@@ -4528,16 +4528,14 @@ exports[`csr snapshot test > csr test ./src/button/_example/icon.vue 1`] = `
         width="1em"
       >
         <path
-          d="M7.84 5.01A2 2 0 115 7.84 2 2 0 017.84 5zm-.7.7a1 1 0 10-1.42 1.42 1 1 0 001.41-1.41z"
+          d="M7.84 5.01A2 2 0 105 7.84 2 2 0 007.84 5zm-.7.7a1 1 0 11-1.42 1.42 1 1 0 011.41-1.41z"
           fill="currentColor"
           fill-opacity="0.9"
         />
         <path
-          clip-rule="evenodd"
-          d="M2 7.95V2h5.95a1 1 0 01.7.3l6.14 6.13a1 1 0 010 1.41L9.84 14.8a1 1 0 01-1.41 0L2.29 8.66A1 1 0 012 7.95zM7.95 3l6.13 6.13-4.95 4.95L3 7.95V3h4.95z"
+          d="M2 7.95V2h5.95a1 1 0 01.7.3l6.14 6.13a1 1 0 010 1.41L9.84 14.8a1 1 0 01-1.41 0L2.29 8.66A1 1 0 012 7.95zM7.95 3H3v4.95l6.13 6.13 4.95-4.95L7.95 3z"
           fill="currentColor"
           fill-opacity="0.9"
-          fill-rule="evenodd"
         />
       </svg>
     </button>
@@ -5661,10 +5659,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/base.vue 1`] = `
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'month'"
+              tabindex="-1"
               type="radio"
               value="month"
             />
@@ -5679,10 +5679,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/base.vue 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'year'"
+              tabindex="-1"
               type="radio"
               value="year"
             />
@@ -6628,10 +6630,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/card.vue 1`] = `
             >
               <label
                 class="t-radio-button t-is-checked"
+                tabindex="0"
               >
                 <input
                   class="t-radio-button__former"
-                  name=""
+                  data-value="'month'"
+                  tabindex="-1"
                   type="radio"
                   value="month"
                 />
@@ -6646,10 +6650,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/card.vue 1`] = `
               </label>
               <label
                 class="t-radio-button"
+                tabindex="0"
               >
                 <input
                   class="t-radio-button__former"
-                  name=""
+                  data-value="'year'"
+                  tabindex="-1"
                   type="radio"
                   value="year"
                 />
@@ -7457,10 +7463,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/cell.vue 1`] = `
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'month'"
+              tabindex="-1"
               type="radio"
               value="month"
             />
@@ -7475,10 +7483,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/cell.vue 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'year'"
+              tabindex="-1"
               type="radio"
               value="year"
             />
@@ -8344,10 +8354,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/cell-append.vue 1`
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'month'"
+              tabindex="-1"
               type="radio"
               value="month"
             />
@@ -8362,10 +8374,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/cell-append.vue 1`
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'year'"
+              tabindex="-1"
               type="radio"
               value="year"
             />
@@ -9496,10 +9510,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/controller-config.
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -9514,10 +9530,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/controller-config.
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -10352,10 +10370,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/events.vue 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -10370,10 +10390,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/events.vue 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -11281,10 +11303,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/first-day-of-week.
             >
               <label
                 class="t-radio-button t-is-checked"
+                tabindex="0"
               >
                 <input
                   class="t-radio-button__former"
-                  name=""
+                  data-value="'month'"
+                  tabindex="-1"
                   type="radio"
                   value="month"
                 />
@@ -11299,10 +11323,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/first-day-of-week.
               </label>
               <label
                 class="t-radio-button"
+                tabindex="0"
               >
                 <input
                   class="t-radio-button__former"
-                  name=""
+                  data-value="'year'"
+                  tabindex="-1"
                   type="radio"
                   value="year"
                 />
@@ -12252,10 +12278,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/head.vue 1`] = `
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'month'"
+              tabindex="-1"
               type="radio"
               value="month"
             />
@@ -12270,10 +12298,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/head.vue 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'year'"
+              tabindex="-1"
               type="radio"
               value="year"
             />
@@ -13106,10 +13136,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/mode.vue 1`] = `
             >
               <label
                 class="t-radio-button"
+                tabindex="0"
               >
                 <input
                   class="t-radio-button__former"
-                  name=""
+                  data-value="'month'"
+                  tabindex="-1"
                   type="radio"
                   value="month"
                 />
@@ -13124,10 +13156,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/mode.vue 1`] = `
               </label>
               <label
                 class="t-radio-button t-is-checked"
+                tabindex="0"
               >
                 <input
                   class="t-radio-button__former"
-                  name=""
+                  data-value="'year'"
+                  tabindex="-1"
                   type="radio"
                   value="year"
                 />
@@ -13515,10 +13549,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/range.vue 1`] = `
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'month'"
+              tabindex="-1"
               type="radio"
               value="month"
             />
@@ -13533,10 +13569,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/range.vue 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'year'"
+              tabindex="-1"
               type="radio"
               value="year"
             />
@@ -14368,10 +14406,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/slot-props-api.vue
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'month'"
+              tabindex="-1"
               type="radio"
               value="month"
             />
@@ -14386,10 +14426,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/slot-props-api.vue
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'year'"
+              tabindex="-1"
               type="radio"
               value="year"
             />
@@ -15243,10 +15285,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/value.vue 1`] = `
             >
               <label
                 class="t-radio-button t-is-checked"
+                tabindex="0"
               >
                 <input
                   class="t-radio-button__former"
-                  name=""
+                  data-value="'month'"
+                  tabindex="-1"
                   type="radio"
                   value="month"
                 />
@@ -15261,10 +15305,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/value.vue 1`] = `
               </label>
               <label
                 class="t-radio-button"
+                tabindex="0"
               >
                 <input
                   class="t-radio-button__former"
-                  name=""
+                  data-value="'year'"
+                  tabindex="-1"
                   type="radio"
                   value="year"
                 />
@@ -16221,10 +16267,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/value.vue 1`] = `
             >
               <label
                 class="t-radio-button t-is-checked"
+                tabindex="0"
               >
                 <input
                   class="t-radio-button__former"
-                  name=""
+                  data-value="'month'"
+                  tabindex="-1"
                   type="radio"
                   value="month"
                 />
@@ -16239,10 +16287,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/value.vue 1`] = `
               </label>
               <label
                 class="t-radio-button"
+                tabindex="0"
               >
                 <input
                   class="t-radio-button__former"
-                  name=""
+                  data-value="'year'"
+                  tabindex="-1"
                   type="radio"
                   value="year"
                 />
@@ -17205,10 +17255,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/week.vue 1`] = `
               >
                 <label
                   class="t-radio-button t-is-checked"
+                  tabindex="0"
                 >
                   <input
                     class="t-radio-button__former"
-                    name=""
+                    data-value="'month'"
+                    tabindex="-1"
                     type="radio"
                     value="month"
                   />
@@ -17223,10 +17275,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/week.vue 1`] = `
                 </label>
                 <label
                   class="t-radio-button"
+                  tabindex="0"
                 >
                   <input
                     class="t-radio-button__former"
-                    name=""
+                    data-value="'year'"
+                    tabindex="-1"
                     type="radio"
                     value="year"
                   />
@@ -18053,10 +18107,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/week.vue 1`] = `
               >
                 <label
                   class="t-radio-button t-is-checked"
+                  tabindex="0"
                 >
                   <input
                     class="t-radio-button__former"
-                    name=""
+                    data-value="'month'"
+                    tabindex="-1"
                     type="radio"
                     value="month"
                   />
@@ -18071,10 +18127,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/week.vue 1`] = `
                 </label>
                 <label
                   class="t-radio-button"
+                  tabindex="0"
                 >
                   <input
                     class="t-radio-button__former"
-                    name=""
+                    data-value="'year'"
+                    tabindex="-1"
                     type="radio"
                     value="year"
                   />
@@ -18901,10 +18959,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/week.vue 1`] = `
               >
                 <label
                   class="t-radio-button t-is-checked"
+                  tabindex="0"
                 >
                   <input
                     class="t-radio-button__former"
-                    name=""
+                    data-value="'month'"
+                    tabindex="-1"
                     type="radio"
                     value="month"
                   />
@@ -18919,10 +18979,12 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/week.vue 1`] = `
                 </label>
                 <label
                   class="t-radio-button"
+                  tabindex="0"
                 >
                   <input
                     class="t-radio-button__former"
-                    name=""
+                    data-value="'year'"
+                    tabindex="-1"
                     type="radio"
                     value="year"
                   />
@@ -24595,10 +24657,12 @@ exports[`csr snapshot test > csr test ./src/collapse/_example/icon.vue 1`] = `
         >
           <label
             class="t-radio t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio__former"
-              name=""
+              data-value="'left'"
+              tabindex="-1"
               type="radio"
               value="left"
             />
@@ -24613,10 +24677,12 @@ exports[`csr snapshot test > csr test ./src/collapse/_example/icon.vue 1`] = `
           </label>
           <label
             class="t-radio"
+            tabindex="0"
           >
             <input
               class="t-radio__former"
-              name=""
+              data-value="'right'"
+              tabindex="-1"
               type="radio"
               value="right"
             />
@@ -25877,10 +25943,12 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/enable-alpha.v
       >
         <label
           class="t-radio-button t-is-checked"
+          tabindex="0"
         >
           <input
             class="t-radio-button__former"
-            name=""
+            data-value="'monochrome'"
+            tabindex="-1"
             type="radio"
             value="monochrome"
           />
@@ -25895,10 +25963,12 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/enable-alpha.v
         </label>
         <label
           class="t-radio-button"
+          tabindex="0"
         >
           <input
             class="t-radio-button__former"
-            name=""
+            data-value="'linear-gradient'"
+            tabindex="-1"
             type="radio"
             value="linear-gradient"
           />
@@ -28268,10 +28338,12 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/recent-color.v
               >
                 <label
                   class="t-radio-button t-is-checked"
+                  tabindex="0"
                 >
                   <input
                     class="t-radio-button__former"
-                    name=""
+                    data-value="'monochrome'"
+                    tabindex="-1"
                     type="radio"
                     value="monochrome"
                   />
@@ -28286,10 +28358,12 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/recent-color.v
                 </label>
                 <label
                   class="t-radio-button"
+                  tabindex="0"
                 >
                   <input
                     class="t-radio-button__former"
-                    name=""
+                    data-value="'linear-gradient'"
+                    tabindex="-1"
                     type="radio"
                     value="linear-gradient"
                   />
@@ -29181,10 +29255,12 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/recent-color.v
               >
                 <label
                   class="t-radio-button t-is-checked"
+                  tabindex="0"
                 >
                   <input
                     class="t-radio-button__former"
-                    name=""
+                    data-value="'monochrome'"
+                    tabindex="-1"
                     type="radio"
                     value="monochrome"
                   />
@@ -29199,10 +29275,12 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/recent-color.v
                 </label>
                 <label
                   class="t-radio-button"
+                  tabindex="0"
                 >
                   <input
                     class="t-radio-button__former"
-                    name=""
+                    data-value="'linear-gradient'"
+                    tabindex="-1"
                     type="radio"
                     value="linear-gradient"
                   />
@@ -29975,8 +30053,9 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/status-readonl
         >
           <input
             class="t-radio-button__former"
-            disabled=""
-            name=""
+            data-value="'monochrome'"
+            disabled="disabled"
+            tabindex="-1"
             type="radio"
             value="monochrome"
           />
@@ -29994,8 +30073,9 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/status-readonl
         >
           <input
             class="t-radio-button__former"
-            disabled=""
-            name=""
+            data-value="'linear-gradient'"
+            disabled="disabled"
+            tabindex="-1"
             type="radio"
             value="linear-gradient"
           />
@@ -30778,10 +30858,12 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/swatch-color.v
               >
                 <label
                   class="t-radio-button t-is-checked"
+                  tabindex="0"
                 >
                   <input
                     class="t-radio-button__former"
-                    name=""
+                    data-value="'monochrome'"
+                    tabindex="-1"
                     type="radio"
                     value="monochrome"
                   />
@@ -30796,10 +30878,12 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/swatch-color.v
                 </label>
                 <label
                   class="t-radio-button"
+                  tabindex="0"
                 >
                   <input
                     class="t-radio-button__former"
-                    name=""
+                    data-value="'linear-gradient'"
+                    tabindex="-1"
                     type="radio"
                     value="linear-gradient"
                   />
@@ -31154,10 +31238,12 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/swatch-color.v
               >
                 <label
                   class="t-radio-button t-is-checked"
+                  tabindex="0"
                 >
                   <input
                     class="t-radio-button__former"
-                    name=""
+                    data-value="'monochrome'"
+                    tabindex="-1"
                     type="radio"
                     value="monochrome"
                   />
@@ -31172,10 +31258,12 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/swatch-color.v
                 </label>
                 <label
                   class="t-radio-button"
+                  tabindex="0"
                 >
                   <input
                     class="t-radio-button__former"
-                    name=""
+                    data-value="'linear-gradient'"
+                    tabindex="-1"
                     type="radio"
                     value="linear-gradient"
                   />
@@ -32512,10 +32600,12 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/calendar.vu
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'month'"
+              tabindex="-1"
               type="radio"
               value="month"
             />
@@ -32530,10 +32620,12 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/calendar.vu
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'year'"
+              tabindex="-1"
               type="radio"
               value="year"
             />
@@ -37596,10 +37688,12 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/first-day-of-we
     >
       <label
         class="t-radio-button t-is-checked"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="1"
+          tabindex="-1"
           type="radio"
           value="1"
         />
@@ -37614,10 +37708,12 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/first-day-of-we
       </label>
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="2"
+          tabindex="-1"
           type="radio"
           value="2"
         />
@@ -37632,10 +37728,12 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/first-day-of-we
       </label>
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="3"
+          tabindex="-1"
           type="radio"
           value="3"
         />
@@ -37650,10 +37748,12 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/first-day-of-we
       </label>
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="4"
+          tabindex="-1"
           type="radio"
           value="4"
         />
@@ -37668,10 +37768,12 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/first-day-of-we
       </label>
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="5"
+          tabindex="-1"
           type="radio"
           value="5"
         />
@@ -37686,10 +37788,12 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/first-day-of-we
       </label>
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="6"
+          tabindex="-1"
           type="radio"
           value="6"
         />
@@ -37704,10 +37808,12 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/first-day-of-we
       </label>
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="7"
+          tabindex="-1"
           type="radio"
           value="7"
         />
@@ -45403,10 +45509,12 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/attach-parent.vue 1`
         <label
           class="t-radio-button"
           data-v-241b7623=""
+          tabindex="0"
         >
           <input
             class="t-radio-button__former"
-            name=""
+            data-value="'left'"
+            tabindex="-1"
             type="radio"
             value="left"
           />
@@ -45422,10 +45530,12 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/attach-parent.vue 1`
         <label
           class="t-radio-button t-is-checked"
           data-v-241b7623=""
+          tabindex="0"
         >
           <input
             class="t-radio-button__former"
-            name=""
+            data-value="'right'"
+            tabindex="-1"
             type="radio"
             value="right"
           />
@@ -45441,10 +45551,12 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/attach-parent.vue 1`
         <label
           class="t-radio-button"
           data-v-241b7623=""
+          tabindex="0"
         >
           <input
             class="t-radio-button__former"
-            name=""
+            data-value="'top'"
+            tabindex="-1"
             type="radio"
             value="top"
           />
@@ -45460,10 +45572,12 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/attach-parent.vue 1`
         <label
           class="t-radio-button"
           data-v-241b7623=""
+          tabindex="0"
         >
           <input
             class="t-radio-button__former"
-            name=""
+            data-value="'bottom'"
+            tabindex="-1"
             type="radio"
             value="bottom"
           />
@@ -45493,10 +45607,12 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/attach-parent.vue 1`
         <label
           class="t-radio-button t-is-checked"
           data-v-241b7623=""
+          tabindex="0"
         >
           <input
             class="t-radio-button__former"
-            name=""
+            data-value="'overlay'"
+            tabindex="-1"
             type="radio"
             value="overlay"
           />
@@ -45512,10 +45628,12 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/attach-parent.vue 1`
         <label
           class="t-radio-button"
           data-v-241b7623=""
+          tabindex="0"
         >
           <input
             class="t-radio-button__former"
-            name=""
+            data-value="'push'"
+            tabindex="-1"
             type="radio"
             value="push"
           />
@@ -46325,10 +46443,12 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/placement.vue 1`] = 
         >
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'left'"
+              tabindex="-1"
               type="radio"
               value="left"
             />
@@ -46343,10 +46463,12 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/placement.vue 1`] = 
           </label>
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'right'"
+              tabindex="-1"
               type="radio"
               value="right"
             />
@@ -46361,10 +46483,12 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/placement.vue 1`] = 
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'top'"
+              tabindex="-1"
               type="radio"
               value="top"
             />
@@ -46379,10 +46503,12 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/placement.vue 1`] = 
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'bottom'"
+              tabindex="-1"
               type="radio"
               value="bottom"
             />
@@ -46433,10 +46559,12 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/popup.vue 1`] = `
       >
         <label
           class="t-radio-button"
+          tabindex="0"
         >
           <input
             class="t-radio-button__former"
-            name=""
+            data-value="'overlay'"
+            tabindex="-1"
             type="radio"
             value="overlay"
           />
@@ -46451,10 +46579,12 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/popup.vue 1`] = `
         </label>
         <label
           class="t-radio-button t-is-checked"
+          tabindex="0"
         >
           <input
             class="t-radio-button__former"
-            name=""
+            data-value="'push'"
+            tabindex="-1"
             type="radio"
             value="push"
           />
@@ -46573,10 +46703,12 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/size.vue 1`] = `
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'small'"
+              tabindex="-1"
               type="radio"
               value="small"
             />
@@ -46591,10 +46723,12 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/size.vue 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'medium'"
+              tabindex="-1"
               type="radio"
               value="medium"
             />
@@ -46609,10 +46743,12 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/size.vue 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'large'"
+              tabindex="-1"
               type="radio"
               value="large"
             />
@@ -46627,10 +46763,12 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/size.vue 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'200'"
+              tabindex="-1"
               type="radio"
               value="200"
             />
@@ -46645,10 +46783,12 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/size.vue 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'400px'"
+              tabindex="-1"
               type="radio"
               value="400px"
             />
@@ -46663,10 +46803,12 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/size.vue 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'50%'"
+              tabindex="-1"
               type="radio"
               value="50%"
             />
@@ -46781,10 +46923,12 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/size-draggable.vue 1
       >
         <label
           class="t-radio-button"
+          tabindex="0"
         >
           <input
             class="t-radio-button__former"
-            name=""
+            data-value="'left'"
+            tabindex="-1"
             type="radio"
             value="left"
           />
@@ -46799,10 +46943,12 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/size-draggable.vue 1
         </label>
         <label
           class="t-radio-button t-is-checked"
+          tabindex="0"
         >
           <input
             class="t-radio-button__former"
-            name=""
+            data-value="'right'"
+            tabindex="-1"
             type="radio"
             value="right"
           />
@@ -46817,10 +46963,12 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/size-draggable.vue 1
         </label>
         <label
           class="t-radio-button"
+          tabindex="0"
         >
           <input
             class="t-radio-button__former"
-            name=""
+            data-value="'top'"
+            tabindex="-1"
             type="radio"
             value="top"
           />
@@ -46835,10 +46983,12 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/size-draggable.vue 1
         </label>
         <label
           class="t-radio-button"
+          tabindex="0"
         >
           <input
             class="t-radio-button__former"
-            name=""
+            data-value="'bottom'"
+            tabindex="-1"
             type="radio"
             value="bottom"
           />
@@ -47193,10 +47343,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/align.vue 1`] = `
     >
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'left'"
+          tabindex="-1"
           type="radio"
           value="left"
         />
@@ -47211,10 +47363,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/align.vue 1`] = `
       </label>
       <label
         class="t-radio-button t-is-checked"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'right'"
+          tabindex="-1"
           type="radio"
           value="right"
         />
@@ -47229,10 +47383,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/align.vue 1`] = `
       </label>
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'top'"
+          tabindex="-1"
           type="radio"
           value="top"
         />
@@ -47498,10 +47654,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/base.vue 1`] = `
         >
           <label
             class="t-radio"
+            tabindex="0"
           >
             <input
               class="t-radio__former"
-              name=""
+              data-value="'1'"
+              tabindex="-1"
               type="radio"
               value="1"
             />
@@ -47516,10 +47674,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/base.vue 1`] = `
           </label>
           <label
             class="t-radio"
+            tabindex="0"
           >
             <input
               class="t-radio__former"
-              name=""
+              data-value="'2'"
+              tabindex="-1"
               type="radio"
               value="2"
             />
@@ -47899,10 +48059,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/clear-validate.vue 1`]
           <label
             class="t-radio"
             data-v-6f67d4f0=""
+            tabindex="0"
           >
             <input
               class="t-radio__former"
-              name=""
+              data-value="'male'"
+              tabindex="-1"
               type="radio"
               value="male"
             />
@@ -47918,10 +48080,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/clear-validate.vue 1`]
           <label
             class="t-radio"
             data-v-6f67d4f0=""
+            tabindex="0"
           >
             <input
               class="t-radio__former"
-              name=""
+              data-value="'female'"
+              tabindex="-1"
               type="radio"
               value="female"
             />
@@ -48953,10 +49117,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
             >
               <label
                 class="t-radio"
+                tabindex="0"
               >
                 <input
                   class="t-radio__former"
-                  name=""
+                  data-value="'1'"
+                  tabindex="-1"
                   type="radio"
                   value="1"
                 />
@@ -48971,10 +49137,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
               </label>
               <label
                 class="t-radio"
+                tabindex="0"
               >
                 <input
                   class="t-radio__former"
-                  name=""
+                  data-value="'2'"
+                  tabindex="-1"
                   type="radio"
                   value="2"
                 />
@@ -49337,10 +49505,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/error-message.vue 1`] 
       <label
         class="t-radio-button t-is-checked"
         data-v-e6f62b80=""
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'default'"
+          tabindex="-1"
           type="radio"
           value="default"
         />
@@ -49360,10 +49530,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/error-message.vue 1`] 
       <label
         class="t-radio-button"
         data-v-e6f62b80=""
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'config'"
+          tabindex="-1"
           type="radio"
           value="config"
         />
@@ -49613,10 +49785,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/error-message.vue 1`] 
               <label
                 class="t-radio"
                 data-v-e6f62b80=""
+                tabindex="0"
               >
                 <input
                   class="t-radio__former"
-                  name=""
+                  data-value="'male'"
+                  tabindex="-1"
                   type="radio"
                   value="male"
                 />
@@ -49632,10 +49806,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/error-message.vue 1`] 
               <label
                 class="t-radio"
                 data-v-e6f62b80=""
+                tabindex="0"
               >
                 <input
                   class="t-radio__former"
-                  name=""
+                  data-value="'female'"
+                  tabindex="-1"
                   type="radio"
                   value="female"
                 />
@@ -49995,10 +50171,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/layout.vue 1`] = `
     >
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'vertical'"
+          tabindex="-1"
           type="radio"
           value="vertical"
         />
@@ -50013,10 +50191,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/layout.vue 1`] = `
       </label>
       <label
         class="t-radio-button t-is-checked"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'inline'"
+          tabindex="-1"
           type="radio"
           value="inline"
         />
@@ -50308,10 +50488,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/reset.vue 1`] = `
     >
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'empty'"
+          tabindex="-1"
           type="radio"
           value="empty"
         />
@@ -50326,10 +50508,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/reset.vue 1`] = `
       </label>
       <label
         class="t-radio-button t-is-checked"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'initial'"
+          tabindex="-1"
           type="radio"
           value="initial"
         />
@@ -50599,10 +50783,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/size.vue 1`] = `
     >
       <label
         class="t-radio-button t-is-checked"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'medium'"
+          tabindex="-1"
           type="radio"
           value="medium"
         />
@@ -50617,10 +50803,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/size.vue 1`] = `
       </label>
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'large'"
+          tabindex="-1"
           type="radio"
           value="large"
         />
@@ -50780,10 +50968,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/size.vue 1`] = `
             >
               <label
                 class="t-radio"
+                tabindex="0"
               >
                 <input
                   class="t-radio__former"
-                  name=""
+                  data-value="'1'"
+                  tabindex="-1"
                   type="radio"
                   value="1"
                 />
@@ -50798,10 +50988,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/size.vue 1`] = `
               </label>
               <label
                 class="t-radio"
+                tabindex="0"
               >
                 <input
                   class="t-radio__former"
-                  name=""
+                  data-value="'2'"
+                  tabindex="-1"
                   type="radio"
                   value="2"
                 />
@@ -50988,10 +51180,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
         >
           <label
             class="t-radio t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio__former"
-              name=""
+              data-value="1"
+              tabindex="-1"
               type="radio"
               value="1"
             />
@@ -51006,10 +51200,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
           </label>
           <label
             class="t-radio"
+            tabindex="0"
           >
             <input
               class="t-radio__former"
-              name=""
+              data-value="2"
+              tabindex="-1"
               type="radio"
               value="2"
             />
@@ -51024,10 +51220,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
           </label>
           <label
             class="t-radio"
+            tabindex="0"
           >
             <input
               class="t-radio__former"
-              name=""
+              data-value="3"
+              tabindex="-1"
               type="radio"
               value="3"
             />
@@ -51184,10 +51382,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
                   >
                     <label
                       class="t-radio t-is-checked"
+                      tabindex="0"
                     >
                       <input
                         class="t-radio__former"
-                        name=""
+                        data-value="'wenke'"
+                        tabindex="-1"
                         type="radio"
                         value="wenke"
                       />
@@ -51202,10 +51402,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
                     </label>
                     <label
                       class="t-radio"
+                      tabindex="0"
                     >
                       <input
                         class="t-radio__former"
-                        name=""
+                        data-value="'like'"
+                        tabindex="-1"
                         type="radio"
                         value="like"
                       />
@@ -51519,10 +51721,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
                   >
                     <label
                       class="t-radio t-is-checked"
+                      tabindex="0"
                     >
                       <input
                         class="t-radio__former"
-                        name=""
+                        data-value="'wenke'"
+                        tabindex="-1"
                         type="radio"
                         value="wenke"
                       />
@@ -51537,10 +51741,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
                     </label>
                     <label
                       class="t-radio"
+                      tabindex="0"
                     >
                       <input
                         class="t-radio__former"
-                        name=""
+                        data-value="'like'"
+                        tabindex="-1"
                         type="radio"
                         value="like"
                       />
@@ -52327,10 +52533,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
           <label
             class="t-radio"
             data-v-064ce350=""
+            tabindex="0"
           >
             <input
               class="t-radio__former"
-              name=""
+              data-value="'male'"
+              tabindex="-1"
               type="radio"
               value="male"
             />
@@ -52346,10 +52554,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
           <label
             class="t-radio"
             data-v-064ce350=""
+            tabindex="0"
           >
             <input
               class="t-radio__former"
-              name=""
+              data-value="'female'"
+              tabindex="-1"
               type="radio"
               value="female"
             />
@@ -52840,10 +53050,12 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator-status.vue 1
     >
       <label
         class="t-radio-button t-is-checked"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="true"
+          tabindex="-1"
           type="radio"
           value="true"
         />
@@ -52858,10 +53070,11 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator-status.vue 1
       </label>
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          tabindex="-1"
           type="radio"
           value="false"
         />
@@ -61779,10 +61992,12 @@ exports[`csr snapshot test > csr test ./src/input-number/_example/status.vue 1`]
       <label
         class="t-radio-button"
         data-v-77658c68=""
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'hide'"
+          tabindex="-1"
           type="radio"
           value="hide"
         />
@@ -61798,10 +62013,12 @@ exports[`csr snapshot test > csr test ./src/input-number/_example/status.vue 1`]
       <label
         class="t-radio-button"
         data-v-77658c68=""
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'align-left'"
+          tabindex="-1"
           type="radio"
           value="align-left"
         />
@@ -61817,10 +62034,12 @@ exports[`csr snapshot test > csr test ./src/input-number/_example/status.vue 1`]
       <label
         class="t-radio-button t-is-checked"
         data-v-77658c68=""
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'align-input'"
+          tabindex="-1"
           type="radio"
           value="align-input"
         />
@@ -64370,10 +64589,12 @@ exports[`csr snapshot test > csr test ./src/list/_example/loading.vue 1`] = `
     >
       <label
         class="t-radio-button t-is-checked"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'load-more'"
+          tabindex="-1"
           type="radio"
           value="load-more"
         />
@@ -64388,10 +64609,12 @@ exports[`csr snapshot test > csr test ./src/list/_example/loading.vue 1`] = `
       </label>
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'loading'"
+          tabindex="-1"
           type="radio"
           value="loading"
         />
@@ -64406,10 +64629,12 @@ exports[`csr snapshot test > csr test ./src/list/_example/loading.vue 1`] = `
       </label>
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'loading-custom'"
+          tabindex="-1"
           type="radio"
           value="loading-custom"
         />
@@ -64424,10 +64649,12 @@ exports[`csr snapshot test > csr test ./src/list/_example/loading.vue 1`] = `
       </label>
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="''"
+          tabindex="-1"
           type="radio"
           value=""
         />
@@ -75008,10 +75235,12 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/pagination-mini.
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'vertical'"
+              tabindex="-1"
               type="radio"
               value="vertical"
             />
@@ -75026,10 +75255,12 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/pagination-mini.
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'horizontal'"
+              tabindex="-1"
               type="radio"
               value="horizontal"
             />
@@ -75072,10 +75303,12 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/pagination-mini.
         >
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'small'"
+              tabindex="-1"
               type="radio"
               value="small"
             />
@@ -75090,10 +75323,12 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/pagination-mini.
           </label>
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'medium'"
+              tabindex="-1"
               type="radio"
               value="medium"
             />
@@ -75108,10 +75343,12 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/pagination-mini.
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'large'"
+              tabindex="-1"
               type="radio"
               value="large"
             />
@@ -78694,10 +78931,11 @@ exports[`csr snapshot test > csr test ./src/radio/_example/base.vue 1`] = `
   >
     <label
       class="t-radio"
+      tabindex="0"
     >
       <input
         class="t-radio__former"
-        name=""
+        tabindex="-1"
         type="radio"
         value=""
       />
@@ -78716,10 +78954,11 @@ exports[`csr snapshot test > csr test ./src/radio/_example/base.vue 1`] = `
   >
     <label
       class="t-radio t-is-checked"
+      tabindex="0"
     >
       <input
         class="t-radio__former"
-        name=""
+        tabindex="-1"
         type="radio"
         value=""
       />
@@ -78741,8 +78980,8 @@ exports[`csr snapshot test > csr test ./src/radio/_example/base.vue 1`] = `
     >
       <input
         class="t-radio__former"
-        disabled=""
-        name=""
+        disabled="disabled"
+        tabindex="-1"
         type="radio"
         value=""
       />
@@ -78764,8 +79003,8 @@ exports[`csr snapshot test > csr test ./src/radio/_example/base.vue 1`] = `
     >
       <input
         class="t-radio__former"
-        disabled=""
-        name=""
+        disabled="disabled"
+        tabindex="-1"
         type="radio"
         value=""
       />
@@ -78802,10 +79041,14 @@ exports[`csr snapshot test > csr test ./src/radio/_example/group.vue 1`] = `
         >
           <label
             class="t-radio"
+            tabindex="0"
           >
             <input
               class="t-radio__former"
+              data-allow-uncheck="true"
+              data-value="1"
               name="city"
+              tabindex="-1"
               type="radio"
               value="1"
             />
@@ -78820,10 +79063,14 @@ exports[`csr snapshot test > csr test ./src/radio/_example/group.vue 1`] = `
           </label>
           <label
             class="t-radio"
+            tabindex="0"
           >
             <input
               class="t-radio__former"
+              data-allow-uncheck="true"
+              data-value="2"
               name="city"
+              tabindex="-1"
               type="radio"
               value="2"
             />
@@ -78838,10 +79085,14 @@ exports[`csr snapshot test > csr test ./src/radio/_example/group.vue 1`] = `
           </label>
           <label
             class="t-radio"
+            tabindex="0"
           >
             <input
               class="t-radio__former"
+              data-allow-uncheck="true"
+              data-value="'3'"
               name="city"
+              tabindex="-1"
               type="radio"
               value="3"
             />
@@ -78856,10 +79107,14 @@ exports[`csr snapshot test > csr test ./src/radio/_example/group.vue 1`] = `
           </label>
           <label
             class="t-radio"
+            tabindex="0"
           >
             <input
               class="t-radio__former"
+              data-allow-uncheck="true"
+              data-value="'4'"
               name="city"
+              tabindex="-1"
               type="radio"
               value="4"
             />
@@ -78890,11 +79145,14 @@ exports[`csr snapshot test > csr test ./src/radio/_example/group.vue 1`] = `
           class="t-radio-group t-size-m t-radio-group__outline"
         >
           <label
-            class="t-radio t-is-checked"
+            class="t-radio"
+            tabindex="0"
           >
             <input
               class="t-radio__former"
-              name=""
+              data-allow-uncheck="true"
+              data-value="'1'"
+              tabindex="-1"
               type="radio"
               value="1"
             />
@@ -78909,10 +79167,12 @@ exports[`csr snapshot test > csr test ./src/radio/_example/group.vue 1`] = `
           </label>
           <label
             class="t-radio"
+            tabindex="0"
           >
             <input
               class="t-radio__former"
-              name=""
+              data-value="'2'"
+              tabindex="-1"
               type="radio"
               value="2"
             />
@@ -78927,10 +79187,12 @@ exports[`csr snapshot test > csr test ./src/radio/_example/group.vue 1`] = `
           </label>
           <label
             class="t-radio"
+            tabindex="0"
           >
             <input
               class="t-radio__former"
-              name=""
+              data-value="'3'"
+              tabindex="-1"
               type="radio"
               value="3"
             />
@@ -78948,8 +79210,9 @@ exports[`csr snapshot test > csr test ./src/radio/_example/group.vue 1`] = `
           >
             <input
               class="t-radio__former"
-              disabled=""
-              name=""
+              data-value="'4'"
+              disabled="disabled"
+              tabindex="-1"
               type="radio"
               value="4"
             />
@@ -78982,10 +79245,12 @@ exports[`csr snapshot test > csr test ./src/radio/_example/size.vue 1`] = `
     >
       <label
         class="t-radio-button t-is-checked"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'1'"
+          tabindex="-1"
           type="radio"
           value="1"
         />
@@ -79000,10 +79265,12 @@ exports[`csr snapshot test > csr test ./src/radio/_example/size.vue 1`] = `
       </label>
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'2'"
+          tabindex="-1"
           type="radio"
           value="2"
         />
@@ -79018,10 +79285,12 @@ exports[`csr snapshot test > csr test ./src/radio/_example/size.vue 1`] = `
       </label>
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'3'"
+          tabindex="-1"
           type="radio"
           value="3"
         />
@@ -79036,10 +79305,12 @@ exports[`csr snapshot test > csr test ./src/radio/_example/size.vue 1`] = `
       </label>
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'4'"
+          tabindex="-1"
           type="radio"
           value="4"
         />
@@ -79062,10 +79333,12 @@ exports[`csr snapshot test > csr test ./src/radio/_example/size.vue 1`] = `
     >
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'1'"
+          tabindex="-1"
           type="radio"
           value="1"
         />
@@ -79080,10 +79353,12 @@ exports[`csr snapshot test > csr test ./src/radio/_example/size.vue 1`] = `
       </label>
       <label
         class="t-radio-button t-is-checked"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'2'"
+          tabindex="-1"
           type="radio"
           value="2"
         />
@@ -79098,10 +79373,12 @@ exports[`csr snapshot test > csr test ./src/radio/_example/size.vue 1`] = `
       </label>
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'3'"
+          tabindex="-1"
           type="radio"
           value="3"
         />
@@ -79116,10 +79393,12 @@ exports[`csr snapshot test > csr test ./src/radio/_example/size.vue 1`] = `
       </label>
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'4'"
+          tabindex="-1"
           type="radio"
           value="4"
         />
@@ -79142,10 +79421,12 @@ exports[`csr snapshot test > csr test ./src/radio/_example/size.vue 1`] = `
     >
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'1'"
+          tabindex="-1"
           type="radio"
           value="1"
         />
@@ -79160,10 +79441,12 @@ exports[`csr snapshot test > csr test ./src/radio/_example/size.vue 1`] = `
       </label>
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'2'"
+          tabindex="-1"
           type="radio"
           value="2"
         />
@@ -79178,10 +79461,12 @@ exports[`csr snapshot test > csr test ./src/radio/_example/size.vue 1`] = `
       </label>
       <label
         class="t-radio-button t-is-checked"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'3'"
+          tabindex="-1"
           type="radio"
           value="3"
         />
@@ -79196,10 +79481,12 @@ exports[`csr snapshot test > csr test ./src/radio/_example/size.vue 1`] = `
       </label>
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'4'"
+          tabindex="-1"
           type="radio"
           value="4"
         />
@@ -79244,10 +79531,12 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'1'"
+              tabindex="-1"
               type="radio"
               value="1"
             />
@@ -79262,10 +79551,12 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'2'"
+              tabindex="-1"
               type="radio"
               value="2"
             />
@@ -79280,10 +79571,12 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'3'"
+              tabindex="-1"
               type="radio"
               value="3"
             />
@@ -79298,10 +79591,12 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'4'"
+              tabindex="-1"
               type="radio"
               value="4"
             />
@@ -79316,10 +79611,12 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'5'"
+              tabindex="-1"
               type="radio"
               value="5"
             />
@@ -79345,8 +79642,9 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
           >
             <input
               class="t-radio-button__former"
-              disabled=""
-              name=""
+              data-value="'1'"
+              disabled="disabled"
+              tabindex="-1"
               type="radio"
               value="1"
             />
@@ -79364,8 +79662,9 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
           >
             <input
               class="t-radio-button__former"
-              disabled=""
-              name=""
+              data-value="'2'"
+              disabled="disabled"
+              tabindex="-1"
               type="radio"
               value="2"
             />
@@ -79383,8 +79682,9 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
           >
             <input
               class="t-radio-button__former"
-              disabled=""
-              name=""
+              data-value="'3'"
+              disabled="disabled"
+              tabindex="-1"
               type="radio"
               value="3"
             />
@@ -79402,8 +79702,9 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
           >
             <input
               class="t-radio-button__former"
-              disabled=""
-              name=""
+              data-value="'4'"
+              disabled="disabled"
+              tabindex="-1"
               type="radio"
               value="4"
             />
@@ -79421,8 +79722,8 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
           >
             <input
               class="t-radio-button__former"
-              disabled=""
-              name=""
+              disabled="disabled"
+              tabindex="-1"
               type="radio"
               value=""
             />
@@ -79468,10 +79769,12 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
             >
               <label
                 class="t-radio-button t-is-checked"
+                tabindex="0"
               >
                 <input
                   class="t-radio-button__former"
-                  name=""
+                  data-value="'1'"
+                  tabindex="-1"
                   type="radio"
                   value="1"
                 />
@@ -79486,10 +79789,12 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
               </label>
               <label
                 class="t-radio-button"
+                tabindex="0"
               >
                 <input
                   class="t-radio-button__former"
-                  name=""
+                  data-value="'2'"
+                  tabindex="-1"
                   type="radio"
                   value="2"
                 />
@@ -79504,10 +79809,12 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
               </label>
               <label
                 class="t-radio-button"
+                tabindex="0"
               >
                 <input
                   class="t-radio-button__former"
-                  name=""
+                  data-value="'3'"
+                  tabindex="-1"
                   type="radio"
                   value="3"
                 />
@@ -79522,10 +79829,12 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
               </label>
               <label
                 class="t-radio-button"
+                tabindex="0"
               >
                 <input
                   class="t-radio-button__former"
-                  name=""
+                  data-value="'4'"
+                  tabindex="-1"
                   type="radio"
                   value="4"
                 />
@@ -79540,10 +79849,12 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
               </label>
               <label
                 class="t-radio-button"
+                tabindex="0"
               >
                 <input
                   class="t-radio-button__former"
-                  name=""
+                  data-value="'5'"
+                  tabindex="-1"
                   type="radio"
                   value="5"
                 />
@@ -79579,10 +79890,12 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
             >
               <label
                 class="t-radio-button t-is-checked"
+                tabindex="0"
               >
                 <input
                   class="t-radio-button__former"
-                  name=""
+                  data-value="'1'"
+                  tabindex="-1"
                   type="radio"
                   value="1"
                 />
@@ -79597,10 +79910,12 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
               </label>
               <label
                 class="t-radio-button"
+                tabindex="0"
               >
                 <input
                   class="t-radio-button__former"
-                  name=""
+                  data-value="'2'"
+                  tabindex="-1"
                   type="radio"
                   value="2"
                 />
@@ -79615,10 +79930,12 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
               </label>
               <label
                 class="t-radio-button"
+                tabindex="0"
               >
                 <input
                   class="t-radio-button__former"
-                  name=""
+                  data-value="'3'"
+                  tabindex="-1"
                   type="radio"
                   value="3"
                 />
@@ -79633,10 +79950,12 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
               </label>
               <label
                 class="t-radio-button"
+                tabindex="0"
               >
                 <input
                   class="t-radio-button__former"
-                  name=""
+                  data-value="'4'"
+                  tabindex="-1"
                   type="radio"
                   value="4"
                 />
@@ -79651,10 +79970,12 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
               </label>
               <label
                 class="t-radio-button"
+                tabindex="0"
               >
                 <input
                   class="t-radio-button__former"
-                  name=""
+                  data-value="'5'"
+                  tabindex="-1"
                   type="radio"
                   value="5"
                 />
@@ -79693,8 +80014,9 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
               >
                 <input
                   class="t-radio-button__former"
-                  disabled=""
-                  name=""
+                  data-value="'1'"
+                  disabled="disabled"
+                  tabindex="-1"
                   type="radio"
                   value="1"
                 />
@@ -79712,8 +80034,9 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
               >
                 <input
                   class="t-radio-button__former"
-                  disabled=""
-                  name=""
+                  data-value="'2'"
+                  disabled="disabled"
+                  tabindex="-1"
                   type="radio"
                   value="2"
                 />
@@ -79731,8 +80054,9 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
               >
                 <input
                   class="t-radio-button__former"
-                  disabled=""
-                  name=""
+                  data-value="'3'"
+                  disabled="disabled"
+                  tabindex="-1"
                   type="radio"
                   value="3"
                 />
@@ -79750,8 +80074,9 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
               >
                 <input
                   class="t-radio-button__former"
-                  disabled=""
-                  name=""
+                  data-value="'4'"
+                  disabled="disabled"
+                  tabindex="-1"
                   type="radio"
                   value="4"
                 />
@@ -79769,8 +80094,9 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
               >
                 <input
                   class="t-radio-button__former"
-                  disabled=""
-                  name=""
+                  data-value="'5'"
+                  disabled="disabled"
+                  tabindex="-1"
                   type="radio"
                   value="5"
                 />
@@ -79809,8 +80135,9 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
               >
                 <input
                   class="t-radio-button__former"
-                  disabled=""
-                  name=""
+                  data-value="'1'"
+                  disabled="disabled"
+                  tabindex="-1"
                   type="radio"
                   value="1"
                 />
@@ -79828,8 +80155,9 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
               >
                 <input
                   class="t-radio-button__former"
-                  disabled=""
-                  name=""
+                  data-value="'2'"
+                  disabled="disabled"
+                  tabindex="-1"
                   type="radio"
                   value="2"
                 />
@@ -79847,8 +80175,9 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
               >
                 <input
                   class="t-radio-button__former"
-                  disabled=""
-                  name=""
+                  data-value="'3'"
+                  disabled="disabled"
+                  tabindex="-1"
                   type="radio"
                   value="3"
                 />
@@ -79866,8 +80195,9 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
               >
                 <input
                   class="t-radio-button__former"
-                  disabled=""
-                  name=""
+                  data-value="'4'"
+                  disabled="disabled"
+                  tabindex="-1"
                   type="radio"
                   value="4"
                 />
@@ -79885,8 +80215,9 @@ exports[`csr snapshot test > csr test ./src/radio/_example/type.vue 1`] = `
               >
                 <input
                   class="t-radio-button__former"
-                  disabled=""
-                  name=""
+                  data-value="'5'"
+                  disabled="disabled"
+                  tabindex="-1"
                   type="radio"
                   value="5"
                 />
@@ -86862,10 +87193,12 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/multiple.vue 1
       >
         <label
           class="t-radio"
+          tabindex="0"
         >
           <input
             class="t-radio__former"
-            name=""
+            data-value="'scroll'"
+            tabindex="-1"
             type="radio"
             value="scroll"
           />
@@ -86880,10 +87213,12 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/multiple.vue 1
         </label>
         <label
           class="t-radio t-is-checked"
+          tabindex="0"
         >
           <input
             class="t-radio__former"
-            name=""
+            data-value="'break-line'"
+            tabindex="-1"
             type="radio"
             value="break-line"
           />
@@ -93744,10 +94079,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/async-loading.vue 1`]
     >
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'load-more'"
+          tabindex="-1"
           type="radio"
           value="load-more"
         />
@@ -93762,10 +94099,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/async-loading.vue 1`]
       </label>
       <label
         class="t-radio-button t-is-checked"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'loading'"
+          tabindex="-1"
           type="radio"
           value="loading"
         />
@@ -93780,10 +94119,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/async-loading.vue 1`]
       </label>
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'loading-custom'"
+          tabindex="-1"
           type="radio"
           value="loading-custom"
         />
@@ -93798,10 +94139,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/async-loading.vue 1`]
       </label>
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="''"
+          tabindex="-1"
           type="radio"
           value=""
         />
@@ -94249,10 +94592,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
       >
         <label
           class="t-radio-button"
+          tabindex="0"
         >
           <input
             class="t-radio-button__former"
-            name=""
+            data-value="'small'"
+            tabindex="-1"
             type="radio"
             value="small"
           />
@@ -94267,10 +94612,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
         </label>
         <label
           class="t-radio-button t-is-checked"
+          tabindex="0"
         >
           <input
             class="t-radio-button__former"
-            name=""
+            data-value="'medium'"
+            tabindex="-1"
             type="radio"
             value="medium"
           />
@@ -94285,10 +94632,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
         </label>
         <label
           class="t-radio-button"
+          tabindex="0"
         >
           <input
             class="t-radio-button__former"
-            name=""
+            data-value="'large'"
+            tabindex="-1"
             type="radio"
             value="large"
           />
@@ -95854,10 +96203,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-col-button.vue
       >
         <label
           class="t-radio-button"
+          tabindex="0"
         >
           <input
             class="t-radio-button__former"
-            name=""
+            data-value="'top-left'"
+            tabindex="-1"
             type="radio"
             value="top-left"
           />
@@ -95872,10 +96223,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-col-button.vue
         </label>
         <label
           class="t-radio-button t-is-checked"
+          tabindex="0"
         >
           <input
             class="t-radio-button__former"
-            name=""
+            data-value="'top-right'"
+            tabindex="-1"
             type="radio"
             value="top-right"
           />
@@ -95890,10 +96243,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-col-button.vue
         </label>
         <label
           class="t-radio-button"
+          tabindex="0"
         >
           <input
             class="t-radio-button__former"
-            name=""
+            data-value="'bottom-left'"
+            tabindex="-1"
             type="radio"
             value="bottom-left"
           />
@@ -95908,10 +96263,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-col-button.vue
         </label>
         <label
           class="t-radio-button"
+          tabindex="0"
         >
           <input
             class="t-radio-button__former"
-            name=""
+            data-value="'bottom-right'"
+            tabindex="-1"
             type="radio"
             value="bottom-right"
           />
@@ -96542,10 +96899,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-footer.vue 1`]
     >
       <label
         class="t-radio-button t-is-checked"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'normal'"
+          tabindex="-1"
           type="radio"
           value="normal"
         />
@@ -96560,10 +96919,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-footer.vue 1`]
       </label>
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'full'"
+          tabindex="-1"
           type="radio"
           value="full"
         />
@@ -96578,10 +96939,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-footer.vue 1`]
       </label>
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'custom'"
+          tabindex="-1"
           type="radio"
           value="custom"
         />
@@ -101002,10 +101365,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/expandable.vue 1`] = 
       <label
         class="t-radio-button t-is-checked"
         data-v-ce8962e4=""
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'true'"
+          tabindex="-1"
           type="radio"
           value="true"
         />
@@ -101021,10 +101386,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/expandable.vue 1`] = 
       <label
         class="t-radio-button"
         data-v-ce8962e4=""
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'false'"
+          tabindex="-1"
           type="radio"
           value="false"
         />
@@ -101040,10 +101407,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/expandable.vue 1`] = 
       <label
         class="t-radio-button"
         data-v-ce8962e4=""
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'custom'"
+          tabindex="-1"
           type="radio"
           value="custom"
         />
@@ -101713,10 +102082,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/filter-controlled.vue
     >
       <label
         class="t-radio-button t-is-checked"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'left'"
+          tabindex="-1"
           type="radio"
           value="left"
         />
@@ -101731,10 +102102,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/filter-controlled.vue
       </label>
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'center'"
+          tabindex="-1"
           type="radio"
           value="center"
         />
@@ -101749,10 +102122,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/filter-controlled.vue
       </label>
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'right'"
+          tabindex="-1"
           type="radio"
           value="right"
         />
@@ -102328,10 +102703,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-column.vue 1`] 
       <label
         class="t-radio-button"
         data-v-c5be352e=""
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="1"
+          tabindex="-1"
           type="radio"
           value="1"
         />
@@ -102347,10 +102724,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-column.vue 1`] 
       <label
         class="t-radio-button t-is-checked"
         data-v-c5be352e=""
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="2"
+          tabindex="-1"
           type="radio"
           value="2"
         />
@@ -102379,10 +102758,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-column.vue 1`] 
       <label
         class="t-radio-button t-is-checked"
         data-v-c5be352e=""
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="1"
+          tabindex="-1"
           type="radio"
           value="1"
         />
@@ -102398,10 +102779,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-column.vue 1`] 
       <label
         class="t-radio-button"
         data-v-c5be352e=""
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="2"
+          tabindex="-1"
           type="radio"
           value="2"
         />
@@ -102430,10 +102813,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-column.vue 1`] 
       <label
         class="t-radio-button t-is-checked"
         data-v-c5be352e=""
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'fixed'"
+          tabindex="-1"
           type="radio"
           value="fixed"
         />
@@ -102449,10 +102834,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-column.vue 1`] 
       <label
         class="t-radio-button"
         data-v-c5be352e=""
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'auto'"
+          tabindex="-1"
           type="radio"
           value="auto"
         />
@@ -102909,10 +103296,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
     >
       <label
         class="t-radio-button t-is-checked"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'fixed'"
+          tabindex="-1"
           type="radio"
           value="fixed"
         />
@@ -102927,10 +103316,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
       </label>
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'auto'"
+          tabindex="-1"
           type="radio"
           value="auto"
         />
@@ -104383,10 +104774,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
       <label
         class="t-radio-button t-is-checked"
         data-v-4344bc5a=""
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'fixed'"
+          tabindex="-1"
           type="radio"
           value="fixed"
         />
@@ -104402,10 +104795,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
       <label
         class="t-radio-button"
         data-v-4344bc5a=""
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'auto'"
+          tabindex="-1"
           type="radio"
           value="auto"
         />
@@ -117241,10 +117636,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
     >
       <label
         class="t-radio-button t-is-checked"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="true"
+          tabindex="-1"
           type="radio"
           value="true"
         />
@@ -117259,10 +117656,11 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
       </label>
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          tabindex="-1"
           type="radio"
           value="false"
         />
@@ -118831,10 +119229,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/select-single.vue 1`]
             >
               <label
                 class="t-radio"
+                tabindex="0"
               >
                 <input
                   class="t-radio__former"
-                  name=""
+                  data-allow-uncheck="true"
+                  tabindex="-1"
                   type="radio"
                   value=""
                 />
@@ -118906,8 +119306,9 @@ exports[`csr snapshot test > csr test ./src/table/_example/select-single.vue 1`]
               >
                 <input
                   class="t-radio__former"
-                  disabled=""
-                  name=""
+                  data-allow-uncheck="true"
+                  disabled="disabled"
+                  tabindex="-1"
                   type="radio"
                   value=""
                 />
@@ -118976,10 +119377,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/select-single.vue 1`]
             >
               <label
                 class="t-radio"
+                tabindex="0"
               >
                 <input
                   class="t-radio__former"
-                  name=""
+                  data-allow-uncheck="true"
+                  tabindex="-1"
                   type="radio"
                   value=""
                 />
@@ -119051,8 +119454,9 @@ exports[`csr snapshot test > csr test ./src/table/_example/select-single.vue 1`]
               >
                 <input
                   class="t-radio__former"
-                  disabled=""
-                  name=""
+                  data-allow-uncheck="true"
+                  disabled="disabled"
+                  tabindex="-1"
                   type="radio"
                   value=""
                 />
@@ -119121,10 +119525,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/select-single.vue 1`]
             >
               <label
                 class="t-radio"
+                tabindex="0"
               >
                 <input
                   class="t-radio__former"
-                  name=""
+                  data-allow-uncheck="true"
+                  tabindex="-1"
                   type="radio"
                   value=""
                 />
@@ -121562,10 +121968,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'true'"
+              tabindex="-1"
               type="radio"
               value="true"
             />
@@ -121580,10 +121988,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'false'"
+              tabindex="-1"
               type="radio"
               value="false"
             />
@@ -127168,10 +127578,12 @@ exports[`csr snapshot test > csr test ./src/tabs/_example/ban.vue 1`] = `
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'normal'"
+              tabindex="-1"
               type="radio"
               value="normal"
             />
@@ -127186,10 +127598,12 @@ exports[`csr snapshot test > csr test ./src/tabs/_example/ban.vue 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'card'"
+              tabindex="-1"
               type="radio"
               value="card"
             />
@@ -127445,10 +127859,12 @@ exports[`csr snapshot test > csr test ./src/tabs/_example/combination.vue 1`] = 
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'normal'"
+              tabindex="-1"
               type="radio"
               value="normal"
             />
@@ -127463,10 +127879,12 @@ exports[`csr snapshot test > csr test ./src/tabs/_example/combination.vue 1`] = 
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'card'"
+              tabindex="-1"
               type="radio"
               value="card"
             />
@@ -127670,10 +128088,12 @@ exports[`csr snapshot test > csr test ./src/tabs/_example/icon.vue 1`] = `
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'normal'"
+              tabindex="-1"
               type="radio"
               value="normal"
             />
@@ -127688,10 +128108,12 @@ exports[`csr snapshot test > csr test ./src/tabs/_example/icon.vue 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'card'"
+              tabindex="-1"
               type="radio"
               value="card"
             />
@@ -127877,10 +128299,12 @@ exports[`csr snapshot test > csr test ./src/tabs/_example/position.vue 1`] = `
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'top'"
+              tabindex="-1"
               type="radio"
               value="top"
             />
@@ -127895,10 +128319,12 @@ exports[`csr snapshot test > csr test ./src/tabs/_example/position.vue 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'right'"
+              tabindex="-1"
               type="radio"
               value="right"
             />
@@ -127913,10 +128339,12 @@ exports[`csr snapshot test > csr test ./src/tabs/_example/position.vue 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'bottom'"
+              tabindex="-1"
               type="radio"
               value="bottom"
             />
@@ -127931,10 +128359,12 @@ exports[`csr snapshot test > csr test ./src/tabs/_example/position.vue 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'left'"
+              tabindex="-1"
               type="radio"
               value="left"
             />
@@ -128939,18 +129369,16 @@ exports[`csr snapshot test > csr test ./src/tag/_example/delete.vue 1`] = `
             width="1em"
           >
             <path
-              d="M7.84 5.01A2 2 0 115 7.84 2 2 0 017.84 5zm-.7.7a1 1 0 10-1.42 1.42 1 1 0 001.41-1.41z"
+              d="M7.84 5.01A2 2 0 105 7.84 2 2 0 007.84 5zm-.7.7a1 1 0 11-1.42 1.42 1 1 0 011.41-1.41z"
               data-v-48c2675e=""
               fill="currentColor"
               fill-opacity="0.9"
             />
             <path
-              clip-rule="evenodd"
-              d="M2 7.95V2h5.95a1 1 0 01.7.3l6.14 6.13a1 1 0 010 1.41L9.84 14.8a1 1 0 01-1.41 0L2.29 8.66A1 1 0 012 7.95zM7.95 3l6.13 6.13-4.95 4.95L3 7.95V3h4.95z"
+              d="M2 7.95V2h5.95a1 1 0 01.7.3l6.14 6.13a1 1 0 010 1.41L9.84 14.8a1 1 0 01-1.41 0L2.29 8.66A1 1 0 012 7.95zM7.95 3H3v4.95l6.13 6.13 4.95-4.95L7.95 3z"
               data-v-48c2675e=""
               fill="currentColor"
               fill-opacity="0.9"
-              fill-rule="evenodd"
             />
           </svg>
           <span
@@ -129070,16 +129498,14 @@ exports[`csr snapshot test > csr test ./src/tag/_example/icon.vue 1`] = `
         width="1em"
       >
         <path
-          d="M7.84 5.01A2 2 0 115 7.84 2 2 0 017.84 5zm-.7.7a1 1 0 10-1.42 1.42 1 1 0 001.41-1.41z"
+          d="M7.84 5.01A2 2 0 105 7.84 2 2 0 007.84 5zm-.7.7a1 1 0 11-1.42 1.42 1 1 0 011.41-1.41z"
           fill="currentColor"
           fill-opacity="0.9"
         />
         <path
-          clip-rule="evenodd"
-          d="M2 7.95V2h5.95a1 1 0 01.7.3l6.14 6.13a1 1 0 010 1.41L9.84 14.8a1 1 0 01-1.41 0L2.29 8.66A1 1 0 012 7.95zM7.95 3l6.13 6.13-4.95 4.95L3 7.95V3h4.95z"
+          d="M2 7.95V2h5.95a1 1 0 01.7.3l6.14 6.13a1 1 0 010 1.41L9.84 14.8a1 1 0 01-1.41 0L2.29 8.66A1 1 0 012 7.95zM7.95 3H3v4.95l6.13 6.13 4.95-4.95L7.95 3z"
           fill="currentColor"
           fill-opacity="0.9"
-          fill-rule="evenodd"
         />
       </svg>
       <span>
@@ -129101,16 +129527,14 @@ exports[`csr snapshot test > csr test ./src/tag/_example/icon.vue 1`] = `
         width="1em"
       >
         <path
-          d="M7.84 5.01A2 2 0 115 7.84 2 2 0 017.84 5zm-.7.7a1 1 0 10-1.42 1.42 1 1 0 001.41-1.41z"
+          d="M7.84 5.01A2 2 0 105 7.84 2 2 0 007.84 5zm-.7.7a1 1 0 11-1.42 1.42 1 1 0 011.41-1.41z"
           fill="currentColor"
           fill-opacity="0.9"
         />
         <path
-          clip-rule="evenodd"
-          d="M2 7.95V2h5.95a1 1 0 01.7.3l6.14 6.13a1 1 0 010 1.41L9.84 14.8a1 1 0 01-1.41 0L2.29 8.66A1 1 0 012 7.95zM7.95 3l6.13 6.13-4.95 4.95L3 7.95V3h4.95z"
+          d="M2 7.95V2h5.95a1 1 0 01.7.3l6.14 6.13a1 1 0 010 1.41L9.84 14.8a1 1 0 01-1.41 0L2.29 8.66A1 1 0 012 7.95zM7.95 3H3v4.95l6.13 6.13 4.95-4.95L7.95 3z"
           fill="currentColor"
           fill-opacity="0.9"
-          fill-rule="evenodd"
         />
       </svg>
       <span>
@@ -133057,10 +133481,12 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/base.vue 1`] = `
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'vertical'"
+              tabindex="-1"
               type="radio"
               value="vertical"
             />
@@ -133075,10 +133501,12 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/base.vue 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'horizontal'"
+              tabindex="-1"
               type="radio"
               value="horizontal"
             />
@@ -133413,10 +133841,12 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'default'"
+              tabindex="-1"
               type="radio"
               value="default"
             />
@@ -133431,10 +133861,12 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'dot'"
+              tabindex="-1"
               type="radio"
               value="dot"
             />
@@ -133667,10 +134099,12 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'vertical'"
+                tabindex="-1"
                 type="radio"
                 value="vertical"
               />
@@ -133685,10 +134119,12 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'horizontal'"
+                tabindex="-1"
                 type="radio"
                 value="horizontal"
               />
@@ -133727,10 +134163,12 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'left'"
+                tabindex="-1"
                 type="radio"
                 value="left"
               />
@@ -133745,10 +134183,12 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'alternate'"
+                tabindex="-1"
                 type="radio"
                 value="alternate"
               />
@@ -133763,10 +134203,12 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'right'"
+                tabindex="-1"
                 type="radio"
                 value="right"
               />
@@ -133805,10 +134247,12 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'same'"
+                tabindex="-1"
                 type="radio"
                 value="same"
               />
@@ -133823,10 +134267,12 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'alternate'"
+                tabindex="-1"
                 type="radio"
                 value="alternate"
               />
@@ -140505,10 +140951,13 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             >
               <label
                 class="t-radio-button t-is-checked"
+                tabindex="0"
               >
                 <input
                   class="t-radio-button__former"
+                  data-value="'onlyLeaf'"
                   name="value-mode"
+                  tabindex="-1"
                   type="radio"
                   value="onlyLeaf"
                 />
@@ -140523,10 +140972,13 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
               </label>
               <label
                 class="t-radio-button"
+                tabindex="0"
               >
                 <input
                   class="t-radio-button__former"
+                  data-value="'parentFirst'"
                   name="value-mode"
+                  tabindex="-1"
                   type="radio"
                   value="parentFirst"
                 />
@@ -140541,10 +140993,13 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
               </label>
               <label
                 class="t-radio-button"
+                tabindex="0"
               >
                 <input
                   class="t-radio-button__former"
+                  data-value="'all'"
                   name="value-mode"
+                  tabindex="-1"
                   type="radio"
                   value="all"
                 />
@@ -152734,10 +153189,12 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/filterable.vue 
     >
       <label
         class="t-radio-button t-is-checked"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'default'"
+          tabindex="-1"
           type="radio"
           value="default"
         />
@@ -152752,10 +153209,12 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/filterable.vue 
       </label>
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'function'"
+          tabindex="-1"
           type="radio"
           value="function"
         />
@@ -153299,10 +153758,11 @@ exports[`csr snapshot test > csr test ./src/upload/_example/base.vue 1`] = `
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              tabindex="-1"
               type="radio"
               value="false"
             />
@@ -153317,10 +153777,12 @@ exports[`csr snapshot test > csr test ./src/upload/_example/base.vue 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="true"
+              tabindex="-1"
               type="radio"
               value="true"
             />
@@ -153685,10 +154147,12 @@ exports[`csr snapshot test > csr test ./src/upload/_example/draggable.vue 1`] = 
       >
         <label
           class="t-radio-button t-is-checked"
+          tabindex="0"
         >
           <input
             class="t-radio-button__former"
-            name=""
+            data-value="'file'"
+            tabindex="-1"
             type="radio"
             value="file"
           />
@@ -153703,10 +154167,12 @@ exports[`csr snapshot test > csr test ./src/upload/_example/draggable.vue 1`] = 
         </label>
         <label
           class="t-radio-button"
+          tabindex="0"
         >
           <input
             class="t-radio-button__former"
-            name=""
+            data-value="'image'"
+            tabindex="-1"
             type="radio"
             value="image"
           />
@@ -154545,10 +155011,12 @@ exports[`csr snapshot test > csr test ./src/upload/_example/request-method.vue 1
     >
       <label
         class="t-radio-button t-is-checked"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'requestSuccessMethod'"
+          tabindex="-1"
           type="radio"
           value="requestSuccessMethod"
         />
@@ -154563,10 +155031,12 @@ exports[`csr snapshot test > csr test ./src/upload/_example/request-method.vue 1
       </label>
       <label
         class="t-radio-button"
+        tabindex="0"
       >
         <input
           class="t-radio-button__former"
-          name=""
+          data-value="'requestFailMethod'"
+          tabindex="-1"
           type="radio"
           value="requestFailMethod"
         />
