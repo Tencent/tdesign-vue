@@ -79045,6 +79045,7 @@ exports[`csr snapshot test > csr test ./src/radio/_example/group.vue 1`] = `
           >
             <input
               class="t-radio__former"
+              data-allow-uncheck="true"
               data-value="1"
               name="city"
               tabindex="-1"
@@ -79066,6 +79067,7 @@ exports[`csr snapshot test > csr test ./src/radio/_example/group.vue 1`] = `
           >
             <input
               class="t-radio__former"
+              data-allow-uncheck="true"
               data-value="2"
               name="city"
               tabindex="-1"
@@ -79087,6 +79089,7 @@ exports[`csr snapshot test > csr test ./src/radio/_example/group.vue 1`] = `
           >
             <input
               class="t-radio__former"
+              data-allow-uncheck="true"
               data-value="'3'"
               name="city"
               tabindex="-1"
@@ -79108,6 +79111,7 @@ exports[`csr snapshot test > csr test ./src/radio/_example/group.vue 1`] = `
           >
             <input
               class="t-radio__former"
+              data-allow-uncheck="true"
               data-value="'4'"
               name="city"
               tabindex="-1"
@@ -79146,6 +79150,7 @@ exports[`csr snapshot test > csr test ./src/radio/_example/group.vue 1`] = `
           >
             <input
               class="t-radio__former"
+              data-allow-uncheck="true"
               data-value="'1'"
               tabindex="-1"
               type="radio"
@@ -119228,6 +119233,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/select-single.vue 1`]
               >
                 <input
                   class="t-radio__former"
+                  data-allow-uncheck="true"
                   tabindex="-1"
                   type="radio"
                   value=""
@@ -119300,6 +119306,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/select-single.vue 1`]
               >
                 <input
                   class="t-radio__former"
+                  data-allow-uncheck="true"
                   disabled="disabled"
                   tabindex="-1"
                   type="radio"
@@ -119374,6 +119381,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/select-single.vue 1`]
               >
                 <input
                   class="t-radio__former"
+                  data-allow-uncheck="true"
                   tabindex="-1"
                   type="radio"
                   value=""
@@ -119446,6 +119454,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/select-single.vue 1`]
               >
                 <input
                   class="t-radio__former"
+                  data-allow-uncheck="true"
                   disabled="disabled"
                   tabindex="-1"
                   type="radio"
@@ -119520,6 +119529,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/select-single.vue 1`]
               >
                 <input
                   class="t-radio__former"
+                  data-allow-uncheck="true"
                   tabindex="-1"
                   type="radio"
                   value=""
