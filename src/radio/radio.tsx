@@ -49,6 +49,7 @@ export default mixins(Vue as VueConstructor<RadioInstance>, classPrefixMixins).e
       },
     ];
 
+    const allowUncheck = this.allowUncheck || this.radioGroup?.allowUncheck;
     return (
       <label class={inputClass} onClick={this.handleRadioClick} tabindex={tDisabled ? undefined : '0'}>
         <input
@@ -61,6 +62,7 @@ export default mixins(Vue as VueConstructor<RadioInstance>, classPrefixMixins).e
           onClick={this.onInputClick}
           tabindex="-1"
           data-value={typeof this.value === 'string' ? `'${this.value}'` : this.value}
+          data-allow-uncheck={allowUncheck || undefined}
           on={{ ...omit(this.$listeners, ['change', 'click']) }}
         />
         <span class={`${prefixCls}__input`}></span>
