@@ -84326,12 +84326,13 @@ exports[`csr snapshot test > csr test ./src/select/_example/group.vue 1`] = `
   >
     <div
       class="t-select__wrap"
+      style="min-width: 240px;"
     >
       <div
-        class="t-select-input t-select-input--empty t-select"
+        class="t-select-input t-select-input--multiple t-select-input--empty t-select"
       >
         <div
-          class="t-input__wrap"
+          class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty t-tag-input__with-suffix-icon"
         >
           <div
             class="t-input t-is-default t-input--prefix t-input--suffix"
@@ -84346,6 +84347,11 @@ exports[`csr snapshot test > csr test ./src/select/_example/group.vue 1`] = `
               type="text"
               unselectable="off"
             />
+            <span
+              class="t-input__input-pre"
+            >
+              请选择
+            </span>
             <span
               class="t-input__suffix t-input__suffix-icon"
             >
