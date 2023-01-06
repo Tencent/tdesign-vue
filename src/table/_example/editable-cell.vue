@@ -68,11 +68,12 @@ export default {
               clearable: true,
               autofocus: true,
             },
-            on: {
+            // 透传给 component: Input 的事件
+            on: (editContext) => ({
               blur: () => {
-                console.log('失去焦点');
+                console.log('失去焦点', editContext);
               },
-            },
+            }),
             // 除了点击非自身元素退出编辑态之外，还有哪些事件退出编辑态
             abortEditOnEvent: ['onEnter'],
             // 编辑完成，退出编辑态后触发

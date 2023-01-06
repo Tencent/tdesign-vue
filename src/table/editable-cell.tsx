@@ -311,6 +311,7 @@ export default defineComponent({
       componentProps,
       tableEditableCellRef,
       errorList,
+      currentRow,
       onEditChange,
       Edit1Icon,
       cellParams,
@@ -356,7 +357,7 @@ export default defineComponent({
           status={errorMessage ? this.errorList?.[0]?.type || 'error' : undefined}
           tips={errorMessage}
           props={this.componentProps}
-          on={{ ...this.listeners, ...this.col.edit?.on }}
+          on={{ ...this.listeners, ...this.col.edit?.on?.({ ...this.cellParams, editedRow: this.currentRow }) }}
           value={this.editValue}
           onChange={this.onEditChange}
         />

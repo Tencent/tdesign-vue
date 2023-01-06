@@ -824,7 +824,7 @@ export interface TableEditableCellConfig<T extends TableRowData = TableRowData> 
   /**
    * 透传给编辑组件的事件
    */
-  on?: { [key: string]: any };
+  on?: (context: TableEditableCellPropsParams<T>) => { [eventName: string]: Function };
   /**
    * 编辑完成后，退出编辑模式时触发
    */
