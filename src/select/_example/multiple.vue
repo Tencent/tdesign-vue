@@ -8,7 +8,14 @@
     </t-select>
 
     <!-- 超出 2 个的选中项折叠，如果想要自定义折叠项，参考下文「自定义折叠的选中项」 -->
-    <t-select v-model="value3" :options="options1" :minCollapsedNum="2" placeholder="请选择云解决方案" multiple />
+    <t-select
+      v-model="value3"
+      :options="options1"
+      :minCollapsedNum="2"
+      placeholder="请选择云解决方案"
+      multiple
+      :valueDisplay="valueDisplay"
+    />
   </t-space>
 </template>
 
@@ -47,6 +54,21 @@ export default {
   methods: {
     handleChange(...args) {
       console.log('change', ...args);
+    },
+    valueDisplay(h, { onClose, displayValue }) {
+      if (!(displayValue instanceof Array)) return;
+      return displayValue.map((item, index) => (
+        <t-tag
+          key={index}
+          closable={true}
+          onClose={(context) => {
+            context.e && context.e.stopPropagation();
+            onClose(index);
+          }}
+        >
+          {item.label}
+        </t-tag>
+      ));
     },
   },
 };
