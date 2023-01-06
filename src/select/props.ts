@@ -26,11 +26,11 @@ export default {
   empty: {
     type: [String, Function] as PropType<TdSelectProps['empty']>,
   },
-  /** 自定义过滤方法，用于对现有数据进行搜索过滤，判断是否过滤某一项数据 */
+  /** 自定义搜索规则，用于对现有数据进行搜索，判断是否过滤某一项数据。参数 `filterWords` 表示搜索词，`option`表示单个选项内容，返回值为 `true` 保留该选项，返回值为 `false` 则隐藏该选项。使用该方法时无需设置 `filterable` */
   filter: {
     type: Function as PropType<TdSelectProps['filter']>,
   },
-  /** 是否可搜索 */
+  /** 是否可搜索，默认搜索规则不区分大小写，全文本任意位置匹配。如果默认搜索规则不符合业务需求，可以更为使用 `filter` 自定义过滤规则 */
   filterable: Boolean,
   /** 透传 Input 输入框组件的全部属性 */
   inputProps: {
@@ -124,6 +124,7 @@ export default {
   /** 输入框状态 */
   status: {
     type: String as PropType<TdSelectProps['status']>,
+    default: 'default' as TdSelectProps['status'],
     validator(val: TdSelectProps['status']): boolean {
       if (!val) return true;
       return ['default', 'success', 'warning', 'error'].includes(val);
