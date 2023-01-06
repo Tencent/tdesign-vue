@@ -65,8 +65,9 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
 
       // 跳过不符合格式化的输入框内容
       if (!isValidDate(val, formatRef.value.format)) return;
-      const newMonth = dayjs(val).month();
-      const newYear = dayjs(val).year();
+      cacheValue.value = val;
+      const newMonth = parseToDayjs(val, formatRef.value.format).month();
+      const newYear = parseToDayjs(val, formatRef.value.format).year();
       const newTime = formatTime(val, formatRef.value.timeFormat);
       !Number.isNaN(newYear) && (year.value = newYear);
       !Number.isNaN(newMonth) && (month.value = newMonth);
@@ -118,17 +119,21 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
     },
   }));
 
-  watch(value, (value) => {
-    if (!value) {
-      inputValue.value = '';
-      return;
-    }
-    if (!isValidDate(value, formatRef.value.format)) return;
+  watch(
+    value,
+    (value) => {
+      if (!value) {
+        inputValue.value = '';
+        return;
+      }
+      if (!isValidDate(value, formatRef.value.format)) return;
 
-    inputValue.value = formatDate(value, {
-      format: formatRef.value.format,
-    });
-  });
+      inputValue.value = formatDate(value, {
+        format: formatRef.value.format,
+      });
+    },
+    { immediate: true },
+  );
 
   return {
     year,

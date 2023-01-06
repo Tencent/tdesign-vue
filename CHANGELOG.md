@@ -5,6 +5,38 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.0.3 `2023-01-05` 
+### 🚀 Features
+- `AutoComplete`: @chaishi ([#1983](https://github.com/Tencent/tdesign-vue/pull/1983))
+  - 新增清空功能 `clearable`
+  - 新增自动聚焦功能 `autofocus`
+  - 新增 `enter/blur/compositionend/compositionstart` 等事件，及相关参数和文档保持一致
+- `Input`: 优化 enter 事件判断，不区分大小写 @chaishi ([#1983](https://github.com/Tencent/tdesign-vue/pull/1983))
+- `Upload`: 支持配置模拟进度间隔时间，用于设置小文件上传进度触发频次 @chaishi ([#2001](https://github.com/Tencent/tdesign-vue/pull/2001))
+- `ImageViewer`: 默认 z-index 调整为 3000，支持全局 CSS Token 调整 @Ylushen ([common #1104](https://github.com/Tencent/tdesign-common/pull/1104))
+- `语言包`: 新增阿拉伯语的语言包 @Ylushen ([common #1097](https://github.com/Tencent/tdesign-common/pull/1097))
+### 🐞 Bug Fixes
+- `Select`: @skytt
+  - 调整 select 标记字段位置 修复部分场景使用option子组件报错的问题 ([#1975](https://github.com/Tencent/tdesign-vue/pull/1975))
+  - 修复 option slots 部分情况下异常渲染更新的问题 ([#1981](https://github.com/Tencent/tdesign-vue/pull/1981))
+- `Table`:
+  - 修复本地数据分页功能中，`onPageChange` 参数 `newData` 数值不正确问题 @chaishi ([#1973](https://github.com/Tencent/tdesign-vue/pull/1973))
+  - 修复 colInfo 不存在导致赋值报错的问题 @wenkeming ([#1979](https://github.com/Tencent/tdesign-vue/pull/1979))
+- `Form`: 修复表单校验，未监听 `name` 和 `rules` 变化的问题，[issue#1942](https://github.com/Tencent/tdesign-vue/issues/1942) @chaishi ([#1971](https://github.com/Tencent/tdesign-vue/pull/1971))
+- `Tree`: 修复 data 变化时无法更新树结构问题 @TabSpace ([#1976](https://github.com/Tencent/tdesign-vue/pull/1976))
+- `Tag`: 修复 disabled 状态下关闭按钮 icon 依然高亮显示的问题 @byq1213 ([#1998](https://github.com/Tencent/tdesign-vue/pull/1998))
+- `Input`:
+  - 修复 value 为空时在IE上无法失焦的问题 @huangpiqiao ([#1996](https://github.com/Tencent/tdesign-vue/pull/1996))
+  - 处理在 clear 事件中无法获取到最新 value 问题 @chaishi ([#2000](https://github.com/Tencent/tdesign-vue/pull/2000))
+- `AutoComplete`: 修复 `options` 不存在时，组件因缺少判空报错问题 @chaishi ([#1983](https://github.com/Tencent/tdesign-vue/pull/1983))
+- `Upload`: 上传组件的输入框模式在 Form 表单中的宽度问题修复 @chaishi ([#1999](https://github.com/Tencent/tdesign-vue/pull/1999))
+- `Checkbox`: 修复禁用的选项依然会被选中的问题 @chaishi ([#2001](https://github.com/Tencent/tdesign-vue/pull/2001))
+- `Datepicker`: 修复月份切换时响应错误的问题 @honkinglin ([#2008](https://github.com/Tencent/tdesign-vue/pull/2008))
+- `Menu`: 优化弹出型子菜单最大展示高度，兼容大部分情况下正常展示菜单，且不出现全局滚动条 @xiaosansiji ([common #1111](https://github.com/Tencent/tdesign-common/pull/1111))
+### 🚧 Others
+- `Button`: 移除没有使用到的类名 `t-size-m` @chaishi ([#1977](https://github.com/Tencent/tdesign-vue/pull/1977))
+- `Link/Input`: 去掉非必要的类名 `t-size-m` @chaishi ([#1983](https://github.com/Tencent/tdesign-vue/pull/1983))
+
 ## 🌈 1.0.2 `2022-12-28` 
 ### 🚀 Features
 - `Loading`: 新增`v-loading` 支持 @uyarn ([#1964](https://github.com/Tencent/tdesign-vue/pull/1964))
