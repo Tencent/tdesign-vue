@@ -45,6 +45,7 @@ export const extendTableProps = [
   'scroll',
   'cellEmptyContent',
   'pagination',
+  'attach',
   'onCellClick',
   'onPageChange',
   'onRowClick',
@@ -180,6 +181,7 @@ export default defineComponent({
       'tableElm',
       'tableContentElm',
       'pagination',
+      'attach',
     ];
 
     this.data?.forEach((row, rowIndex) => {
