@@ -262,9 +262,26 @@ export default defineComponent({
       }
     };
 
-    const onInnerRowClick: TdPrimaryTableProps['onRowClick'] = (context) => {
-      onInnerExpandRowClick(context);
-      onInnerSelectRowClick(context);
+    let timer: NodeJS.Timeout;
+    const DURATION = 250;
+    const onInnerRowClick: TdPrimaryTableProps['onRowClick'] = (params) => {
+      // no dblclick, no delay
+      if (!context.listeners['row-dblclick']) {
+        onInnerExpandRowClick(params);
+        onInnerSelectRowClick(params);
+        return;
+      }
+      if (timer) {
+        // dblclick
+        clearTimeout(timer);
+        timer = undefined;
+      } else {
+        timer = setTimeout(() => {
+          onInnerExpandRowClick(params);
+          onInnerSelectRowClick(params);
+          timer = undefined;
+        }, DURATION);
+      }
     };
 
     return {

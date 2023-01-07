@@ -9,6 +9,7 @@
       @select-change="rehandleSelectChange"
       select-on-row-click
       @row-click="onRowClick"
+      @row-dblclick="onRowDblclick"
     >
       <template #status="{ row }">
         <p v-if="row.status === 0" class="status">健康</p>
@@ -109,6 +110,10 @@ export default {
       if (this.selectedOnRowClick && !disabledFunc({ row, rowIndex: index })) {
         this.selectedRowKeys = [row.id];
       }
+    },
+
+    onRowDblclick(context) {
+      console.log(context);
     },
   },
 };
