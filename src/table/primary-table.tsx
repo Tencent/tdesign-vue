@@ -111,6 +111,7 @@ export default defineComponent({
       clearValidateData,
       onPrimaryTableRowValidate,
       onPrimaryTableRowEdit,
+      onPrimaryTableCellEditChange,
     } = useEditableRow(props, context);
 
     const primaryTableClasses = computed(() => ({
@@ -204,6 +205,7 @@ export default defineComponent({
               onChange: onPrimaryTableRowEdit,
               onValidate: onPrimaryTableRowValidate,
               onRuleChange,
+              onEditableChange: onPrimaryTableCellEditChange,
             };
             if (props.editableRowKeys) {
               const rowValue = get(p.row, props.rowKey || 'id');
