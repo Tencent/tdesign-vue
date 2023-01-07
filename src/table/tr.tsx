@@ -28,6 +28,7 @@ import { VirtualScrollConfig } from '../hooks/useVirtualScrollNew';
 import {
   BaseTableCellParams, TableRowData, RowspanColspan, TdPrimaryTableProps, TdBaseTableProps,
 } from './type';
+import { AttachNode } from '../common';
 
 export interface RenderTdExtra {
   rowAndColFixedPosition: RowAndColFixedPosition;
@@ -54,6 +55,7 @@ export const TABLE_PROPS = [
   'scroll',
   'cellEmptyContent',
   'pagination',
+  'attach',
   'onCellClick',
   'onRowClick',
   'onRowDblclick',
@@ -83,6 +85,7 @@ export interface TrProps extends TrCommonProps {
   tableContentElm?: HTMLDivElement;
   cellEmptyContent?: TdBaseTableProps['cellEmptyContent'];
   virtualConfig: VirtualScrollConfig;
+  attach?: AttachNode;
 }
 
 export const ROW_LISTENERS = ['click', 'dblclick', 'mouseover', 'mousedown', 'mouseenter', 'mouseleave', 'mouseup'];
@@ -247,7 +250,7 @@ export default defineComponent({
       return (
         <TEllipsis
           placement={'top'}
-          attach={this.tableElm ? () => this.tableElm : undefined}
+          attach={this.attach || (this.tableElm ? () => this.tableElm : undefined)}
           tooltipContent={content && (() => content)}
           tooltipProps={tooltipProps}
           overlayClassName={this.ellipsisOverlayClassName}

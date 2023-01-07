@@ -6,6 +6,7 @@
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
 allowResizeColumnWidth | Boolean | undefined | 已废弃。是否允许调整列宽。请更为使用 `resizable` | N
+attach | String / Function | - | 超出省略等所有浮层元素统一绑定到 `attach`，可根据实际情况调整挂载元素。TS 类型：`AttachNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 bordered | Boolean | false | 是否显示表格边框 | N
 bottomContent | String / Slot / Function | - | 表格底部内容，可以用于自定义列设置等。TS 类型：`string \| TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 cellEmptyContent | String / Slot / Function | - | 单元格数据为空时呈现的内容。TS 类型：`string \| TNode<BaseTableCellParams<T>>`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N

@@ -13,6 +13,7 @@ import { useGlobalIcon } from '../hooks/useGlobalIcon';
 import { PrimaryTableCol, FilterValue } from './type';
 import { useConfig } from '../config-provider/useConfig';
 import log from '../_common/js/log';
+import { AttachNode } from '../common';
 
 type Params = Parameters<CreateElement>;
 type FirstParams = Params[0];
@@ -36,6 +37,7 @@ export interface TableFilterControllerProps {
   column: PrimaryTableCol;
   primaryTableElement: HTMLDivElement;
   popupProps: PopupProps;
+  attach?: AttachNode;
 }
 
 export default defineComponent({
@@ -49,6 +51,7 @@ export default defineComponent({
     isFocusClass: String,
     primaryTableElement: {},
     popupProps: Object as PropType<TableFilterControllerProps['popupProps']>,
+    attach: [String, Function] as PropType<TableFilterControllerProps['attach']>,
   },
 
   // eslint-disable-next-line
@@ -189,7 +192,7 @@ export default defineComponent({
     const isValueTrue = filterValue && typeof filterValue !== 'object';
     return (
       <Popup
-        attach={this.primaryTableElement ? () => this.primaryTableElement : undefined}
+        attach={this.attach || (this.primaryTableElement ? () => this.primaryTableElement : undefined)}
         visible={this.filterPopupVisible}
         destroyOnClose
         trigger="click"

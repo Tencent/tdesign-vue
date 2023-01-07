@@ -23,6 +23,7 @@ import {
   OptionData,
   SizeEnum,
   ClassName,
+  AttachNode,
   HTMLElementAttributes,
   ComponentType,
   InfinityScroll,
@@ -34,6 +35,10 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    * @deprecated
    */
   allowResizeColumnWidth?: boolean;
+  /**
+   * 超出省略等所有浮层元素统一绑定到 `attach`，可根据实际情况调整挂载元素
+   */
+  attach?: AttachNode;
   /**
    * 是否显示表格边框
    * @default false

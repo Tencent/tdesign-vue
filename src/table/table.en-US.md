@@ -6,6 +6,7 @@
 name | type | default | description | required
 -- | -- | -- | -- | --
 allowResizeColumnWidth | Boolean | undefined | `deprecated`。allow to resize column width | N
+attach | String / Function | - | elements with popup would be attached to `attach`。Typescript：`AttachNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 bordered | Boolean | false | show table bordered | N
 bottomContent | String / Slot / Function | - | Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 cellEmptyContent | String / Slot / Function | - | Typescript：`string \| TNode<BaseTableCellParams<T>>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
