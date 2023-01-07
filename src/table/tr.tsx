@@ -216,7 +216,6 @@ export default defineComponent({
       trRef,
       tableColFixedClasses,
       tableDraggableClasses,
-      tSlots: context.slots,
       tdEllipsisClass,
       tableBaseClass,
       tdAlignClasses,
@@ -262,7 +261,7 @@ export default defineComponent({
     renderTd(h: CreateElement, params: BaseTableCellParams<TableRowData>, extra: RenderTdExtra) {
       const { col, colIndex, rowIndex } = params;
       const { cellSpans, dataLength, rowAndColFixedPosition } = extra;
-      const cellNode = renderCell(params, this.tSlots, {
+      const cellNode = renderCell(params, this.$scopedSlots, {
         cellEmptyContent: extra.cellEmptyContent,
         pagination: this.pagination,
       });
