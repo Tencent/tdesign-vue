@@ -27,6 +27,9 @@ export default function useAffix(props: TdBaseTableProps) {
   const showAffixFooter = ref(true);
   // 当表格完全滚动消失在视野时，需要隐藏吸底分页器
   const showAffixPagination = ref(true);
+  // 当鼠标按下拖动内容来滚动时，需要更新表头位置
+  let isMousedown = false;
+  let isMouseInScrollableArea = false;
 
   const isVirtualScroll = computed(
     () => props.scroll && props.scroll.type === 'virtual' && (props.scroll.threshold || 100) < props.data.length,
@@ -134,10 +137,12 @@ export default function useAffix(props: TdBaseTableProps) {
 
   const onHeaderMouseEnter = () => {
     on(affixHeaderRef.value, 'scroll', onHeaderScroll);
+    onMouseEnterScrollableArea();
   };
 
   const onHeaderMouseLeave = () => {
-    off(affixHeaderRef.value, 'scroll', onHeaderScroll);
+    if (!isMousedown) off(affixHeaderRef.value, 'scroll', onHeaderScroll);
+    onMouseLeaveScrollableArea();
   };
 
   const onScrollbarMouseEnter = () => {
@@ -150,13 +155,38 @@ export default function useAffix(props: TdBaseTableProps) {
 
   const onTableContentMouseEnter = () => {
     on(tableContentRef.value, 'scroll', onTableContentScroll);
+    onMouseEnterScrollableArea();
   };
 
   const onTableContentMouseLeave = () => {
-    off(tableContentRef.value, 'scroll', onTableContentScroll);
+    if (!isMousedown) off(tableContentRef.value, 'scroll', onTableContentScroll);
+    onMouseLeaveScrollableArea();
+  };
+
+  const onMousedown = () => {
+    isMousedown = true;
+  };
+
+  const onMouseup = () => {
+    isMousedown = false;
+    if (!isMouseInScrollableArea) {
+      off(affixHeaderRef.value, 'scroll', onHeaderScroll);
+      off(tableContentRef.value, 'scroll', onTableContentScroll);
+    }
+  };
+
+  const onMouseEnterScrollableArea = () => {
+    isMouseInScrollableArea = true;
+  };
+
+  const onMouseLeaveScrollableArea = () => {
+    isMouseInScrollableArea = false;
   };
 
   const addHorizontalScrollListeners = () => {
+    on(window, 'mousedown', onMousedown);
+    on(window, 'mouseup', onMouseup);
+
     if (affixHeaderRef.value) {
       on(affixHeaderRef.value, 'mouseenter', onHeaderMouseEnter);
       on(affixHeaderRef.value, 'mouseleave', onHeaderMouseLeave);
@@ -179,6 +209,9 @@ export default function useAffix(props: TdBaseTableProps) {
   };
 
   const removeHorizontalScrollListeners = () => {
+    off(window, 'mousedown', onMousedown);
+    off(window, 'mouseup', onMouseup);
+
     if (affixHeaderRef.value) {
       off(affixHeaderRef.value, 'mouseenter', onHeaderMouseEnter);
       off(affixHeaderRef.value, 'mouseleave', onHeaderMouseLeave);
