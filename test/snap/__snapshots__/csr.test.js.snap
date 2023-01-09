@@ -35590,6 +35590,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
         </span>
         <span
           class="t-tree__label"
+          title="Department A"
         >
           <span
             style="position: relative;"
@@ -35626,6 +35627,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
         </span>
         <span
           class="t-tree__label"
+          title="Department B"
         >
           <span
             style="position: relative;"
@@ -47025,33 +47027,21 @@ exports[`csr snapshot test > csr test ./src/dropdown/_example/base.vue 1`] = `
 <div
   class="tdesign-demo-dropdown"
 >
-  <button
-    class="t-button t-button--variant-text t-button--theme-default"
-    type="button"
+  <div
+    class="t-input__wrap"
   >
-    <span
-      class="t-button__text"
+    <div
+      class="t-input"
     >
-       更多 
-    </span>
-    <span
-      class="t-button__suffix"
-    >
-      <svg
-        class="t-icon t-icon-chevron-down"
-        fill="none"
-        height="1em"
-        viewBox="0 0 16 16"
-        width="1em"
-      >
-        <path
-          d="M3.54 6.46l.92-.92L8 9.08l3.54-3.54.92.92L8 10.92 3.54 6.46z"
-          fill="currentColor"
-          fill-opacity="0.9"
-        />
-      </svg>
-    </span>
-  </button>
+      <input
+        autocomplete=""
+        class="t-input__inner"
+        placeholder="请输入"
+        type="text"
+        unselectable="off"
+      />
+    </div>
+  </div>
 </div>
 `;
 
@@ -140544,6 +140534,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/activable.vue 1`] = `
           </span>
           <span
             class="t-tree__label"
+            title="1"
           >
             <span
               style="position: relative;"
@@ -140566,6 +140557,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/activable.vue 1`] = `
           />
           <span
             class="t-tree__label"
+            title="1.1"
           >
             <span
               style="position: relative;"
@@ -140588,6 +140580,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/activable.vue 1`] = `
           />
           <span
             class="t-tree__label"
+            title="1.2"
           >
             <span
               style="position: relative;"
@@ -140624,6 +140617,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/activable.vue 1`] = `
           </span>
           <span
             class="t-tree__label"
+            title="2"
           >
             <span
               style="position: relative;"
@@ -140646,6 +140640,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/activable.vue 1`] = `
           />
           <span
             class="t-tree__label"
+            title="2.1"
           >
             <span
               style="position: relative;"
@@ -140668,6 +140663,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/activable.vue 1`] = `
           />
           <span
             class="t-tree__label"
+            title="2.2"
           >
             <span
               style="position: relative;"
@@ -140725,6 +140721,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/base.vue 1`] = `
         </span>
         <span
           class="t-tree__label"
+          title="第一段"
         >
           <span
             style="position: relative;"
@@ -140761,6 +140758,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/base.vue 1`] = `
         </span>
         <span
           class="t-tree__label"
+          title="第一段"
         >
           <span
             style="position: relative;"
@@ -140797,6 +140795,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/base.vue 1`] = `
         </span>
         <span
           class="t-tree__label"
+          title="第一段"
         >
           <span
             style="position: relative;"
@@ -140833,6 +140832,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/base.vue 1`] = `
         </span>
         <span
           class="t-tree__label"
+          title="第一段"
         >
           <span
             style="position: relative;"
@@ -143690,6 +143690,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
         </span>
         <span
           class="t-tree__label"
+          title="1"
         >
           <span
             style="position: relative;"
@@ -143726,6 +143727,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
         </span>
         <span
           class="t-tree__label"
+          title="1.1"
         >
           <span
             style="position: relative;"
@@ -143762,6 +143764,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
         </span>
         <span
           class="t-tree__label"
+          title="1.1.1"
         >
           <span
             style="position: relative;"
@@ -143784,6 +143787,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
         />
         <span
           class="t-tree__label"
+          title="1.1.1.1"
         >
           <span
             style="position: relative;"
@@ -143806,6 +143810,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
         />
         <span
           class="t-tree__label"
+          title="1.1.1.2"
         >
           <span
             style="position: relative;"
@@ -143842,6 +143847,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
         </span>
         <span
           class="t-tree__label"
+          title="1.1.2"
         >
           <span
             style="position: relative;"
@@ -143864,6 +143870,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
         />
         <span
           class="t-tree__label"
+          title="1.1.2.1"
         >
           <span
             style="position: relative;"
@@ -143886,6 +143893,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
         />
         <span
           class="t-tree__label"
+          title="1.1.2.2"
         >
           <span
             style="position: relative;"
@@ -143922,6 +143930,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
         </span>
         <span
           class="t-tree__label"
+          title="2"
         >
           <span
             style="position: relative;"
@@ -143944,6 +143953,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
         />
         <span
           class="t-tree__label"
+          title="2.1"
         >
           <span
             style="position: relative;"
@@ -143966,6 +143976,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
         />
         <span
           class="t-tree__label"
+          title="2.2"
         >
           <span
             style="position: relative;"
@@ -144160,6 +144171,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
           </span>
           <span
             class="t-tree__label"
+            title="1"
           >
             <span
               style="position: relative;"
@@ -144196,6 +144208,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
           </span>
           <span
             class="t-tree__label"
+            title="1.1"
           >
             <span
               style="position: relative;"
@@ -144218,6 +144231,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
           />
           <span
             class="t-tree__label"
+            title="1.1.1"
           >
             <span
               style="position: relative;"
@@ -144240,6 +144254,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
           />
           <span
             class="t-tree__label"
+            title="1.1.2"
           >
             <span
               style="position: relative;"
@@ -144276,6 +144291,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
           </span>
           <span
             class="t-tree__label"
+            title="1.2"
           >
             <span
               style="position: relative;"
@@ -144298,6 +144314,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
           />
           <span
             class="t-tree__label"
+            title="1.2.1"
           >
             <span
               style="position: relative;"
@@ -144320,6 +144337,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
           />
           <span
             class="t-tree__label"
+            title="1.2.2"
           >
             <span
               style="position: relative;"
@@ -144356,6 +144374,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
           </span>
           <span
             class="t-tree__label"
+            title="2"
           >
             <span
               style="position: relative;"
@@ -144378,6 +144397,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
           />
           <span
             class="t-tree__label"
+            title="2.1"
           >
             <span
               style="position: relative;"
@@ -144400,6 +144420,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
           />
           <span
             class="t-tree__label"
+            title="2.2"
           >
             <span
               style="position: relative;"
@@ -144453,6 +144474,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
         </span>
         <span
           class="t-tree__label"
+          title="1"
         >
           <span
             style="position: relative;"
@@ -144489,6 +144511,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
         </span>
         <span
           class="t-tree__label"
+          title="1.1"
         >
           <span
             style="position: relative;"
@@ -144525,6 +144548,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
         </span>
         <span
           class="t-tree__label"
+          title="1.2"
         >
           <span
             style="position: relative;"
@@ -144561,6 +144585,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
         </span>
         <span
           class="t-tree__label"
+          title="2"
         >
           <span
             style="position: relative;"
@@ -144583,6 +144608,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
         />
         <span
           class="t-tree__label"
+          title="2.1"
         >
           <span
             style="position: relative;"
@@ -144605,6 +144631,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
         />
         <span
           class="t-tree__label"
+          title="2.2"
         >
           <span
             style="position: relative;"
@@ -144740,6 +144767,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-mutex.vue 1`] =
           </span>
           <span
             class="t-tree__label"
+            title="1"
           >
             <span
               style="position: relative;"
@@ -144776,6 +144804,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-mutex.vue 1`] =
           </span>
           <span
             class="t-tree__label"
+            title="2"
           >
             <span
               style="position: relative;"
@@ -144867,6 +144896,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/filter.vue 1`] = `
           </span>
           <span
             class="t-tree__label"
+            title="1"
           >
             <span
               style="position: relative;"
@@ -144903,6 +144933,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/filter.vue 1`] = `
           </span>
           <span
             class="t-tree__label"
+            title="2"
           >
             <span
               style="position: relative;"
@@ -144967,6 +144998,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/icon.vue 1`] = `
             </span>
             <span
               class="t-tree__label"
+              title="1"
             >
               <span
                 style="position: relative;"
@@ -144998,6 +145030,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/icon.vue 1`] = `
             </span>
             <span
               class="t-tree__label"
+              title="2"
             >
               <span
                 style="position: relative;"
@@ -145054,6 +145087,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/icon.vue 1`] = `
             </span>
             <span
               class="t-tree__label"
+              title="1"
             >
               <span
                 style="position: relative;"
@@ -145085,6 +145119,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/icon.vue 1`] = `
             </span>
             <span
               class="t-tree__label"
+              title="2"
             >
               <span
                 style="position: relative;"
@@ -145149,6 +145184,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             </span>
             <span
               class="t-tree__label"
+              title="[object Object]"
             >
               <span
                 style="position: relative;"
@@ -145173,6 +145209,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             />
             <span
               class="t-tree__label"
+              title="[object Object]"
             >
               <span
                 style="position: relative;"
@@ -145197,6 +145234,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             />
             <span
               class="t-tree__label"
+              title="[object Object]"
             >
               <span
                 style="position: relative;"
@@ -145235,6 +145273,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             </span>
             <span
               class="t-tree__label"
+              title="[object Object]"
             >
               <span
                 style="position: relative;"
@@ -145259,6 +145298,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             />
             <span
               class="t-tree__label"
+              title="[object Object]"
             >
               <span
                 style="position: relative;"
@@ -145283,6 +145323,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             />
             <span
               class="t-tree__label"
+              title="[object Object]"
             >
               <span
                 style="position: relative;"
@@ -145920,6 +145961,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
               <span
                 class="t-tree__label"
+                title="1"
               >
                 <span
                   style="position: relative;"
@@ -145946,6 +145988,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               />
               <span
                 class="t-tree__label"
+                title="1.1"
               >
                 <span
                   style="position: relative;"
@@ -145972,6 +146015,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               />
               <span
                 class="t-tree__label"
+                title="1.2"
               >
                 <span
                   style="position: relative;"
@@ -146008,6 +146052,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
               <span
                 class="t-tree__label"
+                title="2"
               >
                 <span
                   style="position: relative;"
@@ -146048,6 +146093,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
               <span
                 class="t-tree__label"
+                title="2.1"
               >
                 <span
                   style="position: relative;"
@@ -146088,6 +146134,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
               <span
                 class="t-tree__label"
+                title="2.1.1"
               >
                 <span
                   style="position: relative;"
@@ -146128,6 +146175,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
               <span
                 class="t-tree__label"
+                title="2.1.1.1"
               >
                 <span
                   style="position: relative;"
@@ -146154,6 +146202,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               />
               <span
                 class="t-tree__label"
+                title="2.1.1.1.1"
               >
                 <span
                   style="position: relative;"
@@ -146180,6 +146229,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               />
               <span
                 class="t-tree__label"
+                title="2.1.1.1.2"
               >
                 <span
                   style="position: relative;"
@@ -146206,6 +146256,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               />
               <span
                 class="t-tree__label"
+                title="2.1.2"
               >
                 <span
                   style="position: relative;"
@@ -146232,6 +146283,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               />
               <span
                 class="t-tree__label"
+                title="2.2"
               >
                 <span
                   style="position: relative;"
@@ -146268,6 +146320,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
               <span
                 class="t-tree__label"
+                title="3"
               >
                 <span
                   style="position: relative;"
@@ -146294,6 +146347,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               />
               <span
                 class="t-tree__label"
+                title="3.1"
               >
                 <span
                   style="position: relative;"
@@ -146320,6 +146374,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               />
               <span
                 class="t-tree__label"
+                title="3.2"
               >
                 <span
                   style="position: relative;"
@@ -146342,6 +146397,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               />
               <span
                 class="t-tree__label"
+                title="4"
               >
                 <span
                   style="position: relative;"
@@ -146410,6 +146466,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
               <span
                 class="t-tree__label"
+                title="1"
               >
                 <span
                   style="position: relative;"
@@ -146455,6 +146512,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               />
               <span
                 class="t-tree__label"
+                title="1.1"
               >
                 <span
                   style="position: relative;"
@@ -146500,6 +146558,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               />
               <span
                 class="t-tree__label"
+                title="1.2"
               >
                 <span
                   style="position: relative;"
@@ -146543,6 +146602,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
               <span
                 class="t-tree__label"
+                title="2"
               >
                 <span
                   style="position: relative;"
@@ -146590,6 +146650,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
               <span
                 class="t-tree__label"
+                title="2.1"
               >
                 <span
                   style="position: relative;"
@@ -146640,6 +146701,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
               <span
                 class="t-tree__label"
+                title="2.1.1"
               >
                 <span
                   style="position: relative;"
@@ -146693,6 +146755,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
               <span
                 class="t-tree__label"
+                title="2.1.1.1"
               >
                 <span
                   style="position: relative;"
@@ -146747,6 +146810,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               />
               <span
                 class="t-tree__label"
+                title="2.1.1.1.1"
               >
                 <span
                   style="position: relative;"
@@ -146801,6 +146865,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               />
               <span
                 class="t-tree__label"
+                title="2.1.1.1.2"
               >
                 <span
                   style="position: relative;"
@@ -146849,6 +146914,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               />
               <span
                 class="t-tree__label"
+                title="2.1.2"
               >
                 <span
                   style="position: relative;"
@@ -146894,6 +146960,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               />
               <span
                 class="t-tree__label"
+                title="2.2"
               >
                 <span
                   style="position: relative;"
@@ -146937,6 +147004,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
               <span
                 class="t-tree__label"
+                title="3"
               >
                 <span
                   style="position: relative;"
@@ -146982,6 +147050,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               />
               <span
                 class="t-tree__label"
+                title="3.1"
               >
                 <span
                   style="position: relative;"
@@ -147027,6 +147096,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               />
               <span
                 class="t-tree__label"
+                title="3.2"
               >
                 <span
                   style="position: relative;"
@@ -147068,6 +147138,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               />
               <span
                 class="t-tree__label"
+                title="4"
               >
                 <span
                   style="position: relative;"
@@ -147139,6 +147210,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
               <span
                 class="t-tree__label"
+                title="1"
               >
                 <span
                   style="position: relative;"
@@ -147188,6 +147260,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               />
               <span
                 class="t-tree__label"
+                title="1.1"
               >
                 <span
                   style="position: relative;"
@@ -147237,6 +147310,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               />
               <span
                 class="t-tree__label"
+                title="1.2"
               >
                 <span
                   style="position: relative;"
@@ -147283,6 +147357,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
               <span
                 class="t-tree__label"
+                title="2"
               >
                 <span
                   style="position: relative;"
@@ -147334,6 +147409,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
               <span
                 class="t-tree__label"
+                title="2.1"
               >
                 <span
                   style="position: relative;"
@@ -147389,6 +147465,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
               <span
                 class="t-tree__label"
+                title="2.1.1"
               >
                 <span
                   style="position: relative;"
@@ -147448,6 +147525,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
               <span
                 class="t-tree__label"
+                title="2.1.1.1"
               >
                 <span
                   style="position: relative;"
@@ -147509,6 +147587,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               />
               <span
                 class="t-tree__label"
+                title="2.1.1.1.1"
               >
                 <span
                   style="position: relative;"
@@ -147570,6 +147649,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               />
               <span
                 class="t-tree__label"
+                title="2.1.1.1.2"
               >
                 <span
                   style="position: relative;"
@@ -147623,6 +147703,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               />
               <span
                 class="t-tree__label"
+                title="2.1.2"
               >
                 <span
                   style="position: relative;"
@@ -147672,6 +147753,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               />
               <span
                 class="t-tree__label"
+                title="2.2"
               >
                 <span
                   style="position: relative;"
@@ -147718,6 +147800,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
               <span
                 class="t-tree__label"
+                title="3"
               >
                 <span
                   style="position: relative;"
@@ -147767,6 +147850,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               />
               <span
                 class="t-tree__label"
+                title="3.1"
               >
                 <span
                   style="position: relative;"
@@ -147816,6 +147900,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               />
               <span
                 class="t-tree__label"
+                title="3.2"
               >
                 <span
                   style="position: relative;"
@@ -147860,6 +147945,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               />
               <span
                 class="t-tree__label"
+                title="4"
               >
                 <span
                   style="position: relative;"
@@ -148100,6 +148186,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
               />
               <span
                 class="t-tree__label"
+                title="1 | value: node1"
               >
                 <span
                   style="position: relative;"
@@ -148128,6 +148215,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
               />
               <span
                 class="t-tree__label"
+                title="2 | value: node2"
               >
                 <span
                   style="position: relative;"
