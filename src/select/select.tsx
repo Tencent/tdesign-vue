@@ -244,10 +244,17 @@ export default defineComponent({
           label: optionsMap.value.get(value)?.label,
         }))
         : innerValue.value;
-      return {
+      const params = {
         value: val,
         onClose: multiple.value ? (index: number) => removeTag(index) : () => {},
       };
+      if (minCollapsedNum.value && multiple.value) {
+        return {
+          ...params,
+          displayValue: val?.slice?.(0, minCollapsedNum.value),
+        };
+      }
+      return params;
     });
 
     const collapsedItemsParams = computed(() => multiple.value
