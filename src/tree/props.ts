@@ -134,6 +134,12 @@ export default {
       return ['onlyLeaf', 'parentFirst', 'all'].includes(val);
     },
   },
+  /** 懒加载和虚拟滚动。为保证组件收益最大化，当数据量小于阈值 `scroll.threshold` 时，无论虚拟滚动的配置是否存在，组件内部都不会开启虚拟滚动，`scroll.threshold` 默认为 `100` */
+  scroll: {
+    type: Object as PropType<TdTreeProps['scroll']>,
+  },
+  /** 内容滚动时触发 */
+  onScroll: Function as PropType<TdTreeProps['onScroll']>,
   /** 节点激活时触发，泛型 `T` 表示树节点 TS 类型 */
   onActive: Function as PropType<TdTreeProps['onActive']>,
   /** 节点选中状态变化时触发，context.node 表示当前变化的选项，泛型 `T` 表示树节点 TS 类型 */

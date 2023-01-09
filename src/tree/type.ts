@@ -5,7 +5,7 @@
  * */
 
 import { CheckboxProps } from '../checkbox';
-import { TNode, TreeOptionData } from '../common';
+import { TNode, TreeOptionData, InfinityScroll } from '../common';
 
 export interface TdTreeProps<T extends TreeOptionData = TreeOptionData> {
   /**
@@ -164,6 +164,10 @@ export interface TdTreeProps<T extends TreeOptionData = TreeOptionData> {
    */
   valueMode?: 'onlyLeaf' | 'parentFirst' | 'all';
   /**
+   * 懒加载和虚拟滚动。为保证组件收益最大化，当数据量小于阈值 `scroll.threshold` 时，无论虚拟滚动的配置是否存在，组件内部都不会开启虚拟滚动，`scroll.threshold` 默认为 `100`
+   */
+  scroll?: InfinityScroll;
+  /**
    * 节点激活时触发，泛型 `T` 表示树节点 TS 类型
    */
   onActive?: (value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T> }) => void;
@@ -208,6 +212,10 @@ export interface TdTreeProps<T extends TreeOptionData = TreeOptionData> {
    * 异步加载后触发，泛型 `T` 表示树节点 TS 类型
    */
   onLoad?: (context: { node: TreeNodeModel<T> }) => void;
+  /**
+   * 内容滚动时触发
+   */
+  onScroll?: (params: { e: WheelEvent }) => void;
 }
 
 /** 组件实例方法 */

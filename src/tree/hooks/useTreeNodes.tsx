@@ -1,7 +1,8 @@
 import { CreateElement } from 'vue';
 import {
-  ref, nextTick, SetupContext, Ref,
+  ref, nextTick, SetupContext, Ref, computed,
 } from '@vue/composition-api';
+import useVirtualScroll from '../../hooks/useVirtualScrollNew';
 import { TypeVNode, TypeTreeProps, TypeTreeState } from '../interface';
 import TreeItem from '../tree-item';
 import TreeNode from '../../_common/js/tree/tree-node';
@@ -92,6 +93,39 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
     return treeNodeViews;
   };
 
+  const emitScrollEvent = (e: WheelEvent) => {
+    props.onScroll?.({ e });
+    // Vue3 ignore next line
+    context.emit('scroll', { e });
+  };
+
+  const treeContentRef = ref<HTMLDivElement>();
+
+  const setTreeContentRef = (tableContent: HTMLDivElement) => {
+    treeContentRef.value = tableContent;
+  };
+
+  // 虚拟滚动相关数据
+  const virtualScrollParams = computed(() => ({
+    data: props.data,
+    scroll: props.scroll,
+  }));
+  const virtualConfig = useVirtualScroll(treeContentRef, virtualScrollParams);
+
+  let lastScrollY = 0;
+  const onInnerVirtualScroll = (e: WheelEvent) => {
+    const target = (e.target || e.srcElement) as HTMLElement;
+    const top = target.scrollTop;
+    // 排除横向滚动出发的纵向虚拟滚动计算
+    if (lastScrollY !== top) {
+      virtualConfig.isVirtualScroll.value && virtualConfig.handleScroll();
+    } else {
+      lastScrollY = 0;
+    }
+    lastScrollY = top;
+    emitScrollEvent(e);
+  };
+
   refresh();
   store.emitter.on('update', refresh);
 
@@ -100,5 +134,8 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
     nodesEmpty,
     clearCacheNodes,
     renderTreeNodes,
+    treeContentRef,
+    setTreeContentRef,
+    onInnerVirtualScroll,
   };
 }

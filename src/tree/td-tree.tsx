@@ -241,7 +241,12 @@ export default defineComponent({
       </transition-group>
     );
 
-    const treeNode = <div class={classList}>{emptyNode || treeNodeList}</div>;
+    const treeNode = (
+      <div class={classList} ref="treeContentRef" on={{ scroll: this.onInnerVirtualScroll }}>
+        {emptyNode || treeNodeList}
+      </div>
+    );
+
     return treeNode;
   },
 });
