@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import {
   computed, ref, watch, onBeforeMount,
 } from '@vue/composition-api';
@@ -165,12 +164,10 @@ export default function useAffix(props: TdBaseTableProps) {
   };
 
   const onMousedown = () => {
-    console.log('mouseDown');
     isMousedown = true;
   };
 
   const onMouseup = () => {
-    console.log('mouseUp');
     isMousedown = false;
     if (!isMouseInScrollableArea) {
       off(affixHeaderRef.value, 'scroll', onHeaderScroll);
@@ -179,12 +176,10 @@ export default function useAffix(props: TdBaseTableProps) {
   };
 
   const onMouseEnterScrollableArea = () => {
-    console.log('onMouseEnterScrollableArea');
     isMouseInScrollableArea = true;
   };
 
   const onMouseLeaveScrollableArea = () => {
-    console.log('onMouseLeaveScrollableArea');
     isMouseInScrollableArea = false;
   };
 

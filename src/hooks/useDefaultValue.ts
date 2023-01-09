@@ -20,9 +20,11 @@ export default function useDefaultValue<T, P extends any[]>(
     return [
       value,
       (newValue, ...args) => {
-        emit(`update:${propsName}`, newValue, ...args);
-        onChange?.(newValue, ...args);
-        emit(eventName, newValue, ...args);
+        if (newValue !== value.value) {
+          emit(`update:${propsName}`, newValue, ...args);
+          onChange?.(newValue, ...args);
+          emit(eventName, newValue, ...args);
+        }
       },
     ];
   }
