@@ -145184,7 +145184,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             </span>
             <span
               class="t-tree__label"
-              title="[object Object]"
+              title="1"
             >
               <span
                 style="position: relative;"
@@ -145209,7 +145209,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             />
             <span
               class="t-tree__label"
-              title="[object Object]"
+              title="1.1"
             >
               <span
                 style="position: relative;"
@@ -145234,7 +145234,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             />
             <span
               class="t-tree__label"
-              title="[object Object]"
+              title="1.2"
             >
               <span
                 style="position: relative;"
@@ -145273,7 +145273,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             </span>
             <span
               class="t-tree__label"
-              title="[object Object]"
+              title="2"
             >
               <span
                 style="position: relative;"
@@ -145298,7 +145298,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             />
             <span
               class="t-tree__label"
-              title="[object Object]"
+              title="2.1"
             >
               <span
                 style="position: relative;"
@@ -145323,7 +145323,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             />
             <span
               class="t-tree__label"
-              title="[object Object]"
+              title="2.2"
             >
               <span
                 style="position: relative;"
@@ -148186,7 +148186,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
               />
               <span
                 class="t-tree__label"
-                title="1 | value: node1"
+                title=""
               >
                 <span
                   style="position: relative;"
@@ -148215,7 +148215,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
               />
               <span
                 class="t-tree__label"
-                title="2 | value: node2"
+                title=""
               >
                 <span
                   style="position: relative;"
