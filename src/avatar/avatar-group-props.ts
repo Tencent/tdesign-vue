@@ -2,7 +2,6 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-19 10:44:26
  * */
 
 import { TdAvatarGroupProps } from '../avatar/type';
@@ -14,6 +13,7 @@ export default {
     type: String as PropType<TdAvatarGroupProps['cascading']>,
     default: 'right-up' as TdAvatarGroupProps['cascading'],
     validator(val: TdAvatarGroupProps['cascading']): boolean {
+      if (!val) return true;
       return ['left-up', 'right-up'].includes(val);
     },
   },
@@ -29,6 +29,7 @@ export default {
   placement: {
     type: String as PropType<TdAvatarGroupProps['placement']>,
     validator(val: TdAvatarGroupProps['placement']): boolean {
+      if (!val) return true;
       return ['left', 'top', 'bottom', 'right'].includes(val);
     },
   },

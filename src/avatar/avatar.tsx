@@ -4,6 +4,7 @@ import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import { AvatarGroupInstance } from './instance';
 import { Styles } from '../common';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import Image from '../image';
 import mixins from '../utils/mixins';
 
 const classPrefixMixins = getClassPrefixMixins('avatar');
@@ -115,7 +116,16 @@ export default mixins(Vue as VueConstructor<AvatarInstance>, classPrefixMixins).
     }
 
     if (image && this.isImgExist) {
-      content = <img style={{ ...this.customImageSize }} src={image} alt={alt} onError={this.handleImgLoadError}></img>;
+      content = (
+        <Image
+          style={{ ...this.customImageSize }}
+          src={image}
+          alt={alt}
+          onError={this.handleImgLoadError}
+          props={this.imageProps}
+          scopedSlots={this.$scopedSlots}
+        ></Image>
+      );
     }
     return (
       <div ref="avatar" class={avatarClass} style={{ ...this.customAvatarSize }}>
