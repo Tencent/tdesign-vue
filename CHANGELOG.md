@@ -14,7 +14,7 @@ docClass: timeline
 - `Input`: 优化 enter 事件判断，不区分大小写 @chaishi ([#1983](https://github.com/Tencent/tdesign-vue/pull/1983))
 - `Upload`: 支持配置模拟进度间隔时间，用于设置小文件上传进度触发频次 @chaishi ([#2001](https://github.com/Tencent/tdesign-vue/pull/2001))
 - `ImageViewer`: 默认 z-index 调整为 3000，支持全局 CSS Token 调整 @Ylushen ([common #1104](https://github.com/Tencent/tdesign-common/pull/1104))
-- `语言包`: 新增阿拉伯语的语言包 @Ylushen ([common #1097](https://github.com/Tencent/tdesign-common/pull/1097))
+- 语言包: 新增阿拉伯语的语言包 @sunshineYuanlei ([common #1097](https://github.com/Tencent/tdesign-common/pull/1097))
 ### 🐞 Bug Fixes
 - `Select`: @skytt
   - 调整 select 标记字段位置 修复部分场景使用option子组件报错的问题 ([#1975](https://github.com/Tencent/tdesign-vue/pull/1975))
