@@ -82,12 +82,12 @@ export default function useRenderLabel(props: TypeTreeItemProps, context: SetupC
           key="1"
           // v-ripple={this.keepAnimation.ripple}
           class={labelClasses}
-          title={labelNode}
+          title={node.label}
         >
           {inner}
         </span>
       ) : (
-        <span key="2" class={labelClasses} title={labelNode}>
+        <span key="2" class={labelClasses} title={node.label}>
           {inner}
         </span>
       );
