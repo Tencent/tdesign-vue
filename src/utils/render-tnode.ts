@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { ComponentRenderProxy } from '@vue/composition-api';
+import { ComponentRenderProxy, h } from '@vue/composition-api';
 import {
   PropType, CreateElement, VNode, VNodeChildren, RenderContext,
 } from 'vue/types/umd';
@@ -29,10 +29,10 @@ export type VmType = Vue | ComponentRenderProxy;
 // 同时支持驼峰命名和中划线命名的插槽，示例：value-display 和 valueDisplay
 export function handleSlots(vm: VmType, params: Record<string, any>, name: string) {
   // 检查是否存在 驼峰命名 的插槽
-  let node = vm.$scopedSlots[camelCase(name)]?.(params);
+  let node = vm.$scopedSlots[camelCase(name)]?.(params || h);
   if (node) return node;
   // 检查是否存在 中划线命名 的插槽
-  node = vm.$scopedSlots[kebabCase(name)]?.(params);
+  node = vm.$scopedSlots[kebabCase(name)]?.(params || h);
   if (node) return node;
   return null;
 }
