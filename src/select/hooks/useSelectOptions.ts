@@ -8,7 +8,6 @@ import {
 } from '@vue/composition-api';
 import { VNode } from 'vue';
 import get from 'lodash/get';
-import isArray from 'lodash/isArray';
 import {
   TdSelectProps, SelectKeysType, TdOptionProps, SelectOptionGroup, SelectValue,
 } from '../type';
@@ -60,38 +59,9 @@ export default function useSelectOptions(
       innerSlotRecord = instance.proxy.$slots.default;
       // 处理 slots 中 t-option 与 t-option-group
       const currentSlots = instance.proxy.$slots.default || [];
-      const optionsSlots = currentSlots.filter((item) => item.componentOptions?.tag === 't-option');
-      const groupSlots = currentSlots.filter((item) => item.componentOptions?.tag === 't-option-group');
-      if (isArray(groupSlots)) {
-        groupSlots.forEach((group) => {
-          const groupOption = {
-            group: (group.componentOptions.propsData as TdOptionProps)?.label,
-            ...group.componentOptions.propsData,
-            children: [] as TdOptionProps[],
-          };
-
-          const res = group.componentOptions.children;
-          if (isArray(res)) {
-            res.forEach((child) => {
-              groupOption.children.push({
-                // 单独处理 style 和 class 参数的透传
-                class: child.data.staticClass,
-                style: child.data.staticStyle,
-                // 透传其他常规参数
-                ...child.componentOptions.propsData,
-                slots: () => child.componentOptions.children,
-                index: dynamicIndex,
-              } as TdOptionProps);
-              dynamicIndex += 1;
-            });
-          }
-
-          innerOptions.push(groupOption);
-        });
-      }
-
-      if (isArray(optionsSlots)) {
-        optionsSlots.forEach((child) => {
+      currentSlots.forEach((child) => {
+        if (child.componentOptions?.tag === 't-option') {
+          // 独立选项
           innerOptions.push({
             // 单独处理 style 和 class 参数的透传
             class: child.data.staticClass,
@@ -102,8 +72,30 @@ export default function useSelectOptions(
             index: dynamicIndex,
           } as TdOptionProps);
           dynamicIndex += 1;
-        });
-      }
+        } else if (child.componentOptions?.tag === 't-option-group') {
+          // 分组选项
+          const groupOption = {
+            group: (child.componentOptions.propsData as TdOptionProps)?.label,
+            ...child.componentOptions.propsData,
+            children: [] as TdOptionProps[],
+          };
+
+          child.componentOptions.children?.forEach?.((groupChild) => {
+            groupOption.children.push({
+              // 单独处理 style 和 class 参数的透传
+              class: groupChild.data.staticClass,
+              style: groupChild.data.staticStyle,
+              // 透传其他常规参数
+              ...groupChild.componentOptions.propsData,
+              slots: () => groupChild.componentOptions.children,
+              index: dynamicIndex,
+            } as TdOptionProps);
+            dynamicIndex += 1;
+          });
+
+          innerOptions.push(groupOption);
+        }
+      });
     }
 
     options.value = innerOptions;

@@ -12,7 +12,7 @@ import { TagInputProps } from '../tag-input';
 import { TagProps } from '../tag';
 import { SelectInputValueChangeContext } from '../select-input';
 import { PopupVisibleChangeContext } from '../popup';
-import { TNode, SizeEnum, TScroll } from '../common';
+import { TNode, SizeEnum, InfinityScroll } from '../common';
 
 export interface TdSelectProps<T extends SelectOption = SelectOption> {
   /**
@@ -48,11 +48,11 @@ export interface TdSelectProps<T extends SelectOption = SelectOption> {
    */
   empty?: string | TNode;
   /**
-   * 自定义过滤方法，用于对现有数据进行搜索过滤，判断是否过滤某一项数据
+   * 自定义搜索规则，用于对现有数据进行搜索，判断是否过滤某一项数据。参数 `filterWords` 表示搜索词，`option`表示单个选项内容，返回值为 `true` 保留该选项，返回值为 `false` 则隐藏该选项。使用该方法时无需设置 `filterable`
    */
   filter?: (filterWords: string, option: T) => boolean | Promise<boolean>;
   /**
-   * 是否可搜索
+   * 是否可搜索，默认搜索规则不区分大小写，全文本任意位置匹配。如果默认搜索规则不符合业务需求，可以更为使用 `filter` 自定义过滤规则
    */
   filterable?: boolean;
   /**
@@ -140,7 +140,7 @@ export interface TdSelectProps<T extends SelectOption = SelectOption> {
   /**
    * 懒加载和虚拟滚动。为保证组件收益最大化，当数据量小于阈值 `scroll.threshold` 时，无论虚拟滚动的配置是否存在，组件内部都不会开启虚拟滚动，`scroll.threshold` 默认为 `100`
    */
-  scroll?: TScroll;
+  scroll?: InfinityScroll;
   /**
    * 透传 SelectInput 筛选器输入框组件的全部属性
    */
@@ -157,6 +157,7 @@ export interface TdSelectProps<T extends SelectOption = SelectOption> {
   size?: SizeEnum;
   /**
    * 输入框状态
+   * @default default
    */
   status?: 'default' | 'success' | 'warning' | 'error';
   /**
@@ -182,7 +183,9 @@ export interface TdSelectProps<T extends SelectOption = SelectOption> {
   /**
    * 自定义选中项呈现方式
    */
-  valueDisplay?: string | TNode<{ value: SelectValue; onClose: (index: number, item?: any) => void }>;
+  valueDisplay?:
+    | string
+    | TNode<{ value: SelectValue; onClose: (index: number, item?: any) => void; displayValue?: SelectValue }>;
   /**
    * 用于控制选中值的类型。假设数据选项为：`[{ label: '姓名', value: 'name' }]`，value 表示值仅返回数据选项中的 value， object 表示值返回全部数据。
    * @default value

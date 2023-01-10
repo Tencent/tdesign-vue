@@ -133,10 +133,12 @@ exports[`Calendar > :props > :cell 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -151,10 +153,12 @@ exports[`Calendar > :props > :cell 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -594,10 +598,12 @@ exports[`Calendar > :props > :cell 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -612,10 +618,12 @@ exports[`Calendar > :props > :cell 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -1130,10 +1138,12 @@ exports[`Calendar > :props > :cellAppend 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -1148,10 +1158,12 @@ exports[`Calendar > :props > :cellAppend 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -1976,10 +1988,12 @@ exports[`Calendar > :props > :cellAppend 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -1994,10 +2008,12 @@ exports[`Calendar > :props > :cellAppend 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -3482,10 +3498,12 @@ exports[`Calendar > :props > :controllerConfig 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -3500,10 +3518,12 @@ exports[`Calendar > :props > :controllerConfig 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -4334,10 +4354,12 @@ exports[`Calendar > :props > :fillWithZero 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -4352,10 +4374,12 @@ exports[`Calendar > :props > :fillWithZero 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -5180,10 +5204,12 @@ exports[`Calendar > :props > :fillWithZero 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -5198,10 +5224,12 @@ exports[`Calendar > :props > :fillWithZero 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -6030,10 +6058,12 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'month'"
+              tabindex="-1"
               type="radio"
               value="month"
             />
@@ -6048,10 +6078,12 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'year'"
+              tabindex="-1"
               type="radio"
               value="year"
             />
@@ -6995,10 +7027,12 @@ exports[`Calendar > :props > :format 1`] = `
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'month'"
+              tabindex="-1"
               type="radio"
               value="month"
             />
@@ -7013,10 +7047,12 @@ exports[`Calendar > :props > :format 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'year'"
+              tabindex="-1"
               type="radio"
               value="year"
             />
@@ -7847,10 +7883,12 @@ exports[`Calendar > :props > :head 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -7865,10 +7903,12 @@ exports[`Calendar > :props > :head 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -8697,10 +8737,12 @@ exports[`Calendar > :props > :head 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -8715,10 +8757,12 @@ exports[`Calendar > :props > :head 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -9548,10 +9592,12 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -9566,10 +9612,12 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -10394,10 +10442,12 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -10412,10 +10462,12 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -11071,10 +11123,12 @@ exports[`Calendar > :props > :mode 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -11089,10 +11143,12 @@ exports[`Calendar > :props > :mode 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -11862,10 +11918,12 @@ exports[`Calendar > :props > :mode 1`] = `
           >
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -11880,10 +11938,12 @@ exports[`Calendar > :props > :mode 1`] = `
             </label>
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -12270,10 +12330,12 @@ exports[`Calendar > :props > :multiple 1`] = `
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'month'"
+              tabindex="-1"
               type="radio"
               value="month"
             />
@@ -12288,10 +12350,12 @@ exports[`Calendar > :props > :multiple 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'year'"
+              tabindex="-1"
               type="radio"
               value="year"
             />
@@ -13120,10 +13184,12 @@ exports[`Calendar > :props > :preventCellContextmenu 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -13138,10 +13204,12 @@ exports[`Calendar > :props > :preventCellContextmenu 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -13966,10 +14034,12 @@ exports[`Calendar > :props > :preventCellContextmenu 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -13984,10 +14054,12 @@ exports[`Calendar > :props > :preventCellContextmenu 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -14816,10 +14888,12 @@ exports[`Calendar > :props > :range 1`] = `
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'month'"
+              tabindex="-1"
               type="radio"
               value="month"
             />
@@ -14834,10 +14908,12 @@ exports[`Calendar > :props > :range 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'year'"
+              tabindex="-1"
               type="radio"
               value="year"
             />
@@ -15666,10 +15742,12 @@ exports[`Calendar > :props > :theme 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -15684,10 +15762,12 @@ exports[`Calendar > :props > :theme 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -16489,10 +16569,12 @@ exports[`Calendar > :props > :theme 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -16507,10 +16589,12 @@ exports[`Calendar > :props > :theme 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -17339,10 +17423,12 @@ exports[`Calendar > :props > :value 1`] = `
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'month'"
+              tabindex="-1"
               type="radio"
               value="month"
             />
@@ -17357,10 +17443,12 @@ exports[`Calendar > :props > :value 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'year'"
+              tabindex="-1"
               type="radio"
               value="year"
             />
@@ -18189,10 +18277,12 @@ exports[`Calendar > :props > :week 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -18207,10 +18297,12 @@ exports[`Calendar > :props > :week 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -19021,10 +19113,12 @@ exports[`Calendar > :props > :week 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -19039,10 +19133,12 @@ exports[`Calendar > :props > :week 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -19872,10 +19968,12 @@ exports[`Calendar > :props > :year:month 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -19890,10 +19988,12 @@ exports[`Calendar > :props > :year:month 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -20718,10 +20818,12 @@ exports[`Calendar > :props > :year:month 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -20736,10 +20838,12 @@ exports[`Calendar > :props > :year:month 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -21568,10 +21672,12 @@ exports[`Calendar > <slot> > <cell> 1`] = `
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'month'"
+              tabindex="-1"
               type="radio"
               value="month"
             />
@@ -21586,10 +21692,12 @@ exports[`Calendar > <slot> > <cell> 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'year'"
+              tabindex="-1"
               type="radio"
               value="year"
             />
@@ -22417,10 +22525,12 @@ exports[`Calendar > <slot> > <cellAppend> 1`] = `
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'month'"
+              tabindex="-1"
               type="radio"
               value="month"
             />
@@ -22435,10 +22545,12 @@ exports[`Calendar > <slot> > <cellAppend> 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'year'"
+              tabindex="-1"
               type="radio"
               value="year"
             />
@@ -23266,10 +23378,12 @@ exports[`Calendar > <slot> > <head> 1`] = `
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'month'"
+              tabindex="-1"
               type="radio"
               value="month"
             />
@@ -23284,10 +23398,12 @@ exports[`Calendar > <slot> > <head> 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'year'"
+              tabindex="-1"
               type="radio"
               value="year"
             />
@@ -24115,10 +24231,12 @@ exports[`Calendar > <slot> > <week> 1`] = `
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'month'"
+              tabindex="-1"
               type="radio"
               value="month"
             />
@@ -24133,10 +24251,12 @@ exports[`Calendar > <slot> > <week> 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'year'"
+              tabindex="-1"
               type="radio"
               value="year"
             />

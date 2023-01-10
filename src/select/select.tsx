@@ -36,7 +36,11 @@ import { off, on } from '../utils/dom';
 import Option from './option';
 import SelectPanel from './select-panel';
 import {
-  getSingleContent, getMultipleContent, getNewMultipleValue, flattenOptions,
+  getSingleContent,
+  getMultipleContent,
+  getNewMultipleValue,
+  flattenOptions,
+  getAllSelectableOption,
 } from './util';
 import useSelectOptions from './hooks/useSelectOptions';
 import { SelectPanelInstance } from './instance';
@@ -207,6 +211,9 @@ export default defineComponent({
     const isReachMaxLimit = computed(
       () => multiple.value && max.value !== 0 && max.value <= (innerValue.value as SelectValue[]).length,
     );
+    const isAllOptionsChecked = computed(
+      () => getAllSelectableOption(optionsList.value).length === (innerValue.value as SelectValue[]).length,
+    );
 
     const placeholderText = computed(
       () => ((!multiple.value
@@ -237,10 +244,17 @@ export default defineComponent({
           label: optionsMap.value.get(value)?.label,
         }))
         : innerValue.value;
-      return {
+      const params = {
         value: val,
         onClose: multiple.value ? (index: number) => removeTag(index) : () => {},
       };
+      if (minCollapsedNum.value && multiple.value) {
+        return {
+          ...params,
+          displayValue: val?.slice?.(0, minCollapsedNum.value),
+        };
+      }
+      return params;
     });
 
     const collapsedItemsParams = computed(() => multiple.value
@@ -268,6 +282,18 @@ export default defineComponent({
       };
       instance.emit('remove', evtObj);
       props.onRemove?.(evtObj);
+    };
+
+    // 全选点击回调，t-option 的事件调用到这里处理
+    const handleCheckAllClick = (e: MouseEvent | KeyboardEvent) => {
+      setInnerValue(
+        isAllOptionsChecked.value
+          ? []
+          : getAllSelectableOption(optionsList.value)
+            .map((option) => option.value)
+            .slice(0, max.value || Infinity),
+        { e, trigger: isAllOptionsChecked.value ? 'uncheck' : 'check' },
+      );
     };
 
     const handleCreate = () => {
@@ -439,22 +465,18 @@ export default defineComponent({
             return;
           }
           // enter 选中逻辑
-          if (!multiple.value) {
-            const optionValue = (displayOptions[hoverIndex.value] as TdOptionProps).value;
-            setInnerValue(
-              optionValue,
-              {
-                e,
-                trigger: 'check',
-              },
-              optionValue,
-            );
-            setInnerPopupVisible(false, { e });
+          if (multiple.value && (displayOptions[hoverIndex.value] as TdOptionProps).checkAll) {
+            handleCheckAllClick(e);
           } else {
             const optionValue = (displayOptions[hoverIndex.value] as TdOptionProps)?.value;
             if (!optionValue) return;
-            const newValue = getNewMultipleValue(innerValue.value, optionValue);
-            setInnerValue(newValue.value, { e, trigger: newValue.isCheck ? 'check' : 'uncheck' }, optionValue);
+            if (!multiple.value) {
+              setInnerValue(optionValue, { e, trigger: 'check' }, optionValue);
+              setInnerPopupVisible(false, { e });
+            } else {
+              const newValue = getNewMultipleValue(innerValue.value, optionValue);
+              setInnerValue(newValue.value, { e, trigger: newValue.isCheck ? 'check' : 'uncheck' }, optionValue);
+            }
           }
           break;
         case 'Escape':
@@ -494,7 +516,9 @@ export default defineComponent({
       selectValue: innerValue,
       reserveKeyword,
       isReachMaxLimit,
+      isAllOptionsChecked,
       getOverlayElm,
+      handleCheckAllClick,
       handleCreate,
       handleValueChange: setInnerValue,
       handlerInputChange: setTInputValue,

@@ -10,6 +10,7 @@ import { TNodeReturnValue } from '../common';
 import { emitEvent } from '../utils/event';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
+import { off, on } from '../utils/dom';
 
 const classPrefixMixins = getClassPrefixMixins('radio-group');
 
@@ -87,25 +88,52 @@ export default mixins(classPrefixMixins).extend({
     },
   },
 
-  created() {
-    this.$on('checked-change', this.handleRadioChange);
-  },
-
   mounted() {
     this.calcBarStyle();
     const observer = new MutationObserver(this.calcBarStyle);
     observer.observe(this.$el, { childList: true, attributes: true, subtree: true });
     this.observer = observer;
+    this.addKeyboardListeners();
   },
 
   beforeDestroy() {
     this.observer.disconnect();
+    this.removeKeyboardListeners();
   },
 
   methods: {
+    // 无障碍规划-键盘事件（在 group 中统一处理，不在 radio.tsx 中单独处理）
+    addKeyboardListeners() {
+      on(this.$el, 'keydown', this.checkRadioInGroup);
+    },
+
+    removeKeyboardListeners() {
+      off(this.$el, 'keydown', this.checkRadioInGroup);
+    },
+
+    // 注意：此处会还原区分 数字 和 数字字符串
+    checkRadioInGroup(e: KeyboardEvent) {
+      if (/enter/i.test(e.key) || /enter/i.test(e.code)) {
+        const inputNode = (e.target as HTMLElement).querySelector('input');
+        const data = inputNode.dataset;
+        if (inputNode.checked && data.allowUncheck) {
+          this.handleRadioChange(undefined, { e });
+        } else {
+          // Number
+          let value: number | string | boolean = !isNaN(Number(data.value)) ? Number(data.value) : data.value;
+          // Boolean
+          value = (typeof value === 'string' && { true: true, false: false }[value]) || value;
+          // String
+          value = typeof value === 'string' && value[0] === "'" ? value.replace(/'/g, '') : value;
+          this.handleRadioChange(value, { e });
+        }
+      }
+    },
+
     handleRadioChange(value: RadioValue, context: { e: Event }): void {
       emitEvent<Parameters<TdRadioGroupProps['onChange']>>(this, 'change', value, context);
     },
+
     calcDefaultBarStyle(): void {
       const defaultNode = this.$el.cloneNode(true);
       const div = document.createElement('div');

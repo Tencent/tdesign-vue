@@ -29,6 +29,12 @@ export default {
             {
               label: '深圳市',
               value: 'shenzhen',
+              children: [
+                {
+                  label: '南山区海天二路33号腾讯滨海大厦',
+                  value: 'Tencent',
+                },
+              ],
             },
           ],
         },

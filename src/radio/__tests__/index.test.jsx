@@ -47,7 +47,7 @@ describe('Radio', () => {
           return <Radio onChange={fn}>Radio</Radio>;
         },
       });
-      wrapper.find('input[type="radio"]').setChecked();
+      wrapper.find('.t-radio').trigger('click');
       expect(fn).toHaveBeenCalled();
 
       // vue-test-utils, `radioInput.setChecked();` is a bug, https://github.com/vuejs/vue-test-utils/issues/1930
@@ -185,7 +185,7 @@ describe('Radio RadioGroup', () => {
           );
         },
       });
-      await wrapper.find('input[type="radio"]').setChecked();
+      await wrapper.find('.t-radio').trigger('click');
       expect(fn).toHaveBeenCalled();
     });
   });

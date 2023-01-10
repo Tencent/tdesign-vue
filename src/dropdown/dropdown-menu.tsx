@@ -71,8 +71,8 @@ export default defineComponent({
       let renderContent;
       data.forEach?.((menu, idx) => {
         const optionItem = { ...(menu as DropdownOption) };
-        const onViewIdx = Math.ceil(this.scrollTop / 30);
-
+        const onViewIdx = idx - Math.ceil(this.scrollTop / 30);
+        const renderIdx = onViewIdx >= 0 ? onViewIdx : idx;
         if (optionItem.children) {
           optionItem.children = this.renderOptions(optionItem.children);
           renderContent = (
@@ -116,7 +116,7 @@ export default defineComponent({
                     },
                   ]}
                   style={{
-                    top: `${(idx - onViewIdx) * 30}px`,
+                    top: `${renderIdx * 30}px`,
                   }}
                 >
                   <ul>{optionItem.children}</ul>

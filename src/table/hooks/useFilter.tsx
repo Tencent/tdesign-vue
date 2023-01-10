@@ -166,6 +166,7 @@ export default function useFilter(props: TdPrimaryTableProps, context: SetupCont
           'inner-filter-change': onInnerFilterChange,
           'visible-change': onPopupVisibleChange,
         }}
+        attach={props.attach}
       ></TableFilterController>
     );
   }

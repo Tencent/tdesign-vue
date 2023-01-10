@@ -2,6 +2,7 @@
   <div>
     <!-- 当前示例包含：输入框、单选、多选、日期 等场景 -->
     <t-table
+      ref="tableRef"
       row-key="key"
       :columns="columns"
       :data="data"
@@ -9,6 +10,8 @@
       bordered
       @row-validate="onRowValidate"
     />
+    <!-- 示例代码有效，勿删 -->
+    <!-- <t-button @click="validateTableData">校验</t-button> -->
   </div>
 </template>
 
@@ -63,11 +66,17 @@ export default {
             // 1. 支持任意组件。需保证组件包含 `value` 和 `onChange` 两个属性，且 onChange 的第一个参数值为 new value。
             // 2. 如果希望支持校验，组件还需包含 `status` 和 `tips` 属性。具体 API 含义参考 Input 组件
             component: Input,
-            // props, 透传全部属性到 Input 组件
+            // props, 透传全部属性到 Input 组件（可以是一个函数，不同行有不同的 props 属性 时，使用 Function）
             props: {
               clearable: true,
               autofocus: true,
             },
+            // 透传给 component: Input 的事件
+            on: (editContext) => ({
+              blur: () => {
+                console.log('失去焦点', editContext);
+              },
+            }),
             // 除了点击非自身元素退出编辑态之外，还有哪些事件退出编辑态
             abortEditOnEvent: ['onEnter'],
             // 编辑完成，退出编辑态后触发
@@ -168,13 +177,21 @@ export default {
   },
 
   methods: {
+    // 用于控制哪些行或哪些单元格不允许出现编辑态
     editableCellState(cellParams) {
-      // 第一行不允许编辑
       const { row } = cellParams;
       return row.status !== 2;
     },
     onRowValidate(params) {
       console.log('validate:', params);
+    },
+
+    // 用于提交前校验数据（示例代码有效，勿删）
+    validateTableData() {
+      // 仅校验处于编辑态的单元格
+      this.$refs.tableRef.validateTableData().then((result) => {
+        console.log('validate result: ', result);
+      });
     },
   },
 };
