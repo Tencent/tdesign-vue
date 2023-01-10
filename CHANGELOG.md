@@ -5,6 +5,32 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.0.4 `2023-01-10` 
+### 🚀 Features
+- `Select`:
+  - 支持全选 @skytt ([#2009](https://github.com/Tencent/tdesign-vue/pull/2009))
+  - `valueDisplay`回调新增`displayValue`参数，用于设置`minCollapsedNum`的场景 @uyarn ([#2013](https://github.com/Tencent/tdesign-vue/pull/2013))
+- `Radio`: @chaishi ([#2010](https://github.com/Tencent/tdesign-vue/pull/2010))
+  - 支持键盘事件：tab 键切换选项，enter 键选中
+  - RadioGroup 支持 `allowUncheck`，[issue#1693](https://github.com/Tencent/tdesign-vue/issues/1693)
+- `Table`: @chaishi ([#2016](https://github.com/Tencent/tdesign-vue/pull/2016))
+  - 可编辑单元格，支持使用  `col.edit.on` 透传组件事件
+  - 可编辑单元格，支持使用 `validateTableData` 校验处于编辑态的单元格
+  - 可编辑单元格，单元格的值 cellValue 不再进行解构处理，[tdesign-vue-next#2236](https://github.com/Tencent/tdesign-vue-next/issues/2236)
+  - 新增 `attach`，用于统一设置超出省略浮层、筛选过滤下拉框等元素的挂载元素。如：`attach={() => document.body}`
+- `Dialog`: 组件实例方法从可选更为必须存在 @chaishi ([#2026](https://github.com/Tencent/tdesign-vue/pull/2026))
+### 🐞 Bug Fixes
+- `Dialog`: 组件销毁前立即移除当前节点，不需要 `setTimeout` 等待时间 @chaishi ([#2011](https://github.com/Tencent/tdesign-vue/pull/2011))
+- `Select`: 修复子组件方式混合传入分组与单个选项时，可能导致顺序错乱、筛选结果有误的问题 @skytt ([#2009](https://github.com/Tencent/tdesign-vue/pull/2009))
+- `Radio`: 修复 RadioGroup 和 Radio 组合使用时，`allowUncheck` 无效问题 @chaishi ([#2010](https://github.com/Tencent/tdesign-vue/pull/2010))
+- `Table`:
+  - 处理单击和双击事件冲突问题，避免双击的时候触发行选中或行展开，[tdesign-vue-next#2218](https://github.com/Tencent/tdesign-vue-next/issues/2218)
+  - 修复表格列动态设置插槽名，渲染无效的问题，[issue#1982](https://github.com/Tencent/tdesign-vue/issues/1982) @chaishi ([#2016](https://github.com/Tencent/tdesign-vue/pull/2016))
+  - 修复表头吸顶，鼠标选中表格内容并拖动触发横向滚动时，鼠标移出表格区域，会出现表头错位的问题 @CaptainWang98 ([#2024](https://github.com/Tencent/tdesign-vue/pull/2024))
+- `Dropdown`: 修复三级及以上子菜单超出问题计算部分场景异常的问题 @uyarn ([#2023](https://github.com/Tencent/tdesign-vue/pull/2023))
+- `TreeSelect`: 修复选项文案过长样式的异常 @uyarn ([#2023](https://github.com/Tencent/tdesign-vue/pull/2023))
+- `Space`: 修复组件 size 类型定义问题 @chaishi ([#2026](https://github.com/Tencent/tdesign-vue/pull/2026))
+
 ## 🌈 1.0.3 `2023-01-05` 
 ### 🚀 Features
 - `AutoComplete`: @chaishi ([#1983](https://github.com/Tencent/tdesign-vue/pull/1983))
@@ -14,7 +40,7 @@ docClass: timeline
 - `Input`: 优化 enter 事件判断，不区分大小写 @chaishi ([#1983](https://github.com/Tencent/tdesign-vue/pull/1983))
 - `Upload`: 支持配置模拟进度间隔时间，用于设置小文件上传进度触发频次 @chaishi ([#2001](https://github.com/Tencent/tdesign-vue/pull/2001))
 - `ImageViewer`: 默认 z-index 调整为 3000，支持全局 CSS Token 调整 @Ylushen ([common #1104](https://github.com/Tencent/tdesign-common/pull/1104))
-- `语言包`: 新增阿拉伯语的语言包 @Ylushen ([common #1097](https://github.com/Tencent/tdesign-common/pull/1097))
+- 语言包: 新增阿拉伯语的语言包 @sunshineYuanlei ([common #1097](https://github.com/Tencent/tdesign-common/pull/1097))
 ### 🐞 Bug Fixes
 - `Select`: @skytt
   - 调整 select 标记字段位置 修复部分场景使用option子组件报错的问题 ([#1975](https://github.com/Tencent/tdesign-vue/pull/1975))
