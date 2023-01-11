@@ -6,9 +6,6 @@
           更多
           <chevron-down-icon size="16" />
         </span>
-        更多
-
-        <chevron-down-icon size="16" slot="suffix" />
       </t-button>
     </t-dropdown>
   </div>
