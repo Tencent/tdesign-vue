@@ -1,0 +1,85 @@
+// Vitest Snapshot v1
+
+exports[`Avatar Component > props.content works fine 1`] = `
+<div
+  class="t-avatar t-avatar--circle"
+>
+  <span>
+    <span
+      class="custom-node"
+    >
+      TNode
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Avatar Component > props.default works fine 1`] = `
+<div
+  class="t-avatar t-avatar--circle"
+>
+  <span>
+    <span
+      class="custom-node"
+    >
+      TNode
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Avatar Component > props.shape is equal to circle 1`] = `
+<div
+  class="t-avatar t-avatar--circle"
+>
+  <span />
+</div>
+`;
+
+exports[`Avatar Component > props.shape is equal to round 1`] = `
+<div
+  class="t-avatar t-avatar--round"
+>
+  <span />
+</div>
+`;
+
+exports[`Avatar Component > slots.content works fine 1`] = `
+<div
+  class="t-avatar t-avatar--circle"
+>
+  <span>
+    <span
+      class="custom-node"
+    >
+      TNode
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Avatar Component > slots.default works fine 1`] = `
+<div
+  class="t-avatar t-avatar--circle"
+>
+  <span>
+    <span
+      class="custom-node"
+    >
+      TNode
+    </span>
+  </span>
+</div>
+`;
+
+exports[`AvatarGroup Component > props.cascading is equal to left-up 1`] = `
+<div
+  class="t-avatar-group t-avatar--offset-left"
+/>
+`;
+
+exports[`AvatarGroup Component > props.cascading is equal to right-up 1`] = `
+<div
+  class="t-avatar-group t-avatar--offset-right"
+/>
+`;

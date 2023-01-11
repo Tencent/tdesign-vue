@@ -130,7 +130,7 @@ describe('Button Component', () => {
   it('props.href works fine', () => {
     const wrapper = mount({
       render() {
-        return <Button href={'https://tdesign.tencent.com/'}>Text</Button>;
+        return <Button href="https://tdesign.tencent.com/">Text</Button>;
       },
     });
     expect(wrapper.attributes('href')).toBe('https://tdesign.tencent.com/');
@@ -259,7 +259,7 @@ describe('Button Component', () => {
   it('slots.suffix works fine', () => {
     const wrapper = mount({
       render() {
-        return <Button scopedSlots={{ suffix: () => <span class="custom-node">TNode</span> }}>Text</Button>;
+        return <Button scopedSlots={{ suffix: (h) => <span class="custom-node">TNode</span> }}>Text</Button>;
       },
     });
     expect(wrapper.find('.custom-node').exists()).toBeTruthy();

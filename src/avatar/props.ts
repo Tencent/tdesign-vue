@@ -13,6 +13,14 @@ export default {
     type: String,
     default: '',
   },
+  /** 子元素内容 */
+  content: {
+    type: [String, Function] as PropType<TdAvatarProps['content']>,
+  },
+  /** 子元素内容，同 content */
+  default: {
+    type: [String, Function] as PropType<TdAvatarProps['default']>,
+  },
   /** 加载失败时隐藏图片 */
   hideOnLoadFailed: Boolean,
   /** 图标 */
