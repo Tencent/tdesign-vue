@@ -6,6 +6,7 @@
  */
 import { mount } from '@vue/test-utils';
 import { Avatar, AvatarGroup } from '..';
+import { getAvatarGroupDefaultMount } from './mount';
 
 describe('Avatar Component', () => {
   it('props.alt works fine', () => {
@@ -160,5 +161,15 @@ describe('AvatarGroup Component', () => {
       expect(wrapper.classes(cascadingClassNameList[index])).toBeTruthy();
       expect(wrapper.element).toMatchSnapshot();
     });
+  });
+
+  it('props.max works fine. `{".t-avatar":4}` should exist', () => {
+    const wrapper = getAvatarGroupDefaultMount(AvatarGroup, { max: 3 });
+    expect(wrapper.findAll('.t-avatar').length).toBe(4);
+  });
+
+  it('props.max works fine. `{".t-avatar__collapse":1}` should exist', () => {
+    const wrapper = getAvatarGroupDefaultMount(AvatarGroup, { max: 3 });
+    expect(wrapper.findAll('.t-avatar__collapse').length).toBe(1);
   });
 });

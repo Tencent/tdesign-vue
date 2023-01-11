@@ -29,7 +29,11 @@ export default mixins(classPrefixMixins).extend({
         const content = this.setEllipsisContent(children);
         const outAvatar = children.slice(0, this.max);
         outAvatar.push(
-          <Avatar size={this.size} icon={this.isIcon() ? this.collapseAvatar : null}>
+          <Avatar
+            class={`${this.componentName}__collapse`}
+            size={this.size}
+            icon={this.isIcon() ? this.collapseAvatar : null}
+          >
             {content}
           </Avatar>,
         );

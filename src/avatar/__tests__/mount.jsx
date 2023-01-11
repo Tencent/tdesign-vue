@@ -1,6 +1,7 @@
 import { mount } from '@vue/test-utils';
 import { Avatar } from '..';
 
+// Avatar 数量变化会影响测试用例结果
 export function getAvatarGroupDefaultMount(AvatarGroup, props, events) {
   return mount({
     render() {
