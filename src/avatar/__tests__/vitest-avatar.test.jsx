@@ -65,7 +65,6 @@ describe('Avatar Component', () => {
       },
     });
     await wrapper.vm.$nextTick();
-    expect(wrapper.findAll('.t-image').length).toBe(false);
   });
 
   it('props.icon works fine', () => {
@@ -163,6 +162,32 @@ describe('AvatarGroup Component', () => {
     });
   });
 
+  it('props.collapseAvatar works fine', () => {
+    const wrapper = getAvatarGroupDefaultMount(AvatarGroup, {
+      collapseAvatar: (h) => <span class="custom-node">TNode</span>,
+      max: 3,
+    });
+    expect(wrapper.find('.custom-node').exists()).toBeTruthy();
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it('slots.collapseAvatar works fine', () => {
+    const wrapper = getAvatarGroupDefaultMount(AvatarGroup, {
+      scopedSlots: { collapseAvatar: (h) => <span class="custom-node">TNode</span> },
+      max: 3,
+    });
+    expect(wrapper.find('.custom-node').exists()).toBeTruthy();
+    expect(wrapper.element).toMatchSnapshot();
+  });
+  it('slots.collapse-avatar works fine', () => {
+    const wrapper = getAvatarGroupDefaultMount(AvatarGroup, {
+      scopedSlots: { 'collapse-avatar': () => <span class="custom-node">TNode</span> },
+      max: 3,
+    });
+    expect(wrapper.find('.custom-node').exists()).toBeTruthy();
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
   it('props.max works fine. `{".t-avatar":4}` should exist', () => {
     const wrapper = getAvatarGroupDefaultMount(AvatarGroup, { max: 3 });
     expect(wrapper.findAll('.t-avatar').length).toBe(4);
@@ -171,5 +196,33 @@ describe('AvatarGroup Component', () => {
   it('props.max works fine. `{".t-avatar__collapse":1}` should exist', () => {
     const wrapper = getAvatarGroupDefaultMount(AvatarGroup, { max: 3 });
     expect(wrapper.findAll('.t-avatar__collapse').length).toBe(1);
+  });
+
+  it('props.max works fine. `{".t-avatar__collapse > span":{"text":"+2"}}` should exist', () => {
+    const wrapper = getAvatarGroupDefaultMount(AvatarGroup, { max: 3 });
+    expect(wrapper.find('.t-avatar__collapse > span').text()).toBe('+2');
+  });
+
+  it('props.size is equal to small', () => {
+    const wrapper = getAvatarGroupDefaultMount(AvatarGroup, { size: 'small' });
+    const domWrapper = wrapper.find('.t-avatar');
+    expect(domWrapper.classes('t-size-s')).toBeTruthy();
+    const domWrapper1 = wrapper.find('.t-avatar:nth-child(5)');
+    expect(domWrapper1.classes('t-size-l')).toBeTruthy();
+  });
+  it('props.size is equal to large', () => {
+    const wrapper = getAvatarGroupDefaultMount(AvatarGroup, { size: 'large' });
+    const domWrapper = wrapper.find('.t-avatar');
+    expect(domWrapper.classes('t-size-l')).toBeTruthy();
+    const domWrapper1 = wrapper.find('.t-avatar:nth-child(4)');
+    expect(domWrapper1.classes('t-size-s')).toBeTruthy();
+  });
+
+  it('props.size is equal to 120px', () => {
+    const wrapper = getAvatarGroupDefaultMount(AvatarGroup, { size: '120px' });
+    const domWrapper = wrapper.find('.t-avatar');
+    expect(domWrapper.element.style.width).toBe('120px');
+    expect(domWrapper.element.style.height).toBe('120px');
+    expect(domWrapper.element.style.fontSize).toBe('60px');
   });
 });

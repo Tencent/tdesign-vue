@@ -83,3 +83,143 @@ exports[`AvatarGroup Component > props.cascading is equal to right-up 1`] = `
   class="t-avatar-group t-avatar--offset-right"
 />
 `;
+
+exports[`AvatarGroup Component > props.collapseAvatar works fine 1`] = `
+<div
+  class="t-avatar-group t-avatar--offset-right"
+>
+  <div
+    class="t-avatar t-size-m t-avatar--circle"
+  >
+    <div
+      class="t-image__wrapper t-image__wrapper--shape-square"
+    >
+      <img
+        alt=""
+        class="t-image t-image--fit-fill t-image--position-center"
+        src="https://tdesign.gtimg.com/site/avatar.jpg"
+      />
+      <div
+        class="t-image__loading"
+      >
+         
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-avatar t-size-m t-avatar--circle"
+  >
+    <span>
+      W
+    </span>
+  </div>
+  <div
+    class="t-avatar t-size-m t-avatar--circle t-avatar__icon"
+  >
+    <i
+      class="custom-node"
+    />
+  </div>
+  <div
+    class="t-avatar t-size-m t-avatar--circle t-avatar__icon t-avatar__collapse"
+  >
+    <span
+      class="custom-node"
+    >
+      TNode
+    </span>
+  </div>
+</div>
+`;
+
+exports[`AvatarGroup Component > slots.collapse-avatar works fine 1`] = `
+<div
+  class="t-avatar-group t-avatar--offset-right"
+>
+  <div
+    class="t-avatar t-size-m t-avatar--circle"
+  >
+    <div
+      class="t-image__wrapper t-image__wrapper--shape-square"
+    >
+      <img
+        alt=""
+        class="t-image t-image--fit-fill t-image--position-center"
+        src="https://tdesign.gtimg.com/site/avatar.jpg"
+      />
+      <div
+        class="t-image__loading"
+      >
+         
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-avatar t-size-m t-avatar--circle"
+  >
+    <span>
+      W
+    </span>
+  </div>
+  <div
+    class="t-avatar t-size-m t-avatar--circle t-avatar__icon"
+  >
+    <i
+      class="custom-node"
+    />
+  </div>
+  <div
+    class="t-avatar t-size-m t-avatar--circle t-avatar__collapse"
+  >
+    <span>
+      +2
+    </span>
+  </div>
+</div>
+`;
+
+exports[`AvatarGroup Component > slots.collapseAvatar works fine 1`] = `
+<div
+  class="t-avatar-group t-avatar--offset-right"
+>
+  <div
+    class="t-avatar t-size-m t-avatar--circle"
+  >
+    <div
+      class="t-image__wrapper t-image__wrapper--shape-square"
+    >
+      <img
+        alt=""
+        class="t-image t-image--fit-fill t-image--position-center"
+        src="https://tdesign.gtimg.com/site/avatar.jpg"
+      />
+      <div
+        class="t-image__loading"
+      >
+         
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-avatar t-size-m t-avatar--circle"
+  >
+    <span>
+      W
+    </span>
+  </div>
+  <div
+    class="t-avatar t-size-m t-avatar--circle t-avatar__icon"
+  >
+    <i
+      class="custom-node"
+    />
+  </div>
+  <div
+    class="t-avatar t-size-m t-avatar--circle t-avatar__collapse"
+  >
+    <span>
+      +2
+    </span>
+  </div>
+</div>
+`;

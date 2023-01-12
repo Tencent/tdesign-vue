@@ -37,13 +37,6 @@ export default mixins(classPrefixMixins).extend({
             {content}
           </Avatar>,
         );
-        // 隐藏的avatar通过popup展示
-        // const hideAvatar = children.slice(this.max - children.length);
-        // const popupContent = <t-popup props={{ ...this.popupProps, placement: this.placement }} >
-        //   <template slot='content'>{hideAvatar }</template>
-        //   <Avatar size={this.size} icon={this.isIcon() ? this.collapseAvatar : null}>{content}</Avatar>
-        // </t-popup>;
-        // return [outAvatar, popupContent];
         return [outAvatar];
       }
       return [children];

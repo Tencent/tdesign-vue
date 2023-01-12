@@ -2099,10 +2099,20 @@ exports[`csr snapshot test > csr test ./src/avatar/_example/base.vue 1`] = `
     <div
       class="t-avatar t-avatar--circle"
     >
-      <img
-        alt=""
-        src="https://tdesign.gtimg.com/site/avatar.jpg"
-      />
+      <div
+        class="t-image__wrapper t-image__wrapper--shape-square"
+      >
+        <img
+          alt=""
+          class="t-image t-image--fit-fill t-image--position-center"
+          src="https://tdesign.gtimg.com/site/avatar.jpg"
+        />
+        <div
+          class="t-image__loading"
+        >
+           
+        </div>
+      </div>
     </div>
   </div>
   <div
@@ -2138,22 +2148,32 @@ exports[`csr snapshot test > csr test ./src/avatar/_example/group.vue 1`] = `
           class="t-avatar-group t-avatar--offset-right"
         >
           <div
-            class="t-avatar t-avatar--circle"
+            class="t-avatar t-size-m t-avatar--circle"
           >
-            <img
-              alt=""
-              src="https://tdesign.gtimg.com/site/avatar.jpg"
-            />
+            <div
+              class="t-image__wrapper t-image__wrapper--shape-square"
+            >
+              <img
+                alt=""
+                class="t-image t-image--fit-fill t-image--position-center"
+                src="https://tdesign.gtimg.com/site/avatar.jpg"
+              />
+              <div
+                class="t-image__loading"
+              >
+                 
+              </div>
+            </div>
           </div>
           <div
-            class="t-avatar t-avatar--circle"
+            class="t-avatar t-size-m t-avatar--circle"
           >
             <span>
               W
             </span>
           </div>
           <div
-            class="t-avatar t-avatar--circle t-avatar__icon"
+            class="t-avatar t-size-m t-avatar--circle t-avatar__icon"
           >
             <svg
               class="t-icon t-icon-user"
@@ -2187,22 +2207,32 @@ exports[`csr snapshot test > csr test ./src/avatar/_example/group.vue 1`] = `
           class="t-avatar-group t-avatar--offset-right"
         >
           <div
-            class="t-avatar t-avatar--circle"
+            class="t-avatar t-size-l t-avatar--circle"
           >
-            <img
-              alt=""
-              src="https://tdesign.gtimg.com/site/avatar.jpg"
-            />
+            <div
+              class="t-image__wrapper t-image__wrapper--shape-square"
+            >
+              <img
+                alt=""
+                class="t-image t-image--fit-fill t-image--position-center"
+                src="https://tdesign.gtimg.com/site/avatar.jpg"
+              />
+              <div
+                class="t-image__loading"
+              >
+                 
+              </div>
+            </div>
           </div>
           <div
-            class="t-avatar t-avatar--circle"
+            class="t-avatar t-size-l t-avatar--circle"
           >
             <span>
               W
             </span>
           </div>
           <div
-            class="t-avatar t-avatar--circle t-avatar__icon"
+            class="t-avatar t-size-l t-avatar--circle t-avatar__icon"
           >
             <svg
               class="t-icon t-icon-user"
@@ -2244,22 +2274,32 @@ exports[`csr snapshot test > csr test ./src/avatar/_example/group-cascading.vue 
           class="t-avatar-group t-avatar--offset-right"
         >
           <div
-            class="t-avatar t-avatar--circle"
+            class="t-avatar t-size-m t-avatar--circle"
           >
-            <img
-              alt=""
-              src="https://tdesign.gtimg.com/site/avatar.jpg"
-            />
+            <div
+              class="t-image__wrapper t-image__wrapper--shape-square"
+            >
+              <img
+                alt=""
+                class="t-image t-image--fit-fill t-image--position-center"
+                src="https://tdesign.gtimg.com/site/avatar.jpg"
+              />
+              <div
+                class="t-image__loading"
+              >
+                 
+              </div>
+            </div>
           </div>
           <div
-            class="t-avatar t-avatar--circle"
+            class="t-avatar t-size-m t-avatar--circle"
           >
             <span>
               W
             </span>
           </div>
           <div
-            class="t-avatar t-avatar--circle t-avatar__icon"
+            class="t-avatar t-size-m t-avatar--circle t-avatar__icon"
           >
             <svg
               class="t-icon t-icon-user"
@@ -2293,22 +2333,32 @@ exports[`csr snapshot test > csr test ./src/avatar/_example/group-cascading.vue 
           class="t-avatar-group t-avatar--offset-left"
         >
           <div
-            class="t-avatar t-avatar--circle"
+            class="t-avatar t-size-m t-avatar--circle"
           >
-            <img
-              alt=""
-              src="https://tdesign.gtimg.com/site/avatar.jpg"
-            />
+            <div
+              class="t-image__wrapper t-image__wrapper--shape-square"
+            >
+              <img
+                alt=""
+                class="t-image t-image--fit-fill t-image--position-center"
+                src="https://tdesign.gtimg.com/site/avatar.jpg"
+              />
+              <div
+                class="t-image__loading"
+              >
+                 
+              </div>
+            </div>
           </div>
           <div
-            class="t-avatar t-avatar--circle"
+            class="t-avatar t-size-m t-avatar--circle"
           >
             <span>
               W
             </span>
           </div>
           <div
-            class="t-avatar t-avatar--circle t-avatar__icon"
+            class="t-avatar t-size-m t-avatar--circle t-avatar__icon"
           >
             <svg
               class="t-icon t-icon-user"
@@ -2350,22 +2400,32 @@ exports[`csr snapshot test > csr test ./src/avatar/_example/group-max.vue 1`] = 
           class="t-avatar-group t-avatar--offset-right"
         >
           <div
-            class="t-avatar t-avatar--circle"
+            class="t-avatar t-size-l t-avatar--circle"
           >
-            <img
-              alt=""
-              src="https://tdesign.gtimg.com/site/avatar.jpg"
-            />
+            <div
+              class="t-image__wrapper t-image__wrapper--shape-square"
+            >
+              <img
+                alt=""
+                class="t-image t-image--fit-fill t-image--position-center"
+                src="https://tdesign.gtimg.com/site/avatar.jpg"
+              />
+              <div
+                class="t-image__loading"
+              >
+                 
+              </div>
+            </div>
           </div>
           <div
-            class="t-avatar t-avatar--circle"
+            class="t-avatar t-size-l t-avatar--circle"
           >
             <span>
               Avatar
             </span>
           </div>
           <div
-            class="t-avatar t-avatar--circle"
+            class="t-avatar t-size-l t-avatar--circle t-avatar__collapse"
           >
             <span>
               +1
@@ -2389,22 +2449,32 @@ exports[`csr snapshot test > csr test ./src/avatar/_example/group-max.vue 1`] = 
           class="t-avatar-group t-avatar--offset-right"
         >
           <div
-            class="t-avatar t-avatar--circle"
+            class="t-avatar t-size-l t-avatar--circle"
           >
-            <img
-              alt=""
-              src="https://tdesign.gtimg.com/site/avatar.jpg"
-            />
+            <div
+              class="t-image__wrapper t-image__wrapper--shape-square"
+            >
+              <img
+                alt=""
+                class="t-image t-image--fit-fill t-image--position-center"
+                src="https://tdesign.gtimg.com/site/avatar.jpg"
+              />
+              <div
+                class="t-image__loading"
+              >
+                 
+              </div>
+            </div>
           </div>
           <div
-            class="t-avatar t-avatar--circle"
+            class="t-avatar t-size-l t-avatar--circle"
           >
             <span>
               Avatar
             </span>
           </div>
           <div
-            class="t-avatar t-avatar--circle t-avatar__icon"
+            class="t-avatar t-size-l t-avatar--circle t-avatar__icon t-avatar__collapse"
           >
             <svg
               class="t-icon t-icon-ellipsis"
@@ -2438,22 +2508,32 @@ exports[`csr snapshot test > csr test ./src/avatar/_example/group-max.vue 1`] = 
           class="t-avatar-group t-avatar--offset-right"
         >
           <div
-            class="t-avatar t-avatar--circle"
+            class="t-avatar t-size-l t-avatar--circle"
           >
-            <img
-              alt=""
-              src="https://tdesign.gtimg.com/site/avatar.jpg"
-            />
+            <div
+              class="t-image__wrapper t-image__wrapper--shape-square"
+            >
+              <img
+                alt=""
+                class="t-image t-image--fit-fill t-image--position-center"
+                src="https://tdesign.gtimg.com/site/avatar.jpg"
+              />
+              <div
+                class="t-image__loading"
+              >
+                 
+              </div>
+            </div>
           </div>
           <div
-            class="t-avatar t-avatar--circle"
+            class="t-avatar t-size-l t-avatar--circle"
           >
             <span>
               Avatar
             </span>
           </div>
           <div
-            class="t-avatar t-avatar--circle"
+            class="t-avatar t-size-l t-avatar--circle t-avatar__collapse"
           >
             <span>
               more
@@ -2512,7 +2592,29 @@ exports[`csr snapshot test > csr test ./src/avatar/_example/size.vue 1`] = `
         class="t-space-item"
       >
         <div
-          class="t-avatar t-avatar--circle"
+          class="t-avatar t-size-s t-avatar--circle"
+        >
+          <span>
+            W
+          </span>
+        </div>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <div
+          class="t-avatar t-size-m t-avatar--circle"
+        >
+          <span>
+            W
+          </span>
+        </div>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <div
+          class="t-avatar t-size-l t-avatar--circle"
         >
           <span>
             W
@@ -2524,28 +2626,7 @@ exports[`csr snapshot test > csr test ./src/avatar/_example/size.vue 1`] = `
       >
         <div
           class="t-avatar t-avatar--circle"
-        >
-          <span>
-            W
-          </span>
-        </div>
-      </div>
-      <div
-        class="t-space-item"
-      >
-        <div
-          class="t-avatar t-avatar--circle"
-        >
-          <span>
-            W
-          </span>
-        </div>
-      </div>
-      <div
-        class="t-space-item"
-      >
-        <div
-          class="t-avatar t-avatar--circle"
+          style="width: 100px; height: 100px; font-size: 50px;"
         >
           <span>
             W
@@ -2565,7 +2646,29 @@ exports[`csr snapshot test > csr test ./src/avatar/_example/size.vue 1`] = `
         class="t-space-item"
       >
         <div
-          class="t-avatar t-avatar--round"
+          class="t-avatar t-size-s t-avatar--round"
+        >
+          <span>
+            W
+          </span>
+        </div>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <div
+          class="t-avatar t-size-m t-avatar--round"
+        >
+          <span>
+            W
+          </span>
+        </div>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <div
+          class="t-avatar t-size-l t-avatar--round"
         >
           <span>
             W
@@ -2577,28 +2680,7 @@ exports[`csr snapshot test > csr test ./src/avatar/_example/size.vue 1`] = `
       >
         <div
           class="t-avatar t-avatar--round"
-        >
-          <span>
-            W
-          </span>
-        </div>
-      </div>
-      <div
-        class="t-space-item"
-      >
-        <div
-          class="t-avatar t-avatar--round"
-        >
-          <span>
-            W
-          </span>
-        </div>
-      </div>
-      <div
-        class="t-space-item"
-      >
-        <div
-          class="t-avatar t-avatar--round"
+          style="width: 100px; height: 100px; font-size: 50px;"
         >
           <span>
             W
@@ -20150,22 +20232,32 @@ exports[`csr snapshot test > csr test ./src/card/_example/footer-actions.vue 1`]
             class="t-avatar-group t-avatar--offset-left"
           >
             <div
-              class="t-avatar t-avatar--circle"
+              class="t-avatar t-size-m t-avatar--circle"
             >
-              <img
-                alt=""
-                src="https://tdesign.gtimg.com/site/avatar-boy.jpg"
-              />
+              <div
+                class="t-image__wrapper t-image__wrapper--shape-square"
+              >
+                <img
+                  alt=""
+                  class="t-image t-image--fit-fill t-image--position-center"
+                  src="https://tdesign.gtimg.com/site/avatar-boy.jpg"
+                />
+                <div
+                  class="t-image__loading"
+                >
+                   
+                </div>
+              </div>
             </div>
             <div
-              class="t-avatar t-avatar--circle"
+              class="t-avatar t-size-m t-avatar--circle"
             >
               <span>
                 Q
               </span>
             </div>
             <div
-              class="t-avatar t-avatar--circle"
+              class="t-avatar t-size-m t-avatar--circle t-avatar__collapse"
             >
               <span>
                 +3
@@ -20527,11 +20619,23 @@ exports[`csr snapshot test > csr test ./src/card/_example/header-footer-actions.
         <div
           class="t-avatar t-avatar--circle"
           data-v-bed46286=""
+          style="width: 56px; height: 56px; font-size: 28px;"
         >
-          <img
-            alt=""
-            src="https://tdesign.gtimg.com/site/avatar-boy.jpg"
-          />
+          <div
+            class="t-image__wrapper t-image__wrapper--shape-square"
+            style="height: 56px; width: 56px;"
+          >
+            <img
+              alt=""
+              class="t-image t-image--fit-fill t-image--position-center"
+              src="https://tdesign.gtimg.com/site/avatar-boy.jpg"
+            />
+            <div
+              class="t-image__loading"
+            >
+               
+            </div>
+          </div>
         </div>
       </div>
       <div>

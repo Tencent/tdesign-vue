@@ -29,6 +29,5 @@ name | type | default | description | required
 cascading | String | 'right-up' | multiple images cascading。options：left-up/right-up。Typescript：`CascadingValue` `type CascadingValue = 'left-up' \| 'right-up'`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/avatar/type.ts) | N
 collapseAvatar | String / Slot / Function | - | Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 max | Number | - | \- | N
-placement | String | - | popup placement。options：left/top/bottom/right。Typescript：`MaxOverPlacement` `type MaxOverPlacement = 'left' \| 'top' \| 'bottom' \| 'right'`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/avatar/type.ts) | N
 popupProps | Object | - | Typescript：`PopupProps`，[Popup API Documents](./popup?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/avatar/type.ts) | N
 size | String | medium | size | N
