@@ -9,7 +9,7 @@ export default defineComponent({
   name: 'TImage',
   components: {},
   props,
-  setup(props: TdImageProps) {
+  setup(props: TdImageProps, { emit }) {
     const {
       lazy, overlayTrigger, onLoad, onError,
     } = props;
@@ -41,15 +41,17 @@ export default defineComponent({
     };
 
     const isLoaded = ref(false);
-    const handleLoad = () => {
+    const handleLoad = (e: Event) => {
       isLoaded.value = true;
-      onLoad?.();
+      emit('load', { e });
+      onLoad?.({ e });
     };
 
     const hasError = ref(false);
-    const handleError = () => {
+    const handleError = (e: Event) => {
       hasError.value = true;
-      onError?.();
+      emit('error', { e });
+      onError?.({ e });
     };
 
     const hasMouseEvent = overlayTrigger === 'hover';

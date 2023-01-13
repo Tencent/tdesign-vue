@@ -18,12 +18,12 @@ placeholder | String / Slot / Function | - | Typescript：`string \| TNode`。[s
 position | String | center | \- | N
 shape | String | square | options：circle/round/square | N
 src | String | - | \- | N
-onError | Function |  | Typescript：`() => void`<br/> | N
-onLoad | Function |  | Typescript：`() => void`<br/> | N
+onError | Function |  | Typescript：`(context: { e: Event }) => void`<br/>trigger on image load failed | N
+onLoad | Function |  | Typescript：`(context: { e: Event }) => void`<br/>trigger on image loaded | N
 
 ### Image Events
 
 name | params | description
 -- | -- | --
-error | \- | \-
-load | \- | \-
+error | `(context: { e: Event })` | trigger on image load failed
+load | `(context: { e: Event })` | trigger on image loaded

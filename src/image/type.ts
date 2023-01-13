@@ -71,9 +71,9 @@ export interface TdImageProps {
   /**
    * 图片加载失败时触发
    */
-  onError?: () => void;
+  onError?: (context: { e: Event }) => void;
   /**
    * 图片加载完成时触发
    */
-  onLoad?: () => void;
+  onLoad?: (context: { e: Event }) => void;
 }
