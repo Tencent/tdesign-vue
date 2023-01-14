@@ -73,6 +73,7 @@ export interface TdInputNumberProps<T = InputNumberValue> {
   size?: 'small' | 'medium' | 'large';
   /**
    * 文本框状态
+   * @default default
    */
   status?: 'default' | 'success' | 'warning' | 'error';
   /**

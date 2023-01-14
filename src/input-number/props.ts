@@ -73,6 +73,7 @@ export default {
   /** 文本框状态 */
   status: {
     type: String as PropType<TdInputNumberProps['status']>,
+    default: 'default' as TdInputNumberProps['status'],
     validator(val: TdInputNumberProps['status']): boolean {
       if (!val) return true;
       return ['default', 'success', 'warning', 'error'].includes(val);
@@ -103,6 +104,7 @@ export default {
   /** 数字输入框的值。当值为 '' 时，输入框显示为空 */
   value: {
     type: [String, Number] as PropType<TdInputNumberProps['value']>,
+    default: undefined,
   },
   /** 数字输入框的值。当值为 '' 时，输入框显示为空，非受控属性 */
   defaultValue: {

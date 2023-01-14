@@ -29,6 +29,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, './'),
       'tdesign-vue/es': path.resolve(__dirname, './src'),
       'tdesign-vue': path.resolve(__dirname, './src'),
+      '@test/utils': path.resolve(__dirname, './test/utils'),
       vue: 'vue/dist/vue.runtime.common.js',
     },
   },

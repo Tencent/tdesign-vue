@@ -1,10 +1,5 @@
 import { mount } from '@vue/test-utils';
-
-function createElementById(vue2AttachTo) {
-  const div = document.createElement('div');
-  div.id = vue2AttachTo;
-  document.body.appendChild(div);
-}
+import { createElementById } from '../../../test/utils';
 
 export function getNormalAutoCompleteMount(AutoComplete, propsData = {}, listeners) {
   const options = [
