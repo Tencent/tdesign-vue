@@ -176,7 +176,7 @@ export default defineComponent({
     );
     const topContent = renderTNodeJSX(this, 'panelTopContent');
     const bottomContent = renderTNodeJSX(this, 'panelBottomContent');
-    const panelContent = topContent || listContent || bottomContent ? (
+    const panelContent = topContent || this.options?.length || bottomContent ? (
         <div class={`${this.classPrefix}-autocomplete__panel`}>
           {topContent}
           {listContent}
@@ -191,17 +191,20 @@ export default defineComponent({
     };
     return (
       <div class={this.classes}>
-        <Popup
-          visible={this.popupVisible}
-          on={{ 'visible-change': this.onPopupVisibleChange }}
-          trigger="focus"
-          placement="bottom-left"
-          hideEmptyPopup={true}
-          content={panelContent ? () => panelContent : null}
-          props={popupProps}
-        >
-          {triggerNode}
-        </Popup>
+        {panelContent && (
+          <Popup
+            visible={this.popupVisible}
+            on={{ 'visible-change': this.onPopupVisibleChange }}
+            trigger="focus"
+            placement="bottom-left"
+            hideEmptyPopup={true}
+            content={panelContent ? () => panelContent : null}
+            props={popupProps}
+          >
+            {triggerNode}
+          </Popup>
+        )}
+        {!panelContent && triggerNode}
       </div>
     );
   },

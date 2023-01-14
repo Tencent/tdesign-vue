@@ -160,17 +160,19 @@ describe('AutoComplete Component', () => {
     const wrapper = mount(
       {
         render() {
-          return <AutoComplete></AutoComplete>;
+          return <AutoComplete popupProps={{ overlayClassName: 'empty-options-class-name' }}></AutoComplete>;
         },
       },
       { attachTo: '#focus-dom' },
     );
     wrapper.find('input').trigger('focus');
     await wrapper.vm.$nextTick();
-    const tAutocompletePanelDom = document.querySelectorAll('.t-autocomplete__panel');
-    expect(tAutocompletePanelDom.length).toBe(0);
+    const emptyOptionsClassNameTAutocompletePanelDom = document.querySelectorAll(
+      '.empty-options-class-name .t-autocomplete__panel',
+    );
+    expect(emptyOptionsClassNameTAutocompletePanelDom.length).toBe(0);
     // remove nodes from document to avoid influencing following test cases
-    tAutocompletePanelDom.forEach((node) => node.remove());
+    emptyOptionsClassNameTAutocompletePanelDom.forEach((node) => node.remove());
   });
   it('props.options: define one option', async () => {
     const wrapper = getOptionSlotAutoCompleteMount(AutoComplete, {
