@@ -6,8 +6,9 @@
  */
 import { mount } from '@vue/test-utils';
 import { vi } from 'vitest';
+import { createElementById, simulateKeydownEvent } from '@test/utils';
 import { AutoComplete } from '..';
-import { getNormalAutoCompleteMount } from './mount';
+import { getNormalAutoCompleteMount, getOptionSlotAutoCompleteMount } from './mount';
 
 describe('AutoComplete Component', () => {
   it('props.autofocus is equal to false', () => {
@@ -142,17 +143,38 @@ describe('AutoComplete Component', () => {
     expect(customNodeDom).toBeDefined();
     // remove node in document to avoid influencing following test cases
     customNodeDom?.remove();
-    document.querySelectorAll('.t-popup').forEach((node) => node.remove());
+    document.querySelectorAll('.t-select-option').forEach((node) => node.remove());
   });
-  it('props.options: 3 options should exist', async () => {
+  it('props.options: 5 options should exist', async () => {
     const wrapper = getNormalAutoCompleteMount(AutoComplete);
     wrapper.find('input').trigger('focus');
     await wrapper.vm.$nextTick();
     const tSelectOptionDom = document.querySelectorAll('.t-select-option');
-    expect(tSelectOptionDom.length).toBe(3);
+    expect(tSelectOptionDom.length).toBe(5);
     // remove nodes from document to avoid influencing following test cases
     tSelectOptionDom.forEach((node) => node.remove());
-    document.querySelectorAll('.t-popup').forEach((node) => node.remove());
+  });
+  it('props.options: expect empty options with no panel', async () => {
+    const wrapper = getNormalAutoCompleteMount(AutoComplete);
+    wrapper.find('input').trigger('focus');
+    await wrapper.vm.$nextTick();
+    const tAutocompletePanelDom = document.querySelectorAll('.t-autocomplete__panel');
+    // remove nodes from document to avoid influencing following test cases
+    tAutocompletePanelDom.forEach((node) => node.remove());
+  });
+  it('props.options: defined option list with slots.option', async () => {
+    const wrapper = getOptionSlotAutoCompleteMount(AutoComplete, {
+      popupProps: { overlayClassName: 'option-slot-class-name' },
+    });
+    wrapper.find('input').trigger('focus');
+    await wrapper.vm.$nextTick();
+    const optionSlotClassNameCustomSlotOptionDom = document.querySelector(
+      '.option-slot-class-name .custom-slot-option',
+    );
+    expect(optionSlotClassNameCustomSlotOptionDom.textContent).toBe('First Keyword');
+    // remove nodes from document to avoid influencing following test cases
+    optionSlotClassNameCustomSlotOptionDom.remove();
+    document.querySelectorAll('.t-select-option').forEach((node) => node.remove());
   });
 
   it('props.panelBottomContent works fine', async () => {
@@ -283,6 +305,27 @@ describe('AutoComplete Component', () => {
     });
     const domWrapper = wrapper.find('input');
     expect(domWrapper.attributes('placeholder')).toBe('type keyword to search');
+  });
+
+  it('props.popupProps works fine', async () => {
+    const wrapper = getNormalAutoCompleteMount(AutoComplete, { popupProps: { overlayClassName: 'custom-class-name' } });
+    wrapper.find('input').trigger('focus');
+    await wrapper.vm.$nextTick();
+    const customClassNameDom = document.querySelector('.custom-class-name');
+    expect(customClassNameDom).toBeDefined();
+    // remove node in document to avoid influencing following test cases
+    customClassNameDom?.remove();
+  });
+  it('props.popupProps works fine', async () => {
+    const wrapper = getNormalAutoCompleteMount(AutoComplete, {
+      popupProps: { overlayInnerClassName: 'custom-class-name' },
+    });
+    wrapper.find('input').trigger('focus');
+    await wrapper.vm.$nextTick();
+    const customClassNameDom = document.querySelector('.custom-class-name');
+    expect(customClassNameDom).toBeDefined();
+    // remove node in document to avoid influencing following test cases
+    customClassNameDom?.remove();
   });
 
   it('props.readonly works fine', () => {
@@ -434,5 +477,54 @@ describe('AutoComplete Component', () => {
     expect(wrapper.find('.t-is-focused').exists()).toBeTruthy();
     expect(onFocusFn).toHaveBeenCalled(1);
     expect(onFocusFn.mock.calls[0][0].e.type).toBe('focus');
+  });
+
+  it('events.select works fine', async () => {
+    const onSelectFn1 = vi.fn();
+    const wrapper = getNormalAutoCompleteMount(
+      AutoComplete,
+      { popupProps: { overlayClassName: 'select-event-class-name' } },
+      { select: onSelectFn1 },
+    );
+    wrapper.find('input').trigger('focus');
+    await wrapper.vm.$nextTick();
+    document.querySelector('.select-event-class-name .t-select-option').click();
+    await wrapper.vm.$nextTick();
+    document.querySelectorAll('.t-select-option').forEach((node) => node.remove());
+    expect(onSelectFn1).toHaveBeenCalled(1);
+    expect(onSelectFn1.mock.calls[0][0]).toBe('FirstKeyword');
+    expect(onSelectFn1.mock.calls[0][1].e.type).toBe('click');
+  });
+  it('events.select: keyboard operations: ArrowDown & ArrowUp & Enter', async () => {
+    const onSelectFn6 = vi.fn();
+    const wrapper = getNormalAutoCompleteMount(AutoComplete, {}, { select: onSelectFn6 });
+    wrapper.find('input').trigger('focus');
+    await wrapper.vm.$nextTick();
+    simulateKeydownEvent(document, 'ArrowDown');
+    await wrapper.vm.$nextTick();
+    const domWrapper1 = document.querySelector('.t-select-option:first-child');
+    expect(domWrapper1.classList.contains('t-select-option--hover')).toBeTruthy();
+    simulateKeydownEvent(document, 'ArrowDown');
+    await wrapper.vm.$nextTick();
+    const domWrapper2 = document.querySelector('.t-select-option:nth-child(2)');
+    expect(domWrapper2.classList.contains('t-select-option--hover')).toBeTruthy();
+    simulateKeydownEvent(document, 'ArrowUp');
+    await wrapper.vm.$nextTick();
+    const domWrapper3 = document.querySelector('.t-select-option:first-child');
+    expect(domWrapper3.classList.contains('t-select-option--hover')).toBeTruthy();
+    simulateKeydownEvent(document, 'ArrowUp');
+    await wrapper.vm.$nextTick();
+    const domWrapper4 = document.querySelector('.t-select-option:nth-child(5)');
+    expect(domWrapper4.classList.contains('t-select-option--hover')).toBeTruthy();
+    simulateKeydownEvent(document, 'ArrowDown');
+    await wrapper.vm.$nextTick();
+    const domWrapper5 = document.querySelector('.t-select-option:first-child');
+    expect(domWrapper5.classList.contains('t-select-option--hover')).toBeTruthy();
+    simulateKeydownEvent(document, 'Enter');
+    await wrapper.vm.$nextTick();
+    document.querySelectorAll('.t-select-option').forEach((node) => node.remove());
+    expect(onSelectFn6).toHaveBeenCalled(1);
+    expect(onSelectFn6.mock.calls[0][0]).toBe('FirstKeyword');
+    expect(onSelectFn6.mock.calls[0][1].e.type).toBe('keydown');
   });
 });

@@ -14,6 +14,12 @@ export function getNormalAutoCompleteMount(AutoComplete, propsData = {}, listene
       text: 'SecondKeyword',
     },
     'ThirdKeyword',
+    {
+      label: 'READONLY_KEYWORD',
+    },
+    {
+      text: 'DISABLED_KEYWORD',
+    },
   ];
 
   const id = propsData.vue2AttachTo || 'auto-complete-test';
@@ -30,6 +36,29 @@ export function getNormalAutoCompleteMount(AutoComplete, propsData = {}, listene
     },
     listeners,
   });
+}
+
+export function getOptionSlotAutoCompleteMount(AutoComplete, props, events) {
+  const options = ['First', 'Second'];
+  createElementById();
+  return mount(
+    {
+      render() {
+        return (
+          <AutoComplete
+            value=""
+            options={options}
+            props={props}
+            on={events}
+            scopedSlots={{
+              option: ({ option }) => <div class="custom-slot-option">{`${option.text} Keyword`}</div>,
+            }}
+          />
+        );
+      },
+    },
+    { attachTo: '#focus-dom' },
+  );
 }
 
 export default getNormalAutoCompleteMount;

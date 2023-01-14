@@ -7,6 +7,7 @@ import { CommonClassNameType } from '../hooks/useCommonClassName';
 import { AutoCompleteOptionObj, TdAutoCompleteProps } from './type';
 import log from '../_common/js/log';
 import { usePrefixClass } from '../hooks/useConfig';
+import { on, off } from '../utils/dom';
 
 export default defineComponent({
   name: 'AutoCompleteOptionList',
@@ -92,13 +93,21 @@ export default defineComponent({
       }
     };
 
+    const addKeyboardListener = () => {
+      on(document, 'keydown', onKeyInnerPress);
+    };
+
+    const removeKeyboardListener = () => {
+      off(document, 'keydown', onKeyInnerPress);
+    };
+
     watch(
       () => props.popupVisible,
       () => {
         if (props.popupVisible) {
-          document.addEventListener('keydown', onKeyInnerPress);
+          addKeyboardListener();
         } else {
-          document.removeEventListener('keydown', onKeyInnerPress);
+          removeKeyboardListener();
         }
       },
       { immediate: true },
@@ -115,7 +124,7 @@ export default defineComponent({
     );
 
     onBeforeMount(() => {
-      document.removeEventListener('keydown', onKeyInnerPress);
+      removeKeyboardListener();
     });
 
     return {
@@ -124,6 +133,8 @@ export default defineComponent({
       optionClasses,
       active,
       tOptions,
+      addKeyboardListener,
+      removeKeyboardListener,
       onOptionClick,
     };
   },

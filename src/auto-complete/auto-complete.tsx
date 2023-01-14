@@ -1,9 +1,9 @@
 import {
-  computed, ref, defineComponent, toRefs,
+  computed, ref, defineComponent, toRefs, nextTick,
 } from '@vue/composition-api';
 import props from './props';
 import { TdAutoCompleteProps } from './type';
-import Input, { InputProps } from '../input';
+import Input, { InputProps, TdInputProps } from '../input';
 import Popup, { PopupProps } from '../popup';
 import useCommonClassName from '../hooks/useCommonClassName';
 import AutoCompleteOptionList from './option-list';
@@ -24,6 +24,7 @@ export default defineComponent({
     const { global } = useConfig('input');
 
     const popupVisible = ref();
+    const optionListRef = ref();
 
     const getOverlayStyle = (trigger: HTMLElement, popupElement: HTMLElement) => {
       const triggerWidth = trigger.getBoundingClientRect().width || trigger.offsetWidth || trigger.clientWidth;
@@ -50,7 +51,7 @@ export default defineComponent({
       return classes;
     });
 
-    const onInputChange = (value: string, context: { e?: InputEvent | MouseEvent }) => {
+    const onInputChange: TdInputProps['onChange'] = (value, context) => {
       setTValue(value, context);
     };
 
@@ -67,6 +68,9 @@ export default defineComponent({
       popupVisible.value = true;
       emit('focus', { ...context, value });
       props.onFocus?.({ ...context, value });
+      nextTick(() => {
+        optionListRef.value?.addKeyboardListener();
+      });
     };
 
     const onInnerBlur: InputProps['onBlur'] = (value, context) => {
@@ -129,6 +133,7 @@ export default defineComponent({
       inputListeners,
       tValue,
       popupVisible,
+      optionListRef,
       onPopupVisibleChange,
       getOverlayStyle,
       onInnerSelect,
@@ -154,6 +159,7 @@ export default defineComponent({
     // 联想词列表
     const listContent = (
       <AutoCompleteOptionList
+        ref="optionListRef"
         value={this.tValue}
         options={this.options}
         size={this.size}
