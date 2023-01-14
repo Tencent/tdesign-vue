@@ -155,14 +155,24 @@ describe('AutoComplete Component', () => {
     tSelectOptionDom.forEach((node) => node.remove());
   });
   it('props.options: expect empty options with no panel', async () => {
-    const wrapper = getNormalAutoCompleteMount(AutoComplete);
+    // Vue2 need attachTo to trigger `focus` event. https://v1.test-utils.vuejs.org/api/wrapper/#trigger
+    createElementById();
+    const wrapper = mount(
+      {
+        render() {
+          return <AutoComplete></AutoComplete>;
+        },
+      },
+      { attachTo: '#focus-dom' },
+    );
     wrapper.find('input').trigger('focus');
     await wrapper.vm.$nextTick();
     const tAutocompletePanelDom = document.querySelectorAll('.t-autocomplete__panel');
+    expect(tAutocompletePanelDom.length).toBe(0);
     // remove nodes from document to avoid influencing following test cases
     tAutocompletePanelDom.forEach((node) => node.remove());
   });
-  it('props.options: defined option list with slots.option', async () => {
+  it('props.options: define one option', async () => {
     const wrapper = getOptionSlotAutoCompleteMount(AutoComplete, {
       popupProps: { overlayClassName: 'option-slot-class-name' },
     });
