@@ -1,11 +1,9 @@
 import { mount } from '@vue/test-utils';
+import { createElementById } from '../../../test/utils';
 
-function createElementById(vue2AttachTo) {
-  const div = document.createElement('div');
-  div.id = vue2AttachTo;
-  document.body.appendChild(div);
-}
-
+// Vue2 触发 focus 等特殊事件，需要 attachTo。
+// trigger 文档：https://v1.test-utils.vuejs.org/api/wrapper/#trigger
+// attachTo 文档：https://v1.test-utils.vuejs.org/api/options.html#attachto
 export function getNormalAutoCompleteMount(AutoComplete, propsData = {}, listeners) {
   const options = [
     'FirstKeyword',
@@ -16,14 +14,16 @@ export function getNormalAutoCompleteMount(AutoComplete, propsData = {}, listene
       text: 'SecondKeyword',
     },
     'ThirdKeyword',
+    {
+      label: 'READONLY_KEYWORD',
+    },
+    {
+      text: 'DISABLED_KEYWORD',
+    },
   ];
 
-  // Vue2 触发 focus 等特殊事件，需要 attachTo。
-  // trigger 文档：https://v1.test-utils.vuejs.org/api/wrapper/#trigger
-  // attachTo 文档：https://v1.test-utils.vuejs.org/api/options.html#attachto
   const id = propsData.vue2AttachTo || 'auto-complete-test';
   createElementById(id);
-
   // eslint-disable-next-line
   delete propsData.vue2AttachTo;
 
@@ -36,6 +36,29 @@ export function getNormalAutoCompleteMount(AutoComplete, propsData = {}, listene
     },
     listeners,
   });
+}
+
+export function getOptionSlotAutoCompleteMount(AutoComplete, props, events) {
+  const options = ['First', 'Second'];
+  createElementById();
+  return mount(
+    {
+      render() {
+        return (
+          <AutoComplete
+            value=""
+            options={options}
+            props={props}
+            on={events}
+            scopedSlots={{
+              option: ({ option }) => <div class="custom-slot-option">{`${option.text} Keyword`}</div>,
+            }}
+          />
+        );
+      },
+    },
+    { attachTo: '#focus-dom' },
+  );
 }
 
 export default getNormalAutoCompleteMount;
