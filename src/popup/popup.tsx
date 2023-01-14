@@ -435,7 +435,7 @@ export default mixins(classPrefixMixins).extend({
         }}
         parent={this}
         visible={visible}
-        attach={this.attach}
+        attach={() => ({ attach: this.attach, current: this.$el })}
       >
         <transition
           slot="content"
