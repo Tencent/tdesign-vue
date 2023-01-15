@@ -8,19 +8,26 @@
             <span>默认占位</span>
             <t-image
               src="https://tdesign.gtimg.com/demo/demo-image-1.png"
-              :key.sync="loadingCount"
+              :key="loadingCount"
               :style="{ width: '284px', height: '160px' }"
             />
-            <t-button variant="outline" :icon="renderIcon" @click="loadCount = loadCount + 1"> 重演 loading </t-button>
+            <t-button variant="outline" @click="loadingCount = loadingCount + 3">
+              <template #icon><refresh-icon /></template>
+              重演 loading
+            </t-button>
           </t-space>
+
           <t-space direction="vertical">
             <span>自定义占位</span>
             <t-image
-              :key.sync="loadingCount"
+              :key="loadingCount"
               src="https://tdesign.gtimg.com/demo/demo-image-1.png"
               :style="{ width: '284px', height: '160px' }"
-              :loading="renderCustomIcon"
-            />
+            >
+              <template #loading>
+                <qrcode-icon />
+              </template>
+            </t-image>
           </t-space>
         </t-space>
       </div>
@@ -29,16 +36,21 @@
         <t-space>
           <t-space direction="vertical">
             <span>默认错误</span>
-            <t-image src="" :key.sync="errorCount" :style="{ width: '284px', height: '160px' }" />
-            <t-button variant="outline" :icon="renderIcon" @click="errorCount = errorCount + 1"> 重演 error </t-button>
+            <t-image src="" :key="errorCount" :style="{ width: '284px', height: '160px' }" />
+
+            <t-button variant="outline" @click="errorCount = errorCount + 3">
+              <template #icon><refresh-icon /></template>
+              重演 error
+            </t-button>
           </t-space>
+
           <t-space direction="vertical">
             <span>自定义错误</span>
             <t-image
               src=""
-              :key.sync="errorCount"
+              :key="errorCount"
               :style="{ width: '284px', height: '160px' }"
-              :error="renderCustomIcon"
+              :error="renderErrorContent"
             />
           </t-space>
         </t-space>
@@ -49,19 +61,19 @@
 
 <script lang="jsx">
 import Vue from 'vue';
-import { RefreshIcon, ImageErrorIcon } from 'tdesign-icons-vue';
+import { RefreshIcon, ImageErrorIcon, QrcodeIcon } from 'tdesign-icons-vue';
 
 export default Vue.extend({
+  components: { RefreshIcon, QrcodeIcon },
   data() {
     return {
       loadingCount: 0,
       errorCount: 0,
-      renderCustomIcon: <ImageErrorIcon size="24" />,
     };
   },
   methods: {
-    renderIcon() {
-      return <RefreshIcon />;
+    renderErrorContent() {
+      return <ImageErrorIcon size="24" />;
     },
   },
 });

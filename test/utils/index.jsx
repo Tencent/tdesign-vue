@@ -18,6 +18,11 @@ export function createElementById(vue2AttachTo = 'focus-dom') {
   document.body.appendChild(div);
 }
 
+// event 可选值：load/error
+export function simulateImageEvent(dom, event) {
+  dom.dispatchEvent(new Event(event));
+}
+
 export function simulateKeydownEvent(dom, type) {
   let event;
   switch (type) {

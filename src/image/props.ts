@@ -13,8 +13,6 @@ export default {
     type: String,
     default: '',
   },
-  /** 禁用状态，图片不响应鼠标事件 */
-  disabled: Boolean,
   /** 自定义图片加载失败状态下的显示内容 */
   error: {
     type: [String, Function] as PropType<TdImageProps['error']>,
@@ -38,7 +36,7 @@ export default {
   },
   /** 图片上方的浮层内容 */
   overlayContent: {
-    type: Function as PropType<TdImageProps['overlayContent']>,
+    type: [String, Function] as PropType<TdImageProps['overlayContent']>,
   },
   /** 浮层 `overlayContent` 出现的时机 */
   overlayTrigger: {
