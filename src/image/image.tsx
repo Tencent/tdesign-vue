@@ -1,4 +1,4 @@
-import { defineComponent, ref } from '@vue/composition-api';
+import { defineComponent, ref, watch } from '@vue/composition-api';
 import omit from 'lodash/omit';
 import { ImageErrorIcon, ImageIcon } from 'tdesign-icons-vue';
 import observe from '../_common/js/utils/observe';
@@ -38,6 +38,17 @@ export default defineComponent({
 
     const { classPrefix } = useConfig();
     const imageRef = ref<HTMLElement>(null);
+
+    const imageSrc = ref(props.src);
+    watch(
+      () => props.src,
+      () => {
+        hasError.value = false;
+        isLoaded.value = false;
+        imageSrc.value = props.src;
+      },
+    );
+
     const shouldLoad = ref(!lazy);
     const handleLoadImage = () => {
       shouldLoad.value = true;
@@ -73,6 +84,7 @@ export default defineComponent({
       hasMouseEvent,
       handleToggleOverlay,
       shouldShowOverlay,
+      imageSrc,
       hasError,
       shouldLoad,
       handleError,
@@ -137,7 +149,7 @@ export default defineComponent({
         {(this.hasError || !this.shouldLoad) && <div class={`${this.classPrefix}-image`} />}
         {!(this.hasError || !this.shouldLoad) && (
           <img
-            src={this.src}
+            src={this.imageSrc}
             onError={this.handleError}
             onLoad={this.handleLoad}
             class={[
