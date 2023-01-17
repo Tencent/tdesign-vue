@@ -98,7 +98,7 @@ export default Vue.extend({
       this.content = new (this.$root.constructor as any)({
         parent,
         render() {
-          return <div>{parent.$slots.content}</div>;
+          return parent.$slots.content;
         },
         mounted() {
           parent.$emit('contentMounted');
