@@ -15,7 +15,7 @@ import log from '../../_common/js/log';
 dayjs.extend(customParseFormat);
 
 export default defineComponent({
-  name: 'TimePickerPanel',
+  name: 'TTimePickerPanel',
   props: {
     ...panelProps(),
     handleConfirmClick: Function,

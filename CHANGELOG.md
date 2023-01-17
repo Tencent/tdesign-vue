@@ -5,6 +5,31 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.0.5 `2023-01-17` 
+### 🚀 Features
+- `Avatar`: @chaishi ([#2032](https://github.com/Tencent/tdesign-vue/pull/2032))
+  - 组件内部支持使用 Image 组件渲染图片
+  -  新增 `avatar.imageProps`，用于透传图片组件全部属性。插槽也和 Image 组件保持同名
+  - 支持使用 `props.default/props.content` 定义内容
+  - 支持 `@error` 监听事件，并新增事件参数 `{ e: Event }`
+- `Image`: 支持 `@load` 和 `@error` 监听事件，并新增事件参数 `{ e: Event }` @chaishi ([#2032](https://github.com/Tencent/tdesign-vue/pull/2032))
+- `Input`: @chaishi ([#2041](https://github.com/Tencent/tdesign-vue/pull/2041))
+  - `change` 事件新增 `trigger` 参数，用于表示触发本次数据变化的场景
+  - 去除非必要的类名 `t-is-default`
+  -  新增 click 点击事件
+- `Popup`: 移除多余 `div` 包裹元素 @ikeq ([#2047](https://github.com/Tencent/tdesign-vue/pull/2047))
+### 🐞 Bug Fixes
+- `AutoComplete`: 修复初次聚焦，键盘事件无法上下选中问题 @chaishi ([#2041](https://github.com/Tencent/tdesign-vue/pull/2041))
+- `Image`: @chaishi ([#2043](https://github.com/Tencent/tdesign-vue/pull/2043))
+  - 修复无法使用 `loading` 自定义加载状态节点问题
+  - 修复无法使用 `error` 自定义错误状态节点问题
+  - 修复无法使用 `overlayContent ` 自定义浮层问题
+  - 修复无法使用 `placeholder` 自定义图片占位问题
+  - 修复动态修改src值图片无法显示问题 @sechi747 ([#2036](https://github.com/Tencent/tdesign-vue/pull/2036))
+- `Space`: 修复无法显示纯文本元素问题 @chaishi ([#2043](https://github.com/Tencent/tdesign-vue/pull/2043))
+- `TimePicker`: 修复 TimePickerPanel 没有自动注册的问题 @uyarn ([#2049](https://github.com/Tencent/tdesign-vue/pull/2049))
+- `Menu`: 修正菜单项 active 态文字颜色 @xiaosansiji ([common #1122](https://github.com/Tencent/tdesign-common/pull/1122))
+
 ## 🌈 1.0.4 `2023-01-10` 
 ### 🚀 Features
 - `Select`:

@@ -92,7 +92,7 @@ export default {
   /** 输入框的值，即当前指定的联想词 */
   value: {
     type: String,
-    default: '',
+    default: undefined,
   },
   /** 输入框的值，即当前指定的联想词，非受控属性 */
   defaultValue: {

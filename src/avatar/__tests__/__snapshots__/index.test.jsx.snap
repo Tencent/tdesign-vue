@@ -6,10 +6,20 @@ exports[`Avatar > :props > :image 1`] = `
 <div
   class="t-avatar t-avatar--circle"
 >
-  <img
-    alt=""
-    src="https://tdesign.gtimg.com/site/avatar.jpg"
-  />
+  <div
+    class="t-image__wrapper t-image__wrapper--shape-square"
+  >
+    <img
+      alt=""
+      class="t-image t-image--fit-fill t-image--position-center"
+      src="https://tdesign.gtimg.com/site/avatar.jpg"
+    />
+    <div
+      class="t-image__loading"
+    >
+       
+    </div>
+  </div>
 </div>
 `;
 
@@ -35,14 +45,21 @@ exports[`Avatar > :props > :shape 1`] = `
 exports[`Avatar > :props > :size 1`] = `
 <div>
   <div
-    class="t-avatar t-avatar--circle"
+    class="t-avatar t-size-s t-avatar--circle"
   >
     <span>
       Avatar
     </span>
   </div>
   <div
-    class="t-avatar t-avatar--circle"
+    class="t-avatar t-size-m t-avatar--circle"
+  >
+    <span>
+      W
+    </span>
+  </div>
+  <div
+    class="t-avatar t-size-l t-avatar--circle"
   >
     <span>
       W
@@ -50,13 +67,7 @@ exports[`Avatar > :props > :size 1`] = `
   </div>
   <div
     class="t-avatar t-avatar--circle"
-  >
-    <span>
-      W
-    </span>
-  </div>
-  <div
-    class="t-avatar t-avatar--circle"
+    style="width: 80px; height: 80px; font-size: 40px;"
   >
     <span>
       Avatar
@@ -79,14 +90,14 @@ exports[`AvatarGroup > :props > :cascading 1`] = `
     class="t-avatar-group t-avatar--offset-right"
   >
     <div
-      class="t-avatar t-avatar--circle"
+      class="t-avatar t-size-m t-avatar--circle"
     >
       <span>
         W
       </span>
     </div>
     <div
-      class="t-avatar t-avatar--circle"
+      class="t-avatar t-size-m t-avatar--circle"
     >
       <span>
         W
@@ -97,14 +108,14 @@ exports[`AvatarGroup > :props > :cascading 1`] = `
     class="t-avatar-group t-avatar--offset-left"
   >
     <div
-      class="t-avatar t-avatar--circle"
+      class="t-avatar t-size-m t-avatar--circle"
     >
       <span>
         W
       </span>
     </div>
     <div
-      class="t-avatar t-avatar--circle"
+      class="t-avatar t-size-m t-avatar--circle"
     >
       <span>
         W
@@ -120,14 +131,14 @@ exports[`AvatarGroup > :props > :collapseAvatar 1`] = `
     class="t-avatar-group t-avatar--offset-right"
   >
     <div
-      class="t-avatar t-avatar--circle"
+      class="t-avatar t-size-m t-avatar--circle"
     >
       <span>
         W
       </span>
     </div>
     <div
-      class="t-avatar t-avatar--circle"
+      class="t-avatar t-size-m t-avatar--circle"
     >
       <span>
         W
@@ -138,14 +149,14 @@ exports[`AvatarGroup > :props > :collapseAvatar 1`] = `
     class="t-avatar-group t-avatar--offset-left"
   >
     <div
-      class="t-avatar t-avatar--circle"
+      class="t-avatar t-size-m t-avatar--circle"
     >
       <span>
         W
       </span>
     </div>
     <div
-      class="t-avatar t-avatar--circle"
+      class="t-avatar t-size-m t-avatar--circle"
     >
       <span>
         W
@@ -161,21 +172,21 @@ exports[`AvatarGroup > :props > :max 1`] = `
     class="t-avatar-group t-avatar--offset-right"
   >
     <div
-      class="t-avatar t-avatar--circle"
+      class="t-avatar t-size-m t-avatar--circle"
     >
       <span>
         W
       </span>
     </div>
     <div
-      class="t-avatar t-avatar--circle"
+      class="t-avatar t-size-m t-avatar--circle"
     >
       <span>
         W
       </span>
     </div>
     <div
-      class="t-avatar t-avatar--circle"
+      class="t-avatar t-size-m t-avatar--circle t-avatar__collapse"
     >
       <span>
         +1
@@ -189,23 +200,24 @@ exports[`AvatarGroup > :props > :placement 1`] = `
 <div>
   <div
     class="t-avatar-group t-avatar--offset-right"
+    placement="bottom"
   >
     <div
-      class="t-avatar t-avatar--circle"
+      class="t-avatar t-size-m t-avatar--circle"
     >
       <span>
         W
       </span>
     </div>
     <div
-      class="t-avatar t-avatar--circle"
+      class="t-avatar t-size-m t-avatar--circle"
     >
       <span>
         W
       </span>
     </div>
     <div
-      class="t-avatar t-avatar--circle"
+      class="t-avatar t-size-m t-avatar--circle t-avatar__collapse"
     >
       <span>
         +1
@@ -221,21 +233,21 @@ exports[`AvatarGroup > :props > :popupProps 1`] = `
     class="t-avatar-group t-avatar--offset-right"
   >
     <div
-      class="t-avatar t-avatar--circle"
+      class="t-avatar t-size-m t-avatar--circle"
     >
       <span>
         W
       </span>
     </div>
     <div
-      class="t-avatar t-avatar--circle"
+      class="t-avatar t-size-m t-avatar--circle"
     >
       <span>
         W
       </span>
     </div>
     <div
-      class="t-avatar t-avatar--circle"
+      class="t-avatar t-size-m t-avatar--circle t-avatar__collapse"
     >
       <span>
         +1
@@ -251,21 +263,21 @@ exports[`AvatarGroup > :props > :size 1`] = `
     class="t-avatar-group t-avatar--offset-right"
   >
     <div
-      class="t-avatar t-avatar--circle"
+      class="t-avatar t-size-s t-avatar--circle"
     >
       <span>
         W
       </span>
     </div>
     <div
-      class="t-avatar t-avatar--circle"
+      class="t-avatar t-size-s t-avatar--circle"
     >
       <span>
         W
       </span>
     </div>
     <div
-      class="t-avatar t-avatar--circle"
+      class="t-avatar t-size-s t-avatar--circle"
     >
       <span>
         W

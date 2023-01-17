@@ -1,7 +1,7 @@
 <template>
   <t-space size="large">
     <t-avatar :icon="icon"></t-avatar>
-    <t-avatar :image="image" :hideOnLoadFailed="false"></t-avatar>
+    <t-avatar :image="image" :hideOnLoadFailed="false" @error="onError"></t-avatar>
     <t-avatar>W</t-avatar>
   </t-space>
 </template>
@@ -18,6 +18,11 @@ export default {
   computed: {
     icon() {
       return () => <UserIcon />;
+    },
+  },
+  methods: {
+    onError(params) {
+      console.log(params);
     },
   },
 };
