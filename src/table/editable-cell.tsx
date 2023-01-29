@@ -248,19 +248,9 @@ export default defineComponent({
       }
     };
 
-    const documentClickHandler = (e: PointerEvent) => {
+    const documentClickHandler = () => {
       if (!col.value.edit || !col.value.edit.component) return;
       if (!isEdit.value) return;
-      // @ts-ignore
-      if (e.path?.includes(tableEditableCellRef.value?.$el)) return;
-      // @ts-ignore 如果点击到 Popup 复层也直接返回
-      for (let i = 0, len = e.path.length; i < len; i++) {
-        // @ts-ignore
-        const node = e.path[i];
-        if (node.classList?.value?.includes('popup__content')) {
-          return;
-        }
-      }
       const outsideAbortEvent = col.value.edit.onEdited;
       updateAndSaveAbort(outsideAbortEvent, {
         ...cellParams.value,
@@ -296,10 +286,6 @@ export default defineComponent({
     watch(
       cellValue,
       (cellValue) => {
-        // let val = cellValue;
-        // if (typeof val === 'object' && val !== null) {
-        //   val = val instanceof Array ? [...val] : { ...val };
-        // }
         editValue.value = cellValue;
       },
       { immediate: true },
