@@ -248,7 +248,7 @@ export default defineComponent({
       }
     };
 
-    const documentClickHandler = (e: PointerEvent) => {
+    const documentClickHandler = () => {
       if (!col.value.edit || !col.value.edit.component) return;
       if (!isEdit.value) return;
       const outsideAbortEvent = col.value.edit.onEdited;
