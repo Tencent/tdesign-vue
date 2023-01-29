@@ -1,27 +1,42 @@
-import { Ref, onMounted, onBeforeUnmount } from '@vue/composition-api';
+import { Ref, watch, onBeforeUnmount } from '@vue/composition-api';
 
 export default function useResizeObserver(
   container: Ref<HTMLElement>,
-  callback: (data: [ResizeObserverEntry]) => void,
+  callback: (data: ResizeObserverEntry[]) => void,
 ) {
+  const isSupport = window && window.ResizeObserver;
+  if (!isSupport) {
+    const env = process.env.NODE_ENV;
+    !['test-unit', 'test-snap'].includes(env) && console.warn('ResizeObserver is not supported in this browser');
+    return;
+  }
+
   let containerObserver: ResizeObserver = null;
 
-  const observeContainer = () => {
-    if (!container || !container.value || !window || !window.ResizeObserver) {
-      containerObserver?.unobserve(container.value);
-      containerObserver?.disconnect();
-    } else {
-      containerObserver = new ResizeObserver(callback);
-      containerObserver.observe(container.value);
-    }
+  const cleanupObserver = () => {
+    if (!containerObserver) return;
+    containerObserver.unobserve(container.value);
+    containerObserver.disconnect();
+    containerObserver = null;
   };
 
-  onMounted(() => {
-    observeContainer();
-  });
+  const addObserver = (el: HTMLElement) => {
+    containerObserver = new ResizeObserver(callback);
+    containerObserver.observe(el);
+  };
+
+  if (container) {
+    watch(
+      container,
+      (el) => {
+        cleanupObserver();
+        el && addObserver(el);
+      },
+      { immediate: true, flush: 'post' },
+    );
+  }
 
   onBeforeUnmount(() => {
-    containerObserver?.unobserve(container.value);
-    containerObserver?.disconnect();
+    cleanupObserver();
   });
 }
