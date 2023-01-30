@@ -238,7 +238,7 @@ export default defineComponent({
             return filter;
           }
         }
-        return node.data[realLabel.value].indexOf(value) >= 0;
+        return node.data[realLabel.value]?.indexOf(value) >= 0;
       };
       props.onSearch?.(searchValue);
       emit('search', searchValue);
