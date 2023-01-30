@@ -19,6 +19,12 @@ export default function useItemEvents(props: TypeTreeItemProps, context: SetupCo
   };
 
   let clicked = false;
+
+  const handleMousedown = (evt: MouseEvent) => {
+    // 在mousedown阶段阻止冒泡 应用于处理如展开阻止下拉框失焦等场景
+    evt.preventDefault();
+  };
+
   const handleClick = (evt: MouseEvent) => {
     const { expandOnClickNode } = props;
     const srcTarget = evt.target as HTMLElement;
@@ -50,5 +56,6 @@ export default function useItemEvents(props: TypeTreeItemProps, context: SetupCo
   return {
     handleChange,
     handleClick,
+    handleMousedown,
   };
 }
