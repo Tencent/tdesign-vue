@@ -47,7 +47,7 @@ export type OptionData = {
 export type TreeOptionData<T = string | number> = {
   children?: Array<TreeOptionData<T>>;
   /** option label content */
-  label?: TNode;
+  label?: string | TNode;
   /** option search text */
   text?: string;
   /** option value */
