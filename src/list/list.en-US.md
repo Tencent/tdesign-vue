@@ -29,13 +29,13 @@ name | type | default | description | required
 action | String / Slot / Function | - | Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 content | String / Slot / Function | - | Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 default | String / Slot / Function | - | Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-onClick | Function |  | Typescript：`(e: MouseEvent) => void`<br/>click event | N
+onClick | Function |  | Typescript：`(context: { e: MouseEvent }) => void`<br/> | N
 
 ### ListItem Events
 
 name | params | description
 -- | -- | --
-click | `(e: MouseEvent)` | click event
+click | `(context: { e: MouseEvent })` | \-
 
 ### ListItemMeta Props
 

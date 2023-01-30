@@ -11,8 +11,8 @@ export default mixins(classPrefixMixins).extend({
   props,
   methods: {
     handleClick(e: MouseEvent): void {
-      this.$emit('click', e);
-      this.onClick?.(e);
+      this.$emit('click', { e });
+      this.onClick?.({ e });
     },
   },
   render(): VNode {

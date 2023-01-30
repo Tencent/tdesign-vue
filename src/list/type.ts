@@ -64,11 +64,9 @@ export interface TdListItemProps {
    */
   default?: string | TNode;
   /**
-   * 点击事件
-   * @param e
-   * @returns
+   * 点击时触发
    */
-  onClick?: (e: MouseEvent) => void;
+  onClick?: (context: { e: MouseEvent }) => void;
 }
 
 export interface TdListItemMetaProps {
