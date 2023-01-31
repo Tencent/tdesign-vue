@@ -43422,7 +43422,7 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/icon.vue 1`] = `
                   </span>
                 </button>
                 <button
-                  class="t-button t-button--variant-base t-button--theme-primary t-dialog__confirm"
+                  class="t-button t-button--variant-base t-button--theme-info t-dialog__confirm"
                   type="button"
                 >
                   <span
@@ -43514,7 +43514,7 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/icon.vue 1`] = `
                   </span>
                 </button>
                 <button
-                  class="t-button t-button--variant-base t-button--theme-primary t-dialog__confirm"
+                  class="t-button t-button--variant-base t-button--theme-warning t-dialog__confirm"
                   type="button"
                 >
                   <span
@@ -43606,7 +43606,7 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/icon.vue 1`] = `
                   </span>
                 </button>
                 <button
-                  class="t-button t-button--variant-base t-button--theme-primary t-dialog__confirm"
+                  class="t-button t-button--variant-base t-button--theme-danger t-dialog__confirm"
                   type="button"
                 >
                   <span
@@ -43698,7 +43698,7 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/icon.vue 1`] = `
                   </span>
                 </button>
                 <button
-                  class="t-button t-button--variant-base t-button--theme-primary t-dialog__confirm"
+                  class="t-button t-button--variant-base t-button--theme-success t-dialog__confirm"
                   type="button"
                 >
                   <span
@@ -44989,7 +44989,7 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/warning.vue 1`] = `
                   </span>
                 </button>
                 <button
-                  class="t-button t-button--variant-base t-button--theme-primary t-dialog__confirm"
+                  class="t-button t-button--variant-base t-button--theme-info t-dialog__confirm"
                   type="button"
                 >
                   <span
@@ -45084,7 +45084,7 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/warning.vue 1`] = `
                   </span>
                 </button>
                 <button
-                  class="t-button t-button--variant-base t-button--theme-primary t-dialog__confirm"
+                  class="t-button t-button--variant-base t-button--theme-success t-dialog__confirm"
                   type="button"
                 >
                   <span
@@ -45169,7 +45169,7 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/warning.vue 1`] = `
             >
               <div>
                 <button
-                  class="t-button t-button--variant-base t-button--theme-primary t-dialog__confirm"
+                  class="t-button t-button--variant-base t-button--theme-warning t-dialog__confirm"
                   type="button"
                 >
                   <span
@@ -45254,7 +45254,7 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/warning.vue 1`] = `
             >
               <div>
                 <button
-                  class="t-button t-button--variant-base t-button--theme-primary t-dialog__confirm"
+                  class="t-button t-button--variant-base t-button--theme-danger t-dialog__confirm"
                   type="button"
                 >
                   <span
