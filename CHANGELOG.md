@@ -5,6 +5,36 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.0.6 `2023-01-31` 
+### 🚀 Features
+- `ColorPicker`: 切换单色-渐变模式时触发色值及 onChange 变化 @uyarn ([#2056](https://github.com/Tencent/tdesign-vue/pull/2056))
+- `Upload`: @chaishi ([#2058](https://github.com/Tencent/tdesign-vue/pull/2058))
+  - 可拖拽的单图片/单文件上传，支持自定义文件信息内容
+  - 一个请求上传多个文件时，去除重复参数 `file`，保留 `file[0]` `file[1]` 即可，同时新增参数 `length` 表示本次上传文件的数量
+  - onError/onSuccess/onProgress` 添加关键事件参数 `XMLHttpRequest`，用于获取上传请求更详细的信息
+  - `tips` 支持插槽和函数配置
+  - 新增上传请求超时也会执行 `onError`
+  - 支持 `onCancelUpload` 事件
+  - 支持 `mockProgressDuration`，用于设置模拟上传进度间隔时间
+### 🐞 Bug Fixes
+- `SelectInput`: 修复下拉弹窗状态未改变时，重复触发 `onPopupVisibleChange` 事件的问题 @xiaosansiji ([#2050](https://github.com/Tencent/tdesign-vue/pull/2050))
+- `Table`: 修复可编辑单元格无法退出问题 @chaishi ([#2055](https://github.com/Tencent/tdesign-vue/pull/2055))
+- `TreeSelect`: @uyarn ([#2060](https://github.com/Tencent/tdesign-vue/pull/2060))
+  - 修复组件未失焦时触发 blur 事件的问题
+  - 修复搜索选中选项后，保留搜索关键词的问题
+  - 修复搜索状态下，无命中关键词时控制台报错的问题
+- `Tree`: 修复禁用节点文字颜色过淡的问题 @uyarn ([#2060](https://github.com/Tencent/tdesign-vue/pull/2060))
+- `Datepicker`: 修复 dayjs 国际化设置问题 @honkinglin ([#2062](https://github.com/Tencent/tdesign-vue/pull/2062))
+- `Upload`: @chaishi ([#2058](https://github.com/Tencent/tdesign-vue/pull/2058))
+  - 修复 `onSelectChange` 事件第二个参数 `currentSelectedFiles` 不正确问题
+  - 修复 `autoUpload=false` 场景下，即使 `beforeUpload` 函数全部返回 `false` 依然会触发 `onChange` 事件问题
+  - 修复 `data` 为函数时，参数为空的问题，补充参数 `files`
+  - 修复 `theme=image-flow` 时，无法使用 `fileListDisplay` 自定义图片列表的问题
+  - 修复文件数量超出 `max` 时，且没有可继续上传的文件时，依然触发 `onChange` 事件问题
+  - 修复 `theme=file` 或者 `theme=image-flow` 时，`abridgeName` 无效问题
+  - 修复 `theme=image-flow` 且 `autoUpload=false` 时，`onChange` 事件第一个参数丢失 file.url 问题
+  - 修复非自动上传场景 `onChange` 事件第二个参数 `file` 值并非当前文件问题
+
 ## 🌈 1.0.5 `2023-01-17` 
 ### 🚀 Features
 - `Avatar`: @chaishi ([#2032](https://github.com/Tencent/tdesign-vue/pull/2032))
