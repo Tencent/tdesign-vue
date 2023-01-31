@@ -102,4 +102,4 @@ status | String | - | Typescript：` 'success' \| 'fail' \| 'progress' \| 'waiti
 type | String | - | \- | N
 uploadTime | String | - | upload time | N
 url | String | - | \- | N
-`PlainObject` | \- | - | \- | N
+`PlainObject` | \- | - | `PlainObject` is not an attribute of UploadFile，it means you can add and attributes to UploadFile, `type PlainObject = {[key: string]: any}`' | N

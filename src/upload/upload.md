@@ -102,4 +102,4 @@ status | String | - | 文件上传状态：上传成功，上传失败，上传�
 type | String | - | 文件类型 | N
 uploadTime | String | - | 上传时间 | N
 url | String | - | 文件上传成功后的下载/访问地址 | N
-`PlainObject` | \- | - | 继承 `PlainObject` 中的全部 API | N
+`PlainObject` | \- | - | `PlainObject` 不是 UploadFile 中的属性，而表示 UploadFile 本身支持添加任意属性，`type PlainObject = {[key: string]: any}`' | N
