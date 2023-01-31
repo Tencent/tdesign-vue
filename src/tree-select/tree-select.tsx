@@ -71,6 +71,13 @@ export default defineComponent({
       }
     });
 
+    watch(innerVisible, (visible) => {
+      // 关闭popup 清空输入内容
+      if (!visible && props.filterable) {
+        innerInputValue.value && setInnerInputValue('');
+      }
+    });
+
     watch(
       () => props.data,
       async () => {
@@ -164,6 +171,7 @@ export default defineComponent({
       trigger: TreeSelectValueChangeTrigger,
     ) => {
       setTreeSelectValue(valueParam, { node, trigger });
+      setInnerInputValue('');
       changeNodeInfo();
     };
 
@@ -238,7 +246,7 @@ export default defineComponent({
             return filter;
           }
         }
-        return node.data[realLabel.value].indexOf(value) >= 0;
+        return node.data[realLabel.value]?.indexOf(value) >= 0;
       };
       props.onSearch?.(searchValue);
       emit('search', searchValue);

@@ -15,7 +15,7 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
   const classPrefix = usePrefixClass().value;
   const componentName = usePrefixClass('tree').value;
 
-  const { handleClick } = useItemEvents(props, context);
+  const { handleClick, handleMousedown } = useItemEvents(props, context);
   const { renderIcon } = useRenderIcon(props);
   const { renderLabel } = useRenderLabel(props, context);
   const { renderLine } = useRenderLine(props);
@@ -107,6 +107,7 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
         data-value={value}
         data-level={level}
         style={styles}
+        onMousedown={handleMousedown}
         onClick={(evt: MouseEvent) => handleClick(evt)}
         draggable={node.isDraggable()}
         onDragstart={(evt: DragEvent) => handleDragStart(evt)}
