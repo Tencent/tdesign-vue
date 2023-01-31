@@ -42,7 +42,7 @@ export default defineComponent({
 
   render() {
     const renderDragContent = () => {
-      const params = { dragActive: this.dragActive, files: this.displayFiles };
+      const params = { dragActive: this.dragActive || false, files: this.displayFiles };
       return (
         <div
           class={`${this.classPrefix}-upload__dragger ${this.classPrefix}-upload__dragger-center`}

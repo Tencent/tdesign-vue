@@ -28,11 +28,15 @@ export type VmType = Vue | ComponentRenderProxy;
 
 // 同时支持驼峰命名和中划线命名的插槽，示例：value-display 和 valueDisplay
 export function handleSlots(vm: VmType, params: Record<string, any>, name: string) {
+  const finaleParams = h;
+  if (params) {
+    Object.assign(finaleParams, params);
+  }
   // 检查是否存在 驼峰命名 的插槽
-  let node = vm.$scopedSlots[camelCase(name)]?.(params || h);
+  let node = vm.$scopedSlots[camelCase(name)]?.(finaleParams);
   if (node) return node;
   // 检查是否存在 中划线命名 的插槽
-  node = vm.$scopedSlots[kebabCase(name)]?.(params || h);
+  node = vm.$scopedSlots[kebabCase(name)]?.(finaleParams);
   if (node) return node;
   return null;
 }
@@ -112,7 +116,9 @@ export const renderTNodeJSX = (vm: VmType, name: string, options?: ScopedSlotRet
   if (propsNode === true && defaultNode) {
     return handleSlots(vm, params, name) || defaultNode;
   }
-  if (typeof propsNode === 'function') return propsNode(vm.$createElement, params);
+  if (typeof propsNode === 'function') {
+    return propsNode(vm.$createElement, params);
+  }
   const isPropsEmpty = [undefined, params, ''].includes(propsNode);
   // Props 为空，但插槽存在
   if (isPropsEmpty && (vm.$scopedSlots[camelCase(name)] || vm.$scopedSlots[kebabCase(name)])) {

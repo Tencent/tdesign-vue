@@ -45,6 +45,7 @@ export default defineComponent({
 
     const rootClass = computed(() => [`${COMPONENT_NAME.value}`]);
     const wrapClass = computed(() => [
+      COMPONENT_NAME.value,
       `${COMPONENT_NAME.value}-preview-image`,
       {
         [`${classPrefix.value}-is-hide`]: !visibleValue.value,
