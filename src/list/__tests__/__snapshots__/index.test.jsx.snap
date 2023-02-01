@@ -74,15 +74,7 @@ exports[`List > :props > :asyncLoading is load-more 1`] = `
   <div
     class="t-list__load"
   >
-    <div
-      class="t-loading--center t-size-m t-loading t-is-load-more"
-    >
-      <div
-        class="t-loading__text"
-      >
-        点击加载更多
-      </div>
-    </div>
+    <!---->
   </div>
 </div>
 `;
