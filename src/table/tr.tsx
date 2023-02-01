@@ -130,7 +130,14 @@ export function renderCell(
   if (extra?.cellEmptyContent) {
     return isFunction(extra.cellEmptyContent) ? extra.cellEmptyContent(h, params) : extra.cellEmptyContent;
   }
-  if (slots.cellEmptyContent) return slots.cellEmptyContent(params);
+  const hParams = h;
+  Object.assign(hParams, params || {});
+  if (slots.cellEmptyContent) {
+    return slots.cellEmptyContent(hParams);
+  }
+  if (slots['cell-empty-content']) {
+    return slots['cell-empty-content'](hParams);
+  }
   return r;
 }
 
