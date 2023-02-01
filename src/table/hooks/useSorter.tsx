@@ -183,6 +183,16 @@ export default function useSorter(props: TdPrimaryTableProps, { emit, slots }: S
     { immediate: true },
   );
 
+  // async data and default data is empty
+  watch(
+    () => props.data,
+    (val, previousVal) => {
+      if (val.length !== previousVal.length) {
+        originalData.value = props.data;
+      }
+    },
+  );
+
   return {
     renderSortIcon,
   };
