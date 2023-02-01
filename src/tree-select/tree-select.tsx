@@ -171,7 +171,7 @@ export default defineComponent({
       trigger: TreeSelectValueChangeTrigger,
     ) => {
       setTreeSelectValue(valueParam, { node, trigger });
-      setInnerInputValue('');
+      if (props.filterable && innerInputValue) setInnerInputValue('');
       changeNodeInfo();
     };
 

@@ -12,11 +12,15 @@ import {
 
 // 兼容处理插槽名称，同时支持驼峰命名和中划线命名，示例：value-display 和 valueDisplay
 function handleSlots(slots: SetupContext['slots'], name: string, params: Record<string, any>) {
+  const finaleParams = h;
+  if (params) {
+    Object.assign(finaleParams, params);
+  }
   // 检查是否存在 驼峰命名 的插槽
-  let node = slots[camelCase(name)]?.(params);
+  let node = slots[camelCase(name)]?.(finaleParams);
   if (node) return node;
   // 检查是否存在 中划线命名 的插槽
-  node = slots[kebabCase(name)]?.(params);
+  node = slots[kebabCase(name)]?.(finaleParams);
   if (node) return node;
   return null;
 }
