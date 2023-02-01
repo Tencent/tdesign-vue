@@ -1,7 +1,6 @@
 import { SetupContext } from '@vue/composition-api';
 import { usePrefixClass } from '../../hooks/useConfig';
 import { TypeTreeItemProps, TypeEventState } from '../interface';
-
 // 这里封装 tree-item 的一般事件
 // 拖动事件，虚拟滚动事件不要安排到这里
 export default function useItemEvents(props: TypeTreeItemProps, context: SetupContext) {
@@ -19,11 +18,6 @@ export default function useItemEvents(props: TypeTreeItemProps, context: SetupCo
   };
 
   let clicked = false;
-
-  const handleMousedown = (evt: MouseEvent) => {
-    // 在mousedown阶段阻止冒泡 应用于处理如展开阻止下拉框失焦等场景
-    evt.preventDefault();
-  };
 
   const handleClick = (evt: MouseEvent) => {
     const { expandOnClickNode } = props;
@@ -56,6 +50,5 @@ export default function useItemEvents(props: TypeTreeItemProps, context: SetupCo
   return {
     handleChange,
     handleClick,
-    handleMousedown,
   };
 }
