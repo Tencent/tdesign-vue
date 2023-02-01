@@ -5,6 +5,15 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.0.7 `2023-02-01` 
+
+### 🐞 Bug Fixes
+- `Table`:  @chaishi
+    - 修复插槽 `cell-empty-content` 无效问题 ([#2068](https://github.com/Tencent/tdesign-vue/pull/2068))
+    - 修复本地数据排序，异步获取数据，修复取消排序时，清空数据问题 ([#2073](https://github.com/Tencent/tdesign-vue/pull/2073))
+- `Loading`: 当属性 `loading=false` 时，不允许存在任何加载组件相关元素 @chaishi ([#2068](https://github.com/Tencent/tdesign-vue/pull/2068))
+- `TreeSelect`: 修复单选下选中值后没有触发`onblur`的问题 @uyarn ([#2069](https://github.com/Tencent/tdesign-vue/pull/2069))
+
 ## 🌈 1.0.6 `2023-01-31` 
 ### 🚀 Features
 - `ColorPicker`: 切换单色-渐变模式时触发色值及 onChange 变化 @uyarn ([#2056](https://github.com/Tencent/tdesign-vue/pull/2056))
