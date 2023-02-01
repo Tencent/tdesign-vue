@@ -124,6 +124,8 @@ export default mixins(classPrefixMixins).extend({
   },
 
   render() {
+    if (!this.loading) return null;
+
     const defaultIndicator = <GradientIcon size={this.size} />;
     const indicator = this.loading && renderTNodeJSX(this, 'indicator', defaultIndicator);
     const text = this.showText && <div class={`${this.classPrefix}-loading__text`}>{renderTNodeJSX(this, 'text')}</div>;
