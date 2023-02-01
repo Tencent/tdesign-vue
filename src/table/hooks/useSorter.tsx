@@ -3,6 +3,7 @@ import {
 } from '@vue/composition-api';
 import { CreateElement } from 'vue';
 import isFunction from 'lodash/isFunction';
+import get from 'lodash/get';
 import {
   SortInfo, TdPrimaryTableProps, PrimaryTableCol, TableRowData,
 } from '../type';
@@ -181,6 +182,16 @@ export default function useSorter(props: TdPrimaryTableProps, { emit, slots }: S
       }
     },
     { immediate: true },
+  );
+
+  // async data and default data is empty
+  watch(
+    () => props.data,
+    (val = [], previousVal = []) => {
+      if (val.map((t) => get(t, props.rowKey)).join() !== previousVal.map((t) => get(t, props.rowKey)).join()) {
+        originalData.value = props.data;
+      }
+    },
   );
 
   return {
