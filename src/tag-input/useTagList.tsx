@@ -1,17 +1,18 @@
-import { ref, toRefs } from '@vue/composition-api';
+import { ref, SetupContext, toRefs } from '@vue/composition-api';
 import {
-  TagInputValue, TagInputChangeContext, TdTagInputProps, DragProps, TagInputRemoveContext,
+  TagInputValue, TagInputChangeContext, TdTagInputProps, TagInputRemoveContext,
 } from './type';
 import { InputValue } from '../input';
 import Tag from '../tag';
 import useVModel from '../hooks/useVModel';
 import { useTNodeJSX } from '../hooks/tnode';
 import { useConfig } from '../config-provider/useConfig';
+import { DragProps } from './interface';
 
 export type ChangeParams = [TagInputChangeContext];
 
 // handle tag add and remove
-export default function useTagList(props: TdTagInputProps, getDragProps: DragProps) {
+export default function useTagList(props: TdTagInputProps, context: SetupContext, getDragProps: DragProps) {
   const renderTNode = useTNodeJSX();
   const { classPrefix } = useConfig('classPrefix');
 
@@ -29,7 +30,9 @@ export default function useTagList(props: TdTagInputProps, getDragProps: DragPro
     const arr = [...tagValue.value];
     arr.splice(p.index, 1);
     setTagValue(arr, { trigger: 'tag-remove', ...p });
-    onRemove.value?.({ ...p, trigger: 'tag-remove', value: arr });
+    const removeParams: TagInputRemoveContext = { ...p, trigger: 'tag-remove', value: arr };
+    onRemove.value?.(removeParams);
+    context.emit('remove', removeParams);
   };
 
   const clearAll = (context: { e: MouseEvent }) => {
@@ -37,29 +40,31 @@ export default function useTagList(props: TdTagInputProps, getDragProps: DragPro
   };
 
   // 按下 Enter 键，新增标签
-  const onInnerEnter = (value: InputValue, context: { e: KeyboardEvent }) => {
+  const onInnerEnter = (value: InputValue, params: { e: KeyboardEvent }) => {
     const valueStr = String(value).trim();
-    if (!valueStr) return;
-    const isLimitExceeded = max && tagValue.value?.length >= max.value;
     let newValue: TagInputValue = tagValue.value;
-    if (!isLimitExceeded) {
+    const isLimitExceeded = max && tagValue.value?.length >= max.value;
+    if (!isLimitExceeded && valueStr) {
       newValue = tagValue.value instanceof Array ? tagValue.value.concat(String(valueStr)) : [valueStr];
       setTagValue(newValue, {
         trigger: 'enter',
         index: newValue.length - 1,
         item: valueStr,
-        e: context.e,
+        e: params.e,
       });
     }
-    props?.onEnter?.(newValue, { ...context, inputValue: value });
+    const enterEventParams = { ...params, inputValue: value };
+    props.onEnter?.(newValue, enterEventParams);
+    context.emit('enter', newValue, enterEventParams);
   };
 
   // 按下回退键，删除标签
-  const onInputBackspaceKeyUp = (value: InputValue, context: { e: KeyboardEvent }) => {
-    const { e } = context;
+  const onInputBackspaceKeyUp = (value: InputValue, p: { e: KeyboardEvent }) => {
+    const { e } = p;
     if (!tagValue.value || !tagValue.value.length) return;
     // 回车键删除，输入框值为空时，才允许 Backspace 删除标签
-    if (!oldInputValue.value && ['Backspace', 'NumpadDelete'].includes(e.code)) {
+    const isDelete = /(Backspace|NumpadDelete)/.test(e.code) || /(Backspace|NumpadDelete)/.test(e.key);
+    if (!oldInputValue.value && isDelete) {
       const index = tagValue.value.length - 1;
       const item = tagValue.value[index];
       const trigger = 'backspace';
@@ -71,10 +76,9 @@ export default function useTagList(props: TdTagInputProps, getDragProps: DragPro
         trigger,
       };
       setTagValue(newValue, params);
-      onRemove.value?.({
-        ...params,
-        value: newValue,
-      });
+      const removeParams: TagInputRemoveContext = { ...params, value: newValue };
+      onRemove.value?.(removeParams);
+      context.emit('remove', removeParams);
     }
     oldInputValue.value = value;
   };

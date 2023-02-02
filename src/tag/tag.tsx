@@ -77,7 +77,7 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalI
     const tagContent: TNodeReturnValue = renderContent(this, 'default', 'content');
 
     const title = typeof tagContent === 'string' ? tagContent : '';
-    const titleAttribute = title ? { title } : undefined;
+    const titleAttribute = title && this.maxWidth ? { title } : undefined;
     // 图标
     const icon = renderTNodeJSX(this, 'icon');
     return (

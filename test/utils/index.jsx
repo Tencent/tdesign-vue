@@ -16,7 +16,7 @@ export function simulateInputChange(dom, text) {
 
 // input enter
 export function simulateInputEnter(dom) {
-  dom.trigger('keydown.enter');
+  fireEvent.keyDown(dom, { key: 'Enter', code: 'Enter', charCode: 13 });
 }
 
 // Only for Vue2
