@@ -31,7 +31,11 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalI
       ];
     },
     tagStyle(): Styles {
-      if (this.maxWidth) return { maxWidth: `${this.maxWidth}px` };
+      if (this.maxWidth) {
+        return {
+          maxWidth: isNaN(Number(this.maxWidth)) ? this.maxWidth : `${this.maxWidth}px`,
+        };
+      }
       return {};
     },
   },
@@ -72,13 +76,14 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalI
     // 标签内容
     const tagContent: TNodeReturnValue = renderContent(this, 'default', 'content');
 
+    const title = typeof tagContent === 'string' ? tagContent : '';
+    const titleAttribute = title ? { title } : undefined;
     // 图标
     const icon = renderTNodeJSX(this, 'icon');
-
     return (
-      <span class={this.tagClass} onClick={this.handleClick}>
+      <span class={this.tagClass} style={this.tagStyle} onClick={this.handleClick}>
         {icon}
-        <span style={this.tagStyle} class={this.maxWidth ? `${this.componentName}--text` : undefined}>
+        <span class={this.maxWidth ? `${this.componentName}--text` : undefined} attrs={titleAttribute}>
           {tagContent}
         </span>
         {!this.disabled ? closeIcon : undefined}
