@@ -201,7 +201,7 @@ export interface SelectInputFocusContext {
 }
 
 export interface SelectInputValueChangeContext {
-  e?: InputEvent | MouseEvent | FocusEvent | KeyboardEvent;
+  e?: InputEvent | MouseEvent | FocusEvent | KeyboardEvent | CompositionEvent;
   trigger: 'input' | 'clear' | 'blur' | 'initial';
 }
 
