@@ -400,6 +400,8 @@ export default defineComponent({
             borderless: this.borderless,
             readonly: this.readonly,
             placeholder: this.inputPlaceholder,
+            status: this.status,
+            tips: this.tips,
             allowInput: this.filterable || isFunction(this.filter),
             minCollapsedNum: this.minCollapsedNum,
             popupProps: {
