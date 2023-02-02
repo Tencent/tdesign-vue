@@ -6,7 +6,7 @@
  */
 import { mount } from '@vue/test-utils';
 import { vi } from 'vitest';
-import { createElementById, simulateKeydownEvent } from '@test/utils';
+import { mockDelay, createElementById, simulateKeydownEvent } from '@test/utils';
 import { AutoComplete } from '..';
 import { getNormalAutoCompleteMount, getOptionSlotAutoCompleteMount } from './mount';
 
@@ -36,6 +36,7 @@ describe('AutoComplete Component', () => {
     await wrapper.vm.$nextTick();
     expect(wrapper.find('.t-input__suffix-clear').exists()).toBeTruthy();
   });
+
   it('props.clearable: expect trigger clear and change events after clear icon has been clicked', async () => {
     const onClearFn1 = vi.fn();
     const onChangeFn1 = vi.fn();
@@ -49,10 +50,10 @@ describe('AutoComplete Component', () => {
     expect(wrapper.find('.t-input__suffix-clear').exists()).toBeTruthy();
     wrapper.find('.t-input__suffix-clear').trigger('click');
     await wrapper.vm.$nextTick();
-    expect(onClearFn1).toHaveBeenCalled(1);
+    expect(onClearFn1).toHaveBeenCalled();
     expect(onClearFn1.mock.calls[0][0].e.stopPropagation).toBeTruthy();
     expect(onClearFn1.mock.calls[0][0].e.type).toBe('click');
-    expect(onChangeFn1).toHaveBeenCalled(1);
+    expect(onChangeFn1).toHaveBeenCalled();
     expect(onChangeFn1.mock.calls[0][0]).toBe('');
     expect(onChangeFn1.mock.calls[0][1].e.stopPropagation).toBeTruthy();
     expect(onChangeFn1.mock.calls[0][1].e.type).toBe('click');
@@ -140,11 +141,12 @@ describe('AutoComplete Component', () => {
     wrapper.find('input').trigger('focus');
     await wrapper.vm.$nextTick();
     const customNodeDom = document.querySelector('.custom-node');
-    expect(customNodeDom).toBeDefined();
+    expect(customNodeDom).toBeTruthy();
     // remove node in document to avoid influencing following test cases
     customNodeDom?.remove();
     document.querySelectorAll('.t-select-option').forEach((node) => node.remove());
   });
+
   it('props.options: 5 options should exist', async () => {
     const wrapper = getNormalAutoCompleteMount(AutoComplete);
     wrapper.find('input').trigger('focus');
@@ -154,6 +156,7 @@ describe('AutoComplete Component', () => {
     // remove nodes from document to avoid influencing following test cases
     tSelectOptionDom.forEach((node) => node.remove());
   });
+
   it('props.options: expect empty options with no panel', async () => {
     // Vue2 need attachTo to trigger `focus` event. https://v1.test-utils.vuejs.org/api/wrapper/#trigger
     createElementById();
@@ -174,6 +177,7 @@ describe('AutoComplete Component', () => {
     // remove nodes from document to avoid influencing following test cases
     emptyOptionsClassNameTAutocompletePanelDom.forEach((node) => node.remove());
   });
+
   it('props.options: define one option', async () => {
     const wrapper = getOptionSlotAutoCompleteMount(AutoComplete, {
       popupProps: { overlayClassName: 'option-slot-class-name' },
@@ -190,121 +194,153 @@ describe('AutoComplete Component', () => {
   });
 
   it('props.panelBottomContent works fine', async () => {
-    const wrapper = mount({
-      render() {
-        return <AutoComplete panelBottomContent={(h) => <span class="custom-node">TNode</span>}></AutoComplete>;
+    // Vue2 need attachTo to trigger `focus` event. https://v1.test-utils.vuejs.org/api/wrapper/#trigger
+    createElementById();
+    const wrapper = mount(
+      {
+        render() {
+          return <AutoComplete panelBottomContent={(h) => <span class="custom-node">TNode</span>}></AutoComplete>;
+        },
       },
-    });
+      { attachTo: '#focus-dom' },
+    );
     wrapper.find('input').trigger('focus');
     await wrapper.vm.$nextTick();
     const customNodeDom = document.querySelector('.custom-node');
-    expect(customNodeDom).toBeDefined();
+    expect(customNodeDom).toBeTruthy();
     // remove node in document to avoid influencing following test cases
     customNodeDom?.remove();
     const tPopupDom = document.querySelector('.t-popup');
-    expect(tPopupDom).toBeDefined();
+    expect(tPopupDom).toBeTruthy();
     // remove node in document to avoid influencing following test cases
     tPopupDom?.remove();
   });
 
   it('slots.panelBottomContent works fine', async () => {
-    const wrapper = mount({
-      render() {
-        return (
-          <AutoComplete
-            scopedSlots={{ panelBottomContent: (h) => <span class="custom-node">TNode</span> }}
-          ></AutoComplete>
-        );
+    // Vue2 need attachTo to trigger `focus` event. https://v1.test-utils.vuejs.org/api/wrapper/#trigger
+    createElementById();
+    const wrapper = mount(
+      {
+        render() {
+          return (
+            <AutoComplete
+              scopedSlots={{ panelBottomContent: (h) => <span class="custom-node">TNode</span> }}
+            ></AutoComplete>
+          );
+        },
       },
-    });
+      { attachTo: '#focus-dom' },
+    );
     wrapper.find('input').trigger('focus');
     await wrapper.vm.$nextTick();
     const customNodeDom = document.querySelector('.custom-node');
-    expect(customNodeDom).toBeDefined();
+    expect(customNodeDom).toBeTruthy();
     // remove node in document to avoid influencing following test cases
     customNodeDom?.remove();
     const tPopupDom = document.querySelector('.t-popup');
-    expect(tPopupDom).toBeDefined();
+    expect(tPopupDom).toBeTruthy();
     // remove node in document to avoid influencing following test cases
     tPopupDom?.remove();
   });
   it('slots.panel-bottom-content works fine', async () => {
-    const wrapper = mount({
-      render() {
-        return (
-          <AutoComplete
-            scopedSlots={{ 'panel-bottom-content': () => <span class="custom-node">TNode</span> }}
-          ></AutoComplete>
-        );
+    // Vue2 need attachTo to trigger `focus` event. https://v1.test-utils.vuejs.org/api/wrapper/#trigger
+    createElementById();
+    const wrapper = mount(
+      {
+        render() {
+          return (
+            <AutoComplete
+              scopedSlots={{ 'panel-bottom-content': (h) => <span class="custom-node">TNode</span> }}
+            ></AutoComplete>
+          );
+        },
       },
-    });
+      { attachTo: '#focus-dom' },
+    );
     wrapper.find('input').trigger('focus');
     await wrapper.vm.$nextTick();
     const customNodeDom = document.querySelector('.custom-node');
-    expect(customNodeDom).toBeDefined();
+    expect(customNodeDom).toBeTruthy();
     // remove node in document to avoid influencing following test cases
     customNodeDom?.remove();
     const tPopupDom = document.querySelector('.t-popup');
-    expect(tPopupDom).toBeDefined();
+    expect(tPopupDom).toBeTruthy();
     // remove node in document to avoid influencing following test cases
     tPopupDom?.remove();
   });
 
   it('props.panelTopContent works fine', async () => {
-    const wrapper = mount({
-      render() {
-        return <AutoComplete panelTopContent={(h) => <span class="custom-node">TNode</span>}></AutoComplete>;
+    // Vue2 need attachTo to trigger `focus` event. https://v1.test-utils.vuejs.org/api/wrapper/#trigger
+    createElementById();
+    const wrapper = mount(
+      {
+        render() {
+          return <AutoComplete panelTopContent={(h) => <span class="custom-node">TNode</span>}></AutoComplete>;
+        },
       },
-    });
+      { attachTo: '#focus-dom' },
+    );
     wrapper.find('input').trigger('focus');
     await wrapper.vm.$nextTick();
     const customNodeDom = document.querySelector('.custom-node');
-    expect(customNodeDom).toBeDefined();
+    expect(customNodeDom).toBeTruthy();
     // remove node in document to avoid influencing following test cases
     customNodeDom?.remove();
     const tPopupDom = document.querySelector('.t-popup');
-    expect(tPopupDom).toBeDefined();
+    expect(tPopupDom).toBeTruthy();
     // remove node in document to avoid influencing following test cases
     tPopupDom?.remove();
   });
 
   it('slots.panelTopContent works fine', async () => {
-    const wrapper = mount({
-      render() {
-        return (
-          <AutoComplete scopedSlots={{ panelTopContent: (h) => <span class="custom-node">TNode</span> }}></AutoComplete>
-        );
+    // Vue2 need attachTo to trigger `focus` event. https://v1.test-utils.vuejs.org/api/wrapper/#trigger
+    createElementById();
+    const wrapper = mount(
+      {
+        render() {
+          return (
+            <AutoComplete
+              scopedSlots={{ panelTopContent: (h) => <span class="custom-node">TNode</span> }}
+            ></AutoComplete>
+          );
+        },
       },
-    });
+      { attachTo: '#focus-dom' },
+    );
     wrapper.find('input').trigger('focus');
     await wrapper.vm.$nextTick();
     const customNodeDom = document.querySelector('.custom-node');
-    expect(customNodeDom).toBeDefined();
+    expect(customNodeDom).toBeTruthy();
     // remove node in document to avoid influencing following test cases
     customNodeDom?.remove();
     const tPopupDom = document.querySelector('.t-popup');
-    expect(tPopupDom).toBeDefined();
+    expect(tPopupDom).toBeTruthy();
     // remove node in document to avoid influencing following test cases
     tPopupDom?.remove();
   });
   it('slots.panel-top-content works fine', async () => {
-    const wrapper = mount({
-      render() {
-        return (
-          <AutoComplete
-            scopedSlots={{ 'panel-top-content': () => <span class="custom-node">TNode</span> }}
-          ></AutoComplete>
-        );
+    // Vue2 need attachTo to trigger `focus` event. https://v1.test-utils.vuejs.org/api/wrapper/#trigger
+    createElementById();
+    const wrapper = mount(
+      {
+        render() {
+          return (
+            <AutoComplete
+              scopedSlots={{ 'panel-top-content': (h) => <span class="custom-node">TNode</span> }}
+            ></AutoComplete>
+          );
+        },
       },
-    });
+      { attachTo: '#focus-dom' },
+    );
     wrapper.find('input').trigger('focus');
     await wrapper.vm.$nextTick();
     const customNodeDom = document.querySelector('.custom-node');
-    expect(customNodeDom).toBeDefined();
+    expect(customNodeDom).toBeTruthy();
     // remove node in document to avoid influencing following test cases
     customNodeDom?.remove();
     const tPopupDom = document.querySelector('.t-popup');
-    expect(tPopupDom).toBeDefined();
+    expect(tPopupDom).toBeTruthy();
     // remove node in document to avoid influencing following test cases
     tPopupDom?.remove();
   });
@@ -324,10 +360,11 @@ describe('AutoComplete Component', () => {
     wrapper.find('input').trigger('focus');
     await wrapper.vm.$nextTick();
     const customClassNameDom = document.querySelector('.custom-class-name');
-    expect(customClassNameDom).toBeDefined();
+    expect(customClassNameDom).toBeTruthy();
     // remove node in document to avoid influencing following test cases
     customClassNameDom?.remove();
   });
+
   it('props.popupProps works fine', async () => {
     const wrapper = getNormalAutoCompleteMount(AutoComplete, {
       popupProps: { overlayInnerClassName: 'custom-class-name' },
@@ -335,7 +372,7 @@ describe('AutoComplete Component', () => {
     wrapper.find('input').trigger('focus');
     await wrapper.vm.$nextTick();
     const customClassNameDom = document.querySelector('.custom-class-name');
-    expect(customClassNameDom).toBeDefined();
+    expect(customClassNameDom).toBeTruthy();
     // remove node in document to avoid influencing following test cases
     customClassNameDom?.remove();
   });
@@ -411,7 +448,7 @@ describe('AutoComplete Component', () => {
       render() {
         return (
           <AutoComplete
-            scopedSlots={{ 'trigger-element': () => <span class="custom-node">TNode</span> }}
+            scopedSlots={{ 'trigger-element': (h) => <span class="custom-node">TNode</span> }}
           ></AutoComplete>
         );
       },
@@ -435,11 +472,12 @@ describe('AutoComplete Component', () => {
     const wrapper = getNormalAutoCompleteMount(AutoComplete, {}, { focus: onFocusFn, blur: onBlurFn1 });
     wrapper.find('input').trigger('focus');
     await wrapper.vm.$nextTick();
-    expect(onFocusFn).toHaveBeenCalled(1);
+    expect(onFocusFn).toHaveBeenCalled();
     expect(onFocusFn.mock.calls[0][0].e.type).toBe('focus');
     wrapper.find('input').trigger('blur');
     await wrapper.vm.$nextTick();
-    expect(onBlurFn1).toHaveBeenCalled(1);
+    await mockDelay(300);
+    expect(onBlurFn1).toHaveBeenCalled();
     expect(onBlurFn1.mock.calls[0][0].e.type).toBe('blur');
   });
 
@@ -452,7 +490,7 @@ describe('AutoComplete Component', () => {
     });
     wrapper.find('input').trigger('compositionend');
     await wrapper.vm.$nextTick();
-    expect(onCompositionendFn).toHaveBeenCalled(1);
+    expect(onCompositionendFn).toHaveBeenCalled();
     expect(onCompositionendFn.mock.calls[0][0].e.type).toBe('compositionend');
   });
 
@@ -465,7 +503,7 @@ describe('AutoComplete Component', () => {
     });
     wrapper.find('input').trigger('compositionstart');
     await wrapper.vm.$nextTick();
-    expect(onCompositionstartFn).toHaveBeenCalled(1);
+    expect(onCompositionstartFn).toHaveBeenCalled();
     expect(onCompositionstartFn.mock.calls[0][0].e.type).toBe('compositionstart');
   });
 
@@ -476,7 +514,7 @@ describe('AutoComplete Component', () => {
     await wrapper.vm.$nextTick();
     wrapper.find('input').trigger('keydown.enter');
     await wrapper.vm.$nextTick();
-    expect(onEnterFn1).toHaveBeenCalled(1);
+    expect(onEnterFn1).toHaveBeenCalled();
     expect(onEnterFn1.mock.calls[0][0].e.type).toBe('keydown');
     expect(/Enter/i.test(onEnterFn1.mock.calls[0][0].e.key)).toBeTruthy();
   });
@@ -487,7 +525,7 @@ describe('AutoComplete Component', () => {
     wrapper.find('input').trigger('focus');
     await wrapper.vm.$nextTick();
     expect(wrapper.find('.t-is-focused').exists()).toBeTruthy();
-    expect(onFocusFn).toHaveBeenCalled(1);
+    expect(onFocusFn).toHaveBeenCalled();
     expect(onFocusFn.mock.calls[0][0].e.type).toBe('focus');
   });
 
@@ -503,10 +541,11 @@ describe('AutoComplete Component', () => {
     document.querySelector('.select-event-class-name .t-select-option').click();
     await wrapper.vm.$nextTick();
     document.querySelectorAll('.t-select-option').forEach((node) => node.remove());
-    expect(onSelectFn1).toHaveBeenCalled(1);
+    expect(onSelectFn1).toHaveBeenCalled();
     expect(onSelectFn1.mock.calls[0][0]).toBe('FirstKeyword');
     expect(onSelectFn1.mock.calls[0][1].e.type).toBe('click');
   });
+
   it('events.select: keyboard operations: ArrowDown & ArrowUp & Enter', async () => {
     const onSelectFn6 = vi.fn();
     const wrapper = getNormalAutoCompleteMount(AutoComplete, {}, { select: onSelectFn6 });
@@ -514,28 +553,33 @@ describe('AutoComplete Component', () => {
     await wrapper.vm.$nextTick();
     simulateKeydownEvent(document, 'ArrowDown');
     await wrapper.vm.$nextTick();
+    await mockDelay(10);
     const domWrapper1 = document.querySelector('.t-select-option:first-child');
     expect(domWrapper1.classList.contains('t-select-option--hover')).toBeTruthy();
     simulateKeydownEvent(document, 'ArrowDown');
     await wrapper.vm.$nextTick();
+    await mockDelay(10);
     const domWrapper2 = document.querySelector('.t-select-option:nth-child(2)');
     expect(domWrapper2.classList.contains('t-select-option--hover')).toBeTruthy();
     simulateKeydownEvent(document, 'ArrowUp');
     await wrapper.vm.$nextTick();
+    await mockDelay(10);
     const domWrapper3 = document.querySelector('.t-select-option:first-child');
     expect(domWrapper3.classList.contains('t-select-option--hover')).toBeTruthy();
     simulateKeydownEvent(document, 'ArrowUp');
     await wrapper.vm.$nextTick();
+    await mockDelay(10);
     const domWrapper4 = document.querySelector('.t-select-option:nth-child(5)');
     expect(domWrapper4.classList.contains('t-select-option--hover')).toBeTruthy();
     simulateKeydownEvent(document, 'ArrowDown');
     await wrapper.vm.$nextTick();
+    await mockDelay(10);
     const domWrapper5 = document.querySelector('.t-select-option:first-child');
     expect(domWrapper5.classList.contains('t-select-option--hover')).toBeTruthy();
     simulateKeydownEvent(document, 'Enter');
     await wrapper.vm.$nextTick();
     document.querySelectorAll('.t-select-option').forEach((node) => node.remove());
-    expect(onSelectFn6).toHaveBeenCalled(1);
+    expect(onSelectFn6).toHaveBeenCalled();
     expect(onSelectFn6.mock.calls[0][0]).toBe('FirstKeyword');
     expect(onSelectFn6.mock.calls[0][1].e.type).toBe('keydown');
   });
