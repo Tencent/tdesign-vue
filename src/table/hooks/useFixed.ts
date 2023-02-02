@@ -228,7 +228,9 @@ export default function useFixed(
       // 多级表头，使用父元素作为初始基本位置
       const defaultWidth = i === columns.length - 1 ? parent?.right || 0 : 0;
       const lastColInfo = initialColumnMap.get(lastCol?.colKey || i + 1);
-      colInfo.right = (lastColInfo?.right || defaultWidth) + (lastColInfo?.width || 0);
+      if (colInfo) {
+        colInfo.right = (lastColInfo?.right || defaultWidth) + (lastColInfo?.width || 0);
+      }
       // 多级表头
       if (col.children?.length) {
         setFixedRightPos(col.children, initialColumnMap, colInfo);
@@ -345,6 +347,7 @@ export default function useFixed(
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const updateFixedStatus = () => {
+    if (!columns.value?.length) return () => {};
     const { newColumnsMap, levelNodes } = getColumnMap(columns.value);
     setIsLastOrFirstFixedCol(levelNodes);
     const timer = setTimeout(() => {
