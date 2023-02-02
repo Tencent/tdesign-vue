@@ -41,10 +41,10 @@ exports[`Tag or CheckTag > :Tag:props > :disabled 1`] = `
 exports[`Tag or CheckTag > :Tag:props > :maxWidth 1`] = `
 <span
   class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis"
+  style="max-width: 100px;"
 >
   <span
     class="t-tag--text"
-    style="max-width: 100px;"
   />
 </span>
 `;
