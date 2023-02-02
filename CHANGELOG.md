@@ -5,6 +5,13 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.0.8 `2023-02-02` 
+### 🚀 Features
+- `TreeSelect`: 支持`tips`和`status` API @uyarn ([#2084](https://github.com/Tencent/tdesign-vue/pull/2084))
+### 🐞 Bug Fixes
+- `Loading`: 加载组件包裹元素时，无法显示内容问题 @chaishi ([#2083](https://github.com/Tencent/tdesign-vue/pull/2083))
+
+
 ## 🌈 1.0.7 `2023-02-01` 
 
 ### 🐞 Bug Fixes
