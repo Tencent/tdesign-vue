@@ -24,6 +24,11 @@ export interface TdSelectInputProps {
    */
   autoWidth?: boolean;
   /**
+   * 自动聚焦
+   * @default false
+   */
+  autofocus?: boolean;
+  /**
    * 无边框模式
    * @default false
    */
@@ -34,12 +39,11 @@ export interface TdSelectInputProps {
    */
   clearable?: boolean;
   /**
-   * 标签过多的情况下，折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 `collapsedItems` 自定义。`value` 表示所有标签值，`collapsedTags` 表示折叠标签值，`count` 表示总标签数量
+   * 标签过多的情况下，折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 `collapsedItems` 自定义。`value` 表示所有标签值，`collapsedTags` 表示折叠标签值，`count` 表示选中的标签数量
    */
   collapsedItems?: TNode<{ value: SelectInputValue; collapsedTags: SelectInputValue; count: number }>;
   /**
    * 是否禁用
-   * @default false
    */
   disabled?: boolean;
   /**
@@ -95,6 +99,10 @@ export interface TdSelectInputProps {
    */
   popupVisible?: boolean;
   /**
+   * 是否显示下拉框，非受控属性
+   */
+  defaultPopupVisible?: boolean;
+  /**
    * 只读状态，值为真会隐藏输入框，且无法打开下拉框
    * @default false
    */
@@ -113,7 +121,7 @@ export interface TdSelectInputProps {
    */
   suffixIcon?: TNode;
   /**
-   * 自定义标签的内部内容，每一个标签的当前值。注意和 `valueDisplay` 区分，`valueDisplay`  是用来定义全部标签内容，而非某一个标签
+   * 多选场景下，自定义选中标签的内部内容。注意和 `valueDisplay` 区分，`valueDisplay`  是用来定义全部标签内容，而非某一个标签
    */
   tag?: string | TNode<{ value: string | number }>;
   /**
@@ -194,7 +202,7 @@ export interface SelectInputFocusContext {
 
 export interface SelectInputValueChangeContext {
   e?: InputEvent | MouseEvent | FocusEvent | KeyboardEvent;
-  trigger: 'input' | 'clear' | 'blur';
+  trigger: 'input' | 'clear' | 'blur' | 'initial';
 }
 
 export type SelectInputChangeContext = TagInputChangeContext;

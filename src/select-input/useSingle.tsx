@@ -24,6 +24,7 @@ const COMMON_PROPERTIES = [
   'readonly',
   'suffix',
   'suffixIcon',
+  'autofocus',
 ];
 
 const DEFAULT_KEYS = {
@@ -78,6 +79,7 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
       value: singleValueDisplay ? undefined : displayedValue,
       label: prefixContent.length ? () => prefixContent : undefined,
       autoWidth: props.autoWidth,
+      autofocus: props.autofocus,
       readonly: !props.allowInput,
       placeholder: singleValueDisplay ? '' : props.placeholder,
       suffixIcon: !props.disabled && props.loading ? () => <Loading loading size="small" /> : props.suffixIcon,
