@@ -168,11 +168,14 @@ export default mixins(classPrefixMixins).extend({
     }
 
     // Normal Loading without overlay or content
-    return this.loading ? (
-      <div class={this.normalClasses} style={this.styles}>
-        {indicator}
-        {text}
-      </div>
-    ) : null;
+    if (this.loading) {
+      return (
+        <div class={this.normalClasses} style={this.styles}>
+          {indicator}
+          {text}
+        </div>
+      );
+    }
+    return null;
   },
 });
