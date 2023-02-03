@@ -53,11 +53,9 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
     props.onTagChange?.(val, context);
     instance.emit('tag-change', val, context);
   };
-
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const renderSelectMultiple = (p: RenderSelectMultipleParams, h: Vue.CreateElement) => {
     const tagInputProps = {
-      ...props.tagInputProps,
       ...p.commonInputProps,
       tagProps: props.tagProps,
       label: props.label,
@@ -78,6 +76,7 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
         ...props.inputProps,
       },
       suffixIcon: !props.disabled && props.loading ? () => <Loading loading size="small" /> : props.suffixIcon,
+      ...props.tagInputProps,
     };
     return (
       <TagInput

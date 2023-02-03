@@ -9,17 +9,25 @@ import { InputValue } from '../input';
 import { PopupProps } from '../popup';
 import { SelectInputProps } from '../select-input';
 import { TagProps } from '../tag';
-import { TreeProps, TreeNodeModel } from '../tree';
+import { TreeProps, TreeNodeModel, TreeKeysType } from '../tree';
 import { SelectInputValueChangeContext } from '../select-input';
-import { PopupVisibleChangeContext } from '../popup';
+import { PopupVisibleChangeContext, PopupTriggerEvent } from '../popup';
 import { TNode, TreeOptionData } from '../common';
 
-export interface TdTreeSelectProps<DataOption extends TreeOptionData = TreeOptionData> {
+export interface TdTreeSelectProps<
+  DataOption extends TreeOptionData = TreeOptionData,
+  TreeValueType extends TreeSelectValue = TreeSelectValue,
+> {
   /**
    * 宽度随内容自适应
    * @default false
    */
   autoWidth?: boolean;
+  /**
+   * 自动聚焦
+   * @default false
+   */
+  autofocus?: boolean;
   /**
    * 无边框模式
    * @default false
@@ -31,11 +39,11 @@ export interface TdTreeSelectProps<DataOption extends TreeOptionData = TreeOptio
    */
   clearable?: boolean;
   /**
-   * 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义
+   * 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义。`value` 表示当前存在的所有标签，`collapsedTags` 表示折叠的标签，`count` 表示选中的标签数量
    */
   collapsedItems?: TNode<{ value: DataOption[]; collapsedSelectedItems: DataOption[]; count: number }>;
   /**
-   * 数据
+   * 树选择的数据列表。结构：`[{ label: TNode, value: string | number, text: string, ... }]`，其中 `label` 表示选项呈现的内容，可自定义；`value` 表示选项的唯一值；表示当 `label` 用于选项复杂内容呈现时，`text` 用于搜索功能。<br />其中 `label` 和 `value` 可以使用 `keys` 属性定义别名
    * @default []
    */
   data?: Array<DataOption>;
@@ -45,7 +53,6 @@ export interface TdTreeSelectProps<DataOption extends TreeOptionData = TreeOptio
   disabled?: boolean;
   /**
    * 当下拉列表为空时显示的内容
-   * @default ''
    */
   empty?: string | TNode;
   /**
@@ -69,6 +76,10 @@ export interface TdTreeSelectProps<DataOption extends TreeOptionData = TreeOptio
    * 输入框的值，非受控属性
    */
   defaultInputValue?: InputValue;
+  /**
+   * 用来定义 value / label 在 `data` 数据中对应的字段别名
+   */
+  keys?: TreeKeysType;
   /**
    * 是否正在加载数据
    * @default false
@@ -115,7 +126,7 @@ export interface TdTreeSelectProps<DataOption extends TreeOptionData = TreeOptio
    */
   readonly?: boolean;
   /**
-   * 透传 SelectInput 筛选器输入框组件的全部属性
+   * 【开发中】透传 SelectInput 筛选器输入框组件的全部属性
    */
   selectInputProps?: SelectInputProps;
   /**
@@ -125,6 +136,7 @@ export interface TdTreeSelectProps<DataOption extends TreeOptionData = TreeOptio
   size?: 'small' | 'medium' | 'large';
   /**
    * 输入框状态
+   * @default default
    */
   status?: 'default' | 'success' | 'warning' | 'error';
   /**
@@ -140,13 +152,13 @@ export interface TdTreeSelectProps<DataOption extends TreeOptionData = TreeOptio
    */
   treeProps?: TreeProps;
   /**
-   * 选中值
+   * 选中值，泛型 `TreeValueType` 继承自 `TreeSelectValue`
    */
-  value?: TreeSelectValue;
+  value?: TreeValueType;
   /**
-   * 选中值，非受控属性
+   * 选中值，泛型 `TreeValueType` 继承自 `TreeSelectValue`，非受控属性
    */
-  defaultValue?: TreeSelectValue;
+  defaultValue?: TreeValueType;
   /**
    * 自定义选中项呈现方式
    */
@@ -161,10 +173,10 @@ export interface TdTreeSelectProps<DataOption extends TreeOptionData = TreeOptio
    */
   onBlur?: (context: { value: TreeSelectValue; e: FocusEvent }) => void;
   /**
-   * 节点选中状态变化时触发，`context.node` 表示当前变化的选项，`context. trigger` 表示触发变化的来源
+   * 节点选中状态变化时触发，`context.node` 表示当前变化的选项，`context. trigger` 表示触发变化的来源。泛型 `TreeValueType` 继承自 `TreeSelectValue`
    */
   onChange?: (
-    value: TreeSelectValue,
+    value: TreeValueType,
     context: { node: TreeNodeModel<DataOption>; trigger: TreeSelectValueChangeTrigger; e?: MouseEvent | KeyboardEvent },
   ) => void;
   /**
@@ -178,27 +190,32 @@ export interface TdTreeSelectProps<DataOption extends TreeOptionData = TreeOptio
   /**
    * 输入框值发生变化时触发，`context.trigger` 表示触发输入框值变化的来源：文本输入触发、清除按钮触发、失去焦点等
    */
-  onInputChange?: (value: InputValue, context?: SelectInputValueChangeContext) => void;
+  onInputChange?: (value: InputValue, context: SelectInputValueChangeContext) => void;
   /**
-   * 下拉框显示或隐藏时触发
+   * 下拉框显示或隐藏时触发。单选场景，选中某个选项时触发关闭，此时需要添加参数 `node`
    */
-  onPopupVisibleChange?: (visible: boolean, context: PopupVisibleChangeContext) => void;
+  onPopupVisibleChange?: (
+    visible: boolean,
+    context: PopupVisibleChangeContext & { node?: TreeNodeModel<DataOption>; e?: PopupTriggerEvent },
+  ) => void;
   /**
    * 多选模式下，选中数据被移除时触发
    */
   onRemove?: (options: RemoveOptions<DataOption>) => void;
   /**
-   * 输入值变化时，触发搜索事件。主要用于远程搜索新数据
+   * 输入值变化时，触发搜索事件。主要用于远程搜索新数据。设置 `filterable=true` 开启此功能。优先级高于本地数据搜索 `filter`，即一旦存在这个远程搜索事件 `filter` 失效
    */
   onSearch?: (filterWords: string) => void;
 }
 
-export type TreeSelectValue = string | number | object | Array<TreeSelectValue>;
+export type TreeSelectValue = string | number | TreeOptionData | Array<string | number | TreeOptionData>;
 
 export type TreeSelectValueChangeTrigger = 'clear' | 'tag-remove' | 'backspace' | 'check' | 'uncheck';
 
 export interface RemoveOptions<T> {
-  value: string | number | object;
+  value: string | number | { [key: string]: any };
   data: T;
-  e?: MouseEvent;
+  index: number;
+  e?: MouseEvent | KeyboardEvent;
+  trigger: 'tag-remove' | 'backspace';
 }

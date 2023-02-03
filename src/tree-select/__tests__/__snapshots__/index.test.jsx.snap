@@ -60,10 +60,10 @@ exports[`TreeSelect > :props > :defaultValue 1`] = `
       >
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
+          style="max-width: 300px;"
         >
           <span
             class="t-tag--text"
-            style="max-width: 300px;"
           />
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
@@ -447,10 +447,10 @@ exports[`TreeSelect > :props > :multiple 1`] = `
       >
         <span
           class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
+          style="max-width: 300px;"
         >
           <span
             class="t-tag--text"
-            style="max-width: 300px;"
           />
           <svg
             class="t-icon t-icon-close t-tag__icon-close"

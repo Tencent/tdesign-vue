@@ -7,12 +7,13 @@
 import { mount } from '@vue/test-utils';
 import { vi } from 'vitest';
 import { SelectInput } from '..';
+import { getSelectInputMultipleMount } from './mount';
 
 describe('SelectInput Component', () => {
   it('props.allowInput is equal to true', () => {
     const wrapper = mount({
       render() {
-        return <SelectInput allowInput={'true'}></SelectInput>;
+        return <SelectInput allowInput={true}></SelectInput>;
       },
     });
     const domWrapper = wrapper.find('.t-input');
@@ -74,6 +75,43 @@ describe('SelectInput Component', () => {
     wrapper.find('.t-input').trigger('mouseenter');
     await wrapper.vm.$nextTick();
     expect(wrapper.find('.t-tag-input__suffix-clear').exists()).toBeTruthy();
+  });
+
+  it('props.collapsedItems works fine', () => {
+    const wrapper = getSelectInputMultipleMount(SelectInput, {
+      collapsedItems: (h) => <span class="custom-node">TNode</span>,
+      minCollapsedNum: 3,
+    });
+    expect(wrapper.find('.custom-node').exists()).toBeTruthy();
+  });
+
+  it('slots.collapsedItems works fine', () => {
+    const wrapper = getSelectInputMultipleMount(SelectInput, {
+      scopedSlots: { collapsedItems: (h) => <span class="custom-node">TNode</span> },
+      minCollapsedNum: 3,
+    });
+    expect(wrapper.find('.custom-node').exists()).toBeTruthy();
+  });
+  it('slots.collapsed-items works fine', () => {
+    const wrapper = getSelectInputMultipleMount(SelectInput, {
+      scopedSlots: { 'collapsed-items': (h) => <span class="custom-node">TNode</span> },
+      minCollapsedNum: 3,
+    });
+    expect(wrapper.find('.custom-node').exists()).toBeTruthy();
+  });
+
+  it('props.collapsedItems is a function with params', () => {
+    const fn = vi.fn();
+    getSelectInputMultipleMount(SelectInput, { collapsedItems: fn, minCollapsedNum: 3 });
+    expect(fn).toHaveBeenCalled();
+    expect(fn.mock.calls[0][1].count).toBe(5);
+  });
+  it('slots.collapsedItems: a function with params', () => {
+    const fn = vi.fn();
+    getSelectInputMultipleMount(SelectInput, { scopedSlots: { collapsedItems: fn }, minCollapsedNum: 3 });
+
+    expect(fn).toHaveBeenCalled();
+    expect(fn.mock.calls[0][0].count).toBe(5);
   });
 
   it('props.disabled works fine', () => {
