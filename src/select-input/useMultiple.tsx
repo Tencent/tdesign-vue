@@ -3,10 +3,10 @@ import {
 } from '@vue/composition-api';
 import isObject from 'lodash/isObject';
 import Vue from 'vue';
-import { TdSelectInputProps, SelectInputChangeContext, SelectInputKeys } from './type';
+import { TdSelectInputProps, SelectInputKeys } from './type';
 import { SelectInputCommonProperties } from './interface';
 import { InputValue } from '../input';
-import TagInput, { TagInputValue, InputValueChangeContext } from '../tag-input';
+import TagInput, { TagInputValue, InputValueChangeContext, TagInputProps } from '../tag-input';
 import Loading from '../loading';
 import useDefaultValue from '../hooks/useDefaultValue';
 import { usePrefixClass } from '../hooks/useConfig';
@@ -17,9 +17,9 @@ export interface RenderSelectMultipleParams {
   popupVisible: boolean;
 }
 
-const DEFAULT_KEYS = {
+const DEFAULT_KEYS: SelectInputKeys = {
   label: 'label',
-  key: 'key',
+  value: 'value',
   children: 'children',
 };
 
@@ -45,7 +45,7 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
 
   const tPlaceholder = computed<string>(() => (!tags.value || !tags.value.length ? props.placeholder : ''));
 
-  const onTagInputChange = (val: TagInputValue, context: SelectInputChangeContext) => {
+  const onTagInputChange: TagInputProps['onChange'] = (val, context) => {
     // 避免触发浮层的显示或隐藏
     if (context.trigger === 'tag-remove') {
       context.e?.stopPropagation();

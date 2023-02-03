@@ -82,7 +82,15 @@ export default {
     type: Object as PropType<TdTreeSelectProps['popupProps']>,
   },
   /** 是否显示下拉框 */
-  popupVisible: Boolean,
+  popupVisible: {
+    type: Boolean,
+    default: undefined,
+  },
+  /** 是否显示下拉框，非受控属性 */
+  defaultPopupVisible: {
+    type: Boolean,
+    default: undefined,
+  },
   /** 组件前置图标 */
   prefixIcon: {
     type: Function as PropType<TdTreeSelectProps['prefixIcon']>,
@@ -125,12 +133,12 @@ export default {
   },
   /** 选中值，泛型 `TreeValueType` 继承自 `TreeSelectValue` */
   value: {
-    type: [String, Number, Array] as PropType<TdTreeSelectProps['value']>,
+    type: [String, Number, Object, Array] as PropType<TdTreeSelectProps['value']>,
     default: undefined,
   },
   /** 选中值，泛型 `TreeValueType` 继承自 `TreeSelectValue`，非受控属性 */
   defaultValue: {
-    type: [String, Number, Array] as PropType<TdTreeSelectProps['defaultValue']>,
+    type: [String, Number, Object, Array] as PropType<TdTreeSelectProps['defaultValue']>,
   },
   /** 自定义选中项呈现方式 */
   valueDisplay: {

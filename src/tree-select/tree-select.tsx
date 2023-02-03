@@ -1,16 +1,13 @@
-import { defineComponent, ref, computed } from '@vue/composition-api';
+import { defineComponent, computed } from '@vue/composition-api';
 import isArray from 'lodash/isArray';
-import isBoolean from 'lodash/isBoolean';
 import isFunction from 'lodash/isFunction';
-import Tree, { TreeNodeModel } from '../tree';
+import Tree from '../tree';
+import props from './props';
 import SelectInput from '../select-input';
-import { TagInputChangeContext } from '../tag-input';
+import { TagInputChangeContext, TagInputValue } from '../tag-input';
 import { InputValue } from '../input';
 import FakeArrow from '../common-components/fake-arrow';
-import { PopupVisibleChangeContext } from '../popup';
-import { TreeSelectValue, TdTreeSelectProps, RemoveOptions } from './type';
-import { TreeOptionData } from '../common';
-import props from './props';
+import { TreeSelectValue, TdTreeSelectProps } from './type';
 import { useTNodeJSX, useTNodeDefault } from '../hooks/tnode';
 import useTreeSelect from './useTreeSelect';
 
@@ -22,13 +19,10 @@ export default defineComponent({
   setup(props: TdTreeSelectProps, context) {
     const treeSelectInfo = useTreeSelect(props, context);
 
-    const {
-      treeRef, tKeys, dropdownInnerSize, innerVisible, treeSelectValue, setInnerVisible, setInnerInputValue,
-    } = treeSelectInfo;
+    const renderTNodeJSX = useTNodeJSX();
+    const renderDefaultTNode = useTNodeDefault();
 
-    // data
-    const filterByText = ref(null);
-    const treeKey = ref(0);
+    const { dropdownInnerSize, treeSelectValue } = treeSelectInfo;
 
     const multiLimitDisabled = computed(
       () => props.multiple
@@ -37,69 +31,15 @@ export default defineComponent({
         && props.max <= (treeSelectValue.value as Array<TreeSelectValue>).length,
     );
 
-    const inputChange = (value: InputValue): boolean => {
-      // 未打开状态不处理输入框输入
-      const searchValue = String(value);
-      if (!innerVisible.value) {
-        props.onSearch?.(searchValue);
-        context.emit('search', searchValue);
-        return;
-      }
-      setInnerInputValue(value, { trigger: 'input' });
-      if (!value) {
-        filterByText.value = null;
-        return null;
-      }
-      filterByText.value = (node: TreeNodeModel<TreeOptionData>) => {
-        if (isFunction(props.filter)) {
-          const filter: boolean | Promise<boolean> = props.filter(searchValue, node);
-          if (isBoolean(filter)) {
-            return filter;
-          }
-        }
-        if (isFunction(node.data[tKeys.value.label]?.indexOf)) {
-          return node.data[tKeys.value.label]?.indexOf(value) >= 0;
-        }
-        return false;
-      };
-      props.onSearch?.(searchValue);
-      // emit('search', searchValue);
-    };
-
-    const tagChange = (value: string | number, context: TagInputChangeContext) => {
-      const { trigger, index } = context;
-      const fitTrigger = ['tag-remove', 'backspace'].includes(trigger);
-      if (fitTrigger) {
-        isArray(treeSelectValue.value) && (treeSelectValue.value as Array<TreeSelectValue>).splice(index, 1);
-      }
-      const removeParams: RemoveOptions<any> = {
-        value,
-        data: treeRef.value.getItem(value),
-        e: context.e,
-        // @ts-ignore
-        trigger: fitTrigger ? trigger : undefined,
-        index,
-      };
-      props.onRemove?.(removeParams);
-      // emit('remove', removeParams);
-      // change(treeSelectValue.value, null, trigger as 'tag-remove' | 'backspace');
-    };
-
-    // const treeRerender = () => {
-    //   treeKey.value += 1;
-    // };
-
     return {
       ...treeSelectInfo,
-      treeKey,
-      filterByText,
       dropdownInnerSize,
       multiLimitDisabled,
-      setInnerVisible,
-      tagChange,
-      inputChange,
+      renderTNodeJSX,
+      renderDefaultTNode,
     };
   },
+
   methods: {
     renderSuffixIcon() {
       return (
@@ -115,7 +55,6 @@ export default defineComponent({
     },
 
     getTreePanel() {
-      const renderDefaultTNode = useTNodeDefault();
       return (
         <div
           class={[
@@ -125,7 +64,7 @@ export default defineComponent({
         >
           {this.loading && !this.tDisabled ? (
             <p class={[`${this.classPrefix}-select-loading-tips`, `${this.classPrefix}-select__right-icon-polyfill`]}>
-              {renderDefaultTNode('loadingText', {
+              {this.renderDefaultTNode('loadingText', {
                 defaultNode: <div class={`${this.classPrefix}-select__empty`}>{this.global.loadingText}</div>,
               })}
             </p>
@@ -149,7 +88,7 @@ export default defineComponent({
                 onExpand: this.treeNodeExpand,
                 onLoad: this.treeNodeLoad,
                 expandOnClickNode: true,
-                empty: () => renderDefaultTNode('empty', {
+                empty: () => this.renderDefaultTNode('empty', {
                   defaultNode: <div class={`${this.classPrefix}-select__empty`}>{this.global.empty}</div>,
                 }),
                 ...this.treeProps,
@@ -166,7 +105,6 @@ export default defineComponent({
   },
 
   render() {
-    const renderTNodeJSX = useTNodeJSX();
     return (
       <SelectInput
         scopedSlots={this.$scopedSlots}
@@ -205,7 +143,7 @@ export default defineComponent({
               maxWidth: 300,
               ...(this.tagProps as TdTreeSelectProps['tagProps']),
             },
-            label: () => renderTNodeJSX('prefixIcon'),
+            label: () => this.renderTNodeJSX('prefixIcon'),
             suffixIcon: this.renderSuffixIcon,
             onClear: this.clear,
             onBlur: (value: InputValue, context: { e: FocusEvent }) => {
@@ -218,12 +156,12 @@ export default defineComponent({
             },
             onInputChange: this.inputChange,
             onTagChange: this.tagChange,
-            onPopupVisibleChange: (state: boolean, context: PopupVisibleChangeContext) => this.setInnerVisible(state, context),
-            valueDisplay: () => renderTNodeJSX('valueDisplay', {
+            onPopupVisibleChange: this.onInnerPopupVisibleChange,
+            valueDisplay: () => this.renderTNodeJSX('valueDisplay', {
               params: this.multiple
                 ? {
                   value: this.nodeInfo,
-                  onClose: (value: string | number, context: TagInputChangeContext) => {
+                  onClose: (value: TagInputValue, context: TagInputChangeContext) => {
                     this.tagChange(value, context);
                   },
                 }

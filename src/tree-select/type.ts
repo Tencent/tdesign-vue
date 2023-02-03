@@ -117,6 +117,10 @@ export interface TdTreeSelectProps<
    */
   popupVisible?: boolean;
   /**
+   * 是否显示下拉框，非受控属性
+   */
+  defaultPopupVisible?: boolean;
+  /**
    * 组件前置图标
    */
   prefixIcon?: TNode;
@@ -175,10 +179,7 @@ export interface TdTreeSelectProps<
   /**
    * 节点选中状态变化时触发，`context.node` 表示当前变化的选项，`context. trigger` 表示触发变化的来源。泛型 `TreeValueType` 继承自 `TreeSelectValue`
    */
-  onChange?: (
-    value: TreeValueType,
-    context: { node: TreeNodeModel<DataOption>; trigger: TreeSelectValueChangeTrigger; e?: MouseEvent | KeyboardEvent },
-  ) => void;
+  onChange?: (value: TreeValueType, context: TreeSelectChangeContext<DataOption>) => void;
   /**
    * 点击清除按钮时触发
    */
@@ -201,7 +202,7 @@ export interface TdTreeSelectProps<
   /**
    * 多选模式下，选中数据被移除时触发
    */
-  onRemove?: (options: RemoveOptions<DataOption>) => void;
+  onRemove?: (options: RemoveOptions<DataOption, TreeValueType>) => void;
   /**
    * 输入值变化时，触发搜索事件。主要用于远程搜索新数据。设置 `filterable=true` 开启此功能。优先级高于本地数据搜索 `filter`，即一旦存在这个远程搜索事件 `filter` 失效
    */
@@ -210,12 +211,20 @@ export interface TdTreeSelectProps<
 
 export type TreeSelectValue = string | number | TreeOptionData | Array<string | number | TreeOptionData>;
 
+export interface TreeSelectChangeContext<DataOption> {
+  node: TreeNodeModel<DataOption>;
+  index?: number;
+  trigger: TreeSelectValueChangeTrigger;
+  e?: MouseEvent | KeyboardEvent;
+}
+
 export type TreeSelectValueChangeTrigger = 'clear' | 'tag-remove' | 'backspace' | 'check' | 'uncheck';
 
-export interface RemoveOptions<T> {
-  value: string | number | { [key: string]: any };
+export interface RemoveOptions<T extends TreeOptionData = TreeOptionData, N extends TreeSelectValue = TreeSelectValue> {
+  value: N;
   data: T;
   index: number;
+  node: TreeNodeModel<DataOption>;
   e?: MouseEvent | KeyboardEvent;
   trigger: 'tag-remove' | 'backspace';
 }

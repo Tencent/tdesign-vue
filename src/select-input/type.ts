@@ -143,7 +143,7 @@ export interface TdSelectInputProps {
   /**
    * 自定义值呈现的全部内容，参数为所有标签的值
    */
-  valueDisplay?: string | TNode<{ value: SelectInputValue; onClose: (index: number, item?: any) => void }>;
+  valueDisplay?: string | TNode<{ value: TagInputValue; onClose: (index: number, item?: any) => void }>;
   /**
    * 失去焦点时触发，`context.inputValue` 表示输入框的值；`context.tagInputValue` 表示标签输入框的值
    */
@@ -183,7 +183,7 @@ export interface TdSelectInputProps {
   /**
    * 值变化时触发，参数 `context.trigger` 表示数据变化的触发来源；`context.index` 指当前变化项的下标；`context.item` 指当前变化项；`context.e` 表示事件参数
    */
-  onTagChange?: (value: SelectInputValue, context: SelectInputChangeContext) => void;
+  onTagChange?: (value: TagInputValue, context: SelectInputChangeContext) => void;
 }
 
 export interface SelectInputKeys {

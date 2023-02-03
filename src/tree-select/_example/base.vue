@@ -4,11 +4,12 @@
     :data="options"
     v-model="value"
     :popupVisible="popupVisible"
-    @blur="onBlurTrigger"
-    @popup-visible-change="onVisibleChange"
     filterable
     clearable
     placeholder="请选择"
+    @blur="onBlurTrigger"
+    @change="onChange"
+    @popup-visible-change="onVisibleChange"
   />
 </template>
 <script>
@@ -58,7 +59,10 @@ export default {
   },
   methods: {
     onBlurTrigger(context) {
-      console.log(context);
+      console.log('blur:', context);
+    },
+    onChange(value, context) {
+      console.log('change:', value, context);
     },
     onVisibleChange(v, c) {
       if (c.trigger || c.node?.label !== '广州市') {
