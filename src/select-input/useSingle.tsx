@@ -109,7 +109,8 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
         onFocus={(val: InputValue, context: { e: MouseEvent }) => {
           props.onFocus?.(value.value, { ...context, inputValue: val });
           instance.emit('focus', value.value, { ...context, tagInputValue: val });
-          !popupVisible && setInputValue(getInputValue(value.value, keys.value), { ...context, trigger: 'input' }); // 聚焦时拿到value
+          // TODO: discuss, focus might not need change input value
+          !popupVisible && setInputValue(getInputValue(value.value, keys.value), { ...context, trigger: 'focus' }); // 聚焦时拿到value
         }}
         onPaste={(context: { e: ClipboardEvent; pasteValue: string }) => {
           props.onPaste?.(context);

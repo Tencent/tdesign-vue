@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils';
+import { createElementById } from '../../../test/utils';
 
 const OPTIONS = [
   { label: 'tdesign-vue', value: 1 },
@@ -23,11 +24,15 @@ export function getTreeSelectDefaultMount(TreeSelect, props = {}, events) {
   // eslint-disable-next-line
   delete props.scopedSlots;
 
-  return mount({
-    render() {
-      return <TreeSelect data={OPTIONS} props={props} on={events} scopedSlots={scopedSlots}></TreeSelect>;
+  createElementById();
+  return mount(
+    {
+      render() {
+        return <TreeSelect data={OPTIONS} props={props} on={events} scopedSlots={scopedSlots}></TreeSelect>;
+      },
     },
-  });
+    { attachTo: '#focus-dom' },
+  );
 }
 
 // multiple select
@@ -36,19 +41,23 @@ export function getTreeSelectMultipleMount(TreeSelect, props, events) {
   // eslint-disable-next-line
   delete props.scopedSlots;
 
+  createElementById();
   const value = [1, 2, 3, '4', '5'];
-  return mount({
-    render() {
-      return (
-        <TreeSelect
-          value={value}
-          data={OPTIONS}
-          multiple={true}
-          props={props}
-          on={events}
-          scopedSlots={scopedSlots}
-        ></TreeSelect>
-      );
+  return mount(
+    {
+      render() {
+        return (
+          <TreeSelect
+            value={value}
+            data={OPTIONS}
+            multiple={true}
+            props={props}
+            on={events}
+            scopedSlots={scopedSlots}
+          ></TreeSelect>
+        );
+      },
     },
-  });
+    { attachTo: '#focus-dom' },
+  );
 }

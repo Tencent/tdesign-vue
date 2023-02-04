@@ -159,6 +159,8 @@ export default {
   onChange: Function as PropType<TdTreeSelectProps['onChange']>,
   /** 点击清除按钮时触发 */
   onClear: Function as PropType<TdTreeSelectProps['onClear']>,
+  /** 回车键按下时触发。`inputValue` 表示输入框的值，`value` 表示选中值。泛型 `TreeValueType` 继承 `TreeSelectValue` */
+  onEnter: Function as PropType<TdTreeSelectProps['onEnter']>,
   /** 输入框获得焦点时触发 */
   onFocus: Function as PropType<TdTreeSelectProps['onFocus']>,
   /** 输入框值发生变化时触发，`context.trigger` 表示触发输入框值变化的来源：文本输入触发、清除按钮触发、失去焦点等 */

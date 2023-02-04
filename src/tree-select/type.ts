@@ -7,10 +7,9 @@
 import { InputProps } from '../input';
 import { InputValue } from '../input';
 import { PopupProps } from '../popup';
-import { SelectInputProps } from '../select-input';
+import { SelectInputProps, SelectInputValueChangeContext } from '../select-input';
 import { TagProps } from '../tag';
 import { TreeProps, TreeNodeModel, TreeKeysType } from '../tree';
-import { SelectInputValueChangeContext } from '../select-input';
 import { PopupVisibleChangeContext, PopupTriggerEvent } from '../popup';
 import { TNode, TreeOptionData } from '../common';
 
@@ -185,6 +184,10 @@ export interface TdTreeSelectProps<
    */
   onClear?: (context: { e: MouseEvent }) => void;
   /**
+   * 回车键按下时触发。`inputValue` 表示输入框的值，`value` 表示选中值。泛型 `TreeValueType` 继承 `TreeSelectValue`
+   */
+  onEnter?: (context: { inputValue: string; e: KeyboardEvent; value: TreeValueType }) => void;
+  /**
    * 输入框获得焦点时触发
    */
   onFocus?: (context: { value: TreeSelectValue; e: FocusEvent }) => void;
@@ -206,13 +209,14 @@ export interface TdTreeSelectProps<
   /**
    * 输入值变化时，触发搜索事件。主要用于远程搜索新数据。设置 `filterable=true` 开启此功能。优先级高于本地数据搜索 `filter`，即一旦存在这个远程搜索事件 `filter` 失效
    */
-  onSearch?: (filterWords: string) => void;
+  onSearch?: (filterWords: string, context: { e: KeyboardEvent | SelectInputValueChangeContext['e'] }) => void;
 }
 
 export type TreeSelectValue = string | number | TreeOptionData | Array<string | number | TreeOptionData>;
 
 export interface TreeSelectChangeContext<DataOption> {
   node: TreeNodeModel<DataOption>;
+  data: DataOption;
   index?: number;
   trigger: TreeSelectValueChangeTrigger;
   e?: MouseEvent | KeyboardEvent;
@@ -224,7 +228,7 @@ export interface RemoveOptions<T extends TreeOptionData = TreeOptionData, N exte
   value: N;
   data: T;
   index: number;
-  node: TreeNodeModel<DataOption>;
+  node: TreeNodeModel<T>;
   e?: MouseEvent | KeyboardEvent;
   trigger: 'tag-remove' | 'backspace';
 }

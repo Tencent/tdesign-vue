@@ -12,32 +12,13 @@ import { TreeOptionData } from '../common';
 import useVModel from '../hooks/useVModel';
 import useDefaultValue from '../hooks/useDefaultValue';
 import { SelectInputProps } from '../select-input';
+import { getNodeDataByValue } from './utils';
 
 const DEFAULT_KEYS = {
   label: 'label',
   value: 'value',
   children: 'children',
 };
-
-function getNodeDataByValue(
-  values: Array<string | number>,
-  data: TreeOptionData[],
-  keys: TreeKeysType,
-  results: TreeOptionData[] = [],
-) {
-  for (let i = 0, len = data.length; i < len; i++) {
-    const item = data[i];
-    const index = values.findIndex((val) => item[keys.value] === val);
-    if (index !== -1) {
-      results.push(item);
-    }
-    if (item.children?.length) {
-      results.push(...getNodeDataByValue(values, item.children, keys, results));
-    }
-    if (results.length >= values.length) return results;
-  }
-  return results || [];
-}
 
 export default function useTreeSelect(props: TdTreeSelectProps, context: SetupContext) {
   const classPrefix = usePrefixClass();
@@ -77,9 +58,10 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
 
   const tKeys = computed<TreeKeysType>(() => ({ ...DEFAULT_KEYS, ...props.treeProps?.keys, ...props.keys }));
 
-  const inputPlaceholder = computed(
-    () => (innerVisible.value && nodeInfo.value?.[tKeys.value.label]) || (props.placeholder ?? global.value.placeholder),
-  );
+  const inputPlaceholder = computed(() => {
+    const label = nodeInfo.value?.[tKeys.value.label];
+    return (innerVisible.value && label) || props.placeholder || global.value.placeholder;
+  });
 
   const popupClass = computed(() => [`${classPrefix.value}-select__dropdown`, 'narrow-scrollbar']);
   const dropdownInnerSize = computed(
@@ -95,7 +77,7 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
   };
 
   watch(
-    () => props.data,
+    () => [...props.data],
     () => {
       treeRerender();
     },
@@ -128,7 +110,12 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
     if (treeRef.value) {
       return list.map((item) => {
         const finalValue = typeof item === 'object' ? item[tKeys.value.value] : item;
-        return treeRef.value.getItem(finalValue)?.data;
+        return (
+          treeRef.value.getItem(finalValue)?.data || {
+            [tKeys.value.label]: finalValue,
+            [tKeys.value.value]: finalValue,
+          }
+        );
       });
     }
     const onlyValues = list.map((item) => (typeof item === 'object' ? item[tKeys.value.value] : item));
@@ -140,30 +127,43 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
     const { value } = treeSelectValue;
     const oneValue = Array.isArray(value) ? value[0] : value;
     const finalValue = typeof oneValue === 'object' ? oneValue[tKeys.value.value] : oneValue;
-    if (treeRef.value) return treeRef.value.getItem(finalValue)?.data;
-    return getNodeDataByValue([finalValue], props.data, tKeys.value);
+    if (treeRef.value) {
+      return (
+        treeRef.value.getItem(finalValue)?.data || {
+          [tKeys.value.label]: finalValue,
+          [tKeys.value.value]: finalValue,
+        }
+      );
+    }
+    return getNodeDataByValue([finalValue], props.data, tKeys.value)[0];
   }
 
   // clear all value
   const clear: SelectInputProps['onClear'] = ({ e }) => {
     const defaultValue: TreeSelectValue = props.multiple ? [] : undefined;
-    setTreeSelectValue(defaultValue, { e, node: undefined, trigger: 'clear' });
-    const clearParams = { e };
-    props.onClear?.(clearParams);
-    context.emit('clear', clearParams);
+    setTreeSelectValue(defaultValue, {
+      e, node: null, data: null, trigger: 'clear',
+    });
+    props.onClear?.({ e });
+    context.emit('clear', { e });
+    // close popup after clear
+    setInnerVisible(false, { e, trigger: 'trigger-element-click' });
   };
 
   // only for multiple tree select
-  const treeNodeChange: TreeProps['onChange'] = (value, context) => {
+  const treeNodeChange: TreeProps['onChange'] = (value, ctx) => {
     if (!props.multiple) return;
     let current: TreeSelectValue = value;
     if (isObjectValue.value) {
       current = value.map((nodeValue) => treeRef.value.getItem(nodeValue));
     }
+    const tmpValue = Array.isArray(treeSelectValue.value) ? treeSelectValue.value : [treeSelectValue.value];
     setTreeSelectValue(current, {
-      ...context,
-      trigger: context.node.checked ? 'check' : 'uncheck',
+      ...ctx,
+      data: ctx.node.data,
+      trigger: value.length > tmpValue.length ? 'check' : 'uncheck',
     });
+    innerInputValue.value && setInnerInputValue('', { trigger: 'change', e: ctx.e });
   };
 
   // only for single tree select
@@ -175,29 +175,31 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
     let current: TreeSelectValue = value;
     const nodeValue = Array.isArray(value) ? value[0] : value;
     current = isObjectValue.value ? treeRef.value.getItem(nodeValue) : nodeValue;
-    setTreeSelectValue(current, { ...ctx, trigger: 'check' });
+    setTreeSelectValue(current, { ...ctx, data: ctx.node.data, trigger: 'check' });
     setInnerVisible(false, ctx);
+    innerInputValue.value && setInnerInputValue('', { trigger: 'change', e: ctx.e });
   };
 
   // label could be used as TNode, then use text to filter
   const defaultFilterFunction: TreeProps['filter'] = (node) => {
     const label = node.data[tKeys.value.label];
     const searchLabel = isFunction(label) ? node.data.text : label || node.data.text;
-    return searchLabel?.indexOf(value) >= 0;
+    return searchLabel?.indexOf(innerInputValue.value) >= 0;
   };
 
   // filterable - 内置过滤规则； filter - 自定义过滤规则；filterable + onSearch 远程过滤
   const filterByText = computed<TreeProps['filter'] | undefined>(() => {
-    if ((props.filter || props.filterable) && inputValue.value && !context.listeners.search) {
-      return props.filter ? (node) => props.filter(inputValue.value, node.data) : defaultFilterFunction;
+    if ((props.filter || props.filterable) && innerInputValue.value && !context.listeners.search) {
+      return props.filter ? (node) => props.filter(innerInputValue.value, node) : defaultFilterFunction;
     }
     return undefined;
   });
 
   const inputChange: SelectInputProps['onInputChange'] = (value, ctx) => {
+    if (value === innerInputValue.value) return;
     setInnerInputValue(value, ctx);
-    if (context.listeners.search && props.filterable) {
-      props.onSearch?.(value);
+    if (context.listeners.search || props.onSearch) {
+      props.onSearch?.(value, { e: ctx.e });
       context.emit('search', value);
     }
   };
@@ -207,37 +209,69 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
     if (state) {
       treeRerender();
     }
+    if (!state && innerInputValue.value) {
+      setInnerInputValue('', { trigger: 'blur', e: ctx.e });
+    }
   };
 
   // multiple tree select
   const tagChange: SelectInputProps['onTagChange'] = (_, ctx) => {
     const { trigger, index } = ctx;
+    const fitTrigger = trigger === 'tag-remove' || trigger === 'backspace';
+    if (!fitTrigger) return;
     // handle remove event
     const current = treeSelectValue.value[index];
     const currentDeleteValue = typeof current === 'object' ? current[tKeys.value.value] : current;
-    const fitTrigger = trigger === 'tag-remove' || trigger === 'backspace';
-    const currentNode = treeRef.value.getItem(currentDeleteValue);
-    const removeParams: RemoveOptions = {
-      value: currentDeleteValue,
-      data: currentNode?.data,
-      node: currentNode,
-      trigger: fitTrigger ? trigger : undefined,
-      index,
-      e: ctx.e,
-    };
-    props.onRemove?.(removeParams);
-    context.emit('remove', removeParams);
+    const currentNode = treeRef.value?.getItem(currentDeleteValue);
+    const data = currentNode ? currentNode.data : getNodeDataByValue([currentDeleteValue], props.data, tKeys.value)[0];
+    if (fitTrigger) {
+      const removeParams: RemoveOptions = {
+        value: currentDeleteValue,
+        data,
+        node: currentNode,
+        trigger: fitTrigger ? trigger : undefined,
+        index,
+        e: ctx.e,
+      };
+      props.onRemove?.(removeParams);
+      context.emit('remove', removeParams);
+    }
 
     // handle multiple tree select change event
     if (Array.isArray(treeSelectValue.value)) {
-      treeSelectValue.value.splice(index, 1);
-      setTreeSelectValue(treeSelectValue.value, {
+      const newValue = [...treeSelectValue.value];
+      newValue.splice(index, 1);
+      setTreeSelectValue(newValue, {
         node: currentNode,
+        data,
         index,
         e: ctx.e,
         trigger: fitTrigger ? trigger : undefined,
       });
     }
+    innerInputValue.value && setInnerInputValue('', { trigger: 'change', e: ctx.e });
+  };
+
+  const onInnerFocus: SelectInputProps['onFocus'] = (_, ctx) => {
+    props.onFocus?.({ value: treeSelectValue.value, e: ctx.e });
+    context.emit('focus', { value: treeSelectValue.value, e: ctx.e });
+  };
+
+  const onInnerBlur: SelectInputProps['onBlur'] = (_, ctx) => {
+    props.onBlur?.({ value: treeSelectValue.value, e: ctx.e });
+    context.emit('blur', { value: treeSelectValue.value, e: ctx.e });
+  };
+
+  const onInnerEnter: SelectInputProps['onEnter'] = (_, ctx) => {
+    const enterParams = {
+      value: treeSelectValue.value,
+      inputValue: ctx.inputValue,
+      e: ctx.e,
+    };
+    props.onEnter?.(enterParams);
+    context.emit('enter', enterParams);
+    props.onSearch?.(ctx.inputValue, { e: ctx.e });
+    context.emit('search', ctx.inputValue, { e: ctx.e });
   };
 
   return {
@@ -255,8 +289,8 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
     nodeInfo,
     treeSelectValue,
     innerInputValue,
-    singleActivated,
     multipleChecked,
+    singleActivated,
     clear,
     filterByText,
     setInnerVisible,
@@ -267,5 +301,8 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
     inputChange,
     tagChange,
     onInnerPopupVisibleChange,
+    onInnerFocus,
+    onInnerBlur,
+    onInnerEnter,
   };
 }

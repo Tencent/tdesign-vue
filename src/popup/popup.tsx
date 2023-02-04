@@ -301,6 +301,9 @@ export default mixins(classPrefixMixins).extend({
       const triggerEl = this.$el as HTMLElement;
       // ignore document event when clicking trigger element
       if (triggerEl.contains(ev.target as Node)) return;
+      // ignore document event if popper panel clicked
+      const popperEl = this.$refs.popper as HTMLDivElement;
+      if (popperEl.contains(ev.target as Node)) return;
       this.visibleState = 0;
       this.emitPopVisible(false, { trigger: 'document' });
     },

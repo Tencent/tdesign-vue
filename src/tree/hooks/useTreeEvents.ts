@@ -53,13 +53,13 @@ export default function useTreeEvents(props: TypeTreeProps, context: SetupContex
     cache.mouseEvent = null;
   };
 
-  const handleChange = (evtState: TypeEventState) => {
+  const handleChange = (evtState: TypeEventState, ctx: { e: Event }) => {
     const { disabled } = props;
     const { node } = evtState;
     if (!node || disabled || node.disabled) {
       return;
     }
-    toggleChecked(node);
+    toggleChecked(node, ctx);
   };
 
   return {

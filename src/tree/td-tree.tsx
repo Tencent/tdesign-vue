@@ -90,14 +90,14 @@ export default defineComponent({
       });
     });
     watch(refProps.value, (nVal, previousVal) => {
-      if (nVal.join() === previousVal.join()) return;
+      if (nVal.join() === previousVal?.join()) return;
       store.replaceChecked(nVal);
     });
     watch(refProps.expanded, (nVal) => {
       store.replaceExpanded(nVal);
     });
     watch(refProps.actived, (nVal, previousVal) => {
-      if (nVal.join() === previousVal.join()) return;
+      if (nVal.join() === previousVal?.join()) return;
       store.replaceActived(nVal);
     });
 

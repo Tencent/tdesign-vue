@@ -1,5 +1,5 @@
 import {
-  SetupContext, computed, ref, toRefs, getCurrentInstance,
+  SetupContext, computed, ref, toRefs,
 } from '@vue/composition-api';
 import isObject from 'lodash/isObject';
 import Vue from 'vue';
@@ -26,7 +26,6 @@ const DEFAULT_KEYS: SelectInputKeys = {
 export default function useMultiple(props: TdSelectInputProps, context: SetupContext) {
   const { inputValue } = toRefs(props);
   const classPrefix = usePrefixClass();
-  const instance = getCurrentInstance();
   const tagInputRef = ref();
   const [tInputValue, setTInputValue] = useDefaultValue(
     inputValue,
@@ -45,13 +44,13 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
 
   const tPlaceholder = computed<string>(() => (!tags.value || !tags.value.length ? props.placeholder : ''));
 
-  const onTagInputChange: TagInputProps['onChange'] = (val, context) => {
+  const onTagInputChange: TagInputProps['onChange'] = (val, ctx) => {
     // 避免触发浮层的显示或隐藏
-    if (context.trigger === 'tag-remove') {
-      context.e?.stopPropagation();
+    if (ctx.trigger === 'tag-remove') {
+      ctx.e?.stopPropagation();
     }
-    props.onTagChange?.(val, context);
-    instance.emit('tag-change', val, context);
+    props.onTagChange?.(val, ctx);
+    context.emit('tag-change', val, ctx);
   };
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const renderSelectMultiple = (p: RenderSelectMultipleParams, h: Vue.CreateElement) => {
@@ -78,27 +77,36 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
       suffixIcon: !props.disabled && props.loading ? () => <Loading loading size="small" /> : props.suffixIcon,
       ...props.tagInputProps,
     };
+
     return (
       <TagInput
         ref="tagInputRef"
         scopedSlots={context.slots}
         props={tagInputProps}
         on={{
-          'input-change': (val: InputValue, context: InputValueChangeContext) => {
+          'input-change': (val: InputValue, ctx: InputValueChangeContext) => {
             // 筛选器统一特性：筛选器按下回车时不清空输入框
-            if (context?.trigger === 'enter') return;
-            setTInputValue(val, { trigger: context.trigger, e: context.e });
+            if (ctx?.trigger === 'enter') return;
+            setTInputValue(val, { trigger: ctx.trigger, e: ctx.e });
           },
+          ...context.listeners,
         }}
         onChange={onTagInputChange}
         onClear={p.onInnerClear}
-        onBlur={(val: TagInputValue, context: { inputValue: InputValue; e: FocusEvent }) => {
-          props.onBlur?.(props.value, { ...context, tagInputValue: val });
-          instance.emit('blur', props.value, { ...context, tagInputValue: val });
+        onBlur={(val: TagInputValue, ctx: { inputValue: InputValue; e: FocusEvent }) => {
+          const params = { ...ctx, tagInputValue: val };
+          props.onBlur?.(props.value, params);
+          context.emit('blur', props.value, params);
         }}
-        onFocus={(val: TagInputValue, context: { inputValue: InputValue; e: FocusEvent }) => {
-          props.onFocus?.(props.value, { ...context, tagInputValue: val });
-          instance.emit('focus', props.value, { ...context, tagInputValue: val });
+        onFocus={(val: TagInputValue, ctx: { inputValue: InputValue; e: FocusEvent }) => {
+          const params = { ...ctx, tagInputValue: val };
+          props.onFocus?.(props.value, params);
+          context.emit('focus', props.value, params);
+        }}
+        onEnter={(val: TagInputValue, ctx: { e: KeyboardEvent; inputValue: InputValue }) => {
+          const params = { ...ctx, tagInputValue: val };
+          props.onEnter?.(props.value, params);
+          context.emit('focus', props.value, params);
         }}
       />
     );

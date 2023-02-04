@@ -10,41 +10,28 @@
   >
   </t-tree-select>
 </template>
-<script>
+<script lang="jsx">
+const OPTIONS = [
+  { label: 'tdesign-vue', value: 1 },
+  {
+    label: 'tdesign-react',
+    value: 2,
+    children: [
+      { label: 'tdesign-web-react', value: '2.1' },
+      { label: 'tdesign-mobile-react', value: '2.2' },
+    ],
+  },
+  { label: 'tdesign-miniprogram', value: 3 },
+  // eslint-disable-next-line
+  { label: (h) => <span>tdesign-mobile-react</span>, text: 'tdesign-mobile-react', value: '4' },
+  { label: 'tdesign-angular', value: '5' },
+  { label: 'tdesign-mobile-vue', value: '6' },
+];
 export default {
   data() {
     return {
-      value: ['guangzhou', 'shenzhen'],
-      options: [
-        {
-          label: '广东省',
-          value: 'guangdong',
-          children: [
-            {
-              label: '广州市',
-              value: 'guangzhou',
-            },
-            {
-              label: '深圳市',
-              value: 'shenzhen',
-            },
-          ],
-        },
-        {
-          label: '江苏省',
-          value: 'jiangsu',
-          children: [
-            {
-              label: '南京市',
-              value: 'nanjing',
-            },
-            {
-              label: '苏州市',
-              value: 'suzhou',
-            },
-          ],
-        },
-      ],
+      value: [1, 2, 3, '4', '5'],
+      options: OPTIONS,
     };
   },
   methods: {

@@ -5,7 +5,6 @@ import Tree from '../tree';
 import props from './props';
 import SelectInput from '../select-input';
 import { TagInputChangeContext, TagInputValue } from '../tag-input';
-import { InputValue } from '../input';
 import FakeArrow from '../common-components/fake-arrow';
 import { TreeSelectValue, TdTreeSelectProps } from './type';
 import { useTNodeJSX, useTNodeDefault } from '../hooks/tnode';
@@ -17,11 +16,10 @@ export default defineComponent({
   props: { ...props },
 
   setup(props: TdTreeSelectProps, context) {
-    const treeSelectInfo = useTreeSelect(props, context);
-
     const renderTNodeJSX = useTNodeJSX();
     const renderDefaultTNode = useTNodeDefault();
 
+    const treeSelectInfo = useTreeSelect(props, context);
     const { dropdownInnerSize, treeSelectValue } = treeSelectInfo;
 
     const multiLimitDisabled = computed(
@@ -63,7 +61,7 @@ export default defineComponent({
           ]}
         >
           {this.loading && !this.tDisabled ? (
-            <p class={[`${this.classPrefix}-select-loading-tips`, `${this.classPrefix}-select__right-icon-polyfill`]}>
+            <p class={[`${this.classPrefix}-select__loading-tips`, `${this.classPrefix}-select__right-icon-polyfill`]}>
               {this.renderDefaultTNode('loadingText', {
                 defaultNode: <div class={`${this.classPrefix}-select__empty`}>{this.global.loadingText}</div>,
               })}
@@ -87,15 +85,14 @@ export default defineComponent({
                 activeMultiple: this.multiple,
                 onExpand: this.treeNodeExpand,
                 onLoad: this.treeNodeLoad,
+                onChange: this.treeNodeChange,
+                onActive: this.treeNodeActive,
                 expandOnClickNode: true,
                 empty: () => this.renderDefaultTNode('empty', {
                   defaultNode: <div class={`${this.classPrefix}-select__empty`}>{this.global.empty}</div>,
                 }),
+                // support all tree component props
                 ...this.treeProps,
-              }}
-              on={{
-                change: this.treeNodeChange,
-                active: this.treeNodeActive,
               }}
             />
           ) : null}
@@ -111,7 +108,7 @@ export default defineComponent({
         class={`${this.classPrefix}-tree-select`}
         {...{
           props: {
-            value: this.nodeInfo,
+            value: this.innerVisible && !props.multiple ? undefined : this.nodeInfo,
             inputValue: this.innerVisible ? this.innerInputValue : '',
             popupVisible: this.innerVisible,
             disabled: this.tDisabled,
@@ -125,7 +122,7 @@ export default defineComponent({
             placeholder: this.inputPlaceholder,
             status: this.status,
             tips: this.tips,
-            allowInput: this.filterable || isFunction(this.filter),
+            allowInput: Boolean(this.filterable || isFunction(this.filter) || this.$listeners.search || this.onSearch),
             minCollapsedNum: this.minCollapsedNum,
             collapsedItems: this.collapsedItems,
             popupProps: {
@@ -146,17 +143,14 @@ export default defineComponent({
             label: () => this.renderTNodeJSX('prefixIcon'),
             suffixIcon: this.renderSuffixIcon,
             onClear: this.clear,
-            onBlur: (value: InputValue, context: { e: FocusEvent }) => {
-              this.onBlur?.({ value, e: context.e });
-              this.$emit('blur', { value, e: context.e });
-            },
-            onFocus: (value: InputValue, context: { e: FocusEvent }) => {
-              this.onFocus?.({ value, e: context.e });
-              this.$emit('focus', { value, e: context.e });
-            },
+            onBlur: this.onInnerBlur,
+            onFocus: this.onInnerFocus,
             onInputChange: this.inputChange,
             onTagChange: this.tagChange,
+            onEnter: this.onInnerEnter,
             onPopupVisibleChange: this.onInnerPopupVisibleChange,
+
+            // custom value tag fro multiple tree select
             valueDisplay: () => this.renderTNodeJSX('valueDisplay', {
               params: this.multiple
                 ? {
@@ -170,7 +164,10 @@ export default defineComponent({
                 },
             }),
 
+            // tree panel
             panel: this.getTreePanel,
+
+            // support all select-input component props
             ...this.selectInputProps,
           },
         }}

@@ -155,7 +155,10 @@ export interface TdSelectInputProps {
   /**
    * 按键按下 Enter 时触发
    */
-  onEnter?: (value: SelectInputValue, context: { e: KeyboardEvent; inputValue: InputValue }) => void;
+  onEnter?: (
+    value: SelectInputValue,
+    context: { e: KeyboardEvent; inputValue: InputValue; tagInputValue?: TagInputValue },
+  ) => void;
   /**
    * 聚焦时触发
    */
@@ -202,7 +205,7 @@ export interface SelectInputFocusContext {
 
 export interface SelectInputValueChangeContext {
   e?: InputEvent | MouseEvent | FocusEvent | KeyboardEvent | CompositionEvent;
-  trigger: 'input' | 'clear' | 'blur' | 'initial';
+  trigger: 'input' | 'clear' | 'blur' | 'focus' | 'initial' | 'change';
 }
 
 export type SelectInputChangeContext = TagInputChangeContext;
