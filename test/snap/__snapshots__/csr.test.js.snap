@@ -2859,15 +2859,15 @@ exports[`csr snapshot test > csr test ./src/badge/_example/custom.vue 1`] = `
             height="1em"
             size="20px"
             version="1.1"
-            viewBox="0 0 14 14"
+            viewBox="0 0 12 12"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
           >
             <foreignobject
               height="12"
               width="12"
-              x="1"
-              y="1"
+              x="0"
+              y="0"
             >
               <div
                 class="t-loading__gradient-conic"
@@ -5250,15 +5250,15 @@ exports[`csr snapshot test > csr test ./src/button/_example/status.vue 1`] = `
           height="1em"
           size="medium"
           version="1.1"
-          viewBox="0 0 14 14"
+          viewBox="0 0 12 12"
           width="1em"
           xmlns="http://www.w3.org/2000/svg"
         >
           <foreignobject
             height="12"
             width="12"
-            x="1"
-            y="1"
+            x="0"
+            y="0"
           >
             <div
               class="t-loading__gradient-conic"
@@ -35191,15 +35191,15 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
                 height="1em"
                 size="small"
                 version="1.1"
-                viewBox="0 0 14 14"
+                viewBox="0 0 12 12"
                 width="1em"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <foreignobject
                   height="12"
                   width="12"
-                  x="1"
-                  y="1"
+                  x="0"
+                  y="0"
                 >
                   <div
                     class="t-loading__gradient-conic"
@@ -35401,15 +35401,15 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
               height="1em"
               size="small"
               version="1.1"
-              viewBox="0 0 14 14"
+              viewBox="0 0 12 12"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
             >
               <foreignobject
                 height="12"
                 width="12"
-                x="1"
-                y="1"
+                x="0"
+                y="0"
               >
                 <div
                   class="t-loading__gradient-conic"
@@ -41757,15 +41757,15 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/async.vue 1`] = `
                       height="1em"
                       size="medium"
                       version="1.1"
-                      viewBox="0 0 14 14"
+                      viewBox="0 0 12 12"
                       width="1em"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <foreignobject
                         height="12"
                         width="12"
-                        x="1"
-                        y="1"
+                        x="0"
+                        y="0"
                       >
                         <div
                           class="t-loading__gradient-conic"
@@ -53495,15 +53495,15 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator-status.vue 1
                     height="1em"
                     size="small"
                     version="1.1"
-                    viewBox="0 0 14 14"
+                    viewBox="0 0 12 12"
                     width="1em"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <foreignobject
                       height="12"
                       width="12"
-                      x="1"
-                      y="1"
+                      x="0"
+                      y="0"
                     >
                       <div
                         class="t-loading__gradient-conic"
@@ -66556,15 +66556,15 @@ exports[`csr snapshot test > csr test ./src/loading/_example/attach.vue 1`] = `
         height="1em"
         size="small"
         version="1.1"
-        viewBox="0 0 14 14"
+        viewBox="0 0 12 12"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"
       >
         <foreignobject
           height="12"
           width="12"
-          x="1"
-          y="1"
+          x="0"
+          y="0"
         >
           <div
             class="t-loading__gradient-conic"
@@ -66609,15 +66609,15 @@ exports[`csr snapshot test > csr test ./src/loading/_example/base.vue 1`] = `
         height="1em"
         size="medium"
         version="1.1"
-        viewBox="0 0 14 14"
+        viewBox="0 0 12 12"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"
       >
         <foreignobject
           height="12"
           width="12"
-          x="1"
-          y="1"
+          x="0"
+          y="0"
         >
           <div
             class="t-loading__gradient-conic"
@@ -66652,15 +66652,15 @@ exports[`csr snapshot test > csr test ./src/loading/_example/delay.vue 1`] = `
             height="1em"
             size="small"
             version="1.1"
-            viewBox="0 0 14 14"
+            viewBox="0 0 12 12"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
           >
             <foreignobject
               height="12"
               width="12"
-              x="1"
-              y="1"
+              x="0"
+              y="0"
             >
               <div
                 class="t-loading__gradient-conic"
@@ -66824,15 +66824,15 @@ exports[`csr snapshot test > csr test ./src/loading/_example/icon-text.vue 1`] =
         height="1em"
         size="small"
         version="1.1"
-        viewBox="0 0 14 14"
+        viewBox="0 0 12 12"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"
       >
         <foreignobject
           height="12"
           width="12"
-          x="1"
-          y="1"
+          x="0"
+          y="0"
         >
           <div
             class="t-loading__gradient-conic"
@@ -67050,15 +67050,15 @@ exports[`csr snapshot test > csr test ./src/loading/_example/size.vue 1`] = `
           height="1em"
           size="small"
           version="1.1"
-          viewBox="0 0 14 14"
+          viewBox="0 0 12 12"
           width="1em"
           xmlns="http://www.w3.org/2000/svg"
         >
           <foreignobject
             height="12"
             width="12"
-            x="1"
-            y="1"
+            x="0"
+            y="0"
           >
             <div
               class="t-loading__gradient-conic"
@@ -67086,15 +67086,15 @@ exports[`csr snapshot test > csr test ./src/loading/_example/size.vue 1`] = `
           height="1em"
           size="26px"
           version="1.1"
-          viewBox="0 0 14 14"
+          viewBox="0 0 12 12"
           width="1em"
           xmlns="http://www.w3.org/2000/svg"
         >
           <foreignobject
             height="12"
             width="12"
-            x="1"
-            y="1"
+            x="0"
+            y="0"
           >
             <div
               class="t-loading__gradient-conic"
@@ -67121,15 +67121,15 @@ exports[`csr snapshot test > csr test ./src/loading/_example/size.vue 1`] = `
           height="1em"
           size="medium"
           version="1.1"
-          viewBox="0 0 14 14"
+          viewBox="0 0 12 12"
           width="1em"
           xmlns="http://www.w3.org/2000/svg"
         >
           <foreignobject
             height="12"
             width="12"
-            x="1"
-            y="1"
+            x="0"
+            y="0"
           >
             <div
               class="t-loading__gradient-conic"
@@ -67157,15 +67157,15 @@ exports[`csr snapshot test > csr test ./src/loading/_example/size.vue 1`] = `
           height="1em"
           size="medium"
           version="1.1"
-          viewBox="0 0 14 14"
+          viewBox="0 0 12 12"
           width="1em"
           xmlns="http://www.w3.org/2000/svg"
         >
           <foreignobject
             height="12"
             width="12"
-            x="1"
-            y="1"
+            x="0"
+            y="0"
           >
             <div
               class="t-loading__gradient-conic"
@@ -67192,15 +67192,15 @@ exports[`csr snapshot test > csr test ./src/loading/_example/size.vue 1`] = `
           height="1em"
           size="large"
           version="1.1"
-          viewBox="0 0 14 14"
+          viewBox="0 0 12 12"
           width="1em"
           xmlns="http://www.w3.org/2000/svg"
         >
           <foreignobject
             height="12"
             width="12"
-            x="1"
-            y="1"
+            x="0"
+            y="0"
           >
             <div
               class="t-loading__gradient-conic"
@@ -67321,15 +67321,15 @@ exports[`csr snapshot test > csr test ./src/loading/_example/wrap.vue 1`] = `
               height="1em"
               size="small"
               version="1.1"
-              viewBox="0 0 14 14"
+              viewBox="0 0 12 12"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
             >
               <foreignobject
                 height="12"
                 width="12"
-                x="1"
-                y="1"
+                x="0"
+                y="0"
               >
                 <div
                   class="t-loading__gradient-conic"
@@ -71886,15 +71886,15 @@ exports[`csr snapshot test > csr test ./src/message/_example/loading.vue 1`] = `
           height="1em"
           size="medium"
           version="1.1"
-          viewBox="0 0 14 14"
+          viewBox="0 0 12 12"
           width="1em"
           xmlns="http://www.w3.org/2000/svg"
         >
           <foreignobject
             height="12"
             width="12"
-            x="1"
-            y="1"
+            x="0"
+            y="0"
           >
             <div
               class="t-loading__gradient-conic"
@@ -71922,15 +71922,15 @@ exports[`csr snapshot test > csr test ./src/message/_example/loading.vue 1`] = `
           height="1em"
           size="medium"
           version="1.1"
-          viewBox="0 0 14 14"
+          viewBox="0 0 12 12"
           width="1em"
           xmlns="http://www.w3.org/2000/svg"
         >
           <foreignobject
             height="12"
             width="12"
-            x="1"
-            y="1"
+            x="0"
+            y="0"
           >
             <div
               class="t-loading__gradient-conic"
@@ -71958,15 +71958,15 @@ exports[`csr snapshot test > csr test ./src/message/_example/loading.vue 1`] = `
           height="1em"
           size="medium"
           version="1.1"
-          viewBox="0 0 14 14"
+          viewBox="0 0 12 12"
           width="1em"
           xmlns="http://www.w3.org/2000/svg"
         >
           <foreignobject
             height="12"
             width="12"
-            x="1"
-            y="1"
+            x="0"
+            y="0"
           >
             <div
               class="t-loading__gradient-conic"
@@ -72596,15 +72596,15 @@ exports[`csr snapshot test > csr test ./src/message/_example/type.vue 1`] = `
         height="1em"
         size="medium"
         version="1.1"
-        viewBox="0 0 14 14"
+        viewBox="0 0 12 12"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"
       >
         <foreignobject
           height="12"
           width="12"
-          x="1"
-          y="1"
+          x="0"
+          y="0"
         >
           <div
             class="t-loading__gradient-conic"
@@ -86535,15 +86535,15 @@ exports[`csr snapshot test > csr test ./src/select/_example/status.vue 1`] = `
                   height="1em"
                   size="small"
                   version="1.1"
-                  viewBox="0 0 14 14"
+                  viewBox="0 0 12 12"
                   width="1em"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <foreignobject
                     height="12"
                     width="12"
-                    x="1"
-                    y="1"
+                    x="0"
+                    y="0"
                   >
                     <div
                       class="t-loading__gradient-conic"
@@ -94040,15 +94040,15 @@ exports[`csr snapshot test > csr test ./src/switch/_example/status.vue 1`] = `
             height="1em"
             size="small"
             version="1.1"
-            viewBox="0 0 14 14"
+            viewBox="0 0 12 12"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
           >
             <foreignobject
               height="12"
               width="12"
-              x="1"
-              y="1"
+              x="0"
+              y="0"
             >
               <div
                 class="t-loading__gradient-conic"
@@ -95342,15 +95342,15 @@ exports[`csr snapshot test > csr test ./src/table/_example/async-loading.vue 1`]
                         height="1em"
                         size="small"
                         version="1.1"
-                        viewBox="0 0 14 14"
+                        viewBox="0 0 12 12"
                         width="1em"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <foreignobject
                           height="12"
                           width="12"
-                          x="1"
-                          y="1"
+                          x="0"
+                          y="0"
                         >
                           <div
                             class="t-loading__gradient-conic"
@@ -114046,15 +114046,15 @@ exports[`csr snapshot test > csr test ./src/table/_example/loading.vue 1`] = `
         height="1em"
         size="small"
         version="1.1"
-        viewBox="0 0 14 14"
+        viewBox="0 0 12 12"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"
       >
         <foreignobject
           height="12"
           width="12"
-          x="1"
-          y="1"
+          x="0"
+          y="0"
         >
           <div
             class="t-loading__gradient-conic"
@@ -114353,15 +114353,15 @@ exports[`csr snapshot test > csr test ./src/table/_example/loading.vue 1`] = `
         height="1em"
         size="small"
         version="1.1"
-        viewBox="0 0 14 14"
+        viewBox="0 0 12 12"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"
       >
         <foreignobject
           height="12"
           width="12"
-          x="1"
-          y="1"
+          x="0"
+          y="0"
         >
           <div
             class="t-loading__gradient-conic"
@@ -148586,15 +148586,15 @@ exports[`csr snapshot test > csr test ./src/tree/_example/load.vue 1`] = `
                 height="1em"
                 size="medium"
                 version="1.1"
-                viewBox="0 0 14 14"
+                viewBox="0 0 12 12"
                 width="1em"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <foreignobject
                   height="12"
                   width="12"
-                  x="1"
-                  y="1"
+                  x="0"
+                  y="0"
                 >
                   <div
                     class="t-loading__gradient-conic"
@@ -148642,15 +148642,15 @@ exports[`csr snapshot test > csr test ./src/tree/_example/load.vue 1`] = `
                 height="1em"
                 size="medium"
                 version="1.1"
-                viewBox="0 0 14 14"
+                viewBox="0 0 12 12"
                 width="1em"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <foreignobject
                   height="12"
                   width="12"
-                  x="1"
-                  y="1"
+                  x="0"
+                  y="0"
                 >
                   <div
                     class="t-loading__gradient-conic"
