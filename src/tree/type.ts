@@ -166,7 +166,7 @@ export interface TdTreeProps<T extends TreeOptionData = TreeOptionData> {
   /**
    * 节点激活时触发，泛型 `T` 表示树节点 TS 类型
    */
-  onActive?: (value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T>; e: MouseEvent }) => void;
+  onActive?: (value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T>; e: Event }) => void;
   /**
    * 节点选中状态变化时触发，context.node 表示当前变化的选项，泛型 `T` 表示树节点 TS 类型
    */

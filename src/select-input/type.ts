@@ -147,7 +147,7 @@ export interface TdSelectInputProps {
   /**
    * 失去焦点时触发，`context.inputValue` 表示输入框的值；`context.tagInputValue` 表示标签输入框的值
    */
-  onBlur?: (value: SelectInputValue, context: SelectInputFocusContext) => void;
+  onBlur?: (value: SelectInputValue, context: SelectInputBlurContext) => void;
   /**
    * 清空按钮点击时触发
    */
@@ -197,6 +197,8 @@ export interface SelectInputKeys {
 
 export type SelectInputValue = string | number | boolean | Date | Object | Array<any> | Array<SelectInputValue>;
 
+export type SelectInputBlurContext = PopupVisibleChangeContext & { inputValue: string; tagInputValue?: TagInputValue };
+
 export interface SelectInputFocusContext {
   inputValue: InputValue;
   tagInputValue?: TagInputValue;
@@ -204,7 +206,7 @@ export interface SelectInputFocusContext {
 }
 
 export interface SelectInputValueChangeContext {
-  e?: InputEvent | MouseEvent | FocusEvent | KeyboardEvent | CompositionEvent;
+  e?: Event | InputEvent | MouseEvent | FocusEvent | KeyboardEvent | CompositionEvent;
   trigger: 'input' | 'clear' | 'blur' | 'focus' | 'initial' | 'change';
 }
 

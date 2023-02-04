@@ -1,7 +1,7 @@
 import {
   computed, defineComponent, ref, SetupContext, toRefs,
 } from '@vue/composition-api';
-import Popup from '../popup';
+import Popup, { PopupVisibleChangeContext } from '../popup';
 import props from './props';
 import { TdSelectInputProps } from './type';
 import useSingle from './useSingle';
@@ -27,9 +27,22 @@ export default defineComponent({
       multiple, value, popupVisible, borderless,
     } = toRefs(props);
 
-    const { commonInputProps, onInnerClear, renderSelectSingle } = useSingle(props, context);
-    const { renderSelectMultiple } = useMultiple(props, context);
-    const { tOverlayInnerStyle, innerPopupVisible, onInnerPopupVisibleChange } = useOverlayInnerStyle(props);
+    const {
+      commonInputProps, singleInputValue, onInnerClear, renderSelectSingle,
+    } = useSingle(props, context);
+    const { multipleInputValue, renderSelectMultiple } = useMultiple(props, context);
+    const { tOverlayInnerStyle, innerPopupVisible, onInnerPopupVisibleChange } = useOverlayInnerStyle(props, {
+      afterHidePopup: onInnerBlur,
+    });
+
+    // SelectInput.blur is not equal to Input or TagInput, example: click popup panel.
+    // if trigger blur on click popup panel, filter data of tree select can not be checked.
+    function onInnerBlur(ctx: PopupVisibleChangeContext) {
+      const inputValue = props.multiple ? multipleInputValue.value : singleInputValue.value;
+      const params: Parameters<TdSelectInputProps['onBlur']>[1] = { e: ctx.e, inputValue };
+      props.onBlur?.(props.value, params);
+      context.emit('blur', props.value, params);
+    }
 
     const classes = computed(() => [
       `${classPrefix.value}-select-input`,

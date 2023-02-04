@@ -19,6 +19,7 @@ import { closeIconClickEffect, handleRemoveTagEffect } from './core/effect';
 import { getPanels, getSingleContent, getMultipleContent } from './core/helper';
 import { getFakeArrowIconClass } from './core/className';
 import useFormDisabled from '../hooks/useFormDisabled';
+import { TagInputValue } from '../tag-input';
 
 export default defineComponent({
   name: 'TCascader',
@@ -129,32 +130,32 @@ export default defineComponent({
               setInputVal(`${value}`);
               (this?.selectInputProps as TdSelectInputProps)?.onInputChange?.(value, ctx);
             },
-            onTagChange: (val: CascaderValue, ctx: SelectInputChangeContext) => {
+            onTagChange: (val: TagInputValue, ctx: SelectInputChangeContext) => {
               // 按 enter 键不处理
               if (ctx.trigger === 'enter') return;
               handleRemoveTagEffect(cascaderContext, ctx.index, this.onRemove);
-              (this?.selectInputProps as TdSelectInputProps)?.onTagChange?.(val, ctx);
+              (this.selectInputProps as TdSelectInputProps)?.onTagChange?.(val, ctx);
             },
             onPopupVisibleChange: (val: boolean, context: PopupVisibleChangeContext) => {
               if (this.disabled) return;
               setVisible(val, context);
-              (this?.selectInputProps as TdSelectInputProps)?.onPopupVisibleChange?.(val, context);
+              (this.selectInputProps as TdSelectInputProps)?.onPopupVisibleChange?.(val, context);
             },
             onBlur: (val: CascaderValue, context: SelectInputFocusContext) => {
               const ctx = { value: cascaderContext.value, e: context.e };
               this.onBlur?.(ctx);
               emit('blur', ctx);
-              (this?.selectInputProps as TdSelectInputProps)?.onBlur?.(val, context);
+              (this.selectInputProps as TdSelectInputProps)?.onBlur?.(val, context);
             },
             onFocus: (val: CascaderValue, context: SelectInputFocusContext) => {
               const ctx = { value: cascaderContext.value, e: context.e };
               this.onFocus?.(ctx);
               emit('focus', ctx);
-              (this?.selectInputProps as TdSelectInputProps)?.onFocus?.(val, context);
+              (this.selectInputProps as TdSelectInputProps)?.onFocus?.(val, context);
             },
             onClear: (context: { e: MouseEvent }) => {
               closeIconClickEffect(cascaderContext);
-              (this?.selectInputProps as TdSelectInputProps)?.onClear?.(context);
+              (this.selectInputProps as TdSelectInputProps)?.onClear?.(context);
             },
             ...omit(this.selectInputProps as TdSelectInputProps, [
               'onTagChange',

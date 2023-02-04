@@ -108,8 +108,8 @@ export default defineComponent({
         class={`${this.classPrefix}-tree-select`}
         {...{
           props: {
-            value: this.innerVisible && !props.multiple ? undefined : this.nodeInfo,
-            inputValue: this.innerVisible ? this.innerInputValue : '',
+            value: this.nodeInfo,
+            inputValue: this.innerInputValue,
             popupVisible: this.innerVisible,
             disabled: this.tDisabled,
             multiple: this.multiple,

@@ -31,6 +31,7 @@
         multiple
         clearable
         :filter="filterFunction"
+        :treeProps="{ expandAll: true, valueMode: 'onlyLeaf' }"
         placeholder="请选择"
         style="width: 500px"
       ></t-tree-select>
@@ -47,6 +48,7 @@
         style="width: 500px"
         :popupVisible="true"
         :loading="loading"
+        :treeProps="{ expandAll: true, valueMode: 'onlyLeaf' }"
         @search="onMultipleRemoteSearch"
       ></t-tree-select>
     </template>
@@ -57,6 +59,7 @@
         v-if="type === 'filterable'"
         v-model="singleValue1"
         :data="options"
+        :treeProps="{ expandAll: true, valueMode: 'onlyLeaf' }"
         clearable
         filterable
         placeholder="请选择"
@@ -71,6 +74,7 @@
         :data="options"
         clearable
         :filter="filterFunction"
+        :treeProps="{ expandAll: true, valueMode: 'onlyLeaf' }"
         placeholder="请选择"
         style="width: 300px"
       ></t-tree-select>
@@ -85,7 +89,7 @@
         placeholder="请选择"
         style="width: 500px"
         :loading="loading"
-        :treeProps="{ expandAll: true }"
+        :treeProps="{ expandAll: true, valueMode: 'onlyLeaf' }"
         @search="onMultipleRemoteSearch"
       ></t-tree-select>
     </template>
@@ -125,15 +129,15 @@ const OPTIONS = [
 export default {
   data() {
     return {
-      multiple: false,
+      multiple: true,
       multipleValue1: [],
       multipleValue2: [],
       multipleValue3: [],
       loading: false,
-      singleValue1: 'filterable',
+      singleValue1: '',
       singleValue2: '',
       singleValue3: '',
-      type: 'search',
+      type: 'filterable',
       options: OPTIONS,
     };
   },
@@ -147,6 +151,7 @@ export default {
         this.options = OPTIONS;
         return;
       }
+      console.log('search', keyword);
       this.loading = true;
       const timer = setTimeout(() => {
         this.options = [

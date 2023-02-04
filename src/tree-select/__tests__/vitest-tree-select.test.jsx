@@ -7,7 +7,11 @@
 import { mount } from '@vue/test-utils';
 import { vi } from 'vitest';
 import {
-  mockDelay, simulateInputChange, createElementById, simulateInputEnter,
+  mockDelay,
+  simulateInputChange,
+  createElementById,
+  simulateDocumentClick,
+  simulateInputEnter,
 } from '@test/utils';
 import { TreeSelect } from '..';
 import { getTreeSelectDefaultMount, getTreeSelectMultipleMount } from './mount';
@@ -212,7 +216,7 @@ describe('TreeSelect Component', () => {
     customNodeDom?.remove();
   });
 
-  it('props.filter works fine', async () => {
+  it('props.filter: multiple tree select & filterable', async () => {
     const wrapper = getTreeSelectMultipleMount(TreeSelect, {
       filter: (filterWord, node) => !filterWord || node.data.label === filterWord,
     });
@@ -240,7 +244,44 @@ describe('TreeSelect Component', () => {
     simulateInputChange(inputDom1, 'tdesign-react');
     await wrapper.vm.$nextTick();
     await mockDelay(100);
+    const tTreeItemNotTTreeItemHiddenDom = document.querySelectorAll('.t-tree__item:not(.t-tree__item--hidden)');
+    expect(tTreeItemNotTTreeItemHiddenDom.length).toBe(6);
+    // remove nodes from document to avoid influencing following test cases
+    tTreeItemNotTTreeItemHiddenDom.forEach((node) => node.remove());
     document.querySelectorAll('.t-popup').forEach((node) => node.remove());
+  });
+
+  it('props.filter: multiple tree select, check filter nodes', async () => {
+    const wrapper = getTreeSelectMultipleMount(TreeSelect, { filterable: true });
+    wrapper.find('.t-input').trigger('click');
+    await wrapper.vm.$nextTick();
+    const inputDom1 = wrapper.find('input').element;
+    simulateInputChange(inputDom1, 'tdesign-vue');
+    await wrapper.vm.$nextTick();
+    await mockDelay(100);
+    document.querySelector('.t-tree__item:first-child').click();
+    await wrapper.vm.$nextTick();
+    document.querySelectorAll('.t-popup').forEach((node) => node.remove());
+  });
+
+  it('props.filter: single tree select, check filter nodes', async () => {
+    const onChangeFn2 = vi.fn();
+    const wrapper = getTreeSelectDefaultMount(TreeSelect, { filterable: true }, { change: onChangeFn2 });
+    wrapper.find('.t-input').trigger('click');
+    await wrapper.vm.$nextTick();
+    const inputDom1 = wrapper.find('input').element;
+    simulateInputChange(inputDom1, 'tdesign-vue');
+    await wrapper.vm.$nextTick();
+    await mockDelay(100);
+    document.querySelector('.t-tree__item:first-child').click();
+    await wrapper.vm.$nextTick();
+    document.querySelectorAll('.t-popup').forEach((node) => node.remove());
+    expect(onChangeFn2).toHaveBeenCalled();
+    expect(onChangeFn2.mock.calls[0][0]).toBe(1);
+    expect(onChangeFn2.mock.calls[0][1].node).toBeTruthy();
+    expect(onChangeFn2.mock.calls[0][1].data).toEqual({ label: 'tdesign-vue', value: 1 });
+    expect(onChangeFn2.mock.calls[0][1].trigger).toBe('check');
+    expect(onChangeFn2.mock.calls[0][1].e.type).toBe('click');
   });
 
   it('props.filterable works fine', async () => {
@@ -628,11 +669,11 @@ describe('TreeSelect Component', () => {
     expect(onFocusFn).toHaveBeenCalled();
     expect(onFocusFn.mock.calls[0][0].e.type).toBe('focus');
     expect(onFocusFn.mock.calls[0][0].value).toBe(1);
-    wrapper.find('input').trigger('blur');
+    simulateDocumentClick(document);
     await wrapper.vm.$nextTick();
     document.querySelectorAll('.t-popup').forEach((node) => node.remove());
     expect(onBlurFn1).toHaveBeenCalled();
-    expect(onBlurFn1.mock.calls[0][0].e.type).toBe('blur');
+    expect(onBlurFn1.mock.calls[0][0].e.type).toBe('click');
     expect(onBlurFn1.mock.calls[0][0].value).toBe(1);
   });
 
@@ -648,11 +689,11 @@ describe('TreeSelect Component', () => {
     await wrapper.vm.$nextTick();
     expect(onFocusFn).toHaveBeenCalled();
     expect(onFocusFn.mock.calls[0][0].e.type).toBe('focus');
-    wrapper.find('input').trigger('blur');
+    simulateDocumentClick(document);
     await wrapper.vm.$nextTick();
     document.querySelectorAll('.t-popup').forEach((node) => node.remove());
     expect(onBlurFn1).toHaveBeenCalled();
-    expect(onBlurFn1.mock.calls[0][0].e.type).toBe('blur');
+    expect(onBlurFn1.mock.calls[0][0].e.type).toBe('click');
     expect(onBlurFn1.mock.calls[0][0].value).toEqual([1]);
   });
 
@@ -718,6 +759,7 @@ describe('TreeSelect Component', () => {
     await wrapper.vm.$nextTick();
     wrapper.find('.t-tag-input__suffix-clear').trigger('click');
     await wrapper.vm.$nextTick();
+    document.querySelectorAll('.t-popup').forEach((node) => node.remove());
     expect(onClearFn1).toHaveBeenCalled();
     expect(onClearFn1.mock.calls[0][0].e.type).toBe('click');
     expect(onChangeFn1).toHaveBeenCalled();
@@ -725,7 +767,7 @@ describe('TreeSelect Component', () => {
     expect(onChangeFn1.mock.calls[0][1].trigger).toBe('clear');
     expect(onPopupVisibleChangeFn1).toHaveBeenCalled();
     expect(onPopupVisibleChangeFn1.mock.calls[0][0]).toBe(false);
-    expect(onPopupVisibleChangeFn1.mock.calls[0][1].trigger).toBe('trigger-element-click');
+    expect(onPopupVisibleChangeFn1.mock.calls[0][1].trigger).toBe('clear');
   });
 
   it('events.clear: Single TreeSelect, clear value on click clear icon', async () => {
@@ -741,6 +783,7 @@ describe('TreeSelect Component', () => {
     await wrapper.vm.$nextTick();
     wrapper.find('.t-input__suffix-clear').trigger('click');
     await wrapper.vm.$nextTick();
+    document.querySelectorAll('.t-popup').forEach((node) => node.remove());
     expect(onClearFn1).toHaveBeenCalled();
     expect(onClearFn1.mock.calls[0][0].e.type).toBe('click');
     expect(onChangeFn1).toHaveBeenCalled();
@@ -748,7 +791,7 @@ describe('TreeSelect Component', () => {
     expect(onChangeFn1.mock.calls[0][1].trigger).toBe('clear');
     expect(onPopupVisibleChangeFn1).toHaveBeenCalled();
     expect(onPopupVisibleChangeFn1.mock.calls[0][0]).toBe(false);
-    expect(onPopupVisibleChangeFn1.mock.calls[0][1].trigger).toBe('trigger-element-click');
+    expect(onPopupVisibleChangeFn1.mock.calls[0][1].trigger).toBe('clear');
   });
 
   it('events.focus works fine', async () => {
@@ -756,6 +799,7 @@ describe('TreeSelect Component', () => {
     const wrapper = getTreeSelectMultipleMount(TreeSelect, { filterable: true, value: [1] }, { focus: onFocusFn });
     wrapper.find('input').trigger('focus');
     await wrapper.vm.$nextTick();
+    document.querySelectorAll('.t-popup').forEach((node) => node.remove());
     expect(onFocusFn).toHaveBeenCalled();
     expect(onFocusFn.mock.calls[0][0].value).toEqual([1]);
     expect(onFocusFn.mock.calls[0][0].e.type).toBe('focus');
@@ -770,6 +814,7 @@ describe('TreeSelect Component', () => {
     );
     wrapper.find('input').trigger('focus');
     await wrapper.vm.$nextTick();
+    document.querySelectorAll('.t-popup').forEach((node) => node.remove());
     expect(onFocusFn).toHaveBeenCalled();
     expect(onFocusFn.mock.calls[0][0].value).toEqual([{ label: 'tdesign-vue', value: 1 }]);
     expect(onFocusFn.mock.calls[0][0].e.type).toBe('focus');

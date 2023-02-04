@@ -7,10 +7,10 @@
 import { InputProps } from '../input';
 import { InputValue } from '../input';
 import { PopupProps } from '../popup';
-import { SelectInputProps, SelectInputValueChangeContext } from '../select-input';
+import { SelectInputProps, SelectInputBlurContext, SelectInputValueChangeContext } from '../select-input';
 import { TagProps } from '../tag';
 import { TreeProps, TreeNodeModel, TreeKeysType } from '../tree';
-import { PopupVisibleChangeContext, PopupTriggerEvent } from '../popup';
+import { PopupVisibleChangeContext, PopupTriggerEvent, PopupTriggerSource } from '../popup';
 import { TNode, TreeOptionData } from '../common';
 
 export interface TdTreeSelectProps<
@@ -174,7 +174,7 @@ export interface TdTreeSelectProps<
   /**
    * 输入框失去焦点时触发
    */
-  onBlur?: (context: { value: TreeSelectValue; e: FocusEvent }) => void;
+  onBlur?: (context: SelectInputBlurContext & { value: TreeSelectValue }) => void;
   /**
    * 节点选中状态变化时触发，`context.node` 表示当前变化的选项，`context. trigger` 表示触发变化的来源。泛型 `TreeValueType` 继承自 `TreeSelectValue`
    */
@@ -198,10 +198,7 @@ export interface TdTreeSelectProps<
   /**
    * 下拉框显示或隐藏时触发。单选场景，选中某个选项时触发关闭，此时需要添加参数 `node`
    */
-  onPopupVisibleChange?: (
-    visible: boolean,
-    context: PopupVisibleChangeContext & { node?: TreeNodeModel<DataOption>; e?: PopupTriggerEvent },
-  ) => void;
+  onPopupVisibleChange?: (visible: boolean, context: TreeSelectPopupVisibleContext<DataOption>) => void;
   /**
    * 多选模式下，选中数据被移除时触发
    */
@@ -219,10 +216,16 @@ export interface TreeSelectChangeContext<DataOption> {
   data: DataOption;
   index?: number;
   trigger: TreeSelectValueChangeTrigger;
-  e?: MouseEvent | KeyboardEvent;
+  e?: MouseEvent | KeyboardEvent | Event;
 }
 
 export type TreeSelectValueChangeTrigger = 'clear' | 'tag-remove' | 'backspace' | 'check' | 'uncheck';
+
+export interface TreeSelectPopupVisibleContext<T> {
+  e?: PopupTriggerEvent | Event;
+  node?: TreeNodeModel<T>;
+  trigger?: PopupTriggerSource | 'clear';
+}
 
 export interface RemoveOptions<T extends TreeOptionData = TreeOptionData, N extends TreeSelectValue = TreeSelectValue> {
   value: N;

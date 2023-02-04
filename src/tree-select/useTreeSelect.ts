@@ -44,7 +44,7 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
 
   const [innerInputValue, setInnerInputValue] = useDefaultValue(
     inputValue,
-    props.defaultInputValue,
+    props.defaultInputValue || '',
     props.onInputChange,
     'inputValue',
     'input-change',
@@ -142,12 +142,15 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
   const clear: SelectInputProps['onClear'] = ({ e }) => {
     const defaultValue: TreeSelectValue = props.multiple ? [] : undefined;
     setTreeSelectValue(defaultValue, {
-      e, node: null, data: null, trigger: 'clear',
+      e,
+      node: null,
+      data: null,
+      trigger: 'clear',
     });
     props.onClear?.({ e });
     context.emit('clear', { e });
     // close popup after clear
-    setInnerVisible(false, { e, trigger: 'trigger-element-click' });
+    setInnerVisible(false, { e, trigger: 'clear' });
   };
 
   // only for multiple tree select
@@ -189,13 +192,14 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
 
   // filterable - 内置过滤规则； filter - 自定义过滤规则；filterable + onSearch 远程过滤
   const filterByText = computed<TreeProps['filter'] | undefined>(() => {
+    if (props.onSearch || context.listeners.search) return;
     if ((props.filter || props.filterable) && innerInputValue.value && !context.listeners.search) {
       return props.filter ? (node) => props.filter(innerInputValue.value, node) : defaultFilterFunction;
     }
     return undefined;
   });
 
-  const inputChange: SelectInputProps['onInputChange'] = (value, ctx) => {
+  const inputChange: SelectInputProps['onInputChange'] = (value = '', ctx) => {
     if (value === innerInputValue.value) return;
     setInnerInputValue(value, ctx);
     if (context.listeners.search || props.onSearch) {
@@ -255,11 +259,15 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
   const onInnerFocus: SelectInputProps['onFocus'] = (_, ctx) => {
     props.onFocus?.({ value: treeSelectValue.value, e: ctx.e });
     context.emit('focus', { value: treeSelectValue.value, e: ctx.e });
+    // open popup on focus, used for keyboard event
+    if (innerVisible.value !== true) {
+      setInnerVisible(true, { ...ctx, trigger: 'trigger-element-focus' });
+    }
   };
 
   const onInnerBlur: SelectInputProps['onBlur'] = (_, ctx) => {
-    props.onBlur?.({ value: treeSelectValue.value, e: ctx.e });
-    context.emit('blur', { value: treeSelectValue.value, e: ctx.e });
+    props.onBlur?.({ value: treeSelectValue.value, ...ctx });
+    context.emit('blur', { value: treeSelectValue.value, ...ctx });
   };
 
   const onInnerEnter: SelectInputProps['onEnter'] = (_, ctx) => {

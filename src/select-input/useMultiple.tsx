@@ -85,19 +85,19 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
         props={tagInputProps}
         on={{
           'input-change': (val: InputValue, ctx: InputValueChangeContext) => {
-            // 筛选器统一特性：筛选器按下回车时不清空输入框
-            if (ctx?.trigger === 'enter') return;
+            /**
+             * 筛选器统一特性：
+             * 1. 筛选器按下回车时不清空输入框;
+             * 2. SelectInput 的失焦不等于 TagInput。如点击下拉面板时，TagInput 失去焦点，但 SelectInput 依旧保持聚焦，允许继续选择。
+             */
+            if (ctx.trigger === 'enter' || ctx.trigger === 'blur') return;
             setTInputValue(val, { trigger: ctx.trigger, e: ctx.e });
           },
           ...context.listeners,
         }}
         onChange={onTagInputChange}
         onClear={p.onInnerClear}
-        onBlur={(val: TagInputValue, ctx: { inputValue: InputValue; e: FocusEvent }) => {
-          const params = { ...ctx, tagInputValue: val };
-          props.onBlur?.(props.value, params);
-          context.emit('blur', props.value, params);
-        }}
+        // [Important Info]: SelectInput.blur is not equal to TagInput, example: click popup panel
         onFocus={(val: TagInputValue, ctx: { inputValue: InputValue; e: FocusEvent }) => {
           const params = { ...ctx, tagInputValue: val };
           props.onFocus?.(props.value, params);
@@ -116,6 +116,7 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
     tags,
     tPlaceholder,
     tagInputRef,
+    multipleInputValue: tInputValue,
     renderSelectMultiple,
   };
 }

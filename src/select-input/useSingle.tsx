@@ -98,10 +98,7 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
         scopedSlots={context.slots}
         onChange={onInnerInputChange}
         onClear={onInnerClear}
-        onBlur={(val: InputValue, context: { e: MouseEvent }) => {
-          props.onBlur?.(value.value, { ...context, inputValue: val });
-          instance.emit('blur', value.value, { ...context, inputValue: val });
-        }}
+        // [Important Info]: SelectInput.focus is not equal to Input, example: click popup panel
         onEnter={(val: InputValue, context: { e: KeyboardEvent }) => {
           props.onEnter?.(value.value, { ...context, inputValue: val });
           instance.emit('enter', value.value, { ...context, inputValue: val });
@@ -109,8 +106,8 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
         onFocus={(val: InputValue, context: { e: MouseEvent }) => {
           props.onFocus?.(value.value, { ...context, inputValue: val });
           instance.emit('focus', value.value, { ...context, tagInputValue: val });
-          // TODO: discuss, focus might not need change input value
-          !popupVisible && setInputValue(getInputValue(value.value, keys.value), { ...context, trigger: 'focus' }); // 聚焦时拿到value
+          // TO Discuss: focus might not need to change input value. it will caught some curious errors in tree-select
+          // !popupVisible && setInputValue(getInputValue(value.value, keys.value), { ...context, trigger: 'focus' }); // 聚焦时拿到value
         }}
         onPaste={(context: { e: ClipboardEvent; pasteValue: string }) => {
           props.onPaste?.(context);
@@ -131,6 +128,7 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
   return {
     inputRef,
     commonInputProps,
+    singleInputValue: inputValue,
     onInnerClear,
     renderSelectSingle,
   };

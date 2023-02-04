@@ -35,11 +35,11 @@ tagProps | Object | - | 透传 Tag 标签组件全部属性。TS 类型：`TagPr
 tips | String / Slot / Function | - | 输入框下方提示文本，会根据不同的 `status` 呈现不同的样式。TS 类型：`string \| TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 value | String / Number / Boolean / Object / Array / Date | undefined | 全部标签值。值为数组表示多个标签，值为非数组表示单个数值。TS 类型：`SelectInputValue` `type SelectInputValue = string \| number \| boolean \| Date \| Object \| Array<any> \| Array<SelectInputValue>`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select-input/type.ts) | N
 valueDisplay | String / Slot / Function | - | 自定义值呈现的全部内容，参数为所有标签的值。TS 类型：`string \| TNode<{ value: TagInputValue; onClose: (index: number, item?: any) => void }>`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-onBlur | Function |  | TS 类型：`(value: SelectInputValue, context: SelectInputFocusContext) => void`<br/>失去焦点时触发，`context.inputValue` 表示输入框的值；`context.tagInputValue` 表示标签输入框的值 | N
+onBlur | Function |  | TS 类型：`(value: SelectInputValue, context: SelectInputBlurContext) => void`<br/>失去焦点时触发，`context.inputValue` 表示输入框的值；`context.tagInputValue` 表示标签输入框的值。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select-input/type.ts)。<br/>`type SelectInputBlurContext = PopupVisibleChangeContext & { inputValue: string; tagInputValue?: TagInputValue; }`<br/> | N
 onClear | Function |  | TS 类型：`(context: { e: MouseEvent }) => void`<br/>清空按钮点击时触发 | N
 onEnter | Function |  | TS 类型：`(value: SelectInputValue, context: { e: KeyboardEvent; inputValue: InputValue; tagInputValue?: TagInputValue }) => void`<br/>按键按下 Enter 时触发 | N
 onFocus | Function |  | TS 类型：`(value: SelectInputValue, context: SelectInputFocusContext) => void`<br/>聚焦时触发。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select-input/type.ts)。<br/>`interface SelectInputFocusContext { inputValue: InputValue; tagInputValue?: TagInputValue; e: FocusEvent }`<br/> | N
-onInputChange | Function |  | TS 类型：`(value: InputValue, context?: SelectInputValueChangeContext) => void`<br/>输入框值发生变化时触发，`context.trigger` 表示触发输入框值变化的来源：文本输入触发、清除按钮触发等。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select-input/type.ts)。<br/>`interface SelectInputValueChangeContext { e?: InputEvent \| MouseEvent \| FocusEvent \| KeyboardEvent \| CompositionEvent; trigger: 'input' \| 'clear' \| 'blur' \| 'focus' \| 'initial' \| 'change' }`<br/> | N
+onInputChange | Function |  | TS 类型：`(value: InputValue, context?: SelectInputValueChangeContext) => void`<br/>输入框值发生变化时触发，`context.trigger` 表示触发输入框值变化的来源：文本输入触发、清除按钮触发等。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select-input/type.ts)。<br/>`interface SelectInputValueChangeContext { e?: Event \| InputEvent \| MouseEvent \| FocusEvent \| KeyboardEvent \| CompositionEvent; trigger: 'input' \| 'clear' \| 'blur' \| 'focus' \| 'initial' \| 'change' }`<br/> | N
 onMouseenter | Function |  | TS 类型：`(context: { e: MouseEvent }) => void`<br/>进入输入框时触发 | N
 onMouseleave | Function |  | TS 类型：`(context: { e: MouseEvent }) => void`<br/>离开输入框时触发 | N
 onPaste | Function |  | TS 类型：`(context: { e: ClipboardEvent; pasteValue: string }) => void`<br/>粘贴事件，`pasteValue` 表示粘贴板的内容 | N
@@ -50,11 +50,11 @@ onTagChange | Function |  | TS 类型：`(value: TagInputValue, context: SelectI
 
 名称 | 参数 | 描述
 -- | -- | --
-blur | `(value: SelectInputValue, context: SelectInputFocusContext)` | 失去焦点时触发，`context.inputValue` 表示输入框的值；`context.tagInputValue` 表示标签输入框的值
+blur | `(value: SelectInputValue, context: SelectInputBlurContext)` | 失去焦点时触发，`context.inputValue` 表示输入框的值；`context.tagInputValue` 表示标签输入框的值。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select-input/type.ts)。<br/>`type SelectInputBlurContext = PopupVisibleChangeContext & { inputValue: string; tagInputValue?: TagInputValue; }`<br/>
 clear | `(context: { e: MouseEvent })` | 清空按钮点击时触发
 enter | `(value: SelectInputValue, context: { e: KeyboardEvent; inputValue: InputValue; tagInputValue?: TagInputValue })` | 按键按下 Enter 时触发
 focus | `(value: SelectInputValue, context: SelectInputFocusContext)` | 聚焦时触发。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select-input/type.ts)。<br/>`interface SelectInputFocusContext { inputValue: InputValue; tagInputValue?: TagInputValue; e: FocusEvent }`<br/>
-input-change | `(value: InputValue, context?: SelectInputValueChangeContext)` | 输入框值发生变化时触发，`context.trigger` 表示触发输入框值变化的来源：文本输入触发、清除按钮触发等。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select-input/type.ts)。<br/>`interface SelectInputValueChangeContext { e?: InputEvent \| MouseEvent \| FocusEvent \| KeyboardEvent \| CompositionEvent; trigger: 'input' \| 'clear' \| 'blur' \| 'focus' \| 'initial' \| 'change' }`<br/>
+input-change | `(value: InputValue, context?: SelectInputValueChangeContext)` | 输入框值发生变化时触发，`context.trigger` 表示触发输入框值变化的来源：文本输入触发、清除按钮触发等。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select-input/type.ts)。<br/>`interface SelectInputValueChangeContext { e?: Event \| InputEvent \| MouseEvent \| FocusEvent \| KeyboardEvent \| CompositionEvent; trigger: 'input' \| 'clear' \| 'blur' \| 'focus' \| 'initial' \| 'change' }`<br/>
 mouseenter | `(context: { e: MouseEvent })` | 进入输入框时触发
 mouseleave | `(context: { e: MouseEvent })` | 离开输入框时触发
 paste | `(context: { e: ClipboardEvent; pasteValue: string })` | 粘贴事件，`pasteValue` 表示粘贴板的内容

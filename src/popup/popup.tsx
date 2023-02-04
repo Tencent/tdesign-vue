@@ -305,7 +305,7 @@ export default mixins(classPrefixMixins).extend({
       const popperEl = this.$refs.popper as HTMLDivElement;
       if (popperEl.contains(ev.target as Node)) return;
       this.visibleState = 0;
-      this.emitPopVisible(false, { trigger: 'document' });
+      this.emitPopVisible(false, { trigger: 'document', e: ev });
     },
     emitPopVisible(visible: boolean, context: PopupVisibleChangeContext) {
       if (this.disabled || visible === this.visible) return;

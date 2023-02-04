@@ -19,6 +19,10 @@ export function simulateInputEnter(dom) {
   fireEvent.keyDown(dom, { key: 'Enter', code: 'Enter', charCode: 13 });
 }
 
+export function simulateDocumentClick(dom = document) {
+  fireEvent.click(dom);
+}
+
 // Only for Vue2
 export function createElementById(vue2AttachTo = 'focus-dom') {
   const div = document.createElement('div');

@@ -1,10 +1,10 @@
 import { SetupContext } from '@vue/composition-api';
-import { TypeTreeProps, TypeTreeState, TypeEventState } from '../interface';
+import { TreeProps, TypeTreeState, TypeEventState } from '../interface';
 import { getMark, emitEvent } from '../util';
 import useTreeAction from './useTreeAction';
 
 // tree 组件一般事件处理
-export default function useTreeEvents(props: TypeTreeProps, context: SetupContext, state: TypeTreeState) {
+export default function useTreeEvents(props: TreeProps, context: SetupContext, state: TypeTreeState) {
   const { cache } = state;
 
   const { toggleExpanded, toggleActived, toggleChecked } = useTreeAction(props, context, state);
@@ -14,7 +14,6 @@ export default function useTreeEvents(props: TypeTreeProps, context: SetupContex
     if (!node) {
       return;
     }
-
     cache.mouseEvent = mouseEvent;
 
     let shouldExpand = props.expandOnClickNode;
@@ -47,7 +46,7 @@ export default function useTreeEvents(props: TypeTreeProps, context: SetupContex
 
     if (shouldActive) {
       toggleActived(node);
-      emitEvent<Parameters<TypeTreeProps['onClick']>>(props, context, 'click', evtCtx);
+      emitEvent<Parameters<TreeProps['onClick']>>(props, context, 'click', evtCtx);
     }
 
     cache.mouseEvent = null;
