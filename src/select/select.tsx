@@ -603,10 +603,7 @@ export default defineComponent({
                 size: this.size,
                 ...this.inputProps,
               },
-              tagInputProps: {
-                autoWidth: true,
-                ...this.tagInputProps,
-              },
+              tagInputProps: this.tagInputProps,
               tagProps: this.tagProps,
               minCollapsedNum: this.minCollapsedNum,
               collapsedItems: () => renderTNode('collapsedItems', { params: this.collapsedItemsParams }),

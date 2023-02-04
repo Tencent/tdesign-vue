@@ -1,13 +1,5 @@
 <template>
-  <t-tree-select
-    style="width: 300px"
-    v-model="value"
-    :data="options"
-    multiple
-    clearable
-    placeholder="请选择"
-    @remove="handleRemove"
-  >
+  <t-tree-select v-model="value" :data="options" multiple clearable placeholder="请选择" @remove="handleRemove">
   </t-tree-select>
 </template>
 <script lang="jsx">
@@ -30,7 +22,7 @@ const OPTIONS = [
 export default {
   data() {
     return {
-      value: [1, 2, 3, '4', '5'],
+      value: [1, 2, 3],
       options: OPTIONS,
     };
   },

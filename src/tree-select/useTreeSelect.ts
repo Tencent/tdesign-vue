@@ -125,6 +125,9 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
   // single tree select node info
   function getSingleNodeInfo(): TreeOptionData {
     const { value } = treeSelectValue;
+    if (value === '' || value === undefined || value === null) {
+      return undefined;
+    }
     const oneValue = Array.isArray(value) ? value[0] : value;
     const finalValue = typeof oneValue === 'object' ? oneValue[tKeys.value.value] : oneValue;
     if (treeRef.value) {
@@ -175,11 +178,16 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
     if (treeSelectValue.value === ctx.node.data[tKeys.value.value]) {
       return;
     }
+    const onlyLeafNode = Boolean(
+      !props.multiple && props.treeProps?.valueMode === 'onlyLeaf' && ctx.node?.data?.children?.length,
+    );
     let current: TreeSelectValue = value;
     const nodeValue = Array.isArray(value) ? value[0] : value;
     current = isObjectValue.value ? treeRef.value.getItem(nodeValue) : nodeValue;
-    setTreeSelectValue(current, { ...ctx, data: ctx.node.data, trigger: 'check' });
-    setInnerVisible(false, ctx);
+    if (!onlyLeafNode) {
+      setTreeSelectValue(current, { ...ctx, data: ctx.node.data, trigger: 'check' });
+      setInnerVisible(false, ctx);
+    }
     innerInputValue.value && setInnerInputValue('', { trigger: 'change', e: ctx.e });
   };
 

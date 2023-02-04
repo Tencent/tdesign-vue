@@ -38,7 +38,7 @@ transition | Boolean | true | 节点展开折叠时是否使用过渡动画 | N
 value | Array | [] | 选中值（组件为可选状态时）。支持语法糖 `v-model`。TS 类型：`Array<TreeNodeValue>` `type TreeNodeValue = string \| number`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree/type.ts) | N
 defaultValue | Array | [] | 选中值（组件为可选状态时）。非受控属性。TS 类型：`Array<TreeNodeValue>` `type TreeNodeValue = string \| number`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree/type.ts) | N
 valueMode | String | onlyLeaf | 选中值模式。all 表示父节点和子节点全部会出现在选中值里面；parentFirst 表示当子节点全部选中时，仅父节点在选中值里面；onlyLeaft 表示无论什么情况，选中值仅呈现叶子节点。可选项：onlyLeaf/parentFirst/all | N
-onActive | Function |  | TS 类型：`(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T>; e: MouseEvent }) => void`<br/>节点激活时触发，泛型 `T` 表示树节点 TS 类型 | N
+onActive | Function |  | TS 类型：`(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T>; e: Event }) => void`<br/>节点激活时触发，泛型 `T` 表示树节点 TS 类型 | N
 onChange | Function |  | TS 类型：`(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T>; e?: any }) => void`<br/>节点选中状态变化时触发，context.node 表示当前变化的选项，泛型 `T` 表示树节点 TS 类型 | N
 onClick | Function |  | TS 类型：`(context: { node: TreeNodeModel<T>; e: MouseEvent }) => void`<br/>节点点击时触发，泛型 `T` 表示树节点 TS 类型 | N
 onDragEnd | Function |  | TS 类型：`(context: { e: DragEvent; node: TreeNodeModel<T> }) => void`<br/>节点结束拖拽时触发，泛型 `T` 表示树节点 TS 类型 | N
@@ -53,7 +53,7 @@ onLoad | Function |  | TS 类型：`(context: { node: TreeNodeModel<T> }) => voi
 
 名称 | 参数 | 描述
 -- | -- | --
-active | `(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T>; e: MouseEvent })` | 节点激活时触发，泛型 `T` 表示树节点 TS 类型
+active | `(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T>; e: Event })` | 节点激活时触发，泛型 `T` 表示树节点 TS 类型
 change | `(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T>; e?: any })` | 节点选中状态变化时触发，context.node 表示当前变化的选项，泛型 `T` 表示树节点 TS 类型
 click | `(context: { node: TreeNodeModel<T>; e: MouseEvent })` | 节点点击时触发，泛型 `T` 表示树节点 TS 类型
 drag-end | `(context: { e: DragEvent; node: TreeNodeModel<T> })` | 节点结束拖拽时触发，泛型 `T` 表示树节点 TS 类型

@@ -313,7 +313,7 @@ exports[`Select > :props > :multiple 1`] = `
     class="t-select-input t-select-input--multiple t-select-input--empty t-select"
   >
     <div
-      class="t-input__wrap t-input--auto-width t-tag-input t-tag-input--break-line t-is-empty t-tag-input__with-suffix-icon"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty t-tag-input__with-suffix-icon"
     >
       <div
         class="t-input t-is-readonly t-input--prefix t-input--suffix"
