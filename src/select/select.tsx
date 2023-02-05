@@ -329,7 +329,7 @@ export default defineComponent({
     const handleTInputValueChange = (val: string, context: SelectInputValueChangeContext) => {
       if (context.trigger === 'blur' || !innerPopupVisible.value) return;
       setTInputValue(val);
-      debounceSearch();
+      debounceSearch({ e: context.e as KeyboardEvent });
     };
 
     const handleTagChange = (currentTags: SelectInputValue, context: SelectInputChangeContext) => {
@@ -357,9 +357,9 @@ export default defineComponent({
       props.onEnter?.({ value, e: context?.e, inputValue: tInputValue.value.toString() });
     };
 
-    const debounceSearch = debounce(() => {
+    const debounceSearch = debounce((context: { e: KeyboardEvent }) => {
       instance.emit('search', tInputValue.value);
-      props.onSearch?.(tInputValue.value.toString());
+      props.onSearch?.(tInputValue.value.toString(), { e: context.e });
     }, 300);
 
     const getOverlayElm = (): HTMLElement => {
