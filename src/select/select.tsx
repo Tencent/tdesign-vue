@@ -19,7 +19,7 @@ import useVModel from '../hooks/useVModel';
 import { useTNodeJSX } from '../hooks/tnode';
 import { useConfig, usePrefixClass } from '../config-provider/useConfig';
 import {
-  TdSelectProps, SelectValue, TdOptionProps, SelectValueChangeTrigger, SelectKeysType,
+  TdSelectProps, SelectValue, TdOptionProps, SelectValueChangeTrigger,
 } from './type';
 import props from './props';
 import TLoading from '../loading';
