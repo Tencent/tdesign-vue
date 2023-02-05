@@ -99,12 +99,28 @@ export default defineComponent({
         </div>
       );
     },
+
+    renderCollapsedItems() {
+      const treeSelectValue = this.treeSelectValue || [];
+      const value = Array.isArray(treeSelectValue) ? treeSelectValue : [treeSelectValue];
+      return this.renderTNodeJSX('collapsedItems', {
+        params: {
+          value,
+          collapsedSelectedItems: value.slice(this.minCollapsedNum),
+          count: value.length - this.minCollapsedNum,
+        },
+      });
+    },
   },
 
   render() {
+    const slots = this.$scopedSlots;
     return (
       <SelectInput
-        scopedSlots={this.$scopedSlots}
+        scopedSlots={{
+          tips: slots.tips,
+          suffix: slots.suffix,
+        }}
         class={`${this.classPrefix}-tree-select`}
         {...{
           props: {
@@ -122,9 +138,10 @@ export default defineComponent({
             placeholder: this.inputPlaceholder,
             status: this.status,
             tips: this.tips,
+            suffix: this.suffix,
             allowInput: Boolean(this.filterable || isFunction(this.filter) || this.$listeners.search || this.onSearch),
             minCollapsedNum: this.minCollapsedNum,
-            collapsedItems: this.collapsedItems,
+            collapsedItems: this.renderCollapsedItems,
             popupProps: {
               overlayClassName: this.popupClass,
               ...(this.popupProps as TdTreeSelectProps['popupProps']),

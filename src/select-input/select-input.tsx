@@ -8,6 +8,7 @@ import useSingle from './useSingle';
 import useMultiple from './useMultiple';
 import useOverlayInnerStyle from './useOverlayInnerStyle';
 import { useConfig } from '../config-provider/useConfig';
+import { renderTNodeJSX } from '../utils/render-tnode';
 
 export default defineComponent({
   name: 'TSelectInput',
@@ -102,12 +103,13 @@ export default defineComponent({
       </Popup>
     );
 
+    const tipsNode = renderTNodeJSX(this, 'tips');
     return (
       <div ref="selectInputRef" class={this.classes}>
         {mainContent}
-        {this.tips && (
+        {tipsNode && (
           <div class={`${this.classPrefix}-input__tips ${this.classPrefix}-input__tips--${this.status || 'normal'}`}>
-            {this.tips}
+            {tipsNode}
           </div>
         )}
       </div>

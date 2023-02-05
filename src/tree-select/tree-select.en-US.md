@@ -9,7 +9,7 @@ autoWidth | Boolean | false | \- | N
 autofocus | Boolean | false | \- | N
 borderless | Boolean | false | \- | N
 clearable | Boolean | false | \- | N
-collapsedItems | Slot / Function | - | Typescript：`TNode<{ value: DataOption[]; collapsedSelectedItems: DataOption[]; count: number }>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+collapsedItems | Slot / Function | - | Typescript：`TNode<{ value: TreeValueType[]; collapsedSelectedItems: DataOption[]; count: number }>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 data | Array | [] | Typescript：`Array<DataOption>` | N
 disabled | Boolean | - | \- | N
 empty | String / Slot / Function | - | Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
@@ -19,6 +19,7 @@ inputProps | Object | - | Typescript：`InputProps`，[Input API Documents](./in
 inputValue | String / Number | - | input value。`.sync` is supported。Typescript：`InputValue`，[Input API Documents](./input?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts) | N
 defaultInputValue | String / Number | - | input value。uncontrolled property。Typescript：`InputValue`，[Input API Documents](./input?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts) | N
 keys | Object | - | Typescript：`TreeKeysType`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+label | String / Slot / Function | - | Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 loading | Boolean | false | \- | N
 loadingText | String / Slot / Function | - | Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 max | Number | 0 | \- | N
@@ -33,6 +34,8 @@ readonly | Boolean | false | \- | N
 selectInputProps | Object | - | Typescript：`SelectInputProps`，[SelectInput API Documents](./select-input?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts) | N
 size | String | medium | options：small/medium/large | N
 status | String | default | options：default/success/warning/error | N
+suffix | String / Slot / Function | - | Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+suffixIcon | Slot / Function | - | Typescript：`TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 tagProps | Object | - | Typescript：`TagProps`，[Tag API Documents](./tag?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts) | N
 tips | String / Slot / Function | - | Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 treeProps | Object | - | Typescript：`TreeProps`，[Tree API Documents](./tree?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts) | N

@@ -21062,7 +21062,9 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/base.vue 1`] = `
     >
       <div
         class="t-input__prefix"
-      />
+      >
+        单选：
+      </div>
       <input
         autocomplete=""
         class="t-input__inner"
@@ -84063,7 +84065,9 @@ exports[`csr snapshot test > csr test ./src/select/_example/base.vue 1`] = `
           >
             <div
               class="t-input__prefix"
-            />
+            >
+              属性：
+            </div>
             <input
               autocomplete=""
               class="t-input__inner"
@@ -84113,7 +84117,9 @@ exports[`csr snapshot test > csr test ./src/select/_example/base.vue 1`] = `
           >
             <div
               class="t-input__prefix"
-            />
+            >
+              插槽：
+            </div>
             <input
               autocomplete=""
               class="t-input__inner"
@@ -154234,17 +154240,6 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/prefix.vue 1`] 
     <div
       class="t-input t-is-readonly t-input--prefix t-input--suffix"
     >
-      <span
-        class="t-input__prefix t-input__prefix-icon"
-      >
-        <svg
-          class="t-icon t-icon-user"
-        >
-          <use
-            href="#t-icon-user"
-          />
-        </svg>
-      </span>
       <div
         class="t-input__prefix"
       >

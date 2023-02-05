@@ -8,6 +8,8 @@ import { TdCascaderProps } from './type';
 import { PropType } from 'vue';
 
 export default {
+  /** 自动聚焦 */
+  autofocus: Boolean,
   /** 参考 checkbox 组件 API */
   checkProps: {
     type: Object as PropType<TdCascaderProps['checkProps']>,
@@ -16,7 +18,7 @@ export default {
   checkStrictly: Boolean,
   /** 是否支持清空选项 */
   clearable: Boolean,
-  /** 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义 */
+  /** 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义。`value` 表示当前存在的所有标签，`collapsedTags` 表示折叠的标签，`count` 表示选中的标签数量  */
   collapsedItems: {
     type: Function as PropType<TdCascaderProps['collapsedItems']>,
   },
@@ -40,6 +42,10 @@ export default {
   keys: {
     type: Object as PropType<TdCascaderProps['keys']>,
   },
+  /** 左侧文本 */
+  label: {
+    type: [String, Function] as PropType<TdCascaderProps['label']>,
+  },
   /** 延迟加载 children 为 true 的子节点，即使 expandAll 被设置为 true，也同样延迟加载 */
   lazy: {
     type: Boolean,
@@ -54,7 +60,6 @@ export default {
   /** 远程加载时显示的文字，支持自定义。如加上超链接 */
   loadingText: {
     type: [String, Function] as PropType<TdCascaderProps['loadingText']>,
-    default: '',
   },
   /** 用于控制多选数量，值为 0 则不限制 */
   max: {
@@ -83,10 +88,7 @@ export default {
     type: Object as PropType<TdCascaderProps['popupProps']>,
   },
   /** 是否显示下拉框 */
-  popupVisible: {
-    type: Boolean,
-    default: undefined,
-  },
+  popupVisible: Boolean,
   /** 只读状态，值为真会隐藏输入框，且无法打开下拉框 */
   readonly: Boolean,
   /** 透传 SelectInput 筛选器输入框组件的全部属性 */
@@ -110,10 +112,19 @@ export default {
   /** 输入框状态 */
   status: {
     type: String as PropType<TdCascaderProps['status']>,
+    default: 'default' as TdCascaderProps['status'],
     validator(val: TdCascaderProps['status']): boolean {
       if (!val) return true;
       return ['default', 'success', 'warning', 'error'].includes(val);
     },
+  },
+  /** 后置图标前的后置内容 */
+  suffix: {
+    type: [String, Function] as PropType<TdCascaderProps['suffix']>,
+  },
+  /** 组件后置图标 */
+  suffixIcon: {
+    type: Function as PropType<TdCascaderProps['suffixIcon']>,
   },
   /** 透传 TagInput 标签输入框组件的全部属性 */
   tagInputProps: {

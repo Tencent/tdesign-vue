@@ -943,15 +943,6 @@ exports[`TreeSelect > <slot> > <prefixIcon> 1`] = `
     <div
       class="t-input t-is-readonly t-input--prefix t-input--suffix"
     >
-      <span
-        class="t-input__prefix t-input__prefix-icon"
-      >
-        <div>
-          <i>
-            icon
-          </i>
-        </div>
-      </span>
       <div
         class="t-input__prefix"
       >

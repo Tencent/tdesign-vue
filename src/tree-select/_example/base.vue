@@ -19,6 +19,7 @@
       style="width: 500px"
       :data="options"
       v-model="value2"
+      label="单选："
       :treeProps="{ expandAll: true, valueMode: 'onlyLeaf' }"
       filterable
       clearable

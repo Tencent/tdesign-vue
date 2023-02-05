@@ -38,9 +38,9 @@ export interface TdTreeSelectProps<
    */
   clearable?: boolean;
   /**
-   * 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义。`value` 表示当前存在的所有标签，`collapsedTags` 表示折叠的标签，`count` 表示选中的标签数量
+   * 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义。`value` 表示当前存在的所有标签，`collapsedTags` 表示折叠的标签，`count` 表示折叠的数量
    */
-  collapsedItems?: TNode<{ value: DataOption[]; collapsedSelectedItems: DataOption[]; count: number }>;
+  collapsedItems?: TNode<{ value: TreeValueType[]; collapsedSelectedItems: DataOption[]; count: number }>;
   /**
    * 树选择的数据列表。结构：`[{ label: TNode, value: string | number, text: string, ... }]`，其中 `label` 表示选项呈现的内容，可自定义；`value` 表示选项的唯一值；表示当 `label` 用于选项复杂内容呈现时，`text` 用于搜索功能。<br />其中 `label` 和 `value` 可以使用 `keys` 属性定义别名
    * @default []
@@ -79,6 +79,10 @@ export interface TdTreeSelectProps<
    * 用来定义 value / label 在 `data` 数据中对应的字段别名
    */
   keys?: TreeKeysType;
+  /**
+   * 左侧文本
+   */
+  label?: string | TNode;
   /**
    * 是否正在加载数据
    * @default false
@@ -142,6 +146,14 @@ export interface TdTreeSelectProps<
    * @default default
    */
   status?: 'default' | 'success' | 'warning' | 'error';
+  /**
+   * 后置图标前的后置内容
+   */
+  suffix?: string | TNode;
+  /**
+   * 组件后置图标
+   */
+  suffixIcon?: TNode;
   /**
    * 透传 Tag 标签组件全部属性
    */

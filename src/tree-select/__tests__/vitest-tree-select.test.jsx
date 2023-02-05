@@ -113,14 +113,14 @@ describe('TreeSelect Component', () => {
     const fn = vi.fn();
     getTreeSelectMultipleMount(TreeSelect, { collapsedItems: fn, minCollapsedNum: 3 });
     expect(fn).toHaveBeenCalled();
-    expect(fn.mock.calls[0][1].count).toBe(5);
+    expect(fn.mock.calls[0][1].count).toBe(2);
   });
   it('slots.collapsedItems: a function with params', () => {
     const fn = vi.fn();
     getTreeSelectMultipleMount(TreeSelect, { scopedSlots: { collapsedItems: fn }, minCollapsedNum: 3 });
 
     expect(fn).toHaveBeenCalled();
-    expect(fn.mock.calls[0][0].count).toBe(5);
+    expect(fn.mock.calls[0][0].count).toBe(2);
   });
 
   it('props.data: empty data with panel content node', async () => {

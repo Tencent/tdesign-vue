@@ -10,7 +10,9 @@ import FakeArrow from '../common-components/fake-arrow';
 import props from './props';
 
 import { useCascaderContext } from './hooks';
-import { CascaderValue, TdSelectInputProps, TdCascaderProps } from './interface';
+import {
+  CascaderValue, CascaderKeysType, TdSelectInputProps, TdCascaderProps,
+} from './interface';
 import { useConfig, usePrefixClass, useCommonClassName } from '../hooks/useConfig';
 import { PopupVisibleChangeContext } from '../popup';
 import { InputValue } from '../input';
@@ -20,13 +22,20 @@ import { getPanels, getSingleContent, getMultipleContent } from './core/helper';
 import { getFakeArrowIconClass } from './core/className';
 import useFormDisabled from '../hooks/useFormDisabled';
 import { TagInputValue } from '../tag-input';
+import { renderTNodeJSX } from '../utils/render-tnode';
+
+const DEFAULT_KEYS = {
+  label: 'label',
+  value: 'value',
+  children: 'children',
+};
 
 export default defineComponent({
   name: 'TCascader',
 
   props: { ...props },
 
-  setup(props, { slots, emit }) {
+  setup(props, { emit }) {
     const COMPONENT_NAME = usePrefixClass('cascader');
     const classPrefix = usePrefixClass();
     const { STATUS } = useCommonClassName();
@@ -34,7 +43,7 @@ export default defineComponent({
     const { global } = useConfig('cascader');
 
     // 全局状态的上下文
-    const { cascaderContext, isFilterable } = useCascaderContext(props);
+    const { innerValue, cascaderContext, isFilterable } = useCascaderContext(props);
 
     const displayValue = computed(() => props.multiple ? getMultipleContent(cascaderContext.value) : getSingleContent(cascaderContext.value));
 
@@ -52,6 +61,7 @@ export default defineComponent({
       COMPONENT_NAME,
       overlayClassName,
       panels,
+      innerValue,
       displayValue,
       inputPlaceholder,
       isFilterable,
@@ -59,7 +69,6 @@ export default defineComponent({
       STATUS,
       classPrefix,
       cascaderContext,
-      slots,
       emit,
     };
   },
@@ -75,10 +84,12 @@ export default defineComponent({
       STATUS,
       classPrefix,
       cascaderContext,
-      slots,
       emit,
     } = this;
+
     const renderSuffixIcon = () => {
+      const suffixIcon = renderTNodeJSX(this, 'suffixIcon');
+      if (suffixIcon) return suffixIcon;
       const { visible } = cascaderContext;
       return (
         <FakeArrow
@@ -89,9 +100,28 @@ export default defineComponent({
       );
     };
 
+    const renderCollapsedItems = () => {
+      const cascaderValue = this.innerValue || [];
+      const keys = (this.keys as CascaderKeysType) || DEFAULT_KEYS;
+      const value = Array.isArray(cascaderValue) ? cascaderValue : [cascaderValue];
+      const cascaderOptions = value.map((item) => {
+        const tmpValue = typeof item === 'object' ? item[keys.value] : item;
+        return cascaderContext.treeStore.getNode(tmpValue).data;
+      });
+      return renderTNodeJSX(this, 'collapsedItems', {
+        params: {
+          value: cascaderOptions,
+          collapsedSelectedItems: cascaderOptions.slice(0, this.minCollapsedNum),
+          count: value.length - this.minCollapsedNum,
+        },
+      });
+    };
+
     const {
       setVisible, visible, inputVal, setInputVal,
     } = cascaderContext;
+
+    const slots = this.$scopedSlots;
 
     return (
       <SelectInput
@@ -104,7 +134,10 @@ export default defineComponent({
             keys: this.keys,
             allowInput: isFilterable,
             minCollapsedNum: this.minCollapsedNum,
-            collapsedItems: this.collapsedItems,
+            collapsedItems: renderCollapsedItems,
+            label: this.label,
+            suffix: this.suffix,
+            tag: this.tag,
             readonly: this.readonly,
             disabled: isDisabled,
             clearable: this.clearable,
@@ -178,7 +211,9 @@ export default defineComponent({
               scopedSlots={{ empty: slots.empty, loadingText: slots.loadingText }}
             />
           ),
-          collapsedItems: slots.collapsedItems,
+          tips: slots.tips,
+          tag: slots.tag,
+          suffix: slots.suffix,
         }}
       />
     );
