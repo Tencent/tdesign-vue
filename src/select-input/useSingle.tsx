@@ -72,7 +72,8 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const renderSelectSingle = (h: Vue.CreateElement, popupVisible: boolean) => {
     const singleValueDisplay = renderTNode('valueDisplay');
-    const displayedValue = popupVisible && props.allowInput ? inputValue.value : getInputValue(value.value, keys.value);
+    const pureValue = getInputValue(value.value, keys.value);
+    const displayedValue = popupVisible && props.allowInput ? inputValue.value || pureValue : pureValue;
     const prefixContent = [singleValueDisplay, renderTNode('label')];
     const inputProps = {
       ...commonInputProps.value,
