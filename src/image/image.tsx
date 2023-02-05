@@ -36,7 +36,7 @@ export default defineComponent({
       'onError',
     ]);
 
-    const { classPrefix } = useConfig();
+    const { classPrefix, global: globalConfig } = useConfig('image');
     const imageRef = ref<HTMLElement>(null);
 
     const imageSrc = ref(props.src);
@@ -81,6 +81,7 @@ export default defineComponent({
       imageRef,
       handleLoadImage,
       classPrefix,
+      globalConfig,
       hasMouseEvent,
       handleToggleOverlay,
       shouldShowOverlay,
@@ -165,7 +166,7 @@ export default defineComponent({
             {renderTNodeJSX(this, 'loading') || (
               <Space direction="vertical" size={8} align="center">
                 <ImageIcon size="24px" />
-                图片加载中
+                {this.globalConfig.loadingText}
               </Space>
             )}
           </div>
@@ -176,7 +177,7 @@ export default defineComponent({
             {renderTNodeJSX(this, 'error') || (
               <Space direction="vertical" size={8} align="center">
                 <ImageErrorIcon size="24px" />
-                图片无法显示
+                {this.globalConfig.errorText}
               </Space>
             )}
           </div>
