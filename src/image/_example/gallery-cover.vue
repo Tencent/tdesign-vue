@@ -14,7 +14,9 @@ import { Tag } from 'tdesign-vue';
 export default Vue.extend({
   data() {
     return {
-      label: (
+      // overlayContent 支持插槽
+      // eslint-disable-next-line
+      label: (h) => (
         <Tag
           shape="mark"
           theme="warning"

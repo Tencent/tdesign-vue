@@ -13,7 +13,9 @@ import Vue from 'vue';
 export default Vue.extend({
   data() {
     return {
-      renderMask: (
+      // renderMask 支持插槽
+      // eslint-disable-next-line
+      renderMask: (h) => (
         <div
           style={{
             background: 'rgba(0,0,0,.4)',
