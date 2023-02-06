@@ -9056,7 +9056,7 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/cell-append.vue 1`
                   class="cell-append-demo-outer"
                 >
                   <span
-                    class="activeTag t-tag t-tag--success t-size-s t-tag--light"
+                    class="activeTag t-tag t-tag--success t-tag--light t-size-s"
                     style="width: 100%;"
                   >
                     <span>
@@ -9064,7 +9064,7 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/cell-append.vue 1`
                     </span>
                   </span>
                   <span
-                    class="activeTag t-tag t-tag--warning t-size-s t-tag--light"
+                    class="activeTag t-tag t-tag--warning t-tag--light t-size-s"
                     style="width: 100%;"
                   >
                     <span>
@@ -21164,7 +21164,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/check-strictly.vue
             class="t-input__prefix"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 1/1.1/1.1.2/1.1.2.1
@@ -21184,7 +21184,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/check-strictly.vue
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 2
@@ -21254,7 +21254,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/collapsed.vue 1`] 
             class="t-input__prefix"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 选项一/子选项一
@@ -21274,7 +21274,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/collapsed.vue 1`] 
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark"
+              class="t-tag t-tag--default t-tag--dark"
             >
               <span>
                 +2
@@ -21323,7 +21323,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/collapsed.vue 1`] 
             class="t-input__prefix"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 选项一/子选项一
@@ -21390,7 +21390,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/collapsed.vue 1`] 
             class="t-input__prefix"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 选项一/子选项一
@@ -21513,7 +21513,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/disabled.vue 1`] =
             class="t-input__prefix"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-is-disabled t-tag--disabled"
+              class="t-tag t-tag--default t-tag--dark t-is-disabled t-tag--disabled"
             >
               <span>
                 选项一/子选项一
@@ -21617,7 +21617,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/ellipsis.vue 1`] =
             class="t-input__prefix"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 当选项一数据展示文本过长时/子选项一
@@ -21732,7 +21732,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/filterable.vue 1`]
             class="t-input__prefix"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 当选项一数据展示文本过长时/子选项一
@@ -21900,7 +21900,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/keys.vue 1`] = `
             class="t-input__prefix"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 选项一/子选项一
@@ -22058,7 +22058,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/multiple.vue 1`] =
         class="t-input__prefix"
       >
         <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+          class="t-tag t-tag--default t-tag--dark t-tag--close"
         >
           <span>
             选项一/子选项一
@@ -22878,7 +22878,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/value-type.vue 1`]
             class="t-input__prefix"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 选项一/子选项一
@@ -22898,7 +22898,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/value-type.vue 1`]
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 选项一/子选项二
@@ -23947,7 +23947,7 @@ exports[`csr snapshot test > csr test ./src/collapse/_example/base.vue 1`] = `
                           class="t-input__prefix"
                         >
                           <span
-                            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+                            class="t-tag t-tag--default t-tag--dark t-tag--close"
                           >
                             <span>
                               Vue
@@ -23967,7 +23967,7 @@ exports[`csr snapshot test > csr test ./src/collapse/_example/base.vue 1`] = `
                             </svg>
                           </span>
                           <span
-                            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+                            class="t-tag t-tag--default t-tag--dark t-tag--close"
                           >
                             <span>
                               React
@@ -24018,7 +24018,7 @@ exports[`csr snapshot test > csr test ./src/collapse/_example/base.vue 1`] = `
                             Controlled: 
                           </div>
                           <span
-                            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+                            class="t-tag t-tag--default t-tag--dark t-tag--close"
                           >
                             <span>
                               Vue
@@ -24038,7 +24038,7 @@ exports[`csr snapshot test > csr test ./src/collapse/_example/base.vue 1`] = `
                             </svg>
                           </span>
                           <span
-                            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+                            class="t-tag t-tag--default t-tag--dark t-tag--close"
                           >
                             <span>
                               React
@@ -24089,7 +24089,7 @@ exports[`csr snapshot test > csr test ./src/collapse/_example/base.vue 1`] = `
                             UnControlled: 
                           </div>
                           <span
-                            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+                            class="t-tag t-tag--default t-tag--dark t-tag--close"
                           >
                             <span>
                               Vue
@@ -24109,7 +24109,7 @@ exports[`csr snapshot test > csr test ./src/collapse/_example/base.vue 1`] = `
                             </svg>
                           </span>
                           <span
-                            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+                            class="t-tag t-tag--default t-tag--dark t-tag--close"
                           >
                             <span>
                               React
@@ -35537,7 +35537,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
     data-v-96b659ea=""
   />
   <span
-    class="t-tag t-tag--primary t-size-m t-tag--dark t-tag--close"
+    class="t-tag t-tag--primary t-tag--dark t-tag--close"
     data-v-96b659ea=""
   >
     <span>
@@ -35563,7 +35563,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
     </svg>
   </span>
   <span
-    class="t-tag t-tag--success t-size-m t-tag--dark t-tag--close"
+    class="t-tag t-tag--success t-tag--dark t-tag--close"
     data-v-96b659ea=""
   >
     <span>
@@ -35589,7 +35589,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
     </svg>
   </span>
   <span
-    class="t-tag t-tag--warning t-size-m t-tag--dark t-tag--close"
+    class="t-tag t-tag--warning t-tag--dark t-tag--close"
     data-v-96b659ea=""
   >
     <span>
@@ -35615,7 +35615,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
     </svg>
   </span>
   <span
-    class="t-tag t-tag--danger t-size-m t-tag--dark t-tag--close"
+    class="t-tag t-tag--danger t-tag--dark t-tag--close"
     data-v-96b659ea=""
   >
     <span>
@@ -56833,7 +56833,7 @@ exports[`csr snapshot test > csr test ./src/image/_example/extra-always.vue 1`] 
               style="background: rgba(0, 0, 0, 0.4); height: 100%; display: flex; align-items: center; justify-content: center; font-size: 14px; line-height: 22px;"
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--dark t-tag--mark"
+                class="t-tag t-tag--warning t-tag--dark t-tag--mark"
                 style="border-radius: 3px; color: rgb(255, 255, 255); background: transparent;"
               >
                 <span>
@@ -56930,7 +56930,7 @@ exports[`csr snapshot test > csr test ./src/image/_example/extra-always.vue 1`] 
             class="t-image__overlay-content"
           >
             <span
-              class="t-tag t-tag--warning t-size-m t-tag--dark t-tag--mark"
+              class="t-tag t-tag--warning t-tag--dark t-tag--mark"
               style="position: absolute; right: 8px; bottom: 8px; border-radius: 3px; color: rgb(0, 82, 217); background: rgb(236, 242, 254);"
             >
               <span>
@@ -58162,7 +58162,7 @@ exports[`csr snapshot test > csr test ./src/image/_example/gallery-cover.vue 1`]
     class="t-image__overlay-content"
   >
     <span
-      class="t-tag t-tag--warning t-size-m t-tag--dark t-tag--mark"
+      class="t-tag t-tag--warning t-tag--dark t-tag--mark"
       style="margin: 8px; border-radius: 3px; color: rgb(0, 82, 217); background: rgb(236, 242, 254);"
     >
       <span>
@@ -84179,7 +84179,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/collapsed.vue 1`] = 
               class="t-input__prefix"
             >
               <span
-                class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+                class="t-tag t-tag--default t-tag--dark t-tag--close"
               >
                 <span>
                   选项一
@@ -84199,7 +84199,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/collapsed.vue 1`] = 
                 </svg>
               </span>
               <span
-                class="t-tag t-tag--default t-size-m t-tag--dark"
+                class="t-tag t-tag--default t-tag--dark"
               >
                 <span>
                   +1
@@ -84252,7 +84252,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/collapsed.vue 1`] = 
               class="t-input__prefix"
             >
               <span
-                class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+                class="t-tag t-tag--default t-tag--dark t-tag--close"
               >
                 <span>
                   选项一
@@ -84323,7 +84323,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/collapsed.vue 1`] = 
               class="t-input__prefix"
             >
               <span
-                class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+                class="t-tag t-tag--default t-tag--dark t-tag--close"
               >
                 <span>
                   选项一
@@ -84635,7 +84635,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/custom-selected.vue 
               class="t-input__prefix"
             >
               <span
-                class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+                class="t-tag t-tag--default t-tag--dark t-tag--close"
               >
                 <span>
                   选项一(1)
@@ -84655,7 +84655,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/custom-selected.vue 
                 </svg>
               </span>
               <span
-                class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+                class="t-tag t-tag--default t-tag--dark t-tag--close"
               >
                 <span>
                   选项二(2)
@@ -84675,7 +84675,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/custom-selected.vue 
                 </svg>
               </span>
               <span
-                class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+                class="t-tag t-tag--default t-tag--dark t-tag--close"
               >
                 <span>
                   选项三(3)
@@ -84741,7 +84741,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/custom-selected.vue 
               class="t-input__prefix"
             >
               <span
-                class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+                class="t-tag t-tag--default t-tag--dark t-tag--close"
               >
                 <span>
                    选项四(4) 
@@ -84761,7 +84761,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/custom-selected.vue 
                 </svg>
               </span>
               <span
-                class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+                class="t-tag t-tag--default t-tag--dark t-tag--close"
               >
                 <span>
                    选项五(5) 
@@ -84781,7 +84781,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/custom-selected.vue 
                 </svg>
               </span>
               <span
-                class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+                class="t-tag t-tag--default t-tag--dark t-tag--close"
               >
                 <span>
                    选项六(6) 
@@ -84801,7 +84801,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/custom-selected.vue 
                 </svg>
               </span>
               <span
-                class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+                class="t-tag t-tag--default t-tag--dark t-tag--close"
               >
                 <span>
                    选项七(7) 
@@ -84927,14 +84927,14 @@ exports[`csr snapshot test > csr test ./src/select/_example/disabled.vue 1`] = `
               class="t-input__prefix"
             >
               <span
-                class="t-tag t-tag--default t-size-m t-tag--dark t-is-disabled t-tag--disabled"
+                class="t-tag t-tag--default t-tag--dark t-is-disabled t-tag--disabled"
               >
                 <span>
                   选项一
                 </span>
               </span>
               <span
-                class="t-tag t-tag--default t-size-m t-tag--dark t-is-disabled t-tag--disabled"
+                class="t-tag t-tag--default t-tag--dark t-is-disabled t-tag--disabled"
               >
                 <span>
                   选项二
@@ -85272,7 +85272,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/label-in-value.vue 1
               class="t-input__prefix"
             >
               <span
-                class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+                class="t-tag t-tag--default t-tag--dark t-tag--close"
               >
                 <span>
                   选项一
@@ -85401,7 +85401,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/multiple.vue 1`] = `
               class="t-input__prefix"
             >
               <span
-                class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+                class="t-tag t-tag--default t-tag--dark t-tag--close"
               >
                 <span>
                   区块链
@@ -85421,7 +85421,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/multiple.vue 1`] = `
                 </svg>
               </span>
               <span
-                class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+                class="t-tag t-tag--default t-tag--dark t-tag--close"
               >
                 <span>
                   人工智能
@@ -85487,7 +85487,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/multiple.vue 1`] = `
               class="t-input__prefix"
             >
               <span
-                class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+                class="t-tag t-tag--default t-tag--dark t-tag--close"
               >
                 <span>
                   云服务器
@@ -85507,7 +85507,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/multiple.vue 1`] = `
                 </svg>
               </span>
               <span
-                class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+                class="t-tag t-tag--default t-tag--dark t-tag--close"
               >
                 <span>
                   云数据库
@@ -85527,7 +85527,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/multiple.vue 1`] = `
                 </svg>
               </span>
               <span
-                class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+                class="t-tag t-tag--default t-tag--dark t-tag--close"
               >
                 <span>
                   域名注册
@@ -85547,7 +85547,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/multiple.vue 1`] = `
                 </svg>
               </span>
               <span
-                class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+                class="t-tag t-tag--default t-tag--dark t-tag--close"
               >
                 <span>
                   网站备案
@@ -85567,7 +85567,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/multiple.vue 1`] = `
                 </svg>
               </span>
               <span
-                class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+                class="t-tag t-tag--default t-tag--dark t-tag--close"
               >
                 <span>
                   对象存储
@@ -85587,7 +85587,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/multiple.vue 1`] = `
                 </svg>
               </span>
               <span
-                class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+                class="t-tag t-tag--default t-tag--dark t-tag--close"
               >
                 <span>
                   低代码平台
@@ -85653,7 +85653,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/multiple.vue 1`] = `
               class="t-input__prefix"
             >
               <span
-                class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+                class="t-tag t-tag--default t-tag--dark t-tag--close"
               >
                 <span>
                   区块链
@@ -85673,7 +85673,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/multiple.vue 1`] = `
                 </svg>
               </span>
               <span
-                class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+                class="t-tag t-tag--default t-tag--dark t-tag--close"
               >
                 <span>
                   人工智能
@@ -85693,7 +85693,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/multiple.vue 1`] = `
                 </svg>
               </span>
               <span
-                class="t-tag t-tag--default t-size-m t-tag--dark"
+                class="t-tag t-tag--default t-tag--dark"
               >
                 <span>
                   +2
@@ -86784,7 +86784,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/autowidth-mult
           class="t-input__prefix"
         >
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-tag--dark t-tag--close"
           >
             <span>
               Vue
@@ -86804,7 +86804,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/autowidth-mult
             </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
+            class="t-tag t-tag--default t-tag--dark"
           >
             <span>
               +2
@@ -86890,7 +86890,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/borderless-mul
           class="t-input__prefix"
         >
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-tag--dark t-tag--close"
           >
             <span>
               Vue
@@ -86910,7 +86910,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/borderless-mul
             </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
+            class="t-tag t-tag--default t-tag--dark"
           >
             <span>
               +2
@@ -86954,7 +86954,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/collapsed-item
             class="t-input__prefix"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 tdesign-vue
@@ -86974,7 +86974,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/collapsed-item
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark"
+              class="t-tag t-tag--default t-tag--dark"
             >
               <span>
                 +5
@@ -87011,7 +87011,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/collapsed-item
             class="t-input__prefix"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 tdesign-vue
@@ -87031,7 +87031,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/collapsed-item
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 tdesign-react
@@ -87051,7 +87051,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/collapsed-item
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark"
+              class="t-tag t-tag--default t-tag--dark"
             >
               <span>
                 更多(4)
@@ -87088,7 +87088,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/collapsed-item
             class="t-input__prefix"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 tdesign-vue
@@ -87108,7 +87108,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/collapsed-item
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 tdesign-react
@@ -87128,7 +87128,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/collapsed-item
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 tdesign-miniprogram
@@ -87148,7 +87148,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/collapsed-item
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark"
+              class="t-tag t-tag--default t-tag--dark"
             >
               <span>
                 More(3)
@@ -87246,7 +87246,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/custom-tag.vue
             class="t-input__prefix"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 <span
@@ -87287,7 +87287,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/custom-tag.vue
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 <span
@@ -87352,7 +87352,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/custom-tag.vue
             class="t-input__prefix"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
               data-v-3251f825=""
               style="margin-right: 4px;"
             >
@@ -87399,7 +87399,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/custom-tag.vue
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
               data-v-3251f825=""
               style="margin-right: 4px;"
             >
@@ -87446,7 +87446,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/custom-tag.vue
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
               data-v-3251f825=""
               style="margin-right: 4px;"
             >
@@ -87531,7 +87531,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/excess-tags-di
             class="t-input__prefix"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 tdesign-vue
@@ -87551,7 +87551,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/excess-tags-di
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 tdesign-react
@@ -87571,7 +87571,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/excess-tags-di
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 tdesign-miniprogram
@@ -87591,7 +87591,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/excess-tags-di
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 tdesign-angular
@@ -87611,7 +87611,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/excess-tags-di
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 tdesign-mobile-vue
@@ -87631,7 +87631,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/excess-tags-di
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 tdesign-mobile-react
@@ -87688,7 +87688,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/excess-tags-di
             class="t-input__prefix"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 tdesign-vue
@@ -87708,7 +87708,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/excess-tags-di
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 tdesign-react
@@ -87728,7 +87728,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/excess-tags-di
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 tdesign-miniprogram
@@ -87748,7 +87748,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/excess-tags-di
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 tdesign-angular
@@ -87768,7 +87768,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/excess-tags-di
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 tdesign-mobile-vue
@@ -87788,7 +87788,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/excess-tags-di
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 tdesign-mobile-react
@@ -88063,7 +88063,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/multiple.vue 1
             class="t-input__prefix"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 Vue
@@ -88083,7 +88083,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/multiple.vue 1
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 React
@@ -88103,7 +88103,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/multiple.vue 1
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 Miniprogram
@@ -94342,7 +94342,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -94413,7 +94413,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -94484,7 +94484,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -94555,7 +94555,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -94626,7 +94626,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -95077,7 +95077,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/async-loading.vue 1`]
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -95129,7 +95129,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/async-loading.vue 1`]
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -95181,7 +95181,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/async-loading.vue 1`]
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -95233,7 +95233,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/async-loading.vue 1`]
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -95285,7 +95285,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/async-loading.vue 1`]
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -95688,7 +95688,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -95740,7 +95740,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
                 class=""
               >
                 <span
-                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -95792,7 +95792,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
                 class=""
               >
                 <span
-                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -95844,7 +95844,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -95896,7 +95896,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
                 class=""
               >
                 <span
-                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -96191,7 +96191,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-cell.vue 1`] =
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 data-v-d50b79d8=""
               >
                 <span>
@@ -96246,7 +96246,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-cell.vue 1`] =
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 data-v-d50b79d8=""
               >
                 <span>
@@ -96301,7 +96301,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-cell.vue 1`] =
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
                 data-v-d50b79d8=""
               >
                 <span>
@@ -96356,7 +96356,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-cell.vue 1`] =
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 data-v-d50b79d8=""
               >
                 <span>
@@ -96411,7 +96411,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-cell.vue 1`] =
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 data-v-d50b79d8=""
               >
                 <span>
@@ -96584,7 +96584,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-col.vue 1`] = 
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -96636,7 +96636,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-col.vue 1`] = 
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -96688,7 +96688,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-col.vue 1`] = 
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -96740,7 +96740,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-col.vue 1`] = 
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -96792,7 +96792,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-col.vue 1`] = 
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -97286,7 +97286,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-col-button.vue
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -97338,7 +97338,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-col-button.vue
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -97390,7 +97390,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-col-button.vue
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -97442,7 +97442,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-col-button.vue
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -97494,7 +97494,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-col-button.vue
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -97880,7 +97880,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-footer.vue 1`]
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -97928,7 +97928,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-footer.vue 1`]
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -97976,7 +97976,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-footer.vue 1`]
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -98024,7 +98024,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-footer.vue 1`]
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -98072,7 +98072,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-footer.vue 1`]
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -98280,7 +98280,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-header.vue 1`]
             class=""
           >
             <span
-              class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+              class="t-tag t-tag--success t-tag--light-outline t-tag--round"
             >
               <span>
                 <svg
@@ -98328,7 +98328,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-header.vue 1`]
             class=""
           >
             <span
-              class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+              class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
             >
               <span>
                 <svg
@@ -98376,7 +98376,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-header.vue 1`]
             class=""
           >
             <span
-              class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+              class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
             >
               <span>
                 <svg
@@ -98424,7 +98424,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-header.vue 1`]
             class=""
           >
             <span
-              class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+              class="t-tag t-tag--success t-tag--light-outline t-tag--round"
             >
               <span>
                 <svg
@@ -98472,7 +98472,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-header.vue 1`]
             class=""
           >
             <span
-              class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+              class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
             >
               <span>
                 <svg
@@ -98774,7 +98774,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/data-sort.vue 1`] = `
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -98831,7 +98831,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/data-sort.vue 1`] = `
                 class=""
               >
                 <span
-                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -98888,7 +98888,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/data-sort.vue 1`] = `
                 class=""
               >
                 <span
-                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -98945,7 +98945,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/data-sort.vue 1`] = `
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -99116,7 +99116,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/drag-col-sort.vue 1`]
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -99168,7 +99168,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/drag-col-sort.vue 1`]
                 class=""
               >
                 <span
-                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -99220,7 +99220,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/drag-col-sort.vue 1`]
                 class=""
               >
                 <span
-                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -99272,7 +99272,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/drag-col-sort.vue 1`]
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -99439,7 +99439,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/drag-sort.vue 1`] = `
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -99492,7 +99492,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/drag-sort.vue 1`] = `
                 class=""
               >
                 <span
-                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -99545,7 +99545,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/drag-sort.vue 1`] = `
                 class=""
               >
                 <span
-                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -99598,7 +99598,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/drag-sort.vue 1`] = `
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -99816,7 +99816,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/drag-sort-handler.vue
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -99888,7 +99888,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/drag-sort-handler.vue
                 class=""
               >
                 <span
-                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -99960,7 +99960,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/drag-sort-handler.vue
                 class=""
               >
                 <span
-                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -100032,7 +100032,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/drag-sort-handler.vue
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -100845,7 +100845,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/editable-row.vue 1`] 
                           class="t-input__prefix"
                         >
                           <span
-                            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+                            class="t-tag t-tag--default t-tag--dark t-tag--close"
                           >
                             <span>
                               宣传物料制作费用
@@ -101358,7 +101358,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/ellipsis.vue 1`] = `
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -101441,7 +101441,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/ellipsis.vue 1`] = `
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -101524,7 +101524,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/ellipsis.vue 1`] = `
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -101607,7 +101607,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/ellipsis.vue 1`] = `
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -101690,7 +101690,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/ellipsis.vue 1`] = `
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -102445,7 +102445,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/expandable.vue 1`] = 
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -102534,7 +102534,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/expandable.vue 1`] = 
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -102623,7 +102623,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/expandable.vue 1`] = 
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -102712,7 +102712,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/expandable.vue 1`] = 
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -102801,7 +102801,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/expandable.vue 1`] = 
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -103253,7 +103253,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/filter-controlled.vue
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -103301,7 +103301,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/filter-controlled.vue
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -103349,7 +103349,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/filter-controlled.vue
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -103397,7 +103397,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/filter-controlled.vue
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -103445,7 +103445,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/filter-controlled.vue
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -103799,7 +103799,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-column.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -103858,7 +103858,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-column.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -103917,7 +103917,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-column.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -103976,7 +103976,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-column.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -104035,7 +104035,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-column.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -104289,7 +104289,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -104351,7 +104351,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -104413,7 +104413,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -104475,7 +104475,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -104537,7 +104537,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -104599,7 +104599,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -104661,7 +104661,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -104723,7 +104723,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -104785,7 +104785,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -104847,7 +104847,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -104909,7 +104909,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -104971,7 +104971,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -105033,7 +105033,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -105095,7 +105095,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -105157,7 +105157,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -105219,7 +105219,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -105281,7 +105281,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -105343,7 +105343,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -105405,7 +105405,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -105467,7 +105467,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -105809,7 +105809,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -105873,7 +105873,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -105937,7 +105937,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -106001,7 +106001,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -106065,7 +106065,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -106129,7 +106129,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -106193,7 +106193,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -106257,7 +106257,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -106321,7 +106321,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -106385,7 +106385,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -106449,7 +106449,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -106513,7 +106513,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -106577,7 +106577,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -106641,7 +106641,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -106868,7 +106868,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/lazy.vue 1`] = `
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -114500,7 +114500,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/merge-cells.vue 1`] =
             class=""
           >
             <span
-              class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+              class="t-tag t-tag--success t-tag--light-outline t-tag--round"
             >
               <span>
                 <svg
@@ -114548,7 +114548,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/merge-cells.vue 1`] =
             class=""
           >
             <span
-              class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+              class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
             >
               <span>
                 <svg
@@ -114599,7 +114599,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/merge-cells.vue 1`] =
             class=""
           >
             <span
-              class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+              class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
             >
               <span>
                 <svg
@@ -114637,7 +114637,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/merge-cells.vue 1`] =
             class=""
           >
             <span
-              class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+              class="t-tag t-tag--success t-tag--light-outline t-tag--round"
             >
               <span>
                 <svg
@@ -114691,7 +114691,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/merge-cells.vue 1`] =
             class=""
           >
             <span
-              class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+              class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
             >
               <span>
                 <svg
@@ -114739,7 +114739,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/merge-cells.vue 1`] =
             class=""
           >
             <span
-              class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+              class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
             >
               <span>
                 <svg
@@ -115288,7 +115288,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -115375,7 +115375,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -115462,7 +115462,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -115549,7 +115549,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -115636,7 +115636,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -115723,7 +115723,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -115810,7 +115810,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -115897,7 +115897,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -115984,7 +115984,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -116071,7 +116071,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -116158,7 +116158,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -116245,7 +116245,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -116332,7 +116332,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -116419,7 +116419,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -116506,7 +116506,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -116593,7 +116593,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -116680,7 +116680,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -116767,7 +116767,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -116854,7 +116854,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -116941,7 +116941,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -117028,7 +117028,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -117115,7 +117115,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -117202,7 +117202,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -117289,7 +117289,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -117376,7 +117376,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -117463,7 +117463,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -117550,7 +117550,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -117637,7 +117637,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -117724,7 +117724,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -117811,7 +117811,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -118143,7 +118143,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multiple-sort.vue 1`]
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -118200,7 +118200,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multiple-sort.vue 1`]
                 class=""
               >
                 <span
-                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -118257,7 +118257,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multiple-sort.vue 1`]
                 class=""
               >
                 <span
-                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -118314,7 +118314,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multiple-sort.vue 1`]
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -118371,7 +118371,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multiple-sort.vue 1`]
                 class=""
               >
                 <span
-                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -118622,7 +118622,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
                 class=""
               >
                 <span
-                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -118689,7 +118689,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -118756,7 +118756,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
                 class=""
               >
                 <span
-                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -118823,7 +118823,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
                 class=""
               >
                 <span
-                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -118890,7 +118890,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -119580,7 +119580,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/select-multiple.vue 1
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -119652,7 +119652,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/select-multiple.vue 1
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -119723,7 +119723,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/select-multiple.vue 1
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -119795,7 +119795,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/select-multiple.vue 1
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -119866,7 +119866,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/select-multiple.vue 1
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -120063,7 +120063,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/select-single.vue 1`]
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -120137,7 +120137,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/select-single.vue 1`]
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -120211,7 +120211,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/select-single.vue 1`]
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -120285,7 +120285,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/select-single.vue 1`]
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -120359,7 +120359,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/select-single.vue 1`]
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -120944,7 +120944,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/single-sort.vue 1`] =
               class="t-table__sort-column"
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -120992,7 +120992,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/single-sort.vue 1`] =
               class="t-table__sort-column"
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -121040,7 +121040,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/single-sort.vue 1`] =
               class="t-table__sort-column"
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -121088,7 +121088,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/single-sort.vue 1`] =
               class="t-table__sort-column"
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -121259,7 +121259,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/style.vue 1`] = `
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -121316,7 +121316,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/style.vue 1`] = `
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -121374,7 +121374,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/style.vue 1`] = `
               class=""
             >
               <span
-                class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -121431,7 +121431,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/style.vue 1`] = `
               class=""
             >
               <span
-                class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--success t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -121488,7 +121488,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/style.vue 1`] = `
               class=""
             >
               <span
-                class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
               >
                 <span>
                   <svg
@@ -121792,7 +121792,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree.vue 1`] = `
               class=""
             >
               <span
-                class="t-tag t-tag--primary t-size-s t-tag--dark"
+                class="t-tag t-tag--primary t-tag--dark t-size-s"
               >
                 <span>
                   电子签署
@@ -122164,7 +122164,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree.vue 1`] = `
               class=""
             >
               <span
-                class="t-tag t-tag--primary t-size-s t-tag--dark"
+                class="t-tag t-tag--primary t-tag--dark t-size-s"
               >
                 <span>
                   电子签署
@@ -122414,7 +122414,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree.vue 1`] = `
               class=""
             >
               <span
-                class="t-tag t-tag--primary t-size-s t-tag--dark"
+                class="t-tag t-tag--primary t-tag--dark t-size-s"
               >
                 <span>
                   电子签署
@@ -123074,7 +123074,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -123194,7 +123194,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -123314,7 +123314,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -123434,7 +123434,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -123554,7 +123554,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -123674,7 +123674,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -123794,7 +123794,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -123914,7 +123914,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -124034,7 +124034,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -124154,7 +124154,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -124274,7 +124274,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -124394,7 +124394,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -124514,7 +124514,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -124634,7 +124634,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -124754,7 +124754,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -124874,7 +124874,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -124994,7 +124994,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -125114,7 +125114,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -125234,7 +125234,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -125354,7 +125354,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -125474,7 +125474,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -125594,7 +125594,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -125714,7 +125714,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -125834,7 +125834,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -125954,7 +125954,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -126074,7 +126074,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -126194,7 +126194,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -126314,7 +126314,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -126434,7 +126434,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -126554,7 +126554,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
                 class=""
               >
                 <span
-                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -126776,7 +126776,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -126829,7 +126829,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -126882,7 +126882,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -126935,7 +126935,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -126988,7 +126988,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -127041,7 +127041,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -127094,7 +127094,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -127147,7 +127147,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -127200,7 +127200,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -127253,7 +127253,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -127306,7 +127306,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -127359,7 +127359,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -127412,7 +127412,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -127465,7 +127465,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -127518,7 +127518,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -127571,7 +127571,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -127624,7 +127624,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -127677,7 +127677,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -127730,7 +127730,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -127783,7 +127783,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -127836,7 +127836,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -127889,7 +127889,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -127942,7 +127942,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -127995,7 +127995,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -128048,7 +128048,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -128101,7 +128101,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -128154,7 +128154,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -128207,7 +128207,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--success t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--success t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -128260,7 +128260,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--danger t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--danger t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -128313,7 +128313,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
                 class=""
               >
                 <span
-                  class="t-tag t-tag--warning t-size-m t-tag--light-outline t-tag--round"
+                  class="t-tag t-tag--warning t-tag--light-outline t-tag--round"
                 >
                   <span>
                     <svg
@@ -129549,7 +129549,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/base.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--default t-size-m t-tag--dark"
+          class="t-tag t-tag--default t-tag--dark"
         >
           <span>
             标签一
@@ -129564,7 +129564,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/base.vue 1`] = `
           target="_blank"
         >
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
+            class="t-tag t-tag--default t-tag--dark"
           >
             <span>
               超链接
@@ -129585,7 +129585,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/base.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--primary t-size-m t-tag--dark"
+          class="t-tag t-tag--primary t-tag--dark"
         >
           <span>
             标签一
@@ -129596,7 +129596,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/base.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--success t-size-m t-tag--dark"
+          class="t-tag t-tag--success t-tag--dark"
         >
           <span>
             标签二
@@ -129607,7 +129607,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/base.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--warning t-size-m t-tag--dark"
+          class="t-tag t-tag--warning t-tag--dark"
         >
           <span>
             标签三
@@ -129618,7 +129618,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/base.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--danger t-size-m t-tag--dark"
+          class="t-tag t-tag--danger t-tag--dark"
         >
           <span>
             标签四
@@ -129638,7 +129638,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/base.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--primary t-size-m t-tag--light"
+          class="t-tag t-tag--primary t-tag--light"
         >
           <span>
             标签一
@@ -129649,7 +129649,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/base.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--success t-size-m t-tag--light"
+          class="t-tag t-tag--success t-tag--light"
         >
           <span>
             标签二
@@ -129660,7 +129660,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/base.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--warning t-size-m t-tag--light"
+          class="t-tag t-tag--warning t-tag--light"
         >
           <span>
             标签三
@@ -129671,7 +129671,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/base.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--danger t-size-m t-tag--light"
+          class="t-tag t-tag--danger t-tag--light"
         >
           <span>
             标签四
@@ -129691,7 +129691,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/base.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--primary t-size-m t-tag--outline"
+          class="t-tag t-tag--primary t-tag--outline"
         >
           <span>
             标签一
@@ -129702,7 +129702,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/base.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--success t-size-m t-tag--outline"
+          class="t-tag t-tag--success t-tag--outline"
         >
           <span>
             标签二
@@ -129713,7 +129713,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/base.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--warning t-size-m t-tag--outline"
+          class="t-tag t-tag--warning t-tag--outline"
         >
           <span>
             标签三
@@ -129724,7 +129724,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/base.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--danger t-size-m t-tag--outline"
+          class="t-tag t-tag--danger t-tag--outline"
         >
           <span>
             标签四
@@ -129744,7 +129744,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/base.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--primary t-size-m t-tag--light-outline"
+          class="t-tag t-tag--primary t-tag--light-outline"
         >
           <span>
             标签一
@@ -129755,7 +129755,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/base.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--success t-size-m t-tag--light-outline"
+          class="t-tag t-tag--success t-tag--light-outline"
         >
           <span>
             标签二
@@ -129766,7 +129766,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/base.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--warning t-size-m t-tag--light-outline"
+          class="t-tag t-tag--warning t-tag--light-outline"
         >
           <span>
             标签三
@@ -129777,7 +129777,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/base.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--danger t-size-m t-tag--light-outline"
+          class="t-tag t-tag--danger t-tag--light-outline"
         >
           <span>
             标签四
@@ -129807,7 +129807,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/delete.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--primary t-size-m t-tag--dark t-tag--close"
+          class="t-tag t-tag--primary t-tag--dark t-tag--close"
           data-v-48c2675e=""
         >
           <span>
@@ -129832,7 +129832,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/delete.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--success t-size-m t-tag--dark t-tag--close"
+          class="t-tag t-tag--success t-tag--dark t-tag--close"
           data-v-48c2675e=""
         >
           <span>
@@ -129857,7 +129857,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/delete.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--warning t-size-m t-tag--dark t-tag--close"
+          class="t-tag t-tag--warning t-tag--dark t-tag--close"
           data-v-48c2675e=""
         >
           <span>
@@ -129882,7 +129882,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/delete.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--danger t-size-m t-tag--dark t-tag--close"
+          class="t-tag t-tag--danger t-tag--dark t-tag--close"
           data-v-48c2675e=""
         >
           <span>
@@ -129917,7 +129917,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/delete.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--primary t-size-m t-tag--light t-tag--close"
+          class="t-tag t-tag--primary t-tag--light t-tag--close"
           data-v-48c2675e=""
         >
           <span>
@@ -129942,7 +129942,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/delete.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--success t-size-m t-tag--light t-tag--close"
+          class="t-tag t-tag--success t-tag--light t-tag--close"
           data-v-48c2675e=""
         >
           <span>
@@ -129967,7 +129967,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/delete.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--warning t-size-m t-tag--light t-tag--close"
+          class="t-tag t-tag--warning t-tag--light t-tag--close"
           data-v-48c2675e=""
         >
           <span>
@@ -129992,7 +129992,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/delete.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--danger t-size-m t-tag--light t-tag--close"
+          class="t-tag t-tag--danger t-tag--light t-tag--close"
           data-v-48c2675e=""
         >
           <span>
@@ -130027,7 +130027,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/delete.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--primary t-size-m t-tag--outline t-tag--close"
+          class="t-tag t-tag--primary t-tag--outline t-tag--close"
           data-v-48c2675e=""
         >
           <span>
@@ -130052,7 +130052,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/delete.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--success t-size-m t-tag--outline t-tag--close"
+          class="t-tag t-tag--success t-tag--outline t-tag--close"
           data-v-48c2675e=""
         >
           <span>
@@ -130077,7 +130077,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/delete.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--warning t-size-m t-tag--outline t-tag--close"
+          class="t-tag t-tag--warning t-tag--outline t-tag--close"
           data-v-48c2675e=""
         >
           <span>
@@ -130102,7 +130102,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/delete.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--danger t-size-m t-tag--outline t-tag--close"
+          class="t-tag t-tag--danger t-tag--outline t-tag--close"
           data-v-48c2675e=""
         >
           <span>
@@ -130137,7 +130137,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/delete.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
+          class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
           data-v-48c2675e=""
           style="max-width: 100px;"
         >
@@ -130165,7 +130165,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/delete.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
+          class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
           data-v-48c2675e=""
           style="max-width: 100px;"
         >
@@ -130214,7 +130214,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/delete.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close t-is-disabled t-tag--disabled"
+          class="t-tag t-tag--default t-tag--dark t-tag--close t-is-disabled t-tag--disabled"
           data-v-48c2675e=""
         >
           <span>
@@ -130232,7 +130232,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/delete.vue 1`] = `
       data-v-48c2675e=""
     >
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark"
+        class="t-tag t-tag--default t-tag--dark"
         data-v-48c2675e=""
       >
         <span>
@@ -130277,7 +130277,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/disabled.vue 1`] = `
     class="t-space-item"
   >
     <span
-      class="t-tag t-tag--default t-size-m t-tag--dark t-is-disabled t-tag--disabled"
+      class="t-tag t-tag--default t-tag--dark t-is-disabled t-tag--disabled"
     >
       <span>
         失效标签
@@ -130296,7 +130296,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/icon.vue 1`] = `
     class="t-space-item"
   >
     <span
-      class="t-tag t-tag--default t-size-m t-tag--dark"
+      class="t-tag t-tag--default t-tag--dark"
     >
       <svg
         class="t-icon t-icon-discount"
@@ -130325,7 +130325,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/icon.vue 1`] = `
     class="t-space-item"
   >
     <span
-      class="t-tag t-tag--default t-size-m t-tag--dark"
+      class="t-tag t-tag--default t-tag--dark"
     >
       <svg
         class="t-icon t-icon-discount"
@@ -130356,7 +130356,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/icon.vue 1`] = `
 exports[`csr snapshot test > csr test ./src/tag/_example/long-text.vue 1`] = `
 <div>
   <span
-    class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis"
+    class="t-tag t-tag--default t-tag--dark t-tag--ellipsis"
     style="max-width: 150px;"
     title="默认超八个字超长文本标签超长省略文本标签"
   >
@@ -130378,7 +130378,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/plain.vue 1`] = `
     class="t-space-item"
   >
     <span
-      class="t-tag t-tag--primary t-size-m t-tag--outline"
+      class="t-tag t-tag--primary t-tag--outline"
     >
       <span>
         标签一
@@ -130389,7 +130389,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/plain.vue 1`] = `
     class="t-space-item"
   >
     <span
-      class="t-tag t-tag--success t-size-m t-tag--outline"
+      class="t-tag t-tag--success t-tag--outline"
     >
       <span>
         标签二
@@ -130400,7 +130400,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/plain.vue 1`] = `
     class="t-space-item"
   >
     <span
-      class="t-tag t-tag--default t-size-m t-tag--outline"
+      class="t-tag t-tag--default t-tag--outline"
     >
       <span>
         标签三
@@ -130411,7 +130411,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/plain.vue 1`] = `
     class="t-space-item"
   >
     <span
-      class="t-tag t-tag--warning t-size-m t-tag--outline"
+      class="t-tag t-tag--warning t-tag--outline"
     >
       <span>
         标签四
@@ -130422,7 +130422,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/plain.vue 1`] = `
     class="t-space-item"
   >
     <span
-      class="t-tag t-tag--danger t-size-m t-tag--outline"
+      class="t-tag t-tag--danger t-tag--outline"
     >
       <span>
         标签五
@@ -130485,7 +130485,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/shape.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--default t-size-m t-tag--dark"
+          class="t-tag t-tag--default t-tag--dark"
           data-v-2785032a=""
         >
           <span>
@@ -130497,41 +130497,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/shape.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--primary t-size-m t-tag--dark"
-          data-v-2785032a=""
-        >
-          <span>
-            标签一
-          </span>
-        </span>
-      </div>
-    </div>
-  </div>
-  <div
-    class="t-space-item"
-  >
-    <div
-      class="t-space t-space-horizontal"
-      data-v-2785032a=""
-      style="gap: 16px;"
-    >
-      <div
-        class="t-space-item"
-      >
-        <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--round"
-          data-v-2785032a=""
-        >
-          <span>
-            标签一
-          </span>
-        </span>
-      </div>
-      <div
-        class="t-space-item"
-      >
-        <span
-          class="t-tag t-tag--primary t-size-m t-tag--dark t-tag--round"
+          class="t-tag t-tag--primary t-tag--dark"
           data-v-2785032a=""
         >
           <span>
@@ -130553,7 +130519,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/shape.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--mark"
+          class="t-tag t-tag--default t-tag--dark t-tag--round"
           data-v-2785032a=""
         >
           <span>
@@ -130565,7 +130531,41 @@ exports[`csr snapshot test > csr test ./src/tag/_example/shape.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--primary t-size-m t-tag--dark t-tag--mark"
+          class="t-tag t-tag--primary t-tag--dark t-tag--round"
+          data-v-2785032a=""
+        >
+          <span>
+            标签一
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-space t-space-horizontal"
+      data-v-2785032a=""
+      style="gap: 16px;"
+    >
+      <div
+        class="t-space-item"
+      >
+        <span
+          class="t-tag t-tag--default t-tag--dark t-tag--mark"
+          data-v-2785032a=""
+        >
+          <span>
+            标签一
+          </span>
+        </span>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <span
+          class="t-tag t-tag--primary t-tag--dark t-tag--mark"
           data-v-2785032a=""
         >
           <span>
@@ -130587,7 +130587,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/size.vue 1`] = `
     class="t-space-item"
   >
     <span
-      class="t-tag t-tag--default t-size-s t-tag--dark"
+      class="t-tag t-tag--default t-tag--dark t-size-s"
     >
       <span>
         小型标签
@@ -130598,7 +130598,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/size.vue 1`] = `
     class="t-space-item"
   >
     <span
-      class="t-tag t-tag--default t-size-m t-tag--dark"
+      class="t-tag t-tag--default t-tag--dark"
     >
       <span>
         默认标签
@@ -130609,7 +130609,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/size.vue 1`] = `
     class="t-space-item"
   >
     <span
-      class="t-tag t-tag--default t-size-l t-tag--dark"
+      class="t-tag t-tag--default t-tag--dark t-size-l"
     >
       <span>
         大型标签
@@ -130640,7 +130640,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/theme.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--primary t-size-m t-tag--dark"
+          class="t-tag t-tag--primary t-tag--dark"
         >
           <span>
             标签一
@@ -130651,7 +130651,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/theme.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--success t-size-m t-tag--dark"
+          class="t-tag t-tag--success t-tag--dark"
         >
           <span>
             标签二
@@ -130662,7 +130662,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/theme.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--warning t-size-m t-tag--dark"
+          class="t-tag t-tag--warning t-tag--dark"
         >
           <span>
             标签三
@@ -130673,7 +130673,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/theme.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--danger t-size-m t-tag--dark"
+          class="t-tag t-tag--danger t-tag--dark"
         >
           <span>
             标签四
@@ -130698,7 +130698,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/theme.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--primary t-size-m t-tag--light"
+          class="t-tag t-tag--primary t-tag--light"
         >
           <span>
             标签一
@@ -130709,7 +130709,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/theme.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--success t-size-m t-tag--light"
+          class="t-tag t-tag--success t-tag--light"
         >
           <span>
             标签二
@@ -130720,7 +130720,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/theme.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--warning t-size-m t-tag--light"
+          class="t-tag t-tag--warning t-tag--light"
         >
           <span>
             标签三
@@ -130731,7 +130731,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/theme.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--danger t-size-m t-tag--light"
+          class="t-tag t-tag--danger t-tag--light"
         >
           <span>
             标签四
@@ -130756,7 +130756,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/theme.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--primary t-size-m t-tag--outline"
+          class="t-tag t-tag--primary t-tag--outline"
         >
           <span>
             标签一
@@ -130767,7 +130767,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/theme.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--success t-size-m t-tag--outline"
+          class="t-tag t-tag--success t-tag--outline"
         >
           <span>
             标签二
@@ -130778,7 +130778,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/theme.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--warning t-size-m t-tag--outline"
+          class="t-tag t-tag--warning t-tag--outline"
         >
           <span>
             标签三
@@ -130789,7 +130789,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/theme.vue 1`] = `
         class="t-space-item"
       >
         <span
-          class="t-tag t-tag--danger t-size-m t-tag--outline"
+          class="t-tag t-tag--danger t-tag--outline"
         >
           <span>
             标签四
@@ -130812,7 +130812,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/auto-width.vue 1`
       class="t-input__prefix"
     >
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--default t-tag--dark t-tag--close"
       >
         <span>
           Vue
@@ -130832,7 +130832,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/auto-width.vue 1`
         </svg>
       </span>
       <span
-        class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+        class="t-tag t-tag--default t-tag--dark t-tag--close"
       >
         <span>
           React
@@ -130884,7 +130884,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/base.vue 1`] = `
           class="t-input__prefix"
         >
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-tag--dark t-tag--close"
           >
             <span>
               Vue
@@ -130904,7 +130904,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/base.vue 1`] = `
             </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-tag--dark t-tag--close"
           >
             <span>
               React1
@@ -130955,7 +130955,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/base.vue 1`] = `
             Controlled: 
           </div>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-tag--dark t-tag--close"
           >
             <span>
               Vue
@@ -130975,7 +130975,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/base.vue 1`] = `
             </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-tag--dark t-tag--close"
           >
             <span>
               React2
@@ -131026,7 +131026,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/base.vue 1`] = `
             UnControlled: 
           </div>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-tag--dark t-tag--close"
           >
             <span>
               Vue
@@ -131046,7 +131046,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/base.vue 1`] = `
             </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-tag--dark t-tag--close"
           >
             <span>
               React3
@@ -131100,7 +131100,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/collapsed.vue 1`]
           class="t-input__prefix"
         >
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-tag--dark t-tag--close"
           >
             <span>
               Vue
@@ -131120,7 +131120,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/collapsed.vue 1`]
             </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
+            class="t-tag t-tag--default t-tag--dark"
           >
             <span>
               +4
@@ -131153,7 +131153,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/collapsed.vue 1`]
           class="t-input__prefix"
         >
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-tag--dark t-tag--close"
           >
             <span>
               Vue
@@ -131173,7 +131173,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/collapsed.vue 1`]
             </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-tag--dark t-tag--close"
           >
             <span>
               React
@@ -131193,7 +131193,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/collapsed.vue 1`]
             </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
+            class="t-tag t-tag--default t-tag--dark"
           >
             <span>
               更多(3)
@@ -131226,7 +131226,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/collapsed.vue 1`]
           class="t-input__prefix"
         >
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-tag--dark t-tag--close"
           >
             <span>
               Vue
@@ -131246,7 +131246,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/collapsed.vue 1`]
             </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-tag--dark t-tag--close"
           >
             <span>
               React
@@ -131266,7 +131266,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/collapsed.vue 1`]
             </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-tag--dark t-tag--close"
           >
             <span>
               Miniprogram
@@ -131286,7 +131286,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/collapsed.vue 1`]
             </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
+            class="t-tag t-tag--default t-tag--dark"
           >
             <span>
               More(2)
@@ -131327,7 +131327,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/custom-tag.vue 1`
           class="t-input__prefix"
         >
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-tag--dark t-tag--close"
           >
             <span>
               <img
@@ -131353,7 +131353,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/custom-tag.vue 1`
             </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-tag--dark t-tag--close"
           >
             <span>
               <img
@@ -131379,7 +131379,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/custom-tag.vue 1`
             </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark"
+            class="t-tag t-tag--default t-tag--dark"
           >
             <span>
               +1
@@ -131412,7 +131412,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/custom-tag.vue 1`
           class="t-input__prefix"
         >
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-tag--dark t-tag--close"
             style="margin-right: 4px;"
           >
             <span>
@@ -131439,7 +131439,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/custom-tag.vue 1`
             </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-tag--dark t-tag--close"
             style="margin-right: 4px;"
           >
             <span>
@@ -131466,7 +131466,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/custom-tag.vue 1`
             </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-tag--dark t-tag--close"
             style="margin-right: 4px;"
           >
             <span>
@@ -131531,7 +131531,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/draggable.vue 1`]
             draggable="true"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 Vue
@@ -131556,7 +131556,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/draggable.vue 1`]
             draggable="true"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 React
@@ -131581,7 +131581,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/draggable.vue 1`]
             draggable="true"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 Angular
@@ -131637,7 +131637,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/draggable.vue 1`]
             draggable="true"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 Vue
@@ -131662,7 +131662,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/draggable.vue 1`]
             draggable="true"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 React
@@ -131687,7 +131687,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/draggable.vue 1`]
             draggable="true"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 Angular
@@ -131712,7 +131712,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/draggable.vue 1`]
             draggable="true"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 Miniprogram
@@ -131772,7 +131772,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/excess.vue 1`] = 
             Scroll: 
           </div>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-tag--dark t-tag--close"
           >
             <span>
               Vue
@@ -131792,7 +131792,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/excess.vue 1`] = 
             </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-tag--dark t-tag--close"
           >
             <span>
               React
@@ -131843,7 +131843,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/excess.vue 1`] = 
             BreakLine: 
           </div>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-tag--dark t-tag--close"
           >
             <span>
               Vue
@@ -131863,7 +131863,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/excess.vue 1`] = 
             </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-tag--dark t-tag--close"
           >
             <span>
               React
@@ -131944,7 +131944,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/size.vue 1`] = `
           class="t-input__prefix"
         >
           <span
-            class="t-tag t-tag--default t-size-s t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-tag--dark t-size-s t-tag--close"
           >
             <span>
               Vue
@@ -131964,7 +131964,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/size.vue 1`] = `
             </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-s t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-tag--dark t-size-s t-tag--close"
           >
             <span>
               React
@@ -132010,7 +132010,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/size.vue 1`] = `
           class="t-input__prefix"
         >
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-tag--dark t-tag--close"
           >
             <span>
               Vue
@@ -132030,7 +132030,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/size.vue 1`] = `
             </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-tag--dark t-tag--close"
           >
             <span>
               React
@@ -132076,7 +132076,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/size.vue 1`] = `
           class="t-input__prefix"
         >
           <span
-            class="t-tag t-tag--default t-size-l t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-tag--dark t-size-l t-tag--close"
           >
             <span>
               Vue
@@ -132096,7 +132096,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/size.vue 1`] = `
             </svg>
           </span>
           <span
-            class="t-tag t-tag--default t-size-l t-tag--dark t-tag--close"
+            class="t-tag t-tag--default t-tag--dark t-size-l t-tag--close"
           >
             <span>
               React
@@ -132156,21 +132156,21 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/status.vue 1`] = 
             class="t-input__prefix"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-is-disabled t-tag--disabled"
+              class="t-tag t-tag--default t-tag--dark t-is-disabled t-tag--disabled"
             >
               <span>
                 Vue
               </span>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-is-disabled t-tag--disabled"
+              class="t-tag t-tag--default t-tag--dark t-is-disabled t-tag--disabled"
             >
               <span>
                 React
               </span>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-is-disabled t-tag--disabled"
+              class="t-tag t-tag--default t-tag--dark t-is-disabled t-tag--disabled"
             >
               <span>
                 Miniprogram
@@ -132211,21 +132211,21 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/status.vue 1`] = 
             class="t-input__prefix"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark"
+              class="t-tag t-tag--default t-tag--dark"
             >
               <span>
                 Vue
               </span>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark"
+              class="t-tag t-tag--default t-tag--dark"
             >
               <span>
                 React
               </span>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark"
+              class="t-tag t-tag--default t-tag--dark"
             >
               <span>
                 Miniprogram
@@ -132271,7 +132271,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/status.vue 1`] = 
             class="t-input__prefix"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 Vue
@@ -132291,7 +132291,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/status.vue 1`] = 
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 React
@@ -132311,7 +132311,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/status.vue 1`] = 
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 Miniprogram
@@ -132369,7 +132369,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/status.vue 1`] = 
             class="t-input__prefix"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 Vue
@@ -132389,7 +132389,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/status.vue 1`] = 
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 React
@@ -132409,7 +132409,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/status.vue 1`] = 
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 Miniprogram
@@ -132467,7 +132467,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/status.vue 1`] = 
             class="t-input__prefix"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 Vue
@@ -132487,7 +132487,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/status.vue 1`] = 
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 React
@@ -132507,7 +132507,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/status.vue 1`] = 
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                 Miniprogram
@@ -132567,7 +132567,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/theme.vue 1`] = `
           class="t-input__prefix"
         >
           <span
-            class="t-tag t-tag--primary t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--primary t-tag--dark t-tag--close"
           >
             <span>
               Vue
@@ -132587,7 +132587,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/theme.vue 1`] = `
             </svg>
           </span>
           <span
-            class="t-tag t-tag--primary t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--primary t-tag--dark t-tag--close"
           >
             <span>
               React
@@ -132607,7 +132607,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/theme.vue 1`] = `
             </svg>
           </span>
           <span
-            class="t-tag t-tag--primary t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--primary t-tag--dark t-tag--close"
           >
             <span>
               Miniprogram
@@ -132653,7 +132653,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/theme.vue 1`] = `
           class="t-input__prefix"
         >
           <span
-            class="t-tag t-tag--success t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--success t-tag--dark t-tag--close"
           >
             <span>
               Vue
@@ -132673,7 +132673,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/theme.vue 1`] = `
             </svg>
           </span>
           <span
-            class="t-tag t-tag--success t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--success t-tag--dark t-tag--close"
           >
             <span>
               React
@@ -132693,7 +132693,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/theme.vue 1`] = `
             </svg>
           </span>
           <span
-            class="t-tag t-tag--success t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--success t-tag--dark t-tag--close"
           >
             <span>
               Miniprogram
@@ -132739,7 +132739,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/theme.vue 1`] = `
           class="t-input__prefix"
         >
           <span
-            class="t-tag t-tag--warning t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--warning t-tag--dark t-tag--close"
           >
             <span>
               Vue
@@ -132759,7 +132759,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/theme.vue 1`] = `
             </svg>
           </span>
           <span
-            class="t-tag t-tag--warning t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--warning t-tag--dark t-tag--close"
           >
             <span>
               React
@@ -132779,7 +132779,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/theme.vue 1`] = `
             </svg>
           </span>
           <span
-            class="t-tag t-tag--warning t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--warning t-tag--dark t-tag--close"
           >
             <span>
               Miniprogram
@@ -132825,7 +132825,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/theme.vue 1`] = `
           class="t-input__prefix"
         >
           <span
-            class="t-tag t-tag--danger t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--danger t-tag--dark t-tag--close"
           >
             <span>
               Vue
@@ -132845,7 +132845,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/theme.vue 1`] = `
             </svg>
           </span>
           <span
-            class="t-tag t-tag--danger t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--danger t-tag--dark t-tag--close"
           >
             <span>
               React
@@ -132865,7 +132865,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/theme.vue 1`] = `
             </svg>
           </span>
           <span
-            class="t-tag t-tag--danger t-size-m t-tag--dark t-tag--close"
+            class="t-tag t-tag--danger t-tag--dark t-tag--close"
           >
             <span>
               Miniprogram
@@ -153713,7 +153713,7 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/collapsed.vue 1
             class="t-input__prefix"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
               style="max-width: 300px;"
             >
               <span
@@ -153736,7 +153736,7 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/collapsed.vue 1
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark"
+              class="t-tag t-tag--default t-tag--dark"
             >
               <span>
                 +1
@@ -153786,7 +153786,7 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/collapsed.vue 1
             class="t-input__prefix"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
               style="max-width: 300px;"
             >
               <span
@@ -153809,7 +153809,7 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/collapsed.vue 1
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark"
+              class="t-tag t-tag--default t-tag--dark"
             >
               <span>
                 更多...
@@ -154133,7 +154133,7 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/multiple.vue 1`
         class="t-input__prefix"
       >
         <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
+          class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
           style="max-width: 300px;"
         >
           <span
@@ -154156,7 +154156,7 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/multiple.vue 1`
           </svg>
         </span>
         <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
+          class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
           style="max-width: 300px;"
         >
           <span
@@ -154179,7 +154179,7 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/multiple.vue 1`
           </svg>
         </span>
         <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
+          class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
           style="max-width: 300px;"
         >
           <span
@@ -154400,7 +154400,7 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/valuedisplay.vu
             class="t-input__prefix"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                  深圳市(shenzhen) 
@@ -154420,7 +154420,7 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/valuedisplay.vu
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
               <span>
                  广州市(guangzhou) 
@@ -154545,7 +154545,7 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/valuetype.vue 1
             class="t-input__prefix"
           >
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
               style="max-width: 300px;"
             >
               <span
@@ -154568,7 +154568,7 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/valuetype.vue 1
               </svg>
             </span>
             <span
-              class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
               style="max-width: 300px;"
             >
               <span

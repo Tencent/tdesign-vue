@@ -101,8 +101,8 @@ export default defineComponent({
     },
 
     renderCollapsedItems() {
-      const treeSelectValue = this.treeSelectValue || [];
-      const value = Array.isArray(treeSelectValue) ? treeSelectValue : [treeSelectValue];
+      const selectedNodeInfo = this.nodeInfo || [];
+      const value = Array.isArray(selectedNodeInfo) ? selectedNodeInfo : [selectedNodeInfo];
       return this.renderTNodeJSX('collapsedItems', {
         params: {
           value,

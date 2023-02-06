@@ -129,7 +129,7 @@ describe('Tag Component', () => {
     });
   });
 
-  const sizeClassNameList = ['t-size-s', 't-size-m', 't-size-l'];
+  const sizeClassNameList = ['t-size-s', { 't-size-m': false }, 't-size-l'];
   ['small', 'medium', 'large'].forEach((item, index) => {
     it(`props.size is equal to ${item}`, () => {
       const wrapper = mount({
@@ -137,7 +137,12 @@ describe('Tag Component', () => {
           return <Tag size={item}></Tag>;
         },
       });
-      expect(wrapper.classes(sizeClassNameList[index])).toBeTruthy();
+      if (typeof sizeClassNameList[index] === 'string') {
+        expect(wrapper.classes(sizeClassNameList[index])).toBeTruthy();
+      } else if (typeof sizeClassNameList[index] === 'object') {
+        const classNameKey = Object.keys(sizeClassNameList[index])[0];
+        expect(wrapper.classes(classNameKey)).toBeFalsy();
+      }
     });
   });
 

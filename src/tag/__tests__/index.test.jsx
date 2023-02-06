@@ -151,42 +151,42 @@ describe('Tag or CheckTag', () => {
       expect(wrapper.element).toMatchSnapshot();
     });
 
-    it(':variant:plain;theme:default', () => {
+    it(':variant:light;theme:default', () => {
       const wrapper = mount({
         render() {
-          return <Tag variant="plain" theme={'default'}></Tag>;
+          return <Tag variant="light" theme={'default'}></Tag>;
         },
       });
       expect(wrapper.element).toMatchSnapshot();
     });
-    it(':variant:plain;theme:primary', () => {
+    it(':variant:light;theme:primary', () => {
       const wrapper = mount({
         render() {
-          return <Tag variant="plain" theme={'primary'}></Tag>;
+          return <Tag variant="light" theme={'primary'}></Tag>;
         },
       });
       expect(wrapper.element).toMatchSnapshot();
     });
-    it(':variant:plain;theme:warning', () => {
+    it(':variant:light;theme:warning', () => {
       const wrapper = mount({
         render() {
-          return <Tag variant="plain" theme={'warning'}></Tag>;
+          return <Tag variant="light" theme={'warning'}></Tag>;
         },
       });
       expect(wrapper.element).toMatchSnapshot();
     });
-    it(':variant:plain;theme:danger', () => {
+    it(':variant:light;theme:danger', () => {
       const wrapper = mount({
         render() {
-          return <Tag variant="plain" theme={'danger'}></Tag>;
+          return <Tag variant="light" theme={'danger'}></Tag>;
         },
       });
       expect(wrapper.element).toMatchSnapshot();
     });
-    it(':variant:plain;theme:success', () => {
+    it(':variant:light;theme:success', () => {
       const wrapper = mount({
         render() {
-          return <Tag variant="plain" theme={'success'}></Tag>;
+          return <Tag variant="light" theme={'success'}></Tag>;
         },
       });
       expect(wrapper.element).toMatchSnapshot();

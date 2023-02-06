@@ -134,7 +134,6 @@ export default function useTagList(props: TdTagInputProps, context: SetupContext
           value: tagValue.value,
           count: tagValue.value.length - minCollapsedNum.value,
           collapsedTags: tagValue.value.slice(minCollapsedNum.value, tagValue.value.length),
-          collapsedSelectedItems: tagValue.value.slice(minCollapsedNum.value, tagValue.value.length),
         },
       });
       list.push(more ?? <Tag key="more">+{len}</Tag>);

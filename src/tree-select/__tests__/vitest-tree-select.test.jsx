@@ -9,8 +9,8 @@ import { vi } from 'vitest';
 import {
   mockDelay,
   simulateInputChange,
+  simulateDocumentMouseEvent,
   createElementById,
-  simulateDocumentClick,
   simulateInputEnter,
 } from '@test/utils';
 import { TreeSelect } from '..';
@@ -89,7 +89,15 @@ describe('TreeSelect Component', () => {
   it('props.collapsedItems works fine', () => {
     const wrapper = getTreeSelectMultipleMount(TreeSelect, {
       collapsedItems: (h) => <span class="custom-node">TNode</span>,
-      minCollapsedNum: 3,
+      minCollapsedNum: 2,
+      value: [1, 3, '5'],
+      data: [
+        { label: 'tdesign-vue', value: 1 },
+        { label: 'tdesign-react', value: 2 },
+        { label: 'tdesign-miniprogram', value: 3 },
+        { label: 'tdesign-angular', value: '5' },
+        { label: 'tdesign-mobile-vue', value: '6' },
+      ],
     });
     expect(wrapper.find('.custom-node').exists()).toBeTruthy();
   });
@@ -97,30 +105,80 @@ describe('TreeSelect Component', () => {
   it('slots.collapsedItems works fine', () => {
     const wrapper = getTreeSelectMultipleMount(TreeSelect, {
       scopedSlots: { collapsedItems: (h) => <span class="custom-node">TNode</span> },
-      minCollapsedNum: 3,
+      minCollapsedNum: 2,
+      value: [1, 3, '5'],
+      data: [
+        { label: 'tdesign-vue', value: 1 },
+        { label: 'tdesign-react', value: 2 },
+        { label: 'tdesign-miniprogram', value: 3 },
+        { label: 'tdesign-angular', value: '5' },
+        { label: 'tdesign-mobile-vue', value: '6' },
+      ],
     });
     expect(wrapper.find('.custom-node').exists()).toBeTruthy();
   });
   it('slots.collapsed-items works fine', () => {
     const wrapper = getTreeSelectMultipleMount(TreeSelect, {
       scopedSlots: { 'collapsed-items': (h) => <span class="custom-node">TNode</span> },
-      minCollapsedNum: 3,
+      minCollapsedNum: 2,
+      value: [1, 3, '5'],
+      data: [
+        { label: 'tdesign-vue', value: 1 },
+        { label: 'tdesign-react', value: 2 },
+        { label: 'tdesign-miniprogram', value: 3 },
+        { label: 'tdesign-angular', value: '5' },
+        { label: 'tdesign-mobile-vue', value: '6' },
+      ],
     });
     expect(wrapper.find('.custom-node').exists()).toBeTruthy();
   });
 
   it('props.collapsedItems is a function with params', () => {
     const fn = vi.fn();
-    getTreeSelectMultipleMount(TreeSelect, { collapsedItems: fn, minCollapsedNum: 3 });
+    getTreeSelectMultipleMount(TreeSelect, {
+      collapsedItems: fn,
+      minCollapsedNum: 2,
+      value: [1, 3, '5'],
+      data: [
+        { label: 'tdesign-vue', value: 1 },
+        { label: 'tdesign-react', value: 2 },
+        { label: 'tdesign-miniprogram', value: 3 },
+        { label: 'tdesign-angular', value: '5' },
+        { label: 'tdesign-mobile-vue', value: '6' },
+      ],
+    });
     expect(fn).toHaveBeenCalled();
-    expect(fn.mock.calls[0][1].count).toBe(2);
+    expect(fn.mock.calls[0][1].count).toBe(1);
+    expect(fn.mock.calls[0][1].value).toEqual([
+      { label: 'tdesign-vue', value: 1 },
+      { label: 'tdesign-miniprogram', value: 3 },
+      { label: 'tdesign-angular', value: '5' },
+    ]);
+    expect(fn.mock.calls[0][1].collapsedSelectedItems).toEqual([{ label: 'tdesign-angular', value: '5' }]);
   });
   it('slots.collapsedItems: a function with params', () => {
     const fn = vi.fn();
-    getTreeSelectMultipleMount(TreeSelect, { scopedSlots: { collapsedItems: fn }, minCollapsedNum: 3 });
+    getTreeSelectMultipleMount(TreeSelect, {
+      scopedSlots: { collapsedItems: fn },
+      minCollapsedNum: 2,
+      value: [1, 3, '5'],
+      data: [
+        { label: 'tdesign-vue', value: 1 },
+        { label: 'tdesign-react', value: 2 },
+        { label: 'tdesign-miniprogram', value: 3 },
+        { label: 'tdesign-angular', value: '5' },
+        { label: 'tdesign-mobile-vue', value: '6' },
+      ],
+    });
 
     expect(fn).toHaveBeenCalled();
-    expect(fn.mock.calls[0][0].count).toBe(2);
+    expect(fn.mock.calls[0][0].count).toBe(1);
+    expect(fn.mock.calls[0][0].value).toEqual([
+      { label: 'tdesign-vue', value: 1 },
+      { label: 'tdesign-miniprogram', value: 3 },
+      { label: 'tdesign-angular', value: '5' },
+    ]);
+    expect(fn.mock.calls[0][0].collapsedSelectedItems).toEqual([{ label: 'tdesign-angular', value: '5' }]);
   });
 
   it('props.data: empty data with panel content node', async () => {
@@ -663,17 +721,17 @@ describe('TreeSelect Component', () => {
       { filterable: true, value: 1 },
       { focus: onFocusFn, blur: onBlurFn1 },
     );
-    wrapper.find('input').trigger('focus');
+    wrapper.find('.t-input').trigger('click');
     await wrapper.vm.$nextTick();
     await mockDelay(100);
     expect(onFocusFn).toHaveBeenCalled();
     expect(onFocusFn.mock.calls[0][0].e.type).toBe('focus');
     expect(onFocusFn.mock.calls[0][0].value).toBe(1);
-    simulateDocumentClick(document);
+    simulateDocumentMouseEvent(document, 'mousedown');
     await wrapper.vm.$nextTick();
     document.querySelectorAll('.t-popup').forEach((node) => node.remove());
     expect(onBlurFn1).toHaveBeenCalled();
-    expect(onBlurFn1.mock.calls[0][0].e.type).toBe('click');
+    expect(onBlurFn1.mock.calls[0][0].e.type).toBe('mousedown');
     expect(onBlurFn1.mock.calls[0][0].value).toBe(1);
   });
 
@@ -689,11 +747,11 @@ describe('TreeSelect Component', () => {
     await wrapper.vm.$nextTick();
     expect(onFocusFn).toHaveBeenCalled();
     expect(onFocusFn.mock.calls[0][0].e.type).toBe('focus');
-    simulateDocumentClick(document);
+    simulateDocumentMouseEvent(document, 'mousedown');
     await wrapper.vm.$nextTick();
     document.querySelectorAll('.t-popup').forEach((node) => node.remove());
     expect(onBlurFn1).toHaveBeenCalled();
-    expect(onBlurFn1.mock.calls[0][0].e.type).toBe('click');
+    expect(onBlurFn1.mock.calls[0][0].e.type).toBe('mousedown');
     expect(onBlurFn1.mock.calls[0][0].value).toEqual([1]);
   });
 

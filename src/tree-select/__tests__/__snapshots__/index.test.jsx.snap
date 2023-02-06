@@ -59,7 +59,7 @@ exports[`TreeSelect > :props > :defaultValue 1`] = `
         class="t-input__prefix"
       >
         <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
+          class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
           style="max-width: 300px;"
         >
           <span
@@ -82,7 +82,7 @@ exports[`TreeSelect > :props > :defaultValue 1`] = `
           </svg>
         </span>
         <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
+          class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
           style="max-width: 300px;"
         >
           <span
@@ -471,7 +471,7 @@ exports[`TreeSelect > :props > :multiple 1`] = `
         class="t-input__prefix"
       >
         <span
-          class="t-tag t-tag--default t-size-m t-tag--dark t-tag--ellipsis t-tag--close"
+          class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
           style="max-width: 300px;"
         >
           <span

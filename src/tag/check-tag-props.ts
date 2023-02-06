@@ -9,10 +9,7 @@ import { PropType } from 'vue';
 
 export default {
   /** 标签选中的状态，默认风格（theme=default）才有选中态 */
-  checked: {
-    type: Boolean,
-    default: undefined,
-  },
+  checked: Boolean,
   /** 标签选中的状态，默认风格（theme=default）才有选中态，非受控属性 */
   defaultChecked: Boolean,
   /** 组件子元素；传入数组时：[选中内容，非选中内容] */

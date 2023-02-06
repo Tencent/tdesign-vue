@@ -110,7 +110,7 @@ export default mixins(classPrefixMixins).extend({
       if (visible) {
         this.preventClosing(true);
         if (!this.hasDocumentEvent) {
-          on(document, 'click', this.handleDocumentClick, true);
+          on(document, 'mousedown', this.handleDocumentClick, true);
           this.hasDocumentEvent = true;
         }
         // focus trigger esc 隐藏浮层
@@ -127,7 +127,7 @@ export default mixins(classPrefixMixins).extend({
       } else {
         this.preventClosing(false);
         // destruction is delayed until after animation ends
-        off(document, 'click', this.handleDocumentClick, true);
+        off(document, 'mousedown', this.handleDocumentClick, true);
         this.hasDocumentEvent = false;
         this.mouseInRange = false;
       }
@@ -187,7 +187,7 @@ export default mixins(classPrefixMixins).extend({
       (this as any).popup?.preventClosing(false);
     }
     this.destroyPopper();
-    off(document, 'click', this.handleDocumentClick, true);
+    off(document, 'mousedown', this.handleDocumentClick, true);
     clearTimeout(this.timeout);
   },
   methods: {

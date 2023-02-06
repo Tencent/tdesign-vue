@@ -9,7 +9,7 @@ autoWidth | Boolean | false | \- | N
 autofocus | Boolean | false | \- | N
 borderless | Boolean | false | \- | N
 clearable | Boolean | false | \- | N
-collapsedItems | Slot / Function | - | Typescript：`TNode<{ value: TreeValueType[]; collapsedSelectedItems: DataOption[]; count: number }>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+collapsedItems | Slot / Function | - | Typescript：`TNode<{ value: DataOption[]; collapsedSelectedItems: DataOption[]; count: number }>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 data | Array | [] | Typescript：`Array<DataOption>` | N
 disabled | Boolean | - | \- | N
 empty | String / Slot / Function | - | Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
@@ -41,7 +41,7 @@ tips | String / Slot / Function | - | Typescript：`string \| TNode`。[see more
 treeProps | Object | - | Typescript：`TreeProps`，[Tree API Documents](./tree?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts) | N
 value | String / Number / Object / Array | - | `v-model` is supported。Typescript：`TreeValueType` `type TreeSelectValue = string \| number \| TreeOptionData \| Array<string \| number \| TreeOptionData>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts) | N
 defaultValue | String / Number / Object / Array | - | uncontrolled property。Typescript：`TreeValueType` `type TreeSelectValue = string \| number \| TreeOptionData \| Array<string \| number \| TreeOptionData>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts) | N
-valueDisplay | Slot / Function | - | Typescript：`string \| TNode<{ value: TreeOptionData \| TreeOptionData[]; onClose: (index: number, item?: any) => void }>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+valueDisplay | Slot / Function | - | Typescript：`string \| TNode<{ value: TreeOptionData \| TreeOptionData[]; onClose: (index: number) => void }>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 valueType | String | value | options：value/object | N
 onBlur | Function |  | Typescript：`(context: SelectInputBlurContext & { value: TreeSelectValue }) => void`<br/> | N
 onChange | Function |  | Typescript：`(value: TreeValueType, context: TreeSelectChangeContext<DataOption>) => void`<br/>[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts)。<br/>`interface TreeSelectChangeContext<DataOption> { node: TreeNodeModel<DataOption>; data: DataOption; index?: number; trigger: TreeSelectValueChangeTrigger; e?: MouseEvent \| KeyboardEvent \| Event }`<br/><br/>`type TreeSelectValueChangeTrigger = 'clear' \| 'tag-remove' \| 'backspace' \| 'check' \| 'uncheck'`<br/> | N

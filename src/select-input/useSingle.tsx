@@ -99,11 +99,11 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
         scopedSlots={context.slots}
         onChange={onInnerInputChange}
         onClear={onInnerClear}
-        // [Important Info]: SelectInput.focus is not equal to Input, example: click popup panel
         onEnter={(val: InputValue, context: { e: KeyboardEvent }) => {
           props.onEnter?.(value.value, { ...context, inputValue: val });
           instance.emit('enter', value.value, { ...context, inputValue: val });
         }}
+        // [Important Info]: SelectInput.blur is not equal to Input, example: click popup panel
         onFocus={(val: InputValue, context: { e: MouseEvent }) => {
           props.onFocus?.(value.value, { ...context, inputValue: val });
           instance.emit('focus', value.value, { ...context, tagInputValue: val });

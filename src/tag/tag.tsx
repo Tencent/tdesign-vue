@@ -19,10 +19,10 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalI
       return [
         `${this.componentName}`,
         `${this.componentName}--${this.theme}`,
-        this.commonSizeClassName[this.size],
         `${this.componentName}--${this.variant}`,
         this.shape !== 'square' && `${this.componentName}--${this.shape}`,
         {
+          [this.commonSizeClassName[this.size]]: this.size !== 'medium',
           [`${this.componentName}--ellipsis`]: this.maxWidth,
           [`${this.componentName}--close`]: this.closable,
           [`${this.classPrefix}-is-disabled`]: this.disabled,
