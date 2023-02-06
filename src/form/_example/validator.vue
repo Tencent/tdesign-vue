@@ -80,7 +80,7 @@ const INITIAL_DATA = {
   content: {
     url: '',
   },
-  hobby: [],
+  hobby: '',
   course: [],
 };
 export default {
