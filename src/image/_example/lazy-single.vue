@@ -23,8 +23,16 @@ export default Vue.extend({
   data() {
     return {
       loadingCount: 0,
-      renderPlaceholder: <img width="100%" height="100%" src="https://tdesign.gtimg.com/demo/demo-image-5.png" />,
-      renderLoading: (
+
+      // renderPlaceholder 支持插槽
+      // eslint-disable-next-line
+      renderPlaceholder: (h) => (
+        <img width="100%" height="100%" src="https://tdesign.gtimg.com/demo/demo-image-5.png" />
+      ),
+
+      // renderLoading 支持插槽
+      // eslint-disable-next-line
+      renderLoading: (h) => (
         <div
           style={{
             display: 'flex',

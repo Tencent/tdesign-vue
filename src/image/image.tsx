@@ -36,7 +36,7 @@ export default defineComponent({
       'onError',
     ]);
 
-    const { classPrefix, global: globalConfig } = useConfig('image');
+    const { classPrefix, globalConfig } = useConfig('image');
     const imageRef = ref<HTMLElement>(null);
 
     const imageSrc = ref(props.src);
