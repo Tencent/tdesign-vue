@@ -46,6 +46,7 @@ import useSelectOptions from './hooks/useSelectOptions';
 import { SelectPanelInstance } from './instance';
 import log from '../_common/js/log';
 import useFormDisabled from '../hooks/useFormDisabled';
+import { OptionData } from '../common';
 
 export type OptionInstance = InstanceType<typeof Option>;
 
@@ -257,13 +258,22 @@ export default defineComponent({
       return params;
     });
 
-    const collapsedItemsParams = computed(() => multiple.value
-      ? {
-        value: innerValue.value,
-        collapsedSelectedItems: innerValue.value.slice(minCollapsedNum.value),
-        count: innerValue.value.length - minCollapsedNum.value,
-      }
-      : {});
+    const collapsedItemsParams = computed(() => {
+      const tValue = innerValue.value || [];
+      const values = Array.isArray(tValue) ? tValue : [tValue];
+      return multiple.value
+        ? {
+          value: values,
+          collapsedSelectedItems: values
+            .map((item: any) => {
+              const tmpValue = typeof item === 'object' ? item[props.keys?.value || 'value'] : item;
+              return props.options.find((t: OptionData) => t.value === tmpValue);
+            })
+            .slice(minCollapsedNum.value),
+          count: values.length - minCollapsedNum.value,
+        }
+        : {};
+    });
 
     const removeTag = (index: number, context?: { e?: MouseEvent | KeyboardEvent }) => {
       const { e } = context || {};
@@ -319,7 +329,7 @@ export default defineComponent({
     const handleTInputValueChange = (val: string, context: SelectInputValueChangeContext) => {
       if (context.trigger === 'blur' || !innerPopupVisible.value) return;
       setTInputValue(val);
-      debounceSearch();
+      debounceSearch({ e: context.e as KeyboardEvent });
     };
 
     const handleTagChange = (currentTags: SelectInputValue, context: SelectInputChangeContext) => {
@@ -347,9 +357,9 @@ export default defineComponent({
       props.onEnter?.({ value, e: context?.e, inputValue: tInputValue.value.toString() });
     };
 
-    const debounceSearch = debounce(() => {
+    const debounceSearch = debounce((context: { e: KeyboardEvent }) => {
       instance.emit('search', tInputValue.value);
-      props.onSearch?.(tInputValue.value.toString());
+      props.onSearch?.(tInputValue.value.toString(), { e: context.e });
     }, 300);
 
     const getOverlayElm = (): HTMLElement => {
@@ -554,6 +564,8 @@ export default defineComponent({
 
   methods: {
     renderSuffixIcon() {
+      const suffixIcon = this.renderTNode('suffixIcon');
+      if (suffixIcon) return suffixIcon;
       const {
         isLoading, showArrow, innerPopupVisible, isDisabled,
       } = this;
@@ -569,6 +581,20 @@ export default defineComponent({
         />
       ) : null;
     },
+
+    renderLabel() {
+      const label = this.renderTNode('label');
+      const prefixIcon = this.renderTNode('prefixIcon');
+      if (label && prefixIcon) {
+        return (
+          <div>
+            {label}
+            {prefixIcon}
+          </div>
+        );
+      }
+      return label || prefixIcon;
+    },
   },
 
   render() {
@@ -581,6 +607,11 @@ export default defineComponent({
         <SelectInput
           ref="selectInputRef"
           class={this.componentName}
+          scopedSlots={{
+            tips: this.$scopedSlots.tips,
+            tag: this.$scopedSlots.tag,
+            suffix: this.$scopedSlots.suffix,
+          }}
           {...{
             props: {
               autoWidth: this.autoWidth,
@@ -591,11 +622,13 @@ export default defineComponent({
               keys: this.keys,
               status: this.status,
               tips: this.tips,
+              suffix: this.suffix,
+              tag: this.tag,
               value: this.displayText,
               valueDisplay: () => renderTNode('valueDisplay', { params: this.valueDisplayParams }),
               clearable: this.clearable,
               disabled: this.disabled,
-              label: () => renderTNode('prefixIcon'),
+              label: this.renderLabel,
               suffixIcon: this.renderSuffixIcon,
               placeholder: this.placeholderText,
               inputValue: this.tInputValue,
@@ -603,10 +636,7 @@ export default defineComponent({
                 size: this.size,
                 ...this.inputProps,
               },
-              tagInputProps: {
-                autoWidth: true,
-                ...this.tagInputProps,
-              },
+              tagInputProps: this.tagInputProps,
               tagProps: this.tagProps,
               minCollapsedNum: this.minCollapsedNum,
               collapsedItems: () => renderTNode('collapsedItems', { params: this.collapsedItemsParams }),

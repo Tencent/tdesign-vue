@@ -21,6 +21,11 @@ export interface TdSelectProps<T extends SelectOption = SelectOption> {
    */
   autoWidth?: boolean;
   /**
+   * 自动聚焦
+   * @default false
+   */
+  autofocus?: boolean;
+  /**
    * 无边框模式
    * @default false
    */
@@ -31,7 +36,7 @@ export interface TdSelectProps<T extends SelectOption = SelectOption> {
    */
   clearable?: boolean;
   /**
-   * 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义
+   * 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义。`value` 表示当前存在的所有标签，`collapsedTags` 表示折叠的标签，`count` 表示折叠的数量
    */
   collapsedItems?: TNode<{ value: T[]; collapsedSelectedItems: T[]; count: number }>;
   /**
@@ -71,6 +76,10 @@ export interface TdSelectProps<T extends SelectOption = SelectOption> {
    * 用来定义 value / label 在 `options` 中对应的字段别名
    */
   keys?: SelectKeysType;
+  /**
+   * 左侧文本
+   */
+  label?: string | TNode;
   /**
    * 是否为加载状态
    * @default false
@@ -161,6 +170,14 @@ export interface TdSelectProps<T extends SelectOption = SelectOption> {
    */
   status?: 'default' | 'success' | 'warning' | 'error';
   /**
+   * 后置图标前的后置内容
+   */
+  suffix?: string | TNode;
+  /**
+   * 组件后置图标
+   */
+  suffixIcon?: TNode;
+  /**
    * 透传 TagInput 标签输入框组件的全部属性
    */
   tagInputProps?: TagInputProps;
@@ -233,7 +250,7 @@ export interface TdSelectProps<T extends SelectOption = SelectOption> {
   /**
    * 输入值变化时，触发搜索事件。主要用于远程搜索新数据
    */
-  onSearch?: (filterWords: string) => void;
+  onSearch?: (filterWords: string, context: { e: KeyboardEvent }) => void;
 }
 
 export interface TdOptionProps {

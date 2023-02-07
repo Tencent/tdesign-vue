@@ -1,4 +1,5 @@
 import { fireEvent, createEvent } from '@testing-library/dom';
+import { EVENTS_MAP } from './events';
 
 export function mockDelay(timeout = 300) {
   return new Promise((resolve) => {
@@ -16,7 +17,12 @@ export function simulateInputChange(dom, text) {
 
 // input enter
 export function simulateInputEnter(dom) {
-  dom.trigger('keydown.enter');
+  fireEvent.keyDown(dom, { key: 'Enter', code: 'Enter', charCode: 13 });
+}
+
+export function simulateDocumentMouseEvent(dom = document, trigger = 'click') {
+  const triggerName = EVENTS_MAP[trigger] || trigger;
+  fireEvent[triggerName](dom);
 }
 
 // Only for Vue2

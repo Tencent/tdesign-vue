@@ -232,6 +232,7 @@ export const useCascaderContext = (props: TdCascaderProps) => {
   );
 
   return {
+    innerValue,
     cascaderContext,
     isFilterable,
   };

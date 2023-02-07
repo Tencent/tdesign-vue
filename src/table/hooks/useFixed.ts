@@ -347,7 +347,7 @@ export default function useFixed(
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const updateFixedStatus = () => {
-    if (!(columns.value?.length)) return () => {};
+    if (!columns.value?.length) return () => {};
     const { newColumnsMap, levelNodes } = getColumnMap(columns.value);
     setIsLastOrFirstFixedCol(levelNodes);
     const timer = setTimeout(() => {
