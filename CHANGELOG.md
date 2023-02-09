@@ -5,7 +5,7 @@ toc: false
 docClass: timeline
 ---
 
-## 🌈 1.0.9 `2023-02-08` 
+## 🌈 1.1.0 `2023-02-08` 
 ### 🚀 Features
 - `Cascader`: @chaishi ([#2096](https://github.com/Tencent/tdesign-vue/pull/2096))
   - 支持自定义 `tips/label/suffix/suffixIcon` 等节点
