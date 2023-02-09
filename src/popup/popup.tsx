@@ -110,7 +110,7 @@ export default mixins(classPrefixMixins).extend({
       if (visible) {
         this.preventClosing(true);
         if (!this.hasDocumentEvent) {
-          on(document, 'click', this.handleDocumentClick, true);
+          on(document, 'mousedown', this.handleDocumentClick, true);
           this.hasDocumentEvent = true;
         }
         // focus trigger esc 隐藏浮层
@@ -127,7 +127,7 @@ export default mixins(classPrefixMixins).extend({
       } else {
         this.preventClosing(false);
         // destruction is delayed until after animation ends
-        off(document, 'click', this.handleDocumentClick, true);
+        off(document, 'mousedown', this.handleDocumentClick, true);
         this.hasDocumentEvent = false;
         this.mouseInRange = false;
       }
@@ -187,7 +187,7 @@ export default mixins(classPrefixMixins).extend({
       (this as any).popup?.preventClosing(false);
     }
     this.destroyPopper();
-    off(document, 'click', this.handleDocumentClick, true);
+    off(document, 'mousedown', this.handleDocumentClick, true);
     clearTimeout(this.timeout);
   },
   methods: {
@@ -301,8 +301,11 @@ export default mixins(classPrefixMixins).extend({
       const triggerEl = this.$el as HTMLElement;
       // ignore document event when clicking trigger element
       if (triggerEl.contains(ev.target as Node)) return;
+      // ignore document event if popper panel clicked
+      const popperEl = this.$refs.popper as HTMLDivElement;
+      if (popperEl.contains(ev.target as Node)) return;
       this.visibleState = 0;
-      this.emitPopVisible(false, { trigger: 'document' });
+      this.emitPopVisible(false, { trigger: 'document', e: ev });
     },
     emitPopVisible(visible: boolean, context: PopupVisibleChangeContext) {
       if (this.disabled || visible === this.visible) return;

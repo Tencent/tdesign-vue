@@ -2,7 +2,7 @@ import {
   computed, defineComponent, ref, watch,
 } from '@vue/composition-api';
 import { ImageErrorIcon } from 'tdesign-icons-vue';
-import { usePrefixClass } from '../../hooks/useConfig';
+import { useConfig } from '../../hooks/useConfig';
 import { useDrag } from '../hooks';
 import { setTransform } from '../../utils/helper';
 
@@ -16,7 +16,7 @@ export default defineComponent({
     placementSrc: String,
   },
   setup(props) {
-    const classPrefix = usePrefixClass();
+    const { classPrefix, global: globalConfig } = useConfig('imageViewer');
     const error = ref(false);
     const loaded = ref(false);
     const { transform, mouseDownHandler } = useDrag({ translateX: 0, translateY: 0 });
@@ -47,6 +47,7 @@ export default defineComponent({
     );
 
     return {
+      globalConfig,
       classPrefix,
       boxStyle,
       loaded,
@@ -65,7 +66,7 @@ export default defineComponent({
               {/* 脱离文档流 */}
               <div class={`${this.classPrefix}-image-viewer__img-error-content`}>
                 <ImageErrorIcon size="4em" />
-                <div class={`${this.classPrefix}-image-viewer__img-error-text`}>图片加载失败，可尝试重新加载</div>
+                <div class={`${this.classPrefix}-image-viewer__img-error-text`}>{this.globalConfig.errorText}</div>
               </div>
             </div>
           )}

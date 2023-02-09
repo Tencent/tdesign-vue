@@ -2,15 +2,15 @@ import pick from 'lodash/pick';
 import { SetupContext } from '@vue/composition-api';
 import TreeStore from '../../_common/js/tree/tree-store';
 import {
-  TypeTreeProps, TypeValueMode, TypeEventState, TypeTreeNodeModel,
+  TreeProps, TypeValueMode, TypeEventState, TypeTreeNodeModel,
 } from '../interface';
 
-export default function useTreeStore(props: TypeTreeProps, context: SetupContext) {
+export default function useTreeStore(props: TreeProps, context: SetupContext) {
   const {
     actived, value, valueMode, filter, keys,
   } = props;
 
-  const store = new TreeStore({
+  const store: TreeStore = new TreeStore({
     valueMode: valueMode as TypeValueMode,
     filter,
   });
@@ -83,7 +83,7 @@ export default function useTreeStore(props: TypeTreeProps, context: SetupContext
     context.emit('load', evtCtx);
   };
 
-  const rebuild = (list: TypeTreeProps['data']) => {
+  const rebuild = (list: TreeProps['data']) => {
     const { value, actived } = props;
     store.reload(list || []);
     // 初始化选中状态

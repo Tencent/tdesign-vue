@@ -21,12 +21,11 @@ export interface TdTagInputProps {
    */
   clearable?: boolean;
   /**
-   * 标签过多的情况下，折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义。`value` 表示标签值，`collapsedTags` 表示折叠标签值，`count` 表示总标签数量
+   * 标签过多的情况下，折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义。`value` 表示当前存在的所有标签，`collapsedTags` 表示折叠的标签，`count` 表示折叠的数量
    */
   collapsedItems?: TNode<{ value: TagInputValue; collapsedTags: TagInputValue; count: number }>;
   /**
    * 是否禁用标签输入框
-   * @default false
    */
   disabled?: boolean;
   /**
@@ -82,9 +81,8 @@ export interface TdTagInputProps {
   size?: 'small' | 'medium' | 'large';
   /**
    * 输入框状态
-   * @default default
    */
-  status?: 'success' | 'warning' | 'error' | 'default';
+  status?: 'default' | 'success' | 'warning' | 'error';
   /**
    * 后置图标前的后置内容
    */
@@ -107,10 +105,12 @@ export interface TdTagInputProps {
   tips?: string | TNode;
   /**
    * 值
+   * @default []
    */
   value?: TagInputValue;
   /**
    * 值，非受控属性
+   * @default []
    */
   defaultValue?: TagInputValue;
   /**
@@ -130,7 +130,11 @@ export interface TdTagInputProps {
    */
   onClear?: (context: { e: MouseEvent }) => void;
   /**
-   * 拖拽排序时触发
+   * 点击组件时触发
+   */
+  onClick?: (context: { e: MouseEvent }) => void;
+  /**
+   * 【开发中】拖拽排序时触发
    */
   onDragSort?: (context: TagInputDragSortContext) => void;
   /**
@@ -183,8 +187,8 @@ export interface TagInputDragSortContext {
 }
 
 export interface InputValueChangeContext {
-  e?: InputEvent | MouseEvent | KeyboardEvent;
-  trigger: 'input' | 'clear' | 'enter';
+  e?: InputEvent | MouseEvent | CompositionEvent | KeyboardEvent;
+  trigger: 'input' | 'clear' | 'enter' | 'blur';
 }
 
 export interface TagInputRemoveContext {
@@ -196,42 +200,3 @@ export interface TagInputRemoveContext {
 }
 
 export type TagInputRemoveTrigger = 'tag-remove' | 'backspace';
-
-interface DragSortContext<T> {
-  currentIndex: number;
-  current: T;
-  targetIndex: number;
-  target: T;
-}
-
-export interface DragSortProps<T> {
-  sortOnDraggable: boolean;
-  onDragSort?: (context: DragSortContext<T>) => void;
-  onDragOverCheck?: {
-    x?: boolean;
-    targetClassNameRegExp?: RegExp;
-  };
-}
-
-type DragFnType = (e?: DragEvent, index?: number, record?: any) => void;
-interface DragSortInnerData {
-  dragging?: boolean;
-  onDragStart?: DragFnType;
-  onDragOver?: DragFnType;
-  onDrop?: DragFnType;
-  onDragEnd?: DragFnType;
-}
-
-export interface DragProps {
-  (index?: number, record?: any): {
-    draggable: boolean;
-    onDragstart?: DragFnType;
-    onDragover?: DragFnType;
-    onDrop?: DragFnType;
-    onDragend?: DragFnType;
-  };
-}
-
-export interface DragSortInnerProps extends DragSortInnerData {
-  getDragProps?: DragProps;
-}

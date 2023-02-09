@@ -16,6 +16,11 @@ import { TNode, TreeOptionData, SizeEnum } from '../common';
 
 export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOptionData> {
   /**
+   * 自动聚焦
+   * @default false
+   */
+  autofocus?: boolean;
+  /**
    * 参考 checkbox 组件 API
    */
   checkProps?: CheckboxProps;
@@ -30,7 +35,7 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
    */
   clearable?: boolean;
   /**
-   * 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义
+   * 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义。`value` 表示当前存在的所有标签，`collapsedTags` 表示折叠的标签，`count` 表示选中的标签数量
    */
   collapsedItems?: TNode<{ value: CascaderOption[]; collapsedSelectedItems: CascaderOption[]; count: number }>;
   /**
@@ -60,6 +65,10 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
    */
   keys?: CascaderKeysType;
   /**
+   * 左侧文本
+   */
+  label?: string | TNode;
+  /**
    * 延迟加载 children 为 true 的子节点，即使 expandAll 被设置为 true，也同样延迟加载
    * @default true
    */
@@ -75,7 +84,6 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
   loading?: boolean;
   /**
    * 远程加载时显示的文字，支持自定义。如加上超链接
-   * @default ''
    */
   loadingText?: string | TNode;
   /**
@@ -131,8 +139,17 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
   size?: SizeEnum;
   /**
    * 输入框状态
+   * @default default
    */
   status?: 'default' | 'success' | 'warning' | 'error';
+  /**
+   * 后置图标前的后置内容
+   */
+  suffix?: string | TNode;
+  /**
+   * 组件后置图标
+   */
+  suffixIcon?: TNode;
   /**
    * 透传 TagInput 标签输入框组件的全部属性
    */

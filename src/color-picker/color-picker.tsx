@@ -70,7 +70,6 @@ export default defineComponent({
 
     const popProps = {
       placement: 'bottom-left',
-      ...((popupProps as any) || {}),
       trigger: 'click',
       attach: 'body',
       overlayClassName: [baseClassName],
@@ -88,6 +87,7 @@ export default defineComponent({
           this.setVisible(false);
         }
       },
+      ...((popupProps as any) || {}),
     };
     return (
       <t-popup

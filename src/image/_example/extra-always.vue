@@ -27,7 +27,9 @@ import { Tag } from 'tdesign-vue';
 export default Vue.extend({
   data() {
     return {
-      renderMask: (
+      // renderMask 支持插槽
+      // eslint-disable-next-line
+      renderMask: (h) => (
         <div
           style={{
             background: 'rgba(0,0,0,.4)',
@@ -52,7 +54,9 @@ export default Vue.extend({
           </Tag>
         </div>
       ),
-      renderButton: (
+      // renderButton 支持插槽
+      // eslint-disable-next-line
+      renderButton: (h) => (
         <Tag
           shape="mark"
           theme="warning"

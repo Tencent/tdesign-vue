@@ -258,12 +258,13 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       }
     },
     overlayAction(e: MouseEvent) {
+      if (e.target !== this.$refs.dialogPosition) {
+        return;
+      }
+      emitEvent<Parameters<TdDialogProps['onOverlayClick']>>(this, 'overlay-click', { e });
       // 根据closeOnClickOverlay判断点击蒙层时是否触发close事件
       if (this.showOverlay && (this.closeOnOverlayClick ?? this.global.closeOnOverlayClick)) {
-        if (e.target === this.$refs.dialogPosition) {
-          emitEvent<Parameters<TdDialogProps['onOverlayClick']>>(this, 'overlay-click', { e });
-          this.emitCloseEvent({ e, trigger: 'overlay' });
-        }
+        this.emitCloseEvent({ e, trigger: 'overlay' });
       }
     },
     closeBtnAction(e: MouseEvent) {

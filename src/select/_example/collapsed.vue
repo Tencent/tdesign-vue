@@ -46,12 +46,12 @@ export default {
   methods: {
     collapsedItems(h, { value, count, collapsedSelectedItems }) {
       console.log('collapsedItems: ', value, collapsedSelectedItems, count);
-      if (!(value instanceof Array) || !count) return;
+      if (!count) return;
       // hover展示全部已选项
       return (
         <t-popup>
           <div slot="content">
-            {value.map((item) => (
+            {collapsedSelectedItems.map((item) => (
               <p style="padding: 8px;">{item.label}</p>
             ))}
           </div>

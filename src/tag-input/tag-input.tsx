@@ -3,7 +3,7 @@ import {
 } from '@vue/composition-api';
 
 import { CloseCircleFilledIcon as TdCloseCircleFilledIcon } from 'tdesign-icons-vue';
-import TInput, { InputValue } from '../input';
+import TInput, { InputProps, InputValue } from '../input';
 import { TdTagInputProps } from './type';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
@@ -38,12 +38,15 @@ export default defineComponent({
     const {
       excessTagsDisplayType, readonly, disabled, clearable, placeholder,
     } = toRefs(props);
-    const { isHover, addHover, cancelHover } = useHover({
-      readonly: props.readonly,
-      disabled: props.disabled,
-      onMouseenter: props.onMouseenter,
-      onMouseleave: props.onMouseleave,
-    });
+    const { isHover, addHover, cancelHover } = useHover(
+      {
+        readonly: props.readonly,
+        disabled: props.disabled,
+        onMouseenter: props.onMouseenter,
+        onMouseleave: props.onMouseleave,
+      },
+      context,
+    );
 
     // 这里不需要响应式，因此直接传递参数
     const { getDragProps } = useDragSorter(
@@ -66,6 +69,7 @@ export default defineComponent({
       tagValue, onInnerEnter, onInputBackspaceKeyUp, clearAll, renderLabel, onClose,
     } = useTagList(
       props,
+      context,
       getDragProps,
     );
 
@@ -114,8 +118,9 @@ export default defineComponent({
       });
     };
 
-    const onClick = () => {
-      tagInputRef.value.focus();
+    const onInnerClick: InputProps['onClick'] = (params) => {
+      props.onClick?.(params);
+      context.emit('click', params);
     };
 
     const onClearClick = (ctx: { e: MouseEvent }) => {
@@ -133,6 +138,8 @@ export default defineComponent({
       showClearIcon,
       tagInputRef,
       classPrefix,
+      classes,
+      componentName: COMPONENT_NAME,
       setTInputValue,
       addHover,
       cancelHover,
@@ -143,13 +150,11 @@ export default defineComponent({
       onWheel,
       scrollToRightOnEnter,
       scrollToLeftOnLeave,
-      onClick,
       onClearClick,
+      onInnerClick,
       onClose,
-      classes,
       onInputCompositionstart,
       onInputCompositionend,
-      componentName: COMPONENT_NAME,
       CloseCircleFilledIcon,
     };
   },
@@ -177,15 +182,11 @@ export default defineComponent({
     return (
       <TInput
         ref="tagInputRef"
-        readonly={this.inputProps?.readonly}
+        readonly={this.readonly || this.inputProps?.readonly}
         inputClass={this.inputProps?.inputClass} // 展开无效 需直接透传
         value={this.tInputValue}
-        onChange={(val: InputValue, context?: { e?: InputEvent | MouseEvent }) => {
-          this.setTInputValue(val, { ...context, trigger: 'input' });
-        }}
         showInput={!this.inputProps?.readonly || !this.tagValue || !this.tagValue?.length}
         keepWrapperWidth={!this.autoWidth}
-        onMousewheel={this.onWheel}
         autoWidth={true}
         size={this.size}
         disabled={this.disabled}
@@ -196,36 +197,40 @@ export default defineComponent({
         placeholder={this.tagInputPlaceholder}
         suffix={this.suffix}
         suffixIcon={() => suffixIconNode}
-        {...{
-          props: {
-            ...this.inputProps,
-            onEnter: this.onInputEnter,
-            onKeyup: this.onInputBackspaceKeyUp,
-            onMouseenter: (context: { e: MouseEvent }) => {
-              this.addHover(context);
-              this.scrollToRightOnEnter();
-            },
-            onMouseleave: (context: { e: MouseEvent }) => {
-              this.cancelHover(context);
-              this.scrollToLeftOnLeave();
-            },
-            onFocus: (inputValue: InputValue, context: { e: MouseEvent }) => {
-              this.onFocus?.(this.tagValue, { e: context.e, inputValue });
-              this.$emit('focus', this.tagValue, { e: context.e, inputValue });
-            },
-            onBlur: (inputValue: InputValue, context: { e: MouseEvent }) => {
-              this.onBlur?.(this.tagValue, { e: context.e, inputValue });
-              this.$emit('blur', this.tagValue, { e: context.e, inputValue });
-            },
-            onPaste: (context: { e: ClipboardEvent; pasteValue: string }) => {
-              this.onPaste?.(context);
-              this.$emit('paste', context);
-            },
-          },
-        }}
-        onCompositionstart={this.onInputCompositionstart}
-        onCompositionend={this.onInputCompositionend}
         props={this.inputProps}
+        scopedSlots={this.$scopedSlots}
+        on={{
+          change: (val: InputValue, context?: { e?: InputEvent | MouseEvent }) => {
+            this.setTInputValue(val, { ...context, trigger: 'input' });
+          },
+          enter: this.onInputEnter,
+          keydown: this.onInputBackspaceKeyUp,
+          mouseenter: (context: { e: MouseEvent }) => {
+            this.addHover(context);
+            this.scrollToRightOnEnter();
+          },
+          mouseleave: (context: { e: MouseEvent }) => {
+            this.cancelHover(context);
+            this.scrollToLeftOnLeave();
+          },
+          focus: (inputValue: InputValue, context: { e: MouseEvent }) => {
+            this.onFocus?.(this.tagValue, { e: context.e, inputValue });
+            this.$emit('focus', this.tagValue, { e: context.e, inputValue });
+          },
+          blur: (inputValue: InputValue, context: { e: MouseEvent }) => {
+            this.setTInputValue('', { e: context.e, trigger: 'blur' });
+            this.onBlur?.(this.tagValue, { e: context.e, inputValue: '' });
+            this.$emit('blur', this.tagValue, { e: context.e, inputValue: '' });
+          },
+          paste: (context: { e: ClipboardEvent; pasteValue: string }) => {
+            this.onPaste?.(context);
+            this.$emit('paste', context);
+          },
+          click: this.onInnerClick,
+          compositionstart: this.onInputCompositionstart,
+          compositionend: this.onInputCompositionend,
+          mousewheel: this.onWheel,
+        }}
       />
     );
   },
