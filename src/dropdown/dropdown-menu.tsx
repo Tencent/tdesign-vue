@@ -112,6 +112,7 @@ export default defineComponent({
                 )}
                 <div
                   class={[
+                    `${this.dropdownClass}__submenu-wrapper`,
                     {
                       [`${this.dropdownClass}__submenu-wrapper--${this.direction}`]: this.direction,
                     },
