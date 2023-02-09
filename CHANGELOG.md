@@ -5,6 +5,13 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.1.1 `2023-02-09` 
+### 🐞 Bug Fixes
+- `TreeSelect`: @chaishi  
+    - 修复第一次点击无法显示下拉框问题 ([#2126](https://github.com/Tencent/tdesign-vue/pull/2126))
+    - 修复1.1.0版本中 `treeProps.keys` 无效问题 ([#2126](https://github.com/Tencent/tdesign-vue/pull/2126))
+
+
 ## 🌈 1.1.0 `2023-02-08` 
 ### 🚀 Features
 - `Cascader`: @chaishi ([#2096](https://github.com/Tencent/tdesign-vue/pull/2096))
