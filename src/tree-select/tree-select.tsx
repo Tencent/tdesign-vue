@@ -124,6 +124,7 @@ export default defineComponent({
         class={`${this.classPrefix}-tree-select`}
         {...{
           props: {
+            keys: this.tKeys,
             value: this.nodeInfo,
             inputValue: this.innerInputValue,
             popupVisible: this.innerVisible,
