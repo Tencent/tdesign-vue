@@ -1,5 +1,5 @@
 import { ref, reactive, SetupContext } from '@vue/composition-api';
-import { DragSortProps, DragSortInnerProps } from '../type';
+import { DragSortProps, DragSortInnerProps } from '../interface';
 
 export default function useDragSorter<T>(props: DragSortProps<T>, context: SetupContext): DragSortInnerProps {
   const { sortOnDraggable, onDragSort, onDragOverCheck } = props;

@@ -12,7 +12,7 @@ export default {
   autoWidth: Boolean,
   /** 是否可清空 */
   clearable: Boolean,
-  /** 标签过多的情况下，折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义。`value` 表示标签值，`collapsedTags` 表示折叠标签值，`count` 表示总标签数量 */
+  /** 标签过多的情况下，折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义。`value` 表示当前存在的所有标签，`collapsedTags` 表示折叠的标签，`count` 表示折叠的数量 */
   collapsedItems: {
     type: Function as PropType<TdTagInputProps['collapsedItems']>,
   },
@@ -75,10 +75,9 @@ export default {
   /** 输入框状态 */
   status: {
     type: String as PropType<TdTagInputProps['status']>,
-    default: 'default' as TdTagInputProps['status'],
     validator(val: TdTagInputProps['status']): boolean {
       if (!val) return true;
-      return ['success', 'warning', 'error', 'default'].includes(val);
+      return ['default', 'success', 'warning', 'error'].includes(val);
     },
   },
   /** 后置图标前的后置内容 */
@@ -109,6 +108,7 @@ export default {
   /** 值，非受控属性 */
   defaultValue: {
     type: Array as PropType<TdTagInputProps['defaultValue']>,
+    default: (): TdTagInputProps['defaultValue'] => [],
   },
   /** 自定义值呈现的全部内容，参数为所有标签的值 */
   valueDisplay: {
@@ -120,6 +120,8 @@ export default {
   onChange: Function as PropType<TdTagInputProps['onChange']>,
   /** 清空按钮点击时触发 */
   onClear: Function as PropType<TdTagInputProps['onClear']>,
+  /** 点击组件时触发 */
+  onClick: Function as PropType<TdTagInputProps['onClick']>,
   /** 【开发中】拖拽排序时触发 */
   onDragSort: Function as PropType<TdTagInputProps['onDragSort']>,
   /** 按键按下 Enter 时触发 */

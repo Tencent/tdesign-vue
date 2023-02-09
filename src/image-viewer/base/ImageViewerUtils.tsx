@@ -5,7 +5,7 @@ import {
 
 import TImageViewerIcon from './ImageModalIcon';
 import TToolTip from '../../tooltip';
-import { usePrefixClass } from '../../hooks/useConfig';
+import { useConfig } from '../../hooks/useConfig';
 import { downloadFile } from '../utils';
 
 import { ImageInfo } from '../type';
@@ -29,10 +29,11 @@ export default defineComponent({
     currentImage,
   },
   setup() {
-    const classPrefix = usePrefixClass();
+    const { classPrefix, global: globalConfig } = useConfig('imageViewer');
 
     return {
       classPrefix,
+      globalConfig,
     };
   },
   render() {
@@ -41,7 +42,7 @@ export default defineComponent({
         <div class={`${this.classPrefix}-image-viewer__utils-content`}>
           <TToolTip
             overlayClassName={`${this.classPrefix}-image-viewer__utils--tip`}
-            content="镜像"
+            content={this.globalConfig.mirrorTipText}
             destroyOnClose
             placement="top"
             showArrow
@@ -51,7 +52,7 @@ export default defineComponent({
           </TToolTip>
           <TToolTip
             overlayClassName={`${this.classPrefix}-image-viewer__utils--tip`}
-            content="旋转"
+            content={this.globalConfig.rotateTipText}
             destroyOnClose
             placement="top"
             showArrow
@@ -68,7 +69,7 @@ export default defineComponent({
           <TImageViewerIcon icon={() => <ZoomInIcon size="medium" />} clickHandler={this.zoomInHandler} />
           <TToolTip
             overlayClassName={`${this.classPrefix}-image-viewer__utils--tip`}
-            content="原始大小"
+            content={this.globalConfig.originalSizeTipText}
             destroyOnClose
             placement="top"
             showArrow

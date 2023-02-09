@@ -1,11 +1,11 @@
 import { SetupContext } from '@vue/composition-api';
 import {
-  TreeNodeValue, TypeTreeProps, TypeTreeState, TypeTargetNode,
+  TreeNodeValue, TreeProps, TypeTreeState, TypeTargetNode,
 } from '../interface';
 import { getNode, emitEvent } from '../util';
 
 // tree 组件节点状态设置
-export default function useTreeAction(props: TypeTreeProps, context: SetupContext, state: TypeTreeState) {
+export default function useTreeAction(props: TreeProps, context: SetupContext, state: TypeTreeState) {
   const { cache, store } = state;
 
   const setExpanded = (item: TypeTargetNode, isExpanded: boolean): TreeNodeValue[] => {
@@ -15,7 +15,7 @@ export default function useTreeAction(props: TypeTreeProps, context: SetupContex
       node: node.getModel(),
       e: cache.mouseEvent as MouseEvent,
     };
-    emitEvent<Parameters<TypeTreeProps['onExpand']>>(props, context, 'expand', expanded, evtCtx);
+    emitEvent<Parameters<TreeProps['onExpand']>>(props, context, 'expand', expanded, evtCtx);
     return expanded;
   };
 
@@ -31,7 +31,7 @@ export default function useTreeAction(props: TypeTreeProps, context: SetupContex
       node: node.getModel(),
       e: cache.mouseEvent,
     };
-    emitEvent<Parameters<TypeTreeProps['onActive']>>(props, context, 'active', actived, evtCtx);
+    emitEvent<Parameters<TreeProps['onActive']>>(props, context, 'active', actived, evtCtx);
     return actived;
   };
 
@@ -40,19 +40,20 @@ export default function useTreeAction(props: TypeTreeProps, context: SetupContex
     return setActived(node, !node.isActived());
   };
 
-  const setChecked = (item: TypeTargetNode, isChecked: boolean): TreeNodeValue[] => {
+  const setChecked = (item: TypeTargetNode, isChecked: boolean, ctx: { e: Event }): TreeNodeValue[] => {
     const node = getNode(store, item);
     const checked = node.setChecked(isChecked);
     const evtCtx = {
       node: node.getModel(),
+      e: ctx?.e,
     };
-    emitEvent<Parameters<TypeTreeProps['onChange']>>(props, context, 'change', checked, evtCtx);
+    emitEvent<Parameters<TreeProps['onChange']>>(props, context, 'change', checked, evtCtx);
     return checked;
   };
 
-  const toggleChecked = (item: TypeTargetNode): TreeNodeValue[] => {
+  const toggleChecked = (item: TypeTargetNode, ctx: { e: Event }): TreeNodeValue[] => {
     const node = getNode(store, item);
-    return setChecked(node, !node.isChecked());
+    return setChecked(node, !node.isChecked(), ctx);
   };
 
   return {

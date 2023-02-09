@@ -10,7 +10,7 @@
               {{ item }}
             </p>
           </template>
-          <span v-show="count > 0" style="color: #00a870; margin-left: 10px">+{{ count - 1 }}</span>
+          <span v-show="count > 0" style="color: #00a870; margin-left: 10px">+{{ count }}</span>
         </t-popup>
       </template>
     </t-cascader>
@@ -59,18 +59,19 @@ export default {
     };
   },
   methods: {
-    collapsedItems(h, { value, count }) {
-      if (!(value instanceof Array) || !count) return;
+    collapsedItems(h, { value: selectedValue, count }) {
+      if (!count) return;
+      const value = selectedValue instanceof Array ? selectedValue : [selectedValue];
       // hover展示全部已选项
       return (
         <t-popup>
           <div slot="content">
             {value.map((item) => (
-              <p style="padding: 10px;">{item}</p>
+              <p style="padding: 10px;">{item.label}</p>
             ))}
           </div>
           <span v-show={count > 0} style="color: #ED7B2F; margin-left: 10px;">
-            +{count - 1}
+            +{count}
           </span>
         </t-popup>
       );

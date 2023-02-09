@@ -230,9 +230,6 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       });
       this.resizeObserver.observe(element);
     },
-    mouseEvent(v: boolean) {
-      this.isHover = v;
-    },
     renderIcon(
       h: CreateElement,
       icon: string | Function | undefined,
@@ -384,12 +381,12 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     },
 
     onInputMouseenter(e: MouseEvent) {
-      this.mouseEvent(true);
+      this.isHover = true;
       emitEvent<Parameters<TdInputProps['onMouseenter']>>(this, 'mouseenter', { e });
     },
 
     onInputMouseleave(e: MouseEvent) {
-      this.mouseEvent(false);
+      this.isHover = false;
       emitEvent<Parameters<TdInputProps['onMouseleave']>>(this, 'mouseleave', { e });
     },
 
