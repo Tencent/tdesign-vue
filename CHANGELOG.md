@@ -5,6 +5,56 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.0.9 `2023-02-08` 
+### 🚀 Features
+- `Cascader`: @chaishi ([#2096](https://github.com/Tencent/tdesign-vue/pull/2096))
+  - 支持自定义 `tips/label/suffix/suffixIcon` 等节点
+  - 支持 `collapsedItems` 定义折叠的元素， https://github.com/Tencent/tdesign-vue/issues/2102
+- `SelectInput`: 支持自定义 `tips` 节点 @chaishi ([#2096](https://github.com/Tencent/tdesign-vue/pull/2096))
+- `TagInput`: `collapsedItems` 的参数 `count` 含义更为折叠的标签数量  @chaishi ([#2096](https://github.com/Tencent/tdesign-vue/pull/2096))
+- `Tree`: change 事件新增参数 `{ e }` @chaishi ([#2096](https://github.com/Tencent/tdesign-vue/pull/2096))
+- `Select`: 支持自定义 `tips/label/suffix/suffixIcon` 等节点 @chaishi ([#2096](https://github.com/Tencent/tdesign-vue/pull/2096))
+- `TreeSelect`: @chaishi ([#2096](https://github.com/Tencent/tdesign-vue/pull/2096))
+  - 支持 `defaultPopupVisible`
+  - 新增事件 `onEnter`
+  - 支持自定义 `tips/label/suffix/suffixIcon`
+- `Dropdown`: submenu层级结构调整，增加一层`t-dropdown__submenu-wrapper` @uyarn ([#2119](https://github.com/Tencent/tdesign-vue/pull/2119))
+### 🐞 Bug Fixes
+- `Avatar`: 修复图片头像的 `size` 属性失效的问题 @yaogengzhu ([common#2092](https://github.com/Tencent/tdesign-common/pull/1141))
+- `Loading`: 修复loading在部分windows设备中晃动的问题 @uyarn ([#2092](https://github.com/Tencent/tdesign-vue/pull/2092))
+- `Table`: 修复固定列 columns数据不一致导致的报错 [issue#2089] @thinkanymore ([#2091](https://github.com/Tencent/tdesign-vue/pull/2091))
+- `Dialog`:
+  - 修复 `closeOnClickOverlay = false `时，`overlayClick` 事件未触发问题 @KMethod ([#2087](https://github.com/Tencent/tdesign-vue/pull/2087))
+- `ImageViewer`: 支持 `errorText mirrorTipText originalSizeTipText rotateTipText` 等字段配置 @whitexie ([#2103](https://github.com/Tencent/tdesign-vue/pull/2103))
+- `Image`: 支持 `errorText loadingText` 字段全局配置 @whitexie ([#2103](https://github.com/Tencent/tdesign-vue/pull/2103))
+- `InputNumber`: 修复小数点后第二个数字若为 0 无法输入问题，[issue#2304](https://github.com/Tencent/tdesign-vue-next/issues/2304) @chaishi ([#2105](https://github.com/Tencent/tdesign-vue/pull/2105))
+- `Form`:
+  - 修复其他表单项变化，触发 `<form-item :rules="[]" />` 校验问题，[issues#2100](https://github.com/Tencent/tdesign-vue/issues/2100) @chaishi ([#2105](https://github.com/Tencent/tdesign-vue/pull/2105))
+  - 修复数组类表单项会因其他项变化引起自身校验问题 @chaishi ([#2110](https://github.com/Tencent/tdesign-vue/pull/2110))
+- `SelectInput`: @chaishi ([#2096](https://github.com/Tencent/tdesign-vue/pull/2096))
+  - 修复点击下拉面板触发 onBlur 事件问题，期望不触发
+  - 支持 @enter 和 onEnter 事件
+- `Popup`: 点击浮层面板时，禁止触发 onVisibleChange(trigger=document) 事件 @chaishi ([#2096](https://github.com/Tencent/tdesign-vue/pull/2096))
+- `Tag`: @chaishi ([#2096](https://github.com/Tencent/tdesign-vue/pull/2096))  
+  - 修复 `maxWidth` 最大宽度限制未包含图标宽度问题
+  - 修复超出省略场景，元素缺少 title 属性问题
+- `TagInput`: @chaishi ([#2096](https://github.com/Tencent/tdesign-vue/pull/2096))
+  - 修复 `readonly` 无效问题
+  - 修复失去焦点时，没有清空 inputValue 问题
+  - 修复输入文本为空时，按下无法触发 onEnter 事件问题
+  - 修复 @click  @enter @mouseenter @mouseleave  @remove 等事件无效问题
+  - 修复 inputProps 优先级不是最高，进而难以覆盖任意属性问题
+- `Select`: 修复 `collapsedItems` 参数 `value/collapsedSelectedItems` 和文档不一致问题，缺少 label 等信息，无法正常渲染节点 @chaishi ([#2096](https://github.com/Tencent/tdesign-vue/pull/2096))
+- `TreeSelect`: @chaishi ([#2096](https://github.com/Tencent/tdesign-vue/pull/2096))
+  - 修复按下 Enter 键时，没有触发搜索事件 onSearch 问题
+  - `remove` 事件参数新增 `{ trigger, e, node, data, index }`，并修复参数 `{ value }` 不正确问题
+  - `change` 事件新增参数 `{ index }`，并修复 `trigger` 不正确问题
+  - 修复 onSearch 存在时，依然无法输入过滤文本问题
+  - 修复 onFocus 事件参数 `value` 不是树选择组件值的问题
+  - 修复 `collapsedItems` 参数 `value/collapsedSelectedItems` 和文档不一致问题，缺少 label 等信息，无法正常渲染节点
+- `Dropdown`: 修复多层超长菜单的异常问题 @uyarn ([#2119](https://github.com/Tencent/tdesign-vue/pull/2119))
+- `Watermark`: 修复`unplugin`方式使用`watermark`组件报错的问题 @uyarn ([#2119](https://github.com/Tencent/tdesign-vue/pull/2119))
+
 ## 🌈 1.0.8 `2023-02-02` 
 ### 🚀 Features
 - `TreeSelect`: 支持`tips`和`status` API @uyarn ([#2084](https://github.com/Tencent/tdesign-vue/pull/2084))
