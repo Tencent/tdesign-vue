@@ -267,10 +267,6 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
   const onInnerFocus: SelectInputProps['onFocus'] = (_, ctx) => {
     props.onFocus?.({ value: treeSelectValue.value, e: ctx.e });
     context.emit('focus', { value: treeSelectValue.value, e: ctx.e });
-    // open popup on focus, used for keyboard event
-    if (innerVisible.value !== true) {
-      setInnerVisible(true, { ...ctx, trigger: 'trigger-element-focus' });
-    }
   };
 
   const onInnerBlur: SelectInputProps['onBlur'] = (_, ctx) => {
