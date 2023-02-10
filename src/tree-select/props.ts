@@ -50,7 +50,7 @@ export default {
   defaultInputValue: {
     type: [String, Number] as PropType<TdTreeSelectProps['defaultInputValue']>,
   },
-  /** 用来定义 value / label 在 `data` 数据中对应的字段别名 */
+  /** 用来定义 `value / label / children` 在 `data` 数据中对应的字段别名，示例：`{ value: 'key', label 'name', children: 'list' }` */
   keys: {
     type: Object as PropType<TdTreeSelectProps['keys']>,
   },
