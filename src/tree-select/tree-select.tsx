@@ -72,7 +72,7 @@ export default defineComponent({
               ref="treeRef"
               key={this.treeKey}
               props={{
-                keys: this.keys,
+                keys: this.tKeys,
                 value: [...this.multipleChecked],
                 actived: this.singleActivated,
                 hover: true,
