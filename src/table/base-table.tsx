@@ -93,7 +93,6 @@ export default defineComponent({
       updateColumnFixedShadow,
       getThWidthList,
       updateThWidthList,
-      setRecalculateColWidthFuncRef,
       addTableResizeObserver,
     } = useFixed(props, context, finalColumns, {
       paginationAffixRef,
@@ -121,11 +120,13 @@ export default defineComponent({
     } = usePagination(props, context);
 
     // 列宽拖拽逻辑
-    const columnResizeParams = useColumnResize(tableContentRef, refreshTable, getThWidthList, updateThWidthList);
-    const {
-      resizeLineRef, resizeLineStyle, recalculateColWidth, setEffectColMap,
-    } = columnResizeParams;
-    setRecalculateColWidthFuncRef(recalculateColWidth);
+    const columnResizeParams = useColumnResize({
+      isWidthOverflow,
+      tableContentRef,
+      getThWidthList,
+      updateThWidthList,
+    });
+    const { resizeLineRef, resizeLineStyle, setEffectColMap } = columnResizeParams;
 
     const dynamicBaseTableClasses = computed(() => [
       tableClasses.value,
