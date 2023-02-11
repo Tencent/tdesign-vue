@@ -363,11 +363,13 @@ export default defineComponent({
     renderFixedHeader(columns: BaseTableCol<TableRowData>[]) {
       if (!this.showHeader) return null;
       const isVirtual = this.virtualConfig.isVirtualScroll.value;
+      const isIE = getIEVersion() <= 11;
       const barWidth = this.isWidthOverflow ? this.scrollbarWidth : 0;
       // IE 浏览器需要遮挡 header 吸顶滚动条，要减去 getBoundingClientRect.height 的滚动条高度 4 像素
-      const IEHeaderWrap = getIEVersion() <= 11 ? 4 : 0;
+      const IEHeaderWrap = isIE ? 4 : 0;
       const affixHeaderHeight = (this.affixHeaderRef?.getBoundingClientRect().height || 0) - IEHeaderWrap;
-      const affixHeaderWrapHeight = affixHeaderHeight - barWidth;
+      // IE 浏览器不需要减去横向滚动条的宽度
+      const affixHeaderWrapHeight = affixHeaderHeight - (isIE ? 0 : barWidth);
       // 两类场景：1. 虚拟滚动，永久显示表头，直到表头消失在可视区域； 2. 表头吸顶，根据滚动情况判断是否显示吸顶表头
       const headerOpacity = this.headerAffixedTop ? Number(this.showAffixHeader) : 1;
       const affixHeaderWrapHeightStyle = {
