@@ -125,7 +125,7 @@ export default function useFixed(
   const isFixedRightColumn = ref(false);
   const isFixedLeftColumn = ref(false);
 
-  const columnResizable = computed(() => resizable.value || allowResizeColumnWidth.value || false);
+  const columnResizable = computed(() => allowResizeColumnWidth.value ?? resizable.value ?? false);
 
   // 没有表头吸顶，没有虚拟滚动，则不需要表头宽度计算
   const notNeedThWidthList = computed(
@@ -417,9 +417,6 @@ export default function useFixed(
   };
 
   const updateThWidthListHandler = () => {
-    if (columnResizable.value) {
-      recalculateColWidth.value(finalColumns.value, thWidthList.value, tableLayout.value, tableElmWidth.value);
-    }
     if (notNeedThWidthList.value) return;
     const timer = setTimeout(() => {
       updateTableWidth();
@@ -524,7 +521,12 @@ export default function useFixed(
     }
   }, 30);
 
-  const onResize = refreshTable;
+  const onResize = () => {
+    refreshTable();
+    if (columnResizable.value) {
+      recalculateColWidth.value(finalColumns.value, thWidthList.value, tableLayout.value, tableElmWidth.value);
+    }
+  };
 
   let resizeObserver: ResizeObserver = null;
   function addTableResizeObserver(tableElement: HTMLDivElement) {
@@ -533,6 +535,9 @@ export default function useFixed(
     off(window, 'resize', onResize);
     resizeObserver = new window.ResizeObserver(() => {
       refreshTable();
+      if (columnResizable.value) {
+        recalculateColWidth.value(finalColumns.value, thWidthList.value, tableLayout.value, tableElmWidth.value);
+      }
     });
     resizeObserver.observe(tableElement);
     tableRef.value = tableElement;

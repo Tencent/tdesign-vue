@@ -155,7 +155,7 @@ export default defineComponent({
       return (bottomRect?.height || 0) + (paginationRect?.height || 0);
     });
 
-    const columnResizable = computed(() => props.allowResizeColumnWidth === undefined ? props.resizable : props.allowResizeColumnWidth);
+    const columnResizable = computed(() => props.allowResizeColumnWidth ?? props.resizable);
 
     watch(tableElmRef, () => {
       setUseFixedTableElmRef(tableElmRef.value);
