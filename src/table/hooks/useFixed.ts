@@ -502,7 +502,7 @@ export default function useFixed(
     { immediate: true },
   );
 
-  const refreshTable = debounce(() => {
+  const refreshTable = () => {
     updateTableWidth();
     updateFixedHeader();
     updateThWidthListHandler();
@@ -511,11 +511,11 @@ export default function useFixed(
       updateFixedStatus();
       updateColumnFixedShadow(tableContentRef.value, { skipScrollLimit: true });
     }
-  }, 30);
-
-  const onResize = () => {
-    refreshTable();
   };
+
+  const onResize = debounce(() => {
+    refreshTable();
+  }, 30);
 
   let resizeObserver: ResizeObserver = null;
   function addTableResizeObserver(tableElement: HTMLDivElement) {
@@ -524,6 +524,10 @@ export default function useFixed(
     off(window, 'resize', onResize);
     resizeObserver = new window.ResizeObserver(() => {
       refreshTable();
+      const timer = setTimeout(() => {
+        refreshTable();
+        clearTimeout(timer);
+      }, 250);
     });
     resizeObserver.observe(tableElement);
     tableRef.value = tableElement;
