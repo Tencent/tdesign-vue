@@ -5,7 +5,6 @@
 import { ref, Ref, reactive } from '@vue/composition-api';
 import isNumber from 'lodash/isNumber';
 import { BaseTableCol, TableRowData } from '../type';
-import { calculateColumnWidth } from '../../_common/js/table/column-resize';
 import { on, off } from '../../utils/dom';
 
 const DEFAULT_MIN_WIDTH = 80;
@@ -18,12 +17,14 @@ export default function useColumnResize(params: {
   tableContentRef: Ref<HTMLDivElement>;
   getThWidthList: (type?: 'default' | 'calculate') => { [colKeys: string]: number };
   updateThWidthList: (data: { [colKey: string]: number }) => void;
+  setTableElmWidth: (width: number) => void;
 }) {
   const {
-    isWidthOverflow, tableContentRef, getThWidthList, updateThWidthList,
+    isWidthOverflow, tableContentRef, getThWidthList, updateThWidthList, setTableElmWidth,
   } = params;
   const resizeLineRef = ref<HTMLDivElement>();
   const effectColMap = ref<{ [colKey: string]: any }>({});
+  const leafColumns = ref([]);
   const originalSelectStart = document.onselectstart;
   const originalDragStart = document.ondragstart;
 
@@ -39,9 +40,10 @@ export default function useColumnResize(params: {
     return nodes[i];
   };
 
-  // 递归查找列宽度变化后，受影响的相关列
+  // 递归查找列宽度变化后，受影响的相关列。前后非禁用调整列宽的列
   const setEffectColMap = (nodes: BaseTableCol<TableRowData>[], parent: BaseTableCol<TableRowData> | null) => {
     if (!nodes) return;
+    leafColumns.value = nodes;
     nodes.forEach((n, index) => {
       const prevNode = getSiblingResizableCol(nodes, index - 1, 'prev');
       const nextNode = getSiblingResizableCol(nodes, index + 1, 'next');
@@ -81,6 +83,9 @@ export default function useColumnResize(params: {
     // calculate mouse cursor before drag start
     if (!resizeLineRef.value || resizeLineParams.isDragging) return;
     const target = (e.target as HTMLElement).closest('th');
+    // 判断是否为叶子阶段，仅叶子结点允许拖拽
+    const colKey = target.getAttribute('data-colkey');
+    if (!leafColumns.value.find((t) => t.colKey === colKey)) return;
     const targetBoundRect = target.getBoundingClientRect();
     if (targetBoundRect.right - e.pageX <= distance) {
       const colResizable = col.resizable ?? true;
@@ -93,8 +98,8 @@ export default function useColumnResize(params: {
     } else if (e.pageX - targetBoundRect.left <= distance) {
       const prevEl = target.previousElementSibling;
       if (prevEl) {
-        const effectPrevCol = effectColMap.value[col.colKey].prev;
-        const colResizable = effectPrevCol.resizable ?? true;
+        const effectPrevCol = effectColMap.value[col.colKey]?.prev;
+        const colResizable = effectPrevCol?.resizable ?? true;
         if (colResizable) {
           target.style.cursor = 'col-resize';
           resizeLineParams.draggingCol = prevEl as HTMLElement;
@@ -118,6 +123,14 @@ export default function useColumnResize(params: {
     };
   };
 
+  const getTotalTableWidth = (thWidthList: { [key: string]: number }): number => {
+    let tableWidth = 0;
+    leafColumns.value.forEach((col) => {
+      tableWidth += thWidthList[col.colKey];
+    });
+    return tableWidth;
+  };
+
   // 调整表格列宽
   const onColumnMousedown = (e: MouseEvent, col: BaseTableCol<TableRowData>) => {
     if (!resizeLineParams.draggingCol) return;
@@ -126,8 +139,8 @@ export default function useColumnResize(params: {
     const tableBoundRect = tableContentRef.value?.getBoundingClientRect();
     const resizeLinePos = targetBoundRect.right - tableBoundRect.left;
     const colLeft = targetBoundRect.left - tableBoundRect.left;
-    const effectNextCol = effectColMap.value[col.colKey].next;
-    const effectPrevCol = effectColMap.value[col.colKey].prev;
+    const effectNextCol = effectColMap.value[col.colKey]?.next;
+    const effectPrevCol = effectColMap.value[col.colKey]?.prev;
     const { minColWidth, maxColWidth } = getMinMaxColWidth(col, effectPrevCol);
     const minResizeLineLeft = colLeft + minColWidth;
     const maxResizeLineLeft = colLeft + maxColWidth;
@@ -156,18 +169,26 @@ export default function useColumnResize(params: {
        *  - 操作边框左侧，改变当前列和下一列；若下一列禁用宽度调整，则改变表格总宽度
        */
       const thWidthList = getThWidthList('calculate');
-      const currentCol = effectColMap.value[col.colKey].current;
+      const currentCol = effectColMap.value[col.colKey]?.current;
+      if (!currentCol) return;
       const currentSibling = resizeLineParams.effectCol === 'next' ? currentCol.prevSibling : currentCol.nextSibling;
-      const { newThWidthList } = calculateColumnWidth({
-        moveDistance,
-        thWidthList,
-        effectType: resizeLineParams.effectCol,
-        currentCol: col.resizable !== false ? col : currentSibling,
-        effectNextCol,
-        effectPrevCol,
-        isWidthOverflow: isWidthOverflow.value,
-      });
+      // 多行表头，列宽为最后一层的宽度，即叶子结点宽度
+      const newThWidthList = { ...thWidthList };
+      const tmpCurrentCol = col.resizable !== false ? col : currentSibling;
+      if (resizeLineParams.effectCol === 'next') {
+        newThWidthList[tmpCurrentCol.colKey] -= moveDistance;
+        if (!isWidthOverflow.value) {
+          newThWidthList[effectNextCol.colKey] += moveDistance;
+        }
+      } else if (resizeLineParams.effectCol === 'prev') {
+        if (!isWidthOverflow.value) {
+          newThWidthList[tmpCurrentCol.colKey] += moveDistance;
+        }
+        newThWidthList[effectPrevCol.colKey] -= moveDistance;
+      }
       updateThWidthList(newThWidthList);
+      const tableWidth = getTotalTableWidth(newThWidthList);
+      setTableElmWidth(tableWidth);
 
       // 恢复设置
       resizeLineParams.isDragging = false;
