@@ -35,6 +35,7 @@
       :line="showLine"
       :icon="showIcon"
       :label="label"
+      :scroll="scroll"
       ref="tree"
     >
       <template #operations="{ node }">
@@ -90,6 +91,11 @@ export default {
       expandParent: true,
       showLine: true,
       showIcon: true,
+      scroll: {
+        rowHeight: 47,
+        threshold: 10,
+        type: 'virtual',
+      },
       items,
     };
   },

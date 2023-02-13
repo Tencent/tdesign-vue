@@ -52,6 +52,20 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
     nodes.value = store.getNodes();
   };
 
+  // 虚拟滚动
+  const treeContentRef = ref<HTMLDivElement>();
+  const setTreeContentRef = (treeContent: HTMLDivElement) => {
+    treeContentRef.value = treeContent;
+  };
+  const virtualScrollParams = computed(() => {
+    const list = nodes.value.filter((node) => node.visible);
+    return {
+      data: list,
+      scroll: props.scroll,
+    };
+  });
+  const virtualConfig = useVirtualScroll(treeContentRef, virtualScrollParams);
+
   const renderTreeNodes = (h: CreateElement) => {
     let treeNodeViews: TypeVNode[] = [];
     let isEmpty = true;
@@ -99,26 +113,16 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
     context.emit('scroll', { e });
   };
 
-  const treeContentRef = ref<HTMLDivElement>();
-
-  const setTreeContentRef = (tableContent: HTMLDivElement) => {
-    treeContentRef.value = tableContent;
-  };
-
-  // 虚拟滚动相关数据
-  const virtualScrollParams = computed(() => ({
-    data: props.data,
-    scroll: props.scroll,
-  }));
-  const virtualConfig = useVirtualScroll(treeContentRef, virtualScrollParams);
-
   let lastScrollY = 0;
   const onInnerVirtualScroll = (e: WheelEvent) => {
+    const isVirtual = virtualConfig.isVirtualScroll.value;
     const target = (e.target || e.srcElement) as HTMLElement;
     const top = target.scrollTop;
     // 排除横向滚动出发的纵向虚拟滚动计算
     if (lastScrollY !== top) {
-      virtualConfig.isVirtualScroll.value && virtualConfig.handleScroll();
+      if (isVirtual) {
+        virtualConfig.handleScroll();
+      }
     } else {
       lastScrollY = 0;
     }
@@ -134,8 +138,12 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
     nodesEmpty,
     clearCacheNodes,
     renderTreeNodes,
+
+    // 虚拟滚动相关
     treeContentRef,
     setTreeContentRef,
     onInnerVirtualScroll,
+    virtualConfig,
+    scrollToElement: virtualConfig.scrollToElement,
   };
 }

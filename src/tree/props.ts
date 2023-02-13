@@ -134,12 +134,6 @@ export default {
       return ['onlyLeaf', 'parentFirst', 'all'].includes(val);
     },
   },
-  /** 懒加载和虚拟滚动。为保证组件收益最大化，当数据量小于阈值 `scroll.threshold` 时，无论虚拟滚动的配置是否存在，组件内部都不会开启虚拟滚动，`scroll.threshold` 默认为 `100` */
-  scroll: {
-    type: Object as PropType<TdTreeProps['scroll']>,
-  },
-  /** 内容滚动时触发 */
-  onScroll: Function as PropType<TdTreeProps['onScroll']>,
   /** 节点激活时触发，泛型 `T` 表示树节点 TS 类型 */
   onActive: Function as PropType<TdTreeProps['onActive']>,
   /** 节点选中状态变化时触发，context.node 表示当前变化的选项，泛型 `T` 表示树节点 TS 类型 */
@@ -160,4 +154,19 @@ export default {
   onExpand: Function as PropType<TdTreeProps['onExpand']>,
   /** 异步加载后触发，泛型 `T` 表示树节点 TS 类型 */
   onLoad: Function as PropType<TdTreeProps['onLoad']>,
+
+  /** tree 高度，超出后会出现滚动条。示例：100,  '30%',  '300'。值为数字类型，会自动加上单位 px。如果不是绝对固定高度，建议使用 `maxHeight` */
+  height: {
+    type: [String, Number] as PropType<TdTreeProps['height']>,
+  },
+  /** tree 最大高度，超出后会出现滚动条。示例：100, '30%', '300'。值为数字类型，会自动加上单位 px */
+  maxHeight: {
+    type: [String, Number] as PropType<TdTreeProps['maxHeight']>,
+  },
+  /** 懒加载和虚拟滚动。为保证组件收益最大化，当数据量小于阈值 `scroll.threshold` 时，无论虚拟滚动的配置是否存在，组件内部都不会开启虚拟滚动，`scroll.threshold` 默认为 `100` */
+  scroll: {
+    type: Object as PropType<TdTreeProps['scroll']>,
+  },
+  /** 内容滚动时触发 */
+  onScroll: Function as PropType<TdTreeProps['onScroll']>,
 };

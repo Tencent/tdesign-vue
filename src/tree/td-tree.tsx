@@ -1,8 +1,6 @@
 import upperFirst from 'lodash/upperFirst';
 import isFunction from 'lodash/isFunction';
-import {
-  computed, watch, toRefs, defineComponent,
-} from '@vue/composition-api';
+import { watch, toRefs, defineComponent } from '@vue/composition-api';
 
 import TreeNode from '../_common/js/tree/tree-node';
 import props from './props';
@@ -13,6 +11,7 @@ import {
   TreeNodeValue, TypeTreeState, TreeNodeState, TypeTreeNodeModel,
 } from './interface';
 import useTreeStore from './hooks/useTreeStore';
+import useTreeStyles from './hooks/useTreeStyles';
 import useCache from './hooks/useCache';
 import useTreeAction from './hooks/useTreeAction';
 import useTreeNodes from './hooks/useTreeNodes';
@@ -40,32 +39,7 @@ export default defineComponent({
     const { store, rebuild, updateStoreConfig } = useTreeStore(props, context);
     const { cache } = useCache(props);
 
-    const classList = computed(() => {
-      const cname = componentName.value;
-      const list: Array<string> = [cname];
-      const {
-        disabled, hover, transition, checkable, draggable, expandOnClickNode,
-      } = props;
-      if (disabled) {
-        list.push(`${classPrefix.value}-is-disabled`);
-      }
-      if (hover) {
-        list.push(`${cname}--hoverable`);
-      }
-      if (checkable) {
-        list.push(`${cname}--checkable`);
-      }
-      if (draggable) {
-        list.push(`${cname}--draggable`);
-      }
-      if (transition) {
-        list.push(`${cname}--transition`);
-      }
-      if (expandOnClickNode) {
-        list.push(`${cname}--block-node`);
-      }
-      return list;
-    });
+    const { treeClasses, treeContentStyles } = useTreeStyles(props);
 
     // 用于 hooks 传递数据
     const state: TypeTreeState = {
@@ -75,7 +49,9 @@ export default defineComponent({
 
     useDragHandle(props, context, state);
     const { setActived, setExpanded, setChecked } = useTreeAction(props, context, state);
-    const { renderTreeNodes, clearCacheNodes, nodesEmpty } = useTreeNodes(props, context, state);
+    const {
+      renderTreeNodes, clearCacheNodes, nodesEmpty, onInnerVirtualScroll, virtualConfig, treeContentRef,
+    } = useTreeNodes(props, context, state);
 
     watch(refProps.data, (list) => {
       clearCacheNodes();
@@ -105,13 +81,18 @@ export default defineComponent({
       componentName,
       store,
       cache,
-      classList,
+      treeClasses,
+      treeContentStyles,
       updateStoreConfig,
       setActived,
       setExpanded,
       setChecked,
       renderTreeNodes,
       nodesEmpty,
+      onInnerVirtualScroll,
+      virtualConfig,
+      treeContentRef,
+      scrollToElement: virtualConfig.scrollToElement,
     };
   },
   // 在 methods 提供公共方法
@@ -205,7 +186,7 @@ export default defineComponent({
   },
   render(h) {
     const {
-      cache, classList, updateStoreConfig, renderTreeNodes, nodesEmpty,
+      cache, treeClasses, treeContentStyles, updateStoreConfig, renderTreeNodes, nodesEmpty, virtualConfig,
     } = this;
 
     updateStoreConfig();
@@ -216,6 +197,7 @@ export default defineComponent({
 
     const treeNodeViews = renderTreeNodes(h);
     const cname = this.componentName;
+    const isVirtual = virtualConfig.isVirtualScroll.value;
 
     // 空数据判定
     let emptyNode: TNodeReturnValue = null;
@@ -229,6 +211,21 @@ export default defineComponent({
       emptyNode = <div></div>;
     }
 
+    const translate = `translateY(${virtualConfig?.translateY.value}px)`;
+    const posStyle = isVirtual
+      ? {
+        transform: translate,
+        '-ms-transform': translate,
+        '-moz-transform': translate,
+        '-webkit-transform': translate,
+      }
+      : undefined;
+
+    const treeStyles = {
+      ...treeContentStyles,
+      ...posStyle,
+    };
+
     // 构造列表
     const treeNodeList = (
       <transition-group
@@ -236,13 +233,14 @@ export default defineComponent({
         class={`${cname}__list`}
         enter-active-class={`${cname}__item--enter-active`}
         leave-active-class={`${cname}__item--leave-active`}
+        style={treeStyles}
       >
         {treeNodeViews}
       </transition-group>
     );
 
     const treeNode = (
-      <div class={classList} ref="treeContentRef" on={{ scroll: this.onInnerVirtualScroll }}>
+      <div class={treeClasses} ref="treeContentRef" on={{ scroll: this.onInnerVirtualScroll }}>
         {emptyNode || treeNodeList}
       </div>
     );
