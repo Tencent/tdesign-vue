@@ -88,12 +88,12 @@ export default defineComponent({
       rowAndColFixedPosition,
       setData,
       refreshTable,
+      setTableElmWidth,
       emitScrollEvent,
       setUseFixedTableElmRef,
       updateColumnFixedShadow,
       getThWidthList,
       updateThWidthList,
-      setRecalculateColWidthFuncRef,
       addTableResizeObserver,
     } = useFixed(props, context, finalColumns, {
       paginationAffixRef,
@@ -121,11 +121,14 @@ export default defineComponent({
     } = usePagination(props, context);
 
     // 列宽拖拽逻辑
-    const columnResizeParams = useColumnResize(tableContentRef, refreshTable, getThWidthList, updateThWidthList);
-    const {
-      resizeLineRef, resizeLineStyle, recalculateColWidth, setEffectColMap,
-    } = columnResizeParams;
-    setRecalculateColWidthFuncRef(recalculateColWidth);
+    const columnResizeParams = useColumnResize({
+      isWidthOverflow,
+      tableContentRef,
+      getThWidthList,
+      updateThWidthList,
+      setTableElmWidth,
+    });
+    const { resizeLineRef, resizeLineStyle, setEffectColMap } = columnResizeParams;
 
     const dynamicBaseTableClasses = computed(() => [
       tableClasses.value,
@@ -155,7 +158,7 @@ export default defineComponent({
       return (bottomRect?.height || 0) + (paginationRect?.height || 0);
     });
 
-    const columnResizable = computed(() => props.allowResizeColumnWidth === undefined ? props.resizable : props.allowResizeColumnWidth);
+    const columnResizable = computed(() => props.allowResizeColumnWidth ?? props.resizable);
 
     watch(tableElmRef, () => {
       setUseFixedTableElmRef(tableElmRef.value);
@@ -174,18 +177,9 @@ export default defineComponent({
         props.onLeafColumnsChange?.(spansAndLeafNodes.value.leafColumns);
         // Vue3 do not need next line
         context.emit('LeafColumnsChange', spansAndLeafNodes.value.leafColumns);
+        setEffectColMap(spansAndLeafNodes.value.leafColumns, null);
       },
       { immediate: true },
-    );
-
-    watch(
-      thList,
-      () => {
-        setEffectColMap(thList.value[0], null);
-      },
-      {
-        immediate: true,
-      },
     );
 
     const onFixedChange = () => {
@@ -487,9 +481,10 @@ export default defineComponent({
       log.warn('Table', 'allowResizeColumnWidth is going to be deprecated, please use resizable instead.');
     }
 
-    if (this.columnResizable && this.tableLayout === 'auto') {
-      log.warn('Table', 'table-layout can not be `auto` for resizable column table, set `table-layout: fixed` please.');
-    }
+    // already support resize column for table-layout: auto
+    // if (this.columnResizable && this.tableLayout === 'auto') {
+    //   log.warn('Table', 'table-layout can not be `auto` for resizable column table, set `table-layout: fixed` please.');
+    // }
 
     const translate = `translate(0, ${this.virtualConfig.scrollHeight.value}px)`;
     const virtualStyle = {
