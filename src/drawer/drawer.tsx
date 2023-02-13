@@ -150,6 +150,10 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
     this.handleScrollThrough(this.visible);
   },
 
+  beforeDestroy() {
+    this.clearStyleFunc();
+  },
+
   render() {
     if (this.destroyOnClose && !this.visible && this.animationEnd) return null;
 
