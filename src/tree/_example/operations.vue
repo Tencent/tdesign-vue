@@ -325,31 +325,4 @@ export default {
   font-size: 10px;
   color: gray;
 }
-/* .t-space{
-  width: 100%;
-} */
 </style>
-<!-- <style scoped>
-.tdesign-tree-demo .t-tree {
-  margin-bottom: 20px;
-}
-.tdesign-tree-demo .title {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .tips {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .operations {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .t-form__item {
-  margin-bottom: 5px;
-}
-.tdesign-tree-demo .t-button {
-  margin: 0 10px 10px 0;
-}
-.tips {
-  font-size: 10px;
-  color: gray;
-}
-</style> -->

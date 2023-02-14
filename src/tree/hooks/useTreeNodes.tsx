@@ -69,13 +69,19 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
   const renderTreeNodes = (h: CreateElement) => {
     let treeNodeViews: TypeVNode[] = [];
     let isEmpty = true;
-    const list = nodes.value;
+    let list = nodes.value;
     if (clearStep) {
       cacheMap.clear();
       clearStep = 0;
       nodesEmpty.value = !list.some((node: TreeNode) => node.visible);
       return treeNodeViews;
     }
+
+    const isVirtual = virtualConfig.isVirtualScroll.value;
+    if (isVirtual) {
+      list = virtualConfig.visibleData.value;
+    }
+
     treeNodeViews = list.map((node: TreeNode) => {
       // 如果节点已经存在，则使用缓存节点
       let nodeView: TypeVNode = cacheMap.get(node.value);

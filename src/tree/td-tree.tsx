@@ -39,8 +39,6 @@ export default defineComponent({
     const { store, rebuild, updateStoreConfig } = useTreeStore(props, context);
     const { cache } = useCache(props);
 
-    const { treeClasses, treeContentStyles } = useTreeStyles(props);
-
     // 用于 hooks 传递数据
     const state: TypeTreeState = {
       store,
@@ -52,6 +50,8 @@ export default defineComponent({
     const {
       renderTreeNodes, clearCacheNodes, nodesEmpty, onInnerVirtualScroll, virtualConfig, treeContentRef,
     } = useTreeNodes(props, context, state);
+
+    const { treeClasses, treeContentStyles } = useTreeStyles(props, virtualConfig);
 
     watch(refProps.data, (list) => {
       clearCacheNodes();

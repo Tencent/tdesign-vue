@@ -2,17 +2,19 @@ import { computed, toRefs } from '@vue/composition-api';
 import { TypeTreeProps } from '../interface';
 import { Styles } from '../../common';
 import { usePrefixClass } from '../../hooks/useConfig';
+import { VirtualScrollConfig } from '../../hooks/useVirtualScrollNew';
 
 export function formatCSSUnit(unit: string | number) {
   if (!unit) return unit;
   return isNaN(Number(unit)) ? unit : `${unit}px`;
 }
 
-export default function useTreeStyles(props: TypeTreeProps) {
+export default function useTreeStyles(props: TypeTreeProps, virtualConfig: VirtualScrollConfig) {
   const componentName = usePrefixClass('tree').value;
   const classPrefix = usePrefixClass().value;
 
   const { height, maxHeight } = toRefs(props);
+  const isVirtual = virtualConfig.isVirtualScroll.value;
 
   const treeClasses = computed(() => {
     const list: Array<string> = [componentName];
@@ -36,6 +38,9 @@ export default function useTreeStyles(props: TypeTreeProps) {
     }
     if (expandOnClickNode) {
       list.push(`${componentName}--block-node`);
+    }
+    if (isVirtual) {
+      list.push(`${componentName}--vscroll`);
     }
     return list;
   });

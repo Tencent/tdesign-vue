@@ -92,8 +92,8 @@ export default {
       showLine: true,
       showIcon: true,
       scroll: {
-        rowHeight: 47,
-        threshold: 10,
+        rowHeight: 34,
+        threshold: 20,
         type: 'virtual',
       },
       items,
@@ -146,8 +146,5 @@ export default {
 }
 .tdesign-tree-demo .t-form__item {
   margin-bottom: 5px;
-}
-.tdesign-tree-demo .t-button {
-  margin: 0 10px 10px 0;
 }
 </style>
