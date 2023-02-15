@@ -16,9 +16,9 @@ const configList = ref(configJson);
 const panelList = [{ label: 'timeline', value: 'timeline' }];
 
 const usageCodeMap = { timePicker: '<t-timeline v-bind="configProps" />' };
-const usageCode = ref(`<template>${usageCodeMap[panelList[0].value].trim()}</template>`);
+const usageCode = ref(`<template>${usageCodeMap[panelList[0].value]?.trim()}</template>`);
 
 function onPanelChange(panel) {
-  usageCode.value = `<template>${usageCodeMap[panel].trim()}</template>`;
+  usageCode.value = `<template>${usageCodeMap[panel]?.trim()}</template>`;
 }
 </script>
