@@ -31,8 +31,6 @@ export interface TheadProps {
   };
   thList?: BaseTableCol<TableRowData>[][];
   columnResizeParams?: {
-    resizeLineRef: HTMLDivElement;
-    resizeLineStyle: Object;
     onColumnMouseover: (e: MouseEvent, col: BaseTableCol<TableRowData>) => void;
     onColumnMousedown: (e: MouseEvent, col: BaseTableCol<TableRowData>) => void;
   };

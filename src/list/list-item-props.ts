@@ -21,4 +21,6 @@ export default {
   default: {
     type: [String, Function] as PropType<TdListItemProps['default']>,
   },
+  /** 点击事件 */
+  onClick: Function as PropType<TdListItemProps['onClick']>,
 };

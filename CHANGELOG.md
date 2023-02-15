@@ -5,6 +5,27 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.1.2 `2023-02-15` 
+### 🚀 Features
+- `TreeSelect`: 支持使用 `keys` 定义字段别名 @chaishi ([#2128](https://github.com/Tencent/tdesign-vue/pull/2128))
+- `List`: ListItem 支持 `onClick` 事件 @yaogengzhu ([#1923](https://github.com/Tencent/tdesign-vue/pull/1923))
+- `Timeline`: @chaishi ([#2138](https://github.com/Tencent/tdesign-vue/pull/2138))
+  - 支持使用属性函数  `props.slot: () => <dot/>` 自定义连接点
+  - 支持使用插槽和属性函数 `content` 自定义内容
+  - 支持使用插槽和属性函数 `label` 自定义时间文本
+### 🐞 Bug Fixes
+- `Table`: @chaishi ([#2130](https://github.com/Tencent/tdesign-vue/pull/2130))
+  - 修复 `affixHeader` 在IE上高度异常问题 @huangpiqiao ([#2129](https://github.com/Tencent/tdesign-vue/pull/2129))
+  - 修复添加 `resizable` 属性后，在 Dialog 组件中宽度计算问题，并非提前设置好的 column.width，[issue#2116](https://github.com/Tencent/tdesign-vue/issues/2116)
+  - 修复 `column.resizable=false` 在某些场景下无效问题，[issue#1765](https://github.com/Tencent/tdesign-vue/issues/1765)
+  - 修复在自定义列数量场景，表格宽度未能根据列数自适应，[issue#1861](https://github.com/Tencent/tdesign-vue/issues/1861)
+  - 修复宽度计算的各类问题，[issue#1663](https://github.com/Tencent/tdesign-vue/issues/1663) @chaishi
+  - 修复空表格在 Dialog 组件中，文本显示位置不正确问题，[issue#2082](https://github.com/Tencent/tdesign-vue/issues/2082)
+  - 分页功能，修复 `pagination.onChange` 被调用两次问题，[issue#2066](https://github.com/Tencent/tdesign-vue/issues/2066)
+- `Cascader`: 修复级联组件无法选中值为 0 的选项的问题 @vkm0303 ([#2144](https://github.com/Tencent/tdesign-vue/pull/2144))
+- `Timeline`: 修复 `TimelineItem.labelAlign` 优先级不是最高的问题 @chaishi ([#2138](https://github.com/Tencent/tdesign-vue/pull/2138))
+- `Drawer`: 修复组件销毁时未正常移除锁定样式的问题 @honkinglin ([#2133](https://github.com/Tencent/tdesign-vue/pull/2133))
+
 ## 🌈 1.1.1 `2023-02-09` 
 ### 🐞 Bug Fixes
 - `TreeSelect`: @chaishi  

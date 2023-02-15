@@ -61,3 +61,26 @@ export function getTreeSelectMultipleMount(TreeSelect, props, events) {
     { attachTo: '#focus-dom' },
   );
 }
+
+const OPTIONS1 = [
+  { name: 'tdesign-vue', key: 1 },
+  {
+    name: 'tdesign-react',
+    key: 2,
+    children: [
+      { name: 'tdesign-web-react', key: '2.1' },
+      { name: 'tdesign-mobile-react', key: '2.2' },
+    ],
+  },
+  { name: 'tdesign-miniprogram', key: 3 },
+];
+
+// test keys and treeProps.keys
+export function getTreeSelectKeysMount(TreeSelect, props, events) {
+  const value = [1];
+  return mount({
+    render() {
+      return <TreeSelect value={value} data={OPTIONS1} props={props} on={events}></TreeSelect>;
+    },
+  });
+}

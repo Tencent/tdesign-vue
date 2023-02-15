@@ -53,6 +53,14 @@ scroll | `(options: { e: Event \| WheelEvent; scrollTop: number; scrollBottom: n
 action | String / Slot / Function | - | 操作栏。TS 类型：`string \| TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 content | String / Slot / Function | - | 内容。TS 类型：`string \| TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 default | String / Slot / Function | - | 内容，同 content。TS 类型：`string \| TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+onClick | Function |  | TS 类型：`(context: { e: MouseEvent }) => void`<br/>点击时触发 | N
+
+### ListItem Events
+
+名称 | 参数 | 描述
+-- | -- | --
+click | `(context: { e: MouseEvent })` | 点击时触发
+
 
 ### ListItemMeta Props
 

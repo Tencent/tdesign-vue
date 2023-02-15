@@ -88,12 +88,12 @@ export default defineComponent({
       rowAndColFixedPosition,
       setData,
       refreshTable,
+      setTableElmWidth,
       emitScrollEvent,
       setUseFixedTableElmRef,
       updateColumnFixedShadow,
       getThWidthList,
       updateThWidthList,
-      setRecalculateColWidthFuncRef,
       addTableResizeObserver,
     } = useFixed(props, context, finalColumns, {
       paginationAffixRef,
@@ -121,11 +121,14 @@ export default defineComponent({
     } = usePagination(props, context);
 
     // 列宽拖拽逻辑
-    const columnResizeParams = useColumnResize(tableContentRef, refreshTable, getThWidthList, updateThWidthList);
-    const {
-      resizeLineRef, resizeLineStyle, recalculateColWidth, setEffectColMap,
-    } = columnResizeParams;
-    setRecalculateColWidthFuncRef(recalculateColWidth);
+    const columnResizeParams = useColumnResize({
+      isWidthOverflow,
+      tableContentRef,
+      getThWidthList,
+      updateThWidthList,
+      setTableElmWidth,
+    });
+    const { resizeLineRef, resizeLineStyle, setEffectColMap } = columnResizeParams;
 
     const dynamicBaseTableClasses = computed(() => [
       tableClasses.value,
@@ -155,7 +158,7 @@ export default defineComponent({
       return (bottomRect?.height || 0) + (paginationRect?.height || 0);
     });
 
-    const columnResizable = computed(() => props.allowResizeColumnWidth === undefined ? props.resizable : props.allowResizeColumnWidth);
+    const columnResizable = computed(() => props.allowResizeColumnWidth ?? props.resizable);
 
     watch(tableElmRef, () => {
       setUseFixedTableElmRef(tableElmRef.value);
@@ -174,18 +177,9 @@ export default defineComponent({
         props.onLeafColumnsChange?.(spansAndLeafNodes.value.leafColumns);
         // Vue3 do not need next line
         context.emit('LeafColumnsChange', spansAndLeafNodes.value.leafColumns);
+        setEffectColMap(spansAndLeafNodes.value.leafColumns, null);
       },
       { immediate: true },
-    );
-
-    watch(
-      thList,
-      () => {
-        setEffectColMap(thList.value[0], null);
-      },
-      {
-        immediate: true,
-      },
     );
 
     const onFixedChange = () => {
@@ -363,11 +357,13 @@ export default defineComponent({
     renderFixedHeader(columns: BaseTableCol<TableRowData>[]) {
       if (!this.showHeader) return null;
       const isVirtual = this.virtualConfig.isVirtualScroll.value;
+      const isIE = getIEVersion() <= 11;
       const barWidth = this.isWidthOverflow ? this.scrollbarWidth : 0;
       // IE 浏览器需要遮挡 header 吸顶滚动条，要减去 getBoundingClientRect.height 的滚动条高度 4 像素
-      const IEHeaderWrap = getIEVersion() <= 11 ? 4 : 0;
+      const IEHeaderWrap = isIE ? 4 : 0;
       const affixHeaderHeight = (this.affixHeaderRef?.getBoundingClientRect().height || 0) - IEHeaderWrap;
-      const affixHeaderWrapHeight = affixHeaderHeight - barWidth;
+      // IE 浏览器不需要减去横向滚动条的宽度
+      const affixHeaderWrapHeight = affixHeaderHeight - (isIE ? 0 : barWidth);
       // 两类场景：1. 虚拟滚动，永久显示表头，直到表头消失在可视区域； 2. 表头吸顶，根据滚动情况判断是否显示吸顶表头
       const headerOpacity = this.headerAffixedTop ? Number(this.showAffixHeader) : 1;
       const affixHeaderWrapHeightStyle = {
@@ -485,9 +481,10 @@ export default defineComponent({
       log.warn('Table', 'allowResizeColumnWidth is going to be deprecated, please use resizable instead.');
     }
 
-    if (this.columnResizable && this.tableLayout === 'auto') {
-      log.warn('Table', 'table-layout can not be `auto` for resizable column table, set `table-layout: fixed` please.');
-    }
+    // already support resize column for table-layout: auto
+    // if (this.columnResizable && this.tableLayout === 'auto') {
+    //   log.warn('Table', 'table-layout can not be `auto` for resizable column table, set `table-layout: fixed` please.');
+    // }
 
     const translate = `translate(0, ${this.virtualConfig.scrollHeight.value}px)`;
     const virtualStyle = {

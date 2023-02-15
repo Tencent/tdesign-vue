@@ -1,5 +1,5 @@
 import log from '../_common/js/log';
-import { TdTimeLineProps } from './type';
+import { TdTimelineProps } from './type';
 
 const DefaultAlign = {
   vertical: ['left', 'right'],
@@ -7,8 +7,8 @@ const DefaultAlign = {
 };
 
 export default function getRenderAlign(
-  align: TdTimeLineProps['labelAlign'],
-  layout: TdTimeLineProps['layout'] = 'vertical',
+  align: TdTimelineProps['labelAlign'],
+  layout: TdTimelineProps['layout'] = 'vertical',
 ) {
   let renderAlign = layout === 'vertical' ? 'left' : 'top';
   if (layout === 'vertical' && align) {
