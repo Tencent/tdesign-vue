@@ -49,7 +49,7 @@
 </template>
 
 <script>
-const allLevels = [3, 3, 3];
+const allLevels = [5, 5, 5];
 
 let cacheIndex = 0;
 function getValue() {
@@ -93,7 +93,8 @@ export default {
       showIcon: true,
       scroll: {
         rowHeight: 34,
-        threshold: 20,
+        bufferSize: 10,
+        threshold: 10,
         type: 'virtual',
       },
       items,

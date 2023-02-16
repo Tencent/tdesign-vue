@@ -51,7 +51,7 @@ export default defineComponent({
       renderTreeNodes, clearCacheNodes, nodesEmpty, onInnerVirtualScroll, virtualConfig, treeContentRef,
     } = useTreeNodes(props, context, state);
 
-    const { treeClasses, treeContentStyles } = useTreeStyles(props, virtualConfig);
+    const { treeClasses, scrollStyles, cursorStyles } = useTreeStyles(props, virtualConfig);
 
     watch(refProps.data, (list) => {
       clearCacheNodes();
@@ -82,14 +82,17 @@ export default defineComponent({
       store,
       cache,
       treeClasses,
-      treeContentStyles,
+
       updateStoreConfig,
       setActived,
       setExpanded,
       setChecked,
       renderTreeNodes,
       nodesEmpty,
+
       onInnerVirtualScroll,
+      scrollStyles,
+      cursorStyles,
       virtualConfig,
       treeContentRef,
       scrollToElement: virtualConfig.scrollToElement,
@@ -186,7 +189,14 @@ export default defineComponent({
   },
   render(h) {
     const {
-      cache, treeClasses, treeContentStyles, updateStoreConfig, renderTreeNodes, nodesEmpty, virtualConfig,
+      cache,
+      treeClasses,
+      updateStoreConfig,
+      renderTreeNodes,
+      nodesEmpty,
+      virtualConfig,
+      scrollStyles,
+      cursorStyles,
     } = this;
 
     updateStoreConfig();
@@ -211,21 +221,6 @@ export default defineComponent({
       emptyNode = <div></div>;
     }
 
-    const translate = `translateY(${virtualConfig?.translateY.value}px)`;
-    const posStyle = isVirtual
-      ? {
-        transform: translate,
-        '-ms-transform': translate,
-        '-moz-transform': translate,
-        '-webkit-transform': translate,
-      }
-      : undefined;
-
-    const treeStyles = {
-      ...treeContentStyles,
-      ...posStyle,
-    };
-
     // 构造列表
     const treeNodeList = (
       <transition-group
@@ -233,7 +228,7 @@ export default defineComponent({
         class={`${cname}__list`}
         enter-active-class={`${cname}__item--enter-active`}
         leave-active-class={`${cname}__item--leave-active`}
-        style={treeStyles}
+        style={scrollStyles}
       >
         {treeNodeViews}
       </transition-group>
@@ -241,6 +236,7 @@ export default defineComponent({
 
     const treeNode = (
       <div class={treeClasses} ref="treeContentRef" on={{ scroll: this.onInnerVirtualScroll }}>
+        {isVirtual && <div class={`${cname}__vscroll-cursor`} style={cursorStyles} />}
         {emptyNode || treeNodeList}
       </div>
     );

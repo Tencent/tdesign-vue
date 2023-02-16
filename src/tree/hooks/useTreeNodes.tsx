@@ -1,6 +1,6 @@
 import { CreateElement } from 'vue';
 import {
-  ref, nextTick, SetupContext, Ref, computed,
+  ref, nextTick, SetupContext, Ref, computed, onMounted,
 } from '@vue/composition-api';
 import useVirtualScroll from '../../hooks/useVirtualScrollNew';
 import { TypeVNode, TypeTreeProps, TypeTreeState } from '../interface';
@@ -54,9 +54,6 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
 
   // 虚拟滚动
   const treeContentRef = ref<HTMLDivElement>();
-  const setTreeContentRef = (treeContent: HTMLDivElement) => {
-    treeContentRef.value = treeContent;
-  };
   const virtualScrollParams = computed(() => {
     const list = nodes.value.filter((node) => node.visible);
     return {
@@ -65,6 +62,13 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
     };
   });
   const virtualConfig = useVirtualScroll(treeContentRef, virtualScrollParams);
+
+  onMounted(() => {
+    const isVirtual = virtualConfig.isVirtualScroll.value;
+    if (isVirtual) {
+      virtualConfig.handleScroll();
+    }
+  });
 
   const renderTreeNodes = (h: CreateElement) => {
     let treeNodeViews: TypeVNode[] = [];
@@ -147,7 +151,6 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
 
     // 虚拟滚动相关
     treeContentRef,
-    setTreeContentRef,
     onInnerVirtualScroll,
     virtualConfig,
     scrollToElement: virtualConfig.scrollToElement,

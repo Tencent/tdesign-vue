@@ -50,8 +50,36 @@ export default function useTreeStyles(props: TypeTreeProps, virtualConfig: Virtu
     maxHeight: formatCSSUnit(maxHeight.value),
   }));
 
+  const scrollStyles = computed<Styles>(() => {
+    const transform = `translateY(${virtualConfig?.translateY.value}px)`;
+    const posStyle = isVirtual
+      ? {
+        transform,
+        '-ms-transform': transform,
+        '-moz-transform': transform,
+        '-webkit-transform': transform,
+      }
+      : undefined;
+    return {
+      ...treeContentStyles.value,
+      ...posStyle,
+    };
+  });
+
+  const cursorStyles = computed<Styles>(() => {
+    const translate = `translate(0, ${virtualConfig?.scrollHeight.value}px)`;
+    return {
+      transform: translate,
+      '-ms-transform': translate,
+      '-moz-transform': translate,
+      '-webkit-transform': translate,
+    };
+  });
+
   return {
     treeClasses,
     treeContentStyles,
+    scrollStyles,
+    cursorStyles,
   };
 }
