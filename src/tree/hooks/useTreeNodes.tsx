@@ -10,7 +10,8 @@ import useTreeEvents from './useTreeEvents';
 
 // tree 节点列表渲染
 export default function useTreeNodes(props: TypeTreeProps, context: SetupContext, state: TypeTreeState) {
-  const { store } = state;
+  const { store, cache } = state;
+  const { scope } = cache;
 
   const { handleClick, handleChange } = useTreeEvents(props, context, state);
 
@@ -62,6 +63,7 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
     };
   });
   const virtualConfig = useVirtualScroll(treeContentRef, virtualScrollParams);
+  scope.virtualConfig = virtualConfig;
 
   onMounted(() => {
     const isVirtual = virtualConfig.isVirtualScroll.value;

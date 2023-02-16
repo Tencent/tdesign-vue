@@ -1,15 +1,14 @@
 import { computed, toRefs } from '@vue/composition-api';
-import { TypeTreeProps } from '../interface';
+import { TypeTreeProps, TypeVirtualScrollConfig } from '../interface';
 import { Styles } from '../../common';
 import { usePrefixClass } from '../../hooks/useConfig';
-import { VirtualScrollConfig } from '../../hooks/useVirtualScrollNew';
 
 export function formatCSSUnit(unit: string | number) {
   if (!unit) return unit;
   return isNaN(Number(unit)) ? unit : `${unit}px`;
 }
 
-export default function useTreeStyles(props: TypeTreeProps, virtualConfig: VirtualScrollConfig) {
+export default function useTreeStyles(props: TypeTreeProps, virtualConfig: TypeVirtualScrollConfig) {
   const componentName = usePrefixClass('tree').value;
   const classPrefix = usePrefixClass().value;
 

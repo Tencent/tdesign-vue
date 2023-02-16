@@ -32,10 +32,10 @@ export default defineComponent({
     onDrag: { default: undefined },
   },
   setup(props: TypeTreeItemProps, context) {
-    const root = ref(null);
-    const { renderItemNode } = useTreeItem(props, context, root);
+    const treeItemRef = ref(null);
+    const { renderItemNode } = useTreeItem(props, context, treeItemRef);
     return {
-      root,
+      treeItemRef,
       renderItemNode,
     };
   },

@@ -3,6 +3,7 @@ import { TNode, TreeOptionData } from '../common';
 import TreeStore from '../_common/js/tree/tree-store';
 import TreeNode from '../_common/js/tree/tree-node';
 import { TypeTreeEventState } from '../_common/js/tree/types';
+import { VirtualScrollConfig } from '../hooks/useVirtualScrollNew';
 import {
   TdTreeProps, TreeNodeModel, TreeInstanceFunctions, TreeNodeValue, TreeNodeState,
 } from './type';
@@ -32,6 +33,8 @@ export type TypeTNodeProp = boolean | string | TNode<TypeTreeNodeModel>;
 export type TypeTreeNodeModel = TreeNodeModel<TreeOptionData>;
 
 export type TypeTargetNode = TreeNodeValue | TypeTreeNode | TypeTreeNodeModel;
+
+export type TypeVirtualScrollConfig = VirtualScrollConfig;
 
 export interface TypeEventState extends TypeTreeEventState {
   mouseEvent?: MouseEvent;
@@ -90,6 +93,7 @@ export interface TypeTreeScope {
   treeProps?: TypeTreeProps;
   scopedSlots?: TypeScopedSlots;
   drag?: TypeDragHandle;
+  virtualConfig?: TypeVirtualScrollConfig;
 }
 
 export interface TypeTreeCache {
