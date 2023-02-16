@@ -84,35 +84,39 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
     const isVirtual = virtualConfig.isVirtualScroll.value;
     if (isVirtual) {
       list = virtualConfig.visibleData.value;
-    }
-
-    treeNodeViews = list.map((node: TreeNode) => {
-      // 如果节点已经存在，则使用缓存节点
-      let nodeView: TypeVNode = cacheMap.get(node.value);
-      if (node.visible) {
-        // 任意一个节点可视，过滤结果就不是空
-        isEmpty = false;
-        // 如果节点未曾创建，则临时创建
-        if (!nodeView) {
-          // 初次仅渲染可显示的节点
-          // 不存在节点视图，则创建该节点视图并插入到当前位置
-          nodeView = renderItem(h, node);
-          cacheMap.set(node.value, nodeView);
+      nodesEmpty.value = list.length <= 0;
+      // 虚拟滚动只渲染可见节点
+      treeNodeViews = list.map((node: TreeNode) => renderItem(h, node));
+    } else {
+      treeNodeViews = list.map((node: TreeNode) => {
+        // 如果节点已经存在，则使用缓存节点
+        // 不可见的节点，缓存中存在，则依然会保留
+        let nodeView: TypeVNode = cacheMap.get(node.value);
+        if (node.visible) {
+          // 任意一个节点可视，过滤结果就不是空
+          isEmpty = false;
+          // 如果节点未曾创建，则临时创建
+          if (!nodeView) {
+            // 初次仅渲染可显示的节点
+            // 不存在节点视图，则创建该节点视图并插入到当前位置
+            nodeView = renderItem(h, node);
+            cacheMap.set(node.value, nodeView);
+          }
         }
-      }
-      return nodeView;
-    });
-    nodesEmpty.value = isEmpty;
-
-    // 更新缓存后，被删除的节点要移除掉，避免内存泄露
-    nextTick(() => {
-      cacheMap.forEach((view: TypeVNode, value: string) => {
-        const node = store.getNode(value);
-        if (!node) {
-          cacheMap.delete(value);
-        }
+        return nodeView;
       });
-    });
+      nodesEmpty.value = isEmpty;
+
+      // 更新缓存后，被删除的节点要移除掉，避免内存泄露
+      nextTick(() => {
+        cacheMap.forEach((view: TypeVNode, value: string) => {
+          const node = store.getNode(value);
+          if (!node) {
+            cacheMap.delete(value);
+          }
+        });
+      });
+    }
 
     return treeNodeViews;
   };
