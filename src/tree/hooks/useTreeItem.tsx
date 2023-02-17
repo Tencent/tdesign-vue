@@ -29,7 +29,7 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
   );
 
   onMounted(() => {
-    const isVirtual = virtualConfig.isVirtualScroll.value;
+    const isVirtual = virtualConfig?.isVirtualScroll.value;
     if (isVirtual) {
       virtualConfig.handleRowMounted({
         ref: treeItemRef,

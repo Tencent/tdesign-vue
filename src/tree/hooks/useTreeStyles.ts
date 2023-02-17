@@ -1,5 +1,5 @@
 import { computed, toRefs } from '@vue/composition-api';
-import { TypeTreeProps, TypeVirtualScrollConfig } from '../interface';
+import { TypeTreeProps, TypeTreeState } from '../interface';
 import { Styles } from '../../common';
 import { usePrefixClass } from '../../hooks/useConfig';
 
@@ -8,12 +8,14 @@ export function formatCSSUnit(unit: string | number) {
   return isNaN(Number(unit)) ? unit : `${unit}px`;
 }
 
-export default function useTreeStyles(props: TypeTreeProps, virtualConfig: TypeVirtualScrollConfig) {
+export default function useTreeStyles(props: TypeTreeProps, state: TypeTreeState) {
   const componentName = usePrefixClass('tree').value;
   const classPrefix = usePrefixClass().value;
+  const treeState = state;
+  const { virtualConfig } = treeState;
 
   const { height, maxHeight } = toRefs(props);
-  const isVirtual = virtualConfig.isVirtualScroll.value;
+  const isVirtual = virtualConfig?.isVirtualScroll.value;
 
   const treeClasses = computed(() => {
     const list: Array<string> = [componentName];
@@ -60,7 +62,6 @@ export default function useTreeStyles(props: TypeTreeProps, virtualConfig: TypeV
       }
       : undefined;
     return {
-      ...treeContentStyles.value,
       ...posStyle,
     };
   });

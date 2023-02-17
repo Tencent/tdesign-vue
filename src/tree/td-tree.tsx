@@ -7,13 +7,12 @@ import props from './props';
 import { useConfig, usePrefixClass } from '../hooks/useConfig';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { TNodeReturnValue, TreeOptionData } from '../common';
-import {
-  TreeNodeValue, TypeTreeState, TreeNodeState, TypeTreeNodeModel,
-} from './interface';
+import { TreeNodeValue, TreeNodeState, TypeTreeNodeModel } from './interface';
 import useTreeStore from './hooks/useTreeStore';
 import useTreeStyles from './hooks/useTreeStyles';
-import useCache from './hooks/useCache';
+import useTreeState from './hooks/useTreeState';
 import useTreeAction from './hooks/useTreeAction';
+import useTreeScroll from './hooks/useTreeScroll';
 import useTreeNodes from './hooks/useTreeNodes';
 import useDragHandle from './hooks/useDragHandle';
 import { getNode } from './util';
@@ -37,21 +36,17 @@ export default defineComponent({
     const componentName = usePrefixClass('tree');
     const refProps = toRefs(props);
     const { store, rebuild, updateStoreConfig } = useTreeStore(props, context);
-    const { cache } = useCache(props);
 
     // 用于 hooks 传递数据
-    const state: TypeTreeState = {
-      store,
-      cache,
-    };
+    const { state, treeContentRef } = useTreeState(props, store);
 
     useDragHandle(props, context, state);
     const { setActived, setExpanded, setChecked } = useTreeAction(props, context, state);
+    const { onInnerVirtualScroll, virtualConfig } = useTreeScroll(props, context, state);
+    const { renderTreeNodes, clearCacheNodes, nodesEmpty } = useTreeNodes(props, context, state);
     const {
-      renderTreeNodes, clearCacheNodes, nodesEmpty, onInnerVirtualScroll, virtualConfig, treeContentRef,
-    } = useTreeNodes(props, context, state);
-
-    const { treeClasses, scrollStyles, cursorStyles } = useTreeStyles(props, virtualConfig);
+      treeClasses, treeContentStyles, scrollStyles, cursorStyles,
+    } = useTreeStyles(props, state);
 
     watch(refProps.data, (list) => {
       clearCacheNodes();
@@ -79,9 +74,10 @@ export default defineComponent({
       global,
       classPrefix,
       componentName,
+      state,
       store,
-      cache,
       treeClasses,
+      treeContentRef,
 
       updateStoreConfig,
       setActived,
@@ -91,10 +87,10 @@ export default defineComponent({
       nodesEmpty,
 
       onInnerVirtualScroll,
+      treeContentStyles,
       scrollStyles,
       cursorStyles,
       virtualConfig,
-      treeContentRef,
       scrollToElement: virtualConfig.scrollToElement,
     };
   },
@@ -189,19 +185,20 @@ export default defineComponent({
   },
   render(h) {
     const {
-      cache,
+      state,
       treeClasses,
       updateStoreConfig,
       renderTreeNodes,
       nodesEmpty,
       virtualConfig,
+      treeContentStyles,
       scrollStyles,
       cursorStyles,
     } = this;
 
     updateStoreConfig();
 
-    const { scope } = cache;
+    const { scope } = state;
     // 更新 scopedSlots
     scope.scopedSlots = this.$scopedSlots;
 
@@ -235,7 +232,12 @@ export default defineComponent({
     );
 
     const treeNode = (
-      <div class={treeClasses} ref="treeContentRef" on={{ scroll: this.onInnerVirtualScroll }}>
+      <div
+        class={treeClasses}
+        ref="treeContentRef"
+        on={{ scroll: this.onInnerVirtualScroll }}
+        style={treeContentStyles}
+      >
         {isVirtual && <div class={`${cname}__vscroll-cursor`} style={cursorStyles} />}
         {emptyNode || treeNodeList}
       </div>

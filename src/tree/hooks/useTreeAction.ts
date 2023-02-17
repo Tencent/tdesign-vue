@@ -6,14 +6,15 @@ import { getNode, emitEvent } from '../util';
 
 // tree 组件节点状态设置
 export default function useTreeAction(props: TypeTreeProps, context: SetupContext, state: TypeTreeState) {
-  const { cache, store } = state;
+  const treeState = state;
+  const { store } = treeState;
 
   const setExpanded = (item: TypeTargetNode, isExpanded: boolean): TreeNodeValue[] => {
     const node = getNode(store, item);
     const expanded = node.setExpanded(isExpanded);
     const evtCtx = {
       node: node.getModel(),
-      e: cache.mouseEvent as MouseEvent,
+      e: treeState.mouseEvent as MouseEvent,
     };
     emitEvent<Parameters<TypeTreeProps['onExpand']>>(props, context, 'expand', expanded, evtCtx);
     return expanded;
@@ -29,7 +30,7 @@ export default function useTreeAction(props: TypeTreeProps, context: SetupContex
     const actived = node.setActived(isActived);
     const evtCtx = {
       node: node.getModel(),
-      e: cache.mouseEvent,
+      e: treeState.mouseEvent,
     };
     emitEvent<Parameters<TypeTreeProps['onActive']>>(props, context, 'active', actived, evtCtx);
     return actived;

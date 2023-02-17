@@ -1,4 +1,5 @@
 import { VNode } from 'vue';
+import { Ref } from '@vue/composition-api';
 import { TNode, TreeOptionData } from '../common';
 import TreeStore from '../_common/js/tree/tree-store';
 import TreeNode from '../_common/js/tree/tree-node';
@@ -96,14 +97,12 @@ export interface TypeTreeScope {
   virtualConfig?: TypeVirtualScrollConfig;
 }
 
-export interface TypeTreeCache {
-  mouseEvent?: Event;
-  scope: TypeTreeScope;
-}
-
 export interface TypeTreeState {
+  scope: TypeTreeScope;
   store: TypeTreeStore;
-  cache: TypeTreeCache;
+  treeContentRef: Ref;
+  mouseEvent?: Event;
+  virtualConfig?: TypeVirtualScrollConfig;
 }
 
 export interface TypeTreeItemProps {
