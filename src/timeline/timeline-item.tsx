@@ -104,7 +104,6 @@ export default defineComponent({
   },
 
   render() {
-    const dotSlot = renderTNodeJSX(this, 'dot');
     const {
       dotColor,
       dotClassName,
@@ -117,17 +116,22 @@ export default defineComponent({
       classPrefix = 't',
     } = this;
 
+    const dotElement = renderTNodeJSX(this, 'dot');
     const labelNode = renderTNodeJSX(this, 'label');
+
+    const dotContentClass = `${classPrefix}-timeline-item__dot-content`;
+    if (Array.isArray(dotElement) && dotElement[0]?.data) {
+      const classes = dotElement[0].data.class;
+      dotElement[0].data.class = classes ? [classes, dotContentClass].join(' ') : dotContentClass;
+    }
 
     return (
       <li class={getItemClassName} style={style}>
         {mode === 'alternate' && labelNode && <div class={labelClassName}>{labelNode}</div>}
         <div class={`${classPrefix}-timeline-item__wrapper`}>
           <div class={dotClassName} style={{ borderColor: !DEFAULT_THEME.includes(dotColor) && dotColor }}>
-            <div class={`${classPrefix}-timeline-item__dot-content`}>
-              {!dotSlot && loading && <TLoading size="12px" />}
-              {dotSlot}
-            </div>
+            {!dotElement && loading && <TLoading size="12px" class={dotContentClass} />}
+            {dotElement}
           </div>
           <div class={tailClassName} />
         </div>
