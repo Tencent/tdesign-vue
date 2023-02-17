@@ -58,14 +58,15 @@ export const MessageList = mixins(classPrefixMixins).extend({
       if (!val) return;
       return isNaN(Number(val)) ? val : `${val}px`;
     },
-    msgStyles(item: { offset: object }) {
-      return (
-        item.offset && {
+    msgStyles(item: { offset: object; style: Styles }) {
+      return item.offset
+        ? {
           position: 'relative',
           left: this.getOffset(item.offset[0]),
           top: this.getOffset(item.offset[1]),
+          ...item.style,
         }
-      );
+        : item.style;
     },
     getListeners(index: number) {
       return {
@@ -82,6 +83,7 @@ export const MessageList = mixins(classPrefixMixins).extend({
           <t-message
             key={item.key}
             style={this.msgStyles(item)}
+            class={item.className}
             {...{ props: item }}
             {...{ on: this.getListeners(index) }}
           />

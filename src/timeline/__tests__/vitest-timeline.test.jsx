@@ -5,7 +5,6 @@
  * If you need to modify this file, contact PMC first please.
  */
 import { mount } from '@vue/test-utils';
-import { vi } from 'vitest';
 import { Timeline, TimelineItem } from '..';
 import { getTimelineDefaultMount, getTimelineItemMount } from './mount';
 
