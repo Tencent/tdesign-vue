@@ -100,6 +100,7 @@ export interface TypeTreeScope {
 export interface TypeTreeState {
   scope: TypeTreeScope;
   store: TypeTreeStore;
+  nodes: Ref;
   treeContentRef: Ref;
   mouseEvent?: Event;
   virtualConfig?: TypeVirtualScrollConfig;

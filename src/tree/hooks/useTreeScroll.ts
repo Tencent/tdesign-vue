@@ -1,21 +1,16 @@
-import {
-  ref, SetupContext, Ref, computed, onMounted,
-} from '@vue/composition-api';
+import { SetupContext, computed, onMounted } from '@vue/composition-api';
 import useVirtualScroll from '../../hooks/useVirtualScrollNew';
 import { TypeTreeProps, TypeTreeState } from '../interface';
-
 import TreeNode from '../../_common/js/tree/tree-node';
 
 // tree 虚拟滚动整合
 export default function useTreeScroll(props: TypeTreeProps, context: SetupContext, state: TypeTreeState) {
   const treeState = state;
-  const { scope, treeContentRef } = treeState;
-
-  const nodes: Ref<TreeNode[]> = ref([]);
+  const { scope, treeContentRef, nodes } = treeState;
 
   // 虚拟滚动
   const virtualScrollParams = computed(() => {
-    const list = nodes.value.filter((node) => node.visible);
+    const list = nodes.value.filter((node: TreeNode) => node.visible);
     return {
       data: list,
       scroll: props.scroll,

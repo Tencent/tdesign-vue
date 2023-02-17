@@ -1,7 +1,5 @@
 import { CreateElement } from 'vue';
-import {
-  ref, nextTick, SetupContext, Ref,
-} from '@vue/composition-api';
+import { ref, nextTick, SetupContext } from '@vue/composition-api';
 import { TypeVNode, TypeTreeProps, TypeTreeState } from '../interface';
 import TreeItem from '../tree-item';
 import TreeNode from '../../_common/js/tree/tree-node';
@@ -10,7 +8,9 @@ import useTreeEvents from './useTreeEvents';
 // tree 节点列表渲染
 export default function useTreeNodes(props: TypeTreeProps, context: SetupContext, state: TypeTreeState) {
   const treeState = state;
-  const { store, scope, virtualConfig } = treeState;
+  const {
+    store, scope, nodes, virtualConfig,
+  } = treeState;
 
   const { handleClick, handleChange } = useTreeEvents(props, context, state);
 
@@ -43,7 +43,6 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
     clearStep = 1;
   };
 
-  const nodes: Ref<TreeNode[]> = ref([]);
   const nodesEmpty = ref(false);
   const refresh = () => {
     // 渲染为平铺列表
