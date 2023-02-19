@@ -5,6 +5,7 @@
 
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
+shape | String | square | 侧边栏菜单形状。可选项: square(方形)/oval(椭圆形) | N
 collapsed | Boolean | false | 默认是否折叠 | N
 draggable | Boolean | false | 是否可拖拽 | N
 entrance | Slot / Function | - | 自定义折叠入口，collapsed 值为 true 有效。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
