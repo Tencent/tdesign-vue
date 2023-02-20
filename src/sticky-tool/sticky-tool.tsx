@@ -25,7 +25,17 @@ export default mixins(getConfigReceiverMixins('sticky-tool')).extend({
     const nodes = this.$scopedSlots?.default && this.$scopedSlots.default(null);
     const list = this.getList();
     const content = list.map((item, index) => {
-      const stickyItem = <t-step-item props={item} key={item.label || index}></t-step-item>;
+      const stickyItem = (
+        <t-sticky-item
+          props={{
+            ...item,
+            type: this.type,
+            onClick: this.onClick,
+            onHover: this.onHover,
+          }}
+          key={item.label || index}
+        ></t-sticky-item>
+      );
 
       if (nodes && nodes[index]) {
         const vnode = nodes[index];

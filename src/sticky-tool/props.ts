@@ -9,10 +9,14 @@ import { TdStickyToolProps } from './type';
 import { PropType } from 'vue';
 
 export default {
-  /** 默认是否折叠 */
-  collapsed: Boolean,
-  /** 是否可拖拽 */
-  draggable: Boolean,
+  type: {
+    type: String,
+    default: 'normal',
+  },
+  shape: {
+    type: String,
+    default: 'square',
+  },
   /** 自定义折叠入口，collapsed 值为 true 有效 */
   entrance: {
     type: Function as PropType<TdStickyToolProps['entrance']>,
