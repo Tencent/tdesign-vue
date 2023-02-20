@@ -258,18 +258,18 @@ export default defineComponent({
     },
 
     renderTooltipBody() {
-      const { body } = this.currentStepInfo;
+      const { body: stepBody } = this.currentStepInfo;
       let descBody: any;
-      if (isFunction(body)) {
-        descBody = body(h);
+      if (isFunction(stepBody)) {
+        descBody = stepBody(h);
       } else if (this.$scopedSlots.body) {
         const hParams = h;
         Object.assign(hParams, { currentStepInfo: this.currentStepInfo });
         descBody = this.$scopedSlots.body(hParams);
-      } else if (typeof body === 'string') {
-        descBody = body;
+      } else if (typeof stepBody === 'string') {
+        descBody = stepBody;
       } else {
-        descBody = <body />;
+        descBody = <stepBody />;
       }
       return descBody ? <div class={`${this.componentName}__desc`}>{descBody}</div> : null;
     },
@@ -461,7 +461,7 @@ export default defineComponent({
       } else if (typeof content === 'string') {
         renderBody = content;
       } else if (content) {
-        renderBody = () => <content {...contentProps} />;
+        renderBody = () => <content props={contentProps} />;
       } else {
         renderBody = renderPopupContent;
       }
@@ -484,7 +484,7 @@ export default defineComponent({
           placement={currentStepInfo.placement}
           props={this.currentStepInfo.popupProps}
           content={renderBody}
-          overlayClassName={currentStepInfo?.stepOverlayClass}
+          overlayClassName={[`${this.componentName}__popup`, currentStepInfo?.stepOverlayClass]}
           overlayInnerClassName={innerClassName.concat(this.currentStepInfo.popupProps?.overlayInnerClassName)}
         >
           <div ref="referenceLayerRef" v-transfer-dom="body" class={classes} />

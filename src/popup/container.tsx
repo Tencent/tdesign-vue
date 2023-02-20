@@ -42,7 +42,7 @@ const Trigger = Vue.extend({
     };
   },
   mounted() {
-    if (!this.$el || process?.env?.NODE_ENV === 'test') return;
+    if (!this.$el || (typeof process !== 'undefined' && process.env?.NODE_ENV === 'test')) return;
     this.$on(
       'hook:destroyed',
       observeResize(this.$el, (ev) => {
@@ -87,7 +87,7 @@ export default Vue.extend({
     });
   },
   destroyed() {
-    if (process?.env?.NODE_ENV === 'test') return;
+    if (typeof process !== 'undefined' && process.env?.NODE_ENV === 'test') return;
     this.unmountContent();
   },
   methods: {
