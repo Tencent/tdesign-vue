@@ -36471,9 +36471,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/table.vue 1
             >
               <div
                 class="t-table__empty"
-              >
-                Empty Data
-              </div>
+              />
             </td>
           </tr>
         </tbody>
@@ -43777,7 +43775,7 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/modal.vue 1`] = `
         <span
           class="t-button__text"
         >
-          模态对话框-不可拖拽
+          非模态对话框-不可拖拽
         </span>
       </button>
     </div>
@@ -43909,89 +43907,6 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/modal.vue 1`] = `
                 class="t-dialog__header-content"
               >
                 非模态对话框
-              </div>
-              <span
-                class="t-dialog__close"
-              >
-                <svg
-                  class="t-icon t-icon-close"
-                  fill="none"
-                  height="1em"
-                  viewBox="0 0 16 16"
-                  width="1em"
-                >
-                  <path
-                    d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
-                    fill="currentColor"
-                    fill-opacity="0.9"
-                  />
-                </svg>
-              </span>
-            </div>
-            <div
-              class="t-dialog__body"
-            >
-              <div>
-                <div>
-                  对话框内容
-                </div>
-              </div>
-            </div>
-            <div
-              class="t-dialog__footer"
-            >
-              <div>
-                <button
-                  class="t-button t-button--variant-base t-button--theme-default t-dialog__cancel"
-                  type="button"
-                >
-                  <span
-                    class="t-button__text"
-                  >
-                    取消
-                  </span>
-                </button>
-                <button
-                  class="t-button t-button--variant-base t-button--theme-primary t-dialog__confirm"
-                  type="button"
-                >
-                  <span
-                    class="t-button__text"
-                  >
-                    确认
-                  </span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </transition-stub>
-  <transition-stub
-    duration="300"
-    name="t-dialog-zoom__vue"
-  >
-    <div
-      class="t-dialog__ctx t-dialog__ctx--modeless"
-      style="display: none;"
-    >
-      <div
-        class="t-dialog__wrap"
-      >
-        <div
-          class="t-dialog__position t-dialog--top"
-        >
-          <div
-            class="t-dialog t-dialog--default t-dialog__modal-default"
-          >
-            <div
-              class="t-dialog__header"
-            >
-              <div
-                class="t-dialog__header-content"
-              >
-                非模态对话框-不可拖拽
               </div>
               <span
                 class="t-dialog__close"
@@ -47637,18 +47552,20 @@ exports[`csr snapshot test > csr test ./src/form/_example/align.vue 1`] = `
 exports[`csr snapshot test > csr test ./src/form/_example/base.vue 1`] = `
 <form
   class="t-form"
+  data-v-2450e2c3=""
 >
   <div
-    class="t-form__item t-form-item__name"
+    class="t-form__item t-form-item__account t-form__item-with-help"
+    data-v-2450e2c3=""
   >
     <div
-      class="t-form__label t-form__label--required t-form__label--colon t-form__label--right"
+      class="t-form__label t-form__label--required t-form__label--right"
       style="width: 100px;"
     >
       <label
         for=""
       >
-        姓名
+        用户名
       </label>
     </div>
     <div
@@ -47660,6 +47577,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/base.vue 1`] = `
       >
         <div
           class="t-input__wrap"
+          data-v-2450e2c3=""
         >
           <div
             class="t-input"
@@ -47667,26 +47585,178 @@ exports[`csr snapshot test > csr test ./src/form/_example/base.vue 1`] = `
             <input
               autocomplete=""
               class="t-input__inner"
-              placeholder="请输入姓名"
+              placeholder="请输入用户名"
               type="text"
               unselectable="off"
             />
           </div>
         </div>
       </div>
+      <div
+        class="t-input__help"
+      >
+        这里可以展示一段说明文字
+      </div>
     </div>
   </div>
   <div
-    class="t-form__item t-form-item__tel"
+    class="t-form__item t-form-item__age"
+    data-v-2450e2c3=""
   >
     <div
-      class="t-form__label t-form__label--colon t-form__label--right"
+      class="t-form__label t-form__label--required t-form__label--right"
       style="width: 100px;"
     >
       <label
         for=""
       >
-        手机号码
+        年龄
+      </label>
+    </div>
+    <div
+      class="t-form__controls"
+      style="margin-left: 100px;"
+    >
+      <div
+        class="t-form__controls-content"
+      >
+        <div
+          class="t-input-number t-size-m t-input-number--row"
+          data-v-2450e2c3=""
+        >
+          <button
+            class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
+            type="button"
+          >
+            <svg
+              class="t-icon t-icon-remove t-size-m"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M3.5 7.35h9v1.3h-9v-1.3z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </button>
+          <div
+            class="t-input__wrap"
+          >
+            <div
+              class="t-input t-align-center"
+            >
+              <input
+                autocomplete="off"
+                class="t-input__inner"
+                placeholder="年龄"
+                type="text"
+                unselectable="off"
+              />
+            </div>
+          </div>
+          <button
+            class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
+            type="button"
+          >
+            <svg
+              class="t-icon t-icon-add t-size-m"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-form__item t-form-item__region"
+    data-v-2450e2c3=""
+  >
+    <div
+      class="t-form__label t-form__label--required t-form__label--right"
+      style="width: 100px;"
+    >
+      <label
+        for=""
+      >
+        籍贯
+      </label>
+    </div>
+    <div
+      class="t-form__controls"
+      style="margin-left: 100px;"
+    >
+      <div
+        class="t-form__controls-content"
+      >
+        <div
+          class="t-select-input t-select-input--empty t-cascader"
+          data-v-2450e2c3=""
+        >
+          <div
+            class="t-input__wrap"
+          >
+            <div
+              class="t-input t-input--prefix t-input--suffix"
+            >
+              <div
+                class="t-input__prefix"
+              />
+              <input
+                autocomplete=""
+                class="t-input__inner"
+                placeholder="请选择籍贯"
+                type="text"
+                unselectable="off"
+              />
+              <span
+                class="t-input__suffix t-input__suffix-icon"
+              >
+                <svg
+                  class="t-fake-arrow t-cascader__icon"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-form__item t-form-item__password"
+    data-v-2450e2c3=""
+  >
+    <div
+      class="t-form__label t-form__label--required t-form__label--right"
+      style="width: 100px;"
+    >
+      <label
+        for=""
+      >
+        密码
       </label>
     </div>
     <div
@@ -47698,33 +47768,57 @@ exports[`csr snapshot test > csr test ./src/form/_example/base.vue 1`] = `
       >
         <div
           class="t-input__wrap"
+          data-v-2450e2c3=""
         >
           <div
-            class="t-input"
+            class="t-input t-input--suffix"
           >
             <input
               autocomplete=""
               class="t-input__inner"
-              placeholder="请输入手机号码"
-              type="text"
+              placeholder="请输入密码"
+              type="password"
               unselectable="off"
             />
+            <span
+              class="t-input__suffix t-input__suffix-icon"
+            >
+              <svg
+                class="t-icon t-icon-browse-off t-input__suffix-clear"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
+              >
+                <path
+                  d="M10.77 11.98l1.38 1.37.7-.7-9.7-9.7-.7.7 1.2 1.21a7.9 7.9 0 00-2.53 2.91L1 8l.12.23a7.72 7.72 0 009.65 3.75zM10 11.2A6.67 6.67 0 012.11 8c.56-1 1.34-1.83 2.26-2.43l1.08 1.09a2.88 2.88 0 003.9 3.9l.64.64zM6.21 7.42l2.37 2.37a1.88 1.88 0 01-2.37-2.37zM14.88 8.23L15 8l-.12-.23a7.73 7.73 0 00-9.35-3.86l.8.8A6.7 6.7 0 0113.9 8a6.87 6.87 0 01-2.02 2.26l.7.7a7.9 7.9 0 002.3-2.73z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+                <path
+                  d="M10.88 8c0 .37-.07.73-.2 1.06l-.82-.82.02-.24a1.88 1.88 0 00-2.12-1.86l-.82-.82A2.87 2.87 0 0110.88 8z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </span>
           </div>
         </div>
       </div>
     </div>
   </div>
   <div
-    class="t-form__item t-form-item__status"
+    class="t-form__item t-form-item__email"
+    data-v-2450e2c3=""
   >
     <div
-      class="t-form__label t-form__label--colon t-form__label--right"
+      class="t-form__label t-form__label--required t-form__label--right"
       style="width: 100px;"
     >
       <label
         for=""
       >
-        接收短信
+        邮箱
       </label>
     </div>
     <div
@@ -47735,23 +47829,30 @@ exports[`csr snapshot test > csr test ./src/form/_example/base.vue 1`] = `
         class="t-form__controls-content"
       >
         <div
-          class="t-switch t-size-m"
+          class="t-input__wrap"
+          data-v-2450e2c3=""
         >
-          <span
-            class="t-switch__handle"
-          />
           <div
-            class="t-switch__content t-size-m"
-          />
+            class="t-input"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入邮箱"
+              type="text"
+              unselectable="off"
+            />
+          </div>
         </div>
       </div>
     </div>
   </div>
   <div
     class="t-form__item t-form-item__gender"
+    data-v-2450e2c3=""
   >
     <div
-      class="t-form__label t-form__label--colon t-form__label--right"
+      class="t-form__label t-form__label--required t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -47769,17 +47870,19 @@ exports[`csr snapshot test > csr test ./src/form/_example/base.vue 1`] = `
       >
         <div
           class="t-radio-group t-size-m t-radio-group__outline"
+          data-v-2450e2c3=""
         >
           <label
             class="t-radio"
+            data-v-2450e2c3=""
             tabindex="0"
           >
             <input
               class="t-radio__former"
-              data-value="'1'"
+              data-value="'male'"
               tabindex="-1"
               type="radio"
-              value="1"
+              value="male"
             />
             <span
               class="t-radio__input"
@@ -47792,14 +47895,15 @@ exports[`csr snapshot test > csr test ./src/form/_example/base.vue 1`] = `
           </label>
           <label
             class="t-radio"
+            data-v-2450e2c3=""
             tabindex="0"
           >
             <input
               class="t-radio__former"
-              data-value="'2'"
+              data-value="'female'"
               tabindex="-1"
               type="radio"
-              value="2"
+              value="female"
             />
             <span
               class="t-radio__input"
@@ -47816,9 +47920,10 @@ exports[`csr snapshot test > csr test ./src/form/_example/base.vue 1`] = `
   </div>
   <div
     class="t-form__item t-form-item__course"
+    data-v-2450e2c3=""
   >
     <div
-      class="t-form__label t-form__label--colon t-form__label--right"
+      class="t-form__label t-form__label--required t-form__label--right"
       style="width: 100px;"
     >
       <label
@@ -47836,6 +47941,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/base.vue 1`] = `
       >
         <div
           class="t-checkbox-group"
+          data-v-2450e2c3=""
         >
           <label
             class="t-checkbox"
@@ -47891,12 +47997,315 @@ exports[`csr snapshot test > csr test ./src/form/_example/base.vue 1`] = `
               英语
             </span>
           </label>
+          <label
+            class="t-checkbox"
+          >
+            <input
+              class="t-checkbox__former"
+              name=""
+              type="checkbox"
+              value="4"
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
+            >
+              体育
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-form__item t-form-item__college"
+    data-v-2450e2c3=""
+  >
+    <div
+      class="t-form__label t-form__label--required t-form__label--right"
+      style="width: 100px;"
+    >
+      <label
+        for=""
+      >
+        学院
+      </label>
+    </div>
+    <div
+      class="t-form__controls"
+      style="margin-left: 100px;"
+    >
+      <div
+        class="t-form__controls-content"
+      >
+        <div
+          class="demo-select-base t-select__wrap"
+          data-v-2450e2c3=""
+        >
+          <div
+            class="t-select-input t-select-input--empty t-select"
+          >
+            <div
+              class="t-input__wrap"
+            >
+              <div
+                class="t-input t-input--prefix t-input--suffix"
+              >
+                <div
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择所在学院"
+                  type="text"
+                  unselectable="off"
+                />
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-fake-arrow t-select__right-icon"
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                      stroke="black"
+                      stroke-opacity="0.9"
+                      stroke-width="1.3"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-form__item t-form-item__date"
+    data-v-2450e2c3=""
+  >
+    <div
+      class="t-form__label t-form__label--required t-form__label--right"
+      style="width: 100px;"
+    >
+      <label
+        for=""
+      >
+        入学时间
+      </label>
+    </div>
+    <div
+      class="t-form__controls"
+      style="margin-left: 100px;"
+    >
+      <div
+        class="t-form__controls-content"
+      >
+        <div
+          class="t-date-picker"
+          data-v-2450e2c3=""
+        >
+          <div
+            class="t-select-input t-select-input--empty"
+          >
+            <div
+              class="t-input__wrap"
+            >
+              <div
+                class="t-input t-is-readonly t-input--prefix t-input--suffix"
+              >
+                <div
+                  class="t-input__prefix"
+                />
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请选择日期"
+                  readonly="readonly"
+                  type="text"
+                  unselectable="on"
+                />
+                <span
+                  class="t-input__suffix t-input__suffix-icon"
+                >
+                  <svg
+                    class="t-icon t-icon-calendar"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 16 16"
+                    width="1em"
+                  >
+                    <path
+                      d="M10 3H6V1.5H5V3H3a1 1 0 00-1 1v9a1 1 0 001 1h10a1 1 0 001-1V4a1 1 0 00-1-1h-2V1.5h-1V3zM5 5h1V4h4v1h1V4h2v2H3V4h2v1zM3 7h10v6H3V7z"
+                      fill="currentColor"
+                      fill-opacity="0.9"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-form__item t-form-item__content.url"
+    data-v-2450e2c3=""
+  >
+    <div
+      class="t-form__label t-form__label--required t-form__label--right"
+      style="width: 100px;"
+    >
+      <label
+        for=""
+      >
+        个人网站
+      </label>
+    </div>
+    <div
+      class="t-form__controls"
+      style="margin-left: 100px;"
+    >
+      <div
+        class="t-form__controls-content"
+      >
+        <div
+          class="t-input__wrap"
+          data-v-2450e2c3=""
+        >
+          <div
+            class="t-input"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入个人网站地址"
+              type="text"
+              unselectable="off"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-form__item t-form-item__description t-form__item-with-help"
+    data-v-2450e2c3=""
+  >
+    <div
+      class="t-form__label t-form__label--right"
+      style="width: 100px;"
+    >
+      <label
+        for=""
+      >
+        个人简介
+      </label>
+    </div>
+    <div
+      class="t-form__controls"
+      style="margin-left: 100px;"
+    >
+      <div
+        class="t-form__controls-content"
+      >
+        <div
+          class="t-textarea"
+          data-v-2450e2c3=""
+        >
+          <textarea
+            class="t-textarea__inner"
+            placeholder="请用一句话介绍自己"
+            unselectable="off"
+          />
+        </div>
+      </div>
+      <div
+        class="t-input__help"
+      >
+        请用一句话介绍自己
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-form__item t-form-item__hobby"
+    data-v-2450e2c3=""
+  >
+    <div
+      class="t-form__label t-form__label--required t-form__label--right"
+      style="width: 100px;"
+    >
+      <label
+        for=""
+      >
+        兴趣爱好
+      </label>
+    </div>
+    <div
+      class="t-form__controls"
+      style="margin-left: 100px;"
+    >
+      <div
+        class="t-form__controls-content"
+      >
+        <div
+          class="t-select-input t-tree-select"
+          data-v-2450e2c3=""
+        >
+          <div
+            class="t-input__wrap"
+          >
+            <div
+              class="t-input t-input--prefix t-input--suffix"
+            >
+              <div
+                class="t-input__prefix"
+              />
+              <input
+                autocomplete=""
+                class="t-input__inner"
+                placeholder="请选择你的兴趣爱好"
+                type="text"
+                unselectable="off"
+              />
+              <span
+                class="t-input__suffix t-input__suffix-icon"
+              >
+                <svg
+                  class="t-fake-arrow"
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
   <div
     class="t-form__item t-form-item__"
+    data-v-2450e2c3=""
     style="margin-left: 100px;"
   >
     <div
@@ -47915,6 +48324,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/base.vue 1`] = `
       >
         <div
           class="t-space t-space-horizontal"
+          data-v-2450e2c3=""
           style="gap: 10px;"
         >
           <div
@@ -47922,6 +48332,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/base.vue 1`] = `
           >
             <button
               class="t-button t-button--variant-base t-button--theme-primary"
+              data-v-2450e2c3=""
               type="submit"
             >
               <span
@@ -47936,12 +48347,28 @@ exports[`csr snapshot test > csr test ./src/form/_example/base.vue 1`] = `
           >
             <button
               class="t-button t-button--variant-base t-button--theme-default"
+              data-v-2450e2c3=""
               type="reset"
             >
               <span
                 class="t-button__text"
               >
                 重置
+              </span>
+            </button>
+          </div>
+          <div
+            class="t-space-item"
+          >
+            <button
+              class="t-button t-button--variant-base t-button--theme-default"
+              data-v-2450e2c3=""
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                清空校验结果
               </span>
             </button>
           </div>
@@ -53037,7 +53464,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
         class="t-form__controls-content"
       >
         <div
-          class="t-select-input t-tree-select"
+          class="t-select-input t-select-input--empty t-tree-select"
           data-v-064ce350=""
         >
           <div
@@ -101884,9 +102311,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/empty.vue 1`] = `
             >
               <div
                 class="t-table__empty"
-              >
-                暂无数据
-              </div>
+              />
             </td>
           </tr>
         </tbody>
@@ -102009,11 +102434,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/empty.vue 1`] = `
             >
               <div
                 class="t-table__empty"
-              >
-                <span>
-                  😊 使用插槽自定义的空内容 😊
-                </span>
-              </div>
+              />
             </td>
           </tr>
         </tbody>
@@ -102136,11 +102557,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/empty.vue 1`] = `
             >
               <div
                 class="t-table__empty"
-              >
-                <span>
-                  😊 使用渲染函数自定义的空内容 😊
-                </span>
-              </div>
+              />
             </td>
           </tr>
         </tbody>
@@ -119258,9 +119675,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination-ajax.vue 1
           >
             <div
               class="t-table__empty"
-            >
-              暂无数据
-            </div>
+            />
           </td>
         </tr>
       </tbody>
@@ -134422,11 +134837,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/base.vue 1`] = `
         >
           <div
             class="t-timeline-item__dot  t-timeline-item__dot--primary"
-          >
-            <div
-              class="t-timeline-item__dot-content"
-            />
-          </div>
+          />
           <div
             class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-primary"
           />
@@ -134450,11 +134861,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/base.vue 1`] = `
         >
           <div
             class="t-timeline-item__dot  t-timeline-item__dot--primary"
-          >
-            <div
-              class="t-timeline-item__dot-content"
-            />
-          </div>
+          />
           <div
             class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-primary"
           />
@@ -134478,11 +134885,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/base.vue 1`] = `
         >
           <div
             class="t-timeline-item__dot  t-timeline-item__dot--primary"
-          >
-            <div
-              class="t-timeline-item__dot-content"
-            />
-          </div>
+          />
           <div
             class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-primary"
           />
@@ -134506,11 +134909,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/base.vue 1`] = `
         >
           <div
             class="t-timeline-item__dot  t-timeline-item__dot--primary"
-          >
-            <div
-              class="t-timeline-item__dot-content"
-            />
-          </div>
+          />
           <div
             class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-primary"
           />
@@ -134548,11 +134947,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customContent.vue 
       >
         <div
           class="t-timeline-item__dot  t-timeline-item__dot--primary"
-        >
-          <div
-            class="t-timeline-item__dot-content"
-          />
-        </div>
+        />
         <div
           class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-primary"
         />
@@ -134587,11 +134982,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customContent.vue 
       >
         <div
           class="t-timeline-item__dot  t-timeline-item__dot--primary"
-        >
-          <div
-            class="t-timeline-item__dot-content"
-          />
-        </div>
+        />
         <div
           class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-primary"
         />
@@ -134626,11 +135017,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customContent.vue 
       >
         <div
           class="t-timeline-item__dot  t-timeline-item__dot--primary"
-        >
-          <div
-            class="t-timeline-item__dot-content"
-          />
-        </div>
+        />
         <div
           class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-primary"
         />
@@ -134665,11 +135052,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customContent.vue 
       >
         <div
           class="t-timeline-item__dot  t-timeline-item__dot--primary"
-        >
-          <div
-            class="t-timeline-item__dot-content"
-          />
-        </div>
+        />
         <div
           class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-primary"
         />
@@ -134787,23 +135170,19 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
           <div
             class="t-timeline-item__dot t-timeline-item__dot--custom t-timeline-item__dot--primary"
           >
-            <div
-              class="t-timeline-item__dot-content"
+            <svg
+              class="t-icon t-icon-tips t-size-m t-timeline-item__dot-content"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
             >
-              <svg
-                class="t-icon t-icon-tips t-size-m"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M8 1c-1.38 0-2.63.55-3.53 1.47a4.96 4.96 0 000 7.06c.3.32.65.58 1.03.8V12a1 1 0 001 1h3a1 1 0 001-1v-1.67A4.96 4.96 0 0013 6a5 5 0 00-5-5zM5.18 3.17a4 4 0 115.65 5.65v.01c-.3.3-.66.55-1.05.75l-.28.14V12h-3V9.72l-.28-.14A3.96 3.96 0 014 6c0-1.1.44-2.1 1.17-2.82zM5.5 14v1h5v-1h-5z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </div>
+              <path
+                d="M8 1c-1.38 0-2.63.55-3.53 1.47a4.96 4.96 0 000 7.06c.3.32.65.58 1.03.8V12a1 1 0 001 1h3a1 1 0 001-1v-1.67A4.96 4.96 0 0013 6a5 5 0 00-5-5zM5.18 3.17a4 4 0 115.65 5.65v.01c-.3.3-.66.55-1.05.75l-.28.14V12h-3V9.72l-.28-.14A3.96 3.96 0 014 6c0-1.1.44-2.1 1.17-2.82zM5.5 14v1h5v-1h-5z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
           </div>
           <div
             class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-primary"
@@ -134829,23 +135208,19 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
           <div
             class="t-timeline-item__dot t-timeline-item__dot--custom t-timeline-item__dot--primary"
           >
-            <div
-              class="t-timeline-item__dot-content"
+            <svg
+              class="t-icon t-icon-user t-size-m t-timeline-item__dot-content"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
             >
-              <svg
-                class="t-icon t-icon-user t-size-m"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M11.5 5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0zm-1 0a2.5 2.5 0 10-5 0 2.5 2.5 0 005 0zM13.96 10.85c.34.16.54.5.54.87V14a.5.5 0 01-.5.5H2a.5.5 0 01-.5-.5v-2.28c0-.37.2-.7.54-.87a13.79 13.79 0 0111.92 0zM8 10.5c-1.97 0-3.83.45-5.5 1.24v1.76h11v-1.76A12.78 12.78 0 008 10.5z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </div>
+              <path
+                d="M11.5 5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0zm-1 0a2.5 2.5 0 10-5 0 2.5 2.5 0 005 0zM13.96 10.85c.34.16.54.5.54.87V14a.5.5 0 01-.5.5H2a.5.5 0 01-.5-.5v-2.28c0-.37.2-.7.54-.87a13.79 13.79 0 0111.92 0zM8 10.5c-1.97 0-3.83.45-5.5 1.24v1.76h11v-1.76A12.78 12.78 0 008 10.5z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
           </div>
           <div
             class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-primary"
@@ -134871,23 +135246,19 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
           <div
             class="t-timeline-item__dot t-timeline-item__dot--custom t-timeline-item__dot--primary"
           >
-            <div
-              class="t-timeline-item__dot-content"
+            <svg
+              class="t-icon t-icon-heart t-size-m t-timeline-item__dot-content"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
             >
-              <svg
-                class="t-icon t-icon-heart t-size-m"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M8 5.86l1.06-.98a2.35 2.35 0 013.25 3.4L8 12.57l-4.31-4.3a2.35 2.35 0 013.25-3.4L8 5.86zm-.39-1.72a3.35 3.35 0 00-4.63 4.84l4.87 4.87a.2.2 0 00.3 0l4.87-4.87a3.35 3.35 0 00-4.63-4.84L8 4.5l-.39-.36z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </div>
+              <path
+                d="M8 5.86l1.06-.98a2.35 2.35 0 013.25 3.4L8 12.57l-4.31-4.3a2.35 2.35 0 013.25-3.4L8 5.86zm-.39-1.72a3.35 3.35 0 00-4.63 4.84l4.87 4.87a.2.2 0 00.3 0l4.87-4.87a3.35 3.35 0 00-4.63-4.84L8 4.5l-.39-.36z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
           </div>
           <div
             class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-primary"
@@ -134913,28 +135284,24 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
           <div
             class="t-timeline-item__dot t-timeline-item__dot--custom t-timeline-item__dot--primary"
           >
-            <div
-              class="t-timeline-item__dot-content"
+            <svg
+              class="t-icon t-icon-home t-size-m t-timeline-item__dot-content"
+              fill="none"
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
             >
-              <svg
-                class="t-icon t-icon-home t-size-m"
-                fill="none"
-                height="1em"
-                viewBox="0 0 16 16"
-                width="1em"
-              >
-                <path
-                  d="M6 11v1h4v-1H6z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-                <path
-                  d="M7.65 1.65c.2-.2.5-.2.7 0l6.5 6.5-.7.7L13 7.71v5.79a1 1 0 01-1 1H4a1 1 0 01-1-1V7.7L1.85 8.86l-.7-.7 6.5-6.5zM8 2.7l-4 4v6.79h8V6.7l-4-4z"
-                  fill="currentColor"
-                  fill-opacity="0.9"
-                />
-              </svg>
-            </div>
+              <path
+                d="M6 11v1h4v-1H6z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+              <path
+                d="M7.65 1.65c.2-.2.5-.2.7 0l6.5 6.5-.7.7L13 7.71v5.79a1 1 0 01-1 1H4a1 1 0 01-1-1V7.7L1.85 8.86l-.7-.7 6.5-6.5zM8 2.7l-4 4v6.79h8V6.7l-4-4z"
+                fill="currentColor"
+                fill-opacity="0.9"
+              />
+            </svg>
           </div>
           <div
             class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-primary"
@@ -135186,11 +135553,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
       >
         <div
           class="t-timeline-item__dot  t-timeline-item__dot--primary"
-        >
-          <div
-            class="t-timeline-item__dot-content"
-          />
-        </div>
+        />
         <div
           class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-primary"
         />
@@ -135214,11 +135577,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
       >
         <div
           class="t-timeline-item__dot  t-timeline-item__dot--primary"
-        >
-          <div
-            class="t-timeline-item__dot-content"
-          />
-        </div>
+        />
         <div
           class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-primary"
         />
@@ -135242,11 +135601,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
       >
         <div
           class="t-timeline-item__dot  t-timeline-item__dot--primary"
-        >
-          <div
-            class="t-timeline-item__dot-content"
-          />
-        </div>
+        />
         <div
           class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-primary"
         />
@@ -135270,11 +135625,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
       >
         <div
           class="t-timeline-item__dot  t-timeline-item__dot--primary"
-        >
-          <div
-            class="t-timeline-item__dot-content"
-          />
-        </div>
+        />
         <div
           class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-primary"
         />
@@ -135361,11 +135712,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/loading.vue 1`] = 
       >
         <div
           class="t-timeline-item__dot  t-timeline-item__dot--primary"
-        >
-          <div
-            class="t-timeline-item__dot-content"
-          />
-        </div>
+        />
         <div
           class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-primary"
         />
@@ -135389,11 +135736,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/loading.vue 1`] = 
       >
         <div
           class="t-timeline-item__dot  t-timeline-item__dot--primary"
-        >
-          <div
-            class="t-timeline-item__dot-content"
-          />
-        </div>
+        />
         <div
           class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-primary"
         />
@@ -135417,11 +135760,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/loading.vue 1`] = 
       >
         <div
           class="t-timeline-item__dot  t-timeline-item__dot--primary"
-        >
-          <div
-            class="t-timeline-item__dot-content"
-          />
-        </div>
+        />
         <div
           class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-primary"
         />
@@ -135445,11 +135784,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/loading.vue 1`] = 
       >
         <div
           class="t-timeline-item__dot  t-timeline-item__dot--primary"
-        >
-          <div
-            class="t-timeline-item__dot-content"
-          />
-        </div>
+        />
         <div
           class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-primary"
         />
@@ -135517,11 +135852,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/reverse.vue 1`] = 
       >
         <div
           class="t-timeline-item__dot  t-timeline-item__dot--primary"
-        >
-          <div
-            class="t-timeline-item__dot-content"
-          />
-        </div>
+        />
         <div
           class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-primary"
         />
@@ -135545,11 +135876,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/reverse.vue 1`] = 
       >
         <div
           class="t-timeline-item__dot  t-timeline-item__dot--primary"
-        >
-          <div
-            class="t-timeline-item__dot-content"
-          />
-        </div>
+        />
         <div
           class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-primary"
         />
@@ -135573,11 +135900,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/reverse.vue 1`] = 
       >
         <div
           class="t-timeline-item__dot  t-timeline-item__dot--primary"
-        >
-          <div
-            class="t-timeline-item__dot-content"
-          />
-        </div>
+        />
         <div
           class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-primary"
         />
@@ -135601,11 +135924,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/reverse.vue 1`] = 
       >
         <div
           class="t-timeline-item__dot  t-timeline-item__dot--primary"
-        >
-          <div
-            class="t-timeline-item__dot-content"
-          />
-        </div>
+        />
         <div
           class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-primary"
         />
@@ -135634,6 +135953,29 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/theme.vue 1`] = `
     <div
       class="t-space-item"
     >
+      <li
+        class="t-timeline-item t-timeline-item-left "
+      >
+        <div
+          class="t-timeline-item__wrapper"
+        >
+          <div
+            class="t-timeline-item__dot  t-timeline-item__dot--primary"
+          />
+          <div
+            class="t-timeline-item__tail t-timeline-item__tail--theme-undefined "
+          />
+        </div>
+        <div
+          class="t-timeline-item__content"
+        >
+          123
+        </div>
+      </li>
+    </div>
+    <div
+      class="t-space-item"
+    >
       <ul
         class="t-timeline t-timeline-left t-timeline-vertical t-timeline-label--same t-timeline-label"
       >
@@ -135645,11 +135987,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/theme.vue 1`] = `
           >
             <div
               class="t-timeline-item__dot  t-timeline-item__dot--primary"
-            >
-              <div
-                class="t-timeline-item__dot-content"
-              />
-            </div>
+            />
             <div
               class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-primary"
             />
@@ -135673,11 +136011,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/theme.vue 1`] = `
           >
             <div
               class="t-timeline-item__dot  t-timeline-item__dot--error"
-            >
-              <div
-                class="t-timeline-item__dot-content"
-              />
-            </div>
+            />
             <div
               class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-error"
             />
@@ -135701,11 +136035,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/theme.vue 1`] = `
           >
             <div
               class="t-timeline-item__dot  t-timeline-item__dot--warning"
-            >
-              <div
-                class="t-timeline-item__dot-content"
-              />
-            </div>
+            />
             <div
               class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-warning"
             />
@@ -135729,11 +136059,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/theme.vue 1`] = `
           >
             <div
               class="t-timeline-item__dot  t-timeline-item__dot--primary"
-            >
-              <div
-                class="t-timeline-item__dot-content"
-              />
-            </div>
+            />
             <div
               class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-primary"
             />
@@ -135758,11 +136084,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/theme.vue 1`] = `
             <div
               class="t-timeline-item__dot  "
               style="border-color: yellowgreen;"
-            >
-              <div
-                class="t-timeline-item__dot-content"
-              />
-            </div>
+            />
             <div
               class="t-timeline-item__tail t-timeline-item__tail--theme-default t-timeline-item__tail--status-yellowgreen"
             />
