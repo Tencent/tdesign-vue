@@ -18,6 +18,12 @@
       <t-form-item label="显示图标">
         <t-switch v-model="showIcon" />
       </t-form-item>
+      <t-form-item label="可选">
+        <t-switch v-model="isCheckable" />
+      </t-form-item>
+      <t-form-item label="可操作">
+        <t-switch v-model="isOperateAble" />
+      </t-form-item>
       <t-form-item label="启用虚拟滚动">
         <t-switch v-model="enableVScroll" />
       </t-form-item>
@@ -27,7 +33,7 @@
       :data="items"
       hover
       activable
-      checkable
+      :checkable="isCheckable"
       expand-all
       :height="enableVScroll ? 300 : 0"
       :transition="transition"
@@ -39,7 +45,7 @@
       ref="tree"
     >
       <template #operations="{ node }">
-        <div class="tdesign-demo-block-row">
+        <div class="tdesign-demo-block-row" v-if="isOperateAble">
           <t-button size="small" variant="base" @click="append(node)">添加子节点</t-button>
           <t-button size="small" variant="base" theme="danger" @click="remove(node)">删除</t-button>
         </div>
@@ -91,6 +97,8 @@ export default {
       expandParent: true,
       showLine: true,
       showIcon: true,
+      isCheckable: true,
+      isOperateAble: true,
       scroll: {
         rowHeight: 34,
         bufferSize: 10,
