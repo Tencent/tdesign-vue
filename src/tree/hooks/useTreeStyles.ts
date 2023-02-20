@@ -12,7 +12,7 @@ export default function useTreeStyles(props: TypeTreeProps, state: TypeTreeState
   const componentName = usePrefixClass('tree').value;
   const classPrefix = usePrefixClass().value;
   const treeState = state;
-  const { virtualConfig } = treeState;
+  const { virtualConfig, isScrolling } = treeState;
 
   const { height, maxHeight } = toRefs(props);
   const isVirtual = virtualConfig?.isVirtualScroll.value;
@@ -42,6 +42,9 @@ export default function useTreeStyles(props: TypeTreeProps, state: TypeTreeState
     }
     if (isVirtual) {
       list.push(`${componentName}--vscroll`);
+    }
+    if (isScrolling.value) {
+      list.push(`${componentName}--scrolling`);
     }
     return list;
   });

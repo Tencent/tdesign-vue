@@ -15,27 +15,18 @@ import {
 export * from './type';
 
 export type TypeVNode = VNode;
-
 export type TreeProps = TdTreeProps;
 export type TypeTreeProps = TdTreeProps;
-
 export type TypeTNodeState = TreeNodeValue;
-
 export type TypeTNodeValue = TreeNodeState;
-
 export type TypeTreeNode = TreeNode;
-
 export type TypeTreeStore = TreeStore;
-
 export type TypeValueMode = TypeTreeProps['valueMode'];
-
 export type TypeTNodeProp = boolean | string | TNode<TypeTreeNodeModel>;
-
 export type TypeTreeNodeModel = TreeNodeModel<TreeOptionData>;
-
 export type TypeTargetNode = TreeNodeValue | TypeTreeNode | TypeTreeNodeModel;
-
 export type TypeVirtualScrollConfig = VirtualScrollConfig;
+export type TypeTimer = ReturnType<typeof setTimeout>;
 
 export interface TypeEventState extends TypeTreeEventState {
   mouseEvent?: MouseEvent;
@@ -100,8 +91,9 @@ export interface TypeTreeScope {
 export interface TypeTreeState {
   scope: TypeTreeScope;
   store: TypeTreeStore;
-  nodes: Ref;
-  treeContentRef: Ref;
+  nodes: Ref<TreeNode[]>;
+  isScrolling: Ref<boolean>;
+  treeContentRef: Ref<HTMLDivElement>;
   mouseEvent?: Event;
   virtualConfig?: TypeVirtualScrollConfig;
 }

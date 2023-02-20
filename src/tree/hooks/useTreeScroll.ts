@@ -1,12 +1,14 @@
 import { SetupContext, computed, onMounted } from '@vue/composition-api';
 import useVirtualScroll from '../../hooks/useVirtualScrollNew';
-import { TypeTreeProps, TypeTreeState } from '../interface';
+import { TypeTreeProps, TypeTreeState, TypeTimer } from '../interface';
 import TreeNode from '../../_common/js/tree/tree-node';
 
 // tree 虚拟滚动整合
 export default function useTreeScroll(props: TypeTreeProps, context: SetupContext, state: TypeTreeState) {
   const treeState = state;
-  const { scope, treeContentRef, nodes } = treeState;
+  const {
+    scope, treeContentRef, nodes, isScrolling,
+  } = treeState;
 
   // 虚拟滚动
   const virtualScrollParams = computed(() => {
@@ -33,8 +35,23 @@ export default function useTreeScroll(props: TypeTreeProps, context: SetupContex
     context.emit('scroll', { e });
   };
 
+  // 设置滚动结束状态
+  let scrollStopTimer: TypeTimer = null;
+  const setScrolling = () => {
+    isScrolling.value = true;
+    if (scrollStopTimer) {
+      clearTimeout(scrollStopTimer);
+      scrollStopTimer = null;
+    }
+    scrollStopTimer = setTimeout(() => {
+      scrollStopTimer = null;
+      isScrolling.value = false;
+    }, 100);
+  };
+
   let lastScrollY = 0;
   const onInnerVirtualScroll = (e: WheelEvent) => {
+    setScrolling();
     const isVirtual = virtualConfig?.isVirtualScroll.value;
     const target = (e.target || e.srcElement) as HTMLElement;
     const top = target.scrollTop;
