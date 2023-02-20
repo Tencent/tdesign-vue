@@ -165,8 +165,8 @@ export default function useColumnResize(params: {
       /**
        * 计算列宽
        *  - 若表格宽度已经超出，存在横向滚动，则直接改变表格总宽度
-       *  - 操作边框右侧，改变当前列和上一列；若上一列禁用宽度调整，则改变表格总宽度
-       *  - 操作边框左侧，改变当前列和下一列；若下一列禁用宽度调整，则改变表格总宽度
+       *  - 操作边框右侧，改变当前列和上一列；若上一列禁用宽度调整，则改变上一列的上一列，依次往前寻找
+       *  - 操作边框左侧，改变当前列和下一列；若下一列禁用宽度调整，则改变下一列的下一列，依次往后寻找
        */
       const thWidthList = getThWidthList('calculate');
       const currentCol = effectColMap.value[col.colKey]?.current;

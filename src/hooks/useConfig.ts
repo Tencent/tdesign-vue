@@ -3,13 +3,14 @@ import { useConfig } from '../config-provider/useConfig';
 
 export function usePrefixClass(componentName?: string) {
   const { classPrefix } = useConfig('classPrefix');
-  return computed(() => componentName ? `${classPrefix.value}-${componentName}` : classPrefix.value);
+  return computed(() => (componentName ? `${classPrefix.value}-${componentName}` : classPrefix.value));
 }
 
 export function useCommonClassName() {
   const { classPrefix } = useConfig('classPrefix');
 
   return {
+    classPrefix,
     SIZE: computed(() => ({
       small: `${classPrefix.value}-size-s`,
       medium: `${classPrefix.value}-size-m`,
