@@ -228,8 +228,8 @@ export default defineComponent({
   methods: {
     getHighlightContent() {
       const params: any = h;
-      params.currentStepInfo = this.currentStepInfo;
-      const { highlightContent } = this.currentStepInfo;
+      params.currentStepInfo = this.currentStepInfo as GuideStep;
+      const { highlightContent } = this.currentStepInfo as GuideStep;
       // 支持组件
       let node: any = highlightContent;
       // 支持函数
@@ -251,20 +251,21 @@ export default defineComponent({
     },
 
     renderTooltipTitle() {
-      const functionTitle = isFunction(this.currentStepInfo.title) ? this.currentStepInfo.title(h) : undefined;
+      const currentStepInfo = this.currentStepInfo as GuideStep;
+      const functionTitle = isFunction(currentStepInfo.title) ? currentStepInfo.title(h) : undefined;
       const slotTitle = this.$scopedSlots.title ? this.$scopedSlots.title(h) : undefined;
-      const title = functionTitle || slotTitle || this.currentStepInfo.title;
+      const title = functionTitle || slotTitle || currentStepInfo.title;
       return title ? <div class={`${this.componentName}__title`}>{title}</div> : null;
     },
 
     renderTooltipBody() {
-      const { body: stepBody } = this.currentStepInfo;
+      const { body: stepBody } = this.currentStepInfo as GuideStep;
       let descBody: any;
       if (isFunction(stepBody)) {
         descBody = stepBody(h);
       } else if (this.$scopedSlots.body) {
         const hParams = h;
-        Object.assign(hParams, { currentStepInfo: this.currentStepInfo });
+        Object.assign(hParams, { currentStepInfo: this.currentStepInfo as GuideStep });
         descBody = this.$scopedSlots.body(hParams);
       } else if (typeof stepBody === 'string') {
         descBody = stepBody;
@@ -482,10 +483,10 @@ export default defineComponent({
           show-arrow={!content}
           zIndex={this.zIndex}
           placement={currentStepInfo.placement}
-          props={this.currentStepInfo.popupProps}
+          props={currentStepInfo.popupProps}
           content={renderBody}
           overlayClassName={[`${this.componentName}__popup`, currentStepInfo?.stepOverlayClass]}
-          overlayInnerClassName={innerClassName.concat(this.currentStepInfo.popupProps?.overlayInnerClassName)}
+          overlayInnerClassName={innerClassName.concat(currentStepInfo.popupProps?.overlayInnerClassName)}
         >
           <div ref="referenceLayerRef" v-transfer-dom="body" class={classes} />
         </Popup>
