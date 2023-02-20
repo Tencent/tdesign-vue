@@ -15,7 +15,11 @@ export default function useTreeScroll(props: TypeTreeProps, context: SetupContex
     const list = nodes.value.filter((node: TreeNode) => node.visible);
     return {
       data: list,
-      scroll: props.scroll,
+      scroll: {
+        // 默认一行高度为 34px
+        rowHeight: 34,
+        ...props.scroll,
+      },
     };
   });
   const virtualConfig = useVirtualScroll(treeContentRef, virtualScrollParams);

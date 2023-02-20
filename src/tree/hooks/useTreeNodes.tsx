@@ -2,7 +2,7 @@ import { CreateElement } from 'vue';
 import { ref, nextTick, SetupContext } from '@vue/composition-api';
 import { TypeVNode, TypeTreeProps, TypeTreeState } from '../interface';
 import TreeItem from '../tree-item';
-import TreeNode from '../../_common/js/tree/tree-node';
+import { TreeNode, privateKey } from '../../_common/js/tree/tree-node';
 import useTreeEvents from './useTreeEvents';
 
 // tree 节点列表渲染
@@ -20,7 +20,7 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
 
     const treeItem = (
       <TreeItem
-        key={node.value}
+        key={node[privateKey]}
         node={node}
         treeScope={scope}
         onClick={handleClick}
