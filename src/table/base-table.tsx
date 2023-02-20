@@ -127,6 +127,7 @@ export default defineComponent({
       getThWidthList,
       updateThWidthList,
       setTableElmWidth,
+      showColumnShadow,
     });
     const { resizeLineRef, resizeLineStyle, setEffectColMap } = columnResizeParams;
 

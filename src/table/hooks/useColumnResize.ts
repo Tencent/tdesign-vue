@@ -18,9 +18,13 @@ export default function useColumnResize(params: {
   getThWidthList: (type?: 'default' | 'calculate') => { [colKeys: string]: number };
   updateThWidthList: (data: { [colKey: string]: number }) => void;
   setTableElmWidth: (width: number) => void;
+  showColumnShadow: {
+    left: boolean;
+    right: boolean;
+  };
 }) {
   const {
-    isWidthOverflow, tableContentRef, getThWidthList, updateThWidthList, setTableElmWidth,
+    isWidthOverflow, tableContentRef, getThWidthList, updateThWidthList, setTableElmWidth, showColumnShadow,
   } = params;
   const resizeLineRef = ref<HTMLDivElement>();
   const effectColMap = ref<{ [colKey: string]: any }>({});
@@ -78,6 +82,9 @@ export default function useColumnResize(params: {
     bottom: '0',
   });
 
+  // 当前列是否配置右侧固定并且处于固定激活状态
+  const isColRightFixActive = (col: BaseTableCol<TableRowData>) => col.fixed === 'right' && showColumnShadow.right;
+
   // 频繁事件，仅用于计算是否在表头显示拖拽鼠标形态
   const onColumnMouseover = (e: MouseEvent, col: BaseTableCol<TableRowData>) => {
     // calculate mouse cursor before drag start
@@ -87,7 +94,8 @@ export default function useColumnResize(params: {
     const colKey = target.getAttribute('data-colkey');
     if (!leafColumns.value.find((t) => t.colKey === colKey)) return;
     const targetBoundRect = target.getBoundingClientRect();
-    if (targetBoundRect.right - e.pageX <= distance) {
+
+    if (targetBoundRect.right - e.pageX <= distance || isColRightFixActive(col)) {
       const colResizable = col.resizable ?? true;
       if (colResizable) {
         target.style.cursor = 'col-resize';
@@ -137,13 +145,22 @@ export default function useColumnResize(params: {
     const target = resizeLineParams.draggingCol;
     const targetBoundRect = target.getBoundingClientRect();
     const tableBoundRect = tableContentRef.value?.getBoundingClientRect();
-    const resizeLinePos = targetBoundRect.right - tableBoundRect.left;
-    const colLeft = targetBoundRect.left - tableBoundRect.left;
+    let resizeLinePos = targetBoundRect.right - tableBoundRect.left;
+    let colLeft = targetBoundRect.left - tableBoundRect.left;
+    if (isColRightFixActive(col)) {
+      resizeLinePos = targetBoundRect.left - tableBoundRect.left;
+      colLeft = resizeLinePos;
+    }
     const effectNextCol = effectColMap.value[col.colKey]?.next;
     const effectPrevCol = effectColMap.value[col.colKey]?.prev;
     const { minColWidth, maxColWidth } = getMinMaxColWidth(col, effectPrevCol);
-    const minResizeLineLeft = colLeft + minColWidth;
-    const maxResizeLineLeft = colLeft + maxColWidth;
+    let minResizeLineLeft = colLeft + minColWidth;
+    let maxResizeLineLeft = colLeft + maxColWidth;
+
+    if (isColRightFixActive(col)) {
+      minResizeLineLeft = tableBoundRect.right - tableBoundRect.left - maxColWidth;
+      maxResizeLineLeft = tableBoundRect.right - tableBoundRect.left - minColWidth;
+    }
 
     // 开始拖拽，记录下鼠标起始位置
     resizeLineParams.isDragging = true;
@@ -176,7 +193,12 @@ export default function useColumnResize(params: {
       const newThWidthList = { ...thWidthList };
       const tmpCurrentCol = col.resizable !== false ? col : currentSibling;
       if (resizeLineParams.effectCol === 'next') {
-        newThWidthList[tmpCurrentCol.colKey] -= moveDistance;
+        if (isColRightFixActive(col)) {
+          newThWidthList[tmpCurrentCol.colKey] += moveDistance;
+        } else {
+          newThWidthList[tmpCurrentCol.colKey] -= moveDistance;
+        }
+
         if (!isWidthOverflow.value) {
           newThWidthList[effectNextCol.colKey] += moveDistance;
         }
