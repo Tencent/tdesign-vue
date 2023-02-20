@@ -1,7 +1,8 @@
 import {
-  defineComponent, computed, nextTick, onMounted, ref, toRefs, watch, h,
+  defineComponent, computed, nextTick, onMounted, ref, toRefs, watch,
 } from '@vue/composition-api';
 import isFunction from 'lodash/isFunction';
+import { CreateElement } from 'vue';
 import {
   scrollToParentVisibleArea, getRelativePosition, getTargetElm, scrollToElm,
 } from './utils';
@@ -224,9 +225,21 @@ export default defineComponent({
     };
   },
 
-  // Vue2 JSX 函数无法写在 setup 中；如果写在 render 函数中每次渲染都会创建函数，不合理。故而 JSX 函数放在 methods 函数中
-  methods: {
-    getHighlightContent() {
+  render(h) {
+    // TODO directives导致return的类型都丢失
+    const { stepsTotal } = this;
+    const currentStepInfo = this.currentStepInfo as GuideStep;
+    const globalConfig = this.global as GlobalConfigProvider['guide'];
+    const getCurrentCrossProps = this.getCurrentCrossProps as Function;
+    const renderTooltipTitle = (h: CreateElement) => {
+      const currentStepInfo = this.currentStepInfo as GuideStep;
+      const functionTitle = isFunction(currentStepInfo.title) ? currentStepInfo.title(h) : undefined;
+      const slotTitle = this.$scopedSlots.title ? this.$scopedSlots.title(h) : undefined;
+      const title = functionTitle || slotTitle || currentStepInfo.title;
+      return title ? <div class={`${this.componentName}__title`}>{title}</div> : null;
+    };
+
+    const getHighlightContent = (h: CreateElement) => {
       const params: any = h;
       params.currentStepInfo = this.currentStepInfo as GuideStep;
       const { highlightContent } = this.currentStepInfo as GuideStep;
@@ -248,40 +261,8 @@ export default defineComponent({
         node.props.class = `t-guide__highlight t-guide__highlight--mask ${node.props.class || ''}`;
       }
       return node;
-    },
+    };
 
-    renderTooltipTitle() {
-      const currentStepInfo = this.currentStepInfo as GuideStep;
-      const functionTitle = isFunction(currentStepInfo.title) ? currentStepInfo.title(h) : undefined;
-      const slotTitle = this.$scopedSlots.title ? this.$scopedSlots.title(h) : undefined;
-      const title = functionTitle || slotTitle || currentStepInfo.title;
-      return title ? <div class={`${this.componentName}__title`}>{title}</div> : null;
-    },
-
-    renderTooltipBody() {
-      const { body: stepBody } = this.currentStepInfo as GuideStep;
-      let descBody: any;
-      if (isFunction(stepBody)) {
-        descBody = stepBody(h);
-      } else if (this.$scopedSlots.body) {
-        const hParams = h;
-        Object.assign(hParams, { currentStepInfo: this.currentStepInfo as GuideStep });
-        descBody = this.$scopedSlots.body(hParams);
-      } else if (typeof stepBody === 'string') {
-        descBody = stepBody;
-      } else {
-        descBody = <stepBody />;
-      }
-      return descBody ? <div class={`${this.componentName}__desc`}>{descBody}</div> : null;
-    },
-  },
-
-  render() {
-    // TODO directives导致return的类型都丢失
-    const { stepsTotal } = this;
-    const currentStepInfo = this.currentStepInfo as GuideStep;
-    const globalConfig = this.global as GlobalConfigProvider['guide'];
-    const getCurrentCrossProps = this.getCurrentCrossProps as Function;
     const renderOverlayLayer = () => (
       <div
         ref="overlayLayerRef"
@@ -358,6 +339,23 @@ export default defineComponent({
       );
     };
 
+    const renderTooltipBody = (h: CreateElement) => {
+      const { body: stepBody } = this.currentStepInfo as GuideStep;
+      let descBody: any;
+      if (isFunction(stepBody)) {
+        descBody = stepBody(h);
+      } else if (this.$scopedSlots.body) {
+        const hParams = h;
+        Object.assign(hParams, { currentStepInfo: this.currentStepInfo as GuideStep });
+        descBody = this.$scopedSlots.body(hParams);
+      } else if (typeof stepBody === 'string') {
+        descBody = stepBody;
+      } else {
+        descBody = <stepBody />;
+      }
+      return descBody ? <div class={`${this.componentName}__desc`}>{descBody}</div> : null;
+    };
+
     const renderPopupContent = () => {
       const footerClasses = [`${this.componentName}__footer`, `${this.componentName}__footer--popup`];
       const action = (
@@ -369,8 +367,8 @@ export default defineComponent({
 
       return (
         <div class={`${this.componentName}__tooltip`}>
-          {this.renderTooltipTitle()}
-          {this.renderTooltipBody()}
+          {renderTooltipTitle(h)}
+          {renderTooltipBody(h)}
           {action}
         </div>
       );
@@ -385,7 +383,7 @@ export default defineComponent({
       ];
       const showOverlay = getCurrentCrossProps('showOverlay');
       const maskClass = [`${this.componentName}__highlight--${showOverlay ? 'mask' : 'nomask'}`];
-      const innerHighlightContent = this.getHighlightContent();
+      const innerHighlightContent = getHighlightContent(h);
       const showHighlightContent = Boolean(innerHighlightContent && this.isPopup);
 
       return (
@@ -431,8 +429,8 @@ export default defineComponent({
         <div>
           <div ref="dialogWrapperRef" v-transfer-dom="body" class={wrapperClasses} style={style}>
             <div ref="dialogTooltipRef" class={dialogClasses}>
-              {this.renderTooltipTitle()}
-              {this.renderTooltipBody()}
+              {renderTooltipTitle(h)}
+              {renderTooltipBody(h)}
               <div class={footerClasses}>
                 {renderCounter()}
                 {renderAction('dialog')}
