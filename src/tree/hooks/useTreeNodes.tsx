@@ -33,16 +33,6 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
 
   const cacheMap = new Map();
 
-  let clearStep = 0;
-  const clearCacheNodes = () => {
-    // 重构为 hooks api 之后发现一个问题
-    // 立即执行 cacheMap.clear() 之后，renderTreeNodes 执行了 2 次
-    // 其中第一次在 nodes.value 变更之前执行
-    // 导致 cacheMap 缓存重新建立，并引发了视图绑定异常
-    // 因此用 clearStep 方式解决
-    clearStep = 1;
-  };
-
   const nodesEmpty = ref(false);
   const refresh = () => {
     // 渲染为平铺列表
@@ -53,12 +43,6 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
     let treeNodeViews: TypeVNode[] = [];
     let isEmpty = true;
     let list = nodes.value;
-    if (clearStep) {
-      cacheMap.clear();
-      clearStep = 0;
-      nodesEmpty.value = !list.some((node: TreeNode) => node.visible);
-      return treeNodeViews;
-    }
 
     const isVirtual = virtualConfig?.isVirtualScroll.value;
     if (isVirtual) {
@@ -68,9 +52,10 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
       treeNodeViews = list.map((node: TreeNode) => renderItem(h, node));
     } else {
       treeNodeViews = list.map((node: TreeNode) => {
+        const nodePrivateKey = node[privateKey];
         // 如果节点已经存在，则使用缓存节点
         // 不可见的节点，缓存中存在，则依然会保留
-        let nodeView: TypeVNode = cacheMap.get(node.value);
+        let nodeView: TypeVNode = cacheMap.get(nodePrivateKey);
         if (node.visible) {
           // 任意一个节点可视，过滤结果就不是空
           isEmpty = false;
@@ -79,7 +64,7 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
             // 初次仅渲染可显示的节点
             // 不存在节点视图，则创建该节点视图并插入到当前位置
             nodeView = renderItem(h, node);
-            cacheMap.set(node.value, nodeView);
+            cacheMap.set(nodePrivateKey, nodeView);
           }
         }
         return nodeView;
@@ -88,10 +73,10 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
 
       // 更新缓存后，被删除的节点要移除掉，避免内存泄露
       nextTick(() => {
-        cacheMap.forEach((view: TypeVNode, value: string) => {
-          const node = store.getNode(value);
+        cacheMap.forEach((view: TypeVNode, nodePrivateKey: string) => {
+          const node = store.privateMap.get(nodePrivateKey);
           if (!node) {
-            cacheMap.delete(value);
+            cacheMap.delete(nodePrivateKey);
           }
         });
       });
@@ -106,7 +91,6 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
   return {
     refresh,
     nodesEmpty,
-    clearCacheNodes,
     renderTreeNodes,
   };
 }

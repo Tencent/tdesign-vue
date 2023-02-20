@@ -43,13 +43,12 @@ export default defineComponent({
     useDragHandle(props, context, state);
     const { setActived, setExpanded, setChecked } = useTreeAction(props, context, state);
     const { onInnerVirtualScroll, virtualConfig } = useTreeScroll(props, context, state);
-    const { renderTreeNodes, clearCacheNodes, nodesEmpty } = useTreeNodes(props, context, state);
+    const { renderTreeNodes, nodesEmpty } = useTreeNodes(props, context, state);
     const {
       treeClasses, treeContentStyles, scrollStyles, cursorStyles,
     } = useTreeStyles(props, state);
 
     watch(refProps.data, (list) => {
-      clearCacheNodes();
       rebuild(list);
     });
     watch(refProps.keys, (keys) => {
