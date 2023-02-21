@@ -20,7 +20,7 @@ import { emitEvent } from '../utils/event';
 import { ClassName, Styles } from '../common';
 import { updateElement } from '../hooks/useDestroyOnClose';
 import stack from './stack';
-import { getScrollbarWidth } from '../utils/dom';
+import { getScrollbarWidth } from '../_common/js/utils/getScrollbarWidth';
 
 function getCSSValue(v: string | number) {
   return isNaN(Number(v)) ? v : `${Number(v)}px`;
@@ -182,7 +182,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     },
   },
   mounted() {
-    const hasScrollBar = document.body.scrollHeight > document.body.clientHeight;
+    const hasScrollBar = document.documentElement.scrollHeight > document.documentElement.clientHeight;
     const scrollWidth = hasScrollBar ? getScrollbarWidth() : 0;
 
     if (this.draggable) {
