@@ -43,7 +43,14 @@
       :onClose="close4"
       :cancelBtn="null"
     />
-    <t-dialog body="对话框内容" :closeBtn="false" :visible.sync="visible5" @confirm="onConfirm" :onClose="close5">
+    <t-dialog
+      body="对话框内容"
+      :closeBtn="false"
+      :visible.sync="visible5"
+      @confirm="onConfirm"
+      :onClose="close5"
+      :cancelBtn="null"
+    >
       <div slot="header">
         <icon name="check-circle-filled" color="orange" />
         <span style="vertical-align: middle">对话框标题</span>
