@@ -15,7 +15,6 @@ export default function useTreeStyles(props: TypeTreeProps, state: TypeTreeState
   const { virtualConfig, isScrolling } = treeState;
 
   const { height, maxHeight } = toRefs(props);
-  const isVirtual = virtualConfig?.isVirtualScroll.value;
 
   const treeClasses = computed(() => {
     const list: Array<string> = [componentName];
@@ -40,12 +39,15 @@ export default function useTreeStyles(props: TypeTreeProps, state: TypeTreeState
     if (expandOnClickNode) {
       list.push(`${componentName}--block-node`);
     }
+
+    const isVirtual = virtualConfig?.isVirtualScroll.value;
     if (isVirtual) {
-      list.push(`${componentName}--vscroll`);
+      list.push(`${componentName}__vscroll`);
+      if (isScrolling.value) {
+        list.push(`${componentName}--scrolling`);
+      }
     }
-    if (isScrolling.value) {
-      list.push(`${componentName}--scrolling`);
-    }
+
     return list;
   });
 
@@ -55,22 +57,23 @@ export default function useTreeStyles(props: TypeTreeProps, state: TypeTreeState
   }));
 
   const scrollStyles = computed<Styles>(() => {
-    const transform = `translateY(${virtualConfig?.translateY.value}px)`;
-    const posStyle = isVirtual
-      ? {
-        transform,
-        '-ms-transform': transform,
-        '-moz-transform': transform,
-        '-webkit-transform': transform,
-      }
-      : undefined;
-    return {
-      ...posStyle,
+    // isVirtual 改为函数内取值，可接收属性的变动
+    const isVirtual = virtualConfig?.isVirtualScroll.value;
+    const translateY = isVirtual ? virtualConfig?.translateY.value : 0;
+    const transform = `translateY(${translateY}px)`;
+    const posStyle = {
+      transform,
+      '-ms-transform': transform,
+      '-moz-transform': transform,
+      '-webkit-transform': transform,
     };
+    return posStyle;
   });
 
   const cursorStyles = computed<Styles>(() => {
-    const translate = `translate(0, ${virtualConfig?.scrollHeight.value}px)`;
+    const isVirtual = virtualConfig?.isVirtualScroll.value;
+    const translateY = isVirtual ? virtualConfig?.translateY.value : 0;
+    const translate = `translate(0, ${translateY}px)`;
     return {
       transform: translate,
       '-ms-transform': translate,

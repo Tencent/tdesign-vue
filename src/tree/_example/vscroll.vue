@@ -9,7 +9,7 @@
       <t-button @click="append()">插入根节点</t-button>
     </div>
     <t-form labelWidth="150" style="max-width: 500px">
-      <t-form-item label="展开动画">
+      <t-form-item label="动画">
         <t-switch v-model="transition" />
       </t-form-item>
       <t-form-item label="显示连线">
@@ -27,6 +27,9 @@
       <t-form-item label="启用虚拟滚动">
         <t-switch v-model="enableVScroll" />
       </t-form-item>
+      <t-form-item label="lazy 模式">
+        <t-switch v-model="lazyVScroll" />
+      </t-form-item>
     </t-form>
 
     <t-tree
@@ -35,7 +38,7 @@
       activable
       :checkable="isCheckable"
       expand-all
-      :height="enableVScroll ? 300 : 0"
+      :height="300"
       :transition="transition"
       :expand-on-click-node="false"
       :line="showLine"
@@ -94,19 +97,32 @@ export default {
       insertCount: 1,
       useActived: false,
       enableVScroll: true,
+      lazyVScroll: false,
       expandParent: true,
       showLine: true,
       showIcon: true,
       isCheckable: true,
       isOperateAble: true,
-      scroll: {
+      items,
+    };
+  },
+  computed: {
+    scroll() {
+      if (!this.enableVScroll) {
+        return null;
+      }
+      const scrollProps = {
         rowHeight: 34,
         bufferSize: 10,
         threshold: 10,
-        type: 'virtual',
-      },
-      items,
-    };
+      };
+      if (this.lazyVScroll) {
+        scrollProps.type = 'lazy';
+      } else {
+        scrollProps.type = 'virtual';
+      }
+      return scrollProps;
+    },
   },
   methods: {
     label(createElement, node) {

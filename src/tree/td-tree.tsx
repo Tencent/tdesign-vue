@@ -218,17 +218,31 @@ export default defineComponent({
     }
 
     // 构造列表
-    const treeNodeList = (
-      <transition-group
-        tag="div"
-        class={`${cname}__list`}
-        enter-active-class={`${cname}__item--enter-active`}
-        leave-active-class={`${cname}__item--leave-active`}
-        style={scrollStyles}
-      >
-        {treeNodeViews}
-      </transition-group>
-    );
+    const { $props } = this;
+    const { transition } = $props;
+
+    let treeNodeList = null;
+    if (!transition && isVirtual) {
+      // 关闭动画时，列表不使用 transition-group 以启用更高的性能
+      treeNodeList = (
+        <div class={`${cname}__list`} style={scrollStyles}>
+          {treeNodeViews}
+        </div>
+      );
+    } else {
+      // 启用动画时，需要确保滚动中动画样式失效
+      treeNodeList = (
+        <transition-group
+          tag="div"
+          class={`${cname}__list`}
+          enter-active-class={`${cname}__item--enter-active`}
+          leave-active-class={`${cname}__item--leave-active`}
+          style={scrollStyles}
+        >
+          {treeNodeViews}
+        </transition-group>
+      );
+    }
 
     const treeNode = (
       <div
