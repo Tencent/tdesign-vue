@@ -14,6 +14,7 @@
       :visible.sync="visible1"
       @confirm="onConfirm"
       :onClose="close1"
+      :cancelBtn="null"
     />
     <t-dialog
       theme="success"
@@ -22,6 +23,7 @@
       :visible.sync="visible2"
       @confirm="onConfirm"
       :onClose="close2"
+      :cancelBtn="null"
     />
     <t-dialog
       theme="warning"
