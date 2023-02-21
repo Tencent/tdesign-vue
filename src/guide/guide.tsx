@@ -248,16 +248,18 @@ export default defineComponent({
       // 支持函数
       if (isFunction(highlightContent)) {
         node = highlightContent(params);
-      }
-      // 支持插槽
-      if (this.$scopedSlots.highlightContent) {
+      } else if (this.$scopedSlots.highlightContent) {
+        // 支持插槽
         node = this.$scopedSlots.highlightContent(params);
-      }
-      if (this.$scopedSlots['highlight-content']) {
+      } else if (this.$scopedSlots['highlight-content']) {
         node = this.$scopedSlots['highlight-content'](params);
+      } else if (highlightContent) {
+        // 支持组件
+        node = <node />;
       }
       // 给自定义元素添加类名
-      if (node?.props) {
+      if (node) {
+        node.props = node.props || {};
         node.props.class = `t-guide__highlight t-guide__highlight--mask ${node.props.class || ''}`;
       }
       return node;
@@ -390,7 +392,7 @@ export default defineComponent({
         <div
           ref="highlightLayerRef"
           v-transfer-dom="body"
-          class={highlightClass.concat(showHighlightContent ? highlightClass : maskClass)}
+          class={highlightClass.concat(showHighlightContent ? [] : maskClass)}
           style={style}
         >
           {showHighlightContent && innerHighlightContent}
