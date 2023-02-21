@@ -29,6 +29,7 @@ export default function useTreeState(props: TypeTreeProps, store: TypeTreeStore)
   };
 
   return {
+    isScrolling,
     treeContentRef,
     state,
   };

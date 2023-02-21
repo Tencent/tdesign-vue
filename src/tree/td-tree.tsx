@@ -38,7 +38,7 @@ export default defineComponent({
     const { store, rebuild, updateStoreConfig } = useTreeStore(props, context);
 
     // 用于 hooks 传递数据
-    const { state, treeContentRef } = useTreeState(props, store);
+    const { state, treeContentRef, isScrolling } = useTreeState(props, store);
 
     useDragHandle(props, context, state);
     const { setActived, setExpanded, setChecked } = useTreeAction(props, context, state);
@@ -85,6 +85,7 @@ export default defineComponent({
       renderTreeNodes,
       nodesEmpty,
 
+      isScrolling,
       onInnerVirtualScroll,
       treeContentStyles,
       scrollStyles,
@@ -189,6 +190,7 @@ export default defineComponent({
       updateStoreConfig,
       renderTreeNodes,
       nodesEmpty,
+      isScrolling,
       virtualConfig,
       treeContentStyles,
       scrollStyles,
@@ -222,7 +224,7 @@ export default defineComponent({
     const { transition } = $props;
 
     let treeNodeList = null;
-    if (!transition && isVirtual) {
+    if ((isVirtual && !transition) || (isVirtual && isScrolling)) {
       // 关闭动画时，列表不使用 transition-group 以启用更高的性能
       treeNodeList = (
         <div class={`${cname}__list`} style={scrollStyles}>
