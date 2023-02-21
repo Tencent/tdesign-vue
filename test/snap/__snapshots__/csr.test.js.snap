@@ -55651,7 +55651,7 @@ exports[`csr snapshot test > csr test ./src/guide/_example/custom-popup.vue 1`] 
             data-v-2edbaa18=""
           >
             <div
-              class="main-title"
+              class="main-title-popup"
               data-v-2edbaa18=""
             >
               <div

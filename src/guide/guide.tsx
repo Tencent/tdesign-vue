@@ -260,7 +260,7 @@ export default defineComponent({
       // 给自定义元素添加类名
       if (node) {
         node.props = node.props || {};
-        node.props.class = `t-guide__highlight t-guide__highlight--mask ${node.props.class || ''}`;
+        node.props.class = `${this.componentName}__highlight--mask ${node.props.class || ''}`;
       }
       return node;
     };
