@@ -27,6 +27,7 @@
       <t-guide
         :current.sync="current"
         :steps="steps"
+        :highlightPadding="32"
         @change="handleChange"
         @prev-step-click="handlePrevStepClick"
         @next-step-click="handleNextStepClick"
