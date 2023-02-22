@@ -18,11 +18,14 @@ export default mixins(getConfigReceiverMixins('sticky-tool')).extend({
         this.componentName,
         `${this.componentName}--${this.shape}`,
         `${this.componentName}--${this.shape}-shadow`,
+        `${this.componentName}--${this.placement}`,
       ];
     },
     styles(): Styles {
       return {
         width: typeof this.width === 'number' ? `${this.width}px` : this.width,
+        // left: this.getOffset(item.offset[0]),
+        // top: this.getOffset(item.offset[1]),
       };
     },
   },
@@ -77,6 +80,10 @@ export default mixins(getConfigReceiverMixins('sticky-tool')).extend({
         arr.push(option);
       });
       return arr;
+    },
+    getOffset(val: string | number) {
+      if (!val) return;
+      return isNaN(Number(val)) ? val : `${val}px`;
     },
   },
 });
