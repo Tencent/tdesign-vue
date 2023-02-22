@@ -2,25 +2,12 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-12-12 16:59:59
  * */
 
 import { TdStickyToolProps } from './type';
 import { PropType } from 'vue';
 
 export default {
-  type: {
-    type: String,
-    default: 'normal',
-  },
-  shape: {
-    type: String,
-    default: 'square',
-  },
-  /** 自定义折叠入口，collapsed 值为 true 有效 */
-  entrance: {
-    type: Function as PropType<TdStickyToolProps['entrance']>,
-  },
   /** 列表 */
   list: {
     type: Array as PropType<TdStickyToolProps['list']>,
@@ -35,7 +22,30 @@ export default {
     type: String as PropType<TdStickyToolProps['placement']>,
     default: 'right-bottom' as TdStickyToolProps['placement'],
     validator(val: TdStickyToolProps['placement']): boolean {
+      if (!val) return true;
       return ['right-top', 'right-center', 'right-bottom', 'left-top', 'left-center', 'left-bottom'].includes(val);
+    },
+  },
+  /** 透传 Popup 组件全部特性，优先级低于 StickyItem.popupProps */
+  popupProps: {
+    type: Object as PropType<TdStickyToolProps['popupProps']>,
+  },
+  /** 侧边栏菜单形状，有 2 种：方形、圆形 */
+  shape: {
+    type: String as PropType<TdStickyToolProps['shape']>,
+    default: 'square' as TdStickyToolProps['shape'],
+    validator(val: TdStickyToolProps['shape']): boolean {
+      if (!val) return true;
+      return ['square', 'round'].includes(val);
+    },
+  },
+  /** 侧边栏菜单类型，有 2 种：常规型和紧凑型 */
+  type: {
+    type: String as PropType<TdStickyToolProps['type']>,
+    default: 'normal' as TdStickyToolProps['type'],
+    validator(val: TdStickyToolProps['type']): boolean {
+      if (!val) return true;
+      return ['normal', 'compact'].includes(val);
     },
   },
   /** 宽度 */

@@ -1,7 +1,7 @@
 import { VNode } from 'vue';
 import props from './props';
 import TStickyItem from './sticky-item';
-import { ClassName } from '../common';
+import { ClassName, Styles } from '../common';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins from '../config-provider/config-receiver';
 import { TdStickyItemProps } from './type';
@@ -19,6 +19,11 @@ export default mixins(getConfigReceiverMixins('sticky-tool')).extend({
         `${this.componentName}--${this.shape}`,
         `${this.componentName}--${this.shape}-shadow`,
       ];
+    },
+    styles(): Styles {
+      return {
+        width: typeof this.width === 'number' ? `${this.width}px` : this.width,
+      };
     },
   },
   render() {
@@ -47,7 +52,11 @@ export default mixins(getConfigReceiverMixins('sticky-tool')).extend({
       }
       return stickyItem;
     });
-    return <div class={this.classes}>{content}</div>;
+    return (
+      <div class={this.classes} style={this.styles}>
+        {content}
+      </div>
+    );
   },
   methods: {
     getList() {
