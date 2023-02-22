@@ -100,6 +100,7 @@ export default mixins(classPrefixMixins).extend({
       this.$refs.popup && (this.$refs.popup as PopupInstanceType).updatePopper();
     },
   },
+
   render() {
     return (
       <Popup

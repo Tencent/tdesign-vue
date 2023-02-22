@@ -191,7 +191,7 @@ export default defineComponent({
         ...pick(this.$props, TABLE_PROPS),
         row,
         columns: this.columns,
-        rowIndex: row.__VIRTUAL_SCROLL_INDEX || rowIndex,
+        rowIndex: row?.__VIRTUAL_SCROLL_INDEX || rowIndex,
         dataLength,
         skipSpansMap: this.skipSpansMap,
         virtualConfig: this.virtualConfig,

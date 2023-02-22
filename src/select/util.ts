@@ -42,7 +42,7 @@ export const getNewMultipleValue = (innerValue: SelectValue[], optionValue: Sele
 export const getAllSelectableOption = (options: TdOptionProps[]) => options.filter((option) => !option.disabled && !option.checkAll);
 
 /** 将 options 扁平化，拍扁所有 group */
-export const flattenOptions = (options: TdOptionProps[]): SelectOption[] => options.reduce(
+export const flattenOptions = (options: (TdOptionProps & { isCreated?: boolean })[]): SelectOption[] => options.reduce(
   (pre, current) => pre.concat(
     (current as SelectOptionGroup).group ? flattenOptions((current as SelectOptionGroup).children) : current,
   ),

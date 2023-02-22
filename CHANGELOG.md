@@ -5,6 +5,30 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.1.3 `2023-02-22` 
+### 🚀 Features
+- `Message`: MessagePlugin 插件支持传入 `className/style`，以便自定义消息样式 @chaishi ([#2151](https://github.com/Tencent/tdesign-vue/pull/2151))
+- `Dialog`: 确认按钮主题不再跟随 Dialog 主题变动 @xiaosansiji ([#2172](https://github.com/Tencent/tdesign-vue/pull/2172))
+- `Guide`:  定义步骤浮层内容 @chaishi ([#2170](https://github.com/Tencent/tdesign-vue/pull/2170))
+  - 支持使用插槽 `body` `title` `content` 自定义相关内容
+  - 支持透传 `popupProps` 属性，以便自定义更多特性，如 `popupProps.overlayInnerClassName`
+- `Select`: 支持Option自定义title属性 @uyarn ([#2176](https://github.com/Tencent/tdesign-vue/pull/2176))
+- `Popup`: 新增onScrollToBottom事件，新增popperOptions API @uyarn ([#2176](https://github.com/Tencent/tdesign-vue/pull/2176))
+### 🐞 Bug Fixes
+- `Timeline`: 修复自定义图标未能显示在正中间的问题 @chaishi ([#2150](https://github.com/Tencent/tdesign-vue/pull/2150))
+- `Table`:
+  - 表格宽度向下取整，修复表格宽度出现小数时导致吸顶和吸底出现横向滚动条 @huangpiqiao ([#2159](https://github.com/Tencent/tdesign-vue/pull/2159))
+  -  修复 ssr 场景下构建报错的问题 @KMethod ([#2166](https://github.com/Tencent/tdesign-vue/pull/2166))
+- `Guide`: @chaishi ([#2170](https://github.com/Tencent/tdesign-vue/pull/2170))
+  - 修复 `@next-step-click` `@prev-step-click` `@skip` 等事件未能触发问题
+  - 修复 `上一步`、`下一步`、`跳过` 等按钮的标识类名未能正确添加问题 @chaishi ([#2170](https://github.com/Tencent/tdesign-vue/pull/2170))
+- `SelectInput`: @uyarn ([#2176](https://github.com/Tencent/tdesign-vue/pull/2176))
+  - 修复基于 SelectInput 的输入类组件单选可输入模式下回删无法完全清空，及其导致的一系列问题
+  - 修复onBlur事件触发时机的问题 @uyarn ([#2176](https://github.com/Tencent/tdesign-vue/pull/2176))
+- `Tabs`: 修复在 tabs 内容区域使用图标大小异常的问题 @uyarn ([#2176](https://github.com/Tencent/tdesign-vue/pull/2176))
+- `Drawer/Dialog`: 修复滚动条检测问题 @honkinglin ([#2173](https://github.com/Tencent/tdesign-vue/pull/2173))
+- `Button`: 修复按钮 block 样式优先级问题 @honkinglin ([common #1152](https://github.com/Tencent/tdesign-common/pull/1152))
+
 ## 🌈 1.1.2 `2023-02-15` 
 ### 🚀 Features
 - `TreeSelect`: 支持使用 `keys` 定义字段别名 @chaishi ([#2128](https://github.com/Tencent/tdesign-vue/pull/2128))
