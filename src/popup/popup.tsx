@@ -9,6 +9,7 @@ import { PopupVisibleChangeContext, TdPopupProps } from './type';
 import Container from './container';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
+import { emitEvent } from '../utils/event';
 
 const classPrefixMixins = getClassPrefixMixins('popup');
 
@@ -272,6 +273,14 @@ export default mixins(classPrefixMixins).extend({
     handleToggle(context: PopupVisibleChangeContext) {
       this.emitPopVisible(!this.visible, context);
     },
+    handleOnScroll(e: WheelEvent) {
+      const { scrollTop, clientHeight, scrollHeight } = e.target as HTMLDivElement;
+      if (scrollHeight - scrollTop === clientHeight) {
+        // touch bottom
+        emitEvent(this, 'scroll-to-bottom', { e });
+      }
+      emitEvent(this, 'scroll', { e });
+    },
     handleOpen(context: Pick<PopupVisibleChangeContext, 'trigger'>) {
       clearTimeout(this.timeout);
       this.timeout = setTimeout(
@@ -365,7 +374,7 @@ export default mixins(classPrefixMixins).extend({
 
   render(h) {
     const {
-      visible, destroyOnClose, hasTrigger, onScroll,
+      visible, destroyOnClose, hasTrigger, onScroll, handleOnScroll,
     } = this;
     const ref = renderContent(this, 'default', 'triggerElement');
     const content = renderTNodeJSX(this, 'content');
@@ -408,13 +417,11 @@ export default mixins(classPrefixMixins).extend({
             {
               class: this.overlayClasses,
               ref: 'overlay',
-              on: onScroll
-                ? {
-                  scroll(e: WheelEvent) {
-                    onScroll({ e });
-                  },
-                }
-                : undefined,
+              on: {
+                scroll(e: WheelEvent) {
+                  handleOnScroll(e);
+                },
+              },
             },
             [content, this.showArrow && h('div', { class: `${this.componentName}__arrow` })],
           ),
