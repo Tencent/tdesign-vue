@@ -221,6 +221,7 @@ export default mixins(classPrefixMixins).extend({
         onFirstUpdate: () => {
           this.$nextTick(this.updatePopper);
         },
+        ...this.popperOptions,
       });
     },
 
@@ -374,7 +375,7 @@ export default mixins(classPrefixMixins).extend({
 
   render(h) {
     const {
-      visible, destroyOnClose, hasTrigger, onScroll, handleOnScroll,
+      visible, destroyOnClose, hasTrigger, handleOnScroll,
     } = this;
     const ref = renderContent(this, 'default', 'triggerElement');
     const content = renderTNodeJSX(this, 'content');
