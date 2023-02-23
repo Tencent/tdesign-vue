@@ -224,7 +224,7 @@ export default defineComponent({
     const { transition } = $props;
 
     let treeNodeList = null;
-    if ((isVirtual && !transition) || (isVirtual && isScrolling)) {
+    if (!transition || (isVirtual && isScrolling)) {
       // 关闭动画时，列表不使用 transition-group 以启用更高的性能
       treeNodeList = (
         <div class={`${cname}__list`} style={scrollStyles}>
