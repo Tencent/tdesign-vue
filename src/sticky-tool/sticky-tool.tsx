@@ -24,8 +24,7 @@ export default mixins(getConfigReceiverMixins('sticky-tool')).extend({
     styles(): Styles {
       return {
         width: typeof this.width === 'number' ? `${this.width}px` : this.width,
-        // left: this.getOffset(item.offset[0]),
-        // top: this.getOffset(item.offset[1]),
+        ...this.getOffset(),
       };
     },
   },
@@ -81,9 +80,24 @@ export default mixins(getConfigReceiverMixins('sticky-tool')).extend({
       });
       return arr;
     },
-    getOffset(val: string | number) {
-      if (!val) return;
-      return isNaN(Number(val)) ? val : `${val}px`;
+    getOffset(): Styles {
+      // 默认偏移位置
+      const position: Array<string | number> = [80, 24];
+      this.offset.forEach((item, index) => {
+        position[index] = isNaN(Number(item))
+          ? `calc( ${position[index]}px + ${item})`
+          : `${(position[index] as number) + (item as number)}px`;
+      });
+      const offsetStyle: Styles = {};
+      this.placement.split('-').forEach((item, index) => {
+        if (item !== 'center') {
+          offsetStyle[item] = position[index];
+        } else {
+          offsetStyle.top = '50%';
+          offsetStyle.transform = 'translate(0, -50%)';
+        }
+      });
+      return offsetStyle;
     },
   },
 });
