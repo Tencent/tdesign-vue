@@ -7,7 +7,7 @@ import './style';
 
 export * from './type';
 export type StickyToolProps = TdStickyToolProps;
-export type TdStickyItemProps = TdStickyItemProps;
+export type StickyItemProps = TdStickyItemProps;
 
 export const StickyItem = withInstall(_StickyItem);
 
