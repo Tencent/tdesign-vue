@@ -90,7 +90,7 @@ export interface TypeTreeScope {
   treeProps?: TypeTreeProps;
   scopedSlots?: TypeScopedSlots;
   drag?: TypeDragHandle;
-  scrollProps?: TScroll;
+  scrollProps?: Ref<TScroll>;
   virtualConfig?: TypeVirtualScrollConfig;
 }
 

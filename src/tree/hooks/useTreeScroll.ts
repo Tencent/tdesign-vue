@@ -1,4 +1,6 @@
-import { SetupContext, computed, onMounted } from '@vue/composition-api';
+import {
+  SetupContext, computed, onMounted, Ref,
+} from '@vue/composition-api';
 import useVirtualScroll from '../../hooks/useVirtualScrollNew';
 import { TScroll } from '../../common';
 import TreeNode from '../../_common/js/tree/tree-node';
@@ -11,11 +13,11 @@ export default function useTreeScroll(props: TypeTreeProps, context: SetupContex
     scope, treeContentRef, nodes, isScrolling,
   } = treeState;
 
-  const scrollProps: TScroll = {
+  const scrollProps: Ref<TScroll> = computed(() => ({
     // 默认一行高度为 34px
     rowHeight: 34,
     ...props.scroll,
-  };
+  }));
   scope.scrollProps = scrollProps;
 
   // 虚拟滚动
@@ -23,9 +25,10 @@ export default function useTreeScroll(props: TypeTreeProps, context: SetupContex
     const list = nodes.value.filter((node: TreeNode) => node.visible);
     return {
       data: list,
-      scroll: scrollProps,
+      scroll: scrollProps.value,
     };
   });
+
   const virtualConfig = useVirtualScroll(treeContentRef, virtualScrollParams);
   scope.virtualConfig = virtualConfig;
   treeState.virtualConfig = virtualConfig;
