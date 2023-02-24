@@ -139,7 +139,7 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
         onDragleave={(evt: DragEvent) => handleDragLeave(evt)}
         onDrop={(evt: DragEvent) => handleDrop(evt)}
       >
-        {renderItem(h)}
+        {hasLazyLoadHolder.value ? [<div style={{ height: `${tRowHeight.value}px` }}></div>] : renderItem(h)}
       </div>
     );
     return itemNode;
