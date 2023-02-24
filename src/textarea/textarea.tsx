@@ -221,19 +221,21 @@ export default mixins(Vue as VueConstructor<Textarea>, classPrefixMixins).extend
           style={this.textareaStyle}
           ref="refTextareaElem"
         ></textarea>
-        {this.maxcharacter ? (
-          <span class={this.limitClasses}>{`${this.characterNumber}/${this.maxcharacter}`}</span>
-        ) : null}
-        {!this.maxcharacter && this.maxlength ? (
-          <span class={this.limitClasses}>{`${this.value ? getUnicodeLength(String(this.value)) : 0}/${
-            this.maxlength
-          }`}</span>
-        ) : null}
-        {tips && (
-          <div class={[`${this.componentName}__tips`, `${this.componentName}__tips--${this.status || 'normal'}`]}>
-            {tips}
-          </div>
-        )}
+        <div class={[{ [`${this.componentName}__tips_wrapper`]: tips }]}>
+          {tips && (
+            <div class={[`${this.componentName}__tips`, `${this.componentName}__tips--${this.status || 'normal'}`]}>
+              {tips}
+            </div>
+          )}
+          {this.maxcharacter ? (
+            <span class={this.limitClasses}>{`${this.characterNumber}/${this.maxcharacter}`}</span>
+          ) : null}
+          {!this.maxcharacter && this.maxlength ? (
+            <span class={this.limitClasses}>{`${this.value ? getUnicodeLength(String(this.value)) : 0}/${
+              this.maxlength
+            }`}</span>
+          ) : null}
+        </div>
       </div>
     );
   },
