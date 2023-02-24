@@ -2021,6 +2021,9 @@ exports[`csr snapshot test > csr test ./src/auto-complete/_example/trigger-eleme
         placeholder="自定义联想词触发元素"
         unselectable="off"
       />
+      <div
+        class=""
+      />
     </div>
   </div>
 </div>
@@ -32551,6 +32554,9 @@ exports[`csr snapshot test > csr test ./src/comment/_example/reply-form.vue 1`] 
               placeholder="请输入内容"
               unselectable="off"
             />
+            <div
+              class=""
+            />
           </div>
           <button
             class="form-submit t-button t-button--variant-base t-button--theme-primary"
@@ -48198,6 +48204,9 @@ exports[`csr snapshot test > csr test ./src/form/_example/base.vue 1`] = `
             placeholder="请用一句话介绍自己"
             unselectable="off"
           />
+          <div
+            class=""
+          />
         </div>
       </div>
       <div
@@ -49567,6 +49576,9 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                 clearable=""
                 placeholder="请用一句话介绍自己"
                 unselectable="off"
+              />
+              <div
+                class=""
               />
             </div>
           </div>
@@ -53402,6 +53414,9 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
             class="t-textarea__inner"
             placeholder="请用一句话介绍自己"
             unselectable="off"
+          />
+          <div
+            class=""
           />
         </div>
       </div>
@@ -61347,6 +61362,9 @@ exports[`csr snapshot test > csr test ./src/input/_example/textarea.vue 1`] = `
         class="t-textarea__inner"
         placeholder="请输入内容"
         unselectable="off"
+      />
+      <div
+        class=""
       />
     </div>
   </div>
@@ -133362,6 +133380,9 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/base.vue 1`] = `
         placeholder="请输入描述文案"
         unselectable="off"
       />
+      <div
+        class=""
+      />
     </div>
   </div>
   <div
@@ -133375,6 +133396,9 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/base.vue 1`] = `
         name="description"
         placeholder="请输入文案，高度可自适应；autosize=true"
         unselectable="off"
+      />
+      <div
+        class=""
       />
     </div>
   </div>
@@ -133390,6 +133414,9 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/base.vue 1`] = `
         placeholder="请输入文案，高度可自适应，最小3行，最大5行；autosize={minRows: 3, maxRows: 5}"
         unselectable="off"
       />
+      <div
+        class=""
+      />
     </div>
   </div>
 </div>
@@ -133403,6 +133430,9 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/events.vue 1`] = `
     class="t-textarea__inner"
     placeholder="请输入"
     unselectable="off"
+  />
+  <div
+    class=""
   />
 </div>
 `;
@@ -133423,11 +133453,20 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/maxlength.vue 1`] 
         placeholder="请输入描述文案，文本长度最多20，maxlength=20"
         unselectable="off"
       />
-      <span
-        class="t-textarea__limit"
+      <div
+        class="t-textarea__tips_wrapper"
       >
-        0/20
-      </span>
+        <div
+          class="t-textarea__tips t-textarea__tips--normal"
+        >
+          这里可以放一些提示文字
+        </div>
+        <span
+          class="t-textarea__limit"
+        >
+          0/20
+        </span>
+      </div>
     </div>
   </div>
   <div
@@ -133441,11 +133480,15 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/maxlength.vue 1`] 
         placeholder="请输入描述文案，最多20字符（一个汉字占两个字符长度），maxcharacter=20"
         unselectable="off"
       />
-      <span
-        class="t-textarea__limit"
+      <div
+        class=""
       >
-        0/20
-      </span>
+        <span
+          class="t-textarea__limit"
+        >
+          0/20
+        </span>
+      </div>
     </div>
   </div>
 </div>
@@ -133467,6 +133510,9 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/type.vue 1`] = `
         disabled="disabled"
         unselectable="off"
       />
+      <div
+        class=""
+      />
     </div>
   </div>
   <div
@@ -133479,6 +133525,9 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/type.vue 1`] = `
         class="t-textarea__inner"
         readonly="readonly"
         unselectable="on"
+      />
+      <div
+        class=""
       />
     </div>
   </div>
@@ -133493,9 +133542,13 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/type.vue 1`] = `
         unselectable="off"
       />
       <div
-        class="t-textarea__tips t-textarea__tips--normal"
+        class="t-textarea__tips_wrapper"
       >
-        这是普通文本提示
+        <div
+          class="t-textarea__tips t-textarea__tips--normal"
+        >
+          这是普通文本提示
+        </div>
       </div>
     </div>
   </div>
@@ -133510,9 +133563,13 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/type.vue 1`] = `
         unselectable="off"
       />
       <div
-        class="t-textarea__tips t-textarea__tips--success"
+        class="t-textarea__tips_wrapper"
       >
-        校验通过文本提示
+        <div
+          class="t-textarea__tips t-textarea__tips--success"
+        >
+          校验通过文本提示
+        </div>
       </div>
     </div>
   </div>
@@ -133527,9 +133584,13 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/type.vue 1`] = `
         unselectable="off"
       />
       <div
-        class="t-textarea__tips t-textarea__tips--warning"
+        class="t-textarea__tips_wrapper"
       >
-        校验不通过文本提示
+        <div
+          class="t-textarea__tips t-textarea__tips--warning"
+        >
+          校验不通过文本提示
+        </div>
       </div>
     </div>
   </div>
@@ -133544,9 +133605,13 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/type.vue 1`] = `
         unselectable="off"
       />
       <div
-        class="t-textarea__tips t-textarea__tips--error"
+        class="t-textarea__tips_wrapper"
       >
-        校验存在严重问题文本提示
+        <div
+          class="t-textarea__tips t-textarea__tips--error"
+        >
+          校验存在严重问题文本提示
+        </div>
       </div>
     </div>
   </div>
