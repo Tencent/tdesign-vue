@@ -23,8 +23,10 @@ export default function useTreeState(props: TypeTreeProps, store: TypeTreeStore)
     virtualConfig: null,
     // 缓存与节点共享的关联对象
     scope: {
+      treeContentRef,
       treeProps: props,
       scopedSlots: {},
+      virtualConfig: null,
     },
   };
 

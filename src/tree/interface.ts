@@ -1,6 +1,6 @@
 import { VNode } from 'vue';
 import { Ref } from '@vue/composition-api';
-import { TNode, TreeOptionData } from '../common';
+import { TNode, TreeOptionData, TScroll } from '../common';
 import TreeStore from '../_common/js/tree/tree-store';
 import TreeNode from '../_common/js/tree/tree-node';
 import { TypeTreeEventState } from '../_common/js/tree/types';
@@ -27,6 +27,10 @@ export type TypeTreeNodeModel = TreeNodeModel<TreeOptionData>;
 export type TypeTargetNode = TreeNodeValue | TypeTreeNode | TypeTreeNodeModel;
 export type TypeVirtualScrollConfig = VirtualScrollConfig;
 export type TypeTimer = ReturnType<typeof setTimeout>;
+
+export interface TypeTreeRow extends TreeNode {
+  __VIRTUAL_SCROLL_INDEX?: number;
+}
 
 export interface TypeEventState extends TypeTreeEventState {
   mouseEvent?: MouseEvent;
@@ -82,9 +86,11 @@ export interface TypeDragHandle {
 }
 
 export interface TypeTreeScope {
+  treeContentRef: Ref<HTMLDivElement>;
   treeProps?: TypeTreeProps;
   scopedSlots?: TypeScopedSlots;
   drag?: TypeDragHandle;
+  scrollProps?: TScroll;
   virtualConfig?: TypeVirtualScrollConfig;
 }
 
@@ -102,4 +108,5 @@ export interface TypeTreeItemProps {
   node: TypeTreeNode;
   treeScope: TypeTreeScope;
   expandOnClickNode: boolean;
+  rowIndex: number;
 }

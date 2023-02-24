@@ -1,8 +1,11 @@
 import { CreateElement } from 'vue';
-import { SetupContext, Ref, onMounted } from '@vue/composition-api';
+import {
+  SetupContext, Ref, onMounted, reactive,
+} from '@vue/composition-api';
 import { TypeVNode, TypeTreeItemProps } from '../interface';
 import { usePrefixClass } from '../../hooks/useConfig';
-import { ClassName } from '../../common';
+import { ClassName, TScroll } from '../../common';
+import useLazyLoad from '../../hooks/useLazyLoad';
 import useItemEvents from './useItemEvents';
 import useRenderIcon from './useRenderIcon';
 import useRenderLabel from './useRenderLabel';
@@ -12,7 +15,8 @@ import useDraggable from './useDraggable';
 
 export default function useTreeItem(props: TypeTreeItemProps, context: SetupContext, treeItemRef: Ref<HTMLElement>) {
   const { node, treeScope } = props;
-  const { virtualConfig } = treeScope;
+  const { virtualConfig, treeContentRef } = treeScope;
+  const scrollProps = treeScope?.scrollProps || ({} as TScroll);
   const classPrefix = usePrefixClass().value;
   const componentName = usePrefixClass('tree').value;
 
@@ -26,6 +30,15 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
   } = useDraggable(
     props,
     treeItemRef,
+  );
+
+  const { hasLazyLoadHolder, tRowHeight } = useLazyLoad(
+    treeContentRef,
+    treeItemRef,
+    reactive({
+      ...scrollProps,
+      rowIndex: props.rowIndex,
+    }),
   );
 
   onMounted(() => {
@@ -133,6 +146,8 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
   };
 
   return {
+    hasLazyLoadHolder,
+    tRowHeight,
     renderItemNode,
   };
 }

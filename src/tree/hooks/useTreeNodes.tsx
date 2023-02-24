@@ -1,8 +1,10 @@
 import { CreateElement } from 'vue';
 import { ref, nextTick, SetupContext } from '@vue/composition-api';
-import { TypeVNode, TypeTreeProps, TypeTreeState } from '../interface';
+import {
+  TypeVNode, TypeTreeRow, TypeTreeNode, TypeTreeProps, TypeTreeState,
+} from '../interface';
 import TreeItem from '../tree-item';
-import { TreeNode, privateKey } from '../../_common/js/tree/tree-node';
+import { privateKey } from '../../_common/js/tree/tree-node';
 import useTreeEvents from './useTreeEvents';
 
 // tree 节点列表渲染
@@ -15,12 +17,14 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
   const { handleClick, handleChange } = useTreeEvents(props, context, state);
 
   // 创建单个 tree 节点
-  const renderItem = (h: CreateElement, node: TreeNode) => {
+  const renderItem = (h: CreateElement, node: TypeTreeRow, index: number) => {
     const { expandOnClickNode } = props;
+    const rowIndex = node.__VIRTUAL_SCROLL_INDEX || index;
 
     const treeItem = (
       <TreeItem
         key={node[privateKey]}
+        rowIndex={rowIndex}
         node={node}
         treeScope={scope}
         onClick={handleClick}
@@ -49,9 +53,9 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
       list = virtualConfig.visibleData.value;
       nodesEmpty.value = list.length <= 0;
       // 虚拟滚动只渲染可见节点
-      treeNodeViews = list.map((node: TreeNode) => renderItem(h, node));
+      treeNodeViews = list.map((node: TypeTreeNode, index) => renderItem(h, node, index));
     } else {
-      treeNodeViews = list.map((node: TreeNode) => {
+      treeNodeViews = list.map((node: TypeTreeNode, index) => {
         const nodePrivateKey = node[privateKey];
         // 如果节点已经存在，则使用缓存节点
         // 不可见的节点，缓存中存在，则依然会保留
@@ -63,7 +67,7 @@ export default function useTreeNodes(props: TypeTreeProps, context: SetupContext
           if (!nodeView) {
             // 初次仅渲染可显示的节点
             // 不存在节点视图，则创建该节点视图并插入到当前位置
-            nodeView = renderItem(h, node);
+            nodeView = renderItem(h, node, index);
             cacheMap.set(nodePrivateKey, nodeView);
           }
         }

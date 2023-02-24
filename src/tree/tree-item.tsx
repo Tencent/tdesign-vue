@@ -15,6 +15,9 @@ export const treeItemProps = {
   node: {
     type: Object as PropType<TypeTreeItemProps['node']>,
   },
+  rowIndex: {
+    type: Number as PropType<TypeTreeItemProps['rowIndex']>,
+  },
   treeScope: {
     type: Object as PropType<TypeTreeItemProps['treeScope']>,
   },
