@@ -6,7 +6,7 @@
 
 import { TNode, SizeEnum } from '../common';
 
-export interface TdRadioProps {
+export interface TdRadioProps<T = RadioValue> {
   /**
    * 是否允许取消选中
    * @default false
@@ -14,10 +14,12 @@ export interface TdRadioProps {
   allowUncheck?: boolean;
   /**
    * 是否选中
+   * @default false
    */
   checked?: boolean;
   /**
    * 是否选中，非受控属性
+   * @default false
    */
   defaultChecked?: boolean;
   /**
@@ -40,14 +42,23 @@ export interface TdRadioProps {
   /**
    * 单选按钮的值
    */
-  value?: RadioValue;
+  value?: T;
   /**
    * 选中状态变化时触发
    */
   onChange?: (checked: boolean, context: { e: Event }) => void;
+  /**
+   * 点击时出发，一般用于外层阻止冒泡场景
+   */
+  onClick?: (context: { e: MouseEvent }) => void;
 }
 
-export interface TdRadioGroupProps {
+export interface TdRadioGroupProps<T = RadioValue> {
+  /**
+   * 是否允许取消选中
+   * @default false
+   */
+  allowUncheck?: boolean;
   /**
    * 是否禁用全部子单选框
    */
@@ -62,18 +73,18 @@ export interface TdRadioGroupProps {
    */
   options?: Array<RadioOption>;
   /**
-   * 组件尺寸
+   * 组件尺寸【讨论中】
    * @default medium
    */
   size?: SizeEnum;
   /**
    * 选中的值
    */
-  value?: RadioValue;
+  value?: T;
   /**
    * 选中的值，非受控属性
    */
-  defaultValue?: RadioValue;
+  defaultValue?: T;
   /**
    * 单选组件按钮形式
    * @default outline
@@ -82,7 +93,7 @@ export interface TdRadioGroupProps {
   /**
    * 选中值发生变化时触发
    */
-  onChange?: (value: RadioValue, context: { e: Event }) => void;
+  onChange?: (value: T, context: { e: Event }) => void;
 }
 
 export type RadioValue = string | number | boolean;

@@ -130,7 +130,7 @@ export default mixins(classPrefixMixins).extend({
 
     // full screen loading
     if (this.fullscreen) {
-      if (!this.showFullScreenLoading) return null;
+      if (!this.showFullScreenLoading || !this.loading) return null;
       return (
         <div class={this.fullScreenClasses} style={this.styles} v-transfer-dom={this.attach}>
           <div class={this.baseClasses}>
@@ -158,7 +158,7 @@ export default mixins(classPrefixMixins).extend({
 
     // transfer parent node
     if (this.attach) {
-      if (!this.showAttachedLoading) return;
+      if (!this.showAttachedLoading || !this.loading) return;
       return (
         <div class={this.attachClasses} style={this.styles} v-transfer-dom={this.attach}>
           {indicator}
@@ -168,11 +168,14 @@ export default mixins(classPrefixMixins).extend({
     }
 
     // Normal Loading without overlay or content
-    return (
-      <div class={this.normalClasses} style={this.styles}>
-        {indicator}
-        {text}
-      </div>
-    );
+    if (this.loading) {
+      return (
+        <div class={this.normalClasses} style={this.styles}>
+          {indicator}
+          {text}
+        </div>
+      );
+    }
+    return null;
   },
 });

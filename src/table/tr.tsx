@@ -28,6 +28,7 @@ import { VirtualScrollConfig } from '../hooks/useVirtualScrollNew';
 import {
   BaseTableCellParams, TableRowData, RowspanColspan, TdPrimaryTableProps, TdBaseTableProps,
 } from './type';
+import { AttachNode } from '../common';
 
 export interface RenderTdExtra {
   rowAndColFixedPosition: RowAndColFixedPosition;
@@ -54,6 +55,7 @@ export const TABLE_PROPS = [
   'scroll',
   'cellEmptyContent',
   'pagination',
+  'attach',
   'onCellClick',
   'onRowClick',
   'onRowDblclick',
@@ -83,6 +85,7 @@ export interface TrProps extends TrCommonProps {
   tableContentElm?: HTMLDivElement;
   cellEmptyContent?: TdBaseTableProps['cellEmptyContent'];
   virtualConfig: VirtualScrollConfig;
+  attach?: AttachNode;
 }
 
 export const ROW_LISTENERS = ['click', 'dblclick', 'mouseover', 'mousedown', 'mouseenter', 'mouseleave', 'mouseup'];
@@ -127,7 +130,14 @@ export function renderCell(
   if (extra?.cellEmptyContent) {
     return isFunction(extra.cellEmptyContent) ? extra.cellEmptyContent(h, params) : extra.cellEmptyContent;
   }
-  if (slots.cellEmptyContent) return slots.cellEmptyContent(params);
+  const hParams = h;
+  Object.assign(hParams, params || {});
+  if (slots.cellEmptyContent) {
+    return slots.cellEmptyContent(hParams);
+  }
+  if (slots['cell-empty-content']) {
+    return slots['cell-empty-content'](hParams);
+  }
   return r;
 }
 
@@ -216,7 +226,6 @@ export default defineComponent({
       trRef,
       tableColFixedClasses,
       tableDraggableClasses,
-      tSlots: context.slots,
       tdEllipsisClass,
       tableBaseClass,
       tdAlignClasses,
@@ -248,7 +257,7 @@ export default defineComponent({
       return (
         <TEllipsis
           placement={'top'}
-          attach={this.tableElm ? () => this.tableElm : undefined}
+          attach={this.attach || (this.tableElm ? () => this.tableElm : undefined)}
           tooltipContent={content && (() => content)}
           tooltipProps={tooltipProps}
           overlayClassName={this.ellipsisOverlayClassName}
@@ -262,7 +271,7 @@ export default defineComponent({
     renderTd(h: CreateElement, params: BaseTableCellParams<TableRowData>, extra: RenderTdExtra) {
       const { col, colIndex, rowIndex } = params;
       const { cellSpans, dataLength, rowAndColFixedPosition } = extra;
-      const cellNode = renderCell(params, this.tSlots, {
+      const cellNode = renderCell(params, this.$scopedSlots, {
         cellEmptyContent: extra.cellEmptyContent,
         pagination: this.pagination,
       });

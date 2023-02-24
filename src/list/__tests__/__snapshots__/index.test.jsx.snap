@@ -37,15 +37,15 @@ exports[`List > :props > :asyncLoading is a string 1`] = `
         height="1em"
         size="medium"
         version="1.1"
-        viewBox="0 0 14 14"
+        viewBox="0 0 12 12"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"
       >
         <foreignobject
           height="12"
           width="12"
-          x="1"
-          y="1"
+          x="0"
+          y="0"
         >
           <div
             class="t-loading__gradient-conic"
@@ -74,15 +74,7 @@ exports[`List > :props > :asyncLoading is load-more 1`] = `
   <div
     class="t-list__load"
   >
-    <div
-      class="t-loading--center t-size-m t-loading t-is-load-more"
-    >
-      <div
-        class="t-loading__text"
-      >
-        点击加载更多
-      </div>
-    </div>
+    <!---->
   </div>
 </div>
 `;

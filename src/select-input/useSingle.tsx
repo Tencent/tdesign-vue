@@ -24,6 +24,7 @@ const COMMON_PROPERTIES = [
   'readonly',
   'suffix',
   'suffixIcon',
+  'autofocus',
 ];
 
 const DEFAULT_KEYS = {
@@ -71,13 +72,15 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const renderSelectSingle = (h: Vue.CreateElement, popupVisible: boolean) => {
     const singleValueDisplay = renderTNode('valueDisplay');
-    const displayedValue = popupVisible && props.allowInput ? inputValue.value : getInputValue(value.value, keys.value);
+    const pureValue = getInputValue(value.value, keys.value);
+    const displayedValue = popupVisible && props.allowInput ? inputValue.value : pureValue;
     const prefixContent = [singleValueDisplay, renderTNode('label')];
     const inputProps = {
       ...commonInputProps.value,
       value: singleValueDisplay ? undefined : displayedValue,
       label: prefixContent.length ? () => prefixContent : undefined,
       autoWidth: props.autoWidth,
+      autofocus: props.autofocus,
       readonly: !props.allowInput,
       placeholder: singleValueDisplay ? '' : props.placeholder,
       suffixIcon: !props.disabled && props.loading ? () => <Loading loading size="small" /> : props.suffixIcon,
@@ -96,18 +99,16 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
         scopedSlots={context.slots}
         onChange={onInnerInputChange}
         onClear={onInnerClear}
-        onBlur={(val: InputValue, context: { e: MouseEvent }) => {
-          props.onBlur?.(value.value, { ...context, inputValue: val });
-          instance.emit('blur', value.value, { ...context, inputValue: val });
-        }}
         onEnter={(val: InputValue, context: { e: KeyboardEvent }) => {
           props.onEnter?.(value.value, { ...context, inputValue: val });
           instance.emit('enter', value.value, { ...context, inputValue: val });
         }}
+        // [Important Info]: SelectInput.blur is not equal to Input, example: click popup panel
         onFocus={(val: InputValue, context: { e: MouseEvent }) => {
           props.onFocus?.(value.value, { ...context, inputValue: val });
           instance.emit('focus', value.value, { ...context, tagInputValue: val });
-          !popupVisible && setInputValue(getInputValue(value.value, keys.value), { ...context, trigger: 'input' }); // 聚焦时拿到value
+          // TO Discuss: focus might not need to change input value. it will caught some curious errors in tree-select
+          // !popupVisible && setInputValue(getInputValue(value.value, keys.value), { ...context, trigger: 'focus' }); // 聚焦时拿到value
         }}
         onPaste={(context: { e: ClipboardEvent; pasteValue: string }) => {
           props.onPaste?.(context);
@@ -128,6 +129,7 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
   return {
     inputRef,
     commonInputProps,
+    singleInputValue: inputValue,
     onInnerClear,
     renderSelectSingle,
   };

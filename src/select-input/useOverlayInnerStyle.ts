@@ -9,13 +9,18 @@ import { Styles } from '../common';
 
 export type overlayInnerStyleProps = Pick<
   TdSelectInputProps,
-  'popupProps' | 'autoWidth' | 'readonly' | 'onPopupVisibleChange' | 'disabled' | 'allowInput'
+  'popupProps' | 'autoWidth' | 'readonly' | 'onPopupVisibleChange' | 'disabled' | 'allowInput' | 'popupVisible'
 >;
 
 // 单位：px
 const MAX_POPUP_WIDTH = 1000;
 
-export default function useOverlayInnerStyle(props: overlayInnerStyleProps) {
+export default function useOverlayInnerStyle(
+  props: overlayInnerStyleProps,
+  extra?: {
+    afterHidePopup?: (ctx: PopupVisibleChangeContext) => void;
+  },
+) {
   const instance = getCurrentInstance();
 
   const { popupProps, autoWidth } = toRefs(props);
@@ -41,14 +46,19 @@ export default function useOverlayInnerStyle(props: overlayInnerStyleProps) {
     };
   };
 
-  const onInnerPopupVisibleChange = (visible: boolean, context: PopupVisibleChangeContext) => {
+  const onInnerPopupVisibleChange = (visible: boolean, ctx: PopupVisibleChangeContext) => {
     if (props.disabled || props.readonly) return;
-
     // 如果点击触发元素（输入框）且为可输入状态，则继续显示下拉框
-    const newVisible = context.trigger === 'trigger-element-click' && props.allowInput ? true : visible;
-    innerPopupVisible.value = newVisible;
-    props.onPopupVisibleChange?.(newVisible, context);
-    instance.emit('popup-visible-change', newVisible, context);
+    const newVisible = ctx.trigger === 'trigger-element-click' && props.allowInput ? true : visible;
+    // 重复点击触发元素时，下拉框展示状态不变，不重复触发事件
+    if (props.popupVisible !== newVisible) {
+      innerPopupVisible.value = newVisible;
+      props.onPopupVisibleChange?.(newVisible, ctx);
+      instance.emit('popup-visible-change', newVisible, ctx);
+      if (!newVisible) {
+        extra?.afterHidePopup?.(ctx);
+      }
+    }
   };
 
   const tOverlayInnerStyle = computed(() => {

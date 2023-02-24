@@ -1,14 +1,14 @@
 import { CreateElement } from 'vue';
 import { ref, nextTick, SetupContext } from '@vue/composition-api';
 import {
-  TypeVNode, TypeTreeRow, TypeTreeNode, TypeTreeProps, TypeTreeState,
+  TypeVNode, TypeTreeRow, TypeTreeNode, TreeProps, TypeTreeState,
 } from '../interface';
 import TreeItem from '../tree-item';
 import { privateKey } from '../../_common/js/tree/tree-node';
 import useTreeEvents from './useTreeEvents';
 
 // tree 节点列表渲染
-export default function useTreeNodes(props: TypeTreeProps, context: SetupContext, state: TypeTreeState) {
+export default function useTreeNodes(props: TreeProps, context: SetupContext, state: TypeTreeState) {
   const treeState = state;
   const {
     store, scope, nodes, virtualConfig,

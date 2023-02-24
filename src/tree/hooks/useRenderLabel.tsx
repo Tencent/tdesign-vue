@@ -69,7 +69,7 @@ export default function useRenderLabel(props: TypeTreeItemProps, context: SetupC
           onChange={handleChange}
           stopLabelTrigger={expandOnClickNode && Array.isArray(node.children) && node.children?.length > 0}
           ignore="expand,active"
-          {...{ props: itemCheckProps }}
+          props={itemCheckProps}
         >
           {labelNode}
         </TCheckBox>
@@ -82,11 +82,12 @@ export default function useRenderLabel(props: TypeTreeItemProps, context: SetupC
           key="1"
           // v-ripple={this.keepAnimation.ripple}
           class={labelClasses}
+          title={node.label}
         >
           {inner}
         </span>
       ) : (
-        <span key="2" class={labelClasses}>
+        <span key="2" class={labelClasses} title={node.label}>
           {inner}
         </span>
       );

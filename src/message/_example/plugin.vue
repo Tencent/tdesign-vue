@@ -14,7 +14,14 @@
         <t-button
           theme="success"
           variant="outline"
-          @click="$message.success({ content: '用户表示操作顺利达成', duration: 2000 })"
+          @click="
+            $message.success({
+              content: '用户表示操作顺利达成，自定义 className 和 style',
+              duration: 2000,
+              className: 'test_class',
+              style: { width: '600px' },
+            })
+          "
         >
           成功
         </t-button>

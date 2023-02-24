@@ -20,7 +20,7 @@ import { emitEvent } from '../utils/event';
 import { ClassName, Styles } from '../common';
 import { updateElement } from '../hooks/useDestroyOnClose';
 import stack from './stack';
-import { getScrollbarWidth } from '../utils/dom';
+import { getScrollbarWidth } from '../_common/js/utils/getScrollbarWidth';
 
 function getCSSValue(v: string | number) {
   return isNaN(Number(v)) ? v : `${Number(v)}px`;
@@ -182,7 +182,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     },
   },
   mounted() {
-    const hasScrollBar = document.body.scrollHeight > document.body.clientHeight;
+    const hasScrollBar = document.documentElement.scrollHeight > document.documentElement.clientHeight;
     const scrollWidth = hasScrollBar ? getScrollbarWidth() : 0;
 
     if (this.draggable) {
@@ -206,7 +206,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
 
   beforeDestroy() {
     this.addKeyboardEvent(false);
-    this.clearStyleFunc();
+    this.destroySelf();
   },
 
   directives: {
@@ -217,9 +217,14 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     clearStyleFunc() {
       clearTimeout(this.timer);
       this.timer = setTimeout(() => {
-        this.styleEl.parentNode?.removeChild?.(this.styleEl);
+        this.destroySelf();
       }, 150);
     },
+
+    destroySelf() {
+      this.styleEl.parentNode?.removeChild?.(this.styleEl);
+    },
+
     storeUid(flag: boolean) {
       if (flag) {
         stack.push(this.uid);
@@ -253,12 +258,13 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       }
     },
     overlayAction(e: MouseEvent) {
+      if (e.target !== this.$refs.dialogPosition) {
+        return;
+      }
+      emitEvent<Parameters<TdDialogProps['onOverlayClick']>>(this, 'overlay-click', { e });
       // 根据closeOnClickOverlay判断点击蒙层时是否触发close事件
       if (this.showOverlay && (this.closeOnOverlayClick ?? this.global.closeOnOverlayClick)) {
-        if (e.target === this.$refs.dialogPosition) {
-          emitEvent<Parameters<TdDialogProps['onOverlayClick']>>(this, 'overlay-click', { e });
-          this.emitCloseEvent({ e, trigger: 'overlay' });
-        }
+        this.emitCloseEvent({ e, trigger: 'overlay' });
       }
     },
     closeBtnAction(e: MouseEvent) {
@@ -406,7 +412,6 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
             className: `${this.componentName}__cancel`,
           })}
           {this.getConfirmBtn({
-            theme: this.theme,
             confirmBtn: this.confirmBtn,
             globalConfirm: this.global.confirm,
             globalConfirmBtnTheme: this.global.confirmBtnTheme,

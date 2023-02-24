@@ -36,12 +36,17 @@ import { off, on } from '../utils/dom';
 import Option from './option';
 import SelectPanel from './select-panel';
 import {
-  getSingleContent, getMultipleContent, getNewMultipleValue, flattenOptions,
+  getSingleContent,
+  getMultipleContent,
+  getNewMultipleValue,
+  flattenOptions,
+  getAllSelectableOption,
 } from './util';
 import useSelectOptions from './hooks/useSelectOptions';
 import { SelectPanelInstance } from './instance';
 import log from '../_common/js/log';
 import useFormDisabled from '../hooks/useFormDisabled';
+import { OptionData } from '../common';
 
 export type OptionInstance = InstanceType<typeof Option>;
 
@@ -207,6 +212,9 @@ export default defineComponent({
     const isReachMaxLimit = computed(
       () => multiple.value && max.value !== 0 && max.value <= (innerValue.value as SelectValue[]).length,
     );
+    const isAllOptionsChecked = computed(
+      () => getAllSelectableOption(optionsList.value).length === (innerValue.value as SelectValue[]).length,
+    );
 
     const placeholderText = computed(
       () => ((!multiple.value
@@ -237,19 +245,35 @@ export default defineComponent({
           label: optionsMap.value.get(value)?.label,
         }))
         : innerValue.value;
-      return {
+      const params = {
         value: val,
         onClose: multiple.value ? (index: number) => removeTag(index) : () => {},
       };
+      if (minCollapsedNum.value && multiple.value) {
+        return {
+          ...params,
+          displayValue: val?.slice?.(0, minCollapsedNum.value),
+        };
+      }
+      return params;
     });
 
-    const collapsedItemsParams = computed(() => multiple.value
-      ? {
-        value: innerValue.value,
-        collapsedSelectedItems: innerValue.value.slice(minCollapsedNum.value),
-        count: innerValue.value.length - minCollapsedNum.value,
-      }
-      : {});
+    const collapsedItemsParams = computed(() => {
+      const tValue = innerValue.value || [];
+      const values = Array.isArray(tValue) ? tValue : [tValue];
+      return multiple.value
+        ? {
+          value: values,
+          collapsedSelectedItems: values
+            .map((item: any) => {
+              const tmpValue = typeof item === 'object' ? item[props.keys?.value || 'value'] : item;
+              return props.options.find((t: OptionData) => t.value === tmpValue);
+            })
+            .slice(minCollapsedNum.value),
+          count: values.length - minCollapsedNum.value,
+        }
+        : {};
+    });
 
     const removeTag = (index: number, context?: { e?: MouseEvent | KeyboardEvent }) => {
       const { e } = context || {};
@@ -268,6 +292,18 @@ export default defineComponent({
       };
       instance.emit('remove', evtObj);
       props.onRemove?.(evtObj);
+    };
+
+    // 全选点击回调，t-option 的事件调用到这里处理
+    const handleCheckAllClick = (e: MouseEvent | KeyboardEvent) => {
+      setInnerValue(
+        isAllOptionsChecked.value
+          ? []
+          : getAllSelectableOption(optionsList.value)
+            .map((option) => option.value)
+            .slice(0, max.value || Infinity),
+        { e, trigger: isAllOptionsChecked.value ? 'uncheck' : 'check' },
+      );
     };
 
     const handleCreate = () => {
@@ -293,7 +329,7 @@ export default defineComponent({
     const handleTInputValueChange = (val: string, context: SelectInputValueChangeContext) => {
       if (context.trigger === 'blur' || !innerPopupVisible.value) return;
       setTInputValue(val);
-      debounceSearch();
+      debounceSearch({ e: context.e as KeyboardEvent });
     };
 
     const handleTagChange = (currentTags: SelectInputValue, context: SelectInputChangeContext) => {
@@ -321,9 +357,9 @@ export default defineComponent({
       props.onEnter?.({ value, e: context?.e, inputValue: tInputValue.value.toString() });
     };
 
-    const debounceSearch = debounce(() => {
+    const debounceSearch = debounce((context: { e: KeyboardEvent }) => {
       instance.emit('search', tInputValue.value);
-      props.onSearch?.(tInputValue.value.toString());
+      props.onSearch?.(tInputValue.value.toString(), { e: context.e });
     }, 300);
 
     const getOverlayElm = (): HTMLElement => {
@@ -439,22 +475,18 @@ export default defineComponent({
             return;
           }
           // enter 选中逻辑
-          if (!multiple.value) {
-            const optionValue = (displayOptions[hoverIndex.value] as TdOptionProps).value;
-            setInnerValue(
-              optionValue,
-              {
-                e,
-                trigger: 'check',
-              },
-              optionValue,
-            );
-            setInnerPopupVisible(false, { e });
+          if (multiple.value && (displayOptions[hoverIndex.value] as TdOptionProps).checkAll) {
+            handleCheckAllClick(e);
           } else {
             const optionValue = (displayOptions[hoverIndex.value] as TdOptionProps)?.value;
             if (!optionValue) return;
-            const newValue = getNewMultipleValue(innerValue.value, optionValue);
-            setInnerValue(newValue.value, { e, trigger: newValue.isCheck ? 'check' : 'uncheck' }, optionValue);
+            if (!multiple.value) {
+              setInnerValue(optionValue, { e, trigger: 'check' }, optionValue);
+              setInnerPopupVisible(false, { e });
+            } else {
+              const newValue = getNewMultipleValue(innerValue.value, optionValue);
+              setInnerValue(newValue.value, { e, trigger: newValue.isCheck ? 'check' : 'uncheck' }, optionValue);
+            }
           }
           break;
         case 'Escape':
@@ -494,7 +526,9 @@ export default defineComponent({
       selectValue: innerValue,
       reserveKeyword,
       isReachMaxLimit,
+      isAllOptionsChecked,
       getOverlayElm,
+      handleCheckAllClick,
       handleCreate,
       handleValueChange: setInnerValue,
       handlerInputChange: setTInputValue,
@@ -530,6 +564,8 @@ export default defineComponent({
 
   methods: {
     renderSuffixIcon() {
+      const suffixIcon = this.renderTNode('suffixIcon');
+      if (suffixIcon) return suffixIcon;
       const {
         isLoading, showArrow, innerPopupVisible, isDisabled,
       } = this;
@@ -545,6 +581,20 @@ export default defineComponent({
         />
       ) : null;
     },
+
+    renderLabel() {
+      const label = this.renderTNode('label');
+      const prefixIcon = this.renderTNode('prefixIcon');
+      if (label && prefixIcon) {
+        return (
+          <div>
+            {label}
+            {prefixIcon}
+          </div>
+        );
+      }
+      return label || prefixIcon;
+    },
   },
 
   render() {
@@ -557,6 +607,11 @@ export default defineComponent({
         <SelectInput
           ref="selectInputRef"
           class={this.componentName}
+          scopedSlots={{
+            tips: this.$scopedSlots.tips,
+            tag: this.$scopedSlots.tag,
+            suffix: this.$scopedSlots.suffix,
+          }}
           {...{
             props: {
               autoWidth: this.autoWidth,
@@ -567,11 +622,13 @@ export default defineComponent({
               keys: this.keys,
               status: this.status,
               tips: this.tips,
+              suffix: this.suffix,
+              tag: this.tag,
               value: this.displayText,
               valueDisplay: () => renderTNode('valueDisplay', { params: this.valueDisplayParams }),
               clearable: this.clearable,
               disabled: this.disabled,
-              label: () => renderTNode('prefixIcon'),
+              label: this.renderLabel,
               suffixIcon: this.renderSuffixIcon,
               placeholder: this.placeholderText,
               inputValue: this.tInputValue,
@@ -579,10 +636,7 @@ export default defineComponent({
                 size: this.size,
                 ...this.inputProps,
               },
-              tagInputProps: {
-                autoWidth: true,
-                ...this.tagInputProps,
-              },
+              tagInputProps: this.tagInputProps,
               tagProps: this.tagProps,
               minCollapsedNum: this.minCollapsedNum,
               collapsedItems: () => renderTNode('collapsedItems', { params: this.collapsedItemsParams }),

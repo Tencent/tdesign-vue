@@ -10,11 +10,13 @@ import { PropType } from 'vue';
 export default {
   /** 宽度随内容自适应 */
   autoWidth: Boolean,
+  /** 自动聚焦 */
+  autofocus: Boolean,
   /** 无边框模式 */
   borderless: Boolean,
   /** 是否可以清空选项 */
   clearable: Boolean,
-  /** 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义 */
+  /** 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义。`value` 表示当前存在的所有标签，`collapsedTags` 表示折叠的标签，泛型 `T` 继承 `SelectOption`，表示选项数据；`count` 表示折叠的数量 */
   collapsedItems: {
     type: Function as PropType<TdSelectProps['collapsedItems']>,
   },
@@ -26,11 +28,11 @@ export default {
   empty: {
     type: [String, Function] as PropType<TdSelectProps['empty']>,
   },
-  /** 自定义过滤方法，用于对现有数据进行搜索过滤，判断是否过滤某一项数据 */
+  /** 自定义搜索规则，用于对现有数据进行搜索，判断是否过滤某一项数据。参数 `filterWords` 表示搜索词，`option`表示单个选项内容，返回值为 `true` 保留该选项，返回值为 `false` 则隐藏该选项。使用该方法时无需设置 `filterable` */
   filter: {
     type: Function as PropType<TdSelectProps['filter']>,
   },
-  /** 是否可搜索 */
+  /** 是否可搜索，默认搜索规则不区分大小写，全文本任意位置匹配。如果默认搜索规则不符合业务需求，可以更为使用 `filter` 自定义过滤规则 */
   filterable: Boolean,
   /** 透传 Input 输入框组件的全部属性 */
   inputProps: {
@@ -39,6 +41,7 @@ export default {
   /** 输入框的值 */
   inputValue: {
     type: [String, Number] as PropType<TdSelectProps['inputValue']>,
+    default: undefined,
   },
   /** 输入框的值，非受控属性 */
   defaultInputValue: {
@@ -47,6 +50,10 @@ export default {
   /** 用来定义 value / label 在 `options` 中对应的字段别名 */
   keys: {
     type: Object as PropType<TdSelectProps['keys']>,
+  },
+  /** 左侧文本 */
+  label: {
+    type: [String, Function] as PropType<TdSelectProps['label']>,
   },
   /** 是否为加载状态 */
   loading: Boolean,
@@ -88,7 +95,10 @@ export default {
     type: Object as PropType<TdSelectProps['popupProps']>,
   },
   /** 是否显示下拉框 */
-  popupVisible: Boolean,
+  popupVisible: {
+    type: Boolean,
+    default: undefined,
+  },
   /** 是否显示下拉框，非受控属性 */
   defaultPopupVisible: Boolean,
   /** 组件前置图标 */
@@ -124,10 +134,19 @@ export default {
   /** 输入框状态 */
   status: {
     type: String as PropType<TdSelectProps['status']>,
+    default: 'default' as TdSelectProps['status'],
     validator(val: TdSelectProps['status']): boolean {
       if (!val) return true;
       return ['default', 'success', 'warning', 'error'].includes(val);
     },
+  },
+  /** 后置图标前的后置内容 */
+  suffix: {
+    type: [String, Function] as PropType<TdSelectProps['suffix']>,
+  },
+  /** 组件后置图标 */
+  suffixIcon: {
+    type: Function as PropType<TdSelectProps['suffixIcon']>,
   },
   /** 透传 TagInput 标签输入框组件的全部属性 */
   tagInputProps: {
@@ -144,12 +163,13 @@ export default {
   /** 选中值 */
   value: {
     type: [String, Number, Object, Array] as PropType<TdSelectProps['value']>,
+    default: undefined,
   },
   /** 选中值，非受控属性 */
   defaultValue: {
     type: [String, Number, Object, Array] as PropType<TdSelectProps['defaultValue']>,
   },
-  /** 自定义选中项呈现方式 */
+  /** 自定义选中项呈现的内容 */
   valueDisplay: {
     type: [String, Function] as PropType<TdSelectProps['valueDisplay']>,
   },

@@ -74,8 +74,11 @@ export default mixins(classPrefixMixins).extend({
       }
       return '';
     },
+    canCheckedCheckbox(): Array<CheckboxOptionObj> {
+      return this.optionList.filter((item) => item.disabled !== true);
+    },
     intersectionLen(): number {
-      const values = this.optionList.map((item) => item.value);
+      const values = this.canCheckedCheckbox.map((item) => item.value);
       if (this.value instanceof Array) {
         const n = intersection(this.value, values);
         return n.length;
@@ -83,13 +86,13 @@ export default mixins(classPrefixMixins).extend({
       return 0;
     },
     isCheckAll(): boolean {
-      if (this.value instanceof Array && this.value.length !== this.optionList.length - 1) {
+      if (this.value instanceof Array && this.value.length !== this.canCheckedCheckbox.length - 1) {
         return false;
       }
-      return this.intersectionLen === this.optionList.length - 1;
+      return this.intersectionLen === this.canCheckedCheckbox.length - 1;
     },
     indeterminate(): boolean {
-      return !this.isCheckAll && this.intersectionLen < this.optionList.length && this.intersectionLen !== 0;
+      return !this.isCheckAll && this.intersectionLen < this.canCheckedCheckbox.length && this.intersectionLen !== 0;
     },
     maxExceeded(): boolean {
       return this.max !== undefined && this.value.length === this.max;
@@ -177,7 +180,7 @@ export default mixins(classPrefixMixins).extend({
       const val = new Set<TdCheckboxProps['value']>();
       for (let i = 0, len = this.optionList.length; i < len; i++) {
         const item = this.optionList[i];
-        if (item.checkAll) continue;
+        if (item.checkAll || item.disabled) continue;
         val.add(item.value);
         if (this.maxExceeded) break;
       }

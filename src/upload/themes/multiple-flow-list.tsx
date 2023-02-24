@@ -1,6 +1,6 @@
 import { CreateElement } from 'vue';
 import {
-  h, computed, defineComponent, toRefs, PropType,
+  computed, defineComponent, toRefs, PropType,
 } from '@vue/composition-api';
 import classNames from 'classnames';
 import {
@@ -15,12 +15,13 @@ import ImageViewer from '../../image-viewer';
 import { CommonDisplayFileProps } from '../interface';
 import { commonProps } from '../constants';
 import TButton from '../../button';
-import { UploadFile, TdUploadProps } from '../type';
+import { UploadFile } from '../type';
 import { UploadDisplayDragEvents } from '../../common';
 import useDrag, { UploadDragEvents } from '../hooks/useDrag';
 import { abridgeName, returnFileSize } from '../../_common/js/upload/utils';
 import TLoading from '../../loading';
 import Link from '../../link';
+import { renderTNodeJSX } from '../../utils/render-tnode';
 
 export interface ImageFlowListProps extends CommonDisplayFileProps {
   uploadFiles?: (toFiles?: UploadFile[]) => void;
@@ -29,7 +30,6 @@ export interface ImageFlowListProps extends CommonDisplayFileProps {
   disabled?: boolean;
   isBatchUpload?: boolean;
   draggable?: boolean;
-  onPreview?: TdUploadProps['onPreview'];
 }
 
 export default defineComponent({
@@ -43,7 +43,6 @@ export default defineComponent({
     disabled: Boolean,
     isBatchUpload: Boolean,
     draggable: Boolean,
-    onPreview: Function as PropType<ImageFlowListProps['onPreview']>,
   },
 
   setup(props: ImageFlowListProps) {
@@ -120,6 +119,7 @@ export default defineComponent({
     renderImgItem(file: UploadFile, index: number) {
       const { iconMap, textMap } = this.getStatusMap();
       const { BrowseIcon, DeleteIcon } = this.icons;
+      const fileName = this.abridgeName && file.name ? abridgeName(file.name, ...this.abridgeName) : file.name;
       return (
         <li class={`${this.uploadPrefix}__card-item`} key={file.name + index + file.percent + file.status}>
           <div
@@ -129,7 +129,7 @@ export default defineComponent({
             ])}
           >
             {['fail', 'progress'].includes(file.status) && (
-              <div class={`${this.uploadPrefix}__card-status-wrap`}>
+              <div class={`${this.uploadPrefix}__card-status-wrap ${this.uploadPrefix}__${this.theme}-${file.status}`}>
                 {iconMap[file.status as 'fail' | 'progress']}
                 <p>
                   {textMap[file.status as 'fail' | 'progress']}
@@ -152,7 +152,7 @@ export default defineComponent({
                     trigger={(h: CreateElement, { open }: any) => (
                       <BrowseIcon
                         onClick={({ e }: { e: MouseEvent }) => {
-                          this.onPreview?.({ file, index, e });
+                          this.$emit('preview', { file, index, e });
                           open();
                         }}
                       />
@@ -163,7 +163,7 @@ export default defineComponent({
               )}
               {!this.disabled && (
                 <span
-                  class={`${this.uploadPrefix}__card-mask-item`}
+                  class={`${this.uploadPrefix}__card-mask-item ${this.uploadPrefix}__delete`}
                   onClick={(e: MouseEvent) => this.onRemove({ e, index, file })}
                 >
                   <DeleteIcon />
@@ -171,7 +171,7 @@ export default defineComponent({
               )}
             </div>
           </div>
-          <p class={`${this.uploadPrefix}__card-name`}>{abridgeName(file.name)}</p>
+          <p class={`${this.uploadPrefix}__card-name`}>{fileName}</p>
         </li>
       );
     },
@@ -181,9 +181,9 @@ export default defineComponent({
       return (
         <div class={`${this.uploadPrefix}__flow-status`}>
           {iconMap[file.status]}
-          <span>
+          <span class={`${this.uploadPrefix}__${this.theme}-${file.status}`}>
             {textMap[file.status]}
-            {file.status === 'progress' ? ` ${file.percent}%` : ''}
+            {this.showUploadProgress && file.status === 'progress' ? ` ${file.percent || 0}%` : ''}
           </span>
         </div>
       );
@@ -192,12 +192,13 @@ export default defineComponent({
     renderNormalActionCol(file: UploadFile, index: number) {
       return (
         <td>
-          <Link
+          <TButton
             theme="primary"
-            hover="color"
+            variant="text"
             content={this.locale?.triggerUploadText?.delete}
+            class={`${this.uploadPrefix}__delete`}
             onClick={(e: MouseEvent) => this.onRemove({ e, index, file })}
-          ></Link>
+          ></TButton>
         </td>
       );
     },
@@ -207,23 +208,26 @@ export default defineComponent({
       // 第一行数据才需要合并单元格
       return index === 0 ? (
         <td rowSpan={this.displayFiles.length} class={`${this.uploadPrefix}__flow-table__batch-row`}>
-          <Link
+          <TButton
             theme="primary"
-            hover="color"
+            variant="text"
             content={this.locale?.triggerUploadText?.delete}
-            onClick={(e: MouseEvent) => this.onRemove({ e, index: -1, file: null })}
-          ></Link>
+            class={`${this.uploadPrefix}__delete`}
+            onClick={(e: MouseEvent) => this.onRemove({ e, index: -1, file: undefined })}
+          ></TButton>
         </td>
       ) : null;
     },
 
     renderFileList() {
-      if (this.fileListDisplay) {
-        return this.fileListDisplay(h, {
+      const list = renderTNodeJSX(this, 'fileListDisplay', {
+        params: {
           files: this.displayFiles,
           dragEvents: this.innerDragEvents,
-        });
-      }
+        },
+      });
+      if (list) return list;
+
       return (
         <table class={`${this.uploadPrefix}__flow-table`} on={this.innerDragEvents}>
           <thead>
@@ -243,13 +247,13 @@ export default defineComponent({
             {this.displayFiles.map((file, index) => {
               // 合并操作出现条件为：当前为合并上传模式且列表内没有待上传文件
               const showBatchUploadAction = this.isBatchUpload;
-              const deleteNode = showBatchUploadAction && !this.displayFiles.find((item) => item.status !== 'success')
+              const deleteNode = showBatchUploadAction && this.displayFiles.every((item) => item.status === 'success' || !item.status)
                 ? this.renderBatchActionCol(index)
                 : this.renderNormalActionCol(file, index);
               const fileName = this.abridgeName?.length ? abridgeName(file.name, ...this.abridgeName) : file.name;
               return (
                 <tr key={file.name + index}>
-                  <td>
+                  <td class={`${this.uploadPrefix}__file-name`}>
                     {file.url ? (
                       <Link href={file.url} target="_blank" hover="color">
                         {fileName}
@@ -266,6 +270,21 @@ export default defineComponent({
             })}
           </tbody>
         </table>
+      );
+    },
+
+    renderImageList() {
+      const customList = renderTNodeJSX(this, 'fileListDisplay', {
+        params: {
+          files: this.displayFiles,
+          dragEvents: this.innerDragEvents,
+        },
+      });
+      if (customList) return customList;
+      return (
+        <ul class={`${this.uploadPrefix}__card clearfix`}>
+          {this.displayFiles.map((file, index) => this.renderImgItem(file, index))}
+        </ul>
       );
     },
   },
@@ -285,13 +304,7 @@ export default defineComponent({
 
         {this.theme === 'image-flow' && (
           <div class={cardClassName} on={this.innerDragEvents}>
-            {this.displayFiles.length ? (
-              <ul class={`${this.uploadPrefix}__card clearfix`}>
-                {this.displayFiles.map((file, index) => this.renderImgItem(file, index))}
-              </ul>
-            ) : (
-              this.renderEmpty()
-            )}
+            {this.displayFiles.length ? this.renderImageList() : this.renderEmpty()}
           </div>
         )}
 
@@ -308,16 +321,18 @@ export default defineComponent({
           <div class={`${this.uploadPrefix}__flow-bottom`}>
             <TButton
               theme="default"
-              onClick={(e: MouseEvent) => this.cancelUpload?.({ e })}
               disabled={this.disabled || !this.uploading}
+              class={`${this.uploadPrefix}__cancel`}
               content={this.locale?.cancelUploadText}
+              onClick={(e: MouseEvent) => this.cancelUpload?.({ e })}
             ></TButton>
             <TButton
               disabled={this.disabled || this.uploading || !this.displayFiles.length}
               theme="primary"
               loading={this.uploading}
-              onClick={() => this.uploadFiles?.()}
               content={this.uploadText}
+              class={`${this.uploadPrefix}__continue`}
+              onClick={() => this.uploadFiles?.()}
             ></TButton>
           </div>
         )}

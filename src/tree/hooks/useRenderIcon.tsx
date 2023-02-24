@@ -19,6 +19,11 @@ export default function useRenderIcon(props: TypeTreeItemProps) {
     return <CaretRightSmallIcon />;
   };
 
+  const handleMousedown = (evt: MouseEvent) => {
+    // 在点击展开按钮 mousedown阶段 阻止冒泡 应用于处理如展开阻止下拉框失焦等场景
+    evt.preventDefault();
+  };
+
   const renderIcon = (h: CreateElement) => {
     const { node, treeScope } = props;
     const { scopedSlots } = treeScope;
@@ -57,6 +62,7 @@ export default function useRenderIcon(props: TypeTreeItemProps) {
         ]}
         trigger="expand"
         ignore="active"
+        onmousedown={handleMousedown}
       >
         {iconNode}
       </span>

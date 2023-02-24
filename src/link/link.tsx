@@ -22,9 +22,9 @@ export default mixins(classPrefixMixins).extend({
     const suffixContent = renderTNodeJSX(this, 'suffixIcon');
     const linkClass = [
       this.componentName,
-      this.commonSizeClassName[this.size],
       `${this.componentName}--theme-${this.theme}`,
       {
+        [this.commonSizeClassName[this.size]]: this.size !== 'medium',
         [this.commonStatusClassName.disabled]: this.disabled,
         [`${this.classPrefix}-is-underline`]: this.underline,
         [`${this.componentName}--hover-${this.hover}`]: !this.disabled,

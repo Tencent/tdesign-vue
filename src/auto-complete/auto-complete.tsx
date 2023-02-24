@@ -1,9 +1,9 @@
 import {
-  computed, ref, defineComponent, toRefs,
+  computed, ref, defineComponent, toRefs, nextTick,
 } from '@vue/composition-api';
 import props from './props';
 import { TdAutoCompleteProps } from './type';
-import Input, { InputProps } from '../input';
+import Input, { InputProps, TdInputProps } from '../input';
 import Popup, { PopupProps } from '../popup';
 import useCommonClassName from '../hooks/useCommonClassName';
 import AutoCompleteOptionList from './option-list';
@@ -24,6 +24,7 @@ export default defineComponent({
     const { global } = useConfig('input');
 
     const popupVisible = ref();
+    const optionListRef = ref();
 
     const getOverlayStyle = (trigger: HTMLElement, popupElement: HTMLElement) => {
       const triggerWidth = trigger.getBoundingClientRect().width || trigger.offsetWidth || trigger.clientWidth;
@@ -50,7 +51,7 @@ export default defineComponent({
       return classes;
     });
 
-    const onInputChange = (value: string, context: { e?: InputEvent | MouseEvent }) => {
+    const onInputChange: TdInputProps['onChange'] = (value, context) => {
       setTValue(value, context);
     };
 
@@ -67,11 +68,44 @@ export default defineComponent({
       popupVisible.value = true;
       emit('focus', { ...context, value });
       props.onFocus?.({ ...context, value });
+      nextTick(() => {
+        optionListRef.value?.addKeyboardListener();
+      });
+    };
+
+    const onInnerBlur: InputProps['onBlur'] = (value, context) => {
+      emit('blur', { ...context, value });
+      props.onBlur?.({ ...context, value });
+    };
+
+    const onInnerCompositionend: InputProps['onCompositionend'] = (value, context) => {
+      emit('compositionend', { ...context, value });
+      props.onCompositionend?.({ ...context, value });
+    };
+
+    const onInnerCompositionstart: InputProps['onCompositionstart'] = (value, context) => {
+      emit('compositionstart', { ...context, value });
+      props.onCompositionstart?.({ ...context, value });
+    };
+
+    const onInnerEnter: InputProps['onEnter'] = (value, context) => {
+      emit('enter', { ...context, value });
+      props.onEnter?.({ ...context, value });
+    };
+
+    const onInnerClear: InputProps['onClear'] = (context) => {
+      emit('clear', context);
+      props.onClear?.(context);
     };
 
     const inputListeners = computed(() => ({
       change: onInputChange,
       focus: onInnerFocus,
+      blur: onInnerBlur,
+      compositionend: onInnerCompositionend,
+      compositionstart: onInnerCompositionstart,
+      enter: onInnerEnter,
+      clear: onInnerClear,
     }));
 
     const onInnerSelect: TdAutoCompleteProps['onSelect'] = (value, context) => {
@@ -99,6 +133,7 @@ export default defineComponent({
       inputListeners,
       tValue,
       popupVisible,
+      optionListRef,
       onPopupVisibleChange,
       getOverlayStyle,
       onInnerSelect,
@@ -115,6 +150,8 @@ export default defineComponent({
         status={this.status}
         readonly={this.readonly}
         disabled={this.disabled}
+        autofocus={this.autofocus}
+        clearable={this.clearable}
         props={this.innerInputProps}
         scopedSlots={this.$scopedSlots}
       />
@@ -122,6 +159,7 @@ export default defineComponent({
     // 联想词列表
     const listContent = (
       <AutoCompleteOptionList
+        ref="optionListRef"
         value={this.tValue}
         options={this.options}
         size={this.size}
@@ -138,7 +176,7 @@ export default defineComponent({
     );
     const topContent = renderTNodeJSX(this, 'panelTopContent');
     const bottomContent = renderTNodeJSX(this, 'panelBottomContent');
-    const panelContent = topContent || listContent || bottomContent ? (
+    const panelContent = topContent || this.options?.length || bottomContent ? (
         <div class={`${this.classPrefix}-autocomplete__panel`}>
           {topContent}
           {listContent}
@@ -153,17 +191,20 @@ export default defineComponent({
     };
     return (
       <div class={this.classes}>
-        <Popup
-          visible={this.popupVisible}
-          on={{ 'visible-change': this.onPopupVisibleChange }}
-          trigger="focus"
-          placement="bottom-left"
-          hideEmptyPopup={true}
-          content={panelContent ? () => panelContent : null}
-          props={popupProps}
-        >
-          {triggerNode}
-        </Popup>
+        {panelContent && (
+          <Popup
+            visible={this.popupVisible}
+            on={{ 'visible-change': this.onPopupVisibleChange }}
+            trigger="focus"
+            placement="bottom-left"
+            hideEmptyPopup={true}
+            content={panelContent ? () => panelContent : null}
+            props={popupProps}
+          >
+            {triggerNode}
+          </Popup>
+        )}
+        {!panelContent && triggerNode}
       </div>
     );
   },

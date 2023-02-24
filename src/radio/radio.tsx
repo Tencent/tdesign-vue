@@ -34,47 +34,36 @@ export default mixins(Vue as VueConstructor<RadioInstance>, classPrefixMixins).e
     };
   },
 
-  computed: {
-    tDisabled(): boolean {
-      return this.formDisabled || this.disabled;
-    },
-  },
-
   render(): VNode {
     const { radioGroup, radioButton } = this;
-
-    const inputProps = {
-      checked: this.checked,
-      disabled: this.tDisabled,
-      value: this.value,
-      name: this.name,
-    };
-
-    if (radioGroup) {
-      inputProps.checked = this.value === radioGroup.value;
-      inputProps.disabled = this.tDisabled === undefined ? radioGroup.disabled : this.tDisabled;
-      inputProps.name = radioGroup.name;
-    }
+    const tChecked = this.getChecked();
+    const tDisabled = this.getDisabled();
 
     const prefixCls = radioButton ? `${this.componentName}-button` : this.componentName;
 
     const inputClass = [
       `${prefixCls}`,
       {
-        [this.commonStatusClassName.checked]: inputProps.checked,
-        [this.commonStatusClassName.disabled]: inputProps.disabled,
+        [this.commonStatusClassName.checked]: tChecked,
+        [this.commonStatusClassName.disabled]: tDisabled,
       },
     ];
 
+    const allowUncheck = this.allowUncheck || this.radioGroup?.allowUncheck;
     return (
-      <label class={inputClass} onClick={this.handleRadioClick}>
+      <label class={inputClass} onClick={this.handleRadioClick} tabindex={tDisabled ? undefined : '0'}>
         <input
           type="radio"
           class={`${prefixCls}__former`}
+          value={this.value ?? undefined}
+          name={this.name || radioGroup?.name || undefined}
+          checked={tChecked}
+          disabled={tDisabled}
+          onClick={this.onInputClick}
+          tabindex="-1"
+          data-value={typeof this.value === 'string' ? `'${this.value}'` : this.value}
+          data-allow-uncheck={allowUncheck || undefined}
           on={{ ...omit(this.$listeners, ['change', 'click']) }}
-          {...{ domProps: inputProps }}
-          onChange={this.handleChange}
-          onClick={this.handleClick}
         />
         <span class={`${prefixCls}__input`}></span>
         <span class={`${prefixCls}__label`}>{renderContent(this, 'default', 'label')}</span>
@@ -83,27 +72,34 @@ export default mixins(Vue as VueConstructor<RadioInstance>, classPrefixMixins).e
   },
 
   methods: {
-    handleChange(e: Event) {
-      if (this.radioGroup) {
-        // this.radioGroup.$emit('checked-change', this.value, { e });
-        this.radioGroup.handleRadioChange(this.value, { e });
-      } else {
-        const target = e.target as HTMLInputElement;
-        emitEvent<Parameters<TdRadioProps['onChange']>>(this, 'change', target.checked, { e });
-      }
+    getChecked() {
+      return this.checked || (this.value !== undefined && this.radioGroup?.value === this.value);
+    },
+
+    getDisabled() {
+      return Boolean((this.formDisabled || this.disabled) ?? this.radioGroup?.disabled);
+    },
+
+    onInputClick(e: MouseEvent) {
+      e.stopPropagation();
     },
 
     handleRadioClick(e: MouseEvent) {
+      const tDisabled = this.getDisabled();
+      if (tDisabled) return;
       this.$emit('click', { e });
+      this.checkRadio(e);
     },
 
-    handleClick(e: Event) {
-      if (!this.checked || !this.allowUncheck) return;
+    checkRadio(e: MouseEvent) {
+      const tChecked = this.getChecked();
+      const allowUncheck = this.allowUncheck || this.radioGroup?.allowUncheck;
       if (this.radioGroup) {
-        // this.radioGroup.$emit('checked-change', undefined, { e });
-        this.radioGroup.handleRadioChange(undefined, { e });
+        const value = tChecked && allowUncheck ? undefined : this.value;
+        this.radioGroup.handleRadioChange(value, { e });
       } else {
-        emitEvent<Parameters<TdRadioProps['onChange']>>(this, 'change', false, { e });
+        const value = allowUncheck ? !tChecked : true;
+        emitEvent<Parameters<TdRadioProps['onChange']>>(this, 'change', value, { e });
       }
     },
   },

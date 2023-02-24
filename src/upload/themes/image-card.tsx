@@ -24,7 +24,6 @@ export interface ImageCardUploadProps extends CommonDisplayFileProps {
   triggerUpload?: (e: MouseEvent) => void;
   uploadFiles?: (toFiles?: UploadFile[]) => void;
   cancelUpload?: (context: { e: MouseEvent; file: UploadFile }) => void;
-  onPreview?: TdUploadProps['onPreview'];
 }
 
 export default defineComponent({
@@ -39,7 +38,6 @@ export default defineComponent({
     triggerUpload: Function as PropType<ImageCardUploadProps['triggerUpload']>,
     uploadFiles: Function as PropType<ImageCardUploadProps['uploadFiles']>,
     cancelUpload: Function as PropType<ImageCardUploadProps['cancelUpload']>,
-    // onPreview: Function as PropType<ImageCardUploadProps['onPreview']>,
   },
 
   setup(props: ImageCardUploadProps) {
@@ -78,7 +76,7 @@ export default defineComponent({
                 trigger={(h: CreateElement, { open }: any) => (
                   <BrowseIcon
                     onClick={({ e }: { e: MouseEvent }) => {
-                      this.onPreview?.({ file, index, e });
+                      this.$emit('preview', { file, index, e });
                       open();
                     }}
                   />
@@ -91,7 +89,7 @@ export default defineComponent({
                 class={`${this.classPrefix}-upload__card-mask-item`}
                 onClick={(e: MouseEvent) => e.stopPropagation()}
               >
-                <DeleteIcon onClick={({ e }: { e: MouseEvent }) => this?.onRemove?.({ e, file, index })} />
+                <DeleteIcon onClick={({ e }: { e: MouseEvent }) => this.onRemove?.({ e, file, index })} />
               </span>,
             ]}
           </div>
@@ -101,7 +99,7 @@ export default defineComponent({
 
     renderProgressFile(file: UploadFile, loadCard: string) {
       return (
-        <div class={loadCard}>
+        <div class={[loadCard, `${this.classPrefix}-upload__${this.theme}-${file.status}`]}>
           <Loading loading={true} size="medium" />
           <p>
             {this.locale?.progress?.uploadingText}
@@ -119,7 +117,7 @@ export default defineComponent({
           <p>{file.response?.error || this.locale?.progress?.failText}</p>
           <div class={`${this.classPrefix}-upload__card-mask`}>
             <span class={`${this.classPrefix}-upload__card-mask-item`} onClick={(e: MouseEvent) => e.stopPropagation()}>
-              <DeleteIcon onClick={({ e }: { e: MouseEvent }) => this?.onRemove?.({ e, file, index })} />
+              <DeleteIcon onClick={({ e }: { e: MouseEvent }) => this.onRemove?.({ e, file, index })} />
             </span>
           </div>
         </div>
@@ -149,7 +147,9 @@ export default defineComponent({
 
           {this.showTrigger && (
             <li class={cardItemClasses} onClick={this.triggerUpload}>
-              <div class={`${this.classPrefix}-upload__card-container ${this.classPrefix}-upload__card-box`}>
+              <div
+                class={`${this.classPrefix}-upload__image-add ${this.classPrefix}-upload__card-container ${this.classPrefix}-upload__card-box`}
+              >
                 <AddIcon />
                 <p class={`${this.classPrefix}-size-s`}>{this.locale?.triggerUploadText?.image}</p>
               </div>

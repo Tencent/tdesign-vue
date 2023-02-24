@@ -8,7 +8,7 @@ import {
 } from 'tdesign-icons-vue';
 import { abridgeName, getFileSizeText } from '../../_common/js/upload/utils';
 import { TdUploadProps, UploadFile } from '../type';
-import TLink from '../../link';
+import Button from '../../button';
 import { CommonDisplayFileProps } from '../interface';
 import { commonProps } from '../constants';
 import useCommonClassName from '../../hooks/useCommonClassName';
@@ -16,6 +16,7 @@ import TLoading from '../../loading';
 import useDrag, { UploadDragEvents } from '../hooks/useDrag';
 import useGlobalIcon from '../../hooks/useGlobalIcon';
 import ImageViewer from '../../image-viewer';
+import { renderTNodeJSX } from '../../utils/render-tnode';
 
 export interface DraggerProps extends CommonDisplayFileProps {
   trigger?: TdUploadProps['trigger'];
@@ -72,9 +73,9 @@ export default defineComponent({
 
   methods: {
     renderImage() {
+      if (!this.displayFiles.length) return;
       const file = this.displayFiles[0];
-      if (!file) return null;
-      const url = file.url || file.response?.url;
+      const url = file?.url || file?.response?.url;
       return (
         <div class={`${this.uploadPrefix}__dragger-img-wrap`}>
           {url && (
@@ -91,9 +92,9 @@ export default defineComponent({
     },
 
     renderUploading() {
+      if (!this.displayFiles.length) return;
       const file = this.displayFiles[0];
-      if (!file) return null;
-      if (file.status === 'progress') {
+      if (file?.status === 'progress') {
         return (
           <div class={`${this.uploadPrefix}__single-progress`}>
             <TLoading />
@@ -105,30 +106,33 @@ export default defineComponent({
 
     renderMainPreview() {
       const file = this.displayFiles[0];
-      if (!file) return null;
       const { CheckCircleFilledIcon, ErrorCircleFilledIcon } = this.icons;
       const fileName = this.abridgeName ? abridgeName(file.name, ...this.abridgeName) : file.name;
+      const fileInfo = [
+        <div class={`${this.uploadPrefix}__dragger-text`} key="info">
+          <span class={`${this.uploadPrefix}__single-name`}>{fileName}</span>
+          {file.status === 'progress' && this.renderUploading()}
+          {file.status === 'success' && <CheckCircleFilledIcon />}
+          {file.status === 'fail' && <ErrorCircleFilledIcon />}
+        </div>,
+        <small class={`${this.sizeClassNames.small}`} key="size">
+          {this.locale.file.fileSizeText}：{getFileSizeText(file.size)}
+        </small>,
+        <small class={`${this.sizeClassNames.small}`} key="time">
+          {this.locale.file.fileOperationDateText}：{file.uploadTime || '-'}
+        </small>,
+      ];
       return (
         <div class={`${this.uploadPrefix}__dragger-progress`}>
           {this.theme === 'image' && this.renderImage()}
           <div class={`${this.uploadPrefix}__dragger-progress-info`}>
-            <div class={`${this.uploadPrefix}__dragger-text`}>
-              <span class={`${this.uploadPrefix}__single-name`}>{fileName}</span>
-              {file.status === 'progress' && this.renderUploading()}
-              {file.status === 'success' && <CheckCircleFilledIcon />}
-              {file.status === 'fail' && <ErrorCircleFilledIcon />}
-            </div>
-            <small class={`${this.sizeClassNames.small}`}>
-              {this.locale.file.fileSizeText}：{getFileSizeText(file.size)}
-            </small>
-            <small class={`${this.sizeClassNames.small}`}>
-              {this.locale.file.fileOperationDateText}：{file.uploadTime || '-'}
-            </small>
+            {renderTNodeJSX(this, 'fileListDisplay', { params: { files: this.displayFiles } }) || fileInfo}
+
             <div class={`${this.uploadPrefix}__dragger-btns`}>
               {['progress', 'waiting'].includes(file.status) && !this.disabled && (
-                <TLink
+                <Button
                   theme="primary"
-                  hover="color"
+                  variant="text"
                   class={`${this.uploadPrefix}__dragger-progress-cancel`}
                   onClick={(e: MouseEvent) => this.cancelUpload?.({
                     e,
@@ -137,40 +141,40 @@ export default defineComponent({
                   }
                 >
                   {this.locale?.cancelUploadText}
-                </TLink>
+                </Button>
               )}
               {!this.autoUpload && file.status === 'waiting' && (
-                <TLink
+                <Button
                   theme="primary"
-                  hover="color"
+                  variant="text"
                   disabled={this.disabled}
                   onClick={() => this.uploadFiles?.()}
                   class={`${this.uploadPrefix}__dragger-upload-btn`}
                 >
                   {this.locale.triggerUploadText.normal}
-                </TLink>
+                </Button>
               )}
             </div>
             {['fail', 'success'].includes(file?.status) && !this.disabled && (
               <div class={`${this.uploadPrefix}__dragger-btns`}>
-                <TLink
+                <Button
                   theme="primary"
-                  hover="color"
+                  variant="text"
                   disabled={this.disabled}
                   class={`${this.uploadPrefix}__dragger-progress-cancel`}
                   onClick={this.triggerUpload}
                 >
                   {this.locale.triggerUploadText.reupload}
-                </TLink>
-                <TLink
+                </Button>
+                <Button
                   theme="danger"
-                  hover="color"
+                  variant="text"
                   disabled={this.disabled}
                   class={`${this.uploadPrefix}__dragger-delete-btn`}
-                  onClick={(e: MouseEvent) => this.onRemove({ e, index: 0, file })}
+                  onClick={(e: MouseEvent) => this.onRemove?.({ e, index: 0, file })}
                 >
                   {this.locale.triggerUploadText.delete}
-                </TLink>
+                </Button>
               </div>
             )}
           </div>
@@ -191,7 +195,7 @@ export default defineComponent({
 
     getContent() {
       const file = this.displayFiles[0];
-      if (file && ['progress', 'success', 'fail', 'waiting'].includes(file.status)) {
+      if (file && (['progress', 'success', 'fail', 'waiting'].includes(file.status) || !file.status)) {
         return this.renderMainPreview();
       }
       return (

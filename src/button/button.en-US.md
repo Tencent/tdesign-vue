@@ -8,7 +8,7 @@ name | type | default | description | required
 block | Boolean | false | make button to be a block-level element | N
 content | String / Slot / Function | - | button's children elements。Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 default | String / Slot / Function | - | default slot。Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-disabled | Boolean | - | disable the button, make it can not be clicked | N
+disabled | Boolean | false | disable the button, make it can not be clicked | N
 ghost | Boolean | false | make background-color to be transparent | N
 href | String | - | \- | N
 icon | Slot / Function | - | use it to set left icon in button。Typescript：`TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N

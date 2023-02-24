@@ -3,7 +3,7 @@ import {
   defineComponent, PropType, ref, computed,
 } from '@vue/composition-api';
 import debounce from 'lodash/debounce';
-import { TNode } from '../common';
+import { AttachNode, TNode } from '../common';
 import { renderContent } from '../utils/render-tnode';
 import { isNodeOverflow } from '../utils/dom';
 import TTooltip, { TooltipProps } from '../tooltip';
@@ -13,7 +13,7 @@ export interface EllipsisProps {
   default?: string | TNode;
   tooltipContent?: string | number | TNode;
   placement?: TooltipProps['placement'];
-  attach?: () => HTMLElement;
+  attach?: AttachNode;
   tooltipProps?: TooltipProps;
   zIndex?: number;
   overlayClassName?: string;
@@ -39,7 +39,7 @@ export default defineComponent({
     /** 浮层位置 */
     placement: String as PropType<EllipsisProps['placement']>,
     /** 挂载元素 */
-    attach: Function as PropType<EllipsisProps['attach']>,
+    attach: [String, Function] as PropType<EllipsisProps['attach']>,
     /** 透传 Tooltip 组件属性 */
     tooltipProps: Object as PropType<EllipsisProps['tooltipProps']>,
     zIndex: Number,

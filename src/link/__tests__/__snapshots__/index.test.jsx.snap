@@ -3,31 +3,31 @@
 exports[`Link > :props > :content 1`] = `
 <div>
   <a
-    class="t-link t-size-m t-link--theme-default t-link--hover-underline"
+    class="t-link t-link--theme-default t-link--hover-underline"
     target=""
   >
     bar
   </a>
   <a
-    class="t-link t-size-m t-link--theme-default t-link--hover-underline"
+    class="t-link t-link--theme-default t-link--hover-underline"
     target=""
   >
     bar
   </a>
   <a
-    class="t-link t-size-m t-link--theme-default t-link--hover-underline"
+    class="t-link t-link--theme-default t-link--hover-underline"
     target=""
   >
     foo
   </a>
   <a
-    class="t-link t-size-m t-link--theme-default t-link--hover-underline"
+    class="t-link t-link--theme-default t-link--hover-underline"
     target=""
   >
     foo
   </a>
   <a
-    class="t-link t-size-m t-link--theme-default t-link--hover-underline"
+    class="t-link t-link--theme-default t-link--hover-underline"
     target=""
   >
     bar
@@ -37,7 +37,7 @@ exports[`Link > :props > :content 1`] = `
 
 exports[`Link > :props > :disabled 1`] = `
 <a
-  class="t-link t-size-m t-link--theme-default t-is-disabled"
+  class="t-link t-link--theme-default t-is-disabled"
   target=""
 >
   text
@@ -46,7 +46,7 @@ exports[`Link > :props > :disabled 1`] = `
 
 exports[`Link > :props > :hover 1`] = `
 <a
-  class="t-link t-size-m t-link--theme-default t-link--hover-color"
+  class="t-link t-link--theme-default t-link--hover-color"
   target=""
 >
   text
@@ -55,7 +55,7 @@ exports[`Link > :props > :hover 1`] = `
 
 exports[`Link > :props > :size 1`] = `
 <a
-  class="t-link t-size-l t-link--theme-default t-link--hover-underline"
+  class="t-link t-link--theme-default t-size-l t-link--hover-underline"
   target=""
 >
   text
@@ -64,7 +64,7 @@ exports[`Link > :props > :size 1`] = `
 
 exports[`Link > :props > :theme 1`] = `
 <a
-  class="t-link t-size-m t-link--theme-primary t-link--hover-underline"
+  class="t-link t-link--theme-primary t-link--hover-underline"
   target=""
 >
   text
@@ -73,7 +73,7 @@ exports[`Link > :props > :theme 1`] = `
 
 exports[`Link > :props > :underline 1`] = `
 <a
-  class="t-link t-size-m t-link--theme-default t-is-underline t-link--hover-underline"
+  class="t-link t-link--theme-default t-is-underline t-link--hover-underline"
   target=""
 >
   text
@@ -82,7 +82,7 @@ exports[`Link > :props > :underline 1`] = `
 
 exports[`Link > <slot> > <icon> 1`] = `
 <a
-  class="t-link t-size-m t-link--theme-default t-link--hover-underline"
+  class="t-link t-link--theme-default t-link--hover-underline"
   target=""
 />
 `;

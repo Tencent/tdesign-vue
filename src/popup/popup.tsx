@@ -9,6 +9,7 @@ import { PopupVisibleChangeContext, TdPopupProps } from './type';
 import Container from './container';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
+import { emitEvent } from '../utils/event';
 
 const classPrefixMixins = getClassPrefixMixins('popup');
 
@@ -110,7 +111,7 @@ export default mixins(classPrefixMixins).extend({
       if (visible) {
         this.preventClosing(true);
         if (!this.hasDocumentEvent) {
-          on(document, 'click', this.handleDocumentClick, true);
+          on(document, 'mousedown', this.handleDocumentClick, true);
           this.hasDocumentEvent = true;
         }
         // focus trigger esc 隐藏浮层
@@ -127,7 +128,7 @@ export default mixins(classPrefixMixins).extend({
       } else {
         this.preventClosing(false);
         // destruction is delayed until after animation ends
-        off(document, 'click', this.handleDocumentClick, true);
+        off(document, 'mousedown', this.handleDocumentClick, true);
         this.hasDocumentEvent = false;
         this.mouseInRange = false;
       }
@@ -187,7 +188,7 @@ export default mixins(classPrefixMixins).extend({
       (this as any).popup?.preventClosing(false);
     }
     this.destroyPopper();
-    off(document, 'click', this.handleDocumentClick, true);
+    off(document, 'mousedown', this.handleDocumentClick, true);
     clearTimeout(this.timeout);
   },
   methods: {
@@ -220,6 +221,7 @@ export default mixins(classPrefixMixins).extend({
         onFirstUpdate: () => {
           this.$nextTick(this.updatePopper);
         },
+        ...this.popperOptions,
       });
     },
 
@@ -272,6 +274,14 @@ export default mixins(classPrefixMixins).extend({
     handleToggle(context: PopupVisibleChangeContext) {
       this.emitPopVisible(!this.visible, context);
     },
+    handleOnScroll(e: WheelEvent) {
+      const { scrollTop, clientHeight, scrollHeight } = e.target as HTMLDivElement;
+      if (scrollHeight - scrollTop === clientHeight) {
+        // touch bottom
+        emitEvent(this, 'scroll-to-bottom', { e });
+      }
+      emitEvent(this, 'scroll', { e });
+    },
     handleOpen(context: Pick<PopupVisibleChangeContext, 'trigger'>) {
       clearTimeout(this.timeout);
       this.timeout = setTimeout(
@@ -301,8 +311,11 @@ export default mixins(classPrefixMixins).extend({
       const triggerEl = this.$el as HTMLElement;
       // ignore document event when clicking trigger element
       if (triggerEl.contains(ev.target as Node)) return;
+      // ignore document event if popper panel clicked
+      const popperEl = this.$refs.popper as HTMLDivElement;
+      if (popperEl.contains(ev.target as Node)) return;
       this.visibleState = 0;
-      this.emitPopVisible(false, { trigger: 'document' });
+      this.emitPopVisible(false, { trigger: 'document', e: ev });
     },
     emitPopVisible(visible: boolean, context: PopupVisibleChangeContext) {
       if (this.disabled || visible === this.visible) return;
@@ -362,7 +375,7 @@ export default mixins(classPrefixMixins).extend({
 
   render(h) {
     const {
-      visible, destroyOnClose, hasTrigger, onScroll,
+      visible, destroyOnClose, hasTrigger, handleOnScroll,
     } = this;
     const ref = renderContent(this, 'default', 'triggerElement');
     const content = renderTNodeJSX(this, 'content');
@@ -405,13 +418,11 @@ export default mixins(classPrefixMixins).extend({
             {
               class: this.overlayClasses,
               ref: 'overlay',
-              on: onScroll
-                ? {
-                  scroll(e: WheelEvent) {
-                    onScroll({ e });
-                  },
-                }
-                : undefined,
+              on: {
+                scroll(e: WheelEvent) {
+                  handleOnScroll(e);
+                },
+              },
             },
             [content, this.showArrow && h('div', { class: `${this.componentName}__arrow` })],
           ),
@@ -435,7 +446,7 @@ export default mixins(classPrefixMixins).extend({
         }}
         parent={this}
         visible={visible}
-        attach={this.attach}
+        attach={() => ({ attach: this.attach, current: this.$el })}
       >
         <transition
           slot="content"

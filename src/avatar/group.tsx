@@ -29,17 +29,14 @@ export default mixins(classPrefixMixins).extend({
         const content = this.setEllipsisContent(children);
         const outAvatar = children.slice(0, this.max);
         outAvatar.push(
-          <Avatar size={this.size} icon={this.isIcon() ? this.collapseAvatar : null}>
+          <Avatar
+            class={`${this.componentName}__collapse`}
+            size={this.size}
+            icon={this.isIcon() ? this.collapseAvatar : null}
+          >
             {content}
           </Avatar>,
         );
-        // 隐藏的avatar通过popup展示
-        // const hideAvatar = children.slice(this.max - children.length);
-        // const popupContent = <t-popup props={{ ...this.popupProps, placement: this.placement }} >
-        //   <template slot='content'>{hideAvatar }</template>
-        //   <Avatar size={this.size} icon={this.isIcon() ? this.collapseAvatar : null}>{content}</Avatar>
-        // </t-popup>;
-        // return [outAvatar, popupContent];
         return [outAvatar];
       }
       return [children];

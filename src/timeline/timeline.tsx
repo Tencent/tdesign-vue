@@ -4,7 +4,7 @@ import {
 } from '@vue/composition-api';
 import getRenderAlign from './utils';
 import TimelineItem from './timeline-item';
-import { TdTimeLineProps } from './type';
+import { TdTimelineProps } from './type';
 import TimelineProps from './props';
 import { usePrefixClass } from '../hooks/useConfig';
 
@@ -14,7 +14,7 @@ export default defineComponent({
     TimelineItem,
   },
   props: { ...TimelineProps },
-  setup(props: TdTimeLineProps) {
+  setup(props: TdTimelineProps) {
     const {
       theme, labelAlign, reverse, layout, mode,
     } = toRefs(props);

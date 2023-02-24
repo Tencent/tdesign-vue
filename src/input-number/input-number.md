@@ -19,7 +19,7 @@ min | String / Number | -Infinity | 最小值。如果是大数，请传入字�
 placeholder | String | undefined | 占位符 | N
 readonly | Boolean | false | 只读状态 | N
 size | String | medium | 组件尺寸。可选项：small/medium/large | N
-status | String | - | 文本框状态。可选项：default/success/warning/error | N
+status | String | default | 文本框状态。可选项：default/success/warning/error | N
 step | String / Number | 1 | 数值改变步数，可以是小数。如果是大数，请保证数据类型为字符串。TS 类型：`InputNumberValue` | N
 suffix | String / Slot / Function | - | 后置内容。TS 类型：`string \| TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 theme | String | row | 按钮布局。可选项：column/row/normal | N

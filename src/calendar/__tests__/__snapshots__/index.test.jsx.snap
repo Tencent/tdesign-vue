@@ -27,7 +27,7 @@ exports[`Calendar > :props > :cell 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -82,7 +82,7 @@ exports[`Calendar > :props > :cell 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -133,10 +133,12 @@ exports[`Calendar > :props > :cell 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -151,10 +153,12 @@ exports[`Calendar > :props > :cell 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -186,7 +190,7 @@ exports[`Calendar > :props > :cell 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            class="t-button t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -488,7 +492,7 @@ exports[`Calendar > :props > :cell 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -543,7 +547,7 @@ exports[`Calendar > :props > :cell 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -594,10 +598,12 @@ exports[`Calendar > :props > :cell 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -612,10 +618,12 @@ exports[`Calendar > :props > :cell 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -647,7 +655,7 @@ exports[`Calendar > :props > :cell 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            class="t-button t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -1024,7 +1032,7 @@ exports[`Calendar > :props > :cellAppend 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -1079,7 +1087,7 @@ exports[`Calendar > :props > :cellAppend 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -1130,10 +1138,12 @@ exports[`Calendar > :props > :cellAppend 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -1148,10 +1158,12 @@ exports[`Calendar > :props > :cellAppend 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -1183,7 +1195,7 @@ exports[`Calendar > :props > :cellAppend 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            class="t-button t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -1870,7 +1882,7 @@ exports[`Calendar > :props > :cellAppend 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -1925,7 +1937,7 @@ exports[`Calendar > :props > :cellAppend 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -1976,10 +1988,12 @@ exports[`Calendar > :props > :cellAppend 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -1994,10 +2008,12 @@ exports[`Calendar > :props > :cellAppend 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -2029,7 +2045,7 @@ exports[`Calendar > :props > :cellAppend 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            class="t-button t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -3375,7 +3391,7 @@ exports[`Calendar > :props > :controllerConfig 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-s t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-size-s t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -3431,7 +3447,7 @@ exports[`Calendar > :props > :controllerConfig 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-s t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-size-s t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -3482,10 +3498,12 @@ exports[`Calendar > :props > :controllerConfig 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -3500,10 +3518,12 @@ exports[`Calendar > :props > :controllerConfig 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -3535,7 +3555,7 @@ exports[`Calendar > :props > :controllerConfig 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-s t-button--variant-base t-button--theme-warning"
+            class="t-button t-button--variant-base t-button--theme-warning t-size-s"
             size="medium"
             type="button"
           >
@@ -4228,7 +4248,7 @@ exports[`Calendar > :props > :fillWithZero 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -4283,7 +4303,7 @@ exports[`Calendar > :props > :fillWithZero 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -4334,10 +4354,12 @@ exports[`Calendar > :props > :fillWithZero 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -4352,10 +4374,12 @@ exports[`Calendar > :props > :fillWithZero 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -4387,7 +4411,7 @@ exports[`Calendar > :props > :fillWithZero 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            class="t-button t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -5074,7 +5098,7 @@ exports[`Calendar > :props > :fillWithZero 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -5129,7 +5153,7 @@ exports[`Calendar > :props > :fillWithZero 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -5180,10 +5204,12 @@ exports[`Calendar > :props > :fillWithZero 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -5198,10 +5224,12 @@ exports[`Calendar > :props > :fillWithZero 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -5233,7 +5261,7 @@ exports[`Calendar > :props > :fillWithZero 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            class="t-button t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -5924,7 +5952,7 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-is-readonly t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -5979,7 +6007,7 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
               class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-is-readonly t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -6030,10 +6058,12 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'month'"
+              tabindex="-1"
               type="radio"
               value="month"
             />
@@ -6048,10 +6078,12 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'year'"
+              tabindex="-1"
               type="radio"
               value="year"
             />
@@ -6083,7 +6115,7 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
         class="t-calendar__control-section-cell"
       >
         <button
-          class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+          class="t-button t-button--variant-base t-button--theme-primary"
           type="button"
         >
           <span
@@ -6889,7 +6921,7 @@ exports[`Calendar > :props > :format 1`] = `
               class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-is-readonly t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -6944,7 +6976,7 @@ exports[`Calendar > :props > :format 1`] = `
               class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-is-readonly t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -6995,10 +7027,12 @@ exports[`Calendar > :props > :format 1`] = `
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'month'"
+              tabindex="-1"
               type="radio"
               value="month"
             />
@@ -7013,10 +7047,12 @@ exports[`Calendar > :props > :format 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'year'"
+              tabindex="-1"
               type="radio"
               value="year"
             />
@@ -7048,7 +7084,7 @@ exports[`Calendar > :props > :format 1`] = `
         class="t-calendar__control-section-cell"
       >
         <button
-          class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+          class="t-button t-button--variant-base t-button--theme-primary"
           type="button"
         >
           <span
@@ -7741,7 +7777,7 @@ exports[`Calendar > :props > :head 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -7796,7 +7832,7 @@ exports[`Calendar > :props > :head 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -7847,10 +7883,12 @@ exports[`Calendar > :props > :head 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -7865,10 +7903,12 @@ exports[`Calendar > :props > :head 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -7900,7 +7940,7 @@ exports[`Calendar > :props > :head 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            class="t-button t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -8591,7 +8631,7 @@ exports[`Calendar > :props > :head 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -8646,7 +8686,7 @@ exports[`Calendar > :props > :head 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -8697,10 +8737,12 @@ exports[`Calendar > :props > :head 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -8715,10 +8757,12 @@ exports[`Calendar > :props > :head 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -8750,7 +8794,7 @@ exports[`Calendar > :props > :head 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            class="t-button t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -9442,7 +9486,7 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -9497,7 +9541,7 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -9548,10 +9592,12 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -9566,10 +9612,12 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -9601,7 +9649,7 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            class="t-button t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -10288,7 +10336,7 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -10343,7 +10391,7 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -10394,10 +10442,12 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -10412,10 +10462,12 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -10447,7 +10499,7 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            class="t-button t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -10965,7 +11017,7 @@ exports[`Calendar > :props > :mode 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -11020,7 +11072,7 @@ exports[`Calendar > :props > :mode 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -11071,10 +11123,12 @@ exports[`Calendar > :props > :mode 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -11089,10 +11143,12 @@ exports[`Calendar > :props > :mode 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -11124,7 +11180,7 @@ exports[`Calendar > :props > :mode 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            class="t-button t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -11811,7 +11867,7 @@ exports[`Calendar > :props > :mode 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -11862,10 +11918,12 @@ exports[`Calendar > :props > :mode 1`] = `
           >
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -11880,10 +11938,12 @@ exports[`Calendar > :props > :mode 1`] = `
             </label>
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -11906,7 +11966,7 @@ exports[`Calendar > :props > :mode 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            class="t-button t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -12164,7 +12224,7 @@ exports[`Calendar > :props > :multiple 1`] = `
               class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-is-readonly t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -12219,7 +12279,7 @@ exports[`Calendar > :props > :multiple 1`] = `
               class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-is-readonly t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -12270,10 +12330,12 @@ exports[`Calendar > :props > :multiple 1`] = `
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'month'"
+              tabindex="-1"
               type="radio"
               value="month"
             />
@@ -12288,10 +12350,12 @@ exports[`Calendar > :props > :multiple 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'year'"
+              tabindex="-1"
               type="radio"
               value="year"
             />
@@ -12323,7 +12387,7 @@ exports[`Calendar > :props > :multiple 1`] = `
         class="t-calendar__control-section-cell"
       >
         <button
-          class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+          class="t-button t-button--variant-base t-button--theme-primary"
           type="button"
         >
           <span
@@ -13014,7 +13078,7 @@ exports[`Calendar > :props > :preventCellContextmenu 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -13069,7 +13133,7 @@ exports[`Calendar > :props > :preventCellContextmenu 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -13120,10 +13184,12 @@ exports[`Calendar > :props > :preventCellContextmenu 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -13138,10 +13204,12 @@ exports[`Calendar > :props > :preventCellContextmenu 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -13173,7 +13241,7 @@ exports[`Calendar > :props > :preventCellContextmenu 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            class="t-button t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -13860,7 +13928,7 @@ exports[`Calendar > :props > :preventCellContextmenu 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -13915,7 +13983,7 @@ exports[`Calendar > :props > :preventCellContextmenu 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -13966,10 +14034,12 @@ exports[`Calendar > :props > :preventCellContextmenu 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -13984,10 +14054,12 @@ exports[`Calendar > :props > :preventCellContextmenu 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -14019,7 +14091,7 @@ exports[`Calendar > :props > :preventCellContextmenu 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            class="t-button t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -14710,7 +14782,7 @@ exports[`Calendar > :props > :range 1`] = `
               class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-is-readonly t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -14765,7 +14837,7 @@ exports[`Calendar > :props > :range 1`] = `
               class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-is-readonly t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -14816,10 +14888,12 @@ exports[`Calendar > :props > :range 1`] = `
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'month'"
+              tabindex="-1"
               type="radio"
               value="month"
             />
@@ -14834,10 +14908,12 @@ exports[`Calendar > :props > :range 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'year'"
+              tabindex="-1"
               type="radio"
               value="year"
             />
@@ -14869,7 +14945,7 @@ exports[`Calendar > :props > :range 1`] = `
         class="t-calendar__control-section-cell"
       >
         <button
-          class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+          class="t-button t-button--variant-base t-button--theme-primary"
           type="button"
         >
           <span
@@ -15560,7 +15636,7 @@ exports[`Calendar > :props > :theme 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-s t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-size-s t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -15615,7 +15691,7 @@ exports[`Calendar > :props > :theme 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-s t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-size-s t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -15666,10 +15742,12 @@ exports[`Calendar > :props > :theme 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -15684,10 +15762,12 @@ exports[`Calendar > :props > :theme 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -16383,7 +16463,7 @@ exports[`Calendar > :props > :theme 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -16438,7 +16518,7 @@ exports[`Calendar > :props > :theme 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -16489,10 +16569,12 @@ exports[`Calendar > :props > :theme 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -16507,10 +16589,12 @@ exports[`Calendar > :props > :theme 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -16542,7 +16626,7 @@ exports[`Calendar > :props > :theme 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            class="t-button t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -17233,7 +17317,7 @@ exports[`Calendar > :props > :value 1`] = `
               class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-is-readonly t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -17288,7 +17372,7 @@ exports[`Calendar > :props > :value 1`] = `
               class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-is-readonly t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -17339,10 +17423,12 @@ exports[`Calendar > :props > :value 1`] = `
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'month'"
+              tabindex="-1"
               type="radio"
               value="month"
             />
@@ -17357,10 +17443,12 @@ exports[`Calendar > :props > :value 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'year'"
+              tabindex="-1"
               type="radio"
               value="year"
             />
@@ -17392,7 +17480,7 @@ exports[`Calendar > :props > :value 1`] = `
         class="t-calendar__control-section-cell"
       >
         <button
-          class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+          class="t-button t-button--variant-base t-button--theme-primary"
           type="button"
         >
           <span
@@ -18083,7 +18171,7 @@ exports[`Calendar > :props > :week 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -18138,7 +18226,7 @@ exports[`Calendar > :props > :week 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -18189,10 +18277,12 @@ exports[`Calendar > :props > :week 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -18207,10 +18297,12 @@ exports[`Calendar > :props > :week 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -18242,7 +18334,7 @@ exports[`Calendar > :props > :week 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            class="t-button t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -18915,7 +19007,7 @@ exports[`Calendar > :props > :week 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -18970,7 +19062,7 @@ exports[`Calendar > :props > :week 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -19021,10 +19113,12 @@ exports[`Calendar > :props > :week 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -19039,10 +19133,12 @@ exports[`Calendar > :props > :week 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -19074,7 +19170,7 @@ exports[`Calendar > :props > :week 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            class="t-button t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -19766,7 +19862,7 @@ exports[`Calendar > :props > :year:month 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -19821,7 +19917,7 @@ exports[`Calendar > :props > :year:month 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -19872,10 +19968,12 @@ exports[`Calendar > :props > :year:month 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -19890,10 +19988,12 @@ exports[`Calendar > :props > :year:month 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -19925,7 +20025,7 @@ exports[`Calendar > :props > :year:month 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            class="t-button t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -20612,7 +20712,7 @@ exports[`Calendar > :props > :year:month 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -20667,7 +20767,7 @@ exports[`Calendar > :props > :year:month 1`] = `
                 class="t-input__wrap t-input--auto-width"
               >
                 <div
-                  class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                  class="t-input t-is-readonly t-input--prefix t-input--suffix"
                 >
                   <div
                     class="t-input__prefix"
@@ -20718,10 +20818,12 @@ exports[`Calendar > :props > :year:month 1`] = `
           >
             <label
               class="t-radio-button t-is-checked"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'month'"
+                tabindex="-1"
                 type="radio"
                 value="month"
               />
@@ -20736,10 +20838,12 @@ exports[`Calendar > :props > :year:month 1`] = `
             </label>
             <label
               class="t-radio-button"
+              tabindex="0"
             >
               <input
                 class="t-radio-button__former"
-                name=""
+                data-value="'year'"
+                tabindex="-1"
                 type="radio"
                 value="year"
               />
@@ -20771,7 +20875,7 @@ exports[`Calendar > :props > :year:month 1`] = `
           class="t-calendar__control-section-cell"
         >
           <button
-            class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+            class="t-button t-button--variant-base t-button--theme-primary"
             type="button"
           >
             <span
@@ -21462,7 +21566,7 @@ exports[`Calendar > <slot> > <cell> 1`] = `
               class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-is-readonly t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -21517,7 +21621,7 @@ exports[`Calendar > <slot> > <cell> 1`] = `
               class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-is-readonly t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -21568,10 +21672,12 @@ exports[`Calendar > <slot> > <cell> 1`] = `
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'month'"
+              tabindex="-1"
               type="radio"
               value="month"
             />
@@ -21586,10 +21692,12 @@ exports[`Calendar > <slot> > <cell> 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'year'"
+              tabindex="-1"
               type="radio"
               value="year"
             />
@@ -21621,7 +21729,7 @@ exports[`Calendar > <slot> > <cell> 1`] = `
         class="t-calendar__control-section-cell"
       >
         <button
-          class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+          class="t-button t-button--variant-base t-button--theme-primary"
           type="button"
         >
           <span
@@ -22311,7 +22419,7 @@ exports[`Calendar > <slot> > <cellAppend> 1`] = `
               class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-is-readonly t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -22366,7 +22474,7 @@ exports[`Calendar > <slot> > <cellAppend> 1`] = `
               class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-is-readonly t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -22417,10 +22525,12 @@ exports[`Calendar > <slot> > <cellAppend> 1`] = `
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'month'"
+              tabindex="-1"
               type="radio"
               value="month"
             />
@@ -22435,10 +22545,12 @@ exports[`Calendar > <slot> > <cellAppend> 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'year'"
+              tabindex="-1"
               type="radio"
               value="year"
             />
@@ -22470,7 +22582,7 @@ exports[`Calendar > <slot> > <cellAppend> 1`] = `
         class="t-calendar__control-section-cell"
       >
         <button
-          class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+          class="t-button t-button--variant-base t-button--theme-primary"
           type="button"
         >
           <span
@@ -23160,7 +23272,7 @@ exports[`Calendar > <slot> > <head> 1`] = `
               class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-is-readonly t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -23215,7 +23327,7 @@ exports[`Calendar > <slot> > <head> 1`] = `
               class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-is-readonly t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -23266,10 +23378,12 @@ exports[`Calendar > <slot> > <head> 1`] = `
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'month'"
+              tabindex="-1"
               type="radio"
               value="month"
             />
@@ -23284,10 +23398,12 @@ exports[`Calendar > <slot> > <head> 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'year'"
+              tabindex="-1"
               type="radio"
               value="year"
             />
@@ -23319,7 +23435,7 @@ exports[`Calendar > <slot> > <head> 1`] = `
         class="t-calendar__control-section-cell"
       >
         <button
-          class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+          class="t-button t-button--variant-base t-button--theme-primary"
           type="button"
         >
           <span
@@ -24009,7 +24125,7 @@ exports[`Calendar > <slot> > <week> 1`] = `
               class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-is-readonly t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -24064,7 +24180,7 @@ exports[`Calendar > <slot> > <week> 1`] = `
               class="t-input__wrap t-input--auto-width"
             >
               <div
-                class="t-input t-size-m t-is-default t-is-readonly t-input--prefix t-input--suffix"
+                class="t-input t-is-readonly t-input--prefix t-input--suffix"
               >
                 <div
                   class="t-input__prefix"
@@ -24115,10 +24231,12 @@ exports[`Calendar > <slot> > <week> 1`] = `
         >
           <label
             class="t-radio-button t-is-checked"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'month'"
+              tabindex="-1"
               type="radio"
               value="month"
             />
@@ -24133,10 +24251,12 @@ exports[`Calendar > <slot> > <week> 1`] = `
           </label>
           <label
             class="t-radio-button"
+            tabindex="0"
           >
             <input
               class="t-radio-button__former"
-              name=""
+              data-value="'year'"
+              tabindex="-1"
               type="radio"
               value="year"
             />
@@ -24168,7 +24288,7 @@ exports[`Calendar > <slot> > <week> 1`] = `
         class="t-calendar__control-section-cell"
       >
         <button
-          class="t-button t-size-m t-button--variant-base t-button--theme-primary"
+          class="t-button t-button--variant-base t-button--theme-primary"
           type="button"
         >
           <span

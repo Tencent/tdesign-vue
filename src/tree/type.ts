@@ -166,11 +166,11 @@ export interface TdTreeProps<T extends TreeOptionData = TreeOptionData> {
   /**
    * 节点激活时触发，泛型 `T` 表示树节点 TS 类型
    */
-  onActive?: (value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T> }) => void;
+  onActive?: (value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T>; e: Event }) => void;
   /**
    * 节点选中状态变化时触发，context.node 表示当前变化的选项，泛型 `T` 表示树节点 TS 类型
    */
-  onChange?: (value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T> }) => void;
+  onChange?: (value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T>; e?: any }) => void;
   /**
    * 节点点击时触发，泛型 `T` 表示树节点 TS 类型
    */
@@ -232,47 +232,47 @@ export interface TreeInstanceFunctions<T extends TreeOptionData = TreeOptionData
   /**
    * 为指定节点添加子节点，默认添加到根节点，泛型 `T` 表示树节点 TS 类型
    */
-  appendTo?: (value: TreeNodeValue, newData: T | Array<T>) => void;
+  appendTo: (value: TreeNodeValue, newData: T | Array<T>) => void;
   /**
    * 获取指定节点下标
    */
-  getIndex?: (value: TreeNodeValue) => number;
+  getIndex: (value: TreeNodeValue) => number;
   /**
    * 获取指定节点所有信息，泛型 `T` 表示树节点 TS 类型
    */
-  getItem?: (value: TreeNodeValue) => TreeNodeModel<T>;
+  getItem: (value: TreeNodeValue) => TreeNodeModel<T>;
   /**
    * 获取某节点的全部子孙节点；参数为空，则表示获取整棵树的全部节点，泛型 `T` 表示树节点 TS 类型
    */
-  getItems?: (value?: TreeNodeValue) => Array<TreeNodeModel<T>>;
+  getItems: (value?: TreeNodeValue) => Array<TreeNodeModel<T>>;
   /**
    * 获取指定节点的直属父节点，泛型 `T` 表示树节点 TS 类型
    */
-  getParent?: (value: TreeNodeValue) => TreeNodeModel<T>;
+  getParent: (value: TreeNodeValue) => TreeNodeModel<T>;
   /**
    * 获取指定节点的全部父节点，泛型 `T` 表示树节点 TS 类型
    */
-  getParents?: (value: TreeNodeValue) => TreeNodeModel<T>[];
+  getParents: (value: TreeNodeValue) => TreeNodeModel<T>[];
   /**
    * 自下而上获取全路径数据，泛型 `T` 表示树节点 TS 类型
    */
-  getPath?: (value: TreeNodeValue) => TreeNodeModel<T>[];
+  getPath: (value: TreeNodeValue) => TreeNodeModel<T>[];
   /**
    * 插入新节点到指定节点后面，泛型 `T` 表示树节点 TS 类型
    */
-  insertAfter?: (value: TreeNodeValue, newData: T) => void;
+  insertAfter: (value: TreeNodeValue, newData: T) => void;
   /**
    * 插入新节点到指定节点前面，泛型 `T` 表示树节点 TS 类型
    */
-  insertBefore?: (value: TreeNodeValue, newData: T) => void;
+  insertBefore: (value: TreeNodeValue, newData: T) => void;
   /**
    * 移除指定节点
    */
-  remove?: (value: TreeNodeValue) => void;
+  remove: (value: TreeNodeValue) => void;
   /**
    * 设置节点状态
    */
-  setItem?: (value: TreeNodeValue, options: TreeNodeState) => void;
+  setItem: (value: TreeNodeValue, options: TreeNodeState) => void;
 }
 
 export interface TreeNodeState {
@@ -347,7 +347,7 @@ export interface TreeNodeModel<T extends TreeOptionData = TreeOptionData> extend
    */
   checked: boolean;
   /**
-   * 节点数据，泛型 `T` 表示树节点 TS 类型
+   * 节点数据，泛型 `T` 表示树节点 TS 类型，继承 `TreeOptionData`
    */
   data: T;
   /**
@@ -363,7 +363,7 @@ export interface TreeNodeModel<T extends TreeOptionData = TreeOptionData> extend
    */
   loading: boolean;
   /**
-   * 追加子节点数据，泛型 `T` 表示树节点 TS 类型
+   * 追加子节点数据，泛型 `T` 表示树节点 TS 类型，继承 `TreeOptionData`
    */
   appendData: (data: T | Array<T>) => void;
   /**
@@ -423,7 +423,7 @@ export interface TreeNodeModel<T extends TreeOptionData = TreeOptionData> extend
    */
   remove: (value?: TreeNodeValue) => void;
   /**
-   * 设置当前节点数据，数据变化可自动刷新页面，泛型 `T` 表示树节点 TS 类型
+   * 设置节点数据，数据变化可自动刷新页面，泛型 `T` 表示树节点 TS 类型，继承 `TreeOptionData`
    */
   setData: (data: T) => void;
 }

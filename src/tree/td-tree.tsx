@@ -1,7 +1,6 @@
 import upperFirst from 'lodash/upperFirst';
 import isFunction from 'lodash/isFunction';
 import { watch, toRefs, defineComponent } from '@vue/composition-api';
-
 import TreeNode from '../_common/js/tree/tree-node';
 import props from './props';
 import { useConfig, usePrefixClass } from '../hooks/useConfig';
@@ -29,7 +28,11 @@ export default defineComponent({
     prop: 'value',
     event: 'change',
   },
-  props,
+
+  props: {
+    ...props,
+  },
+
   setup(props, context) {
     const { t, global } = useConfig('tree');
     const classPrefix = usePrefixClass();
@@ -56,13 +59,15 @@ export default defineComponent({
         keys,
       });
     });
-    watch(refProps.value, (nVal) => {
+    watch(refProps.value, (nVal, previousVal) => {
+      if (nVal.join() === previousVal?.join()) return;
       store.replaceChecked(nVal);
     });
     watch(refProps.expanded, (nVal) => {
       store.replaceExpanded(nVal);
     });
-    watch(refProps.actived, (nVal) => {
+    watch(refProps.actived, (nVal, previousVal) => {
+      if (nVal.join() === previousVal?.join()) return;
       store.replaceActived(nVal);
     });
 

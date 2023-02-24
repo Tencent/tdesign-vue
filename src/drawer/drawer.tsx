@@ -11,7 +11,7 @@ import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
 import { ClassName, Styles } from '../common';
 import ActionMixin from '../dialog/actions';
-import { getScrollbarWidth } from '../utils/dom';
+import { getScrollbarWidth } from '../_common/js/utils/getScrollbarWidth';
 
 type FooterButtonType = 'confirm' | 'cancel';
 
@@ -148,6 +148,10 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
       }
     `;
     this.handleScrollThrough(this.visible);
+  },
+
+  beforeDestroy() {
+    this.clearStyleFunc();
   },
 
   render() {

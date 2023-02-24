@@ -13,7 +13,7 @@ export interface TdAutoCompleteProps<T extends AutoCompleteOption = AutoComplete
   /**
    * 自动获取焦点
    */
-  autoFocus?: boolean;
+  autofocus?: boolean;
   /**
    * 是否允许清空
    */
@@ -75,6 +75,7 @@ export interface TdAutoCompleteProps<T extends AutoCompleteOption = AutoComplete
   size?: SizeEnum;
   /**
    * 输入框状态
+   * @default default
    */
   status?: 'default' | 'success' | 'warning' | 'error';
   /**
@@ -106,7 +107,7 @@ export interface TdAutoCompleteProps<T extends AutoCompleteOption = AutoComplete
   /**
    * 输入框值发生变化时触发
    */
-  onChange?: (value: string, context?: { e?: InputEvent | MouseEvent | KeyboardEvent }) => void;
+  onChange?: (value: string, context?: { e?: InputEvent | MouseEvent | CompositionEvent | KeyboardEvent }) => void;
   /**
    * 清空按钮点击时触发
    */

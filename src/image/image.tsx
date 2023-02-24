@@ -1,15 +1,18 @@
-import { defineComponent, ref } from '@vue/composition-api';
+import { defineComponent, ref, watch } from '@vue/composition-api';
 import omit from 'lodash/omit';
+import { ImageErrorIcon, ImageIcon } from 'tdesign-icons-vue';
 import observe from '../_common/js/utils/observe';
 import { useConfig } from '../config-provider/useConfig';
 import { TdImageProps } from './type';
 import props from './props';
+import { renderTNodeJSX } from '../utils/render-tnode';
+import Space from '../space';
 
 export default defineComponent({
   name: 'TImage',
-  components: {},
+  components: { Space },
   props,
-  setup(props: TdImageProps) {
+  setup(props: TdImageProps, { emit }) {
     const {
       lazy, overlayTrigger, onLoad, onError,
     } = props;
@@ -33,23 +36,36 @@ export default defineComponent({
       'onError',
     ]);
 
-    const { classPrefix } = useConfig();
+    const { classPrefix, globalConfig } = useConfig('image');
     const imageRef = ref<HTMLElement>(null);
+
+    const imageSrc = ref(props.src);
+    watch(
+      () => props.src,
+      () => {
+        hasError.value = false;
+        isLoaded.value = false;
+        imageSrc.value = props.src;
+      },
+    );
+
     const shouldLoad = ref(!lazy);
     const handleLoadImage = () => {
       shouldLoad.value = true;
     };
 
     const isLoaded = ref(false);
-    const handleLoad = () => {
+    const handleLoad = (e: Event) => {
       isLoaded.value = true;
-      onLoad?.();
+      emit('load', { e });
+      onLoad?.({ e });
     };
 
     const hasError = ref(false);
-    const handleError = () => {
+    const handleError = (e: Event) => {
       hasError.value = true;
-      onError?.();
+      emit('error', { e });
+      onError?.({ e });
     };
 
     const hasMouseEvent = overlayTrigger === 'hover';
@@ -65,9 +81,11 @@ export default defineComponent({
       imageRef,
       handleLoadImage,
       classPrefix,
+      globalConfig,
       hasMouseEvent,
       handleToggleOverlay,
       shouldShowOverlay,
+      imageSrc,
       hasError,
       shouldLoad,
       handleError,
@@ -87,17 +105,17 @@ export default defineComponent({
   },
   methods: {
     renderPlaceholder() {
-      if (!this.placeholder) {
-        return null;
-      }
-      return <div class={`${this.classPrefix}-image__placeholder`}>{this.placeholder}</div>;
+      const placeholder = renderTNodeJSX(this, 'placeholder');
+      if (!placeholder) return;
+      return <div class={`${this.classPrefix}-image__placeholder`}>{placeholder}</div>;
     },
     renderGalleryShadow() {
       if (!this.gallery) return null;
       return <div class={`${this.classPrefix}-image__gallery-shadow`} />;
     },
     renderOverlay() {
-      if (!this.overlayContent) return null;
+      const overlay = renderTNodeJSX(this, 'overlayContent');
+      if (!overlay) return null;
       return (
         <div
           class={[
@@ -105,7 +123,7 @@ export default defineComponent({
             !this.shouldShowOverlay && `${this.classPrefix}-image__overlay-content--hidden`,
           ]}
         >
-          {this.overlayContent}
+          {overlay}
         </div>
       );
     },
@@ -132,7 +150,7 @@ export default defineComponent({
         {(this.hasError || !this.shouldLoad) && <div class={`${this.classPrefix}-image`} />}
         {!(this.hasError || !this.shouldLoad) && (
           <img
-            src={this.src}
+            src={this.imageSrc}
             onError={this.handleError}
             onLoad={this.handleLoad}
             class={[
@@ -145,20 +163,22 @@ export default defineComponent({
         )}
         {!(this.hasError || !this.shouldLoad) && !this.isLoaded && (
           <div class={`${this.classPrefix}-image__loading`}>
-            {this.loading || (
-              <div direction="vertical" size={8} align="center">
-                图片加载中
-              </div>
+            {renderTNodeJSX(this, 'loading') || (
+              <Space direction="vertical" size={8} align="center">
+                <ImageIcon size="24px" />
+                {this.globalConfig.loadingText}
+              </Space>
             )}
           </div>
         )}
 
         {this.hasError && (
           <div class={`${this.classPrefix}-image__error`}>
-            {this.error || (
-              <div direction="vertical" size={8} align="center">
-                图片无法显示
-              </div>
+            {renderTNodeJSX(this, 'error') || (
+              <Space direction="vertical" size={8} align="center">
+                <ImageErrorIcon size="24px" />
+                {this.globalConfig.errorText}
+              </Space>
             )}
           </div>
         )}

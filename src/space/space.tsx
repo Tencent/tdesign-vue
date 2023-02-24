@@ -55,16 +55,16 @@ export default defineComponent({
       COMPONENT_NAME, spaceClassNames, renderStyle, slots,
     } = this;
 
-    const children = slots.default?.().filter((child) => child.tag !== undefined) || [];
+    const children = slots.default?.().filter((child) => child.tag !== undefined || child.text) || [];
     const childCount = children?.length;
 
     const renderChildren = () => children.map((child, index) => {
-      const renderSeparator = renderTNodeJSX(this, 'separator');
-      const showSeparator = index + 1 !== childCount && renderSeparator;
+      const separatorNode = renderTNodeJSX(this, 'separator');
+      const showSeparator = index + 1 !== childCount && separatorNode;
 
       return [
           <div class={`${COMPONENT_NAME}-item`}>{child}</div>,
-          showSeparator ? <div class={`${COMPONENT_NAME}-item-separator`}>{renderSeparator}</div> : null,
+          showSeparator ? <div class={`${COMPONENT_NAME}-item-separator`}>{separatorNode}</div> : null,
       ];
     });
 

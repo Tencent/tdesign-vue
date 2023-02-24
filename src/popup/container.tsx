@@ -1,7 +1,9 @@
 import Vue from 'vue';
 import raf from 'raf';
+import { PropType } from '@vue/composition-api';
+import isFunction from 'lodash/isFunction';
 import { getAttach, removeDom } from '../utils/dom';
-import props from './props';
+import { TdPopupProps } from './type';
 
 function isContentRectChanged(rect1: DOMRectReadOnly, rect2: DOMRectReadOnly) {
   if (!rect1 || !rect2) return;
@@ -40,6 +42,7 @@ const Trigger = Vue.extend({
     };
   },
   mounted() {
+    if (!this.$el || (typeof process !== 'undefined' && process.env?.NODE_ENV === 'test')) return;
     this.$on(
       'hook:destroyed',
       observeResize(this.$el, (ev) => {
@@ -60,7 +63,13 @@ export default Vue.extend({
   props: {
     parent: Object,
     visible: Boolean,
-    attach: props.attach,
+    // support attach to current node when current is equal to `CURRENT_NODE`
+    attach: [Function] as PropType<
+      () => {
+        attach: TdPopupProps['attach'];
+        current: HTMLElement;
+      }
+    >,
   },
   data() {
     return {
@@ -78,6 +87,7 @@ export default Vue.extend({
     });
   },
   destroyed() {
+    if (typeof process !== 'undefined' && process.env?.NODE_ENV === 'test') return;
     this.unmountContent();
   },
   methods: {
@@ -91,7 +101,7 @@ export default Vue.extend({
       this.content = new (this.$root.constructor as any)({
         parent,
         render() {
-          return <div>{parent.$slots.content}</div>;
+          return parent.$slots.content;
         },
         mounted() {
           parent.$emit('contentMounted');
@@ -110,12 +120,16 @@ export default Vue.extend({
           removeDom(elm);
         },
       });
+      const { attach, current } = this.attach();
+      const currentAttach = attach === 'CURRENT_NODE' ? current : attach;
       // @ts-ignore
-      getAttach(this.attach, this.$refs?.triggerRef?.$el).appendChild(elm);
+      getAttach(currentAttach, this.$refs?.triggerRef?.$el).appendChild(elm);
       this.content.$mount(elm.children[0]);
     },
     unmountContent() {
-      this.content?.$destroy();
+      if (isFunction(this.content?.$destroy)) {
+        this.content.$destroy();
+      }
     },
     updateContent() {
       this.content?.$forceUpdate();

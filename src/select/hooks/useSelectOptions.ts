@@ -1,10 +1,6 @@
 /**
  * Select 内部 option 处理
  * 将 slot 方式传入的 <t-option /> 元素与 prop 方式传入的 options 参数进行统一收编处理，便于数据管理和筛选
- *
- * 因为 Vue2 没有很好的方案监听 `未实际渲染的 Slots`，这里折中方案如下：
- * 在 slot 数组首层（若存在 group 分组，其子项作为一个整体考虑）的每个元素对象实例上，进行特殊标记的方式，来区别 slot 是否已经在内部 options 登记
- * 每次 beforeUpdate 之前，遍历 Select 实例 slot 数组首层，若存在未被标记的元素，则重新构造内部 option 数组
  */
 
 import {
@@ -12,7 +8,6 @@ import {
 } from '@vue/composition-api';
 import { VNode } from 'vue';
 import get from 'lodash/get';
-import isArray from 'lodash/isArray';
 import {
   TdSelectProps, SelectKeysType, TdOptionProps, SelectOptionGroup, SelectValue,
 } from '../type';
@@ -22,15 +17,16 @@ type UniOption = (TdOptionProps | SelectOptionGroup) & {
   slots?: () => VNode;
 };
 
-// slot 是否已经被记录的标记字段名称
-const markName = '_t_has_recorded';
-
 export default function useSelectOptions(
   props: TdSelectProps,
   instance: ComponentInternalInstance,
   keys: Ref<SelectKeysType>,
 ) {
+  // 内部 options 记录
   const options = ref<UniOption[]>([]);
+
+  // 指向当前 slots 数组，用来判断 slot 是否被更新
+  let innerSlotRecord: VNode[] = null;
 
   const getOptions = () => {
     let dynamicIndex = 0;
@@ -59,42 +55,13 @@ export default function useSelectOptions(
 
     // props 中 options 参数优先级高于 slots
     if (props.options === undefined) {
+      // 记录当前 slot 数组
+      innerSlotRecord = instance.proxy.$slots.default;
       // 处理 slots 中 t-option 与 t-option-group
       const currentSlots = instance.proxy.$slots.default || [];
-      // eslint-disable-next-line no-param-reassign
-      currentSlots.forEach((v) => (v.data[markName] = true));
-      const optionsSlots = currentSlots.filter((item) => item.componentOptions?.tag === 't-option');
-      const groupSlots = currentSlots.filter((item) => item.componentOptions?.tag === 't-option-group');
-      if (isArray(groupSlots)) {
-        groupSlots.forEach((group) => {
-          const groupOption = {
-            group: (group.componentOptions.propsData as TdOptionProps)?.label,
-            ...group.componentOptions.propsData,
-            children: [] as TdOptionProps[],
-          };
-
-          const res = group.componentOptions.children;
-          if (isArray(res)) {
-            res.forEach((child) => {
-              groupOption.children.push({
-                // 单独处理 style 和 class 参数的透传
-                class: child.data.staticClass,
-                style: child.data.staticStyle,
-                // 透传其他常规参数
-                ...child.componentOptions.propsData,
-                slots: () => child.componentOptions.children,
-                index: dynamicIndex,
-              } as TdOptionProps);
-              dynamicIndex += 1;
-            });
-          }
-
-          innerOptions.push(groupOption);
-        });
-      }
-
-      if (isArray(optionsSlots)) {
-        optionsSlots.forEach((child) => {
+      currentSlots.forEach((child) => {
+        if (child.componentOptions?.tag === 't-option') {
+          // 独立选项
           innerOptions.push({
             // 单独处理 style 和 class 参数的透传
             class: child.data.staticClass,
@@ -105,8 +72,30 @@ export default function useSelectOptions(
             index: dynamicIndex,
           } as TdOptionProps);
           dynamicIndex += 1;
-        });
-      }
+        } else if (child.componentOptions?.tag === 't-option-group') {
+          // 分组选项
+          const groupOption = {
+            group: (child.componentOptions.propsData as TdOptionProps)?.label,
+            ...child.componentOptions.propsData,
+            children: [] as TdOptionProps[],
+          };
+
+          child.componentOptions.children?.forEach?.((groupChild) => {
+            groupOption.children.push({
+              // 单独处理 style 和 class 参数的透传
+              class: groupChild.data.staticClass,
+              style: groupChild.data.staticStyle,
+              // 透传其他常规参数
+              ...groupChild.componentOptions.propsData,
+              slots: () => groupChild.componentOptions.children,
+              index: dynamicIndex,
+            } as TdOptionProps);
+            dynamicIndex += 1;
+          });
+
+          innerOptions.push(groupOption);
+        }
+      });
     }
 
     options.value = innerOptions;
@@ -146,7 +135,7 @@ export default function useSelectOptions(
   );
   // 当组件 slot 变化时，重新构造内部 options 数组
   onBeforeUpdate(() => {
-    if (instance.proxy.$slots.default?.some((v) => v.data[markName] !== true)) {
+    if (props.options === undefined && innerSlotRecord !== instance.proxy.$slots.default) {
       getOptions();
     }
   });

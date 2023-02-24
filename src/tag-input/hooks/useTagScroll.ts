@@ -6,6 +6,7 @@
 import {
   onMounted, onUnmounted, ref, toRefs,
 } from '@vue/composition-api';
+import isFunction from 'lodash/isFunction';
 import { TdTagInputProps } from '../type';
 
 export default function useTagScroll(props: TdTagInputProps) {
@@ -26,7 +27,8 @@ export default function useTagScroll(props: TdTagInputProps) {
   };
 
   const scrollTo = (distance: number) => {
-    scrollElement.value?.scroll({ left: distance, behavior: 'smooth' });
+    if (!isFunction(scrollElement.value?.scroll)) return;
+    scrollElement.value.scroll({ left: distance, behavior: 'smooth' });
   };
 
   const scrollToRight = () => {
