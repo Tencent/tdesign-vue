@@ -1,7 +1,6 @@
-import { VNode } from 'vue';
 import props from './sticky-item-props';
 import { ClassName } from '../common';
-import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
+import { renderTNodeJSX } from '../utils/render-tnode';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins from '../config-provider/config-receiver';
 
@@ -26,7 +25,7 @@ export default mixins(getConfigReceiverMixins('sticky-item')).extend({
     return (
       <div class={this.baseClass}>
         <div class={this.iconClass}>{icon}</div>
-        {this.type === 'normal' ? <p>{this.label}</p> : <></>}
+        {this.type === 'normal' ? <p>{this.label}</p> : <div></div>}
       </div>
     );
   },
