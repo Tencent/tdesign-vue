@@ -22,10 +22,9 @@ export default mixins(getConfigReceiverMixins('sticky-tool')).extend({
       ];
     },
     styles(): Styles {
-      return {
-        width: typeof this.width === 'number' ? `${this.width}px` : this.width,
-        ...this.getOffset(),
-      };
+      const styles = this.getOffset();
+      if (this.width) styles.width = typeof this.width === 'number' ? `${this.width}px` : this.width;
+      return styles;
     },
   },
   render() {
@@ -37,6 +36,7 @@ export default mixins(getConfigReceiverMixins('sticky-tool')).extend({
           props={{
             ...item,
             type: this.type,
+            shape: this.shape,
             onClick: this.onClick,
             onHover: this.onHover,
           }}
@@ -82,8 +82,8 @@ export default mixins(getConfigReceiverMixins('sticky-tool')).extend({
     },
     getOffset(): Styles {
       // 默认偏移位置
-      const position: Array<string | number> = [80, 24];
-      this.offset.forEach((item, index) => {
+      const position: Array<string | number> = this.offset ? [80, 24] : ['80px', '24px'];
+      this.offset?.forEach((item, index) => {
         position[index] = isNaN(Number(item))
           ? `calc( ${position[index]}px + ${item})`
           : `${(position[index] as number) + (item as number)}px`;

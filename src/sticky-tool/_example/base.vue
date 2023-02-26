@@ -1,9 +1,9 @@
 <template>
-  <t-sticky-tool width="40px">
-    <t-sticky-item label="已完成的步骤">
+  <t-sticky-tool>
+    <t-sticky-item label="添加">
       <add-icon slot="icon" />
     </t-sticky-item>
-    <t-sticky-item label="进行中的步骤" :icon="renderIcon"></t-sticky-item>
+    <t-sticky-item label="搜索" :icon="renderIcon"></t-sticky-item>
   </t-sticky-tool>
 </template>
 
