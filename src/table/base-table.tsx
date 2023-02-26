@@ -95,6 +95,7 @@ export default defineComponent({
       getThWidthList,
       updateThWidthList,
       addTableResizeObserver,
+      updateTableAfterColumnResize,
     } = useFixed(props, context, finalColumns, {
       paginationAffixRef,
       horizontalScrollAffixRef,
@@ -124,9 +125,11 @@ export default defineComponent({
     const columnResizeParams = useColumnResize({
       isWidthOverflow,
       tableContentRef,
+      showColumnShadow,
       getThWidthList,
       updateThWidthList,
       setTableElmWidth,
+      updateTableAfterColumnResize,
     });
     const { resizeLineRef, resizeLineStyle, setEffectColMap } = columnResizeParams;
 
@@ -525,7 +528,14 @@ export default defineComponent({
         {this.virtualConfig.isVirtualScroll.value && (
           <div class={this.virtualScrollClasses.cursor} style={virtualStyle} />
         )}
-        <table ref="tableElmRef" class={this.tableElmClasses} style={this.tableElementStyles}>
+        <table
+          ref="tableElmRef"
+          class={this.tableElmClasses}
+          style={{
+            ...this.tableElementStyles,
+            width: this.resizable && this.tableElmWidth ? `${this.tableElmWidth}px` : this.tableElementStyles.width,
+          }}
+        >
           {this.renderColGroup(columns, false)}
           {this.showHeader && <THead scopedSlots={this.$scopedSlots} props={this.getHeadProps(false)} />}
           <TBody ref="tableBodyRef" scopedSlots={this.$scopedSlots} props={tableBodyProps} on={tBodyListener} />
