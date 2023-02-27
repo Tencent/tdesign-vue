@@ -1,6 +1,7 @@
 /**
  * important info: only resize happened, th width calculating allowed
- * 验证场景：吸顶表头调整列宽、列数量发生变化、表格未超出、表格已超出
+ * 验证场景：多级表头调整叶子结点列宽、吸顶表头调整列宽、列数量发生变化、表格未超出、表格已超出
+ * - 固定列，调整列宽，需要更新固定位置；右侧固定列，调整列宽，需特殊处理
  */
 import { ref, Ref, reactive } from '@vue/composition-api';
 import isNumber from 'lodash/isNumber';
@@ -15,12 +16,23 @@ const distance = 8;
 export default function useColumnResize(params: {
   isWidthOverflow: Ref<boolean>;
   tableContentRef: Ref<HTMLDivElement>;
+  showColumnShadow: {
+    left: boolean;
+    right: boolean;
+  };
   getThWidthList: (type?: 'default' | 'calculate') => { [colKeys: string]: number };
   updateThWidthList: (data: { [colKey: string]: number }) => void;
   setTableElmWidth: (width: number) => void;
+  updateTableAfterColumnResize: () => void;
 }) {
   const {
-    isWidthOverflow, tableContentRef, getThWidthList, updateThWidthList, setTableElmWidth,
+    isWidthOverflow,
+    tableContentRef,
+    showColumnShadow,
+    getThWidthList,
+    updateThWidthList,
+    setTableElmWidth,
+    updateTableAfterColumnResize,
   } = params;
   const resizeLineRef = ref<HTMLDivElement>();
   const effectColMap = ref<{ [colKey: string]: any }>({});
@@ -78,6 +90,9 @@ export default function useColumnResize(params: {
     bottom: '0',
   });
 
+  // 当前列是否配置右侧固定并且处于固定激活状态
+  const isColRightFixActive = (col: BaseTableCol<TableRowData>) => col.fixed === 'right' && showColumnShadow.right;
+
   // 频繁事件，仅用于计算是否在表头显示拖拽鼠标形态
   const onColumnMouseover = (e: MouseEvent, col: BaseTableCol<TableRowData>) => {
     // calculate mouse cursor before drag start
@@ -87,15 +102,19 @@ export default function useColumnResize(params: {
     const colKey = target.getAttribute('data-colkey');
     if (!leafColumns.value.find((t) => t.colKey === colKey)) return;
     const targetBoundRect = target.getBoundingClientRect();
-    if (targetBoundRect.right - e.pageX <= distance) {
+    const thRightCursor = targetBoundRect.right - e.pageX <= distance;
+    const thLeftCursor = e.pageX - targetBoundRect.left <= distance;
+    const isFixedToRight = isColRightFixActive(col);
+    if (thRightCursor || isFixedToRight) {
       const colResizable = col.resizable ?? true;
       if (colResizable) {
-        target.style.cursor = 'col-resize';
-        resizeLineParams.draggingCol = target;
+        target.style.cursor = thRightCursor || (isFixedToRight && thLeftCursor) ? 'col-resize' : '';
+        const isCurrent = (thRightCursor && !isFixedToRight) || (isFixedToRight && thLeftCursor);
+        resizeLineParams.draggingCol = isCurrent ? target : (target.nextElementSibling as HTMLElement);
         resizeLineParams.effectCol = 'next';
         return;
       }
-    } else if (e.pageX - targetBoundRect.left <= distance) {
+    } else if (thLeftCursor) {
       const prevEl = target.previousElementSibling;
       if (prevEl) {
         const effectPrevCol = effectColMap.value[col.colKey]?.prev;
@@ -114,12 +133,46 @@ export default function useColumnResize(params: {
     resizeLineParams.effectCol = null;
   };
 
-  const getMinMaxColWidth = (col: BaseTableCol<TableRowData>, effectPrevCol: BaseTableCol<TableRowData>) => {
-    const targetCol = resizeLineParams.effectCol === 'next' ? col : effectPrevCol;
+  const getMinMaxColWidth = (targetCol: BaseTableCol<TableRowData>) => {
     const propMinWidth = isNumber(targetCol.minWidth) ? targetCol.minWidth : parseInt(targetCol.minWidth || '0', 10);
     return {
       minColWidth: Math.max(targetCol.resize?.minWidth || DEFAULT_MIN_WIDTH, propMinWidth),
       maxColWidth: targetCol.resize?.maxWidth || DEFAULT_MAX_WIDTH,
+    };
+  };
+
+  const getNormalResizeInfo = (
+    col: BaseTableCol,
+    effectPrevCol: BaseTableCol,
+    targetBoundRect: DOMRect,
+    tableBoundRect: DOMRect,
+  ) => {
+    const resizeLinePos = targetBoundRect.right - tableBoundRect.left;
+    const colLeft = targetBoundRect.left - tableBoundRect.left;
+    const targetCol = resizeLineParams.effectCol === 'next' ? col : effectPrevCol;
+    const { minColWidth, maxColWidth } = getMinMaxColWidth(targetCol);
+    return {
+      resizeLinePos,
+      minResizeLineLeft: colLeft + minColWidth,
+      maxResizeLineLeft: colLeft + maxColWidth,
+    };
+  };
+
+  const getFixedToRightResizeInfo = (
+    target: HTMLElement,
+    col: BaseTableCol,
+    effectPrevCol: BaseTableCol,
+    targetBoundRect: DOMRect,
+    tableBoundRect: DOMRect,
+  ) => {
+    const resizeLinePos = targetBoundRect.left - tableBoundRect.left;
+    const targetCol = target.dataset.colkey === col.colKey ? col : effectPrevCol;
+    const colLeft = targetBoundRect.left - tableBoundRect.left;
+    const { minColWidth, maxColWidth } = getMinMaxColWidth(targetCol);
+    return {
+      resizeLinePos,
+      minResizeLineLeft: colLeft + (targetBoundRect.width - maxColWidth),
+      maxResizeLineLeft: colLeft + (targetBoundRect.width - minColWidth),
     };
   };
 
@@ -137,13 +190,11 @@ export default function useColumnResize(params: {
     const target = resizeLineParams.draggingCol;
     const targetBoundRect = target.getBoundingClientRect();
     const tableBoundRect = tableContentRef.value?.getBoundingClientRect();
-    const resizeLinePos = targetBoundRect.right - tableBoundRect.left;
-    const colLeft = targetBoundRect.left - tableBoundRect.left;
     const effectNextCol = effectColMap.value[col.colKey]?.next;
     const effectPrevCol = effectColMap.value[col.colKey]?.prev;
-    const { minColWidth, maxColWidth } = getMinMaxColWidth(col, effectPrevCol);
-    const minResizeLineLeft = colLeft + minColWidth;
-    const maxResizeLineLeft = colLeft + maxColWidth;
+    const { resizeLinePos, minResizeLineLeft, maxResizeLineLeft } = isColRightFixActive(col)
+      ? getFixedToRightResizeInfo(target, col, effectNextCol, targetBoundRect, tableBoundRect)
+      : getNormalResizeInfo(col, effectPrevCol, targetBoundRect, tableBoundRect);
 
     // 开始拖拽，记录下鼠标起始位置
     resizeLineParams.isDragging = true;
@@ -164,7 +215,7 @@ export default function useColumnResize(params: {
       const moveDistance = resizeLinePos - parseFloat(resizeLineStyle.left) || 0;
       /**
        * 计算列宽
-       *  - 若表格宽度已经超出，存在横向滚动，则直接改变表格总宽度
+       *  - 若表格宽度已经超出，存在横向滚动，则直接改变当前列宽，也意味着改变表格总宽度
        *  - 操作边框右侧，改变当前列和上一列；若上一列禁用宽度调整，则改变上一列的上一列，依次往前寻找
        *  - 操作边框左侧，改变当前列和下一列；若下一列禁用宽度调整，则改变下一列的下一列，依次往后寻找
        */
@@ -174,11 +225,23 @@ export default function useColumnResize(params: {
       const currentSibling = resizeLineParams.effectCol === 'next' ? currentCol.prevSibling : currentCol.nextSibling;
       // 多行表头，列宽为最后一层的宽度，即叶子结点宽度
       const newThWidthList = { ...thWidthList };
+      // 当前列不允许修改宽度，就调整相邻列的宽度
       const tmpCurrentCol = col.resizable !== false ? col : currentSibling;
       if (resizeLineParams.effectCol === 'next') {
-        newThWidthList[tmpCurrentCol.colKey] -= moveDistance;
-        if (!isWidthOverflow.value) {
-          newThWidthList[effectNextCol.colKey] += moveDistance;
+        // 右侧激活态的固定列，需特殊调整
+        if (isColRightFixActive(col)) {
+          // 如果不相同，则表示改变相临的右侧列宽
+          if (target.dataset.colkey !== col.colKey) {
+            newThWidthList[effectNextCol.colKey] += moveDistance;
+          } else {
+            newThWidthList[tmpCurrentCol.colKey] += moveDistance;
+          }
+        } else {
+          // 非右侧激活态的固定列
+          newThWidthList[tmpCurrentCol.colKey] -= moveDistance;
+          if (!isWidthOverflow.value) {
+            newThWidthList[effectNextCol.colKey] += moveDistance;
+          }
         }
       } else if (resizeLineParams.effectCol === 'prev') {
         if (!isWidthOverflow.value) {
@@ -188,7 +251,8 @@ export default function useColumnResize(params: {
       }
       updateThWidthList(newThWidthList);
       const tableWidth = getTotalTableWidth(newThWidthList);
-      setTableElmWidth(tableWidth);
+      setTableElmWidth(Math.round(tableWidth));
+      updateTableAfterColumnResize();
 
       // 恢复设置
       resizeLineParams.isDragging = false;
