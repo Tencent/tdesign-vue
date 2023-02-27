@@ -16,6 +16,7 @@ export default mixins(getConfigReceiverMixins('sticky-tool')).extend({
     classes(): ClassName {
       return [
         this.componentName,
+        `${this.componentName}--${this.type}`,
         `${this.componentName}--${this.shape}`,
         `${this.componentName}--${this.shape}-shadow`,
         `${this.componentName}--${this.placement}`,
