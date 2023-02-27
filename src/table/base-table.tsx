@@ -533,7 +533,10 @@ export default defineComponent({
           class={this.tableElmClasses}
           style={{
             ...this.tableElementStyles,
-            width: this.resizable && this.tableElmWidth ? `${this.tableElmWidth}px` : this.tableElementStyles.width,
+            width:
+              this.resizable && this.isWidthOverflow && this.tableElmWidth
+                ? `${this.tableElmWidth}px`
+                : this.tableElementStyles.width,
           }}
         >
           {this.renderColGroup(columns, false)}
