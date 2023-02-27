@@ -1,5 +1,8 @@
-import { defineComponent, ref, watch } from '@vue/composition-api';
+import {
+  computed, defineComponent, ref, watch,
+} from '@vue/composition-api';
 import omit from 'lodash/omit';
+import isFunction from 'lodash/isFunction';
 import { ImageErrorIcon, ImageIcon } from 'tdesign-icons-vue';
 import observe from '../_common/js/utils/observe';
 import { useConfig } from '../config-provider/useConfig';
@@ -39,13 +42,14 @@ export default defineComponent({
     const { classPrefix, globalConfig } = useConfig('image');
     const imageRef = ref<HTMLElement>(null);
 
-    const imageSrc = ref(props.src);
+    // replace image url
+    const imageSrc = computed(() => isFunction(globalConfig.value.replaceImageSrc) ? globalConfig.value.replaceImageSrc(props) : props.src);
+
     watch(
       () => props.src,
       () => {
         hasError.value = false;
         isLoaded.value = false;
-        imageSrc.value = props.src;
       },
     );
 
@@ -77,8 +81,15 @@ export default defineComponent({
       }
     };
 
+    const imageClasses = computed(() => [
+      `${classPrefix.value}-image`,
+      `${classPrefix.value}-image--fit-${props.fit}`,
+      `${classPrefix.value}-image--position-${props.position}`,
+    ]);
+
     return {
       imageRef,
+      imageClasses,
       handleLoadImage,
       classPrefix,
       globalConfig,
@@ -127,6 +138,23 @@ export default defineComponent({
         </div>
       );
     },
+
+    renderImageSrcset() {
+      return (
+        <picture>
+          {Object.entries(this.srcset).map(([type, url]) => (
+            <source type={type} srcset={url} />
+          ))}
+          {this.src && this.renderImage(this.src)}
+        </picture>
+      );
+    },
+
+    renderImage(url: string) {
+      return (
+        <img src={url} onError={this.handleError} onLoad={this.handleLoad} class={this.imageClasses} alt={this.alt} />
+      );
+    },
   },
 
   render() {
@@ -148,19 +176,8 @@ export default defineComponent({
         {this.renderGalleryShadow()}
 
         {(this.hasError || !this.shouldLoad) && <div class={`${this.classPrefix}-image`} />}
-        {!(this.hasError || !this.shouldLoad) && (
-          <img
-            src={this.imageSrc}
-            onError={this.handleError}
-            onLoad={this.handleLoad}
-            class={[
-              `${this.classPrefix}-image`,
-              `${this.classPrefix}-image--fit-${this.fit}`,
-              `${this.classPrefix}-image--position-${this.position}`,
-            ]}
-            alt={this.alt}
-          />
-        )}
+        {!(this.hasError || !this.shouldLoad)
+          && (this.srcset && Object.keys(this.srcset).length ? this.renderImageSrcset() : this.renderImage(this.imageSrc))}
         {!(this.hasError || !this.shouldLoad) && !this.isLoaded && (
           <div class={`${this.classPrefix}-image__loading`}>
             {renderTNodeJSX(this, 'loading') || (
