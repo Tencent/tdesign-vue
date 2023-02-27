@@ -9,7 +9,7 @@ autoWidth | Boolean | false | 宽度随内容自适应 | N
 autofocus | Boolean | false | 自动聚焦 | N
 borderless | Boolean | false | 无边框模式 | N
 clearable | Boolean | false | 是否可以清空选项 | N
-collapsedItems | Slot / Function | - | 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义。`value` 表示当前存在的所有标签，`collapsedTags` 表示折叠的标签，`count` 表示折叠的数量。TS 类型：`TNode<{ value: T[]; collapsedSelectedItems: T[]; count: number }>`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+collapsedItems | Slot / Function | - | 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义。`value` 表示当前存在的所有标签，`collapsedTags` 表示折叠的标签，泛型 `T` 继承 `SelectOption`，表示选项数据；`count` 表示折叠的数量。TS 类型：`TNode<{ value: T[]; collapsedSelectedItems: T[]; count: number }>`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 creatable | Boolean | false | 是否允许用户创建新条目，需配合 filterable 使用 | N
 disabled | Boolean | - | 是否禁用组件 | N
 empty | String / Slot / Function | - | 当下拉列表为空时显示的内容。TS 类型：`string \| TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
@@ -47,7 +47,7 @@ tagProps | Object | - | 透传 Tag 标签组件全部属性。TS 类型：`TagPr
 tips | String / Slot / Function | - | 输入框下方提示文本，会根据不同的 `status` 呈现不同的样式。TS 类型：`string \| TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 value | String / Number / Object / Array | - | 选中值。支持语法糖 `v-model`。TS 类型：`SelectValue` `type SelectValue<T extends SelectOption = SelectOption> = string \| number \| T \| Array<SelectValue<T>>`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select/type.ts) | N
 defaultValue | String / Number / Object / Array | - | 选中值。非受控属性。TS 类型：`SelectValue` `type SelectValue<T extends SelectOption = SelectOption> = string \| number \| T \| Array<SelectValue<T>>`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select/type.ts) | N
-valueDisplay | String / Slot / Function | - | 自定义选中项呈现方式。TS 类型：`string \| TNode<{ value: SelectValue; onClose: (index: number, item?: any) => void; displayValue?: SelectValue }>`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+valueDisplay | String / Slot / Function | - | 自定义选中项呈现的内容。TS 类型：`string \| TNode<{ value: SelectValue; onClose: (index: number) => void; displayValue?: SelectValue }>`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 valueType | String | value | 用于控制选中值的类型。假设数据选项为：`[{ label: '姓名', value: 'name' }]`，value 表示值仅返回数据选项中的 value， object 表示值返回全部数据。。可选项：value/object | N
 onBlur | Function |  | TS 类型：`(context: { value: SelectValue; e: FocusEvent \| KeyboardEvent }) => void`<br/>输入框失去焦点时触发 | N
 onChange | Function |  | TS 类型：`(value: SelectValue, context: { option?: T, selectedOptions: T[], trigger: SelectValueChangeTrigger; e?: MouseEvent \| KeyboardEvent }) => void`<br/>选中值变化时触发。`context.trigger` 表示触发变化的来源；`context.selectedOptions` 表示选中值的完整对象，数组长度一定和 `value` 相同；`context.option` 表示当前操作的选项，不一定存在。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/select/type.ts)。<br/>`type SelectValueChangeTrigger = 'clear' \| 'tag-remove' \| 'backspace' \| 'check' \| 'uncheck'`<br/> | N
@@ -84,6 +84,7 @@ content | String / Slot / Function | - | 用于定义复杂的选项内容。TS 
 default | String / Slot / Function | - | 用于定义复杂的选项内容。同 content。TS 类型：`string \| TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 disabled | Boolean | false | 是否禁用该选项 | N
 label | String | - | 选项名称 | N
+title | String | - | 选项标题，在选项过长时hover选项展示 | N
 value | String / Number | - | 选项值 | N
 
 ### OptionGroup Props

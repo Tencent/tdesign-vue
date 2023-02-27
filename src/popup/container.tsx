@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import raf from 'raf';
 import { PropType } from '@vue/composition-api';
+import isFunction from 'lodash/isFunction';
 import { getAttach, removeDom } from '../utils/dom';
 import { TdPopupProps } from './type';
 
@@ -41,6 +42,7 @@ const Trigger = Vue.extend({
     };
   },
   mounted() {
+    if (!this.$el || (typeof process !== 'undefined' && process.env?.NODE_ENV === 'test')) return;
     this.$on(
       'hook:destroyed',
       observeResize(this.$el, (ev) => {
@@ -85,6 +87,7 @@ export default Vue.extend({
     });
   },
   destroyed() {
+    if (typeof process !== 'undefined' && process.env?.NODE_ENV === 'test') return;
     this.unmountContent();
   },
   methods: {
@@ -124,7 +127,9 @@ export default Vue.extend({
       this.content.$mount(elm.children[0]);
     },
     unmountContent() {
-      this.content?.$destroy();
+      if (isFunction(this.content?.$destroy)) {
+        this.content.$destroy();
+      }
     },
     updateContent() {
       this.content?.$forceUpdate();

@@ -12,7 +12,7 @@ import { TagInputProps } from '../tag-input';
 import { TagProps } from '../tag';
 import { SelectInputValueChangeContext } from '../select-input';
 import { PopupVisibleChangeContext } from '../popup';
-import { TNode, SizeEnum, InfinityScroll } from '../common';
+import { PlainObject, TNode, SizeEnum, InfinityScroll } from '../common';
 
 export interface TdSelectProps<T extends SelectOption = SelectOption> {
   /**
@@ -36,7 +36,7 @@ export interface TdSelectProps<T extends SelectOption = SelectOption> {
    */
   clearable?: boolean;
   /**
-   * 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义。`value` 表示当前存在的所有标签，`collapsedTags` 表示折叠的标签，`count` 表示折叠的数量
+   * 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义。`value` 表示当前存在的所有标签，`collapsedTags` 表示折叠的标签，泛型 `T` 继承 `SelectOption`，表示选项数据；`count` 表示折叠的数量
    */
   collapsedItems?: TNode<{ value: T[]; collapsedSelectedItems: T[]; count: number }>;
   /**
@@ -198,11 +198,9 @@ export interface TdSelectProps<T extends SelectOption = SelectOption> {
    */
   defaultValue?: SelectValue;
   /**
-   * 自定义选中项呈现方式
+   * 自定义选中项呈现的内容
    */
-  valueDisplay?:
-    | string
-    | TNode<{ value: SelectValue; onClose: (index: number, item?: any) => void; displayValue?: SelectValue }>;
+  valueDisplay?: string | TNode<{ value: SelectValue; onClose: (index: number) => void; displayValue?: SelectValue }>;
   /**
    * 用于控制选中值的类型。假设数据选项为：`[{ label: '姓名', value: 'name' }]`，value 表示值仅返回数据选项中的 value， object 表示值返回全部数据。
    * @default value
@@ -278,6 +276,11 @@ export interface TdOptionProps {
    */
   label?: string;
   /**
+   * 选项标题，在选项过长时hover选项展示
+   * @default ''
+   */
+  title?: string;
+  /**
    * 选项值
    */
   value?: string | number;
@@ -311,7 +314,7 @@ export interface SelectRemoveContext<T> {
   e: MouseEvent | KeyboardEvent;
 }
 
-export type SelectOption = TdOptionProps | SelectOptionGroup;
+export type SelectOption = TdOptionProps | SelectOptionGroup | PlainObject;
 
 export interface SelectOptionGroup extends TdOptionGroupProps {
   group: string;

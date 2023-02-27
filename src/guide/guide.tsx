@@ -1,37 +1,36 @@
 import {
   defineComponent, computed, nextTick, onMounted, ref, toRefs, watch,
 } from '@vue/composition-api';
-
+import isFunction from 'lodash/isFunction';
+import { CreateElement } from 'vue';
 import {
   scrollToParentVisibleArea, getRelativePosition, getTargetElm, scrollToElm,
 } from './utils';
-
 import setStyle from '../_common/js/utils/set-style';
 import TransferDom from '../utils/transfer-dom';
-
 import {
   addClass, removeClass, isFixed, getWindowScroll,
 } from '../utils/dom';
-
 import useDefaultValue from '../hooks/useDefaultValue';
-import { useTNodeJSX } from '../hooks/tnode';
-import { usePrefixClass, useConfig } from '../hooks/useConfig';
+import { usePrefixClass, useConfig, useCommonClassName } from '../hooks/useConfig';
 import { GlobalConfigProvider } from '../config-provider/type';
 import Button from '../button';
-import Popup from '../popup';
-
+import Popup, { PopupProps } from '../popup';
 import props from './props';
-import { TdGuideProps, GuideCrossProps, TdGuideStepProps } from './type';
+import { TdGuideProps, GuideStep } from './type';
+import { GuideCrossProps } from './interface';
+import { renderTNodeJSX } from '../utils/render-tnode';
 
 export default defineComponent({
   name: 'TGuide',
   directives: { TransferDom },
   props: { ...props },
-  setup(props) {
+  setup(props, context) {
     const COMPONENT_NAME = usePrefixClass('guide');
     const LOCK_CLASS = usePrefixClass('guide--lock');
     const { global } = useConfig('guide');
     const { current } = toRefs(props);
+    const { classPrefix } = useCommonClassName();
 
     const [innerCurrent, setInnerCurrent] = useDefaultValue(
       current,
@@ -57,7 +56,7 @@ export default defineComponent({
     // 步骤总数
     const stepsTotal = computed(() => props.steps.length);
     // 当前步骤的信息
-    const currentStepInfo = computed(() => props.steps?.[innerCurrent.value]);
+    const currentStepInfo = computed<GuideStep>(() => props.steps?.[innerCurrent.value]);
     // 当前是否为 popup
     const isPopup = computed(() => getCurrentCrossProps('mode') === 'popup');
     // 当前元素位置状态
@@ -92,6 +91,7 @@ export default defineComponent({
     const showPopupGuide = () => {
       nextTick(() => {
         currentHighlightLayerElm.value = getTargetElm(currentStepInfo.value.element);
+        if (!currentHighlightLayerElm.value) return;
         scrollToParentVisibleArea(currentHighlightLayerElm.value);
         setHighlightLayerPosition(highlightLayerRef.value);
         setHighlightLayerPosition(referenceLayerRef.value);
@@ -139,29 +139,35 @@ export default defineComponent({
       const total = stepsTotal.value;
       activated.value = false;
       setInnerCurrent(-1, { e, total });
-      props.onSkip?.({ e, current: innerCurrent.value, total });
+      const eventParams = { e, current: innerCurrent.value, total };
+      props.onSkip?.(eventParams);
+      context.emit('skip', eventParams);
     };
 
     const handlePrev = (e: MouseEvent) => {
       const total = stepsTotal.value;
       setInnerCurrent(innerCurrent.value - 1, { e, total });
-      props.onPrevStepClick?.({
+      const eventParams = {
         e,
         prev: innerCurrent.value - 1,
         current: innerCurrent.value,
         total,
-      });
+      };
+      props.onPrevStepClick?.(eventParams);
+      context.emit('prev-step-click', eventParams);
     };
 
     const handleNext = (e: MouseEvent) => {
       const total = stepsTotal.value;
       setInnerCurrent(innerCurrent.value + 1, { e, total });
-      props.onNextStepClick?.({
+      const eventParams = {
         e,
         next: innerCurrent.value + 1,
         current: innerCurrent.value,
         total,
-      });
+      };
+      props.onNextStepClick?.(eventParams);
+      context.emit('next-step-click', eventParams);
     };
 
     const handleFinish = (e: MouseEvent) => {
@@ -169,6 +175,7 @@ export default defineComponent({
       activated.value = false;
       setInnerCurrent(-1, { e, total });
       props.onFinish?.({ e, current: innerCurrent.value, total });
+      context.emit('finish', { e, current: innerCurrent.value, total });
     };
 
     const initGuide = () => {
@@ -195,6 +202,7 @@ export default defineComponent({
     });
 
     return {
+      classPrefix,
       componentName: COMPONENT_NAME,
       innerCurrent,
       isPopup,
@@ -216,12 +224,47 @@ export default defineComponent({
       activated,
     };
   },
-  render() {
+
+  render(h) {
     // TODO directives导致return的类型都丢失
     const { stepsTotal } = this;
-    const currentStepInfo = this.currentStepInfo as TdGuideStepProps;
+    const currentStepInfo = this.currentStepInfo as GuideStep;
     const globalConfig = this.global as GlobalConfigProvider['guide'];
     const getCurrentCrossProps = this.getCurrentCrossProps as Function;
+    const renderTooltipTitle = (h: CreateElement) => {
+      const currentStepInfo = this.currentStepInfo as GuideStep;
+      const functionTitle = isFunction(currentStepInfo.title) ? currentStepInfo.title(h) : undefined;
+      const slotTitle = this.$scopedSlots.title ? this.$scopedSlots.title(h) : undefined;
+      const title = functionTitle || slotTitle || currentStepInfo.title;
+      return title ? <div class={`${this.componentName}__title`}>{title}</div> : null;
+    };
+
+    const getHighlightContent = (h: CreateElement) => {
+      const params: any = h;
+      params.currentStepInfo = this.currentStepInfo as GuideStep;
+      const { highlightContent } = this.currentStepInfo as GuideStep;
+      // 支持组件
+      let node: any = highlightContent;
+      // 支持函数
+      if (isFunction(highlightContent)) {
+        node = highlightContent(params);
+      } else if (this.$scopedSlots.highlightContent) {
+        // 支持插槽
+        node = this.$scopedSlots.highlightContent(params);
+      } else if (this.$scopedSlots['highlight-content']) {
+        node = this.$scopedSlots['highlight-content'](params);
+      } else if (highlightContent) {
+        // 支持组件
+        node = <node />;
+      }
+      // 给自定义元素添加类名
+      if (node) {
+        node.props = node.props || {};
+        node.props.class = `${this.componentName}__highlight--mask ${node.props.class || ''}`;
+      }
+      return node;
+    };
+
     const renderOverlayLayer = () => (
       <div
         ref="overlayLayerRef"
@@ -240,9 +283,9 @@ export default defineComponent({
         <div class={`${this.componentName}__action`}>
           {!this.hideSkip && !isLast && (
             <Button
+              class={`${this.componentName}__skip`}
               {...{
                 props: {
-                  class: `${this.componentName}__skip`,
                   theme: 'default',
                   size: buttonSize,
                   variant: 'base',
@@ -254,9 +297,9 @@ export default defineComponent({
           )}
           {!this.hidePrev && !isFirst && (
             <Button
+              class={`${this.componentName}__prev`}
               {...{
                 props: {
-                  class: `${this.componentName}__prev`,
                   theme: 'primary',
                   size: buttonSize,
                   variant: 'base',
@@ -268,9 +311,9 @@ export default defineComponent({
           )}
           {!isLast && (
             <Button
+              class={`${this.componentName}__next`}
               {...{
                 props: {
-                  class: `${this.componentName}__next`,
                   theme: 'primary',
                   size: buttonSize,
                   variant: 'base',
@@ -282,9 +325,9 @@ export default defineComponent({
           )}
           {isLast && (
             <Button
+              class={`${this.componentName}__finish`}
               {...{
                 props: {
-                  class: `${this.componentName}__finish`,
                   theme: 'primary',
                   size: buttonSize,
                   variant: 'base',
@@ -298,19 +341,21 @@ export default defineComponent({
       );
     };
 
-    const renderTooltipTitle = () => {
-      const title = <div class={`${this.componentName}__title`}>{currentStepInfo.title}</div>;
-
-      return title;
-    };
-
-    const renderTooltipDesc = () => {
-      const { body: descBody } = currentStepInfo;
-      const desc = (
-        <div class={`${this.componentName}__desc`}>{typeof descBody === 'string' ? descBody : <descBody />}</div>
-      );
-
-      return desc;
+    const renderTooltipBody = (h: CreateElement) => {
+      const { body: stepBody } = this.currentStepInfo as GuideStep;
+      let descBody: any;
+      if (isFunction(stepBody)) {
+        descBody = stepBody(h);
+      } else if (this.$scopedSlots.body) {
+        const hParams = h;
+        Object.assign(hParams, { currentStepInfo: this.currentStepInfo as GuideStep });
+        descBody = this.$scopedSlots.body(hParams);
+      } else if (typeof stepBody === 'string') {
+        descBody = stepBody;
+      } else {
+        descBody = <stepBody />;
+      }
+      return descBody ? <div class={`${this.componentName}__desc`}>{descBody}</div> : null;
     };
 
     const renderPopupContent = () => {
@@ -324,8 +369,8 @@ export default defineComponent({
 
       return (
         <div class={`${this.componentName}__tooltip`}>
-          {renderTooltipTitle()}
-          {renderTooltipDesc()}
+          {renderTooltipTitle(h)}
+          {renderTooltipBody(h)}
           {action}
         </div>
       );
@@ -340,34 +385,28 @@ export default defineComponent({
       ];
       const showOverlay = getCurrentCrossProps('showOverlay');
       const maskClass = [`${this.componentName}__highlight--${showOverlay ? 'mask' : 'nomask'}`];
-      const { highlightContent } = currentStepInfo;
-      const showHighlightContent = highlightContent && this.isPopup;
+      const innerHighlightContent = getHighlightContent(h);
+      const showHighlightContent = Boolean(innerHighlightContent && this.isPopup);
 
       return (
         <div
           ref="highlightLayerRef"
           v-transfer-dom="body"
-          class={highlightClass.concat(showHighlightContent ? highlightClass : maskClass)}
+          class={highlightClass.concat(showHighlightContent ? [] : maskClass)}
           style={style}
         >
-          {showHighlightContent && <highlightContent class={highlightClass.concat(maskClass)} style={style} />}
+          {showHighlightContent && innerHighlightContent}
         </div>
       );
     };
     const renderCounter = () => {
-      const renderTNodeJSX = useTNodeJSX();
-
-      const popupSlotCounter = renderTNodeJSX('counter', {
+      const popupSlotCounter = renderTNodeJSX(this, 'counter', {
         params: { total: this.stepsTotal, current: this.innerCurrent },
       });
 
       const popupDefaultCounter = (
         <div class={`${this.componentName}__counter`}>
-          {popupSlotCounter || (
-            <span>
-              {(this.innerCurrent as number) + 1}/{this.stepsTotal}
-            </span>
-          )}
+          {popupSlotCounter || `${(this.innerCurrent as number) + 1}/${this.stepsTotal}`}
         </div>
       );
       return !this.hideCounter ? popupDefaultCounter : null;
@@ -392,8 +431,8 @@ export default defineComponent({
         <div>
           <div ref="dialogWrapperRef" v-transfer-dom="body" class={wrapperClasses} style={style}>
             <div ref="dialogTooltipRef" class={dialogClasses}>
-              {renderTooltipTitle()}
-              {renderTooltipDesc()}
+              {renderTooltipTitle(h)}
+              {renderTooltipBody(h)}
               <div class={footerClasses}>
                 {renderCounter()}
                 {renderAction('dialog')}
@@ -405,34 +444,49 @@ export default defineComponent({
     };
     const renderPopupGuide = () => {
       const { content } = currentStepInfo;
-      let renderBody: JSX.Element;
-      if (content) {
-        const contentProps = {
-          handlePrev: this.handlePrev,
-          handleNext: this.handleNext,
-          handleSkip: this.handleSkip,
-          handleFinish: this.handleFinish,
-          current: this.innerCurrent,
-          total: this.stepsTotal,
-        };
-        renderBody = <content {...{ props: { ...contentProps } }} />;
+      const contentProps = {
+        handlePrev: this.handlePrev,
+        handleNext: this.handleNext,
+        handleSkip: this.handleSkip,
+        handleFinish: this.handleFinish,
+        current: this.innerCurrent,
+        total: this.stepsTotal,
+      };
+      const hParams: any = h;
+      hParams.currentStepInfo = this.currentStepInfo;
+      let renderBody: any;
+      if (isFunction(content)) {
+        renderBody = () => content(hParams);
+      } else if (this.$scopedSlots.content) {
+        renderBody = () => this.$scopedSlots.content(hParams);
+      } else if (typeof content === 'string') {
+        renderBody = content;
+      } else if (content) {
+        renderBody = () => <content props={contentProps} />;
       } else {
-        renderBody = renderPopupContent();
+        renderBody = renderPopupContent;
       }
 
       const classes = [
         `${this.componentName}__reference`,
         `${this.componentName}--${this.currentElmIsFixed ? 'fixed' : 'absolute'}`,
       ];
+
+      const innerClassName: PopupProps['overlayInnerClassName'] = [
+        {
+          [`${this.classPrefix}-guide__popup--content`]: !!content,
+        },
+      ];
       return (
         <Popup
           visible={true}
           show-arrow={!content}
-          content={() => renderBody}
           zIndex={this.zIndex}
-          overlayClassName={currentStepInfo?.stepOverlayClass}
-          overlayInnerClassName={{ [`${this.componentName}__popup--content`]: !!content }}
           placement={currentStepInfo.placement}
+          props={currentStepInfo.popupProps}
+          content={renderBody}
+          overlayClassName={[`${this.componentName}__popup`, currentStepInfo?.stepOverlayClass]}
+          overlayInnerClassName={innerClassName.concat(currentStepInfo.popupProps?.overlayInnerClassName)}
         >
           <div ref="referenceLayerRef" v-transfer-dom="body" class={classes} />
         </Popup>

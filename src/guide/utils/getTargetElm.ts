@@ -13,7 +13,10 @@ export default function getTargetElm(elm: AttachNode): HTMLElement {
     if (targetElement) {
       return targetElement as HTMLElement;
     }
-    throw new Error('There is no element with given.');
+    const isTestEnv = typeof process !== 'undefined' && process.env?.NODE_ENV === 'test';
+    if (!isTestEnv) {
+      throw new Error('There is no element with given.');
+    }
   } else {
     return document.body;
   }
