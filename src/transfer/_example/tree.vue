@@ -6,8 +6,16 @@
     @change="onChange"
     @checked-change="handleCheckedChange"
   >
-    <template #tree="slotProps">
-      <t-tree :data="slotProps.data" v-model="slotProps.value" checkable hover expand-all transition />
+    <template v-slot:tree="slotProps">
+      <t-tree
+        :data="slotProps.data"
+        v-model="slotProps.value"
+        @change="slotProps.onChange"
+        checkable
+        hover
+        expand-all
+        transition
+      />
     </template>
   </t-transfer>
 </template>
