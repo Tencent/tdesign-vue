@@ -2021,9 +2021,6 @@ exports[`csr snapshot test > csr test ./src/auto-complete/_example/trigger-eleme
         placeholder="自定义联想词触发元素"
         unselectable="off"
       />
-      <div
-        class=""
-      />
     </div>
   </div>
 </div>
@@ -32554,9 +32551,6 @@ exports[`csr snapshot test > csr test ./src/comment/_example/reply-form.vue 1`] 
               placeholder="请输入内容"
               unselectable="off"
             />
-            <div
-              class=""
-            />
           </div>
           <button
             class="form-submit t-button t-button--variant-base t-button--theme-primary"
@@ -48204,9 +48198,6 @@ exports[`csr snapshot test > csr test ./src/form/_example/base.vue 1`] = `
             placeholder="请用一句话介绍自己"
             unselectable="off"
           />
-          <div
-            class=""
-          />
         </div>
       </div>
       <div
@@ -49576,9 +49567,6 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                 clearable=""
                 placeholder="请用一句话介绍自己"
                 unselectable="off"
-              />
-              <div
-                class=""
               />
             </div>
           </div>
@@ -53414,9 +53402,6 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
             class="t-textarea__inner"
             placeholder="请用一句话介绍自己"
             unselectable="off"
-          />
-          <div
-            class=""
           />
         </div>
       </div>
@@ -61362,9 +61347,6 @@ exports[`csr snapshot test > csr test ./src/input/_example/textarea.vue 1`] = `
         class="t-textarea__inner"
         placeholder="请输入内容"
         unselectable="off"
-      />
-      <div
-        class=""
       />
     </div>
   </div>
@@ -133380,9 +133362,6 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/base.vue 1`] = `
         placeholder="请输入描述文案"
         unselectable="off"
       />
-      <div
-        class=""
-      />
     </div>
   </div>
   <div
@@ -133396,9 +133375,6 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/base.vue 1`] = `
         name="description"
         placeholder="请输入文案，高度可自适应；autosize=true"
         unselectable="off"
-      />
-      <div
-        class=""
       />
     </div>
   </div>
@@ -133414,9 +133390,6 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/base.vue 1`] = `
         placeholder="请输入文案，高度可自适应，最小3行，最大5行；autosize={minRows: 3, maxRows: 5}"
         unselectable="off"
       />
-      <div
-        class=""
-      />
     </div>
   </div>
 </div>
@@ -133430,9 +133403,6 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/events.vue 1`] = `
     class="t-textarea__inner"
     placeholder="请输入"
     unselectable="off"
-  />
-  <div
-    class=""
   />
 </div>
 `;
@@ -133454,7 +133424,7 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/maxlength.vue 1`] 
         unselectable="off"
       />
       <div
-        class="t-textarea__tips_wrapper"
+        class="t-textarea__info_wrapper"
       >
         <div
           class="t-textarea__tips t-textarea__tips--normal"
@@ -133481,7 +133451,7 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/maxlength.vue 1`] 
         unselectable="off"
       />
       <div
-        class=""
+        class="t-textarea__info_wrapper t-textarea__info_wrapper_align"
       >
         <span
           class="t-textarea__limit"
@@ -133510,9 +133480,6 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/type.vue 1`] = `
         disabled="disabled"
         unselectable="off"
       />
-      <div
-        class=""
-      />
     </div>
   </div>
   <div
@@ -133525,9 +133492,6 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/type.vue 1`] = `
         class="t-textarea__inner"
         readonly="readonly"
         unselectable="on"
-      />
-      <div
-        class=""
       />
     </div>
   </div>
@@ -133542,7 +133506,7 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/type.vue 1`] = `
         unselectable="off"
       />
       <div
-        class="t-textarea__tips_wrapper"
+        class="t-textarea__info_wrapper"
       >
         <div
           class="t-textarea__tips t-textarea__tips--normal"
@@ -133563,7 +133527,7 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/type.vue 1`] = `
         unselectable="off"
       />
       <div
-        class="t-textarea__tips_wrapper"
+        class="t-textarea__info_wrapper"
       >
         <div
           class="t-textarea__tips t-textarea__tips--success"
@@ -133584,7 +133548,7 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/type.vue 1`] = `
         unselectable="off"
       />
       <div
-        class="t-textarea__tips_wrapper"
+        class="t-textarea__info_wrapper"
       >
         <div
           class="t-textarea__tips t-textarea__tips--warning"
@@ -133605,7 +133569,7 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/type.vue 1`] = `
         unselectable="off"
       />
       <div
-        class="t-textarea__tips_wrapper"
+        class="t-textarea__info_wrapper"
       >
         <div
           class="t-textarea__tips t-textarea__tips--error"
