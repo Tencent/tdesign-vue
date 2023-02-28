@@ -6,7 +6,7 @@
         <t-button @click="visible = false"> 关闭抽屉 </t-button>
       </template>
       <div class="guide-container">
-        <div class="main-title">
+        <div class="main-title-popup">
           <div class="title-major">Guide 用户引导</div>
           <div class="title-sub">按钮用于开启一个闭环的操作任务，如“删除”对象、“购买”商品等。</div>
         </div>
@@ -47,7 +47,7 @@ export default {
       current: -1,
       steps: [
         {
-          element: '.main-title',
+          element: '.main-title-popup',
           title: '新手引导标题',
           description: '新手引导的说明文案',
           placement: 'bottom-right',

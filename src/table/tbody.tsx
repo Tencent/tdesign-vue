@@ -129,6 +129,8 @@ export default defineComponent({
   render(h) {
     // eslint-disable-next-line
     const renderEmpty = (h: CreateElement, columns: TableBodyProps['columns']) => {
+      // 小于 100 属于异常宽度，不显示
+      const showEmptyText = Boolean(this.tableWidth && this.tableWidth > 100) || process.env.NODE_ENV === 'test';
       return (
         <tr class={[this.tableBaseClass.emptyRow, { [this.tableFullRowClasses.base]: this.isWidthOverflow }]}>
           <td colspan={columns.length}>
@@ -136,7 +138,7 @@ export default defineComponent({
               class={[this.tableBaseClass.empty, { [this.tableFullRowClasses.innerFullRow]: this.isWidthOverflow }]}
               style={this.isWidthOverflow ? { width: `${this.tableWidth}px` } : {}}
             >
-              {this.renderTNode('empty') || this.t(this.global.empty)}
+              {showEmptyText ? this.renderTNode('empty') || this.t(this.global.empty) : ''}
             </div>
           </td>
         </tr>
@@ -189,7 +191,7 @@ export default defineComponent({
         ...pick(this.$props, TABLE_PROPS),
         row,
         columns: this.columns,
-        rowIndex: row.__VIRTUAL_SCROLL_INDEX || rowIndex,
+        rowIndex: row?.__VIRTUAL_SCROLL_INDEX || rowIndex,
         dataLength,
         skipSpansMap: this.skipSpansMap,
         virtualConfig: this.virtualConfig,

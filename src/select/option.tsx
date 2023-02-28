@@ -180,8 +180,11 @@ export default defineComponent({
   },
 
   render() {
-    const { classes, mouseEvent } = this;
-    const optionChild = renderContent(this, 'default', 'content') || <span>{this.labelText}</span>;
+    const {
+      classes, mouseEvent, labelText, title,
+    } = this;
+    const optionChild = renderContent(this, 'default', 'content') || <span>{labelText}</span>;
+    const titleText = title || labelText;
     if (this.hasLazyLoadHolder) {
       return (
         <li
@@ -191,6 +194,7 @@ export default defineComponent({
           onMouseleave={() => mouseEvent(false)}
           onClick={this.handleClick}
           v-ripple={(this.keepAnimation as any).ripple}
+          title={titleText}
         >
           {<span style={{ height: `${this.tRowHeight}px`, border: 'none' }}></span>}
         </li>
@@ -205,6 +209,7 @@ export default defineComponent({
         onMouseleave={() => mouseEvent(false)}
         onClick={this.handleClick}
         v-ripple={(this.keepAnimation as any).ripple}
+        title={titleText}
       >
         {this.multiple ? (
           <t-checkbox

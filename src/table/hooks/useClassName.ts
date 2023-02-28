@@ -9,7 +9,8 @@ export default function useClassName() {
       table: [
         `${classPrefix.value}-table`,
         {
-          [`${classPrefix.value}-table--chrome`]: /Chrome/.test(navigator?.userAgent),
+          [`${classPrefix.value}-table--chrome`]:
+            typeof navigator !== 'undefined' && /Chrome/.test(navigator?.userAgent),
         },
       ],
       columnResizableTable: `${classPrefix.value}-table--column-resizable`,

@@ -70,8 +70,9 @@ export default defineComponent({
           {!this.loading ? (
             <Tree
               ref="treeRef"
+              key={this.treeKey}
               props={{
-                key: this.treeKey,
+                keys: this.tKeys,
                 value: [...this.multipleChecked],
                 actived: this.singleActivated,
                 hover: true,
@@ -124,6 +125,7 @@ export default defineComponent({
         class={`${this.classPrefix}-tree-select`}
         {...{
           props: {
+            keys: this.tKeys,
             value: this.nodeInfo,
             inputValue: this.innerInputValue,
             popupVisible: this.innerVisible,

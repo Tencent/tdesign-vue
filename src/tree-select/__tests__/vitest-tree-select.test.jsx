@@ -14,9 +14,13 @@ import {
   simulateInputEnter,
 } from '@test/utils';
 import { TreeSelect } from '..';
-import { getTreeSelectDefaultMount, getTreeSelectMultipleMount } from './mount';
+import { getTreeSelectDefaultMount, getTreeSelectMultipleMount, getTreeSelectKeysMount } from './mount';
 
 describe('TreeSelect Component', () => {
+  afterEach(() => {
+    document.querySelectorAll('.t-popup').forEach((node) => node?.remove());
+  });
+
   it('props.autofocus is equal to false', () => {
     const wrapper = mount({
       render() {
@@ -74,7 +78,6 @@ describe('TreeSelect Component', () => {
   it('props.clearable: show clear icon on mouse enter in single tree select', async () => {
     const wrapper = getTreeSelectDefaultMount(TreeSelect, { value: 1, clearable: true });
     wrapper.find('.t-input').trigger('mouseenter');
-    await wrapper.vm.$nextTick();
     await mockDelay(0);
     expect(wrapper.find('.t-input__suffix-clear').exists()).toBeTruthy();
   });
@@ -191,8 +194,6 @@ describe('TreeSelect Component', () => {
     await wrapper.vm.$nextTick();
     const tSelectEmptyDom = document.querySelector('.t-select__empty');
     expect(tSelectEmptyDom).toBeTruthy();
-    // remove node in document to avoid influencing following test cases
-    tSelectEmptyDom?.remove();
   });
 
   it('props.disabled works fine', () => {
@@ -234,7 +235,6 @@ describe('TreeSelect Component', () => {
   it('props.disabled: cant not show clear icon on mouse enter in single tree select', async () => {
     const wrapper = getTreeSelectDefaultMount(TreeSelect, { value: 1, disabled: true });
     wrapper.find('.t-input').trigger('mouseenter');
-    await wrapper.vm.$nextTick();
     await mockDelay(0);
     expect(wrapper.find('.t-input__suffix-clear').exists()).toBeFalsy();
   });
@@ -256,8 +256,6 @@ describe('TreeSelect Component', () => {
     await wrapper.vm.$nextTick();
     const customNodeDom = document.querySelector('.custom-node');
     expect(customNodeDom).toBeTruthy();
-    // remove node in document to avoid influencing following test cases
-    customNodeDom?.remove();
   });
 
   it('slots.empty works fine', async () => {
@@ -270,8 +268,6 @@ describe('TreeSelect Component', () => {
     await wrapper.vm.$nextTick();
     const customNodeDom = document.querySelector('.custom-node');
     expect(customNodeDom).toBeTruthy();
-    // remove node in document to avoid influencing following test cases
-    customNodeDom?.remove();
   });
 
   it('props.filter: multiple tree select & filterable', async () => {
@@ -282,12 +278,9 @@ describe('TreeSelect Component', () => {
     await wrapper.vm.$nextTick();
     const inputDom1 = wrapper.find('input').element;
     simulateInputChange(inputDom1, 'tdesign-react');
-    await wrapper.vm.$nextTick();
     await mockDelay(100);
     const tTreeItemNotTTreeItemHiddenDom = document.querySelectorAll('.t-tree__item:not(.t-tree__item--hidden)');
     expect(tTreeItemNotTTreeItemHiddenDom.length).toBe(1);
-    // remove nodes from document to avoid influencing following test cases
-    tTreeItemNotTTreeItemHiddenDom.forEach((node) => node.remove());
     document.querySelectorAll('.t-popup').forEach((node) => node.remove());
   });
 
@@ -300,12 +293,9 @@ describe('TreeSelect Component', () => {
     await wrapper.vm.$nextTick();
     const inputDom1 = wrapper.find('input').element;
     simulateInputChange(inputDom1, 'tdesign-react');
-    await wrapper.vm.$nextTick();
     await mockDelay(100);
     const tTreeItemNotTTreeItemHiddenDom = document.querySelectorAll('.t-tree__item:not(.t-tree__item--hidden)');
     expect(tTreeItemNotTTreeItemHiddenDom.length).toBe(6);
-    // remove nodes from document to avoid influencing following test cases
-    tTreeItemNotTTreeItemHiddenDom.forEach((node) => node.remove());
     document.querySelectorAll('.t-popup').forEach((node) => node.remove());
   });
 
@@ -315,7 +305,6 @@ describe('TreeSelect Component', () => {
     await wrapper.vm.$nextTick();
     const inputDom1 = wrapper.find('input').element;
     simulateInputChange(inputDom1, 'tdesign-vue');
-    await wrapper.vm.$nextTick();
     await mockDelay(100);
     document.querySelector('.t-tree__item:first-child').click();
     await wrapper.vm.$nextTick();
@@ -329,7 +318,6 @@ describe('TreeSelect Component', () => {
     await wrapper.vm.$nextTick();
     const inputDom1 = wrapper.find('input').element;
     simulateInputChange(inputDom1, 'tdesign-vue');
-    await wrapper.vm.$nextTick();
     await mockDelay(100);
     document.querySelector('.t-tree__item:first-child').click();
     await wrapper.vm.$nextTick();
@@ -345,12 +333,9 @@ describe('TreeSelect Component', () => {
   it('props.filterable works fine', async () => {
     const wrapper = getTreeSelectDefaultMount(TreeSelect, { inputValue: 'tdesign-vue', filterable: true });
     wrapper.find('.t-input').trigger('click');
-    await wrapper.vm.$nextTick();
     await mockDelay(100);
     const tTreeItemNotTTreeItemHiddenDom = document.querySelectorAll('.t-tree__item:not(.t-tree__item--hidden)');
     expect(tTreeItemNotTTreeItemHiddenDom.length).toBe(1);
-    // remove nodes from document to avoid influencing following test cases
-    tTreeItemNotTTreeItemHiddenDom.forEach((node) => node.remove());
     document.querySelectorAll('.t-popup').forEach((node) => node.remove());
   });
 
@@ -399,6 +384,94 @@ describe('TreeSelect Component', () => {
     expect(onInputChangeFn.mock.calls[0][1].trigger).toBe('input');
   });
 
+  it('props.keys: single tree select, keys works fined', async () => {
+    getTreeSelectKeysMount(TreeSelect, {
+      keys: { label: 'name', value: 'key' },
+      popupVisible: true,
+      treeProps: { expandAll: true },
+      popupProps: { overlayClassName: 'singleTreeSelectKeys' },
+    });
+    await mockDelay(200);
+    const singleTreeSelectKeysTTreeItemDom = document.querySelector('.singleTreeSelectKeys .t-tree__item');
+    expect(singleTreeSelectKeysTTreeItemDom.textContent).toBe('tdesign-vue');
+    const singleTreeSelectKeysTTreeItemNthChild2Dom = document.querySelector(
+      '.singleTreeSelectKeys .t-tree__item:nth-child(2)',
+    );
+    expect(singleTreeSelectKeysTTreeItemNthChild2Dom.textContent).toBe('tdesign-react');
+    const singleTreeSelectKeysTTreeItemNthChild3Dom = document.querySelector(
+      '.singleTreeSelectKeys .t-tree__item:nth-child(3)',
+    );
+    expect(singleTreeSelectKeysTTreeItemNthChild3Dom.textContent).toBe('tdesign-web-react');
+    const singleTreeSelectKeysTTreeItemLastChildDom = document.querySelector(
+      '.singleTreeSelectKeys .t-tree__item:last-child',
+    );
+    expect(singleTreeSelectKeysTTreeItemLastChildDom.textContent).toBe('tdesign-miniprogram');
+  });
+
+  it('props.keys: multiple tree select, keys works fined', async () => {
+    getTreeSelectKeysMount(TreeSelect, {
+      multiple: true,
+      popupVisible: true,
+      keys: { label: 'name', value: 'key' },
+      treeProps: { expandAll: true },
+      popupProps: { overlayClassName: 'multipleTreeSelectKeys' },
+    });
+    await mockDelay(200);
+    const multipleTreeSelectKeysTTreeItemDom = document.querySelector('.multipleTreeSelectKeys .t-tree__item');
+    expect(multipleTreeSelectKeysTTreeItemDom.textContent).toBe('tdesign-vue');
+    const multipleTreeSelectKeysTTreeItemNthChild2Dom = document.querySelector(
+      '.multipleTreeSelectKeys .t-tree__item:nth-child(2)',
+    );
+    expect(multipleTreeSelectKeysTTreeItemNthChild2Dom.textContent).toBe('tdesign-react');
+    const multipleTreeSelectKeysTTreeItemNthChild3Dom = document.querySelector(
+      '.multipleTreeSelectKeys .t-tree__item:nth-child(3)',
+    );
+    expect(multipleTreeSelectKeysTTreeItemNthChild3Dom.textContent).toBe('tdesign-web-react');
+    const multipleTreeSelectKeysTTreeItemLastChildDom = document.querySelector(
+      '.multipleTreeSelectKeys .t-tree__item:last-child',
+    );
+    expect(multipleTreeSelectKeysTTreeItemLastChildDom.textContent).toBe('tdesign-miniprogram');
+  });
+
+  it('props.keys: single tree select, change event works fine', async () => {
+    const onChangeFn = vi.fn();
+    const wrapper = getTreeSelectKeysMount(
+      TreeSelect,
+      {
+        value: 1,
+        popupVisible: true,
+        treeProps: { expandAll: true, keys: { label: 'name', value: 'key' } },
+        popupProps: { overlayClassName: 'keysPropsSingle' },
+      },
+      { change: onChangeFn },
+    );
+    await mockDelay(200);
+    document.querySelector('.keysPropsSingle .t-tree__item:last-child').click();
+    await wrapper.vm.$nextTick();
+    expect(onChangeFn).toHaveBeenCalled();
+    expect(onChangeFn.mock.calls[0][0]).toBe(3);
+  });
+
+  it('props.keys: multiple tree select, change event works fine', async () => {
+    const onChangeFn = vi.fn();
+    const wrapper = getTreeSelectKeysMount(
+      TreeSelect,
+      {
+        value: [1],
+        multiple: true,
+        popupVisible: true,
+        treeProps: { expandAll: true, keys: { label: 'name', value: 'key' } },
+        popupProps: { overlayClassName: 'keysPropsMultiple' },
+      },
+      { change: onChangeFn },
+    );
+    await mockDelay(200);
+    document.querySelector('.keysPropsMultiple .t-tree__item:last-child .t-checkbox__label').click();
+    await wrapper.vm.$nextTick();
+    expect(onChangeFn).toHaveBeenCalled();
+    expect(onChangeFn.mock.calls[0][0]).toEqual([1, 3]);
+  });
+
   it('props.loading: TreeSelect contains element `.t-loading`', () => {
     // loading default value is false
     const wrapper = mount({
@@ -433,12 +506,8 @@ describe('TreeSelect Component', () => {
     await wrapper.vm.$nextTick();
     const customNodeDom = document.querySelector('.custom-node');
     expect(customNodeDom).toBeTruthy();
-    // remove node in document to avoid influencing following test cases
-    customNodeDom?.remove();
     const tSelectLoadingTipsDom = document.querySelector('.t-select__loading-tips');
     expect(tSelectLoadingTipsDom).toBeTruthy();
-    // remove node in document to avoid influencing following test cases
-    tSelectLoadingTipsDom?.remove();
   });
 
   it('slots.loadingText works fine', async () => {
@@ -456,12 +525,8 @@ describe('TreeSelect Component', () => {
     await wrapper.vm.$nextTick();
     const customNodeDom = document.querySelector('.custom-node');
     expect(customNodeDom).toBeTruthy();
-    // remove node in document to avoid influencing following test cases
-    customNodeDom?.remove();
     const tSelectLoadingTipsDom = document.querySelector('.t-select__loading-tips');
     expect(tSelectLoadingTipsDom).toBeTruthy();
-    // remove node in document to avoid influencing following test cases
-    tSelectLoadingTipsDom?.remove();
   });
   it('slots.loading-text works fine', async () => {
     const wrapper = mount({
@@ -478,12 +543,8 @@ describe('TreeSelect Component', () => {
     await wrapper.vm.$nextTick();
     const customNodeDom = document.querySelector('.custom-node');
     expect(customNodeDom).toBeTruthy();
-    // remove node in document to avoid influencing following test cases
-    customNodeDom?.remove();
     const tSelectLoadingTipsDom = document.querySelector('.t-select__loading-tips');
     expect(tSelectLoadingTipsDom).toBeTruthy();
-    // remove node in document to avoid influencing following test cases
-    tSelectLoadingTipsDom?.remove();
   });
 
   it('props.loadingText: loading status show loading text in panel', async () => {
@@ -496,15 +557,12 @@ describe('TreeSelect Component', () => {
     await wrapper.vm.$nextTick();
     const tSelectLoadingTipsDom = document.querySelector('.t-select__loading-tips');
     expect(tSelectLoadingTipsDom).toBeTruthy();
-    // remove node in document to avoid influencing following test cases
-    tSelectLoadingTipsDom?.remove();
   });
 
   it('props.max works fine', async () => {
     const onChangeFn1 = vi.fn();
     const wrapper = getTreeSelectMultipleMount(TreeSelect, { max: 2, value: [1, '4'] }, { change: onChangeFn1 });
     wrapper.find('.t-input').trigger('click');
-    await wrapper.vm.$nextTick();
     await mockDelay(300);
     document.querySelector('.t-popup .t-tree__item:last-child .t-checkbox__label').click();
     await wrapper.vm.$nextTick();
@@ -650,6 +708,92 @@ describe('TreeSelect Component', () => {
     expect(wrapper.findAll('.t-input__tips').length).toBe(1);
   });
 
+  it('props.treeProps: single tree select, treeProps.keys works fined', async () => {
+    getTreeSelectKeysMount(TreeSelect, {
+      popupVisible: true,
+      treeProps: { expandAll: true, keys: { label: 'name', value: 'key' } },
+      popupProps: { overlayClassName: 'singleTreeSelectKeys' },
+    });
+    await mockDelay(200);
+    const singleTreeSelectKeysTTreeItemDom = document.querySelector('.singleTreeSelectKeys .t-tree__item');
+    expect(singleTreeSelectKeysTTreeItemDom.textContent).toBe('tdesign-vue');
+    const singleTreeSelectKeysTTreeItemNthChild2Dom = document.querySelector(
+      '.singleTreeSelectKeys .t-tree__item:nth-child(2)',
+    );
+    expect(singleTreeSelectKeysTTreeItemNthChild2Dom.textContent).toBe('tdesign-react');
+    const singleTreeSelectKeysTTreeItemNthChild3Dom = document.querySelector(
+      '.singleTreeSelectKeys .t-tree__item:nth-child(3)',
+    );
+    expect(singleTreeSelectKeysTTreeItemNthChild3Dom.textContent).toBe('tdesign-web-react');
+    const singleTreeSelectKeysTTreeItemLastChildDom = document.querySelector(
+      '.singleTreeSelectKeys .t-tree__item:last-child',
+    );
+    expect(singleTreeSelectKeysTTreeItemLastChildDom.textContent).toBe('tdesign-miniprogram');
+  });
+
+  it('props.treeProps: multiple tree select, treeProps.keys works fined', async () => {
+    getTreeSelectKeysMount(TreeSelect, {
+      multiple: true,
+      popupVisible: true,
+      treeProps: { expandAll: true, keys: { label: 'name', value: 'key' } },
+      popupProps: { overlayClassName: 'multipleTreeSelectKeys' },
+    });
+    await mockDelay(200);
+    const multipleTreeSelectKeysTTreeItemDom = document.querySelector('.multipleTreeSelectKeys .t-tree__item');
+    expect(multipleTreeSelectKeysTTreeItemDom.textContent).toBe('tdesign-vue');
+    const multipleTreeSelectKeysTTreeItemNthChild2Dom = document.querySelector(
+      '.multipleTreeSelectKeys .t-tree__item:nth-child(2)',
+    );
+    expect(multipleTreeSelectKeysTTreeItemNthChild2Dom.textContent).toBe('tdesign-react');
+    const multipleTreeSelectKeysTTreeItemNthChild3Dom = document.querySelector(
+      '.multipleTreeSelectKeys .t-tree__item:nth-child(3)',
+    );
+    expect(multipleTreeSelectKeysTTreeItemNthChild3Dom.textContent).toBe('tdesign-web-react');
+    const multipleTreeSelectKeysTTreeItemLastChildDom = document.querySelector(
+      '.multipleTreeSelectKeys .t-tree__item:last-child',
+    );
+    expect(multipleTreeSelectKeysTTreeItemLastChildDom.textContent).toBe('tdesign-miniprogram');
+  });
+
+  it('props.treeProps: single tree select, trigger change event to check treeProps.keys', async () => {
+    const onChangeFn = vi.fn();
+    const wrapper = getTreeSelectKeysMount(
+      TreeSelect,
+      {
+        value: 1,
+        popupVisible: true,
+        treeProps: { expandAll: true, keys: { label: 'name', value: 'key' } },
+        popupProps: { overlayClassName: 'treePropsKeysSingle' },
+      },
+      { change: onChangeFn },
+    );
+    await mockDelay(200);
+    document.querySelector('.treePropsKeysSingle .t-tree__item:last-child').click();
+    await wrapper.vm.$nextTick();
+    expect(onChangeFn).toHaveBeenCalled();
+    expect(onChangeFn.mock.calls[0][0]).toBe(3);
+  });
+
+  it('props.treeProps: multiple tree select, trigger change event to check treeProps.keys', async () => {
+    const onChangeFn = vi.fn();
+    const wrapper = getTreeSelectKeysMount(
+      TreeSelect,
+      {
+        value: [1],
+        popupVisible: true,
+        multiple: true,
+        treeProps: { expandAll: true, keys: { label: 'name', value: 'key' } },
+        popupProps: { overlayClassName: 'treePropsKeysMultiple' },
+      },
+      { change: onChangeFn },
+    );
+    await mockDelay(200);
+    document.querySelector('.treePropsKeysMultiple .t-tree__item:last-child .t-checkbox__label').click();
+    await wrapper.vm.$nextTick();
+    expect(onChangeFn).toHaveBeenCalled();
+    expect(onChangeFn.mock.calls[0][0]).toEqual([1, 3]);
+  });
+
   it('props.value is equal to tdesign-vue', () => {
     const wrapper = mount({
       render() {
@@ -691,6 +835,7 @@ describe('TreeSelect Component', () => {
     getTreeSelectMultipleMount(TreeSelect, { valueDisplay: fn, value: 1, data: [{ label: 'tdesign-vue', value: 1 }] });
     expect(fn).toHaveBeenCalled();
     expect(fn.mock.calls[0][1].value).toEqual([{ label: 'tdesign-vue', value: 1 }]);
+    expect(fn.mock.calls[0][1].onClose).toBeTruthy();
   });
   it('slots.valueDisplay: a function with params', () => {
     const fn = vi.fn();
@@ -702,6 +847,7 @@ describe('TreeSelect Component', () => {
 
     expect(fn).toHaveBeenCalled();
     expect(fn.mock.calls[0][0].value).toEqual([{ label: 'tdesign-vue', value: 1 }]);
+    expect(fn.mock.calls[0][0].onClose).toBeTruthy();
   });
 
   it('props.valueType is equal object', () => {
@@ -722,7 +868,6 @@ describe('TreeSelect Component', () => {
       { focus: onFocusFn, blur: onBlurFn1 },
     );
     wrapper.find('.t-input').trigger('click');
-    await wrapper.vm.$nextTick();
     await mockDelay(100);
     expect(onFocusFn).toHaveBeenCalled();
     expect(onFocusFn.mock.calls[0][0].e.type).toBe('focus');
@@ -759,7 +904,6 @@ describe('TreeSelect Component', () => {
     const onChangeFn1 = vi.fn();
     const wrapper = getTreeSelectDefaultMount(TreeSelect, { treeProps: { expandAll: true } }, { change: onChangeFn1 });
     wrapper.find('.t-input').trigger('click');
-    await wrapper.vm.$nextTick();
     await mockDelay(200);
     document.querySelector('.t-tree__item:nth-child(3)').click();
     await wrapper.vm.$nextTick();
@@ -775,7 +919,6 @@ describe('TreeSelect Component', () => {
     const onChangeFn1 = vi.fn();
     const wrapper = getTreeSelectMultipleMount(TreeSelect, { treeProps: { expandAll: true } }, { change: onChangeFn1 });
     wrapper.find('.t-input').trigger('click');
-    await wrapper.vm.$nextTick();
     await mockDelay(200);
     document.querySelector('.t-tree__item:last-child .t-checkbox__label').click();
     await wrapper.vm.$nextTick();
@@ -792,7 +935,6 @@ describe('TreeSelect Component', () => {
     const onChangeFn1 = vi.fn();
     const wrapper = getTreeSelectMultipleMount(TreeSelect, { treeProps: { expandAll: true } }, { change: onChangeFn1 });
     wrapper.find('.t-input').trigger('click');
-    await wrapper.vm.$nextTick();
     await mockDelay(200);
     document.querySelector('.t-tree__item:first-child .t-checkbox__label').click();
     await wrapper.vm.$nextTick();
@@ -886,7 +1028,6 @@ describe('TreeSelect Component', () => {
       { 'input-change': onInputChangeFn1 },
     );
     wrapper.find('.t-input').trigger('click');
-    await wrapper.vm.$nextTick();
     await mockDelay(200);
     document.querySelector('.t-tree__item:first-child .t-checkbox__label').click();
     await wrapper.vm.$nextTick();
@@ -903,7 +1044,6 @@ describe('TreeSelect Component', () => {
       { 'popup-visible-change': onPopupVisibleChangeFn },
     );
     wrapper.find('.t-input').trigger('click');
-    await wrapper.vm.$nextTick();
     await mockDelay(200);
     expect(onPopupVisibleChangeFn).toHaveBeenCalled();
     expect(onPopupVisibleChangeFn.mock.calls[0][0]).toBe(true);

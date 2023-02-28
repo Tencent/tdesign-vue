@@ -5,6 +5,58 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.1.3 `2023-02-22` 
+### 🚀 Features
+- `Message`: MessagePlugin 插件支持传入 `className/style`，以便自定义消息样式 @chaishi ([#2151](https://github.com/Tencent/tdesign-vue/pull/2151))
+- `Dialog`: 确认按钮主题不再跟随 Dialog 主题变动 @xiaosansiji ([#2172](https://github.com/Tencent/tdesign-vue/pull/2172))
+- `Guide`:  定义步骤浮层内容 @chaishi ([#2170](https://github.com/Tencent/tdesign-vue/pull/2170))
+  - 支持使用插槽 `body` `title` `content` 自定义相关内容
+  - 支持透传 `popupProps` 属性，以便自定义更多特性，如 `popupProps.overlayInnerClassName`
+- `Select`: 支持Option自定义title属性 @uyarn ([#2176](https://github.com/Tencent/tdesign-vue/pull/2176))
+- `Popup`: 新增onScrollToBottom事件，新增popperOptions API @uyarn ([#2176](https://github.com/Tencent/tdesign-vue/pull/2176))
+### 🐞 Bug Fixes
+- `Timeline`: 修复自定义图标未能显示在正中间的问题 @chaishi ([#2150](https://github.com/Tencent/tdesign-vue/pull/2150))
+- `Table`:
+  - 表格宽度向下取整，修复表格宽度出现小数时导致吸顶和吸底出现横向滚动条 @huangpiqiao ([#2159](https://github.com/Tencent/tdesign-vue/pull/2159))
+  -  修复 ssr 场景下构建报错的问题 @KMethod ([#2166](https://github.com/Tencent/tdesign-vue/pull/2166))
+- `Guide`: @chaishi ([#2170](https://github.com/Tencent/tdesign-vue/pull/2170))
+  - 修复 `@next-step-click` `@prev-step-click` `@skip` 等事件未能触发问题
+  - 修复 `上一步`、`下一步`、`跳过` 等按钮的标识类名未能正确添加问题 @chaishi ([#2170](https://github.com/Tencent/tdesign-vue/pull/2170))
+- `SelectInput`: @uyarn ([#2176](https://github.com/Tencent/tdesign-vue/pull/2176))
+  - 修复基于 SelectInput 的输入类组件单选可输入模式下回删无法完全清空，及其导致的一系列问题
+  - 修复onBlur事件触发时机的问题 @uyarn ([#2176](https://github.com/Tencent/tdesign-vue/pull/2176))
+- `Tabs`: 修复在 tabs 内容区域使用图标大小异常的问题 @uyarn ([#2176](https://github.com/Tencent/tdesign-vue/pull/2176))
+- `Drawer/Dialog`: 修复滚动条检测问题 @honkinglin ([#2173](https://github.com/Tencent/tdesign-vue/pull/2173))
+- `Button`: 修复按钮 block 样式优先级问题 @honkinglin ([common #1152](https://github.com/Tencent/tdesign-common/pull/1152))
+
+## 🌈 1.1.2 `2023-02-15` 
+### 🚀 Features
+- `TreeSelect`: 支持使用 `keys` 定义字段别名 @chaishi ([#2128](https://github.com/Tencent/tdesign-vue/pull/2128))
+- `List`: ListItem 支持 `onClick` 事件 @yaogengzhu ([#1923](https://github.com/Tencent/tdesign-vue/pull/1923))
+- `Timeline`: @chaishi ([#2138](https://github.com/Tencent/tdesign-vue/pull/2138))
+  - 支持使用属性函数  `props.slot: () => <dot/>` 自定义连接点
+  - 支持使用插槽和属性函数 `content` 自定义内容
+  - 支持使用插槽和属性函数 `label` 自定义时间文本
+### 🐞 Bug Fixes
+- `Table`: @chaishi ([#2130](https://github.com/Tencent/tdesign-vue/pull/2130))
+  - 修复 `affixHeader` 在IE上高度异常问题 @huangpiqiao ([#2129](https://github.com/Tencent/tdesign-vue/pull/2129))
+  - 修复添加 `resizable` 属性后，在 Dialog 组件中宽度计算问题，并非提前设置好的 column.width，[issue#2116](https://github.com/Tencent/tdesign-vue/issues/2116)
+  - 修复 `column.resizable=false` 在某些场景下无效问题，[issue#1765](https://github.com/Tencent/tdesign-vue/issues/1765)
+  - 修复在自定义列数量场景，表格宽度未能根据列数自适应，[issue#1861](https://github.com/Tencent/tdesign-vue/issues/1861)
+  - 修复宽度计算的各类问题，[issue#1663](https://github.com/Tencent/tdesign-vue/issues/1663) @chaishi
+  - 修复空表格在 Dialog 组件中，文本显示位置不正确问题，[issue#2082](https://github.com/Tencent/tdesign-vue/issues/2082)
+  - 分页功能，修复 `pagination.onChange` 被调用两次问题，[issue#2066](https://github.com/Tencent/tdesign-vue/issues/2066)
+- `Cascader`: 修复级联组件无法选中值为 0 的选项的问题 @vkm0303 ([#2144](https://github.com/Tencent/tdesign-vue/pull/2144))
+- `Timeline`: 修复 `TimelineItem.labelAlign` 优先级不是最高的问题 @chaishi ([#2138](https://github.com/Tencent/tdesign-vue/pull/2138))
+- `Drawer`: 修复组件销毁时未正常移除锁定样式的问题 @honkinglin ([#2133](https://github.com/Tencent/tdesign-vue/pull/2133))
+
+## 🌈 1.1.1 `2023-02-09` 
+### 🐞 Bug Fixes
+- `TreeSelect`: @chaishi  
+    - 修复第一次点击无法显示下拉框问题 ([#2126](https://github.com/Tencent/tdesign-vue/pull/2126))
+    - 修复1.1.0版本中 `treeProps.keys` 无效问题 ([#2126](https://github.com/Tencent/tdesign-vue/pull/2126))
+
+
 ## 🌈 1.1.0 `2023-02-08` 
 ### 🚀 Features
 - `Cascader`: @chaishi ([#2096](https://github.com/Tencent/tdesign-vue/pull/2096))

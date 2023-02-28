@@ -1,14 +1,14 @@
-import { VNode } from 'vue';
 import {
-  computed, defineComponent, toRefs, getCurrentInstance, inject,
+  computed, defineComponent, toRefs, getCurrentInstance, inject, SetupContext, ref,
 } from '@vue/composition-api';
 import TLoading from '../loading';
-import { TdTimeLineItemProps } from './type';
+import { TdTimelineItemProps } from './type';
 import getRenderAlign from './utils';
 import TimelineItemProps from './timeline-item-props';
 import { usePrefixClass } from '../hooks/useConfig';
+import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 
-const DefaultTheme = ['primary', 'warning', 'error', 'default'];
+const DEFAULT_THEME = ['primary', 'warning', 'error', 'default'];
 
 export default defineComponent({
   name: 'TTimelineItem',
@@ -18,19 +18,23 @@ export default defineComponent({
   props: {
     ...TimelineItemProps,
   },
-  setup(props: TdTimeLineItemProps) {
+  setup(props: TdTimelineItemProps, context: SetupContext) {
     const instance = getCurrentInstance();
     const classPrefix = usePrefixClass();
 
-    const timelineProvider: any = inject('TTimeline');
+    const timelineProvider: any = inject('TTimeline', {
+      layout: 'vertical',
+      reverse: false,
+      theme: undefined,
+      labelAlign: 'left',
+      mode: 'alternate',
+      uidArr: ref([]),
+    });
     const {
       layout, reverse, theme, labelAlign, mode, uidArr,
     } = timelineProvider;
     const { dotColor, labelAlign: itemLabelAlign, loading } = toRefs(props);
-    const renderAlign = computed(() => {
-      const result = getRenderAlign(labelAlign?.value, layout?.value);
-      return result;
-    });
+    const timelineItemAlign = computed(() => itemLabelAlign.value ?? getRenderAlign(labelAlign?.value, layout?.value));
 
     const currentIndex = computed(() => {
       let index = 0;
@@ -43,20 +47,20 @@ export default defineComponent({
     });
 
     // 计算节点模式 CSS 类名
-    const getPositionClassName = computed(() => {
+    const positionClassName = computed(() => {
       // 横向布局 以及 纵向布局对应为不同的样式名
       const left = layout?.value === 'horizontal' ? 'top' : 'left';
       const right = layout?.value === 'horizontal' ? 'bottom' : 'right';
       // 单独设置则单独生效
-      if (renderAlign.value === 'alternate') {
-        return itemLabelAlign?.value || currentIndex.value % 2 === 0
+      if (timelineItemAlign.value === 'alternate') {
+        return currentIndex.value % 2 === 0
           ? `${classPrefix.value}-timeline-item-${left}`
           : `${classPrefix.value}-timeline-item-${right}`;
       }
-      if (renderAlign.value === 'left' || renderAlign.value === 'top') {
+      if (timelineItemAlign.value === 'left' || timelineItemAlign.value === 'top') {
         return `${classPrefix.value}-timeline-item-${left}`;
       }
-      if (renderAlign.value === 'right' || renderAlign.value === 'bottom') {
+      if (timelineItemAlign.value === 'right' || timelineItemAlign.value === 'bottom') {
         return `${classPrefix.value}-timeline-item-${right}`;
       }
       return '';
@@ -65,7 +69,7 @@ export default defineComponent({
     const getItemClassName = computed(() => {
       const isLastChildren = uidArr.value.length - 1 === currentIndex.value;
       const lastClassName = isLastChildren ? `${classPrefix.value}-timeline-item--last` : '';
-      return `${classPrefix.value}-timeline-item ${getPositionClassName.value} ${lastClassName}`;
+      return `${classPrefix.value}-timeline-item ${positionClassName.value} ${lastClassName}`;
     });
 
     // 连线类名
@@ -73,11 +77,13 @@ export default defineComponent({
       const statusClassName = reverse ? `${classPrefix.value}-timeline-item__tail--status-${dotColor?.value}` : '';
       return `${classPrefix.value}-timeline-item__tail ${classPrefix.value}-timeline-item__tail--theme-${theme?.value} ${statusClassName}`;
     });
-    const dotElement = instance.slots.dot;
+    const dotElement = computed<boolean>(() => Boolean(context.slots.dot || props.dot));
     // 圆圈类名
     const dotClassName = computed(() => {
-      const dotCustomClassName = !!dotElement || (!dotElement && loading?.value) ? `${classPrefix.value}-timeline-item__dot--custom` : '';
-      const docColorClassName = DefaultTheme.includes(dotColor?.value)
+      const dotCustomClassName = !!dotElement.value || (!dotElement.value && loading?.value)
+        ? `${classPrefix.value}-timeline-item__dot--custom`
+        : '';
+      const docColorClassName = DEFAULT_THEME.includes(dotColor?.value)
         ? `${classPrefix.value}-timeline-item__dot--${dotColor?.value}`
         : '';
       return `${classPrefix.value}-timeline-item__dot ${dotCustomClassName} ${docColorClassName}`;
@@ -98,36 +104,40 @@ export default defineComponent({
   },
 
   render() {
-    const defaultSlot: VNode[] = this.$scopedSlots.default ? this.$scopedSlots.default(null) : [null];
-    const dotSlot: VNode[] = this.$scopedSlots.dot ? this.$scopedSlots.dot(null) : null;
     const {
       dotColor,
       dotClassName,
       style = {},
       labelClassName,
-      label,
       mode,
       loading,
       tailClassName,
-      content,
       getItemClassName,
-      classPrefix,
+      classPrefix = 't',
     } = this;
+
+    const dotElement = renderTNodeJSX(this, 'dot');
+    const labelNode = renderTNodeJSX(this, 'label');
+
+    const dotContentClass = `${classPrefix}-timeline-item__dot-content`;
+    if (Array.isArray(dotElement) && dotElement[0]?.data) {
+      const classes = dotElement[0].data.class;
+      dotElement[0].data.class = classes ? [classes, dotContentClass].join(' ') : dotContentClass;
+    }
+
     return (
       <li class={getItemClassName} style={style}>
-        {mode === 'alternate' && label && <div class={labelClassName}>{label}</div>}
+        {mode === 'alternate' && labelNode && <div class={labelClassName}>{labelNode}</div>}
         <div class={`${classPrefix}-timeline-item__wrapper`}>
-          <div class={dotClassName} style={{ borderColor: !DefaultTheme.includes(dotColor) && dotColor }}>
-            <div class={`${classPrefix}-timeline-item__dot-content`}>
-              {!dotSlot && loading && <TLoading size="12px" />}
-              {dotSlot}
-            </div>
+          <div class={dotClassName} style={{ borderColor: !DEFAULT_THEME.includes(dotColor) && dotColor }}>
+            {!dotElement && loading && <TLoading size="12px" class={dotContentClass} />}
+            {dotElement}
           </div>
           <div class={tailClassName} />
         </div>
         <div class={`${classPrefix}-timeline-item__content`}>
-          {content || defaultSlot}
-          {mode === 'same' && label && <div class={labelClassName}>{label}</div>}
+          {renderContent(this, 'content', 'default')}
+          {mode === 'same' && labelNode && <div class={labelClassName}>{labelNode}</div>}
         </div>
       </li>
     );
