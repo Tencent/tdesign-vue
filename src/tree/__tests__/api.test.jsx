@@ -199,8 +199,12 @@ describe('Tree:api', () => {
         expanded: true,
       });
       await delay(10);
-      expect(wrapper.find('[data-value="t1.1"]').exists()).toBe(true);
-      expect(wrapper.find('[data-value="t2.1"]').exists()).toBe(true);
+      const t1d1 = wrapper.find('[data-value="t1.1"]');
+      expect(t1d1.exists()).toBe(true);
+      expect(t1d1.classes('t-tree__item--visible')).toBe(true);
+      const t2d1 = wrapper.find('[data-value="t2.1"]');
+      expect(t2d1.exists()).toBe(true);
+      expect(t2d1.classes('t-tree__item--visible')).toBe(true);
     });
   });
 
