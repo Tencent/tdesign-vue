@@ -326,7 +326,7 @@ copyText | String | - | 语言配置，“复制链接” 描述文本 | N
 
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
-`MessageOptions` | \- | - | 继承 `MessageOptions` 中的全部 API | N
+`MessageOptions` | \- | - | 继承 `MessageOptions` 中的全部属性 | N
 
 ### ImageConfig
 
@@ -334,6 +334,7 @@ copyText | String | - | 语言配置，“复制链接” 描述文本 | N
 -- | -- | -- | -- | --
 errorText | String | - | 图片加载失败显示的文本，中文默认为“图片无法显示” | N
 loadingText | String | - | 图片加载中显示的文本，中文默认为“图片加载中” | N
+replaceImageSrc | Function | - | 统一替换图片 `src` 地址，参数为组件的全部属性，返回值为新的图片地址。TS 类型：`(params: ImageProps) => string`，[Image API Documents](./image?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
 
 ### ImageViewerConfig
 
