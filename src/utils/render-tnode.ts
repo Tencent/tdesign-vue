@@ -28,15 +28,17 @@ export type VmType = Vue | ComponentRenderProxy;
 
 // 同时支持驼峰命名和中划线命名的插槽，示例：value-display 和 valueDisplay
 export function handleSlots(vm: VmType, params: Record<string, any>, name: string) {
-  const finaleParams = h;
+  // 每个 slots 需要单独的 h 函数 否则直接assign会重复把不同 slots 的 params 都注入
+  // eslint-disable-next-line no-new-func
+  const finalParams = new Function(`return ${h.toString()}`)();
   if (params) {
-    Object.assign(finaleParams, params);
+    Object.assign(finalParams, params);
   }
   // 检查是否存在 驼峰命名 的插槽
-  let node = vm.$scopedSlots[camelCase(name)]?.(finaleParams);
+  let node = vm.$scopedSlots[camelCase(name)]?.(finalParams);
   if (node) return node;
   // 检查是否存在 中划线命名 的插槽
-  node = vm.$scopedSlots[kebabCase(name)]?.(finaleParams);
+  node = vm.$scopedSlots[kebabCase(name)]?.(finalParams);
   if (node) return node;
   return null;
 }
