@@ -6,7 +6,7 @@ export default function useFormDisabled() {
     let { parent } = currentInstance;
     while (parent) {
       if (parent.proxy.$options.name === 'TForm') {
-        return parent.props.disabled;
+        return parent.props.disabled as boolean;
       }
       parent = parent.parent;
     }
