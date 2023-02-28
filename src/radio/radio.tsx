@@ -85,6 +85,7 @@ export default mixins(Vue as VueConstructor<RadioInstance>, classPrefixMixins).e
     },
 
     handleRadioClick(e: MouseEvent) {
+      e.stopPropagation();
       const tDisabled = this.getDisabled();
       if (tDisabled) return;
       this.$emit('click', { e });
