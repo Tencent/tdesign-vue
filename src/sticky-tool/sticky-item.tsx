@@ -8,23 +8,14 @@ export default mixins(getConfigReceiverMixins('sticky-item'), getGlobalIconMixin
   name: 'TStickyItem',
   props: {
     ...props,
-    type: {
-      type: String,
-      default: 'normal',
-    },
-    shape: {
-      type: String,
-      default: 'square',
-    },
+    type: String,
+    shape: String,
     onClick: Function,
     onHover: Function,
   },
   computed: {
     baseClass(): ClassName {
       return [`${this.componentName}`, `${this.componentName}--${this.type}`, `${this.componentName}--${this.shape}`];
-    },
-    iconClass(): ClassName {
-      return [`${this.componentName}__icon`];
     },
     labelClass(): ClassName {
       return [`${this.componentName}__label`];
@@ -34,7 +25,7 @@ export default mixins(getConfigReceiverMixins('sticky-item'), getGlobalIconMixin
     const icon = renderTNodeJSX(this, 'icon');
     return (
       <div class={this.baseClass}>
-        <div class={this.iconClass}>{icon}</div>
+        {icon}
         {this.type === 'normal' ? <div class={this.labelClass}>{this.label}</div> : null}
       </div>
     );

@@ -1,5 +1,5 @@
 <template>
-  <t-sticky-tool>
+  <t-sticky-tool type="compact">
     <t-sticky-item label="添加">
       <add-icon slot="icon" />
     </t-sticky-item>

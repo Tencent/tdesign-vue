@@ -48,7 +48,13 @@ export default mixins(getConfigReceiverMixins('sticky-tool')).extend({
       if (nodes && nodes[index]) {
         const vnode = nodes[index];
         if (vnode.componentOptions) {
-          vnode.componentOptions.propsData = item;
+          vnode.componentOptions.propsData = {
+            ...item,
+            type: this.type,
+            shape: this.shape,
+            onClick: this.onClick,
+            onHover: this.onHover,
+          };
           return vnode;
         }
         return stickyItem;
