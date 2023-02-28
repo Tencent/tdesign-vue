@@ -563,6 +563,11 @@ export default function useFixed(
     tableElmWidth.value = width;
   };
 
+  const updateTableAfterColumnResize = () => {
+    updateFixedStatus();
+    updateFixedHeader();
+  };
+
   return {
     tableWidth,
     tableElmWidth,
@@ -585,5 +590,6 @@ export default function useFixed(
     getThWidthList,
     updateThWidthList,
     addTableResizeObserver,
+    updateTableAfterColumnResize,
   };
 }
