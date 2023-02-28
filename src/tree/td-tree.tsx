@@ -109,11 +109,13 @@ export default defineComponent({
       if (node && spec) {
         ['expanded', 'actived', 'checked'].forEach((name) => {
           if (keys.includes(name)) {
-            const setupMethod = this[`set${upperFirst(name)}`];
-            if (isFunction(setupMethod)) {
-              setupMethod(node, spec[name]);
-            }
+            const val = spec[name];
             delete spec[name];
+            const methodName = `set${upperFirst(name)}`;
+            const setupMethod = this[methodName];
+            if (isFunction(setupMethod)) {
+              setupMethod(node, val);
+            }
           }
         });
         node.set(spec);

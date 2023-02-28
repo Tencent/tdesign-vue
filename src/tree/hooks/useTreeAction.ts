@@ -11,7 +11,9 @@ export default function useTreeAction(props: TreeProps, context: SetupContext, s
 
   const setExpanded = (item: TypeTargetNode, isExpanded: boolean): TreeNodeValue[] => {
     const node = getNode(store, item);
-    const expanded = node.setExpanded(isExpanded);
+    const expanded = node.setExpanded(isExpanded, {
+      directly: true,
+    });
     const evtCtx = {
       node: node.getModel(),
       e: treeState.mouseEvent as MouseEvent,
@@ -27,7 +29,9 @@ export default function useTreeAction(props: TreeProps, context: SetupContext, s
 
   const setActived = (item: TypeTargetNode, isActived: boolean) => {
     const node = getNode(store, item);
-    const actived = node.setActived(isActived);
+    const actived = node.setActived(isActived, {
+      directly: true,
+    });
     const evtCtx = {
       node: node.getModel(),
       e: treeState.mouseEvent,
@@ -43,7 +47,9 @@ export default function useTreeAction(props: TreeProps, context: SetupContext, s
 
   const setChecked = (item: TypeTargetNode, isChecked: boolean, ctx: { e: Event }): TreeNodeValue[] => {
     const node = getNode(store, item);
-    const checked = node.setChecked(isChecked);
+    const checked = node.setChecked(isChecked, {
+      directly: true,
+    });
     const evtCtx = {
       node: node.getModel(),
       e: ctx?.e,
