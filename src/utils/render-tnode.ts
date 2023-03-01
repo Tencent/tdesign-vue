@@ -4,7 +4,7 @@ import {
   PropType, CreateElement, VNode, VNodeChildren, RenderContext,
 } from 'vue/types/umd';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
-// import isObject from 'lodash/isObject';
+import isPlainObject from 'lodash/isPlainObject';
 import camelCase from 'lodash/camelCase';
 import kebabCase from 'lodash/kebabCase';
 import { TNode } from '../common';
@@ -28,15 +28,17 @@ export type VmType = Vue | ComponentRenderProxy;
 
 // 同时支持驼峰命名和中划线命名的插槽，示例：value-display 和 valueDisplay
 export function handleSlots(vm: VmType, params: Record<string, any>, name: string) {
-  const finaleParams = h;
-  if (params) {
-    Object.assign(finaleParams, params);
+  let finalParams;
+  if (isPlainObject(params)) {
+    finalParams = params;
+  } else {
+    finalParams = h;
   }
   // 检查是否存在 驼峰命名 的插槽
-  let node = vm.$scopedSlots[camelCase(name)]?.(finaleParams);
+  let node = vm.$scopedSlots[camelCase(name)]?.(finalParams);
   if (node) return node;
   // 检查是否存在 中划线命名 的插槽
-  node = vm.$scopedSlots[kebabCase(name)]?.(finaleParams);
+  node = vm.$scopedSlots[kebabCase(name)]?.(finalParams);
   if (node) return node;
   return null;
 }
