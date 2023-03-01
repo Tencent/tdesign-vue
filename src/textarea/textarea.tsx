@@ -209,6 +209,7 @@ export default mixins(Vue as VueConstructor<Textarea>, classPrefixMixins).extend
       },
     ];
     const tips = renderTNodeJSX(this, 'tips');
+
     const textTips = tips && (
       <div class={[`${this.componentName}__tips`, `${this.componentName}__tips--${this.status || 'normal'}`]}>
         {tips}
