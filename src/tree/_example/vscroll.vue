@@ -24,11 +24,15 @@
       <t-form-item label="可操作">
         <t-switch v-model="isOperateAble" />
       </t-form-item>
-      <t-form-item label="启用虚拟滚动">
-        <t-switch v-model="enableVScroll" />
+      <t-form-item label="滚动模式">
+        <t-radio-group v-model="scrollMode" @change="onScrollModeChange">
+          <t-radio-button value="normal">普通滚动</t-radio-button>
+          <t-radio-button value="vscroll">虚拟滚动</t-radio-button>
+          <t-radio-button value="lazy">lazy模式</t-radio-button>
+        </t-radio-group>
       </t-form-item>
-      <t-form-item label="lazy 模式">
-        <t-switch v-model="lazyVScroll" />
+      <t-form-item>
+        <t-alert theme="warning">切换滚动模式后需要刷新页面</t-alert>
       </t-form-item>
     </t-form>
 
@@ -88,6 +92,8 @@ function createTreeData() {
   return items;
 }
 
+const LSKEY_SCROLL_MODE = 'TDESIGN_TREE_VSCROLL_SCROLL_MODE';
+
 export default {
   data() {
     const items = createTreeData();
@@ -103,12 +109,14 @@ export default {
       showIcon: true,
       isCheckable: true,
       isOperateAble: true,
+      scrollMode: 'vscroll',
       items,
     };
   },
   computed: {
     scroll() {
-      if (!this.enableVScroll) {
+      const { scrollMode } = this;
+      if (!scrollMode === 'normal') {
         return null;
       }
       const scrollProps = {
@@ -116,7 +124,7 @@ export default {
         bufferSize: 10,
         threshold: 10,
       };
-      if (this.lazyVScroll) {
+      if (scrollMode === 'lazy') {
         scrollProps.type = 'lazy';
       } else {
         scrollProps.type = 'virtual';
@@ -124,11 +132,20 @@ export default {
       return scrollProps;
     },
   },
+  mounted() {
+    const mode = localStorage.getItem(LSKEY_SCROLL_MODE);
+    if (mode) {
+      this.scrollMode = mode;
+    }
+  },
   methods: {
     label(createElement, node) {
       return `${node.value}`;
     },
-
+    onScrollModeChange() {
+      const { scrollMode } = this;
+      localStorage.setItem(LSKEY_SCROLL_MODE, scrollMode);
+    },
     getInsertItem() {
       const value = getValue();
       return {
@@ -170,6 +187,12 @@ export default {
   margin-bottom: 10px;
 }
 .tdesign-tree-demo .t-form__item {
+  margin-bottom: 5px;
+}
+.tdesign-demo-vscroll .t-alert {
+  margin-bottom: 5px;
+}
+.tdesign-demo-vscroll .t-alert {
   margin-bottom: 5px;
 }
 </style>
