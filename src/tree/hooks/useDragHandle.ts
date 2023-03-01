@@ -5,7 +5,8 @@ import {
 import { emitEvent } from '../util';
 import TreeNode from '../../_common/js/tree/tree-node';
 
-export default function useDragHandle(props: TypeTreeProps, context: SetupContext, treeState: TypeTreeState) {
+export default function useDragHandle(props: TypeTreeProps, context: SetupContext, state: TypeTreeState) {
+  const treeState = state;
   const { store } = treeState;
 
   let dragNode: TreeNode = null;
@@ -85,8 +86,7 @@ export default function useDragHandle(props: TypeTreeProps, context: SetupContex
     handleDrop,
   };
 
-  const { cache } = treeState;
-  const { scope } = cache;
+  const { scope } = treeState;
   scope.drag = drag;
 
   return {

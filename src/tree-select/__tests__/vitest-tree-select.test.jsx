@@ -339,7 +339,7 @@ describe('TreeSelect Component', () => {
     document.querySelectorAll('.t-popup').forEach((node) => node.remove());
   });
 
-  it('props.inputProps is equal to {name:\'tree-select-input-name\'}', () => {
+  it("props.inputProps is equal to {name:'tree-select-input-name'}", () => {
     const wrapper = mount({
       render() {
         return <TreeSelect inputProps={{ name: 'tree-select-input-name' }}></TreeSelect>;

@@ -1,5 +1,6 @@
 import { computed, defineComponent, SetupContext } from '@vue/composition-api';
 import { UploadIcon } from 'tdesign-icons-vue';
+import useFormDisabled from '../hooks/useFormDisabled';
 import props from './props';
 import NormalFile from './themes/normal-file';
 import DraggerFile from './themes/dragger-file';
@@ -19,6 +20,7 @@ export default defineComponent({
 
   setup(props: UploadProps, context: SetupContext) {
     const uploadData = useUpload(props, context);
+    const { formDisabled } = useFormDisabled();
 
     const {
       localeConfig,
@@ -36,13 +38,15 @@ export default defineComponent({
       onDragFileChange,
     } = uploadData;
 
+    const disabled = computed<boolean>(() => formDisabled.value || innerDisabled.value);
+
     const commonDisplayFileProps = computed<CommonDisplayFileProps>(() => ({
       files: uploadValue.value,
       toUploadFiles: toUploadFiles.value,
       displayFiles: displayFiles.value,
       theme: props.theme,
       placeholder: props.placeholder,
-      disabled: innerDisabled.value,
+      disabled: disabled.value,
       tips: props.tips,
       status: props.status,
       sizeOverLimitMessage: sizeOverLimitMessage.value,
@@ -95,14 +99,14 @@ export default defineComponent({
       const getDefaultTrigger = () => {
         if (this.theme === 'file-input') {
           return (
-            <Button disabled={this.innerDisabled} variant="outline" {...this.triggerButtonProps}>
+            <Button disabled={this.disabled} variant="outline" {...this.triggerButtonProps}>
               {this.triggerUploadText}
             </Button>
           );
         }
         return (
           <Button
-            disabled={this.innerDisabled}
+            disabled={this.disabled}
             variant="outline"
             icon={() => <UploadIcon />}
             props={this.triggerButtonProps}
@@ -220,7 +224,7 @@ export default defineComponent({
         <input
           ref="inputRef"
           type="file"
-          disabled={this.innerDisabled}
+          disabled={this.disabled}
           onChange={this.onNormalFileChange}
           multiple={this.multiple}
           accept={this.accept}

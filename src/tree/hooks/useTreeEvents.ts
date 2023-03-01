@@ -5,8 +5,7 @@ import useTreeAction from './useTreeAction';
 
 // tree 组件一般事件处理
 export default function useTreeEvents(props: TreeProps, context: SetupContext, state: TypeTreeState) {
-  const { cache } = state;
-
+  const treeState = state;
   const { toggleExpanded, toggleActived, toggleChecked } = useTreeAction(props, context, state);
 
   const handleClick = (evtState: TypeEventState) => {
@@ -14,7 +13,8 @@ export default function useTreeEvents(props: TreeProps, context: SetupContext, s
     if (!node) {
       return;
     }
-    cache.mouseEvent = mouseEvent;
+
+    treeState.mouseEvent = mouseEvent;
 
     let shouldExpand = props.expandOnClickNode;
     let shouldActive = !props.disabled && !node.disabled;
@@ -49,7 +49,7 @@ export default function useTreeEvents(props: TreeProps, context: SetupContext, s
       emitEvent<Parameters<TreeProps['onClick']>>(props, context, 'click', evtCtx);
     }
 
-    cache.mouseEvent = null;
+    treeState.mouseEvent = null;
   };
 
   const handleChange = (evtState: TypeEventState, ctx: { e: Event }) => {

@@ -345,7 +345,7 @@ describe('AutoComplete Component', () => {
     tPopupDom?.remove();
   });
 
-  it('props.placeholder is equal to \'type keyword to search\'', () => {
+  it("props.placeholder is equal to 'type keyword to search'", () => {
     const wrapper = mount({
       render() {
         return <AutoComplete placeholder="type keyword to search"></AutoComplete>;
@@ -456,7 +456,7 @@ describe('AutoComplete Component', () => {
     expect(wrapper.find('.custom-node').exists()).toBeTruthy();
   });
 
-  it('props.value is equal to \'DefaultKeyword\'', () => {
+  it("props.value is equal to 'DefaultKeyword'", () => {
     const wrapper = mount({
       render() {
         return <AutoComplete value="DefaultKeyword"></AutoComplete>;

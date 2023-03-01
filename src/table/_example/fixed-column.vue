@@ -81,6 +81,7 @@ export default {
           colKey: 'status',
           title: '审批状态',
           width: 120,
+          fixed: this.leftFixedColumn >= 2 ? 'left' : undefined,
           cell: (h, { row }) => {
             const statusNameListMap = {
               0: { label: '审批通过', theme: 'success', icon: <CheckCircleFilledIcon /> },

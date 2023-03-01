@@ -40,22 +40,22 @@ describe('Space Component', () => {
     expect(wrapper.find('.custom-node').exists()).toBeTruthy();
   });
 
-  it('props.size is equal to \'small\'', () => {
+  it("props.size is equal to 'small'", () => {
     const wrapper = getSpaceDefaultMount(Space, { size: 'small' });
     const domWrapper = wrapper.findComponent(Space);
     expect(domWrapper.element.style.gap).toBe('8px');
   });
-  it('props.size is equal to \'large\'', () => {
+  it("props.size is equal to 'large'", () => {
     const wrapper = getSpaceDefaultMount(Space, { size: 'large' });
     const domWrapper = wrapper.findComponent(Space);
     expect(domWrapper.element.style.gap).toBe('24px');
   });
-  it('props.size is equal to \'38px\'', () => {
+  it("props.size is equal to '38px'", () => {
     const wrapper = getSpaceDefaultMount(Space, { size: '38px' });
     const domWrapper = wrapper.findComponent(Space);
     expect(domWrapper.element.style.gap).toBe('38px');
   });
-  it('props.size is equal to [\'20px\', \'80px\']', () => {
+  it("props.size is equal to ['20px', '80px']", () => {
     const wrapper = getSpaceDefaultMount(Space, { size: ['20px', '80px'] });
     const domWrapper = wrapper.findComponent(Space);
     expect(domWrapper.element.style.gap).toBe('20px 80px');
