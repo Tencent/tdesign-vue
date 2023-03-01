@@ -1,9 +1,10 @@
 <template>
-  <t-sticky-tool type="compact">
-    <t-sticky-item label="添加">
+  <t-sticky-tool>
+    <t-sticky-item label="添加" popup="666">
       <add-icon slot="icon" />
     </t-sticky-item>
     <t-sticky-item label="搜索" :icon="renderIcon"></t-sticky-item>
+    <t-sticky-item :label="renderLabel" :icon="renderIcon"></t-sticky-item>
   </t-sticky-tool>
 </template>
 
@@ -17,6 +18,9 @@ export default {
   methods: {
     renderIcon() {
       return <SearchIcon />;
+    },
+    renderLabel() {
+      return <div style="color: red">搜索</div>;
     },
   },
 };
