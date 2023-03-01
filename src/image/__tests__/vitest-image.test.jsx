@@ -213,7 +213,7 @@ describe('Image Component', () => {
     });
   });
 
-  it('props.srcset is equal to {\'image/avif\': \'https://tdesign.gtimg.com/img/tdesign-image.avif\',\'image/webp\': \'https://tdesign.gtimg.com/img/tdesign-image.webp\'}', () => {
+  it("props.srcset is equal to {'image/avif': 'https://tdesign.gtimg.com/img/tdesign-image.avif','image/webp': 'https://tdesign.gtimg.com/img/tdesign-image.webp'}", () => {
     const wrapper = mount({
       render() {
         return (

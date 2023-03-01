@@ -34,6 +34,7 @@ export default function useTreeStore(props: TreeProps, context: SetupContext) {
       'lazy',
       'valueMode',
       'filter',
+      'allowFoldNodeOnFilter',
     ]);
     store.setConfig(storeProps);
   };

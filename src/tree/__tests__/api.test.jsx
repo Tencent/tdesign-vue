@@ -100,7 +100,7 @@ describe('Tree:api', () => {
   // tree.setItem
   // 设置节点属性
   describe('setItem', () => {
-    it('可以设置节点属性，触发视图更新', async () => {
+    it('可以设置节点属性 label，触发视图更新', async () => {
       const data = [
         {
           label: 't1',
@@ -123,6 +123,88 @@ describe('Tree:api', () => {
       expect(t1.label).toBe('节点1');
       await delay(10);
       expect(wrapper.find('[data-value="t1"]').text()).toBe('节点1');
+    });
+
+    it('可以设置节点属性 checked，触发视图更新', async () => {
+      const data = [
+        {
+          value: 't1',
+          children: [
+            {
+              value: 't1.1',
+            },
+          ],
+        },
+        {
+          value: 't2',
+          children: [
+            {
+              value: 't2.1',
+            },
+          ],
+        },
+      ];
+      const wrapper = mount({
+        render() {
+          return <Tree ref="tree" data={data} expandAll={true} checkable />;
+        },
+      });
+
+      await delay(10);
+      const { tree } = wrapper.vm.$refs;
+      tree.setItem('t1', {
+        checked: true,
+      });
+      tree.setItem('t2', {
+        checked: true,
+      });
+      await delay(10);
+      expect(wrapper.find('[data-value="t1"] .t-checkbox').classes('t-is-checked')).toBe(true);
+      expect(wrapper.find('[data-value="t1.1"] .t-checkbox').classes('t-is-checked')).toBe(true);
+      expect(wrapper.find('[data-value="t2"] .t-checkbox').classes('t-is-checked')).toBe(true);
+      expect(wrapper.find('[data-value="t2.1"] .t-checkbox').classes('t-is-checked')).toBe(true);
+    });
+
+    it('可以设置节点属性 expanded，触发视图更新', async () => {
+      const data = [
+        {
+          value: 't1',
+          children: [
+            {
+              value: 't1.1',
+            },
+          ],
+        },
+        {
+          value: 't2',
+          children: [
+            {
+              value: 't2.1',
+            },
+          ],
+        },
+      ];
+      const wrapper = mount({
+        render() {
+          return <Tree ref="tree" data={data} />;
+        },
+      });
+
+      await delay(10);
+      const { tree } = wrapper.vm.$refs;
+      tree.setItem('t1', {
+        expanded: true,
+      });
+      tree.setItem('t2', {
+        expanded: true,
+      });
+      await delay(10);
+      const t1d1 = wrapper.find('[data-value="t1.1"]');
+      expect(t1d1.exists()).toBe(true);
+      expect(t1d1.classes('t-tree__item--visible')).toBe(true);
+      const t2d1 = wrapper.find('[data-value="t2.1"]');
+      expect(t2d1.exists()).toBe(true);
+      expect(t2d1.classes('t-tree__item--visible')).toBe(true);
     });
   });
 

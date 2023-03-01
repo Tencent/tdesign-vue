@@ -123,7 +123,7 @@ describe('Guide Component', () => {
     expect(tGuideCounterDom).toBeFalsy();
   });
 
-  it('props.finishButtonProps is equal to {theme: \'warning\'}', async () => {
+  it("props.finishButtonProps is equal to {theme: 'warning'}", async () => {
     getGuideMultipleStepsMount(Guide, { current: 2, finishButtonProps: { theme: 'warning' } });
     await mockDelay(60);
     const domWrapper = document.querySelector('.t-guide__finish');
@@ -166,14 +166,14 @@ describe('Guide Component', () => {
     expect(domWrapper1.style.left).toBe('-32px');
   });
 
-  it('props.nextButtonProps is equal to {theme: \'warning\'}', async () => {
+  it("props.nextButtonProps is equal to {theme: 'warning'}", async () => {
     getGuideMultipleStepsMount(Guide, { current: 1, nextButtonProps: { theme: 'warning' } });
     await mockDelay(60);
     const domWrapper = document.querySelector('.t-guide__next');
     expect(domWrapper.classList.contains('t-button--theme-warning')).toBeTruthy();
   });
 
-  it('props.prevButtonProps is equal to {theme: \'warning\'}', async () => {
+  it("props.prevButtonProps is equal to {theme: 'warning'}", async () => {
     getGuideMultipleStepsMount(Guide, { current: 2, prevButtonProps: { theme: 'warning' } });
     await mockDelay(60);
     const domWrapper = document.querySelector('.t-guide__prev');
@@ -194,7 +194,7 @@ describe('Guide Component', () => {
     expect(tGuideHighlightMaskDom).toBeFalsy();
   });
 
-  it('props.skipButtonProps is equal to {theme: \'warning\'}', async () => {
+  it("props.skipButtonProps is equal to {theme: 'warning'}", async () => {
     getGuideMultipleStepsMount(Guide, { current: 0, skipButtonProps: { theme: 'warning' } });
     await mockDelay(60);
     const domWrapper = document.querySelector('.t-guide__skip');
@@ -398,7 +398,7 @@ describe('Guide Component', () => {
     });
   });
 
-  it('GuideStep.nextButtonProps is equal to {theme: \'warning\'}', async () => {
+  it("GuideStep.nextButtonProps is equal to {theme: 'warning'}", async () => {
     getCustomMultipleGuideStepMount(Guide, { current: 1, nextButtonProps: { theme: 'warning' } });
     await mockDelay(60);
     const domWrapper = document.querySelector('.t-guide__next');
@@ -413,14 +413,14 @@ describe('Guide Component', () => {
     expect(document.body).toMatchSnapshot();
   });
 
-  it('GuideStep.popupProps is equal to {placement: \'top-left\'}', async () => {
+  it("GuideStep.popupProps is equal to {placement: 'top-left'}", async () => {
     getCustomGuideStepMount(Guide, { popupProps: { placement: 'top-left' } });
     await mockDelay(60);
     const domWrapper = document.querySelector('.t-popup');
     expect(domWrapper.getAttribute('data-popper-placement')).toBe('top-start');
   });
 
-  it('GuideStep.prevButtonProps is equal to {theme: \'warning\'}', async () => {
+  it("GuideStep.prevButtonProps is equal to {theme: 'warning'}", async () => {
     getCustomMultipleGuideStepMount(Guide, { current: 2, prevButtonProps: { theme: 'warning' } });
     await mockDelay(60);
     const domWrapper = document.querySelector('.t-guide__prev');
@@ -441,7 +441,7 @@ describe('Guide Component', () => {
     expect(tGuideHighlightMaskDom).toBeFalsy();
   });
 
-  it('GuideStep.skipButtonProps is equal to {theme: \'warning\'}', async () => {
+  it("GuideStep.skipButtonProps is equal to {theme: 'warning'}", async () => {
     getCustomMultipleGuideStepMount(Guide, { current: 1, skipButtonProps: { theme: 'warning' } });
     await mockDelay(60);
     const domWrapper = document.querySelector('.t-guide__skip');

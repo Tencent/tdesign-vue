@@ -274,13 +274,22 @@ describe('Upload Component', () => {
             autoUpload={false}
             files={[
               {
-                name: 'file1.txt', status: 'waiting', uploadTime: '2023-01-27', lastModified: 1674830942522,
+                name: 'file1.txt',
+                status: 'waiting',
+                uploadTime: '2023-01-27',
+                lastModified: 1674830942522,
               },
               {
-                name: 'file2.txt', status: 'success', uploadTime: '2023-01-27', lastModified: 1674831204354,
+                name: 'file2.txt',
+                status: 'success',
+                uploadTime: '2023-01-27',
+                lastModified: 1674831204354,
               },
               {
-                name: 'file3.txt', status: 'fail', uploadTime: '2023-01-27', lastModified: 1674831204354,
+                name: 'file3.txt',
+                status: 'fail',
+                uploadTime: '2023-01-27',
+                lastModified: 1674831204354,
               },
             ]}
             action="https://tdesign.test.com/upload/file_success"
@@ -296,13 +305,22 @@ describe('Upload Component', () => {
     expect(onChangeFn1).toHaveBeenCalled();
     expect(onChangeFn1.mock.calls[0][0]).toEqual([
       {
-        name: 'file1.txt', status: 'waiting', uploadTime: '2023-01-27', lastModified: 1674830942522,
+        name: 'file1.txt',
+        status: 'waiting',
+        uploadTime: '2023-01-27',
+        lastModified: 1674830942522,
       },
       {
-        name: 'file2.txt', status: 'success', uploadTime: '2023-01-27', lastModified: 1674831204354,
+        name: 'file2.txt',
+        status: 'success',
+        uploadTime: '2023-01-27',
+        lastModified: 1674831204354,
       },
       {
-        name: 'file3.txt', status: 'waiting', uploadTime: '2023-01-27', lastModified: 1674831204354,
+        name: 'file3.txt',
+        status: 'waiting',
+        uploadTime: '2023-01-27',
+        lastModified: 1674831204354,
       },
     ]);
     expect(onChangeFn1.mock.calls[0][1].trigger).toBe('abort');
@@ -662,9 +680,14 @@ describe('Upload Component', () => {
           <Upload
             theme="image"
             draggable={true}
-            files={[{
-              url: 'https://image2.png', name: 'image2.png', status: 'progress', percent: 80,
-            }]}
+            files={[
+              {
+                url: 'https://image2.png',
+                name: 'image2.png',
+                status: 'progress',
+                percent: 80,
+              },
+            ]}
           ></Upload>
         );
       },
@@ -1753,7 +1776,10 @@ describe('Upload Component', () => {
               { url: 'https://img2.txt', status: 'waiting', name: 'img2.txt' },
               { url: 'https://img3.txt', status: 'fail', name: 'img3.txt' },
               {
-                url: 'https://img4.txt', status: 'progress', percent: 90, name: 'img4.txt',
+                url: 'https://img4.txt',
+                status: 'progress',
+                percent: 90,
+                name: 'img4.txt',
               },
             ]}
           ></Upload>

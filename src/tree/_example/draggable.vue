@@ -111,7 +111,4 @@ export default {
 .tdesign-tree-demo .t-form__item {
   margin-bottom: 5px;
 }
-.tdesign-tree-demo .t-button {
-  margin: 0 10px 10px 0;
-}
 </style>
