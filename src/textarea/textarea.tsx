@@ -209,6 +209,20 @@ export default mixins(Vue as VueConstructor<Textarea>, classPrefixMixins).extend
       },
     ];
     const tips = renderTNodeJSX(this, 'tips');
+
+    const textTips = tips && (
+      <div class={[`${this.componentName}__tips`, `${this.componentName}__tips--${this.status || 'normal'}`]}>
+        {tips}
+      </div>
+    );
+
+    const limitText = (this.maxcharacter && <span class={this.limitClasses}>{`${this.characterNumber}/${this.maxcharacter}`}</span>)
+      || (!this.maxcharacter && this.maxlength && (
+        <span class={this.limitClasses}>{`${this.value ? getUnicodeLength(String(this.value)) : 0}/${
+          this.maxlength
+        }`}</span>
+      ));
+
     return (
       <div class={this.textareaClasses}>
         <textarea
@@ -221,19 +235,19 @@ export default mixins(Vue as VueConstructor<Textarea>, classPrefixMixins).extend
           style={this.textareaStyle}
           ref="refTextareaElem"
         ></textarea>
-        {this.maxcharacter ? (
-          <span class={this.limitClasses}>{`${this.characterNumber}/${this.maxcharacter}`}</span>
-        ) : null}
-        {!this.maxcharacter && this.maxlength ? (
-          <span class={this.limitClasses}>{`${this.value ? getUnicodeLength(String(this.value)) : 0}/${
-            this.maxlength
-          }`}</span>
-        ) : null}
-        {tips && (
-          <div class={[`${this.componentName}__tips`, `${this.componentName}__tips--${this.status || 'normal'}`]}>
-            {tips}
+        {textTips || limitText ? (
+          <div
+            class={[
+              `${this.componentName}__info_wrapper`,
+              {
+                [`${this.componentName}__info_wrapper_align`]: !textTips,
+              },
+            ]}
+          >
+            {textTips}
+            {limitText}
           </div>
-        )}
+        ) : null}
       </div>
     );
   },
