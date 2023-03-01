@@ -3,6 +3,8 @@ import cloneDeep from 'lodash/cloneDeep';
 import { GlobalConfigProvider } from './type';
 import { defaultGlobalConfig, mergeWith } from './context';
 
+export const globalConfigSymbol = '__TDESIGN__INSTANCE__GLOBAL__CONFIG__';
+
 const ConfigProvider = Vue.extend({
   name: 'TConfigProvider',
 
@@ -24,6 +26,8 @@ const ConfigProvider = Vue.extend({
   computed: {
     mergedGlobalConfig() {
       const mergedGlobalConfig = mergeWith(this.defaultData, this.globalConfig);
+      // 用于直接调用实例、plugin的方式使用
+      Vue.prototype[globalConfigSymbol] = mergedGlobalConfig;
       return mergedGlobalConfig;
     },
   },

@@ -2,12 +2,16 @@ import Vue from 'vue';
 import DialogComponent from './dialog';
 
 import { getAttach } from '../utils/dom';
-import {
+import { globalConfigSymbol } from '../config-provider/config-provider';
+
+import type {
   DialogOptions, DialogMethod, DialogConfirmMethod, DialogAlertMethod, DialogInstance,
 } from './type';
 
 const createDialog: DialogMethod = (props: DialogOptions) => {
   const options = { ...props };
+
+  const globalOptions = Vue.prototype[globalConfigSymbol];
   const dialog = new DialogComponent({
     propsData: {
       ...options,
@@ -16,6 +20,7 @@ const createDialog: DialogMethod = (props: DialogOptions) => {
         || (() => {
           dialog.visible = false;
         }),
+      instanceGlobal: globalOptions?.dialog,
     },
   }).$mount();
   dialog.visible = true;
