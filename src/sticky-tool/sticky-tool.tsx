@@ -31,29 +31,25 @@ export default mixins(getConfigReceiverMixins('sticky-tool')).extend({
     const nodes = this.$scopedSlots?.default && this.$scopedSlots.default(null);
     const list = this.getList();
     const content = list.map((item, index) => {
-      const stickyItem = (
-        <t-sticky-item
-          props={{
-            ...item,
-            type: this.type,
-            shape: this.shape,
-            onClick: this.onClick,
-            onHover: this.onHover,
-          }}
-          key={item.label || index}
-        ></t-sticky-item>
-      );
+      const {
+        type, shape, placement, popupProps, onClick, onHover,
+      } = this;
+      const itemProps = {
+        ...item,
+        type,
+        shape,
+        placement,
+        basePopupProps: popupProps,
+        baseWidth: this.styles.width,
+        onClick,
+        onHover,
+      };
+      const stickyItem = <t-sticky-item props={itemProps} key={item.label || index}></t-sticky-item>;
 
       if (nodes && nodes[index]) {
         const vnode = nodes[index];
         if (vnode.componentOptions) {
-          vnode.componentOptions.propsData = {
-            ...item,
-            type: this.type,
-            shape: this.shape,
-            onClick: this.onClick,
-            onHover: this.onHover,
-          };
+          vnode.componentOptions.propsData = itemProps;
           return vnode;
         }
         return stickyItem;
