@@ -1,19 +1,17 @@
 import upperFirst from 'lodash/upperFirst';
 import isFunction from 'lodash/isFunction';
-import {
-  computed, watch, toRefs, defineComponent,
-} from '@vue/composition-api';
+import { watch, toRefs, defineComponent } from '@vue/composition-api';
 import TreeNode from '../_common/js/tree/tree-node';
 import props from './props';
 import { useConfig, usePrefixClass } from '../hooks/useConfig';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { TNodeReturnValue, TreeOptionData } from '../common';
-import {
-  TreeNodeValue, TypeTreeState, TreeNodeState, TypeTreeNodeModel,
-} from './interface';
+import { TreeNodeValue, TreeNodeState, TypeTreeNodeModel } from './interface';
 import useTreeStore from './hooks/useTreeStore';
-import useCache from './hooks/useCache';
+import useTreeStyles from './hooks/useTreeStyles';
+import useTreeState from './hooks/useTreeState';
 import useTreeAction from './hooks/useTreeAction';
+import useTreeScroll from './hooks/useTreeScroll';
 import useTreeNodes from './hooks/useTreeNodes';
 import useDragHandle from './hooks/useDragHandle';
 import { getNode } from './util';
@@ -41,47 +39,19 @@ export default defineComponent({
     const componentName = usePrefixClass('tree');
     const refProps = toRefs(props);
     const { store, rebuild, updateStoreConfig } = useTreeStore(props, context);
-    const { cache } = useCache(props);
-
-    const classList = computed(() => {
-      const cname = componentName.value;
-      const list: Array<string> = [cname];
-      const {
-        disabled, hover, transition, checkable, draggable, expandOnClickNode,
-      } = props;
-      if (disabled) {
-        list.push(`${classPrefix.value}-is-disabled`);
-      }
-      if (hover) {
-        list.push(`${cname}--hoverable`);
-      }
-      if (checkable) {
-        list.push(`${cname}--checkable`);
-      }
-      if (draggable) {
-        list.push(`${cname}--draggable`);
-      }
-      if (transition) {
-        list.push(`${cname}--transition`);
-      }
-      if (expandOnClickNode) {
-        list.push(`${cname}--block-node`);
-      }
-      return list;
-    });
 
     // 用于 hooks 传递数据
-    const state: TypeTreeState = {
-      store,
-      cache,
-    };
+    const { state, treeContentRef, isScrolling } = useTreeState(props, store);
 
     useDragHandle(props, context, state);
     const { setActived, setExpanded, setChecked } = useTreeAction(props, context, state);
-    const { renderTreeNodes, clearCacheNodes, nodesEmpty } = useTreeNodes(props, context, state);
+    const { onInnerVirtualScroll, virtualConfig } = useTreeScroll(props, context, state);
+    const { renderTreeNodes, nodesEmpty } = useTreeNodes(props, context, state);
+    const {
+      treeClasses, treeContentStyles, scrollStyles, cursorStyles,
+    } = useTreeStyles(props, state);
 
     watch(refProps.data, (list) => {
-      clearCacheNodes();
       rebuild(list);
     });
     watch(refProps.keys, (keys) => {
@@ -108,15 +78,25 @@ export default defineComponent({
       global,
       classPrefix,
       componentName,
+      state,
       store,
-      cache,
-      classList,
+      treeClasses,
+      treeContentRef,
+
       updateStoreConfig,
       setActived,
       setExpanded,
       setChecked,
       renderTreeNodes,
       nodesEmpty,
+
+      isScrolling,
+      onInnerVirtualScroll,
+      treeContentStyles,
+      scrollStyles,
+      cursorStyles,
+      virtualConfig,
+      scrollToElement: virtualConfig.scrollToElement,
     };
   },
   // 在 methods 提供公共方法
@@ -129,11 +109,13 @@ export default defineComponent({
       if (node && spec) {
         ['expanded', 'actived', 'checked'].forEach((name) => {
           if (keys.includes(name)) {
-            const setupMethod = this[`set${upperFirst(name)}`];
-            if (isFunction(setupMethod)) {
-              setupMethod(node, spec[name]);
-            }
+            const val = spec[name];
             delete spec[name];
+            const methodName = `set${upperFirst(name)}`;
+            const setupMethod = this[methodName];
+            if (isFunction(setupMethod)) {
+              setupMethod(node, val);
+            }
           }
         });
         node.set(spec);
@@ -210,17 +192,27 @@ export default defineComponent({
   },
   render(h) {
     const {
-      cache, classList, updateStoreConfig, renderTreeNodes, nodesEmpty,
+      state,
+      treeClasses,
+      updateStoreConfig,
+      renderTreeNodes,
+      nodesEmpty,
+      isScrolling,
+      virtualConfig,
+      treeContentStyles,
+      scrollStyles,
+      cursorStyles,
     } = this;
 
     updateStoreConfig();
 
-    const { scope } = cache;
+    const { scope } = state;
     // 更新 scopedSlots
     scope.scopedSlots = this.$scopedSlots;
 
     const treeNodeViews = renderTreeNodes(h);
     const cname = this.componentName;
+    const isVirtual = virtualConfig.isVirtualScroll.value;
 
     // 空数据判定
     let emptyNode: TNodeReturnValue = null;
@@ -235,18 +227,44 @@ export default defineComponent({
     }
 
     // 构造列表
-    const treeNodeList = (
-      <transition-group
-        tag="div"
-        class={`${cname}__list`}
-        enter-active-class={`${cname}__item--enter-active`}
-        leave-active-class={`${cname}__item--leave-active`}
+    const { $props } = this;
+    const { transition } = $props;
+
+    let treeNodeList = null;
+    if (!transition || (isVirtual && isScrolling)) {
+      // 关闭动画时，列表不使用 transition-group 以启用更高的性能
+      treeNodeList = (
+        <div class={`${cname}__list`} style={scrollStyles}>
+          {treeNodeViews}
+        </div>
+      );
+    } else {
+      // 启用动画时，需要确保滚动中动画样式失效
+      treeNodeList = (
+        <transition-group
+          tag="div"
+          class={`${cname}__list`}
+          enter-active-class={`${cname}__item--enter-active`}
+          leave-active-class={`${cname}__item--leave-active`}
+          style={scrollStyles}
+        >
+          {treeNodeViews}
+        </transition-group>
+      );
+    }
+
+    const treeNode = (
+      <div
+        class={treeClasses}
+        ref="treeContentRef"
+        on={{ scroll: this.onInnerVirtualScroll }}
+        style={treeContentStyles}
       >
-        {treeNodeViews}
-      </transition-group>
+        {isVirtual && <div class={`${cname}__vscroll-cursor`} style={cursorStyles} />}
+        {emptyNode || treeNodeList}
+      </div>
     );
 
-    const treeNode = <div class={classList}>{emptyNode || treeNodeList}</div>;
     return treeNode;
   },
 });

@@ -5,6 +5,26 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.2.0 `2023-03-02` 
+### 🚀 Features
+- `Textarea`: 为解决 Textarea 字符限制文案会遮挡文本内容的问题，内容长度限制提示位置由组件内右下角移动到组件之外的右下角，与 tips 在同一行 @duanbaosheng ([#2194](https://github.com/Tencent/tdesign-vue/pull/2194))
+- `Upload`: 自定义上传方法，支持一个请求上传返回多个文件的数据回显 @chaishi ([common #1165](https://github.com/Tencent/tdesign-common/pull/1165))
+- `Image`: @chaishi ([#2182](https://github.com/Tencent/tdesign-vue/pull/2182))
+  - 图片组件支持特殊格式的地址 `.avif` 和 `.webp`
+  - 新增图片全局配置 `globalConfig.image.replaceImageSrc`，用于统一替换图片地址
+- `Tree`: 支持虚拟滚动 @TabSpace ([#2181](https://github.com/Tencent/tdesign-vue/pull/2181))
+- `Dialog`: 支持插件调用形式接收来自 `ConfigProvider` 的配置 @uyarn ([#2191](https://github.com/Tencent/tdesign-vue/pull/2191))
+- `全局类型`: 新增公共 types 文件的导出  @uyarn ([#2201](https://github.com/Tencent/tdesign-vue/pull/2201))
+### 🐞 Bug Fixes
+- `Table`: @chaishi ([#2183](https://github.com/Tencent/tdesign-vue/pull/2183))
+  - 列宽调整功能，修复左右侧固定列宽度调整问题，[issue#2168](https://github.com/Tencent/tdesign-vue/issues/2168)
+  - 列宽调整功能，修复吸顶表头列宽调整问题
+- `Upload`: 修复表单禁用对 Upload 组件无效的问题 @yusongh ([#2190](https://github.com/Tencent/tdesign-vue/pull/2190))
+- `Tree`:
+  - 修复 allowFoldNodeOnFilter 属性未生效的问题 @TabSpace ([#2181](https://github.com/Tencent/tdesign-vue/pull/2181))
+  - 去除 Tree 多余的滚动条样式设置 @honkinglin ([common #1168](https://github.com/Tencent/tdesign-common/pull/1168))
+- `Dialog`: 修复全局配置 `confirmBtnTheme` 属性失效的问题 @uyarn ([#2191](https://github.com/Tencent/tdesign-vue/pull/2191))
+
 ## 🌈 1.1.3 `2023-02-22` 
 ### 🚀 Features
 - `Message`: MessagePlugin 插件支持传入 `className/style`，以便自定义消息样式 @chaishi ([#2151](https://github.com/Tencent/tdesign-vue/pull/2151))

@@ -15,6 +15,9 @@ export const treeItemProps = {
   node: {
     type: Object as PropType<TypeTreeItemProps['node']>,
   },
+  rowIndex: {
+    type: Number as PropType<TypeTreeItemProps['rowIndex']>,
+  },
   treeScope: {
     type: Object as PropType<TypeTreeItemProps['treeScope']>,
   },
@@ -32,10 +35,10 @@ export default defineComponent({
     onDrag: { default: undefined },
   },
   setup(props: TypeTreeItemProps, context) {
-    const root = ref(null);
-    const { renderItemNode } = useTreeItem(props, context, root);
+    const treeItemRef = ref(null);
+    const { renderItemNode } = useTreeItem(props, context, treeItemRef);
     return {
-      root,
+      treeItemRef,
       renderItemNode,
     };
   },

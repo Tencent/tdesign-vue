@@ -6,14 +6,17 @@ import { getNode, emitEvent } from '../util';
 
 // tree 组件节点状态设置
 export default function useTreeAction(props: TreeProps, context: SetupContext, state: TypeTreeState) {
-  const { cache, store } = state;
+  const treeState = state;
+  const { store } = treeState;
 
   const setExpanded = (item: TypeTargetNode, isExpanded: boolean): TreeNodeValue[] => {
     const node = getNode(store, item);
-    const expanded = node.setExpanded(isExpanded);
+    const expanded = node.setExpanded(isExpanded, {
+      directly: true,
+    });
     const evtCtx = {
       node: node.getModel(),
-      e: cache.mouseEvent as MouseEvent,
+      e: treeState.mouseEvent as MouseEvent,
     };
     emitEvent<Parameters<TreeProps['onExpand']>>(props, context, 'expand', expanded, evtCtx);
     return expanded;
@@ -26,10 +29,12 @@ export default function useTreeAction(props: TreeProps, context: SetupContext, s
 
   const setActived = (item: TypeTargetNode, isActived: boolean) => {
     const node = getNode(store, item);
-    const actived = node.setActived(isActived);
+    const actived = node.setActived(isActived, {
+      directly: true,
+    });
     const evtCtx = {
       node: node.getModel(),
-      e: cache.mouseEvent,
+      e: treeState.mouseEvent,
     };
     emitEvent<Parameters<TreeProps['onActive']>>(props, context, 'active', actived, evtCtx);
     return actived;
@@ -42,7 +47,9 @@ export default function useTreeAction(props: TreeProps, context: SetupContext, s
 
   const setChecked = (item: TypeTargetNode, isChecked: boolean, ctx: { e: Event }): TreeNodeValue[] => {
     const node = getNode(store, item);
-    const checked = node.setChecked(isChecked);
+    const checked = node.setChecked(isChecked, {
+      directly: true,
+    });
     const evtCtx = {
       node: node.getModel(),
       e: ctx?.e,

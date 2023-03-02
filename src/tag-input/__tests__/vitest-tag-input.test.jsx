@@ -138,7 +138,7 @@ describe('TagInput Component', () => {
     });
   });
 
-  it('props.inputProps is equal to {size: \'small\'}', () => {
+  it("props.inputProps is equal to {size: 'small'}", () => {
     const wrapper = mount({
       render() {
         return <TagInput inputProps={{ size: 'small' }}></TagInput>;

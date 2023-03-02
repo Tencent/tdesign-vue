@@ -210,12 +210,12 @@ describe('BaseTable Component', () => {
     expect(wrapper3.classes('t-table--column-resizable')).toBeFalsy();
   });
 
-  it('props.rowAttributes is equal to { \'data-level\': \'level-1\' }', () => {
+  it("props.rowAttributes is equal to { 'data-level': 'level-1' }", () => {
     const wrapper = getNormalTableMount(BaseTable, { rowAttributes: { 'data-level': 'level-1' } });
     const domWrapper = wrapper.find('tbody > tr');
     expect(domWrapper.attributes('data-level')).toBe('level-1');
   });
-  it('props.rowAttributes is equal to [{ \'data-level\': \'level-1\' }, { \'data-name\': \'tdesign\' }]', () => {
+  it("props.rowAttributes is equal to [{ 'data-level': 'level-1' }, { 'data-name': 'tdesign' }]", () => {
     const wrapper = getNormalTableMount(BaseTable, {
       rowAttributes: [{ 'data-level': 'level-1' }, { 'data-name': 'tdesign' }],
     });
@@ -223,7 +223,7 @@ describe('BaseTable Component', () => {
     expect(domWrapper.attributes('data-level')).toBe('level-1');
     expect(domWrapper.attributes('data-name')).toBe('tdesign');
   });
-  it('props.rowAttributes is equal to () => [{ \'data-level\': \'level-1\' }, { \'data-name\': \'tdesign\' }]', () => {
+  it("props.rowAttributes is equal to () => [{ 'data-level': 'level-1' }, { 'data-name': 'tdesign' }]", () => {
     const wrapper = getNormalTableMount(BaseTable, {
       rowAttributes: () => [{ 'data-level': 'level-1' }, { 'data-name': 'tdesign' }],
     });
@@ -231,7 +231,7 @@ describe('BaseTable Component', () => {
     expect(domWrapper.attributes('data-level')).toBe('level-1');
     expect(domWrapper.attributes('data-name')).toBe('tdesign');
   });
-  it('props.rowAttributes is equal to [() => [{ \'data-level\': \'level-1\' }, { \'data-name\': \'tdesign\' }]]', () => {
+  it("props.rowAttributes is equal to [() => [{ 'data-level': 'level-1' }, { 'data-name': 'tdesign' }]]", () => {
     const wrapper = getNormalTableMount(BaseTable, {
       rowAttributes: [() => [{ 'data-level': 'level-1' }, { 'data-name': 'tdesign' }]],
     });
@@ -240,12 +240,12 @@ describe('BaseTable Component', () => {
     expect(domWrapper.attributes('data-name')).toBe('tdesign');
   });
 
-  it('props.rowClassName is equal to \'tdesign-class\'', () => {
+  it("props.rowClassName is equal to 'tdesign-class'", () => {
     const wrapper = getNormalTableMount(BaseTable, { rowClassName: 'tdesign-class' });
     const domWrapper = wrapper.find('tbody > tr');
     expect(domWrapper.classes('tdesign-class')).toBeTruthy();
   });
-  it('props.rowClassName is equal to { \'tdesign-class\': true, \'tdesign-class-next\': false }', () => {
+  it("props.rowClassName is equal to { 'tdesign-class': true, 'tdesign-class-next': false }", () => {
     const wrapper = getNormalTableMount(BaseTable, {
       rowClassName: { 'tdesign-class': true, 'tdesign-class-next': false },
     });
@@ -253,7 +253,7 @@ describe('BaseTable Component', () => {
     expect(domWrapper.classes('tdesign-class')).toBeTruthy();
     expect(domWrapper.classes('tdesign-class-next')).toBeFalsy();
   });
-  it('props.rowClassName is equal to [\'tdesign-class-default\', { \'tdesign-class\': true, \'tdesign-class-next\': false }]', () => {
+  it("props.rowClassName is equal to ['tdesign-class-default', { 'tdesign-class': true, 'tdesign-class-next': false }]", () => {
     const wrapper = getNormalTableMount(BaseTable, {
       rowClassName: ['tdesign-class-default', { 'tdesign-class': true, 'tdesign-class-next': false }],
     });
@@ -262,7 +262,7 @@ describe('BaseTable Component', () => {
     expect(domWrapper.classes('tdesign-class')).toBeTruthy();
     expect(domWrapper.classes('tdesign-class-next')).toBeFalsy();
   });
-  it('props.rowClassName is equal to () => ({ \'tdesign-class\': true, \'tdesign-class-next\': false })', () => {
+  it("props.rowClassName is equal to () => ({ 'tdesign-class': true, 'tdesign-class-next': false })", () => {
     const wrapper = getNormalTableMount(BaseTable, {
       rowClassName: () => ({ 'tdesign-class': true, 'tdesign-class-next': false }),
     });
