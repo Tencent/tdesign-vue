@@ -1,5 +1,5 @@
 import { computed, toRefs } from '@vue/composition-api';
-import { TypeTreeProps, TypeTreeState } from '../interface';
+import { TreeProps, TypeTreeState } from '../interface';
 import { Styles } from '../../common';
 import { usePrefixClass } from '../../hooks/useConfig';
 
@@ -8,7 +8,7 @@ export function formatCSSUnit(unit: string | number) {
   return isNaN(Number(unit)) ? unit : `${unit}px`;
 }
 
-export default function useTreeStyles(props: TypeTreeProps, state: TypeTreeState) {
+export default function useTreeStyles(props: TreeProps, state: TypeTreeState) {
   const componentName = usePrefixClass('tree').value;
   const classPrefix = usePrefixClass().value;
   const treeState = state;
