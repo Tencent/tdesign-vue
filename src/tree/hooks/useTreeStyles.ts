@@ -19,7 +19,7 @@ export default function useTreeStyles(props: TreeProps, state: TypeTreeState) {
   const treeClasses = computed(() => {
     const list: Array<string> = [componentName];
     const {
-      disabled, hover, transition, checkable, draggable, expandOnClickNode,
+      disabled, hover, transition, checkable, draggable, expandOnClickNode, scroll,
     } = props;
     if (disabled) {
       list.push(`${classPrefix}-is-disabled`);
@@ -46,6 +46,8 @@ export default function useTreeStyles(props: TreeProps, state: TypeTreeState) {
       if (isScrolling.value) {
         list.push(`${componentName}--scrolling`);
       }
+    } else if (scroll && scroll.type === 'lazy') {
+      list.push(`${componentName}__lazyload`);
     }
 
     return list;

@@ -195,4 +195,7 @@ export default {
 .tdesign-demo-vscroll .t-alert {
   margin-bottom: 5px;
 }
+.tdesign-demo-vscroll .t-tree {
+  overflow-y: auto;
+}
 </style>
