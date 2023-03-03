@@ -32,7 +32,7 @@ export default mixins(getConfigReceiverMixins('sticky-tool')).extend({
     const list = this.getList();
     const content = list.map((item, index) => {
       const {
-        type, shape, placement, popupProps, onClick, onHover,
+        type, shape, placement, popupProps,
       } = this;
       const itemProps = {
         ...item,
@@ -41,8 +41,8 @@ export default mixins(getConfigReceiverMixins('sticky-tool')).extend({
         placement,
         basePopupProps: popupProps,
         baseWidth: this.styles.width,
-        onClick,
-        onHover,
+        onClick: props.onClick,
+        onHover: props.onHover,
       };
       const stickyItem = <t-sticky-item props={itemProps} key={item.label || index}></t-sticky-item>;
 

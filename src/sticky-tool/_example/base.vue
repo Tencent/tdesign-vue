@@ -1,5 +1,11 @@
 <template>
-  <t-sticky-tool :offset="['10%', '10px']" placement="right-center" :popupProps="{ placement: 'right' }" :width="100">
+  <t-sticky-tool
+    :offset="[10, 10]"
+    placement="right-center"
+    :popupProps="{ placement: 'right' }"
+    :width="100"
+    @click="handleClick"
+  >
     <t-sticky-item label="添加" popup="666">
       <add-icon slot="icon" />
     </t-sticky-item>
@@ -31,8 +37,11 @@ export default {
     renderPopup() {
       return <img alt="TDesign Logo" width="200" src="https://tdesign.gtimg.com/site/TDesign.png"></img>;
     },
-    handleClick() {
-      console.log(123);
+    handleClick(e, item) {
+      console.log(123, e, item);
+    },
+    handleClick1() {
+      console.log(456);
     },
   },
 };
