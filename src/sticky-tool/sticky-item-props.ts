@@ -10,7 +10,7 @@ import { PropType } from 'vue';
 export default {
   /** 图标 */
   icon: {
-    type: [String, Function] as PropType<TdStickyItemProps['icon']>,
+    type: Function as PropType<TdStickyItemProps['icon']>,
   },
   /** 名称 */
   label: {

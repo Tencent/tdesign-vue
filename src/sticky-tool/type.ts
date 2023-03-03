@@ -54,7 +54,7 @@ export interface TdStickyItemProps {
   /**
    * 图标
    */
-  icon?: string | TNode;
+  icon?: TNode;
   /**
    * 名称
    */

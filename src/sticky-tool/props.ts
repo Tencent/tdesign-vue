@@ -15,7 +15,7 @@ export default {
   },
   /** 相对于 placement 的偏移量，示例：[-10, 20] 或 ['10em', '8rem'] */
   offset: {
-    type: Object as PropType<TdStickyToolProps['offset']>,
+    type: Array as PropType<TdStickyToolProps['offset']>,
   },
   /** 固定位置 */
   placement: {
