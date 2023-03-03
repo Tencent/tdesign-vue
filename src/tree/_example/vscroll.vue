@@ -116,7 +116,7 @@ export default {
   computed: {
     scroll() {
       const { scrollMode } = this;
-      if (!scrollMode === 'normal') {
+      if (scrollMode === 'normal') {
         return null;
       }
       const scrollProps = {
