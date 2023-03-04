@@ -3,7 +3,7 @@
     :offset="[10, 10]"
     placement="right-center"
     :popupProps="{ placement: 'right' }"
-    :width="100"
+    :width="60"
     :onClick="handleClick"
     @hover="handleHover"
   >
@@ -11,13 +11,16 @@
       <add-icon slot="icon" />
     </t-sticky-item>
     <t-sticky-item
-      label="搜索"
+      :label="renderLabel"
       :icon="renderIcon"
       trigger="click"
       :popup="renderPopup"
       :popupProps="{ placement: 'bottom' }"
     ></t-sticky-item>
-    <t-sticky-item :label="renderLabel" :icon="renderIcon"></t-sticky-item>
+    <t-sticky-item :icon="renderIcon">
+      <div slot="label">搜索</div>
+      <img slot="popup" alt="TDesign Logo" width="200" src="https://tdesign.gtimg.com/site/TDesign.png" />
+    </t-sticky-item>
   </t-sticky-tool>
 </template>
 

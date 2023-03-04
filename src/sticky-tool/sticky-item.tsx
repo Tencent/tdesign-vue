@@ -41,12 +41,13 @@ export default mixins(getConfigReceiverMixins('sticky-item'), getGlobalIconMixin
   render() {
     const icon = renderTNodeJSX(this, 'icon');
     const label = renderTNodeJSX(this, 'label');
+    const popup = renderTNodeJSX(this, 'popup');
     return (
       <Popup
         trigger={this.trigger}
         hideEmptyPopup={true}
         placement={this.popupPlacement}
-        content={this.popup}
+        content={() => popup}
         props={this.popupProps || this.basePopupProps}
       >
         <div
