@@ -45,7 +45,7 @@ export default mixins(getConfigReceiverMixins('sticky-tool')).extend({
         onClick: handleClick,
         onHover: handleHover,
       };
-      const stickyItem = <t-sticky-item props={itemProps} key={item.label || index}></t-sticky-item>;
+      const stickyItem = <t-sticky-item props={itemProps} key={index}></t-sticky-item>;
 
       if (nodes && nodes[index]) {
         const vnode = nodes[index];

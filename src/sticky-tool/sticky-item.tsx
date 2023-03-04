@@ -1,5 +1,5 @@
 import props from './sticky-item-props';
-import { TdStickyToolProps, TdStickyItemProps } from './type';
+import { TdStickyItemProps } from './type';
 import { ClassName, Styles } from '../common';
 import Popup from '../popup';
 import { renderTNodeJSX } from '../utils/render-tnode';
@@ -41,7 +41,6 @@ export default mixins(getConfigReceiverMixins('sticky-item'), getGlobalIconMixin
   render() {
     const icon = renderTNodeJSX(this, 'icon');
     const label = renderTNodeJSX(this, 'label');
-    const on = { ...this.$listeners };
     return (
       <Popup
         trigger={this.trigger}
