@@ -1,5 +1,5 @@
 import props from './sticky-item-props';
-import { TdStickyItemProps } from './type';
+import { TdStickyToolProps, TdStickyItemProps } from './type';
 import { ClassName, Styles } from '../common';
 import Popup from '../popup';
 import { renderTNodeJSX } from '../utils/render-tnode';
@@ -41,10 +41,7 @@ export default mixins(getConfigReceiverMixins('sticky-item'), getGlobalIconMixin
   render() {
     const icon = renderTNodeJSX(this, 'icon');
     const label = renderTNodeJSX(this, 'label');
-    // const on = { ...this.$listeners };
-    // if (typeof this.onClick === 'function') {
-    //   on.click = this.onClick;
-    // }
+    const on = { ...this.$listeners };
     return (
       <Popup
         trigger={this.trigger}
@@ -53,7 +50,12 @@ export default mixins(getConfigReceiverMixins('sticky-item'), getGlobalIconMixin
         content={this.popup}
         props={this.popupProps || this.basePopupProps}
       >
-        <div class={this.baseClass} style={this.styles} onClick={this.handleItemClick}>
+        <div
+          class={this.baseClass}
+          style={this.styles}
+          onClick={this.handleClickItem}
+          onMouseenter={this.handleHoverItem}
+        >
           {icon}
           {this.type === 'normal' ? <div class={this.labelClass}>{label}</div> : null}
         </div>
@@ -61,8 +63,15 @@ export default mixins(getConfigReceiverMixins('sticky-item'), getGlobalIconMixin
     );
   },
   methods: {
-    handleItemClick(e: MouseEvent, item: TdStickyItemProps) {
+    handleClickItem(e: MouseEvent) {
+      const item: TdStickyItemProps = {};
+      Object.keys(props).forEach((i) => (item[i] = this[i]));
       this.onClick(e, item);
+    },
+    handleHoverItem(e: MouseEvent) {
+      const item: TdStickyItemProps = {};
+      Object.keys(props).forEach((i) => (item[i] = this[i]));
+      this.onHover(e, item);
     },
   },
 });

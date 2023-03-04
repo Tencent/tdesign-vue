@@ -4,7 +4,8 @@
     placement="right-center"
     :popupProps="{ placement: 'right' }"
     :width="100"
-    @click="handleClick"
+    :onClick="handleClick"
+    @hover="handleHover"
   >
     <t-sticky-item label="添加" popup="666">
       <add-icon slot="icon" />
@@ -38,10 +39,10 @@ export default {
       return <img alt="TDesign Logo" width="200" src="https://tdesign.gtimg.com/site/TDesign.png"></img>;
     },
     handleClick(e, item) {
-      console.log(123, e, item);
+      console.log('click', e, item);
     },
-    handleClick1() {
-      console.log(456);
+    handleHover(e, item) {
+      console.log('hover', e, item);
     },
   },
 };

@@ -4,7 +4,8 @@ import TStickyItem from './sticky-item';
 import { ClassName, Styles } from '../common';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins from '../config-provider/config-receiver';
-import { TdStickyItemProps } from './type';
+import { emitEvent } from '../utils/event';
+import { TdStickyToolProps, TdStickyItemProps } from './type';
 
 export default mixins(getConfigReceiverMixins('sticky-tool')).extend({
   name: 'TStickyTool',
@@ -32,7 +33,7 @@ export default mixins(getConfigReceiverMixins('sticky-tool')).extend({
     const list = this.getList();
     const content = list.map((item, index) => {
       const {
-        type, shape, placement, popupProps,
+        type, shape, placement, popupProps, handleClick, handleHover,
       } = this;
       const itemProps = {
         ...item,
@@ -41,8 +42,8 @@ export default mixins(getConfigReceiverMixins('sticky-tool')).extend({
         placement,
         basePopupProps: popupProps,
         baseWidth: this.styles.width,
-        onClick: props.onClick,
-        onHover: props.onHover,
+        onClick: handleClick,
+        onHover: handleHover,
       };
       const stickyItem = <t-sticky-item props={itemProps} key={item.label || index}></t-sticky-item>;
 
@@ -100,6 +101,12 @@ export default mixins(getConfigReceiverMixins('sticky-tool')).extend({
         }
       });
       return offsetStyle;
+    },
+    handleClick(e: MouseEvent, item: TdStickyItemProps) {
+      emitEvent<Parameters<TdStickyToolProps['onClick']>>(this, 'click', { e, item });
+    },
+    handleHover(e: MouseEvent, item: TdStickyItemProps) {
+      emitEvent<Parameters<TdStickyToolProps['onHover']>>(this, 'hover', { e, item });
     },
   },
 });
