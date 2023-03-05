@@ -41,11 +41,11 @@ export default {
     renderPopup() {
       return <img alt="TDesign Logo" width="200" src="https://tdesign.gtimg.com/site/TDesign.png"></img>;
     },
-    handleClick(e, item) {
-      console.log('click', e, item);
+    handleClick(context) {
+      console.log('click', context);
     },
-    handleHover(e, item) {
-      console.log('hover', e, item);
+    handleHover(context) {
+      console.log('hover', context);
     },
   },
 };
