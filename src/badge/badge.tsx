@@ -11,7 +11,6 @@ export default mixins(classPrefixMixins).extend({
   props: { ...props },
   methods: {
     getContent() {
-      if (this.dot) return '';
       if (typeof this.$scopedSlots.count === 'function') {
         return this.$scopedSlots.count(null);
       }
@@ -70,7 +69,7 @@ export default mixins(classPrefixMixins).extend({
         {children || null}
         {isHidden ? null : (
           <sup class={badgeClassNames} style={inlineStyle}>
-            {content}
+            {dot ? null : content}
           </sup>
         )}
       </div>
