@@ -50,6 +50,9 @@ export default function useRenderLabel(props: TypeTreeItemProps, context: SetupC
       } else {
         checkboxDisabled = !!disableCheck;
       }
+      if (node.vmIsLocked && !node.vmIsRest) {
+        checkboxDisabled = true;
+      }
       if (node.isDisabled()) {
         checkboxDisabled = true;
       }

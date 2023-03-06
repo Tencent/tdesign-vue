@@ -80,6 +80,12 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
     } else {
       list.push(`${componentName}__item--hidden`);
     }
+    if (node.vmIsLocked) {
+      list.push(`${componentName}__item--locked`);
+    }
+    if (node.vmIsRest) {
+      list.push(`${componentName}__item--matched`);
+    }
     // 拖拽过程样式相关classList
     list.push({
       [`${componentName}__item--dragging`]: isDragging,
