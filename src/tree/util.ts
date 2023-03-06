@@ -54,6 +54,12 @@ export function getMark(name: string, element?: HTMLElement, root?: HTMLElement)
   return info;
 }
 
+export function pathMatchClass(name: string, element?: HTMLElement, root?: HTMLElement): boolean {
+  const list = getParentsToRoot(element, root);
+  const rs = list.some((el) => el.classList.contains(name));
+  return rs;
+}
+
 export function getTNode(prop: TypeTNodeProp, options: TypeGetTNodeOption): string | TypeVNode {
   let tnode = null;
   let item = null;
