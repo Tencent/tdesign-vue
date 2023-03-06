@@ -36,23 +36,29 @@ export default {
       expandOnClickNode: false,
       items: [
         {
+          value: 't1',
           label: '1',
           children: [
             {
+              value: 't1.1',
               label: '1.1',
             },
             {
+              value: 't1.2',
               label: '1.2',
             },
           ],
         },
         {
+          value: 't2',
           label: '2',
           children: [
             {
+              value: 't2.1',
               label: '2.1',
             },
             {
+              value: 't2.2',
               label: '2.2',
             },
           ],

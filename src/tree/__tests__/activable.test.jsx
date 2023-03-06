@@ -21,7 +21,7 @@ describe('Tree:activable', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} activable expandAll transition={false}></Tree>;
+          return <Tree ref="tree" data={data} activable expand-all transition={false}></Tree>;
         },
       });
       await delay(1);
@@ -60,7 +60,7 @@ describe('Tree:activable', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} activable expandAll transition={false}></Tree>;
+          return <Tree ref="tree" data={data} activable expand-all transition={false}></Tree>;
         },
       });
       await delay(1);
@@ -87,7 +87,7 @@ describe('Tree:activable', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} activable defaultActived={['t1.1']} expandAll transition={false}></Tree>;
+          return <Tree ref="tree" data={data} activable defaultActived={['t1.1']} expand-all transition={false}></Tree>;
         },
       });
       await delay(1);
@@ -114,7 +114,7 @@ describe('Tree:activable', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} actived={['t1.1']} expandAll transition={false}></Tree>;
+          return <Tree ref="tree" data={data} activable actived={['t1.1']} expand-all transition={false}></Tree>;
         },
       });
       await delay(1);
@@ -144,7 +144,7 @@ describe('Tree:activable', () => {
           };
         },
         render() {
-          return <Tree ref="tree" data={data} actived={this.actived} expandAll transition={false}></Tree>;
+          return <Tree ref="tree" data={data} activable actived={this.actived} expand-all transition={false}></Tree>;
         },
       });
       await delay(1);
@@ -152,14 +152,14 @@ describe('Tree:activable', () => {
       expect(wrapper.find('[data-value="t1.1"]').classes('t-is-active')).toBe(true);
       expect(wrapper.find('[data-value="t1.2"]').classes('t-is-active')).toBe(false);
       wrapper.setData({
-        expanded: ['t1.2'],
+        actived: ['t1.2'],
       });
       await delay(1);
       expect(wrapper.find('[data-value="t1"]').classes('t-is-active')).toBe(false);
       expect(wrapper.find('[data-value="t1.1"]').classes('t-is-active')).toBe(false);
       expect(wrapper.find('[data-value="t1.2"]').classes('t-is-active')).toBe(true);
       wrapper.setData({
-        expanded: ['t1'],
+        actived: ['t1'],
       });
       await delay(1);
       expect(wrapper.find('[data-value="t1"]').classes('t-is-active')).toBe(true);
@@ -186,7 +186,7 @@ describe('Tree:activable', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} activable expandAll transition={false}></Tree>;
+          return <Tree ref="tree" data={data} activable expand-all transition={false}></Tree>;
         },
       });
       await delay(1);
@@ -233,7 +233,7 @@ describe('Tree:activable', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} activable expandAll activeMultiple={true} transition={false}></Tree>;
+          return <Tree ref="tree" data={data} activable expand-all activeMultiple={true} transition={false}></Tree>;
         },
       });
       await delay(1);
