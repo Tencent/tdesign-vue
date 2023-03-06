@@ -14,7 +14,7 @@ describe('Image Component', () => {
   it('props.alt works fine', () => {
     const wrapper = mount({
       render() {
-        return <Image alt="text image load failed" src="https://www.error.img.com"></Image>;
+        return <Image alt={'text image load failed'} src={'https://www.error.img.com'}></Image>;
       },
     }).find('img');
     expect(wrapper.attributes('alt')).toBe('text image load failed');
@@ -24,7 +24,7 @@ describe('Image Component', () => {
     const wrapper = mount({
       render() {
         return (
-          <Image error={(h) => <span class="custom-node">TNode</span>} src="https://this.is.an.error.img.com"></Image>
+          <Image error={(h) => <span class="custom-node">TNode</span>} src={'https://this.is.an.error.img.com'}></Image>
         );
       },
     });
@@ -40,7 +40,7 @@ describe('Image Component', () => {
         return (
           <Image
             scopedSlots={{ error: (h) => <span class="custom-node">TNode</span> }}
-            src="https://this.is.an.error.img.com"
+            src={'https://this.is.an.error.img.com'}
           ></Image>
         );
       },
@@ -140,7 +140,7 @@ describe('Image Component', () => {
   it('slots.overlay-content works fine', () => {
     const wrapper = mount({
       render() {
-        return <Image scopedSlots={{ 'overlay-content': () => <span class="custom-node">TNode</span> }}></Image>;
+        return <Image scopedSlots={{ 'overlay-content': (h) => <span class="custom-node">TNode</span> }}></Image>;
       },
     });
     expect(wrapper.find('.custom-node').exists()).toBeTruthy();
@@ -156,7 +156,7 @@ describe('Image Component', () => {
     wrapper.find('.t-image__wrapper').trigger('mouseenter');
     await wrapper.vm.$nextTick();
     expect(wrapper.find('.t-image__overlay-content').exists()).toBeTruthy();
-    expect(wrapper.findAll('.t-image__overlay-content--hidden').length).toBe(0);
+    expect(wrapper.find('.t-image__overlay-content--hidden').exists()).toBeFalsy();
     wrapper.find('.t-image__wrapper').trigger('mouseleave');
     await wrapper.vm.$nextTick();
     expect(wrapper.find('.t-image__overlay-content--hidden').exists()).toBeTruthy();
@@ -213,11 +213,30 @@ describe('Image Component', () => {
     });
   });
 
+  it("props.srcset is equal to {'image/avif': 'https://tdesign.gtimg.com/img/tdesign-image.avif','image/webp': 'https://tdesign.gtimg.com/img/tdesign-image.webp'}", () => {
+    const wrapper = mount({
+      render() {
+        return (
+          <Image
+            srcset={{
+              'image/avif': 'https://tdesign.gtimg.com/img/tdesign-image.avif',
+              'image/webp': 'https://tdesign.gtimg.com/img/tdesign-image.webp',
+            }}
+          ></Image>
+        );
+      },
+    });
+    const domWrapper = wrapper.find('picture > source');
+    expect(domWrapper.attributes('srcset')).toBe('https://tdesign.gtimg.com/img/tdesign-image.avif');
+    const domWrapper1 = wrapper.find('picture > source:nth-child(2)');
+    expect(domWrapper1.attributes('srcset')).toBe('https://tdesign.gtimg.com/img/tdesign-image.webp');
+  });
+
   it('events.error works fine', async () => {
     const onErrorFn = vi.fn();
     const wrapper = mount({
       render() {
-        return <Image src="https://load-failed-img.png" on={{ error: onErrorFn }}></Image>;
+        return <Image src={'https://load-failed-img.png'} on={{ error: onErrorFn }}></Image>;
       },
     });
     const imgDom = wrapper.find('img').element;
@@ -225,7 +244,7 @@ describe('Image Component', () => {
     await wrapper.vm.$nextTick();
     expect(wrapper.find('.t-image__error').exists()).toBeTruthy();
     expect(wrapper.find('.t-icon-image-error').exists()).toBeTruthy();
-    expect(onErrorFn).toHaveBeenCalled(1);
+    expect(onErrorFn).toHaveBeenCalled();
     expect(onErrorFn.mock.calls[0][0].e.type).toBe('error');
   });
 
@@ -233,14 +252,14 @@ describe('Image Component', () => {
     const onLoadFn1 = vi.fn();
     const wrapper = mount({
       render() {
-        return <Image src="https://tdesign.gtimg.com/demo/demo-image-1.png" on={{ load: onLoadFn1 }}></Image>;
+        return <Image src={'https://tdesign.gtimg.com/demo/demo-image-1.png'} on={{ load: onLoadFn1 }}></Image>;
       },
     });
     await wrapper.vm.$nextTick();
-    const imgDom = wrapper.find('img').element;
-    simulateImageEvent(imgDom, 'load');
+    const imgDom1 = wrapper.find('img').element;
+    simulateImageEvent(imgDom1, 'load');
     await wrapper.vm.$nextTick();
-    expect(onLoadFn1).toHaveBeenCalled(1);
+    expect(onLoadFn1).toHaveBeenCalled();
     expect(onLoadFn1.mock.calls[0][0].e.type).toBe('load');
   });
 });

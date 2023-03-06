@@ -5,7 +5,7 @@
  * */
 
 import { CheckboxProps } from '../checkbox';
-import { TNode, TreeOptionData } from '../common';
+import { TNode, TreeOptionData, TScroll } from '../common';
 
 export interface TdTreeProps<T extends TreeOptionData = TreeOptionData> {
   /**
@@ -108,6 +108,10 @@ export interface TdTreeProps<T extends TreeOptionData = TreeOptionData> {
    */
   filter?: (node: TreeNodeModel<T>) => boolean;
   /**
+   * 表格高度，超出后会出现滚动条。示例：100,  '30%',  '300'。值为数字类型，会自动加上单位 px。如果不是绝对固定表格高度，建议使用 `maxHeight`
+   */
+  height?: string | number;
+  /**
    * 节点是否有悬浮状态
    */
   hover?: boolean;
@@ -117,7 +121,7 @@ export interface TdTreeProps<T extends TreeOptionData = TreeOptionData> {
    */
   icon?: boolean | TNode<TreeNodeModel<T>>;
   /**
-   * 用来定义 value / label / children 在 `options` 中对应的字段别名
+   * 用来定义 `value / label / children` 在 `data` 数据中对应的字段别名，示例：`{ value: 'key', label 'name', children: 'list' }`
    */
   keys?: TreeKeysType;
   /**
@@ -140,9 +144,17 @@ export interface TdTreeProps<T extends TreeOptionData = TreeOptionData> {
    */
   load?: (node: TreeNodeModel<T>) => Promise<Array<T>>;
   /**
+   * 表格最大高度，超出后会出现滚动条。示例：100, '30%', '300'。值为数字类型，会自动加上单位 px
+   */
+  maxHeight?: string | number;
+  /**
    * 自定义节点操作项，泛型 `T` 表示树节点 TS 类型
    */
   operations?: TNode<TreeNodeModel<T>>;
+  /**
+   * 懒加载和虚拟滚动。为保证组件收益最大化，当数据量小于阈值 `scroll.threshold` 时，无论虚拟滚动的配置是否存在，组件内部都不会开启虚拟滚动，`scroll.threshold` 默认为 `100`
+   */
+  scroll?: TScroll;
   /**
    * 节点展开折叠时是否使用过渡动画
    * @default true
@@ -166,11 +178,17 @@ export interface TdTreeProps<T extends TreeOptionData = TreeOptionData> {
   /**
    * 节点激活时触发，泛型 `T` 表示树节点 TS 类型
    */
-  onActive?: (value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T>; e: Event }) => void;
+  onActive?: (
+    value: Array<TreeNodeValue>,
+    context: { node: TreeNodeModel<T>; e?: MouseEvent; trigger: 'node-click' | 'setItem' },
+  ) => void;
   /**
    * 节点选中状态变化时触发，context.node 表示当前变化的选项，泛型 `T` 表示树节点 TS 类型
    */
-  onChange?: (value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T>; e?: any }) => void;
+  onChange?: (
+    value: Array<TreeNodeValue>,
+    context: { node: TreeNodeModel<T>; e?: any; trigger: 'node-click' | 'setItem' },
+  ) => void;
   /**
    * 节点点击时触发，泛型 `T` 表示树节点 TS 类型
    */
@@ -203,11 +221,18 @@ export interface TdTreeProps<T extends TreeOptionData = TreeOptionData> {
   /**
    * 节点展开或收起时触发，泛型 `T` 表示树节点 TS 类型
    */
-  onExpand?: (value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T>; e: MouseEvent }) => void;
+  onExpand?: (
+    value: Array<TreeNodeValue>,
+    context: { node: TreeNodeModel<T>; e?: MouseEvent; trigger: 'node-click' | 'icon-click' | 'setItem' },
+  ) => void;
   /**
    * 异步加载后触发，泛型 `T` 表示树节点 TS 类型
    */
   onLoad?: (context: { node: TreeNodeModel<T> }) => void;
+  /**
+   * 滚动事件
+   */
+  onScroll?: (params: { e: WheelEvent }) => void;
 }
 
 /** 组件实例方法 */

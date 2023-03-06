@@ -1,113 +1,147 @@
 <template>
   <t-space :size="32" direction="vertical">
-    <t-input-adornment prepend="filter:">
-      <t-input v-model="filterText" @change="onInput" />
-    </t-input-adornment>
-
-    <t-tree :data="items" expand-on-click-node :default-expanded="expanded" :filter="filterByText" hover line />
+    <t-form labelWidth="150">
+      <t-form-item label="">
+        <t-input-adornment prepend="filter:">
+          <t-input v-model="filterText" @change="onInput" />
+        </t-input-adornment>
+      </t-form-item>
+      <t-form-item label="允许折叠">
+        <t-switch v-model="allowFoldNodeOnFilter" @change="checkExpanded" />
+      </t-form-item>
+      <t-form-item label="可选">
+        <t-switch v-model="isCheckable" />
+      </t-form-item>
+    </t-form>
+    <t-tree
+      ref="tree"
+      :data="items"
+      expand-on-click-node
+      :expandAll="allowFoldNodeOnFilter"
+      :allowFoldNodeOnFilter="allowFoldNodeOnFilter"
+      :default-expanded="expanded"
+      :filter="filterByText"
+      :checkable="isCheckable"
+      hover
+      line
+    />
   </t-space>
 </template>
 
 <script>
+const exampleItems = [
+  {
+    value: '1',
+    label: '1',
+    children: [
+      {
+        value: '1.1',
+        label: '1.1',
+        children: [
+          {
+            value: '1.1.1',
+            label: '1.1.1',
+            children: [
+              {
+                value: '1.1.1.1',
+                label: '1.1.1.1',
+              },
+              {
+                value: '1.1.1.2',
+                label: '1.1.1.2',
+              },
+            ],
+          },
+          {
+            value: '1.1.2',
+            label: '1.1.2',
+            children: [
+              {
+                value: '1.1.2.1',
+                label: '1.1.2.1',
+              },
+              {
+                value: '1.1.2.2',
+                label: '1.1.2.2',
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: '1.2',
+        label: '1.2',
+        children: [
+          {
+            value: '1.2.1',
+            label: '1.2.1',
+            children: [
+              {
+                value: '1.2.1.1',
+                label: '1.2.1.1',
+              },
+              {
+                value: '1.2.1.2',
+                label: '1.2.1.2',
+              },
+            ],
+          },
+          {
+            value: '1.2.2',
+            label: '1.2.2',
+            children: [
+              {
+                value: '1.2.2.1',
+                label: '1.2.2.1',
+              },
+              {
+                value: '1.2.2.2',
+                label: '1.2.2.2',
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    value: '2',
+    label: '2',
+    children: [
+      {
+        value: '2.1',
+        label: '2.1',
+      },
+      {
+        value: '2.2',
+        label: '2.2',
+      },
+    ],
+  },
+];
+
 export default {
   data() {
     return {
+      isCheckable: false,
       filterText: '',
       filterByText: null,
       expanded: ['1.1.1'],
-      items: [
-        {
-          value: '1',
-          label: '1',
-          children: [
-            {
-              value: '1.1',
-              label: '1.1',
-              children: [
-                {
-                  value: '1.1.1',
-                  label: '1.1.1',
-                  children: [
-                    {
-                      value: '1.1.1.1',
-                      label: '1.1.1.1',
-                    },
-                    {
-                      value: '1.1.1.2',
-                      label: '1.1.1.2',
-                    },
-                  ],
-                },
-                {
-                  value: '1.1.2',
-                  label: '1.1.2',
-                  children: [
-                    {
-                      value: '1.1.2.1',
-                      label: '1.1.2.1',
-                    },
-                    {
-                      value: '1.1.2.2',
-                      label: '1.1.2.2',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              value: '1.2',
-              label: '1.2',
-              children: [
-                {
-                  value: '1.2.1',
-                  label: '1.2.1',
-                  children: [
-                    {
-                      value: '1.2.1.1',
-                      label: '1.2.1.1',
-                    },
-                    {
-                      value: '1.2.1.2',
-                      label: '1.2.1.2',
-                    },
-                  ],
-                },
-                {
-                  value: '1.2.2',
-                  label: '1.2.2',
-                  children: [
-                    {
-                      value: '1.2.2.1',
-                      label: '1.2.2.1',
-                    },
-                    {
-                      value: '1.2.2.2',
-                      label: '1.2.2.2',
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-        {
-          value: '2',
-          label: '2',
-          children: [
-            {
-              value: '2.1',
-              label: '2.1',
-            },
-            {
-              value: '2.2',
-              label: '2.2',
-            },
-          ],
-        },
-      ],
+      allowFoldNodeOnFilter: false,
+      items: exampleItems,
     };
   },
   methods: {
+    checkExpanded() {
+      const { allowFoldNodeOnFilter } = this;
+      const { tree } = this.$refs;
+      const treeItems = tree.getItems();
+      treeItems.forEach((node) => {
+        tree.setItem(node.value, {
+          expanded: allowFoldNodeOnFilter,
+        });
+      });
+    },
     onInput(state) {
       console.info('onInput:', state);
       if (this.filterText) {

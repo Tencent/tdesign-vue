@@ -1,6 +1,11 @@
 <template>
   <t-space direction="vertical">
-    <t-textarea v-model="value" placeholder="请输入描述文案，文本长度最多20，maxlength=20" :maxlength="20"></t-textarea>
+    <t-textarea
+      v-model="value"
+      tips="这里可以放一些提示文字"
+      placeholder="请输入描述文案，文本长度最多20，maxlength=20"
+      :maxlength="20"
+    ></t-textarea>
 
     <t-textarea
       v-model="value2"

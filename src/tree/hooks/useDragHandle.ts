@@ -1,11 +1,12 @@
 import { SetupContext } from '@vue/composition-api';
 import {
-  TypeTreeProps, TypDragEventState, TypeTreeState, TypeDragHandle,
+  TreeProps, TypDragEventState, TypeTreeState, TypeDragHandle,
 } from '../interface';
 import { emitEvent } from '../util';
 import TreeNode from '../../_common/js/tree/tree-node';
 
-export default function useDragHandle(props: TypeTreeProps, context: SetupContext, treeState: TypeTreeState) {
+export default function useDragHandle(props: TreeProps, context: SetupContext, state: TypeTreeState) {
+  const treeState = state;
   const { store } = treeState;
 
   let dragNode: TreeNode = null;
@@ -18,7 +19,7 @@ export default function useDragHandle(props: TypeTreeProps, context: SetupContex
       node: node.getModel(),
       e: dragEvent,
     };
-    emitEvent<Parameters<TypeTreeProps['onDragStart']>>(props, context, 'drag-start', ctx);
+    emitEvent<Parameters<TreeProps['onDragStart']>>(props, context, 'drag-start', ctx);
   };
 
   const handleDragEnd = (state: TypDragEventState) => {
@@ -29,7 +30,7 @@ export default function useDragHandle(props: TypeTreeProps, context: SetupContex
       node: node.getModel(),
       e: dragEvent,
     };
-    emitEvent<Parameters<TypeTreeProps['onDragEnd']>>(props, context, 'drag-end', ctx);
+    emitEvent<Parameters<TreeProps['onDragEnd']>>(props, context, 'drag-end', ctx);
   };
 
   const handleDragOver = (state: TypDragEventState) => {
@@ -38,7 +39,7 @@ export default function useDragHandle(props: TypeTreeProps, context: SetupContex
       node: node.getModel(),
       e: dragEvent,
     };
-    emitEvent<Parameters<TypeTreeProps['onDragOver']>>(props, context, 'drag-over', ctx);
+    emitEvent<Parameters<TreeProps['onDragOver']>>(props, context, 'drag-over', ctx);
   };
 
   const handleDragLeave = (state: TypDragEventState) => {
@@ -47,7 +48,7 @@ export default function useDragHandle(props: TypeTreeProps, context: SetupContex
       node: node.getModel(),
       e: dragEvent,
     };
-    emitEvent<Parameters<TypeTreeProps['onDragLeave']>>(props, context, 'drag-leave', ctx);
+    emitEvent<Parameters<TreeProps['onDragLeave']>>(props, context, 'drag-leave', ctx);
   };
 
   const handleDrop = (state: TypDragEventState) => {
@@ -74,7 +75,7 @@ export default function useDragHandle(props: TypeTreeProps, context: SetupContex
       dropPosition,
       e: dragEvent,
     };
-    emitEvent<Parameters<TypeTreeProps['onDrop']>>(props, context, 'drop', ctx);
+    emitEvent<Parameters<TreeProps['onDrop']>>(props, context, 'drop', ctx);
   };
 
   const drag: TypeDragHandle = {
@@ -85,8 +86,7 @@ export default function useDragHandle(props: TypeTreeProps, context: SetupContex
     handleDrop,
   };
 
-  const { cache } = treeState;
-  const { scope } = cache;
+  const { scope } = treeState;
   scope.drag = drag;
 
   return {

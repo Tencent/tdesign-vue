@@ -10,7 +10,7 @@ export interface TypeDragStates {
 
 type TypeDrag = 'dragStart' | 'dragOver' | 'dragLeave' | 'dragEnd' | 'drop';
 
-export default function useDraggable(props: TypeTreeItemProps, root: Ref<HTMLElement>) {
+export default function useDraggable(props: TypeTreeItemProps, treeItemRef: Ref<HTMLElement>) {
   const dragStates = reactive({
     isDragOver: false,
     isDragging: false,
@@ -18,7 +18,7 @@ export default function useDraggable(props: TypeTreeItemProps, root: Ref<HTMLEle
   });
 
   const updateDropPosition = (dragEvent: DragEvent) => {
-    const rootNode = root.value;
+    const rootNode = treeItemRef.value;
     if (!rootNode) return;
 
     const rect = rootNode?.getBoundingClientRect?.();

@@ -68,7 +68,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     };
   },
 
-  props: { ...props },
+  props: { ...props, instanceGlobal: Object },
 
   computed: {
     // 是否模态形式的对话框
@@ -408,13 +408,14 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
         <div>
           {this.getCancelBtn({
             cancelBtn: this.cancelBtn,
-            globalCancel: this.global.cancel,
+            globalCancel: this.instanceGlobal?.cancel || this.global.cancel,
             className: `${this.componentName}__cancel`,
           })}
           {this.getConfirmBtn({
+            theme: this.theme,
             confirmBtn: this.confirmBtn,
-            globalConfirm: this.global.confirm,
-            globalConfirmBtnTheme: this.global.confirmBtnTheme,
+            globalConfirm: this.instanceGlobal?.confirm || this.global.confirm,
+            globalConfirmBtnTheme: this.instanceGlobal?.confirmBtnTheme || this.global.confirmBtnTheme,
             className: `${this.componentName}__confirm`,
           })}
         </div>

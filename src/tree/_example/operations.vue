@@ -1,5 +1,5 @@
 <template>
-  <t-space :size="20" direction="vertical">
+  <t-space :size="20" direction="vertical" class="t-tree-demo-operations">
     <t-space :size="10" direction="vertical" style="width: 100%">
       <h3>Render:</h3>
       <t-tree :data="items" hover expand-all :label="getLabel" :operations="renderOperations" />
@@ -223,6 +223,9 @@ export default {
         }
         this.setLabel(item.value);
       }
+      if (this.useActived) {
+        this.activeId = '';
+      }
     },
     insertBefore(node) {
       const { tree } = this.$refs;
@@ -239,9 +242,6 @@ export default {
         tree.insertAfter(node.value, item);
         this.setLabel(item.value);
       }
-    },
-    setUseActived() {
-      this.useActived = !this.useActived;
     },
     getActiveParent() {
       const { tree } = this.$refs;
@@ -320,36 +320,13 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style>
 .tips {
   font-size: 10px;
   color: gray;
 }
-/* .t-space{
-  width: 100%;
-} */
+.t-tree-demo-operations .t-is-active .t-tree__label,
+.t-tree-demo-operations .t-is-active .t-checkbox__label {
+  background-color: rgba(255, 0, 0, 0.3);
+}
 </style>
-<!-- <style scoped>
-.tdesign-tree-demo .t-tree {
-  margin-bottom: 20px;
-}
-.tdesign-tree-demo .title {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .tips {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .operations {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .t-form__item {
-  margin-bottom: 5px;
-}
-.tdesign-tree-demo .t-button {
-  margin: 0 10px 10px 0;
-}
-.tips {
-  font-size: 10px;
-  color: gray;
-}
-</style> -->

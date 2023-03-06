@@ -206,7 +206,7 @@ describe('Tree:props:events', () => {
   });
 
   describe('event:load', () => {
-    it('onLoad 回调可触发', () => new Promise((resolve) => {
+    it('onLoad 回调可触发', () => new Promise((itResolve) => {
       const data = [
         {
           label: '1',
@@ -215,10 +215,16 @@ describe('Tree:props:events', () => {
         },
       ];
 
+      const loadedValues = [];
       const onLoad = (context) => {
-        expect(context.node.value).toBe('t1');
-        resolve();
+        // 这个事件会被触发多次
+        loadedValues.push(context.node.value);
       };
+
+      setTimeout(() => {
+        expect(loadedValues[0]).toBe('t1');
+        itResolve();
+      }, 10);
 
       const loadData = (node) => new Promise((resolve) => {
         setTimeout(() => {
@@ -241,6 +247,6 @@ describe('Tree:props:events', () => {
           return <Tree ref="tree" data={data} expand-all lazy={false} load={loadData} onLoad={onLoad}></Tree>;
         },
       });
-    }, 10));
+    }, 20));
   });
 });

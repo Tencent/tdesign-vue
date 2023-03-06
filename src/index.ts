@@ -18,6 +18,7 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
 }
 
+export * from './common';
 export * from './components';
 export default {
   install,

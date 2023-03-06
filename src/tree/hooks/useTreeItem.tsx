@@ -1,8 +1,11 @@
 import { CreateElement } from 'vue';
-import { SetupContext, Ref } from '@vue/composition-api';
+import {
+  SetupContext, Ref, onMounted, reactive,
+} from '@vue/composition-api';
 import { TypeVNode, TypeTreeItemProps } from '../interface';
 import { usePrefixClass } from '../../hooks/useConfig';
 import { ClassName } from '../../common';
+import useLazyLoad from '../../hooks/useLazyLoad';
 import useItemEvents from './useItemEvents';
 import useRenderIcon from './useRenderIcon';
 import useRenderLabel from './useRenderLabel';
@@ -10,8 +13,10 @@ import useRenderLine from './useRenderLine';
 import useRenderOperations from './useRenderOperations';
 import useDraggable from './useDraggable';
 
-export default function useTreeItem(props: TypeTreeItemProps, context: SetupContext, root: Ref<HTMLElement>) {
-  const { node } = props;
+export default function useTreeItem(props: TypeTreeItemProps, context: SetupContext, treeItemRef: Ref<HTMLElement>) {
+  const { node, treeScope } = props;
+  const { virtualConfig, treeContentRef } = treeScope;
+  const scrollProps = treeScope?.scrollProps;
   const classPrefix = usePrefixClass().value;
   const componentName = usePrefixClass('tree').value;
 
@@ -24,8 +29,27 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
     dragStates, handleDragStart, handleDragEnd, handleDragOver, handleDragLeave, handleDrop,
   } = useDraggable(
     props,
-    root,
+    treeItemRef,
   );
+
+  const { hasLazyLoadHolder, tRowHeight } = useLazyLoad(
+    treeContentRef,
+    treeItemRef,
+    reactive({
+      ...scrollProps?.value,
+      rowIndex: props.rowIndex,
+    }),
+  );
+
+  onMounted(() => {
+    const isVirtual = virtualConfig?.isVirtualScroll.value;
+    if (isVirtual) {
+      virtualConfig.handleRowMounted({
+        ref: treeItemRef,
+        data: node,
+      });
+    }
+  });
 
   // 节点隐藏用 class 切换，不要写在 js 中
   const getItemStyles = (): string => {
@@ -55,6 +79,12 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
       list.push(`${componentName}__item--visible`);
     } else {
       list.push(`${componentName}__item--hidden`);
+    }
+    if (node.vmIsLocked) {
+      list.push(`${componentName}__item--locked`);
+    }
+    if (node.vmIsRest) {
+      list.push(`${componentName}__item--matched`);
     }
     // 拖拽过程样式相关classList
     list.push({
@@ -102,7 +132,7 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
 
     const itemNode = (
       <div
-        ref="root"
+        ref="treeItemRef"
         class={classList}
         data-value={value}
         data-level={level}
@@ -115,13 +145,15 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
         onDragleave={(evt: DragEvent) => handleDragLeave(evt)}
         onDrop={(evt: DragEvent) => handleDrop(evt)}
       >
-        {renderItem(h)}
+        {hasLazyLoadHolder.value ? [<div />] : renderItem(h)}
       </div>
     );
     return itemNode;
   };
 
   return {
+    hasLazyLoadHolder,
+    tRowHeight,
     renderItemNode,
   };
 }
