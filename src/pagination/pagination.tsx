@@ -373,8 +373,8 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
               <li
                 class={this.btnMoreClass}
                 onClick={this.prevMorePage}
-                onMouseover={() => (this.prevMore = true)}
-                onMouseout={() => (this.prevMore = false)}
+                onMouseenter={() => (this.prevMore = true)}
+                onMouseleave={() => (this.prevMore = false)}
               >
                 {this.prevMore ? <ChevronLeftDoubleIcon /> : <EllipsisIcon />}
               </li>
@@ -388,8 +388,8 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
               <li
                 class={this.btnMoreClass}
                 onClick={this.nextMorePage}
-                onMouseover={() => (this.nextMore = true)}
-                onMouseout={() => (this.nextMore = false)}
+                onMouseenter={() => (this.nextMore = true)}
+                onMouseleave={() => (this.nextMore = false)}
               >
                 {this.nextMore ? <ChevronRightDoubleIcon /> : <EllipsisIcon />}
               </li>
