@@ -23,6 +23,11 @@ export interface TdDatePickerProps {
    */
   clearable?: boolean;
   /**
+   * 时间选择器默认值，当 value/defaultValue 未设置值时有效
+   * @default '00:00:00'
+   */
+  defaultTime?: string;
+  /**
    * 禁用日期，示例：['A', 'B'] 表示日期 A 和日期 B 会被禁用。`{ from: 'A', to: 'B' }` 表示在 A 到 B 之间的日期会被禁用。`{ before: 'A', after: 'B' }` 表示在 A 之前和在 B 之后的日期都会被禁用。其中 A = '2021-01-01'，B = '2021-02-01'。值类型为 Function 则表示返回值为 true 的日期会被禁用
    */
   disableDate?: DisableDate;
@@ -75,6 +80,7 @@ export interface TdDatePickerProps {
   presetsPlacement?: 'left' | 'top' | 'right' | 'bottom';
   /**
    * 输入框状态
+   * @default default
    */
   status?: 'default' | 'success' | 'warning' | 'error';
   /**
@@ -101,17 +107,9 @@ export interface TdDatePickerProps {
   defaultValue?: DateValue;
   /**
    * 用于格式化日期的值，仅支持部分格式，时间戳、日期等。⚠️ `YYYYMMDD` 这种格式不支持，请勿使用，如果希望支持可以给 `dayjs` 提个 PR。注意和 `format` 的区别，`format` 仅用于处理日期在页面中呈现的格式
+   * @default ''
    */
-  valueType?:
-    | 'time-stamp'
-    | 'Date'
-    | 'YYYY'
-    | 'YYYY-MM'
-    | 'YYYY-MM-DD'
-    | 'YYYY-MM-DD HH'
-    | 'YYYY-MM-DD HH:mm'
-    | 'YYYY-MM-DD HH:mm:ss'
-    | 'YYYY-MM-DD HH:mm:ss:SSS';
+  valueType?: ValueTypeEnum;
   /**
    * 当输入框失去焦点时触发
    */
@@ -141,6 +139,11 @@ export interface TdDateRangePickerProps {
    * @default false
    */
   clearable?: boolean;
+  /**
+   * 时间选择器默认值，当 value/defaultValue 未设置值时有效
+   * @default ["00:00:00", "23:59:59"]
+   */
+  defaultTime?: string[];
   /**
    * 禁用日期，示例：['A', 'B'] 表示日期 A 和日期 B 会被禁用。{ from: 'A', to: 'B' } 表示在 A 到 B 之间的日期会被禁用。{ before: 'A', after: 'B' } 表示在 A 之前和在 B 之后的日期都会被禁用。其中 A = '2021-01-01'，B = '2021-02-01'。值类型为 Function 则表示返回值为 true 的日期会被禁用
    */
@@ -205,6 +208,7 @@ export interface TdDateRangePickerProps {
   separator?: string;
   /**
    * 输入框状态
+   * @default default
    */
   status?: 'default' | 'success' | 'warning' | 'error';
   /**
@@ -269,7 +273,6 @@ export interface TdDatePickerPanelProps
     TdDatePickerProps,
     | 'value'
     | 'defaultValue'
-    | 'disabled'
     | 'disableDate'
     | 'enableTimePicker'
     | 'firstDayOfWeek'
@@ -279,6 +282,11 @@ export interface TdDatePickerPanelProps
     | 'presetsPlacement'
     | 'timePickerProps'
   > {
+  /**
+   * 时间选择器默认值，当 value/defaultValue 未设置值时有效
+   * @default '00:00:00'
+   */
+  defaultTime?: string;
   /**
    * 点击日期单元格时触发
    */
@@ -326,7 +334,6 @@ export interface TdDateRangePickerPanelProps
     TdDateRangePickerProps,
     | 'value'
     | 'defaultValue'
-    | 'disabled'
     | 'disableDate'
     | 'enableTimePicker'
     | 'firstDayOfWeek'
@@ -337,6 +344,11 @@ export interface TdDateRangePickerPanelProps
     | 'panelPreselection'
     | 'timePickerProps'
   > {
+  /**
+   * 时间选择器默认值，当 value/defaultValue 未设置值时有效
+   * @default ["00:00:00", "23:59:59"]
+   */
+  defaultTime?: string[];
   /**
    * 点击日期单元格时触发
    */
@@ -411,6 +423,17 @@ export interface PresetDate {
 }
 
 export type DateValue = string | number | Date;
+
+export type ValueTypeEnum =
+  | 'time-stamp'
+  | 'Date'
+  | 'YYYY'
+  | 'YYYY-MM'
+  | 'YYYY-MM-DD'
+  | 'YYYY-MM-DD HH'
+  | 'YYYY-MM-DD HH:mm'
+  | 'YYYY-MM-DD HH:mm:ss'
+  | 'YYYY-MM-DD HH:mm:ss:SSS';
 
 export type DatePickerTriggerSource = 'confirm' | 'pick' | 'enter' | 'preset' | 'clear';
 
