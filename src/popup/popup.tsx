@@ -1,5 +1,5 @@
 import { VNodeDirective } from 'vue';
-import { createPopper, Placement } from '@popperjs/core';
+import { createPopper } from '@popperjs/core';
 import { on, off, once } from '../utils/dom';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import { getIEVersion } from '../utils/helper';
@@ -10,31 +10,11 @@ import Container from './container';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
 import { emitEvent } from '../utils/event';
+import { getPopperPlacement, attachListeners, triggers } from './utils';
 
 const classPrefixMixins = getClassPrefixMixins('popup');
 
-const triggers = ['click', 'hover', 'focus', 'context-menu'] as const;
 const injectionKey = '__T_POPUP';
-
-function getPopperPlacement(placement: TdPopupProps['placement']) {
-  return placement.replace(/-(left|top)$/, '-start').replace(/-(right|bottom)$/, '-end') as Placement;
-}
-
-function attachListeners(elm: Element) {
-  const offs: Array<() => void> = [];
-  return {
-    add<K extends keyof HTMLElementEventMap>(type: K, listener: (ev: HTMLElementEventMap[K]) => void) {
-      on(elm, type, listener);
-      offs.push(() => {
-        off(elm, type, listener);
-      });
-    },
-    clean() {
-      offs.forEach((handler) => handler?.());
-      offs.length = 0;
-    },
-  };
-}
 
 export default mixins(classPrefixMixins).extend({
   name: 'TPopup',
@@ -88,7 +68,7 @@ export default mixins(classPrefixMixins).extend({
         this.overlayInnerClassName,
       ];
     },
-    hasTrigger(): Record<typeof triggers[number], boolean> {
+    hasTrigger(): Record<(typeof triggers)[number], boolean> {
       return triggers.reduce(
         (map, trigger) => ({
           ...map,
@@ -201,7 +181,6 @@ export default mixins(classPrefixMixins).extend({
         this.popper.update();
         return;
       }
-
       this.popper = createPopper(triggerEl, popperEl, {
         modifiers:
           getIEVersion() > 9
@@ -380,7 +359,6 @@ export default mixins(classPrefixMixins).extend({
     const ref = renderContent(this, 'default', 'triggerElement');
     const content = renderTNodeJSX(this, 'content');
     const hidePopup = this.hideEmptyPopup && ['', undefined, null].includes(content);
-
     const overlay = visible || !destroyOnClose
       ? h(
         'div',
@@ -429,7 +407,6 @@ export default mixins(classPrefixMixins).extend({
         ],
       )
       : null;
-
     return (
       <Container
         ref="container"
