@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import Vue, { VNode } from 'vue';
 import { createPopper, Instance } from '@popperjs/core';
 import {
   getAttach, once, on, off,
@@ -31,6 +31,7 @@ const triggerType = (triggerProps: string): Record<(typeof triggers)[number], bo
 );
 
 const Overlay = mixins(classPrefixMixins).extend({
+  name: 'TPopupOverlay',
   data() {
     return {
       visibleState: false,
@@ -59,7 +60,7 @@ const Overlay = mixins(classPrefixMixins).extend({
   },
 
   methods: {
-    handleDocumentClick(e: Event) {
+    handleDocumentClick(e: Event): void {
       if (triggerEl?.contains(e.target as Node)) return;
       if (this.contentClicked) {
         setTimeout(() => {
@@ -74,14 +75,14 @@ const Overlay = mixins(classPrefixMixins).extend({
         triggerEl = null;
       }
     },
-    handleMouseLeave() {
+    handleMouseLeave(): void {
       if (this.destroyOnClose) {
         this.visibleState = false;
       }
       popperInstance?.destroy();
       popperInstance = null;
     },
-    handleMouseEnter() {
+    handleMouseEnter(): void {
       clearTimeout(timeout);
     },
   },
@@ -96,7 +97,7 @@ const Overlay = mixins(classPrefixMixins).extend({
   beforeDestroy() {
     off(document, 'click', this.handleDocumentClick);
   },
-  render(h) {
+  render(h): VNode {
     const content = renderTNodeJSX(this, 'content');
 
     const hidePopup = this.hideEmptyPopup && ['', undefined, null].includes(content);

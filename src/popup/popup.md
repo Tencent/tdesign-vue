@@ -1,12 +1,13 @@
 :: BASE_DOC ::
 
-#### 通过插件方式调用Popup
+### 通过插件方式调用Popup
 
 通过插件方式调用Popup，用于将Popup渲染在已有节点的场景，同时该方式不论如何调用都只会挂载在一个节点上，用于减少页面上的Popup的渲染节点。
 
 使用方式：`this.$popup(triggerElement, content, popupProps)`
 
 {{ plugin }}
+
 ## API
 ### Popup Props
 
