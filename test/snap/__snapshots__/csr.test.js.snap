@@ -57335,7 +57335,7 @@ exports[`csr snapshot test > csr test ./src/image/_example/extra-always.vue 1`] 
             >
               <span
                 class="t-tag t-tag--warning t-tag--dark t-tag--mark"
-                style="border-radius: 3px; color: rgb(255, 255, 255); background: transparent;"
+                style="border-radius: 3px; background: transparent; color: rgb(255, 255, 255);"
               >
                 <span>
                   <svg
@@ -57432,7 +57432,7 @@ exports[`csr snapshot test > csr test ./src/image/_example/extra-always.vue 1`] 
           >
             <span
               class="t-tag t-tag--warning t-tag--dark t-tag--mark"
-              style="position: absolute; right: 8px; bottom: 8px; border-radius: 3px; color: rgb(0, 82, 217); background: rgb(236, 242, 254);"
+              style="position: absolute; right: 8px; bottom: 8px; border-radius: 3px; background: rgb(236, 242, 254); color: rgb(0, 82, 217);"
             >
               <span>
                 <svg
@@ -58664,7 +58664,7 @@ exports[`csr snapshot test > csr test ./src/image/_example/gallery-cover.vue 1`]
   >
     <span
       class="t-tag t-tag--warning t-tag--dark t-tag--mark"
-      style="margin: 8px; border-radius: 3px; color: rgb(0, 82, 217); background: rgb(236, 242, 254);"
+      style="margin: 8px; border-radius: 3px; background: rgb(236, 242, 254); color: rgb(0, 82, 217);"
     >
       <span>
         标签一
@@ -130125,6 +130125,21 @@ exports[`csr snapshot test > csr test ./src/tag/_example/base.vue 1`] = `
   <div
     class="t-space-item"
   >
+    <span
+      class="t-tag t-tag--default t-tag--dark t-tag--ellipsis"
+    >
+      <span
+        class="t-tag--text"
+        style="max-width: 150px;"
+        title="This is a long long long long long tag"
+      >
+        This is a long long long long long tag
+      </span>
+    </span>
+  </div>
+  <div
+    class="t-space-item"
+  >
     <div
       class="t-space t-space-horizontal"
       style="gap: 16px;"
@@ -130723,10 +130738,10 @@ exports[`csr snapshot test > csr test ./src/tag/_example/delete.vue 1`] = `
         <span
           class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
           data-v-48c2675e=""
-          style="max-width: 100px;"
         >
           <span
             class="t-tag--text"
+            style="max-width: 100px;"
           >
              可删除标签可删除标签 
           </span>
@@ -130751,7 +130766,6 @@ exports[`csr snapshot test > csr test ./src/tag/_example/delete.vue 1`] = `
         <span
           class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
           data-v-48c2675e=""
-          style="max-width: 100px;"
         >
           <svg
             class="t-icon t-icon-discount"
@@ -130776,6 +130790,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/delete.vue 1`] = `
           </svg>
           <span
             class="t-tag--text"
+            style="max-width: 100px;"
           >
              可删除标签可删除标签 
           </span>
@@ -130941,11 +130956,11 @@ exports[`csr snapshot test > csr test ./src/tag/_example/long-text.vue 1`] = `
 <div>
   <span
     class="t-tag t-tag--default t-tag--dark t-tag--ellipsis"
-    style="max-width: 150px;"
     title="默认超八个字超长文本标签超长省略文本标签"
   >
     <span
       class="t-tag--text"
+      style="max-width: 150px;"
     >
       默认超八个字超长文本标签超长省略文本标签
     </span>
@@ -152160,10 +152175,10 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/collapsed.vue 1
           >
             <span
               class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
-              style="max-width: 300px;"
             >
               <span
                 class="t-tag--text"
+                style="max-width: 300px;"
               >
                 广州市
               </span>
@@ -152233,10 +152248,10 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/collapsed.vue 1
           >
             <span
               class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
-              style="max-width: 300px;"
             >
               <span
                 class="t-tag--text"
+                style="max-width: 300px;"
               >
                 广州市
               </span>
@@ -152580,10 +152595,10 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/multiple.vue 1`
       >
         <span
           class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
-          style="max-width: 300px;"
         >
           <span
             class="t-tag--text"
+            style="max-width: 300px;"
           >
             tdesign-vue
           </span>
@@ -152603,10 +152618,10 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/multiple.vue 1`
         </span>
         <span
           class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
-          style="max-width: 300px;"
         >
           <span
             class="t-tag--text"
+            style="max-width: 300px;"
           >
             tdesign-react
           </span>
@@ -152626,10 +152641,10 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/multiple.vue 1`
         </span>
         <span
           class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
-          style="max-width: 300px;"
         >
           <span
             class="t-tag--text"
+            style="max-width: 300px;"
           >
             tdesign-miniprogram
           </span>
@@ -152992,10 +153007,10 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/valuetype.vue 1
           >
             <span
               class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
-              style="max-width: 300px;"
             >
               <span
                 class="t-tag--text"
+                style="max-width: 300px;"
               >
                 广州市
               </span>
@@ -153015,10 +153030,10 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/valuetype.vue 1
             </span>
             <span
               class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
-              style="max-width: 300px;"
             >
               <span
                 class="t-tag--text"
+                style="max-width: 300px;"
               >
                 深圳市
               </span>

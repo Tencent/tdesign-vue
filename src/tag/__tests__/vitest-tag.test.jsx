@@ -106,9 +106,8 @@ describe('Tag Component', () => {
         return <Tag maxWidth={'150px'} content={'This is a long long long long long tag'}></Tag>;
       },
     });
-    const domWrapper = wrapper.findComponent(Tag);
-    expect(domWrapper.element.style.maxWidth).toBe('150px');
     const domWrapper1 = wrapper.find('.t-tag--text');
+    expect(domWrapper1.element.style.maxWidth).toBe('150px');
     expect(domWrapper1.attributes('title')).toBe('This is a long long long long long tag');
   });
 
