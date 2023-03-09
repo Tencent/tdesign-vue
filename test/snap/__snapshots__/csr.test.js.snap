@@ -34003,7 +34003,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/dialog.vue 
                   </span>
                 </button>
                 <button
-                  class="t-button t-button--variant-base t-button--theme-primary t-dialog__confirm"
+                  class="t-button t-button--variant-base t-button--theme-warning t-dialog__confirm"
                   type="button"
                 >
                   <span
@@ -34098,7 +34098,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/dialog.vue 
                   </span>
                 </button>
                 <button
-                  class="t-button t-button--variant-base t-button--theme-primary t-dialog__confirm"
+                  class="t-button t-button--variant-base t-button--theme-danger t-dialog__confirm"
                   type="button"
                 >
                   <span
@@ -34193,7 +34193,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/dialog.vue 
                   </span>
                 </button>
                 <button
-                  class="t-button t-button--variant-base t-button--theme-primary t-dialog__confirm"
+                  class="t-button t-button--variant-base t-button--theme-success t-dialog__confirm"
                   type="button"
                 >
                   <span
@@ -35666,6 +35666,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
+      style="transform: translateY(0px);"
       tag="div"
     >
       <div
@@ -49955,31 +49956,6 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                             />
                           </svg>
                         </span>
-                        <span
-                          class="t-upload__card-mask-item-divider"
-                        />
-                        <span
-                          class="t-upload__card-mask-item"
-                        >
-                          <svg
-                            class="t-icon t-icon-delete"
-                            fill="none"
-                            height="1em"
-                            viewBox="0 0 16 16"
-                            width="1em"
-                          >
-                            <path
-                              d="M6 12V6h1v6H6zM9 6v6h1V6H9z"
-                              fill="currentColor"
-                              fill-opacity="0.9"
-                            />
-                            <path
-                              d="M10.5 3H14v1h-1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V4H2V3h3.5V1.8c0-.44.36-.8.8-.8h3.4c.44 0 .8.36.8.8V3zm-4 0h3V2h-3v1zM4 4v10h8V4H4z"
-                              fill="currentColor"
-                              fill-opacity="0.9"
-                            />
-                          </svg>
-                        </span>
                       </div>
                     </div>
                     <div
@@ -57359,7 +57335,7 @@ exports[`csr snapshot test > csr test ./src/image/_example/extra-always.vue 1`] 
             >
               <span
                 class="t-tag t-tag--warning t-tag--dark t-tag--mark"
-                style="border-radius: 3px; color: rgb(255, 255, 255); background: transparent;"
+                style="border-radius: 3px; background: transparent; color: rgb(255, 255, 255);"
               >
                 <span>
                   <svg
@@ -57456,7 +57432,7 @@ exports[`csr snapshot test > csr test ./src/image/_example/extra-always.vue 1`] 
           >
             <span
               class="t-tag t-tag--warning t-tag--dark t-tag--mark"
-              style="position: absolute; right: 8px; bottom: 8px; border-radius: 3px; color: rgb(0, 82, 217); background: rgb(236, 242, 254);"
+              style="position: absolute; right: 8px; bottom: 8px; border-radius: 3px; background: rgb(236, 242, 254); color: rgb(0, 82, 217);"
             >
               <span>
                 <svg
@@ -58688,7 +58664,7 @@ exports[`csr snapshot test > csr test ./src/image/_example/gallery-cover.vue 1`]
   >
     <span
       class="t-tag t-tag--warning t-tag--dark t-tag--mark"
-      style="margin: 8px; border-radius: 3px; color: rgb(0, 82, 217); background: rgb(236, 242, 254);"
+      style="margin: 8px; border-radius: 3px; background: rgb(236, 242, 254); color: rgb(0, 82, 217);"
     >
       <span>
         标签一
@@ -130711,10 +130687,10 @@ exports[`csr snapshot test > csr test ./src/tag/_example/delete.vue 1`] = `
         <span
           class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
           data-v-48c2675e=""
-          style="max-width: 100px;"
         >
           <span
             class="t-tag--text"
+            style="max-width: 100px;"
           >
              可删除标签可删除标签 
           </span>
@@ -130739,7 +130715,6 @@ exports[`csr snapshot test > csr test ./src/tag/_example/delete.vue 1`] = `
         <span
           class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
           data-v-48c2675e=""
-          style="max-width: 100px;"
         >
           <svg
             class="t-icon t-icon-discount"
@@ -130764,6 +130739,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/delete.vue 1`] = `
           </svg>
           <span
             class="t-tag--text"
+            style="max-width: 100px;"
           >
              可删除标签可删除标签 
           </span>
@@ -130929,11 +130905,11 @@ exports[`csr snapshot test > csr test ./src/tag/_example/long-text.vue 1`] = `
 <div>
   <span
     class="t-tag t-tag--default t-tag--dark t-tag--ellipsis"
-    style="max-width: 150px;"
     title="默认超八个字超长文本标签超长省略文本标签"
   >
     <span
       class="t-tag--text"
+      style="max-width: 150px;"
     >
       默认超八个字超长文本标签超长省略文本标签
     </span>
@@ -133551,11 +133527,20 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/maxlength.vue 1`] 
         placeholder="请输入描述文案，文本长度最多20，maxlength=20"
         unselectable="off"
       />
-      <span
-        class="t-textarea__limit"
+      <div
+        class="t-textarea__info_wrapper"
       >
-        0/20
-      </span>
+        <div
+          class="t-textarea__tips t-textarea__tips--normal"
+        >
+          这里可以放一些提示文字
+        </div>
+        <span
+          class="t-textarea__limit"
+        >
+          0/20
+        </span>
+      </div>
     </div>
   </div>
   <div
@@ -133569,11 +133554,15 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/maxlength.vue 1`] 
         placeholder="请输入描述文案，最多20字符（一个汉字占两个字符长度），maxcharacter=20"
         unselectable="off"
       />
-      <span
-        class="t-textarea__limit"
+      <div
+        class="t-textarea__info_wrapper t-textarea__info_wrapper_align"
       >
-        0/20
-      </span>
+        <span
+          class="t-textarea__limit"
+        >
+          0/20
+        </span>
+      </div>
     </div>
   </div>
 </div>
@@ -133621,9 +133610,13 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/type.vue 1`] = `
         unselectable="off"
       />
       <div
-        class="t-textarea__tips t-textarea__tips--normal"
+        class="t-textarea__info_wrapper"
       >
-        这是普通文本提示
+        <div
+          class="t-textarea__tips t-textarea__tips--normal"
+        >
+          这是普通文本提示
+        </div>
       </div>
     </div>
   </div>
@@ -133638,9 +133631,13 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/type.vue 1`] = `
         unselectable="off"
       />
       <div
-        class="t-textarea__tips t-textarea__tips--success"
+        class="t-textarea__info_wrapper"
       >
-        校验通过文本提示
+        <div
+          class="t-textarea__tips t-textarea__tips--success"
+        >
+          校验通过文本提示
+        </div>
       </div>
     </div>
   </div>
@@ -133655,9 +133652,13 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/type.vue 1`] = `
         unselectable="off"
       />
       <div
-        class="t-textarea__tips t-textarea__tips--warning"
+        class="t-textarea__info_wrapper"
       >
-        校验不通过文本提示
+        <div
+          class="t-textarea__tips t-textarea__tips--warning"
+        >
+          校验不通过文本提示
+        </div>
       </div>
     </div>
   </div>
@@ -133672,9 +133673,13 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/type.vue 1`] = `
         unselectable="off"
       />
       <div
-        class="t-textarea__tips t-textarea__tips--error"
+        class="t-textarea__info_wrapper"
       >
-        校验存在严重问题文本提示
+        <div
+          class="t-textarea__tips t-textarea__tips--error"
+        >
+          校验存在严重问题文本提示
+        </div>
       </div>
     </div>
   </div>
@@ -141315,7 +141320,349 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
         <div
           class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"
         >
-          <div />
+          <transition-group-stub
+            class="t-tree__list"
+            enteractiveclass="t-tree__item--enter-active"
+            leaveactiveclass="t-tree__item--leave-active"
+            style="transform: translateY(0px);"
+            tag="div"
+          >
+            <div
+              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              data-level="0"
+              data-value="1"
+              draggable="false"
+              style="--level: 0;"
+            >
+              <span
+                class="t-tree__icon t-folder-icon t-tree__icon--default"
+                ignore="active"
+                trigger="expand"
+              >
+                <svg
+                  class="t-icon t-icon-caret-right-small"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M6 5v6l4.5-3L6 5z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+              <label
+                class="t-checkbox t-tree__label"
+              >
+                <input
+                  class="t-checkbox__former"
+                  name="1"
+                  type="checkbox"
+                  value=""
+                />
+                <span
+                  class="t-checkbox__input"
+                />
+                <span
+                  class="t-checkbox__label"
+                >
+                  1
+                </span>
+              </label>
+            </div>
+            <div
+              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              data-level="1"
+              data-value="1.1"
+              draggable="false"
+              style="--level: 1;"
+            >
+              <span
+                class="t-tree__icon t-folder-icon"
+                ignore="active"
+                trigger="expand"
+              />
+              <label
+                class="t-checkbox t-tree__label"
+              >
+                <input
+                  class="t-checkbox__former"
+                  name="1.1"
+                  type="checkbox"
+                  value=""
+                />
+                <span
+                  class="t-checkbox__input"
+                />
+                <span
+                  class="t-checkbox__label"
+                >
+                  1.1
+                </span>
+              </label>
+            </div>
+            <div
+              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              data-level="1"
+              data-value="1.2"
+              draggable="false"
+              style="--level: 1;"
+            >
+              <span
+                class="t-tree__icon t-folder-icon t-tree__icon--default"
+                ignore="active"
+                trigger="expand"
+              >
+                <svg
+                  class="t-icon t-icon-caret-right-small"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M6 5v6l4.5-3L6 5z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+              <label
+                class="t-checkbox t-tree__label"
+              >
+                <input
+                  class="t-checkbox__former"
+                  name="1.2"
+                  type="checkbox"
+                  value=""
+                />
+                <span
+                  class="t-checkbox__input"
+                />
+                <span
+                  class="t-checkbox__label"
+                >
+                  1.2
+                </span>
+              </label>
+            </div>
+            <div
+              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              data-level="2"
+              data-value="1.2.1"
+              draggable="false"
+              style="--level: 2;"
+            >
+              <span
+                class="t-tree__icon t-folder-icon t-tree__icon--default"
+                ignore="active"
+                trigger="expand"
+              >
+                <svg
+                  class="t-icon t-icon-caret-right-small"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M6 5v6l4.5-3L6 5z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+              <label
+                class="t-checkbox t-tree__label"
+              >
+                <input
+                  class="t-checkbox__former"
+                  name="1.2.1"
+                  type="checkbox"
+                  value=""
+                />
+                <span
+                  class="t-checkbox__input"
+                />
+                <span
+                  class="t-checkbox__label"
+                >
+                  1.2.1
+                </span>
+              </label>
+            </div>
+            <div
+              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              data-level="3"
+              data-value="1.2.1.1"
+              draggable="false"
+              style="--level: 3;"
+            >
+              <span
+                class="t-tree__icon t-folder-icon"
+                ignore="active"
+                trigger="expand"
+              />
+              <label
+                class="t-checkbox t-tree__label"
+              >
+                <input
+                  class="t-checkbox__former"
+                  name="1.2.1.1"
+                  type="checkbox"
+                  value=""
+                />
+                <span
+                  class="t-checkbox__input"
+                />
+                <span
+                  class="t-checkbox__label"
+                >
+                  1.2.1.1
+                </span>
+              </label>
+            </div>
+            <div
+              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              data-level="3"
+              data-value="1.2.1.2"
+              draggable="false"
+              style="--level: 3;"
+            >
+              <span
+                class="t-tree__icon t-folder-icon"
+                ignore="active"
+                trigger="expand"
+              />
+              <label
+                class="t-checkbox t-tree__label"
+              >
+                <input
+                  class="t-checkbox__former"
+                  name="1.2.1.2"
+                  type="checkbox"
+                  value=""
+                />
+                <span
+                  class="t-checkbox__input"
+                />
+                <span
+                  class="t-checkbox__label"
+                >
+                  1.2.1.2
+                </span>
+              </label>
+            </div>
+            <div
+              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              data-level="0"
+              data-value="2"
+              draggable="false"
+              style="--level: 0;"
+            >
+              <span
+                class="t-tree__icon t-folder-icon t-tree__icon--default"
+                ignore="active"
+                trigger="expand"
+              >
+                <svg
+                  class="t-icon t-icon-caret-right-small"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                >
+                  <path
+                    d="M6 5v6l4.5-3L6 5z"
+                    fill="currentColor"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+              </span>
+              <label
+                class="t-checkbox t-tree__label"
+              >
+                <input
+                  class="t-checkbox__former"
+                  name="2"
+                  type="checkbox"
+                  value=""
+                />
+                <span
+                  class="t-checkbox__input"
+                />
+                <span
+                  class="t-checkbox__label"
+                >
+                  2
+                </span>
+              </label>
+            </div>
+            <div
+              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              data-level="1"
+              data-value="2.1"
+              draggable="false"
+              style="--level: 1;"
+            >
+              <span
+                class="t-tree__icon t-folder-icon"
+                ignore="active"
+                trigger="expand"
+              />
+              <label
+                class="t-checkbox t-tree__label"
+              >
+                <input
+                  class="t-checkbox__former"
+                  name="2.1"
+                  type="checkbox"
+                  value=""
+                />
+                <span
+                  class="t-checkbox__input"
+                />
+                <span
+                  class="t-checkbox__label"
+                >
+                  2.1
+                </span>
+              </label>
+            </div>
+            <div
+              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              data-level="1"
+              data-value="2.2"
+              draggable="false"
+              style="--level: 1;"
+            >
+              <span
+                class="t-tree__icon t-folder-icon"
+                ignore="active"
+                trigger="expand"
+              />
+              <label
+                class="t-checkbox t-tree__label"
+              >
+                <input
+                  class="t-checkbox__former"
+                  name="2.2"
+                  type="checkbox"
+                  value=""
+                />
+                <span
+                  class="t-checkbox__input"
+                />
+                <span
+                  class="t-checkbox__label"
+                >
+                  2.2
+                </span>
+              </label>
+            </div>
+          </transition-group-stub>
         </div>
       </div>
     </div>
@@ -141537,12 +141884,13 @@ exports[`csr snapshot test > csr test ./src/tree/_example/activable.vue 1`] = `
         class="t-tree__list"
         enteractiveclass="t-tree__item--enter-active"
         leaveactiveclass="t-tree__item--leave-active"
+        style="transform: translateY(0px);"
         tag="div"
       >
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
           data-level="0"
-          data-value="t5"
+          data-value="t1"
           draggable="false"
           style="--level: 0;"
         >
@@ -141579,7 +141927,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/activable.vue 1`] = `
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
           data-level="1"
-          data-value="t6"
+          data-value="t1.1"
           draggable="false"
           style="--level: 1;"
         >
@@ -141602,7 +141950,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/activable.vue 1`] = `
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
           data-level="1"
-          data-value="t7"
+          data-value="t1.2"
           draggable="false"
           style="--level: 1;"
         >
@@ -141625,7 +141973,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/activable.vue 1`] = `
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
           data-level="0"
-          data-value="t8"
+          data-value="t2"
           draggable="false"
           style="--level: 0;"
         >
@@ -141662,7 +142010,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/activable.vue 1`] = `
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
           data-level="1"
-          data-value="t9"
+          data-value="t2.1"
           draggable="false"
           style="--level: 1;"
         >
@@ -141685,7 +142033,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/activable.vue 1`] = `
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
           data-level="1"
-          data-value="t10"
+          data-value="t2.2"
           draggable="false"
           style="--level: 1;"
         >
@@ -141724,12 +142072,13 @@ exports[`csr snapshot test > csr test ./src/tree/_example/base.vue 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
+      style="transform: translateY(0px);"
       tag="div"
     >
       <div
         class="t-tree__item t-tree__item--visible"
         data-level="0"
-        data-value="t11"
+        data-value="t279"
         draggable="false"
         style="--level: 0;"
       >
@@ -141766,7 +142115,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/base.vue 1`] = `
       <div
         class="t-tree__item t-tree__item--visible"
         data-level="0"
-        data-value="t14"
+        data-value="t282"
         draggable="false"
         style="--level: 0;"
       >
@@ -141803,7 +142152,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/base.vue 1`] = `
       <div
         class="t-tree__item t-tree__item--visible"
         data-level="0"
-        data-value="t17"
+        data-value="t285"
         draggable="false"
         style="--level: 0;"
       >
@@ -141840,7 +142189,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/base.vue 1`] = `
       <div
         class="t-tree__item t-tree__item--visible"
         data-level="0"
-        data-value="t20"
+        data-value="t288"
         draggable="false"
         style="--level: 0;"
       >
@@ -142065,6 +142414,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
         class="t-tree__list"
         enteractiveclass="t-tree__item--enter-active"
         leaveactiveclass="t-tree__item--leave-active"
+        style="transform: translateY(0px);"
         tag="div"
       >
         <div
@@ -142842,6 +143192,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/controlled.vue 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
+      style="transform: translateY(0px);"
       tag="div"
     >
       <div
@@ -143424,6 +143775,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/data.vue 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
+      style="transform: translateY(0px);"
       tag="div"
     >
       <div
@@ -143878,12 +144230,13 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
+      style="transform: translateY(0px);"
       tag="div"
     >
       <div
         class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
         data-level="0"
-        data-value="t23"
+        data-value="t337"
         draggable="false"
         style="--level: 0;"
       >
@@ -143912,7 +144265,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
           <input
             class="t-checkbox__former"
             disabled="disabled"
-            name="t23"
+            name="t337"
             type="checkbox"
             value=""
           />
@@ -143929,7 +144282,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
       <div
         class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
         data-level="1"
-        data-value="t24"
+        data-value="t338"
         draggable="false"
         style="--level: 1;"
       >
@@ -143958,7 +144311,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
           <input
             class="t-checkbox__former"
             disabled="disabled"
-            name="t24"
+            name="t338"
             type="checkbox"
             value=""
           />
@@ -143975,7 +144328,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
       <div
         class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
         data-level="2"
-        data-value="t25"
+        data-value="t339"
         draggable="false"
         style="--level: 2;"
       >
@@ -143990,7 +144343,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
           <input
             class="t-checkbox__former"
             disabled="disabled"
-            name="t25"
+            name="t339"
             type="checkbox"
             value=""
           />
@@ -144007,7 +144360,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
       <div
         class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
         data-level="2"
-        data-value="t26"
+        data-value="t340"
         draggable="false"
         style="--level: 2;"
       >
@@ -144022,7 +144375,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
           <input
             class="t-checkbox__former"
             disabled="disabled"
-            name="t26"
+            name="t340"
             type="checkbox"
             value=""
           />
@@ -144039,7 +144392,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
       <div
         class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
         data-level="1"
-        data-value="t27"
+        data-value="t341"
         draggable="false"
         style="--level: 1;"
       >
@@ -144068,7 +144421,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
           <input
             class="t-checkbox__former"
             disabled="disabled"
-            name="t27"
+            name="t341"
             type="checkbox"
             value=""
           />
@@ -144085,7 +144438,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
       <div
         class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
         data-level="2"
-        data-value="t28"
+        data-value="t342"
         draggable="false"
         style="--level: 2;"
       >
@@ -144100,7 +144453,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
           <input
             class="t-checkbox__former"
             disabled="disabled"
-            name="t28"
+            name="t342"
             type="checkbox"
             value=""
           />
@@ -144117,7 +144470,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
       <div
         class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
         data-level="2"
-        data-value="t29"
+        data-value="t343"
         draggable="false"
         style="--level: 2;"
       >
@@ -144132,7 +144485,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
           <input
             class="t-checkbox__former"
             disabled="disabled"
-            name="t29"
+            name="t343"
             type="checkbox"
             value=""
           />
@@ -144149,7 +144502,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
       <div
         class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
         data-level="0"
-        data-value="t30"
+        data-value="t344"
         draggable="false"
         style="--level: 0;"
       >
@@ -144178,7 +144531,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
           <input
             class="t-checkbox__former"
             disabled="disabled"
-            name="t30"
+            name="t344"
             type="checkbox"
             value=""
           />
@@ -144195,7 +144548,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
       <div
         class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
         data-level="1"
-        data-value="t31"
+        data-value="t345"
         draggable="false"
         style="--level: 1;"
       >
@@ -144210,7 +144563,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
           <input
             class="t-checkbox__former"
             disabled="disabled"
-            name="t31"
+            name="t345"
             type="checkbox"
             value=""
           />
@@ -144227,7 +144580,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
       <div
         class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
         data-level="1"
-        data-value="t32"
+        data-value="t346"
         draggable="false"
         style="--level: 1;"
       >
@@ -144242,7 +144595,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
           <input
             class="t-checkbox__former"
             disabled="disabled"
-            name="t32"
+            name="t346"
             type="checkbox"
             value=""
           />
@@ -144304,12 +144657,13 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
+      style="transform: translateY(0px);"
       tag="div"
     >
       <div
         class="t-tree__item t-tree__item--open t-tree__item--visible"
         data-level="0"
-        data-value="t33"
+        data-value="t347"
         draggable="false"
         style="--level: 0;"
       >
@@ -144337,7 +144691,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
         >
           <input
             class="t-checkbox__former"
-            name="t33"
+            name="t347"
             type="checkbox"
             value=""
           />
@@ -144354,7 +144708,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
       <div
         class="t-tree__item t-tree__item--open t-tree__item--visible"
         data-level="1"
-        data-value="t34"
+        data-value="t348"
         draggable="false"
         style="--level: 1;"
       >
@@ -144383,7 +144737,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
           <input
             class="t-checkbox__former"
             disabled="disabled"
-            name="t34"
+            name="t348"
             type="checkbox"
             value=""
           />
@@ -144400,7 +144754,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
       <div
         class="t-tree__item t-tree__item--open t-tree__item--visible"
         data-level="2"
-        data-value="t35"
+        data-value="t349"
         draggable="false"
         style="--level: 2;"
       >
@@ -144414,7 +144768,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
         >
           <input
             class="t-checkbox__former"
-            name="t35"
+            name="t349"
             type="checkbox"
             value=""
           />
@@ -144431,7 +144785,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
       <div
         class="t-tree__item t-tree__item--open t-tree__item--visible"
         data-level="2"
-        data-value="t36"
+        data-value="t350"
         draggable="false"
         style="--level: 2;"
       >
@@ -144445,7 +144799,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
         >
           <input
             class="t-checkbox__former"
-            name="t36"
+            name="t350"
             type="checkbox"
             value=""
           />
@@ -144462,7 +144816,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
       <div
         class="t-tree__item t-tree__item--open t-tree__item--visible"
         data-level="1"
-        data-value="t37"
+        data-value="t351"
         draggable="false"
         style="--level: 1;"
       >
@@ -144491,7 +144845,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
           <input
             class="t-checkbox__former"
             disabled="disabled"
-            name="t37"
+            name="t351"
             type="checkbox"
             value=""
           />
@@ -144508,7 +144862,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
       <div
         class="t-tree__item t-tree__item--open t-tree__item--visible"
         data-level="2"
-        data-value="t38"
+        data-value="t352"
         draggable="false"
         style="--level: 2;"
       >
@@ -144522,7 +144876,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
         >
           <input
             class="t-checkbox__former"
-            name="t38"
+            name="t352"
             type="checkbox"
             value=""
           />
@@ -144539,7 +144893,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
       <div
         class="t-tree__item t-tree__item--open t-tree__item--visible"
         data-level="2"
-        data-value="t39"
+        data-value="t353"
         draggable="false"
         style="--level: 2;"
       >
@@ -144553,7 +144907,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
         >
           <input
             class="t-checkbox__former"
-            name="t39"
+            name="t353"
             type="checkbox"
             value=""
           />
@@ -144570,7 +144924,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
       <div
         class="t-tree__item t-tree__item--open t-tree__item--visible"
         data-level="0"
-        data-value="t40"
+        data-value="t354"
         draggable="false"
         style="--level: 0;"
       >
@@ -144598,7 +144952,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
         >
           <input
             class="t-checkbox__former"
-            name="t40"
+            name="t354"
             type="checkbox"
             value=""
           />
@@ -144615,7 +144969,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
       <div
         class="t-tree__item t-tree__item--open t-tree__item--visible"
         data-level="1"
-        data-value="t41"
+        data-value="t355"
         draggable="false"
         style="--level: 1;"
       >
@@ -144630,7 +144984,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
           <input
             class="t-checkbox__former"
             disabled="disabled"
-            name="t41"
+            name="t355"
             type="checkbox"
             value=""
           />
@@ -144647,7 +145001,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
       <div
         class="t-tree__item t-tree__item--open t-tree__item--visible"
         data-level="1"
-        data-value="t42"
+        data-value="t356"
         draggable="false"
         style="--level: 1;"
       >
@@ -144661,7 +145015,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
         >
           <input
             class="t-checkbox__former"
-            name="t42"
+            name="t356"
             type="checkbox"
             value=""
           />
@@ -144693,6 +145047,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
+      style="transform: translateY(0px);"
       tag="div"
     >
       <div
@@ -145174,12 +145529,13 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
         class="t-tree__list"
         enteractiveclass="t-tree__item--enter-active"
         leaveactiveclass="t-tree__item--leave-active"
+        style="transform: translateY(0px);"
         tag="div"
       >
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
           data-level="0"
-          data-value="t43"
+          data-value="t368"
           draggable="false"
           style="--level: 0;"
         >
@@ -145216,7 +145572,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
           data-level="1"
-          data-value="t44"
+          data-value="t369"
           draggable="false"
           style="--level: 1;"
         >
@@ -145253,7 +145609,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
           data-level="2"
-          data-value="t45"
+          data-value="t370"
           draggable="false"
           style="--level: 2;"
         >
@@ -145276,7 +145632,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
           data-level="2"
-          data-value="t46"
+          data-value="t371"
           draggable="false"
           style="--level: 2;"
         >
@@ -145299,7 +145655,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
           data-level="1"
-          data-value="t47"
+          data-value="t372"
           draggable="false"
           style="--level: 1;"
         >
@@ -145336,7 +145692,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
           data-level="2"
-          data-value="t48"
+          data-value="t373"
           draggable="false"
           style="--level: 2;"
         >
@@ -145359,7 +145715,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
           data-level="2"
-          data-value="t49"
+          data-value="t374"
           draggable="false"
           style="--level: 2;"
         >
@@ -145382,7 +145738,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
           data-level="0"
-          data-value="t50"
+          data-value="t375"
           draggable="false"
           style="--level: 0;"
         >
@@ -145419,7 +145775,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
           data-level="1"
-          data-value="t51"
+          data-value="t376"
           draggable="false"
           style="--level: 1;"
         >
@@ -145442,7 +145798,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
           data-level="1"
-          data-value="t52"
+          data-value="t377"
           draggable="false"
           style="--level: 1;"
         >
@@ -145477,12 +145833,13 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
+      style="transform: translateY(0px);"
       tag="div"
     >
       <div
         class="t-tree__item t-tree__item--open t-tree__item--visible"
         data-level="0"
-        data-value="t53"
+        data-value="t378"
         draggable="false"
         style="--level: 0;"
       >
@@ -145519,7 +145876,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
       <div
         class="t-tree__item t-tree__item--visible"
         data-level="1"
-        data-value="t54"
+        data-value="t379"
         draggable="false"
         style="--level: 1;"
       >
@@ -145556,7 +145913,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
       <div
         class="t-tree__item t-tree__item--visible"
         data-level="1"
-        data-value="t57"
+        data-value="t382"
         draggable="false"
         style="--level: 1;"
       >
@@ -145593,7 +145950,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
       <div
         class="t-tree__item t-tree__item--open t-tree__item--visible"
         data-level="0"
-        data-value="t60"
+        data-value="t385"
         draggable="false"
         style="--level: 0;"
       >
@@ -145630,7 +145987,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
       <div
         class="t-tree__item t-tree__item--visible"
         data-level="1"
-        data-value="t61"
+        data-value="t386"
         draggable="false"
         style="--level: 1;"
       >
@@ -145653,7 +146010,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
       <div
         class="t-tree__item t-tree__item--visible"
         data-level="1"
-        data-value="t62"
+        data-value="t387"
         draggable="false"
         style="--level: 1;"
       >
@@ -145770,12 +146127,13 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-mutex.vue 1`] =
         class="t-tree__list"
         enteractiveclass="t-tree__item--enter-active"
         leaveactiveclass="t-tree__item--leave-active"
+        style="transform: translateY(0px);"
         tag="div"
       >
         <div
           class="t-tree__item t-tree__item--visible"
           data-level="0"
-          data-value="t63"
+          data-value="t388"
           draggable="false"
           style="--level: 0;"
         >
@@ -145812,7 +146170,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-mutex.vue 1`] =
         <div
           class="t-tree__item t-tree__item--visible"
           data-level="0"
-          data-value="t70"
+          data-value="t395"
           draggable="false"
           style="--level: 0;"
         >
@@ -145860,34 +146218,119 @@ exports[`csr snapshot test > csr test ./src/tree/_example/filter.vue 1`] = `
   <div
     class="t-space-item"
   >
-    <div
-      class="t-input-adornment"
+    <form
+      class="t-form"
     >
-      <span
-        class="t-input-adornment__prepend"
-      >
-        <span
-          class="t-input-adornment__text"
-        >
-          filter:
-        </span>
-      </span>
       <div
-        class="t-input__wrap"
+        class="t-form__item t-form-item__"
       >
         <div
-          class="t-input"
+          class="t-form__label t-form__label--right"
         >
-          <input
-            autocomplete=""
-            class="t-input__inner"
-            placeholder="请输入"
-            type="text"
-            unselectable="off"
+          <label
+            for=""
           />
         </div>
+        <div
+          class="t-form__controls"
+        >
+          <div
+            class="t-form__controls-content"
+          >
+            <div
+              class="t-input-adornment"
+            >
+              <span
+                class="t-input-adornment__prepend"
+              >
+                <span
+                  class="t-input-adornment__text"
+                >
+                  filter:
+                </span>
+              </span>
+              <div
+                class="t-input__wrap"
+              >
+                <div
+                  class="t-input"
+                >
+                  <input
+                    autocomplete=""
+                    class="t-input__inner"
+                    placeholder="请输入"
+                    type="text"
+                    unselectable="off"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+      <div
+        class="t-form__item t-form-item__"
+      >
+        <div
+          class="t-form__label t-form__label--right"
+        >
+          <label
+            for=""
+          >
+            允许折叠
+          </label>
+        </div>
+        <div
+          class="t-form__controls"
+        >
+          <div
+            class="t-form__controls-content"
+          >
+            <div
+              class="t-switch t-size-m"
+            >
+              <span
+                class="t-switch__handle"
+              />
+              <div
+                class="t-switch__content t-size-m"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-form__item t-form-item__"
+      >
+        <div
+          class="t-form__label t-form__label--right"
+        >
+          <label
+            for=""
+          >
+            可选
+          </label>
+        </div>
+        <div
+          class="t-form__controls"
+        >
+          <div
+            class="t-form__controls-content"
+          >
+            <div
+              class="t-switch t-size-m"
+            >
+              <span
+                class="t-switch__handle"
+              />
+              <div
+                class="t-switch__content t-size-m"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
   <div
     class="t-space-item"
@@ -145899,6 +146342,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/filter.vue 1`] = `
         class="t-tree__list"
         enteractiveclass="t-tree__item--enter-active"
         leaveactiveclass="t-tree__item--leave-active"
+        style="transform: translateY(0px);"
         tag="div"
       >
         <div
@@ -146006,12 +146450,13 @@ exports[`csr snapshot test > csr test ./src/tree/_example/icon.vue 1`] = `
           class="t-tree__list"
           enteractiveclass="t-tree__item--enter-active"
           leaveactiveclass="t-tree__item--leave-active"
+          style="transform: translateY(0px);"
           tag="div"
         >
           <div
             class="t-tree__item t-tree__item--visible"
             data-level="0"
-            data-value="t77"
+            data-value="t420"
             draggable="false"
             style="--level: 0;"
           >
@@ -146043,7 +146488,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/icon.vue 1`] = `
           <div
             class="t-tree__item t-tree__item--visible"
             data-level="0"
-            data-value="t78"
+            data-value="t421"
             draggable="false"
             style="--level: 0;"
           >
@@ -146095,12 +146540,13 @@ exports[`csr snapshot test > csr test ./src/tree/_example/icon.vue 1`] = `
           class="t-tree__list"
           enteractiveclass="t-tree__item--enter-active"
           leaveactiveclass="t-tree__item--leave-active"
+          style="transform: translateY(0px);"
           tag="div"
         >
           <div
             class="t-tree__item t-tree__item--visible"
             data-level="0"
-            data-value="t79"
+            data-value="t422"
             draggable="false"
             style="--level: 0;"
           >
@@ -146132,7 +146578,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/icon.vue 1`] = `
           <div
             class="t-tree__item t-tree__item--visible"
             data-level="0"
-            data-value="t80"
+            data-value="t423"
             draggable="false"
             style="--level: 0;"
           >
@@ -146187,12 +146633,13 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
           class="t-tree__list"
           enteractiveclass="t-tree__item--enter-active"
           leaveactiveclass="t-tree__item--leave-active"
+          style="transform: translateY(0px);"
           tag="div"
         >
           <div
             class="t-tree__item t-tree__item--open t-tree__item--visible"
             data-level="0"
-            data-value="t81"
+            data-value="t424"
             draggable="false"
             style="--level: 0;"
           >
@@ -146223,7 +146670,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                 style="position: relative;"
               >
                 <strong>
-                  value: t81, label: 1
+                  value: t424, label: 1
                 </strong>
               </span>
             </span>
@@ -146231,7 +146678,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
           <div
             class="t-tree__item t-tree__item--open t-tree__item--visible"
             data-level="1"
-            data-value="t82"
+            data-value="t425"
             draggable="false"
             style="--level: 1;"
           >
@@ -146248,7 +146695,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                 style="position: relative;"
               >
                 <strong>
-                  value: t82, label: 1.1
+                  value: t425, label: 1.1
                 </strong>
               </span>
             </span>
@@ -146256,7 +146703,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
           <div
             class="t-tree__item t-tree__item--open t-tree__item--visible"
             data-level="1"
-            data-value="t83"
+            data-value="t426"
             draggable="false"
             style="--level: 1;"
           >
@@ -146273,7 +146720,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                 style="position: relative;"
               >
                 <strong>
-                  value: t83, label: 1.2
+                  value: t426, label: 1.2
                 </strong>
               </span>
             </span>
@@ -146281,7 +146728,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
           <div
             class="t-tree__item t-tree__item--open t-tree__item--visible"
             data-level="0"
-            data-value="t84"
+            data-value="t427"
             draggable="false"
             style="--level: 0;"
           >
@@ -146312,7 +146759,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                 style="position: relative;"
               >
                 <strong>
-                  value: t84, label: 2
+                  value: t427, label: 2
                 </strong>
               </span>
             </span>
@@ -146320,7 +146767,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
           <div
             class="t-tree__item t-tree__item--open t-tree__item--visible"
             data-level="1"
-            data-value="t85"
+            data-value="t428"
             draggable="false"
             style="--level: 1;"
           >
@@ -146337,7 +146784,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                 style="position: relative;"
               >
                 <strong>
-                  value: t85, label: 2.1
+                  value: t428, label: 2.1
                 </strong>
               </span>
             </span>
@@ -146345,7 +146792,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
           <div
             class="t-tree__item t-tree__item--open t-tree__item--visible"
             data-level="1"
-            data-value="t86"
+            data-value="t429"
             draggable="false"
             style="--level: 1;"
           >
@@ -146362,7 +146809,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                 style="position: relative;"
               >
                 <strong>
-                  value: t86, label: 2.2
+                  value: t429, label: 2.2
                 </strong>
               </span>
             </span>
@@ -146385,12 +146832,13 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
           class="t-tree__list"
           enteractiveclass="t-tree__item--enter-active"
           leaveactiveclass="t-tree__item--leave-active"
+          style="transform: translateY(0px);"
           tag="div"
         >
           <div
             class="t-tree__item t-tree__item--open t-tree__item--visible"
             data-level="0"
-            data-value="t87"
+            data-value="t430"
             draggable="false"
             style="--level: 0;"
           >
@@ -146418,7 +146866,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             >
               <input
                 class="t-checkbox__former"
-                name="t87"
+                name="t430"
                 type="checkbox"
                 value=""
               />
@@ -146431,7 +146879,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                 <font
                   color="blue"
                 >
-                  label: 1, value: t87
+                  label: 1, value: t430
                 </font>
               </span>
             </label>
@@ -146439,7 +146887,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
           <div
             class="t-tree__item t-tree__item--open t-tree__item--visible"
             data-level="1"
-            data-value="t88"
+            data-value="t431"
             draggable="false"
             style="--level: 1;"
           >
@@ -146453,7 +146901,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             >
               <input
                 class="t-checkbox__former"
-                name="t88"
+                name="t431"
                 type="checkbox"
                 value=""
               />
@@ -146466,7 +146914,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                 <font
                   color="blue"
                 >
-                  label: 1.1, value: t88
+                  label: 1.1, value: t431
                 </font>
               </span>
             </label>
@@ -146474,7 +146922,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
           <div
             class="t-tree__item t-tree__item--open t-tree__item--visible"
             data-level="1"
-            data-value="t89"
+            data-value="t432"
             draggable="false"
             style="--level: 1;"
           >
@@ -146488,7 +146936,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             >
               <input
                 class="t-checkbox__former"
-                name="t89"
+                name="t432"
                 type="checkbox"
                 value=""
               />
@@ -146501,7 +146949,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                 <font
                   color="blue"
                 >
-                  label: 1.2, value: t89
+                  label: 1.2, value: t432
                 </font>
               </span>
             </label>
@@ -146509,7 +146957,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
           <div
             class="t-tree__item t-tree__item--open t-tree__item--visible"
             data-level="0"
-            data-value="t90"
+            data-value="t433"
             draggable="false"
             style="--level: 0;"
           >
@@ -146537,7 +146985,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             >
               <input
                 class="t-checkbox__former"
-                name="t90"
+                name="t433"
                 type="checkbox"
                 value=""
               />
@@ -146550,7 +146998,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                 <font
                   color="blue"
                 >
-                  label: 2, value: t90
+                  label: 2, value: t433
                 </font>
               </span>
             </label>
@@ -146558,7 +147006,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
           <div
             class="t-tree__item t-tree__item--open t-tree__item--visible"
             data-level="1"
-            data-value="t91"
+            data-value="t434"
             draggable="false"
             style="--level: 1;"
           >
@@ -146572,7 +147020,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             >
               <input
                 class="t-checkbox__former"
-                name="t91"
+                name="t434"
                 type="checkbox"
                 value=""
               />
@@ -146585,7 +147033,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                 <font
                   color="blue"
                 >
-                  label: 2.1, value: t91
+                  label: 2.1, value: t434
                 </font>
               </span>
             </label>
@@ -146593,7 +147041,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
           <div
             class="t-tree__item t-tree__item--open t-tree__item--visible"
             data-level="1"
-            data-value="t92"
+            data-value="t435"
             draggable="false"
             style="--level: 1;"
           >
@@ -146607,7 +147055,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             >
               <input
                 class="t-checkbox__former"
-                name="t92"
+                name="t435"
                 type="checkbox"
                 value=""
               />
@@ -146620,7 +147068,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                 <font
                   color="blue"
                 >
-                  label: 2.2, value: t92
+                  label: 2.2, value: t435
                 </font>
               </span>
             </label>
@@ -146760,6 +147208,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/lazy.vue 1`] = `
         class="t-tree__list"
         enteractiveclass="t-tree__item--enter-active"
         leaveactiveclass="t-tree__item--leave-active"
+        style="transform: translateY(0px);"
         tag="div"
       >
         <div
@@ -146964,6 +147413,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
             class="t-tree__list"
             enteractiveclass="t-tree__item--enter-active"
             leaveactiveclass="t-tree__item--leave-active"
+            style="transform: translateY(0px);"
             tag="div"
           >
             <div
@@ -147462,6 +147912,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
             class="t-tree__list"
             enteractiveclass="t-tree__item--enter-active"
             leaveactiveclass="t-tree__item--leave-active"
+            style="transform: translateY(0px);"
             tag="div"
           >
             <div
@@ -148203,6 +148654,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
             class="t-tree__list"
             enteractiveclass="t-tree__item--enter-active"
             leaveactiveclass="t-tree__item--leave-active"
+            style="transform: translateY(0px);"
             tag="div"
           >
             <div
@@ -149049,6 +149501,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/load.vue 1`] = `
         class="t-tree__list"
         enteractiveclass="t-tree__item--enter-active"
         leaveactiveclass="t-tree__item--leave-active"
+        style="transform: translateY(0px);"
         tag="div"
       >
         <div
@@ -149171,8 +149624,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/load.vue 1`] = `
 
 exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
 <div
-  class="t-space t-space-vertical"
-  data-v-43574890=""
+  class="t-tree-demo-operations t-space t-space-vertical"
   style="gap: 20px;"
 >
   <div
@@ -149180,15 +149632,12 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
   >
     <div
       class="t-space t-space-vertical"
-      data-v-43574890=""
       style="gap: 10px; width: 100%;"
     >
       <div
         class="t-space-item"
       >
-        <h3
-          data-v-43574890=""
-        >
+        <h3>
           Render:
         </h3>
       </div>
@@ -149197,12 +149646,12 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
       >
         <div
           class="t-tree t-tree--hoverable t-tree--transition"
-          data-v-43574890=""
         >
           <transition-group-stub
             class="t-tree__list"
             enteractiveclass="t-tree__item--enter-active"
             leaveactiveclass="t-tree__item--leave-active"
+            style="transform: translateY(0px);"
             tag="div"
           >
             <div
@@ -149273,15 +149722,12 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
   >
     <div
       class="t-space t-space-vertical"
-      data-v-43574890=""
       style="gap: 10px; width: 100%;"
     >
       <div
         class="t-space-item"
       >
-        <h3
-          data-v-43574890=""
-        >
+        <h3>
           Scope Slot:
         </h3>
       </div>
@@ -149290,11 +149736,9 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
       >
         <form
           class="t-form"
-          data-v-43574890=""
         >
           <div
             class="t-form__item t-form-item__"
-            data-v-43574890=""
             style="margin-bottom: 5px;"
           >
             <div
@@ -149314,7 +149758,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
               >
                 <div
                   class="t-switch t-size-m"
-                  data-v-43574890=""
                 >
                   <span
                     class="t-switch__handle"
@@ -149328,7 +149771,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
           </div>
           <div
             class="t-form__item t-form-item__"
-            data-v-43574890=""
           >
             <div
               class="t-form__label t-form__label--right"
@@ -149347,7 +149789,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
               >
                 <div
                   class="t-switch t-size-m t-is-checked"
-                  data-v-43574890=""
                 >
                   <span
                     class="t-switch__handle"
@@ -149366,7 +149807,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
       >
         <div
           class="t-input-adornment"
-          data-v-43574890=""
         >
           <span
             class="t-input-adornment__prepend"
@@ -149379,7 +149819,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
           </span>
           <div
             class="t-input__wrap"
-            data-v-43574890=""
           >
             <div
               class="t-input"
@@ -149400,12 +149839,12 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
       >
         <div
           class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"
-          data-v-43574890=""
         >
           <transition-group-stub
             class="t-tree__list"
             enteractiveclass="t-tree__item--enter-active"
             leaveactiveclass="t-tree__item--leave-active"
+            style="transform: translateY(0px);"
             tag="div"
           >
             <div
@@ -149444,7 +149883,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
               >
                 <div
                   class="t-space t-space-horizontal"
-                  data-v-43574890=""
                   style="gap: 10px;"
                 >
                   <div
@@ -149452,7 +149890,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
                   >
                     <button
                       class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-                      data-v-43574890=""
                       type="button"
                     >
                       <span
@@ -149467,7 +149904,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
                   >
                     <button
                       class="t-button t-button--variant-outline t-button--theme-default t-size-s"
-                      data-v-43574890=""
                       type="button"
                     >
                       <span
@@ -149482,7 +149918,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
                   >
                     <button
                       class="t-button t-button--variant-outline t-button--theme-default t-size-s"
-                      data-v-43574890=""
                       type="button"
                     >
                       <span
@@ -149497,7 +149932,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
                   >
                     <button
                       class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-                      data-v-43574890=""
                       type="button"
                     >
                       <span
@@ -149546,7 +149980,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
               >
                 <div
                   class="t-space t-space-horizontal"
-                  data-v-43574890=""
                   style="gap: 10px;"
                 >
                   <div
@@ -149554,7 +149987,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
                   >
                     <button
                       class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-                      data-v-43574890=""
                       type="button"
                     >
                       <span
@@ -149569,7 +150001,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
                   >
                     <button
                       class="t-button t-button--variant-outline t-button--theme-default t-size-s"
-                      data-v-43574890=""
                       type="button"
                     >
                       <span
@@ -149584,7 +150015,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
                   >
                     <button
                       class="t-button t-button--variant-outline t-button--theme-default t-size-s"
-                      data-v-43574890=""
                       type="button"
                     >
                       <span
@@ -149599,7 +150029,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
                   >
                     <button
                       class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-                      data-v-43574890=""
                       type="button"
                     >
                       <span
@@ -149622,15 +150051,12 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
   >
     <div
       class="t-space t-space-vertical"
-      data-v-43574890=""
       style="gap: 10px;"
     >
       <div
         class="t-space-item"
       >
-        <h3
-          data-v-43574890=""
-        >
+        <h3>
           API:
         </h3>
       </div>
@@ -149639,7 +150065,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
       >
         <div
           class="t-space t-space-horizontal"
-          data-v-43574890=""
           style="gap: 10px; flex-wrap: wrap;"
         >
           <div
@@ -149647,7 +150072,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
           >
             <button
               class="t-button t-button--variant-base t-button--theme-primary"
-              data-v-43574890=""
               type="button"
             >
               <span
@@ -149662,7 +150086,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
           >
             <button
               class="t-button t-button--variant-base t-button--theme-primary"
-              data-v-43574890=""
               type="button"
             >
               <span
@@ -149677,7 +150100,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
           >
             <button
               class="t-button t-button--variant-base t-button--theme-primary"
-              data-v-43574890=""
               type="button"
             >
               <span
@@ -149692,7 +150114,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
           >
             <button
               class="t-button t-button--variant-base t-button--theme-primary"
-              data-v-43574890=""
               type="button"
             >
               <span
@@ -149707,7 +150128,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
           >
             <button
               class="t-button t-button--variant-base t-button--theme-primary"
-              data-v-43574890=""
               type="button"
             >
               <span
@@ -149722,7 +150142,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
           >
             <button
               class="t-button t-button--variant-base t-button--theme-primary"
-              data-v-43574890=""
               type="button"
             >
               <span
@@ -149737,7 +150156,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
           >
             <button
               class="t-button t-button--variant-base t-button--theme-primary"
-              data-v-43574890=""
               type="button"
             >
               <span
@@ -149752,7 +150170,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
           >
             <button
               class="t-button t-button--variant-base t-button--theme-primary"
-              data-v-43574890=""
               type="button"
             >
               <span
@@ -149767,7 +150184,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
           >
             <button
               class="t-button t-button--variant-base t-button--theme-primary"
-              data-v-43574890=""
               type="button"
             >
               <span
@@ -149782,7 +150198,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
           >
             <button
               class="t-button t-button--variant-base t-button--theme-primary"
-              data-v-43574890=""
               type="button"
             >
               <span
@@ -149797,7 +150212,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
           >
             <button
               class="t-button t-button--variant-base t-button--theme-primary"
-              data-v-43574890=""
               type="button"
             >
               <span
@@ -149812,7 +150226,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
           >
             <button
               class="t-button t-button--variant-base t-button--theme-primary"
-              data-v-43574890=""
               type="button"
             >
               <span
@@ -149829,7 +150242,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
       >
         <p
           class="tips"
-          data-v-43574890=""
         >
           * 相关信息通过控制台输出
         </p>
@@ -149994,6 +150406,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/performance.vue 1`] = 
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
+      style="transform: translateY(0px);"
       tag="div"
     >
       <div
@@ -150246,6 +150659,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/state.vue 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
+      style="transform: translateY(0px);"
       tag="div"
     >
       <div
@@ -150569,6 +150983,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
         class="t-tree__list"
         enteractiveclass="t-tree__item--enter-active"
         leaveactiveclass="t-tree__item--leave-active"
+        style="transform: translateY(0px);"
         tag="div"
       >
         <div
@@ -151082,6 +151497,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/transition.vue 1`] = `
       class="t-tree__list"
       enteractiveclass="t-tree__item--enter-active"
       leaveactiveclass="t-tree__item--leave-active"
+      style="transform: translateY(0px);"
       tag="div"
     >
       <div
@@ -151287,7 +151703,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
         <label
           for=""
         >
-          展开动画
+          动画
         </label>
       </div>
       <div
@@ -151380,7 +151796,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
         <label
           for=""
         >
-          启用虚拟滚动
+          可选
         </label>
       </div>
       <div
@@ -151402,2670 +151818,185 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
         </div>
       </div>
     </div>
-  </form>
-  <div
-    class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"
-    height="300"
-  >
-    <transition-group-stub
-      class="t-tree__list"
-      enteractiveclass="t-tree__item--enter-active"
-      leaveactiveclass="t-tree__item--leave-active"
-      tag="div"
+    <div
+      class="t-form__item t-form-item__"
     >
       <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="0"
-        data-value="t1"
-        draggable="false"
-        style="--level: 0;"
+        class="t-form__label t-form__label--right"
       >
-        <span
-          class="t-tree__icon t-folder-icon t-tree__icon--default"
-          ignore="active"
-          trigger="expand"
+        <label
+          for=""
         >
-          <svg
-            class="t-icon t-icon-caret-right-small"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
+          可操作
+        </label>
+      </div>
+      <div
+        class="t-form__controls"
+      >
+        <div
+          class="t-form__controls-content"
+        >
+          <div
+            class="t-switch t-size-m t-is-checked"
           >
-            <path
-              d="M6 5v6l4.5-3L6 5z"
-              fill="currentColor"
-              fill-opacity="0.9"
+            <span
+              class="t-switch__handle"
             />
-          </svg>
-        </span>
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t1"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t1
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="1"
-        data-value="t2"
-        draggable="false"
-        style="--level: 1;"
-      >
-        <span
-          class="t-tree__line t-tree__line--first"
-          style="--level: 1;"
-        />
-        <span
-          class="t-tree__icon t-folder-icon t-tree__icon--default"
-          ignore="active"
-          trigger="expand"
-        >
-          <svg
-            class="t-icon t-icon-caret-right-small"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M6 5v6l4.5-3L6 5z"
-              fill="currentColor"
-              fill-opacity="0.9"
+            <div
+              class="t-switch__content t-size-m"
             />
-          </svg>
-        </span>
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t2"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t2
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
           </div>
-        </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="t-form__item t-form-item__"
+    >
+      <div
+        class="t-form__label t-form__label--right"
+      >
+        <label
+          for=""
+        >
+          滚动模式
+        </label>
       </div>
       <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="2"
-        data-value="t3"
-        draggable="false"
-        style="--level: 2;"
+        class="t-form__controls"
       >
-        <span
-          class="t-tree__line t-tree__line--leaf t-tree__line--first"
-          style="--level: 2; box-shadow: calc(-1 * var(--space)) 0 var(--color);"
-        />
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t3"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t3
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
+        <div
+          class="t-form__controls-content"
         >
           <div
-            class="tdesign-demo-block-row"
+            class="t-radio-group t-size-m t-radio-group__outline"
           >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
+            <label
+              class="t-radio-button"
+              tabindex="0"
             >
+              <input
+                class="t-radio-button__former"
+                data-value="'normal'"
+                tabindex="-1"
+                type="radio"
+                value="normal"
+              />
               <span
-                class="t-button__text"
+                class="t-radio-button__input"
+              />
+              <span
+                class="t-radio-button__label"
               >
-                添加子节点
+                普通滚动
               </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
+            </label>
+            <label
+              class="t-radio-button t-is-checked"
+              tabindex="0"
             >
+              <input
+                class="t-radio-button__former"
+                data-value="'vscroll'"
+                tabindex="-1"
+                type="radio"
+                value="vscroll"
+              />
               <span
-                class="t-button__text"
+                class="t-radio-button__input"
+              />
+              <span
+                class="t-radio-button__label"
               >
-                删除
+                虚拟滚动
               </span>
-            </button>
+            </label>
+            <label
+              class="t-radio-button"
+              tabindex="0"
+            >
+              <input
+                class="t-radio-button__former"
+                data-value="'lazy'"
+                tabindex="-1"
+                type="radio"
+                value="lazy"
+              />
+              <span
+                class="t-radio-button__input"
+              />
+              <span
+                class="t-radio-button__label"
+              >
+                lazy模式
+              </span>
+            </label>
           </div>
-        </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="t-form__item t-form-item__"
+    >
+      <div
+        class="t-form__label t-form__label--right"
+      >
+        <label
+          for=""
+        />
       </div>
       <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="2"
-        data-value="t4"
-        draggable="false"
-        style="--level: 2;"
+        class="t-form__controls"
       >
-        <span
-          class="t-tree__line t-tree__line--leaf"
-          style="--level: 2; box-shadow: calc(-1 * var(--space)) 0 var(--color);"
-        />
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t4"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t4
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
+        <div
+          class="t-form__controls-content"
         >
           <div
-            class="tdesign-demo-block-row"
+            class="t-alert t-alert--warning"
           >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
+            <div
+              class="t-alert__icon"
             >
-              <span
-                class="t-button__text"
+              <svg
+                class="t-icon t-icon-error-circle-filled"
+                fill="none"
+                height="1em"
+                viewBox="0 0 16 16"
+                width="1em"
               >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
+                <path
+                  d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
+                  fill="currentColor"
+                  fill-opacity="0.9"
+                />
+              </svg>
+            </div>
+            <div
+              class="t-alert__content"
             >
-              <span
-                class="t-button__text"
+              <div
+                class="t-alert__message"
               >
-                删除
-              </span>
-            </button>
+                <div
+                  class="t-alert__description"
+                >
+                  切换滚动模式后需要刷新页面
+                </div>
+              </div>
+            </div>
           </div>
-        </span>
+        </div>
       </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="2"
-        data-value="t5"
-        draggable="false"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__line t-tree__line--leaf"
-          style="--level: 2; box-shadow: calc(-1 * var(--space)) 0 var(--color);"
-        />
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t5"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t5
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="1"
-        data-value="t6"
-        draggable="false"
-        style="--level: 1;"
-      >
-        <span
-          class="t-tree__line"
-          style="--level: 1;"
-        />
-        <span
-          class="t-tree__icon t-folder-icon t-tree__icon--default"
-          ignore="active"
-          trigger="expand"
-        >
-          <svg
-            class="t-icon t-icon-caret-right-small"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M6 5v6l4.5-3L6 5z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t6"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t6
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="2"
-        data-value="t7"
-        draggable="false"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__line t-tree__line--leaf t-tree__line--first"
-          style="--level: 2; box-shadow: calc(-1 * var(--space)) 0 var(--color);"
-        />
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t7"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t7
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="2"
-        data-value="t8"
-        draggable="false"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__line t-tree__line--leaf"
-          style="--level: 2; box-shadow: calc(-1 * var(--space)) 0 var(--color);"
-        />
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t8"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t8
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="2"
-        data-value="t9"
-        draggable="false"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__line t-tree__line--leaf"
-          style="--level: 2; box-shadow: calc(-1 * var(--space)) 0 var(--color);"
-        />
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t9"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t9
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="1"
-        data-value="t10"
-        draggable="false"
-        style="--level: 1;"
-      >
-        <span
-          class="t-tree__line"
-          style="--level: 1;"
-        />
-        <span
-          class="t-tree__icon t-folder-icon t-tree__icon--default"
-          ignore="active"
-          trigger="expand"
-        >
-          <svg
-            class="t-icon t-icon-caret-right-small"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M6 5v6l4.5-3L6 5z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t10"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t10
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="2"
-        data-value="t11"
-        draggable="false"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__line t-tree__line--leaf t-tree__line--first"
-          style="--level: 2;"
-        />
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t11"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t11
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="2"
-        data-value="t12"
-        draggable="false"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__line t-tree__line--leaf"
-          style="--level: 2;"
-        />
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t12"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t12
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="2"
-        data-value="t13"
-        draggable="false"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__line t-tree__line--leaf"
-          style="--level: 2;"
-        />
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t13"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t13
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="0"
-        data-value="t14"
-        draggable="false"
-        style="--level: 0;"
-      >
-        <span
-          class="t-tree__icon t-folder-icon t-tree__icon--default"
-          ignore="active"
-          trigger="expand"
-        >
-          <svg
-            class="t-icon t-icon-caret-right-small"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M6 5v6l4.5-3L6 5z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t14"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t14
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="1"
-        data-value="t15"
-        draggable="false"
-        style="--level: 1;"
-      >
-        <span
-          class="t-tree__line t-tree__line--first"
-          style="--level: 1;"
-        />
-        <span
-          class="t-tree__icon t-folder-icon t-tree__icon--default"
-          ignore="active"
-          trigger="expand"
-        >
-          <svg
-            class="t-icon t-icon-caret-right-small"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M6 5v6l4.5-3L6 5z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t15"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t15
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="2"
-        data-value="t16"
-        draggable="false"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__line t-tree__line--leaf t-tree__line--first"
-          style="--level: 2; box-shadow: calc(-1 * var(--space)) 0 var(--color);"
-        />
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t16"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t16
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="2"
-        data-value="t17"
-        draggable="false"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__line t-tree__line--leaf"
-          style="--level: 2; box-shadow: calc(-1 * var(--space)) 0 var(--color);"
-        />
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t17"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t17
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="2"
-        data-value="t18"
-        draggable="false"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__line t-tree__line--leaf"
-          style="--level: 2; box-shadow: calc(-1 * var(--space)) 0 var(--color);"
-        />
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t18"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t18
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="1"
-        data-value="t19"
-        draggable="false"
-        style="--level: 1;"
-      >
-        <span
-          class="t-tree__line"
-          style="--level: 1;"
-        />
-        <span
-          class="t-tree__icon t-folder-icon t-tree__icon--default"
-          ignore="active"
-          trigger="expand"
-        >
-          <svg
-            class="t-icon t-icon-caret-right-small"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M6 5v6l4.5-3L6 5z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t19"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t19
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="2"
-        data-value="t20"
-        draggable="false"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__line t-tree__line--leaf t-tree__line--first"
-          style="--level: 2; box-shadow: calc(-1 * var(--space)) 0 var(--color);"
-        />
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t20"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t20
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="2"
-        data-value="t21"
-        draggable="false"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__line t-tree__line--leaf"
-          style="--level: 2; box-shadow: calc(-1 * var(--space)) 0 var(--color);"
-        />
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t21"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t21
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="2"
-        data-value="t22"
-        draggable="false"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__line t-tree__line--leaf"
-          style="--level: 2; box-shadow: calc(-1 * var(--space)) 0 var(--color);"
-        />
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t22"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t22
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="1"
-        data-value="t23"
-        draggable="false"
-        style="--level: 1;"
-      >
-        <span
-          class="t-tree__line"
-          style="--level: 1;"
-        />
-        <span
-          class="t-tree__icon t-folder-icon t-tree__icon--default"
-          ignore="active"
-          trigger="expand"
-        >
-          <svg
-            class="t-icon t-icon-caret-right-small"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M6 5v6l4.5-3L6 5z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t23"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t23
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="2"
-        data-value="t24"
-        draggable="false"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__line t-tree__line--leaf t-tree__line--first"
-          style="--level: 2;"
-        />
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t24"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t24
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="2"
-        data-value="t25"
-        draggable="false"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__line t-tree__line--leaf"
-          style="--level: 2;"
-        />
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t25"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t25
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="2"
-        data-value="t26"
-        draggable="false"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__line t-tree__line--leaf"
-          style="--level: 2;"
-        />
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t26"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t26
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="0"
-        data-value="t27"
-        draggable="false"
-        style="--level: 0;"
-      >
-        <span
-          class="t-tree__icon t-folder-icon t-tree__icon--default"
-          ignore="active"
-          trigger="expand"
-        >
-          <svg
-            class="t-icon t-icon-caret-right-small"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M6 5v6l4.5-3L6 5z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t27"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t27
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="1"
-        data-value="t28"
-        draggable="false"
-        style="--level: 1;"
-      >
-        <span
-          class="t-tree__line t-tree__line--first"
-          style="--level: 1;"
-        />
-        <span
-          class="t-tree__icon t-folder-icon t-tree__icon--default"
-          ignore="active"
-          trigger="expand"
-        >
-          <svg
-            class="t-icon t-icon-caret-right-small"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M6 5v6l4.5-3L6 5z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t28"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t28
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="2"
-        data-value="t29"
-        draggable="false"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__line t-tree__line--leaf t-tree__line--first"
-          style="--level: 2; box-shadow: calc(-1 * var(--space)) 0 var(--color);"
-        />
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t29"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t29
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="2"
-        data-value="t30"
-        draggable="false"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__line t-tree__line--leaf"
-          style="--level: 2; box-shadow: calc(-1 * var(--space)) 0 var(--color);"
-        />
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t30"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t30
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="2"
-        data-value="t31"
-        draggable="false"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__line t-tree__line--leaf"
-          style="--level: 2; box-shadow: calc(-1 * var(--space)) 0 var(--color);"
-        />
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t31"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t31
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="1"
-        data-value="t32"
-        draggable="false"
-        style="--level: 1;"
-      >
-        <span
-          class="t-tree__line"
-          style="--level: 1;"
-        />
-        <span
-          class="t-tree__icon t-folder-icon t-tree__icon--default"
-          ignore="active"
-          trigger="expand"
-        >
-          <svg
-            class="t-icon t-icon-caret-right-small"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M6 5v6l4.5-3L6 5z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t32"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t32
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="2"
-        data-value="t33"
-        draggable="false"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__line t-tree__line--leaf t-tree__line--first"
-          style="--level: 2; box-shadow: calc(-1 * var(--space)) 0 var(--color);"
-        />
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t33"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t33
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="2"
-        data-value="t34"
-        draggable="false"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__line t-tree__line--leaf"
-          style="--level: 2; box-shadow: calc(-1 * var(--space)) 0 var(--color);"
-        />
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t34"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t34
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="2"
-        data-value="t35"
-        draggable="false"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__line t-tree__line--leaf"
-          style="--level: 2; box-shadow: calc(-1 * var(--space)) 0 var(--color);"
-        />
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t35"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t35
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="1"
-        data-value="t36"
-        draggable="false"
-        style="--level: 1;"
-      >
-        <span
-          class="t-tree__line"
-          style="--level: 1;"
-        />
-        <span
-          class="t-tree__icon t-folder-icon t-tree__icon--default"
-          ignore="active"
-          trigger="expand"
-        >
-          <svg
-            class="t-icon t-icon-caret-right-small"
-            fill="none"
-            height="1em"
-            viewBox="0 0 16 16"
-            width="1em"
-          >
-            <path
-              d="M6 5v6l4.5-3L6 5z"
-              fill="currentColor"
-              fill-opacity="0.9"
-            />
-          </svg>
-        </span>
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t36"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t36
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="2"
-        data-value="t37"
-        draggable="false"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__line t-tree__line--leaf t-tree__line--first"
-          style="--level: 2;"
-        />
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t37"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t37
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="2"
-        data-value="t38"
-        draggable="false"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__line t-tree__line--leaf"
-          style="--level: 2;"
-        />
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t38"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t38
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-      <div
-        class="t-tree__item t-tree__item--open t-tree__item--visible"
-        data-level="2"
-        data-value="t39"
-        draggable="false"
-        style="--level: 2;"
-      >
-        <span
-          class="t-tree__line t-tree__line--leaf"
-          style="--level: 2;"
-        />
-        <span
-          class="t-tree__icon t-folder-icon"
-          ignore="active"
-          trigger="expand"
-        />
-        <label
-          class="t-checkbox t-tree__label"
-        >
-          <input
-            class="t-checkbox__former"
-            name="t39"
-            type="checkbox"
-            value=""
-          />
-          <span
-            class="t-checkbox__input"
-          />
-          <span
-            class="t-checkbox__label"
-          >
-            t39
-          </span>
-        </label>
-        <span
-          class="t-tree__operations"
-          ignore="active,expand"
-        >
-          <div
-            class="tdesign-demo-block-row"
-          >
-            <button
-              class="t-button t-button--variant-base t-button--theme-primary t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                添加子节点
-              </span>
-            </button>
-            <button
-              class="t-button t-button--variant-base t-button--theme-danger t-size-s"
-              type="button"
-            >
-              <span
-                class="t-button__text"
-              >
-                删除
-              </span>
-            </button>
-          </div>
-        </span>
-      </div>
-    </transition-group-stub>
+    </div>
+  </form>
+  <div
+    class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition t-tree__vscroll"
+    style="height: 300px;"
+  >
+    <div
+      class="t-tree__vscroll-cursor"
+      style="transform: translate(0, 0px);"
+    />
+    <div />
   </div>
 </div>
 `;
@@ -154193,10 +152124,10 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/collapsed.vue 1
           >
             <span
               class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
-              style="max-width: 300px;"
             >
               <span
                 class="t-tag--text"
+                style="max-width: 300px;"
               >
                 广州市
               </span>
@@ -154266,10 +152197,10 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/collapsed.vue 1
           >
             <span
               class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
-              style="max-width: 300px;"
             >
               <span
                 class="t-tag--text"
+                style="max-width: 300px;"
               >
                 广州市
               </span>
@@ -154613,10 +152544,10 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/multiple.vue 1`
       >
         <span
           class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
-          style="max-width: 300px;"
         >
           <span
             class="t-tag--text"
+            style="max-width: 300px;"
           >
             tdesign-vue
           </span>
@@ -154636,10 +152567,10 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/multiple.vue 1`
         </span>
         <span
           class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
-          style="max-width: 300px;"
         >
           <span
             class="t-tag--text"
+            style="max-width: 300px;"
           >
             tdesign-react
           </span>
@@ -154659,10 +152590,10 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/multiple.vue 1`
         </span>
         <span
           class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
-          style="max-width: 300px;"
         >
           <span
             class="t-tag--text"
+            style="max-width: 300px;"
           >
             tdesign-miniprogram
           </span>
@@ -155025,10 +152956,10 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/valuetype.vue 1
           >
             <span
               class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
-              style="max-width: 300px;"
             >
               <span
                 class="t-tag--text"
+                style="max-width: 300px;"
               >
                 广州市
               </span>
@@ -155048,10 +152979,10 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/valuetype.vue 1
             </span>
             <span
               class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
-              style="max-width: 300px;"
             >
               <span
                 class="t-tag--text"
+                style="max-width: 300px;"
               >
                 深圳市
               </span>
