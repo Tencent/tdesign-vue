@@ -35,3 +35,13 @@ name | params | description
 scroll | `(context: { e: WheelEvent })` | \-
 scroll-to-bottom | `(context: { e: WheelEvent })` | \-
 visible-change | `(visible: boolean, context: PopupVisibleChangeContext)` | [see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/popup/type.ts)。<br/>`interface PopupVisibleChangeContext { e?: PopupTriggerEvent; trigger?: PopupTriggerSource }`<br/><br/>`type PopupTriggerEvent = MouseEvent \| FocusEvent \| KeyboardEvent`<br/><br/>`type PopupTriggerSource = 'document' \| 'trigger-element-click' \| 'trigger-element-hover' \| 'trigger-element-blur' \| 'trigger-element-focus' \| 'trigger-element-mousedown' \| 'context-menu' \| 'keydown-esc'`<br/>
+
+### PopupPlugin
+
+support `this.$popup`
+
+name | params | default | description
+-- | -- | -- | --
+content | String / Slot / Function | - | required。Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)
+popupProps | Object | - | \-
+triggerElement | String | - | required
