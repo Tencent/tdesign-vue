@@ -1,5 +1,13 @@
 :: BASE_DOC ::
 
+### 通过插件方式调用Popup
+
+通过插件方式调用Popup，用于将Popup渲染在已有节点的场景，同时该方式不论如何调用都只会挂载在一个节点上，用于减少页面上的Popup的渲染节点。
+
+使用方式：`this.$popup(triggerElement, content, popupProps)`
+
+{{ plugin }}
+
 ## API
 ### Popup Props
 
@@ -35,3 +43,13 @@ onVisibleChange | Function |  | TS 类型：`(visible: boolean, context: PopupVi
 scroll | `(context: { e: WheelEvent })` | 下拉选项滚动事件
 scroll-to-bottom | `(context: { e: WheelEvent })` | 下拉滚动触底事件，常用于滚动到底执行具体业务逻辑
 visible-change | `(visible: boolean, context: PopupVisibleChangeContext)` | 当浮层隐藏或显示时触发，`trigger=document` 表示点击非浮层元素触发；`trigger=context-menu` 表示右击触发。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/popup/type.ts)。<br/>`interface PopupVisibleChangeContext { e?: PopupTriggerEvent; trigger?: PopupTriggerSource }`<br/><br/>`type PopupTriggerEvent = MouseEvent \| FocusEvent \| KeyboardEvent`<br/><br/>`type PopupTriggerSource = 'document' \| 'trigger-element-click' \| 'trigger-element-hover' \| 'trigger-element-blur' \| 'trigger-element-focus' \| 'trigger-element-mousedown' \| 'context-menu' \| 'keydown-esc'`<br/>
+
+### PopupPlugin
+
+同时也支持 `this.$popup`。
+
+参数名称 | 参数类型 | 参数默认值 | 参数说明
+-- | -- | -- | --
+content | String / Slot / Function | - | 必需。气泡框的内容。TS 类型：`string \| TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)
+popupProps | Object | - | 透传气泡框/浮层的属性
+triggerElement | String | - | 必需。触发气泡框/浮层的元素，传入选择器即可
