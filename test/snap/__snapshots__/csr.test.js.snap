@@ -130089,6 +130089,21 @@ exports[`csr snapshot test > csr test ./src/tag/_example/base.vue 1`] = `
   <div
     class="t-space-item"
   >
+    <span
+      class="t-tag t-tag--default t-tag--dark t-tag--ellipsis"
+    >
+      <span
+        class="t-tag--text"
+        style="max-width: 150px;"
+        title="This is a long long long long long tag"
+      >
+        This is a long long long long long tag
+      </span>
+    </span>
+  </div>
+  <div
+    class="t-space-item"
+  >
     <div
       class="t-space t-space-horizontal"
       style="gap: 16px;"
