@@ -1,11 +1,16 @@
 <template>
   <t-space :size="32" direction="vertical">
     <t-form labelWidth="150">
-      <t-input-adornment prepend="filter:">
-        <t-input v-model="filterText" @change="onInput" />
-      </t-input-adornment>
+      <t-form-item label="">
+        <t-input-adornment prepend="filter:">
+          <t-input v-model="filterText" @change="onInput" />
+        </t-input-adornment>
+      </t-form-item>
       <t-form-item label="允许折叠">
         <t-switch v-model="allowFoldNodeOnFilter" @change="checkExpanded" />
+      </t-form-item>
+      <t-form-item label="可选">
+        <t-switch v-model="isCheckable" />
       </t-form-item>
     </t-form>
     <t-tree
@@ -16,6 +21,7 @@
       :allowFoldNodeOnFilter="allowFoldNodeOnFilter"
       :default-expanded="expanded"
       :filter="filterByText"
+      :checkable="isCheckable"
       hover
       line
     />
@@ -117,6 +123,7 @@ const exampleItems = [
 export default {
   data() {
     return {
+      isCheckable: false,
       filterText: '',
       filterByText: null,
       expanded: ['1.1.1'],

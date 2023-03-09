@@ -4,10 +4,10 @@ import {
 import useVirtualScroll from '../../hooks/useVirtualScrollNew';
 import { TScroll } from '../../common';
 import TreeNode from '../../_common/js/tree/tree-node';
-import { TypeTreeProps, TypeTreeState, TypeTimer } from '../interface';
+import { TreeProps, TypeTreeState, TypeTimer } from '../interface';
 
 // tree 虚拟滚动整合
-export default function useTreeScroll(props: TypeTreeProps, context: SetupContext, state: TypeTreeState) {
+export default function useTreeScroll(props: TreeProps, context: SetupContext, state: TypeTreeState) {
   const treeState = state;
   const {
     scope, treeContentRef, nodes, isScrolling,

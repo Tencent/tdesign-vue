@@ -5,6 +5,23 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.2.1 `2023-03-09` 
+### 🚀 Features
+- `DatePicker`: 支持 `defaultTime` 用于设置默认时间 @honkinglin ([#2215](https://github.com/Tencent/tdesign-vue/pull/2215))
+- `Popup`: 支持通过 `this.$popup` 方法直接调用弹出层，具体使用方式请看文档示例 @uyarn ([#2219](https://github.com/Tencent/tdesign-vue/pull/2219))
+- `Tag`: 修改 `maxWidth` 生效的 DOM 节点，方便控制文本内容长度 @huangpiqiao ([#2220](https://github.com/Tencent/tdesign-vue/pull/2220))
+### 🐞 Bug Fixes
+- `DatePicker`: 修复月份为 0 时展示当前月份问题 @honkinglin ([#2205](https://github.com/Tencent/tdesign-vue/pull/2205))
+- `Tree`: @TabSpace 
+  - 完善过滤样式和虚拟滚动样式 ([#2209](https://github.com/Tencent/tdesign-vue/pull/2209))
+  - 修正激活态切换时，旧激活态未消失的问题 ([#2209](https://github.com/Tencent/tdesign-vue/pull/2209))
+  - 解决 operations 示例中，节点插入引发死循环的问题 ([#2212](https://github.com/Tencent/tdesign-vue/pull/2212))
+- `Badge`: 修复徽标错误行为 @Aicmortal ([#2206](https://github.com/Tencent/tdesign-vue/pull/2206))
+- `Table`: 修复 IE 上 affix 表头和表尾出现滚动条的问题 @huangpiqiao ([#2216](https://github.com/Tencent/tdesign-vue/pull/2216))
+- `Pagination`: 修复某些情况下 mouseover 触发导致按钮闪烁的问题 @KMethod ([#2214](https://github.com/Tencent/tdesign-vue/pull/2214))
+### 🚧 Others
+- `tree`: 完善激活态单元测试 @TabSpace ([#2209](https://github.com/Tencent/tdesign-vue/pull/2209))
+
 ## 🌈 1.2.0 `2023-03-02` 
 ### 🚀 Features
 - `Textarea`: 为解决 Textarea 字符限制文案会遮挡文本内容的问题，内容长度限制提示位置由组件内右下角移动到组件之外的右下角，与 tips 在同一行 @duanbaosheng ([#2194](https://github.com/Tencent/tdesign-vue/pull/2194))

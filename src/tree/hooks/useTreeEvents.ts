@@ -10,18 +10,21 @@ export default function useTreeEvents(props: TreeProps, context: SetupContext, s
 
   const handleClick = (evtState: TypeEventState) => {
     const { mouseEvent, event, node } = evtState;
-    if (!node) {
-      return;
-    }
+    if (!node || !mouseEvent) return;
 
+    // 用于向内部方法传递事件对象
     treeState.mouseEvent = mouseEvent;
 
     let shouldExpand = props.expandOnClickNode;
     let shouldActive = !props.disabled && !node.disabled;
+
+    // 给节点添加属性 trigger="expand,active", ignore="expand,active"
+    // 来确认或者屏蔽动作
     ['trigger', 'ignore'].forEach((markName) => {
       const mark = getMark(markName, event.target as HTMLElement, event.currentTarget as HTMLElement);
       const markValue = mark?.value || '';
       if (markValue.indexOf('expand') >= 0) {
+        // 路径节点包含了 trigger="expand" ignore="expand"
         if (markName === 'trigger') {
           shouldExpand = true;
         } else if (markName === 'ignore') {
@@ -29,6 +32,7 @@ export default function useTreeEvents(props: TreeProps, context: SetupContext, s
         }
       }
       if (markValue.indexOf('active') >= 0) {
+        // 路径节点包含了 trigger="active" ignore="active"
         if (markName === 'ignore') {
           shouldActive = false;
         }
@@ -39,15 +43,15 @@ export default function useTreeEvents(props: TreeProps, context: SetupContext, s
       toggleExpanded(node);
     }
 
+    if (shouldActive) {
+      toggleActived(node);
+    }
+
     const evtCtx = {
       node: node.getModel(),
       e: mouseEvent,
     };
-
-    if (shouldActive) {
-      toggleActived(node);
-      emitEvent<Parameters<TreeProps['onClick']>>(props, context, 'click', evtCtx);
-    }
+    emitEvent<Parameters<TreeProps['onClick']>>(props, context, 'click', evtCtx);
 
     treeState.mouseEvent = null;
   };

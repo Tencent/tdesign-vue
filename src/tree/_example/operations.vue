@@ -1,5 +1,5 @@
 <template>
-  <t-space :size="20" direction="vertical">
+  <t-space :size="20" direction="vertical" class="t-tree-demo-operations">
     <t-space :size="10" direction="vertical" style="width: 100%">
       <h3>Render:</h3>
       <t-tree :data="items" hover expand-all :label="getLabel" :operations="renderOperations" />
@@ -223,6 +223,9 @@ export default {
         }
         this.setLabel(item.value);
       }
+      if (this.useActived) {
+        this.activeId = '';
+      }
     },
     insertBefore(node) {
       const { tree } = this.$refs;
@@ -239,9 +242,6 @@ export default {
         tree.insertAfter(node.value, item);
         this.setLabel(item.value);
       }
-    },
-    setUseActived() {
-      this.useActived = !this.useActived;
     },
     getActiveParent() {
       const { tree } = this.$refs;
@@ -320,9 +320,13 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style>
 .tips {
   font-size: 10px;
   color: gray;
+}
+.t-tree-demo-operations .t-is-active .t-tree__label,
+.t-tree-demo-operations .t-is-active .t-checkbox__label {
+  background-color: rgba(255, 0, 0, 0.3);
 }
 </style>

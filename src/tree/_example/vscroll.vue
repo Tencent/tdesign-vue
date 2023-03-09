@@ -116,7 +116,7 @@ export default {
   computed: {
     scroll() {
       const { scrollMode } = this;
-      if (!scrollMode === 'normal') {
+      if (scrollMode === 'normal') {
         return null;
       }
       const scrollProps = {
@@ -194,5 +194,8 @@ export default {
 }
 .tdesign-demo-vscroll .t-alert {
   margin-bottom: 5px;
+}
+.tdesign-demo-vscroll .t-tree {
+  overflow-y: auto;
 }
 </style>

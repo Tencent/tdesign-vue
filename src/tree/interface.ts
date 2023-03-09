@@ -28,7 +28,7 @@ export type TypeTNodeState = TreeNodeValue;
 export type TypeTNodeValue = TreeNodeState;
 export type TypeTreeNode = TreeNode;
 export type TypeTreeStore = TreeStore;
-export type TypeValueMode = TypeTreeProps['valueMode'];
+export type TypeValueMode = TreeProps['valueMode'];
 export type TypeTNodeProp = boolean | string | TNode<TypeTreeNodeModel>;
 export type TypeTreeNodeModel = TreeNodeModel<TreeOptionData>;
 export type TypeTargetNode = TreeNodeValue | TypeTreeNode | TypeTreeNodeModel;
@@ -94,7 +94,7 @@ export interface TypeDragHandle {
 
 export interface TypeTreeScope {
   treeContentRef: Ref<HTMLDivElement>;
-  treeProps?: TypeTreeProps;
+  treeProps?: TreeProps;
   scopedSlots?: TypeScopedSlots;
   drag?: TypeDragHandle;
   scrollProps?: Ref<TScroll>;
@@ -116,4 +116,21 @@ export interface TypeTreeItemProps {
   treeScope: TypeTreeScope;
   expandOnClickNode: boolean;
   rowIndex: number;
+}
+
+export interface TypeEventContext {
+  node: TypeTreeNodeModel;
+  e: MouseEvent;
+}
+
+export interface TypeExpandEventContext extends TypeEventContext {
+  trigger: 'setItem' | 'node-click' | 'icon-click';
+}
+
+export interface TypeActiveEventContext extends TypeEventContext {
+  trigger: 'setItem' | 'node-click';
+}
+
+export interface TypeChangeEventContext extends TypeEventContext {
+  trigger: 'setItem' | 'node-click';
 }
