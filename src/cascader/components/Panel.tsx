@@ -25,6 +25,8 @@ export default defineComponent({
     const renderTNodeJSXDefault = useTNodeDefault();
     const COMPONENT_NAME = usePrefixClass('cascader');
     const { global } = useConfig('cascader');
+    const { valueType, cascaderValue, treeStore } = props.cascaderContext;
+    const { config } = treeStore;
 
     const panels = computed(() => getPanels(props.cascaderContext.treeNodes));
 
@@ -32,6 +34,12 @@ export default defineComponent({
       const { trigger: propsTrigger, cascaderContext } = props;
       expendClickEffect(propsTrigger, trigger, node, cascaderContext);
     };
+
+    // 异步加载回显时默认触发第一个值
+    if (config.load && valueType === 'full' && (cascaderValue as Array<string | number>).length > 0) {
+      const firstExpandNode = treeStore.nodes.find((node: TreeNode) => node.value === cascaderValue[0]);
+      handleExpand(firstExpandNode, 'click');
+    }
 
     return {
       global,

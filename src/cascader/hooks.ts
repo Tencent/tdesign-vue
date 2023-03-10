@@ -52,6 +52,7 @@ export const useContext = (
         showAllLevels,
         minCollapsedNum,
         valueType,
+        value,
       } = props;
       return {
         value: statusContext.scopeVal,
@@ -68,6 +69,7 @@ export const useContext = (
         minCollapsedNum,
         valueType,
         visible: innerPopupVisible.value,
+        cascaderValue: value,
         ...statusContext,
         setTreeNodes: (nodes: TreeNode[]) => {
           statusContext.treeNodes = nodes;
@@ -122,7 +124,7 @@ export const useCascaderContext = (props: TdCascaderProps) => {
     () => props.options,
     () => {
       const {
-        options, keys = {}, checkStrictly, lazy, load, valueMode,
+        options, keys = {}, checkStrictly, lazy, load, valueMode, value, valueType,
       } = props;
       const { treeStore } = statusContext;
 
@@ -145,6 +147,11 @@ export const useCascaderContext = (props: TdCascaderProps) => {
             nextTick(() => {
               store.refreshNodes();
               updatedTreeNodes();
+              // 异步加载时子级回显
+              if (load && valueType === 'full' && (value as Array<string | number>).length > store.expandedMap.size) {
+                const expanded = (value as Array<string | number>).slice(0, store.expandedMap.size + 1);
+                store.setExpanded(expanded);
+              }
             });
           },
         });
