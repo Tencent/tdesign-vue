@@ -30,6 +30,7 @@
       :pagination="pagination"
       :showHeader="showHeader"
       cellEmptyContent="-"
+      resizable
     ></t-table>
   </t-space>
 </template>

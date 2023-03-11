@@ -1,3 +1,4 @@
+import isUndefined from 'lodash/isUndefined';
 import {
   ref,
   reactive,
@@ -6,8 +7,8 @@ import {
   SetupContext,
   onMounted,
   computed,
-  onBeforeMount,
   ComputedRef,
+  onBeforeUnmount,
   Ref,
 } from '@vue/composition-api';
 import get from 'lodash/get';
@@ -302,7 +303,7 @@ export default function useFixed(
 
   let shadowLastScrollLeft: number;
   const updateColumnFixedShadow = (target: HTMLElement, extra?: { skipScrollLimit?: boolean }) => {
-    if (!isFixedColumn || !target) return;
+    if (!isFixedColumn.value || !target) return;
     const { scrollLeft } = target;
     // 只有左右滚动，需要更新固定列阴影
     if (shadowLastScrollLeft === scrollLeft && (!extra || !extra.skipScrollLimit)) return;
@@ -310,8 +311,8 @@ export default function useFixed(
     const isShowRight = target.clientWidth + scrollLeft < target.scrollWidth;
     const isShowLeft = scrollLeft > 0;
     if (showColumnShadow.left === isShowLeft && showColumnShadow.right === isShowRight) return;
-    showColumnShadow.left = isShowLeft;
-    showColumnShadow.right = isShowRight;
+    showColumnShadow.left = isShowLeft && isFixedLeftColumn.value;
+    showColumnShadow.right = isShowRight && isFixedRightColumn.value;
   };
 
   // 多级表头场景较为复杂：为了滚动的阴影效果，需要知道哪些列是边界列，左侧固定列的最后一列，右侧固定列的第一列，每一层表头都需要兼顾
@@ -337,7 +338,6 @@ export default function useFixed(
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const updateFixedStatus = () => {
-    if (!columns.value?.length) return () => {};
     const { newColumnsMap, levelNodes } = getColumnMap(columns.value);
     setIsLastOrFirstFixedCol(levelNodes);
     const timer = setTimeout(() => {
@@ -370,7 +370,6 @@ export default function useFixed(
     if (!rect) return;
     // 存在纵向滚动条，且固定表头时，需去除滚动条宽度
     const reduceWidth = isFixedHeader.value ? scrollbarWidth.value : 0;
-    // 表格宽度向下取整，避免出现小数时导致吸顶和吸底出现横向滚动条
     tableWidth.value = Math.floor(rect.width - reduceWidth - (props.bordered ? 1 : 0));
     const elmRect = tableElmRef?.value?.getBoundingClientRect();
     tableElmWidth.value = elmRect?.width;
@@ -508,6 +507,7 @@ export default function useFixed(
     updateFixedHeader();
     updateThWidthListHandler();
     updateAffixPosition();
+
     if (isFixedColumn.value || isFixedHeader.value) {
       updateFixedStatus();
       updateColumnFixedShadow(tableContentRef.value, { skipScrollLimit: true });
@@ -548,7 +548,7 @@ export default function useFixed(
     }
   });
 
-  onBeforeMount(() => {
+  onBeforeUnmount(() => {
     off(window, 'resize', onResize);
     resizeObserver?.unobserve(tableRef.value);
     resizeObserver?.disconnect();
