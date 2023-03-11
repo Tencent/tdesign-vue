@@ -86,6 +86,7 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
       filter: `.${tableFullRowClasses.base}`, // 过滤首行尾行固定
       onMove: (evt: MoveEvent) => !hasClass(evt.related, tableFullRowClasses.base),
       onEnd(evt: SortableEvent) {
+        if (evt.newIndex === evt.oldIndex) return;
         // 处理受控：拖拽列表恢复原始排序
         dragInstanceTmp?.sort(lastRowList.value);
         let { oldIndex: currentIndex, newIndex: targetIndex } = evt;
@@ -137,6 +138,7 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
       dragClass: tableDraggableClasses.dragging,
       handle: `.${tableBaseClass.thCellInner}`,
       onEnd: (evt: SortableEvent) => {
+        if (evt.newIndex === evt.oldIndex) return;
         if (recover) {
           // 处理受控：拖拽列表恢复原始排序，等待外部数据 data 变化，更新最终顺序
           dragInstanceTmp?.sort([...lastColList.value]);
