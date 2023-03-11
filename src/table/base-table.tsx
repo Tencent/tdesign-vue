@@ -47,6 +47,7 @@ export default defineComponent({
     ...props,
     renderExpandedRow: Function as PropType<BaseTableProps['renderExpandedRow']>,
     onLeafColumnsChange: Function as PropType<BaseTableProps['onLeafColumnsChange']>,
+    thDraggable: Boolean,
   },
 
   setup(props: BaseTableProps, context: SetupContext) {
@@ -496,6 +497,7 @@ export default defineComponent({
     const tableBodyProps = {
       rowAndColFixedPosition,
       showColumnShadow: this.showColumnShadow,
+      thDraggable: this.thDraggable,
       data: this.virtualConfig.isVirtualScroll.value ? this.virtualConfig.visibleData.value : data,
       virtualConfig: this.virtualConfig,
       columns,

@@ -81,6 +81,17 @@ export default defineComponent({
     const errorList = ref<AllValidateResult[]>();
 
     const { Edit1Icon } = useGlobalIcon({ Edit1Icon: TdEdit1Icon });
+    const editOnListeners = computed(() => {
+      const listeners = col.value.edit?.on?.({ ...cellParams.value, editedRow: currentRow.value }) || {};
+      // example: onEnter-> enter
+      Object.keys(listeners).forEach((eventName) => {
+        if (eventName.slice(0, 2) === 'on') {
+          listeners[eventName.slice(2).toLocaleLowerCase()] = listeners[eventName];
+          delete listeners[eventName];
+        }
+      });
+      return listeners;
+    });
 
     const currentRow = computed(() => {
       const newRow = { ...row.value };
@@ -171,7 +182,7 @@ export default defineComponent({
       return a === b;
     };
 
-    const updateAndSaveAbort = (outsideAbortEvent: Function, ...args: any) => {
+    const updateAndSaveAbort = (outsideAbortEvent: Function, eventName: string, ...args: any) => {
       validateEdit('self').then((result) => {
         if (result !== true) return;
         const oldValue = get(row.value, col.value.colKey);
@@ -180,6 +191,8 @@ export default defineComponent({
           editValue.value = oldValue;
           outsideAbortEvent?.(...args);
         }
+        // Use enter for listeners in Vue2, instead of onEnter
+        editOnListeners.value[eventName]?.(args[2]);
         // 此处必须在事件执行完成后异步销毁编辑组件，否则会导致事件清除不及时引起的其他问题
         const timer = setTimeout(() => {
           isEdit.value = false;
@@ -211,6 +224,7 @@ export default defineComponent({
         tListeners[eventName] = (...args: any) => {
           updateAndSaveAbort(
             outsideAbortEvent,
+            eventName,
             {
               ...cellParams.value,
               trigger: itemEvent,
@@ -239,6 +253,7 @@ export default defineComponent({
         const outsideAbortEvent = col.value.edit?.onEdited;
         updateAndSaveAbort(
           outsideAbortEvent,
+          'change',
           {
             ...cellParams.value,
             trigger: 'onChange',
@@ -256,7 +271,7 @@ export default defineComponent({
       if (!col.value.edit || !col.value.edit.component) return;
       if (!isEdit.value) return;
       const outsideAbortEvent = col.value.edit.onEdited;
-      updateAndSaveAbort(outsideAbortEvent, {
+      updateAndSaveAbort(outsideAbortEvent, '', {
         ...cellParams.value,
         trigger: 'document',
         newRowData: currentRow.value,
@@ -343,6 +358,7 @@ export default defineComponent({
       tableEditableCellRef,
       errorList,
       currentRow,
+      editOnListeners,
       onEditChange,
       Edit1Icon,
       validateEdit,
@@ -372,6 +388,16 @@ export default defineComponent({
       return null;
     }
     const errorMessage = this.errorList?.[0]?.message;
+    const tmpEditOnListeners = { ...this.editOnListeners };
+    // remove conflict events
+    if (this.col.edit?.abortEditOnEvent?.length) {
+      this.col.edit.abortEditOnEvent.forEach((onEventName) => {
+        const vue2EventName = onEventName.slice(2).toLocaleLowerCase();
+        if (tmpEditOnListeners[vue2EventName]) {
+          delete tmpEditOnListeners[vue2EventName];
+        }
+      });
+    }
     return (
       <div
         class={this.tableBaseClass?.cellEditWrap}
@@ -384,7 +410,7 @@ export default defineComponent({
           status={errorMessage ? this.errorList?.[0]?.type || 'error' : undefined}
           tips={errorMessage}
           props={this.componentProps}
-          on={{ ...this.listeners, ...this.col.edit?.on?.({ ...this.cellParams, editedRow: this.currentRow }) }}
+          on={{ ...this.listeners, ...tmpEditOnListeners }}
           value={this.editValue}
           onChange={this.onEditChange}
         />
