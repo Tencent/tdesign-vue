@@ -311,15 +311,13 @@ export default defineComponent({
 
   methods: {
     renderColGroup(columns: BaseTableCol<TableRowData>[], isAffixHeader = true) {
-      const defaultColWidth = this.tableLayout === 'fixed' && this.isWidthOverflow ? '100px' : undefined;
       return (
         <colgroup>
           {columns.map((col) => {
             const style: Styles = {
-              width:
-                formatCSSUnit(
-                  (isAffixHeader || this.columnResizable ? this.thWidthList[col.colKey] : undefined) || col.width,
-                ) || defaultColWidth,
+              width: formatCSSUnit(
+                (isAffixHeader || this.columnResizable ? this.thWidthList[col.colKey] : undefined) || col.width,
+              ),
             };
             if (col.minWidth) {
               style.minWidth = formatCSSUnit(col.minWidth);
@@ -479,7 +477,6 @@ export default defineComponent({
     const { rowAndColFixedPosition } = this;
     const data = this.isPaginateData ? this.dataSource : this.data;
     const columns = this.spansAndLeafNodes?.leafColumns || this.columns;
-
     if (this.allowResizeColumnWidth) {
       log.warn('Table', 'allowResizeColumnWidth is going to be deprecated, please use resizable instead.');
     }
