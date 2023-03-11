@@ -155,6 +155,7 @@ export default defineComponent({
         params.result[0].errorList = list;
         props.onValidate?.(params);
         if (!list || !list.length) {
+          errorList.value = [];
           resolve(true);
         } else {
           errorList.value = list;
@@ -245,6 +246,9 @@ export default defineComponent({
           },
           ...args,
         );
+      }
+      if (col.value.edit?.validateTrigger === 'change') {
+        validateEdit('self');
       }
     };
 

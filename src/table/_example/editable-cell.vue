@@ -92,6 +92,8 @@ export default {
             ],
             // 默认是否为编辑状态
             defaultEditable: true,
+            // 校验时机：exit | change
+            validateTrigger: 'change',
           },
         },
         {
