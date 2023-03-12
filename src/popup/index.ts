@@ -7,10 +7,10 @@ import './style';
 
 export type PopupProps = TdPopupProps;
 export * from './type';
+export * from './plugin';
 
-export const Popup = withInstall(mapProps(
-  ['visible'],
-  { model: { prop: 'visible', event: 'visible-change' } },
-)(_Popup));
+export const Popup = withInstall(
+  mapProps(['visible'], { model: { prop: 'visible', event: 'visible-change' } })(_Popup),
+);
 
 export default Popup;
