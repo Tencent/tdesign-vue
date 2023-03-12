@@ -130,13 +130,14 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
     let dragInstanceTmp: Sortable = null;
     const options: SortableOptions = {
       animation: 150,
-      ...props.dragSortOptions,
       dataIdAttr: 'data-colkey',
       direction: 'vertical',
       ghostClass: tableDraggableClasses.ghost,
       chosenClass: tableDraggableClasses.chosen,
       dragClass: tableDraggableClasses.dragging,
       handle: `.${tableBaseClass.thCellInner}`,
+      // 存在类名：t-table__th--drag-sort 的列才允许拖拽调整顺序（交换后功能异常）
+      // draggable: `th.${tableDraggableClasses.dragSortTh}`,
       onEnd: (evt: SortableEvent) => {
         if (evt.newIndex === evt.oldIndex) return;
         if (recover) {
@@ -175,6 +176,7 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
         // Vue3 ignore next line
         context.emit('drag-sort', params);
       },
+      ...props.dragSortOptions,
     };
     if (!container) return;
     dragInstanceTmp = new Sortable(container, options);

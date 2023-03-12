@@ -336,6 +336,8 @@ export default defineComponent({
     getHeadProps(isAffixHeader = true) {
       const headProps = {
         isFixedHeader: this.isFixedHeader,
+        showColumnShadow: this.showColumnShadow,
+        thDraggable: this.thDraggable,
         rowAndColFixedPosition: this.rowAndColFixedPosition,
         isMultipleHeader: this.isMultipleHeader,
         bordered: this.bordered,
