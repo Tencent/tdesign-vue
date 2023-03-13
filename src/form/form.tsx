@@ -93,6 +93,7 @@ export default mixins(classPrefixMixins).extend({
     },
 
     formatValidateResult<T>(arr: Awaited<FormItemValidateResult<T>>[]) {
+      if (!arr || !arr.length) return true;
       const r = arr.reduce((r, err) => Object.assign(r || {}, err));
       Object.keys(r).forEach((key) => {
         if (r[key] === true) {

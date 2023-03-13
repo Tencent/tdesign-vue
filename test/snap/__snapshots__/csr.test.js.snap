@@ -94844,7 +94844,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
         >
           <tr>
             <th
-              class="t-table__th-applicant"
+              class="t-table__th-applicant t-table__th--drag-sort"
               data-colkey="applicant"
             >
               <div
@@ -94854,7 +94854,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
               </div>
             </th>
             <th
-              class="t-table__th-status"
+              class="t-table__th-status t-table__th--drag-sort"
               data-colkey="status"
             >
               <div
@@ -94864,7 +94864,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
               </div>
             </th>
             <th
-              class="t-table__th-channel"
+              class="t-table__th-channel t-table__th--drag-sort"
               data-colkey="channel"
             >
               <div
@@ -94874,7 +94874,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
               </div>
             </th>
             <th
-              class="t-table__th-detail.email"
+              class="t-table__th-detail.email t-table__th--drag-sort"
               data-colkey="detail.email"
             >
               <div
@@ -94888,7 +94888,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
               </div>
             </th>
             <th
-              class="t-table__th-matters"
+              class="t-table__th-matters t-table__th--drag-sort"
               data-colkey="matters"
             >
               <div
@@ -94902,7 +94902,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
               </div>
             </th>
             <th
-              class="t-table__th-createTime"
+              class="t-table__th-createTime t-table__th--drag-sort"
               data-colkey="createTime"
             >
               <div
@@ -94912,7 +94912,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
               </div>
             </th>
             <th
-              class="t-table__th-operation"
+              class="t-table__th-operation t-table__th--drag-sort"
               data-colkey="operation"
             >
               <div
@@ -96183,7 +96183,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-table t-table--bordered t-table--striped"
+      class="t-table t-table--bordered t-table--striped t-table--column-resizable"
       style="position: relative;"
     >
       <div
@@ -97812,7 +97812,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-col-button.vue
         >
           <tr>
             <th
-              class="t-table__th-applicant"
+              class="t-table__th-applicant t-table__th--drag-sort"
               data-colkey="applicant"
             >
               <div
@@ -97822,7 +97822,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-col-button.vue
               </div>
             </th>
             <th
-              class="t-table__th-status"
+              class="t-table__th-status t-table__th--drag-sort"
               data-colkey="status"
             >
               <div
@@ -97832,7 +97832,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-col-button.vue
               </div>
             </th>
             <th
-              class="t-table__th-channel"
+              class="t-table__th-channel t-table__th--drag-sort"
               data-colkey="channel"
             >
               <div
@@ -97842,7 +97842,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-col-button.vue
               </div>
             </th>
             <th
-              class="t-table__th-detail.email"
+              class="t-table__th-detail.email t-table__th--drag-sort"
               data-colkey="detail.email"
             >
               <div
@@ -97856,7 +97856,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-col-button.vue
               </div>
             </th>
             <th
-              class="t-table__th-createTime"
+              class="t-table__th-createTime t-table__th--drag-sort"
               data-colkey="createTime"
             >
               <div
@@ -99611,7 +99611,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/drag-col-sort.vue 1`]
     class="item"
   >
     <div
-      class="t-table t-table--col-draggable"
+      class="t-table t-table--column-fixed t-table--col-draggable"
       style="position: relative;"
     >
       <div
@@ -99642,7 +99642,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/drag-col-sort.vue 1`]
           >
             <tr>
               <th
-                class="t-table__th-applicant"
+                class="t-table__th-applicant t-table__th--drag-sort"
                 data-colkey="applicant"
               >
                 <div
@@ -99652,7 +99652,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/drag-col-sort.vue 1`]
                 </div>
               </th>
               <th
-                class="t-table__th-status"
+                class="t-table__th-status t-table__th--drag-sort"
                 data-colkey="status"
               >
                 <div
@@ -99662,7 +99662,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/drag-col-sort.vue 1`]
                 </div>
               </th>
               <th
-                class="t-table__th-channel"
+                class="t-table__th-channel t-table__th--drag-sort"
                 data-colkey="channel"
               >
                 <div
@@ -99672,7 +99672,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/drag-col-sort.vue 1`]
                 </div>
               </th>
               <th
-                class="t-table__th-detail.email"
+                class="t-table__th-detail.email t-table__th--drag-sort"
                 data-colkey="detail.email"
               >
                 <div
@@ -99686,7 +99686,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/drag-col-sort.vue 1`]
                 </div>
               </th>
               <th
-                class="t-table__th-createTime"
+                class="t-table__th-createTime t-table__th--drag-sort"
                 data-colkey="createTime"
               >
                 <div
@@ -103469,8 +103469,8 @@ exports[`csr snapshot test > csr test ./src/table/_example/expandable.vue 1`] = 
 `;
 
 exports[`csr snapshot test > csr test ./src/table/_example/filter-controlled.vue 1`] = `
-<div
-  class="tdesign-demo-block-column tdesign-demo__table"
+<form
+  class="tdesign-demo-block-column tdesign-demo__table t-form"
 >
   <div>
     <div
@@ -104080,7 +104080,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/filter-controlled.vue
       style="display: none; height: 10px; left: 10px; bottom: 0px;"
     />
   </div>
-</div>
+</form>
 `;
 
 exports[`csr snapshot test > csr test ./src/table/_example/fixed-column.vue 1`] = `
@@ -115590,7 +115590,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
         >
           <tr>
             <th
-              class="t-table__th-applicant"
+              class="t-table__th-applicant t-table__th--drag-sort"
               data-colkey="applicant"
               rowspan="3"
             >
@@ -115601,7 +115601,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               </div>
             </th>
             <th
-              class="t-table__th-total_info"
+              class="t-table__th-total_info t-table__th--drag-sort"
               colspan="3"
               data-colkey="total_info"
             >
@@ -115612,7 +115612,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               </div>
             </th>
             <th
-              class="t-table__th-field1"
+              class="t-table__th-field1 t-table__th--drag-sort"
               data-colkey="field1"
               rowspan="3"
             >
@@ -115623,7 +115623,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               </div>
             </th>
             <th
-              class="t-table__th-field3"
+              class="t-table__th-field3 t-table__th--drag-sort"
               data-colkey="field3"
               rowspan="3"
             >
@@ -115634,7 +115634,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               </div>
             </th>
             <th
-              class="t-table__th-field4"
+              class="t-table__th-field4 t-table__th--drag-sort"
               data-colkey="field4"
               rowspan="3"
             >
@@ -115645,7 +115645,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               </div>
             </th>
             <th
-              class="t-table__th-field2"
+              class="t-table__th-field2 t-table__th--drag-sort"
               data-colkey="field2"
               rowspan="3"
             >
@@ -115656,7 +115656,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               </div>
             </th>
             <th
-              class="t-table__th-instruction"
+              class="t-table__th-instruction t-table__th--drag-sort"
               colspan="3"
               data-colkey="instruction"
             >
@@ -115667,7 +115667,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               </div>
             </th>
             <th
-              class="t-table__th-createTime"
+              class="t-table__th-createTime t-table__th--drag-sort"
               data-colkey="createTime"
               rowspan="3"
             >
@@ -115680,7 +115680,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
           </tr>
           <tr>
             <th
-              class="t-table__header-th--bordered t-table__th-platform"
+              class="t-table__header-th--bordered t-table__th-platform t-table__th--drag-sort"
               data-colkey="platform"
               rowspan="2"
             >
@@ -115743,7 +115743,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               </div>
             </th>
             <th
-              class="t-table__th-type_default"
+              class="t-table__th-type_default t-table__th--drag-sort"
               colspan="2"
               data-colkey="type_default"
             >
@@ -115754,7 +115754,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               </div>
             </th>
             <th
-              class="t-table__th-property"
+              class="t-table__th-property t-table__th--drag-sort"
               data-colkey="property"
               rowspan="2"
             >
@@ -115796,7 +115796,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               </div>
             </th>
             <th
-              class="t-table__th-description"
+              class="t-table__th-description t-table__th--drag-sort"
               colspan="2"
               data-colkey="description"
             >
@@ -115813,7 +115813,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
           </tr>
           <tr>
             <th
-              class="t-table__header-th--bordered t-table__th-channel"
+              class="t-table__header-th--bordered t-table__th-channel t-table__th--drag-sort"
               data-colkey="channel"
             >
               <div
@@ -115823,7 +115823,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               </div>
             </th>
             <th
-              class="t-table__th-time t-align-center"
+              class="t-table__th-time t-align-center t-table__th--drag-sort"
               data-colkey="time"
             >
               <div
@@ -115833,7 +115833,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               </div>
             </th>
             <th
-              class="t-table__th-field7"
+              class="t-table__th-field7 t-table__th--drag-sort"
               data-colkey="field7"
             >
               <div
@@ -115843,7 +115843,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
               </div>
             </th>
             <th
-              class="t-table__th-detail.email"
+              class="t-table__th-detail.email t-table__th--drag-sort"
               data-colkey="detail.email"
             >
               <div
@@ -130122,21 +130122,6 @@ exports[`csr snapshot test > csr test ./src/tag/_example/base.vue 1`] = `
   class="t-space t-space-vertical"
   style="gap: 16px;"
 >
-  <div
-    class="t-space-item"
-  >
-    <span
-      class="t-tag t-tag--default t-tag--dark t-tag--ellipsis"
-    >
-      <span
-        class="t-tag--text"
-        style="max-width: 150px;"
-        title="This is a long long long long long tag"
-      >
-        This is a long long long long long tag
-      </span>
-    </span>
-  </div>
   <div
     class="t-space-item"
   >
@@ -154536,19 +154521,6 @@ exports[`csr snapshot test > csr test ./src/upload/_example/single-input.vue 1`]
             >
               未选择文件
             </span>
-            <svg
-              class="t-icon t-icon-close-circle-filled t-upload__single-input-clear"
-              fill="none"
-              height="1em"
-              viewBox="0 0 16 16"
-              width="1em"
-            >
-              <path
-                d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.67 4.95L8 7.29l2.33-2.34.7.7L8.7 8l2.34 2.35-.71.7L8 8.71l-2.33 2.34-.7-.7L7.3 8 4.96 5.65l.71-.7z"
-                fill="currentColor"
-                fill-opacity="0.9"
-              />
-            </svg>
           </div>
         </div>
         <div
