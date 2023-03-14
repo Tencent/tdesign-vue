@@ -21,8 +21,7 @@ export interface TdRangeInputProps {
    */
   clearable?: boolean;
   /**
-   * 是否禁用范围输入框，值为数组表示可分别控制某一个输入框是否禁用
-   * @default false
+   * 是否禁用范围输入框
    */
   disabled?: boolean;
   /**
@@ -67,8 +66,9 @@ export interface TdRangeInputProps {
   size?: 'small' | 'medium' | 'large';
   /**
    * 输入框状态
+   * @default default
    */
-  status?: 'success' | 'warning' | 'error';
+  status?: 'default' | 'success' | 'warning' | 'error';
   /**
    * 后置图标前的后置内容
    */
@@ -100,7 +100,11 @@ export interface TdRangeInputProps {
    */
   onChange?: (
     value: RangeInputValue,
-    context?: { e?: InputEvent | MouseEvent; position?: RangeInputPosition; trigger?: 'input' | 'clear' },
+    context?: {
+      e?: InputEvent | MouseEvent | CompositionEvent;
+      position?: RangeInputPosition;
+      trigger?: 'input' | 'initial' | 'clear';
+    },
   ) => void;
   /**
    * 清空按钮点击时触发
@@ -152,7 +156,6 @@ export interface TdRangeInputPopupProps {
   autoWidth?: boolean;
   /**
    * 是否禁用范围输入框，值为数组表示可分别控制某一个输入框是否禁用
-   * @default false
    */
   disabled?: boolean;
   /**
@@ -166,7 +169,7 @@ export interface TdRangeInputPopupProps {
   /**
    * 下拉框内容，可完全自定义
    */
-  panel?: TNode;
+  panel?: string | TNode;
   /**
    * 透传 Popup 浮层组件全部属性
    */
@@ -186,8 +189,9 @@ export interface TdRangeInputPopupProps {
   readonly?: boolean;
   /**
    * 输入框状态
+   * @default default
    */
-  status?: 'success' | 'warning' | 'error';
+  status?: 'default' | 'success' | 'warning' | 'error';
   /**
    * 输入框下方提示文本，会根据不同的 `status` 呈现不同的样式
    */
