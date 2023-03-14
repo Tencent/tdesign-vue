@@ -1,6 +1,5 @@
 import { PropType } from 'vue';
 import { defineComponent, computed } from '@vue/composition-api';
-import treeNode from '@common/js/tree/tree-node';
 import Item from './Item';
 import { TreeNode, CascaderContextType, CascaderValue } from '../interface';
 import CascaderProps from '../props';
