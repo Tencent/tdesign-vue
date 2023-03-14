@@ -23,7 +23,7 @@ export default {
   },
   /** 下拉框内容，可完全自定义 */
   panel: {
-    type: Function as PropType<TdRangeInputPopupProps['panel']>,
+    type: [String, Function] as PropType<TdRangeInputPopupProps['panel']>,
   },
   /** 透传 Popup 浮层组件全部属性 */
   popupProps: {
@@ -40,9 +40,10 @@ export default {
   /** 输入框状态 */
   status: {
     type: String as PropType<TdRangeInputPopupProps['status']>,
+    default: 'default' as TdRangeInputPopupProps['status'],
     validator(val: TdRangeInputPopupProps['status']): boolean {
       if (!val) return true;
-      return ['success', 'warning', 'error'].includes(val);
+      return ['default', 'success', 'warning', 'error'].includes(val);
     },
   },
   /** 输入框下方提示文本，会根据不同的 `status` 呈现不同的样式 */
