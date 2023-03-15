@@ -31,9 +31,8 @@ export default mixins(getConfigReceiverMixins('sticky-item'), getGlobalIconMixin
     styles(): Styles {
       const styles: Styles = {};
       if (this.baseWidth) {
-        const size = `calc(${this.baseWidth} - 8px)`;
-        styles.width = size;
-        styles.height = size;
+        const selfWidth = this.type === 'normal' ? '56px' : '40px';
+        styles.margin = `calc((${this.baseWidth} - ${selfWidth})/2)`;
       }
       return styles;
     },
