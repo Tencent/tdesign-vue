@@ -30,7 +30,7 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalI
         },
       ];
     },
-    tagStyle(): Styles {
+    textStyle(): Styles {
       if (this.maxWidth) {
         return {
           maxWidth: isNaN(Number(this.maxWidth)) ? this.maxWidth : `${this.maxWidth}px`,
@@ -81,9 +81,13 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalI
     // 图标
     const icon = renderTNodeJSX(this, 'icon');
     return (
-      <span class={this.tagClass} style={this.tagStyle} onClick={this.handleClick}>
+      <span class={this.tagClass} onClick={this.handleClick}>
         {icon}
-        <span class={this.maxWidth ? `${this.componentName}--text` : undefined} attrs={titleAttribute}>
+        <span
+          class={this.maxWidth ? `${this.componentName}--text` : undefined}
+          style={this.textStyle}
+          attrs={titleAttribute}
+        >
           {tagContent}
         </span>
         {!this.disabled ? closeIcon : undefined}

@@ -52,6 +52,20 @@ export default defineComponent({
       );
     },
 
+    renderLabel() {
+      const label = this.renderTNodeJSX('label');
+      const prefixIcon = this.renderTNodeJSX('prefixIcon');
+      if (label && prefixIcon) {
+        return (
+          <div>
+            {label}
+            {prefixIcon}
+          </div>
+        );
+      }
+      return label || prefixIcon;
+    },
+
     getTreePanel() {
       return (
         <div
@@ -159,7 +173,7 @@ export default defineComponent({
               maxWidth: 300,
               ...(this.tagProps as TdTreeSelectProps['tagProps']),
             },
-            label: () => this.renderTNodeJSX('prefixIcon'),
+            label: this.renderLabel,
             suffixIcon: this.renderSuffixIcon,
             onClear: this.clear,
             onBlur: this.onInnerBlur,

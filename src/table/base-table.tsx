@@ -47,6 +47,7 @@ export default defineComponent({
     ...props,
     renderExpandedRow: Function as PropType<BaseTableProps['renderExpandedRow']>,
     onLeafColumnsChange: Function as PropType<BaseTableProps['onLeafColumnsChange']>,
+    thDraggable: Boolean,
   },
 
   setup(props: BaseTableProps, context: SetupContext) {
@@ -67,6 +68,7 @@ export default defineComponent({
     const { global } = useConfig('table');
     const { isMultipleHeader, spansAndLeafNodes, thList } = useTableHeader(props);
     const finalColumns = computed(() => spansAndLeafNodes.value?.leafColumns || props.columns);
+    const isIE = computed(() => getIEVersion() <= 11);
 
     // 吸附相关ref 用来做视图resize后重新定位
     const paginationAffixRef = ref();
@@ -306,20 +308,19 @@ export default defineComponent({
       horizontalScrollAffixRef,
       headerTopAffixRef,
       footerBottomAffixRef,
+      isIE,
     };
   },
 
   methods: {
     renderColGroup(columns: BaseTableCol<TableRowData>[], isAffixHeader = true) {
-      const defaultColWidth = this.tableLayout === 'fixed' && this.isWidthOverflow ? '100px' : undefined;
       return (
         <colgroup>
           {columns.map((col) => {
             const style: Styles = {
-              width:
-                formatCSSUnit(
-                  (isAffixHeader || this.columnResizable ? this.thWidthList[col.colKey] : undefined) || col.width,
-                ) || defaultColWidth,
+              width: formatCSSUnit(
+                (isAffixHeader || this.columnResizable ? this.thWidthList[col.colKey] : undefined) || col.width,
+              ),
             };
             if (col.minWidth) {
               style.minWidth = formatCSSUnit(col.minWidth);
@@ -337,6 +338,8 @@ export default defineComponent({
     getHeadProps(isAffixHeader = true) {
       const headProps = {
         isFixedHeader: this.isFixedHeader,
+        showColumnShadow: this.showColumnShadow,
+        thDraggable: this.thDraggable,
         rowAndColFixedPosition: this.rowAndColFixedPosition,
         isMultipleHeader: this.isMultipleHeader,
         bordered: this.bordered,
@@ -360,13 +363,12 @@ export default defineComponent({
     renderFixedHeader(columns: BaseTableCol<TableRowData>[]) {
       if (!this.showHeader) return null;
       const isVirtual = this.virtualConfig.isVirtualScroll.value;
-      const isIE = getIEVersion() <= 11;
       const barWidth = this.isWidthOverflow ? this.scrollbarWidth : 0;
       // IE 浏览器需要遮挡 header 吸顶滚动条，要减去 getBoundingClientRect.height 的滚动条高度 4 像素
-      const IEHeaderWrap = isIE ? 4 : 0;
+      const IEHeaderWrap = this.isIE ? 4 : 0;
       const affixHeaderHeight = (this.affixHeaderRef?.getBoundingClientRect().height || 0) - IEHeaderWrap;
       // IE 浏览器不需要减去横向滚动条的宽度
-      const affixHeaderWrapHeight = affixHeaderHeight - (isIE ? 0 : barWidth);
+      const affixHeaderWrapHeight = affixHeaderHeight - (this.isIE ? 0 : barWidth);
       // 两类场景：1. 虚拟滚动，永久显示表头，直到表头消失在可视区域； 2. 表头吸顶，根据滚动情况判断是否显示吸顶表头
       const headerOpacity = this.headerAffixedTop ? Number(this.showAffixHeader) : 1;
       const affixHeaderWrapHeightStyle = {
@@ -375,8 +377,8 @@ export default defineComponent({
         opacity: headerOpacity,
       };
       const colgroup = this.renderColGroup(columns, true);
-      // 多级表头左边线缺失
-      const affixedLeftBorder = this.bordered ? 1 : 0;
+      // 多级表头左边线缺失，IE不需要
+      const affixedLeftBorder = this.bordered && !this.isIE ? 1 : 0;
 
       const affixedHeader = Boolean((this.headerAffixedTop || isVirtual) && this.tableWidth) && (
         <div
@@ -407,8 +409,8 @@ export default defineComponent({
      */
     renderAffixedFooter(columns: BaseTableCol<TableRowData>[]) {
       const barWidth = this.isWidthOverflow ? this.scrollbarWidth : 0;
-      // 多级表头左边线缺失
-      const affixedLeftBorder = this.bordered ? 1 : 0;
+      // 多级表头左边线缺失, IE不需要
+      const affixedLeftBorder = this.bordered && !this.isIE ? 1 : 0;
       let marginScrollbarWidth = barWidth;
       if (this.bordered) {
         marginScrollbarWidth += 1;
@@ -479,7 +481,6 @@ export default defineComponent({
     const { rowAndColFixedPosition } = this;
     const data = this.isPaginateData ? this.dataSource : this.data;
     const columns = this.spansAndLeafNodes?.leafColumns || this.columns;
-
     if (this.allowResizeColumnWidth) {
       log.warn('Table', 'allowResizeColumnWidth is going to be deprecated, please use resizable instead.');
     }
@@ -499,6 +500,7 @@ export default defineComponent({
     const tableBodyProps = {
       rowAndColFixedPosition,
       showColumnShadow: this.showColumnShadow,
+      thDraggable: this.thDraggable,
       data: this.virtualConfig.isVirtualScroll.value ? this.virtualConfig.visibleData.value : data,
       virtualConfig: this.virtualConfig,
       columns,

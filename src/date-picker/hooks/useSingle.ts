@@ -38,6 +38,7 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
   const inputProps = computed(() => ({
     ...props.inputProps,
     ref: inputRef,
+    size: props.size,
     prefixIcon: props.prefixIcon,
     placeholder: props.placeholder || global.value.placeholder[props.mode],
     class: [
@@ -68,7 +69,7 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
       cacheValue.value = val;
       const newMonth = parseToDayjs(val, formatRef.value.format).month();
       const newYear = parseToDayjs(val, formatRef.value.format).year();
-      const newTime = formatTime(val, formatRef.value.timeFormat);
+      const newTime = formatTime(val, formatRef.value.timeFormat, props.defaultTime);
       !Number.isNaN(newYear) && (year.value = newYear);
       !Number.isNaN(newMonth) && (month.value = newMonth);
       !Number.isNaN(newTime) && (time.value = newTime);

@@ -6,6 +6,8 @@
 
 import { TNode, ClassName, Styles, AttachNode } from '../common';
 
+export type PopupMethod = (triggerElement: string, content: string | TNode, popupProps?: object) => void;
+
 export interface TdPopupProps {
   /**
    * 制定挂载节点。数据类型为 String 时，会被当作选择器处理，进行节点查询。示例：'body' 或 () => document.body

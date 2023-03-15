@@ -1,5 +1,5 @@
 import {
-  SetupContext, ref, watch, toRefs, onUnmounted, computed,
+  SetupContext, ref, watch, toRefs, onUnmounted, computed, shallowRef,
 } from '@vue/composition-api';
 import { AddRectangleIcon as TdAddRectangleIcon, MinusRectangleIcon as TdMinusRectangleIcon } from 'tdesign-icons-vue';
 import cloneDeep from 'lodash/cloneDeep';
@@ -28,7 +28,7 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
     MinusRectangleIcon: TdMinusRectangleIcon,
   });
   const store = ref(new TableTreeStore() as InstanceType<typeof TableTreeStore>);
-  const treeNodeCol = ref<PrimaryTableCol>();
+  const treeNodeCol = shallowRef<PrimaryTableCol>();
   const dataSource = ref<TdEnhancedTableProps['data']>([]);
   const { tableTreeClasses } = useClassName();
   const renderTNode = useTNodeDefault();

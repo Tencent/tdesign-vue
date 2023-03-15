@@ -12,8 +12,6 @@
 </template>
 
 <script>
-import dayjs from 'dayjs';
-
 export default {
   data() {
     return {
@@ -21,12 +19,6 @@ export default {
       date2: '',
       firstDayOfWeek: 3,
       inputProps: { inputClass: 'test-inputClass' },
-      presets: {
-        昨天: dayjs().subtract(1, 'day').format('YYYY-MM-DD'),
-      },
-      timePickerProps: {
-        value: '13:00:00',
-      },
     };
   },
   methods: {
