@@ -1,10 +1,10 @@
 <template>
   <t-space align="center" :size="32">
-    <t-badge dot>
+    <t-badge dot :count="2">
       <div class="badge-block"></div>
     </t-badge>
-    <t-badge dot>解锁新徽章</t-badge>
-    <t-badge dot>
+    <t-badge dot :count="99">解锁新徽章</t-badge>
+    <t-badge dot :count="100">
       <svg class="t-icon" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" style="font-size: 24px">
         <!-- eslint-disable-next-line max-len  -->
         <path

@@ -370,6 +370,7 @@ export default defineComponent({
       bottomContent,
       firstFullRow,
       lastFullRow,
+      thDraggable: this.$props.dragSort === 'col',
       renderExpandedRow: this.showExpandedRow ? this.renderExpandedRow : undefined,
     };
 

@@ -14,7 +14,7 @@ export default {
   },
   /** 是否可清空 */
   clearable: Boolean,
-  /** 是否禁用范围输入框，值为数组表示可分别控制某一个输入框是否禁用 */
+  /** 是否禁用范围输入框 */
   disabled: Boolean,
   /** 指定输入框展示值的格式 */
   format: {
@@ -57,9 +57,10 @@ export default {
   /** 输入框状态 */
   status: {
     type: String as PropType<TdRangeInputProps['status']>,
+    default: 'default' as TdRangeInputProps['status'],
     validator(val: TdRangeInputProps['status']): boolean {
       if (!val) return true;
-      return ['success', 'warning', 'error'].includes(val);
+      return ['default', 'success', 'warning', 'error'].includes(val);
     },
   },
   /** 后置图标前的后置内容 */

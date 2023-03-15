@@ -2,6 +2,8 @@
  * important info: only resize happened, th width calculating allowed
  * 验证场景：多级表头调整叶子结点列宽、吸顶表头调整列宽、列数量发生变化、表格未超出、表格已超出
  * - 固定列，调整列宽，需要更新固定位置；右侧固定列，调整列宽，需特殊处理
+ * - 当表格内容没有超出时，即没有出现横向滚动条时，此时认为表格有足够的列宽呈现内容，修改宽度为相邻宽度调整
+ * - 当表格内容超出，出现横向滚动条时，会自动调整当前列宽和表格总列宽，不影响相邻列宽
  */
 import { ref, Ref, reactive } from '@vue/composition-api';
 import isNumber from 'lodash/isNumber';
@@ -185,7 +187,7 @@ export default function useColumnResize(params: {
   };
 
   // 调整表格列宽
-  const onColumnMousedown = (e: MouseEvent, col: BaseTableCol<TableRowData>) => {
+  const onColumnMousedown = (e: MouseEvent, col: BaseTableCol<TableRowData>, index: number) => {
     if (!resizeLineParams.draggingCol) return;
     const target = resizeLineParams.draggingCol;
     const targetBoundRect = target.getBoundingClientRect();
@@ -221,12 +223,14 @@ export default function useColumnResize(params: {
        */
       const thWidthList = getThWidthList('calculate');
       const currentCol = effectColMap.value[col.colKey]?.current;
-      if (!currentCol) return;
       const currentSibling = resizeLineParams.effectCol === 'next' ? currentCol.prevSibling : currentCol.nextSibling;
       // 多行表头，列宽为最后一层的宽度，即叶子结点宽度
       const newThWidthList = { ...thWidthList };
       // 当前列不允许修改宽度，就调整相邻列的宽度
       const tmpCurrentCol = col.resizable !== false ? col : currentSibling;
+      // 是否允许调整相邻列宽：列宽未超出时，且并非是最后一列（最后一列的右侧拉伸会认为是表格整体宽度调整）
+      const canResizeSiblingColWidth = !(isWidthOverflow.value || index === leafColumns.value.length - 1);
+
       if (resizeLineParams.effectCol === 'next') {
         // 右侧激活态的固定列，需特殊调整
         if (isColRightFixActive(col)) {
@@ -239,12 +243,12 @@ export default function useColumnResize(params: {
         } else {
           // 非右侧激活态的固定列
           newThWidthList[tmpCurrentCol.colKey] -= moveDistance;
-          if (!isWidthOverflow.value) {
+          if (canResizeSiblingColWidth) {
             newThWidthList[effectNextCol.colKey] += moveDistance;
           }
         }
       } else if (resizeLineParams.effectCol === 'prev') {
-        if (!isWidthOverflow.value) {
+        if (canResizeSiblingColWidth) {
           newThWidthList[tmpCurrentCol.colKey] += moveDistance;
         }
         newThWidthList[effectPrevCol.colKey] -= moveDistance;

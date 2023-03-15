@@ -71,12 +71,6 @@ export default {
               clearable: true,
               autofocus: true,
             },
-            // 透传给 component: Input 的事件
-            on: (editContext) => ({
-              blur: () => {
-                console.log('失去焦点', editContext);
-              },
-            }),
             // 除了点击非自身元素退出编辑态之外，还有哪些事件退出编辑态
             abortEditOnEvent: ['onEnter'],
             // 编辑完成，退出编辑态后触发
@@ -92,6 +86,18 @@ export default {
             ],
             // 默认是否为编辑状态
             defaultEditable: true,
+            // 校验时机：exit | change
+            validateTrigger: 'change',
+            // 透传给 component: Input 的事件
+            on: (editContext) => ({
+              onBlur: () => {
+                console.log('失去焦点', editContext);
+              },
+              // both onEnter and enter can work
+              onEnter: (ctx) => {
+                console.log('回车', ctx);
+              },
+            }),
           },
         },
         {
@@ -106,7 +112,7 @@ export default {
               options: STATUS_OPTIONS,
             },
             // 除了点击非自身元素退出编辑态之外，还有哪些事件退出编辑态
-            abortEditOnEvent: ['onChange'],
+            // abortEditOnEvent: ['onChange'],
             // 编辑完成，退出编辑态后触发
             onEdited: (context) => {
               this.data.splice(context.rowIndex, 1, context.newRowData);
