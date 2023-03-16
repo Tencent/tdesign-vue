@@ -229,6 +229,7 @@ export default defineComponent({
           multiple={this.multiple}
           accept={this.accept}
           hidden
+          attrs={this.inputAttributes}
         />
         {['file', 'file-input'].includes(this.theme) && !this.draggable && this.getNormalFileNode()}
         {['file', 'image'].includes(this.theme) && this.draggable && this.getSingleFileDraggerUploadNode()}
