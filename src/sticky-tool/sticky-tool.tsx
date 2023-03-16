@@ -67,7 +67,7 @@ export default mixins(getConfigReceiverMixins('sticky-tool')).extend({
     getList() {
       const nodes = this.$scopedSlots?.default && this.$scopedSlots.default(null);
       let list: Array<TdStickyItemProps>;
-      if (this.list && this.list.length) {
+      if (this.list?.length) {
         list = this.list;
       } else {
         list = this.getListBySlots(nodes);
