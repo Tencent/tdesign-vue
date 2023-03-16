@@ -18,6 +18,8 @@ import { renderCell } from './tr';
 import { validate } from '../form/form-model';
 import log from '../_common/js/log';
 import { AllValidateResult } from '../form/type';
+import { off, on } from '../utils/dom';
+import { usePrefixClass } from '../config-provider/useConfig';
 
 export interface OnEditableChangeContext<T> extends PrimaryTableRowEditContext<T> {
   isEdit: boolean;
@@ -79,8 +81,20 @@ export default defineComponent({
     const isEdit = ref(props.col.edit?.defaultEditable || false);
     const editValue = ref();
     const errorList = ref<AllValidateResult[]>();
+    const classPrefix = usePrefixClass();
 
     const { Edit1Icon } = useGlobalIcon({ Edit1Icon: TdEdit1Icon });
+    const editOnListeners = computed(() => {
+      const listeners = col.value.edit?.on?.({ ...cellParams.value, editedRow: currentRow.value }) || {};
+      // example: onEnter-> enter
+      Object.keys(listeners).forEach((eventName) => {
+        if (eventName.slice(0, 2) === 'on') {
+          listeners[eventName.slice(2).toLocaleLowerCase()] = listeners[eventName];
+          delete listeners[eventName];
+        }
+      });
+      return listeners;
+    });
 
     const currentRow = computed(() => {
       const newRow = { ...row.value };
@@ -155,6 +169,7 @@ export default defineComponent({
         params.result[0].errorList = list;
         props.onValidate?.(params);
         if (!list || !list.length) {
+          errorList.value = [];
           resolve(true);
         } else {
           errorList.value = list;
@@ -170,7 +185,7 @@ export default defineComponent({
       return a === b;
     };
 
-    const updateAndSaveAbort = (outsideAbortEvent: Function, ...args: any) => {
+    const updateAndSaveAbort = (outsideAbortEvent: Function, eventName: string, ...args: any) => {
       validateEdit('self').then((result) => {
         if (result !== true) return;
         const oldValue = get(row.value, col.value.colKey);
@@ -179,6 +194,8 @@ export default defineComponent({
           editValue.value = oldValue;
           outsideAbortEvent?.(...args);
         }
+        // Use enter for listeners in Vue2, instead of onEnter
+        editOnListeners.value[eventName]?.(args[2]);
         // 此处必须在事件执行完成后异步销毁编辑组件，否则会导致事件清除不及时引起的其他问题
         const timer = setTimeout(() => {
           isEdit.value = false;
@@ -210,6 +227,7 @@ export default defineComponent({
         tListeners[eventName] = (...args: any) => {
           updateAndSaveAbort(
             outsideAbortEvent,
+            eventName,
             {
               ...cellParams.value,
               trigger: itemEvent,
@@ -238,6 +256,7 @@ export default defineComponent({
         const outsideAbortEvent = col.value.edit?.onEdited;
         updateAndSaveAbort(
           outsideAbortEvent,
+          'change',
           {
             ...cellParams.value,
             trigger: 'onChange',
@@ -246,13 +265,20 @@ export default defineComponent({
           ...args,
         );
       }
+      if (col.value.edit?.validateTrigger === 'change') {
+        validateEdit('self');
+      }
     };
 
-    const documentClickHandler = () => {
+    const documentClickHandler = (e: MouseEvent) => {
       if (!col.value.edit || !col.value.edit.component) return;
       if (!isEdit.value) return;
+      // @ts-ignore some browser is also only support e.path
+      const path = e.composedPath?.() || e.path || [];
+      const node = path.find((node: HTMLElement) => node.classList?.contains(`${classPrefix.value}-popup__content`));
+      if (node) return;
       const outsideAbortEvent = col.value.edit.onEdited;
-      updateAndSaveAbort(outsideAbortEvent, {
+      updateAndSaveAbort(outsideAbortEvent, '', {
         ...cellParams.value,
         trigger: 'document',
         newRowData: currentRow.value,
@@ -297,9 +323,9 @@ export default defineComponent({
         const isCellEditable = props.editable === undefined;
         if (!col.value.edit || !col.value.edit.component || !isCellEditable) return;
         if (isEdit) {
-          document.addEventListener('click', documentClickHandler);
+          on(document, 'click', documentClickHandler);
         } else {
-          document.removeEventListener('click', documentClickHandler);
+          off(document, 'click', documentClickHandler);
         }
       },
       { immediate: true },
@@ -339,6 +365,7 @@ export default defineComponent({
       tableEditableCellRef,
       errorList,
       currentRow,
+      editOnListeners,
       onEditChange,
       Edit1Icon,
       validateEdit,
@@ -368,19 +395,29 @@ export default defineComponent({
       return null;
     }
     const errorMessage = this.errorList?.[0]?.message;
+    const tmpEditOnListeners = { ...this.editOnListeners };
+    // remove conflict events
+    if (this.col.edit?.abortEditOnEvent?.length) {
+      this.col.edit.abortEditOnEvent.forEach((onEventName) => {
+        const vue2EventName = onEventName.slice(2).toLocaleLowerCase();
+        if (tmpEditOnListeners[vue2EventName]) {
+          delete tmpEditOnListeners[vue2EventName];
+        }
+      });
+    }
     return (
       <div
         class={this.tableBaseClass?.cellEditWrap}
+        ref="tableEditableCellRef"
         onClick={(e: MouseEvent) => {
           e.stopPropagation();
         }}
       >
         <Component
-          ref="tableEditableCellRef"
           status={errorMessage ? this.errorList?.[0]?.type || 'error' : undefined}
           tips={errorMessage}
           props={this.componentProps}
-          on={{ ...this.listeners, ...this.col.edit?.on?.({ ...this.cellParams, editedRow: this.currentRow }) }}
+          on={{ ...this.listeners, ...tmpEditOnListeners }}
           value={this.editValue}
           onChange={this.onEditChange}
         />

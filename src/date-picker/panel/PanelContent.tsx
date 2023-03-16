@@ -42,12 +42,10 @@ export default defineComponent({
       enableTimePicker: props.enableTimePicker,
     });
 
-    const defaultTimeValue = '00:00:00';
-
-    return { COMPONENT_NAME, defaultTimeValue, timeFormat };
+    return { COMPONENT_NAME, timeFormat };
   },
   render() {
-    const { COMPONENT_NAME, defaultTimeValue, timeFormat } = this;
+    const { COMPONENT_NAME, timeFormat } = this;
 
     return (
       <div class={`${COMPONENT_NAME}-content`}>
@@ -84,13 +82,13 @@ export default defineComponent({
 
         {this.enableTimePicker && (
           <div class={`${COMPONENT_NAME}-time`}>
-            <div class={`${COMPONENT_NAME}-time-viewer`}>{this.time || defaultTimeValue}</div>
+            <div class={`${COMPONENT_NAME}-time-viewer`}>{this.time}</div>
             <TTimePickerPanel
               {...{
                 key: this.partial,
                 props: {
                   format: timeFormat,
-                  value: this.time || defaultTimeValue,
+                  value: this.time,
                   onChange: this.onTimePickerChange,
                   isShowPanel: this.popupVisible,
                   ...this.timePickerProps,

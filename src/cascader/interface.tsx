@@ -32,6 +32,7 @@ export interface CascaderContextType
   inputVal: TdSelectInputProps['inputValue'];
   setInputVal: (val: TdSelectInputProps['inputValue']) => void;
   setExpend: (val: TreeNodeValue[]) => void;
+  cascaderValue: CascaderValue;
 }
 
 export { TreeNode } from '../_common/js/tree/tree-node';

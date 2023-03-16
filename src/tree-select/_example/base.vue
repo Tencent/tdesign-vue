@@ -21,7 +21,6 @@
       v-model="value2"
       label="单选："
       :treeProps="{ expandAll: true, valueMode: 'onlyLeaf' }"
-      filterable
       clearable
       placeholder="请选择（显示选中节点的全部路径）"
       @blur="onBlurTrigger"

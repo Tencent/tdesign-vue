@@ -343,6 +343,8 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
       const labelWidth = isNil(this.labelWidth) ? parent?.labelWidth : this.labelWidth;
       const labelAlign = isNil(this.labelAlign) ? parent?.labelAlign : this.labelAlign;
       if (Number(labelWidth) === 0) return;
+      const labelContent = this.getLabelContent();
+      if (!labelContent) return null;
 
       let labelStyle = {};
       if (labelWidth && labelAlign !== 'top') {
@@ -355,7 +357,7 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
 
       return (
         <div class={this.labelClasses} style={labelStyle}>
-          <label for={this.for}>{this.getLabelContent()}</label>
+          <label for={this.for}>{labelContent}</label>
         </div>
       );
     },

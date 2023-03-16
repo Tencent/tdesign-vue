@@ -1,7 +1,7 @@
 import { PropType } from 'vue';
 import { defineComponent, computed } from '@vue/composition-api';
 import Item from './Item';
-import { TreeNode, CascaderContextType } from '../interface';
+import { TreeNode, CascaderContextType, CascaderValue } from '../interface';
 import CascaderProps from '../props';
 import { usePrefixClass, useConfig } from '../../hooks/useConfig';
 import { useTNodeDefault } from '../../hooks/tnode';
@@ -25,6 +25,10 @@ export default defineComponent({
     const renderTNodeJSXDefault = useTNodeDefault();
     const COMPONENT_NAME = usePrefixClass('cascader');
     const { global } = useConfig('cascader');
+    const {
+      valueType, cascaderValue, treeStore, multiple,
+    } = props.cascaderContext;
+    const { config } = treeStore;
 
     const panels = computed(() => getPanels(props.cascaderContext.treeNodes));
 
@@ -32,6 +36,13 @@ export default defineComponent({
       const { trigger: propsTrigger, cascaderContext } = props;
       expendClickEffect(propsTrigger, trigger, node, cascaderContext);
     };
+
+    // 异步加载回显时默认触发第一个值
+    if (config.load && valueType === 'full' && (cascaderValue as Array<CascaderValue>).length > 0) {
+      const firstValue = multiple ? cascaderValue[0][0] : cascaderValue[0];
+      const firstExpandNode = treeStore.nodes.find((node: TreeNode) => node.value === firstValue);
+      handleExpand(firstExpandNode, 'click');
+    }
 
     return {
       global,

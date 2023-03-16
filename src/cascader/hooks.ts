@@ -52,6 +52,7 @@ export const useContext = (
         showAllLevels,
         minCollapsedNum,
         valueType,
+        value,
       } = props;
       return {
         value: statusContext.scopeVal,
@@ -68,6 +69,7 @@ export const useContext = (
         minCollapsedNum,
         valueType,
         visible: innerPopupVisible.value,
+        cascaderValue: value,
         ...statusContext,
         setTreeNodes: (nodes: TreeNode[]) => {
           statusContext.treeNodes = nodes;
@@ -118,6 +120,34 @@ export const useCascaderContext = (props: TdCascaderProps) => {
     treeStore.replaceChecked(getTreeValue(value));
   };
 
+  // 根据已有的值异步加载子树
+  const loadChildrenByValue = () => {
+    const { value, multiple } = props;
+    const { treeStore } = statusContext;
+    // 异步加载时子级回显
+    if (value instanceof Array) {
+      // 单选
+      if (!multiple && value.length > treeStore.expandedMap.size) {
+        const expanded = value.slice(0, treeStore.expandedMap.size + 1);
+        treeStore.setExpanded(expanded);
+      }
+      // 多选, 展开选择了第一个数组的列
+      // todo 目前只是展开选择了第一个数组的列，其他选中的半选状态没有处理，且在取消时由于没有节点，数据会被误删除
+      if (multiple) {
+        if (value.length > 0) {
+          // 处理第一个数组的值
+          const firstValue = value[0] as Array<string | number>;
+          if (firstValue.length > treeStore.expandedMap.size) {
+            treeStore.setExpanded(firstValue.slice(0, treeStore.expandedMap.size + 1));
+          }
+        }
+        // 加载时给所有的选中列表重新设置value，以刷新已选择的值
+        const lastValues = value.map((item: Array<string | number>) => item[item.length - 1]);
+        treeStore.setChecked(lastValues);
+      }
+    }
+  };
+
   watch(
     () => props.options,
     () => {
@@ -145,6 +175,7 @@ export const useCascaderContext = (props: TdCascaderProps) => {
             nextTick(() => {
               store.refreshNodes();
               updatedTreeNodes();
+              loadChildrenByValue();
             });
           },
         });
