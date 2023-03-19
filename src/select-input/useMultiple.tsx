@@ -77,7 +77,7 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
       suffixIcon: !props.disabled && props.loading ? () => <Loading loading size="small" /> : props.suffixIcon,
       ...props.tagInputProps,
     };
-
+    // eslint-disable-next-line
     const { tips, ...slots } = context.slots;
     return (
       <TagInput
