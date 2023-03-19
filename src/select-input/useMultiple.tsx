@@ -78,10 +78,11 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
       ...props.tagInputProps,
     };
 
+    const { tips, ...slots } = context.slots;
     return (
       <TagInput
         ref="tagInputRef"
-        scopedSlots={context.slots}
+        scopedSlots={slots}
         props={tagInputProps}
         on={{
           'input-change': (val: InputValue, ctx: InputValueChangeContext) => {
