@@ -77,11 +77,12 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
       suffixIcon: !props.disabled && props.loading ? () => <Loading loading size="small" /> : props.suffixIcon,
       ...props.tagInputProps,
     };
-
+    // eslint-disable-next-line
+    const { tips, ...slots } = context.slots;
     return (
       <TagInput
         ref="tagInputRef"
-        scopedSlots={context.slots}
+        scopedSlots={slots}
         props={tagInputProps}
         on={{
           'input-change': (val: InputValue, ctx: InputValueChangeContext) => {
