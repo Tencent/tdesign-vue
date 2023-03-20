@@ -49,6 +49,12 @@ export default function useRowSelect(
     canSelectedRows.value.map((t) => get(t, props.rowKey || 'id')),
   ));
 
+  const allowUncheck = computed(() => {
+    const singleSelectCol = columns.value.find((col) => col.type === 'single');
+    if (!singleSelectCol || !singleSelectCol.checkProps || !('allowUncheck' in singleSelectCol.checkProps)) return false;
+    return singleSelectCol.checkProps.allowUncheck;
+  });
+
   watch(
     [data, pagination, reserveSelectedRowOnPaginate],
     () => {
@@ -151,7 +157,7 @@ export default function useRowSelect(
     if (selectColumn.value.type === 'multiple') {
       isExisted ? selectedRowKeys.splice(selectedRowIndex, 1) : selectedRowKeys.push(id);
     } else if (selectColumn.value.type === 'single') {
-      selectedRowKeys = !isExisted ? [id] : [];
+      selectedRowKeys = isExisted && allowUncheck.value ? [] : [id];
     } else {
       log.warn('Table', '`column.type` must be one of `multiple` and `single`');
       return;
