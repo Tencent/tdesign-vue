@@ -343,7 +343,12 @@ export default defineComponent({
         />
         <div class={[`${baseClassName}__body`]}>
           {isGradient ? (
-            <linear-gradient color={this.color} disabled={this.disabled} handleChange={this.handleGradientChange} />
+            <linear-gradient
+              color={this.color}
+              disabled={this.disabled}
+              handleChange={this.handleGradientChange}
+              enableMultipleGradient={this.enableMultipleGradient}
+            />
           ) : null}
           <saturation-panel color={this.color} disabled={this.disabled} handleChange={this.handleSatAndValueChange} />
           <div class={[`${baseClassName}__sliders-wrapper`]}>

@@ -8,7 +8,7 @@ import { TimeIcon as TdTimeIcon } from 'tdesign-icons-vue';
 import TimePickerPanel from './panel/time-picker-panel';
 import TSelectInput from '../select-input';
 import { formatInputValue, validateInputValue } from '../_common/js/time-picker/utils';
-
+import type { InputProps } from '../input';
 // hooks
 import useVModel from '../hooks/useVModel';
 import { useConfig, usePrefixClass } from '../hooks/useConfig';
@@ -138,7 +138,7 @@ export default defineComponent({
               placeholder: !this.innerValue ? this.placeholder || this.global.placeholder : undefined,
               value: this.isShowPanel ? this.currentValue : this.innerValue ?? undefined,
               inputValue: this.isShowPanel ? this.currentValue : this.innerValue ?? undefined,
-              inputProps: this.inputProps,
+              inputProps: { ...(this.inputProps as InputProps), size: this.size },
               status: this.status,
               tips: this.tips,
               panel: () => (
