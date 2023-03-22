@@ -73,7 +73,7 @@ export default defineComponent({
     const { hasLazyLoadHolder = null, tRowHeight = null } = useLazyLoad(
       panelElement,
       optionNode,
-      reactive({ type: scrollType, bufferSize, rowIndex: props.rowIndex }),
+      reactive({ type: scrollType, bufferSize }),
     );
 
     const isHover = ref(false);
