@@ -88,9 +88,9 @@ export default defineComponent({
       ctx.emit('focus', context);
     };
 
-    const handleOnPick = (v: string) => {
-      props.onPick?.(v);
-      ctx.emit('pick', v);
+    const handleOnPick = (v: string, e: MouseEvent) => {
+      props.onPick?.(v, { e });
+      ctx.emit('pick', v, { e });
     };
 
     watch(
