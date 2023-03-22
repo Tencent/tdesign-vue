@@ -15,12 +15,7 @@ export default mixins(getConfigReceiverMixins('sticky-tool')).extend({
   props: { ...props },
   computed: {
     classes(): ClassName {
-      return [
-        this.componentName,
-        `${this.componentName}--${this.shape}`,
-        `${this.componentName}--${this.shape}--${this.type}`,
-        `${this.componentName}--${this.placement}`,
-      ];
+      return [this.componentName, `${this.componentName}--${this.shape}`];
     },
     styles(): Styles {
       const styles = this.getOffset();
