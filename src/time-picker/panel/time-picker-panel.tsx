@@ -50,10 +50,10 @@ export default defineComponent({
       triggerScroll.value = false;
     };
 
-    const handleChange = (v: string) => {
+    const handleChange = (v: string, e: MouseEvent) => {
       // 触发onPick事件
-      props.onPick?.(v);
-      ctx.emit('pick', v); // 处理直接使用panel的场景 支持@/v-on语法
+      props.onPick?.(v, e);
+      ctx.emit('pick', v, e); // 处理直接使用panel的场景 支持@/v-on语法
 
       props.onChange?.(v);
       ctx.emit('change', v); // 处理直接使用panel的场景 支持@/v-on语法
