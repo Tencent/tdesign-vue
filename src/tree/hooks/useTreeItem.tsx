@@ -35,10 +35,7 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
   const { hasLazyLoadHolder, tRowHeight } = useLazyLoad(
     treeContentRef,
     treeItemRef,
-    reactive({
-      ...scrollProps?.value,
-      rowIndex: props.rowIndex,
-    }),
+    reactive({ ...scrollProps?.value }),
   );
 
   onMounted(() => {
