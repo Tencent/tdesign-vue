@@ -21,7 +21,7 @@ export default {
       console.log('close');
     },
     pick(v) {
-      console.log(v, 'vv');
+      console.log(v);
     },
   },
 };
