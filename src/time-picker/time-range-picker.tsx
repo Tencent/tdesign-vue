@@ -14,7 +14,7 @@ import { formatInputValue, validateInputValue } from '../_common/js/time-picker/
 // interfaces
 import props from './time-range-picker-props';
 import { TimeRangeValue } from './interface';
-
+import type { TimeRangePickerPartial } from './type';
 // hooks
 import useVModel from '../hooks/useVModel';
 import { useConfig, usePrefixClass } from '../hooks/useConfig';
@@ -111,15 +111,15 @@ export default defineComponent({
       ctx.emit('focus', { value, e, position: position === 'first' ? 'start' : 'end' });
     };
 
-    const handleOnPick = (pickValue: string) => {
+    const handleOnPick = (pickValue: string, e: MouseEvent) => {
       let pickedRangeValue = [];
-      let context = {};
+      let context: { e: MouseEvent; position?: TimeRangePickerPartial } = { e };
       if (currentPanelIdx.value === 0) {
         pickedRangeValue = [pickValue, currentValue.value[1] ?? pickValue];
-        context = { position: 'start' };
+        context = { position: 'start', e };
       } else {
         pickedRangeValue = [currentValue.value[0] ?? pickValue, pickValue];
-        context = { position: 'end' };
+        context = { position: 'end', e };
       }
       props.onPick?.(pickedRangeValue, context);
       ctx.emit('pick', pickedRangeValue, context);

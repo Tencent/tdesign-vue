@@ -91,12 +91,13 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
       },
       ...props.inputProps,
     };
-
+    // eslint-disable-next-line
+    const { tips, ...slots } = context.slots;
     return (
       <Input
         ref="inputRef"
         props={inputProps}
-        scopedSlots={context.slots}
+        scopedSlots={slots}
         onChange={onInnerInputChange}
         onClear={onInnerClear}
         onEnter={(val: InputValue, context: { e: KeyboardEvent }) => {

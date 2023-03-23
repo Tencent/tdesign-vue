@@ -6,6 +6,7 @@
 
 import { InputProps } from '../input';
 import { PopupProps } from '../popup';
+import { SelectInputBlurContext } from '../select-input';
 import { RangeInputProps } from '../range-input';
 import { TNode } from '../common';
 
@@ -30,7 +31,6 @@ export interface TdTimePickerProps {
   ) => Partial<{ hour: Array<number>; minute: Array<number>; second: Array<number> }>;
   /**
    * 是否禁用组件
-   * @default false
    */
   disabled?: boolean;
   /**
@@ -60,7 +60,13 @@ export interface TdTimePickerProps {
    */
   presets?: PresetTime;
   /**
+   * 尺寸
+   * @default medium
+   */
+  size?: 'small' | 'medium' | 'large';
+  /**
    * 输入框状态
+   * @default default
    */
   status?: 'default' | 'success' | 'warning' | 'error';
   /**
@@ -109,7 +115,7 @@ export interface TdTimePickerProps {
   /**
    * 面板选中值后触发
    */
-  onPick?: (value: TimePickerValue) => void;
+  onPick?: (value: TimePickerValue, context: { e: MouseEvent }) => void;
 }
 
 export interface TdTimeRangePickerProps {
@@ -134,7 +140,6 @@ export interface TdTimeRangePickerProps {
   ) => Partial<{ hour: Array<number>; minute: Array<number>; second: Array<number> }>;
   /**
    * 是否禁用组件，值为数组表示可分别控制开始日期和结束日期是否禁用
-   * @default false
    */
   disabled?: boolean | Array<boolean>;
   /**
@@ -164,7 +169,13 @@ export interface TdTimeRangePickerProps {
    */
   rangeInputProps?: RangeInputProps;
   /**
+   * 尺寸
+   * @default medium
+   */
+  size?: 'small' | 'medium' | 'large';
+  /**
    * 输入框状态
+   * @default default
    */
   status?: 'default' | 'success' | 'warning' | 'error';
   /**
@@ -203,7 +214,7 @@ export interface TdTimeRangePickerProps {
   /**
    * 面板选中值后触发
    */
-  onPick?: (value: TimeRangeValue, context: { position?: TimeRangePickerPartial }) => void;
+  onPick?: (value: TimeRangeValue, context: { e: MouseEvent; position?: TimeRangePickerPartial }) => void;
 }
 
 export interface PresetTime {

@@ -873,7 +873,7 @@ describe('TreeSelect Component', () => {
     expect(onFocusFn.mock.calls[0][0].e.type).toBe('focus');
     expect(onFocusFn.mock.calls[0][0].value).toBe(1);
     simulateDocumentMouseEvent(document, 'mousedown');
-    await wrapper.vm.$nextTick();
+    await new Promise(setTimeout);
     document.querySelectorAll('.t-popup').forEach((node) => node.remove());
     expect(onBlurFn1).toHaveBeenCalled();
     expect(onBlurFn1.mock.calls[0][0].e.type).toBe('mousedown');
@@ -893,7 +893,7 @@ describe('TreeSelect Component', () => {
     expect(onFocusFn).toHaveBeenCalled();
     expect(onFocusFn.mock.calls[0][0].e.type).toBe('focus');
     simulateDocumentMouseEvent(document, 'mousedown');
-    await wrapper.vm.$nextTick();
+    await new Promise(setTimeout);
     document.querySelectorAll('.t-popup').forEach((node) => node.remove());
     expect(onBlurFn1).toHaveBeenCalled();
     expect(onBlurFn1.mock.calls[0][0].e.type).toBe('mousedown');

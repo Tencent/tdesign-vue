@@ -35,6 +35,7 @@ export interface TableFilterControllerProps {
   };
   isFocusClass: string;
   column: PrimaryTableCol;
+  colIndex: number;
   primaryTableElement: HTMLDivElement;
   popupProps: PopupProps;
   attach?: AttachNode;
@@ -45,6 +46,7 @@ export default defineComponent({
 
   props: {
     column: Object as PropType<TableFilterControllerProps['column']>,
+    colIndex: Number,
     tFilterValue: Object as PropType<TableFilterControllerProps['tFilterValue']>,
     innerFilterValue: Object as PropType<TableFilterControllerProps['innerFilterValue']>,
     tableFilterClasses: Object as PropType<TableFilterControllerProps['tableFilterClasses']>,
@@ -216,7 +218,12 @@ export default defineComponent({
         )}
         props={popupProps}
       >
-        <div ref="triggerElementRef">{this.renderTNode('filterIcon', defaultFilterIcon)}</div>
+        <div ref="triggerElementRef">
+          {this.renderTNode('filterIcon', {
+            defaultNode: defaultFilterIcon,
+            params: { col: column, colIndex: this.colIndex },
+          })}
+        </div>
       </Popup>
     );
   },

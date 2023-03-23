@@ -296,6 +296,9 @@ export default defineComponent({
       scrollToElement: (data: any) => {
         primaryTableRef.value.virtualConfig.scrollToElement(data);
       },
+      scrollColumnIntoView: (colKey: string) => {
+        primaryTableRef.value.scrollColumnIntoView(colKey);
+      },
       validateRowData,
       validateTableData,
       clearValidateData,

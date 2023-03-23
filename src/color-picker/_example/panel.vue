@@ -20,6 +20,7 @@
         @change="handleChange"
         @palette-bar-change="handlePaletteChange"
         @recent-colors-change="handleRecentColorsChange"
+        :enable-multiple-gradient="false"
       /></t-space>
   </t-space>
 </template>

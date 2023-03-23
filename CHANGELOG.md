@@ -5,6 +5,23 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.2.3 `2023-03-23` 
+### 🚀 Features
+- `Table`: @chaishi ([#2251](https://github.com/Tencent/tdesign-vue/pull/2251))
+  - 支持使用 `filterIcon` 支持不同列显示不同的筛选图标，[issue#2088](https://github.com/Tencent/tdesign-vue/issues/2088)
+  - 支持横向滚动到固定列，[issue#1992](https://github.com/Tencent/tdesign-vue/issues/1992)
+- `ColorPicker`: 新增`enableMultipleGradient`, 支持渐变色只存在起始和结束梯度 @uyarn ([#2260](https://github.com/Tencent/tdesign-vue/pull/2260))
+- `TimePicker`: 新增`size` API , 用于控制时间输入框大小，`pick`事件增加`context`回调参数 @uyarn ([#2260](https://github.com/Tencent/tdesign-vue/pull/2260))
+- `Dropdown`: 支持透传popupProps的`on-visible-change`的写法 @uyarn ([#2260](https://github.com/Tencent/tdesign-vue/pull/2260))
+### 🐞 Bug Fixes
+- `Popup`: 修复需多次点击才能关闭的问题 @ikeq ([#2247](https://github.com/Tencent/tdesign-vue/pull/2247))
+- `TreeSelect`:
+  - 修复树选择组件，在表格组件里面时，显示两个 Tips 的问题，[issue#2131](https://github.com/Tencent/tdesign-vue/issues/2131) @chaishi ([#2251](https://github.com/Tencent/tdesign-vue/pull/2251))
+- `Tree`: 修复空初始值或不存在的初始值的问题，@uyarn ([common #1213](https://github.com/Tencent/tdesign-common/pull/1213))
+- `Table`:
+  - 单行选中功能，修复 `allowUncheck: false` 无效问题，[tdesign-vue-next#2561](https://github.com/Tencent/tdesign-vue-next/issues/2561) @chaishi ([#2256](https://github.com/Tencent/tdesign-vue/pull/2256))
+  - 修复 lazyload 的问题 @yanxugong ([#2250](https://github.com/Tencent/tdesign-vue/pull/2250))
+
 ## 🌈 1.2.2 `2023-03-16` 
 ### 🚀 Features
 - `Table`: @chaishi ([#2227](https://github.com/Tencent/tdesign-vue/pull/2227))
