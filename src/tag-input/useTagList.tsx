@@ -58,7 +58,7 @@ export default function useTagList(props: TdTagInputProps, context: SetupContext
     context.emit('enter', newValue, enterEventParams);
   };
 
-  const onInputBackspaceKeyUp = (value: InputValue, p: { e: KeyboardEvent }) => {
+  const onInputBackspaceKeyUp = (value: InputValue) => {
     if (!tagValue.value || !tagValue.value.length) return;
     oldInputValue.value = value;
   };
