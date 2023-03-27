@@ -204,7 +204,7 @@ export default defineComponent({
             this.setTInputValue(val, { ...context, trigger: 'input' });
           },
           enter: this.onInputEnter,
-          keydown: this.onInputBackspaceKeyUp,
+          keyup: this.onInputBackspaceKeyUp,
           mouseenter: (context: { e: MouseEvent }) => {
             this.addHover(context);
             this.scrollToRightOnEnter();
