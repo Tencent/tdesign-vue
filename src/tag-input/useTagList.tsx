@@ -58,8 +58,12 @@ export default function useTagList(props: TdTagInputProps, context: SetupContext
     context.emit('enter', newValue, enterEventParams);
   };
 
-  // 按下回退键，删除标签
   const onInputBackspaceKeyUp = (value: InputValue, p: { e: KeyboardEvent }) => {
+    if (!tagValue.value || !tagValue.value.length) return;
+    oldInputValue.value = value;
+  };
+  // 按下回退键，删除标签
+  const onInputBackspaceKeyDown = (value: InputValue, p: { e: KeyboardEvent }) => {
     const { e } = p;
     if (!tagValue.value || !tagValue.value.length) return;
     // 回车键删除，输入框值为空时，才允许 Backspace 删除标签
@@ -147,6 +151,7 @@ export default function useTagList(props: TdTagInputProps, context: SetupContext
     onClose,
     onInnerEnter,
     onInputBackspaceKeyUp,
+    onInputBackspaceKeyDown,
     renderLabel,
   };
 }

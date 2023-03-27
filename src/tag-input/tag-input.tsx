@@ -66,12 +66,8 @@ export default defineComponent({
     } = useTagScroll(props);
     // handle tag add and remove
     const {
-      tagValue, onInnerEnter, onInputBackspaceKeyUp, clearAll, renderLabel, onClose,
-    } = useTagList(
-      props,
-      context,
-      getDragProps,
-    );
+      tagValue, onInnerEnter, onInputBackspaceKeyUp, onInputBackspaceKeyDown, clearAll, renderLabel, onClose,
+    } = useTagList(props, context, getDragProps);
 
     const { CloseCircleFilledIcon } = useGlobalIcon({ CloseCircleFilledIcon: TdCloseCircleFilledIcon });
 
@@ -146,6 +142,7 @@ export default defineComponent({
       onInputEnter,
       onInnerEnter,
       onInputBackspaceKeyUp,
+      onInputBackspaceKeyDown,
       renderLabel,
       onWheel,
       scrollToRightOnEnter,
@@ -205,6 +202,7 @@ export default defineComponent({
           },
           enter: this.onInputEnter,
           keyup: this.onInputBackspaceKeyUp,
+          keydown: this.onInputBackspaceKeyDown,
           mouseenter: (context: { e: MouseEvent }) => {
             this.addHover(context);
             this.scrollToRightOnEnter();
