@@ -4,7 +4,7 @@ import {
 import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 
-import { TimePickerValue } from '@src/time-picker';
+import { TimePickerValue } from '../type';
 import { DEFAULT_STEPS, DEFAULT_FORMAT } from '../../_common/js/time-picker/const';
 import { panelProps } from './props';
 import SinglePanel from './single-panel';
@@ -28,16 +28,17 @@ export default defineComponent({
     const triggerScroll = ref(false);
     const { global } = useConfig('timePicker');
     const showNowTimeBtn = computed(() => !!props.steps.filter((v) => v > 1).length);
-
     const defaultValue = computed(() => {
       const isStepsSet = showNowTimeBtn.value;
-      if (props.value) {
-        return dayjs(props.value, props.format);
+      const formattedValue = dayjs(props.value, props.format);
+      if (props.value && formattedValue.isValid()) {
+        return formattedValue;
       }
       if (isStepsSet) {
         return dayjs().hour(0).minute(0).second(0);
       }
-      return dayjs();
+      return dayjs().hour(0).minute(0).second(0)
+        .format(props.format);
     });
 
     const panelColUpdate = () => {
@@ -101,7 +102,7 @@ export default defineComponent({
           <SinglePanel
             {...{
               props: {
-                value: this.value,
+                value: dayjs(this.value, this.format).isValid() ? this.value : this.defaultValue,
                 onChange: this.handleChange,
                 onPick: this.onPick,
                 format: this.format || DEFAULT_FORMAT,
