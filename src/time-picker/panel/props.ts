@@ -13,7 +13,7 @@ export const panelProps = () => ({
     default: false,
   },
   value: {
-    type: String,
+    type: [String, Object],
     default: '',
   },
   format: {
@@ -49,7 +49,7 @@ export const panelColProps = () => ({
     default: 'HH:mm:ss',
   },
   value: {
-    type: String,
+    type: [String, Object],
     default: '',
   },
   steps: {
