@@ -152,7 +152,10 @@ export default {
             resetValue: '',
             // 按下 Enter 键时也触发确认搜索
             confirmEvents: ['onEnter'],
-            props: { placeholder: '输入关键词过滤' },
+            props: {
+              placeholder: '输入关键词过滤',
+              onChange: this.oneEmailChange,
+            },
             // 是否显示重置取消按钮，一般情况不需要显示
             showConfirmAndReset: true,
           },
@@ -203,6 +206,9 @@ export default {
     filterIcon(h) {
       console.log(h);
       return <i>icon</i>;
+    },
+    oneEmailChange(val, ctx) {
+      console.log(val, ctx);
     },
     // // 统一配置筛选、省略等浮层绑定的位置
     // getAttach() {

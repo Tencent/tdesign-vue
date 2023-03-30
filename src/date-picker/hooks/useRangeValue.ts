@@ -70,7 +70,12 @@ export default function useRangeValue(props: TdDateRangePickerProps) {
     cacheValue.value = formatDate(value.value, {
       format: formatRef.value.format,
     });
-    time.value = formatTime(value.value, formatRef.value.timeFormat, props.defaultTime) as string[];
+    time.value = formatTime(
+      value.value,
+      formatRef.value.format,
+      formatRef.value.timeFormat,
+      props.defaultTime,
+    ) as string[];
   });
 
   return {

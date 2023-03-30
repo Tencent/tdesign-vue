@@ -353,8 +353,8 @@ export default function useFixed(
   const updateFixedHeader = () => {
     const timer = setTimeout(() => {
       if (!tableContentRef.value) return;
-      isFixedHeader.value = tableContentRef.value.scrollHeight > tableContentRef.value.clientHeight;
-      isWidthOverflow.value = tableContentRef.value.scrollWidth > tableContentRef.value.clientWidth;
+      isFixedHeader.value = tableContentRef.value.scrollHeight - tableContentRef.value.clientHeight >= scrollbarWidth.value;
+      isWidthOverflow.value = tableContentRef.value.scrollWidth - tableContentRef.value.clientWidth >= scrollbarWidth.value;
       const pos = tableContentRef.value.getBoundingClientRect();
       virtualScrollHeaderPos.value = {
         top: pos.top,

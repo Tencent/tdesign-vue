@@ -5,6 +5,18 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.2.4 `2023-03-30` 
+### 🚀 Features
+- `Table`: 支持设置 `filterRow=null` 隐藏过滤结果行 @chaishi ([#2267](https://github.com/Tencent/tdesign-vue/pull/2267))
+### 🐞 Bug Fixes
+- `Table`: 修复 SSR 环境 document 报错问题 @chaishi ([#2267](https://github.com/Tencent/tdesign-vue/pull/2267))
+- `TagInput`: 修复基于`TagInput`的组件使用筛选时删除关键词时会删除已选值的问题 @chiyu1996 ([#2270](https://github.com/Tencent/tdesign-vue/pull/2270))
+- `DatePicker`: 修复 format 为12小时制时功能异常的问题 @uyarn ([#2276](https://github.com/Tencent/tdesign-vue/pull/2276))
+- `Alert`: 修复关闭按钮为文字时的居中和字体大小问题 @Wen1kang ([common#1229](https://github.com/Tencent/tdesign-common/pull/1229))
+- `Loading`: 兜底部分插件场景加载loading的时机问题 @uyarn ([common#1230](https://github.com/Tencent/tdesign-common/pull/1230))
+- `ImageViewer`: 转义样式中的 min 函数，防止 ESM 产物中 less 产物编译失败 @scshsy ([common#1225](https://github.com/Tencent/tdesign-common/pull/1225))
+- `Select/SelectInput`: 修复重复触发 `blur/clear/focus` 事件的问题 @xiaosansiji  ([#2278](https://github.com/Tencent/tdesign-vue/pull/2278))
+
 ## 🌈 1.2.3 `2023-03-23` 
 ### 🚀 Features
 - `Table`: @chaishi ([#2251](https://github.com/Tencent/tdesign-vue/pull/2251))
