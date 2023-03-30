@@ -41,10 +41,8 @@ export default defineComponent({
     function onInnerBlur(ctx: PopupVisibleChangeContext) {
       const inputValue = props.multiple ? multipleInputValue.value : singleInputValue.value;
       const params: Parameters<TdSelectInputProps['onBlur']>[1] = { e: ctx.e, inputValue };
-      if (!props.multiple) {
-        props.onBlur?.(props.value, params);
-        context.emit('blur', props.value, params);
-      }
+      props.onBlur?.(props.value, params);
+      context.emit('blur', props.value, params);
     }
 
     const classes = computed(() => [

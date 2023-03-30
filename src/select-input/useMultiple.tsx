@@ -79,6 +79,9 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
     };
     // eslint-disable-next-line
     const { tips, ...slots } = context.slots;
+    // 防止 TagInput 重复触发基础事件
+    delete context.listeners.blur;
+    delete context.listeners.focus;
     return (
       <TagInput
         ref="tagInputRef"
@@ -98,6 +101,12 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
         }}
         onChange={onTagInputChange}
         onClear={p.onInnerClear}
+        // [Important Info]: SelectInput.blur is not equal to TagInput, example: click popup panel
+        onFocus={(val: TagInputValue, ctx: { inputValue: InputValue; e: FocusEvent }) => {
+          const params = { ...ctx, tagInputValue: val };
+          props.onFocus?.(props.value, params);
+          context.emit('focus', props.value, params);
+        }}
         onEnter={(val: TagInputValue, ctx: { e: KeyboardEvent; inputValue: InputValue }) => {
           const params = { ...ctx, tagInputValue: val };
           props.onEnter?.(props.value, params);
