@@ -383,8 +383,8 @@ export default defineComponent({
       // IE 浏览器需要遮挡 header 吸顶滚动条，要减去 getBoundingClientRect.height 的滚动条高度 4 像素
       const IEHeaderWrap = this.isIE ? 4 : 0;
       const affixHeaderHeight = (this.affixHeaderRef?.getBoundingClientRect().height || 0) - IEHeaderWrap;
-      // IE 浏览器不需要减去横向滚动条的宽度
-      const affixHeaderWrapHeight = affixHeaderHeight - (this.isIE ? 0 : barWidth);
+      // 滚动条判断修正之后，IE浏览器也需要减去横向滚动条的宽度
+      const affixHeaderWrapHeight = affixHeaderHeight - barWidth;
       // 两类场景：1. 虚拟滚动，永久显示表头，直到表头消失在可视区域； 2. 表头吸顶，根据滚动情况判断是否显示吸顶表头
       const headerOpacity = this.headerAffixedTop ? Number(this.showAffixHeader) : 1;
       const affixHeaderWrapHeightStyle = {
