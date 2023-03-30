@@ -32,6 +32,8 @@
       }"
       clearable
       multiple
+      @focus="handleFocus"
+      @blur="handleBlur"
       @tag-change="onTagChange"
       @input-change="onInputChange"
     >
@@ -95,6 +97,12 @@ export default {
     },
   },
   methods: {
+    handleFocus(value, context) {
+      console.log('focus', value, context);
+    },
+    handleBlur() {
+      console.log('Blur');
+    },
     onCheckedChange(val, { current, type }) {
       console.log(current);
       // current 不存在，则表示操作全选
