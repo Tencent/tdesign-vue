@@ -79,6 +79,9 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
     };
     // eslint-disable-next-line
     const { tips, ...slots } = context.slots;
+    const newListeners = { ...context.listeners };
+    // blur 事件已经在 TagInput 中处理，这里不需要再处理
+    delete newListeners.blur;
     return (
       <TagInput
         ref="tagInputRef"
@@ -94,20 +97,20 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
             if (ctx.trigger === 'enter' || ctx.trigger === 'blur') return;
             setTInputValue(val, { trigger: ctx.trigger, e: ctx.e });
           },
-          ...context.listeners,
-        }}
-        onChange={onTagInputChange}
-        onClear={p.onInnerClear}
-        // [Important Info]: SelectInput.blur is not equal to TagInput, example: click popup panel
-        onFocus={(val: TagInputValue, ctx: { inputValue: InputValue; e: FocusEvent }) => {
-          const params = { ...ctx, tagInputValue: val };
-          props.onFocus?.(props.value, params);
-          context.emit('focus', props.value, params);
-        }}
-        onEnter={(val: TagInputValue, ctx: { e: KeyboardEvent; inputValue: InputValue }) => {
-          const params = { ...ctx, tagInputValue: val };
-          props.onEnter?.(props.value, params);
-          context.emit('focus', props.value, params);
+          ...newListeners,
+          change: onTagInputChange,
+          clear: p.onInnerClear,
+          // [Important Info]: SelectInput.blur is not equal to TagInput, example: click popup panel
+          focus: (val: TagInputValue, ctx: { inputValue: InputValue; e: FocusEvent }) => {
+            const params = { ...ctx, tagInputValue: val };
+            props.onFocus?.(props.value, params);
+            context.emit('focus', props.value, params);
+          },
+          enter: (val: TagInputValue, ctx: { e: KeyboardEvent; inputValue: InputValue }) => {
+            const params = { ...ctx, tagInputValue: val };
+            props.onEnter?.(props.value, params);
+            context.emit('focus', props.value, params);
+          },
         }}
       />
     );
