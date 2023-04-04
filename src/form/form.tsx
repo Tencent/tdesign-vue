@@ -1,5 +1,6 @@
 import Vue, { VNode } from 'vue';
 import isEmpty from 'lodash/isEmpty';
+import keys from 'lodash/keys';
 import {
   Data,
   FormValidateResult,
@@ -164,8 +165,9 @@ export default mixins(classPrefixMixins).extend({
         e?.preventDefault();
         e?.stopPropagation();
       }
+      const fields = keys(this.data);
       this.children
-        .filter((child) => this.isFunction(child.resetField))
+        .filter((child) => this.isFunction(child.resetField) && this.needValidate(String(child.name), fields))
         .forEach((child) => child.resetField(this.resetType || 'initial'));
       emitEvent<Parameters<TdFormProps['onReset']>>(this, 'reset', { e });
     },
