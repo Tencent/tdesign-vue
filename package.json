@@ -164,7 +164,7 @@
     "postcss": "^8.3.11",
     "prettier": "^2.6.2",
     "prismjs": "^1.25.0",
-    "rimraf": "^3.0.2",
+    "rimraf": "^4.4.1",
     "rollup": "^2.53.2",
     "rollup-plugin-analyzer": "^3.3.0",
     "rollup-plugin-esbuild": "^4.8.2",
