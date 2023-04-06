@@ -278,6 +278,7 @@ export default defineComponent({
         <TSelectInput
           disabled={isDisabled}
           value={inputValue}
+          inputValue={inputValue}
           status={this.status}
           tips={this.tips}
           popupProps={datePickerPopupProps}
