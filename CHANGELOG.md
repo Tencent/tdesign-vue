@@ -5,6 +5,17 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.2.5 `2023-04-06` 
+### 🐞 Bug Fixes
+- `Popup`: 修复部分构建工具无法自动注册 Popup 插件的问题 @uyarn ([#2294](https://github.com/Tencent/tdesign-vue/pull/2294))
+- `InputAdornment`: 修复 slot 方式直接使用字符串时 class 类名缺失的问题 @ccccpj ([#2293](https://github.com/Tencent/tdesign-vue/pull/2293))
+- `Form`: 修复重置操作后错误为 data 数据添加了 `undefined` key 的问题 @akinocccc ([#2296](https://github.com/Tencent/tdesign-vue/pull/2296))
+- `DatePicker`: 修复日期输入框值不更新的问题 @akinocccc ([#2299](https://github.com/Tencent/tdesign-vue/pull/2299))
+- `Tree`: 修复懒加载子节点时点击label会触发选中的问题 @uyarn ([#2298](https://github.com/Tencent/tdesign-vue/pull/2298))
+- `InputNumber`: 
+    - 修复当浮点数和整数相加时，因为 JS 浮点精度计算问题导致的数据错误 @Ericleungs ([common#1251](https://github.com/Tencent/tdesign-common/pull/1251))
+   - 修复小数位操作以 0 结尾时部分边界场景异常的问题 @uyarn ([#2304](https://github.com/Tencent/tdesign-vue/pull/2304))
+
 ## 🌈 1.2.4 `2023-03-30` 
 ### 🚀 Features
 - `Table`: 支持设置 `filterRow=null` 隐藏过滤结果行 @chaishi ([#2267](https://github.com/Tencent/tdesign-vue/pull/2267))
