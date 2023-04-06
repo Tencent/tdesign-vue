@@ -11,17 +11,16 @@ spline: explain
   <p>接下来我们将支持在 vue 2.7 中使用，具体时间请关注版本更新动态。</p>
 </div>
 
-### 安装
+## 安装
 
-#### 使用 npm 安装
+### 使用 npm 安装
 
 推荐使用 npm 方式进行开发
 
 ```shell
 npm i tdesign-vue
 ```
-
-#### 通过 浏览器引入 安装
+### 通过 浏览器引入 安装
 
 目前可以通过 [unpkg.com/tdesign-vue](https://unpkg.com/tdesign-vue) 获取到最新版本的资源，在页面上引入 js 和 css 文件即可开始使用。由于部分组件依赖了`@vue/composition-api`，除了像其他 vue2 版本的组件库一样需要引入`vue`，还需要额外手动引入`@vue/composition-api`。
 
@@ -36,47 +35,60 @@ npm i tdesign-vue
 </script>
 ```
 
-### 使用
+npm package 中提供了多种构建产物，可以阅读 [这里](https://github.com/Tencent/tdesign/blob/main/docs/develop-install.md) 了解不同目录下产物的差别。
+## 使用
 
-#### 基础使用
+TDesign 提供了三种方式使用组件，具体使用方式如下
+
+### 基础使用
+
+基础使用会全量注册所有组件，如果您的项目大规模使用组件，请放心使用这种方式。
 
 ```js
 import Vue from 'vue';
 import TDesign from 'tdesign-vue';
-// 引入组件库全局样式资源
+
+// 引入组件库的少量全局样式变量
 import 'tdesign-vue/es/style/index.css';
 
 Vue.use(TDesign);
 ```
 
-npm package 中提供了多种构建产物，可以阅读 [这里](https://github.com/Tencent/tdesign/blob/main/docs/develop-install.md) 了解不同目录下产物的差别。
+### 按需引入使用
 
-#### 自动引入使用
+如果您对产物大小有严格的要求，可以通过 按需引入具体组件 的方式来使用。
 
-故名思义，就是可以直接使用 TDesign 的组件，而不需要手动引入：
+借助 Webpack 或 Rollup 等支持 tree-shaking 特性的构建工具，可以达到按需引入的使用效果。
 
-```html
-<template>
-  <t-button>按钮</t-button>
-</template>
+```js
+import { Button as TButton } from 'tdesign-vue';
 
-<script>
-  // import { Button as TButton } from 'tdesign-vue' // 组件的引入可以省略
-  export default {
-    // components: { TButton }, // 对应的组件注册也可以省略
-  };
-</script>
+// 引入组件库的少量全局样式变量
+import 'tdesign-vue/es/style/index.css';
+
+Vue.use(TButton);
 ```
 
-推荐使用 `unplugin-vue-components` 和 `unplugin-auto-import` 来实现自动引入：
+### 通过插件按需使用
 
+除此之外，也可以使用 `unplugin-vue-components` 和 `unplugin-auto-import` 来实现自动导入：
+
+您仍需在项目引入组件库的少量全局样式变量及`@vue/composition-api`
+```js
+import VueCompositionAPI from '@vue/composition-api';
+// 引入组件库的少量全局样式变量
+import 'tdesign-vue/es/style/index.css';
+
+Vue.use(VueCompositionAPI); // 必须是项目的第一个 use
 ```
+
+并安装两个 unplugin 相关的第三方包
+```bash
 npm install -D unplugin-vue-components unplugin-auto-import
 ```
-
 然后在 Webpack 或 Vite 对应的配置文件添加上述插件。
 
-##### Vite
+#### Vite
 
 ```js
 import AutoImport from 'unplugin-auto-import/vite';
@@ -96,7 +108,7 @@ export default {
 };
 ```
 
-##### Webpack
+#### Webpack
 
 ```js
 const AutoImport = require('unplugin-auto-import/webpack');
@@ -115,15 +127,13 @@ module.exports = {
   ],
 };
 ```
-> 由于部分组件依赖了`@vue/composition-api`，在以上配置之外，自动引入的方式仍需要您手动引入`@vue/composition-api`来保证组件的正常运行。
-
 > `TDesignResolver` 支持的配置，可以点击此[链接](https://github.com/antfu/unplugin-vue-components/blob/main/src/core/resolvers/tdesign.ts#L4)。
 
-### 快速体验
+## 快速体验
 
 可以访问官方提供的 [TDesign Starter](https://tdesign.tencent.com/starter/vue/) 项目体验使用 TDesign 组件快速搭建业务系统。
 
-### 浏览器兼容性
+## 浏览器兼容性
 
 | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/> IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Safari |
 | --- | --- | --- | --- |
@@ -132,7 +142,7 @@ module.exports = {
 
 详情参见[桌面端组件库浏览器兼容性说明](https://github.com/Tencent/tdesign/wiki/Browser-Compatibility)
 
-### FAQ
+## FAQ
 
 Q: 通过局部注册 (Local Registration) 使用时，报错 `Uncaught Error: [vue-composition-api] must call Vue.use(plugin) before using any function`
 
