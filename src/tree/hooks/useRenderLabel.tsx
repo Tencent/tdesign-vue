@@ -1,7 +1,9 @@
 import { CreateElement } from 'vue';
-import { SetupContext } from '@vue/composition-api';
+import { SetupContext, computed } from '@vue/composition-api';
+import isBoolean from 'lodash/isBoolean';
 import { TypeVNode, TypeTreeItemProps } from '../interface';
 import { usePrefixClass } from '../../hooks/useConfig';
+
 import TCheckBox from '../../checkbox';
 import { getTNode } from '../util';
 import useItemEvents from './useItemEvents';
@@ -43,6 +45,15 @@ export default function useRenderLabel(props: TypeTreeItemProps, context: SetupC
       },
     ];
 
+    const shouldStopLabelTrigger = computed(() => {
+      const isNormalBranchNode = Array.isArray(node.children) && node.children?.length > 0;
+      const isLazyLoadChildBranchNode = isBoolean(node.children) && node.children; // 懒加载子节点场景
+
+      const isBranchNode = isNormalBranchNode || isLazyLoadChildBranchNode;
+
+      return expandOnClickNode && isBranchNode;
+    });
+
     if (node.vmCheckable) {
       let checkboxDisabled = false;
       if (typeof disableCheck === 'function') {
@@ -70,7 +81,7 @@ export default function useRenderLabel(props: TypeTreeItemProps, context: SetupC
           disabled={node.isDisabled()}
           name={String(node.value)}
           onChange={handleChange}
-          stopLabelTrigger={expandOnClickNode && Array.isArray(node.children) && node.children?.length > 0}
+          stopLabelTrigger={shouldStopLabelTrigger.value}
           ignore="expand,active"
           props={itemCheckProps}
         >
