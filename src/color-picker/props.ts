@@ -24,6 +24,11 @@ export default {
   disabled: Boolean,
   /** 是否开启透明通道 */
   enableAlpha: Boolean,
+  /** 是否允许开启通过点击渐变轴增加渐变梯度，默认开启，关闭时只会存在起始和结束两个颜色 */
+  enableMultipleGradient: {
+    type: Boolean,
+    default: true,
+  },
   /** 格式化色值。`enableAlpha` 为真时，`RGBA/HSLA/HSVA` 等值有效 */
   format: {
     type: String as PropType<TdColorPickerProps['format']>,

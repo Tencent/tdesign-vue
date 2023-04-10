@@ -32,8 +32,14 @@
       }"
       clearable
       multiple
+      @focus="handleFocus"
+      @blur="handleBlur"
       @tag-change="onTagChange"
       @input-change="onInputChange"
+      @clear="handleClear"
+      @enter="handleEnter"
+      @mouseenter="handleMouseenter"
+      @change="handleChange"
     >
       <template #panel>
         <t-checkbox-group
@@ -95,6 +101,24 @@ export default {
     },
   },
   methods: {
+    handleFocus(value, context) {
+      console.log('focus', value, context);
+    },
+    handleBlur() {
+      console.log('Blur');
+    },
+    handleClear() {
+      console.log('Clear');
+    },
+    handleEnter() {
+      console.log('Enter');
+    },
+    handleMouseenter() {
+      console.log('Mouseenter');
+    },
+    handleChange() {
+      console.log('Change');
+    },
     onCheckedChange(val, { current, type }) {
       console.log(current);
       // current 不存在，则表示操作全选

@@ -66,7 +66,7 @@ export const TABLE_PROPS = [
   'onRowMouseup',
 ] as const;
 
-export type TrPropsKeys = typeof TABLE_PROPS[number];
+export type TrPropsKeys = (typeof TABLE_PROPS)[number];
 
 export interface TrProps extends TrCommonProps {
   row: TableRowData;
@@ -194,11 +194,7 @@ export default defineComponent({
       return [trStyles.value?.classes, customClasses];
     });
 
-    const { hasLazyLoadHolder, tRowHeight } = useLazyLoad(
-      tableContentElm,
-      trRef,
-      reactive({ ...props.scroll, rowIndex: props.rowIndex }),
-    );
+    const { hasLazyLoadHolder, tRowHeight } = useLazyLoad(tableContentElm, trRef, reactive({ ...props.scroll }));
     const getTrListeners = (row: TableRowData, rowIndex: number) => {
       const trListeners: { [eventName: string]: (e: MouseEvent) => void } = {};
       // add events to row

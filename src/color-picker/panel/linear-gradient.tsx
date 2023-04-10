@@ -19,6 +19,10 @@ export default defineComponent({
   inheritAttrs: false,
   props: {
     ...baseProps,
+    enableMultipleGradient: {
+      type: Boolean,
+      default: true,
+    },
   },
   setup(props) {
     const baseClassName = useBaseClassName();
@@ -177,7 +181,7 @@ export default defineComponent({
     };
 
     const handleThumbBarClick = (e: MouseEvent) => {
-      if (props.disabled) {
+      if (props.disabled || !props.enableMultipleGradient) {
         return;
       }
       let left = e.clientX - sliderRect.left;

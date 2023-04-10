@@ -31,6 +31,11 @@
     <!-- 2. :filter-row="() => null" 用于隐藏过滤结果行 -->
     <!-- 3. <template #filterRow><p>这是自定义的过滤结果行</p></template> ，可使用插槽完全自定义结果行内容-->
     <!-- 4. :attach="getAttach" 统一控制浮层挂载元素 -->
+    <!-- 5. 每一列自定义不同筛选图标：
+      <template #filterIcon="{ col, colIndex }">
+        <div><FilterIcon /> {{ colIndex }}</div>
+      </template>
+    -->
     <t-table
       rowKey="key"
       :columns="columns"
@@ -41,7 +46,7 @@
       table-layout="fixed"
       @filter-change="onFilterChange"
       @change="onChange"
-    />
+    ></t-table>
   </t-form>
 </template>
 
@@ -147,7 +152,10 @@ export default {
             resetValue: '',
             // 按下 Enter 键时也触发确认搜索
             confirmEvents: ['onEnter'],
-            props: { placeholder: '输入关键词过滤' },
+            props: {
+              placeholder: '输入关键词过滤',
+              onChange: this.oneEmailChange,
+            },
             // 是否显示重置取消按钮，一般情况不需要显示
             showConfirmAndReset: true,
           },
@@ -198,6 +206,9 @@ export default {
     filterIcon(h) {
       console.log(h);
       return <i>icon</i>;
+    },
+    oneEmailChange(val, ctx) {
+      console.log(val, ctx);
     },
     // // 统一配置筛选、省略等浮层绑定的位置
     // getAttach() {

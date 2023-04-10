@@ -17,7 +17,11 @@ export default mixins(classPrefixMixins).extend({
       const isContentNode = isString(addon) || isNumber(addon);
 
       if (this.$scopedSlots[type]) {
-        addonNode = this.$scopedSlots[type](null);
+        if (this.$scopedSlots[type](null).length === 1 && this.$scopedSlots[type](null)[0].text) {
+          addonNode = <span class={`${this.componentName}__text`}>{this.$scopedSlots[type](null)}</span>;
+        } else {
+          addonNode = this.$scopedSlots[type](null);
+        }
       } else if (typeof addon === 'function') {
         addonNode = addon(h);
       } else {

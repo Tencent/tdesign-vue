@@ -45,9 +45,19 @@ export default {
   presets: {
     type: Object as PropType<TdTimePickerProps['presets']>,
   },
+  /** 尺寸 */
+  size: {
+    type: String as PropType<TdTimePickerProps['size']>,
+    default: 'medium' as TdTimePickerProps['size'],
+    validator(val: TdTimePickerProps['size']): boolean {
+      if (!val) return true;
+      return ['small', 'medium', 'large'].includes(val);
+    },
+  },
   /** 输入框状态 */
   status: {
     type: String as PropType<TdTimePickerProps['status']>,
+    default: 'default' as TdTimePickerProps['status'],
     validator(val: TdTimePickerProps['status']): boolean {
       if (!val) return true;
       return ['default', 'success', 'warning', 'error'].includes(val);
@@ -64,12 +74,12 @@ export default {
   },
   /** 选中值 */
   value: {
-    type: String,
+    type: String as PropType<TdTimePickerProps['value']>,
     default: '',
   },
   /** 选中值，非受控属性 */
   defaultValue: {
-    type: String,
+    type: String as PropType<TdTimePickerProps['defaultValue']>,
     default: '',
   },
   /** 当输入框失去焦点时触发，value 表示组件当前有效值 */

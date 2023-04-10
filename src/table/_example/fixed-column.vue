@@ -24,6 +24,7 @@
 
     <!-- 如果希望表格列宽自适应，设置 `table-layout: auto` 即可。这种模式下的固定列，必须指定 tableContentWidth -->
     <t-table
+      ref="tableRef"
       rowKey="index"
       :data="emptyData ? [] : data"
       :columns="columns"
@@ -116,6 +117,11 @@ export default {
   methods: {
     rehandleClickOp(data) {
       console.log(data);
+    },
+    // eslint-disable-next-line
+    scrollToCreateTime() {
+      // 横向滚动到指定列
+      this.$refs.tableRef.scrollColumnIntoView('matters');
     },
   },
 };
