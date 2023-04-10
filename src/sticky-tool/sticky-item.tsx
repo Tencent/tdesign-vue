@@ -1,7 +1,9 @@
-import props from './sticky-item-props';
-import { TdStickyItemProps } from './type';
-import { ClassName, Styles } from '../common';
+import baseProps from './sticky-item-props';
+import TdStickyToolProps from './props';
+import type { TdStickyItemProps } from './type';
+import type { ClassName, Styles } from '../common';
 import Popup from '../popup';
+import PopupProps from '../popup/props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { getGlobalIconMixins } from '../config-provider/config-receiver';
@@ -9,14 +11,15 @@ import getConfigReceiverMixins, { getGlobalIconMixins } from '../config-provider
 export default mixins(getConfigReceiverMixins('sticky-item'), getGlobalIconMixins()).extend({
   name: 'TStickyItem',
   props: {
-    ...props,
-    type: String,
-    shape: String,
-    placement: String,
-    basePopupProps: Object,
-    baseWidth: String,
-    onClick: Function,
-    onHover: Function,
+    ...baseProps,
+    type: TdStickyToolProps.type,
+    shape: TdStickyToolProps.shape,
+    placement: TdStickyToolProps.placement,
+    basePopupProps: PopupProps,
+    baseWidth: TdStickyToolProps.width,
+    onClick: TdStickyToolProps.onClick,
+    onHover: TdStickyToolProps.onHover,
+    fatherCompName: String,
   },
   computed: {
     baseClass(): ClassName {
@@ -43,6 +46,7 @@ export default mixins(getConfigReceiverMixins('sticky-item'), getGlobalIconMixin
     const popup = renderTNodeJSX(this, 'popup');
     return (
       <Popup
+        overlayInnerClassName={`${this.fatherCompName}-popup-content`}
         trigger={this.trigger}
         hideEmptyPopup={true}
         placement={this.popupPlacement}
@@ -64,13 +68,13 @@ export default mixins(getConfigReceiverMixins('sticky-item'), getGlobalIconMixin
   methods: {
     handleClickItem(e: MouseEvent) {
       const item: TdStickyItemProps = {};
-      Object.keys(props).forEach((i) => (item[i] = this[i]));
-      this.onClick(e, item);
+      Object.keys(baseProps).forEach((i) => (item[i] = this[i]));
+      this.onClick({ e, item });
     },
     handleHoverItem(e: MouseEvent) {
       const item: TdStickyItemProps = {};
-      Object.keys(props).forEach((i) => (item[i] = this[i]));
-      this.onHover(e, item);
+      Object.keys(baseProps).forEach((i) => (item[i] = this[i]));
+      this.onHover({ e, item });
     },
   },
 });

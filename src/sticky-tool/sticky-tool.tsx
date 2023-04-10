@@ -1,11 +1,11 @@
 import { VNode } from 'vue';
 import props from './props';
 import TStickyItem from './sticky-item';
-import { ClassName, Styles } from '../common';
+import type { ClassName, Styles } from '../common';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins from '../config-provider/config-receiver';
 import { emitEvent } from '../utils/event';
-import { TdStickyToolProps, TdStickyItemProps } from './type';
+import type { TdStickyToolProps, TdStickyItemProps } from './type';
 
 export default mixins(getConfigReceiverMixins('sticky-tool')).extend({
   name: 'TStickyTool',
@@ -39,6 +39,7 @@ export default mixins(getConfigReceiverMixins('sticky-tool')).extend({
         baseWidth: this.styles.width,
         onClick: handleClick,
         onHover: handleHover,
+        fatherCompName: this.componentName,
       };
       const stickyItem = <t-sticky-item props={itemProps} key={index}></t-sticky-item>;
 
@@ -97,11 +98,11 @@ export default mixins(getConfigReceiverMixins('sticky-tool')).extend({
       });
       return offsetStyle;
     },
-    handleClick(e: MouseEvent, item: TdStickyItemProps) {
-      emitEvent<Parameters<TdStickyToolProps['onClick']>>(this, 'click', { e, item });
+    handleClick(context: { e: MouseEvent; item: TdStickyItemProps }) {
+      emitEvent<Parameters<TdStickyToolProps['onClick']>>(this, 'click', context);
     },
-    handleHover(e: MouseEvent, item: TdStickyItemProps) {
-      emitEvent<Parameters<TdStickyToolProps['onHover']>>(this, 'hover', { e, item });
+    handleHover(context: { e: MouseEvent; item: TdStickyItemProps }) {
+      emitEvent<Parameters<TdStickyToolProps['onHover']>>(this, 'hover', context);
     },
   },
 });
