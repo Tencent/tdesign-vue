@@ -1,7 +1,7 @@
 :: BASE_DOC ::
 
 ### 指令方式调用
-支持 `v-loading` 指令调用 `Loading`，只需要绑定 `boolean` 值即可，支持 `fullscreen` 和 `inheritColor` 修饰符，分别对应其属性。
+支持 `v-loading` 指令调用 `Loading`，只需要绑定 `boolean` 值即可，支持 `fullscreen` 和 `inheritColor` 修饰符以及 `Object` 形式的自定义配置，分别对应其属性。
 
 {{ directive }}
 
