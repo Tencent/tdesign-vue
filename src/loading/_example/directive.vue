@@ -7,6 +7,9 @@
 
     <div v-loading.fullscreen="loading2" class="loading-container">Loading...</div>
     <t-button size="small" :disabled="loading2" @click="handleLoadingFullscreen">支持 fullscreen 修饰符</t-button>
+
+    <div v-loading="loading3" class="loading-container">Loading...</div>
+    <t-button size="small" :disabled="loading2" @click="handleLoadingCustom">支持传递 Object 配置</t-button>
   </t-space>
 </template>
 <script>
@@ -15,6 +18,11 @@ export default {
     return {
       loading1: false,
       loading2: false,
+      loading3: {
+        loading: false,
+        delay: 300,
+        showOverlay: true,
+      },
     };
   },
   methods: {
@@ -29,6 +37,13 @@ export default {
       this.loading2 = true;
       const timer = setTimeout(() => {
         this.loading2 = false;
+        clearTimeout(timer);
+      }, 1000);
+    },
+    handleLoadingCustom() {
+      this.loading3 = { ...this.loading3, loading: true };
+      const timer = setTimeout(() => {
+        this.loading3 = { ...this.loading3, loading: false };
         clearTimeout(timer);
       }, 1000);
     },
