@@ -162,12 +162,13 @@ export default {
   },
   /** 选中值 */
   value: {
-    type: [String, Number, Object, Array] as PropType<TdSelectProps['value']>,
+    type: [String, Number, Boolean, Object, Array] as PropType<TdSelectProps['value']>,
     default: undefined,
   },
   /** 选中值，非受控属性 */
   defaultValue: {
-    type: [String, Number, Object, Array] as PropType<TdSelectProps['defaultValue']>,
+    type: [String, Number, Boolean, Object, Array] as PropType<TdSelectProps['defaultValue']>,
+    default: undefined,
   },
   /** 自定义选中项呈现的内容 */
   valueDisplay: {
