@@ -203,7 +203,20 @@ export default function useColumnResize(params: {
     });
     return tableWidth;
   };
-
+  const getSiblingColCanResizable = (
+    newThWidthList: { [key: string]: number },
+    effectNextCol: BaseTableCol,
+    distance: number,
+    index: number,
+  ) => {
+    let isWidthAbnormal = true;
+    if (effectNextCol) {
+      const { minColWidth, maxColWidth } = getMinMaxColWidth(effectNextCol);
+      const targetNextColWidth = newThWidthList[effectNextCol.colKey] + distance;
+      isWidthAbnormal = targetNextColWidth < minColWidth || targetNextColWidth > maxColWidth;
+    }
+    return !(isWidthAbnormal || isWidthOverflow.value || index === leafColumns.value.length - 1);
+  };
   const getOtherResizeInfo = (
     col: BaseTableCol<TableRowData>,
     effectPrevCol: BaseTableCol,
@@ -250,13 +263,14 @@ export default function useColumnResize(params: {
        */
       const thWidthList = getThWidthList('calculate');
       const currentCol = effectColMap.value[col.colKey]?.current;
-      const currentSibling = resizeLineParams.effectCol === 'next' ? currentCol.prevSibling : currentCol.nextSibling;
+      const currentSibling = resizeLineParams.effectCol === 'next' ? currentCol.nextSibling : currentCol.prevSibling;
       // 多行表头，列宽为最后一层的宽度，即叶子结点宽度
       const newThWidthList = { ...thWidthList };
       // 当前列不允许修改宽度，就调整相邻列的宽度
       const tmpCurrentCol = col.resizable !== false ? col : currentSibling;
-      // 是否允许调整相邻列宽：列宽未超出时，且并非是最后一列（最后一列的右侧拉伸会认为是表格整体宽度调整）
-      const canResizeSiblingColWidth = !(isWidthOverflow.value || index === leafColumns.value.length - 1);
+      // 是否允许调整后一列的列宽：列宽未超出时，满足后一列设置的最大最小值时且并非是最后一列（最后一列的右侧拉伸会认为是表格整体宽度调整）
+      const rightCol = resizeLineParams.effectCol === 'next' ? currentCol.nextSibling : col;
+      const canResizeSiblingColWidth = getSiblingColCanResizable(newThWidthList, rightCol, moveDistance, index);
 
       if (resizeLineParams.effectCol === 'next') {
         // 右侧激活态的固定列，需特殊调整
