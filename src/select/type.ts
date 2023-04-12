@@ -304,7 +304,7 @@ export interface SelectKeysType {
   label?: string;
 }
 
-export type SelectValue<T extends SelectOption = SelectOption> = string | number | T | Array<SelectValue<T>>;
+export type SelectValue<T extends SelectOption = SelectOption> = string | number | boolean | T | Array<SelectValue<T>>;
 
 export type SelectValueChangeTrigger = 'clear' | 'tag-remove' | 'backspace' | 'check' | 'uncheck';
 
