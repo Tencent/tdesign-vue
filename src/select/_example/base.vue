@@ -27,7 +27,7 @@ export default {
         // 可以使用渲染函数自定义下拉选项内容和样式
         {
           label: '计算场景',
-          value: '6',
+          value: true,
           // eslint-disable-next-line @typescript-eslint/no-unused-vars
           content: (h) => <span>计算场景（高性能计算）</span>,
         },
