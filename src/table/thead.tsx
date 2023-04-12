@@ -162,6 +162,7 @@ export default defineComponent({
           const resizeColumnListener = this.resizable || !canDragSort
             ? {
               mousedown: (e: MouseEvent) => {
+                e.stopPropagation();
                 this.columnResizeParams?.onColumnMousedown?.(e, col, index);
                 if (!canDragSort) {
                   const timer = setTimeout(() => {
