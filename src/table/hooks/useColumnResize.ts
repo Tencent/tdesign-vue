@@ -186,6 +186,16 @@ export default function useColumnResize(params: {
     };
   };
 
+  const getFixedToLeftResizeInfo = (targetBoundRect: DOMRect, tableBoundRect: DOMRect) => {
+    const resizeLinePos = targetBoundRect.left - tableBoundRect.left;
+    const colLeft = targetBoundRect.left - tableBoundRect.left;
+    return {
+      resizeLinePos,
+      minResizeLineLeft: colLeft,
+      maxResizeLineLeft: colLeft,
+    };
+  };
+
   const getTotalTableWidth = (thWidthList: { [key: string]: number }): number => {
     let tableWidth = 0;
     leafColumns.value.forEach((col) => {
@@ -193,6 +203,15 @@ export default function useColumnResize(params: {
     });
     return tableWidth;
   };
+
+  const getOtherResizeInfo = (
+    col: BaseTableCol<TableRowData>,
+    effectPrevCol: BaseTableCol,
+    targetBoundRect: DOMRect,
+    tableBoundRect: DOMRect,
+  ) => effectPrevCol
+    ? getNormalResizeInfo(col, effectPrevCol, targetBoundRect, tableBoundRect)
+    : getFixedToLeftResizeInfo(targetBoundRect, tableBoundRect);
 
   // 调整表格列宽
   const onColumnMousedown = (e: MouseEvent, col: BaseTableCol<TableRowData>, index: number) => {
@@ -204,7 +223,7 @@ export default function useColumnResize(params: {
     const effectPrevCol = effectColMap.value[col.colKey]?.prev;
     const { resizeLinePos, minResizeLineLeft, maxResizeLineLeft } = isColRightFixActive(col)
       ? getFixedToRightResizeInfo(target, col, effectNextCol, targetBoundRect, tableBoundRect)
-      : getNormalResizeInfo(col, effectPrevCol, targetBoundRect, tableBoundRect);
+      : getOtherResizeInfo(col, effectNextCol, targetBoundRect, tableBoundRect);
 
     // 开始拖拽，记录下鼠标起始位置
     resizeLineParams.isDragging = true;
@@ -259,7 +278,7 @@ export default function useColumnResize(params: {
         if (canResizeSiblingColWidth) {
           newThWidthList[tmpCurrentCol.colKey] += moveDistance;
         }
-        newThWidthList[effectPrevCol.colKey] -= moveDistance;
+        effectPrevCol && (newThWidthList[effectPrevCol.colKey] -= moveDistance);
       }
       updateThWidthList(newThWidthList);
       const tableWidth = getTotalTableWidth(newThWidthList);
