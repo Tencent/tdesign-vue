@@ -163,7 +163,9 @@ export default defineComponent({
             ? {
               mousedown: (e: MouseEvent) => {
                 e.stopPropagation();
-                this.columnResizeParams?.onColumnMousedown?.(e, col, index);
+                if (this.resizable) {
+                  this.columnResizeParams?.onColumnMousedown?.(e, col, index);
+                }
                 if (!canDragSort) {
                   const timer = setTimeout(() => {
                     const thList = this.theadRef.querySelectorAll('th');
@@ -172,7 +174,9 @@ export default defineComponent({
                   }, 10);
                 }
               },
-              mousemove: (e: MouseEvent) => this.columnResizeParams?.onColumnMouseover?.(e, col),
+              mousemove: (e: MouseEvent) => {
+                this.resizable && this.columnResizeParams?.onColumnMouseover?.(e, col);
+              },
             }
             : {};
           const content = isFunction(col.ellipsisTitle) ? col.ellipsisTitle(h, { col, colIndex: index }) : undefined;
