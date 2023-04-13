@@ -132,6 +132,7 @@ export default defineComponent({
       // value 类型的 value 变量，直接返回
       return _value;
     });
+
     const setInnerValue = (
       newVal: SelectValue,
       context: { trigger: SelectValueChangeTrigger; e?: MouseEvent | KeyboardEvent },
@@ -162,12 +163,20 @@ export default defineComponent({
           [labelOfKeys]: get(option, labelOfKeys),
         };
       };
+      const getSelectedOption = (newVal: SelectValue) => {
+        let selectedOption: SelectValue = getOriginOptions(newVal);
+        if (!selectedOption && optionValue) {
+          // 处理create场景
+          selectedOption = { label: optionValue, value: optionValue };
+        }
+        return selectedOption;
+      };
 
       // 构造 selectOptions
       if (multiple.value) {
-        (newVal as SelectValue[]).forEach((v) => selectedOptions.push(getOriginOptions(v)));
+        (newVal as SelectValue[]).forEach((v) => selectedOptions.push(getSelectedOption(v)));
       } else {
-        selectedOptions.push(getOriginOptions(newVal));
+        selectedOptions.push(getSelectedOption(newVal));
       }
       // 当 value 为 object 类型时，通过 innerValue 寻找对应的 object
       if (valueType.value === 'object') {
@@ -179,8 +188,10 @@ export default defineComponent({
 
       const outputContext = { ...context, selectedOptions };
       if (optionValue) {
+        const outputContextOption: SelectValue = getSelectedOption(optionValue);
+
         // eslint-disable-next-line dot-notation
-        outputContext['option'] = getOriginOptions(optionValue);
+        outputContext['option'] = outputContextOption;
       }
       setValue(newVal, outputContext);
     };
@@ -479,6 +490,7 @@ export default defineComponent({
             handleCheckAllClick(e);
           } else {
             const optionValue = (displayOptions[hoverIndex.value] as TdOptionProps)?.value;
+
             if (!optionValue) return;
             if (!multiple.value) {
               setInnerValue(optionValue, { e, trigger: 'check' }, optionValue);
