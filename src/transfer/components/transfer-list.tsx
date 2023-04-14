@@ -137,9 +137,14 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
       return !this.isAllChecked && this.checkedValue.length > 0;
     },
     isAllChecked(): boolean {
+      const allValue = getDataValues(this.dataSource, [], { isTreeMode: this.isTreeMode, include: false });
       return (
         this.checkedValue.length > 0
-        && this.dataSource.every((item) => item.disabled || this.checkedValue.includes(item.value))
+        && (this.isTreeMode
+          ? allValue.every((item) => this.checkedValue.includes(item))
+          : (this.search ? this.filteredData : this.dataSource).every(
+            (item: TransferItemOption) => item.disabled || this.checkedValue.includes(item.value),
+          ))
       );
     },
     totalCount(): number {
@@ -165,7 +170,10 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
     },
     handleCheckedAllChange(checked: boolean): void {
       if (checked) {
-        const allValue = getDataValues(this.dataSource, [], { isTreeMode: this.isTreeMode, include: false });
+        const allValue = getDataValues(this.search ? this.filteredData : this.dataSource, [], {
+          isTreeMode: this.isTreeMode,
+          include: false,
+        });
         this.handleCheckedChange(allValue);
       } else {
         this.handleCheckedChange([]);
