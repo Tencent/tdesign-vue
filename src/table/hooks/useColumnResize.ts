@@ -193,8 +193,8 @@ export default function useColumnResize(params: {
     tableBoundRect: DOMRect,
   ) => {
     const targetIsSameAsCol = target.dataset.colkey === col.colKey;
-    const resizeLinePos = targetBoundRect.left - tableBoundRect.left + targetBoundRect.width;
     const colLeft = targetBoundRect.left - tableBoundRect.left;
+    const resizeLinePos = colLeft + targetBoundRect.width;
     const { minColWidth, maxColWidth } = getMinMaxColWidth(col);
     return {
       resizeLinePos,
