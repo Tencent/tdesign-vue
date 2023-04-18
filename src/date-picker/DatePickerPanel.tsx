@@ -168,14 +168,14 @@ export default defineComponent({
     }
 
     // 预设
-    function onPresetClick(presetValue: DateValue | (() => DateValue), { e, preset }: any) {
-      const presetVal = typeof presetValue === 'function' ? presetValue() : presetValue;
+    function onPresetClick(preset: any, { e, label }: { e: MouseEvent; label: string }) {
+      const presetVal = typeof preset === 'function' ? preset() : preset;
       onChange?.(formatDate(presetVal, { format: formatRef.value.format }) as DateValue, {
         dayjsValue: parseToDayjs(presetVal, formatRef.value.format),
         trigger: 'preset',
       });
-      props.onPresetClick?.({ e, preset });
-      emit('preset-click', { e, preset });
+      props.onPresetClick?.({ e, preset, label });
+      emit('preset-click', { e, preset, label });
     }
 
     function onYearChange(nextYear: number) {

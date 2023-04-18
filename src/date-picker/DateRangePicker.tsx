@@ -326,7 +326,7 @@ export default defineComponent({
     }
 
     // 预设
-    function onPresetClick(preset: any) {
+    function onPresetClick(preset: any, { e, label }: { e: MouseEvent; label: string }) {
       let presetValue = preset;
       if (typeof preset === 'function') {
         presetValue = preset();
@@ -346,6 +346,8 @@ export default defineComponent({
           },
         );
         popupVisible.value = false;
+        props.onPresetClick?.({ preset, e, label });
+        emit('preset-click', { preset, e, label });
       }
     }
 

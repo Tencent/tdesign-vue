@@ -86,15 +86,6 @@ export default {
     type: String,
     default: '',
   },
-  /** 输入框尺寸 */
-  size: {
-    type: String as PropType<TdDateRangePickerProps['size']>,
-    default: 'medium' as TdDateRangePickerProps['size'],
-    validator(val: TdDateRangePickerProps['size']): boolean {
-      if (!val) return true;
-      return ['small', 'medium', 'large'].includes(val);
-    },
-  },
   /** 输入框状态 */
   status: {
     type: String as PropType<TdDateRangePickerProps['status']>,
@@ -154,4 +145,6 @@ export default {
   onInput: Function as PropType<TdDateRangePickerProps['onInput']>,
   /** 选中日期时触发，可能是开始日期，也可能是结束日期，第二个参数可以区分是开始日期或是结束日期 */
   onPick: Function as PropType<TdDateRangePickerProps['onPick']>,
+  /** 点击预设按钮后触发 */
+  onPresetClick: Function as PropType<TdDateRangePickerProps['onPresetClick']>,
 };

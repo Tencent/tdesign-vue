@@ -77,15 +77,6 @@ export default {
       return ['left', 'top', 'right', 'bottom'].includes(val);
     },
   },
-  /** 输入框尺寸 */
-  size: {
-    type: String as PropType<TdDatePickerProps['size']>,
-    default: 'medium' as TdDatePickerProps['size'],
-    validator(val: TdDatePickerProps['size']): boolean {
-      if (!val) return true;
-      return ['small', 'medium', 'large'].includes(val);
-    },
-  },
   /** 输入框状态 */
   status: {
     type: String as PropType<TdDatePickerProps['status']>,
@@ -130,4 +121,6 @@ export default {
   onFocus: Function as PropType<TdDatePickerProps['onFocus']>,
   /** 面板选中值后触发 */
   onPick: Function as PropType<TdDatePickerProps['onPick']>,
+  /** 点击预设按钮后触发 */
+  onPresetClick: Function as PropType<TdDatePickerProps['onPresetClick']>,
 };

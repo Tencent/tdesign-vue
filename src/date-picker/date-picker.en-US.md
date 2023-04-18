@@ -20,7 +20,6 @@ popupProps | Object | - | Typescript：`PopupProps`，[Popup API Documents](./po
 prefixIcon | Slot / Function | - | Typescript：`TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 presets | Object | - | Typescript：`PresetDate` `interface PresetDate { [name: string]: DateValue \| (() => DateValue) }`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
 presetsPlacement | String | bottom | options：left/top/right/bottom | N
-size | String | medium | options：small/medium/large。Typescript：`SizeEnum`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 status | String | default | options：default/success/warning/error | N
 suffixIcon | Slot / Function | - | Typescript：`TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 timePickerProps | Object | - | Typescript：`TimePickerProps`，[TimePicker API Documents](./time-picker?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
@@ -32,6 +31,7 @@ onBlur | Function |  | Typescript：`(context: { value: DateValue; e: FocusEvent
 onChange | Function |  | Typescript：`(value: DateValue, context: { dayjsValue?: Dayjs, trigger?: DatePickerTriggerSource }) => void`<br/>[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts)。<br/>`import { Dayjs } from 'dayjs'`<br/><br/>`type DatePickerTriggerSource = 'confirm' \| 'pick' \| 'enter' \| 'preset' \| 'clear'`<br/> | N
 onFocus | Function |  | Typescript：`(context: { value: DateValue; e: FocusEvent }) => void`<br/> | N
 onPick | Function |  | Typescript：`(value: DateValue) => void`<br/> | N
+onPresetClick | Function |  | Typescript：`(context: { preset: PresetDate, e: MouseEvent, label: string }) => void`<br/> | N
 
 ### DatePicker Events
 
@@ -41,6 +41,7 @@ blur | `(context: { value: DateValue; e: FocusEvent })` | \-
 change | `(value: DateValue, context: { dayjsValue?: Dayjs, trigger?: DatePickerTriggerSource })` | [see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts)。<br/>`import { Dayjs } from 'dayjs'`<br/><br/>`type DatePickerTriggerSource = 'confirm' \| 'pick' \| 'enter' \| 'preset' \| 'clear'`<br/>
 focus | `(context: { value: DateValue; e: FocusEvent })` | \-
 pick | `(value: DateValue)` | \-
+preset-click | `(context: { preset: PresetDate, e: MouseEvent, label: string })` | \-
 
 ### DateRangePicker Props
 
@@ -63,7 +64,6 @@ presets | Object | - | Typescript：`PresetRange` `interface PresetRange { [rang
 presetsPlacement | String | bottom | options：left/top/right/bottom | N
 rangeInputProps | Object | - | Typescript：`RangeInputProps`，[RangeInput API Documents](./range-input?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
 separator | String | - | \- | N
-size | String | medium | options：small/medium/large。Typescript：`SizeEnum`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 status | String | default | options：default/success/warning/error | N
 suffixIcon | Slot / Function | - | Typescript：`TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 timePickerProps | Object | - | Typescript：`TimePickerProps`，[TimePicker API Documents](./time-picker?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
@@ -76,6 +76,7 @@ onChange | Function |  | Typescript：`(value: DateRangeValue, context: { dayjsV
 onFocus | Function |  | Typescript：`(context: { value: DateRangeValue; partial: DateRangePickerPartial; e: FocusEvent }) => void`<br/> | N
 onInput | Function |  | Typescript：`(context: { input: string; value: DateRangeValue; partial: DateRangePickerPartial; e: InputEvent }) => void`<br/> | N
 onPick | Function |  | Typescript：`(value: DateValue, context: PickContext) => void`<br/>[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts)。<br/>`interface PickContext { e: MouseEvent; partial: DateRangePickerPartial }`<br/> | N
+onPresetClick | Function |  | Typescript：`(context: { preset: PresetDate, e: MouseEvent, label: string }) => void`<br/> | N
 
 ### DateRangePicker Events
 
@@ -86,6 +87,7 @@ change | `(value: DateRangeValue, context: { dayjsValue?: Dayjs[], trigger?: Dat
 focus | `(context: { value: DateRangeValue; partial: DateRangePickerPartial; e: FocusEvent })` | \-
 input | `(context: { input: string; value: DateRangeValue; partial: DateRangePickerPartial; e: InputEvent })` | \-
 pick | `(value: DateValue, context: PickContext)` | [see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts)。<br/>`interface PickContext { e: MouseEvent; partial: DateRangePickerPartial }`<br/>
+preset-click | `(context: { preset: PresetDate, e: MouseEvent, label: string })` | \-
 
 ### DatePickerPanel Props
 
@@ -98,7 +100,7 @@ onChange | Function |  | Typescript：`(value: DateValue, context: { dayjsValue?
 onConfirm | Function |  | Typescript：`(context: { date: Date, e: MouseEvent }) => void`<br/> | N
 onMonthChange | Function |  | Typescript：`(context: { month: number, date: Date, e?: MouseEvent, trigger: DatePickerMonthChangeTrigger }) => void`<br/>[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts)。<br/>`type DatePickerMonthChangeTrigger = 'month-select' \| 'month-arrow-next' \| 'month-arrow-previous' \| 'today'`<br/> | N
 onPanelClick | Function |  | Typescript：`(context: { e: MouseEvent }) => void`<br/> | N
-onPresetClick | Function |  | Typescript：`(context: { preset: PresetDate, e: MouseEvent }) => void`<br/> | N
+onPresetClick | Function |  | Typescript：`(context: { preset: PresetDate, e: MouseEvent, label: string }) => void`<br/> | N
 onTimeChange | Function |  | Typescript：`(context: { time: string, date: Date, trigger: DatePickerTimeChangeTrigger, e?: MouseEvent }) => void`<br/>[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts)。<br/>`type DatePickerTimeChangeTrigger = 'time-hour' \| 'time-minute' \| 'time-second'`<br/> | N
 onYearChange | Function |  | Typescript：`(context: { year: number, date: Date, trigger: DatePickerYearChangeTrigger, e?: MouseEvent }) => void`<br/>[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts)。<br/>`type DatePickerYearChangeTrigger = 'year-select' \| 'year-arrow-next' \| 'year-arrow-previous' \| 'today'`<br/> | N
 
@@ -111,7 +113,7 @@ change | `(value: DateValue, context: { dayjsValue?: Dayjs, e?: MouseEvent, trig
 confirm | `(context: { date: Date, e: MouseEvent })` | \-
 month-change | `(context: { month: number, date: Date, e?: MouseEvent, trigger: DatePickerMonthChangeTrigger })` | [see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts)。<br/>`type DatePickerMonthChangeTrigger = 'month-select' \| 'month-arrow-next' \| 'month-arrow-previous' \| 'today'`<br/>
 panel-click | `(context: { e: MouseEvent })` | \-
-preset-click | `(context: { preset: PresetDate, e: MouseEvent })` | \-
+preset-click | `(context: { preset: PresetDate, e: MouseEvent, label: string })` | \-
 time-change | `(context: { time: string, date: Date, trigger: DatePickerTimeChangeTrigger, e?: MouseEvent })` | [see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts)。<br/>`type DatePickerTimeChangeTrigger = 'time-hour' \| 'time-minute' \| 'time-second'`<br/>
 year-change | `(context: { year: number, date: Date, trigger: DatePickerYearChangeTrigger, e?: MouseEvent })` | [see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts)。<br/>`type DatePickerYearChangeTrigger = 'year-select' \| 'year-arrow-next' \| 'year-arrow-previous' \| 'today'`<br/>
 
@@ -126,7 +128,7 @@ onChange | Function |  | Typescript：`(value: DateRangeValue, context: { dayjsV
 onConfirm | Function |  | Typescript：`(context: { date: Date[], e: MouseEvent }) => void`<br/> | N
 onMonthChange | Function |  | Typescript：`(context: { month: number, date: Date[], partial: DateRangePickerPartial, e?: MouseEvent, trigger: DatePickerMonthChangeTrigger }) => void`<br/> | N
 onPanelClick | Function |  | Typescript：`(context: { e: MouseEvent }) => void`<br/> | N
-onPresetClick | Function |  | Typescript：`(context: { preset: PresetDate, e: MouseEvent }) => void`<br/> | N
+onPresetClick | Function |  | Typescript：`(context: { preset: PresetDate, e: MouseEvent, label: string }) => void`<br/> | N
 onTimeChange | Function |  | Typescript：`(context: { time: string, date: Date[], partial: DateRangePickerPartial, trigger: DatePickerTimeChangeTrigger, e?: MouseEvent }) => void`<br/> | N
 onYearChange | Function |  | Typescript：`(context: { year: number, date: Date[], partial: DateRangePickerPartial, trigger: DatePickerYearChangeTrigger, e?: MouseEvent }) => void`<br/> | N
 
@@ -139,6 +141,6 @@ change | `(value: DateRangeValue, context: { dayjsValue?: Dayjs[], partial: Date
 confirm | `(context: { date: Date[], e: MouseEvent })` | \-
 month-change | `(context: { month: number, date: Date[], partial: DateRangePickerPartial, e?: MouseEvent, trigger: DatePickerMonthChangeTrigger })` | \-
 panel-click | `(context: { e: MouseEvent })` | \-
-preset-click | `(context: { preset: PresetDate, e: MouseEvent })` | \-
+preset-click | `(context: { preset: PresetDate, e: MouseEvent, label: string })` | \-
 time-change | `(context: { time: string, date: Date[], partial: DateRangePickerPartial, trigger: DatePickerTimeChangeTrigger, e?: MouseEvent })` | \-
 year-change | `(context: { year: number, date: Date[], partial: DateRangePickerPartial, trigger: DatePickerYearChangeTrigger, e?: MouseEvent })` | \-
