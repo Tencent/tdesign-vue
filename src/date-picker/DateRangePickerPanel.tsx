@@ -274,7 +274,7 @@ export default defineComponent({
     }
 
     // 预设
-    function onPresetClick(preset: any) {
+    function onPresetClick(preset: any, context: any) {
       let presetValue = preset;
       if (typeof preset === 'function') {
         presetValue = preset();
@@ -292,6 +292,8 @@ export default defineComponent({
             trigger: 'preset',
           },
         );
+        props.onPresetClick?.(context);
+        emit('preset-click', context);
       }
     }
 
