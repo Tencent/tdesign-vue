@@ -40,7 +40,7 @@ const Overlay = mixins(classPrefixMixins).extend({
   },
   props: {
     ...props,
-    triggerEl: HTMLElement,
+    triggerEl: Object,
   },
   computed: {
     hasTrigger(): Record<(typeof triggers)[number], boolean> {
