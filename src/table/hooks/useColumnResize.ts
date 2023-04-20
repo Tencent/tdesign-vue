@@ -186,13 +186,20 @@ export default function useColumnResize(params: {
     };
   };
 
-  const getFixedToLeftResizeInfo = (targetBoundRect: DOMRect, tableBoundRect: DOMRect) => {
-    const resizeLinePos = targetBoundRect.left - tableBoundRect.left;
+  const getFixedToLeftResizeInfo = (
+    target: HTMLElement,
+    col: BaseTableCol,
+    targetBoundRect: DOMRect,
+    tableBoundRect: DOMRect,
+  ) => {
+    const targetIsSameAsCol = target.dataset.colkey === col.colKey;
     const colLeft = targetBoundRect.left - tableBoundRect.left;
+    const resizeLinePos = colLeft + targetBoundRect.width;
+    const { minColWidth, maxColWidth } = getMinMaxColWidth(col);
     return {
       resizeLinePos,
-      minResizeLineLeft: colLeft,
-      maxResizeLineLeft: colLeft,
+      minResizeLineLeft: colLeft + (targetIsSameAsCol ? minColWidth : targetBoundRect.width),
+      maxResizeLineLeft: colLeft + (targetIsSameAsCol ? maxColWidth : targetBoundRect.width),
     };
   };
 
@@ -218,13 +225,14 @@ export default function useColumnResize(params: {
     return !(isWidthAbnormal || isWidthOverflow.value || index === leafColumns.value.length - 1);
   };
   const getOtherResizeInfo = (
+    target: HTMLElement,
     col: BaseTableCol<TableRowData>,
     effectPrevCol: BaseTableCol,
     targetBoundRect: DOMRect,
     tableBoundRect: DOMRect,
   ) => effectPrevCol
     ? getNormalResizeInfo(col, effectPrevCol, targetBoundRect, tableBoundRect)
-    : getFixedToLeftResizeInfo(targetBoundRect, tableBoundRect);
+    : getFixedToLeftResizeInfo(target, col, targetBoundRect, tableBoundRect);
 
   // 调整表格列宽
   const onColumnMousedown = (e: MouseEvent, col: BaseTableCol<TableRowData>, index: number) => {
@@ -236,7 +244,7 @@ export default function useColumnResize(params: {
     const effectPrevCol = effectColMap.value[col.colKey]?.prev;
     const { resizeLinePos, minResizeLineLeft, maxResizeLineLeft } = isColRightFixActive(col)
       ? getFixedToRightResizeInfo(target, col, effectNextCol, targetBoundRect, tableBoundRect)
-      : getOtherResizeInfo(col, effectNextCol, targetBoundRect, tableBoundRect);
+      : getOtherResizeInfo(target, col, effectPrevCol, targetBoundRect, tableBoundRect);
 
     // 开始拖拽，记录下鼠标起始位置
     resizeLineParams.isDragging = true;
