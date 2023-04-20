@@ -106,6 +106,7 @@ export default defineComponent({
       const value = Array.isArray(cascaderValue) ? cascaderValue : [cascaderValue];
       const cascaderOptions = value.map((item) => {
         const tmpValue = typeof item === 'object' ? item[keys.value] : item;
+        if (tmpValue === undefined) return null;
         return cascaderContext.treeStore.getNode(tmpValue).data;
       });
       return renderTNodeJSX(this, 'collapsedItems', {

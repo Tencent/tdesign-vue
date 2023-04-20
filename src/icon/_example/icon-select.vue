@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { manifest } from 'tdesign-icons-vue/lib/manifest'; // 获取全部图标的列表
+import { manifest } from 'tdesign-icons-vue'; // 获取全部图标的列表
 
 export default {
   data() {
