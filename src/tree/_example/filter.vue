@@ -7,7 +7,7 @@
         </t-input-adornment>
       </t-form-item>
       <t-form-item label="允许折叠">
-        <t-switch v-model="allowFoldNodeOnFilter" @change="checkExpanded" />
+        <t-switch v-model="allowFoldNodeOnFilter" />
       </t-form-item>
       <t-form-item label="可选">
         <t-switch v-model="isCheckable" />
@@ -17,7 +17,6 @@
       ref="tree"
       :data="items"
       expand-on-click-node
-      :expandAll="allowFoldNodeOnFilter"
       :allowFoldNodeOnFilter="allowFoldNodeOnFilter"
       :default-expanded="expanded"
       :filter="filterByText"
@@ -132,16 +131,6 @@ export default {
     };
   },
   methods: {
-    checkExpanded() {
-      const { allowFoldNodeOnFilter } = this;
-      const { tree } = this.$refs;
-      const treeItems = tree.getItems();
-      treeItems.forEach((node) => {
-        tree.setItem(node.value, {
-          expanded: allowFoldNodeOnFilter,
-        });
-      });
-    },
     onInput(state) {
       console.info('onInput:', state);
       if (this.filterText) {
