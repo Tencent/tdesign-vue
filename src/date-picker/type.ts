@@ -309,7 +309,7 @@ export interface TdDatePickerPanelProps
    * 特殊受控属性，单独使用DatePickerPanel需要为true
    */
   popupVisible: {
-    type: boolean;
+    type: Boolean;
     default: true;
   };
   /**
@@ -378,7 +378,7 @@ export interface TdDateRangePickerPanelProps
    * 特殊受控属性，单独使用DateRangePickerPanel需要为true
    */
   popupVisible: {
-    type: boolean;
+    type: Boolean;
     default: true;
   };
   /**
