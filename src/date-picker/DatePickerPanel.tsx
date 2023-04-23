@@ -32,7 +32,7 @@ export default defineComponent({
     timePickerProps: datePickerProps.timePickerProps,
     ...datePickerPanelProps,
   },
-  setup(props: TdDatePickerPanelProps, { emit }) {
+  setup(props: TdDatePickerPanelProps, { emit, attrs }) {
     const {
       cacheValue, value, year, month, time, onChange,
     } = useSingleValue(props);
@@ -226,7 +226,8 @@ export default defineComponent({
       timePickerProps: props.timePickerProps,
       enableTimePicker: props.enableTimePicker,
       presetsPlacement: props.presetsPlacement,
-      popupVisible: props.popupVisible,
+      // 该属性在单独使用此panel时无特别意义, 不应该暴露为props
+      popupVisible: (attrs?.popupVisible as Boolean) ?? true,
       onPanelClick,
       onCellClick,
       onJumperClick,
