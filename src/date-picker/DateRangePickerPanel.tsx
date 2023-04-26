@@ -35,7 +35,7 @@ export default defineComponent({
     panelPreselection: dateRangePickerProps.panelPreselection,
     ...dateRangePickerPanelProps,
   },
-  setup(props: TdDateRangePickerPanelProps, { emit }) {
+  setup(props: TdDateRangePickerPanelProps, { emit, attrs }) {
     const {
       value, year, month, time, cacheValue, isFirstValueSelected, onChange,
     } = useRangeValue(props);
@@ -374,6 +374,8 @@ export default defineComponent({
       enableTimePicker: props.enableTimePicker,
       presetsPlacement: props.presetsPlacement,
       panelPreselection: props.panelPreselection,
+      // 该属性本身主要是联动父组件使用, 单独使用没有特别意义, 不应该暴露为props
+      popupVisible: (attrs?.popupVisible as Boolean) ?? true,
       onPanelClick,
       onCellClick,
       onCellMouseEnter,
