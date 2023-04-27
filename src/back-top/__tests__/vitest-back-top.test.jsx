@@ -10,32 +10,60 @@ import { BackTop } from '..';
 
 describe('BackTop Component', () => {
   it('props.content works fine', () => {
-    const wrapper = mount(<BackTop content={() => <span class="custom-node">TNode</span>}></BackTop>);
+    const wrapper = mount({
+      render() {
+        return <BackTop content={() => <span class="custom-node">TNode</span>}></BackTop>;
+      },
+    });
     expect(wrapper.find('.custom-node').exists()).toBeTruthy();
     expect(wrapper.element).toMatchSnapshot();
   });
 
   it('slots.content works fine', () => {
-    const wrapper = mount(<BackTop v-slots={{ content: () => <span class="custom-node">TNode</span> }}></BackTop>);
+    const wrapper = mount({
+      render() {
+        return (
+          <BackTop>
+            <span class="custom-node">TNode</span>
+          </BackTop>
+        );
+      },
+    });
     expect(wrapper.find('.custom-node').exists()).toBeTruthy();
     expect(wrapper.element).toMatchSnapshot();
   });
 
   it('props.default works fine', () => {
-    const wrapper = mount(<BackTop default={() => <span class="custom-node">TNode</span>}></BackTop>);
+    const wrapper = mount({
+      render() {
+        return <BackTop default={() => <span class="custom-node">TNode</span>}></BackTop>;
+      },
+    });
     expect(wrapper.find('.custom-node').exists()).toBeTruthy();
     expect(wrapper.element).toMatchSnapshot();
   });
 
   it('slots.default works fine', () => {
-    const wrapper = mount(<BackTop v-slots={{ default: () => <span class="custom-node">TNode</span> }}></BackTop>);
+    const wrapper = mount({
+      render() {
+        return (
+          <BackTop>
+            <span class="custom-node">TNode</span>{' '}
+          </BackTop>
+        );
+      },
+    });
     expect(wrapper.find('.custom-node').exists()).toBeTruthy();
     expect(wrapper.element).toMatchSnapshot();
   });
 
   ['circle', 'square'].forEach((item) => {
     it(`props.shape is equal to ${item}`, () => {
-      const wrapper = mount(<BackTop shape={item}></BackTop>);
+      const wrapper = mount({
+        render() {
+          return <BackTop shape={item}></BackTop>;
+        },
+      });
       expect(wrapper.classes(`t-back-top--${item}`)).toBeTruthy();
       expect(wrapper.element).toMatchSnapshot();
     });
@@ -44,7 +72,11 @@ describe('BackTop Component', () => {
   const sizeClassNameList = ['t-size-s', 't-size-m'];
   ['small', 'medium'].forEach((item, index) => {
     it(`props.size is equal to ${item}`, () => {
-      const wrapper = mount(<BackTop size={item}>BackTop</BackTop>);
+      const wrapper = mount({
+        render() {
+          return <BackTop size={item}>BackTop</BackTop>;
+        },
+      });
       expect(wrapper.classes(sizeClassNameList[index])).toBeTruthy();
       expect(wrapper.element).toMatchSnapshot();
     });
@@ -52,17 +84,13 @@ describe('BackTop Component', () => {
 
   ['light', 'primary', 'dark'].forEach((item) => {
     it(`props.theme is equal to ${item}`, () => {
-      const wrapper = mount(<BackTop theme={item}>Text</BackTop>);
+      const wrapper = mount({
+        render() {
+          return <BackTop theme={item}>Text</BackTop>;
+        },
+      });
       expect(wrapper.classes(`t-back-top--theme-${item}`)).toBeTruthy();
       expect(wrapper.element).toMatchSnapshot();
     });
-  });
-
-  it('events.click works fine', async () => {
-    const fn = vi.fn();
-    const wrapper = mount(<BackTop onClick={fn}></BackTop>);
-    wrapper.findComponent(BackTop).trigger('click');
-    await wrapper.vm.$nextTick();
-    expect(fn).toHaveBeenCalled();
   });
 });

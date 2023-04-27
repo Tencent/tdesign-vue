@@ -106,7 +106,7 @@ export default defineComponent({
     const { BacktopIcon } = this;
     const defaultContent = (
       <div>
-        <BacktopIcon class={`${this.componentName}__icon`} size={'24'} />,
+        <BacktopIcon class={`${this.componentName}__icon`} size={'24'} />
         <span class={`${this.componentName}__text`}>TOP</span>
       </div>
     );
