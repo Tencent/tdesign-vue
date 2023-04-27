@@ -195,6 +195,14 @@ const docs = [
         componentEn: () => import('tdesign-vue/steps/steps.en-US.md'),
       },
       {
+        title: 'StickyTool 侧边栏',
+        titleEn: 'StickyTool',
+        name: 'StickyTool',
+        path: '/vue/components/sticky-tool',
+        component: () => import('tdesign-vue/sticky-tool/sticky-tool.md'),
+        componentEn: () => import('tdesign-vue/sticky-tool/sticky-tool.en-US.md'),
+      },
+      {
         title: 'Tabs 选项卡',
         titleEn: 'Tabs',
         name: 'tabs',
