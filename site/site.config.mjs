@@ -155,12 +155,10 @@ const docs = [
         componentEn: () => import('tdesign-vue/anchor/anchor.en-US.md'),
       },
       {
-        title: 'BackTop 锚点',
-        titleEn: 'BackTop',
+        title: 'BackTop 回到顶部',
         name: 'back-top',
         path: '/vue/components/back-top',
         component: () => import('tdesign-vue/back-top/back-top.md'),
-        componentEn: () => import('tdesign-vue/back-top/back-top.en-US.md'),
       },
       {
         title: 'Breadcrumb 面包屑',
