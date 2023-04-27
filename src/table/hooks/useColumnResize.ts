@@ -186,6 +186,23 @@ export default function useColumnResize(params: {
     };
   };
 
+  const getFixedToLeftResizeInfo = (
+    target: HTMLElement,
+    col: BaseTableCol,
+    targetBoundRect: DOMRect,
+    tableBoundRect: DOMRect,
+  ) => {
+    const targetIsSameAsCol = target.dataset.colkey === col.colKey;
+    const colLeft = targetBoundRect.left - tableBoundRect.left;
+    const resizeLinePos = colLeft + targetBoundRect.width;
+    const { minColWidth, maxColWidth } = getMinMaxColWidth(col);
+    return {
+      resizeLinePos,
+      minResizeLineLeft: colLeft + (targetIsSameAsCol ? minColWidth : targetBoundRect.width),
+      maxResizeLineLeft: colLeft + (targetIsSameAsCol ? maxColWidth : targetBoundRect.width),
+    };
+  };
+
   const getTotalTableWidth = (thWidthList: { [key: string]: number }): number => {
     let tableWidth = 0;
     leafColumns.value.forEach((col) => {
@@ -193,6 +210,29 @@ export default function useColumnResize(params: {
     });
     return tableWidth;
   };
+  const getSiblingColCanResizable = (
+    newThWidthList: { [key: string]: number },
+    effectNextCol: BaseTableCol,
+    distance: number,
+    index: number,
+  ) => {
+    let isWidthAbnormal = true;
+    if (effectNextCol) {
+      const { minColWidth, maxColWidth } = getMinMaxColWidth(effectNextCol);
+      const targetNextColWidth = newThWidthList[effectNextCol.colKey] + distance;
+      isWidthAbnormal = targetNextColWidth < minColWidth || targetNextColWidth > maxColWidth;
+    }
+    return !(isWidthAbnormal || isWidthOverflow.value || index === leafColumns.value.length - 1);
+  };
+  const getOtherResizeInfo = (
+    target: HTMLElement,
+    col: BaseTableCol<TableRowData>,
+    effectPrevCol: BaseTableCol,
+    targetBoundRect: DOMRect,
+    tableBoundRect: DOMRect,
+  ) => effectPrevCol
+    ? getNormalResizeInfo(col, effectPrevCol, targetBoundRect, tableBoundRect)
+    : getFixedToLeftResizeInfo(target, col, targetBoundRect, tableBoundRect);
 
   // 调整表格列宽
   const onColumnMousedown = (e: MouseEvent, col: BaseTableCol<TableRowData>, index: number) => {
@@ -204,7 +244,7 @@ export default function useColumnResize(params: {
     const effectPrevCol = effectColMap.value[col.colKey]?.prev;
     const { resizeLinePos, minResizeLineLeft, maxResizeLineLeft } = isColRightFixActive(col)
       ? getFixedToRightResizeInfo(target, col, effectNextCol, targetBoundRect, tableBoundRect)
-      : getNormalResizeInfo(col, effectPrevCol, targetBoundRect, tableBoundRect);
+      : getOtherResizeInfo(target, col, effectPrevCol, targetBoundRect, tableBoundRect);
 
     // 开始拖拽，记录下鼠标起始位置
     resizeLineParams.isDragging = true;
@@ -231,13 +271,14 @@ export default function useColumnResize(params: {
        */
       const thWidthList = getThWidthList('calculate');
       const currentCol = effectColMap.value[col.colKey]?.current;
-      const currentSibling = resizeLineParams.effectCol === 'next' ? currentCol.prevSibling : currentCol.nextSibling;
+      const currentSibling = resizeLineParams.effectCol === 'next' ? currentCol.nextSibling : currentCol.prevSibling;
       // 多行表头，列宽为最后一层的宽度，即叶子结点宽度
       const newThWidthList = { ...thWidthList };
       // 当前列不允许修改宽度，就调整相邻列的宽度
       const tmpCurrentCol = col.resizable !== false ? col : currentSibling;
-      // 是否允许调整相邻列宽：列宽未超出时，且并非是最后一列（最后一列的右侧拉伸会认为是表格整体宽度调整）
-      const canResizeSiblingColWidth = !(isWidthOverflow.value || index === leafColumns.value.length - 1);
+      // 是否允许调整后一列的列宽：列宽未超出时，满足后一列设置的最大最小值时且并非是最后一列（最后一列的右侧拉伸会认为是表格整体宽度调整）
+      const rightCol = resizeLineParams.effectCol === 'next' ? currentCol.nextSibling : col;
+      const canResizeSiblingColWidth = getSiblingColCanResizable(newThWidthList, rightCol, moveDistance, index);
 
       if (resizeLineParams.effectCol === 'next') {
         // 右侧激活态的固定列，需特殊调整
@@ -259,7 +300,7 @@ export default function useColumnResize(params: {
         if (canResizeSiblingColWidth) {
           newThWidthList[tmpCurrentCol.colKey] += moveDistance;
         }
-        newThWidthList[effectPrevCol.colKey] -= moveDistance;
+        effectPrevCol && (newThWidthList[effectPrevCol.colKey] -= moveDistance);
       }
       updateThWidthList(newThWidthList);
       const tableWidth = getTotalTableWidth(newThWidthList);

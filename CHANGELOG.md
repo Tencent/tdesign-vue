@@ -5,6 +5,38 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.2.7 `2023-04-20` 
+### 🚀 Features
+- `Datepicker`: 新增 `onPresetClick` 事件 @honkinglin ([#2342](https://github.com/Tencent/tdesign-vue/pull/2342))
+### 🐞 Bug Fixes
+- `DatePicker`: 修复时间戳模式下控制台警告 props 类型错误的问题 @Ericleungs ([#2328](https://github.com/Tencent/tdesign-vue/pull/2328))
+- `Table`: 修复table组件在开启固定列单列 resizable 禁用时，相邻 resizable 启用的列列宽调整范围与预期不一致的问题 @chuyueZhang ([#2335](https://github.com/Tencent/tdesign-vue/pull/2335))
+- `Cascader`: 修复 `valueType = full` 模式下，设置 `minCollapsedNum` 渲染报错的问题 @xiaosansiji ([#2343](https://github.com/Tencent/tdesign-vue/pull/2343))
+- `ColorPicker`: 修复渐变模式下 `hex` 和 `rgb` 模式下输入无法修改渐变点颜色的缺陷 @uyarn ([common#1289](https://github.com/Tencent/tdesign-common/pull/1289))
+- Popup: 修复 nuxt 环境中报错的问题 @uyarn (https://github.com/Tencent/tdesign-vue/pull/2347)
+### 🚧 Others
+- `文档`: icon 调整 manifest 统一入口导出 esm 模块说明 @Layouwen ([#2341](https://github.com/Tencent/tdesign-vue/pull/2341))
+- `主题生成器`: 官网主题生成器升级 1.0 版本，支持色彩智能推荐及尺寸调整，新增腾讯云皮肤 @uyarn ([#2345](https://github.com/Tencent/tdesign-vue/pull/2345))
+
+## 🌈 1.2.6 `2023-04-13` 
+### 🚀 Features
+- `Loading`: 完善指令使用方式，支持 `v-loading` 配置复杂属性 @akinocccc ([#2318](https://github.com/Tencent/tdesign-vue/pull/2318))
+- `Select`: 支持 `boolean` 类型的 value @uyarn ([#2325](https://github.com/Tencent/tdesign-vue/pull/2325))
+### 🐞 Bug Fixes
+- `Upload`: 修复 `triggerButtonProps` 在 `theme=file-input` 时失效的问题 @qqw78901 ([#2319](https://github.com/Tencent/tdesign-vue/pull/2319))
+- `Transfer`: 修复筛选后全选功能 @akinocccc ([#2315](https://github.com/Tencent/tdesign-vue/pull/2315))
+- `Table`: @chuyueZhang ([#2324](https://github.com/Tencent/tdesign-vue/pull/2324))
+  - 列宽调整功能，修复即使 `resizable=false` 时，也会显示拖拽调整列宽图标和辅助线问题
+  - 列宽调整功能，修复在拖拽任意列宽使表格横向滚动条消失之后列宽无法正常调整的问题，即支持 `resize.minWidth`
+  - 列宽调整功能，修复开启多级表头时点击子表头后控制台报错的问题
+- `Select`: 修复创建的选项选中时，回调参数中 `option` 与 `selectedOptions` 缺失的问题 @uyarn ([#2333](https://github.com/Tencent/tdesign-vue/pull/2333))
+- `Timeline`: 修正在项目全局修改 `box-sizing` 情况下，时间点样式错误的问题 @PDieE ([common#1264](https://github.com/Tencent/tdesign-common/pull/1264))
+- `Popconfirm`: 修正 title 样式字重问题 @uyarn ([common#1265](https://github.com/Tencent/tdesign-common/pull/1265))
+- `Input`: 隐藏 Edge 浏览器默认的密码框样式 @wangyang0210 ([common#1261](https://github.com/Tencent/tdesign-common/pull/1261))
+- `InputNumber`: 移除 autowidth 模式下多余的样式 @uyarn ([common#1258](https://github.com/Tencent/tdesign-common/pull/1258))
+- `Datepicker`: 修正区域时间选择，在右输入框点击了一年的最后一周之后，左右输入框的 value 前后对调的问题 @Ericleungs ([common#1257](https://github.com/Tencent/tdesign-common/pull/1257))
+
+
 ## 🌈 1.2.5 `2023-04-06` 
 ### 🐞 Bug Fixes
 - `Popup`: 修复部分构建工具无法自动注册 Popup 插件的问题 @uyarn ([#2294](https://github.com/Tencent/tdesign-vue/pull/2294))

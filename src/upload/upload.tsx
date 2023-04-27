@@ -99,7 +99,7 @@ export default defineComponent({
       const getDefaultTrigger = () => {
         if (this.theme === 'file-input') {
           return (
-            <Button disabled={this.disabled} variant="outline" {...this.triggerButtonProps}>
+            <Button disabled={this.disabled} variant="outline" props={this.triggerButtonProps}>
               {this.triggerUploadText}
             </Button>
           );
