@@ -155,6 +155,14 @@ const docs = [
         componentEn: () => import('tdesign-vue/anchor/anchor.en-US.md'),
       },
       {
+        title: 'BackTop 锚点',
+        titleEn: 'BackTop',
+        name: 'back-top',
+        path: '/vue/components/back-top',
+        component: () => import('tdesign-vue/back-top/back-top.md'),
+        componentEn: () => import('tdesign-vue/back-top/back-top.en-US.md'),
+      },
+      {
         title: 'Breadcrumb 面包屑',
         titleEn: 'Breadcrumb',
         name: 'breadcrumb',
@@ -553,7 +561,6 @@ const docs = [
         path: '/vue/components/rate',
         component: () => import('tdesign-vue/rate/rate.md'),
         componentEn: () => import('tdesign-vue/rate/rate.en-US.md'),
-
       },
     ],
   },
