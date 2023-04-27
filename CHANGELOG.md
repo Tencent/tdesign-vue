@@ -5,6 +5,20 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.3.0 `2023-04-27` 
+### 🚀 Features
+- `StickyTool`: 新增 `StickyTool` 侧边栏组件 @ZekunWu ([#2213](https://github.com/Tencent/tdesign-vue/pull/2213))
+- `BackTop`: 新增 `BackTop` 回到顶部组件 @uyarn @shinyina ([#2368](https://github.com/Tencent/tdesign-vue/pull/2368))
+- `Input`: 支持在 disabled 状态下，hover 时提示展示全部内容 @uyarn ([#2372](https://github.com/Tencent/tdesign-vue/pull/2372))
+### 🐞 Bug Fixes
+- `Select`: 修复多选下尺寸的样式问题 @uyarn ([#2349](https://github.com/Tencent/tdesign-vue/pull/2349))
+- `Table`: 修复 SSR 服务端渲染报错问题 @chaishi ([#2357](https://github.com/Tencent/tdesign-vue/pull/2357))
+- `Datepicker`:  
+  - 修复单独使用 `DatePickerPanel`，且启用 enable-time-picker 时，时分秒无法双向绑定且无法滚动的问题 @Ericleungs ([#2353](https://github.com/Tencent/tdesign-vue/pull/2353))
+  - 修复在时间戳模式下 panel 会显示 Invalid value 的问题 @Ericleungs ([common#1268](https://github.com/Tencent/tdesign-common/pull/1268))
+  - 修复第二次点击面板关闭异常问题 @honkinglin ([#2373](https://github.com/Tencent/tdesign-vue/pull/2373))
+- `Space`: 修复插槽丢失响应式的缺陷 @uyarn ([#2372](https://github.com/Tencent/tdesign-vue/pull/2372))
+
 ## 🌈 1.2.7 `2023-04-20` 
 ### 🚀 Features
 - `Datepicker`: 新增 `onPresetClick` 事件 @honkinglin ([#2342](https://github.com/Tencent/tdesign-vue/pull/2342))
