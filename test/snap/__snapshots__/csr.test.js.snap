@@ -1846,6 +1846,7 @@ exports[`csr snapshot test > csr test ./src/auto-complete/_example/status.vue 1`
             class="t-input__inner"
             disabled="disabled"
             placeholder="请输入关键词搜索"
+            title="第一个默认联想词"
             type="text"
             unselectable="off"
           />
@@ -22539,6 +22540,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/disabled.vue 1`] =
             disabled="disabled"
             placeholder="请选择"
             readonly="readonly"
+            title="选项一 / 子选项一"
             type="text"
             unselectable="on"
           />
@@ -31251,6 +31253,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/status-disable
           class="t-input__inner"
           disabled="disabled"
           placeholder="请输入"
+          title="red"
           type="text"
           unselectable="off"
         />
@@ -31399,6 +31402,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/status-readonl
                   disabled="disabled"
                   placeholder="请选择"
                   readonly="readonly"
+                  title="RGB"
                   type="text"
                   unselectable="on"
                 />
@@ -31451,6 +31455,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/status-readonl
                     class="t-input__inner"
                     disabled="disabled"
                     placeholder="请输入"
+                    title="0"
                     type="text"
                     unselectable="off"
                   />
@@ -31477,6 +31482,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/status-readonl
                     class="t-input__inner"
                     disabled="disabled"
                     placeholder="请输入"
+                    title="82"
                     type="text"
                     unselectable="off"
                   />
@@ -31503,6 +31509,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/status-readonl
                     class="t-input__inner"
                     disabled="disabled"
                     placeholder="请输入"
+                    title="217"
                     type="text"
                     unselectable="off"
                   />
@@ -50524,6 +50531,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                     disabled="disabled"
                     placeholder="请选择寄件地址"
                     readonly="readonly"
+                    title=""
                     type="text"
                     unselectable="on"
                   />
@@ -50590,6 +50598,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                     disabled="disabled"
                     placeholder="请选择收件地址"
                     readonly="readonly"
+                    title=""
                     type="text"
                     unselectable="on"
                   />
@@ -50660,6 +50669,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                       disabled="disabled"
                       placeholder="请选择日期"
                       readonly="readonly"
+                      title=""
                       type="text"
                       unselectable="on"
                     />
@@ -50957,6 +50967,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                     class="t-input__inner"
                     disabled="disabled"
                     placeholder="分数值"
+                    title=""
                     type="text"
                     unselectable="off"
                   />
@@ -62244,6 +62255,7 @@ exports[`csr snapshot test > csr test ./src/input/_example/status.vue 1`] = `
               class="t-input__inner"
               disabled="disabled"
               placeholder="请输入"
+              title="禁用状态"
               type="text"
               unselectable="off"
             />
@@ -63579,6 +63591,7 @@ exports[`csr snapshot test > csr test ./src/input-number/_example/disabled.vue 1
           class="t-input__inner"
           disabled="disabled"
           placeholder="请输入"
+          title="3"
           type="text"
           unselectable="off"
         />
@@ -76478,6 +76491,7 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/disabled.vue 1`]
               disabled="disabled"
               placeholder="请选择"
               readonly="readonly"
+              title="5 条/页"
               type="text"
               unselectable="on"
             />
@@ -86434,6 +86448,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/disabled.vue 1`] = `
               class="t-input__inner"
               disabled="disabled"
               placeholder="-请选择-"
+              title=""
               type="text"
               unselectable="off"
             />
@@ -88090,6 +88105,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/status.vue 1`] = `
               disabled="disabled"
               placeholder="请选择云解决方案"
               readonly="readonly"
+              title=""
               type="text"
               unselectable="on"
             />
@@ -89856,6 +89872,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/status.vue 1`]
                 disabled="disabled"
                 placeholder="Please Select"
                 readonly="readonly"
+                title="TDesign"
                 type="text"
                 unselectable="on"
               />
@@ -134071,6 +134088,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/status.vue 1`] = 
             class="t-input__inner"
             disabled="disabled"
             placeholder=""
+            title=""
             type="text"
             unselectable="off"
           />
@@ -135305,6 +135323,7 @@ exports[`csr snapshot test > csr test ./src/time-picker/_example/disabled.vue 1`
               disabled="disabled"
               placeholder=""
               readonly="readonly"
+              title="11:12:10"
               type="text"
               unselectable="on"
             />
