@@ -5,6 +5,7 @@ import type { ClassName, Styles } from '../common';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins from '../config-provider/config-receiver';
 import { emitEvent } from '../utils/event';
+
 import type { TdStickyToolProps, TdStickyItemProps } from './type';
 
 export default mixins(getConfigReceiverMixins('sticky-tool')).extend({
