@@ -1,6 +1,6 @@
 <template>
   <div class="tdesign-demo-dropdown">
-    <t-dropdown :options="options" :onClick="clickHandler">
+    <t-dropdown :options="options" @click="clickHandler">
       <t-button variant="text">
         <span class="tdesign-demo-dropdown__text">
           更多
