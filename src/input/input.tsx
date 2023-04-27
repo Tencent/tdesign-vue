@@ -492,7 +492,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         [`${this.componentName}--suffix`]: suffixIcon || suffixContent,
       },
     ];
-
+    const inputTextValue = this.composingRef ? this.composingRefValue : this.inputValue;
     const inputNode = (
       <div
         class={classes}
@@ -512,8 +512,9 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
             on={inputEvents}
             ref="inputRef"
             class={`${this.componentName}__inner`}
-            value={this.composingRef ? this.composingRefValue : this.inputValue}
+            value={inputTextValue}
             onInput={this.handleInput}
+            title={this.disabled ? inputTextValue : undefined}
           />
         )}
         {this.autoWidth && (
