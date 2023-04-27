@@ -72,6 +72,7 @@ exports[`Input > :props > :disabled 1`] = `
       class="t-input__inner"
       disabled="disabled"
       placeholder="请输入"
+      title=""
       type="text"
       unselectable="off"
     />

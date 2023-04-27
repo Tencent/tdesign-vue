@@ -1846,6 +1846,7 @@ exports[`csr snapshot test > csr test ./src/auto-complete/_example/status.vue 1`
             class="t-input__inner"
             disabled="disabled"
             placeholder="请输入关键词搜索"
+            title="第一个默认联想词"
             type="text"
             unselectable="off"
           />
@@ -21464,6 +21465,7 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/disabled.vue 1`] =
             disabled="disabled"
             placeholder="请选择"
             readonly="readonly"
+            title="选项一 / 子选项一"
             type="text"
             unselectable="on"
           />
@@ -30176,6 +30178,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/status-disable
           class="t-input__inner"
           disabled="disabled"
           placeholder="请输入"
+          title="red"
           type="text"
           unselectable="off"
         />
@@ -30324,6 +30327,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/status-readonl
                   disabled="disabled"
                   placeholder="请选择"
                   readonly="readonly"
+                  title="RGB"
                   type="text"
                   unselectable="on"
                 />
@@ -30376,6 +30380,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/status-readonl
                     class="t-input__inner"
                     disabled="disabled"
                     placeholder="请输入"
+                    title="0"
                     type="text"
                     unselectable="off"
                   />
@@ -30402,6 +30407,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/status-readonl
                     class="t-input__inner"
                     disabled="disabled"
                     placeholder="请输入"
+                    title="82"
                     type="text"
                     unselectable="off"
                   />
@@ -30428,6 +30434,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/status-readonl
                     class="t-input__inner"
                     disabled="disabled"
                     placeholder="请输入"
+                    title="217"
                     type="text"
                     unselectable="off"
                   />
@@ -41341,9 +41348,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/panel.vue 1`] =
             >
               <div
                 class="t-date-picker__panel-time-viewer"
-              >
-                00:00:00
-              </div>
+              />
               <div
                 class="t-time-picker__panel"
               >
@@ -49451,6 +49456,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                     disabled="disabled"
                     placeholder="请选择寄件地址"
                     readonly="readonly"
+                    title=""
                     type="text"
                     unselectable="on"
                   />
@@ -49517,6 +49523,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                     disabled="disabled"
                     placeholder="请选择收件地址"
                     readonly="readonly"
+                    title=""
                     type="text"
                     unselectable="on"
                   />
@@ -49587,6 +49594,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                       disabled="disabled"
                       placeholder="请选择日期"
                       readonly="readonly"
+                      title=""
                       type="text"
                       unselectable="on"
                     />
@@ -49884,6 +49892,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                     class="t-input__inner"
                     disabled="disabled"
                     placeholder="分数值"
+                    title=""
                     type="text"
                     unselectable="off"
                   />
@@ -61171,6 +61180,7 @@ exports[`csr snapshot test > csr test ./src/input/_example/status.vue 1`] = `
               class="t-input__inner"
               disabled="disabled"
               placeholder="请输入"
+              title="禁用状态"
               type="text"
               unselectable="off"
             />
@@ -62506,6 +62516,7 @@ exports[`csr snapshot test > csr test ./src/input-number/_example/disabled.vue 1
           class="t-input__inner"
           disabled="disabled"
           placeholder="请输入"
+          title="3"
           type="text"
           unselectable="off"
         />
@@ -75405,6 +75416,7 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/disabled.vue 1`]
               disabled="disabled"
               placeholder="请选择"
               readonly="readonly"
+              title="5 条/页"
               type="text"
               unselectable="on"
             />
@@ -85361,6 +85373,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/disabled.vue 1`] = `
               class="t-input__inner"
               disabled="disabled"
               placeholder="-请选择-"
+              title=""
               type="text"
               unselectable="off"
             />
@@ -87017,6 +87030,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/status.vue 1`] = `
               disabled="disabled"
               placeholder="请选择云解决方案"
               readonly="readonly"
+              title=""
               type="text"
               unselectable="on"
             />
@@ -88783,6 +88797,7 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/status.vue 1`]
                 disabled="disabled"
                 placeholder="Please Select"
                 readonly="readonly"
+                title="TDesign"
                 type="text"
                 unselectable="on"
               />
@@ -93978,6 +93993,335 @@ exports[`csr snapshot test > csr test ./src/steps/_example/vertical-sequence.vue
               class="t-steps-item__extra"
             />
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/sticky-tool/_example/base.vue 1`] = `
+<div
+  class="t-space t-space-horizontal"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-sticky-tool t-sticky-tool--square"
+      style="right: -420px; bottom: 0px; position: relative; overflow: hidden;"
+    >
+      <div
+        class="t-sticky-item t-sticky-item--normal t-sticky-item--square"
+      >
+        <svg
+          class="t-icon t-icon-chat"
+          fill="none"
+          height="1em"
+          viewBox="0 0 16 16"
+          width="1em"
+        >
+          <path
+            d="M4.64 10.5H13V4H3v7.87l1.64-1.37zm-2.15 3.09a.3.3 0 01-.49-.23V4a1 1 0 011-1h10a1 1 0 011 1v6.5a1 1 0 01-1 1H5l-2.5 2.09z"
+            fill="currentColor"
+            fill-opacity="0.9"
+          />
+        </svg>
+        <div
+          class="t-sticky-item__label"
+        >
+          chat
+        </div>
+      </div>
+      <div
+        class="t-sticky-item t-sticky-item--normal t-sticky-item--square"
+      >
+        <svg
+          class="t-icon t-icon-add"
+          fill="none"
+          height="1em"
+          viewBox="0 0 16 16"
+          width="1em"
+        >
+          <path
+            d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z"
+            fill="currentColor"
+            fill-opacity="0.9"
+          />
+        </svg>
+        <div
+          class="t-sticky-item__label"
+        >
+          add
+        </div>
+      </div>
+      <div
+        class="t-sticky-item t-sticky-item--normal t-sticky-item--square"
+      >
+        <svg
+          class="t-icon t-icon-qrcode"
+          fill="none"
+          height="1em"
+          viewBox="0 0 16 16"
+          width="1em"
+        >
+          <path
+            d="M6 4H4v2h2V4z"
+            fill="currentColor"
+            fill-opacity="0.9"
+          />
+          <path
+            d="M2.5 2a.5.5 0 00-.5.5v5c0 .28.22.5.5.5h5a.5.5 0 00.5-.5v-5a.5.5 0 00-.5-.5h-5zM3 3h4v4H3V3zM10.5 2a.5.5 0 00-.5.5v3c0 .28.22.5.5.5h3a.5.5 0 00.5-.5v-3a.5.5 0 00-.5-.5h-3zm.5 3V3h2v2h-2zM10 10.5c0-.28.22-.5.5-.5h3c.28 0 .5.22.5.5v3a.5.5 0 01-.5.5h-3a.5.5 0 01-.5-.5v-3zm1 2.5h2v-2h-2v2zM2.5 10a.5.5 0 00-.5.5v3c0 .28.22.5.5.5h3a.5.5 0 00.5-.5v-3a.5.5 0 00-.5-.5h-3zm.5 1h2v2H3v-2zM14 7.5h-4v1h4v-1zM8.5 11v3h-1v-3h1zM8.5 10V9h-1v1h1z"
+            fill="currentColor"
+            fill-opacity="0.9"
+          />
+        </svg>
+        <div
+          class="t-sticky-item__label"
+        >
+          aqcode
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/sticky-tool/_example/compact.vue 1`] = `
+<div
+  class="t-space t-space-horizontal"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-sticky-tool t-sticky-tool--square"
+      style="right: -420px; bottom: 0px; position: relative; overflow: hidden;"
+    >
+      <div
+        class="t-sticky-item t-sticky-item--compact t-sticky-item--square"
+      >
+        <svg
+          class="t-icon t-icon-chat"
+          fill="none"
+          height="1em"
+          viewBox="0 0 16 16"
+          width="1em"
+        >
+          <path
+            d="M4.64 10.5H13V4H3v7.87l1.64-1.37zm-2.15 3.09a.3.3 0 01-.49-.23V4a1 1 0 011-1h10a1 1 0 011 1v6.5a1 1 0 01-1 1H5l-2.5 2.09z"
+            fill="currentColor"
+            fill-opacity="0.9"
+          />
+        </svg>
+      </div>
+      <div
+        class="t-sticky-item t-sticky-item--compact t-sticky-item--square"
+      >
+        <svg
+          class="t-icon t-icon-add"
+          fill="none"
+          height="1em"
+          viewBox="0 0 16 16"
+          width="1em"
+        >
+          <path
+            d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z"
+            fill="currentColor"
+            fill-opacity="0.9"
+          />
+        </svg>
+      </div>
+      <div
+        class="t-sticky-item t-sticky-item--compact t-sticky-item--square"
+      >
+        <svg
+          class="t-icon t-icon-qrcode"
+          fill="none"
+          height="1em"
+          viewBox="0 0 16 16"
+          width="1em"
+        >
+          <path
+            d="M6 4H4v2h2V4z"
+            fill="currentColor"
+            fill-opacity="0.9"
+          />
+          <path
+            d="M2.5 2a.5.5 0 00-.5.5v5c0 .28.22.5.5.5h5a.5.5 0 00.5-.5v-5a.5.5 0 00-.5-.5h-5zM3 3h4v4H3V3zM10.5 2a.5.5 0 00-.5.5v3c0 .28.22.5.5.5h3a.5.5 0 00.5-.5v-3a.5.5 0 00-.5-.5h-3zm.5 3V3h2v2h-2zM10 10.5c0-.28.22-.5.5-.5h3c.28 0 .5.22.5.5v3a.5.5 0 01-.5.5h-3a.5.5 0 01-.5-.5v-3zm1 2.5h2v-2h-2v2zM2.5 10a.5.5 0 00-.5.5v3c0 .28.22.5.5.5h3a.5.5 0 00.5-.5v-3a.5.5 0 00-.5-.5h-3zm.5 1h2v2H3v-2zM14 7.5h-4v1h4v-1zM8.5 11v3h-1v-3h1zM8.5 10V9h-1v1h1z"
+            fill="currentColor"
+            fill-opacity="0.9"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/sticky-tool/_example/shape.vue 1`] = `
+<div
+  class="t-space t-space-horizontal"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-sticky-tool t-sticky-tool--square"
+      style="right: -420px; bottom: 0px; position: relative; overflow: hidden;"
+    >
+      <div
+        class="t-sticky-item t-sticky-item--normal t-sticky-item--square"
+      >
+        <svg
+          class="t-icon t-icon-chat"
+          fill="none"
+          height="1em"
+          viewBox="0 0 16 16"
+          width="1em"
+        >
+          <path
+            d="M4.64 10.5H13V4H3v7.87l1.64-1.37zm-2.15 3.09a.3.3 0 01-.49-.23V4a1 1 0 011-1h10a1 1 0 011 1v6.5a1 1 0 01-1 1H5l-2.5 2.09z"
+            fill="currentColor"
+            fill-opacity="0.9"
+          />
+        </svg>
+        <div
+          class="t-sticky-item__label"
+        >
+          chat
+        </div>
+      </div>
+      <div
+        class="t-sticky-item t-sticky-item--normal t-sticky-item--square"
+      >
+        <svg
+          class="t-icon t-icon-add"
+          fill="none"
+          height="1em"
+          viewBox="0 0 16 16"
+          width="1em"
+        >
+          <path
+            d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z"
+            fill="currentColor"
+            fill-opacity="0.9"
+          />
+        </svg>
+        <div
+          class="t-sticky-item__label"
+        >
+          add
+        </div>
+      </div>
+      <div
+        class="t-sticky-item t-sticky-item--normal t-sticky-item--square"
+      >
+        <svg
+          class="t-icon t-icon-qrcode"
+          fill="none"
+          height="1em"
+          viewBox="0 0 16 16"
+          width="1em"
+        >
+          <path
+            d="M6 4H4v2h2V4z"
+            fill="currentColor"
+            fill-opacity="0.9"
+          />
+          <path
+            d="M2.5 2a.5.5 0 00-.5.5v5c0 .28.22.5.5.5h5a.5.5 0 00.5-.5v-5a.5.5 0 00-.5-.5h-5zM3 3h4v4H3V3zM10.5 2a.5.5 0 00-.5.5v3c0 .28.22.5.5.5h3a.5.5 0 00.5-.5v-3a.5.5 0 00-.5-.5h-3zm.5 3V3h2v2h-2zM10 10.5c0-.28.22-.5.5-.5h3c.28 0 .5.22.5.5v3a.5.5 0 01-.5.5h-3a.5.5 0 01-.5-.5v-3zm1 2.5h2v-2h-2v2zM2.5 10a.5.5 0 00-.5.5v3c0 .28.22.5.5.5h3a.5.5 0 00.5-.5v-3a.5.5 0 00-.5-.5h-3zm.5 1h2v2H3v-2zM14 7.5h-4v1h4v-1zM8.5 11v3h-1v-3h1zM8.5 10V9h-1v1h1z"
+            fill="currentColor"
+            fill-opacity="0.9"
+          />
+        </svg>
+        <div
+          class="t-sticky-item__label"
+        >
+          aqcode
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-sticky-tool t-sticky-tool--round"
+      style="right: -220px; bottom: 0px; position: relative; overflow: hidden;"
+    >
+      <div
+        class="t-sticky-item t-sticky-item--normal t-sticky-item--round"
+      >
+        <svg
+          class="t-icon t-icon-chat"
+          fill="none"
+          height="1em"
+          viewBox="0 0 16 16"
+          width="1em"
+        >
+          <path
+            d="M4.64 10.5H13V4H3v7.87l1.64-1.37zm-2.15 3.09a.3.3 0 01-.49-.23V4a1 1 0 011-1h10a1 1 0 011 1v6.5a1 1 0 01-1 1H5l-2.5 2.09z"
+            fill="currentColor"
+            fill-opacity="0.9"
+          />
+        </svg>
+        <div
+          class="t-sticky-item__label"
+        >
+          chat
+        </div>
+      </div>
+      <div
+        class="t-sticky-item t-sticky-item--normal t-sticky-item--round"
+      >
+        <svg
+          class="t-icon t-icon-add"
+          fill="none"
+          height="1em"
+          viewBox="0 0 16 16"
+          width="1em"
+        >
+          <path
+            d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z"
+            fill="currentColor"
+            fill-opacity="0.9"
+          />
+        </svg>
+        <div
+          class="t-sticky-item__label"
+        >
+          add
+        </div>
+      </div>
+      <div
+        class="t-sticky-item t-sticky-item--normal t-sticky-item--round"
+      >
+        <svg
+          class="t-icon t-icon-qrcode"
+          fill="none"
+          height="1em"
+          viewBox="0 0 16 16"
+          width="1em"
+        >
+          <path
+            d="M6 4H4v2h2V4z"
+            fill="currentColor"
+            fill-opacity="0.9"
+          />
+          <path
+            d="M2.5 2a.5.5 0 00-.5.5v5c0 .28.22.5.5.5h5a.5.5 0 00.5-.5v-5a.5.5 0 00-.5-.5h-5zM3 3h4v4H3V3zM10.5 2a.5.5 0 00-.5.5v3c0 .28.22.5.5.5h3a.5.5 0 00.5-.5v-3a.5.5 0 00-.5-.5h-3zm.5 3V3h2v2h-2zM10 10.5c0-.28.22-.5.5-.5h3c.28 0 .5.22.5.5v3a.5.5 0 01-.5.5h-3a.5.5 0 01-.5-.5v-3zm1 2.5h2v-2h-2v2zM2.5 10a.5.5 0 00-.5.5v3c0 .28.22.5.5.5h3a.5.5 0 00.5-.5v-3a.5.5 0 00-.5-.5h-3zm.5 1h2v2H3v-2zM14 7.5h-4v1h4v-1zM8.5 11v3h-1v-3h1zM8.5 10V9h-1v1h1z"
+            fill="currentColor"
+            fill-opacity="0.9"
+          />
+        </svg>
+        <div
+          class="t-sticky-item__label"
+        >
+          aqcode
         </div>
       </div>
     </div>
@@ -132669,6 +133013,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/status.vue 1`] = 
             class="t-input__inner"
             disabled="disabled"
             placeholder=""
+            title=""
             type="text"
             unselectable="off"
           />
@@ -133903,6 +134248,7 @@ exports[`csr snapshot test > csr test ./src/time-picker/_example/disabled.vue 1`
               disabled="disabled"
               placeholder=""
               readonly="readonly"
+              title="11:12:10"
               type="text"
               unselectable="on"
             />

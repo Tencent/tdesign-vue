@@ -514,7 +514,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
             class={`${this.componentName}__inner`}
             value={inputTextValue}
             onInput={this.handleInput}
-            title={this.disabled ? inputTextValue : null}
+            title={this.disabled ? inputTextValue : undefined}
           />
         )}
         {this.autoWidth && (
