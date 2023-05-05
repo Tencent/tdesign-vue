@@ -67,6 +67,15 @@ export default {
     type: Boolean,
     default: true,
   },
+  /** 组件尺寸 */
+  size: {
+    type: String as PropType<TdColorPickerProps['size']>,
+    default: 'medium' as TdColorPickerProps['size'],
+    validator(val: TdColorPickerProps['size']): boolean {
+      if (!val) return true;
+      return ['small', 'medium', 'large'].includes(val);
+    },
+  },
   /** 系统预设的颜色样例，值为 `null` 或 `[]` 则不显示系统色，值为 `undefined` 会显示组件内置的系统默认色 */
   swatchColors: {
     type: Array as PropType<TdColorPickerProps['swatchColors']>,

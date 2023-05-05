@@ -89,6 +89,7 @@ export default defineComponent({
       },
       ...((popupProps as any) || {}),
     };
+
     return (
       <t-popup
         {...{
@@ -108,6 +109,7 @@ export default defineComponent({
               clearable={this.clearable}
               input-props={this.inputProps}
               handleTriggerChange={this.setInnerValue}
+              size={this.size}
             />,
           )}
         </div>
