@@ -12,9 +12,13 @@ import { TagInputProps } from '../tag-input';
 import { TagProps } from '../tag';
 import { TreeNodeModel } from '../tree';
 import { PopupVisibleChangeContext } from '../popup';
-import { TNode, TreeOptionData, SizeEnum } from '../common';
+import { TNode, TreeOptionData as TreeOption, SizeEnum } from '../common';
 
+export interface TreeOptionData extends TreeOption {
+  content?: string | TNode;
+}
 export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOptionData> {
+  option?: string | TNode;
   /**
    * 自动聚焦
    * @default false

@@ -204,12 +204,13 @@ export default defineComponent({
         scopedSlots={{
           panel: () => (
             <Panel
+              option={this.option}
               empty={this.empty}
               trigger={this.trigger}
               loading={this.loading}
               loadingText={this.loadingText}
               cascaderContext={cascaderContext}
-              scopedSlots={{ empty: slots.empty, loadingText: slots.loadingText }}
+              scopedSlots={{ option: slots.option, empty: slots.empty, loadingText: slots.loadingText }}
             />
           ),
           tips: slots.tips,

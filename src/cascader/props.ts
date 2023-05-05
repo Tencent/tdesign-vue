@@ -8,6 +8,9 @@ import { TdCascaderProps } from './type';
 import { PropType } from 'vue';
 
 export default {
+  option: {
+    type: [String, Function] as PropType<TdCascaderProps['option']>,
+  },
   /** 自动聚焦 */
   autofocus: Boolean,
   /** 参考 checkbox 组件 API */

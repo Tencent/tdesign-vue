@@ -2,14 +2,16 @@ import { defineComponent, PropType, computed } from '@vue/composition-api';
 import { ChevronRightIcon as TdChevronRightIcon } from 'tdesign-icons-vue';
 import { getFullPathLabel } from '../core/helper';
 import { getCascaderItemClass, getCascaderItemIconClass } from '../core/className';
-
+import { useTNodeJSX } from '../../hooks/tnode';
 // utils
 import Checkbox from '../../checkbox/index';
 import TLoading from '../../loading';
 
 // type
 import { getKeepAnimationMixins } from '../../config-provider/config-receiver';
-import { CascaderContextType, TreeNodeValue, TreeNode } from '../interface';
+import {
+  CascaderContextType, TreeNodeValue, TreeNode, TdCascaderProps,
+} from '../interface';
 import { usePrefixClass, useCommonClassName } from '../../hooks/useConfig';
 import { useGlobalIcon } from '../../hooks/useGlobalIcon';
 import Ripple from '../../utils/ripple';
@@ -22,6 +24,9 @@ const props = {
     default() {
       return {};
     },
+  },
+  optionChild: {
+    type: [String, Object, Array] as PropType<TdCascaderProps['option']>,
   },
   cascaderContext: {
     type: Object as PropType<CascaderContextType>,
@@ -36,6 +41,7 @@ export default defineComponent({
   directives: { Ripple },
   props: { ...props },
   setup(props) {
+    const renderTNodeJSX = useTNodeJSX();
     const COMPONENT_NAME = usePrefixClass('cascader__item');
     const classPrefix = usePrefixClass();
     const { STATUS, SIZE } = useCommonClassName();
@@ -46,6 +52,7 @@ export default defineComponent({
     const iconClass = computed(() => getCascaderItemIconClass(classPrefix.value, props.node, STATUS.value, props.cascaderContext));
 
     return {
+      renderTNodeJSX,
       COMPONENT_NAME,
       ChevronRightIcon,
       iconClass,
@@ -129,7 +136,10 @@ export default defineComponent({
           this.onMouseenter();
         }}
       >
-        {cascaderContext.multiple ? RenderCheckBox(node, cascaderContext) : RenderLabelContent(node, cascaderContext)}
+        {this.optionChild
+          || (cascaderContext.multiple
+            ? RenderCheckBox(node, cascaderContext)
+            : RenderLabelContent(node, cascaderContext))}
         {node.children
           && (node.loading ? <TLoading class={iconClass} size="small" /> : <ChevronRightIcon class={iconClass} />)}
       </li>
