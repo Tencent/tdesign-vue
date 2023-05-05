@@ -1,11 +1,11 @@
 <template>
   <t-space>
+    <!-- 方式一：使用 options 自定义下拉选项内容 -->
     <t-cascader
-      v-model="value"
+      v-model="value1"
       :popupProps="{ overlayClassName: 'tdesign-demo-select__overlay-option' }"
       :options="optionsData"
       clearable
-      @change="onChange"
     />
     <!-- 方式二：使用插槽自定义下拉选项内容 -->
     <t-cascader
@@ -77,7 +77,6 @@ export default {
           ],
         },
       ],
-      value: '1.1',
     };
   },
   computed: {
@@ -86,9 +85,6 @@ export default {
     },
   },
   methods: {
-    onChange(val, context) {
-      console.log(this.value, val, context);
-    },
     getDeepOptions(options) {
       if (!options) return null;
       return options.map((item) => ({
