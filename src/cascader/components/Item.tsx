@@ -26,7 +26,7 @@ const props = {
     },
   },
   optionChild: {
-    type: [String, Object, Array] as PropType<TdCascaderProps['option']>,
+    type: [Object, Array] as PropType<TdCascaderProps['option']>,
   },
   cascaderContext: {
     type: Object as PropType<CascaderContextType>,

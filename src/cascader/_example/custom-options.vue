@@ -14,12 +14,12 @@
       :options="options"
       style="width: 300px"
     >
-      <template v-slot:option="slotProps">
+      <template v-slot:option="{ item }">
         <div class="tdesign-demo__user-option">
           <img src="https://tdesign.gtimg.com/site/avatar.jpg" />
           <div class="tdesign-demo__user-option-info">
-            <div>{{ slotProps.label }}</div>
-            <div>{{ slotProps.value }}</div>
+            <div>{{ item.label }}</div>
+            <div>{{ item.value }}</div>
           </div>
         </div>
       </template>
@@ -95,16 +95,16 @@ export default {
         ...item,
         children: this.getDeepOptions(item.children),
         // content 自定义下拉选项关键代码
-        content: (h) => this.optionRender(h, item),
+        content: (h) => this.optionRender(h, { item }),
       }));
     },
-    optionRender(h, data) {
+    optionRender(h, { item }) {
       return (
         <div class="tdesign-demo__user-option">
           <img src="https://tdesign.gtimg.com/site/avatar.jpg" />
           <div class="tdesign-demo__user-option-info">
-            <div>{data.label}</div>
-            <div>{data.value}</div>
+            <div>{item.label}</div>
+            <div>{item.value}</div>
           </div>
         </div>
       );

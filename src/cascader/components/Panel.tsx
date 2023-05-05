@@ -59,11 +59,11 @@ export default defineComponent({
       global, COMPONENT_NAME, handleExpand, renderTNodeJSXDefault, cascaderContext, panels, emit,
     } = this;
 
-    const renderItem = (node: TreeNode) => {
+    const renderItem = (node: TreeNode, index: number) => {
       const optionChild = node.data.content
         ? getDefaultNode(node.data.content(this.$createElement))
         : renderTNodeJSXDefault('option', {
-          params: node.data,
+          params: { item: node.data, index },
         });
       return (
         <Item
@@ -91,7 +91,7 @@ export default defineComponent({
       );
     };
 
-    const renderList = (treeNodes: TreeNode[], isFilter = false, segment = true, key = '1') => (
+    const renderList = (treeNodes: TreeNode[], isFilter = false, segment = true, index = 1) => (
       <ul
         class={[
           `${COMPONENT_NAME}__menu`,
@@ -101,9 +101,9 @@ export default defineComponent({
             [`${COMPONENT_NAME}__menu--filter`]: isFilter,
           },
         ]}
-        key={key}
+        key={`${COMPONENT_NAME}__menu${index}`}
       >
-        {treeNodes.map((node: TreeNode) => renderItem(node))}
+        {treeNodes.map((node: TreeNode) => renderItem(node, index))}
       </ul>
     );
 
@@ -118,7 +118,7 @@ export default defineComponent({
       const { inputVal, treeNodes } = cascaderContext;
       return inputVal
         ? renderList(treeNodes, true)
-        : panels.map((treeNodes, index: number) => renderList(treeNodes, false, index !== panels.length - 1, `${COMPONENT_NAME}__menu${index}`));
+        : panels.map((treeNodes, index: number) => renderList(treeNodes, false, index !== panels.length - 1, index));
     };
 
     let content;
