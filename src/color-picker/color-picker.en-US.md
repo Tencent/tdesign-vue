@@ -19,6 +19,7 @@ recentColors | Array | [] | used color recently。`.sync` is supported。Typescr
 defaultRecentColors | Array | [] | used color recently。uncontrolled property。Typescript：`boolean \| Array<string>` | N
 selectInputProps | Object | - | Typescript：`SelectInputProps`，[SelectInput API Documents](./select-input?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/color-picker/type.ts) | N
 showPrimaryColorPreview | Boolean | true | \- | N
+size | String | medium | options：small/medium/large。Typescript：`SizeEnum`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 swatchColors | Array | - | swatch colors。Typescript：`Array<string>` | N
 value | String | - | color value。`v-model` is supported | N
 defaultValue | String | - | color value。uncontrolled property | N
