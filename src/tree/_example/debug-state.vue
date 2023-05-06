@@ -1,32 +1,35 @@
 <template>
-  <div class="tdesign-demo-block-column">
-    <div>
-      <t-button @click="append()">插入一个根节点</t-button>
-    </div>
-
-    <t-tree
-      :data="items"
-      hover
-      expand-all
-      activable
-      checkable
-      :expand-on-click-node="false"
-      line
-      :label="label"
-      :icon="icon"
-      ref="tree"
-    >
-      <template #operations="{ node }">
-        <div class="tdesign-demo-block-row">
-          <t-button size="small" variant="base" @click="check(node)">检查节点信息</t-button>
-          <t-button size="small" variant="base" @click="changeTime(node)">变更时间</t-button>
-          <t-button size="small" variant="base" @click="changeIcon(node)">变更图标</t-button>
-          <t-button size="small" variant="base" @click="append(node)">添加子节点</t-button>
-          <t-button size="small" variant="base" theme="danger" @click="remove(node)">删除</t-button>
-        </div>
-      </template>
-    </t-tree>
-  </div>
+  <t-space :size="32" direction="vertical" class="tdesign-tree-demo">
+    <t-space :size="10" direction="vertical">
+      <t-form labelWidth="150">
+        <t-form-item>
+          <t-button @click="append()">插入一个根节点</t-button>
+        </t-form-item>
+      </t-form>
+      <t-tree
+        :data="items"
+        hover
+        expand-all
+        activable
+        checkable
+        :expand-on-click-node="false"
+        line
+        :label="label"
+        :icon="icon"
+        ref="tree"
+      >
+        <template #operations="{ node }">
+          <div class="tdesign-demo-block-row">
+            <t-button size="small" variant="base" @click="check(node)">检查节点信息</t-button>
+            <t-button size="small" variant="base" @click="changeTime(node)">变更时间</t-button>
+            <t-button size="small" variant="base" @click="changeIcon(node)">变更图标</t-button>
+            <t-button size="small" variant="base" @click="append(node)">添加子节点</t-button>
+            <t-button size="small" variant="base" theme="danger" @click="remove(node)">删除</t-button>
+          </div>
+        </template>
+      </t-tree>
+    </t-space>
+  </t-space>
 </template>
 
 <script lang="jsx">

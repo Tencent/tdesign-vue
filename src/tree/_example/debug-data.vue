@@ -1,7 +1,7 @@
 <template>
-  <div class="tdesign-tree-demo">
-    <h3 class="title">数据切换</h3>
-    <div class="operations">
+  <t-space :size="32" direction="vertical" class="tdesign-tree-demo">
+    <t-space :size="10" direction="vertical">
+      <h3 class="title">数据切换</h3>
       <t-form labelWidth="150">
         <t-form-item label="切换数据">
           <t-switch @change="toggleData" />
@@ -19,17 +19,17 @@
           <t-switch v-model="transition" />
         </t-form-item>
       </t-form>
-    </div>
-    <t-tree
-      :data="items"
-      hover
-      :expand-all="expandAll"
-      :transition="transition"
-      :activable="activable"
-      :checkable="checkable"
-      :label="label"
-    />
-  </div>
+      <t-tree
+        :data="items"
+        hover
+        :expand-all="expandAll"
+        :transition="transition"
+        :activable="activable"
+        :checkable="checkable"
+        :label="label"
+      />
+    </t-space>
+  </t-space>
 </template>
 
 <script>
@@ -133,21 +133,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.tdesign-tree-demo .t-tree {
-  margin-bottom: 20px;
-}
-.tdesign-tree-demo .title {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .tips {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .operations {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .t-form__item {
-  margin-bottom: 5px;
-}
-</style>

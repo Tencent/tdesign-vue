@@ -1,29 +1,30 @@
 <template>
-  <div class="tdesign-tree-demo tdesign-demo-transition">
-    <t-form labelWidth="150" style="max-width: 500px">
-      <t-form-item label="展开动画">
-        <t-switch v-model="transition" />
-      </t-form-item>
-      <t-form-item label="显示连线">
-        <t-switch v-model="showLine" />
-      </t-form-item>
-      <t-form-item label="显示图标">
-        <t-switch v-model="showIcon" />
-      </t-form-item>
-    </t-form>
-
-    <t-tree
-      :data="items"
-      hover
-      activable
-      checkable
-      :transition="transition"
-      :expand-on-click-node="false"
-      :line="showLine"
-      :icon="showIcon"
-      :label="label"
-    ></t-tree>
-  </div>
+  <t-space :size="32" direction="vertical" class="tdesign-tree-demo">
+    <t-space :size="10" direction="vertical">
+      <t-form label-align="left" :label-width="80" style="max-width: 500px">
+        <t-form-item label="展开动画">
+          <t-switch v-model="transition" />
+        </t-form-item>
+        <t-form-item label="显示连线">
+          <t-switch v-model="showLine" />
+        </t-form-item>
+        <t-form-item label="显示图标">
+          <t-switch v-model="showIcon" />
+        </t-form-item>
+      </t-form>
+      <t-tree
+        :data="items"
+        hover
+        activable
+        checkable
+        :transition="transition"
+        :expand-on-click-node="false"
+        :line="showLine"
+        :icon="showIcon"
+        :label="label"
+      ></t-tree>
+    </t-space>
+  </t-space>
 </template>
 
 <script>
@@ -96,21 +97,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.tdesign-tree-demo .t-tree {
-  margin-bottom: 20px;
-}
-.tdesign-tree-demo .title {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .tips {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .operations {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .t-form__item {
-  margin-bottom: 5px;
-}
-</style>
