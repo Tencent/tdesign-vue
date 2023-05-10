@@ -2,8 +2,8 @@ import {
   defineComponent, computed, ref, onMounted, watch, toRefs,
 } from '@vue/composition-api';
 import {
-  ArrowDownTriangleFilledIcon as TDArrowDownTriangleFilledIcon,
-  ArrowUpTriangleFilledIcon as TDArrowUpTriangleFilledIcon,
+  ArrowTriangleDownFilledIcon as TDArrowTriangleDownFilledIcon,
+  ArrowTriangleUpFilledIcon as TDArrowTriangleUpFilledIcon,
 } from 'tdesign-icons-vue';
 import isNumber from 'lodash/isNumber';
 import isFunction from 'lodash/isFunction';
@@ -113,14 +113,14 @@ export default defineComponent({
     const {
       classPrefix, formatValue, valueStyle, loading, trendPlacement, trend,
     } = this;
-    const { ArrowUpTriangleFilledIcon } = useGlobalIcon({ ArrowUpTriangleFilledIcon: TDArrowUpTriangleFilledIcon });
-    const { ArrowDownTriangleFilledIcon } = useGlobalIcon({
-      ArrowDownTriangleFilledIcon: TDArrowDownTriangleFilledIcon,
+    const { ArrowTriangleUpFilledIcon } = useGlobalIcon({ ArrowTriangleUpFilledIcon: TDArrowTriangleUpFilledIcon });
+    const { ArrowTriangleDownFilledIcon } = useGlobalIcon({
+      ArrowTriangleDownFilledIcon: TDArrowTriangleDownFilledIcon,
     });
 
     const trendIcons = {
-      increase: <ArrowUpTriangleFilledIcon />,
-      decrease: <ArrowDownTriangleFilledIcon />,
+      increase: <ArrowTriangleUpFilledIcon />,
+      decrease: <ArrowTriangleDownFilledIcon />,
     };
     const trendIcon = trend ? trendIcons[trend] : null;
 

@@ -15,15 +15,17 @@
         <t-statistic title="Voice duration" :value="789" unit="minute" extra="the day before 9%" />
         <t-statistic title="Total number of voice DAUs" :value="188" color="red">
           <template #extra>
-            <t-space>
-              the day before
-              <t-icon name="arrow-up" style="color: #d54941" />
-              9%
-            </t-space>
-            <t-space>
-              last week
-              <t-icon name="arrow-down" style="color: #2ba471" />
-              9%
+            <t-space direction="vertical" :size="0">
+              <span>
+                the day before
+                <t-icon name="arrow-up" style="color: #d54941" />
+                9%
+              </span>
+              <span>
+                last week
+                <t-icon name="arrow-down" style="color: #2ba471" />
+                9%
+              </span>
             </t-space>
           </template>
         </t-statistic>
