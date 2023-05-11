@@ -5,6 +5,19 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.3.1 `2023-05-11` 
+### 🚀 Features
+- `ColorPicker`: 新增`size` API @uyarn ([#2388](https://github.com/Tencent/tdesign-vue/pull/2388))
+### 🐞 Bug Fixes
+- `Table`: 修复表格右侧冻结时表头无法对齐问题 @huangpiqiao ([#2371](https://github.com/Tencent/tdesign-vue/pull/2371))
+- `Form`: 修复`disabled`下部分组件未禁用的缺陷 @uyarn ([#2405](https://github.com/Tencent/tdesign-vue/pull/2405))
+- `TagInput`: 修复`disabled`响应丢失导致无法切换可清空状态的缺陷 @uyarn ([#2406](https://github.com/Tencent/tdesign-vue/pull/2406))
+- `Select`: @uyarn ([#2406](https://github.com/Tencent/tdesign-vue/pull/2406))
+  - 修复使用布尔值导致的控制台告警
+  - 修复多选时折叠项在表单中的异常
+- `Popup`: 修复 `onScrollToBottom` 在部分 windows 环境下无法触发的问题 @uyarn ([#2404](https://github.com/Tencent/tdesign-vue/pull/2404))
+- `DatePicker`: 修复默认时间不生效的问题，将原本漏掉的 result 对于 defaultTime 的处理补充回来 @Ericleungs ([common#1331](https://github.com/Tencent/tdesign-common/pull/1331))
+
 ## 🌈 1.3.0 `2023-04-27` 
 ### 🚀 Features
 - `StickyTool`: 新增 `StickyTool` 侧边栏组件 @ZekunWu ([#2213](https://github.com/Tencent/tdesign-vue/pull/2213))
