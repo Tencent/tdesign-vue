@@ -278,7 +278,7 @@ export default defineComponent({
           collapsedSelectedItems: values
             .map((item: any) => {
               const tmpValue = typeof item === 'object' ? item[props.keys?.value || 'value'] : item;
-              return props.options.find((t: OptionData) => t.value === tmpValue);
+              return props.options?.find((t: OptionData) => t.value === tmpValue);
             })
             .slice(minCollapsedNum.value),
           count: values.length - minCollapsedNum.value,
