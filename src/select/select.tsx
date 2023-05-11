@@ -639,7 +639,7 @@ export default defineComponent({
               value: this.displayText,
               valueDisplay: () => renderTNode('valueDisplay', { params: this.valueDisplayParams }),
               clearable: this.clearable,
-              disabled: this.disabled,
+              disabled: this.isDisabled,
               label: this.renderLabel,
               suffixIcon: this.renderSuffixIcon,
               placeholder: this.placeholderText,
