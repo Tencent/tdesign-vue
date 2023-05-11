@@ -40,8 +40,8 @@ export default defineComponent({
     } = toRefs(props);
     const { isHover, addHover, cancelHover } = useHover(
       {
-        readonly: props.readonly,
-        disabled: props.disabled,
+        readonly,
+        disabled,
         onMouseenter: props.onMouseenter,
         onMouseleave: props.onMouseleave,
       },
