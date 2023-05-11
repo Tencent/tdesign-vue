@@ -21,6 +21,7 @@ import {
   initYearMonthTime,
 } from '../_common/js/date-picker/format';
 import { subtractMonth, addMonth, extractTimeObj } from '../_common/js/date-picker/utils';
+import useFormDisabled from '../hooks/useFormDisabled';
 
 export default defineComponent({
   name: 'TDateRangePicker',
@@ -28,6 +29,7 @@ export default defineComponent({
   setup(props, { emit }) {
     const COMPONENT_NAME = usePrefixClass('date-range-picker');
     const { CalendarIcon } = useGlobalIcon({ CalendarIcon: TdCalendarIcon });
+    const { formDisabled } = useFormDisabled();
 
     const {
       inputValue,
@@ -51,6 +53,7 @@ export default defineComponent({
       format: props.format,
       valueType: props.valueType,
     }));
+    const isDisabled = computed(() => formDisabled.value || props.disabled);
 
     // 记录面板是否选中过
     const isSelected = ref(false);
@@ -416,6 +419,7 @@ export default defineComponent({
       popupVisible,
       panelProps,
       CalendarIcon,
+      isDisabled,
     };
   },
   render() {
@@ -440,7 +444,7 @@ export default defineComponent({
     return (
       <div class={COMPONENT_NAME}>
         <TRangeInputPopup
-          disabled={this.disabled}
+          disabled={this.isDisabled}
           status={this.status}
           tips={this.tips || this.$scopedSlots.tips}
           inputValue={inputValue as string[]}
