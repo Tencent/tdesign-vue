@@ -176,7 +176,7 @@ export default defineComponent({
               (this.selectInputProps as TdSelectInputProps)?.onPopupVisibleChange?.(val, context);
             },
             onBlur: (val: CascaderValue, context: SelectInputFocusContext) => {
-              const ctx = { value: cascaderContext.value, e: context.e };
+              const ctx = { value: cascaderContext.value, inputValue: context.inputValue || '', e: context.e };
               this.onBlur?.(ctx);
               emit('blur', ctx);
               (this.selectInputProps as TdSelectInputProps)?.onBlur?.(val, context);
@@ -204,12 +204,13 @@ export default defineComponent({
         scopedSlots={{
           panel: () => (
             <Panel
+              option={this.option}
               empty={this.empty}
               trigger={this.trigger}
               loading={this.loading}
               loadingText={this.loadingText}
               cascaderContext={cascaderContext}
-              scopedSlots={{ empty: slots.empty, loadingText: slots.loadingText }}
+              scopedSlots={{ option: slots.option, empty: slots.empty, loadingText: slots.loadingText }}
             />
           ),
           tips: slots.tips,
