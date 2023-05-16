@@ -4,7 +4,7 @@ export default function useResizeObserver(
   container: Ref<HTMLElement>,
   callback: (data: ResizeObserverEntry[]) => void,
 ) {
-  const isSupport = window && window.ResizeObserver;
+  const isSupport = typeof window !== 'undefined' && window.ResizeObserver;
   // unit tests do not need any warn console; too many warns influence focusing on more important log info
   if (!isSupport) return;
 

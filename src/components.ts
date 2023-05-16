@@ -12,11 +12,13 @@ export * from './space';
 // 导航
 export * from './affix';
 export * from './anchor';
+export * from './back-top';
 export * from './breadcrumb';
 export * from './dropdown';
 export * from './menu';
 export * from './pagination';
 export * from './steps';
+export * from './sticky-tool';
 export * from './tabs';
 
 // 输入

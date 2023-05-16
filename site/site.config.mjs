@@ -155,6 +155,12 @@ const docs = [
         componentEn: () => import('tdesign-vue/anchor/anchor.en-US.md'),
       },
       {
+        title: 'BackTop 回到顶部',
+        name: 'back-top',
+        path: '/vue/components/back-top',
+        component: () => import('tdesign-vue/back-top/back-top.md'),
+      },
+      {
         title: 'Breadcrumb 面包屑',
         titleEn: 'Breadcrumb',
         name: 'breadcrumb',
@@ -193,6 +199,14 @@ const docs = [
         path: '/vue/components/steps',
         component: () => import('tdesign-vue/steps/steps.md'),
         componentEn: () => import('tdesign-vue/steps/steps.en-US.md'),
+      },
+      {
+        title: 'StickyTool 侧边栏',
+        titleEn: 'StickyTool',
+        name: 'StickyTool',
+        path: '/vue/components/sticky-tool',
+        component: () => import('tdesign-vue/sticky-tool/sticky-tool.md'),
+        componentEn: () => import('tdesign-vue/sticky-tool/sticky-tool.en-US.md'),
       },
       {
         title: 'Tabs 选项卡',
@@ -545,7 +559,6 @@ const docs = [
         path: '/vue/components/rate',
         component: () => import('tdesign-vue/rate/rate.md'),
         componentEn: () => import('tdesign-vue/rate/rate.en-US.md'),
-
       },
     ],
   },
