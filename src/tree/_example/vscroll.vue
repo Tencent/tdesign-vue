@@ -1,5 +1,25 @@
 <template>
   <t-space :size="32" direction="vertical" class="tdesign-tree-demo" style="width: 100%">
+    <t-space :size="10" direction="vertical" class="tdesign-tree-vscroll-lazy" style="width: 80%">
+      <h3 class="title">虚拟滚动 - lazy模式</h3>
+      <t-tree
+        :data="lazyItems"
+        hover
+        activable
+        expand-all
+        :height="300"
+        :expand-on-click-node="false"
+        :label="label"
+        :scroll="{
+          rowHeight: 34,
+          bufferSize: 10,
+          threshold: 10,
+          type: 'lazy',
+        }"
+        ref="tree"
+      ></t-tree>
+    </t-space>
+
     <t-space :size="10" direction="vertical" style="width: 100%">
       <h3 class="title">虚拟滚动 - virtual 模式</h3>
       <t-form labelWidth="150" style="max-width: 500px">
@@ -97,6 +117,7 @@ function createTreeData() {
   };
 }
 
+const lazyTree = createTreeData();
 const virtualTree = createTreeData();
 
 export default {
@@ -114,26 +135,8 @@ export default {
       isCheckable: true,
       isOperateAble: true,
       items: virtualTree.items,
+      lazyItems: lazyTree.items,
     };
-  },
-  computed: {
-    scroll() {
-      const { scrollMode } = this;
-      if (scrollMode === 'normal') {
-        return null;
-      }
-      const scrollProps = {
-        rowHeight: 34,
-        bufferSize: 10,
-        threshold: 10,
-      };
-      if (scrollMode === 'lazy') {
-        scrollProps.type = 'lazy';
-      } else {
-        scrollProps.type = 'virtual';
-      }
-      return scrollProps;
-    },
   },
   methods: {
     label(createElement, node) {
