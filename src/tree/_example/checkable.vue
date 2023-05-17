@@ -163,7 +163,6 @@ export default {
       const { tree } = this.$refs;
       // 取得所有节点
       const items = tree.getItems();
-      console.log('items:', items);
       const revertSelection = [];
       items.forEach((item) => {
         if (!item.checked && !item.indeterminate) {
