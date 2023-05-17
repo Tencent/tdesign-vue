@@ -15,6 +15,9 @@
             }}</t-radio-button>
           </t-radio-group>
         </t-form-item>
+        <t-form-item>
+          <t-button theme="primary" @click="selectInvert">反选</t-button>
+        </t-form-item>
       </t-form>
       <t-tree
         :data="items"
@@ -23,8 +26,10 @@
         :checkable="checkable"
         :check-strictly="checkStrictly"
         :value-mode="valueMode"
+        :value="allChecked"
         @change="onChange"
         @click="onClick"
+        ref="tree"
       />
     </t-space>
   </t-space>
@@ -37,6 +42,7 @@ export default {
       valueMode: 'onlyLeaf',
       checkable: true,
       checkStrictly: false,
+      allChecked: [],
       valueOptions: [
         {
           value: 'onlyLeaf',
@@ -152,6 +158,21 @@ export default {
     },
     propOnChange(checked, context) {
       console.info('propOnChange:', checked, context);
+    },
+    selectInvert() {
+      const { tree } = this.$refs;
+      // 取得所有节点
+      const items = tree.getItems();
+      console.log('items:', items);
+      const revertSelection = [];
+      items.forEach((item) => {
+        if (!item.checked && !item.indeterminate) {
+          // checked 为 true, 为直接选中状态
+          // indeterminate 为 true, 为半选状态
+          revertSelection.push(item.value);
+        }
+      });
+      this.allChecked = revertSelection;
     },
   },
 };
