@@ -38,7 +38,9 @@ export default defineComponent({
     const classPrefix = usePrefixClass();
     const componentName = usePrefixClass('tree');
     const refProps = toRefs(props);
-    const { store, rebuild, updateStoreConfig } = useTreeStore(props, context);
+    const {
+      store, rebuild, updateStoreConfig, checkFilterExpand,
+    } = useTreeStore(props, context);
 
     // 用于 hooks 传递数据
     const { state, treeContentRef, isScrolling } = useTreeState(props, store);
@@ -69,6 +71,9 @@ export default defineComponent({
     watch(refProps.actived, (nVal, previousVal) => {
       if (nVal.join() === previousVal?.join()) return;
       store.replaceActived(nVal);
+    });
+    watch(refProps.filter, (nVal, previousVal) => {
+      checkFilterExpand(nVal, previousVal);
     });
 
     // 不想暴露给用户的属性与方法，统一挂载到 setup 返回的对象上

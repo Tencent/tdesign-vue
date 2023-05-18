@@ -1,6 +1,7 @@
 <template>
-  <div class="tdesign-tree-demo">
-    <div class="operations">
+  <t-space :size="32" direction="vertical" class="tdesign-tree-demo">
+    <t-space :size="10" direction="vertical">
+      <h3 class="title">禁用整个 tree</h3>
       <t-form>
         <t-form-item label="是否禁用整个 tree" labelWidth="150">
           <t-switch v-model="disabled" />
@@ -9,17 +10,18 @@
           <t-switch v-model="disableCheck" />
         </t-form-item>
       </t-form>
-    </div>
-    <t-tree :data="items" hover checkable expand-all :disabled="disabled" :disableCheck="disableCheck" />
-    <div class="operations">
+      <t-tree :data="items" hover checkable expand-all :disabled="disabled" :disableCheck="disableCheck" />
+    </t-space>
+    <t-space :size="10" direction="vertical">
+      <h3 class="title">禁用指定节点</h3>
       <t-form>
         <t-form-item label="禁用指定节点 checkbox" labelWidth="200">
           <t-switch v-model="disableTarget" />
         </t-form-item>
       </t-form>
-    </div>
-    <t-tree :data="items" hover checkable expand-all :disableCheck="fnDisableCheck" />
-  </div>
+      <t-tree :data="items" hover checkable expand-all :disableCheck="fnDisableCheck" />
+    </t-space>
+  </t-space>
 </template>
 
 <script>
@@ -82,21 +84,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.tdesign-tree-demo .t-tree {
-  margin-bottom: 20px;
-}
-.tdesign-tree-demo .title {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .tips {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .operations {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .t-form__item {
-  margin-bottom: 5px;
-}
-</style>
