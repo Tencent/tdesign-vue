@@ -1,33 +1,43 @@
 <template>
-  <div class="tdesign-demo-block-column-large">
-    <div class="tdesign-demo-block-column">
-      <t-input-adornment prepend="checked:">
-        <t-input :value="allChecked" />
-      </t-input-adornment>
-      <t-input-adornment prepend="expanded:">
-        <t-input :value="allExpanded" />
-      </t-input-adornment>
-      <t-input-adornment prepend="actived:">
-        <t-input :value="allActived" />
-      </t-input-adornment>
-    </div>
-
-    <t-tree
-      :data="items"
-      checkable
-      activable
-      :expand-on-click-node="false"
-      :active-multiple="false"
-      :expanded="expanded"
-      :actived="actived"
-      :value="checked"
-      :value-mode="valueMode"
-      @expand="onExpand"
-      @change="onChange"
-      @active="onActive"
-      @click="onClick"
-    />
-  </div>
+  <t-space :size="32" direction="vertical" class="tdesign-tree-demo">
+    <t-space :size="10" direction="vertical">
+      <t-form label-align="left" :label-width="80">
+        <t-form-item>
+          <template #label>选中节点</template>
+          <t-input-adornment prepend="checked:">
+            <t-input :value="allChecked" />
+          </t-input-adornment>
+        </t-form-item>
+        <t-form-item>
+          <template #label>展开节点</template>
+          <t-input-adornment prepend="expanded:">
+            <t-input :value="allExpanded" />
+          </t-input-adornment>
+        </t-form-item>
+        <t-form-item>
+          <template #label>高亮节点</template>
+          <t-input-adornment prepend="actived:">
+            <t-input :value="allActived" />
+          </t-input-adornment>
+        </t-form-item>
+      </t-form>
+      <t-tree
+        :data="items"
+        checkable
+        activable
+        :expand-on-click-node="false"
+        :active-multiple="false"
+        :expanded="expanded"
+        :actived="actived"
+        :value="checked"
+        :value-mode="valueMode"
+        @expand="onExpand"
+        @change="onChange"
+        @active="onActive"
+        @click="onClick"
+      />
+    </t-space>
+  </t-space>
 </template>
 
 <script>

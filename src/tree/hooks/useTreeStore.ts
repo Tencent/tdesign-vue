@@ -2,7 +2,12 @@ import pick from 'lodash/pick';
 import { SetupContext } from '@vue/composition-api';
 import TreeStore from '../../_common/js/tree/tree-store';
 import {
-  TreeProps, TypeValueMode, TypeEventState, TypeTreeNodeModel,
+  TreeProps,
+  TypeValueMode,
+  TypeEventState,
+  TypeTreeNodeModel,
+  TypeTreeNode,
+  TypeTNodeValue,
 } from '../interface';
 
 export default function useTreeStore(props: TreeProps, context: SetupContext) {
@@ -61,6 +66,46 @@ export default function useTreeStore(props: TreeProps, context: SetupContext) {
     });
     const expandedArr = Array.from(expandedMap.keys());
     store.setExpanded(expandedArr);
+  };
+
+  let filterChanged = false;
+  let prevExpanded: null | TypeTNodeValue[] = null;
+
+  // store 的 update 方法触发后，可以拿到搜索命中节点的路径节点
+  // 所以在 update 之后检查，如果之前 filter 有变更，则检查路径节点是否需要展开
+  // 如果 filter 属性被清空，则重置为开启搜索之前的结果
+  const expandFilterPath = () => {
+    if (!filterChanged) return;
+    // 确保 filter 属性未变更时，不会重复检查展开状态
+    filterChanged = false;
+
+    if (props.filter) {
+      if (!prevExpanded) {
+        // 缓存之前的展开状态
+        prevExpanded = store.getExpanded();
+      }
+
+      // 展开搜索命中节点的路径节点
+      const pathValues: TypeTNodeValue[] = [];
+      const allNodes: TypeTreeNode[] = store.getNodes();
+      allNodes.forEach((node: TypeTreeNode) => {
+        if (node.vmIsLocked) {
+          pathValues.push(node.value);
+        }
+      });
+      store.setExpanded(pathValues);
+    } else if (prevExpanded) {
+      // filter 属性置空，该还原之前的展开状态了
+      store.replaceExpanded(prevExpanded);
+      prevExpanded = null;
+    }
+  };
+
+  // 这个方法监听 filter 属性，仅在 allowFoldNodeOnFilter 属性为 true 时生效
+  // 仅在 filter 属性发生变更时开启检查开关，避免其他操作也触发展开状态的充值
+  const checkFilterExpand = (newFilter: null | Function, previousFilter: null | Function) => {
+    if (!props.allowFoldNodeOnFilter) return;
+    filterChanged = newFilter !== previousFilter;
   };
 
   const handleLoad = (info: TypeEventState) => {
@@ -126,11 +171,14 @@ export default function useTreeStore(props: TreeProps, context: SetupContext) {
   }
 
   store.emitter.on('load', handleLoad);
+  store.emitter.on('update', expandFilterPath);
 
   return {
     store,
     rebuild,
     updateStoreConfig,
     updateExpanded,
+    checkFilterExpand,
+    expandFilterPath,
   };
 }

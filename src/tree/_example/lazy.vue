@@ -1,32 +1,35 @@
 <template>
-  <t-space :size="10" direction="vertical" class="tdesign-tree-demo">
-    <h3>数据延迟加载</h3>
-    <p>默认为点击加载数据。</p>
-    <p>
-      valueMode 默认为 'onlyLeaf'。选中父节点时，子节点由于未加载，无法更新和获取选中状态，导致无法更新父节点的状态。
-    </p>
-    <p>所以使用延迟加载时，推荐 valueMode 设置为 'all' 或者 'parentFirst'。</p>
-    <!-- <div class="operations"> -->
-    <t-form labelWidth="150">
-      <t-form-item label="可选">
-        <t-switch v-model="checkable" />
-      </t-form-item>
-      <t-form-item label="严格模式">
-        <t-switch v-model="checkStrictly" />
-      </t-form-item>
-    </t-form>
-    <!-- </div> -->
-    <t-tree
-      ref="tree"
-      :data="items"
-      hover
-      expand-all
-      :checkable="checkable"
-      :checkStrictly="checkStrictly"
-      :load="load"
-      valueMode="all"
-      @load="onLoad"
-    />
+  <t-space :size="32" direction="vertical" class="tdesign-tree-demo">
+    <t-space :size="10" direction="vertical">
+      <h3 class="title">数据延迟加载</h3>
+      <div class="tips">
+        <p>默认为点击加载数据。</p>
+        <p>
+          valueMode 默认为
+          'onlyLeaf'。选中父节点时，子节点由于未加载，无法更新和获取选中状态，导致无法更新父节点的状态。
+        </p>
+        <p>所以使用延迟加载时，推荐 valueMode 设置为 'all' 或者 'parentFirst'。</p>
+      </div>
+      <t-form labelWidth="150">
+        <t-form-item label="可选">
+          <t-switch v-model="checkable" />
+        </t-form-item>
+        <t-form-item label="严格模式">
+          <t-switch v-model="checkStrictly" />
+        </t-form-item>
+      </t-form>
+      <t-tree
+        ref="tree"
+        :data="items"
+        hover
+        expand-all
+        :checkable="checkable"
+        :checkStrictly="checkStrictly"
+        :load="load"
+        valueMode="all"
+        @load="onLoad"
+      />
+    </t-space>
   </t-space>
 </template>
 
@@ -82,7 +85,8 @@ export default {
 </script>
 
 <style scoped>
-.tdesign-tree-demo .t-form__item {
-  margin-bottom: 5px;
+.tdesign-tree-demo .tips p {
+  line-height: 24px;
+  text-indent: 1em;
 }
 </style>
