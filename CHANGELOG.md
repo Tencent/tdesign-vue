@@ -5,6 +5,18 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.3.2 `2023-05-19` 
+### 🚀 Features
+- `Cascader`: 选项支持自定义样式  @ZekunWu ([#2396](https://github.com/Tencent/tdesign-vue/pull/2396))
+### 🐞 Bug Fixes
+- `Tree`: 修复 Tree 组件过滤并允许折叠状态下，每次搜索条件变更都展开路径节点 @TabSpace ([#2419](https://github.com/Tencent/tdesign-vue/pull/2419))
+- `TagInput`: 修复组件初始值异常的问题 @uyarn ([#2423](https://github.com/Tencent/tdesign-vue/pull/2423))
+- `Textarea`: 修复 autosize 为 null 报错的问题 @uyarn ([#2423](https://github.com/Tencent/tdesign-vue/pull/2423))
+- `TreeSelect`: 修复搜索多次操作后没有正确返回筛选项的问题 @uyarn ([#2424](https://github.com/Tencent/tdesign-vue/pull/2424))
+- `TreeSelect`: 修复异步加载数据没有正常显示 label 的问题 @uyarn ([#2424](https://github.com/Tencent/tdesign-vue/pull/2424))
+- `Upload`: 修复多图上传增加丢失的间距的样式问题 @PDieE ([common#1344](https://github.com/Tencent/tdesign-common/pull/1344))
+
+
 ## 🌈 1.3.1 `2023-05-11` 
 ### 🚀 Features
 - `ColorPicker`: 新增`size` API @uyarn ([#2388](https://github.com/Tencent/tdesign-vue/pull/2388))

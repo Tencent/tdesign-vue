@@ -1,24 +1,24 @@
 <template>
-  <t-space :size="10" direction="vertical" class="tdesign-tree-demo">
-    <!-- <div class="operations"> -->
-    <t-form labelWidth="120">
-      <t-form-item label="互斥展开">
-        <t-switch v-model="mutex" />
-      </t-form-item>
-      <t-form-item label="整个节点可点击">
-        <t-switch v-model="expandOnClickNode" />
-      </t-form-item>
-    </t-form>
-    <!-- </div> -->
-    <t-tree
-      :data="items"
-      hover
-      :expand-mutex="mutex"
-      :expand-on-click-node="expandOnClickNode"
-      @click="onClick"
-      @expand="onExpand"
-      :onExpand="propOnExpand"
-    />
+  <t-space :size="32" direction="vertical" class="tdesign-tree-demo">
+    <t-space :size="10" direction="vertical">
+      <t-form label-align="left" :label-width="120">
+        <t-form-item label="互斥展开">
+          <t-switch v-model="mutex" />
+        </t-form-item>
+        <t-form-item label="整个节点可点击">
+          <t-switch v-model="expandOnClickNode" />
+        </t-form-item>
+      </t-form>
+      <t-tree
+        :data="items"
+        hover
+        :expand-mutex="mutex"
+        :expand-on-click-node="expandOnClickNode"
+        @click="onClick"
+        @expand="onExpand"
+        :onExpand="propOnExpand"
+      />
+    </t-space>
   </t-space>
 </template>
 
@@ -105,9 +105,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.tdesign-tree-demo .t-form__item {
-  margin-bottom: 5px;
-}
-</style>

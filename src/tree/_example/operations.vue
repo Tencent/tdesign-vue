@@ -1,25 +1,25 @@
 <template>
-  <t-space :size="20" direction="vertical" class="t-tree-demo-operations">
+  <t-space :size="32" direction="vertical" class="tdesign-tree-demo">
     <t-space :size="10" direction="vertical" style="width: 100%">
-      <h3>Render:</h3>
+      <h3 class="title">属性结合 jsx 形式传递</h3>
       <t-tree :data="items" hover expand-all :label="getLabel" :operations="renderOperations" />
     </t-space>
-    <!-- <div> -->
-    <t-space :size="10" direction="vertical" style="width: 100%">
-      <h3>Scope Slot:</h3>
-      <t-form labelWidth="200">
-        <t-form-item label="插入节点使用高亮节点" style="margin-bottom: 5px">
+
+    <t-space :size="10" direction="vertical" style="width: 100%" class="tdesign-tree-operations">
+      <h3 class="title">slot 形式</h3>
+      <t-form :label-width="200" label-align="left">
+        <t-form-item label="插入节点使用高亮节点">
           <t-switch v-model="useActived" />
         </t-form-item>
         <t-form-item label="子节点展开触发父节点展开">
           <t-switch v-model="expandParent" />
         </t-form-item>
+        <t-form-item>
+          <t-input-adornment prepend="filter:">
+            <t-input v-model="filterText" @change="onInputChange" />
+          </t-input-adornment>
+        </t-form-item>
       </t-form>
-      <!-- <div> -->
-      <t-input-adornment prepend="filter:">
-        <t-input v-model="filterText" @change="onInputChange" />
-      </t-input-adornment>
-      <!-- </div> -->
       <t-tree
         :data="items"
         hover
@@ -46,9 +46,9 @@
         </template>
       </t-tree>
     </t-space>
-    <!-- </div> -->
-    <t-space :size="10" direction="vertical">
-      <h3>API:</h3>
+
+    <t-space :size="10" direction="vertical" class="tdesign-tree-operations">
+      <h3 class="title">操作树节点</h3>
       <t-space :size="10" breakLine>
         <t-button theme="primary" @click="getItem">获取 value 为 'node1' 的单个节点</t-button>
         <t-button theme="primary" @click="getAllItems">获取所有节点</t-button>
@@ -63,7 +63,9 @@
         <t-button theme="primary" @click="setActiveExpanded">展开高亮节点</t-button>
         <t-button theme="primary" @click="getActivePlainData">获取高亮节点与其子节点的数据</t-button>
       </t-space>
-      <p class="tips">* 相关信息通过控制台输出</p>
+      <div class="tips">
+        <p>* 相关信息通过控制台输出</p>
+      </div>
     </t-space>
   </t-space>
 </template>
@@ -321,12 +323,12 @@ export default {
 };
 </script>
 <style>
-.tips {
-  font-size: 10px;
-  color: gray;
-}
-.t-tree-demo-operations .t-is-active .t-tree__label,
-.t-tree-demo-operations .t-is-active .t-checkbox__label {
+.tdesign-tree-operations .t-is-active .t-tree__label,
+.tdesign-tree-operations .t-is-active .t-checkbox__label {
   background-color: rgba(255, 0, 0, 0.3);
+}
+.tdesign-tree-operations .tips p {
+  line-height: 24px;
+  text-indent: 1em;
 }
 </style>

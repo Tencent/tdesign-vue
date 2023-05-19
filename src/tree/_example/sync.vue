@@ -1,27 +1,35 @@
 <template>
-  <t-space :size="32" direction="vertical">
-    <t-space :size="16" direction="vertical" style="width: 100%">
-      <t-input-adornment prepend="checked:">
-        <t-input :value="allChecked" @change="onAllCheckedInput" />
-      </t-input-adornment>
-      <t-input-adornment prepend="expanded:">
-        <t-input :value="allExpanded" @change="onAllExpandedInput" />
-      </t-input-adornment>
-      <t-input-adornment prepend="actived:">
-        <t-input :value="allActived" @change="onAllActivedInput" />
-      </t-input-adornment>
+  <t-space :size="32" direction="vertical" class="tdesign-tree-demo">
+    <t-space :size="10" direction="vertical">
+      <t-form>
+        <t-form-item>
+          <t-input-adornment prepend="checked:">
+            <t-input :value="allChecked" @change="onAllCheckedInput" />
+          </t-input-adornment>
+        </t-form-item>
+        <t-form-item>
+          <t-input-adornment prepend="expanded:">
+            <t-input :value="allExpanded" @change="onAllExpandedInput" />
+          </t-input-adornment>
+        </t-form-item>
+        <t-form-item>
+          <t-input-adornment prepend="actived:">
+            <t-input :value="allActived" @change="onAllActivedInput" />
+          </t-input-adornment>
+        </t-form-item>
+      </t-form>
+      <t-tree
+        :data="items"
+        checkable
+        activable
+        :expand-on-click-node="false"
+        :active-multiple="false"
+        :expanded.sync="expanded"
+        :actived.sync="actived"
+        :value.sync="checked"
+        :value-mode="valueMode"
+      />
     </t-space>
-    <t-tree
-      :data="items"
-      checkable
-      activable
-      :expand-on-click-node="false"
-      :active-multiple="false"
-      :expanded.sync="expanded"
-      :actived.sync="actived"
-      :value.sync="checked"
-      :value-mode="valueMode"
-    />
   </t-space>
 </template>
 

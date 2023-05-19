@@ -1,30 +1,37 @@
 <template>
-  <t-space size="32px" direction="vertical">
-    <t-form>
-      <t-form-item label="可选" style="margin-bottom: 16px">
-        <t-switch v-model="checkable" />
-      </t-form-item>
-      <t-form-item label="严格模式" style="margin-bottom: 16px">
-        <t-switch v-model="checkStrictly" />
-      </t-form-item>
-      <t-form-item label="选中值模式" style="margin-bottom: 16px">
-        <t-radio-group name="value-mode" variant="default-filled" v-model="valueMode">
-          <t-radio-button v-for="item in valueOptions" :key="item.value" :value="item.value">{{
-            item.label
-          }}</t-radio-button>
-        </t-radio-group>
-      </t-form-item>
-    </t-form>
-    <t-tree
-      :data="items"
-      hover
-      expand-all
-      :checkable="checkable"
-      :check-strictly="checkStrictly"
-      :value-mode="valueMode"
-      @change="onChange"
-      @click="onClick"
-    />
+  <t-space :size="32" direction="vertical" class="tdesign-tree-demo">
+    <t-space :size="10" direction="vertical">
+      <t-form>
+        <t-form-item label="可选">
+          <t-switch v-model="checkable" />
+        </t-form-item>
+        <t-form-item label="严格模式">
+          <t-switch v-model="checkStrictly" />
+        </t-form-item>
+        <t-form-item label="选中值模式">
+          <t-radio-group name="value-mode" variant="default-filled" v-model="valueMode">
+            <t-radio-button v-for="item in valueOptions" :key="item.value" :value="item.value">{{
+              item.label
+            }}</t-radio-button>
+          </t-radio-group>
+        </t-form-item>
+        <t-form-item>
+          <t-button theme="primary" @click="selectInvert">反选</t-button>
+        </t-form-item>
+      </t-form>
+      <t-tree
+        :data="items"
+        hover
+        expand-all
+        :checkable="checkable"
+        :check-strictly="checkStrictly"
+        :value-mode="valueMode"
+        :value="allChecked"
+        @change="onChange"
+        @click="onClick"
+        ref="tree"
+      />
+    </t-space>
   </t-space>
 </template>
 
@@ -35,6 +42,7 @@ export default {
       valueMode: 'onlyLeaf',
       checkable: true,
       checkStrictly: false,
+      allChecked: [],
       valueOptions: [
         {
           value: 'onlyLeaf',
@@ -150,6 +158,20 @@ export default {
     },
     propOnChange(checked, context) {
       console.info('propOnChange:', checked, context);
+    },
+    selectInvert() {
+      const { tree } = this.$refs;
+      // 取得所有节点
+      const items = tree.getItems();
+      const revertSelection = [];
+      items.forEach((item) => {
+        if (!item.checked && !item.indeterminate) {
+          // checked 为 true, 为直接选中状态
+          // indeterminate 为 true, 为半选状态
+          revertSelection.push(item.value);
+        }
+      });
+      this.allChecked = revertSelection;
     },
   },
 };

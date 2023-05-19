@@ -1,19 +1,21 @@
 <template>
-  <div class="tdesign-tree-demo">
-    <t-tree
-      :data="items"
-      activable
-      hover
-      transition
-      expand-all
-      draggable
-      @drag-start="handleDragStart"
-      @drag-end="handleDragEnd"
-      @drag-over="handleDragOver"
-      @drag-leave="handleDragLeave"
-      @drop="handleDrop"
-    />
-  </div>
+  <t-space :size="32" direction="vertical" class="tdesign-tree-demo">
+    <t-space :size="10" direction="vertical">
+      <t-tree
+        :data="items"
+        activable
+        hover
+        transition
+        expand-all
+        draggable
+        @drag-start="handleDragStart"
+        @drag-end="handleDragEnd"
+        @drag-over="handleDragOver"
+        @drag-leave="handleDragLeave"
+        @drop="handleDrop"
+      />
+    </t-space>
+  </t-space>
 </template>
 
 <script>

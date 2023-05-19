@@ -1,18 +1,25 @@
 <template>
-  <t-space :size="32" direction="vertical" class="tdesign-tree-line">
-    <t-form>
-      <t-form-item label="显示连线" style="margin-bottom: 16px">
-        <t-switch v-model="showLine" />
-      </t-form-item>
-      <t-form-item label="显示图标" style="margin-bottom: 16px">
-        <t-switch v-model="showIcon" />
-      </t-form-item>
-    </t-form>
-    <t-space :size="16" direction="vertical" style="width: 100%">
+  <t-space :size="32" direction="vertical" class="tdesign-tree-demo">
+    <t-space :size="10" direction="vertical">
+      <t-form label-align="left">
+        <t-form-item label="显示连线">
+          <t-switch v-model="showLine" />
+        </t-form-item>
+        <t-form-item label="显示图标">
+          <t-switch v-model="showIcon" />
+        </t-form-item>
+      </t-form>
+    </t-space>
+    <t-space :size="10" direction="vertical">
+      <h3 class="title">默认样式</h3>
       <t-tree :data="items" :line="showLine" :icon="showIcon" expand-all />
-      <h3>render</h3>
+    </t-space>
+    <t-space :size="10" direction="vertical" class="tdesign-tree-line">
+      <h3 class="title">使用属性结合 jsx 来自定义呈现</h3>
       <t-tree :data="items" :icon="showIcon" expand-all :line="renderLine" />
-      <h3>scope slot</h3>
+    </t-space>
+    <t-space :size="10" direction="vertical" class="tdesign-tree-line">
+      <h3 class="title">slot 形式</h3>
       <t-tree :data="items" :icon="showIcon" line expand-all>
         <template #line="{ node }">
           <div v-if="showLine" :class="lineClass(node)">
@@ -198,10 +205,6 @@ export default {
 };
 </script>
 <style scoped>
-.t-tree {
-  margin-bottom: 20px;
-}
-
 .tdesign-tree-line .custom-line {
   display: flex;
   position: absolute;
