@@ -5,6 +5,13 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.3.3 `2023-05-19` 
+### 🐞 Bug Fixes
+- `Tooltip`: 修复箭头偏移问题 @uyarn ([#1347](https://github.com/Tencent/tdesign-common/pull/1347))
+
+
+**Full Changelog**: https://github.com/Tencent/tdesign-react/compare/1.3.2...1.3.3
+
 ## 🌈 1.3.2 `2023-05-19` 
 ### 🚀 Features
 - `Cascader`: 选项支持自定义样式  @ZekunWu ([#2396](https://github.com/Tencent/tdesign-vue/pull/2396))
