@@ -205,7 +205,7 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
   const filterByText = computed<TreeProps['filter'] | undefined>(() => {
     if (props.onSearch || context.listeners.search) return;
     if ((props.filter || props.filterable) && innerInputValue.value && !context.listeners.search) {
-      return props.filter ? (node) => props.filter(innerInputValue.value, node) : defaultFilterFunction;
+      return props.filter ? (node) => props.filter(innerInputValue.value, node) : (node) => defaultFilterFunction(node);
     }
     return undefined;
   });
