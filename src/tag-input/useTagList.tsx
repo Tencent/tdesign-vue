@@ -92,7 +92,7 @@ export default function useTagList(props: TdTagInputProps, context: SetupContext
     const newList = minCollapsedNum.value ? tagValue.value.slice(0, minCollapsedNum.value) : tagValue.value;
     const list = displayNode
       ? [displayNode]
-      : newList?.map((item, index) => {
+      : newList?.map?.((item, index) => {
         const tagContent = renderTNode('tag', { params: { value: item } });
         const TagNode = (
             <Tag
@@ -122,7 +122,7 @@ export default function useTagList(props: TdTagInputProps, context: SetupContext
         ) : (
           TagNode
         );
-      });
+      }) || [];
     if (![null, undefined, ''].includes(label)) {
       list.unshift(
         <div class={`${classPrefix.value}-tag-input__prefix`} key="label">
