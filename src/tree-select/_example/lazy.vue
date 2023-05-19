@@ -17,12 +17,12 @@ export default {
       value: '',
       options: [
         {
-          label: '1',
+          label: '选项1',
           value: '1',
           children: true,
         },
         {
-          label: '2',
+          label: '选项2',
           value: '2',
           children: true,
         },
