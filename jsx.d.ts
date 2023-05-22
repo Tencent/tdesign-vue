@@ -18,6 +18,7 @@ declare module 'vue' {
     id?: any;
     onSelect?: any;
     filterIcon?: any;
+    option?: any;
   }
 }
 
