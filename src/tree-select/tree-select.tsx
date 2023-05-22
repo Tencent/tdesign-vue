@@ -1,9 +1,9 @@
-import { defineComponent, computed } from '@vue/composition-api';
+import { defineComponent, computed } from 'vue';
 import isArray from 'lodash/isArray';
 import isFunction from 'lodash/isFunction';
-import Tree from '../tree';
+import Tree, { TreeProps } from '../tree';
 import props from './props';
-import SelectInput from '../select-input';
+import SelectInput, { SelectInputProps } from '../select-input';
 import { TagInputChangeContext, TagInputValue } from '../tag-input';
 import FakeArrow from '../common-components/fake-arrow';
 import { TreeSelectValue, TdTreeSelectProps } from './type';
@@ -84,7 +84,7 @@ export default defineComponent({
           {!this.loading ? (
             <Tree
               ref="treeRef"
-              key={!this.treeProps?.load && this.treeKey}
+              key={this.treeKey}
               props={{
                 keys: this.tKeys,
                 value: [...this.multipleChecked],
@@ -98,7 +98,9 @@ export default defineComponent({
                 filter: this.filterByText,
                 icon: !this.filterByText,
                 activeMultiple: this.multiple,
+                // @ts-ignore
                 onExpand: this.treeNodeExpand,
+                // @ts-ignore
                 onLoad: this.treeNodeLoad,
                 onChange: this.treeNodeChange,
                 onActive: this.treeNodeActive,
@@ -107,7 +109,7 @@ export default defineComponent({
                   defaultNode: <div class={`${this.classPrefix}-select__empty`}>{this.global.empty}</div>,
                 }),
                 // support all tree component props
-                ...this.treeProps,
+                ...(this.treeProps as TreeProps),
               }}
             />
           ) : null}
@@ -201,7 +203,7 @@ export default defineComponent({
             panel: this.getTreePanel,
 
             // support all select-input component props
-            ...this.selectInputProps,
+            ...(this.selectInputProps as SelectInputProps),
           },
         }}
       />

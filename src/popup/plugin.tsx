@@ -40,7 +40,7 @@ const Overlay = mixins(classPrefixMixins).extend({
   },
   props: {
     ...props,
-    triggerEl: Object,
+    triggerEl: HTMLElement,
   },
   computed: {
     hasTrigger(): Record<(typeof triggers)[number], boolean> {
@@ -112,6 +112,7 @@ const Overlay = mixins(classPrefixMixins).extend({
         style: [
           hidePopup && { visibility: 'hidden', pointerEvents: 'none' },
           { zIndex: this.zIndex },
+          // @ts-ignore
           this.overlayStyle,
         ],
         on: {
@@ -130,6 +131,7 @@ const Overlay = mixins(classPrefixMixins).extend({
           {
             ref: 'overlay',
             class: this.overlayClasses,
+            // @ts-ignore
             style: this.overlayInnerStyle,
           },
           [content, this.showArrow && h('div', { class: `${this.componentName}__arrow` })],
@@ -155,10 +157,8 @@ const removeOverlayInstance = () => {
   }
 };
 
-export type PluginMethod = (trigger: string, content: TNode, popupProps?: TdPopupProps) => Instance;
-
-export const createPopupPlugin: PluginMethod = (trigger, content, popupProps) => {
-  const hasTrigger = triggerType(popupProps?.trigger || 'hover');
+const triggerPopupPlugin = (trigger: string, content: TNode, popupProps: TdPopupProps) => {
+  const hasTrigger = triggerType(popupProps.trigger || 'hover');
   const currentTriggerEl = getAttach(trigger);
   if (triggerEl && hasTrigger.click) {
     return;
@@ -166,9 +166,9 @@ export const createPopupPlugin: PluginMethod = (trigger, content, popupProps) =>
   triggerEl = currentTriggerEl;
   removeOverlayInstance();
 
-  let attach = getAttach(popupProps?.attach || 'body');
+  let attach = getAttach(popupProps.attach);
 
-  const delay = [].concat(popupProps?.delay ?? [250, 150]);
+  const delay = [].concat(popupProps.delay ?? [250, 150]);
   const closeDelay = delay[1] ?? delay[0];
   if (attach === document.body) {
     // don't allow mount on body directly
@@ -198,19 +198,12 @@ export const createPopupPlugin: PluginMethod = (trigger, content, popupProps) =>
   }
 
   popperInstance = createPopper(triggerEl, overlayInstance, {
-    placement: getPopperPlacement(popupProps?.placement || ('top' as TdPopupProps['placement'])),
-    ...popupProps?.popperOptions,
+    placement: getPopperPlacement(popupProps.placement as TdPopupProps['placement']),
+    ...popupProps.popperOptions,
   });
-  return popperInstance;
 };
 
-export const PopupPlugin: PluginMethod & Vue.PluginObject<undefined> = createPopupPlugin as any;
-
-PopupPlugin.install = () => {
-  Vue.prototype.$popup = createPopupPlugin;
-};
-
-export default PopupPlugin;
+Vue.prototype.$popup = triggerPopupPlugin;
 
 declare module 'vue/types/vue' {
   interface Vue {

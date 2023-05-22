@@ -1,6 +1,6 @@
 import {
   defineComponent, computed, toRefs, ref,
-} from '@vue/composition-api';
+} from 'vue';
 import { StarFilledIcon } from 'tdesign-icons-vue';
 import useVModel from '../hooks/useVModel';
 import props from './props';

@@ -1,21 +1,23 @@
-import { VNode, PluginObject } from 'vue'; // eslint-disable-line
-import { ComponentRenderProxy } from '@vue/composition-api'; // eslint-disable-line
-declare global {
-  namespace JSX {
-    // eslint-disable-next-line @typescript-eslint/no-empty-interface
-    interface Element extends VNode {}
-    // eslint-disable-next-line @typescript-eslint/no-empty-interface
-    interface ElementClass extends ComponentRenderProxy {}
-    interface IntrinsicElements {
-      [elem: string]: any;
-    }
-    type IntrinsicAttributes = any;
-  }
-}
-
-declare module '@vue/composition-api' {
-  interface ComponentInternalInstance { // todo
+import { PluginObject } from 'vue'; // eslint-disable-line
+declare module 'vue' {
+  interface ComponentInternalInstance {
+    // todo
     [x: string]: any;
+  }
+
+  interface ComponentCustomProps {
+    onClick?: any;
+    props?: any;
+    scopedSlots?: any;
+    onCancelUpload?: any;
+    onPreview?: any;
+    size?: any;
+    nativeOnClick?: any;
+    on?: any;
+    onChange?: any;
+    id?: any;
+    onSelect?: any;
+    filterIcon?: any;
   }
 }
 

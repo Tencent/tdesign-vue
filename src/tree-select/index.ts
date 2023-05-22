@@ -1,4 +1,3 @@
-import VueCompositionAPI from '@vue/composition-api';
 import { TdTreeSelectProps, TreeSelectValue } from './type';
 import { TreeOptionData } from '../common';
 import _TreeSelect from './tree-select';
@@ -13,5 +12,5 @@ export type TreeSelectProps<
   ValueType extends TreeSelectValue = TreeSelectValue,
 > = TdTreeSelectProps<DataOption, ValueType>;
 
-export const TreeSelect = withInstall(_TreeSelect, VueCompositionAPI);
+export const TreeSelect = withInstall(_TreeSelect);
 export default TreeSelect;

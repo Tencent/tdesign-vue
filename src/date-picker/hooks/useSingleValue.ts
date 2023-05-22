@@ -1,6 +1,6 @@
 import {
   toRefs, watchEffect, ref, computed,
-} from '@vue/composition-api';
+} from 'vue';
 import {
   formatDate,
   formatTime,

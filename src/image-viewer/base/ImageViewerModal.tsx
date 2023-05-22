@@ -1,4 +1,4 @@
-import { computed, defineComponent, PropType } from '@vue/composition-api';
+import { computed, defineComponent, PropType } from 'vue';
 import TDialog from '../../dialog';
 import TImageItem from './ImageItem';
 import TImageViewerUtils from './ImageViewerUtils';
@@ -39,6 +39,7 @@ const defaultProps = {
   },
   showOverlay: Boolean,
   closeBtn: props.closeBtn,
+  title: String,
 };
 
 export default defineComponent({

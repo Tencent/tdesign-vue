@@ -183,7 +183,7 @@ export default mixins(classPrefixMixins, Vue as VueConstructor<SliderInstanceTyp
         this.hideTooltipComponent();
       }
     },
-    onButtonDown(event: MouseEvent) {
+    onButtonDown(event: UIEvent) {
       if (this.disabled) {
         return;
       }
@@ -321,12 +321,12 @@ export default mixins(classPrefixMixins, Vue as VueConstructor<SliderInstanceTyp
         style={this.wrapperStyle}
         tabindex="0"
         show-tooltip={this.showTooltip}
-        onmouseenter={this.handleMouseEnter}
-        onmouseleave={this.handleMouseLeave}
-        onmousedown={this.onButtonDown}
-        ontouchstart={this.onButtonDown}
-        onfocus={this.handleMouseEnter}
-        onblur={this.handleMouseLeave}
+        onMouseenter={this.handleMouseEnter}
+        onMouseleave={this.handleMouseLeave}
+        onMousedown={this.onButtonDown}
+        onTouchstart={this.onButtonDown}
+        onFocus={this.handleMouseEnter}
+        onBlur={this.handleMouseLeave}
         onKeydown={this.onNativeKeyDown}
       >
         <Tooltip

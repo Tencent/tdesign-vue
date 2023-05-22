@@ -1,4 +1,4 @@
-import { SetupContext } from '@vue/composition-api';
+import { SetupContext } from 'vue';
 import camelCase from 'lodash/camelCase';
 import {
   TypeTreeProps,

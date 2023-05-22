@@ -1,6 +1,6 @@
 import {
   defineComponent, toRefs, provide, computed,
-} from '@vue/composition-api';
+} from 'vue';
 import props from './props';
 import { CollapseValue, TdCollapseProps, CollapsePanelValue } from './type';
 import useVModel from '../hooks/useVModel';

@@ -1,4 +1,4 @@
-import { defineComponent, PropType, computed } from '@vue/composition-api';
+import { defineComponent, PropType, computed } from 'vue';
 import TDateFooter from '../base/Footer';
 import type { TdDatePickerProps, TdDateRangePickerProps, DateValue } from '../type';
 
@@ -10,8 +10,7 @@ export default defineComponent({
     presetsPlacement: String as PropType<TdDatePickerProps['presetsPlacement']>,
     onPresetClick: Function,
     onConfirmClick: Function,
-    // 支持时间戳模式：时间戳为Number类型
-    selectedValue: [String, Number] as PropType<DateValue>,
+    selectedValue: String as PropType<DateValue>,
   },
   setup(props) {
     const showPanelFooter = computed(() => props.enableTimePicker || props.presets);

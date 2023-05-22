@@ -1,4 +1,4 @@
-import { computed, toRefs } from '@vue/composition-api';
+import { computed, toRefs } from 'vue';
 import { TdBaseTableProps } from '../type';
 import { ClassName, Styles } from '../../common';
 import useClassName from './useClassName';

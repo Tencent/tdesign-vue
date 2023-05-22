@@ -1,4 +1,4 @@
-import { computed, defineComponent, PropType } from '@vue/composition-api';
+import { computed, defineComponent, PropType } from 'vue';
 import { ChevronDownIcon as TdChevronDownIcon } from 'tdesign-icons-vue';
 import useClassName from './hooks/useClassName';
 import { SortType } from './type';
@@ -84,7 +84,7 @@ export default defineComponent({
         <Tooltip
           content={tips}
           placement="right"
-          {...this.tooltipProps}
+          {...(this.tooltipProps as TooltipProps)}
           showArrow={false}
           class={this.tableSortClasses.iconDirection[direction]}
         >

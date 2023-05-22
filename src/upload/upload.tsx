@@ -1,4 +1,6 @@
-import { computed, defineComponent, SetupContext } from '@vue/composition-api';
+import {
+  computed, defineComponent, Ref, SetupContext, toRef,
+} from 'vue';
 import { UploadIcon } from 'tdesign-icons-vue';
 import useFormDisabled from '../hooks/useFormDisabled';
 import props from './props';
@@ -7,7 +9,7 @@ import DraggerFile from './themes/dragger-file';
 import ImageCard from './themes/image-card';
 import MultipleFlowList from './themes/multiple-flow-list';
 import useUpload from './hooks/useUpload';
-import Button from '../button';
+import Button, { ButtonProps } from '../button';
 import { CommonDisplayFileProps, UploadProps } from './interface';
 import { UploadDragEvents } from './hooks/useDrag';
 import CustomFile from './themes/custom-file';
@@ -86,11 +88,14 @@ export default defineComponent({
       },
     ]);
 
+    const triggerButtonProps = toRef(props, 'triggerButtonProps') as Ref<ButtonProps>;
+
     return {
       ...uploadData,
       commonDisplayFileProps,
       dragProps,
       uploadClasses,
+      triggerButtonProps,
     };
   },
 
@@ -99,7 +104,7 @@ export default defineComponent({
       const getDefaultTrigger = () => {
         if (this.theme === 'file-input') {
           return (
-            <Button disabled={this.disabled} variant="outline" props={this.triggerButtonProps}>
+            <Button disabled={this.disabled} variant="outline" {...this.triggerButtonProps}>
               {this.triggerUploadText}
             </Button>
           );
@@ -229,6 +234,7 @@ export default defineComponent({
           multiple={this.multiple}
           accept={this.accept}
           hidden
+          // @ts-ignore
           attrs={this.inputAttributes}
         />
         {['file', 'file-input'].includes(this.theme) && !this.draggable && this.getNormalFileNode()}

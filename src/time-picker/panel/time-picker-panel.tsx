@@ -1,6 +1,6 @@
 import {
   defineComponent, computed, ref, onMounted, nextTick, watch,
-} from '@vue/composition-api';
+} from 'vue';
 import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 
@@ -27,10 +27,10 @@ export default defineComponent({
     const panelClassName = usePrefixClass('time-picker__panel');
     const triggerScroll = ref(false);
     const { global } = useConfig('timePicker');
-    const showNowTimeBtn = computed(() => !!props.steps.filter((v) => v > 1).length);
+    const showNowTimeBtn = computed(() => !!props.steps.filter((v: any) => v > 1).length);
     const defaultValue = computed(() => {
       const isStepsSet = showNowTimeBtn.value;
-      const formattedValue = dayjs(props.value, props.format);
+      const formattedValue = dayjs(props.value as dayjs.ConfigType, props.format);
       if (props.value && formattedValue.isValid()) {
         return formattedValue;
       }
@@ -102,7 +102,7 @@ export default defineComponent({
           <SinglePanel
             {...{
               props: {
-                value: dayjs(this.value, this.format).isValid() ? this.value : this.defaultValue,
+                value: dayjs(this.value as dayjs.ConfigType, this.format).isValid() ? this.value : this.defaultValue,
                 onChange: this.handleChange,
                 onPick: this.onPick,
                 format: this.format || DEFAULT_FORMAT,

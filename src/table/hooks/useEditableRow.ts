@@ -1,4 +1,4 @@
-import { ref, computed, SetupContext } from '@vue/composition-api';
+import { ref, computed, SetupContext } from 'vue';
 import get from 'lodash/get';
 import isFunction from 'lodash/isFunction';
 import { PrimaryTableProps } from '../interface';

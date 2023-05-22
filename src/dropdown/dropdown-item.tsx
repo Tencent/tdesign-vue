@@ -1,4 +1,4 @@
-import { defineComponent, ref, PropType } from '@vue/composition-api';
+import { defineComponent, ref, PropType } from 'vue';
 import { TdDropdownProps } from '../dropdown/type';
 import dropdownItemProps from './dropdown-item-props';
 import { useTNodeJSX } from '../hooks/tnode';
@@ -68,6 +68,7 @@ export default defineComponent({
           minWidth: pxCompat(this.minColumnWidth),
         }}
         v-ripple={!this.isSubmenu && (this.keepAnimation as Record<AnimationType, boolean>).ripple}
+        // @ts-ignore
         ref={this.itemRef}
       >
         {this.prefixIcon ? <div class={`${this.dropdownItemClass}-icon`}>{prefixIcon}</div> : null}

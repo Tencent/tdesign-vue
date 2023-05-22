@@ -1,13 +1,6 @@
 import {
-  computed,
-  defineComponent,
-  SetupContext,
-  ref,
-  nextTick,
-  PropType,
-  watch,
-  onMounted,
-} from '@vue/composition-api';
+  computed, defineComponent, SetupContext, ref, nextTick, PropType, watch, onMounted,
+} from 'vue';
 import pick from 'lodash/pick';
 import props from './base-table-props';
 import useTableHeader from './hooks/useTableHeader';
@@ -16,7 +9,7 @@ import useFixed from './hooks/useFixed';
 import usePagination from './hooks/usePagination';
 import useVirtualScroll from '../hooks/useVirtualScrollNew';
 import useAffix from './hooks/useAffix';
-import Loading from '../loading';
+import Loading, { LoadingProps } from '../loading';
 import TBody, { extendTableProps } from './tbody';
 import { BaseTableProps } from './interface';
 import { useTNodeJSX } from '../hooks/tnode';
@@ -541,6 +534,7 @@ export default defineComponent({
         ref="tableContentRef"
         class={this.tableBaseClass.content}
         style={this.tableContentStyles}
+        // @ts-ignore
         on={{ scroll: this.onInnerVirtualScroll }}
       >
         {this.virtualConfig.isVirtualScroll.value && (
@@ -583,7 +577,7 @@ export default defineComponent({
         text={customLoadingText ? () => customLoadingText : undefined}
         attach={this.tableRef ? () => this.tableRef : undefined}
         showOverlay
-        props={{ size: 'small', ...this.loadingProps }}
+        props={{ size: 'small', ...(this.loadingProps as Partial<LoadingProps>) }}
       ></Loading>
     );
 

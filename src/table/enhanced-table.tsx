@@ -1,6 +1,6 @@
 import {
   defineComponent, SetupContext, computed, ref,
-} from '@vue/composition-api';
+} from 'vue';
 import baseTableProps from './base-table-props';
 import primaryTableProps from './primary-table-props';
 import enhancedTableProps from './enhanced-table-props';
@@ -150,6 +150,7 @@ export default defineComponent({
       'select-change': this.onInnerSelectChange,
       'drag-sort': this.onDragSortChange,
     };
+    // @ts-ignore
     if (this.tree?.expandTreeNodeOnClick) {
       on['row-click'] = this.onEnhancedTableRowClick;
     }

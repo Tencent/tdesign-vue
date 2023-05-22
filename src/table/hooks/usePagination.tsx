@@ -1,7 +1,6 @@
 import {
-  ref, SetupContext, toRefs, watch,
-} from '@vue/composition-api';
-import { CreateElement } from 'vue';
+  CreateElement, ref, SetupContext, toRefs, watch,
+} from 'vue';
 import { useConfig } from '../../config-provider/useConfig';
 import Pagination, { PageInfo, PaginationProps } from '../../pagination';
 import { TdBaseTableProps, TableRowData } from '../type';

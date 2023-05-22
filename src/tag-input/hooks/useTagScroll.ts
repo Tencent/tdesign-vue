@@ -5,7 +5,7 @@
 
 import {
   onMounted, onUnmounted, ref, toRefs,
-} from '@vue/composition-api';
+} from 'vue';
 import isFunction from 'lodash/isFunction';
 import { TdTagInputProps } from '../type';
 

@@ -1,4 +1,4 @@
-import { defineComponent } from '@vue/composition-api';
+import { defineComponent } from 'vue';
 import ColorSlider from './slider';
 import { useBaseClassName } from '../hooks';
 import baseProps from './base-props';

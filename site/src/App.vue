@@ -1,7 +1,6 @@
 <template>
   <div>
     <router-view />
-    <td-theme-generator />
   </div>
 </template>
 

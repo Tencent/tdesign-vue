@@ -1,6 +1,6 @@
 import {
   computed, defineComponent, nextTick, onBeforeUnmount, onMounted, reactive, ref,
-} from '@vue/composition-api';
+} from 'vue';
 import { SATURATION_PANEL_DEFAULT_HEIGHT, SATURATION_PANEL_DEFAULT_WIDTH } from '../const';
 import { Select as TSelect, Option as TOption } from '../../select';
 import { Draggable, Coordinate } from '../utils';

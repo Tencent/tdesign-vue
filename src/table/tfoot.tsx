@@ -1,6 +1,6 @@
 import {
   SetupContext, h, defineComponent, PropType, toRefs,
-} from '@vue/composition-api';
+} from 'vue';
 import isString from 'lodash/isString';
 import isFunction from 'lodash/isFunction';
 import get from 'lodash/get';
@@ -87,6 +87,7 @@ export default defineComponent({
         this.rowKey || 'id',
       );
       return (
+        // @ts-ignore
         <tr key={rowIndex} attrs={trAttributes} class={customClasses}>
           {this.columns.map((col, colIndex) => {
             const cellSpans: RowspanColspan = {};
@@ -109,6 +110,7 @@ export default defineComponent({
               style.width = `${this.thWidthList[col.colKey]}px`;
             }
             return (
+              // @ts-ignore
               <td attrs={{ key: col.colKey, ...cellSpans }} class={tdStyles.classes} style={style}>
                 {this.renderTFootCell({
                   row,

@@ -1,4 +1,4 @@
-import { ref, Ref } from '@vue/composition-api';
+import { ref, Ref } from 'vue';
 import { TreeProps, TypeTreeStore, TypeTreeState } from '../interface';
 import TreeNode from '../../_common/js/tree/tree-node';
 

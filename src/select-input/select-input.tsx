@@ -1,7 +1,7 @@
 import {
-  computed, defineComponent, ref, SetupContext, toRefs,
-} from '@vue/composition-api';
-import Popup, { PopupVisibleChangeContext } from '../popup';
+  computed, defineComponent, Ref, ref, SetupContext, toRef, toRefs,
+} from 'vue';
+import Popup, { PopupProps, PopupVisibleChangeContext } from '../popup';
 import props from './props';
 import { TdSelectInputProps } from './type';
 import useSingle from './useSingle';
@@ -27,6 +27,8 @@ export default defineComponent({
     const {
       multiple, value, popupVisible, borderless,
     } = toRefs(props);
+
+    const popupProps = toRef(props, 'popupProps') as Ref<PopupProps>;
 
     const {
       commonInputProps, singleInputValue, onInnerClear, renderSelectSingle,
@@ -66,6 +68,7 @@ export default defineComponent({
       renderSelectMultiple,
       onInnerPopupVisibleChange,
       classPrefix,
+      popupProps,
     };
   },
 

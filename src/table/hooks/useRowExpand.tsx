@@ -1,7 +1,8 @@
-import { computed, SetupContext, toRefs } from '@vue/composition-api';
+import {
+  computed, SetupContext, toRefs, CreateElement,
+} from 'vue';
 import { ChevronRightCircleIcon as TdChevronRightCircleIcon } from 'tdesign-icons-vue';
 import get from 'lodash/get';
-import { CreateElement } from 'vue';
 import {
   TdPrimaryTableProps,
   PrimaryTableCol,

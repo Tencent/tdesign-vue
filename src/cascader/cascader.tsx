@@ -1,4 +1,4 @@
-import { defineComponent, computed } from '@vue/composition-api';
+import { defineComponent, computed } from 'vue';
 import omit from 'lodash/omit';
 import Panel from './components/Panel';
 import SelectInput, {
@@ -106,7 +106,6 @@ export default defineComponent({
       const value = Array.isArray(cascaderValue) ? cascaderValue : [cascaderValue];
       const cascaderOptions = value.map((item) => {
         const tmpValue = typeof item === 'object' ? item[keys.value] : item;
-        if (tmpValue === undefined) return null;
         return cascaderContext.treeStore.getNode(tmpValue).data;
       });
       return renderTNodeJSX(this, 'collapsedItems', {
@@ -138,6 +137,7 @@ export default defineComponent({
             collapsedItems: renderCollapsedItems,
             label: this.label,
             suffix: this.suffix,
+            // @ts-ignore
             tag: this.tag,
             readonly: this.readonly,
             disabled: isDisabled,
@@ -176,7 +176,7 @@ export default defineComponent({
               (this.selectInputProps as TdSelectInputProps)?.onPopupVisibleChange?.(val, context);
             },
             onBlur: (val: CascaderValue, context: SelectInputFocusContext) => {
-              const ctx = { value: cascaderContext.value, inputValue: context.inputValue || '', e: context.e };
+              const ctx = { value: cascaderContext.value, e: context.e };
               this.onBlur?.(ctx);
               emit('blur', ctx);
               (this.selectInputProps as TdSelectInputProps)?.onBlur?.(val, context);
@@ -204,13 +204,12 @@ export default defineComponent({
         scopedSlots={{
           panel: () => (
             <Panel
-              option={this.option}
               empty={this.empty}
               trigger={this.trigger}
               loading={this.loading}
               loadingText={this.loadingText}
               cascaderContext={cascaderContext}
-              scopedSlots={{ option: slots.option, empty: slots.empty, loadingText: slots.loadingText }}
+              scopedSlots={{ empty: slots.empty, loadingText: slots.loadingText }}
             />
           ),
           tips: slots.tips,

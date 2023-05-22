@@ -1,4 +1,4 @@
-import { computed } from '@vue/composition-api';
+import { computed } from 'vue';
 import { usePrefixClass } from '../hooks/useConfig';
 
 const BASE_COMPONENT_NAME = 'color-picker';

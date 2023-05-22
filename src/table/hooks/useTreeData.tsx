@@ -1,10 +1,9 @@
 import {
-  SetupContext, ref, watch, toRefs, onUnmounted, computed, shallowRef,
-} from '@vue/composition-api';
+  CreateElement, SetupContext, ref, watch, toRefs, onUnmounted, computed, shallowRef,
+} from 'vue';
 import { AddRectangleIcon as TdAddRectangleIcon, MinusRectangleIcon as TdMinusRectangleIcon } from 'tdesign-icons-vue';
 import cloneDeep from 'lodash/cloneDeep';
 import get from 'lodash/get';
-import { CreateElement } from 'vue';
 import TableTreeStore, { SwapParams } from '../../_common/js/table/tree-store';
 import {
   TdEnhancedTableProps,

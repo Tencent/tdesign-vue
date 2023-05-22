@@ -1,4 +1,4 @@
-import { defineComponent, toRefs } from '@vue/composition-api';
+import { defineComponent, toRefs } from 'vue';
 import props from './props';
 import ColorPanel from './panel';
 import { usePrefixClass } from '../config-provider/useConfig';

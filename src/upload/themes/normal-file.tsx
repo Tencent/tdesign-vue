@@ -1,4 +1,6 @@
-import { defineComponent, computed } from '@vue/composition-api';
+import {
+  defineComponent, computed, toRef, Ref,
+} from 'vue';
 import {
   CloseIcon as TdCloseIcon,
   TimeFilledIcon as TdTimeFilledIcon,
@@ -6,6 +8,7 @@ import {
   ErrorCircleFilledIcon as TdErrorCircleFilledIcon,
   CloseCircleFilledIcon as TdCloseCircleFilledIcon,
 } from 'tdesign-icons-vue';
+import { UploadConfig } from '@src/config-provider';
 import TLoading from '../../loading';
 import Link from '../../link';
 import { renderTNodeJSX } from '../../utils/render-tnode';
@@ -27,7 +30,9 @@ const NormalFile = defineComponent({
     ...commonProps,
   },
 
-  setup(props: NormalFileProps) {
+  setup(props) {
+    const locale = toRef(props, 'locale') as Ref<UploadConfig>;
+
     const icons = useGlobalIcon({
       CloseIcon: TdCloseIcon,
       TimeFilledIcon: TdTimeFilledIcon,
@@ -44,6 +49,7 @@ const NormalFile = defineComponent({
       classes,
       uploadPrefix,
       icons,
+      locale,
     };
   },
 

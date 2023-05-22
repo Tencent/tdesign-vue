@@ -1,4 +1,4 @@
-import { defineComponent, computed } from '@vue/composition-api';
+import { defineComponent, computed } from 'vue';
 
 import { usePrefixClass } from '../config-provider/useConfig';
 import useCommonClassName from '../hooks/useCommonClassName';
@@ -111,7 +111,9 @@ export default defineComponent({
     renderCover() {
       const textCover = typeof this.cover === 'string';
       return (
-        <div class={this.coverCls}>{textCover ? <img src={this.cover}></img> : renderTNodeJSX(this, 'cover')}</div>
+        <div class={this.coverCls}>
+          {textCover ? <img src={this.cover as string}></img> : renderTNodeJSX(this, 'cover')}
+        </div>
       );
     },
     // 头部区域渲染逻辑

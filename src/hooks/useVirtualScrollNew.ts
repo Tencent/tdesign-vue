@@ -7,7 +7,7 @@
  */
 import {
   ref, computed, watch, Ref,
-} from '@vue/composition-api';
+} from 'vue';
 import { TScroll } from '../common';
 import useResizeObserver from './useResizeObserver';
 

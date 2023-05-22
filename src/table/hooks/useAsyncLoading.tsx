@@ -1,6 +1,5 @@
 import isString from 'lodash/isString';
-import { computed, SetupContext } from '@vue/composition-api';
-import { CreateElement } from 'vue';
+import { computed, SetupContext, CreateElement } from 'vue';
 import { useTNodeJSX } from '../../hooks/tnode';
 import { TdPrimaryTableProps } from '../type';
 import Loading from '../../loading';

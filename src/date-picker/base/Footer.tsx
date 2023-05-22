@@ -1,4 +1,4 @@
-import { defineComponent, computed } from '@vue/composition-api';
+import { defineComponent, computed } from 'vue';
 import { useConfig, usePrefixClass } from '../../hooks/useConfig';
 import TButton from '../../button';
 
@@ -41,8 +41,7 @@ export default defineComponent({
                   key={key}
                   size="small"
                   variant="text"
-                  onClick={(e: MouseEvent) => this.onPresetClick?.(this.presets[key], { e, preset: { [key]: this.presets[key] } })
-                  }
+                  onClick={(e: MouseEvent) => this.onPresetClick?.(this.presets[key], { e })}
                 >
                   {key}
                 </TButton>

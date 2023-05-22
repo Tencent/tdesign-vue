@@ -1,4 +1,4 @@
-import { SetupContext } from '@vue/composition-api';
+import { SetupContext } from 'vue';
 import { TreeProps, TypeTreeState, TypeEventState } from '../interface';
 import { getMark, emitEvent } from '../util';
 import useTreeAction from './useTreeAction';

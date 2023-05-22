@@ -12,7 +12,7 @@
 
 <script setup lang="jsx">
 /* eslint-disable */
-import { ref, onMounted } from '@vue/composition-api';
+import { ref, onMounted } from 'vue';
 import datePickerConfigJson from './date-picker-props.json';
 
 import dateRangePickerConfigJson from './date-range-picker-props.json';

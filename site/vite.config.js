@@ -1,8 +1,9 @@
 import path from 'path';
 import { defineConfig } from 'vite';
-import { createVuePlugin } from 'vite-plugin-vue2';
+import vue from '@vitejs/plugin-vue2';
 import { VitePWA } from 'vite-plugin-pwa';
 import ScriptSetup from 'unplugin-vue2-script-setup/vite';
+import vueJsx from '@vitejs/plugin-vue2-jsx';
 import tdocPlugin from './plugin-tdoc';
 import pwaConfig from './pwaConfig';
 
@@ -41,10 +42,11 @@ export default ({ mode }) =>
       },
     },
     plugins: [
-      createVuePlugin({
+      vue({
         include: /(\.md|\.vue)$/,
         jsx: true,
       }),
+      vueJsx({}),
       tdocPlugin(),
       VitePWA(pwaConfig),
       ScriptSetup({}),

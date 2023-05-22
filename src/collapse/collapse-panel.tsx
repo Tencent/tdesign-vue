@@ -1,6 +1,6 @@
 import {
   defineComponent, computed, inject, Ref, toRefs,
-} from '@vue/composition-api';
+} from 'vue';
 import props from './collapse-panel-props';
 import FakeArrow from '../common-components/fake-arrow';
 import { CollapseValue, TdCollapsePanelProps } from './type';

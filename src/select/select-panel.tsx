@@ -1,8 +1,8 @@
 import {
-  computed, defineComponent, toRefs, inject, onMounted, onBeforeUnmount,
-} from '@vue/composition-api';
+  VNode, computed, defineComponent, toRefs, inject, onMounted, onBeforeUnmount,
+} from 'vue';
 import isFunction from 'lodash/isFunction';
-import { VNode } from 'vue';
+import { CSSProperties } from 'vue/types/jsx';
 import { useTNodeJSX } from '../hooks/tnode';
 import { renderTNodeJSXDefault } from '../utils/render-tnode';
 import { useConfig, usePrefixClass } from '../config-provider/useConfig';
@@ -332,7 +332,7 @@ export default defineComponent({
     // 虚拟滚动渲染，popup 的 dom 结构有区别
     if (this.isVirtual) {
       const cursorTranslate = `translate(0, ${this.scrollHeight}px)`;
-      const cursorTranslateStyle = {
+      const cursorTranslateStyle: CSSProperties = {
         position: 'absolute',
         width: '1px',
         height: '1px',
@@ -358,6 +358,6 @@ export default defineComponent({
       );
     }
 
-    return (this.renderPanelContent as Function)();
+    return <div>{this.renderPanelContent()}</div>;
   },
 });

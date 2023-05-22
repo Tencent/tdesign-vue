@@ -1,5 +1,6 @@
-import { CreateElement } from 'vue';
-import { ref, nextTick, SetupContext } from '@vue/composition-api';
+import {
+  CreateElement, ref, nextTick, SetupContext,
+} from 'vue';
 import {
   TypeVNode, TypeTreeRow, TypeTreeNode, TreeProps, TypeTreeState,
 } from '../interface';

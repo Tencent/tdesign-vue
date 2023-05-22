@@ -9,7 +9,7 @@
 
 <script setup lang="jsx">
 /* eslint-disable */
-import { ref, onMounted } from '@vue/composition-api';
+import { ref, onMounted } from 'vue';
 import baseConfigJson from './base-table-props.json';
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 

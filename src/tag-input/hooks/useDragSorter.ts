@@ -1,4 +1,4 @@
-import { ref, reactive, SetupContext } from '@vue/composition-api';
+import { ref, reactive, SetupContext } from 'vue';
 import { DragSortProps, DragSortInnerProps } from '../interface';
 
 export default function useDragSorter<T>(props: DragSortProps<T>, context: SetupContext): DragSortInnerProps {

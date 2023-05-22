@@ -1,8 +1,7 @@
-import { CreateElement } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import {
-  defineComponent, h, ref, onMounted, reactive, set,
-} from '@vue/composition-api';
+  CreateElement, defineComponent, h, ref, onMounted, reactive, set,
+} from 'vue';
 import { ChevronRightIcon as TdChevronRightIcon, ChevronLeftIcon as TdChevronLeftIcon } from 'tdesign-icons-vue';
 import isFunction from 'lodash/isFunction';
 

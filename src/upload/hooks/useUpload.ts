@@ -1,6 +1,6 @@
 import {
   ref, computed, toRefs, SetupContext,
-} from '@vue/composition-api';
+} from 'vue';
 import merge from 'lodash/merge';
 import {
   SizeLimitObj,

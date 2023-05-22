@@ -1,6 +1,6 @@
 import {
   computed, defineComponent, ref, watch,
-} from '@vue/composition-api';
+} from 'vue';
 import { ImageErrorIcon } from 'tdesign-icons-vue';
 import { useConfig } from '../../hooks/useConfig';
 import { useDrag } from '../hooks';

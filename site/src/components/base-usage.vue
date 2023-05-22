@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="jsx">
-import { ref, set, onMounted, computed, onBeforeUnmount, watchEffect } from '@vue/composition-api';
+import { ref, set, onMounted, computed, onBeforeUnmount, watchEffect } from 'vue';
 
 const stringifyProp = (name, value) => {
   if (value === true) return name; // 为 true 只展示 name

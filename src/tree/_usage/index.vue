@@ -9,7 +9,7 @@
 
 <script setup lang="jsx">
 /* eslint-disable */
-import { ref, onMounted } from '@vue/composition-api';
+import { ref, onMounted } from 'vue';
 import configJson from './props.json';
 const data = ref([
   { label: '第一段', children: [{ label: '第二段' }, { label: '第二段' }] },

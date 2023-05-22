@@ -40,8 +40,6 @@ const GLOBAL_CONFIG_ZH: GlobalConfigProvider = {
     placeholder: '请选择时间',
   },
   dialog: {
-    confirm: '确认',
-    cancel: '取消',
     confirmBtnTheme: {
       default: 'primary',
       info: 'primary',
@@ -50,19 +48,8 @@ const GLOBAL_CONFIG_ZH: GlobalConfigProvider = {
       success: 'primary',
     },
   },
-  drawer: {
-    confirm: '确认',
-    cancel: '取消',
-  },
+  drawer: {},
   popconfirm: {
-    confirm: {
-      content: '确定',
-      size: 'small',
-    },
-    cancel: {
-      content: '取消',
-      size: 'small',
-    },
     confirmBtnTheme: {
       default: 'primary',
       warning: 'primary',
@@ -168,21 +155,6 @@ const GLOBAL_CONFIG_ZH: GlobalConfigProvider = {
   },
   form: {
     requiredMark: true,
-    errorMessage: {
-      date: '请输入正确的${name}',
-      url: '请输入正确的${name}',
-      required: '${name}必填',
-      max: '${name}字符长度不能超过 ${validate} 个字符，一个中文等于两个字符',
-      min: '${name}字符长度不能少于 ${validate} 个字符，一个中文等于两个字符',
-      len: '${name}字符长度必须是 ${validate}',
-      enum: '${name}只能是${validate}等',
-      idcard: '请输入正确的${name}',
-      telnumber: '请输入正确的${name}',
-      pattern: '请输入正确的${name}',
-      validator: '${name}不符合要求',
-      boolean: '${name}数据类型必须是布尔类型',
-      number: '${name}必须是数字',
-    },
   },
   input: {
     placeholder: '请输入',

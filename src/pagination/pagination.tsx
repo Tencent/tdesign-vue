@@ -351,12 +351,14 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
         ) : null}
         {/* 首页按钮 */}
         {this.showFirstAndLastPageBtn ? (
+          // @ts-ignore
           <div class={this.preBtnClass} onClick={() => this.toPage(1)} disabled={this.disabled || this.current === min}>
             <PageFirstIcon />
           </div>
         ) : null}
         {/* 向前按钮 */}
         {this.showPreviousAndNextBtn ? (
+          // @ts-ignore
           <div class={this.preBtnClass} onClick={this.prevPage} disabled={this.disabled || this.current === min}>
             <ChevronLeftIcon />
           </div>
@@ -408,6 +410,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
           <div
             class={this.nextBtnClass}
             onClick={this.nextPage}
+            // @ts-ignore
             disabled={this.disabled || this.current === this.pageCount}
           >
             <ChevronRightIcon />
@@ -418,6 +421,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
           <div
             class={this.nextBtnClass}
             onClick={() => this.toPage(this.pageCount)}
+            // @ts-ignore
             disabled={this.disabled || this.current === this.pageCount}
           >
             <PageLastIcon />

@@ -5,6 +5,7 @@ import {
   ChevronRightIcon as TdChevronRightIcon,
   AddIcon as TdAddIcon,
 } from 'tdesign-icons-vue';
+import { CSSProperties } from 'vue/types/jsx';
 import TTabPanel from './tab-panel';
 import TTabNavItem from './tab-nav-item';
 import { emitEvent } from '../utils/event';
@@ -174,7 +175,7 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
     navBarClass(): Array<string> {
       return [`${this.classPrefix}-tabs__bar`, `${this.classPrefix}-is-${this.placement}`];
     },
-    navsContainerStyle(): object {
+    navsContainerStyle(): CSSProperties {
       return this.addable ? { 'min-height': '48px' } : null;
     },
   },

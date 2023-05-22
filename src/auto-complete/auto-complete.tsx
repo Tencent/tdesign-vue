@@ -1,6 +1,6 @@
 import {
   computed, ref, defineComponent, toRefs, nextTick,
-} from '@vue/composition-api';
+} from 'vue';
 import props from './props';
 import { TdAutoCompleteProps } from './type';
 import Input, { InputProps, TdInputProps } from '../input';
@@ -184,7 +184,7 @@ export default defineComponent({
         </div>
     ) : null;
     const popupProps = {
-      ...this.popupProps,
+      ...(this.popupProps as PopupProps),
       overlayInnerStyle: this.getOverlayStyle,
       overlayInnerClassName: this.popupInnerClasses,
       overlayClassName: this.popupClasses,

@@ -1,5 +1,4 @@
-import { VNode } from 'vue';
-import { Ref } from '@vue/composition-api';
+import { VNode, Ref } from 'vue';
 import { TNode, TreeOptionData, TScroll } from '../common';
 import TreeStore from '../_common/js/tree/tree-store';
 import TreeNode from '../_common/js/tree/tree-node';
@@ -24,8 +23,8 @@ export type TreeProps<T extends TreeOptionData = TreeOptionData> = TdTreeProps<T
  */
 export type TypeTreeProps<T extends TreeOptionData = TreeOptionData> = TdTreeProps<T>;
 
-export type TypeTNodeState = TreeNodeState;
-export type TypeTNodeValue = TreeNodeValue;
+export type TypeTNodeState = TreeNodeValue;
+export type TypeTNodeValue = TreeNodeState;
 export type TypeTreeNode = TreeNode;
 export type TypeTreeStore = TreeStore;
 export type TypeValueMode = TreeProps['valueMode'];

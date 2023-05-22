@@ -72,6 +72,7 @@ export default mixins(classPrefixMixins, Vue as VueConstructor<CheckboxInstance>
       <label class={this.labelClasses} title={this.$attrs.title} onClick={this.handleClick}>
         <input
           type="checkbox"
+          // @ts-ignore
           on={{ ...omit(this.$listeners, ['checked', 'change']) }}
           class={`${this.componentName}__former`}
           disabled={this.disabled$}

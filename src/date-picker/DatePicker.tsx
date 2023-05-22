@@ -1,4 +1,4 @@
-import { defineComponent, watch, computed } from '@vue/composition-api';
+import { defineComponent, watch, computed } from 'vue';
 import dayjs from 'dayjs';
 import { CalendarIcon as TdCalendarIcon } from 'tdesign-icons-vue';
 
@@ -193,7 +193,7 @@ export default defineComponent({
     }
 
     // 预设
-    function onPresetClick(presetValue: any, context: any) {
+    function onPresetClick(presetValue: DateValue | (() => DateValue)) {
       const presetVal = typeof presetValue === 'function' ? presetValue() : presetValue;
       onChange?.(
         formatDate(presetVal, {
@@ -205,8 +205,6 @@ export default defineComponent({
           trigger: 'preset',
         },
       );
-      props.onPresetClick?.(context);
-      emit('preset-click', context);
       popupVisible.value = false;
     }
 
@@ -280,7 +278,6 @@ export default defineComponent({
         <TSelectInput
           disabled={isDisabled}
           value={inputValue}
-          inputValue={inputValue}
           status={this.status}
           tips={this.tips}
           popupProps={datePickerPopupProps}

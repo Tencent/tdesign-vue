@@ -1,7 +1,6 @@
-import {
+import Vue, {
   computed, defineComponent, toRefs, inject,
-} from '@vue/composition-api';
-import Vue from 'vue';
+} from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import props from './option-group-props';
 import { ClassName } from '../common';

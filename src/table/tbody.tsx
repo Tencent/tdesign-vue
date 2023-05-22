@@ -1,7 +1,6 @@
 import {
-  defineComponent, computed, PropType, SetupContext, toRefs,
-} from '@vue/composition-api';
-import { CreateElement } from 'vue';
+  CreateElement, defineComponent, computed, PropType, SetupContext, toRefs,
+} from 'vue';
 import camelCase from 'lodash/camelCase';
 import get from 'lodash/get';
 import pick from 'lodash/pick';
@@ -84,7 +83,7 @@ export default defineComponent({
   },
 
   // eslint-disable-next-line
-  setup(props: TableBodyProps, { emit }: SetupContext) {
+  setup(props, { emit }: SetupContext) {
     const renderTNode = useTNodeJSX();
     const {
       data, columns, rowKey, rowspanAndColspan,
@@ -161,7 +160,9 @@ export default defineComponent({
         <tr class={classes}>
           <td colspan={columnLength}>
             <div
+              // @ts-ignore
               class={{ [this.tableFullRowClasses.innerFullRow]: this.isFixedToLeft }}
+              // @ts-ignore
               style={this.isFixedToLeft ? { width: `${this.tableWidth}px` } : {}}
             >
               <div class={this.tableFullRowClasses.innerFullElement}>{fullRowNode}</div>
@@ -187,6 +188,7 @@ export default defineComponent({
     ];
 
     this.data?.forEach((row, rowIndex) => {
+      // @ts-ignore
       const trProps: TrProps = {
         ...pick(this.$props, TABLE_PROPS),
         row,

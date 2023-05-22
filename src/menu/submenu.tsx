@@ -1,13 +1,6 @@
 import {
-  defineComponent,
-  computed,
-  inject,
-  ref,
-  provide,
-  onMounted,
-  getCurrentInstance,
-  watch,
-} from '@vue/composition-api';
+  defineComponent, computed, inject, ref, provide, onMounted, getCurrentInstance, watch,
+} from 'vue';
 import props from './submenu-props';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import FakeArrow from '../common-components/fake-arrow';
@@ -105,8 +98,8 @@ export default defineComponent({
 
     onMounted(() => {
       menu?.vMenu?.add({ value: props.value, parent: submenu?.value });
-      const instance = getCurrentInstance();
-      isNested.value = /submenu/i.test(instance.parent.vnode?.tag);
+      const instance = getCurrentInstance().proxy;
+      isNested.value = /submenu/i.test(instance.$parent.$vnode?.tag);
     });
 
     return {
@@ -175,6 +168,7 @@ export default defineComponent({
             />
           )}
         </div>,
+        // @ts-ignore
         <ul level={this.level} class={this.subClass} style={{ '--padding-left': `${paddingLeft}px` }}>
           {child}
         </ul>,

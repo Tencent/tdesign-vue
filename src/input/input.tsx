@@ -492,7 +492,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         [`${this.componentName}--suffix`]: suffixIcon || suffixContent,
       },
     ];
-    const inputTextValue = this.composingRef ? this.composingRefValue : this.inputValue;
+
     const inputNode = (
       <div
         class={classes}
@@ -500,7 +500,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         onClick={this.onRootClick}
         onMouseenter={this.onInputMouseenter}
         onMouseleave={this.onInputMouseleave}
-        onwheel={this.onHandleMousewheel}
+        onWheel={this.onHandleMousewheel}
       >
         {prefixIcon ? (
           <span class={[`${this.componentName}__prefix`, `${this.componentName}__prefix-icon`]}>{prefixIcon}</span>
@@ -508,13 +508,13 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         {labelContent}
         {this.showInput && (
           <input
+            // @ts-ignore
             attrs={this.inputAttrs}
             on={inputEvents}
             ref="inputRef"
             class={`${this.componentName}__inner`}
-            value={inputTextValue}
+            value={this.composingRef ? this.composingRefValue : this.inputValue}
             onInput={this.handleInput}
-            title={this.disabled ? inputTextValue : undefined}
           />
         )}
         {this.autoWidth && (

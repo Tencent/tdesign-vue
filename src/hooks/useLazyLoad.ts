@@ -1,6 +1,6 @@
 import {
   ref, onMounted, computed, nextTick, Ref, UnwrapRef,
-} from '@vue/composition-api';
+} from 'vue';
 import observe from '../_common/js/utils/observe';
 
 export type UseLazyLoadParams = UnwrapRef<{

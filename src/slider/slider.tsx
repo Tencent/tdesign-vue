@@ -1,4 +1,5 @@
 import Vue, { VNode } from 'vue';
+import { CSSProperties } from 'vue/types/jsx';
 import { emitEvent } from '../utils/event';
 import { TNode, ClassName } from '../common';
 import props from './props';
@@ -154,10 +155,10 @@ export default mixins(classPrefixMixins).extend({
       });
       return Math.max.apply(null, precisions);
     },
-    runwayStyle(): object {
+    runwayStyle(): CSSProperties {
       return this.vertical ? { height: '100%' } : {};
     },
-    barStyle(): object {
+    barStyle(): CSSProperties {
       return this.vertical
         ? {
           height: this.barSize,

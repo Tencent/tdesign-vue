@@ -1,7 +1,7 @@
 /** 超出省略显示 */
 import {
   defineComponent, PropType, ref, computed,
-} from '@vue/composition-api';
+} from 'vue';
 import debounce from 'lodash/debounce';
 import { AttachNode, TNode } from '../common';
 import { renderContent } from '../utils/render-tnode';

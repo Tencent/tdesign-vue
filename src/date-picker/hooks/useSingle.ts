@@ -1,4 +1,4 @@
-import { ref, computed, watch } from '@vue/composition-api';
+import { ref, computed, watch } from 'vue';
 import dayjs from 'dayjs';
 
 import { usePrefixClass, useConfig } from '../../hooks/useConfig';

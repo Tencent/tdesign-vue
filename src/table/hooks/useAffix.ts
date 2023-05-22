@@ -1,6 +1,6 @@
 import {
   computed, ref, watch, onBeforeMount,
-} from '@vue/composition-api';
+} from 'vue';
 import { TdBaseTableProps } from '../type';
 import { on, off } from '../../utils/dom';
 import { AffixProps } from '../../affix';

@@ -1,6 +1,6 @@
 import {
   defineComponent, computed, provide, ref, reactive, watch, onMounted,
-} from '@vue/composition-api';
+} from 'vue';
 import props from './head-menu-props';
 import { MenuValue } from './type';
 import { TdMenuInterface, TdOpenType } from './const';

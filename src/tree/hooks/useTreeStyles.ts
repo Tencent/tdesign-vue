@@ -1,4 +1,4 @@
-import { computed, toRefs } from '@vue/composition-api';
+import { computed, toRefs } from 'vue';
 import { TreeProps, TypeTreeState } from '../interface';
 import { Styles } from '../../common';
 import { usePrefixClass } from '../../hooks/useConfig';

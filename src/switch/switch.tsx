@@ -131,6 +131,7 @@ export default mixins(classPrefixMixins).extend({
     }
 
     return (
+      // @ts-ignore
       <div class={classes} disabled={disabled} onClick={toggle}>
         <span class={nodeClasses}>{loadingContent}</span>
         <div class={contentClasses}>{switchContent}</div>

@@ -1,7 +1,6 @@
-import Vue from 'vue';
-import {
+import Vue, {
   computed, onMounted, ref, SetupContext, toRefs, watch,
-} from '@vue/composition-api';
+} from 'vue';
 import useCommonClassName from '../hooks/useCommonClassName';
 import useVModel from '../hooks/useVModel';
 import { InputNumberValue, TdInputNumberProps } from './type';
@@ -157,7 +156,7 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
     }
     // specialCode 新增或删除这些字符时不触发 change 事件
     const isDelete = e.inputType === 'deleteContentBackward';
-    const inputSpecialCode = specialCode.includes(val.slice(-1)) || /\.\d*0+$/.test(val); // 输入特殊字符不改变当前值
+    const inputSpecialCode = specialCode.includes(val.slice(-1)) || /\.\d*0+$/.test(val);
     const deleteSpecialCode = isDelete && specialCode.includes(String(userInput.value).slice(-1));
     if ((!isNaN(Number(val)) && !inputSpecialCode) || deleteSpecialCode) {
       const newVal = val === '' ? undefined : Number(val);
@@ -193,8 +192,7 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
       decimalPlaces,
       largeNumber,
     });
-
-    if ((newValue !== value && String(newValue) !== value) || Number(newValue) !== Number(tValue.value)) {
+    if (newValue !== value && String(newValue) !== value) {
       setTValue(newValue, { type: 'blur', e: ctx.e });
     }
     props.onBlur?.(newValue, ctx);

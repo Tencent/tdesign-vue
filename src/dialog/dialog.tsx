@@ -421,7 +421,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
         </div>
       );
       const footer = this.footer ? (
-        <div class={`${this.componentName}__footer`} onmousedown={this.onStopDown}>
+        <div class={`${this.componentName}__footer`} onMousedown={this.onStopDown}>
           {renderTNodeJSX(this, 'footer', defaultFooter)}
         </div>
       ) : null;
@@ -431,7 +431,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
         <div class={this.wrapClass}>
           <div class={this.positionClass} style={this.positionStyle} onClick={this.overlayAction} ref="dialogPosition">
             <div key="dialog" ref="dialog" class={this.dialogClass} style={this.dialogStyle}>
-              <div class={`${this.componentName}__header`} onmousedown={this.onStopDown}>
+              <div class={`${this.componentName}__header`} onMousedown={this.onStopDown}>
                 <div class={`${this.componentName}__header-content`}>
                   {this.getIcon()}
                   {renderTNodeJSX(this, 'header', defaultHeader)}
@@ -443,7 +443,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
                 ) : null}
               </div>
 
-              <div class={this.bodyClass} onmousedown={this.onStopDown}>
+              <div class={this.bodyClass} onMousedown={this.onStopDown}>
                 {body}
               </div>
               {footer}

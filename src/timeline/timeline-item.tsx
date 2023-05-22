@@ -1,6 +1,6 @@
 import {
   computed, defineComponent, toRefs, getCurrentInstance, inject, SetupContext, ref,
-} from '@vue/composition-api';
+} from 'vue';
 import TLoading from '../loading';
 import { TdTimelineItemProps } from './type';
 import getRenderAlign from './utils';
@@ -19,7 +19,7 @@ export default defineComponent({
     ...TimelineItemProps,
   },
   setup(props: TdTimelineItemProps, context: SetupContext) {
-    const instance = getCurrentInstance();
+    const instance = getCurrentInstance().proxy;
     const classPrefix = usePrefixClass();
 
     const timelineProvider: any = inject('TTimeline', {
@@ -39,6 +39,7 @@ export default defineComponent({
     const currentIndex = computed(() => {
       let index = 0;
       uidArr.value.forEach((item: number | undefined, itemIndex: number) => {
+        // @ts-ignore
         if (item === instance.uid) {
           index = itemIndex;
         }
@@ -107,6 +108,7 @@ export default defineComponent({
     const {
       dotColor,
       dotClassName,
+      // @ts-ignore
       style = {},
       labelClassName,
       mode,

@@ -1,5 +1,4 @@
-import Vue from 'vue';
-import { ComponentRenderProxy, h } from '@vue/composition-api';
+import Vue, { CreateComponentPublicInstance, h } from 'vue';
 import {
   PropType, CreateElement, VNode, VNodeChildren, RenderContext,
 } from 'vue/types/umd';
@@ -24,7 +23,7 @@ enum RenderWay {
   Unknown = 'unknown',
 }
 
-export type VmType = Vue | ComponentRenderProxy;
+export type VmType = Vue | CreateComponentPublicInstance;
 
 // 同时支持驼峰命名和中划线命名的插槽，示例：value-display 和 valueDisplay
 export function handleSlots(vm: VmType, params: Record<string, any>, name: string) {
