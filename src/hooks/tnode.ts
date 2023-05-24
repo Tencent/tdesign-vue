@@ -44,6 +44,7 @@ export const useTNodeJSX = () => {
     // assemble params && defaultNode
     const params = getParams(options);
     const defaultNode = getDefaultNode(options);
+    const slots = useSlots();
 
     // 处理 props 类型的Node
     let propsNode;
@@ -58,14 +59,14 @@ export const useTNodeJSX = () => {
     // propsNode 为 false 不渲染
     if (propsNode === false) return;
     if (propsNode === true) {
-      return handleSlots(useSlots(), name, params) || defaultNode;
+      return handleSlots(slots, name, params) || defaultNode;
     }
 
     // 同名 props 和 slot 优先处理 props
     if (isFunction(propsNode)) return propsNode(h, params);
     const isPropsEmpty = [undefined, params, ''].includes(propsNode);
-    if (isPropsEmpty && (useSlots[camelCase(name)] || useSlots[kebabCase(name)])) {
-      return handleSlots(useSlots(), name, params);
+    if (isPropsEmpty && (slots[camelCase(name)] || slots[kebabCase(name)])) {
+      return handleSlots(slots, name, params);
     }
     return propsNode;
   };

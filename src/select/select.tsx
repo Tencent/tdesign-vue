@@ -576,10 +576,7 @@ export default defineComponent({
         );
       }
       return showArrow ? (
-        <fake-arrow
-          overlayClassName={`${this.componentName}__right-icon`}
-          isActive={innerPopupVisible && !isDisabled}
-        />
+        <FakeArrow overlayClassName={`${this.componentName}__right-icon`} isActive={innerPopupVisible && !isDisabled} />
       ) : null;
     },
 

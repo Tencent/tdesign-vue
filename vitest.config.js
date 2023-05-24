@@ -37,7 +37,6 @@ export default defineConfig({
   plugins: [
     vue({
       include: /(\.md|\.vue)$/,
-      jsx: true,
     }),
     vueJsx({}),
     ScriptSetup({}),

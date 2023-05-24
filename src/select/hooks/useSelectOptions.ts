@@ -55,9 +55,9 @@ export default function useSelectOptions(
     // props 中 options 参数优先级高于 slots
     if (props.options === undefined) {
       // 记录当前 slot 数组
-      innerSlotRecord = instance.proxy.$slots.default;
+      innerSlotRecord = instance.$slots.default;
       // 处理 slots 中 t-option 与 t-option-group
-      const currentSlots = instance.proxy.$slots.default || [];
+      const currentSlots = instance.$slots.default || [];
       currentSlots.forEach((child: any) => {
         if (child.componentOptions?.tag === 't-option') {
           // 独立选项
@@ -134,7 +134,7 @@ export default function useSelectOptions(
   );
   // 当组件 slot 变化时，重新构造内部 options 数组
   onBeforeUpdate(() => {
-    if (props.options === undefined && innerSlotRecord !== instance.proxy.$slots.default) {
+    if (props.options === undefined && innerSlotRecord !== instance.$slots.default) {
       getOptions();
     }
   });

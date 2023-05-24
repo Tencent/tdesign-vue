@@ -205,7 +205,6 @@ export default defineComponent({
         scopedSlots={{
           panel: () => (
             <Panel
-              // @ts-ignore
               option={this.option}
               empty={this.empty}
               trigger={this.trigger}

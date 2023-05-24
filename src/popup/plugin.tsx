@@ -40,7 +40,7 @@ const Overlay = mixins(classPrefixMixins).extend({
   },
   props: {
     ...props,
-    triggerEl: HTMLElement,
+    triggerEl: Object,
   },
   computed: {
     hasTrigger(): Record<(typeof triggers)[number], boolean> {
@@ -157,8 +157,10 @@ const removeOverlayInstance = () => {
   }
 };
 
-const triggerPopupPlugin = (trigger: string, content: TNode, popupProps: TdPopupProps) => {
-  const hasTrigger = triggerType(popupProps.trigger || 'hover');
+export type PluginMethod = (trigger: string, content: TNode, popupProps?: TdPopupProps) => Instance;
+
+export const createPopupPlugin: PluginMethod = (trigger, content, popupProps) => {
+  const hasTrigger = triggerType(popupProps?.trigger || 'hover');
   const currentTriggerEl = getAttach(trigger);
   if (triggerEl && hasTrigger.click) {
     return;
@@ -166,9 +168,9 @@ const triggerPopupPlugin = (trigger: string, content: TNode, popupProps: TdPopup
   triggerEl = currentTriggerEl;
   removeOverlayInstance();
 
-  let attach = getAttach(popupProps.attach);
+  let attach = getAttach(popupProps?.attach || 'body');
 
-  const delay = [].concat(popupProps.delay ?? [250, 150]);
+  const delay = [].concat(popupProps?.delay ?? [250, 150]);
   const closeDelay = delay[1] ?? delay[0];
   if (attach === document.body) {
     // don't allow mount on body directly
@@ -198,12 +200,19 @@ const triggerPopupPlugin = (trigger: string, content: TNode, popupProps: TdPopup
   }
 
   popperInstance = createPopper(triggerEl, overlayInstance, {
-    placement: getPopperPlacement(popupProps.placement as TdPopupProps['placement']),
-    ...popupProps.popperOptions,
+    placement: getPopperPlacement(popupProps?.placement || ('top' as TdPopupProps['placement'])),
+    ...popupProps?.popperOptions,
   });
+  return popperInstance;
 };
 
-Vue.prototype.$popup = triggerPopupPlugin;
+export const PopupPlugin: PluginMethod & Vue.PluginObject<undefined> = createPopupPlugin as any;
+
+PopupPlugin.install = () => {
+  Vue.prototype.$popup = createPopupPlugin;
+};
+
+export default PopupPlugin;
 
 declare module 'vue/types/vue' {
   interface Vue {
