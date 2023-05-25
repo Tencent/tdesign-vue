@@ -1,5 +1,5 @@
 import {
-  computed, defineComponent, onMounted, ref,
+  computed, defineComponent, onMounted, ref, onBeforeUnmount,
 } from '@vue/composition-api';
 import { BacktopIcon as TdBackTopIcon } from 'tdesign-icons-vue';
 
@@ -90,10 +90,17 @@ export default defineComponent({
         const { scrollTop } = scrollDOM;
         if (scrollTop >= visibleHeight) {
           visible.value = true;
-          containerRef.value.onscroll = null;
+        }
+        if (scrollTop < visibleHeight && visible.value) {
+          visible.value = false;
         }
       };
     });
+
+    onBeforeUnmount(() => {
+      containerRef.value.onscroll = null;
+    });
+
     return {
       BacktopIcon,
       cls,
