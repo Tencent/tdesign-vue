@@ -1,12 +1,14 @@
+import { PropType } from 'vue';
 import baseProps from './sticky-item-props';
 import TdStickyToolProps from './props';
-import type { TdStickyItemProps } from './type';
-import type { ClassName, Styles } from '../common';
 import Popup from '../popup';
-import PopupProps from '../popup/props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { getGlobalIconMixins } from '../config-provider/config-receiver';
+
+import type { TdStickyItemProps } from './type';
+import type { TdPopupProps } from '../popup/type';
+import type { ClassName, Styles } from '../common';
 
 export default mixins(getConfigReceiverMixins('sticky-item'), getGlobalIconMixins()).extend({
   name: 'TStickyItem',
@@ -15,7 +17,7 @@ export default mixins(getConfigReceiverMixins('sticky-item'), getGlobalIconMixin
     type: TdStickyToolProps.type,
     shape: TdStickyToolProps.shape,
     placement: TdStickyToolProps.placement,
-    basePopupProps: PopupProps,
+    basePopupProps: Object as PropType<TdPopupProps>,
     baseWidth: TdStickyToolProps.width,
     onClick: TdStickyToolProps.onClick,
     onHover: TdStickyToolProps.onHover,
