@@ -9,17 +9,17 @@
 
     <t-statistic title="Total Assets" :value="62.58">
       <template #suffix>
-        <arrow-up-icon style="color: #ee4d38" />
+        <arrow-triangle-down-filled-icon style="color: #ee4d38" />
       </template>
     </t-statistic>
   </t-space>
 </template>
 <script>
-import { ArrowUpIcon, ControlPlatformIcon } from 'tdesign-icons-vue';
+import { ControlPlatformIcon, ArrowTriangleDownFilledIcon } from 'tdesign-icons-vue';
 
 export default {
   components: {
-    ArrowUpIcon,
+    ArrowTriangleDownFilledIcon,
     ControlPlatformIcon,
   },
 };
