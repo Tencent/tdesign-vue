@@ -44,6 +44,8 @@ export default defineComponent({
       steps, value, format, position, triggerScroll,
     } = toRefs(props);
 
+    const instance = getCurrentInstance().proxy;
+
     const { global } = useConfig('timePicker');
 
     const { classPrefix } = useConfig();
@@ -182,8 +184,7 @@ export default defineComponent({
       let formattedVal: string;
       if (!props.isShowPanel) return;
 
-      const { proxy } = getCurrentInstance();
-      const scrollTop = (proxy.$refs as any)[`${col}Col`]?.scrollTop + panelOffset.top;
+      const scrollTop = (instance.$refs as any)[`${col}Col`]?.scrollTop + panelOffset.top;
 
       const { offsetHeight, margin } = getItemHeight();
       const timeItemTotalHeight = offsetHeight + margin;
@@ -232,8 +233,7 @@ export default defineComponent({
       }
       if (formattedVal !== value.value) props.onChange?.(formattedVal, e);
       if (distance !== scrollTop) {
-        const { proxy } = getCurrentInstance();
-        const scrollCtrl = (proxy.$refs as any)[`${col}Col`];
+        const scrollCtrl = (instance.$refs as any)[`${col}Col`];
 
         if (!scrollCtrl || scrollCtrl.scrollTop === distance) return;
 
@@ -251,8 +251,7 @@ export default defineComponent({
       behavior: 'auto' | 'smooth' = 'auto',
     ) => {
       const distance = getScrollDistance(col, time);
-      const { proxy } = getCurrentInstance();
-      const scrollCtrl = (proxy.$refs as any)[`${col}Col`];
+      const scrollCtrl = (instance.$refs as any)[`${col}Col`];
 
       if (!scrollCtrl || scrollCtrl.scrollTop === distance || !timeItemCanUsed(col, time)) return;
       scrollCtrl.scrollTo?.({

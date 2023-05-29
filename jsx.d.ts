@@ -6,19 +6,7 @@ declare module 'vue' {
   }
 
   interface ComponentCustomProps {
-    onClick?: any;
-    props?: any;
-    scopedSlots?: any;
-    onCancelUpload?: any;
-    onPreview?: any;
-    size?: any;
-    nativeOnClick?: any;
-    on?: any;
-    onChange?: any;
-    id?: any;
-    onSelect?: any;
-    filterIcon?: any;
-    option?: any;
+    [key: string]: any;
   }
 }
 

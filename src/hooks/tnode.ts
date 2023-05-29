@@ -1,5 +1,5 @@
 import {
-  VNode, h, getCurrentInstance, SetupContext, useSlots,
+  VNode, h, getCurrentInstance, SetupContext,
 } from 'vue';
 // import { h, getCurrentInstance, ComponentInternalInstance, VNode } from 'vue';
 import isEmpty from 'lodash/isEmpty';
@@ -44,7 +44,6 @@ export const useTNodeJSX = () => {
     // assemble params && defaultNode
     const params = getParams(options);
     const defaultNode = getDefaultNode(options);
-    const slots = useSlots();
 
     // 处理 props 类型的Node
     let propsNode;
@@ -59,14 +58,14 @@ export const useTNodeJSX = () => {
     // propsNode 为 false 不渲染
     if (propsNode === false) return;
     if (propsNode === true) {
-      return handleSlots(slots, name, params) || defaultNode;
+      return handleSlots(instance.$scopedSlots, name, params) || defaultNode;
     }
 
     // 同名 props 和 slot 优先处理 props
     if (isFunction(propsNode)) return propsNode(h, params);
     const isPropsEmpty = [undefined, params, ''].includes(propsNode);
-    if (isPropsEmpty && (slots[camelCase(name)] || slots[kebabCase(name)])) {
-      return handleSlots(slots, name, params);
+    if (isPropsEmpty && (instance.$scopedSlots[camelCase(name)] || instance.$scopedSlots[kebabCase(name)])) {
+      return handleSlots(instance.$scopedSlots, name, params);
     }
     return propsNode;
   };

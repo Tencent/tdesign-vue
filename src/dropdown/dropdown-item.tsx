@@ -68,8 +68,7 @@ export default defineComponent({
           minWidth: pxCompat(this.minColumnWidth),
         }}
         v-ripple={!this.isSubmenu && (this.keepAnimation as Record<AnimationType, boolean>).ripple}
-        // @ts-ignore
-        ref={this.itemRef}
+        ref="itemRef"
       >
         {this.prefixIcon ? <div class={`${this.dropdownItemClass}-icon`}>{prefixIcon}</div> : null}
         {renderTNodeJSX('default')}
