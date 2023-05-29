@@ -21,7 +21,7 @@ export default defineComponent({
     const menu = inject<TdMenuInterface>('TdMenu');
     const submenu = inject<TdSubMenuInterface>('TdSubmenu', null);
     const active = computed(() => menu.activeValue.value === props.value);
-    const collapsed = computed(() => menu.collapsed.value);
+    const collapsed = computed(() => menu.collapsed?.value);
     const classPrefix = usePrefixClass();
 
     const classes = computed(() => [
