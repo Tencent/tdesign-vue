@@ -8,6 +8,7 @@ import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import { getKeepAnimationMixins } from '../config-provider/config-receiver';
 import { AnimationType } from '../config-provider/type';
 import { usePrefixClass } from '../hooks/useConfig';
+import Tooltip from '../tooltip';
 
 const keepAnimationMixins = getKeepAnimationMixins();
 
@@ -20,6 +21,7 @@ export default defineComponent({
     const menu = inject<TdMenuInterface>('TdMenu');
     const submenu = inject<TdSubMenuInterface>('TdSubmenu', null);
     const active = computed(() => menu.activeValue.value === props.value);
+    const collapsed = computed(() => menu.collapsed.value);
     const classPrefix = usePrefixClass();
 
     const classes = computed(() => [
@@ -68,13 +70,14 @@ export default defineComponent({
     return {
       menu,
       active,
+      collapsed,
       classes,
       handleClick,
       classPrefix,
     };
   },
   render() {
-    return (
+    const liContent = (
       <li
         v-ripple={(this.keepAnimation as Record<AnimationType, boolean>).ripple}
         class={this.classes}
@@ -84,5 +87,14 @@ export default defineComponent({
         <span class={[`${this.classPrefix}-menu__content`]}>{renderContent(this, 'default', 'content')}</span>
       </li>
     );
+    // 菜单收起，且只有本身为一级菜单才需要显示 tooltip
+    if (this.collapsed && !/submenu/i.test(this.$parent.$vnode?.tag)) {
+      return (
+        <Tooltip content={() => renderContent(this, 'default', 'content')} placement="right">
+          {liContent}
+        </Tooltip>
+      );
+    }
+    return liContent;
   },
 });
