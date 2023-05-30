@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import {
-  computed, onMounted, ref, SetupContext, toRefs, watch,
+  computed, ref, SetupContext, toRefs, watch,
 } from '@vue/composition-api';
 import useCommonClassName from '../hooks/useCommonClassName';
 import useVModel from '../hooks/useVModel';
@@ -10,15 +10,15 @@ import {
   canAddNumber,
   canInputNumber,
   canReduceNumber,
-  formatToNumber,
   getMaxOrMinValidateResult,
   getStepValue,
   formatThousandths,
+  canSetValue,
+  formatUnCompleteNumber,
 } from '../_common/js/input-number/number';
 import useFormDisabled from '../hooks/useFormDisabled';
 import { InputProps } from '..';
 
-export const specialCode = ['-', '.', 'e', 'E'];
 /**
  * 独立一个组件 Hook 方便用户直接使用相关逻辑 自定义任何样式的数字输入框
  */
@@ -66,7 +66,7 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
     if (!value && value !== 0) return '';
     let inputStr = value || value === 0 ? String(value) : '';
     if (!inputRef.value?.$el?.contains(document.activeElement)) {
-      const num = formatToNumber(inputStr, {
+      const num = formatUnCompleteNumber(inputStr, {
         decimalPlaces: props.decimalPlaces,
         largeNumber: props.largeNumber,
       });
@@ -81,15 +81,16 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
   watch(
     tValue,
     (val) => {
-      const inputValue = [undefined, null].includes(val) ? '' : String(val);
-      userInput.value = getUserInput(inputValue);
+      // userInput.value 为非合法数字，则表示用户正在输入，此时无需处理
+      if (!props.largeNumber && !Number.isNaN(userInput.value)) {
+        const inputValue = [undefined, null].includes(val) ? '' : String(val);
+        if (parseFloat(userInput.value) !== val) {
+          userInput.value = getUserInput(inputValue);
+        }
+      }
     },
     { immediate: true },
   );
-
-  onMounted(() => {
-    userInput.value = getUserInput(tValue.value);
-  });
 
   watch(
     [tValue, max, min],
@@ -146,33 +147,34 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
     setTValue(r.newValue, { type: 'add', e });
   };
 
-  const onInnerInputChange = (val: string, { e }: { e: InputEvent }) => {
-    // eslint-disable-next-line no-param-reassign
-    val = formatThousandths(val); // 千分位处理
-
+  const onInnerInputChange = (inputValue: string, { e }: { e: InputEvent }) => {
+    // 千分位处理
+    const val = formatThousandths(inputValue);
     if (!canInputNumber(val, props.largeNumber)) return;
+
+    userInput.value = val;
+
     if (props.largeNumber) {
       setTValue(val, { type: 'input', e });
       return;
     }
-    // specialCode 新增或删除这些字符时不触发 change 事件
-    const isDelete = e.inputType === 'deleteContentBackward';
-    const inputSpecialCode = specialCode.includes(val.slice(-1)) || /\.\d*0+$/.test(val); // 输入特殊字符不改变当前值
-    const deleteSpecialCode = isDelete && specialCode.includes(String(userInput.value).slice(-1));
-    if ((!isNaN(Number(val)) && !inputSpecialCode) || deleteSpecialCode) {
+
+    if (canSetValue(String(val), Number(tValue.value))) {
       const newVal = val === '' ? undefined : Number(val);
       setTValue(newVal, { type: 'input', e });
     }
-    if (inputSpecialCode || deleteSpecialCode) {
-      userInput.value = val;
-    }
   };
 
+  /**
+   * 1. 处理数字输入超出限制；
+   * 2. 处理未输入完成的数字；如：2e/2+/2.等
+   * 3. 格式化数字/数字小数点
+   */
   const handleBlur = (value: string, ctx: { e: FocusEvent }) => {
     const {
       largeNumber, max, min, decimalPlaces,
     } = props;
-    if (!props.allowInputOverLimit && value) {
+    if (!props.allowInputOverLimit && tValue.value) {
       const r = getMaxOrMinValidateResult({
         value: tValue.value,
         largeNumber,
@@ -188,13 +190,12 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
         return;
       }
     }
-    userInput.value = getUserInput(tValue.value);
-    const newValue = formatToNumber(value, {
+    const newValue = formatUnCompleteNumber(String(value), {
       decimalPlaces,
       largeNumber,
     });
-
-    if ((newValue !== value && String(newValue) !== value) || Number(newValue) !== Number(tValue.value)) {
+    userInput.value = getUserInput(newValue);
+    if (newValue !== tValue.value) {
       setTValue(newValue, { type: 'blur', e: ctx.e });
     }
     props.onBlur?.(newValue, ctx);
@@ -233,13 +234,10 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
 
   const handleEnter = (value: string, ctx: { e: KeyboardEvent }) => {
     userInput.value = getUserInput(value);
-    const newValue = formatToNumber(value, {
+    const newValue = formatUnCompleteNumber(value, {
       decimalPlaces: props.decimalPlaces,
       largeNumber: props.largeNumber,
     });
-    if (newValue !== value && String(newValue) !== value) {
-      setTValue(newValue, { type: 'enter', e: ctx.e });
-    }
     props.onEnter?.(newValue, ctx);
     context.emit('enter', newValue, ctx);
   };
