@@ -5,6 +5,17 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.3.4 `2023-05-30` 
+### 🚀 Features
+- `TimePicker`: 没有选中值时不允许点击确认按钮 @uyarn ([#2448](https://github.com/Tencent/tdesign-vue/pull/2448))
+- `Menu`: 侧边导航菜单收起时，支持 Tooltip 展示菜单内容 @xiaosansiji ([#2455](https://github.com/Tencent/tdesign-vue/pull/2455))
+### 🐞 Bug Fixes
+- `Message`: 修复通过命令调用时，attach 所在 Dom 被清空后，新的 message 无法显示问题修复 @luguokong ([#2443](https://github.com/Tencent/tdesign-vue/pull/2443))
+- `Backtop`: 修复 visibleHeight 只触发一次的缺陷 @uyarn ([#2449](https://github.com/Tencent/tdesign-vue/pull/2449))
+- `StickyTool`: 修复控制台告警 @uyarn ([#2450](https://github.com/Tencent/tdesign-vue/pull/2450))
+- `InputAdornment`: 修复 `prepend/append` 为空字符串时仍然渲染节点的问题 @uyarn ([#2457](https://github.com/Tencent/tdesign-vue/pull/2457))
+- `Badge`: 修正在部分情况下未重置`box-sizing`而导致的样式错误 @PDieE ([common#1340](https://github.com/Tencent/tdesign-common/pull/1340))
+
 ## 🌈 1.3.3 `2023-05-19` 
 ### 🐞 Bug Fixes
 - `Tooltip`: 修复箭头偏移问题 @uyarn ([#1347](https://github.com/Tencent/tdesign-common/pull/1347))
