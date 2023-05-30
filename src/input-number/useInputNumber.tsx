@@ -15,6 +15,7 @@ import {
   formatThousandths,
   canSetValue,
   formatUnCompleteNumber,
+  largeNumberToFixed,
 } from '../_common/js/input-number/number';
 import useFormDisabled from '../hooks/useFormDisabled';
 import { InputProps } from '..';
@@ -69,6 +70,7 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
       const num = formatUnCompleteNumber(inputStr, {
         decimalPlaces: props.decimalPlaces,
         largeNumber: props.largeNumber,
+        isToFixed: true,
       });
       inputStr = num || num === 0 ? String(num) : '';
       if (props.format) {
@@ -81,11 +83,18 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
   watch(
     tValue,
     (val) => {
+      const { largeNumber, decimalPlaces } = props;
+      const inputValue = [undefined, null].includes(val) ? '' : String(val);
       // userInput.value 为非合法数字，则表示用户正在输入，此时无需处理
-      if (!props.largeNumber && !Number.isNaN(userInput.value)) {
-        const inputValue = [undefined, null].includes(val) ? '' : String(val);
+      if (!largeNumber && !Number.isNaN(userInput.value)) {
         if (parseFloat(userInput.value) !== val) {
           userInput.value = getUserInput(inputValue);
+        }
+      }
+      if (largeNumber) {
+        userInput.value = getUserInput(inputValue);
+        if (decimalPlaces && largeNumberToFixed(inputValue, decimalPlaces, largeNumber) !== val) {
+          setTValue(userInput.value, { type: 'props', e: undefined });
         }
       }
     },
