@@ -71,10 +71,11 @@ export default defineComponent({
     ]);
     const popupClass = computed(() => [
       `${classPrefix.value}-menu__popup`,
+      `${classPrefix.value}-is-${isHead ? 'horizontal' : 'vertical'}`,
       {
         [`${classPrefix.value}-is-opened`]: popupVisible.value,
-        [`${classPrefix.value}-is-vertical`]: !isHead,
       },
+      'narrow-scrollbar',
     ]);
     const submenuClass = computed(() => [
       `${classPrefix.value}-menu__item`,
