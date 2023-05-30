@@ -18,7 +18,7 @@ exports[`Submenu > slot > <default> 1`] = `
   class="t-submenu"
 >
   <div
-    class="t-menu__item"
+    class="t-menu__item t-menu__item-spacer t-menu__item-spacer--right"
   >
     <span
       class="t-menu__content"
@@ -54,7 +54,7 @@ exports[`Submenu > slot > <icon> 1`] = `
   class="t-submenu"
 >
   <div
-    class="t-menu__item"
+    class="t-menu__item t-menu__item-spacer t-menu__item-spacer--right"
   >
     <div />
     <span
@@ -73,7 +73,7 @@ exports[`Submenu > slot > <title> 1`] = `
   class="t-submenu"
 >
   <div
-    class="t-menu__item"
+    class="t-menu__item t-menu__item-spacer t-menu__item-spacer--right"
   >
     <span
       class="t-menu__content"
