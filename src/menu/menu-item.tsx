@@ -88,7 +88,7 @@ export default defineComponent({
       </li>
     );
     // 菜单收起，且只有本身为一级菜单才需要显示 tooltip
-    if (this.collapsed && !/submenu/i.test(this.$parent.$vnode?.tag)) {
+    if (this.collapsed && /tmenu/i.test(this.$parent.$vnode?.tag)) {
       return (
         <Tooltip content={() => renderContent(this, 'default', 'content')} placement="right">
           {liContent}
