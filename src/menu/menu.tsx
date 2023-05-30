@@ -20,6 +20,7 @@ export default defineComponent({
     const theme = computed(() => props.theme);
     const isMutex = computed(() => props.expandMutex);
     const classPrefix = usePrefixClass();
+    const collapsed = computed(() => props.collapsed);
 
     const menuClass = computed(() => [
       `${classPrefix.value}-default-menu`,
@@ -72,6 +73,7 @@ export default defineComponent({
       theme,
       isHead: false,
       vMenu,
+      collapsed,
       select: (value: MenuValue) => {
         emitChange(value);
       },
