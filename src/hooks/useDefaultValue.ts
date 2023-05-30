@@ -10,19 +10,19 @@ export default function useDefaultValue<T, P extends any[]>(
   propsName: string,
   eventName: string,
 ): [Ref<T>, ChangeHandler<T, P>] {
-  const { $emit, $vnode } = getCurrentInstance().proxy;
+  const instance = getCurrentInstance().proxy;
 
   const internalValue = ref();
   internalValue.value = defaultValue;
 
   // 受控模式
-  if (Object.prototype.hasOwnProperty.call($vnode.componentOptions.propsData, propsName)) {
+  if (Object.prototype.hasOwnProperty.call(instance.$vnode.componentOptions.propsData, propsName)) {
     return [
       value,
       (newValue, ...args) => {
-        $emit(`update:${propsName}`, newValue, ...args);
+        instance.$emit(`update:${propsName}`, newValue, ...args);
         onChange?.(newValue, ...args);
-        $emit(eventName, newValue, ...args);
+        instance.$emit(eventName, newValue, ...args);
       },
     ];
   }
@@ -32,7 +32,7 @@ export default function useDefaultValue<T, P extends any[]>(
     internalValue,
     (newValue, ...args) => {
       internalValue.value = newValue;
-      $emit(eventName, newValue, ...args);
+      instance.$emit(eventName, newValue, ...args);
       onChange?.(newValue, ...args);
     },
   ];

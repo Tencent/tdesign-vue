@@ -1,5 +1,5 @@
 import {
-  defineComponent, computed, provide, ref, reactive, watch, onMounted,
+  defineComponent, computed, provide, ref, watch, onMounted,
 } from 'vue';
 import props from './head-menu-props';
 import { MenuValue } from './type';
@@ -31,7 +31,7 @@ export default defineComponent({
       `${classPrefix.value}-menu--${props.theme}`,
     ]);
     const mode = ref(props.expandType);
-    const submenu = reactive([]);
+    const submenu = ref([]);
     const deliver = (evt: string) => {
       const func = `on${evt[0].toUpperCase() + evt.slice(1)}`;
       return (val: any) => {
@@ -87,8 +87,8 @@ export default defineComponent({
     // watch
     const handleSubmenuExpand = (value: MenuValue) => {
       const ans = vMenu.getChild(value);
-      submenu.length = 0;
-      submenu.push(...ans);
+      submenu.value.length = 0;
+      submenu.value.push(...ans);
     };
     watch(
       () => props.expanded,

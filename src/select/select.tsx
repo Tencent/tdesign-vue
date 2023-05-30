@@ -647,7 +647,7 @@ export default defineComponent({
               updateScrollTop: this.updateScrollTop,
               ...this.selectInputProps,
               panel: () => (
-                <select-panel
+                <SelectPanel
                   ref="selectPanelRef"
                   scopedSlots={this.$scopedSlots}
                   size={this.size}

@@ -1,4 +1,4 @@
-import { VNode } from 'vue';
+import { VNode, provide } from 'vue';
 import isObject from 'lodash/isObject';
 import props from './row-props';
 import { ClassName, Styles } from '../common';
@@ -23,17 +23,13 @@ export default mixins(classPrefixMixins).extend({
 
   props: { ...props },
 
+  setup(props) {
+    provide('rowContext', props.gutter);
+  },
+
   data() {
     return {
       size: 'md',
-    };
-  },
-
-  provide(): { rowContext: any } {
-    return {
-      rowContext: {
-        gutter: this.gutter,
-      },
     };
   },
 

@@ -1,4 +1,4 @@
-import { VNode } from 'vue';
+import { VNode, inject } from 'vue';
 import isObject from 'lodash/isObject';
 import { calcSize } from '../utils/responsive';
 import props from './col-props';
@@ -15,7 +15,12 @@ export default mixins(classPrefixMixins).extend({
 
   props: { ...props },
 
-  inject: ['rowContext'],
+  setup() {
+    const rowContext = inject('rowContext', null);
+    return {
+      rowContext,
+    };
+  },
 
   data() {
     return {
