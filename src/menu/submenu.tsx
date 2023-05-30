@@ -79,6 +79,8 @@ export default defineComponent({
     ]);
     const submenuClass = computed(() => [
       `${classPrefix.value}-menu__item`,
+      `${classPrefix.value}-menu__item-spacer`,
+      `${classPrefix.value}-menu__item-spacer--${isHead && !isNested.value ? 'bottom' : 'right'}`,
       {
         [`${classPrefix.value}-is-disabled`]: props.disabled,
         [`${classPrefix.value}-is-opened`]: isOpen.value,
@@ -110,7 +112,7 @@ export default defineComponent({
         if (!popupVisible.value) {
           open(props.value);
           // popupVisible设置为TRUE之后打开popup，因此需要在nextTick中确保可以拿到ref值
-          nextTick().then(() => {
+          nextTick(() => {
             passSubPopupRefToParent(popupWrapperRef.value);
           });
         }
@@ -219,6 +221,7 @@ export default defineComponent({
       popupClass,
       submenuClass,
       rippleColor,
+      popupWrapperRef,
       handleEnterPopup,
       handleMouseEnter,
       handleMouseLeave,
