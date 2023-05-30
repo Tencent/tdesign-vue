@@ -15,6 +15,7 @@ export default mixins(classPrefixMixins).extend({
     renderAddon(h: CreateElement, type: string, addon: string | Function | undefined): JsxNode {
       let addonNode: JsxNode;
       const isContentNode = isString(addon) || isNumber(addon);
+      if (!addon) return null;
 
       if (this.$scopedSlots[type]) {
         if (this.$scopedSlots[type](null).length === 1 && this.$scopedSlots[type](null)[0].text) {
