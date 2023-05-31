@@ -2,7 +2,14 @@
   <t-space direction="vertical">
     <t-input-number v-model="value1" :step="0.1" :max="5" autoWidth />
 
-    <t-input-number v-model="decimalValue" :step="0.18" :max="5" :allow-input-over-limit="false" style="width: 200px" />
+    <t-input-number
+      v-model="decimalValue"
+      :step="0.18"
+      :max="5"
+      :allow-input-over-limit="false"
+      @change="onNumberChange"
+      style="width: 200px"
+    />
 
     <t-input-number
       v-model="value2"
@@ -41,6 +48,9 @@ export default {
     },
   },
   methods: {
+    onNumberChange(v) {
+      console.log(v);
+    },
     handleChange(v, ctx) {
       console.info('change', v, ctx);
     },
