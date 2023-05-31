@@ -34,14 +34,13 @@ export default defineComponent({
       },
     ]);
     // methods
-    const handleClick = () => {
+    const handleClick = (e: MouseEvent) => {
+      e.stopPropagation();
       if (props.disabled) return;
       menu.select(props.value);
       ctx.emit('click');
 
-      if (props.href) {
-        window.open(props.href, props.target);
-      } else if (props.to) {
+      if (props.to) {
         const router = props.router || (ctx.root as Record<string, any>).$router;
         const methods: string = props.replace ? 'replace' : 'push';
         router[methods](props.to).catch((err: Error) => {
@@ -84,7 +83,13 @@ export default defineComponent({
         onClick={this.handleClick}
       >
         {renderTNodeJSX(this, 'icon')}
-        <span class={[`${this.classPrefix}-menu__content`]}>{renderContent(this, 'default', 'content')}</span>
+        {this.href ? (
+          <a href={this.href} target={this.target} class={`${this.classPrefix}-menu__item-link`}>
+            <span class={`${this.classPrefix}-menu__content`}>{renderContent(this, 'default', 'content')}</span>
+          </a>
+        ) : (
+          <span class={[`${this.classPrefix}-menu__content`]}>{renderContent(this, 'default', 'content')}</span>
+        )}
       </li>
     );
     // 菜单收起，且只有本身为一级菜单才需要显示 tooltip
