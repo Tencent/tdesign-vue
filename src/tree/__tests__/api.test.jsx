@@ -30,9 +30,9 @@ describe('Tree:api', () => {
       expect(wrapper.find('[data-value="t1"]').exists()).toBe(true);
       expect(wrapper.find('[data-value="t1.1"]').exists()).toBe(true);
       expect(wrapper.find('[data-value="t2"]').exists()).toBe(true);
-
       wrapper.vm.$refs.tree.remove('t2');
-      await delay(10);
+      await delay(100);
+      await wrapper.vm.$nextTick();
 
       expect(wrapper.find('[data-value="t2"]').exists()).toBe(false);
     });

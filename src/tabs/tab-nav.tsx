@@ -99,6 +99,9 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
       // https://github.com/vuejs/jsx-vue2/releases/tag/v1.3.0
       // In some legacy codebases, a standalone render function might rely on its this context rather than the runtime currentInstance. So there may be incompatibilities.
       // add const h = this.$createElement to the beginning of the problematic function
+
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const h = this.$createElement;
       return this.panels.map((panel, index) => (
         <TTabNavItem
           ref={`tabItem${index}`}

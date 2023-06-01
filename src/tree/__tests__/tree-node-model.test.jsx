@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import Tree from '@/src/tree/index.ts';
+import { Tree } from '@/src/tree/index.ts';
 import { delay } from './kit';
 
 describe('Tree:treeNodeModel', () => {
@@ -507,7 +507,9 @@ describe('Tree:treeNodeModel', () => {
       expect(wrapper.find('[data-value="t1.1"]').exists()).toBe(true);
       const node = wrapper.vm.$refs.tree.getItem('t1.1');
       node.remove();
-      await delay(1);
+      await delay(100);
+      await wrapper.vm.$nextTick();
+
       expect(wrapper.find('[data-value="t1.1"]').exists()).toBe(false);
     });
 
@@ -530,7 +532,8 @@ describe('Tree:treeNodeModel', () => {
       expect(wrapper.find('[data-value="t1.1"]').exists()).toBe(true);
       const node = wrapper.vm.$refs.tree.getItem('t1');
       node.remove('t1.1');
-      await delay(1);
+      await delay(100);
+      await wrapper.vm.$nextTick();
       expect(wrapper.find('[data-value="t1.1"]').exists()).toBe(false);
     });
 

@@ -247,7 +247,7 @@ describe('InputNumber', () => {
       const fn = vi.fn();
       const wrapper = mount({
         render() {
-          return <InputNumber on={{ keyup: fn }} />;
+          return <InputNumber onKeyup={fn} />;
         },
       });
       const inputWrapper = wrapper.findComponent(InputNumber);
