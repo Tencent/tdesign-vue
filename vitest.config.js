@@ -2,7 +2,6 @@ import { defineConfig } from 'vite';
 import path from 'path';
 import vue from '@vitejs/plugin-vue2';
 import vueJsx from '@vitejs/plugin-vue2-jsx';
-import ScriptSetup from 'unplugin-vue2-script-setup/vite';
 
 const testConfig = {
   exclude: ['src/**/__tests__/demo.test.js'],
@@ -39,7 +38,6 @@ export default defineConfig({
       include: /(\.md|\.vue)$/,
     }),
     vueJsx({}),
-    ScriptSetup({}),
   ],
   test: testConfig,
 });
