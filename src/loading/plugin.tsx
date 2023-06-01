@@ -40,10 +40,8 @@ function produceLoading(props: boolean | TdLoadingProps): LoadingInstance {
   };
   // 全屏加载
   if (props === true) {
-    // 若存在已经创建的全屏实例则先hide
-    if (fullScreenLoadingInstance) {
-      destroyLoadingInstance();
-    }
+    // 若存在已经创建的全屏实例则不需要再创建
+    if (fullScreenLoadingInstance) return;
     fullScreenLoadingInstance = createLoading({
       fullscreen: true,
       loading: true,
@@ -51,12 +49,13 @@ function produceLoading(props: boolean | TdLoadingProps): LoadingInstance {
     });
     return fullScreenLoadingInstance;
   }
-  if (props === false) {
+  // 存在全屏实例时才执行销毁动作
+  if (props === false && fullScreenLoadingInstance) {
     // 销毁全屏实例
     destroyLoadingInstance();
     return;
   }
-  return createLoading(props);
+  return createLoading(props as TdLoadingProps);
 }
 
 export type LoadingPluginType = Vue.PluginObject<undefined> & LoadingMethod;
