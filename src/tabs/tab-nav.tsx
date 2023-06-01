@@ -5,7 +5,6 @@ import {
   ChevronRightIcon as TdChevronRightIcon,
   AddIcon as TdAddIcon,
 } from 'tdesign-icons-vue';
-import { CSSProperties } from 'vue/types/jsx';
 import TTabPanel from './tab-panel';
 import TTabNavItem from './tab-nav-item';
 import { emitEvent } from '../utils/event';
@@ -16,6 +15,7 @@ import { renderTNodeJSX } from '../utils/render-tnode';
 import { TabPanelProps } from '.';
 import { getClassPrefixMixins, getGlobalIconMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
+import { Styles } from '../common';
 
 const classPrefixMixins = getClassPrefixMixins('tab__nav');
 
@@ -99,7 +99,6 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
       // https://github.com/vuejs/jsx-vue2/releases/tag/v1.3.0
       // In some legacy codebases, a standalone render function might rely on its this context rather than the runtime currentInstance. So there may be incompatibilities.
       // add const h = this.$createElement to the beginning of the problematic function
-      const h = this.$createElement;
       return this.panels.map((panel, index) => (
         <TTabNavItem
           ref={`tabItem${index}`}
@@ -179,7 +178,7 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
     navBarClass(): Array<string> {
       return [`${this.classPrefix}-tabs__bar`, `${this.classPrefix}-is-${this.placement}`];
     },
-    navsContainerStyle(): CSSProperties {
+    navsContainerStyle(): Styles {
       return this.addable ? { 'min-height': '48px' } : null;
     },
   },

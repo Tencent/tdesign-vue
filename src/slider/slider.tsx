@@ -1,7 +1,6 @@
 import Vue, { VNode } from 'vue';
-import { CSSProperties } from 'vue/types/jsx';
 import { emitEvent } from '../utils/event';
-import { TNode, ClassName } from '../common';
+import { TNode, ClassName, Styles } from '../common';
 import props from './props';
 import InputNumber from '../input-number/index';
 import TSliderMark from './slider-mark';
@@ -155,10 +154,10 @@ export default mixins(classPrefixMixins).extend({
       });
       return Math.max.apply(null, precisions);
     },
-    runwayStyle(): CSSProperties {
+    runwayStyle(): Styles {
       return this.vertical ? { height: '100%' } : {};
     },
-    barStyle(): CSSProperties {
+    barStyle(): Styles {
       return this.vertical
         ? {
           height: this.barSize,

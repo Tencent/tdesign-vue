@@ -1,5 +1,5 @@
 import Vue, {
-  computed, onMounted, ref, SetupContext, toRefs, watch,
+  computed, ref, SetupContext, toRefs, watch,
 } from 'vue';
 import useCommonClassName from '../hooks/useCommonClassName';
 import useVModel from '../hooks/useVModel';

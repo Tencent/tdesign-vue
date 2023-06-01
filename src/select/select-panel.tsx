@@ -2,7 +2,6 @@ import {
   VNode, computed, defineComponent, toRefs, inject, onMounted, onBeforeUnmount,
 } from 'vue';
 import isFunction from 'lodash/isFunction';
-import { CSSProperties } from 'vue/types/jsx';
 import { useTNodeJSX } from '../hooks/tnode';
 import { renderTNodeJSXDefault } from '../utils/render-tnode';
 import { useConfig, usePrefixClass } from '../config-provider/useConfig';
@@ -12,6 +11,7 @@ import {
 import Option from './option';
 import useVirtualScroll from '../hooks/useVirtualScroll';
 import { flattenOptions } from './util';
+import { Styles } from '../common';
 
 export interface OptionsType extends TdOptionProps {
   $index?: number;
@@ -332,7 +332,7 @@ export default defineComponent({
     // 虚拟滚动渲染，popup 的 dom 结构有区别
     if (this.isVirtual) {
       const cursorTranslate = `translate(0, ${this.scrollHeight}px)`;
-      const cursorTranslateStyle: CSSProperties = {
+      const cursorTranslateStyle = {
         position: 'absolute',
         width: '1px',
         height: '1px',
@@ -341,7 +341,7 @@ export default defineComponent({
         '-ms-transform': cursorTranslate,
         '-moz-transform': cursorTranslate,
         '-webkit-transform': cursorTranslate,
-      };
+      } as Styles;
 
       const translate = `translate(0, ${this.translateY}px)`;
       const virtualStyle = {
