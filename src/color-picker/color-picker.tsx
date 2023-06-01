@@ -1,4 +1,4 @@
-import { defineComponent, ref, toRefs } from '@vue/composition-api';
+import { defineComponent, ref, toRefs } from 'vue';
 import useVModel from '../hooks/useVModel';
 import { renderTNodeJSXDefault } from '../utils/render-tnode';
 import props from './props';
@@ -89,7 +89,6 @@ export default defineComponent({
       },
       ...((popupProps as any) || {}),
     };
-
     return (
       <t-popup
         {...{
@@ -109,7 +108,6 @@ export default defineComponent({
               clearable={this.clearable}
               input-props={this.inputProps}
               handleTriggerChange={this.setInnerValue}
-              size={this.size}
             />,
           )}
         </div>

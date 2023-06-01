@@ -1,12 +1,11 @@
 import {
-  computed, defineComponent, ref, watch,
-} from '@vue/composition-api';
+  computed, defineComponent, onMounted, onUnmounted, ref, watch,
+} from 'vue';
 import omit from 'lodash/omit';
 import isFunction from 'lodash/isFunction';
 import { ImageErrorIcon, ImageIcon } from 'tdesign-icons-vue';
 import observe from '../_common/js/utils/observe';
 import { useConfig } from '../config-provider/useConfig';
-import { TdImageProps } from './type';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import Space from '../space';
@@ -14,8 +13,11 @@ import Space from '../space';
 export default defineComponent({
   name: 'TImage',
   components: { Space },
-  props,
-  setup(props: TdImageProps, { emit }) {
+  props: {
+    ...props,
+  },
+  setup(props, { emit }) {
+    // eslint-disable-next-line vue/no-setup-props-destructure
     const {
       lazy, overlayTrigger, onLoad, onError,
     } = props;
@@ -87,6 +89,17 @@ export default defineComponent({
       `${classPrefix.value}-image--position-${props.position}`,
     ]);
 
+    const io = ref(null);
+
+    onMounted(() => {
+      if (!lazy || !imageRef.value) return;
+      io.value = observe(imageRef.value as HTMLElement, null, handleLoadImage as Function, 0);
+    });
+
+    onUnmounted(() => {
+      imageRef.value && io && (io as IntersectionObserver).unobserve(imageRef.value as Element);
+    });
+
     return {
       imageRef,
       imageClasses,
@@ -102,17 +115,9 @@ export default defineComponent({
       handleError,
       handleLoad,
       isLoaded,
+      io,
       rest,
     };
-  },
-  mounted(this) {
-    if (!this.lazy || !this.imageRef) return;
-
-    const io = observe(this.imageRef as HTMLElement, null, this.handleLoadImage as Function, 0);
-    this.io = io;
-  },
-  destroyed(this) {
-    this.imageRef && this.io && (this.io as IntersectionObserver).unobserve(this.imageRef as Element);
   },
   methods: {
     renderPlaceholder() {
@@ -159,6 +164,7 @@ export default defineComponent({
 
   render() {
     return (
+      // @ts-ignore
       <div
         ref="imageRef"
         class={[
@@ -166,7 +172,6 @@ export default defineComponent({
           `${this.classPrefix}-image__wrapper--shape-${this.shape}`,
           this.gallery && `${this.classPrefix}-image__wrapper--gallery`,
           this.hasMouseEvent && `${this.classPrefix}-image__wrapper--need-hover`,
-          this.className,
         ]}
         onMouseenter={this.handleToggleOverlay}
         onMouseleave={this.handleToggleOverlay}

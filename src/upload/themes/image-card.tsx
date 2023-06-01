@@ -1,13 +1,13 @@
-import { CreateElement } from 'vue';
 import {
-  defineComponent, PropType, toRefs, computed,
-} from '@vue/composition-api';
+  CreateElement, defineComponent, PropType, toRefs, computed, toRef, Ref,
+} from 'vue';
 import {
   BrowseIcon as TdBrowseIcon,
   DeleteIcon as TdDeleteIcon,
   AddIcon as TdAddIcon,
   ErrorCircleFilledIcon as TdErrorCircleFilledIcon,
 } from 'tdesign-icons-vue';
+import { UploadConfig } from '@src/config-provider';
 import Loading from '../../loading';
 import { useGlobalIcon } from '../../hooks/useGlobalIcon';
 import ImageViewer from '../../image-viewer';
@@ -40,8 +40,9 @@ export default defineComponent({
     cancelUpload: Function as PropType<ImageCardUploadProps['cancelUpload']>,
   },
 
-  setup(props: ImageCardUploadProps) {
+  setup(props) {
     const { displayFiles, multiple, max } = toRefs(props);
+    const locale = toRef(props, 'locale') as Ref<UploadConfig>;
     const icons = useGlobalIcon({
       AddIcon: TdAddIcon,
       BrowseIcon: TdBrowseIcon,
@@ -59,6 +60,7 @@ export default defineComponent({
     return {
       icons,
       showTrigger,
+      locale,
     };
   },
 

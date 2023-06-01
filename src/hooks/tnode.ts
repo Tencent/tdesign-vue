@@ -1,5 +1,6 @@
-import { h, getCurrentInstance, SetupContext } from '@vue/composition-api';
-import { VNode } from 'vue';
+import {
+  VNode, h, getCurrentInstance, SetupContext,
+} from 'vue';
 // import { h, getCurrentInstance, ComponentInternalInstance, VNode } from 'vue';
 import isEmpty from 'lodash/isEmpty';
 import isFunction from 'lodash/isFunction';
@@ -38,17 +39,16 @@ function handleSlots(slots: SetupContext['slots'], name: string, params: Record<
  * @example renderTNodeJSX('closeBtn', { defaultNode: <close-icon />, params })。 params 为渲染节点时所需的参数
  */
 export const useTNodeJSX = () => {
-  const instance = getCurrentInstance();
+  const instance = getCurrentInstance().proxy;
   return function (name: string, options?: OptionsType) {
     // assemble params && defaultNode
     const params = getParams(options);
     const defaultNode = getDefaultNode(options);
-    const { slots } = instance.setupContext;
 
     // 处理 props 类型的Node
     let propsNode;
-    if (Object.keys(instance.props).includes(name)) {
-      propsNode = instance.props[name];
+    if (Object.keys(instance.$props).includes(name)) {
+      propsNode = instance.$props[name];
     }
 
     // 同名插槽和属性同时存在，则提醒用户只需要选择一种方式即可
@@ -58,14 +58,14 @@ export const useTNodeJSX = () => {
     // propsNode 为 false 不渲染
     if (propsNode === false) return;
     if (propsNode === true) {
-      return handleSlots(slots, name, params) || defaultNode;
+      return handleSlots(instance.$scopedSlots, name, params) || defaultNode;
     }
 
     // 同名 props 和 slot 优先处理 props
     if (isFunction(propsNode)) return propsNode(h, params);
     const isPropsEmpty = [undefined, params, ''].includes(propsNode);
-    if (isPropsEmpty && (slots[camelCase(name)] || slots[kebabCase(name)])) {
-      return handleSlots(slots, name, params);
+    if (isPropsEmpty && (instance.$scopedSlots[camelCase(name)] || instance.$scopedSlots[kebabCase(name)])) {
+      return handleSlots(instance.$scopedSlots, name, params);
     }
     return propsNode;
   };

@@ -1,7 +1,6 @@
-import { SetupContext, computed } from '@vue/composition-api';
+import { SetupContext, computed, CreateElement } from 'vue';
 import isString from 'lodash/isString';
 import isFunction from 'lodash/isFunction';
-import { CreateElement } from 'vue';
 import {
   BaseTableCol, PrimaryTableCol, TableRowData, TdBaseTableProps,
 } from '../type';

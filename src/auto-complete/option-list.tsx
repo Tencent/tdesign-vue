@@ -1,6 +1,6 @@
 import {
   ref, computed, defineComponent, PropType, h, watch, onBeforeMount,
-} from '@vue/composition-api';
+} from 'vue';
 import isFunction from 'lodash/isFunction';
 import HighlightOption from './highlight-option';
 import { CommonClassNameType } from '../hooks/useCommonClassName';

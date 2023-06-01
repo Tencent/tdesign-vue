@@ -1,6 +1,6 @@
 import {
   defineComponent, PropType, ref, computed,
-} from '@vue/composition-api';
+} from 'vue';
 import { PaginationMini } from '../../pagination';
 import TSelect from '../../select';
 import { useConfig, usePrefixClass } from '../../hooks/useConfig';

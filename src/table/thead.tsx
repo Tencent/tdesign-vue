@@ -1,8 +1,7 @@
 import {
-  defineComponent, computed, SetupContext, PropType, ref,
-} from '@vue/composition-api';
+  defineComponent, computed, SetupContext, PropType, ref, CreateElement,
+} from 'vue';
 import isFunction from 'lodash/isFunction';
-import { CreateElement } from 'vue';
 import { getColumnFixedStyles } from './hooks/useFixed';
 import { RowAndColFixedPosition, BaseTableColumns, ThRowspanAndColspan } from './interface';
 import useClassName from './hooks/useClassName';
@@ -162,10 +161,7 @@ export default defineComponent({
           const resizeColumnListener = this.resizable || !canDragSort
             ? {
               mousedown: (e: MouseEvent) => {
-                e.stopPropagation();
-                if (this.resizable) {
-                  this.columnResizeParams?.onColumnMousedown?.(e, col, index);
-                }
+                this.columnResizeParams?.onColumnMousedown?.(e, col, index);
                 if (!canDragSort) {
                   const timer = setTimeout(() => {
                     const thList = this.theadRef.querySelectorAll('th');
@@ -174,9 +170,7 @@ export default defineComponent({
                   }, 10);
                 }
               },
-              mousemove: (e: MouseEvent) => {
-                this.resizable && this.columnResizeParams?.onColumnMouseover?.(e, col);
-              },
+              mousemove: (e: MouseEvent) => this.columnResizeParams?.onColumnMouseover?.(e, col),
             }
             : {};
           const content = isFunction(col.ellipsisTitle) ? col.ellipsisTitle(h, { col, colIndex: index }) : undefined;
@@ -191,7 +185,9 @@ export default defineComponent({
               data-colkey={col.colKey}
               class={thClasses}
               style={styles}
+              // @ts-ignore
               attrs={{ ...attrs, ...rowspanAndColspan }}
+              // @ts-ignore
               on={resizeColumnListener}
             >
               <div class={this.tableBaseClass.thCellInner}>

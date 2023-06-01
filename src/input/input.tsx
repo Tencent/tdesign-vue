@@ -500,7 +500,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         onClick={this.onRootClick}
         onMouseenter={this.onInputMouseenter}
         onMouseleave={this.onInputMouseleave}
-        onwheel={this.onHandleMousewheel}
+        onWheel={this.onHandleMousewheel}
       >
         {prefixIcon ? (
           <span class={[`${this.componentName}__prefix`, `${this.componentName}__prefix-icon`]}>{prefixIcon}</span>
@@ -508,6 +508,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         {labelContent}
         {this.showInput && (
           <input
+            // @ts-ignore
             attrs={this.inputAttrs}
             on={inputEvents}
             ref="inputRef"

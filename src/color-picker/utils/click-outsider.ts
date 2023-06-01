@@ -1,5 +1,4 @@
-import { ComponentPublicInstance } from '@vue/composition-api';
-import { VNode } from 'vue';
+import { ComponentPublicInstance, VNode } from 'vue';
 import { prefix } from '../../config';
 import { on, isServer } from '../../utils/dom';
 

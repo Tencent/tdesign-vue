@@ -1,7 +1,6 @@
-import { CreateElement } from 'vue';
 import {
-  computed, defineComponent, toRefs, PropType,
-} from '@vue/composition-api';
+  CreateElement, computed, defineComponent, toRefs, PropType, Ref, toRef,
+} from 'vue';
 import classNames from 'classnames';
 import {
   BrowseIcon as TdBrowseIcon,
@@ -10,6 +9,7 @@ import {
   ErrorCircleFilledIcon as TdErrorCircleFilledIcon,
   TimeFilledIcon as TdTimeFilledIcon,
 } from 'tdesign-icons-vue';
+import { UploadConfig } from '@src/config-provider';
 import { useGlobalIcon } from '../../hooks/useGlobalIcon';
 import ImageViewer from '../../image-viewer';
 import { CommonDisplayFileProps } from '../interface';
@@ -45,9 +45,10 @@ export default defineComponent({
     draggable: Boolean,
   },
 
-  setup(props: ImageFlowListProps) {
+  setup(props) {
     // locale 已经在 useUpload 中统一处理优先级
-    const { locale, uploading, classPrefix } = toRefs(props);
+    const { uploading, classPrefix } = toRefs(props);
+    const locale = toRef(props, 'locale') as Ref<UploadConfig>;
     const uploadPrefix = `${classPrefix.value}-upload`;
 
     const icons = useGlobalIcon({
@@ -83,6 +84,7 @@ export default defineComponent({
       uploadPrefix,
       uploadText,
       innerDragEvents,
+      locale,
     };
   },
 
@@ -207,7 +209,7 @@ export default defineComponent({
     renderBatchActionCol(index: number) {
       // 第一行数据才需要合并单元格
       return index === 0 ? (
-        <td rowSpan={this.displayFiles.length} class={`${this.uploadPrefix}__flow-table__batch-row`}>
+        <td rowspan={this.displayFiles.length} class={`${this.uploadPrefix}__flow-table__batch-row`}>
           <TButton
             theme="primary"
             variant="text"
@@ -229,7 +231,11 @@ export default defineComponent({
       if (list) return list;
 
       return (
-        <table class={`${this.uploadPrefix}__flow-table`} on={this.innerDragEvents}>
+        <table
+          class={`${this.uploadPrefix}__flow-table`}
+          // @ts-ignore
+          on={this.innerDragEvents}
+        >
           <thead>
             <tr>
               <th>{this.locale.file?.fileNameText}</th>
@@ -241,7 +247,7 @@ export default defineComponent({
           <tbody>
             {!this.displayFiles.length && (
               <tr>
-                <td colSpan={4}>{this.renderEmpty()}</td>
+                <td colspan={4}>{this.renderEmpty()}</td>
               </tr>
             )}
             {this.displayFiles.map((file, index) => {
@@ -303,7 +309,11 @@ export default defineComponent({
         </div>
 
         {this.theme === 'image-flow' && (
-          <div class={cardClassName} on={this.innerDragEvents}>
+          <div
+            class={cardClassName}
+            // @ts-ignore
+            on={this.innerDragEvents}
+          >
             {this.displayFiles.length ? this.renderImageList() : this.renderEmpty()}
           </div>
         )}
@@ -312,7 +322,11 @@ export default defineComponent({
           && (this.displayFiles.length ? (
             this.renderFileList()
           ) : (
-            <div class={cardClassName} on={this.innerDragEvents}>
+            <div
+              class={cardClassName}
+              // @ts-ignore
+              on={this.innerDragEvents}
+            >
               {this.renderEmpty()}
             </div>
           ))}

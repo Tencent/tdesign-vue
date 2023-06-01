@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import path from 'path';
-import { createVuePlugin } from 'vite-plugin-vue2';
+import vue from '@vitejs/plugin-vue2';
+import vueJsx from '@vitejs/plugin-vue2-jsx';
 import ScriptSetup from 'unplugin-vue2-script-setup/vite';
 
 const testConfig = {
@@ -34,10 +35,10 @@ export default defineConfig({
     },
   },
   plugins: [
-    createVuePlugin({
+    vue({
       include: /(\.md|\.vue)$/,
-      jsx: true,
     }),
+    vueJsx({}),
     ScriptSetup({}),
   ],
   test: testConfig,

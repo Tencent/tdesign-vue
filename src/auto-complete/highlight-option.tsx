@@ -1,4 +1,4 @@
-import { computed, defineComponent } from '@vue/composition-api';
+import { computed, defineComponent } from 'vue';
 import { usePrefixClass } from '../hooks/useConfig';
 
 export default defineComponent({

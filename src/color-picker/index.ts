@@ -1,4 +1,3 @@
-import VueCompositionAPI from '@vue/composition-api';
 import _ColorPickerPanel from './color-picker-panel';
 import _ColorPicker from './color-picker';
 import { withInstall } from '../utils/withInstall';
@@ -8,5 +7,5 @@ import './style';
 export * from './type';
 export type ColorPickerProps = TdColorPickerProps;
 
-export const ColorPickerPanel = withInstall(_ColorPickerPanel, VueCompositionAPI);
-export const ColorPicker = withInstall(_ColorPicker, VueCompositionAPI);
+export const ColorPickerPanel = withInstall(_ColorPickerPanel);
+export const ColorPicker = withInstall(_ColorPicker);

@@ -19,7 +19,7 @@ const renderUsageStr = (compStrMap) => `<!-- 该脚本为自动生成，如有�
 
 <script setup lang="jsx">
 /* eslint-disable */
-import { ref, onMounted } from '@vue/composition-api';
+import { ref, onMounted } from 'vue';
 ${compStrMap.importStr ? compStrMap.importStr.trim() : "import configJson from './props.json';"}
 ${compStrMap.script ? compStrMap.script.trim() : ''}
 

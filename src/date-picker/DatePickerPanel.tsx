@@ -1,4 +1,4 @@
-import { defineComponent, computed } from '@vue/composition-api';
+import { defineComponent, computed } from 'vue';
 import dayjs from 'dayjs';
 
 import useSingleValue from './hooks/useSingleValue';
@@ -32,7 +32,7 @@ export default defineComponent({
     timePickerProps: datePickerProps.timePickerProps,
     ...datePickerPanelProps,
   },
-  setup(props: TdDatePickerPanelProps, { emit, attrs }) {
+  setup(props: TdDatePickerPanelProps, { emit }) {
     const {
       cacheValue, value, year, month, time, onChange,
     } = useSingleValue(props);
@@ -168,14 +168,14 @@ export default defineComponent({
     }
 
     // 预设
-    function onPresetClick(presetValue: any, context: any) {
+    function onPresetClick(presetValue: DateValue | (() => DateValue), { e, preset }: any) {
       const presetVal = typeof presetValue === 'function' ? presetValue() : presetValue;
       onChange?.(formatDate(presetVal, { format: formatRef.value.format }) as DateValue, {
         dayjsValue: parseToDayjs(presetVal, formatRef.value.format),
         trigger: 'preset',
       });
-      props.onPresetClick?.(context);
-      emit('preset-click', context);
+      props.onPresetClick?.({ e, preset });
+      emit('preset-click', { e, preset });
     }
 
     function onYearChange(nextYear: number) {
@@ -226,8 +226,6 @@ export default defineComponent({
       timePickerProps: props.timePickerProps,
       enableTimePicker: props.enableTimePicker,
       presetsPlacement: props.presetsPlacement,
-      // 该属性在单独使用此panel时无特别意义, 不应该暴露为props
-      popupVisible: (attrs?.popupVisible as Boolean) ?? true,
       onPanelClick,
       onCellClick,
       onJumperClick,

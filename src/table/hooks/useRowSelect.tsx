@@ -1,10 +1,9 @@
 // 行选中相关功能：单选 + 多选
 import {
-  computed, toRefs, h, ref, watch,
-} from '@vue/composition-api';
+  CreateElement, computed, toRefs, h, ref, watch,
+} from 'vue';
 import intersection from 'lodash/intersection';
 import get from 'lodash/get';
-import { CreateElement } from 'vue';
 import isFunction from 'lodash/isFunction';
 import useDefaultValue from '../../hooks/useDefaultValue';
 import {

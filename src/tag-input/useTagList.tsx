@@ -1,4 +1,4 @@
-import { ref, SetupContext, toRefs } from '@vue/composition-api';
+import { ref, SetupContext, toRefs } from 'vue';
 import {
   TagInputValue, TagInputChangeContext, TdTagInputProps, TagInputRemoveContext,
 } from './type';
@@ -43,7 +43,7 @@ export default function useTagList(props: TdTagInputProps, context: SetupContext
   const onInnerEnter = (value: InputValue, params: { e: KeyboardEvent }) => {
     const valueStr = String(value).trim();
     let newValue: TagInputValue = tagValue.value;
-    const isLimitExceeded = max && tagValue.value?.length >= max.value;
+    const isLimitExceeded = max.value && tagValue.value?.length >= max.value;
     if (!isLimitExceeded && valueStr) {
       newValue = tagValue.value instanceof Array ? tagValue.value.concat(String(valueStr)) : [valueStr];
       setTagValue(newValue, {
@@ -92,7 +92,7 @@ export default function useTagList(props: TdTagInputProps, context: SetupContext
     const newList = minCollapsedNum.value ? tagValue.value.slice(0, minCollapsedNum.value) : tagValue.value;
     const list = displayNode
       ? [displayNode]
-      : newList?.map?.((item, index) => {
+      : newList?.map((item, index) => {
         const tagContent = renderTNode('tag', { params: { value: item } });
         const TagNode = (
             <Tag
@@ -122,7 +122,7 @@ export default function useTagList(props: TdTagInputProps, context: SetupContext
         ) : (
           TagNode
         );
-      }) || [];
+      });
     if (![null, undefined, ''].includes(label)) {
       list.unshift(
         <div class={`${classPrefix.value}-tag-input__prefix`} key="label">

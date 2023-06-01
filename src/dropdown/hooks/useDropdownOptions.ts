@@ -1,6 +1,5 @@
-import { VNode } from 'vue';
+import { VNode, computed, ComputedRef } from 'vue';
 import get from 'lodash/get';
-import { computed, ComputedRef } from '@vue/composition-api';
 import { DropdownOption, TdDropdownProps } from '../type';
 
 const DropdownMenuName = 'TDropdownMenu';

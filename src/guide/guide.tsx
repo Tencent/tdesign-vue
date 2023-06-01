@@ -1,8 +1,7 @@
 import {
-  defineComponent, computed, nextTick, onMounted, ref, toRefs, watch,
-} from '@vue/composition-api';
+  CreateElement, defineComponent, computed, nextTick, onMounted, ref, toRefs, watch,
+} from 'vue';
 import isFunction from 'lodash/isFunction';
-import { CreateElement } from 'vue';
 import {
   scrollToParentVisibleArea, getRelativePosition, getTargetElm, scrollToElm,
 } from './utils';

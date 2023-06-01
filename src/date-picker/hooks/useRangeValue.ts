@@ -1,6 +1,6 @@
 import {
   ref, toRefs, watchEffect, computed,
-} from '@vue/composition-api';
+} from 'vue';
 import useVModel from '../../hooks/useVModel';
 
 import { TdDateRangePickerProps } from '../type';

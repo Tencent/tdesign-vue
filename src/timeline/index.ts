@@ -1,5 +1,3 @@
-import VueCompositionAPI from '@vue/composition-api';
-
 import _Timeline from './timeline';
 import _TimelineItem from './timeline-item';
 import { TdTimelineProps, TdTimelineItemProps } from './type';
@@ -22,7 +20,7 @@ export type TdTimeLineItemProps = TimelineItemProps;
 
 export * from './type';
 
-export const Timeline = withInstall(_Timeline, VueCompositionAPI);
-export const TimelineItem = withInstall(_TimelineItem, VueCompositionAPI);
+export const Timeline = withInstall(_Timeline);
+export const TimelineItem = withInstall(_TimelineItem);
 
 export default Timeline;

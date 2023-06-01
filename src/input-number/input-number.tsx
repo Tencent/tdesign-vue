@@ -4,7 +4,7 @@ import {
   ChevronDownIcon as TdChevronDownIcon,
   ChevronUpIcon as TdChevronUpIcon,
 } from 'tdesign-icons-vue';
-import { defineComponent, SetupContext } from '@vue/composition-api';
+import { defineComponent, SetupContext } from 'vue';
 import TButton from '../button';
 import TInput from '../input';
 import props from './props';

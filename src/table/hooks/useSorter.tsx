@@ -1,7 +1,6 @@
 import {
-  SetupContext, computed, toRefs, ref, watch,
-} from '@vue/composition-api';
-import { CreateElement } from 'vue';
+  CreateElement, SetupContext, computed, toRefs, ref, watch,
+} from 'vue';
 import isFunction from 'lodash/isFunction';
 import get from 'lodash/get';
 import {

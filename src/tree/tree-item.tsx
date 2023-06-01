@@ -1,5 +1,4 @@
-import { PropType } from 'vue';
-import { defineComponent, ref } from '@vue/composition-api';
+import { PropType, defineComponent, ref } from 'vue';
 import getConfigReceiverMixins, {
   TreeConfig,
   getKeepAnimationMixins,

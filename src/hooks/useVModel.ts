@@ -1,4 +1,4 @@
-import { Ref, ref, getCurrentInstance } from '@vue/composition-api';
+import { Ref, ref, getCurrentInstance } from 'vue';
 import kebabCase from 'lodash/kebabCase';
 
 export type ChangeHandler<T, P extends any[]> = (value: T, ...args: P) => void;
@@ -18,22 +18,22 @@ export default function useVModel<T, P extends any[]>(
   // 除了 value + onChange，还支持其他同含义字段和事件
   alias: UseVModelParams<T>[] = [],
 ): [Ref<T>, ChangeHandler<T, P>] {
-  const { emit, vnode } = getCurrentInstance();
+  const instance = getCurrentInstance().proxy;
   const internalValue = ref<T>();
   internalValue.value = defaultValue;
 
-  const isControlled = Object.prototype.hasOwnProperty.call(vnode.componentOptions.propsData, propName)
-    || Object.prototype.hasOwnProperty.call(vnode.componentOptions.propsData, kebabCase(propName));
+  const isControlled = Object.prototype.hasOwnProperty.call(instance.$vnode.componentOptions.propsData, propName)
+    || Object.prototype.hasOwnProperty.call(instance.$vnode.componentOptions.propsData, kebabCase(propName));
   // 受控模式
   if (isControlled) {
     return [
       value,
       (newValue, ...args) => {
         // input 事件为 v-model 语法糖
-        emit?.('input', newValue, ...args);
+        instance.$emit?.('input', newValue, ...args);
         onChange?.(newValue, ...args);
         if (eventName && eventName !== 'input') {
-          emit?.(eventName, newValue, ...args);
+          instance.$emit?.(eventName, newValue, ...args);
         }
       },
     ];
@@ -42,15 +42,15 @@ export default function useVModel<T, P extends any[]>(
   // controlled, other fields, upload.files.etc.
   for (let i = 0, len = alias.length; i < len; i++) {
     const item = alias[i];
-    if (Object.prototype.hasOwnProperty.call(vnode.componentOptions.propsData, item.propName)) {
+    if (Object.prototype.hasOwnProperty.call(instance.$vnode.componentOptions.propsData, item.propName)) {
       return [
         item.value,
         (newValue, ...args) => {
           // .sync support
-          emit?.(`update:${item.propName}`, newValue, ...args);
+          instance.$emit?.(`update:${item.propName}`, newValue, ...args);
           onChange?.(newValue, ...args);
           if (item.eventName && item.eventName !== 'input') {
-            emit?.(item.eventName, newValue, ...args);
+            instance.$emit?.(item.eventName, newValue, ...args);
           }
         },
       ];
@@ -64,7 +64,7 @@ export default function useVModel<T, P extends any[]>(
       internalValue.value = newValue;
       onChange?.(newValue, ...args);
       if (eventName && eventName !== 'input') {
-        emit?.(eventName, newValue, ...args);
+        instance.$emit?.(eventName, newValue, ...args);
       }
     },
   ];

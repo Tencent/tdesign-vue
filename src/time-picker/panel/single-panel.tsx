@@ -1,6 +1,6 @@
 import {
-  computed, defineComponent, ref, watch, toRefs, onMounted, nextTick,
-} from '@vue/composition-api';
+  computed, defineComponent, ref, watch, toRefs, onMounted, nextTick, getCurrentInstance,
+} from 'vue';
 import debounce from 'lodash/debounce';
 import range from 'lodash/range';
 import padStart from 'lodash/padStart';
@@ -39,10 +39,12 @@ export default defineComponent({
     disableTime: Function,
     isShowPanel: Boolean,
   },
-  setup(props, ctx) {
+  setup(props) {
     const {
       steps, value, format, position, triggerScroll,
     } = toRefs(props);
+
+    const instance = getCurrentInstance().proxy;
 
     const { global } = useConfig('timePicker');
 
@@ -53,9 +55,9 @@ export default defineComponent({
     const maskRef = ref(null);
 
     const dayjsValue = computed(() => {
-      const isStepsSet = !!steps.value.filter((v) => v > 1).length;
+      const isStepsSet = !!steps.value.filter((v: any) => v > 1).length;
 
-      if (value.value) return dayjs(value.value, format.value);
+      if (value.value) return dayjs(value.value as string, format.value);
 
       if (isStepsSet) return dayjs().hour(0).minute(0).second(0);
       return dayjs();
@@ -182,7 +184,7 @@ export default defineComponent({
       let formattedVal: string;
       if (!props.isShowPanel) return;
 
-      const scrollTop = (ctx.refs as any)[`${col}Col`]?.scrollTop + panelOffset.top;
+      const scrollTop = (instance.$refs as any)[`${col}Col`]?.scrollTop + panelOffset.top;
 
       const { offsetHeight, margin } = getItemHeight();
       const timeItemTotalHeight = offsetHeight + margin;
@@ -212,7 +214,10 @@ export default defineComponent({
 
       const distance = getScrollDistance(col, val);
 
-      if (!dayjs(dayjsValue.value).isValid() || (value.value && !dayjs(value.value, format.value, true).isValid())) return;
+      if (
+        !dayjs(dayjsValue.value).isValid()
+        || (value.value && !dayjs(value.value as string, format.value, true).isValid())
+      ) return;
 
       if (timeArr.includes(col)) {
         if (timeItemCanUsed(col, val)) formattedVal = dayjsValue.value[col]?.(val).format(format.value);
@@ -228,7 +233,7 @@ export default defineComponent({
       }
       if (formattedVal !== value.value) props.onChange?.(formattedVal, e);
       if (distance !== scrollTop) {
-        const scrollCtrl = (ctx.refs as any)[`${col}Col`];
+        const scrollCtrl = (instance.$refs as any)[`${col}Col`];
 
         if (!scrollCtrl || scrollCtrl.scrollTop === distance) return;
 
@@ -246,7 +251,7 @@ export default defineComponent({
       behavior: 'auto' | 'smooth' = 'auto',
     ) => {
       const distance = getScrollDistance(col, time);
-      const scrollCtrl = (ctx.refs as any)[`${col}Col`];
+      const scrollCtrl = (instance.$refs as any)[`${col}Col`];
 
       if (!scrollCtrl || scrollCtrl.scrollTop === distance || !timeItemCanUsed(col, time)) return;
       scrollCtrl.scrollTo?.({
@@ -280,7 +285,7 @@ export default defineComponent({
     // update each columns scroll distance
     const updateTimeScrollPos = (isAutoScroll = false) => {
       const behavior = value.value && !isAutoScroll ? 'smooth' : 'auto';
-      const isStepsSet = !!steps.value.filter((v) => v > 1).length;
+      const isStepsSet = !!steps.value.filter((v: any) => v > 1).length;
 
       nextTick(() => {
         cols.value.forEach((col: EPickerCols, idx: number) => {

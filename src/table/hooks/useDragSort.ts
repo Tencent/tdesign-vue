@@ -1,7 +1,7 @@
 // 表格 行拖拽 + 列拖拽功能
 import {
   SetupContext, computed, toRefs, ref, watch, h,
-} from '@vue/composition-api';
+} from 'vue';
 import Sortable, { SortableEvent, SortableOptions, MoveEvent } from 'sortablejs';
 import get from 'lodash/get';
 import isFunction from 'lodash/isFunction';

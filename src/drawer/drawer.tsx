@@ -174,7 +174,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
         <div
           class={this.drawerClasses}
           style={{ zIndex: this.zIndex }}
-          onkeydown={this.onKeyDown}
+          onKeydown={this.onKeyDown}
           v-transfer-dom={this.attach}
           ref="drawerContainer"
           tabindex={0}

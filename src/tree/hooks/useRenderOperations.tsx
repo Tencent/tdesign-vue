@@ -26,6 +26,7 @@ export default function useRenderOperations(props: TypeTreeItemProps) {
     }
     if (opNode) {
       opNode = (
+        // @ts-ignore
         <span class={`${componentName}__operations`} ignore="active,expand">
           {opNode}
         </span>

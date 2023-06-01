@@ -1,6 +1,6 @@
 import {
   computed, defineComponent, toRefs, h, onMounted, ref, watch,
-} from '@vue/composition-api';
+} from 'vue';
 import get from 'lodash/get';
 import omit from 'lodash/omit';
 import baseTableProps from './base-table-props';
@@ -351,6 +351,7 @@ export default defineComponent({
 
   render() {
     const isColumnController = !!(this.columnController && Object.keys(this.columnController).length);
+    // @ts-ignore
     const placement = isColumnController ? this.columnController.placement || 'top-right' : '';
     const isBottomController = isColumnController && placement?.indexOf('bottom') !== -1;
     const topContent = this.formatNode(

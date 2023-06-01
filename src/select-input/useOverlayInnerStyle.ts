@@ -1,6 +1,6 @@
 import {
   ref, toRefs, computed, getCurrentInstance,
-} from '@vue/composition-api';
+} from 'vue';
 import isObject from 'lodash/isObject';
 import isFunction from 'lodash/isFunction';
 import { TdPopupProps, PopupVisibleChangeContext } from '../popup';
@@ -21,7 +21,7 @@ export default function useOverlayInnerStyle(
     afterHidePopup?: (ctx: PopupVisibleChangeContext) => void;
   },
 ) {
-  const instance = getCurrentInstance();
+  const instance = getCurrentInstance().proxy;
 
   const { popupProps, autoWidth } = toRefs(props);
   const innerPopupVisible = ref(false);
@@ -54,7 +54,7 @@ export default function useOverlayInnerStyle(
     if (props.popupVisible !== newVisible) {
       innerPopupVisible.value = newVisible;
       props.onPopupVisibleChange?.(newVisible, ctx);
-      instance.emit('popup-visible-change', newVisible, ctx);
+      instance.$emit('popup-visible-change', newVisible, ctx);
       if (!newVisible) {
         extra?.afterHidePopup?.(ctx);
       }

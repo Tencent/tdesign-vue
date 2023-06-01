@@ -1,4 +1,4 @@
-import { defineComponent, computed } from '@vue/composition-api';
+import { defineComponent, computed } from 'vue';
 import Popup from '../popup';
 import { usePrefixClass } from '../hooks/useConfig';
 import RangeInput from './range-input';

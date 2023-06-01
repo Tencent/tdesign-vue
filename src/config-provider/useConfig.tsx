@@ -1,4 +1,4 @@
-import { inject, h, ref } from '@vue/composition-api';
+import { inject, h, ref } from 'vue';
 import { GlobalConfigProvider, defaultGlobalConfig } from './context';
 
 // 处理正则表达式

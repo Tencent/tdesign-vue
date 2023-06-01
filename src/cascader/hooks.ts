@@ -1,6 +1,6 @@
 import {
   Ref, reactive, computed, toRefs, watch, nextTick,
-} from '@vue/composition-api';
+} from 'vue';
 import isEqual from 'lodash/isEqual';
 import isFunction from 'lodash/isFunction';
 

@@ -49,5 +49,8 @@
     "es",
     "global.d.ts"
   ],
-  "compileOnSave": false
+  "compileOnSave": false,
+  "vueCompilerOptions": {
+    "target": 2.7
+  }
 }

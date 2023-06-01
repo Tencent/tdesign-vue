@@ -1,5 +1,4 @@
-import { CreateElement } from 'vue';
-import { SetupContext } from '@vue/composition-api';
+import { CreateElement, SetupContext } from 'vue';
 import { TableRowData, PrimaryTableCellParams, TdPrimaryTableProps } from '../type';
 import EditableCell from '../editable-cell';
 

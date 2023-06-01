@@ -1,4 +1,4 @@
-import { defineComponent } from '@vue/composition-api';
+import { defineComponent } from 'vue';
 import props from './menu-group-props';
 import { usePrefixClass } from '../hooks/useConfig';
 

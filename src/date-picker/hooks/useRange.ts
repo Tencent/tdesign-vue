@@ -1,4 +1,4 @@
-import { ref, computed, watch } from '@vue/composition-api';
+import { ref, computed, watch } from 'vue';
 import { usePrefixClass, useConfig } from '../../hooks/useConfig';
 
 import { TdDateRangePickerProps, DateValue } from '../type';

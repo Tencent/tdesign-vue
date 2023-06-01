@@ -1,6 +1,6 @@
 import {
   SetupContext, ref, computed, toRefs, watch,
-} from '@vue/composition-api';
+} from 'vue';
 import isFunction from 'lodash/isFunction';
 import { RemoveOptions, TdTreeSelectProps, TreeSelectValue } from './type';
 import {
@@ -205,7 +205,7 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
   const filterByText = computed<TreeProps['filter'] | undefined>(() => {
     if (props.onSearch || context.listeners.search) return;
     if ((props.filter || props.filterable) && innerInputValue.value && !context.listeners.search) {
-      return props.filter ? (node) => props.filter(innerInputValue.value, node) : (node) => defaultFilterFunction(node);
+      return props.filter ? (node) => props.filter(innerInputValue.value, node) : defaultFilterFunction;
     }
     return undefined;
   });

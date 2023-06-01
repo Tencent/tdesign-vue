@@ -1,6 +1,6 @@
 import {
   computed, defineComponent, onMounted, PropType, ref, SetupContext, toRefs, watch,
-} from '@vue/composition-api';
+} from 'vue';
 import get from 'lodash/get';
 import set from 'lodash/set';
 import isFunction from 'lodash/isFunction';
@@ -384,7 +384,7 @@ export default defineComponent({
       return (
         <div class={this.tableBaseClass?.cellEditable} onClick={this.onCellClick}>
           {this.cellNode}
-          {this.col.edit?.showEditIcon !== false && <Edit1Icon />}
+          {(this.col as PrimaryTableCol<TableRowData>).edit?.showEditIcon !== false && <Edit1Icon />}
         </div>
       );
     }
@@ -397,7 +397,9 @@ export default defineComponent({
     const errorMessage = this.errorList?.[0]?.message;
     const tmpEditOnListeners = { ...this.editOnListeners };
     // remove conflict events
+    // @ts-ignore
     if (this.col.edit?.abortEditOnEvent?.length) {
+      // @ts-ignore
       this.col.edit.abortEditOnEvent.forEach((onEventName) => {
         const vue2EventName = onEventName.slice(2).toLocaleLowerCase();
         if (tmpEditOnListeners[vue2EventName]) {

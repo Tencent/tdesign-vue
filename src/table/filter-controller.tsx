@@ -1,5 +1,6 @@
-import { defineComponent, PropType, ref } from '@vue/composition-api';
-import { CreateElement } from 'vue';
+import {
+  CreateElement, defineComponent, PropType, ref,
+} from 'vue';
 import { FilterIcon as TdFilterIcon } from 'tdesign-icons-vue';
 import isEmpty from 'lodash/isEmpty';
 import lowerFirst from 'lodash/lowerFirst';
@@ -56,8 +57,7 @@ export default defineComponent({
     attach: [String, Function] as PropType<TableFilterControllerProps['attach']>,
   },
 
-  // eslint-disable-next-line
-  setup(props: TableFilterControllerProps, { emit }) {
+  setup(props, { emit }) {
     const triggerElementRef = ref<HTMLDivElement>(null);
     const renderTNode = useTNodeDefault();
     const { t, global } = useConfig('table');
@@ -151,6 +151,7 @@ export default defineComponent({
       };
 
       return (
+        // @ts-ignore
         <div class={this.tableFilterClasses.contentInner} on={wrapperListeners}>
           {renderComponent()}
         </div>
@@ -187,8 +188,10 @@ export default defineComponent({
     };
 
     const { column, FilterIcon, popupProps } = this;
+    // @ts-ignore
     if (!column.filter || (column.filter && !Object.keys(column.filter).length)) return null;
     const defaultFilterIcon = this.t(this.global.filterIcon) || <FilterIcon />;
+    // @ts-ignore
     const filterValue = this.tFilterValue?.[column.colKey];
     const isObjectTrue = typeof filterValue === 'object' && !isEmpty(filterValue);
     const isValueTrue = filterValue && typeof filterValue !== 'object';

@@ -1,20 +1,11 @@
 import {
-  defineComponent,
-  PropType,
-  SetupContext,
-  h,
-  ref,
-  reactive,
-  computed,
-  toRefs,
-  watch,
-} from '@vue/composition-api';
+  defineComponent, PropType, SetupContext, h, ref, reactive, computed, toRefs, watch, CreateElement,
+} from 'vue';
 import isFunction from 'lodash/isFunction';
 import upperFirst from 'lodash/upperFirst';
 import isString from 'lodash/isString';
 import pick from 'lodash/pick';
 import get from 'lodash/get';
-import { CreateElement } from 'vue';
 import { formatClassNames, formatRowAttributes, formatRowClassNames } from './utils';
 import { getRowFixedStyles, getColumnFixedStyles } from './hooks/useFixed';
 import { RowAndColFixedPosition } from './interface';
@@ -162,7 +153,7 @@ export default defineComponent({
     tableContentElm: {},
   },
 
-  setup(props: TrProps, context: SetupContext) {
+  setup(props, context: SetupContext) {
     const { tableContentElm } = toRefs(props);
     const trRef = ref(null);
     const {
@@ -194,7 +185,7 @@ export default defineComponent({
       return [trStyles.value?.classes, customClasses];
     });
 
-    const { hasLazyLoadHolder, tRowHeight } = useLazyLoad(tableContentElm, trRef, reactive({ ...props.scroll }));
+    const { hasLazyLoadHolder, tRowHeight } = useLazyLoad(tableContentElm as any, trRef, reactive({ ...props.scroll }));
     const getTrListeners = (row: TableRowData, rowIndex: number) => {
       const trListeners: { [eventName: string]: (e: MouseEvent) => void } = {};
       // add events to row
@@ -253,6 +244,7 @@ export default defineComponent({
       return (
         <TEllipsis
           placement={'top'}
+          // @ts-ignore
           attach={this.attach || (this.tableElm ? () => this.tableElm : undefined)}
           tooltipContent={content && (() => content)}
           tooltipProps={tooltipProps}
@@ -297,6 +289,7 @@ export default defineComponent({
       const normalAttrs = isFunction(col.attrs) ? col.attrs({ ...params, type: 'td' }) : col.attrs;
       const attrs: { [key: string]: any } = { ...normalAttrs, ...cellSpans };
       return (
+        // @ts-ignore
         <td class={classes} attrs={attrs} style={{ ...tdStyles.style, ...attrs.style }} onClick={onClick}>
           {col.ellipsis ? this.renderEllipsisCell(h, params, { cellNode }) : cellNode}
         </td>
@@ -336,6 +329,7 @@ export default defineComponent({
     return (
       <tr
         ref="trRef"
+        // @ts-ignore
         attrs={attrs}
         style={this.trStyles?.style}
         class={this.classes}

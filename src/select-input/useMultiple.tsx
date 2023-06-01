@@ -1,8 +1,7 @@
-import {
+import Vue, {
   SetupContext, computed, ref, toRefs,
-} from '@vue/composition-api';
+} from 'vue';
 import isObject from 'lodash/isObject';
-import Vue from 'vue';
 import { TdSelectInputProps, SelectInputKeys } from './type';
 import { SelectInputCommonProperties } from './interface';
 import { InputValue } from '../input';

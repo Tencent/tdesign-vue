@@ -1,6 +1,6 @@
 import {
   defineComponent, PropType, ref, watch,
-} from '@vue/composition-api';
+} from 'vue';
 import upperCase from 'lodash/upperCase';
 import { TdColorHandler } from '../../../color-picker/interfaces';
 import { TdColorPickerProps } from '../../type';

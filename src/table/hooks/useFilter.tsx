@@ -1,7 +1,6 @@
 import {
-  SetupContext, toRefs, ref, watch, computed,
-} from '@vue/composition-api';
-import { CreateElement } from 'vue';
+  CreateElement, SetupContext, toRefs, ref, watch, computed,
+} from 'vue';
 import useClassName from './useClassName';
 import TButton from '../../button';
 import {

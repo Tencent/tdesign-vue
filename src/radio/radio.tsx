@@ -63,6 +63,7 @@ export default mixins(Vue as VueConstructor<RadioInstance>, classPrefixMixins).e
           tabindex="-1"
           data-value={typeof this.value === 'string' ? `'${this.value}'` : this.value}
           data-allow-uncheck={allowUncheck || undefined}
+          // @ts-ignore
           on={{ ...omit(this.$listeners, ['change', 'click']) }}
         />
         <span class={`${prefixCls}__input`}></span>

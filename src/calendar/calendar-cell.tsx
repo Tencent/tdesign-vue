@@ -86,7 +86,7 @@ export default mixins(classPrefixMixins).extend({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'flex-end',
-      };
+      } as const;
       return (
         // 由于vue2的限制，这里需要一个实体dom。
         <div style={cellContentOuterDomStyle}>
@@ -103,7 +103,7 @@ export default mixins(classPrefixMixins).extend({
 
     return (
       item && (
-        <div class={cellCls} onClick={clickCell} ondblclick={clickCell} onContextmenu={clickCell}>
+        <div class={cellCls} onClick={clickCell} onDblclick={clickCell} onContextmenu={clickCell}>
           {typeof this.cell === 'function'
             ? this.cell(this.$createElement, item)
             : renderTNodeJSXDefault(this, 'cell', {

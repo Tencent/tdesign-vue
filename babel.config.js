@@ -16,7 +16,12 @@ module.exports = {
         modules: false,
       },
     ],
-    '@vue/babel-preset-jsx',
+    [
+      '@vue/babel-preset-jsx',
+      {
+        compositionAPI: true,
+      },
+    ],
   ],
   env: {
     test: {
@@ -30,7 +35,12 @@ module.exports = {
             modules: 'commonjs',
           },
         ],
-        '@vue/babel-preset-jsx',
+        [
+          '@vue/babel-preset-jsx',
+          {
+            compositionAPI: true,
+          },
+        ],
       ],
     },
     production: {
@@ -41,7 +51,12 @@ module.exports = {
             modules: false,
           },
         ],
-        '@vue/babel-preset-jsx',
+        [
+          '@vue/babel-preset-jsx',
+          {
+            compositionAPI: true,
+          },
+        ],
       ],
       plugins: ['@babel/plugin-transform-runtime', '@babel/plugin-transform-class-properties'],
     },

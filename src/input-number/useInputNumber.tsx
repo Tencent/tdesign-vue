@@ -1,7 +1,6 @@
-import Vue from 'vue';
-import {
-  computed, ref, SetupContext, toRefs, watch,
-} from '@vue/composition-api';
+import Vue, {
+  computed, onMounted, ref, SetupContext, toRefs, watch,
+} from 'vue';
 import useCommonClassName from '../hooks/useCommonClassName';
 import useVModel from '../hooks/useVModel';
 import { InputNumberValue, TdInputNumberProps } from './type';

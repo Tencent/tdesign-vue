@@ -1,6 +1,6 @@
 import upperFirst from 'lodash/upperFirst';
 import isFunction from 'lodash/isFunction';
-import { watch, toRefs, defineComponent } from '@vue/composition-api';
+import { watch, toRefs, defineComponent } from 'vue';
 import TreeNode from '../_common/js/tree/tree-node';
 import props from './props';
 import { useConfig, usePrefixClass } from '../hooks/useConfig';
@@ -262,6 +262,7 @@ export default defineComponent({
       <div
         class={treeClasses}
         ref="treeContentRef"
+        // @ts-ignore
         on={{ scroll: this.onInnerVirtualScroll }}
         style={treeContentStyles}
       >

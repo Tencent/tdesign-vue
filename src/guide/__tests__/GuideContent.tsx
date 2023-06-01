@@ -1,4 +1,4 @@
-import { defineComponent } from '@vue/composition-api';
+import { defineComponent } from 'vue';
 import Input from '../../input';
 import Button from '../../button';
 import { Row } from '../../grid';

@@ -1,6 +1,6 @@
 import {
-  defineComponent, computed, inject, onMounted,
-} from '@vue/composition-api';
+  defineComponent, computed, inject, onMounted, getCurrentInstance,
+} from 'vue';
 import props from './menu-item-props';
 import { TdMenuInterface, TdSubMenuInterface } from './const';
 import ripple from '../utils/ripple';
@@ -42,7 +42,8 @@ export default defineComponent({
       if (props.href) {
         window.open(props.href, props.target);
       } else if (props.to) {
-        const router = props.router || (ctx.root as Record<string, any>).$router;
+        const { proxy } = getCurrentInstance();
+        const router = props.router || (proxy as Record<string, any>).$router;
         const methods: string = props.replace ? 'replace' : 'push';
         router[methods](props.to).catch((err: Error) => {
           // vue-router 3.1.0+ push/replace cause NavigationDuplicated error

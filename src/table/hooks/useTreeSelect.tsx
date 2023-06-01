@@ -1,6 +1,6 @@
 import {
   computed, toRefs, ref, Ref, watch,
-} from '@vue/composition-api';
+} from 'vue';
 import get from 'lodash/get';
 import intersection from 'lodash/intersection';
 import {

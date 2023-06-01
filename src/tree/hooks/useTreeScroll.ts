@@ -1,6 +1,6 @@
 import {
   SetupContext, computed, onMounted, Ref,
-} from '@vue/composition-api';
+} from 'vue';
 import useVirtualScroll from '../../hooks/useVirtualScrollNew';
 import { TScroll } from '../../common';
 import TreeNode from '../../_common/js/tree/tree-node';

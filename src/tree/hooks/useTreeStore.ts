@@ -1,5 +1,5 @@
 import pick from 'lodash/pick';
-import { SetupContext } from '@vue/composition-api';
+import { SetupContext } from 'vue';
 import TreeStore from '../../_common/js/tree/tree-store';
 import {
   TreeProps,

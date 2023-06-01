@@ -1,7 +1,7 @@
-import type { ComponentPublicInstance, Ref } from '@vue/composition-api';
+import type { ComponentPublicInstance, Ref } from 'vue';
 import {
   unref, watch, getCurrentScope, onScopeDispose,
-} from '@vue/composition-api';
+} from 'vue';
 
 export const defaultWindow = typeof window !== 'undefined' ? window : undefined;
 export interface ConfigurableWindow {
@@ -12,14 +12,14 @@ export interface MutationObserverOptions extends MutationObserverInit, Configura
 export type MaybeRef<T> = T | Ref<T>;
 export type VueInstance = ComponentPublicInstance;
 export type MaybeElementRef<T extends MaybeElement = MaybeElement> = MaybeRef<T>;
-export type MaybeElement = HTMLElement | SVGElement | VueInstance | undefined | null;
+export type MaybeElement = Element | HTMLElement | SVGElement | VueInstance | undefined | null;
 export type UnRefElementReturn<T extends MaybeElement = MaybeElement> = T extends VueInstance
   ? Exclude<MaybeElement, VueInstance>
   : T | undefined;
 
 export type Fn = () => void;
 
-export function unrefElement<T extends MaybeElement>(elRef: MaybeElementRef<T>): UnRefElementReturn<T> {
+export function unrefElement<T extends MaybeElement>(elRef: MaybeElementRef<T>): any {
   const plain = unref(elRef);
   return (plain as VueInstance)?.$el ?? plain;
 }

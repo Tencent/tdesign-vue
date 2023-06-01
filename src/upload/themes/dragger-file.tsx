@@ -1,11 +1,11 @@
-import { CreateElement } from 'vue';
 import {
-  defineComponent, toRefs, PropType, ref, computed, h,
-} from '@vue/composition-api';
+  CreateElement, defineComponent, toRefs, PropType, ref, computed, h, toRef, Ref,
+} from 'vue';
 import {
   CheckCircleFilledIcon as TdCheckCircleFilledIcon,
   ErrorCircleFilledIcon as TdErrorCircleFilledIcon,
 } from 'tdesign-icons-vue';
+import { UploadConfig } from '@src/config-provider';
 import { abridgeName, getFileSizeText } from '../../_common/js/upload/utils';
 import { TdUploadProps, UploadFile } from '../type';
 import Button from '../../button';
@@ -38,8 +38,9 @@ export default defineComponent({
     dragEvents: Object as PropType<DraggerProps['dragEvents']>,
   },
 
-  setup(props: DraggerProps) {
+  setup(props) {
     const { displayFiles } = toRefs(props);
+    const locale = toRef(props, 'locale') as Ref<UploadConfig>;
 
     const { sizeClassNames } = useCommonClassName();
     const uploadPrefix = `${props.classPrefix}-upload`;
@@ -68,6 +69,7 @@ export default defineComponent({
       sizeClassNames,
       uploadPrefix,
       icons,
+      locale,
     };
   },
 

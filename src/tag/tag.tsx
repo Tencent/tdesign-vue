@@ -86,6 +86,7 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalI
         <span
           class={this.maxWidth ? `${this.componentName}--text` : undefined}
           style={this.textStyle}
+          // @ts-ignore
           attrs={titleAttribute}
         >
           {tagContent}

@@ -1,4 +1,4 @@
-import { Ref } from '@vue/composition-api';
+import { Ref } from 'vue';
 import { MenuValue } from './type';
 import VMenu from './v-menu';
 

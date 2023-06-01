@@ -1,5 +1,6 @@
 import Vue, { VueConstructor } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
+import { CSSProperties } from 'vue/types/jsx';
 import { ANCHOR_SHARP_REGEXP, ANCHOR_CONTAINER, getOffsetTop } from './utils';
 import {
   on, off, getScroll, scrollTo, getScrollContainer,
@@ -226,7 +227,7 @@ export default mixins(Vue as VueConstructor<Anchor>, classPrefixMixins).extend({
     const content = (
       <div class={className}>
         <div class={`${this.componentName}__line`}>
-          <div class={`${this.componentName}__line-cursor-wrapper`} style={activeLineStyle}>
+          <div class={`${this.componentName}__line-cursor-wrapper`} style={activeLineStyle as CSSProperties}>
             {this.renderCursor()}
           </div>
         </div>

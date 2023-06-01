@@ -1,5 +1,5 @@
 import throttle from 'lodash/throttle';
-import { Ref, reactive } from '@vue/composition-api';
+import { Ref, reactive } from 'vue';
 import { TypeTreeItemProps } from '../interface';
 
 export interface TypeDragStates {

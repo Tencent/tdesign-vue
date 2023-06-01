@@ -1,5 +1,4 @@
-import { CreateElement } from 'vue';
-import { SetupContext, computed } from '@vue/composition-api';
+import { CreateElement, SetupContext, computed } from 'vue';
 import isBoolean from 'lodash/isBoolean';
 import { TypeVNode, TypeTreeItemProps } from '../interface';
 import { usePrefixClass } from '../../hooks/useConfig';

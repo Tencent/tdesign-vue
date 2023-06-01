@@ -1,7 +1,6 @@
-import { VNode } from 'vue';
 import {
-  computed, defineComponent, ref, toRefs, nextTick, getCurrentInstance, provide,
-} from '@vue/composition-api';
+  VNode, computed, defineComponent, ref, toRefs, nextTick, getCurrentInstance, provide,
+} from 'vue';
 import getRenderAlign from './utils';
 import TimelineItem from './timeline-item';
 import { TdTimelineProps } from './type';
@@ -19,17 +18,17 @@ export default defineComponent({
       theme, labelAlign, reverse, layout, mode,
     } = toRefs(props);
 
-    const instance = getCurrentInstance();
+    const instance = getCurrentInstance().proxy;
 
     const classPrefix = usePrefixClass();
 
     const uidArr: any = ref([]);
     nextTick(() => {
-      const defaultSlots: any = instance.slots.default ? instance.slots.default : [null];
+      const defaultSlots: any = instance.$slots.default ? instance.$slots.default : [null];
       uidArr.value = defaultSlots.map((item: any) => item?.componentInstance?._uid);
     });
     const hasLabelItem = computed(() => {
-      const defaultSlots: any = instance.slots.default ? instance.slots.default : [null];
+      const defaultSlots: any = instance.$slots.default ? instance.$slots.default : [null];
       return defaultSlots.some((item: any) => !!item?.componentOptions?.propsData?.label);
     });
 
@@ -71,6 +70,7 @@ export default defineComponent({
     if (reverse) {
       defaultSlot.reverse();
     }
+    // @ts-ignore
     const { timelineClassName, style } = this;
     return (
       <ul class={timelineClassName} style={style}>

@@ -1,6 +1,6 @@
 import {
   computed, defineComponent, onMounted, ref, onBeforeUnmount,
-} from '@vue/composition-api';
+} from 'vue';
 import { BacktopIcon as TdBackTopIcon } from 'tdesign-icons-vue';
 
 import { scrollTo } from '../utils/dom';
@@ -20,6 +20,7 @@ export default defineComponent({
     const containerRef = ref(null);
     const componentName = usePrefixClass('back-top');
     const classPrefix = usePrefixClass();
+    // eslint-disable-next-line vue/no-setup-props-destructure
     const {
       theme, shape, size, target, duration, offset, container,
     } = props;

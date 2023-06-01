@@ -1,4 +1,4 @@
-import {
+import Vue, {
   computed,
   ref,
   SetupContext,
@@ -8,8 +8,9 @@ import {
   onBeforeUnmount,
   defineComponent,
   reactive,
-} from '@vue/composition-api';
-import Vue, { PropType } from 'vue';
+  PropType,
+  Ref,
+} from 'vue';
 import { renderContent } from '../utils/render-tnode';
 import Ripple from '../utils/ripple';
 import { getKeepAnimationMixins } from '../config-provider/config-receiver';
@@ -54,13 +55,14 @@ export default defineComponent({
     isVirtual: Boolean,
     bufferSize: Number,
     index: Number,
+    panelElement: HTMLElement,
   },
   components: {
     TCheckbox: Checkbox,
   },
   mixins: [keepAnimationMixins],
   directives: { Ripple },
-  setup(props: OptionProps, context: SetupContext) {
+  setup(props, context) {
     const selectProvider: any = inject('tSelect');
     const optionNode = ref(null);
     const { sizeClassNames, statusClassNames } = useCommonClassName();
@@ -73,7 +75,7 @@ export default defineComponent({
     const { hasLazyLoadHolder = null, tRowHeight = null } = useLazyLoad(
       panelElement,
       optionNode,
-      reactive({ type: scrollType, bufferSize }),
+      reactive({ type: scrollType as Ref<'lazy' | 'virtual'>, bufferSize }),
     );
 
     const isHover = ref(false);
@@ -194,7 +196,7 @@ export default defineComponent({
           onMouseleave={() => mouseEvent(false)}
           onClick={this.handleClick}
           v-ripple={(this.keepAnimation as any).ripple}
-          title={titleText}
+          title={titleText as string}
         >
           {<span style={{ height: `${this.tRowHeight}px`, border: 'none' }}></span>}
         </li>
@@ -209,7 +211,7 @@ export default defineComponent({
         onMouseleave={() => mouseEvent(false)}
         onClick={this.handleClick}
         v-ripple={(this.keepAnimation as any).ripple}
-        title={titleText}
+        title={titleText as string}
       >
         {this.multiple ? (
           <t-checkbox

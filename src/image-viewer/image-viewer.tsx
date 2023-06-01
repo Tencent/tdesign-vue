@@ -1,6 +1,6 @@
 import {
   computed, defineComponent, ref, toRefs, watch,
-} from '@vue/composition-api';
+} from 'vue';
 import { ChevronLeftIcon, ChevronDownIcon, CloseIcon } from 'tdesign-icons-vue';
 
 import props from './props';
@@ -132,12 +132,12 @@ export default defineComponent({
 
     const containerRef = ref();
     const mountContent = () => {
-      if (containerRef) {
+      if (containerRef.value) {
         containerRef.value.mountContent();
       }
     };
     const unmountContent = () => {
-      if (containerRef) {
+      if (containerRef.value) {
         containerRef.value.unmountContent();
       }
     };

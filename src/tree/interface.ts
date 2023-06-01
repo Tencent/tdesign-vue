@@ -1,5 +1,4 @@
-import { VNode } from 'vue';
-import { Ref } from '@vue/composition-api';
+import { Ref, VNode } from 'vue';
 import { TNode, TreeOptionData, TScroll } from '../common';
 import TreeStore from '../_common/js/tree/tree-store';
 import TreeNode from '../_common/js/tree/tree-node';

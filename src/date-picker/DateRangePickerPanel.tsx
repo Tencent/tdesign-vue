@@ -1,6 +1,6 @@
 import {
   defineComponent, computed, ref, watch,
-} from '@vue/composition-api';
+} from 'vue';
 import dayjs from 'dayjs';
 
 import dateRangePickerPanelProps from './date-range-picker-panel-props';
@@ -35,7 +35,7 @@ export default defineComponent({
     panelPreselection: dateRangePickerProps.panelPreselection,
     ...dateRangePickerPanelProps,
   },
-  setup(props: TdDateRangePickerPanelProps, { emit, attrs }) {
+  setup(props: TdDateRangePickerPanelProps, { emit }) {
     const {
       value, year, month, time, cacheValue, isFirstValueSelected, onChange,
     } = useRangeValue(props);
@@ -274,7 +274,7 @@ export default defineComponent({
     }
 
     // 预设
-    function onPresetClick(preset: any, context: any) {
+    function onPresetClick(preset: any) {
       let presetValue = preset;
       if (typeof preset === 'function') {
         presetValue = preset();
@@ -292,8 +292,6 @@ export default defineComponent({
             trigger: 'preset',
           },
         );
-        props.onPresetClick?.(context);
-        emit('preset-click', context);
       }
     }
 
@@ -374,8 +372,6 @@ export default defineComponent({
       enableTimePicker: props.enableTimePicker,
       presetsPlacement: props.presetsPlacement,
       panelPreselection: props.panelPreselection,
-      // 该属性本身主要是联动父组件使用, 单独使用没有特别意义, 不应该暴露为props
-      popupVisible: (attrs?.popupVisible as Boolean) ?? true,
       onPanelClick,
       onCellClick,
       onCellMouseEnter,

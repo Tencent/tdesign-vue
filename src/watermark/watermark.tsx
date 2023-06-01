@@ -1,6 +1,6 @@
 import {
   defineComponent, computed, ref, onMounted,
-} from '@vue/composition-api';
+} from 'vue';
 import generateBase64Url from '../_common/js/watermark/generateBase64Url';
 import randomMovingStyle from '../_common/js/watermark/randomMovingStyle';
 import injectStyle from '../_common/js/utils/injectStyle';

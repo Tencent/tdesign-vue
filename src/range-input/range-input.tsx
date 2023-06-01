@@ -1,6 +1,6 @@
 import {
   defineComponent, ref, toRefs, computed, getCurrentInstance,
-} from '@vue/composition-api';
+} from 'vue';
 import { CloseCircleFilledIcon as TdCloseCircleFilledIcon } from 'tdesign-icons-vue';
 import Input from '../input';
 import props from './props';
@@ -24,7 +24,7 @@ export default defineComponent({
   props,
 
   setup(props) {
-    const instance = getCurrentInstance();
+    const instance = getCurrentInstance().proxy;
     const { value } = toRefs(props);
     const { STATUS, SIZE } = useCommonClassName();
     const classPrefix = usePrefixClass();
@@ -54,31 +54,31 @@ export default defineComponent({
 
     function handleEnter(rangeValue: RangeInputValue, context: { e: MouseEvent }) {
       props.onEnter?.(rangeValue, context);
-      instance.emit('enter', rangeValue, context);
+      instance.$emit('enter', rangeValue, context);
     }
 
     function handleFocus(rangeValue: RangeInputValue, context: { e: MouseEvent }) {
       focused.value = true;
       props.onFocus?.(rangeValue, context);
-      instance.emit('focus', rangeValue, context);
+      instance.$emit('focus', rangeValue, context);
     }
 
     function handleBlur(rangeValue: RangeInputValue, context: { e: MouseEvent }) {
       focused.value = false;
       props.onBlur?.(rangeValue, context);
-      instance.emit('blur', rangeValue, context);
+      instance.$emit('blur', rangeValue, context);
     }
 
     function handleMouseEnter(e: MouseEvent) {
       isHover.value = true;
       props?.onMouseenter?.({ e });
-      instance.emit('monseenter', { e });
+      instance.$emit('monseenter', { e });
     }
 
     function handleMouseLeave(e: MouseEvent) {
       isHover.value = false;
       props?.onMouseleave?.({ e });
-      instance.emit('monseleave', { e });
+      instance.$emit('monseleave', { e });
     }
 
     const exposeObj = {

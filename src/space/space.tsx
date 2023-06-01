@@ -1,4 +1,4 @@
-import { defineComponent, computed } from '@vue/composition-api';
+import { defineComponent, computed } from 'vue';
 import props from './props';
 import { usePrefixClass } from '../hooks/useConfig';
 import { renderTNodeJSX } from '../utils/render-tnode';
@@ -8,7 +8,7 @@ export default defineComponent({
 
   props: { ...props },
 
-  setup(props) {
+  setup(props, { slots }) {
     const COMPONENT_NAME = usePrefixClass('space');
 
     const renderStyle = computed(() => {
@@ -31,7 +31,7 @@ export default defineComponent({
 
       return {
         gap: renderGap,
-        ...(props.breakLine ? { 'flex-wrap': 'wrap' } : {}),
+        ...(props.breakLine ? { 'flex-wrap': 'wrap' as const } : {}),
       };
     });
 
@@ -47,15 +47,21 @@ export default defineComponent({
       COMPONENT_NAME,
       spaceClassNames,
       renderStyle,
+      slots,
     };
   },
   render() {
-    const { COMPONENT_NAME, spaceClassNames, renderStyle } = this;
-    const children = this.$slots.default?.filter((child) => child.tag !== undefined || child.text) || [];
+    const {
+      COMPONENT_NAME, spaceClassNames, renderStyle, slots,
+    } = this;
+
+    const children = slots.default?.().filter((child) => child.tag !== undefined || child.text) || [];
     const childCount = children?.length;
+
     const renderChildren = () => children.map((child, index) => {
       const separatorNode = renderTNodeJSX(this, 'separator');
       const showSeparator = index + 1 !== childCount && separatorNode;
+
       return [
           <div class={`${COMPONENT_NAME}-item`}>{child}</div>,
           showSeparator ? <div class={`${COMPONENT_NAME}-item-separator`}>{separatorNode}</div> : null,

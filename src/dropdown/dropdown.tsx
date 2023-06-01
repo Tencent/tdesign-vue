@@ -1,6 +1,6 @@
-import { defineComponent, ref } from '@vue/composition-api';
+import { defineComponent, ref } from 'vue';
 import omit from 'lodash/omit';
-import Popup, { PopupVisibleChangeContext } from '../popup/index';
+import Popup, { PopupProps, PopupVisibleChangeContext } from '../popup/index';
 import DropdownMenu from './dropdown-menu';
 import { DropdownOption, TdDropdownProps } from './type';
 import props from './props';
@@ -43,7 +43,7 @@ export default defineComponent({
       disabled: this.disabled,
       placement: this.placement,
       trigger: this.trigger,
-      ...omit(this.popupProps, ['onVisibleChange', 'on-visible-change']),
+      ...omit(this.popupProps as PopupProps, ['onVisibleChange', 'on-visible-change']),
       overlayInnerClassName: [
         this.dropdownClass,
         (this.popupProps as TdDropdownProps['popupProps'])?.overlayInnerClassName,

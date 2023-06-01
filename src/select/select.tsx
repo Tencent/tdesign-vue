@@ -1,13 +1,6 @@
 import {
-  computed,
-  defineComponent,
-  ref,
-  toRefs,
-  watch,
-  nextTick,
-  getCurrentInstance,
-  provide,
-} from '@vue/composition-api';
+  computed, defineComponent, ref, toRefs, watch, nextTick, getCurrentInstance, provide, toRef, Ref,
+} from 'vue';
 import isFunction from 'lodash/isFunction';
 import debounce from 'lodash/debounce';
 import get from 'lodash/get';
@@ -23,13 +16,14 @@ import {
 } from './type';
 import props from './props';
 import TLoading from '../loading';
-import Popup, { PopupVisibleChangeContext } from '../popup';
-import TInput from '../input/index';
+import Popup, { PopupProps, PopupVisibleChangeContext } from '../popup';
+import TInput, { InputProps } from '../input/index';
 import Tag from '../tag/index';
 import SelectInput, {
   SelectInputValue,
   SelectInputChangeContext,
   SelectInputValueChangeContext,
+  SelectInputProps,
 } from '../select-input';
 import FakeArrow from '../common-components/fake-arrow';
 import { off, on } from '../utils/dom';
@@ -65,7 +59,7 @@ export default defineComponent({
   setup(props: TdSelectProps) {
     const { t, global } = useConfig('select');
     const renderTNode = useTNodeJSX();
-    const instance = getCurrentInstance();
+    const instance = getCurrentInstance().proxy;
     const selectInputRef = ref(null);
     const selectPanelRef = ref<SelectPanelInstance>();
     const popupOpenTime = ref(250);
@@ -88,6 +82,10 @@ export default defineComponent({
       minCollapsedNum,
       creatable,
     } = toRefs(props);
+
+    const selectInputProps = toRef(props, 'selectInputProps') as Ref<SelectInputProps>;
+    const popupProps = toRef(props, 'popupProps') as Ref<PopupProps>;
+    const inputProps = toRef(props, 'inputProps') as Ref<InputProps>;
 
     const keys = computed(() => ({
       label: props.keys?.label || 'label',
@@ -132,7 +130,6 @@ export default defineComponent({
       // value 类型的 value 变量，直接返回
       return _value;
     });
-
     const setInnerValue = (
       newVal: SelectValue,
       context: { trigger: SelectValueChangeTrigger; e?: MouseEvent | KeyboardEvent },
@@ -163,20 +160,12 @@ export default defineComponent({
           [labelOfKeys]: get(option, labelOfKeys),
         };
       };
-      const getSelectedOption = (newVal: SelectValue) => {
-        let selectedOption: SelectValue = getOriginOptions(newVal);
-        if (!selectedOption && optionValue) {
-          // 处理create场景
-          selectedOption = { label: optionValue, value: optionValue };
-        }
-        return selectedOption;
-      };
 
       // 构造 selectOptions
       if (multiple.value) {
-        (newVal as SelectValue[]).forEach((v) => selectedOptions.push(getSelectedOption(v)));
+        (newVal as SelectValue[]).forEach((v) => selectedOptions.push(getOriginOptions(v)));
       } else {
-        selectedOptions.push(getSelectedOption(newVal));
+        selectedOptions.push(getOriginOptions(newVal));
       }
       // 当 value 为 object 类型时，通过 innerValue 寻找对应的 object
       if (valueType.value === 'object') {
@@ -188,10 +177,8 @@ export default defineComponent({
 
       const outputContext = { ...context, selectedOptions };
       if (optionValue) {
-        const outputContextOption: SelectValue = getSelectedOption(optionValue);
-
         // eslint-disable-next-line dot-notation
-        outputContext['option'] = outputContextOption;
+        outputContext['option'] = getOriginOptions(optionValue);
       }
       setValue(newVal, outputContext);
     };
@@ -209,7 +196,7 @@ export default defineComponent({
       props.defaultPopupVisible,
       (visible: boolean, context: PopupVisibleChangeContext) => {
         props.onPopupVisibleChange?.(visible, context);
-        instance.emit('visible-change', visible);
+        instance.$emit('visible-change', visible);
       },
       'popupVisible',
       'popup-visible-change',
@@ -278,7 +265,7 @@ export default defineComponent({
           collapsedSelectedItems: values
             .map((item: any) => {
               const tmpValue = typeof item === 'object' ? item[props.keys?.value || 'value'] : item;
-              return props.options?.find((t: OptionData) => t.value === tmpValue);
+              return props.options.find((t: OptionData) => t.value === tmpValue);
             })
             .slice(minCollapsedNum.value),
           count: values.length - minCollapsedNum.value,
@@ -301,7 +288,7 @@ export default defineComponent({
         data: optionsMap.value.get(value),
         e,
       };
-      instance.emit('remove', evtObj);
+      instance.$emit('remove', evtObj);
       props.onRemove?.(evtObj);
     };
 
@@ -322,7 +309,7 @@ export default defineComponent({
       const createVal = tInputValue.value;
       // 只有多选情况下需要帮用户清除一次输入框内容，单选场景选中后 popup 消失，携带内容清除的作用
       multiple.value && setTInputValue('');
-      instance.emit('create', createVal);
+      instance.$emit('create', createVal);
       props.onCreate?.(createVal);
     };
 
@@ -333,7 +320,7 @@ export default defineComponent({
       } else {
         setInnerValue('', { trigger: 'clear', e });
       }
-      instance.emit('clear', { e });
+      instance.$emit('clear', { e });
       props.onClear?.({ e });
     };
 
@@ -354,22 +341,22 @@ export default defineComponent({
     };
 
     const handleFocus = (value: string, context: { e: FocusEvent }) => {
-      instance.emit('focus', { value, e: context?.e });
+      instance.$emit('focus', { value, e: context?.e });
       props.onFocus?.({ value, e: context?.e });
     };
 
     const handleBlur = (value: string, context: { e: FocusEvent | KeyboardEvent }) => {
-      instance.emit('blur', { value, e: context?.e });
+      instance.$emit('blur', { value, e: context?.e });
       props.onBlur?.({ value, e: context?.e });
     };
 
     const handleEnter = (value: string, context: { e: KeyboardEvent }) => {
-      instance.emit('enter', { value, e: context?.e, inputValue: tInputValue.value });
+      instance.$emit('enter', { value, e: context?.e, inputValue: tInputValue.value });
       props.onEnter?.({ value, e: context?.e, inputValue: tInputValue.value.toString() });
     };
 
     const debounceSearch = debounce((context: { e: KeyboardEvent }) => {
-      instance.emit('search', tInputValue.value);
+      instance.$emit('search', tInputValue.value);
       props.onSearch?.(tInputValue.value.toString(), { e: context.e });
     }, 300);
 
@@ -490,7 +477,6 @@ export default defineComponent({
             handleCheckAllClick(e);
           } else {
             const optionValue = (displayOptions[hoverIndex.value] as TdOptionProps)?.value;
-
             if (!optionValue) return;
             if (!multiple.value) {
               setInnerValue(optionValue, { e, trigger: 'check' }, optionValue);
@@ -571,6 +557,9 @@ export default defineComponent({
       renderTNode,
       updateScrollTop,
       componentName: COMPONENT_NAME,
+      selectInputProps,
+      popupProps,
+      inputProps,
     };
   },
 
@@ -587,10 +576,7 @@ export default defineComponent({
         );
       }
       return showArrow ? (
-        <fake-arrow
-          overlayClassName={`${this.componentName}__right-icon`}
-          isActive={innerPopupVisible && !isDisabled}
-        />
+        <FakeArrow overlayClassName={`${this.componentName}__right-icon`} isActive={innerPopupVisible && !isDisabled} />
       ) : null;
     },
 
@@ -635,11 +621,12 @@ export default defineComponent({
               status: this.status,
               tips: this.tips,
               suffix: this.suffix,
+              // @ts-ignore
               tag: this.tag,
               value: this.displayText,
               valueDisplay: () => renderTNode('valueDisplay', { params: this.valueDisplayParams }),
               clearable: this.clearable,
-              disabled: this.isDisabled,
+              disabled: this.disabled,
               label: this.renderLabel,
               suffixIcon: this.renderSuffixIcon,
               placeholder: this.placeholderText,
@@ -648,7 +635,7 @@ export default defineComponent({
                 size: this.size,
                 ...this.inputProps,
               },
-              tagInputProps: { size: this.size, ...this.tagInputProps },
+              tagInputProps: this.tagInputProps,
               tagProps: this.tagProps,
               minCollapsedNum: this.minCollapsedNum,
               collapsedItems: () => renderTNode('collapsedItems', { params: this.collapsedItemsParams }),
@@ -660,7 +647,7 @@ export default defineComponent({
               updateScrollTop: this.updateScrollTop,
               ...this.selectInputProps,
               panel: () => (
-                <select-panel
+                <SelectPanel
                   ref="selectPanelRef"
                   scopedSlots={this.$scopedSlots}
                   size={this.size}

@@ -1,6 +1,6 @@
 import {
   SetupContext, ref, computed, toRefs, getCurrentInstance,
-} from '@vue/composition-api';
+} from 'vue';
 
 import isObject from 'lodash/isObject';
 import pick from 'lodash/pick';
@@ -38,7 +38,7 @@ function getInputValue(value: TdSelectInputProps['value'], keys: TdSelectInputPr
 }
 
 export default function useSingle(props: TdSelectInputProps, context: SetupContext) {
-  const instance = getCurrentInstance();
+  const instance = getCurrentInstance().proxy;
 
   const { value, keys, inputValue: propsInputValue } = toRefs(props);
   const classPrefix = usePrefixClass();
@@ -59,7 +59,7 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
   const onInnerClear = (context: { e: MouseEvent }) => {
     context?.e?.stopPropagation();
     props.onClear?.(context);
-    instance.emit('clear', context);
+    instance.$emit('clear', context);
     setInputValue('', { trigger: 'clear' });
   };
 
@@ -77,8 +77,8 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
     const prefixContent = [renderTNode('label'), singleValueDisplay];
     const inputProps = {
       ...commonInputProps.value,
-      value: singleValueDisplay && props.value ? undefined : displayedValue,
-      label: () => prefixContent,
+      value: singleValueDisplay ? undefined : displayedValue,
+      label: prefixContent.length ? () => prefixContent : undefined,
       autoWidth: props.autoWidth,
       autofocus: props.autofocus,
       readonly: !props.allowInput,
@@ -102,26 +102,26 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
         onClear={onInnerClear}
         onEnter={(val: InputValue, context: { e: KeyboardEvent }) => {
           props.onEnter?.(value.value, { ...context, inputValue: val });
-          instance.emit('enter', value.value, { ...context, inputValue: val });
+          instance.$emit('enter', value.value, { ...context, inputValue: val });
         }}
         // [Important Info]: SelectInput.blur is not equal to Input, example: click popup panel
         onFocus={(val: InputValue, context: { e: MouseEvent }) => {
           props.onFocus?.(value.value, { ...context, inputValue: val });
-          instance.emit('focus', value.value, { ...context, tagInputValue: val });
+          instance.$emit('focus', value.value, { ...context, tagInputValue: val });
           // TO Discuss: focus might not need to change input value. it will caught some curious errors in tree-select
           // !popupVisible && setInputValue(getInputValue(value.value, keys.value), { ...context, trigger: 'focus' }); // 聚焦时拿到value
         }}
         onPaste={(context: { e: ClipboardEvent; pasteValue: string }) => {
           props.onPaste?.(context);
-          instance.emit('paste', context);
+          instance.$emit('paste', context);
         }}
         onMouseenter={(context: { e: MouseEvent }) => {
           props.onMouseenter?.(context);
-          instance.emit('mouseenter', context);
+          instance.$emit('mouseenter', context);
         }}
         onMouseleave={(context: { e: MouseEvent }) => {
           props.onMouseleave?.(context);
-          instance.emit('mouseenter', context);
+          instance.$emit('mouseenter', context);
         }}
       />
     );

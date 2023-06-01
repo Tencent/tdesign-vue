@@ -1,6 +1,6 @@
 import {
   defineComponent, PropType, ref, watch,
-} from '@vue/composition-api';
+} from 'vue';
 import props from '../props';
 import { COLOR_MODES } from '../const';
 import { RadioGroup as TRadioGroup, RadioButton as TRadioButton } from '../../radio';

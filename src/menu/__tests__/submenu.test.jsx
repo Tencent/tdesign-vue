@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import { ref } from '@vue/composition-api';
+import { ref } from 'vue';
 import { Submenu } from '@/src/menu';
 
 const Menu = {

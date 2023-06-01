@@ -1,7 +1,6 @@
-import { CreateElement } from 'vue';
 import {
-  SetupContext, Ref, onMounted, reactive,
-} from '@vue/composition-api';
+  CreateElement, SetupContext, Ref, onMounted, reactive,
+} from 'vue';
 import { TypeVNode, TypeTreeItemProps } from '../interface';
 import { usePrefixClass } from '../../hooks/useConfig';
 import { ClassName } from '../../common';

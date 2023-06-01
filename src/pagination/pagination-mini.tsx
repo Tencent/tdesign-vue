@@ -1,4 +1,4 @@
-import { defineComponent, computed } from '@vue/composition-api';
+import { defineComponent, computed } from 'vue';
 import isObject from 'lodash/isObject';
 import {
   ChevronLeftIcon as TdChevronLeftIcon,

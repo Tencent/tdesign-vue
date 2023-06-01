@@ -1,4 +1,4 @@
-import { defineComponent, computed } from '@vue/composition-api';
+import { defineComponent, computed } from 'vue';
 import omit from 'lodash/omit';
 import Panel from './components/Panel';
 import SelectInput, {
@@ -138,6 +138,7 @@ export default defineComponent({
             collapsedItems: renderCollapsedItems,
             label: this.label,
             suffix: this.suffix,
+            // @ts-ignore
             tag: this.tag,
             readonly: this.readonly,
             disabled: isDisabled,
