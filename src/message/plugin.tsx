@@ -70,7 +70,9 @@ const MessageFunction = (props: MessageOptions): Promise<MessageInstance> => {
     instanceMap.set(attachDom, {});
   }
   const p = instanceMap.get(attachDom)[placement];
-  if (!p) {
+
+  // attachDom被清空(如attachDom.innerHtml='')，p也会存在，需要判断下dom包含关系
+  if (!p || !attachDom.contains(p.$el)) {
     const instance = new MessageList({
       propsData: {
         zIndex: options.zIndex,

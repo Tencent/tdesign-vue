@@ -11,6 +11,7 @@ export interface TdMenuInterface {
   theme?: Ref<string>;
   isHead: boolean;
   vMenu?: VMenu;
+  collapsed?: Ref<boolean>;
   select: (val: MenuValue) => void;
   open?: (val: MenuValue, type?: TdOpenType) => boolean | void;
 }

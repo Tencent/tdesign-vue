@@ -120,6 +120,7 @@ export default defineComponent({
             <TButton
               theme="primary"
               variant="base"
+              disabled={!this.value}
               onClick={() => this.handleConfirmClick(this.defaultValue)}
               size="small"
             >
