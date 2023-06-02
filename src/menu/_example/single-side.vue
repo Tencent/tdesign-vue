@@ -4,7 +4,7 @@
       <template #logo>
         <img height="28" src="https://tdesign.gtimg.com/site/baseLogo-light.png" alt="logo" />
       </template>
-      <t-menu-item value="item1">仪表盘</t-menu-item>
+      <t-menu-item value="item1" href="/vue" target="_blank">仪表盘</t-menu-item>
       <t-menu-item value="item2">资源列表</t-menu-item>
       <t-menu-item value="item3">根目录</t-menu-item>
       <t-menu-item value="item4" :disabled="true">调度平台</t-menu-item>

@@ -9,7 +9,7 @@ exports[`MenuItem > props > :disabled 1`] = `
     class="t-default-menu__inner"
   >
     <ul
-      class="t-menu t-menu--scroll narrow-scrollbar"
+      class="t-menu t-menu--scroll"
     >
       <li
         class="t-menu__item t-is-active t-is-disabled t-menu__item--plain"
@@ -32,7 +32,7 @@ exports[`MenuItem > props > :name 1`] = `
     class="t-default-menu__inner"
   >
     <ul
-      class="t-menu t-menu--scroll narrow-scrollbar"
+      class="t-menu t-menu--scroll"
     >
       <li
         class="t-menu__item t-is-active t-menu__item--plain"
@@ -56,7 +56,7 @@ exports[`MenuItem > props > :route 1`] = `
     class="t-default-menu__inner"
   >
     <ul
-      class="t-menu t-menu--scroll narrow-scrollbar"
+      class="t-menu t-menu--scroll"
     >
       <li
         class="t-menu__item t-is-active t-menu__item--plain"
@@ -80,7 +80,7 @@ exports[`MenuItem > slot > <default> 1`] = `
     class="t-default-menu__inner"
   >
     <ul
-      class="t-menu t-menu--scroll narrow-scrollbar"
+      class="t-menu t-menu--scroll"
     >
       <li
         class="t-menu__item t-is-active t-menu__item--plain"
@@ -103,7 +103,7 @@ exports[`MenuItem > slot > <icon> 1`] = `
     class="t-default-menu__inner"
   >
     <ul
-      class="t-menu t-menu--scroll narrow-scrollbar"
+      class="t-menu t-menu--scroll"
     >
       <li
         class="t-menu__item t-is-active t-menu__item--plain"
