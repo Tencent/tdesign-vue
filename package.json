@@ -190,6 +190,7 @@
     "vue-class-component": "^7.2.3",
     "vue-loader": "^15.10.0",
     "vue-router": "^3.5.3",
+    "vue-server-renderer": "^2.7.14",
     "workbox-precaching": "^6.3.0"
   },
   "config": {
