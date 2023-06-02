@@ -275,6 +275,19 @@ export default defineComponent({
         />
       );
     },
+    renderCloseBtn() {
+      if (this.closeBtn === false) {
+        return;
+      }
+      return (
+        <div
+          class={[`${this.COMPONENT_NAME}__modal-icon`, `${this.COMPONENT_NAME}__modal-close-bt`]}
+          onClick={this.closeBtnAction}
+        >
+          {renderTNodeJSX(this, 'closeBtn', <CloseIcon size="24px" />)}
+        </div>
+      );
+    },
     renderViewer() {
       return (
         <div class={this.wrapClass} style={{ zIndex: this.zIndexValue }} onWheel={this.onWheel}>
@@ -290,12 +303,7 @@ export default defineComponent({
               {`${this.indexValue + 1}/${this.imagesList.length}`}
             </div>
           )}
-          <div
-            class={[`${this.COMPONENT_NAME}__modal-icon`, `${this.COMPONENT_NAME}__modal-close-bt`]}
-            onClick={this.closeBtnAction}
-          >
-            {renderTNodeJSX(this, 'closeBtn', <CloseIcon size="24px" />)}
-          </div>
+          {this.renderCloseBtn()}
           <TImageViewerUtils
             zoomInHandler={this.onZoomIn}
             zoomOutHandler={this.onZoomOut}
