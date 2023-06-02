@@ -101,7 +101,7 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
       // add const h = this.$createElement to the beginning of the problematic function
 
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const h = this.$createElement;
+      // const h = this.$createElement;
       return this.panels.map((panel, index) => (
         <TTabNavItem
           ref={`tabItem${index}`}

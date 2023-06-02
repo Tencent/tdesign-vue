@@ -1,6 +1,6 @@
 import path from 'path';
 import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue2';
+import { createVuePlugin } from 'vite-plugin-vue2';
 import { VitePWA } from 'vite-plugin-pwa';
 import vueJsx from '@vitejs/plugin-vue2-jsx';
 import tdocPlugin from './plugin-tdoc';
@@ -41,7 +41,7 @@ export default ({ mode }) =>
       },
     },
     plugins: [
-      vue({
+      createVuePlugin({
         include: /(\.md|\.vue)$/,
         jsx: true,
       }),
