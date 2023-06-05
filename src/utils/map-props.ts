@@ -1,4 +1,5 @@
-import Vue, { ComponentOptions, CreateElement, VueConstructor } from 'vue';
+import Vue, { CreateElement, PluginObject } from 'vue';
+import { ExtendedVue } from 'vue/types/vue';
 
 const defaultModel = {
   prop: 'value',
@@ -6,7 +7,7 @@ const defaultModel = {
 };
 
 function toCamel(str: string): string {
-  return str.replace(/-([a-z])/ig, (m, letter) => letter.toUpperCase());
+  return str.replace(/-([a-z])/gi, (m, letter) => letter.toUpperCase());
 }
 
 type PropOption = {
@@ -33,10 +34,7 @@ function getPropOptionMap(props: (string | PropOption)[], options: Option = {}):
   const { model } = options;
 
   function parseProp(propOption: PropOption): ParsedPropOption {
-    const {
-      name: propName,
-      ...others
-    } = propOption;
+    const { name: propName, ...others } = propOption;
     const camelName = propName.replace(/^[a-z]/, (letter: string) => letter.toUpperCase());
     const defaultName = `default${camelName}`;
     const dataName = `data${camelName}`;
@@ -76,8 +74,8 @@ function getPropOptionMap(props: (string | PropOption)[], options: Option = {}):
 }
 
 export default function (props: (string | PropOption)[], options: Option = {}) {
-  function mapProps(componentConstructor: VueConstructor | any) {
-    const component: ComponentOptions<Vue> = componentConstructor.prototype
+  function mapProps<T extends ExtendedVue<Vue, any, any, any, any>>(componentConstructor: T) {
+    const component = componentConstructor.prototype
       ? componentConstructor.prototype.constructor.options
       : componentConstructor;
     const model = options.model || defaultModel;
@@ -193,10 +191,7 @@ export default function (props: (string | PropOption)[], options: Option = {}) {
 
         Object.keys(propOptionMap).forEach((propName: string): void => {
           const { dataName, events } = propOptionMap[propName];
-          if (
-            propName in this.$vnode.componentOptions.propsData
-            || typeof this[dataName] !== 'undefined'
-          ) {
+          if (propName in this.$vnode.componentOptions.propsData || typeof this[dataName] !== 'undefined') {
             propMap[propName] = this[dataName];
           }
           // 只监听第一个定义的事件，参数取第一个事件参数
@@ -222,7 +217,8 @@ export default function (props: (string | PropOption)[], options: Option = {}) {
           },
 
           on: {
-            ...this._listeners as Record<string, any>,
+            // @ts-ignore
+            ...(this._listeners as Record<string, any>),
             ...handlerMap,
           },
 
@@ -245,7 +241,7 @@ export default function (props: (string | PropOption)[], options: Option = {}) {
         },
         ...defineMethods,
       },
-    });
+    }) as T & PluginObject<T>;
   }
 
   return mapProps;
