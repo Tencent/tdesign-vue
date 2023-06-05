@@ -28,12 +28,15 @@ function getValidAttrs(obj: object): object {
   return newObj;
 }
 
-interface InputInstance extends Vue {
+export interface InputParentInjectInstance extends Vue {
   composing: boolean;
   tFormItem: InstanceType<typeof FormItem>;
 }
 
-export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input'), getGlobalIconMixins()).extend({
+export default mixins(
+  getConfigReceiverMixins<InputParentInjectInstance, InputConfig>('input'),
+  getGlobalIconMixins(),
+).extend({
   name: 'TInput',
   inheritAttrs: false,
 

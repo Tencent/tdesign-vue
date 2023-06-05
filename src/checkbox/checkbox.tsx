@@ -13,11 +13,11 @@ const classPrefixMixins = getClassPrefixMixins('checkbox');
 
 export type CheckboxGroupInstance = InstanceType<typeof Group>;
 
-interface CheckboxInstance extends Vue {
+export interface CheckboxParentInjectInstance extends Vue {
   checkboxGroup: CheckboxGroupInstance;
 }
 
-export default mixins(classPrefixMixins, Vue as VueConstructor<CheckboxInstance>).extend({
+export default mixins(classPrefixMixins, Vue as VueConstructor<CheckboxParentInjectInstance>).extend({
   name: 'TCheckbox',
 
   inheritAttrs: false,
