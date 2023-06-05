@@ -40,7 +40,12 @@ const Overlay = mixins(classPrefixMixins).extend({
   },
   props: {
     ...props,
-    triggerEl: Object,
+    triggerEl: {
+      validator(value) {
+        return value instanceof HTMLElement;
+      },
+      required: true,
+    },
   },
   computed: {
     hasTrigger(): Record<(typeof triggers)[number], boolean> {
@@ -155,7 +160,7 @@ const removeOverlayInstance = () => {
   }
 };
 
-export type PluginMethod = (trigger: string, content: TNode, popupProps?: TdPopupProps) => Instance;
+export type PluginMethod = (triggerEl: string, content: TNode, popupProps?: TdPopupProps) => Instance;
 
 export const createPopupPlugin: PluginMethod = (trigger, content, popupProps) => {
   const hasTrigger = triggerType(popupProps?.trigger || 'hover');
