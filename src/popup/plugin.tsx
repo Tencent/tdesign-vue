@@ -8,6 +8,7 @@ import { getClassPrefixMixins } from '../config-provider/config-receiver';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { getPopperPlacement, triggers } from './utils';
 import mixins from '../utils/mixins';
+import log from '../_common/js/log';
 
 import type { TNode, ClassName } from '../common';
 import type { TdPopupProps } from './type';
@@ -42,7 +43,11 @@ const Overlay = mixins(classPrefixMixins).extend({
     ...props,
     triggerEl: {
       validator(value) {
-        return value instanceof HTMLElement;
+        if (!(value instanceof HTMLElement)) {
+          log.warn('Popup', `Invalid value for prop "triggerEl": expected an HTMLElement, but got ${typeof value}.`);
+          return false;
+        }
+        return true;
       },
       required: true,
     },
