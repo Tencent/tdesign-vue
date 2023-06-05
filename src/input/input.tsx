@@ -69,6 +69,7 @@ export default mixins(
       composingRefValue: this.value,
       resizeObserver: null as ResizeObserver,
       preValue: this.value,
+      timer: null,
     };
   },
   computed: {
@@ -355,6 +356,10 @@ export default mixins(
       this.$emit('click', { e });
       this.onClick?.({ e });
     },
+    throttleChangeCursorPos(ref: HTMLInputElement, pos: number) {
+      // eslint-disable-next-line no-param-reassign
+      (ref as HTMLInputElement).selectionEnd = pos;
+    },
     handleInput(e: InputEvent | CompositionEvent) {
       this.preValue = this.inputValue + e.data;
       let {
@@ -370,13 +375,15 @@ export default mixins(
         emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', val, { e, trigger: 'input' });
         // 受控，重要，勿删 input无法直接实现受控
         if (!this.isIE) {
+          // 修复在 popup 弹出层里输入时 光标异常的问题
           const inputRef = this.$refs.inputRef as HTMLInputElement;
           preCursorPos = inputRef.selectionStart;
-          setTimeout(() => {
-            inputRef.selectionEnd = preCursorPos;
+          // 处理连续快速重复输入异常的问题
+          clearTimeout(this.timer);
+          this.timer = setTimeout(() => {
+            this.throttleChangeCursorPos(inputRef, preCursorPos);
           });
         }
-
         this.$nextTick(() => {
           this.setInputValue(this.value);
         });
