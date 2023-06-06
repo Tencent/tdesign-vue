@@ -183,7 +183,8 @@ export default defineComponent({
     const {
       classes, mouseEvent, labelText, title,
     } = this;
-    const optionChild = renderContent(this, 'default', 'content') || <span>{labelText}</span>;
+    const selfDefinedContent = renderContent(this, 'default', 'content');
+    const optionChild = selfDefinedContent || <span>{labelText}</span>;
     const titleText = title || labelText;
     if (this.hasLazyLoadHolder) {
       return (
@@ -220,7 +221,7 @@ export default defineComponent({
             {optionChild}
           </t-checkbox>
         ) : (
-          <span>{optionChild}</span>
+          optionChild
         )}
       </li>
     );

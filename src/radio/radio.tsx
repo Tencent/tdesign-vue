@@ -1,8 +1,8 @@
 import Vue, { VueConstructor, VNode } from 'vue';
 import { omit } from '../utils/helper';
 import { renderContent } from '../utils/render-tnode';
-import props from './props';
 import { RadioGroupInstance, RadioButtonInstance } from './instance';
+import props from './props';
 import { emitEvent } from '../utils/event';
 import { TdRadioProps } from './type';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
@@ -10,12 +10,12 @@ import mixins from '../utils/mixins';
 
 const classPrefixMixins = getClassPrefixMixins('radio');
 
-interface RadioInstance extends Vue {
+export interface RadioParentInjectInstance extends Vue {
   radioGroup: RadioGroupInstance;
   radioButton: RadioButtonInstance;
 }
 
-export default mixins(Vue as VueConstructor<RadioInstance>, classPrefixMixins).extend({
+export default mixins(Vue as VueConstructor<RadioParentInjectInstance>, classPrefixMixins).extend({
   name: 'TRadio',
 
   inheritAttrs: false,
