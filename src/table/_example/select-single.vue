@@ -15,7 +15,9 @@
         <p v-if="row.status === 0" class="status">健康</p>
         <p v-if="row.status === 1" class="status unhealth">异常</p>
       </template>
-      <template #op-column><p>操作</p></template>
+      <template #op-column>
+        <p>操作</p>
+      </template>
       <template #op="slotProps">
         <a class="link" @click="rehandleClickOp(slotProps)">管理</a>
         <a class="link" @click="rehandleClickOp(slotProps)">删除</a>
@@ -126,6 +128,7 @@ export default {
   .t-table__row--selected {
     background-color: #ecf2fe;
   }
+
   /** 最右侧选中图标示范 */
   .t-table__row--selected > td:last-child::after {
     content: '✅';
@@ -144,10 +147,12 @@ export default {
   cursor: pointer;
   margin-right: 15px;
 }
+
 .status {
   position: relative;
   color: #00a870;
   margin-left: 10px;
+
   &::before {
     position: absolute;
     top: 50%;
@@ -161,8 +166,10 @@ export default {
     border-radius: 50%;
   }
 }
+
 .status.unhealth {
   color: #e34d59;
+
   &::before {
     background-color: #e34d59;
   }

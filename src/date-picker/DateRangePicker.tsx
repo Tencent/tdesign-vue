@@ -21,6 +21,7 @@ import {
   initYearMonthTime,
 } from '../_common/js/date-picker/format';
 import { subtractMonth, addMonth, extractTimeObj } from '../_common/js/date-picker/utils';
+import useFormDisabled from '../hooks/useFormDisabled';
 
 export default defineComponent({
   name: 'TDateRangePicker',
@@ -28,6 +29,7 @@ export default defineComponent({
   setup(props, { emit }) {
     const COMPONENT_NAME = usePrefixClass('date-range-picker');
     const { CalendarIcon } = useGlobalIcon({ CalendarIcon: TdCalendarIcon });
+    const { formDisabled } = useFormDisabled();
 
     const {
       inputValue,
@@ -51,6 +53,7 @@ export default defineComponent({
       format: props.format,
       valueType: props.valueType,
     }));
+    const isDisabled = computed(() => formDisabled.value || props.disabled);
 
     // 记录面板是否选中过
     const isSelected = ref(false);
@@ -315,18 +318,18 @@ export default defineComponent({
       }
 
       // 首次点击不关闭、确保两端都有有效值并且无时间选择器时点击后自动关闭
-      if (!isFirstValueSelected.value) {
+      if (nextValue.length === 1 || !isFirstValueSelected.value) {
         let nextIndex = notValidIndex;
         if (nextIndex === -1) nextIndex = activeIndex.value ? 0 : 1;
         activeIndex.value = nextIndex;
         isFirstValueSelected.value = true;
-      } else {
+      } else if (nextValue.length === 2) {
         popupVisible.value = false;
       }
     }
 
     // 预设
-    function onPresetClick(preset: any) {
+    function onPresetClick(preset: any, context: any) {
       let presetValue = preset;
       if (typeof preset === 'function') {
         presetValue = preset();
@@ -346,6 +349,8 @@ export default defineComponent({
           },
         );
         popupVisible.value = false;
+        props.onPresetClick?.(context);
+        emit('preset-click', context);
       }
     }
 
@@ -414,6 +419,7 @@ export default defineComponent({
       popupVisible,
       panelProps,
       CalendarIcon,
+      isDisabled,
     };
   },
   render() {
@@ -438,7 +444,7 @@ export default defineComponent({
     return (
       <div class={COMPONENT_NAME}>
         <TRangeInputPopup
-          disabled={this.disabled}
+          disabled={this.isDisabled}
           status={this.status}
           tips={this.tips || this.$scopedSlots.tips}
           inputValue={inputValue as string[]}

@@ -54,7 +54,6 @@ export default defineComponent({
     isVirtual: Boolean,
     bufferSize: Number,
     index: Number,
-    panelElement: HTMLElement,
   },
   components: {
     TCheckbox: Checkbox,
@@ -68,7 +67,16 @@ export default defineComponent({
     const { classPrefix } = useConfig('classPrefix');
 
     const {
-      value, label, multiple, disabled, panelElement, scrollType, bufferSize, index, isCreatedOption,
+      value,
+      label,
+      multiple,
+      disabled,
+      // @ts-ignore
+      panelElement,
+      scrollType,
+      bufferSize,
+      index,
+      isCreatedOption,
     } = toRefs(props);
 
     const { hasLazyLoadHolder = null, tRowHeight = null } = useLazyLoad(

@@ -183,7 +183,7 @@ export default mixins(classPrefixMixins, Vue as VueConstructor<SliderInstanceTyp
         this.hideTooltipComponent();
       }
     },
-    onButtonDown(event: UIEvent) {
+    onButtonDown(event: MouseEvent | TouchEvent) {
       if (this.disabled) {
         return;
       }

@@ -358,6 +358,6 @@ export default defineComponent({
       );
     }
 
-    return <div>{this.renderPanelContent()}</div>;
+    return (this.renderPanelContent as Function)();
   },
 });

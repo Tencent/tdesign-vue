@@ -193,7 +193,7 @@ export default defineComponent({
     }
 
     // 预设
-    function onPresetClick(presetValue: DateValue | (() => DateValue)) {
+    function onPresetClick(presetValue: any, context: any) {
       const presetVal = typeof presetValue === 'function' ? presetValue() : presetValue;
       onChange?.(
         formatDate(presetVal, {
@@ -205,6 +205,8 @@ export default defineComponent({
           trigger: 'preset',
         },
       );
+      props.onPresetClick?.(context);
+      emit('preset-click', context);
       popupVisible.value = false;
     }
 

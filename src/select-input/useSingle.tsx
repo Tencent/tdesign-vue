@@ -77,7 +77,7 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
     const prefixContent = [renderTNode('label'), singleValueDisplay];
     const inputProps = {
       ...commonInputProps.value,
-      value: singleValueDisplay ? undefined : displayedValue,
+      value: singleValueDisplay && props.value ? undefined : displayedValue,
       label: prefixContent.length ? () => prefixContent : undefined,
       autoWidth: props.autoWidth,
       autofocus: props.autofocus,

@@ -19,6 +19,7 @@ import type { TimeRangePickerPartial } from './type';
 import useVModel from '../hooks/useVModel';
 import { useConfig, usePrefixClass } from '../hooks/useConfig';
 import { useGlobalIcon } from '../hooks/useGlobalIcon';
+import useFormDisabled from '../hooks/useFormDisabled';
 
 dayjs.extend(customParseFormat);
 
@@ -36,6 +37,7 @@ export default defineComponent({
     const { global } = useConfig('timePicker');
     const { classPrefix } = useConfig('classPrefix');
     const { TimeIcon } = useGlobalIcon({ TimeIcon: TdTimeIcon });
+    const { formDisabled } = useFormDisabled();
 
     const currentPanelIdx = ref(undefined);
     const currentValue = ref<Array<string>>(TIME_PICKER_EMPTY);
@@ -47,6 +49,8 @@ export default defineComponent({
         [`${classPrefix.value}-is-focused`]: isShowPanel.value,
       },
     ]);
+    const isDisabled = computed(() => formDisabled.value || props.disabled);
+
     const { value, format } = toRefs(props);
     const [innerValue, setInnerValue] = useVModel(value, props.defaultValue, props.onChange, 'change');
 
@@ -150,6 +154,7 @@ export default defineComponent({
       handleInputBlur,
       handleTimeChange,
       TimeIcon,
+      isDisabled,
     };
   },
   render() {
@@ -161,7 +166,7 @@ export default defineComponent({
           {...{
             props: {
               onInputChange: this.handleInputChange,
-              disabled: this.disabled,
+              disabled: this.isDisabled,
               popupVisible: this.isShowPanel,
               inputValue: this.isShowPanel ? this.currentValue : this.innerValue ?? TIME_PICKER_EMPTY,
               popupProps: {

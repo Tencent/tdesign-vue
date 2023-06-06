@@ -10,7 +10,8 @@ export default defineComponent({
     presetsPlacement: String as PropType<TdDatePickerProps['presetsPlacement']>,
     onPresetClick: Function,
     onConfirmClick: Function,
-    selectedValue: String as PropType<DateValue>,
+    // 支持时间戳模式：时间戳为Number类型
+    selectedValue: [String, Number] as PropType<DateValue>,
   },
   setup(props) {
     const showPanelFooter = computed(() => props.enableTimePicker || props.presets);

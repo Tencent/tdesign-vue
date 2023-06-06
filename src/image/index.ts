@@ -8,5 +8,6 @@ import './style';
 export type ImageProps = TdImageProps;
 export * from './type';
 
+// @ts-ignore
 export const Image = withInstall(mapProps(['value'])(_Image));
 export default Image;

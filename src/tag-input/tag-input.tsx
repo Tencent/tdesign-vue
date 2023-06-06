@@ -1,9 +1,9 @@
 import {
-  defineComponent, computed, toRefs, ref, nextTick, Ref, toRef,
+  defineComponent, computed, toRefs, ref, nextTick,
 } from 'vue';
 
 import { CloseCircleFilledIcon as TdCloseCircleFilledIcon } from 'tdesign-icons-vue';
-import TInput, { InputProps, InputValue, TdInputProps } from '../input';
+import TInput, { InputProps, InputValue } from '../input';
 import { TdTagInputProps } from './type';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
@@ -21,8 +21,7 @@ export default defineComponent({
   props: { ...props },
 
   setup(props: TdTagInputProps, context) {
-    const { inputValue } = toRefs(props);
-    const inputProps = toRef(props, 'inputProps') as Ref<TdInputProps>;
+    const { inputValue, inputProps } = toRefs(props);
     // 除了绑定 DOM 的变量，其他的一律不可使用 Ref 作为后缀
     const isComposition = ref(false);
     const COMPONENT_NAME = usePrefixClass('tag-input');
@@ -41,8 +40,8 @@ export default defineComponent({
     } = toRefs(props);
     const { isHover, addHover, cancelHover } = useHover(
       {
-        readonly: props.readonly,
-        disabled: props.disabled,
+        readonly,
+        disabled,
         onMouseenter: props.onMouseenter,
         onMouseleave: props.onMouseleave,
       },

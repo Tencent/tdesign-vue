@@ -13,6 +13,7 @@ import type { InputProps } from '../input';
 import useVModel from '../hooks/useVModel';
 import { useConfig, usePrefixClass } from '../hooks/useConfig';
 import { useGlobalIcon } from '../hooks/useGlobalIcon';
+import useFormDisabled from '../hooks/useFormDisabled';
 
 import props from './props';
 
@@ -25,10 +26,12 @@ export default defineComponent({
     const { classPrefix } = useConfig('classPrefix');
     const componentName = usePrefixClass('time-picker');
     const { TimeIcon } = useGlobalIcon({ TimeIcon: TdTimeIcon });
+    const { formDisabled } = useFormDisabled();
 
     const currentValue = ref('');
     const isShowPanel = ref(false);
     const { global } = useConfig('timePicker');
+    const isDisabled = computed(() => formDisabled.value || props.disabled);
 
     const { value } = toRefs(props);
     const [innerValue, setInnerValue] = useVModel(value, props.defaultValue, props.onChange, 'change');
@@ -116,6 +119,7 @@ export default defineComponent({
       global,
       currentValue,
       TimeIcon,
+      isDisabled,
     };
   },
   render() {
@@ -129,7 +133,7 @@ export default defineComponent({
               onClear: this.handleClear,
               onBlur: this.handleInputBlur,
               onInputChange: this.handleInputChange,
-              disabled: this.disabled,
+              disabled: this.isDisabled,
               clearable: this.clearable,
               allowInput: this.allowInput,
               class: this.inputClasses,

@@ -84,7 +84,7 @@ export default defineComponent({
           {!this.loading ? (
             <Tree
               ref="treeRef"
-              key={this.treeKey}
+              key={!(this.treeProps as TreeProps)?.load && this.treeKey}
               props={{
                 keys: this.tKeys,
                 value: [...this.multipleChecked],

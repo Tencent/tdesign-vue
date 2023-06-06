@@ -31,7 +31,7 @@ export const Menu = withInstall(
     ],
     {
       model: { prop: 'value', event: 'change' },
-    },
+    }, // @ts-ignore
   )(_Menu),
 );
 
@@ -49,7 +49,7 @@ export const HeadMenu = withInstall(
     ],
     {
       model: { prop: 'value', event: 'change' },
-    },
+    }, // @ts-ignore
   )(_HeadMenu),
 );
 
