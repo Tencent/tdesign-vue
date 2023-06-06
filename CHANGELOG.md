@@ -8,7 +8,7 @@ docClass: timeline
 ## 🌈 1.4.0 `2023-06-06` 
 ### 🚀 Features
 - `Menu`: @xiaosansiji ([#2461](https://github.com/Tencent/tdesign-vue/pull/2461))
-  - 设置 `href` 时使用 <a> 标签渲染菜单项 [#1671](https://github.com/Tencent/tdesign-vue-next/issues/1671)
+  - 设置 `href` 时使用 `<a>` 标签渲染菜单项 [#1671](https://github.com/Tencent/tdesign-vue-next/issues/1671)
   - 使用 Popup 重构 Menu 弹出菜单实现
 - `Select`: 优化选项结构 移除多余的span节点 @uyarn ([#2480](https://github.com/Tencent/tdesign-vue/pull/2480))
 - `InputNumber`: 支持默认格式化小数点 @chaishi ([#2478](https://github.com/Tencent/tdesign-vue/pull/2478))
