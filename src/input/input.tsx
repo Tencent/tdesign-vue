@@ -28,12 +28,15 @@ function getValidAttrs(obj: object): object {
   return newObj;
 }
 
-interface InputInstance extends Vue {
+export interface InputParentInjectInstance extends Vue {
   composing: boolean;
   tFormItem: InstanceType<typeof FormItem>;
 }
 
-export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input'), getGlobalIconMixins()).extend({
+export default mixins(
+  getConfigReceiverMixins<InputParentInjectInstance, InputConfig>('input'),
+  getGlobalIconMixins(),
+).extend({
   name: 'TInput',
   inheritAttrs: false,
 
@@ -66,6 +69,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       composingRefValue: this.value,
       resizeObserver: null as ResizeObserver,
       preValue: this.value,
+      timer: null,
     };
   },
   computed: {
@@ -352,6 +356,10 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       this.$emit('click', { e });
       this.onClick?.({ e });
     },
+    throttleChangeCursorPos(ref: HTMLInputElement, pos: number) {
+      // eslint-disable-next-line no-param-reassign
+      (ref as HTMLInputElement).selectionEnd = pos;
+    },
     handleInput(e: InputEvent | CompositionEvent) {
       this.preValue = this.inputValue + e.data;
       let {
@@ -367,13 +375,15 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', val, { e, trigger: 'input' });
         // 受控，重要，勿删 input无法直接实现受控
         if (!this.isIE) {
+          // 修复在 popup 弹出层里输入时 光标异常的问题
           const inputRef = this.$refs.inputRef as HTMLInputElement;
           preCursorPos = inputRef.selectionStart;
-          setTimeout(() => {
-            inputRef.selectionEnd = preCursorPos;
+          // 处理连续快速重复输入异常的问题
+          clearTimeout(this.timer);
+          this.timer = setTimeout(() => {
+            this.throttleChangeCursorPos(inputRef, preCursorPos);
           });
         }
-
         this.$nextTick(() => {
           this.setInputValue(this.value);
         });

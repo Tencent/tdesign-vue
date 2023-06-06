@@ -10,11 +10,11 @@ import mixins from '../utils/mixins';
 
 const classPrefixMixins = getClassPrefixMixins('tabs');
 
-interface TabVue extends Vue {
+export interface TabParentInjectVue extends Vue {
   listPanels?: Array<VNode>;
 }
 
-export default mixins(Vue as VueConstructor<TabVue>, classPrefixMixins).extend({
+export default mixins(Vue as VueConstructor<TabParentInjectVue>, classPrefixMixins).extend({
   name: 'TTabs',
   model: {
     prop: 'value',
@@ -30,7 +30,7 @@ export default mixins(Vue as VueConstructor<TabVue>, classPrefixMixins).extend({
 
   props: { ...props },
 
-  provide(): { parent: TabVue } {
+  provide(): { parent: TabParentInjectVue } {
     return {
       parent: this,
     };

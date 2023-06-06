@@ -89,10 +89,14 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
         if (parseFloat(userInput.value) !== val) {
           userInput.value = getUserInput(inputValue);
         }
+        const fixedNumber = Number(largeNumberToFixed(inputValue, decimalPlaces, largeNumber));
+        if (decimalPlaces !== undefined && fixedNumber !== Number(tValue)) {
+          setTValue(fixedNumber, { type: 'props', e: undefined });
+        }
       }
       if (largeNumber) {
         userInput.value = getUserInput(inputValue);
-        if (decimalPlaces && largeNumberToFixed(inputValue, decimalPlaces, largeNumber) !== val) {
+        if (decimalPlaces !== undefined && largeNumberToFixed(inputValue, decimalPlaces, largeNumber) !== val) {
           setTValue(userInput.value, { type: 'props', e: undefined });
         }
       }

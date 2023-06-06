@@ -237,7 +237,7 @@ export default function useFixed(
         const th = thList[j] as HTMLElement;
         const colKey = th.dataset.colkey;
         if (!colKey) {
-          log.warn('TDesign Table', `${th.innerText} missing colKey. colKey is required for fixed column feature.`);
+          log.warn('Table', `${th.innerText} missing colKey. colKey is required for fixed column feature.`);
         }
         const obj = initialColumnMap.get(colKey || j);
         if (obj?.col?.fixed) {
