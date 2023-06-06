@@ -7,6 +7,7 @@ import { Color } from './utils';
 import { TdColorPickerProps } from './type';
 import { useBaseClassName } from './hooks';
 import { TdColorHandler } from './interfaces';
+import useCommonClassName from '../hooks/useCommonClassName';
 
 export default defineComponent({
   name: 'DefaultTrigger',
@@ -38,10 +39,15 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
+    size: {
+      type: String as PropType<TdColorPickerProps['size']>,
+      default: 'medium',
+    },
   },
   setup(props) {
     const baseClassName = useBaseClassName();
     const value = ref(props.color);
+    const { sizeClassNames } = useCommonClassName();
 
     watch(
       () => [props.color],
@@ -64,6 +70,7 @@ export default defineComponent({
       baseClassName,
       value,
       handleChange,
+      sizeClassNames,
     };
   },
 
@@ -73,7 +80,12 @@ export default defineComponent({
       label: () => (
         <div class={[`${baseClassName}__trigger--default__color`, `${baseClassName}--bg-alpha`]}>
           <span
-            class={['color-inner']}
+            class={[
+              'color-inner',
+              {
+                [this.sizeClassNames[this.size]]: this.size !== 'medium',
+              },
+            ]}
             style={{
               background: this.value,
             }}
@@ -94,6 +106,7 @@ export default defineComponent({
               ...this.inputProps,
             },
           }}
+          size={this.size}
         />
       </div>
     );

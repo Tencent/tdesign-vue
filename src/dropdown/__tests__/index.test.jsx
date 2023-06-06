@@ -63,7 +63,6 @@ describe('Dropdown', () => {
       },
     });
 
-    console.log(wrapper);
     expect(wrapper.find('.t-divider').element.parentElement.textContent).toBe(options[1].content);
   });
 
