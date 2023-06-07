@@ -33,8 +33,8 @@
 export default {
   data() {
     return {
-      // 如果希望默认显示为空，请使用 ''，切勿使用 undefined
-      value1: '',
+      // 如果希望默认显示为空，请使用 undefined
+      value1: undefined,
       value2: 100,
       decimalValue: 3.41,
       error: undefined,
