@@ -5,9 +5,9 @@ spline: explain
 ---
 
 <div style="background: var(--td-warning-color-2); padding: 14px 24px; border-radius: 3px; color: #555a65; line-height: 22px">
-  <p>tdesign-vue 在 1.4.0 版本之后支持在 vue2.7 中使用</p>
-  <p>如果您需要在vue2.7中使用tdesign-vue 请安装 tdesign-vue@naruto 或在具体指定版本后加-naruto的标识 我们在1.4版本起的每个版本都同步构建了一份在vue2.7中使用的版本 
-  <p>如tdesign-vue@1.4.0 适用于 vue 2.6 tdesign-vue@1.4.0-naruto 适用于 vue 2.7</p>
+  <p>tdesign-vue 在 1.4.0 版本之后开始同步支持在 Vue 2.7 中使用</p>
+  <p>如果您需要在 Vue2.7 中使用 tdesign-vue 请安装 tdesign-vue@naruto 或在具体指定版本后加-naruto的标识
+  <p>如tdesign-vue@1.4.0 适用于 Vue 2.6 tdesign-vue@1.4.0-naruto 适用于 Vue 2.7</p>
 </div>
 
 ## 安装
@@ -17,13 +17,13 @@ spline: explain
 推荐使用 npm 方式进行开发
 
 ```shell
-npm i tdesign-vue // 在vue 2.6及以下使用
-npm i tdesign-vue@naruto  // 在vue 2.7使用
+npm i tdesign-vue // 在 Vue 2.6 及以下使用
+npm i tdesign-vue@naruto  // 在 Vue 2.7 使用
 ```
 
 ### 通过 浏览器引入 安装
 
-目前可以通过 [unpkg.com/tdesign-vue](https://unpkg.com/tdesign-vue) 获取到最新版本的资源，在页面上引入 js 和 css 文件即可开始使用。由于部分组件依赖了`@vue/composition-api`，除了像其他 vue2 版本的组件库一样需要引入`vue`，还需要额外手动引入`@vue/composition-api`。
+目前可以通过 [unpkg.com/tdesign-vue](https://unpkg.com/tdesign-vue) 获取到最新版本的资源，在页面上引入 js 和 css 文件即可开始使用。由于部分组件依赖了`@vue/composition-api`，除了像其他 Vue2 版本的组件库一样需要引入`vue`，还需要额外手动引入`@vue/composition-api`。
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/tdesign-vue/dist/tdesign.min.css" />
@@ -75,9 +75,9 @@ Vue.use(TButton);
 
 除此之外，也可以使用 `unplugin-vue-components` 和 `unplugin-auto-import` 来实现自动导入：
 
-如果是在 vue2.6 版本中使用 您仍需在项目引入组件库的少量全局样式变量及`@vue/composition-api`
+如果是在 Vue 2.6 版本中使用 您仍需在项目引入组件库的少量全局样式变量及`@vue/composition-api`
 
-如果是在 vue2.7 版本中使用 您不再需要在项目引入`@vue/composition-api`
+如果是在 Vue 2.7 版本中使用 您不再需要在项目引入`@vue/composition-api`
 
 ```js
 import VueCompositionAPI from '@vue/composition-api';
@@ -182,15 +182,14 @@ A: `0.43.0` 版本开始我们不再引入 `reset.less`，影响最大的是移�
 import 'tdesign-vue/dist/reset.css';
 ```
 
-Q: 如何在 vue 2.7 中使用?
+Q: 如何在 Vue 2.7 中使用?
 
-A: tdesign-vue 在 `1.4.0` 版本之后支持在 vue2.7 中使用。如果您需要在 vue2.7 中使用 tdesign-vue 请安装 tdesign-vue@naruto 或在具体指定版本后加-naruto 的标识 我们在 1.4 版本起的每个版本都同步构建了一份在 vue2.7 中使用的版本
+A: tdesign-vue 在 `1.4.0` 版本之后支持在 Vue2.7 中使用。如果您需要在 Vue2.7 中使用 tdesign-vue 请安装 tdesign-vue@naruto 或在具体指定版本后加-naruto 的标识 我们在 1.4.0 版本起的每个版本都同步构建了一份在 Vue2.7 中使用的版本
 
-如`tdesign-vue@1.4.0` 适用于 `vue 2.6` `tdesign-vue@1.4.0-naruto` 适用于 `vue 2.7`
+如`tdesign-vue@1.4.0` 适用于 `Vue 2.6` `tdesign-vue@1.4.0-naruto` 适用于 `Vue 2.7`
 
 Q: 为什么使用有些组件的时候会出现一些奇怪的错误？
 
 A: 使用组件的时候看到这类错误 `vue.runtime.esm.js:4605 [Vue warn]: inject() can only be used inside setup() or functional components.` 说明虽然 `package.json` 中设置的版本号为 `^2.6.14`，但实际上安装了 Vue2.7 的版本，可以在 `node_modules` 目录中检查实际安装的版本号。
 
-由于 Vue2.7 和 Vue2.6 不兼容，请务必确保自己安装的版本号是 Vue2.6.x。
-如果您确实需要使用 vue2.7 请安装 `tdesign-vue@naruto`
+由于 Vue2.7 和 Vue2.6 不兼容，请务必确保自己安装的版本号是 Vue2.6.x。如果您确实需要使用 Vue2.7 请安装 `tdesign-vue@naruto`
