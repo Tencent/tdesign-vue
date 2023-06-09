@@ -77,7 +77,8 @@ export default {
               (nums[0] === '0' && nums[1] < 32) ||
               v.indexOf('alpha') > -1 ||
               v.indexOf('patch') > -1 ||
-              v.indexOf('rc') > -1
+              v.indexOf('rc') > -1 ||
+              v.indexOf('naruto') > -1
             )
               return false;
             options.unshift({ label: v, value: v.replace(/\./g, '_') });
