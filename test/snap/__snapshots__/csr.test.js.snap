@@ -2927,246 +2927,6 @@ exports[`csr snapshot test > csr test ./src/back-top/_example/baseList.vue 1`] =
 </div>
 `;
 
-exports[`csr snapshot test > csr test ./src/back-top/_example/baseListSmall.vue 1`] = `
-<div
-  style="position: relative; height: 280px;"
->
-  <div
-    class="baseListSmall-container t-list t-size-m"
-    style="position: relative; height: 100%; overflow-y: scroll;"
-  >
-    <ul
-      class="t-list__inner"
-    >
-      <li
-        class="t-list-item"
-      >
-        <div
-          class="t-list-item-main"
-        >
-          <div
-            class="t-list-item__content"
-          >
-            列表内容1
-          </div>
-        </div>
-      </li>
-      <li
-        class="t-list-item"
-      >
-        <div
-          class="t-list-item-main"
-        >
-          <div
-            class="t-list-item__content"
-          >
-            列表内容2
-          </div>
-        </div>
-      </li>
-      <li
-        class="t-list-item"
-      >
-        <div
-          class="t-list-item-main"
-        >
-          <div
-            class="t-list-item__content"
-          >
-            列表内容3
-          </div>
-        </div>
-      </li>
-      <li
-        class="t-list-item"
-      >
-        <div
-          class="t-list-item-main"
-        >
-          <div
-            class="t-list-item__content"
-          >
-            列表内容4
-          </div>
-        </div>
-      </li>
-      <li
-        class="t-list-item"
-      >
-        <div
-          class="t-list-item-main"
-        >
-          <div
-            class="t-list-item__content"
-          >
-            列表内容5
-          </div>
-        </div>
-      </li>
-      <li
-        class="t-list-item"
-      >
-        <div
-          class="t-list-item-main"
-        >
-          <div
-            class="t-list-item__content"
-          >
-            列表内容6
-          </div>
-        </div>
-      </li>
-      <li
-        class="t-list-item"
-      >
-        <div
-          class="t-list-item-main"
-        >
-          <div
-            class="t-list-item__content"
-          >
-            列表内容7
-          </div>
-        </div>
-      </li>
-      <li
-        class="t-list-item"
-      >
-        <div
-          class="t-list-item-main"
-        >
-          <div
-            class="t-list-item__content"
-          >
-            列表内容8
-          </div>
-        </div>
-      </li>
-      <li
-        class="t-list-item"
-      >
-        <div
-          class="t-list-item-main"
-        >
-          <div
-            class="t-list-item__content"
-          >
-            列表内容9
-          </div>
-        </div>
-      </li>
-      <li
-        class="t-list-item"
-      >
-        <div
-          class="t-list-item-main"
-        >
-          <div
-            class="t-list-item__content"
-          >
-            列表内容10
-          </div>
-        </div>
-      </li>
-      <li
-        class="t-list-item"
-      >
-        <div
-          class="t-list-item-main"
-        >
-          <div
-            class="t-list-item__content"
-          >
-            列表内容11
-          </div>
-        </div>
-      </li>
-      <li
-        class="t-list-item"
-      >
-        <div
-          class="t-list-item-main"
-        >
-          <div
-            class="t-list-item__content"
-          >
-            列表内容12
-          </div>
-        </div>
-      </li>
-      <li
-        class="t-list-item"
-      >
-        <div
-          class="t-list-item-main"
-        >
-          <div
-            class="t-list-item__content"
-          >
-            列表内容13
-          </div>
-        </div>
-      </li>
-      <li
-        class="t-list-item"
-      >
-        <div
-          class="t-list-item-main"
-        >
-          <div
-            class="t-list-item__content"
-          >
-            列表内容14
-          </div>
-        </div>
-      </li>
-      <li
-        class="t-list-item"
-      >
-        <div
-          class="t-list-item-main"
-        >
-          <div
-            class="t-list-item__content"
-          >
-            列表内容15
-          </div>
-        </div>
-      </li>
-    </ul>
-    <div
-      class="t-list__load"
-    />
-  </div>
-  <button
-    class="t-back-top t-back-top--theme-light t-back-top--square t-size-m"
-    style="inset-inline-end: 24px; inset-block-end: 80px; position: absolute;"
-    type="button"
-  >
-    <div>
-      <svg
-        class="t-icon t-icon-backtop t-back-top__icon"
-        fill="none"
-        height="1em"
-        viewBox="0 0 16 16"
-        width="1em"
-      >
-        <path
-          d="M2 3h12V2H2v1zM3.38 10.23l4.1-4.03v8.64H8.5V6.2l4.18 4.08.71-.7-5.05-4.93a.5.5 0 00-.7 0l-4.98 4.9.72.69z"
-          fill="currentColor"
-          fill-opacity="0.9"
-        />
-      </svg>
-      <span
-        class="t-back-top__text"
-      >
-        TOP
-      </span>
-    </div>
-  </button>
-</div>
-`;
-
 exports[`csr snapshot test > csr test ./src/back-top/_example/custom.vue 1`] = `
 <div
   class="t-space t-space-vertical"
@@ -57149,7 +56909,7 @@ exports[`csr snapshot test > csr test ./src/guide/_example/dialog-body.vue 1`] =
 exports[`csr snapshot test > csr test ./src/guide/_example/highlightContent.vue 1`] = `
 <img
   alt=""
-  class="highligh"
+  class="highlight"
   data-v-26f0756d=""
   src="https://img1.baidu.com/it/u=196030518,88795458&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=687"
   srcset=""
@@ -63970,9 +63730,12 @@ exports[`csr snapshot test > csr test ./src/input-number/_example/format.vue 1`]
 
 exports[`csr snapshot test > csr test ./src/input-number/_example/large-number.vue 1`] = `
 <div
-  class="tdesign-demo-block-column-large"
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
 >
-  <div>
+  <div
+    class="t-space-item"
+  >
     <div
       class="t-input-number t-size-m t-input-number--row"
       style="width: 300px;"
@@ -64030,7 +63793,69 @@ exports[`csr snapshot test > csr test ./src/input-number/_example/large-number.v
       </button>
     </div>
   </div>
-  <div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-input-number t-size-m t-input-number--row"
+      style="width: 300px;"
+    >
+      <button
+        class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__decrease"
+        type="button"
+      >
+        <svg
+          class="t-icon t-icon-remove t-size-m"
+          fill="none"
+          height="1em"
+          viewBox="0 0 16 16"
+          width="1em"
+        >
+          <path
+            d="M3.5 7.35h9v1.3h-9v-1.3z"
+            fill="currentColor"
+            fill-opacity="0.9"
+          />
+        </svg>
+      </button>
+      <div
+        class="t-input__wrap"
+      >
+        <div
+          class="t-input t-align-center"
+        >
+          <input
+            autocomplete="off"
+            class="t-input__inner"
+            placeholder="请输入"
+            type="text"
+            unselectable="off"
+          />
+        </div>
+      </div>
+      <button
+        class="t-button t-button--variant-outline t-button--theme-default t-button--shape-square t-input-number__increase"
+        type="button"
+      >
+        <svg
+          class="t-icon t-icon-add t-size-m"
+          fill="none"
+          height="1em"
+          viewBox="0 0 16 16"
+          width="1em"
+        >
+          <path
+            d="M7.35 8.65v3.85h1.3V8.65h3.85v-1.3H8.65V3.5h-1.3v3.85H3.5v1.3h3.85z"
+            fill="currentColor"
+            fill-opacity="0.9"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
     <div
       class="t-input-number t-size-m t-input-number--row"
       style="width: 300px;"
@@ -65027,7 +64852,7 @@ exports[`csr snapshot test > csr test ./src/layout/_example/aside.vue 1`] = `
             />
           </div>
           <ul
-            class="t-menu t-menu--scroll narrow-scrollbar"
+            class="t-menu t-menu--scroll"
           >
             <li
               class="t-menu__item t-is-active"
@@ -65454,7 +65279,7 @@ exports[`csr snapshot test > csr test ./src/layout/_example/combine.vue 1`] = `
             class="t-default-menu__inner"
           >
             <ul
-              class="t-menu t-menu--scroll narrow-scrollbar"
+              class="t-menu t-menu--scroll"
             >
               <li
                 class="t-menu__item t-is-active"
@@ -69113,7 +68938,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/closable-side.vue 1`] 
       </span>
     </div>
     <ul
-      class="t-menu narrow-scrollbar"
+      class="t-menu t-menu--scroll"
     >
       <li
         class="t-menu__item"
@@ -69135,7 +68960,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/closable-side.vue 1`] 
         class="t-submenu"
       >
         <div
-          class="t-menu__item"
+          class="t-menu__item t-menu__item-spacer t-menu__item-spacer--right"
         >
           <svg
             class="t-icon t-icon-mail"
@@ -69155,7 +68980,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/closable-side.vue 1`] 
             class="t-fake-arrow"
             fill="none"
             height="16"
-            style="transform: rotate(-90deg);"
+            style="transform: rotate(-90deg); margin-left: auto;"
             viewBox="0 0 16 16"
             width="16"
             xmlns="http://www.w3.org/2000/svg"
@@ -69167,41 +68992,6 @@ exports[`csr snapshot test > csr test ./src/menu/_example/closable-side.vue 1`] 
               stroke-width="1.3"
             />
           </svg>
-        </div>
-        <div
-          class="t-menu__popup t-is-vertical"
-        >
-          <ul
-            class="t-menu__popup-wrapper"
-          >
-            <li
-              class="t-menu__item t-is-active t-menu__item--plain t-submenu__item"
-            >
-              <span
-                class="t-menu__content"
-              >
-                菜单内容一
-              </span>
-            </li>
-            <li
-              class="t-menu__item t-menu__item--plain t-submenu__item"
-            >
-              <span
-                class="t-menu__content"
-              >
-                菜单内容二
-              </span>
-            </li>
-            <li
-              class="t-menu__item t-menu__item--plain t-submenu__item"
-            >
-              <span
-                class="t-menu__content"
-              >
-                菜单内容三
-              </span>
-            </li>
-          </ul>
         </div>
       </li>
       <li
@@ -69424,7 +69214,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/custom-side.vue 1`] = 
       />
     </div>
     <ul
-      class="t-menu t-menu--scroll narrow-scrollbar"
+      class="t-menu t-menu--scroll"
     >
       <li
         class="t-menu__item t-menu__item--plain"
@@ -69497,7 +69287,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
           data-v-3a8c765e=""
         >
           <div
-            class="t-menu__item t-is-opened"
+            class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom t-is-opened"
           >
             <span
               data-v-3a8c765e=""
@@ -69545,7 +69335,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
           data-v-3a8c765e=""
         >
           <div
-            class="t-menu__item"
+            class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
           >
             <span
               data-v-3a8c765e=""
@@ -69706,7 +69496,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
           data-v-3a8c765e=""
         >
           <div
-            class="t-menu__item t-is-opened"
+            class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom t-is-opened"
           >
             <span
               data-v-3a8c765e=""
@@ -69754,7 +69544,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
           data-v-3a8c765e=""
         >
           <div
-            class="t-menu__item"
+            class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
           >
             <span
               data-v-3a8c765e=""
@@ -69915,7 +69705,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/group-side.vue 1`] = `
       />
     </div>
     <ul
-      class="t-menu t-menu--scroll narrow-scrollbar"
+      class="t-menu t-menu--scroll"
     >
       <div
         class="t-menu-group"
@@ -69954,7 +69744,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/group-side.vue 1`] = `
           class="t-submenu"
         >
           <div
-            class="t-menu__item"
+            class="t-menu__item t-menu__item-spacer t-menu__item-spacer--right"
           >
             <svg
               class="t-icon t-icon-server"
@@ -70507,7 +70297,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
             data-v-46745d88=""
           >
             <div
-              class="t-menu__item"
+              class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
             />
             <ul
               style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
@@ -70559,7 +70349,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
             data-v-46745d88=""
           >
             <div
-              class="t-menu__item"
+              class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
             />
             <ul
               style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
@@ -70611,7 +70401,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
             data-v-46745d88=""
           >
             <div
-              class="t-menu__item"
+              class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
             />
             <ul
               style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
@@ -70769,14 +70559,14 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
       class="t-default-menu__inner"
     >
       <ul
-        class="t-menu t-menu--scroll narrow-scrollbar"
+        class="t-menu t-menu--scroll"
       >
         <li
           class="t-submenu t-is-opened"
           data-v-3a81e078=""
         >
           <div
-            class="t-menu__item t-is-opened"
+            class="t-menu__item t-menu__item-spacer t-menu__item-spacer--right t-is-opened"
           >
             <svg
               class="t-icon t-icon-mail"
@@ -70817,7 +70607,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
               data-v-3a81e078=""
             >
               <div
-                class="t-menu__item"
+                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--right"
               >
                 <span
                   class="t-menu__content"
@@ -70882,7 +70672,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
               data-v-3a81e078=""
             >
               <div
-                class="t-menu__item"
+                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--right"
               >
                 <span
                   class="t-menu__content"
@@ -70997,7 +70787,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
           data-v-3a81e078=""
         >
           <div
-            class="t-menu__item t-is-disabled"
+            class="t-menu__item t-menu__item-spacer t-menu__item-spacer--right t-is-disabled"
           >
             <svg
               class="t-icon t-icon-play-circle"
@@ -71131,7 +70921,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
       class="t-default-menu__inner"
     >
       <ul
-        class="t-menu t-menu--scroll narrow-scrollbar"
+        class="t-menu t-menu--scroll"
       >
         <li
           class="t-menu__item"
@@ -71192,7 +70982,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
           data-v-3a81e078=""
         >
           <div
-            class="t-menu__item t-is-opened"
+            class="t-menu__item t-menu__item-spacer t-menu__item-spacer--right t-is-opened"
           >
             <svg
               class="t-icon t-icon-control-platform"
@@ -71283,7 +71073,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
           data-v-3a81e078=""
         >
           <div
-            class="t-menu__item t-is-disabled"
+            class="t-menu__item t-menu__item-spacer t-menu__item-spacer--right t-is-disabled"
           >
             <svg
               class="t-icon t-icon-mail"
@@ -71374,7 +71164,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
           data-v-3a81e078=""
         >
           <div
-            class="t-menu__item"
+            class="t-menu__item t-menu__item-spacer t-menu__item-spacer--right"
           >
             <svg
               class="t-icon t-icon-play-circle"
@@ -71521,12 +71311,16 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
           data-v-4dc7c046=""
         >
           <div
-            class="t-menu__item"
+            class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
           >
             <span
-              data-v-4dc7c046=""
+              class="t-menu__content"
             >
-              菜单1
+              <span
+                data-v-4dc7c046=""
+              >
+                菜单1
+              </span>
             </span>
             <svg
               class="t-fake-arrow"
@@ -71545,181 +71339,19 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
               />
             </svg>
           </div>
-          <div
-            class="t-menu__popup"
-          >
-            <ul
-              class="t-menu__popup-wrapper"
-            >
-              <li
-                class="t-submenu"
-                data-v-4dc7c046=""
-              >
-                <div
-                  class="t-menu__item"
-                >
-                  子菜单1-1
-                  <svg
-                    class="t-fake-arrow"
-                    fill="none"
-                    height="16"
-                    style="transform: rotate(0deg);"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </div>
-                <div
-                  class="t-menu__popup"
-                >
-                  <ul
-                    class="t-menu__popup-wrapper"
-                  >
-                    <li
-                      class="t-menu__item t-menu__item--plain"
-                      data-v-4dc7c046=""
-                    >
-                      <span
-                        class="t-menu__content"
-                      >
-                        子菜单1-1-1
-                      </span>
-                    </li>
-                    <li
-                      class="t-menu__item t-menu__item--plain"
-                      data-v-4dc7c046=""
-                    >
-                      <span
-                        class="t-menu__content"
-                      >
-                        子菜单1-1-2
-                      </span>
-                    </li>
-                    <li
-                      class="t-menu__item t-menu__item--plain"
-                      data-v-4dc7c046=""
-                    >
-                      <span
-                        class="t-menu__content"
-                      >
-                        子菜单1-1-3
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li
-                class="t-menu__item t-menu__item--plain"
-                data-v-4dc7c046=""
-              >
-                <span
-                  class="t-menu__content"
-                >
-                  子菜单1-2
-                </span>
-              </li>
-              <li
-                class="t-menu__item t-menu__item--plain"
-                data-v-4dc7c046=""
-              >
-                <span
-                  class="t-menu__content"
-                >
-                  子菜单1-3
-                </span>
-              </li>
-              <li
-                class="t-menu__item t-menu__item--plain"
-                data-v-4dc7c046=""
-              >
-                <span
-                  class="t-menu__content"
-                >
-                  子菜单1-4
-                </span>
-              </li>
-              <li
-                class="t-submenu"
-                data-v-4dc7c046=""
-              >
-                <div
-                  class="t-menu__item"
-                >
-                  子菜单1-5
-                  <svg
-                    class="t-fake-arrow"
-                    fill="none"
-                    height="16"
-                    style="transform: rotate(0deg);"
-                    viewBox="0 0 16 16"
-                    width="16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                      stroke="black"
-                      stroke-opacity="0.9"
-                      stroke-width="1.3"
-                    />
-                  </svg>
-                </div>
-                <div
-                  class="t-menu__popup"
-                >
-                  <ul
-                    class="t-menu__popup-wrapper"
-                  >
-                    <li
-                      class="t-menu__item t-menu__item--plain"
-                      data-v-4dc7c046=""
-                    >
-                      <span
-                        class="t-menu__content"
-                      >
-                        子菜单1-5-1
-                      </span>
-                    </li>
-                    <li
-                      class="t-menu__item t-menu__item--plain"
-                      data-v-4dc7c046=""
-                    >
-                      <span
-                        class="t-menu__content"
-                      >
-                        子菜单1-5-2
-                      </span>
-                    </li>
-                    <li
-                      class="t-menu__item t-menu__item--plain"
-                      data-v-4dc7c046=""
-                    >
-                      <span
-                        class="t-menu__content"
-                      >
-                        子菜单1-5-3
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-          </div>
         </li>
         <li
           class="t-submenu"
           data-v-4dc7c046=""
         >
           <div
-            class="t-menu__item"
+            class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
           >
-            菜单2
+            <span
+              class="t-menu__content"
+            >
+              菜单2
+            </span>
             <svg
               class="t-fake-arrow"
               fill="none"
@@ -71736,44 +71368,6 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
                 stroke-width="1.3"
               />
             </svg>
-          </div>
-          <div
-            class="t-menu__popup"
-          >
-            <ul
-              class="t-menu__popup-wrapper"
-            >
-              <li
-                class="t-menu__item t-is-active t-menu__item--plain"
-                data-v-4dc7c046=""
-              >
-                <span
-                  class="t-menu__content"
-                >
-                  子菜单2-1
-                </span>
-              </li>
-              <li
-                class="t-menu__item t-menu__item--plain"
-                data-v-4dc7c046=""
-              >
-                <span
-                  class="t-menu__content"
-                >
-                  子菜单2-2
-                </span>
-              </li>
-              <li
-                class="t-menu__item t-menu__item--plain"
-                data-v-4dc7c046=""
-              >
-                <span
-                  class="t-menu__content"
-                >
-                  子菜单2-3
-                </span>
-              </li>
-            </ul>
           </div>
         </li>
       </ul>
@@ -71894,12 +71488,16 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
           data-v-4dc7c046=""
         >
           <div
-            class="t-menu__item"
+            class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
           >
             <span
-              data-v-4dc7c046=""
+              class="t-menu__content"
             >
-              菜单1
+              <span
+                data-v-4dc7c046=""
+              >
+                菜单1
+              </span>
             </span>
             <svg
               class="t-fake-arrow"
@@ -71917,44 +71515,6 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
                 stroke-width="1.3"
               />
             </svg>
-          </div>
-          <div
-            class="t-menu__popup"
-          >
-            <ul
-              class="t-menu__popup-wrapper"
-            >
-              <li
-                class="t-menu__item t-menu__item--plain"
-                data-v-4dc7c046=""
-              >
-                <span
-                  class="t-menu__content"
-                >
-                  子菜单1-1
-                </span>
-              </li>
-              <li
-                class="t-menu__item t-menu__item--plain"
-                data-v-4dc7c046=""
-              >
-                <span
-                  class="t-menu__content"
-                >
-                  子菜单1-2
-                </span>
-              </li>
-              <li
-                class="t-menu__item t-menu__item--plain"
-                data-v-4dc7c046=""
-              >
-                <span
-                  class="t-menu__content"
-                >
-                  子菜单1-3
-                </span>
-              </li>
-            </ul>
           </div>
         </li>
         <li
@@ -71962,12 +71522,16 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
           data-v-4dc7c046=""
         >
           <div
-            class="t-menu__item"
+            class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
           >
             <span
-              data-v-4dc7c046=""
+              class="t-menu__content"
             >
-              菜单2
+              <span
+                data-v-4dc7c046=""
+              >
+                菜单2
+              </span>
             </span>
             <svg
               class="t-fake-arrow"
@@ -71985,44 +71549,6 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
                 stroke-width="1.3"
               />
             </svg>
-          </div>
-          <div
-            class="t-menu__popup"
-          >
-            <ul
-              class="t-menu__popup-wrapper"
-            >
-              <li
-                class="t-menu__item t-is-active t-menu__item--plain"
-                data-v-4dc7c046=""
-              >
-                <span
-                  class="t-menu__content"
-                >
-                  子菜单2-1
-                </span>
-              </li>
-              <li
-                class="t-menu__item t-menu__item--plain"
-                data-v-4dc7c046=""
-              >
-                <span
-                  class="t-menu__content"
-                >
-                  子菜单2-2
-                </span>
-              </li>
-              <li
-                class="t-menu__item t-menu__item--plain"
-                data-v-4dc7c046=""
-              >
-                <span
-                  class="t-menu__content"
-                >
-                  子菜单2-3
-                </span>
-              </li>
-            </ul>
           </div>
         </li>
       </ul>
@@ -72142,7 +71668,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/popup-side.vue 1`] = `
       />
     </div>
     <ul
-      class="t-menu t-menu--scroll narrow-scrollbar"
+      class="t-menu t-menu--scroll"
     >
       <li
         class="t-menu__item"
@@ -72164,7 +71690,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/popup-side.vue 1`] = `
         class="t-submenu t-is-opened"
       >
         <div
-          class="t-menu__item t-is-opened"
+          class="t-menu__item t-menu__item-spacer t-menu__item-spacer--right t-is-opened"
         >
           <svg
             class="t-icon t-icon-user-circle"
@@ -72234,7 +71760,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/popup-side.vue 1`] = `
         class="t-submenu"
       >
         <div
-          class="t-menu__item"
+          class="t-menu__item t-menu__item-spacer t-menu__item-spacer--right"
         >
           <svg
             class="t-icon t-icon-root-list"
@@ -72363,7 +71889,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/side-menu-width.vue 1`
         />
       </div>
       <ul
-        class="t-menu t-menu--scroll narrow-scrollbar"
+        class="t-menu t-menu--scroll"
       >
         <li
           class="t-menu__item t-menu__item--plain"
@@ -72422,7 +71948,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/side-menu-width.vue 1`
         />
       </div>
       <ul
-        class="t-menu t-menu--scroll narrow-scrollbar"
+        class="t-menu t-menu--scroll"
       >
         <li
           class="t-menu__item"
@@ -72835,16 +72361,22 @@ exports[`csr snapshot test > csr test ./src/menu/_example/single-side.vue 1`] = 
         />
       </div>
       <ul
-        class="t-menu t-menu--scroll narrow-scrollbar"
+        class="t-menu t-menu--scroll"
       >
         <li
           class="t-menu__item t-is-active t-menu__item--plain"
         >
-          <span
-            class="t-menu__content"
+          <a
+            class="t-menu__item-link"
+            href="/vue"
+            target="_blank"
           >
-            仪表盘
-          </span>
+            <span
+              class="t-menu__content"
+            >
+              仪表盘
+            </span>
+          </a>
         </li>
         <li
           class="t-menu__item t-menu__item--plain"
@@ -72939,7 +72471,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/single-side.vue 1`] = 
         />
       </div>
       <ul
-        class="t-menu t-menu--scroll narrow-scrollbar"
+        class="t-menu t-menu--scroll"
       >
         <li
           class="t-menu__item t-is-active"
@@ -73106,7 +72638,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/single-side.vue 1`] = 
         />
       </div>
       <ul
-        class="t-menu t-menu--scroll narrow-scrollbar"
+        class="t-menu t-menu--scroll"
       >
         <li
           class="t-menu__item t-is-active"
@@ -78994,6 +78526,20 @@ exports[`csr snapshot test > csr test ./src/popup/_example/plugin.vue 1`] = `
         class="t-button__text"
       >
         已渲染的节点2
+      </span>
+    </button>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <button
+      class="trigger-element3 t-button t-button--variant-outline t-button--theme-default"
+      type="button"
+    >
+      <span
+        class="t-button__text"
+      >
+        已渲染的节点3
       </span>
     </button>
   </div>
@@ -116857,7 +116403,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/merge-cells.vue 1`] =
 
 exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] = `
 <div
-  class="tdesign-demo-block-column-large tdesign-demo-table-multi-heade tdesign-demo__tabler"
+  class="tdesign-demo-block-column-large tdesign-demo-table-multi-head tdesign-demo__tabler"
   style="width: 100%;"
 >
   <div
