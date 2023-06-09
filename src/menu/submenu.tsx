@@ -199,7 +199,7 @@ export default defineComponent({
       const instance = getCurrentInstance();
       let node = instance.parent;
 
-      while (node && isHead) {
+      while (node && !/^t(head)?menu/i.test(node.vnode?.tag)) {
         if (/submenu/i.test(node.vnode?.tag)) {
           isNested.value = true;
           break;
@@ -235,7 +235,6 @@ export default defineComponent({
       if (!this.isNested && this.isHead) {
         placement = 'bottom-left';
       }
-      const overlayInnerStyle = this.isNested && this.isHead ? { marginLeft: '0px' } : { marginTop: '12px' };
 
       const popupWrapper = (
         <div
@@ -253,10 +252,13 @@ export default defineComponent({
       const realPopup = (
         <Popup
           overlayInnerClassName={[...this.popupClass]}
-          overlayClassName={[`${this.classPrefix}-menu--${this.theme}`, this.isHead && `${this.classPrefix}-is-head`]}
+          overlayClassName={[
+            `${this.classPrefix}-menu--${this.theme}`,
+            { [`${this.classPrefix}-menu-is-nested`]: this.isNested },
+            { [`${this.classPrefix}-is-head-menu`]: this.isHead },
+          ]}
           visible={this.popupVisible}
           placement={placement as PopupPlacement}
-          overlayInnerStyle={overlayInnerStyle}
           content={() => popupWrapper}
         >
           <div ref="submenuRef" class={this.submenuClass}>
