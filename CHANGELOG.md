@@ -5,6 +5,25 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.4.0 `2023-06-06` 
+### 🚀 Features
+- `Menu`: @xiaosansiji ([#2461](https://github.com/Tencent/tdesign-vue/pull/2461))
+  - 设置 `href` 时使用 `<a>` 标签渲染菜单项 [#1671](https://github.com/Tencent/tdesign-vue-next/issues/1671)
+  - 使用 Popup 重构 Menu 弹出菜单实现
+- `Select`: 优化选项结构 移除多余的span节点 @uyarn ([#2480](https://github.com/Tencent/tdesign-vue/pull/2480))
+- `InputNumber`: 支持默认格式化小数点 @chaishi ([#2478](https://github.com/Tencent/tdesign-vue/pull/2478))
+### 🐞 Bug Fixes
+- `Loading`: 修复多次调用关闭全屏函数时控制台报错问题 @huangpiqiao ([#2465](https://github.com/Tencent/tdesign-vue/pull/2465))
+- `Menu`: @xiaosansiji ([#2461](https://github.com/Tencent/tdesign-vue/pull/2461))
+  - 修复收起菜单时超出内容无法滚动的问题 [#2435](https://github.com/Tencent/tdesign-vue/issues/2435)
+  - 修复侧边导航菜单，次级弹出菜单也会展示 Tooltip 的问题
+- `InputNumber`: 修复部分小数点数字无法输入问题 @chaishi ([#2460](https://github.com/Tencent/tdesign-vue/pull/2460))
+- `Popup`: 修复 `popupPlugin `用法的 `triggerElement` 参数的类型报错的问题 @zhangpaopao0609 ([#2477](https://github.com/Tencent/tdesign-vue/pull/2477))
+- `Input`: 修复快速输入或同时输入时输入值异常的问题 @uyarn ([#2479](https://github.com/Tencent/tdesign-vue/pull/2479))
+- `InputAdornment`: 修复 1.3.4 中修复空字符串导致插槽没有正常渲染的问题 @uyarn ([#2480](https://github.com/Tencent/tdesign-vue/pull/2480))
+- `ImageViewer`: 修复 closeBtn `prop = false` 时渲染异常的问题 @sinbadmaster ([#2472](https://github.com/Tencent/tdesign-vue/pull/2472))
+- `类型问题`: 修复`Radio Checkbox Input Tabs Popup`等组件缺少 type 的问题 @chaishi ([#2475](https://github.com/Tencent/tdesign-vue/pull/2475))
+
 ## 🌈 1.3.4 `2023-05-30` 
 ### 🚀 Features
 - `TimePicker`: 没有选中值时不允许点击确认按钮 @uyarn ([#2448](https://github.com/Tencent/tdesign-vue/pull/2448))
