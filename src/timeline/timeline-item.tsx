@@ -1,5 +1,5 @@
 import {
-  computed, defineComponent, toRefs, getCurrentInstance, inject, SetupContext, ref,
+  computed, defineComponent, toRefs, getCurrentInstance, inject, SetupContext,
 } from '@vue/composition-api';
 import TLoading from '../loading';
 import { TdTimelineItemProps } from './type';
@@ -28,13 +28,17 @@ export default defineComponent({
       theme: undefined,
       labelAlign: 'left',
       mode: 'alternate',
-      uidArr: ref([]),
     });
     const {
-      layout, reverse, theme, labelAlign, mode, uidArr,
+      layout, reverse, theme, labelAlign, mode,
     } = timelineProvider;
     const { dotColor, labelAlign: itemLabelAlign, loading } = toRefs(props);
     const timelineItemAlign = computed(() => itemLabelAlign.value ?? getRenderAlign(labelAlign?.value, layout?.value));
+
+    const uidArr = computed(() => {
+      const defaultSlots: any = instance.parent.slots.default ?? [null];
+      return defaultSlots.map((item: any) => item?.componentInstance?._uid);
+    });
 
     const currentIndex = computed(() => {
       let index = 0;

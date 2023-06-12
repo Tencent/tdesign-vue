@@ -1,6 +1,6 @@
 import { VNode } from 'vue';
 import {
-  computed, defineComponent, ref, toRefs, nextTick, getCurrentInstance, provide,
+  computed, defineComponent, toRefs, getCurrentInstance, provide,
 } from '@vue/composition-api';
 import getRenderAlign from './utils';
 import TimelineItem from './timeline-item';
@@ -23,11 +23,6 @@ export default defineComponent({
 
     const classPrefix = usePrefixClass();
 
-    const uidArr: any = ref([]);
-    nextTick(() => {
-      const defaultSlots: any = instance.slots.default ? instance.slots.default : [null];
-      uidArr.value = defaultSlots.map((item: any) => item?.componentInstance?._uid);
-    });
     const hasLabelItem = computed(() => {
       const defaultSlots: any = instance.slots.default ? instance.slots.default : [null];
       return defaultSlots.some((item: any) => !!item?.componentOptions?.propsData?.label);
@@ -51,7 +46,6 @@ export default defineComponent({
     });
 
     provide('TTimeline', {
-      uidArr,
       theme,
       labelAlign,
       reverse,
