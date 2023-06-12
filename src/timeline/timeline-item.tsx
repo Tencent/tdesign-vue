@@ -1,5 +1,5 @@
 import {
-  computed, defineComponent, toRefs, getCurrentInstance, inject, SetupContext, ref,
+  computed, defineComponent, toRefs, getCurrentInstance, inject, SetupContext,
 } from '@vue/composition-api';
 import TLoading from '../loading';
 import { TdTimelineItemProps } from './type';

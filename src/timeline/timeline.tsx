@@ -1,6 +1,6 @@
 import { VNode } from 'vue';
 import {
-  computed, defineComponent, ref, toRefs, nextTick, getCurrentInstance, provide,
+  computed, defineComponent, toRefs, getCurrentInstance, provide,
 } from '@vue/composition-api';
 import getRenderAlign from './utils';
 import TimelineItem from './timeline-item';
