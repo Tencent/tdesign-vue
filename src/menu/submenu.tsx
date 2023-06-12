@@ -22,6 +22,7 @@ import { AnimationType } from '../config-provider/type';
 import { usePrefixClass } from '../hooks/useConfig';
 import { Popup, PopupPlacement } from '../popup';
 import { TNode } from '../common';
+import { TdSubmenuProps } from './type';
 
 const keepAnimationMixins = getKeepAnimationMixins();
 
