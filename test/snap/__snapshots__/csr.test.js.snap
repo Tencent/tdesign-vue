@@ -136362,7 +136362,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/base.vue 1`] = `
         </div>
       </li>
       <li
-        class="t-timeline-item t-timeline-item-left "
+        class="t-timeline-item t-timeline-item-left t-timeline-item--last"
       >
         <div
           class="t-timeline-item__wrapper"
@@ -136504,7 +136504,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customContent.vue 
       </div>
     </li>
     <li
-      class="t-timeline-item t-timeline-item-left "
+      class="t-timeline-item t-timeline-item-left t-timeline-item--last"
       data-v-63c3f6ae=""
     >
       <div
@@ -136736,7 +136736,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
         </div>
       </li>
       <li
-        class="t-timeline-item t-timeline-item-left "
+        class="t-timeline-item t-timeline-item-left t-timeline-item--last"
       >
         <div
           class="t-timeline-item__wrapper"
@@ -137078,7 +137078,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
       </div>
     </li>
     <li
-      class="t-timeline-item t-timeline-item-left "
+      class="t-timeline-item t-timeline-item-left t-timeline-item--last"
     >
       <div
         class="t-timeline-item__wrapper"
@@ -137237,7 +137237,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/loading.vue 1`] = 
       </div>
     </li>
     <li
-      class="t-timeline-item t-timeline-item-left "
+      class="t-timeline-item t-timeline-item-left t-timeline-item--last"
     >
       <div
         class="t-timeline-item__wrapper"
@@ -137377,7 +137377,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/reverse.vue 1`] = 
       </div>
     </li>
     <li
-      class="t-timeline-item t-timeline-item-left "
+      class="t-timeline-item t-timeline-item-left t-timeline-item--last"
     >
       <div
         class="t-timeline-item__wrapper"
@@ -137536,7 +137536,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/theme.vue 1`] = `
           </div>
         </li>
         <li
-          class="t-timeline-item t-timeline-item-left "
+          class="t-timeline-item t-timeline-item-left t-timeline-item--last"
         >
           <div
             class="t-timeline-item__wrapper"
