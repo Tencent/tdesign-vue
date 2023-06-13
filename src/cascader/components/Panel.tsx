@@ -28,7 +28,6 @@ export default defineComponent({
     const {
       valueType, cascaderValue, treeStore, multiple,
     } = props.cascaderContext;
-    const { config } = treeStore;
 
     const panels = computed(() => getPanels(props.cascaderContext.treeNodes));
 
@@ -38,12 +37,11 @@ export default defineComponent({
     };
 
     // 异步加载回显时默认触发第一个值
-    if (config.load && valueType === 'full' && (cascaderValue as Array<CascaderValue>).length > 0) {
+    if (treeStore?.config?.load && valueType === 'full' && (cascaderValue as Array<CascaderValue>).length > 0) {
       const firstValue = multiple ? cascaderValue[0][0] : cascaderValue[0];
       const firstExpandNode = treeStore.nodes.find((node: TreeNode) => node.value === firstValue);
       handleExpand(firstExpandNode, 'click');
     }
-
     return {
       global,
       panels,

@@ -57041,7 +57041,7 @@ exports[`csr snapshot test > csr test ./src/guide/_example/dialog-body.vue 1`] =
 exports[`csr snapshot test > csr test ./src/guide/_example/highlightContent.vue 1`] = `
 <img
   alt=""
-  class="highligh"
+  class="highlight"
   data-v-26f0756d=""
   src="https://img1.baidu.com/it/u=196030518,88795458&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=687"
   srcset=""
@@ -78658,6 +78658,20 @@ exports[`csr snapshot test > csr test ./src/popup/_example/plugin.vue 1`] = `
         class="t-button__text"
       >
         已渲染的节点2
+      </span>
+    </button>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <button
+      class="trigger-element3 t-button t-button--variant-outline t-button--theme-default"
+      type="button"
+    >
+      <span
+        class="t-button__text"
+      >
+        已渲染的节点3
       </span>
     </button>
   </div>
@@ -116513,7 +116527,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/merge-cells.vue 1`] =
 
 exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] = `
 <div
-  class="tdesign-demo-block-column-large tdesign-demo-table-multi-heade tdesign-demo__tabler"
+  class="tdesign-demo-block-column-large tdesign-demo-table-multi-head tdesign-demo__tabler"
   style="width: 100%;"
 >
   <div
@@ -136232,7 +136246,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/base.vue 1`] = `
         </div>
       </li>
       <li
-        class="t-timeline-item t-timeline-item-left "
+        class="t-timeline-item t-timeline-item-left t-timeline-item--last"
       >
         <div
           class="t-timeline-item__wrapper"
@@ -136374,7 +136388,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customContent.vue 
       </div>
     </li>
     <li
-      class="t-timeline-item t-timeline-item-left "
+      class="t-timeline-item t-timeline-item-left t-timeline-item--last"
       data-v-63c3f6ae=""
     >
       <div
@@ -136606,7 +136620,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
         </div>
       </li>
       <li
-        class="t-timeline-item t-timeline-item-left "
+        class="t-timeline-item t-timeline-item-left t-timeline-item--last"
       >
         <div
           class="t-timeline-item__wrapper"
@@ -136948,7 +136962,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
       </div>
     </li>
     <li
-      class="t-timeline-item t-timeline-item-left "
+      class="t-timeline-item t-timeline-item-left t-timeline-item--last"
     >
       <div
         class="t-timeline-item__wrapper"
@@ -137107,7 +137121,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/loading.vue 1`] = 
       </div>
     </li>
     <li
-      class="t-timeline-item t-timeline-item-left "
+      class="t-timeline-item t-timeline-item-left t-timeline-item--last"
     >
       <div
         class="t-timeline-item__wrapper"
@@ -137247,7 +137261,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/reverse.vue 1`] = 
       </div>
     </li>
     <li
-      class="t-timeline-item t-timeline-item-left "
+      class="t-timeline-item t-timeline-item-left t-timeline-item--last"
     >
       <div
         class="t-timeline-item__wrapper"
@@ -137406,7 +137420,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/theme.vue 1`] = `
           </div>
         </li>
         <li
-          class="t-timeline-item t-timeline-item-left "
+          class="t-timeline-item t-timeline-item-left t-timeline-item--last"
         >
           <div
             class="t-timeline-item__wrapper"
