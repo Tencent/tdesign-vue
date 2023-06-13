@@ -2,7 +2,7 @@ import Vue, { VNode } from 'vue';
 import { emitEvent } from '../utils/event';
 import { TNode, ClassName, Styles } from '../common';
 import props from './props';
-import InputNumber from '../input-number/index';
+import TInputNumber from '../input-number/index';
 import TSliderMark from './slider-mark';
 import { SliderValue, TdSliderProps } from './type';
 import TSliderButton from './slider-button';
@@ -31,7 +31,7 @@ export default mixins(classPrefixMixins).extend({
   },
   components: {
     TSliderMark,
-    TInputNumber: InputNumber,
+    TInputNumber,
   },
   provide(): { slider: any } {
     return {
@@ -360,13 +360,13 @@ export default mixins(classPrefixMixins).extend({
             </div>
             <div class={`${this.componentName}__mark`}>
               {this.markList.map((item, key) => (
-                <t-slider-mark
+                <TSliderMark
                   mark={item.mark}
                   point={item.point}
                   key={key}
                   style={this.getStopStyle(item.position)}
                   on-change-value={this.changeValue}
-                ></t-slider-mark>
+                ></TSliderMark>
               ))}
             </div>
           </div>
@@ -387,7 +387,7 @@ export default mixins(classPrefixMixins).extend({
           ]}
         >
           {
-            <t-input-number
+            <TInputNumber
               class={sliderNumberClass}
               value={range ? this.firstValue : this.prevValue}
               ref="input"
@@ -399,11 +399,11 @@ export default mixins(classPrefixMixins).extend({
               min={min}
               max={max}
               props={this.calcInputNumberProps}
-            ></t-input-number>
+            ></TInputNumber>
           }
           {range && <div class={`${this.componentName}__center-line`} />}
           {range && (
-            <t-input-number
+            <TInputNumber
               class={this.sliderNumberClass}
               v-model={this.secondValue}
               ref="input"
@@ -412,7 +412,7 @@ export default mixins(classPrefixMixins).extend({
               min={min}
               max={max}
               props={this.calcInputNumberProps}
-            ></t-input-number>
+            ></TInputNumber>
           )}
         </div>
       );

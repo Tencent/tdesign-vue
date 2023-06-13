@@ -139,9 +139,9 @@ export default defineComponent({
     if (this.loading) {
       return renderTNodeJSX(this, 'loading', {
         defaultNode: (
-          <t-loading>
+          <TLoading>
             <div class={this.baseCls}></div>
-          </t-loading>
+          </TLoading>
         ),
       });
     }

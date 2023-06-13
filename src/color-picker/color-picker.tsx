@@ -54,7 +54,7 @@ export default defineComponent({
         return null;
       }
       return (
-        <color-panel
+        <ColorPanel
           {...{
             props: {
               ...this.$props,
@@ -90,7 +90,7 @@ export default defineComponent({
       ...((popupProps as any) || {}),
     };
     return (
-      <t-popup
+      <TPopup
         {...{
           props: {
             ...popProps,
@@ -102,7 +102,7 @@ export default defineComponent({
           {renderTNodeJSXDefault(
             this,
             'default',
-            <default-trigger
+            <DefaultTrigger
               color={this.innerValue}
               disabled={disabled}
               clearable={this.clearable}
@@ -112,7 +112,7 @@ export default defineComponent({
             />,
           )}
         </div>
-      </t-popup>
+      </TPopup>
     );
   },
 });

@@ -21,7 +21,6 @@ export default defineComponent({
   setup(props: TdTimelineItemProps, context: SetupContext) {
     const instance = getCurrentInstance().proxy;
     const classPrefix = usePrefixClass();
-
     const timelineProvider: any = inject('TTimeline', {
       layout: 'vertical',
       reverse: false,
@@ -44,7 +43,7 @@ export default defineComponent({
       let index = 0;
       uidArr.value.forEach((item: number | undefined, itemIndex: number) => {
         // @ts-ignore
-        if (item === instance.uid) {
+        if (item === instance._uid) {
           index = itemIndex;
         }
       });

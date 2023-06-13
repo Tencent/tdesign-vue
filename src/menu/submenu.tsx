@@ -313,7 +313,7 @@ export default defineComponent({
           {icon}
           <span class={[`${this.classPrefix}-menu__content`]}>{renderTNodeJSX(this, 'title')}</span>
           {hasContent && (
-            <fake-arrow
+            <FakeArrow
               overlayClassName={this.arrowClass}
               overlayStyle={{ transform: `rotate(${needRotate ? -90 : 0}deg)` }}
             />

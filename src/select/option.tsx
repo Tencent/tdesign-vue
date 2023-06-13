@@ -15,7 +15,7 @@ import Ripple from '../utils/ripple';
 import { getKeepAnimationMixins } from '../config-provider/config-receiver';
 import props from './option-props';
 import { SelectValue, TdOptionProps } from './type';
-import Checkbox from '../checkbox/index';
+import { Checkbox as TCheckbox } from '../checkbox/index';
 import { SelectInstance } from './instance';
 import useLazyLoad from '../hooks/useLazyLoad';
 import { TScroll } from '../common';
@@ -56,7 +56,7 @@ export default defineComponent({
     index: Number,
   },
   components: {
-    TCheckbox: Checkbox,
+    TCheckbox,
   },
   mixins: [keepAnimationMixins],
   directives: { Ripple },
@@ -222,13 +222,13 @@ export default defineComponent({
         title={titleText as string}
       >
         {this.multiple ? (
-          <t-checkbox
+          <TCheckbox
             checked={this.isSelected}
             disabled={this.isDisabled}
             indeterminate={this.checkAll && this.isIndeterminate}
           >
             {optionChild}
-          </t-checkbox>
+          </TCheckbox>
         ) : (
           optionChild
         )}

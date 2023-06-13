@@ -40,7 +40,7 @@ export default defineComponent({
   render() {
     const { baseClassName } = this;
     return (
-      <color-slider
+      <ColorSlider
         class={[`${baseClassName}__alpha`, `${baseClassName}--bg-alpha`]}
         color={this.color}
         value={this.color.alpha * 100}

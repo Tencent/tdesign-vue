@@ -80,7 +80,7 @@ export const MessageList = mixins(classPrefixMixins).extend({
     return (
       <div class={this.componentName} style={this.styles}>
         {this.list.map((item, index) => (
-          <t-message
+          <TMessage
             key={item.key}
             style={this.msgStyles(item)}
             class={item.className}

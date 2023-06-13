@@ -95,7 +95,7 @@ export default defineComponent({
     };
     return (
       <div class={`${baseClassName}__trigger--default`}>
-        <t-input
+        <TInput
           scopedSlots={inputSlots}
           v-model={this.value}
           clearable={this.clearable}

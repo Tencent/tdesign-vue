@@ -301,12 +301,12 @@ export default defineComponent({
       return (
         <div class={`${baseClassName}__swatches-wrap`}>
           {showUsedColors ? (
-            <swatches-panel
+            <SwatchesPanel
               color={this.color}
               disabled={this.disabled}
               title={t(global.recentColorTitle)}
               editable
-              colors={this.recentlyUsedColors}
+              colors={this.recentlyUsedColors as string[]}
               handleAddColor={this.addRecentlyUsedColor}
               handleSetColor={(color: string) => {
                 this.handleSetColor('used', color);
@@ -315,7 +315,7 @@ export default defineComponent({
             />
           ) : null}
           {showSystemColors ? (
-            <swatches-panel
+            <SwatchesPanel
               color={this.color}
               disabled={this.disabled}
               title={t(global.swatchColorTitle)}
@@ -329,7 +329,7 @@ export default defineComponent({
 
     return (
       <div class={[`${baseClassName}__panel`, this.disabled ? statusClassNames.disabled : false]}>
-        <panel-header
+        <PanelHeader
           {...{
             props: {
               ...this.$props,
@@ -340,19 +340,19 @@ export default defineComponent({
         />
         <div class={[`${baseClassName}__body`]}>
           {isGradient ? (
-            <linear-gradient
+            <LinearGradient
               color={this.color}
               disabled={this.disabled}
               handleChange={this.handleGradientChange}
               enableMultipleGradient={this.enableMultipleGradient}
             />
           ) : null}
-          <saturation-panel color={this.color} disabled={this.disabled} handleChange={this.handleSatAndValueChange} />
+          <SaturationPanel color={this.color} disabled={this.disabled} handleChange={this.handleSatAndValueChange} />
           <div class={[`${baseClassName}__sliders-wrapper`]}>
             <div class={[`${baseClassName}__sliders`]}>
-              <hue-slider color={this.color} disabled={this.disabled} handleChange={this.handleHueChange} />
+              <HueSlider color={this.color} disabled={this.disabled} handleChange={this.handleHueChange} />
               {this.enableAlpha ? (
-                <alpha-slider color={this.color} disabled={this.disabled} handleChange={this.handleAlphaChange} />
+                <AlphaSlider color={this.color} disabled={this.disabled} handleChange={this.handleAlphaChange} />
               ) : null}
             </div>
             {this.showPrimaryColorPreview ? (
@@ -367,7 +367,7 @@ export default defineComponent({
             ) : null}
           </div>
 
-          <format-panel
+          <FormatPanel
             {...{
               props: {
                 ...this.$props,

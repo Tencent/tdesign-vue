@@ -136,11 +136,11 @@ export default defineComponent({
       return (
         <ul class={[`${this.classPrefix}-head-menu__submenu`, `${this.classPrefix}-submenu`]}>
           {
-            <t-tabs value={this.activeValue} onChange={this.handleTabChange}>
+            <Tabs value={this.activeValue} onChange={this.handleTabChange}>
               {this.submenu.map((item) => (
-                <t-tab-panel value={item.value} label={item.vnode[0].text} />
+                <TabPanel value={item.value} label={item.vnode[0].text} />
               ))}
-            </t-tabs>
+            </Tabs>
           }
         </ul>
       );

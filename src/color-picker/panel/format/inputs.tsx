@@ -147,7 +147,7 @@ export default defineComponent({
             }}
           >
             {config.type === 'input' ? (
-              <t-input
+              <TInput
                 {...inputProps}
                 align="center"
                 size="small"
@@ -159,7 +159,7 @@ export default defineComponent({
                 onEnter={(v: string) => this.handleChange(config.key, v)}
               />
             ) : (
-              <t-input-number
+              <TInputNumber
                 {...inputProps}
                 align="center"
                 theme="normal"
