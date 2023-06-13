@@ -8,7 +8,9 @@ import { useConfig, usePrefixClass } from '../config-provider/useConfig';
 import {
   TdOptionProps, SelectOptionGroup, TdSelectProps, SelectOption,
 } from './type';
-import Option from './option';
+import TOption from './option';
+import TOptionGroup from './optionGroup';
+
 import useVirtualScroll from '../hooks/useVirtualScroll';
 import { flattenOptions } from './util';
 import { Styles } from '../common';
@@ -46,7 +48,8 @@ export default defineComponent({
   name: 'TSelectPanel',
 
   components: {
-    TOption: Option,
+    TOption,
+    TOptionGroup,
   },
 
   props: [
@@ -233,7 +236,7 @@ export default defineComponent({
 
       return (
         <ul class={[`${this.componentName}__create-option`, `${this.componentName}__list`]}>
-          <t-option
+          <TOption
             multiple={this.multiple}
             index={0}
             isCreatedOption={true}
@@ -268,9 +271,9 @@ export default defineComponent({
             ) => {
               if (item.group) {
                 return (
-                  <t-option-group label={item.group} divider={item.divider}>
+                  <TOptionGroup label={item.group} divider={item.divider}>
                     {this.renderOptionsContent(item.children)}
-                  </t-option-group>
+                  </TOptionGroup>
                 );
               }
 
@@ -285,7 +288,7 @@ export default defineComponent({
                 : { key: index };
               // replace `scopedSlots` of `v-slots` in Vue3
               return (
-                <t-option
+                <TOption
                   // 透传 class
                   class={item.class}
                   // 透传 style

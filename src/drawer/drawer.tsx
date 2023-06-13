@@ -300,14 +300,14 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
       const theme = isCancel ? 'default' : 'primary';
       const isApiObject = typeof btnApi === 'object';
       return (
-        <t-button
+        <TButton
           theme={theme}
           onClick={clickAction}
           props={isApiObject ? btnApi : {}}
           class={`${this.componentName}-${btnType}`}
         >
           {btnApi && typeof btnApi === 'object' ? btnApi.content : btnApi}
-        </t-button>
+        </TButton>
       );
     },
     isUseDefault(btnApi: FooterButton) {

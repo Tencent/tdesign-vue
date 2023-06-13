@@ -82,12 +82,12 @@ export default defineComponent({
         return;
       }
       let scrollDOM: HTMLElement;
-      if (containerRef.value?.scrollTop === undefined) {
-        scrollDOM = document.documentElement;
-      } else {
-        scrollDOM = containerRef.value;
-      }
       if (containerRef.value) {
+        if (containerRef.value.scrollTop === undefined) {
+          scrollDOM = document.documentElement;
+        } else {
+          scrollDOM = containerRef.value;
+        }
         containerRef.value.onscroll = () => {
           const { scrollTop } = scrollDOM;
           if (scrollTop >= visibleHeight) {

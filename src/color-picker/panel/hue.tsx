@@ -20,7 +20,7 @@ export default defineComponent({
   },
   render() {
     return (
-      <color-slider
+      <ColorSlider
         class={`${this.baseClassName}__hue`}
         color={this.color}
         value={this.color.hue}

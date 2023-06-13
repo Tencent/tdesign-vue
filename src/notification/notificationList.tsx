@@ -1,4 +1,4 @@
-import Notification from './notification';
+import TNotification from './notification';
 import { TdNotificationProps, NotificationOptions } from './type';
 import { DEFAULT_Z_INDEX, PLACEMENT_OFFSET, DISTANCE } from './const';
 import { Styles } from '../common';
@@ -8,7 +8,7 @@ import mixins from '../utils/mixins';
 const classPrefixMixins = getClassPrefixMixins('notification');
 
 export default mixins(classPrefixMixins).extend({
-  components: { Notification },
+  components: { TNotification },
   props: {
     placement: {
       type: String,
@@ -70,7 +70,7 @@ export default mixins(classPrefixMixins).extend({
     return (
       <div class={`${this.componentName}__show--${this.placement}`} style={this.styles}>
         {this.list.map((item, index) => (
-          <t-notification
+          <TNotification
             key={item.id}
             style={this.notificationStyles(item)}
             {...{ props: item }}

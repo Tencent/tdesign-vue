@@ -59,14 +59,14 @@ export default mixins(getConfigReceiverMixins('steps')).extend({
       };
 
       const stepItem = (
-        <t-step-item
+        <TStepItem
           props={{
             ...item,
             index: stepIndex,
             status: this.handleStatus(item, index),
           }}
           key={item.value || index}
-        ></t-step-item>
+        ></TStepItem>
       );
 
       if (nodes && nodes[index]) {

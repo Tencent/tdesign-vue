@@ -47,11 +47,15 @@ export default defineComponent({
     const { t, global } = useConfig('colorPicker');
     const { value: inputValue, recentColors } = toRefs(props);
     const [innerValue, setInnerValue] = useVModel(inputValue, props.defaultValue, props.onChange, 'change');
-    const color = ref<Color>(new Color(innerValue.value || DEFAULT_COLOR));
-    const updateColor = () => color.value.update(innerValue.value || DEFAULT_COLOR);
-    const mode = ref<TdColorModes>(color.value.isGradient ? 'linear-gradient' : 'monochrome');
-    const formatModel = ref<TdColorPickerProps['format']>(color.value.isGradient ? 'CSS' : 'RGB');
+    const defaultEmptyColor = computed(() => (isGradient.value ? DEFAULT_LINEAR_GRADIENT : DEFAULT_COLOR));
 
+    const mode = ref<TdColorModes>(props.colorModes?.length === 1 ? props.colorModes[0] : 'monochrome');
+    const isGradient = computed(() => mode.value === 'linear-gradient');
+
+    const color = ref<Color>(new Color(innerValue.value || defaultEmptyColor.value));
+    const updateColor = () => color.value.update(innerValue.value || defaultEmptyColor.value);
+
+    const formatModel = ref<TdColorPickerProps['format']>(color.value.isGradient ? 'CSS' : 'RGB');
     const [recentlyUsedColors, setRecentlyUsedColors] = useDefaultValue(
       recentColors,
       props.defaultRecentColors,
@@ -59,12 +63,6 @@ export default defineComponent({
       'recentColors',
       'recentColorsChange',
     );
-
-    if (props.colorModes.length === 1) {
-      // eslint-disable-next-line vue/no-setup-props-destructure
-      const m = props.colorModes[0];
-      mode.value = m;
-    }
 
     const formatValue = () => {
       // 渐变模式下直接输出css样式
@@ -267,6 +265,7 @@ export default defineComponent({
       global,
       color,
       mode,
+      isGradient,
       formatModel,
       recentlyUsedColors,
       previewColorStyle,
@@ -284,7 +283,7 @@ export default defineComponent({
   },
   render() {
     const {
-      baseClassName, statusClassNames, t, global, recentColors, swatchColors, previewColorStyle,
+      baseClassName, statusClassNames, t, global, recentColors, swatchColors, previewColorStyle, isGradient,
     } = this;
 
     const showUsedColors = recentColors !== null && recentColors !== false;
@@ -302,12 +301,12 @@ export default defineComponent({
       return (
         <div class={`${baseClassName}__swatches-wrap`}>
           {showUsedColors ? (
-            <swatches-panel
+            <SwatchesPanel
               color={this.color}
               disabled={this.disabled}
               title={t(global.recentColorTitle)}
               editable
-              colors={this.recentlyUsedColors}
+              colors={this.recentlyUsedColors as string[]}
               handleAddColor={this.addRecentlyUsedColor}
               handleSetColor={(color: string) => {
                 this.handleSetColor('used', color);
@@ -316,7 +315,7 @@ export default defineComponent({
             />
           ) : null}
           {showSystemColors ? (
-            <swatches-panel
+            <SwatchesPanel
               color={this.color}
               disabled={this.disabled}
               title={t(global.swatchColorTitle)}
@@ -328,11 +327,9 @@ export default defineComponent({
       );
     };
 
-    const isGradient = this.mode === 'linear-gradient';
-
     return (
       <div class={[`${baseClassName}__panel`, this.disabled ? statusClassNames.disabled : false]}>
-        <panel-header
+        <PanelHeader
           {...{
             props: {
               ...this.$props,
@@ -343,19 +340,19 @@ export default defineComponent({
         />
         <div class={[`${baseClassName}__body`]}>
           {isGradient ? (
-            <linear-gradient
+            <LinearGradient
               color={this.color}
               disabled={this.disabled}
               handleChange={this.handleGradientChange}
               enableMultipleGradient={this.enableMultipleGradient}
             />
           ) : null}
-          <saturation-panel color={this.color} disabled={this.disabled} handleChange={this.handleSatAndValueChange} />
+          <SaturationPanel color={this.color} disabled={this.disabled} handleChange={this.handleSatAndValueChange} />
           <div class={[`${baseClassName}__sliders-wrapper`]}>
             <div class={[`${baseClassName}__sliders`]}>
-              <hue-slider color={this.color} disabled={this.disabled} handleChange={this.handleHueChange} />
+              <HueSlider color={this.color} disabled={this.disabled} handleChange={this.handleHueChange} />
               {this.enableAlpha ? (
-                <alpha-slider color={this.color} disabled={this.disabled} handleChange={this.handleAlphaChange} />
+                <AlphaSlider color={this.color} disabled={this.disabled} handleChange={this.handleAlphaChange} />
               ) : null}
             </div>
             {this.showPrimaryColorPreview ? (
@@ -370,7 +367,7 @@ export default defineComponent({
             ) : null}
           </div>
 
-          <format-panel
+          <FormatPanel
             {...{
               props: {
                 ...this.$props,

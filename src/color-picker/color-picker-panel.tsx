@@ -33,7 +33,7 @@ export default defineComponent({
   render() {
     const { prefix, innerValue, handleChange } = this;
     return (
-      <color-panel
+      <ColorPanel
         {...{
           props: {
             ...this.$props,

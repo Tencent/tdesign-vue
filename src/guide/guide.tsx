@@ -64,7 +64,7 @@ export default defineComponent({
     const getCurrentCrossProps = <Key extends keyof GuideCrossProps>(propsName: Key) => currentStepInfo.value[propsName] ?? props[propsName];
 
     // 设置高亮层的位置
-    const setHighlightLayerPosition = (highlighLayer: HTMLElement) => {
+    const setHighlightLayerPosition = (highlightLayer: HTMLElement) => {
       let { top, left } = getRelativePosition(currentHighlightLayerElm.value);
       let { width, height } = currentHighlightLayerElm.value.getBoundingClientRect();
       const highlightPadding = getCurrentCrossProps('highlightPadding');
@@ -79,7 +79,7 @@ export default defineComponent({
         top += scrollTop;
         left += scrollLeft;
       }
-      setStyle(highlighLayer, {
+      setStyle(highlightLayer, {
         width: `${width}px`,
         height: `${height}px`,
         top: `${top}px`,

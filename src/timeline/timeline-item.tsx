@@ -1,5 +1,5 @@
 import {
-  computed, defineComponent, toRefs, getCurrentInstance, inject, SetupContext, ref,
+  computed, defineComponent, toRefs, getCurrentInstance, inject, SetupContext,
 } from 'vue';
 import TLoading from '../loading';
 import { TdTimelineItemProps } from './type';
@@ -21,26 +21,29 @@ export default defineComponent({
   setup(props: TdTimelineItemProps, context: SetupContext) {
     const instance = getCurrentInstance().proxy;
     const classPrefix = usePrefixClass();
-
     const timelineProvider: any = inject('TTimeline', {
       layout: 'vertical',
       reverse: false,
       theme: undefined,
       labelAlign: 'left',
       mode: 'alternate',
-      uidArr: ref([]),
     });
     const {
-      layout, reverse, theme, labelAlign, mode, uidArr,
+      layout, reverse, theme, labelAlign, mode,
     } = timelineProvider;
     const { dotColor, labelAlign: itemLabelAlign, loading } = toRefs(props);
     const timelineItemAlign = computed(() => itemLabelAlign.value ?? getRenderAlign(labelAlign?.value, layout?.value));
+
+    const uidArr = computed(() => {
+      const defaultSlots: any = instance.$parent.$slots.default ?? [null];
+      return defaultSlots.map((item: any) => item?.componentInstance?._uid);
+    });
 
     const currentIndex = computed(() => {
       let index = 0;
       uidArr.value.forEach((item: number | undefined, itemIndex: number) => {
         // @ts-ignore
-        if (item === instance.uid) {
+        if (item === instance._uid) {
           index = itemIndex;
         }
       });

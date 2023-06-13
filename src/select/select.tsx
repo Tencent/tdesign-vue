@@ -572,7 +572,7 @@ export default defineComponent({
       } = this;
       if (isLoading) {
         return (
-          <t-loading class={[`${this.componentName}__right-icon`, `${this.componentName}__active-icon`]} size="small" />
+          <TLoading class={[`${this.componentName}__right-icon`, `${this.componentName}__active-icon`]} size="small" />
         );
       }
       return showArrow ? (
