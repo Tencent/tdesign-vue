@@ -5,6 +5,24 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.4.2 `2023-06-13` 
+### 🚀 Features
+- `Menu`:
+  - Submenu 新增 popupProps 属性，允许透传设置底层 Popup 弹窗属性 @xiaosansiji ([#2504](https://github.com/Tencent/tdesign-vue/pull/2504))
+  - 去除子菜单 inline 样式，改为样式类实现，方便通过全局 Design Token 方式调整尺寸和间距等 @xiaosansiji ([#2496](https://github.com/Tencent/tdesign-vue/pull/2496))
+- `InputNumber`: 初始值为 `undefined/null`，且存在 decimalPlaces 时，不再进行小数点纠正 @chaishi ([#2483](https://github.com/Tencent/tdesign-vue/pull/2483))
+### 🐞 Bug Fixes
+- `Menu`: 
+  - 修复弹出类菜单内容未对齐的问题 @xiaosansiji ([#2496](https://github.com/Tencent/tdesign-vue/pull/2496))
+  - 修复侧边导航横向内容可以滚动的问题 @xiaosansiji ([common#1398](https://github.com/Tencent/tdesign-common/pull/1398))
+  - 修复菜单项与展开箭头 icon 未两端对齐的问题 @xiaosansiji ([common#1390](https://github.com/Tencent/tdesign-common/pull/1390))
+- `Timeline`: 修复 `timeline-item` 响应式渲染丢失的问题 @uyarn ([#2501](https://github.com/Tencent/tdesign-vue/pull/2501))
+- `Table`: 修复通过 `current` 修改分页，序列号没有变化的问题 @LoopZhou ([#2506](https://github.com/Tencent/tdesign-vue/pull/2506))
+- `ColorPicker`: 初始化为渐变模式时 支持空字符串作为初始值 @uyarn ([#2511](https://github.com/Tencent/tdesign-vue/pull/2511))
+- `TreeSelect`: 修复 keys配合 `valueType = object` 时使用的异常问题 @uyarn ([#2511](https://github.com/Tencent/tdesign-vue/pull/2511))
+- `Cascader`: 修复空数组选项展示异常的问题 @uyarn ([#2511](https://github.com/Tencent/tdesign-vue/pull/2511))
+- `Upload`: 删除 Upload 中对 loading 的重复颜色设置 @sinbadmaster ([common#1399](https://github.com/Tencent/tdesign-common/pull/1399))
+
 ## 🌈 1.4.0 `2023-06-06` 
 ### 🚀 Features
 - `Menu`: @xiaosansiji ([#2461](https://github.com/Tencent/tdesign-vue/pull/2461))
