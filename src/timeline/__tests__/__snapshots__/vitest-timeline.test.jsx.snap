@@ -2,7 +2,7 @@
 
 exports[`TimelineItem Component > props.content works fine 1`] = `
 <li
-  class="t-timeline-item t-timeline-item-left "
+  class="t-timeline-item t-timeline-item-left t-timeline-item--last"
 >
   <div
     class="t-timeline-item__wrapper"
@@ -28,7 +28,7 @@ exports[`TimelineItem Component > props.content works fine 1`] = `
 
 exports[`TimelineItem Component > props.label works fine 1`] = `
 <li
-  class="t-timeline-item t-timeline-item-left "
+  class="t-timeline-item t-timeline-item-left t-timeline-item--last"
 >
   <div
     class="t-timeline-item__label t-timeline-item__label--undefined"
@@ -57,7 +57,7 @@ exports[`TimelineItem Component > props.label works fine 1`] = `
 
 exports[`TimelineItem Component > slots.content works fine 1`] = `
 <li
-  class="t-timeline-item t-timeline-item-left "
+  class="t-timeline-item t-timeline-item-left t-timeline-item--last"
 >
   <div
     class="t-timeline-item__wrapper"
@@ -83,7 +83,7 @@ exports[`TimelineItem Component > slots.content works fine 1`] = `
 
 exports[`TimelineItem Component > slots.label works fine 1`] = `
 <li
-  class="t-timeline-item t-timeline-item-left "
+  class="t-timeline-item t-timeline-item-left t-timeline-item--last"
 >
   <div
     class="t-timeline-item__label t-timeline-item__label--undefined"

@@ -109,7 +109,7 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
     const list = Array.isArray(value) ? value : [value];
     if (treeRef.value) {
       return list.map((item) => {
-        const finalValue = typeof item === 'object' ? item[tKeys.value.value] : item;
+        const finalValue = typeof item === 'object' ? item.value : item;
         return (
           treeRef.value.getItem(finalValue)?.data || {
             [tKeys.value.label]: finalValue,
@@ -129,7 +129,7 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
       return undefined;
     }
     const oneValue = Array.isArray(value) ? value[0] : value;
-    const finalValue = typeof oneValue === 'object' ? oneValue[tKeys.value.value] : oneValue;
+    const finalValue = typeof oneValue === 'object' ? oneValue.value : oneValue;
     if (treeRef.value) {
       return (
         treeRef.value.getItem(finalValue)?.data || {

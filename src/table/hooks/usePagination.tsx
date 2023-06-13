@@ -59,7 +59,7 @@ export default function usePagination(props: TdBaseTableProps, context: SetupCon
             props: pagination.value,
             on: {
               change: (pageInfo: PageInfo) => {
-                innerPagination.value = pageInfo;
+                Object.assign(innerPagination.value, pageInfo);
                 updateDataSourceAndPaginate(pageInfo.current, pageInfo.pageSize);
                 // Vue3 ignore this line
                 context.emit('page-change', pageInfo, dataSource.value);
