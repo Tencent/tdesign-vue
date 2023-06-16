@@ -34,7 +34,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
       isSizeDragging: false,
       draggedSizeValue: null,
       animationStart: false,
-      animationEnd: false,
+      animationEnd: true,
       styleTimer: null,
       styleEl: null,
     };
