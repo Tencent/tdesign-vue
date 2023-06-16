@@ -7,17 +7,19 @@ const docs = [
     children: [
       {
         title: '快速开始',
-        titleEn: 'Quick Start',
+        titleEn: 'Getting Started',
         name: 'getting-started',
         path: '/vue/getting-started',
         component: () => import('@/site/docs/getting-started.md'),
+        componentEn: () => import('@/site/docs/getting-started.en-US.md'),
       },
       {
         title: '最佳实践',
-        titleEn: 'Best Practice',
+        titleEn: 'Starter Kit',
         name: 'quick-start',
         path: '/vue/quick-start',
         component: () => import('@/site/docs/starter.md'),
+        componentEn: () => import('@/site/docs/starter.en-US.md'),
       },
       {
         title: '更新日志',
@@ -32,6 +34,7 @@ const docs = [
         name: 'overview',
         path: '/vue/overview',
         component: () => import('@common/docs/web/overview.md'),
+        componentEn: () => import('@common/docs/web/overview.en-US.md'),
       },
     ],
   },
