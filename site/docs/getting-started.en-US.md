@@ -1,6 +1,6 @@
 ---
 title: Vue for Web
-description: TDesign 适配桌面端的组件库，适合在 vue 2 技术栈项目中使用。
+description: TDesign Vue is a UI component library for Vue 2 and desktop application.
 spline: explain
 ---
 

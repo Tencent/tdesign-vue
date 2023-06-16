@@ -34,7 +34,6 @@ const docs = [
         name: 'overview',
         path: '/vue/overview',
         component: () => import('@common/docs/web/overview.md'),
-        componentEn: () => import('@common/docs/web/overview.en-US.md'),
       },
     ],
   },

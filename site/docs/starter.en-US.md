@@ -37,7 +37,7 @@ TDesign Vue Starter is a TDesign-based project, which can be customized theme co
 - Complete Routing
 
   - Support both configuration-based and custom routing. For configuration-based routing
-  - provide deep customization of navigation components (`Menu` adn `Breadcrumb`)
+  - provide deep customization of navigation components (`Menu` and `Breadcrumb`)
 
 - Dynamic Layout
 
