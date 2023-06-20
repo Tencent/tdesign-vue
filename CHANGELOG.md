@@ -5,6 +5,16 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.4.3 `2023-06-20` 
+### 🐞 Bug Fixes
+- `Drawer`: 修复 `destroyOnClose` 不符合预期问题 @Aicmortal ([#2517](https://github.com/Tencent/tdesign-vue/pull/2517))
+- `TextArea`: 修复设置 `value` 值后 autosize 自适应失效的问题 @xiaosansiji ([#2527](https://github.com/Tencent/tdesign-vue/pull/2527))
+- `Swiper`: 修复 `navigation` 插槽失效的问题 @uyarn ([#2514](https://github.com/Tencent/tdesign-vue/pull/2514))
+- `Table`: 减少斑马纹样式影响范围，避免自定义元素被自定义 @chaishi ([common#1415](https://github.com/Tencent/tdesign-common/pull/1415))
+- `Menu`: 侧边导航超长时，不再隐藏滚动条，防止鼠标操作环境下不能拖动滚动条的问题 @xiaosansiji ([common#1416](https://github.com/Tencent/tdesign-common/pull/1416))
+### 🚧 Others
+- `Dropdown`: 新增带图标的下拉菜单示例 @aomnisz ([#2523](https://github.com/Tencent/tdesign-vue/pull/2523))
+
 ## 🌈 1.4.2 `2023-06-13` 
 ### 🚀 Features
 - `Menu`:
