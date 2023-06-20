@@ -101,6 +101,12 @@ export default mixins(Vue as VueConstructor<Textarea>, classPrefixMixins).extend
       },
       immediate: true,
     },
+    value: {
+      handler() {
+        this.$nextTick(() => this.adjustTextareaHeight());
+      },
+      immediate: true,
+    },
   },
 
   methods: {
