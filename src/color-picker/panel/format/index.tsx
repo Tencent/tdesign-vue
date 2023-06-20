@@ -71,7 +71,7 @@ export default defineComponent({
     return (
       <div class={`${baseClassName}__format`}>
         <div class={`${baseClassName}__format--item`}>
-          <TSelect
+          <t-select
             size="small"
             class={`${baseClassName}__format-mode-select`}
             {...selectInputProps}
@@ -83,9 +83,9 @@ export default defineComponent({
             disabled={this.disabled}
           >
             {formats.map((item) => (
-              <TOption key={item} value={item} label={upperCase(item)} style={{ fontSize: '12px' }} />
+              <t-option key={item} value={item} label={upperCase(item)} style={{ fontSize: '12px' }} />
             ))}
-          </TSelect>
+          </t-select>
         </div>
         <div class={`${baseClassName}__format--item`}>
           {h('format-inputs', {
