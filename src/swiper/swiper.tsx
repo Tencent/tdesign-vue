@@ -6,6 +6,7 @@ import props from './props';
 import { TdSwiperProps, SwiperNavigation, SwiperChangeSource } from './type';
 import TSwiperItem from './swiper-item';
 import { isVNode } from '../hooks/render-tnode';
+import { renderTNodeJSX } from '../utils/render-tnode';
 import { emitEvent } from '../utils/event';
 import { getClassPrefixMixins, getGlobalIconMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
@@ -264,7 +265,10 @@ export default mixins(Vue as VueConstructor<SwiperVue>, classPrefixMixins, getGl
       );
     },
     renderNavigation() {
+      const navigationSlot = renderTNodeJSX(this, 'navigation');
       if (isVNode(this.navigation as VNode)) return this.navigation;
+      if (navigationSlot && isVNode(navigationSlot?.[0])) return navigationSlot;
+
       if (this.navigationConfig.type === 'fraction') {
         return (
           <div class={[`${this.componentName}__navigation`, `${this.componentName}__navigation--fraction`]}>
