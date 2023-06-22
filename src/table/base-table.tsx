@@ -33,7 +33,7 @@ import { getAffixProps } from './utils';
 import { Styles } from '../common';
 import { BaseTableCol, TableRowData } from './type';
 
-export const BASE_TABLE_EVENTS = ['page-change', 'cell-click', 'scroll', 'scrollX', 'scrollY'];
+export const BASE_TABLE_EVENTS = ['page-change', 'cell-click', 'scroll', 'scrollX', 'scrollY', 'column-resize-change'];
 export const BASE_TABLE_ALL_EVENTS = ROW_LISTENERS.map((t) => `row-${t}`).concat(BASE_TABLE_EVENTS);
 
 export interface TableListeners {
@@ -123,6 +123,11 @@ export default defineComponent({
       dataSource, innerPagination, isPaginateData, renderPagination,
     } = usePagination(props, context);
 
+    const onInnerResizeChange: BaseTableProps['onColumnResizeChange'] = (p) => {
+      props.onColumnResizeChange?.(p);
+      context.emit('column-resize-change', p);
+    };
+
     // 列宽拖拽逻辑
     const columnResizeParams = useColumnResize({
       isWidthOverflow,
@@ -132,6 +137,7 @@ export default defineComponent({
       updateThWidthList,
       setTableElmWidth,
       updateTableAfterColumnResize,
+      onColumnResizeChange: onInnerResizeChange,
     });
     const { resizeLineRef, resizeLineStyle, setEffectColMap } = columnResizeParams;
 
