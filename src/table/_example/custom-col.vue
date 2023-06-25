@@ -8,6 +8,7 @@
     <!-- 1. defaultDisplayColumns = ['platform'] 设置默认显示哪些列，仅第一次有效 -->
     <!-- 2. displayColumns 动态设置显示哪些列，受控属性，支持 displayColumns.sync 语法糖 -->
     <!-- 3. onDisplayColumnsChange 当前显示列发生变化时触发 -->
+    <!-- 4. 开启 resizable 之后，请勿使用 tableLayout: auto -->
     <!-- 受控用法，示例代码有效，勿删  -->
     <t-table
       rowKey="index"
@@ -21,10 +22,12 @@
         hideTriggerButton: true,
       }"
       :pagination="{ defaultPageSize: 5, defaultCurrent: 1, total: 100 }"
-      tableLayout="auto"
       stripe
+      resizable
+      @column-resize-change="onColumnResizeChange"
       @column-change="onColumnChange"
     ></t-table>
+    <!-- :on-column-resize-change="onColumnResizeChange" -->
   </div>
 </template>
 <script lang="jsx">
@@ -83,6 +86,10 @@ export default {
   methods: {
     onColumnChange(params) {
       console.log(params);
+    },
+    onColumnResizeChange(columnsWidth) {
+      // 注意：宽度可能存在小数点，根据实际需求处理保存数值
+      console.log(columnsWidth);
     },
   },
 };
