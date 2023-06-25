@@ -216,6 +216,10 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   onCellClick?: (context: BaseTableCellEventContext<T>) => void;
   /**
+   * 列调整大小之后触发。`context.columnsWidth` 表示操作后各个列的宽度；
+   */
+  onColumnResizeChange?: (context: { columnsWidth: { [colKey: string]: number } }) => void;
+  /**
    * 分页发生变化时触发。参数 newDataSource 表示分页后的数据。本地数据进行分页时，newDataSource 和源数据 data 会不一样。泛型 T 指表格数据类型
    */
   onPageChange?: (pageInfo: PageInfo, newDataSource: Array<T>) => void;
@@ -579,11 +583,11 @@ export interface PrimaryTableInstanceFunctions<T extends TableRowData = TableRow
   /**
    * 校验行信息，校验完成后，会触发事件 `onRowValidate`。参数 `rowValue` 表示行唯一标识的值
    */
-  validateRowData: (rowValue: any) => void;
+  validateRowData: (rowValue: any) => Promise<{ trigger: TableValidateTrigger; result: ErrorListObjectType<T>[] }>;
   /**
    * 校验表格全部数据，校验完成后，会触发事件 `onValidate`
    */
-  validateTableData: () => void;
+  validateTableData: () => Promise<{ result: TableErrorListMap }>;
 }
 
 export interface PrimaryTableCol<T extends TableRowData = TableRowData>
@@ -1074,6 +1078,8 @@ export interface PrimaryTableValidateContext {
 }
 
 export type TableErrorListMap = { [key: string]: AllValidateResult[] };
+
+export type ErrorListObjectType<T> = PrimaryTableRowEditContext<T> & { errorList: AllValidateResult[] };
 
 export interface PrimaryTableCellParams<T> {
   row: T;
