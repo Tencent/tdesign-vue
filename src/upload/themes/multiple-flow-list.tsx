@@ -2,7 +2,6 @@ import { CreateElement } from 'vue';
 import {
   computed, defineComponent, toRefs, PropType,
 } from '@vue/composition-api';
-import classNames from 'classnames';
 import {
   BrowseIcon as TdBrowseIcon,
   DeleteIcon as TdDeleteIcon,
@@ -123,10 +122,10 @@ export default defineComponent({
       return (
         <li class={`${this.uploadPrefix}__card-item`} key={file.name + index + file.percent + file.status}>
           <div
-            class={classNames([
+            class={[
               `${this.uploadPrefix}__card-content`,
               { [`${this.classPrefix}-is-bordered`]: file.status !== 'waiting' },
-            ])}
+            ]}
           >
             {['fail', 'progress'].includes(file.status) && (
               <div class={`${this.uploadPrefix}__card-status-wrap ${this.uploadPrefix}__${this.theme}-${file.status}`}>
