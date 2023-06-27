@@ -25,6 +25,10 @@ import 'tdesign-icons-view';
 // 主题生成器挂件
 import 'tdesign-theme-generator';
 
+import { registerLocaleChange } from 'tdesign-site-components';
+
+registerLocaleChange();
+
 Vue.use(TDesign);
 Vue.use(VueRouter);
 
