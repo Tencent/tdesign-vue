@@ -5,6 +5,16 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.4.5 `2023-06-27` 
+### 🚀 Features
+- `Dialog`: 支持full-screen模式 @Ghostdar ([#2529](https://github.com/Tencent/tdesign-vue/pull/2529))
+- `Table`: 列宽调整场景，新增事件 `onColumnResizeChange`，在列宽调整后触发 @chaishi ([#2535](https://github.com/Tencent/tdesign-vue/pull/2535))
+- `Menu`: 为默认侧边导航菜单滚动条增加优化样式 @liweijie0812 ([common#1421](https://github.com/Tencent/tdesign-common/pull/1421))
+### 🐞 Bug Fixes
+- `Table`: 列配置和列宽调整场景，修复列数量由多变少时未能更新宽度问题；[tdesign-vue-next#2951](https://github.com/Tencent/tdesign-vue-next/issues/2951) @chaishi ([#2535](https://github.com/Tencent/tdesign-vue/pull/2535))
+- ### 🚧 Others
+- `官网`: 官网新增英文版本，支持中英文切换 @uyarn ([#2521](https://github.com/Tencent/tdesign-vue/pull/2521))
+
 ## 🌈 1.4.4 `2023-06-20` 
 ### 🐞 Bug Fixes
 - `Drawer`: 修复 `destroyOnClose` 不符合预期问题 @Aicmortal ([#2517](https://github.com/Tencent/tdesign-vue/pull/2517))
