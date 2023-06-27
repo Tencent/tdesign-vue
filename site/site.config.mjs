@@ -45,10 +45,11 @@ const docs = [
     children: [
       {
         title: '全局特性配置',
-        titleEn: 'Config',
+        titleEn: 'Global Configuration',
         name: 'config',
-        path: '/vue/config',
+        path: '/vue/global-configuration',
         component: () => import('tdesign-vue/config-provider/config-provider.md'),
+        componentEn: () => import('tdesign-vue/config-provider/config-provider.en-US.md'),
       },
       {
         title: '自定义主题',
