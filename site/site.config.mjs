@@ -30,10 +30,11 @@ const docs = [
       },
       {
         title: '组件概览',
-        titleEn: 'Component overview',
+        titleEn: 'Overview',
         name: 'overview',
         path: '/vue/overview',
         component: () => import('@common/docs/web/overview.md'),
+        componentEn: () => import('@common/docs/web/overview.en-US.md'),
       },
     ],
   },
@@ -44,17 +45,19 @@ const docs = [
     children: [
       {
         title: '全局特性配置',
-        titleEn: 'Config',
+        titleEn: 'Global Configuration',
         name: 'config',
-        path: '/vue/config',
+        path: '/vue/global-configuration',
         component: () => import('tdesign-vue/config-provider/config-provider.md'),
+        componentEn: () => import('tdesign-vue/config-provider/config-provider.en-US.md'),
       },
       {
         title: '自定义主题',
-        titleEn: 'Custom theme',
+        titleEn: 'Theme Customization',
         name: 'custom-theme',
         path: '/vue/custom-theme',
         component: () => import('@common/theme.md'),
+        componentEn: () => import('@common/theme.en-US.md'),
       },
       {
         title: '暗黑模式',
@@ -62,6 +65,7 @@ const docs = [
         name: 'dark-mode',
         path: '/vue/dark-mode',
         component: () => import('@common/dark-mode.md'),
+        componentEn: () => import('@common/dark-mode.en-US.md'),
       },
     ],
   },
@@ -88,8 +92,8 @@ const docs = [
       },
       {
         title: 'Link 链接',
-        titleEn: 'Icon',
-        name: 'icon',
+        titleEn: 'Link',
+        name: 'link',
         path: '/vue/components/link',
         component: () => import('tdesign-vue/link/link.md'),
         componentEn: () => import('tdesign-vue/link/link.en-US.md'),
@@ -158,6 +162,7 @@ const docs = [
       },
       {
         title: 'BackTop 回到顶部',
+        titleEn: 'BackTop',
         name: 'back-top',
         path: '/vue/components/back-top',
         component: () => import('tdesign-vue/back-top/back-top.md'),
@@ -251,6 +256,7 @@ const docs = [
       },
       {
         title: 'ColorPicker 颜色选择器',
+        titleEn: 'ColorPicker',
         name: 'color-picker',
         path: '/vue/components/color-picker',
         component: () => import('tdesign-vue/color-picker/color-picker.md'),
@@ -556,6 +562,7 @@ const docs = [
       },
       {
         title: 'Rate 评分',
+        titleEn: 'Rate',
         name: 'rate',
         docType: 'data',
         path: '/vue/components/rate',
@@ -595,6 +602,7 @@ const docs = [
       },
       {
         title: 'Guide 引导',
+        titleEn: 'Guide',
         name: 'guide',
         path: '/vue/components/guide',
         component: () => import('tdesign-vue/guide/guide.md'),
