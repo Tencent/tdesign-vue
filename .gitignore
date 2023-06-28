@@ -30,3 +30,4 @@ Dockerfile
 robotMsg.json
 package-lock.json
 .gitlogmap
+pnpm-lock.yaml

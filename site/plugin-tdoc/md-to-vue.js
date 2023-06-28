@@ -13,6 +13,12 @@ const DEFAULT_TABS = [
   { tab: 'design', name: '指南' },
 ];
 
+const DEFAULT_EN_TABS = [
+  { tab: 'demo', name: 'DEMO' },
+  { tab: 'api', name: 'API' },
+  { tab: 'design', name: 'Guideline' },
+];
+
 export default async function mdToVue(options) {
   const mdSegment = await customRender(options);
   const { demoDefsStr, demoCodesDefsStr, demoInstallStr, demoCodeInstallStr } = options;
@@ -132,6 +138,7 @@ async function customRender({ source, file, md }) {
   const { content, data } = matter(source);
   const lastUpdated = (await getGitTimestamp(file)) || Math.round(fs.statSync(file).mtimeMs);
   // console.log('data', data);
+  const isEn = file.endsWith('en-US.md');
 
   // md top data
   const pageData = {
@@ -141,7 +148,7 @@ async function customRender({ source, file, md }) {
     description: '',
     isComponent: false,
     tdDocHeader: true,
-    tdDocTabs: DEFAULT_TABS,
+    tdDocTabs: isEn ? DEFAULT_EN_TABS : DEFAULT_TABS,
     apiFlag: /#+\s*API/,
     docClass: '',
     usage: null,

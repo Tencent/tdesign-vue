@@ -6,6 +6,7 @@ import {
 } from 'vue';
 import { SettingIcon as TdSettingIcon } from 'tdesign-icons-vue';
 import intersection from 'lodash/intersection';
+import xorWith from 'lodash/xorWith';
 import Checkbox, {
   CheckboxGroup,
   CheckboxGroupValue,
@@ -35,7 +36,13 @@ export function getColumnKeys(columns: PrimaryTableCol[], keys = new Set<string>
   return keys;
 }
 
-export default function useColumnController(props: TdPrimaryTableProps, context: SetupContext) {
+export default function useColumnController(
+  props: TdPrimaryTableProps,
+  context: SetupContext,
+  extra?: {
+    onColumnReduce: (reduceKeys: CheckboxGroupValue) => void;
+  },
+) {
   const { classPrefix, global } = useConfig('table');
   const { SettingIcon } = useGlobalIcon({ SettingIcon: TdSettingIcon });
   const {
@@ -64,8 +71,12 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
 
   const intersectionChecked = computed(() => intersection(columnCheckboxKeys.value, [...enabledColKeys.value]));
 
-  watch([displayColumns], ([val]) => {
+  watch([displayColumns], ([val], [oldVal]) => {
     columnCheckboxKeys.value = val || props.defaultDisplayColumns || keys;
+    if (val.length < oldVal.length) {
+      const reduceKeys = xorWith(oldVal, val);
+      extra?.onColumnReduce?.(reduceKeys);
+    }
   });
 
   function getCheckboxOptions(columns: PrimaryTableCol[], arr: CheckboxOptionObj[] = []) {
