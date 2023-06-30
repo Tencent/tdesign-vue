@@ -28,6 +28,11 @@
         <t-form-item>
           <t-button @click="append()">插入根节点</t-button>
         </t-form-item>
+        <t-form-item label="">
+          <t-input-adornment prepend="filter:">
+            <t-input v-model="filterText" @change="onInput" />
+          </t-input-adornment>
+        </t-form-item>
       </t-form>
     </t-space>
     <t-tree
@@ -42,6 +47,7 @@
       :line="showLine"
       :icon="showIcon"
       :label="label"
+      :filter="filterByText"
       :scroll="{
         rowHeight: 34,
         bufferSize: 10,
@@ -114,6 +120,8 @@ export default {
       isCheckable: true,
       isOperateAble: true,
       items: virtualTree.items,
+      filterText: '',
+      filterByText: null,
     };
   },
   computed: {
@@ -161,6 +169,23 @@ export default {
     },
     remove(node) {
       node.remove();
+    },
+    onInput(state) {
+      console.info('onInput:', state);
+      if (this.filterText) {
+        // 存在过滤文案，才启用过滤
+        this.filterByText = (node) => {
+          console.log('node:', node);
+          const rs = node.value.indexOf(this.filterText) >= 0;
+          // 命中的节点会强制展示
+          // 命中节点的路径节点会锁定展示
+          // 未命中的节点会隐藏
+          return rs;
+        };
+      } else {
+        // 过滤文案为空，则还原 tree 为无过滤状态
+        this.filterByText = null;
+      }
     },
   },
 };
