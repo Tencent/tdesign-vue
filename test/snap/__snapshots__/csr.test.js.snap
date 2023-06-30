@@ -122849,7 +122849,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree.vue 1`] = `
           class="t-table__body"
         >
           <tr
-            class=""
+            class="t-table-tr--level-0"
             data-id="申请人 0_1 号"
           >
             <td
@@ -122955,7 +122955,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree.vue 1`] = `
             </td>
           </tr>
           <tr
-            class=""
+            class="t-table-tr--level-0"
             data-id="申请人 1_1 号"
           >
             <td
@@ -123077,7 +123077,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree.vue 1`] = `
             </td>
           </tr>
           <tr
-            class=""
+            class="t-table-tr--level-0"
             data-id="申请人 2_1 号"
           >
             <td
@@ -123199,7 +123199,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree.vue 1`] = `
             </td>
           </tr>
           <tr
-            class=""
+            class="t-table-tr--level-0"
             data-id="申请人 3_1 号"
           >
             <td
@@ -123327,7 +123327,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree.vue 1`] = `
             </td>
           </tr>
           <tr
-            class=""
+            class="t-table-tr--level-0"
             data-id="申请人 4_1 号"
           >
             <td
@@ -123449,7 +123449,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree.vue 1`] = `
             </td>
           </tr>
           <tr
-            class=""
+            class="t-table-tr--level-0"
             data-id="申请人懒加载节点 66666，点我体验"
           >
             <td
@@ -123577,7 +123577,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree.vue 1`] = `
             </td>
           </tr>
           <tr
-            class=""
+            class="t-table-tr--level-0"
             data-id="申请人懒加载节点 88888，点我体验 "
           >
             <td
@@ -124090,7 +124090,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
             style="transform: translateY(0px);"
           >
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
@@ -124210,7 +124210,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
               </td>
             </tr>
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
@@ -124330,7 +124330,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
               </td>
             </tr>
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
@@ -124450,7 +124450,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
               </td>
             </tr>
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
@@ -124570,7 +124570,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
               </td>
             </tr>
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
@@ -124690,7 +124690,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
               </td>
             </tr>
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
@@ -124810,7 +124810,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
               </td>
             </tr>
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
@@ -124930,7 +124930,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
               </td>
             </tr>
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
@@ -125050,7 +125050,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
               </td>
             </tr>
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
@@ -125170,7 +125170,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
               </td>
             </tr>
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
@@ -125290,7 +125290,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
               </td>
             </tr>
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
@@ -125410,7 +125410,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
               </td>
             </tr>
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
@@ -125530,7 +125530,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
               </td>
             </tr>
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
@@ -125650,7 +125650,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
               </td>
             </tr>
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
@@ -125770,7 +125770,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
               </td>
             </tr>
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
@@ -125890,7 +125890,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
               </td>
             </tr>
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
@@ -126010,7 +126010,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
               </td>
             </tr>
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
@@ -126130,7 +126130,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
               </td>
             </tr>
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
@@ -126250,7 +126250,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
               </td>
             </tr>
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
@@ -126370,7 +126370,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
               </td>
             </tr>
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
@@ -126490,7 +126490,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
               </td>
             </tr>
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
@@ -126610,7 +126610,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
               </td>
             </tr>
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
@@ -126730,7 +126730,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
               </td>
             </tr>
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
@@ -126850,7 +126850,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
               </td>
             </tr>
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
@@ -126970,7 +126970,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
               </td>
             </tr>
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
@@ -127090,7 +127090,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
               </td>
             </tr>
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
@@ -127210,7 +127210,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
               </td>
             </tr>
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
@@ -127330,7 +127330,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
               </td>
             </tr>
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
@@ -127450,7 +127450,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
               </td>
             </tr>
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
@@ -127570,7 +127570,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
               </td>
             </tr>
             <tr
-              class=""
+              class="t-table-tr--level-0"
             >
               <td
                 class="t-table__expandable-icon-cell"
