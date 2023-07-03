@@ -456,7 +456,16 @@ export default mixins(
     const label = renderTNodeJSX(this, 'label');
     const suffix = renderTNodeJSX(this, 'suffix');
     const limitNode = this.limitNumber && this.showLimitNumber ? (
-        <div class={`${this.classPrefix}-input__limit-number`}>{this.limitNumber}</div>
+        <div
+          class={[
+            `${this.classPrefix}-input__limit-number`,
+            {
+              [`${this.classPrefix}-is-disabled`]: this.disabled,
+            },
+          ]}
+        >
+          {this.limitNumber}
+        </div>
     ) : null;
 
     const labelContent = label ? <div class={`${this.componentName}__prefix`}>{label}</div> : null;
