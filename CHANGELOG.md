@@ -5,6 +5,18 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.4.6 `2023-07-04` 
+### 🚀 Features
+- `DatePicker`: 新增 `onConfirm` 事件 @liweijie0812 ([#2545](https://github.com/Tencent/tdesign-vue/pull/2545))
+- `Table`: 树形结构，添加行层级类名，方便业务设置不同层级的样式 @chaishi ([#2547](https://github.com/Tencent/tdesign-vue/pull/2547))
+### 🐞 Bug Fixes
+- `DatePicker`:  修复默认值为 `null` 时点击日期选择器报错的问题 @liweijie0812 ([common#1499](https://github.com/Tencent/tdesign-common/pull/1499))
+- `Input`: 修复 `limitNumber` 部分在 `disabled` 状态下的样式问题 @uyarn ([#2557](https://github.com/Tencent/tdesign-vue/pull/2557))
+- `Tree`: 修复单独设置 `checkable` 属性的功能 @TabSpace  @uyarn ([#2557](https://github.com/Tencent/tdesign-vue/pull/2557))
+- `InputNumber`: 修复 `value = 0`时自动校正不生效的问题 @imp2002 ([#2546](https://github.com/Tencent/tdesign-vue/pull/2546))
+### 🚧 Others
+- `编辑器插件`: 更新 WebStorm 等编辑器的组件提示 @liweijie0812 ([#2544](https://github.com/Tencent/tdesign-vue/pull/2544))
+
 ## 🌈 1.4.5 `2023-06-27` 
 ### 🚀 Features
 - `Dialog`: 支持full-screen模式 @Ghostdar ([#2529](https://github.com/Tencent/tdesign-vue/pull/2529))
