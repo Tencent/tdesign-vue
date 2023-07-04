@@ -23,6 +23,7 @@ import { usePrefixClass } from '../hooks/useConfig';
 import { Popup, PopupPlacement } from '../popup';
 import { TNode } from '../common';
 import { TdSubmenuProps } from './type';
+import useCollapseAnimation from '../hooks/useCollapseAnimation';
 
 const keepAnimationMixins = getKeepAnimationMixins();
 
@@ -62,6 +63,7 @@ export default defineComponent({
     const popupWrapperRef = ref<HTMLElement>();
     const subPopupRef = ref<HTMLElement>();
     const submenuRef = ref<HTMLElement>();
+    const transitionClass = usePrefixClass('slide-down');
 
     const classes = computed(() => [
       `${classPrefix.value}-submenu`,
@@ -223,6 +225,8 @@ export default defineComponent({
       popupVisible,
       classes,
       subClass,
+      isOpen,
+      transitionClass,
       arrowClass,
       overlayInnerClassName,
       overlayClassName,
@@ -304,6 +308,9 @@ export default defineComponent({
       if (/submenu/i.test(this.$parent.$vnode?.tag)) {
         paddingLeft += 16;
       }
+      const {
+        beforeEnter, enter, afterEnter, beforeLeave, leave, afterLeave,
+      } = useCollapseAnimation();
 
       const needRotate = this.mode === 'popup';
       const rippleVal = (this.keepAnimation as Record<AnimationType, boolean>).ripple ? this.rippleColor : false;
@@ -319,9 +326,24 @@ export default defineComponent({
             />
           )}
         </div>,
-        <ul level={this.level} class={this.subClass} style={{ '--padding-left': `${paddingLeft}px` }}>
-          {child}
-        </ul>,
+        <transition
+          name={this.transitionClass}
+          onBeforeEnter={beforeEnter}
+          onEnter={enter}
+          onAfterEnter={afterEnter}
+          onBeforeLeave={beforeLeave}
+          onLeave={leave}
+          onAfterLeave={afterLeave}
+        >
+          <ul
+            v-show={this.isOpen}
+            level={this.level}
+            class={this.subClass}
+            style={{ '--padding-left': `${paddingLeft}px` }}
+          >
+            {child}
+          </ul>
+        </transition>,
       ];
       const triggerElement = [
         icon,
