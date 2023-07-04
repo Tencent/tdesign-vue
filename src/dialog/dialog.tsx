@@ -98,7 +98,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       if (this.isFullScreen) {
         dialogClass.push(`${this.componentName}__fullscreen`);
       } else {
-        dialogClass.push(...[`${this.componentName}--default`, `${this.componentName}--${this.placement}`]);
+        dialogClass.push(`${this.componentName}--default`);
       }
       return dialogClass;
     },
