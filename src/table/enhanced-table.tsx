@@ -1,6 +1,7 @@
 import {
   defineComponent, SetupContext, computed, ref,
 } from 'vue';
+import get from 'lodash/get';
 import baseTableProps from './base-table-props';
 import primaryTableProps from './primary-table-props';
 import enhancedTableProps from './enhanced-table-props';
@@ -11,6 +12,7 @@ import {
 import useTreeData from './hooks/useTreeData';
 import useTreeSelect from './hooks/useTreeSelect';
 import { TableListeners } from './base-table';
+import { usePrefixClass } from '../hooks/useConfig';
 
 const PRIMARY_B_EVENTS = [
   'cell-click',
@@ -44,6 +46,7 @@ export default defineComponent({
 
   setup(props: TdEnhancedTableProps, context: SetupContext) {
     const primaryTableRef = ref();
+    const classPrefix = usePrefixClass();
 
     const {
       store, dataSource, formatTreeColumn, swapData, ...treeInstanceFunctions
@@ -105,8 +108,10 @@ export default defineComponent({
 
     return {
       store,
+      classPrefix,
       dataSource,
       tColumns,
+      treeDataMap,
       tIndeterminateSelectedRowKeys,
       enhancedTableRef: primaryTableRef,
       primaryTableRef,
@@ -131,6 +136,12 @@ export default defineComponent({
       });
       return listeners;
     },
+    getRowClassName({ row }: { row: TableRowData }) {
+      const rowValue = get(row, this.rowKey || 'id');
+      const rowState = this.treeDataMap.get(rowValue);
+      if (!rowState) return [this.rowClassName];
+      return [`${this.classPrefix}-table-tr--level-${rowState.level}`, this.rowClassName];
+    },
   },
 
   render() {
@@ -143,6 +154,7 @@ export default defineComponent({
       indeterminateSelectedRowKeys: this.tIndeterminateSelectedRowKeys,
       // 树形结构不允许本地数据分页
       disableDataPage: Boolean(this.tree && Object.keys(this.tree).length),
+      rowClassName: this.getRowClassName,
     };
     // 事件，Vue3 do not need this.getListener
     const on: TableListeners = {

@@ -186,7 +186,7 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
     const {
       largeNumber, max, min, decimalPlaces,
     } = props;
-    if (!props.allowInputOverLimit && tValue.value) {
+    if (!props.allowInputOverLimit && tValue.value !== undefined) {
       const r = getMaxOrMinValidateResult({
         value: tValue.value,
         largeNumber,
