@@ -41,6 +41,7 @@ export default defineComponent({
     const disabled = computed<boolean>(() => formDisabled.value || innerDisabled.value);
 
     const commonDisplayFileProps = computed<CommonDisplayFileProps>(() => ({
+      accept: props.accept,
       files: uploadValue.value,
       toUploadFiles: toUploadFiles.value,
       displayFiles: displayFiles.value,

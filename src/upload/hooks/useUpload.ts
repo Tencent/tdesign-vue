@@ -27,6 +27,7 @@ import {
   SuccessContext as OneFileSuccessContext,
 } from '../../_common/js/upload/types';
 import { useConfig } from '../../hooks/useConfig';
+import { getFileList } from './useDrag';
 
 export type ValidateParams = Parameters<TdUploadProps['onValidate']>[0];
 
@@ -196,7 +197,7 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
     toUploadFiles.value = [];
   };
 
-  const onFileChange = (files: FileList) => {
+  const onFileChange = (files: File[]) => {
     if (innerDisabled.value) return;
 
     const params = { currentSelectedFiles: formatToUploadFile([...files], props.format) };
@@ -205,7 +206,6 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
 
     validateFile({
       uploadValue: uploadValue.value,
-      // @ts-ignore
       files: [...files],
       allowUploadDuplicateFile: props.allowUploadDuplicateFile,
       max: props.max,
@@ -274,11 +274,12 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
   };
 
   const onNormalFileChange = (e: InputEvent) => {
-    onFileChange?.((e.target as HTMLInputElement).files);
+    const fileList = getFileList((e.target as HTMLInputElement).files);
+    onFileChange?.(fileList);
   };
 
-  function onDragFileChange(e: DragEvent) {
-    onFileChange?.(e.dataTransfer.files);
+  function onDragFileChange(files: File[]) {
+    onFileChange?.(files);
   }
 
   /**
