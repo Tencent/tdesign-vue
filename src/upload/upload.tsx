@@ -170,6 +170,7 @@ export default defineComponent({
           on={{
             preview: this.onInnerPreview,
           }}
+          scopedSlots={this.$scopedSlots}
         />
       );
     },

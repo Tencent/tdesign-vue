@@ -36,14 +36,22 @@ export default {
       console.log(file, file.raw);
       return new Promise((resolve) => {
         // file.percent 用于控制上传进度，如果不希望显示上传进度，则不对 file.percent 设置值即可。
-        // 如果代码规范不能设置 file.percent，也可以设置 this.files
-        file.percent = 0;
+        const percentTimer = setInterval(() => {
+          if (file.percent + 10 < 99) {
+            // 如果代码规范不能设置 file.percent，也可以设置 this.files
+            file.percent += 10;
+          } else {
+            clearInterval(percentTimer);
+          }
+        }, 100);
+
         const timer = setTimeout(() => {
           // resolve 参数为关键代码
           resolve({ status: 'success', response: { url: 'https://tdesign.gtimg.com/site/avatar.jpg' } });
-          file.percent = 100;
+
           clearTimeout(timer);
-        }, 500);
+          clearInterval(percentTimer);
+        }, 800);
       });
     },
     requestFailMethod(file /** UploadFile */) {

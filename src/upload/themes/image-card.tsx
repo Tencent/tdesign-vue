@@ -15,6 +15,8 @@ import { CommonDisplayFileProps } from '../interface';
 import { commonProps } from '../constants';
 import { TdUploadProps, UploadFile } from '../type';
 import { abridgeName } from '../../_common/js/upload/utils';
+import { renderTNodeJSX } from '../../utils/render-tnode';
+import Link from '../../link';
 
 export interface ImageCardUploadProps extends CommonDisplayFileProps {
   multiple: TdUploadProps['multiple'];
@@ -126,6 +128,14 @@ export default defineComponent({
   },
 
   render() {
+    // render custom UI with fileListDisplay
+    const customList = renderTNodeJSX(this, 'fileListDisplay', {
+      params: {
+        files: this.displayFiles,
+      },
+    });
+    if (customList) return customList;
+
     const cardItemClasses = `${this.classPrefix}-upload__card-item ${this.classPrefix}-is-background`;
     const { AddIcon } = this.icons;
 
@@ -135,12 +145,20 @@ export default defineComponent({
           {this.displayFiles?.map((file: UploadFile, index: number) => {
             const loadCard = `${this.classPrefix}-upload__card-container ${this.classPrefix}-upload__card-box`;
             const fileName = this.abridgeName ? abridgeName(file.name, ...this.abridgeName) : file.name;
+            const fileNameClassName = `${this.classPrefix}-upload__card-name`;
             return (
               <li class={cardItemClasses} key={index}>
                 {file.status === 'progress' && this.renderProgressFile(file, loadCard)}
                 {file.status === 'fail' && this.renderFailFile(file, index, loadCard)}
                 {!['progress', 'fail'].includes(file.status) && file.url && this.renderMainContent(file, index)}
-                <div class={`${this.classPrefix}-upload__card-name`}>{fileName}</div>
+                {fileName
+                  && (file.url ? (
+                    <Link href={file.url} class={fileNameClassName} target="_blank" hover="color">
+                      {fileName}
+                    </Link>
+                  ) : (
+                    <span class={fileNameClassName}>{fileName}</span>
+                  ))}
               </li>
             );
           })}
