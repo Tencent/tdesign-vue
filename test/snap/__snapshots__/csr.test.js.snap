@@ -144189,24 +144189,16 @@ exports[`csr snapshot test > csr test ./src/tree/_example/controlled.vue 1`] = `
                   />
                 </svg>
               </span>
-              <label
-                class="t-checkbox t-tree__label t-is-active"
+              <span
+                class="t-tree__label t-is-active"
+                title="2 这个节点不允许展开, 不允许激活"
               >
-                <input
-                  class="t-checkbox__former"
-                  name="2"
-                  type="checkbox"
-                  value=""
-                />
                 <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
+                  style="position: relative;"
                 >
                   2 这个节点不允许展开, 不允许激活
                 </span>
-              </label>
+              </span>
             </div>
             <div
               class="t-tree__item t-tree__item--visible"
@@ -144220,24 +144212,16 @@ exports[`csr snapshot test > csr test ./src/tree/_example/controlled.vue 1`] = `
                 ignore="active"
                 trigger="expand"
               />
-              <label
-                class="t-checkbox t-tree__label"
+              <span
+                class="t-tree__label"
+                title="2.1 这个节点不允许选中"
               >
-                <input
-                  class="t-checkbox__former"
-                  name="2.1"
-                  type="checkbox"
-                  value=""
-                />
                 <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
+                  style="position: relative;"
                 >
                   2.1 这个节点不允许选中
                 </span>
-              </label>
+              </span>
             </div>
             <div
               class="t-tree__item t-tree__item--visible"
@@ -144251,24 +144235,16 @@ exports[`csr snapshot test > csr test ./src/tree/_example/controlled.vue 1`] = `
                 ignore="active"
                 trigger="expand"
               />
-              <label
-                class="t-checkbox t-tree__label"
+              <span
+                class="t-tree__label"
+                title="2.2"
               >
-                <input
-                  class="t-checkbox__former"
-                  name="2.2"
-                  type="checkbox"
-                  value=""
-                />
                 <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
+                  style="position: relative;"
                 >
                   2.2
                 </span>
-              </label>
+              </span>
             </div>
           </transition-group-stub>
         </div>
@@ -153025,24 +153001,16 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
                   />
                 </svg>
               </span>
-              <label
-                class="t-checkbox t-tree__label t-is-active"
+              <span
+                class="t-tree__label t-is-active"
+                title="2"
               >
-                <input
-                  class="t-checkbox__former"
-                  name="2"
-                  type="checkbox"
-                  value=""
-                />
                 <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
+                  style="position: relative;"
                 >
                   2
                 </span>
-              </label>
+              </span>
             </div>
             <div
               class="t-tree__item t-tree__item--visible"
@@ -153056,24 +153024,16 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
                 ignore="active"
                 trigger="expand"
               />
-              <label
-                class="t-checkbox t-tree__label"
+              <span
+                class="t-tree__label"
+                title="2.1"
               >
-                <input
-                  class="t-checkbox__former"
-                  name="2.1"
-                  type="checkbox"
-                  value=""
-                />
                 <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
+                  style="position: relative;"
                 >
                   2.1
                 </span>
-              </label>
+              </span>
             </div>
             <div
               class="t-tree__item t-tree__item--visible"
@@ -153087,24 +153047,16 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
                 ignore="active"
                 trigger="expand"
               />
-              <label
-                class="t-checkbox t-tree__label"
+              <span
+                class="t-tree__label"
+                title="2.2"
               >
-                <input
-                  class="t-checkbox__former"
-                  name="2.2"
-                  type="checkbox"
-                  value=""
-                />
                 <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
+                  style="position: relative;"
                 >
                   2.2
                 </span>
-              </label>
+              </span>
             </div>
           </transition-group-stub>
         </div>
