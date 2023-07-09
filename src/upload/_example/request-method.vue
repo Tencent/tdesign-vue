@@ -7,7 +7,12 @@
       </t-radio-group>
     </div>
 
-    <t-upload v-model="files" :requestMethod="requestMethod" tips="自定义上传方法需要返回成功或失败信息"></t-upload>
+    <t-upload
+      ref="uploadRef"
+      v-model="files"
+      :requestMethod="requestMethod"
+      tips="自定义上传方法需要返回成功或失败信息"
+    ></t-upload>
   </div>
 </template>
 <script>
@@ -35,11 +40,12 @@ export default {
     requestSuccessMethod(file /** UploadFile */) {
       console.log(file, file.raw);
       return new Promise((resolve) => {
-        // file.percent 用于控制上传进度，如果不希望显示上传进度，则不对 file.percent 设置值即可。
+        // 控制上传进度
+        let percent = 0;
         const percentTimer = setInterval(() => {
-          if (file.percent + 10 < 99) {
-            // 如果代码规范不能设置 file.percent，也可以设置 this.files
-            file.percent += 10;
+          if (percent + 10 < 99) {
+            percent += 10;
+            this.$refs.uploadRef.uploadFilePercent({ file, percent });
           } else {
             clearInterval(percentTimer);
           }

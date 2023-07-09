@@ -170,7 +170,10 @@ export default defineComponent({
           on={{
             preview: this.onInnerPreview,
           }}
-          scopedSlots={this.$scopedSlots}
+          scopedSlots={{
+            fileListDisplay: this.$scopedSlots.fileListDisplay,
+            'file-list-display': this.$scopedSlots['file-list-display'],
+          }}
         />
       );
     },
