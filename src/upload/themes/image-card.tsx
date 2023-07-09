@@ -153,7 +153,7 @@ export default defineComponent({
                 {!['progress', 'fail'].includes(file.status) && file.url && this.renderMainContent(file, index)}
                 {fileName
                   && (file.url ? (
-                    <Link href={file.url} class={fileNameClassName} target="_blank" hover="color">
+                    <Link href={file.url} class={fileNameClassName} target="_blank" hover="color" size="small">
                       {fileName}
                     </Link>
                   ) : (
