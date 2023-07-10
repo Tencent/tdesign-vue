@@ -160,7 +160,8 @@ export default mixins(getConfigReceiverMixins<Vue, AlertConfig>('alert'), getGlo
     },
 
     handleCloseEnd(e: TransitionEvent) {
-      if (e.propertyName === 'opacity') {
+      // 只有当前 Alert DOM 元素 opacity 变化时才触发，防止自定义子元素影响
+      if (e.propertyName === 'opacity' && e.target === this.$el) {
         this.visible = false;
         this.$emit('closed', { e });
         if (this.onClosed) {
