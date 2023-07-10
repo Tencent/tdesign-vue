@@ -19,7 +19,7 @@ import {
   getDisplayFiles,
   formatToUploadFile,
 } from '../../_common/js/upload/main';
-import { getFileUrlByFileRaw } from '../../_common/js/upload/utils';
+import { getFileUrlByFileRaw, getFileList } from '../../_common/js/upload/utils';
 import useVModel from '../../hooks/useVModel';
 import {
   InnerProgressContext,
@@ -27,7 +27,6 @@ import {
   SuccessContext as OneFileSuccessContext,
 } from '../../_common/js/upload/types';
 import { useConfig } from '../../hooks/useConfig';
-import { getFileList } from './useDrag';
 
 export type ValidateParams = Parameters<TdUploadProps['onValidate']>[0];
 
