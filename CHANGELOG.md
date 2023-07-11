@@ -5,6 +5,19 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.4.7 `2023-07-11` 
+### 🚀 Features
+- `Upload`: @chaishi ([#2568](https://github.com/Tencent/tdesign-vue/pull/2568))
+  - 新增组件实例方法，`uploadFilePercent` 用于更新文件上传进度
+  - `theme=image`，支持使用 `fileListDisplay` 自定义 UI 内容
+  - `theme=image`，支持点击名称打开新窗口访问图片，[issue#2338](https://github.com/Tencent/tdesign-vue/issues/2338) 
+  - 拖拽上传场景，支持 `accept` 文件类型限制，[issue#3075](https://github.com/Tencent/tdesign-vue-next/issues/3075)
+- `Dialog`: 为内容区域增加超长时滚动条样式实现 @liweijie0812 ([common#1523](https://github.com/Tencent/tdesign-common/pull/1523))
+### 🐞 Bug Fixes
+- `Alert`: 修复内部自定义元素透明度变化，意外导致 Alert 隐藏的问题 @xiaosansiji ([#2571](https://github.com/Tencent/tdesign-vue/pull/2571))
+- `Upload`: 自定义上传方法，修复未能正确返回上传成功或失败后的文件问题 @chaishi ([#2568](https://github.com/Tencent/tdesign-vue/pull/2568))
+- `Popup`: 修复 `trigger=hover` 时首次鼠标快速移动导致父级关闭的问题 @ikeq ([#2573](https://github.com/Tencent/tdesign-vue/pull/2573))
+
 ## 🌈 1.4.6 `2023-07-04` 
 ### 🚀 Features
 - `DatePicker`: 新增 `onConfirm` 事件 @liweijie0812 ([#2545](https://github.com/Tencent/tdesign-vue/pull/2545))

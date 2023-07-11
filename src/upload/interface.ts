@@ -3,6 +3,7 @@ import { GlobalConfigProvider } from '../config-provider/type';
 import { TNode } from '../common';
 
 export interface CommonDisplayFileProps {
+  accept: string;
   files: TdUploadProps['files'];
   toUploadFiles: TdUploadProps['files'];
   displayFiles: TdUploadProps['files'];

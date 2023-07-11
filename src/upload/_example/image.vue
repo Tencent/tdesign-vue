@@ -29,7 +29,12 @@
         theme="image"
         tips="请选择单张图片文件上传（上传成功状态演示）"
         accept="image/*"
-      ></t-upload>
+      >
+        <!-- custom UI -->
+        <!-- <template #fileListDisplay="{ files }">
+          <div>{{ JSON.stringify(files) }}</div>
+        </template> -->
+      </t-upload>
 
       <t-upload
         ref="uploadRef2"
@@ -57,6 +62,7 @@
       :formatResponse="formatImgResponse"
     ></t-upload>
 
+    <!-- if you want to hide image name, set .t-upload__card-name { display: none } -->
     <t-upload
       ref="uploadRef4"
       action="https://service-bv448zsw-1257786608.gz.apigw.tencentcs.com/api/upload-demo"
