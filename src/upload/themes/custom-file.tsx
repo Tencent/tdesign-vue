@@ -1,4 +1,4 @@
-import { defineComponent, PropType } from '@vue/composition-api';
+import { defineComponent, PropType, toRefs } from '@vue/composition-api';
 import isFunction from 'lodash/isFunction';
 import useDrag, { UploadDragEvents } from '../hooks/useDrag';
 import { CommonDisplayFileProps } from '../interface';
@@ -31,7 +31,9 @@ export default defineComponent({
   },
 
   setup(props) {
-    const drag = useDrag(props.dragEvents);
+    const { accept } = toRefs(props);
+
+    const drag = useDrag(props.dragEvents, accept);
     const { dragActive } = drag;
 
     return {

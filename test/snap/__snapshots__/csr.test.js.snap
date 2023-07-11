@@ -51195,9 +51195,6 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                         </span>
                       </div>
                     </div>
-                    <div
-                      class="t-upload__card-name"
-                    />
                   </li>
                 </ul>
               </div>
@@ -157173,11 +157170,13 @@ exports[`csr snapshot test > csr test ./src/upload/_example/image.vue 1`] = `
                 </span>
               </div>
             </div>
-            <div
-              class="t-upload__card-name"
+            <a
+              class="t-link t-link--theme-default t-size-s t-link--hover-color t-upload__card-name"
+              href="https://tdesign.gtimg.com/demo/demo-image-1.png"
+              target="_blank"
             >
               demo-image-1.png
-            </div>
+            </a>
           </li>
         </ul>
       </div>
