@@ -305,7 +305,7 @@ export default mixins(classPrefixMixins).extend({
       });
     },
     emitPopVisible(visible: boolean, context: PopupVisibleChangeContext) {
-      if (this.disabled || visible === this.visible) return;
+      if (this.disabled || visible === !!this.visible) return;
       if (!visible && this.visibleState > 1) return;
       if (visible && this.mouseInRange) return;
       this.$emit('visible-change', visible, context);

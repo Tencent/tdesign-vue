@@ -39,13 +39,13 @@ export default defineComponent({
   },
 
   setup(props) {
-    const { displayFiles } = toRefs(props);
+    const { displayFiles, accept } = toRefs(props);
     const locale = toRef(props, 'locale') as Ref<UploadConfig>;
 
     const { sizeClassNames } = useCommonClassName();
     const uploadPrefix = `${props.classPrefix}-upload`;
 
-    const drag = useDrag(props.dragEvents);
+    const drag = useDrag(props.dragEvents, accept);
     const { dragActive } = drag;
 
     const draggerFileRef = ref();

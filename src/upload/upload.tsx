@@ -43,6 +43,7 @@ export default defineComponent({
     const disabled = computed<boolean>(() => formDisabled.value || innerDisabled.value);
 
     const commonDisplayFileProps = computed<CommonDisplayFileProps>(() => ({
+      accept: props.accept,
       files: uploadValue.value,
       toUploadFiles: toUploadFiles.value,
       displayFiles: displayFiles.value,
@@ -174,6 +175,10 @@ export default defineComponent({
           cancelUpload={this.cancelUpload}
           on={{
             preview: this.onInnerPreview,
+          }}
+          scopedSlots={{
+            fileListDisplay: this.$scopedSlots.fileListDisplay,
+            'file-list-display': this.$scopedSlots['file-list-display'],
           }}
         />
       );
