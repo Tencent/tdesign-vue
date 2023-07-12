@@ -102,7 +102,7 @@ export default function useTreeStore(props: TreeProps, context: SetupContext) {
   };
 
   // 这个方法监听 filter 属性，仅在 allowFoldNodeOnFilter 属性为 true 时生效
-  // 仅在 filter 属性发生变更时开启检查开关，避免其他操作也触发展开状态的充值
+  // 仅在 filter 属性发生变更时开启检查开关，避免其他操作也触发展开状态的重置
   const checkFilterExpand = (newFilter: null | Function, previousFilter: null | Function) => {
     if (!props.allowFoldNodeOnFilter) return;
     filterChanged = newFilter !== previousFilter;
