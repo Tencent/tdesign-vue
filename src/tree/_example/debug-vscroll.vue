@@ -68,7 +68,7 @@
 </template>
 
 <script>
-const allLevels = [5, 5, 5];
+const allLevels = [20, 20, 20];
 
 function createTreeData() {
   let cacheIndex = 0;
@@ -175,7 +175,6 @@ export default {
       if (this.filterText) {
         // 存在过滤文案，才启用过滤
         this.filterByText = (node) => {
-          console.log('node:', node);
           const rs = node.value.indexOf(this.filterText) >= 0;
           // 命中的节点会强制展示
           // 命中节点的路径节点会锁定展示
