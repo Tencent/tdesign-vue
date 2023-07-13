@@ -1,116 +1,167 @@
-import Vue, { VNode, VueConstructor } from 'vue';
-import { renderContent } from '../utils/render-tnode';
-import checkboxProps from './props';
-import Group from './group';
-import { omit } from '../utils/helper';
-import { ClassName } from '../common';
-import { emitEvent } from '../utils/event';
-import { TdCheckboxProps } from './type';
-import { getClassPrefixMixins } from '../config-provider/config-receiver';
-import mixins from '../utils/mixins';
+import { defineComponent, ref, toRefs, inject, watch } from '@vue/composition-api';
+import props from './props';
+import useVModel from '../hooks/useVModel';
+import { renderContent, useFormDisabled } from '../hooks';
+// import useRipple from '../hooks/useRipple';
+import { useCommonClassName, usePrefixClass } from '../hooks/useConfig';
+import { CheckboxGroupInjectionKey } from './constants';
 
-const classPrefixMixins = getClassPrefixMixins('checkbox');
-
-export type CheckboxGroupInstance = InstanceType<typeof Group>;
-
-export interface CheckboxParentInjectInstance extends Vue {
-  checkboxGroup: CheckboxGroupInstance;
-}
-
-export default mixins(classPrefixMixins, Vue as VueConstructor<CheckboxParentInjectInstance>).extend({
+export default defineComponent({
   name: 'TCheckbox',
-
-  inheritAttrs: false,
-
-  props: { ...checkboxProps, stopLabelTrigger: Boolean },
-
-  inject: {
-    checkboxGroup: { default: undefined },
+  props: {
+    ...props,
+    needRipple: Boolean,
+    stopLabelTrigger: Boolean,
   },
 
-  data() {
+  setup(props) {
+    // const labelRef = ref<HTMLElement>();
+    if (props.needRipple) {
+      // useRipple(labelRef);
+    }
+    const { STATUS } = useCommonClassName();
+
+    const { checked } = toRefs(props);
+    const [innerChecked, setInnerChecked] = useVModel(
+      checked,
+      props.defaultChecked,
+      props.onChange,
+      'change',
+      'checked',
+    );
+
+    const checkboxGroupData = inject(CheckboxGroupInjectionKey, undefined);
+
+    /**
+     * Warn: Do not use computed to set tName,
+     * otherwise checkbox group will render all checkbox items on every checked or unchecked.
+     */
+    const tName = ref<string>();
+    watch(
+      () => [props.name, checkboxGroupData?.value.name].join('_'),
+      () => {
+        const name = props.name || checkboxGroupData?.value.name;
+        if (name) {
+          tName.value = name;
+        }
+      },
+      { immediate: true },
+    );
+
+    // checked
+    const tChecked = ref(false);
+    const getChecked = () => {
+      const { value, checkAll } = props;
+      if (checkAll) return checkboxGroupData?.value.isCheckAll;
+      return checkboxGroupData?.value ? checkboxGroupData.value.checkedValues.includes(value) : innerChecked.value;
+    };
+    watch(
+      () => [
+        innerChecked.value,
+        checkboxGroupData?.value.isCheckAll,
+        checkboxGroupData?.value.checkedValues?.join(','),
+      ],
+      () => {
+        tChecked.value = getChecked();
+      },
+      { immediate: true },
+    );
+
+    // Warn: Do not use computed to set tDisabled
+    // Form.disabled < CheckboxGroup.disabled < Checkbox.disabled
+    const tDisabled = ref<boolean>(false);
+    const { formDisabled } = useFormDisabled();
+    const getDisabled = () => {
+      const { checkAll, disabled } = props;
+      if (!checkAll && !tChecked.value && checkboxGroupData?.value.maxExceeded) {
+        return true;
+      }
+      if (disabled !== undefined) return disabled;
+      if (checkboxGroupData?.value.disabled !== undefined) {
+        return checkboxGroupData.value.disabled;
+      }
+      if (formDisabled.value !== undefined) return formDisabled.value;
+      return false;
+    };
+    watch(
+      () => [props.checkAll, props.disabled, tChecked.value, checkboxGroupData?.value.maxExceeded],
+      () => {
+        tDisabled.value = getDisabled();
+      },
+      { immediate: true },
+    );
+
+    const tIndeterminate = ref(false);
+    watch(
+      () => [props.checkAll, props.indeterminate, checkboxGroupData?.value.indeterminate],
+      () => {
+        tIndeterminate.value = props.checkAll ? checkboxGroupData?.value.indeterminate : props.indeterminate;
+      },
+      { immediate: true },
+    );
+
+    /** update labelClasses, do not use computed to get labelClasses */
+    const COMPONENT_NAME = usePrefixClass('checkbox');
+    const labelClasses = ref({});
+    watch(
+      [tChecked, tDisabled, tIndeterminate],
+      () => {
+        labelClasses.value = [
+          `${COMPONENT_NAME.value}`,
+          {
+            [STATUS.value.checked]: tChecked.value,
+            [STATUS.value.disabled]: tDisabled.value,
+            [STATUS.value.indeterminate]: tIndeterminate.value,
+          },
+        ];
+      },
+      { immediate: true },
+    );
+
+    const handleChange = (e: Event) => {
+      if (props.readonly) return;
+      const checked = !tChecked.value;
+      setInnerChecked(checked, { e });
+      if (checkboxGroupData?.value.handleCheckboxChange) {
+        checkboxGroupData.value.onCheckedChange({ checked, checkAll: props.checkAll, e, option: props });
+      }
+    };
+
+    const handleLabelClick = (e: MouseEvent) => {
+      // 在tree等组件中使用  阻止label触发checked 与expand冲突
+      if (props.stopLabelTrigger) e.preventDefault();
+    };
+
     return {
-      // 表单控制禁用态时的变量
-      formDisabled: undefined,
+      labelClasses,
+      COMPONENT_NAME,
+      tDisabled,
+      tIndeterminate,
+      tName,
+      handleChange,
+      handleLabelClick,
     };
   },
 
-  computed: {
-    labelClasses(): ClassName {
-      return [
-        `${this.componentName}`,
-        {
-          [this.commonStatusClassName.checked]: this.checked$,
-          [this.commonStatusClassName.disabled]: this.disabled$,
-          [this.commonStatusClassName.indeterminate]: this.indeterminate$,
-        },
-      ];
-    },
-    disabled$(): boolean {
-      if (this.formDisabled) return this.formDisabled;
-      if (!this.checkAll && !this.checked$ && this.checkboxGroup?.maxExceeded) {
-        return true;
-      }
-      if (this.disabled !== undefined) return this.disabled;
-      return !!this.checkboxGroup?.disabled;
-    },
-    name$(): string {
-      return this.name || this.checkboxGroup?.name;
-    },
-    checked$(): boolean {
-      if (this.checkAll) return this.checkboxGroup?.isCheckAll;
-      return this.checkboxGroup ? !!this.checkboxGroup.checkedMap[this.value] : this.checked;
-    },
-    indeterminate$(): boolean {
-      if (this.checkAll) return this.checkboxGroup?.indeterminate;
-      return this.indeterminate;
-    },
-  },
-
-  render(): VNode {
+  render() {
     return (
-      <label class={this.labelClasses} title={this.$attrs.title} onClick={this.handleClick}>
+      <label class={this.labelClasses} ref="labelRef">
         <input
           type="checkbox"
-          on={{ ...omit(this.$listeners, ['checked', 'change']) }}
-          class={`${this.componentName}__former`}
-          disabled={this.disabled$}
-          readonly={this.readonly}
-          indeterminate={this.indeterminate$}
-          name={this.name$}
-          value={this.value}
-          checked={this.checked$}
+          class={`${this.COMPONENT_NAME}__former`}
+          disabled={this.tDisabled}
+          readonly={props.readonly}
+          indeterminate={this.tIndeterminate}
+          name={this.tName}
+          value={props.value ? props.value : undefined}
+          checked={this.tName}
           onChange={this.handleChange}
         ></input>
-
-        <span class={`${this.componentName}__input`}></span>
-        <span class={`${this.componentName}__label`} onClick={this.handleLabelClick}>
+        <span class={`${this.COMPONENT_NAME}__input`}></span>
+        <span class={`${this.COMPONENT_NAME}__label`} onClick={this.handleLabelClick}>
           {renderContent(this, 'default', 'label')}
         </span>
       </label>
     );
-  },
-
-  methods: {
-    handleLabelClick(e: Event) {
-      // 在tree等组件中使用  阻止label触发checked 与expand冲突
-      if (this.stopLabelTrigger) e.preventDefault();
-    },
-
-    handleClick(e: MouseEvent) {
-      this.$emit('click', { e });
-    },
-
-    handleChange(e: Event) {
-      const value = !this.checked$;
-      emitEvent<Parameters<TdCheckboxProps['onChange']>>(this, 'change', value, { e });
-      e.stopPropagation();
-      this?.checkboxGroup?.$emit('checked-change', {
-        checked: value,
-        checkAll: this.checkAll,
-        e,
-        option: this.$props,
-      });
-    },
-  },
+  }
 });

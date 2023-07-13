@@ -1,6 +1,6 @@
 import { computed, getCurrentInstance } from '@vue/composition-api';
 
-export default function useFormDisabled() {
+export function useFormDisabled() {
   const formDisabled = computed(() => {
     const currentInstance = getCurrentInstance();
     let { parent } = currentInstance;
@@ -14,3 +14,5 @@ export default function useFormDisabled() {
   });
   return { formDisabled };
 }
+
+export default useFormDisabled;
