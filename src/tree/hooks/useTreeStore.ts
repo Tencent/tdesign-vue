@@ -75,6 +75,7 @@ export default function useTreeStore(props: TreeProps, context: SetupContext) {
   // 所以在 update 之后检查，如果之前 filter 有变更，则检查路径节点是否需要展开
   // 如果 filter 属性被清空，则重置为开启搜索之前的结果
   const expandFilterPath = () => {
+    if (!props.allowFoldNodeOnFilter) return;
     if (!filterChanged) return;
     // 确保 filter 属性未变更时，不会重复检查展开状态
     filterChanged = false;

@@ -68,7 +68,7 @@
 </template>
 
 <script>
-const allLevels = [20, 20, 20];
+const allLevels = [10, 10, 10];
 
 function createTreeData() {
   let cacheIndex = 0;
@@ -123,25 +123,6 @@ export default {
       filterText: '',
       filterByText: null,
     };
-  },
-  computed: {
-    scroll() {
-      const { scrollMode } = this;
-      if (scrollMode === 'normal') {
-        return null;
-      }
-      const scrollProps = {
-        rowHeight: 34,
-        bufferSize: 10,
-        threshold: 10,
-      };
-      if (scrollMode === 'lazy') {
-        scrollProps.type = 'lazy';
-      } else {
-        scrollProps.type = 'virtual';
-      }
-      return scrollProps;
-    },
   },
   methods: {
     label(createElement, node) {
