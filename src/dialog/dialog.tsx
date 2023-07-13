@@ -225,6 +225,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
 
     destroySelf() {
       this.styleEl.parentNode?.removeChild?.(this.styleEl);
+      this.$el.parentNode?.removeChild?.(this.$el);          
     },
 
     storeUid(flag: boolean) {
