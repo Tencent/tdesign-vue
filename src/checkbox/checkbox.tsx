@@ -21,7 +21,7 @@ export default defineComponent({
     }
     const { STATUS } = useCommonClassName();
 
-    const { checked } = toRefs(props);
+    const { checked, checkAll, disabled } = toRefs(props);
     const [innerChecked, setInnerChecked] = useVModel(
       checked,
       props.defaultChecked,
@@ -40,6 +40,7 @@ export default defineComponent({
     watch(
       () => [props.name, checkboxGroupData?.value.name].join('_'),
       () => {
+        console.log('tName');
         const name = props.name || checkboxGroupData?.value.name;
         if (name) {
           tName.value = name;
@@ -60,8 +61,9 @@ export default defineComponent({
         innerChecked.value,
         checkboxGroupData?.value.isCheckAll,
         checkboxGroupData?.value.checkedValues?.join(','),
-      ],
+      ].join('_'),
       () => {
+        console.log('tChecked');
         tChecked.value = getChecked();
       },
       { immediate: true },
@@ -83,8 +85,10 @@ export default defineComponent({
       if (formDisabled.value !== undefined) return formDisabled.value;
       return false;
     };
+
+    // TODO: checkboxGroupData.value?.maxExceeded can not use like this, it will cause performance problem
     watch(
-      () => [props.checkAll, props.disabled, tChecked.value, checkboxGroupData?.value.maxExceeded],
+      [checkAll, disabled, tChecked],
       () => {
         tDisabled.value = getDisabled();
       },
@@ -93,7 +97,7 @@ export default defineComponent({
 
     const tIndeterminate = ref(false);
     watch(
-      () => [props.checkAll, props.indeterminate, checkboxGroupData?.value.indeterminate],
+      () => [props.checkAll, props.indeterminate, checkboxGroupData?.value.indeterminate].join('_'),
       () => {
         tIndeterminate.value = props.checkAll ? checkboxGroupData?.value.indeterminate : props.indeterminate;
       },
@@ -144,6 +148,7 @@ export default defineComponent({
   },
 
   render() {
+    console.log('checkbox rendered');
     return (
       <label class={this.labelClasses} ref="labelRef">
         <input

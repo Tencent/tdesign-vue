@@ -16,8 +16,10 @@ export function useChildComponentSlots() {
   const instance = getCurrentInstance();
   return (childComponentName: string, slots?: ScopedSlot): VNode[] => {
     if (!slots) {
-      slots = instance.slots;
+      // eslint-disable-next-line
+      slots = instance.setupContext?.slots;
     }
+    // @ts-ignore
     const content = slots?.default?.() || [];
 
     // 满足基于基础组件封装场景，递归找到子组件
@@ -26,7 +28,7 @@ export function useChildComponentSlots() {
       if (!isArray(content)) return;
       content.forEach((item: VNode) => {
         if (item.children && isArray(item.children)) {
-          if (item.type !== Fragment) return;
+          // if (item.type !== Fragment) return;
           getChildren(item.children as VNode[]);
         } else {
           childList.push(item);
@@ -36,7 +38,9 @@ export function useChildComponentSlots() {
     };
 
     return getChildren(content).filter((item: VNode) =>
-      (item.type).name?.endsWith(childComponentName),
+      {
+        return item.tag?.endsWith(childComponentName)
+      },
     ) as VNode[];
   };
 }

@@ -109,7 +109,7 @@ export default defineComponent({
       const nodes = getChildComponentSlots('Checkbox');
       const arr: Array<CheckboxOptionObj> = [];
       nodes?.forEach((node) => {
-        const option = node.props as CheckboxOptionObj;
+        const option = node.componentOptions.propsData as CheckboxOptionObj;
         if (!option) return;
         if (option['check-all'] === '' || option['check-all'] === true) {
           option.checkAll = true;
@@ -142,11 +142,12 @@ export default defineComponent({
   },
 
   render() {
+    console.log('group rendered');
     let children = null;
     if (this.options?.length) {
       children = this.optionList?.map((option, index) => (
         <Checkbox
-          key={`${option.value || ''}${index}`}
+          key={option.value ?? index}
           props={option}
           checked={this.innerValue.includes(option.value)}
         ></Checkbox>
