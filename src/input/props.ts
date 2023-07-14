@@ -113,12 +113,12 @@ export default {
   },
   /** 输入框的值 */
   value: {
-    type: [String, Number] as PropType<TdInputProps['value']>,
+    type: String as PropType<TdInputProps['value']>,
     default: '',
   },
   /** 输入框的值，非受控属性 */
   defaultValue: {
-    type: [String, Number] as PropType<TdInputProps['defaultValue']>,
+    type: String as PropType<TdInputProps['defaultValue']>,
     default: '',
   },
   /** 失去焦点时触发 */
