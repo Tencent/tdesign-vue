@@ -21,7 +21,8 @@
 
     <t-space direction="vertical">
       <div>方式三：组件内置全选功能，使用 `options` 定义选项。选中值: {{ value3.join(', ') }}</div>
-      <t-checkbox-group v-model="value3" :options="options2" @change="onChange3" />
+      <t-checkbox-group :disabled="disabled" v-model="value3" :options="options2" @change="onChange3" />
+      <button @click="disabled = !disabled">click</button>
     </t-space>
 
     <!-- <t-space direction="vertical">
@@ -48,6 +49,7 @@ for (let i = 0; i < 1000; i++) {
 export default {
   data() {
     return {
+      disabled: false,
       value1: ['选项一'],
       options1: [
         // eslint-disable-next-line @typescript-eslint/no-unused-vars

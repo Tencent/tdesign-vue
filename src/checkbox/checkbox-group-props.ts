@@ -9,7 +9,10 @@ import { PropType } from 'vue';
 
 export default {
   /** 是否禁用组件 */
-  disabled: Boolean,
+  disabled: {
+    type: Boolean,
+    default: undefined,
+  },
   /** 支持最多选中的数量 */
   max: {
     type: Number,

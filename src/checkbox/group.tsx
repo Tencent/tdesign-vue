@@ -1,4 +1,4 @@
-import { defineComponent, provide, computed, watchEffect, ref, toRefs } from '@vue/composition-api';
+import { defineComponent, provide, computed, watchEffect, ref, toRefs, watch, nextTick } from '@vue/composition-api';
 import intersection from 'lodash/intersection';
 import isObject from 'lodash/isObject';
 import isUndefined from 'lodash/isUndefined';
@@ -7,6 +7,7 @@ import props from './checkbox-group-props';
 import { CheckboxOptionObj, TdCheckboxProps, CheckboxGroupValue } from './type';
 import { CheckboxGroupInjectionKey } from './constants';
 import { usePrefixClass, useVModel, useChildComponentSlots, renderTNodeJSX } from '../hooks';
+import checkboxStore from './store';
 
 export default defineComponent({
   name: 'TCheckboxGroup',
@@ -18,7 +19,7 @@ export default defineComponent({
     const COMPONENT_NAME = usePrefixClass('checkbox-group');
 
     const { isArray } = Array;
-    const { value } = toRefs(props);
+    const { value, disabled } = toRefs(props);
     const [innerValue, setInnerValue] = useVModel(value, props.defaultValue, props.onChange);
 
     const optionList = ref<Array<CheckboxOptionObj>>([]);
@@ -42,11 +43,17 @@ export default defineComponent({
 
     const maxExceeded = computed<boolean>(() => !isUndefined(props.max) && innerValue.value.length === props.max);
 
+    watch([disabled, maxExceeded], ([disabled, maxExceeded]) => {
+      nextTick(() => {
+        checkboxStore.updateDisabled({ disabled, maxExceeded });
+      });
+    }, { immediate: true });
+
     watchEffect(() => {
       if (!props.options) return [];
       optionList.value = props.options.map((item) => {
         return isObject(item)
-          ? { ...item, disabled: item.disabled ?? props.disabled }
+          ? item
           : { label: String(item), value: item };
       });
     });
@@ -119,19 +126,34 @@ export default defineComponent({
       return arr;
     };
 
+    /**
+     * do not use provide/inject variables. it will cause performance problems.
+     * using store.ts for variables instead.
+     * 请勿使用 provide/inject 提供变量数据传递，如：name/isCheckAll/checkedValues/disabled/maxExceeded/indeterminate，这位造成组件性能问题。
+     */
     provide(
       CheckboxGroupInjectionKey,
       computed(() => ({
-        name: props.name,
-        isCheckAll: isCheckAll.value,
-        checkedValues: innerValue.value || [],
-        maxExceeded: maxExceeded.value,
-        disabled: props.disabled,
-        indeterminate: indeterminate.value,
+        // name: props.name,
+        // isCheckAll: isCheckAll.value,
+        // checkedValues: innerValue.value || [],
+        // maxExceeded: maxExceeded.value,
+        // disabled: props.disabled,
+        // indeterminate: indeterminate.value,
         handleCheckboxChange,
         onCheckedChange,
       })),
     );
+
+    watch([innerValue, isCheckAll], ([val, isCheckAll], [oldValue]) => {
+      nextTick(() => {
+        checkboxStore.updateChecked({
+          checked: val,
+          oldChecked: oldValue,
+          isCheckAll,
+        });
+      });
+    }, { immediate: true });
 
     return {
       optionList,
@@ -142,7 +164,6 @@ export default defineComponent({
   },
 
   render() {
-    console.log('group rendered');
     let children = null;
     if (this.options?.length) {
       children = this.optionList?.map((option, index) => (
