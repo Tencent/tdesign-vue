@@ -43,7 +43,6 @@ exports[`Checkbox > :props > :defaultChecked 1`] = `
 exports[`Checkbox > :props > :disabled 1`] = `
 <label
   class="t-checkbox t-is-disabled"
-  tabindex="0"
 >
   <input
     class="t-checkbox__former"
