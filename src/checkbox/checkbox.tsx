@@ -1,5 +1,12 @@
 import {
-  defineComponent, ref, toRefs, inject, watch, onBeforeUnmount,
+  defineComponent,
+  ref,
+  toRefs,
+  inject,
+  watch,
+  onBeforeUnmount,
+  nextTick,
+  getCurrentInstance,
 } from '@vue/composition-api';
 import props from './props';
 import useVModel from '../hooks/useVModel';
@@ -7,7 +14,8 @@ import { renderContent, useFormDisabled } from '../hooks';
 import { useCommonClassName, usePrefixClass } from '../hooks/useConfig';
 import { CheckboxGroupInjectionKey } from './constants';
 import { getCheckboxStore, ObserverListenerParams } from './store';
-import useCheckboxLazyLoad from './useCheckboxLazyLoad';
+import useCheckboxLazyLoad from './hooks/useCheckboxLazyLoad';
+import useKeyboardEvent from './hooks/useKeyboardEvent';
 
 export default defineComponent({
   name: 'TCheckbox',
@@ -18,6 +26,11 @@ export default defineComponent({
     storeKey: String,
   },
 
+  model: {
+    prop: 'checked',
+    event: 'change',
+  },
+
   setup(props) {
     const checkboxStore = getCheckboxStore(props.storeKey);
     const labelRef = ref<HTMLElement>();
@@ -25,7 +38,6 @@ export default defineComponent({
       // useRipple(labelRef);
     }
     const { STATUS } = useCommonClassName();
-    const { formDisabled } = useFormDisabled();
 
     const {
       checked, indeterminate, disabled, value, lazyLoad,
@@ -83,7 +95,8 @@ export default defineComponent({
 
     // Warn: Do not use computed to set tDisabled
     // Priority: Form.disabled < CheckboxGroup.disabled < Checkbox.disabled
-    const tDisabled = ref<boolean>(false);
+    const tDisabled = ref<boolean>();
+    const { formDisabled } = useFormDisabled();
     const handleParentDisabled = ({ parentDisabled, parentMaxExceeded }: ObserverListenerParams) => {
       const { checkAll, disabled } = props;
       if (!checkAll && !tChecked.value && parentMaxExceeded) {
@@ -96,13 +109,7 @@ export default defineComponent({
       }
       if (parentDisabled !== undefined) {
         tDisabled.value = parentDisabled;
-        return;
       }
-      if (formDisabled.value !== undefined) {
-        tDisabled.value = formDisabled.value;
-        return;
-      }
-      return false;
     };
 
     watch(
@@ -117,15 +124,14 @@ export default defineComponent({
 
     /** update labelClasses, do not use computed to get labelClasses */
     const COMPONENT_NAME = usePrefixClass('checkbox');
-    const labelClasses = ref({});
+    const labelClasses = ref([]);
     watch(
-      [tChecked, tDisabled, tIndeterminate],
-      ([tChecked, tDisabled, tIndeterminate]) => {
+      [tChecked, tIndeterminate],
+      ([tChecked, tIndeterminate]) => {
         labelClasses.value = [
           `${COMPONENT_NAME.value}`,
           {
             [STATUS.value.checked]: tChecked,
-            [STATUS.value.disabled]: tDisabled,
             [STATUS.value.indeterminate]: tIndeterminate,
           },
         ];
@@ -173,6 +179,8 @@ export default defineComponent({
 
     const { showCheckbox } = useCheckboxLazyLoad(labelRef, lazyLoad);
 
+    const { onCheckboxFocus, onCheckboxBlur } = useKeyboardEvent(handleChange);
+
     return {
       labelRef,
       labelClasses,
@@ -181,23 +189,36 @@ export default defineComponent({
       tIndeterminate,
       tName,
       tChecked,
-      innerChecked,
       showCheckbox,
+      formDisabled,
+      STATUS,
       handleChange,
       handleLabelClick,
+      onCheckboxFocus,
+      onCheckboxBlur,
     };
   },
 
   render() {
+    const disabled = this.tDisabled ?? this.formDisabled;
+    const classes = this.labelClasses.concat({
+      [this.STATUS.disabled]: disabled,
+    });
     return (
-      <label class={this.labelClasses} ref="labelRef" tabindex="0">
+      <label
+        ref="labelRef"
+        class={classes}
+        tabindex={disabled ? undefined : '0'}
+        onFocus={this.onCheckboxFocus}
+        onBlur={this.onCheckboxBlur}
+      >
         {!this.showCheckbox
           ? null
           : [
               <input
                 type="checkbox"
                 class={`${this.COMPONENT_NAME}__former`}
-                disabled={this.tDisabled}
+                disabled={disabled}
                 readonly={this.readonly}
                 indeterminate={this.tIndeterminate}
                 name={this.tName || this.name || undefined}

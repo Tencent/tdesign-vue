@@ -1,7 +1,7 @@
 import {
   onBeforeUnmount, onMounted, Ref, ref, watch,
 } from '@vue/composition-api';
-import observe from '../_common/js/utils/observe';
+import observe from '../../_common/js/utils/observe';
 
 export function useCheckboxLazyLoad(labelRef: Ref<HTMLElement>, lazyLoad: Ref<boolean>) {
   const ioObserver = ref<IntersectionObserver>();

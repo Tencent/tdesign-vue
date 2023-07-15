@@ -24375,7 +24375,7 @@ exports[`csr snapshot test > csr test ./src/checkbox/_example/controlled.vue 1`]
         class="t-space-item"
       >
         <label
-          class="t-checkbox"
+          class="t-checkbox t-is-checked"
           data-v-032bf202=""
           tabindex="0"
         >
@@ -24383,7 +24383,7 @@ exports[`csr snapshot test > csr test ./src/checkbox/_example/controlled.vue 1`]
             class="t-checkbox__former"
             tabindex="-1"
             type="checkbox"
-            value="true"
+            value=""
           />
           <span
             class="t-checkbox__input"
@@ -26756,14 +26756,14 @@ exports[`csr snapshot test > csr test ./src/collapse/_example/other.vue 1`] = `
         </span>
       </label>
       <label
-        class="t-checkbox"
+        class="t-checkbox t-is-checked"
         tabindex="0"
       >
         <input
           class="t-checkbox__former"
           tabindex="-1"
           type="checkbox"
-          value="true"
+          value=""
         />
         <span
           class="t-checkbox__input"
@@ -26925,14 +26925,14 @@ exports[`csr snapshot test > csr test ./src/collapse/_example/rightSlot.vue 1`] 
             class="t-collapse-panel__header-right-content"
           >
             <label
-              class="t-checkbox"
+              class="t-checkbox t-is-checked"
               tabindex="0"
             >
               <input
                 class="t-checkbox__former"
                 tabindex="-1"
                 type="checkbox"
-                value="true"
+                value=""
               />
               <span
                 class="t-checkbox__input"
@@ -27115,14 +27115,14 @@ exports[`csr snapshot test > csr test ./src/collapse/_example/rightSlot.vue 1`] 
             class="t-collapse-panel__header-right-content"
           >
             <label
-              class="t-checkbox"
+              class="t-checkbox t-is-checked"
               tabindex="0"
             >
               <input
                 class="t-checkbox__former"
                 tabindex="-1"
                 type="checkbox"
-                value="true"
+                value=""
               />
               <span
                 class="t-checkbox__input"
@@ -50588,7 +50588,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
         class="t-space-item"
       >
         <label
-          class="t-checkbox"
+          class="t-checkbox t-is-checked"
           tabindex="0"
           variant="default-filled"
         >
@@ -50596,7 +50596,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
             class="t-checkbox__former"
             tabindex="-1"
             type="checkbox"
-            value="true"
+            value=""
           />
           <span
             class="t-checkbox__input"
@@ -51091,7 +51091,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
               role="group"
             >
               <label
-                class="t-checkbox"
+                class="t-checkbox t-is-disabled"
                 tabindex="0"
               >
                 <input
@@ -51110,7 +51110,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                 </span>
               </label>
               <label
-                class="t-checkbox"
+                class="t-checkbox t-is-disabled"
                 tabindex="0"
               >
                 <input
@@ -51129,7 +51129,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                 </span>
               </label>
               <label
-                class="t-checkbox"
+                class="t-checkbox t-is-disabled"
                 tabindex="0"
               >
                 <input
@@ -88929,14 +88929,14 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/multiple.vue 1
   >
     <div>
       <label
-        class="t-checkbox"
+        class="t-checkbox t-is-checked"
         tabindex="0"
       >
         <input
           class="t-checkbox__former"
           tabindex="-1"
           type="checkbox"
-          value="true"
+          value=""
         />
         <span
           class="t-checkbox__input"
@@ -88948,14 +88948,14 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/multiple.vue 1
         </span>
       </label>
       <label
-        class="t-checkbox"
+        class="t-checkbox t-is-checked"
         tabindex="0"
       >
         <input
           class="t-checkbox__former"
           tabindex="-1"
           type="checkbox"
-          value="true"
+          value=""
         />
         <span
           class="t-checkbox__input"
@@ -95395,14 +95395,14 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
 >
   <div>
     <label
-      class="t-checkbox"
+      class="t-checkbox t-is-checked"
       tabindex="0"
     >
       <input
         class="t-checkbox__former"
         tabindex="-1"
         type="checkbox"
-        value="true"
+        value=""
       />
       <span
         class="t-checkbox__input"
@@ -95414,7 +95414,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
       </span>
     </label>
     <label
-      class="t-checkbox"
+      class="t-checkbox t-is-checked"
       style="margin-left: 32px;"
       tabindex="0"
     >
@@ -95422,7 +95422,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
         class="t-checkbox__former"
         tabindex="-1"
         type="checkbox"
-        value="true"
+        value=""
       />
       <span
         class="t-checkbox__input"
@@ -95474,7 +95474,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
       </span>
     </label>
     <label
-      class="t-checkbox"
+      class="t-checkbox t-is-checked"
       style="margin-left: 32px;"
       tabindex="0"
     >
@@ -95482,7 +95482,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
         class="t-checkbox__former"
         tabindex="-1"
         type="checkbox"
-        value="true"
+        value=""
       />
       <span
         class="t-checkbox__input"
@@ -95494,7 +95494,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
       </span>
     </label>
     <label
-      class="t-checkbox"
+      class="t-checkbox t-is-checked"
       style="margin-left: 32px;"
       tabindex="0"
     >
@@ -95502,7 +95502,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
         class="t-checkbox__former"
         tabindex="-1"
         type="checkbox"
-        value="true"
+        value=""
       />
       <span
         class="t-checkbox__input"
@@ -96794,14 +96794,14 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
         class="t-space-item"
       >
         <label
-          class="t-checkbox"
+          class="t-checkbox t-is-checked"
           tabindex="0"
         >
           <input
             class="t-checkbox__former"
             tabindex="-1"
             type="checkbox"
-            value="true"
+            value=""
           />
           <span
             class="t-checkbox__input"
@@ -96817,14 +96817,14 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
         class="t-space-item"
       >
         <label
-          class="t-checkbox"
+          class="t-checkbox t-is-checked"
           tabindex="0"
         >
           <input
             class="t-checkbox__former"
             tabindex="-1"
             type="checkbox"
-            value="true"
+            value=""
           />
           <span
             class="t-checkbox__input"
@@ -96886,14 +96886,14 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
         class="t-space-item"
       >
         <label
-          class="t-checkbox"
+          class="t-checkbox t-is-checked"
           tabindex="0"
         >
           <input
             class="t-checkbox__former"
             tabindex="-1"
             type="checkbox"
-            value="true"
+            value=""
           />
           <span
             class="t-checkbox__input"
@@ -98438,14 +98438,14 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-col-button.vue
           class="t-space-item"
         >
           <label
-            class="t-checkbox"
+            class="t-checkbox t-is-checked"
             tabindex="0"
           >
             <input
               class="t-checkbox__former"
               tabindex="-1"
               type="checkbox"
-              value="true"
+              value=""
             />
             <span
               class="t-checkbox__input"
@@ -103571,7 +103571,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/expandable.vue 1`] = 
     data-v-ce8962e4=""
   >
     <label
-      class="t-checkbox"
+      class="t-checkbox t-is-checked"
       data-v-ce8962e4=""
       tabindex="0"
     >
@@ -103579,7 +103579,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/expandable.vue 1`] = 
         class="t-checkbox__former"
         tabindex="-1"
         type="checkbox"
-        value="true"
+        value=""
       />
       <span
         class="t-checkbox__input"
@@ -104308,14 +104308,14 @@ exports[`csr snapshot test > csr test ./src/table/_example/filter-controlled.vue
   </div>
   <div>
     <label
-      class="t-checkbox"
+      class="t-checkbox t-is-checked"
       tabindex="0"
     >
       <input
         class="t-checkbox__former"
         tabindex="-1"
         type="checkbox"
-        value="true"
+        value=""
       />
       <span
         class="t-checkbox__input"
@@ -116109,14 +116109,14 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
       class="t-space-item"
     >
       <label
-        class="t-checkbox"
+        class="t-checkbox t-is-checked"
         tabindex="0"
       >
         <input
           class="t-checkbox__former"
           tabindex="-1"
           type="checkbox"
-          value="true"
+          value=""
         />
         <span
           class="t-checkbox__input"
@@ -116132,14 +116132,14 @@ exports[`csr snapshot test > csr test ./src/table/_example/multi-header.vue 1`] 
       class="t-space-item"
     >
       <label
-        class="t-checkbox"
+        class="t-checkbox t-is-checked"
         tabindex="0"
       >
         <input
           class="t-checkbox__former"
           tabindex="-1"
           type="checkbox"
-          value="true"
+          value=""
         />
         <span
           class="t-checkbox__input"
@@ -128033,14 +128033,14 @@ exports[`csr snapshot test > csr test ./src/table/_example/virtual-scroll.vue 1`
         class="t-space-item"
       >
         <label
-          class="t-checkbox"
+          class="t-checkbox t-is-checked"
           tabindex="0"
         >
           <input
             class="t-checkbox__former"
             tabindex="-1"
             type="checkbox"
-            value="true"
+            value=""
           />
           <span
             class="t-checkbox__input"
@@ -156964,14 +156964,14 @@ exports[`csr snapshot test > csr test ./src/upload/_example/base.vue 1`] = `
         class="t-space-item"
       >
         <label
-          class="t-checkbox"
+          class="t-checkbox t-is-checked"
           tabindex="0"
         >
           <input
             class="t-checkbox__former"
             tabindex="-1"
             type="checkbox"
-            value="true"
+            value=""
           />
           <span
             class="t-checkbox__input"
@@ -157744,7 +157744,7 @@ exports[`csr snapshot test > csr test ./src/upload/_example/image.vue 1`] = `
         class="t-space-item"
       >
         <label
-          class="t-checkbox"
+          class="t-checkbox t-is-checked"
           data-v-26399fbc=""
           tabindex="0"
         >
@@ -157752,7 +157752,7 @@ exports[`csr snapshot test > csr test ./src/upload/_example/image.vue 1`] = `
             class="t-checkbox__former"
             tabindex="-1"
             type="checkbox"
-            value="true"
+            value=""
           />
           <span
             class="t-checkbox__input"

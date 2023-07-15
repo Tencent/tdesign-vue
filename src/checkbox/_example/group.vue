@@ -43,7 +43,6 @@ const OPTION_LIST = [
 export default {
   data() {
     return {
-      checkboxName: 'sheep',
       value1: ['选项一'],
       options1: [
         // eslint-disable-next-line @typescript-eslint/no-unused-vars

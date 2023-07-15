@@ -1,5 +1,13 @@
 import {
-  defineComponent, provide, computed, watchEffect, ref, toRefs, watch, nextTick,
+  defineComponent,
+  provide,
+  computed,
+  watchEffect,
+  ref,
+  toRefs,
+  watch,
+  nextTick,
+  onMounted,
 } from '@vue/composition-api';
 import intersection from 'lodash/intersection';
 import isObject from 'lodash/isObject';
@@ -58,19 +66,21 @@ export default defineComponent({
 
     const maxExceeded = computed<boolean>(() => !isUndefined(props.max) && innerValue.value.length === props.max);
 
-    watch(
-      [disabled, maxExceeded, name],
-      ([disabled, maxExceeded, checkboxName]) => {
-        nextTick(() => {
-          checkboxStore.updateCheckbox({ disabled, maxExceeded, checkboxName });
-        });
-      },
-      { immediate: true },
-    );
+    watch([disabled, maxExceeded, name], ([disabled, maxExceeded, checkboxName]) => {
+      checkboxStore.updateCheckbox({ disabled, maxExceeded, checkboxName });
+    });
+
+    onMounted(() => {
+      checkboxStore.updateCheckbox({
+        disabled: disabled.value,
+        maxExceeded: maxExceeded.value,
+        checkboxName: name.value,
+      });
+    });
 
     watchEffect(() => {
       if (!props.options) return [];
-      optionList.value = props.options.map((item) => isObject(item) ? item : { label: String(item), value: item });
+      optionList.value = props.options.map((item) => (isObject(item) ? item : { label: String(item), value: item }));
     });
 
     const getAllCheckboxValue = (): CheckboxGroupValue => {
