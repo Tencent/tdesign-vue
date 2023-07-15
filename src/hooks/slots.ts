@@ -37,11 +37,7 @@ export function useChildComponentSlots() {
       return childList;
     };
 
-    return getChildren(content).filter((item: VNode) =>
-      {
-        return item.tag?.endsWith(childComponentName)
-      },
-    ) as VNode[];
+    return getChildren(content).filter((item: VNode) => item.tag?.endsWith(childComponentName)) as VNode[];
   };
 }
 
