@@ -1,12 +1,5 @@
 import {
-  defineComponent,
-  ref,
-  toRefs,
-  inject,
-  watch,
-  onBeforeUnmount,
-  nextTick,
-  getCurrentInstance,
+  defineComponent, ref, toRefs, inject, watch, onBeforeUnmount,
 } from '@vue/composition-api';
 import props from './props';
 import useVModel from '../hooks/useVModel';
@@ -21,7 +14,6 @@ export default defineComponent({
   name: 'TCheckbox',
   props: {
     ...props,
-    needRipple: Boolean,
     stopLabelTrigger: Boolean,
     storeKey: String,
   },
@@ -34,9 +26,6 @@ export default defineComponent({
   setup(props) {
     const checkboxStore = getCheckboxStore(props.storeKey);
     const labelRef = ref<HTMLElement>();
-    if (props.needRipple) {
-      // useRipple(labelRef);
-    }
     const { STATUS } = useCommonClassName();
 
     const {
