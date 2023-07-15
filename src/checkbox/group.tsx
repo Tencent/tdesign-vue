@@ -1,13 +1,18 @@
-import { defineComponent, provide, computed, watchEffect, ref, toRefs, watch, nextTick } from '@vue/composition-api';
+import {
+  defineComponent, provide, computed, watchEffect, ref, toRefs, watch, nextTick,
+} from '@vue/composition-api';
 import intersection from 'lodash/intersection';
 import isObject from 'lodash/isObject';
 import isUndefined from 'lodash/isUndefined';
+import { VNode } from 'vue';
 import Checkbox from './checkbox';
 import props from './checkbox-group-props';
 import { CheckboxOptionObj, TdCheckboxProps, CheckboxGroupValue } from './type';
 import { CheckboxGroupInjectionKey } from './constants';
-import { usePrefixClass, useVModel, useChildComponentSlots, renderTNodeJSX } from '../hooks';
-import checkboxStore from './store';
+import {
+  usePrefixClass, useVModel, useChildComponentSlots, renderTNodeJSX,
+} from '../hooks';
+import { getCheckboxStore } from './store';
 
 export default defineComponent({
   name: 'TCheckboxGroup',
@@ -17,9 +22,19 @@ export default defineComponent({
   setup(props) {
     /** 样式 */
     const COMPONENT_NAME = usePrefixClass('checkbox-group');
+    const date = new Date();
+    const storeKey = [
+      date.getDate(),
+      date.getHours(),
+      date.getMinutes(),
+      date.getSeconds(),
+      date.getUTCMilliseconds(),
+    ].join('_');
+    const checkboxStore = getCheckboxStore(storeKey);
+    checkboxStore.init();
 
     const { isArray } = Array;
-    const { value, disabled } = toRefs(props);
+    const { value, disabled, name } = toRefs(props);
     const [innerValue, setInnerValue] = useVModel(value, props.defaultValue, props.onChange);
 
     const optionList = ref<Array<CheckboxOptionObj>>([]);
@@ -43,19 +58,19 @@ export default defineComponent({
 
     const maxExceeded = computed<boolean>(() => !isUndefined(props.max) && innerValue.value.length === props.max);
 
-    watch([disabled, maxExceeded], ([disabled, maxExceeded]) => {
-      nextTick(() => {
-        checkboxStore.updateDisabled({ disabled, maxExceeded });
-      });
-    }, { immediate: true });
+    watch(
+      [disabled, maxExceeded, name],
+      ([disabled, maxExceeded, checkboxName]) => {
+        nextTick(() => {
+          checkboxStore.updateCheckbox({ disabled, maxExceeded, checkboxName });
+        });
+      },
+      { immediate: true },
+    );
 
     watchEffect(() => {
       if (!props.options) return [];
-      optionList.value = props.options.map((item) => {
-        return isObject(item)
-          ? item
-          : { label: String(item), value: item };
-      });
+      optionList.value = props.options.map((item) => isObject(item) ? item : { label: String(item), value: item });
     });
 
     const getAllCheckboxValue = (): CheckboxGroupValue => {
@@ -134,33 +149,33 @@ export default defineComponent({
     provide(
       CheckboxGroupInjectionKey,
       computed(() => ({
-        // name: props.name,
-        // isCheckAll: isCheckAll.value,
-        // checkedValues: innerValue.value || [],
-        // maxExceeded: maxExceeded.value,
-        // disabled: props.disabled,
-        // indeterminate: indeterminate.value,
         handleCheckboxChange,
         onCheckedChange,
       })),
     );
 
-    watch([innerValue, isCheckAll], ([val, isCheckAll], [oldValue]) => {
-      nextTick(() => {
-        checkboxStore.updateChecked({
-          checked: val,
-          oldChecked: oldValue,
-          isCheckAll,
+    watch(
+      [innerValue, isCheckAll, indeterminate],
+      ([val, isCheckAll, indeterminate], [oldValue]) => {
+        nextTick(() => {
+          checkboxStore.updateChecked({
+            checked: val,
+            oldChecked: oldValue,
+            isCheckAll,
+            indeterminate,
+          });
         });
-      });
-    }, { immediate: true });
+      },
+      { immediate: true },
+    );
 
     return {
+      storeKey,
       optionList,
       innerValue,
       COMPONENT_NAME,
       getOptionListBySlots,
-    }
+    };
   },
 
   render() {
@@ -171,13 +186,22 @@ export default defineComponent({
           key={option.value ?? index}
           props={option}
           checked={this.innerValue.includes(option.value)}
+          storeKey={this.storeKey}
         ></Checkbox>
       ));
     } else {
       const nodes = renderTNodeJSX(this, 'default');
       this.optionList = this.getOptionListBySlots();
+      nodes.forEach((vNode: VNode) => {
+        // eslint-disable-next-line
+        (vNode.componentOptions.propsData as any).storeKey = this.storeKey;
+      });
       children = nodes;
     }
-    return <div class={this.COMPONENT_NAME}>{children}</div>;
-  }
+    return (
+      <div class={this.COMPONENT_NAME} role="group" aria-label="checkbox-group">
+        {children}
+      </div>
+    );
+  },
 });

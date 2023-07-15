@@ -1,11 +1,13 @@
-import { defineComponent, ref, toRefs, inject, watch } from '@vue/composition-api';
+import {
+  defineComponent, ref, toRefs, inject, watch, onBeforeUnmount,
+} from '@vue/composition-api';
 import props from './props';
 import useVModel from '../hooks/useVModel';
 import { renderContent, useFormDisabled } from '../hooks';
-// import useRipple from '../hooks/useRipple';
 import { useCommonClassName, usePrefixClass } from '../hooks/useConfig';
 import { CheckboxGroupInjectionKey } from './constants';
-import checkboxStore, { ObserverListenerParams } from './store';
+import { getCheckboxStore, ObserverListenerParams } from './store';
+import useCheckboxLazyLoad from './useCheckboxLazyLoad';
 
 export default defineComponent({
   name: 'TCheckbox',
@@ -13,17 +15,21 @@ export default defineComponent({
     ...props,
     needRipple: Boolean,
     stopLabelTrigger: Boolean,
+    storeKey: String,
   },
 
   setup(props) {
-    // const labelRef = ref<HTMLElement>();
+    const checkboxStore = getCheckboxStore(props.storeKey);
+    const labelRef = ref<HTMLElement>();
     if (props.needRipple) {
       // useRipple(labelRef);
     }
     const { STATUS } = useCommonClassName();
     const { formDisabled } = useFormDisabled();
 
-    const { checked, checkAll, disabled } = toRefs(props);
+    const {
+      checked, indeterminate, disabled, value, lazyLoad,
+    } = toRefs(props);
     const [innerChecked, setInnerChecked] = useVModel(
       checked,
       props.defaultChecked,
@@ -34,60 +40,49 @@ export default defineComponent({
 
     const checkboxGroupData = inject(CheckboxGroupInjectionKey, undefined);
 
-    /**
-     * Warn: Do not use computed to set tName,
-     * otherwise checkbox group will render all checkbox items on every checked or unchecked.
-     */
-    const tName = ref<string>();
-    // watch(
-    //   () => [props.name, checkboxGroupData?.value.name].join('_'),
-    //   () => {
-    //     const name = props.name || checkboxGroupData?.value.name;
-    //     if (name) {
-    //       tName.value = name;
-    //     }
-    //   },
-    //   { immediate: true },
-    // );
-
     // checked
+    const tIndeterminate = ref(false);
     const tChecked = ref(false);
-    const handleParentCheckedChange = ({ parentIsCheckAll, parentChecked }: ObserverListenerParams) => {
+    const handleParentCheckedChange = ({
+      parentIsCheckAll,
+      parentChecked,
+      parentIsIndeterminate,
+    }: ObserverListenerParams) => {
       const { value, checkAll } = props;
       if (checkAll) {
         tChecked.value = parentIsCheckAll;
+        tIndeterminate.value = parentIsIndeterminate;
       } else {
         tChecked.value = parentChecked.includes(value);
       }
-    }
+    };
 
-    watch([innerChecked], () => {
-      // CheckboxGroup does not exist, self checked works
-      if (!checkboxStore.checked) {
-        tChecked.value = innerChecked.value;
-      }
-    }, { immediate: true });
+    watch(
+      [innerChecked],
+      () => {
+        // CheckboxGroup does not exist, self checked works
+        if (!checkboxStore.parentExist) {
+          tChecked.value = innerChecked.value;
+        }
+      },
+      { immediate: true },
+    );
 
-    // const getChecked = () => {
-    //   const { value, checkAll } = props;
-    //   if (checkAll) return checkboxGroupData?.value.isCheckAll;
-    //   return checkboxGroupData?.value ? checkboxGroupData.value.checkedValues.includes(value) : innerChecked.value;
-    // };
-    // watch(
-    //   () => [
-    //     innerChecked.value,
-    //     checkboxGroupData?.value.isCheckAll,
-    //     checkboxGroupData?.value.checkedValues?.join(','),
-    //   ].join('_'),
-    //   () => {
-    //     console.log('tChecked');
-    //     tChecked.value = getChecked();
-    //   },
-    //   { immediate: true },
-    // );
+    watch(
+      [indeterminate],
+      ([val]) => {
+        // CheckboxGroup does not exist, self indeterminate works
+        if (!checkboxStore.parentExist) {
+          tIndeterminate.value = val;
+        }
+      },
+      { immediate: true },
+    );
+
+    const tName = ref<string>();
 
     // Warn: Do not use computed to set tDisabled
-    // Form.disabled < CheckboxGroup.disabled < Checkbox.disabled
+    // Priority: Form.disabled < CheckboxGroup.disabled < Checkbox.disabled
     const tDisabled = ref<boolean>(false);
     const handleParentDisabled = ({ parentDisabled, parentMaxExceeded }: ObserverListenerParams) => {
       const { checkAll, disabled } = props;
@@ -110,55 +105,56 @@ export default defineComponent({
       return false;
     };
 
-    // TODO: checkboxGroupData.value?.maxExceeded can not use like this, it will cause performance problem
-    // watch(
-    //   [checkAll, disabled, tChecked],
-    //   () => {
-    //     tDisabled.value = getDisabled();
-    //   },
-    //   { immediate: true },
-    // );
-
-    // const tIndeterminate = ref(false);
-    // watch(
-    //   () => [props.checkAll, props.indeterminate, checkboxGroupData?.value.indeterminate].join('_'),
-    //   () => {
-    //     tIndeterminate.value = props.checkAll ? checkboxGroupData?.value.indeterminate : props.indeterminate;
-    //   },
-    //   { immediate: true },
-    // );
+    watch(
+      [disabled],
+      ([val]) => {
+        if (!checkboxStore.parentExist) {
+          tDisabled.value = val;
+        }
+      },
+      { immediate: true },
+    );
 
     /** update labelClasses, do not use computed to get labelClasses */
     const COMPONENT_NAME = usePrefixClass('checkbox');
     const labelClasses = ref({});
     watch(
-      // [tChecked, tDisabled, tIndeterminate],
-      [tChecked, tDisabled],
-      () => {
+      [tChecked, tDisabled, tIndeterminate],
+      ([tChecked, tDisabled, tIndeterminate]) => {
         labelClasses.value = [
           `${COMPONENT_NAME.value}`,
           {
-            [STATUS.value.checked]: tChecked.value,
-            [STATUS.value.disabled]: tDisabled.value,
-            // [STATUS.value.indeterminate]: tIndeterminate.value,
-            [STATUS.value.indeterminate]: props.indeterminate,
+            [STATUS.value.checked]: tChecked,
+            [STATUS.value.disabled]: tDisabled,
+            [STATUS.value.indeterminate]: tIndeterminate,
           },
         ];
       },
       { immediate: true },
     );
 
-    checkboxStore.subscribe(props.value, (data: ObserverListenerParams) => {
-      switch(data.type) {
-        case 'checked':
-          handleParentCheckedChange(data);
-          break;
-        case 'disabled':
-          handleParentDisabled(data);
-          break;
-        default:
-          break;
-      }
+    const subscribeParentData = (val: string | number | boolean) => {
+      checkboxStore.subscribe(val, (data: ObserverListenerParams) => {
+        switch (data.type) {
+          case 'checked':
+            handleParentCheckedChange(data);
+            break;
+          case 'checkbox':
+            handleParentDisabled(data);
+            if (data.checkboxName) {
+              tName.value = data.checkboxName;
+            }
+            break;
+          default:
+            break;
+        }
+      });
+    };
+
+    subscribeParentData(props.checkAll ? 'CHECK_ALL' : value.value);
+
+    onBeforeUnmount(() => {
+      checkboxStore.unSubscribe(props.checkAll ? 'CHECK_ALL' : value.value);
     });
 
     const handleChange = (e: Event) => {
@@ -166,7 +162,9 @@ export default defineComponent({
       const checked = !tChecked.value;
       setInnerChecked(checked, { e });
       if (checkboxGroupData?.value.handleCheckboxChange) {
-        checkboxGroupData.value.onCheckedChange({ checked, checkAll: props.checkAll, e, option: props });
+        checkboxGroupData.value.onCheckedChange({
+          checked, checkAll: props.checkAll, e, option: props,
+        });
       }
     };
 
@@ -175,12 +173,18 @@ export default defineComponent({
       if (props.stopLabelTrigger) e.preventDefault();
     };
 
+    const { showCheckbox } = useCheckboxLazyLoad(labelRef, lazyLoad);
+
     return {
+      labelRef,
       labelClasses,
       COMPONENT_NAME,
       tDisabled,
-      // tIndeterminate,
+      tIndeterminate,
       tName,
+      tChecked,
+      innerChecked,
+      showCheckbox,
       handleChange,
       handleLabelClick,
     };
@@ -189,22 +193,27 @@ export default defineComponent({
   render() {
     return (
       <label class={this.labelClasses} ref="labelRef">
-        <input
-          type="checkbox"
-          class={`${this.COMPONENT_NAME}__former`}
-          disabled={this.tDisabled}
-          readonly={props.readonly}
-          // indeterminate={this.tIndeterminate}
-          name={this.tName}
-          value={props.value ? props.value : undefined}
-          checked={this.tName}
-          onChange={this.handleChange}
-        ></input>
-        <span class={`${this.COMPONENT_NAME}__input`}></span>
-        <span class={`${this.COMPONENT_NAME}__label`} onClick={this.handleLabelClick}>
-          {renderContent(this, 'default', 'label')}
-        </span>
+        {!this.showCheckbox
+          ? null
+          : [
+              <input
+                type="checkbox"
+                class={`${this.COMPONENT_NAME}__former`}
+                disabled={this.tDisabled}
+                readonly={this.readonly}
+                indeterminate={this.tIndeterminate}
+                name={this.tName || this.name}
+                value={this.value ? this.value : undefined}
+                checked={this.tChecked}
+                onChange={this.handleChange}
+                key="input"
+              ></input>,
+              <span class={`${this.COMPONENT_NAME}__input`} key="input-span"></span>,
+              <span class={`${this.COMPONENT_NAME}__label`} key="label" onClick={this.handleLabelClick}>
+                {renderContent(this, 'default', 'label')}
+              </span>,
+          ]}
       </label>
     );
-  }
+  },
 });

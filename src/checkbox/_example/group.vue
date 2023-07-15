@@ -1,15 +1,15 @@
 <template>
   <t-space direction="vertical" size="48px">
-    <!-- <t-space direction="vertical">
+    <t-space direction="vertical">
       <div>方式一：业务侧自定义全选功能。选中值: {{ value1.join(',') }}</div>
       <div>
         <t-checkbox :checked="checkAll" :indeterminate="indeterminate" :onChange="handleSelectAll">全选</t-checkbox>
       </div>
       <t-checkbox-group v-model="value1" :options="options1" @change="onChange1" />
-    </t-space> -->
+    </t-space>
 
     <!-- key 是避免重复渲染的关键；Checkbox.key is the key point of list render -->
-    <!-- <t-space direction="vertical">
+    <t-space direction="vertical">
       <div>方式二：组件内置全选功能，使用插槽定义选项。选中值: {{ value2.join(', ') }}</div>
       <t-checkbox-group v-model="value2" @change="onChange2">
         <t-checkbox key="1" :checkAll="true" label="全选" />
@@ -17,23 +17,21 @@
         <t-checkbox key="3" label="选项二" value="选项二" :disabled="true" />
         <t-checkbox key="4" label="选项三" value="选项三" />
       </t-checkbox-group>
-    </t-space> -->
+    </t-space>
 
     <t-space direction="vertical">
       <div>方式三：组件内置全选功能，使用 `options` 定义选项。选中值: {{ value3.join(', ') }}</div>
-      <t-checkbox-group :disabled="disabled" v-model="value3" :options="options2" @change="onChange3" />
-      <button @click="disabled = !disabled">click</button>
+      <t-checkbox-group v-model="value3" :options="options2" @change="onChange3" />
     </t-space>
 
-    <!-- <t-space direction="vertical">
+    <t-space direction="vertical">
       <div>方式四：组件内置全选功能，非受控用法</div>
       <t-checkbox-group :defaultValue="['选项一']" :options="options2" />
-    </t-space> -->
+    </t-space>
   </t-space>
 </template>
 
 <script lang="jsx">
-
 const OPTION_LIST = [
   { label: '全选', checkAll: true },
   { value: '选项一', label: '选项一' },
@@ -42,14 +40,10 @@ const OPTION_LIST = [
   { value: '选项三', label: '选项三' },
 ];
 
-for (let i = 0; i < 1000; i++) {
-  OPTION_LIST.push({ label: `选项 ${i + 1}`, value: i + 1 });
-}
-
 export default {
   data() {
     return {
-      disabled: false,
+      checkboxName: 'sheep',
       value1: ['选项一'],
       options1: [
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -60,7 +54,7 @@ export default {
 
       value2: ['选项一'],
       value3: ['选项一', '选项二', '选项三'],
-      options2: OPTION_LIST,
+      options2: [...OPTION_LIST],
     };
   },
   computed: {
