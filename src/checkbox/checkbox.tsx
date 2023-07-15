@@ -135,18 +135,13 @@ export default defineComponent({
 
     const subscribeParentData = (val: string | number | boolean) => {
       checkboxStore.subscribe(val, (data: ObserverListenerParams) => {
-        switch (data.type) {
-          case 'checked':
-            handleParentCheckedChange(data);
-            break;
-          case 'checkbox':
-            handleParentDisabled(data);
-            if (data.checkboxName) {
-              tName.value = data.checkboxName;
-            }
-            break;
-          default:
-            break;
+        if (data.type === 'checked') {
+          handleParentCheckedChange(data);
+        } else if (data.type === 'checkbox') {
+          handleParentDisabled(data);
+          if (data.checkboxName) {
+            tName.value = data.checkboxName;
+          }
         }
       });
     };
@@ -163,7 +158,10 @@ export default defineComponent({
       setInnerChecked(checked, { e });
       if (checkboxGroupData?.value.handleCheckboxChange) {
         checkboxGroupData.value.onCheckedChange({
-          checked, checkAll: props.checkAll, e, option: props,
+          checked,
+          checkAll: props.checkAll,
+          e,
+          option: props,
         });
       }
     };
@@ -192,7 +190,7 @@ export default defineComponent({
 
   render() {
     return (
-      <label class={this.labelClasses} ref="labelRef">
+      <label class={this.labelClasses} ref="labelRef" tabindex="0">
         {!this.showCheckbox
           ? null
           : [
@@ -202,11 +200,12 @@ export default defineComponent({
                 disabled={this.tDisabled}
                 readonly={this.readonly}
                 indeterminate={this.tIndeterminate}
-                name={this.tName || this.name}
+                name={this.tName || this.name || undefined}
                 value={this.value ? this.value : undefined}
                 checked={this.tChecked}
-                onChange={this.handleChange}
+                on={{ change: this.handleChange }}
                 key="input"
+                tabindex="-1"
               ></input>,
               <span class={`${this.COMPONENT_NAME}__input`} key="input-span"></span>,
               <span class={`${this.COMPONENT_NAME}__label`} key="label" onClick={this.handleLabelClick}>
