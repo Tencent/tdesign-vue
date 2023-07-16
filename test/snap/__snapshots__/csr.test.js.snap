@@ -24866,7 +24866,7 @@ exports[`csr snapshot test > csr test ./src/checkbox/_example/group.vue 1`] = `
         class="t-space-item"
       >
         <div>
-          方式四：组件内置全选功能，非受控用法
+          方式四：组件内置全选功能，\`options\` 定义选项列表，插槽定义选项内容
         </div>
       </div>
       <div
@@ -24893,7 +24893,9 @@ exports[`csr snapshot test > csr test ./src/checkbox/_example/group.vue 1`] = `
             <span
               class="t-checkbox__label"
             >
-              全选
+              <span>
+                全选
+              </span>
             </span>
           </label>
           <label
@@ -24904,7 +24906,7 @@ exports[`csr snapshot test > csr test ./src/checkbox/_example/group.vue 1`] = `
               class="t-checkbox__former"
               tabindex="-1"
               type="checkbox"
-              value="选项一"
+              value="optionA"
             />
             <span
               class="t-checkbox__input"
@@ -24912,7 +24914,9 @@ exports[`csr snapshot test > csr test ./src/checkbox/_example/group.vue 1`] = `
             <span
               class="t-checkbox__label"
             >
-              选项一
+              <span>
+                 选项一（optionA/1） 
+              </span>
             </span>
           </label>
           <label
@@ -24923,7 +24927,7 @@ exports[`csr snapshot test > csr test ./src/checkbox/_example/group.vue 1`] = `
               class="t-checkbox__former"
               tabindex="-1"
               type="checkbox"
-              value="选项二"
+              value="optionB"
             />
             <span
               class="t-checkbox__input"
@@ -24931,9 +24935,9 @@ exports[`csr snapshot test > csr test ./src/checkbox/_example/group.vue 1`] = `
             <span
               class="t-checkbox__label"
             >
-              <div>
-                选项二
-              </div>
+              <span>
+                 选项二（optionB/2） 
+              </span>
             </span>
           </label>
           <label
@@ -24944,7 +24948,7 @@ exports[`csr snapshot test > csr test ./src/checkbox/_example/group.vue 1`] = `
               class="t-checkbox__former"
               tabindex="-1"
               type="checkbox"
-              value="选项三"
+              value="optionC"
             />
             <span
               class="t-checkbox__input"
@@ -24952,7 +24956,9 @@ exports[`csr snapshot test > csr test ./src/checkbox/_example/group.vue 1`] = `
             <span
               class="t-checkbox__label"
             >
-              选项三
+              <span>
+                 选项三（optionC/3） 
+              </span>
             </span>
           </label>
         </div>
