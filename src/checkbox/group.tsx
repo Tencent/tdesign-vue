@@ -17,9 +17,7 @@ import Checkbox from './checkbox';
 import props from './checkbox-group-props';
 import { CheckboxOptionObj, TdCheckboxProps, CheckboxGroupValue } from './type';
 import { CheckboxGroupInjectionKey } from './constants';
-import {
-  usePrefixClass, useVModel, useChildComponentSlots, renderTNodeJSX,
-} from '../hooks';
+import { usePrefixClass, useVModel, useChildComponentSlots } from '../hooks';
 import { getCheckboxStore } from './store';
 
 export default defineComponent({
@@ -195,12 +193,14 @@ export default defineComponent({
         <Checkbox
           key={option.value ?? index}
           props={option}
+          index={index}
           checked={this.innerValue.includes(option.value)}
           storeKey={this.storeKey}
+          scopedSlots={this.$scopedSlots}
         ></Checkbox>
       ));
     } else {
-      const nodes = renderTNodeJSX(this, 'default');
+      const nodes = this.$scopedSlots.default?.(null);
       this.optionList = this.getOptionListBySlots();
       nodes.forEach((vNode: VNode) => {
         // eslint-disable-next-line

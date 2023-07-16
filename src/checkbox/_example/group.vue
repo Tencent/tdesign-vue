@@ -9,6 +9,7 @@
     </t-space>
 
     <!-- key 是避免重复渲染的关键；Checkbox.key is the key point of list render -->
+    <!-- 数据量大的情况下，不建议使用这种方式：因父组件 CheckboxGroup 选中项变化，子组件 Checkbox 一定重新渲染。 -->
     <t-space direction="vertical">
       <div>方式二：组件内置全选功能，使用插槽定义选项。选中值: {{ value2.join(', ') }}</div>
       <t-checkbox-group v-model="value2" @change="onChange2">
@@ -19,14 +20,21 @@
       </t-checkbox-group>
     </t-space>
 
+    <!-- 数据量大的情况下，建议使用这种方式，可以避免选中项重复渲染 -->
     <t-space direction="vertical">
       <div>方式三：组件内置全选功能，使用 `options` 定义选项。选中值: {{ value3.join(', ') }}</div>
       <t-checkbox-group v-model="value3" :options="options2" @change="onChange3" />
     </t-space>
 
+    <!-- 数据量大的情况下，建议使用这种方式，可以避免选中项重复渲染 -->
     <t-space direction="vertical">
-      <div>方式四：组件内置全选功能，非受控用法</div>
-      <t-checkbox-group :defaultValue="['选项一']" :options="options2" />
+      <div>方式四：组件内置全选功能，`options` 定义选项列表，插槽定义选项内容</div>
+      <t-checkbox-group :defaultValue="['选项一']" :options="options3">
+        <template #label="{ option: { label, value, checkAll }, index }">
+          <span v-if="checkAll">{{ label }}</span>
+          <span v-else> {{ label }}（{{ value }}/{{ index }}） </span>
+        </template>
+      </t-checkbox-group>
     </t-space>
   </t-space>
 </template>
@@ -38,6 +46,13 @@ const OPTION_LIST = [
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   { value: '选项二', label: (h) => <div>选项二</div> },
   { value: '选项三', label: '选项三' },
+];
+
+const OPTION_LIST3 = [
+  { label: '全选', checkAll: true },
+  { value: 'optionA', label: '选项一' },
+  { value: 'optionB', label: '选项二' },
+  { value: 'optionC', label: '选项三' },
 ];
 
 export default {
@@ -54,6 +69,7 @@ export default {
       value2: ['选项一'],
       value3: ['选项一', '选项二', '选项三'],
       options2: [...OPTION_LIST],
+      options3: OPTION_LIST3,
     };
   },
   computed: {

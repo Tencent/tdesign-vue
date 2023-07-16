@@ -3,7 +3,7 @@ import {
 } from '@vue/composition-api';
 import props from './props';
 import useVModel from '../hooks/useVModel';
-import { renderContent, useFormDisabled } from '../hooks';
+import { renderContent, renderTNodeJSX, useFormDisabled } from '../hooks';
 import { useCommonClassName, usePrefixClass } from '../hooks/useConfig';
 import { CheckboxGroupInjectionKey } from './constants';
 import { getCheckboxStore, ObserverListenerParams } from './store';
@@ -16,6 +16,7 @@ export default defineComponent({
     ...props,
     stopLabelTrigger: Boolean,
     storeKey: String,
+    index: Number,
   },
 
   model: {
@@ -27,6 +28,7 @@ export default defineComponent({
     const checkboxStore = getCheckboxStore(props.storeKey);
     const labelRef = ref<HTMLElement>();
     const { STATUS } = useCommonClassName();
+    const checkboxGroupExist = ref(false);
 
     const {
       checked, indeterminate, disabled, value, lazyLoad,
@@ -56,6 +58,7 @@ export default defineComponent({
       } else {
         tChecked.value = parentChecked.includes(value);
       }
+      checkboxGroupExist.value = checkboxStore.parentExist;
     };
 
     watch(
@@ -64,6 +67,8 @@ export default defineComponent({
         // CheckboxGroup does not exist, self checked works
         if (!checkboxStore.parentExist) {
           tChecked.value = innerChecked.value;
+        } else {
+          checkboxGroupExist.value = true;
         }
       },
       { immediate: true },
@@ -181,6 +186,7 @@ export default defineComponent({
       showCheckbox,
       formDisabled,
       STATUS,
+      checkboxGroupExist,
       handleChange,
       handleLabelClick,
       onCheckboxFocus,
@@ -193,6 +199,10 @@ export default defineComponent({
     const classes = this.labelClasses.concat({
       [this.STATUS.disabled]: disabled,
     });
+    const slotsPrams = {
+      option: this.$options.propsData,
+      index: this.index,
+    };
     return (
       <label
         ref="labelRef"
@@ -219,7 +229,8 @@ export default defineComponent({
               ></input>,
               <span class={`${this.COMPONENT_NAME}__input`} key="input-span"></span>,
               <span class={`${this.COMPONENT_NAME}__label`} key="label" onClick={this.handleLabelClick}>
-                {renderContent(this, 'default', 'label')}
+                {renderTNodeJSX(this, 'default', { params: slotsPrams })
+                  || renderTNodeJSX(this, 'label', { params: slotsPrams, slotFirst: this.checkboxGroupExist })}
               </span>,
           ]}
       </label>
