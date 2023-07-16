@@ -195,6 +195,7 @@ export default defineComponent({
           lazyLoad={this.lazyLoad}
           props={option}
           index={index}
+          data={option}
           checked={this.innerValue.includes(option.value)}
           storeKey={this.storeKey}
           scopedSlots={this.$scopedSlots}

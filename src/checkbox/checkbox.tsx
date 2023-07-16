@@ -17,6 +17,8 @@ export default defineComponent({
     stopLabelTrigger: Boolean,
     storeKey: String,
     index: Number,
+    // 传递给 Checkbox 组件额外的数据
+    data: Object,
   },
 
   model: {
@@ -200,7 +202,7 @@ export default defineComponent({
       [this.STATUS.disabled]: disabled,
     });
     const slotsPrams = {
-      option: this.$options.propsData,
+      data: this.data,
       index: this.index,
     };
     return (

@@ -30,7 +30,7 @@
     <t-space direction="vertical">
       <div>方式四：组件内置全选功能，`options` 定义选项列表，插槽定义选项内容</div>
       <t-checkbox-group :defaultValue="['选项一']" :options="options3">
-        <template #label="{ option: { label, value, checkAll }, index }">
+        <template #label="{ data: { label, value, checkAll }, index }">
           <span v-if="checkAll">{{ label }}</span>
           <span v-else> {{ label }}（{{ value }}/{{ index }}） </span>
         </template>
