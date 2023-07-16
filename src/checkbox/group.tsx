@@ -192,6 +192,7 @@ export default defineComponent({
       children = this.optionList?.map((option, index) => (
         <Checkbox
           key={option.value ?? index}
+          lazyLoad={this.lazyLoad}
           props={option}
           index={index}
           checked={this.innerValue.includes(option.value)}

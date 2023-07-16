@@ -3,7 +3,7 @@ import {
 } from '@vue/composition-api';
 import props from './props';
 import useVModel from '../hooks/useVModel';
-import { renderContent, renderTNodeJSX, useFormDisabled } from '../hooks';
+import { renderTNodeJSX, useFormDisabled } from '../hooks';
 import { useCommonClassName, usePrefixClass } from '../hooks/useConfig';
 import { CheckboxGroupInjectionKey } from './constants';
 import { getCheckboxStore, ObserverListenerParams } from './store';

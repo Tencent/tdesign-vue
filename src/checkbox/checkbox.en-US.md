@@ -29,6 +29,7 @@ change | `(checked: boolean, context: { e: Event })` | \-
 name | type | default | description | required
 -- | -- | -- | -- | --
 disabled | Boolean | undefined | \- | N
+lazyLoad | Boolean | false | load checkbox content when it entering the visible area | N
 max | Number | undefined | \- | N
 name | String | - | \- | N
 options | Array | - | Typescript：`Array<CheckboxOption>` `type CheckboxOption = string \| number \| CheckboxOptionObj` `interface CheckboxOptionObj extends TdCheckboxProps { text?: string; }`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/checkbox/type.ts) | N

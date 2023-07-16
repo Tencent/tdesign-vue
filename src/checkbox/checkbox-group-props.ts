@@ -13,6 +13,8 @@ export default {
     type: Boolean,
     default: undefined,
   },
+  /** 是否启用懒加载。数据量加大时建议开启；加载复杂内容或大量图片时建议开启 */
+  lazyLoad: Boolean,
   /** 支持最多选中的数量 */
   max: {
     type: Number,
