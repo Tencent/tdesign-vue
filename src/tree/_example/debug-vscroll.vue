@@ -68,7 +68,7 @@
 </template>
 
 <script>
-const allLevels = [10, 10, 10];
+const allLevels = [10, 20, 25];
 
 function createTreeData() {
   let cacheIndex = 0;

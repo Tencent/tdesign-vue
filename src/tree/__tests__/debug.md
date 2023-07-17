@@ -15,8 +15,6 @@ tree 针对性测试命令:
 ```bash
 # 执行单测
 npx vitest ./src/tree/__tests__/
-# 更新单测快照
-npx vitest --updateSnapshot ./src/tree/__tests__/
 ```
 
 ## 调试界面
