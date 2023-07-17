@@ -5,6 +5,12 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.4.8 `2023-07-17` 
+### 🚀 Features
+- `DatePicker`: 优化关闭浮层后重置默认选中区域 @honkinglin ([#2585](https://github.com/Tencent/tdesign-vue/pull/2585))
+### 🚧 Others
+- `Input`: 输入框的值 类型移除 Number @liweijie0812 ([#2582](https://github.com/Tencent/tdesign-vue/pull/2582))
+
 ## 🌈 1.4.7 `2023-07-11` 
 ### 🚀 Features
 - `Upload`: @chaishi ([#2568](https://github.com/Tencent/tdesign-vue/pull/2568))
