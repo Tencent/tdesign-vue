@@ -20959,7 +20959,7 @@ exports[`csr snapshot test > csr test ./src/card/_example/footer.vue 1`] = `
         style="margin-left: 0px; margin-right: 0px; gap: 24px;"
       >
         <div
-          class="t-col t-col-12"
+          class="t-col"
           style="flex-basis: auto; padding-left: 0px; padding-right: 0px; display: inline-flex; justify-content: center;"
         >
           <button
@@ -20986,7 +20986,7 @@ exports[`csr snapshot test > csr test ./src/card/_example/footer.vue 1`] = `
           </button>
         </div>
         <div
-          class="t-col t-col-12"
+          class="t-col"
           style="flex-basis: auto; padding-left: 0px; padding-right: 0px; display: inline-flex; justify-content: center;"
         >
           <button
@@ -21013,7 +21013,7 @@ exports[`csr snapshot test > csr test ./src/card/_example/footer.vue 1`] = `
           </button>
         </div>
         <div
-          class="t-col t-col-12"
+          class="t-col"
           style="flex-basis: auto; padding-left: 0px; padding-right: 0px; display: inline-flex; justify-content: center;"
         >
           <button
@@ -21075,7 +21075,7 @@ exports[`csr snapshot test > csr test ./src/card/_example/footer-actions.vue 1`]
             style="margin-left: 0px; margin-right: 0px; gap: 24px;"
           >
             <div
-              class="t-col t-col-12"
+              class="t-col"
               style="flex-basis: auto; padding-left: 0px; padding-right: 0px; display: inline-flex; justify-content: center;"
             >
               <button
@@ -21102,7 +21102,7 @@ exports[`csr snapshot test > csr test ./src/card/_example/footer-actions.vue 1`]
               </button>
             </div>
             <div
-              class="t-col t-col-12"
+              class="t-col"
               style="flex-basis: auto; padding-left: 0px; padding-right: 0px; display: inline-flex; justify-content: center;"
             >
               <button
@@ -21129,7 +21129,7 @@ exports[`csr snapshot test > csr test ./src/card/_example/footer-actions.vue 1`]
               </button>
             </div>
             <div
-              class="t-col t-col-12"
+              class="t-col"
               style="flex-basis: auto; padding-left: 0px; padding-right: 0px; display: inline-flex; justify-content: center;"
             >
               <button
@@ -21962,7 +21962,7 @@ exports[`csr snapshot test > csr test ./src/card/_example/header-subtitle-footer
         style="margin-left: 0px; margin-right: 0px; gap: 24px;"
       >
         <div
-          class="t-col t-col-12"
+          class="t-col"
           style="flex-basis: auto; padding-left: 0px; padding-right: 0px; display: inline-flex; justify-content: center;"
         >
           <button
@@ -21989,7 +21989,7 @@ exports[`csr snapshot test > csr test ./src/card/_example/header-subtitle-footer
           </button>
         </div>
         <div
-          class="t-col t-col-12"
+          class="t-col"
           style="flex-basis: auto; padding-left: 0px; padding-right: 0px; display: inline-flex; justify-content: center;"
         >
           <button
@@ -22016,7 +22016,7 @@ exports[`csr snapshot test > csr test ./src/card/_example/header-subtitle-footer
           </button>
         </div>
         <div
-          class="t-col t-col-12"
+          class="t-col"
           style="flex-basis: auto; padding-left: 0px; padding-right: 0px; display: inline-flex; justify-content: center;"
         >
           <button
@@ -55545,7 +55545,7 @@ exports[`csr snapshot test > csr test ./src/grid/_example/flex.vue 1`] = `
       style="margin-left: 0px; margin-right: 0px;"
     >
       <div
-        class="t-col t-col-12"
+        class="t-col"
         style="flex: 2 2 0px; padding-left: 0px; padding-right: 0px;"
       >
         <div>
@@ -55553,7 +55553,7 @@ exports[`csr snapshot test > csr test ./src/grid/_example/flex.vue 1`] = `
         </div>
       </div>
       <div
-        class="t-col t-col-12"
+        class="t-col"
         style="flex: 3 3 0px; padding-left: 0px; padding-right: 0px;"
       >
         <div>
@@ -55570,7 +55570,7 @@ exports[`csr snapshot test > csr test ./src/grid/_example/flex.vue 1`] = `
       style="margin-left: 0px; margin-right: 0px;"
     >
       <div
-        class="t-col t-col-12"
+        class="t-col"
         style="flex: 0 0 100px; padding-left: 0px; padding-right: 0px;"
       >
         <div>
@@ -55578,7 +55578,7 @@ exports[`csr snapshot test > csr test ./src/grid/_example/flex.vue 1`] = `
         </div>
       </div>
       <div
-        class="t-col t-col-12"
+        class="t-col"
         style="flex-basis: auto; padding-left: 0px; padding-right: 0px;"
       >
         <div>
@@ -55595,7 +55595,7 @@ exports[`csr snapshot test > csr test ./src/grid/_example/flex.vue 1`] = `
       style="margin-left: 0px; margin-right: 0px;"
     >
       <div
-        class="t-col t-col-12"
+        class="t-col"
         style="flex: 1 1 200px; padding-left: 0px; padding-right: 0px;"
       >
         <div>
@@ -55603,7 +55603,7 @@ exports[`csr snapshot test > csr test ./src/grid/_example/flex.vue 1`] = `
         </div>
       </div>
       <div
-        class="t-col t-col-12"
+        class="t-col"
         style="flex: 0 1 300px; padding-left: 0px; padding-right: 0px;"
       >
         <div>
@@ -55620,7 +55620,7 @@ exports[`csr snapshot test > csr test ./src/grid/_example/flex.vue 1`] = `
       style="margin-left: 0px; margin-right: 0px;"
     >
       <div
-        class="t-col t-col-12"
+        class="t-col"
         style="flex: 0 0 auto; padding-left: 0px; padding-right: 0px;"
       >
         <div
@@ -55630,7 +55630,7 @@ exports[`csr snapshot test > csr test ./src/grid/_example/flex.vue 1`] = `
         </div>
       </div>
       <div
-        class="t-col t-col-12"
+        class="t-col"
         style="flex-basis: auto; padding-left: 0px; padding-right: 0px;"
       >
         <div>
@@ -56369,7 +56369,7 @@ exports[`csr snapshot test > csr test ./src/grid/_example/responsive.vue 1`] = `
       style="margin-left: 0px; margin-right: 0px;"
     >
       <div
-        class="t-col t-col-12 t-col-xs-2 t-col-sm-4 t-col-md-6 t-col-lg-8 t-col-xl-10"
+        class="t-col t-col-xs-2 t-col-sm-4 t-col-md-6 t-col-lg-8 t-col-xl-10"
         style="padding-left: 0px; padding-right: 0px;"
       >
         <div>
@@ -56377,7 +56377,7 @@ exports[`csr snapshot test > csr test ./src/grid/_example/responsive.vue 1`] = `
         </div>
       </div>
       <div
-        class="t-col t-col-12 t-col-xs-10 t-col-sm-8 t-col-md-6 t-col-lg-4 t-col-xl-2"
+        class="t-col t-col-xs-10 t-col-sm-8 t-col-md-6 t-col-lg-4 t-col-xl-2"
         style="padding-left: 0px; padding-right: 0px;"
       >
         <div>
@@ -56401,7 +56401,7 @@ exports[`csr snapshot test > csr test ./src/grid/_example/responsive.vue 1`] = `
       style="margin-left: 0px; margin-right: 0px;"
     >
       <div
-        class="t-col t-col-12 t-col-xs-3 t-col-xs-offset-0 t-col-sm-3 t-col-sm-offset-2 t-col-md-3 t-col-md-offset-4 t-col-lg-3 t-col-lg-offset-6 t-col-xl-3 t-col-xl-offset-8"
+        class="t-col t-col-xs-3 t-col-xs-offset-0 t-col-sm-3 t-col-sm-offset-2 t-col-md-3 t-col-md-offset-4 t-col-lg-3 t-col-lg-offset-6 t-col-xl-3 t-col-xl-offset-8"
         style="padding-left: 0px; padding-right: 0px;"
       >
         <div>
@@ -89694,7 +89694,7 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/animation.vue 1`] 
   style="margin-left: 0px; margin-right: 0px;"
 >
   <div
-    class="t-col t-col-12"
+    class="t-col"
     style="padding-left: 0px; padding-right: 0px;"
   >
     <section
@@ -89745,7 +89745,7 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/animation.vue 1`] 
     </section>
   </div>
   <div
-    class="t-col t-col-12"
+    class="t-col"
     style="padding-left: 0px; padding-right: 0px;"
   >
     <section
@@ -89924,7 +89924,7 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/theme.vue 1`] = `
   style="margin-left: 0px; margin-right: 0px;"
 >
   <div
-    class="t-col t-col-12"
+    class="t-col"
     style="padding-left: 0px; padding-right: 0px;"
   >
     <section
@@ -89953,7 +89953,7 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/theme.vue 1`] = `
     </section>
   </div>
   <div
-    class="t-col t-col-12"
+    class="t-col"
     style="padding-left: 0px; padding-right: 0px;"
   >
     <section
@@ -89983,7 +89983,7 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/theme.vue 1`] = `
     </section>
   </div>
   <div
-    class="t-col t-col-12"
+    class="t-col"
     style="padding-left: 0px; padding-right: 0px;"
   >
     <section
@@ -90027,7 +90027,7 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/theme.vue 1`] = `
     </section>
   </div>
   <div
-    class="t-col t-col-12"
+    class="t-col"
     style="padding-left: 0px; padding-right: 0px;"
   >
     <section
@@ -90060,7 +90060,7 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/theme.vue 1`] = `
     </section>
   </div>
   <div
-    class="t-col t-col-12"
+    class="t-col"
     style="padding-left: 0px; padding-right: 0px;"
   >
     <section
@@ -90098,7 +90098,7 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/theme.vue 1`] = `
     </section>
   </div>
   <div
-    class="t-col t-col-12"
+    class="t-col"
     style="padding-left: 0px; padding-right: 0px;"
   >
     <section
