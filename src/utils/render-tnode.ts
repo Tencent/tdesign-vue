@@ -4,7 +4,6 @@ import {
   PropType, CreateElement, VNode, VNodeChildren, RenderContext,
 } from 'vue/types/umd';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
-// import isObject from 'lodash/isObject';
 import camelCase from 'lodash/camelCase';
 import kebabCase from 'lodash/kebabCase';
 import { TNode } from '../common';
@@ -91,6 +90,7 @@ interface JSXRenderContext {
   params?: Record<string, any>;
   // 是否不打印 LOG
   silent?: boolean;
+  slotFirst?: boolean;
 }
 
 /**
@@ -110,6 +110,7 @@ export const renderTNodeJSX = (vm: VmType, name: string, options?: ScopedSlotRet
   //   console.warn(`Both $scopedSlots.${name} and $props.${name} exist, $props.${name} is preferred`);
   // }
   const params = typeof options === 'object' && 'params' in options ? options.params : null;
+  const slotFirst = typeof options === 'object' && 'slotFirst' in options ? options.slotFirst : false;
   const defaultNode = typeof options === 'object' && 'defaultNode' in options ? options.defaultNode : options;
   const propsNode = vm[name];
   if (propsNode === false) return;
@@ -121,7 +122,7 @@ export const renderTNodeJSX = (vm: VmType, name: string, options?: ScopedSlotRet
   }
   const isPropsEmpty = [undefined, params, ''].includes(propsNode);
   // Props 为空，但插槽存在
-  if (isPropsEmpty && (vm.$scopedSlots[camelCase(name)] || vm.$scopedSlots[kebabCase(name)])) {
+  if ((isPropsEmpty || slotFirst) && (vm.$scopedSlots[camelCase(name)] || vm.$scopedSlots[kebabCase(name)])) {
     return handleSlots(vm, params, name);
   }
   return propsNode;
