@@ -1,4 +1,3 @@
-/* eslint-disable no-nested-ternary */
 import {
   defineComponent, computed, inject, onMounted,
 } from '@vue/composition-api';
@@ -41,10 +40,10 @@ export default defineComponent({
       menu.select(props.value);
       ctx.emit('click');
 
-      if (props.to || (props.routerLink && props.href)) {
+      if (props.to) {
         const router = props.router || (ctx.root as Record<string, any>).$router;
         const methods: string = props.replace ? 'replace' : 'push';
-        router[methods](props.to || props.href).catch((err: Error) => {
+        router[methods](props.to).catch((err: Error) => {
           // vue-router 3.1.0+ push/replace cause NavigationDuplicated error
           // https://github.com/vuejs/vue-router/issues/2872
           // 当前path和目标path相同时，会抛出NavigationDuplicated的错误
@@ -77,8 +76,6 @@ export default defineComponent({
     };
   },
   render() {
-    const router = this.router || this.$router;
-
     const liContent = (
       <li
         v-ripple={(this.keepAnimation as Record<AnimationType, boolean>).ripple}
@@ -86,30 +83,15 @@ export default defineComponent({
         onClick={this.handleClick}
       >
         {renderTNodeJSX(this, 'icon')}
-        {this.routerLink ? (
-          <a
-            href={this.href ? this.href : this.to ? (router as any)?.resolve(this.to).href : ''}
-            target={this.target}
-            class={`${this.classPrefix}-menu__item-link`}
-            onClick={(e: MouseEvent) => e.preventDefault()}
-          >
-            <span class={`${this.classPrefix}-menu__content`}>{renderContent(this, 'default', 'content')}</span>
-          </a>
-        ) : this.href ? (
-          <a
-            href={this.href}
-            target={this.target}
-            class={`${this.classPrefix}-menu__item-link`}
-            onClick={(e: MouseEvent) => this.disabled && e.preventDefault()}
-          >
+        {this.href ? (
+          <a href={this.href} target={this.target} class={`${this.classPrefix}-menu__item-link`}>
             <span class={`${this.classPrefix}-menu__content`}>{renderContent(this, 'default', 'content')}</span>
           </a>
         ) : (
-          <span class={`${this.classPrefix}-menu__content`}>{renderContent(this, 'default', 'content')}</span>
+          <span class={[`${this.classPrefix}-menu__content`]}>{renderContent(this, 'default', 'content')}</span>
         )}
       </li>
     );
-
     // 菜单收起，且只有本身为一级菜单才需要显示 tooltip
     if (this.collapsed && /tmenu/i.test(this.$parent.$vnode?.tag)) {
       return (
