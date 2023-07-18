@@ -5,6 +5,30 @@ toc: false
 docClass: timeline
 ---
 
+ ## 🌈 1.4.8 `2023-07-18` 
+### 🚀 Features
+- `DatePicker`: 优化关闭浮层后重置默认选中区域 @honkinglin ([#2585](https://github.com/Tencent/tdesign-vue/pull/2585))
+- `Checkbox`: @chaishi ([#2583](https://github.com/Tencent/tdesign-vue/pull/2583)
+    - 新增支持 `lazyLoad`，懒加载，用于需要渲染大量数据，或加载复杂内容/图片的场景
+    - 渲染性能优化，选择或取消某一个选项时，不再重复渲染全部复选框
+    - 新增支持键盘控制选项选中或取消选中
+    - 新增支持 CheckboxGroup 使用 `options` 定义选项列表的同时，使用插槽 `label` 定义选项内容。可用于数据量较大的场景，不会重复渲染
+### 🐞 Bug Fixes
+- `Checkbox`: @chaishi ([#2583](https://github.com/Tencent/tdesign-vue/pull/2583))
+  - 复选框禁用逻辑优先级顺序修复，应当为：`Form.disabled < CheckboxGroup.disabled < Checkbox.disabled`
+  - 修复带禁用按钮的全选逻辑问题
+- `Input`: 输入框的值类型移除 `Number` 类型 @liweijie0812 ([#2582](https://github.com/Tencent/tdesign-vue/pull/2582))
+- `AutoComplete`: 修复表单内 `AutoComplete` 输入框宽度与 `Input` 组件不一致的问题 @liweijie0812 ([common#1524](https://github.com/Tencent/tdesign-common/pull/1524))
+- `InputNumber`:
+  - 修复大尺寸的 `padding` 样式问题 @uyarn ([common#1533](https://github.com/Tencent/tdesign-common/pull/1533))
+  - 数字为空时，返回 `null`，而非 `undefined` @uyarn ([common#1533](https://github.com/Tencent/tdesign-common/pull/1533))
+- `Transfer`: 优化 transfer item 类名优先级问题 @xixileng ([common#1530](https://github.com/Tencent/tdesign-common/pull/1530))
+- `TagInput`: 修复 tag-input 前缀不居中且会发生抖动的问题 @xixileng ([common#1532](https://github.com/Tencent/tdesign-common/pull/1532))
+- `Dialog`: 修复组件销毁后，没有正确销毁 DOM，导致的内存泄漏问题 @loganylwu ([#2581](https://github.com/Tencent/tdesign-vue/pull/2581))
+
+### 🚧 Others
+- `Grid`: 移除 `span` 默认值，`gutter` 类型补充 `lg/xl/xxl` @liweijie0812 ([#2584](https://github.com/Tencent/tdesign-vue/pull/2584)) 
+
 ## 🌈 1.4.7 `2023-07-11` 
 ### 🚀 Features
 - `Upload`: @chaishi ([#2568](https://github.com/Tencent/tdesign-vue/pull/2568))

@@ -9,7 +9,7 @@ export interface UseVModelParams<T> {
   propName?: string;
 }
 
-export default function useVModel<T, P extends any[]>(
+export function useVModel<T, P extends any[]>(
   value: Ref<T>,
   defaultValue: T,
   onChange: ChangeHandler<T, P>,
@@ -24,6 +24,7 @@ export default function useVModel<T, P extends any[]>(
 
   const isControlled = Object.prototype.hasOwnProperty.call(vnode.componentOptions.propsData, propName)
     || Object.prototype.hasOwnProperty.call(vnode.componentOptions.propsData, kebabCase(propName));
+
   // 受控模式
   if (isControlled) {
     return [
@@ -69,3 +70,5 @@ export default function useVModel<T, P extends any[]>(
     },
   ];
 }
+
+export default useVModel;
