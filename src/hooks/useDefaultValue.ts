@@ -1,6 +1,6 @@
 import { ref, Ref, getCurrentInstance } from '@vue/composition-api';
 
-export type ChangeHandler<T, P extends any[]> = (value: T, ...args: P) => void;
+type ChangeHandler<T, P extends any[]> = (value: T, ...args: P) => void;
 
 export default function useDefaultValue<T, P extends any[]>(
   value: Ref<T>,

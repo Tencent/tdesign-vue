@@ -19,7 +19,7 @@ import {
   getDisplayFiles,
   formatToUploadFile,
 } from '../../_common/js/upload/main';
-import { getFileUrlByFileRaw } from '../../_common/js/upload/utils';
+import { getFileUrlByFileRaw, getFileList } from '../../_common/js/upload/utils';
 import useVModel from '../../hooks/useVModel';
 import {
   InnerProgressContext,
@@ -87,6 +87,14 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
     autoUpload: autoUpload.value,
     isBatchUpload: isBatchUpload.value,
   }));
+
+  const uploadFilePercent = (params: { file: UploadFile; percent: number }) => {
+    const { file, percent } = params;
+    const index = toUploadFiles.value.findIndex((item) => file.raw === item.raw);
+    const newFiles = [...toUploadFiles.value];
+    newFiles[index] = { ...newFiles[index], percent };
+    toUploadFiles.value = newFiles;
+  };
 
   const updateFilesProgress = () => {
     if (props.autoUpload) {
@@ -188,7 +196,7 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
     toUploadFiles.value = [];
   };
 
-  const onFileChange = (files: FileList) => {
+  const onFileChange = (files: File[]) => {
     if (innerDisabled.value) return;
 
     const params = { currentSelectedFiles: formatToUploadFile([...files], props.format) };
@@ -197,7 +205,6 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
 
     validateFile({
       uploadValue: uploadValue.value,
-      // @ts-ignore
       files: [...files],
       allowUploadDuplicateFile: props.allowUploadDuplicateFile,
       max: props.max,
@@ -266,11 +273,12 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
   };
 
   const onNormalFileChange = (e: InputEvent) => {
-    onFileChange?.((e.target as HTMLInputElement).files);
+    const fileList = getFileList((e.target as HTMLInputElement).files);
+    onFileChange?.(fileList);
   };
 
-  function onDragFileChange(e: DragEvent) {
-    onFileChange?.(e.dataTransfer.files);
+  function onDragFileChange(files: File[]) {
+    onFileChange?.(files);
   }
 
   /**
@@ -453,6 +461,7 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
     innerDisabled,
     xhrReq,
     uploadFiles,
+    uploadFilePercent,
     onFileChange,
     onNormalFileChange,
     onDragFileChange,
