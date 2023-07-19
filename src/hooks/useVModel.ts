@@ -9,7 +9,7 @@ export interface UseVModelParams<T> {
   propName?: string;
 }
 
-export default function useVModel<T, P extends any[]>(
+export function useVModel<T, P extends any[]>(
   value: Ref<T>,
   defaultValue: T,
   onChange: ChangeHandler<T, P>,
@@ -69,3 +69,5 @@ export default function useVModel<T, P extends any[]>(
     },
   ];
 }
+
+export default useVModel;

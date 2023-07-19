@@ -54,6 +54,7 @@ describe('Transfer', () => {
             };
           },
         });
+        await wrapper.vm.$nextTick();
         await wrapper.findAll('.t-checkbox-group input[type="checkbox"]').at(2).setChecked(false);
         expect(wrapper.vm.$data.checkedValue).toEqual(['1', '5']);
       });

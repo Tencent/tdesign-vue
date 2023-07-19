@@ -209,6 +209,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
   beforeDestroy() {
     this.addKeyboardEvent(false);
     this.destroySelf();
+    this.destroySelfStyle();
   },
 
   directives: {
@@ -219,12 +220,16 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     clearStyleFunc() {
       clearTimeout(this.timer);
       this.timer = setTimeout(() => {
-        this.destroySelf();
+        this.destroySelfStyle();
       }, 150);
     },
 
-    destroySelf() {
+    destroySelfStyle() {
       this.styleEl.parentNode?.removeChild?.(this.styleEl);
+    },
+
+    destroySelf() {
+      this.$el.parentNode?.removeChild?.(this.$el);
     },
 
     storeUid(flag: boolean) {

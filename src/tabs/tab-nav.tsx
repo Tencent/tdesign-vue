@@ -1,34 +1,25 @@
-import { VNode } from 'vue';
 import debounce from 'lodash/debounce';
 import {
   ChevronLeftIcon as TdChevronLeftIcon,
   ChevronRightIcon as TdChevronRightIcon,
   AddIcon as TdAddIcon,
 } from 'tdesign-icons-vue';
+import type { ComponentPublicInstance } from 'vue';
 import TTabPanel from './tab-panel';
 import TTabNavItem from './tab-nav-item';
 import { emitEvent } from '../utils/event';
 import { firstUpperCase } from '../utils/helper';
-import { TdTabsProps, TdTabPanelProps } from './type';
 import tabProps from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
-import { TabPanelProps } from '.';
 import { getClassPrefixMixins, getGlobalIconMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
 import { Styles } from '../common';
 
+import type { TdTabsProps } from './type';
+
 const classPrefixMixins = getClassPrefixMixins('tab__nav');
 
 const getDomWidth = (dom: HTMLElement): number => dom?.offsetWidth || 0;
-
-const getActiveTabEl = (navs: Array<VNode>, value: TabPanelProps['value']): HTMLElement => {
-  for (let i = 0; i < navs.length; i++) {
-    if ((navs[i].componentOptions.propsData as TdTabPanelProps).value === value) {
-      return navs[i].componentInstance?.$el as HTMLElement;
-    }
-  }
-  return null;
-};
 
 interface GetLeftCoverWidth {
   leftZone: HTMLElement;
@@ -95,24 +86,19 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
     };
   },
   computed: {
-    navs(): Array<VNode> {
-      return this.panels.map((panel, index) => (
-        <TTabNavItem
-          ref={`tabItem${index}`}
-          key={panel.value}
-          index={index}
-          theme={this.theme}
-          size={this.size}
-          placement={this.placement}
-          label={renderTNodeJSX(panel, 'label', `选项卡${index + 1}`)}
-          active={panel.value === this.value}
-          disabled={this.disabled || panel.disabled}
-          removable={panel.removable}
-          value={panel.value}
-          onClick={(e: MouseEvent) => this.tabClick(e, panel)}
-          onRemove={this.removeBtnClick}
-        ></TTabNavItem>
-      ));
+    navs(): Array<Record<string, any>> {
+      return this.panels.map((panel, index) => ({
+        ref: `tabItem${index}`,
+        key: panel.value,
+        theme: this.theme,
+        size: this.size,
+        placement: this.placement,
+        active: panel.value === this.value,
+        disabled: this.disabled || panel.disabled,
+        removable: panel.removable,
+        value: panel.value,
+        panel,
+      }));
     },
     wrapTransformStyle(): { [key: string]: string } {
       if (['left', 'right'].includes(this.placement.toLowerCase())) return {};
@@ -177,6 +163,14 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
     },
     navsContainerStyle(): Styles {
       return this.addable ? { 'min-height': '48px' } : null;
+    },
+    activeElement(): HTMLElement {
+      const activeIndx = this.navs.findIndex((nav) => nav.active);
+      if (activeIndx > -1) {
+        // @ts-ignore
+        return (this.$refs[`tabItem${activeIndx}`] as unknown as ComponentPublicInstance)?.$el;
+      }
+      return null;
     },
   },
   watch: {
@@ -245,18 +239,24 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
           return ['width', 'left'];
         };
         let offset = 0;
+        const { activeElement } = this;
+        if (!activeElement) return {};
+
         const [sizePropName, offsetPropName] = getPropName();
         let i = 0;
         for (; i < this.navs.length; i++) {
-          if ((this.navs[i].componentInstance as InstanceType<typeof TTabPanel>)?.value === this.value) {
+          if (this.navs[i].active) {
             break;
           }
-          offset += this.navs[i].componentInstance?.$el?.[`client${firstUpperCase(sizePropName)}`] || 0;
+          offset
+            += (this.$refs[`tabItem${i}`] as unknown as ComponentPublicInstance)?.$el?.[
+              `client${firstUpperCase(sizePropName)}`
+            ] || 0;
         }
-        if (!this.navs[i]) return {};
+
         return {
           [offsetPropName]: `${offset}px`,
-          [sizePropName]: `${this.navs[i].componentInstance?.$el?.[`client${firstUpperCase(sizePropName)}`] || 0}px`,
+          [sizePropName]: `${activeElement?.[`client${firstUpperCase(sizePropName)}`] || 0}px`,
         };
       };
       this.navBarStyle = getNavBarStyle();
@@ -266,7 +266,7 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
       if (['left', 'right'].includes(this.placement.toLowerCase())) return;
 
       const container = this.$refs.navsContainer as HTMLElement;
-      const activeTabEl: HTMLElement = getActiveTabEl(this.navs, this.value);
+      const activeTabEl: HTMLElement = this.activeElement;
       const totalWidthBeforeActiveTab = activeTabEl?.offsetLeft;
       const containerWidth = getDomWidth(container);
       if (totalWidthBeforeActiveTab > containerWidth) this.scrollLeft = totalWidthBeforeActiveTab;
@@ -361,7 +361,7 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
       if (['left', 'right'].includes(this.placement)) {
         return false;
       }
-      const activeTabEl: HTMLElement = getActiveTabEl(this.navs, this.value);
+      const activeTabEl: HTMLElement = this.activeElement;
       if (!activeTabEl) {
         // 如果没有当前 value 对应的tab，一种情况是真没有；一种情况是在修改value的同时，新增了一个值为该value的tab。后者因为navs的更新在$nextTick之后，所以得等下一个updated才能拿到新的tab
         if (needCheckUpdate) {
@@ -419,14 +419,31 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
     removeBtnClick({ e, value, index }: Parameters<TdTabsProps['onRemove']>[0]) {
       emitEvent<Parameters<TdTabsProps['onRemove']>>(this, 'remove', { e, value, index });
     },
-
+    renderPanelContent() {
+      return this.navs.map((panel, index) => (
+        <TTabNavItem
+          ref={`tabItem${index}`}
+          index={index}
+          key={panel.value}
+          theme={panel.theme}
+          size={panel.size}
+          placement={panel.placement}
+          active={panel.active}
+          disabled={panel.disabled}
+          removable={panel.removable}
+          value={panel.value}
+          label={renderTNodeJSX(panel.panel, 'label', `选项卡${index + 1}`)}
+          onClick={(e: MouseEvent) => this.tabClick(e, panel.panel)}
+          onRemove={this.removeBtnClick}
+        ></TTabNavItem>
+      ));
+    },
     renderArrows() {
       const { ChevronLeftIcon, ChevronRightIcon, AddIcon } = this.useGlobalIcon({
         ChevronLeftIcon: TdChevronLeftIcon,
         ChevronRightIcon: TdChevronRightIcon,
         AddIcon: TdAddIcon,
       });
-
       return [
         <div
           ref="leftOperationsZone"
@@ -465,7 +482,7 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
           <div class={this.navScrollContainerClass}>
             <div ref="navsWrap" class={this.navsWrapClass} style={this.wrapTransformStyle}>
               {this.renderNavBar()}
-              {this.navs}
+              {this.renderPanelContent()}
             </div>
           </div>
         </div>
