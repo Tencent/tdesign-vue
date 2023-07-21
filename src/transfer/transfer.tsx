@@ -129,8 +129,15 @@ export default mixins(getConfigReceiverMixins('transfer')).extend({
         newTargetValue = oldTargetValue.filter((v) => !checkedValue.includes(v));
       } else if (this.targetSort === 'original') {
         // 按照原始顺序
+        const remainValue = this.transferData.reduce((acc, data) => {
+          if (oldTargetValue.includes(data.value) && data.disabled) {
+            return acc.concat(data.value);
+          }
+          return acc;
+        }, []);
         newTargetValue = getDataValues(this.transferData, oldTargetValue.concat(checkedValue), {
           isTreeMode: this.isTreeMode,
+          remainValue,
         });
       } else if (this.targetSort === 'unshift') {
         newTargetValue = checkedValue.concat(oldTargetValue);
