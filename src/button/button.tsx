@@ -1,6 +1,9 @@
 import { VNode, CreateElement } from 'vue';
+import { ref, watch } from '@vue/composition-api';
+import isBoolean from 'lodash/isBoolean';
 import TLoading from '../loading';
 import props from './props';
+import { useFormDisabled } from '../hooks';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import ripple from '../utils/ripple';
 import { getKeepAnimationMixins, getClassPrefixMixins } from '../config-provider/config-receiver';
@@ -19,7 +22,6 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
   render(h: CreateElement): VNode {
     let buttonContent = renderContent(this, 'default', 'content');
     const icon = this.loading ? <TLoading inheritColor={true} /> : renderTNodeJSX(this, 'icon');
-    const disabled = this.disabled || this.loading;
     const suffix = this.suffix || this.$scopedSlots.suffix ? (
         <span class={`${this.componentName}__suffix`}>{renderTNodeJSX(this, 'suffix')}</span>
     ) : null;
@@ -33,13 +35,33 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
       }
     }
 
+    // Warn: Do not use computed to set tDisabled
+    // Priority: Button.disabled > Form.disabled
+    const tDisabled = ref<boolean>(false);
+    const { formDisabled } = useFormDisabled();
+    const getDisabled = () => {
+      if (isBoolean(this.disabled)) return this.disabled;
+
+      if (isBoolean(formDisabled.value)) return formDisabled.value;
+
+      return false;
+    };
+
+    watch(
+      [this.disabled, formDisabled.value],
+      () => {
+        tDisabled.value = getDisabled();
+      },
+      { immediate: true },
+    );
+
     const buttonClass = [
       `${this.componentName}`,
       `${this.componentName}--variant-${this.variant}`,
       `${this.componentName}--theme-${theme}`,
       {
         [this.commonSizeClassName[this.size]]: this.size !== 'medium',
-        [this.commonStatusClassName.disabled]: this.disabled,
+        [this.commonStatusClassName.disabled]: tDisabled.value,
         [this.commonStatusClassName.loading]: this.loading,
         [`${this.componentName}--shape-${this.shape}`]: this.shape !== 'rectangle',
         [`${this.componentName}--ghost`]: this.ghost,
@@ -62,7 +84,7 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
 
     const buttonAttrs = {
       type: this.type,
-      disabled,
+      disabled: tDisabled.value,
       href: this.href || undefined,
     };
 
