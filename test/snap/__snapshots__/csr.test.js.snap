@@ -6309,7 +6309,6 @@ exports[`csr snapshot test > csr test ./src/button/_example/status.vue 1`] = `
   >
     <button
       class="t-button t-button--variant-base t-button--theme-primary t-is-loading"
-      disabled="disabled"
       type="button"
     >
       <div
@@ -43168,7 +43167,6 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/async.vue 1`] = `
                 </button>
                 <button
                   class="t-button t-button--variant-base t-button--theme-primary t-is-loading t-dialog__confirm"
-                  disabled="disabled"
                   type="button"
                 >
                   <div
@@ -51337,7 +51335,8 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                 class="t-space-item"
               >
                 <button
-                  class="t-button t-button--variant-base t-button--theme-primary"
+                  class="t-button t-button--variant-base t-button--theme-primary t-is-disabled"
+                  disabled="disabled"
                   type="submit"
                 >
                   <span
@@ -51351,7 +51350,8 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                 class="t-space-item"
               >
                 <button
-                  class="t-button t-button--variant-base t-button--theme-default"
+                  class="t-button t-button--variant-base t-button--theme-default t-is-disabled"
+                  disabled="disabled"
                   type="reset"
                 >
                   <span
