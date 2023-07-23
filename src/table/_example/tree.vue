@@ -36,6 +36,7 @@
         fields: ['id', 'platform', 'operate'],
         dialogProps: { preventScrollThrough: true },
       }"
+      lazyLoad
       @page-change="onPageChange"
       @abnormal-drag-sort="onAbnormalDragSort"
       @drag-sort="onDragSort"

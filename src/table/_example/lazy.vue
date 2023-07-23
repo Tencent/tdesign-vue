@@ -10,6 +10,7 @@
         :height="300"
         :scroll="{ type: 'lazy', bufferSize: 10 }"
         bordered
+        lazyLoad
       />
     </div>
   </div>

@@ -24,6 +24,7 @@
       :pagination="{ defaultPageSize: 5, defaultCurrent: 1, total: 100 }"
       stripe
       resizable
+      lazyLoad
       @column-resize-change="onColumnResizeChange"
       @column-change="onColumnChange"
     ></t-table>

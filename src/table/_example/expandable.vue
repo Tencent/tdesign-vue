@@ -33,6 +33,7 @@
       :horizontalScrollAffixedBottom="true"
       table-layout="auto"
       tableContentWidth="1200"
+      lazyLoad
       @expand-change="rehandleExpandChange"
     >
       <template #operation="{ row }">

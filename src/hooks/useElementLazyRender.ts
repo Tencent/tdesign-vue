@@ -1,37 +1,38 @@
 import {
   onBeforeUnmount, onMounted, Ref, ref, watch,
 } from '@vue/composition-api';
-import observe from '../../_common/js/utils/observe';
+import observe from '../_common/js/utils/observe';
 
-export function useCheckboxLazyLoad(labelRef: Ref<HTMLElement>, lazyLoad: Ref<boolean>) {
+export function useElementLazyRender(labelRef: Ref<HTMLElement>, lazyLoad: Ref<boolean>) {
   const ioObserver = ref<IntersectionObserver>();
-  const showCheckbox = ref(true);
+  const showElement = ref(true);
+
   const handleLazyLoad = () => {
     if (!lazyLoad.value) return;
-    showCheckbox.value = false;
+    showElement.value = false;
     const io = observe(
       labelRef.value,
       null,
       () => {
-        showCheckbox.value = true;
+        showElement.value = true;
       },
-      0,
+      10,
     );
     ioObserver.value = io;
   };
 
   onMounted(handleLazyLoad);
 
-  watch([lazyLoad], handleLazyLoad);
+  lazyLoad.value && watch([lazyLoad], handleLazyLoad);
 
   onBeforeUnmount(() => {
     if (!lazyLoad.value) return;
-    ioObserver.value.unobserve(labelRef.value);
+    ioObserver.value?.unobserve(labelRef.value);
   });
 
   return {
-    showCheckbox,
+    showElement,
   };
 }
 
-export default useCheckboxLazyLoad;
+export default useElementLazyRender;
