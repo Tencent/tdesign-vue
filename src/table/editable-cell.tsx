@@ -108,7 +108,7 @@ export default defineComponent({
       const [firstKey, ...restKeys] = colKey.split('.') || [];
       const newRow = { ...row.value };
       if (restKeys.length) {
-        newRow[firstKey] = cloneDeep(row[firstKey]);
+        newRow[firstKey] = cloneDeep(row.value[firstKey]);
         set(newRow[firstKey], restKeys.join('.'), editValue.value);
       } else {
         set(newRow, colKey, editValue.value);
