@@ -85,8 +85,13 @@ export default defineComponent({
     const classPrefix = usePrefixClass();
 
     const { Edit1Icon } = useGlobalIcon({ Edit1Icon: TdEdit1Icon });
+
+    const updateEditedCellValue = (val: any) => {
+      editValue.value = val;
+    };
+
     const editOnListeners = computed(() => {
-      const listeners = col.value.edit?.on?.({ ...cellParams.value, editedRow: currentRow.value }) || {};
+      const listeners = col.value.edit?.on?.({ ...cellParams.value, editedRow: currentRow.value, updateEditedCellValue }) || {};
       // example: onEnter-> enter
       Object.keys(listeners).forEach((eventName) => {
         if (eventName.slice(0, 2) === 'on') {
@@ -139,6 +144,7 @@ export default defineComponent({
         ? edit.props({
           ...cellParams.value,
           editedRow: currentRow.value,
+          updateEditedCellValue,
         })
         : { ...edit.props };
       // to remove warn: runtime-core.esm-bundler.js:38 [Vue warn]: Invalid prop: type check failed for prop "onChange". Expected Function, got Array
