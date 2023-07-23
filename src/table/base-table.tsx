@@ -10,6 +10,7 @@ import {
   toRefs,
 } from '@vue/composition-api';
 import pick from 'lodash/pick';
+import isFunction from 'lodash/isFunction';
 import props from './base-table-props';
 import useTableHeader from './hooks/useTableHeader';
 import useColumnResize from './hooks/useColumnResize';
@@ -590,11 +591,11 @@ export default defineComponent({
       </div>
     );
 
-    const customLoadingText = renderTNodeJSX(this, 'loading');
+    const getCustomLoadingText = isFunction(this.loading) ? this.loading : this.$scopedSlots.loading;
     const loadingContent = this.loading !== undefined && (
       <Loading
         loading={!!this.loading}
-        text={customLoadingText ? () => customLoadingText : undefined}
+        text={getCustomLoadingText}
         attach={this.tableRef ? () => this.tableRef : undefined}
         showOverlay
         props={{ size: 'small', ...this.loadingProps }}

@@ -11,7 +11,6 @@
       :size="size"
       :loading="true"
       :loading-props="{ indicator: false }"
-      lazyLoad
     >
       <div slot="loading" class="t-table--loading-message">😊 这里使用插槽自定义加载状态 😊</div>
     </t-table>

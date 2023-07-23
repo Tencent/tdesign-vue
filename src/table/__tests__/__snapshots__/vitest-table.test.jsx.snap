@@ -196,10 +196,6 @@ exports[`BaseTable Component > props.showHeader: BaseTable contains element \`th
     </table>
   </div>
   <div
-    class="t-table__pagination-wrap"
-    style="opacity: 1;"
-  />
-  <div
     class="t-table__resize-line"
     style="display: none; height: 10px; left: 10px; bottom: 0px;"
   />
@@ -401,10 +397,6 @@ exports[`BaseTable Component > props.size is equal to large 1`] = `
       </tfoot>
     </table>
   </div>
-  <div
-    class="t-table__pagination-wrap"
-    style="opacity: 1;"
-  />
   <div
     class="t-table__resize-line"
     style="display: none; height: 10px; left: 10px; bottom: 0px;"
@@ -608,10 +600,6 @@ exports[`BaseTable Component > props.size is equal to medium 1`] = `
     </table>
   </div>
   <div
-    class="t-table__pagination-wrap"
-    style="opacity: 1;"
-  />
-  <div
     class="t-table__resize-line"
     style="display: none; height: 10px; left: 10px; bottom: 0px;"
   />
@@ -814,10 +802,6 @@ exports[`BaseTable Component > props.size is equal to small 1`] = `
     </table>
   </div>
   <div
-    class="t-table__pagination-wrap"
-    style="opacity: 1;"
-  />
-  <div
     class="t-table__resize-line"
     style="display: none; height: 10px; left: 10px; bottom: 0px;"
   />
@@ -1013,10 +997,6 @@ exports[`BaseTable Component > props.tableLayout is equal to auto 1`] = `
       </tfoot>
     </table>
   </div>
-  <div
-    class="t-table__pagination-wrap"
-    style="opacity: 1;"
-  />
   <div
     class="t-table__resize-line"
     style="display: none; height: 10px; left: 10px; bottom: 0px;"
@@ -1219,10 +1199,6 @@ exports[`BaseTable Component > props.tableLayout is equal to fixed 1`] = `
       </tfoot>
     </table>
   </div>
-  <div
-    class="t-table__pagination-wrap"
-    style="opacity: 1;"
-  />
   <div
     class="t-table__resize-line"
     style="display: none; height: 10px; left: 10px; bottom: 0px;"
