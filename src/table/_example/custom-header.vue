@@ -1,5 +1,5 @@
 <template>
-  <t-table :data="data" :columns="columns" rowKey="property">
+  <t-table :data="data" :columns="columns" rowKey="property" lazyLoad>
     <!-- 自定义表头，title值为插槽名称  -->
     <template #title-slot-name> <user-circle-icon /> 类型 </template>
   </t-table>

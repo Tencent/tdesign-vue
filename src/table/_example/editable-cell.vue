@@ -8,6 +8,7 @@
       :data="data"
       :editable-cell-state="editableCellState"
       bordered
+      lazyLoad
       @row-validate="onRowValidate"
     />
     <!-- 示例代码有效，勿删 -->

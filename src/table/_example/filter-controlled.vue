@@ -42,8 +42,9 @@
       :data="data"
       :filter-value="filterValue"
       :bordered="bordered"
-      resizable
       table-layout="fixed"
+      resizable
+      lazyLoad
       @filter-change="onFilterChange"
       @change="onChange"
     ></t-table>

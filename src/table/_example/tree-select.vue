@@ -36,6 +36,7 @@
       :height="300"
       :scroll="{ type: 'virtual', rowHeight: 49, bufferSize: 10 }"
       :selected-row-keys="selectedRowKeys"
+      lazyLoad
       @select-change="rehandleSelectChange"
       @row-click="onRowClick"
     ></t-enhanced-table>

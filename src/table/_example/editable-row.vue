@@ -13,6 +13,7 @@
       :editable-row-keys="editableRowKeys"
       table-layout="auto"
       bordered
+      lazyLoad
       @row-edit="onRowEdit"
       @row-validate="onRowValidate"
       @validate="onValidate"
@@ -29,6 +30,9 @@ import dayjs from 'dayjs';
 const initData = new Array(5).fill(null).map((_, i) => ({
   key: String(i + 1),
   firstName: ['贾明', '张三', '王芳'][i % 3],
+  user: {
+    firstName: ['贾明', '张三', '王芳'][i % 3],
+  },
   status: i % 3,
   email: [
     'espinke0@apache.org',
@@ -68,7 +72,7 @@ export default {
       return [
         {
           title: '申请人',
-          colKey: 'firstName',
+          colKey: 'user.firstName',
           width: 120,
           align: this.align,
           // 编辑状态相关配置，全部集中在 edit
@@ -114,10 +118,11 @@ export default {
             component: Select,
             // props, 透传全部属性到 Select 组件
             // props 为函数时，参数有：col, row, rowIndex, colIndex, editedRow。一般用于实现编辑组件之间的联动
+            // updateEditedCellValue 用于主动更新设置编辑状态的组件值
             props: ({
-              col, row, rowIndex, colIndex, editedRow,
+              col, row, rowIndex, colIndex, editedRow, updateEditedCellValue,
             }) => {
-              console.log(col, row, rowIndex, colIndex, editedRow);
+              console.log(col, row, rowIndex, colIndex, editedRow, updateEditedCellValue);
               return {
                 multiple: true,
                 minCollapsedNum: 1,
