@@ -24660,7 +24660,7 @@ exports[`csr snapshot test > csr test ./src/checkbox/_example/group.vue 1`] = `
         class="t-space-item"
       >
         <div>
-          方式二：组件内置全选功能，使用插槽定义选项。选中值: 选项一
+           方式二：组件内置全选功能，使用插槽定义选项。⚠️注意：数据量大时，不建议使用这种方式。选中值: 选项一。 
         </div>
       </div>
       <div
@@ -24762,7 +24762,7 @@ exports[`csr snapshot test > csr test ./src/checkbox/_example/group.vue 1`] = `
         class="t-space-item"
       >
         <div>
-          方式三：组件内置全选功能，使用 \`options\` 定义选项。选中值: 选项一, 选项二, 选项三
+           方式三：组件内置全选功能，使用 \`options\` 定义选项。数据量大时，可以避免所有元素重新渲染。选中值: 选项一, 选项二, 选项三 
         </div>
       </div>
       <div
@@ -24866,7 +24866,7 @@ exports[`csr snapshot test > csr test ./src/checkbox/_example/group.vue 1`] = `
         class="t-space-item"
       >
         <div>
-          方式四：组件内置全选功能，\`options\` 定义选项列表，插槽定义选项内容
+           方式四：组件内置全选功能，\`options\` 定义选项列表，插槽定义选项内容。数据量大时，可以避免所有元素重新渲染。 
         </div>
       </div>
       <div
