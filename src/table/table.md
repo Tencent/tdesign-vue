@@ -26,6 +26,7 @@ height | String / Number | - | 表格高度，超出后会出现滚动条。示�
 horizontalScrollAffixedBottom | Boolean / Object | - | 滚动条吸底。基于 Affix 组件开发，透传全部 Affix 组件属性。TS 类型：`boolean \| Partial<AffixProps>` | N
 hover | Boolean | false | 是否显示鼠标悬浮状态 | N
 lastFullRow | String / Slot / Function | - | 尾行内容，横跨所有列。TS 类型：`string \| TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+lazyLoad | Boolean | false | 是否启用整个表格元素的懒加载，当页面滚动到可视区域后再渲染表格。注意和表格内部行滚动懒加载的区别，内部行滚动无论表格是否在可视区域都会默认渲染第一屏的行元素 | N
 loading | Boolean / Slot / Function | undefined | 加载中状态。值为 `true` 会显示默认加载中样式，可以通过 Function 和 插槽 自定义加载状态呈现内容和样式。值为 `false` 则会取消加载状态。TS 类型：`boolean \| TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 loadingProps | Object | - | 透传加载组件全部属性。TS 类型：`Partial<LoadingProps>`，[Loading API Documents](./loading?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 maxHeight | String / Number | - | 表格最大高度，超出后会出现滚动条。示例：100, '30%', '300'。值为数字类型，会自动加上单位 px | N

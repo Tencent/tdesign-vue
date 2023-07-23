@@ -16,7 +16,7 @@ export function useElementLazyRender(labelRef: Ref<HTMLElement>, lazyLoad: Ref<b
       () => {
         showElement.value = true;
       },
-      0,
+      10,
     );
     ioObserver.value = io;
   };
@@ -27,7 +27,7 @@ export function useElementLazyRender(labelRef: Ref<HTMLElement>, lazyLoad: Ref<b
 
   onBeforeUnmount(() => {
     if (!lazyLoad.value) return;
-    ioObserver.value.unobserve(labelRef.value);
+    ioObserver.value?.unobserve(labelRef.value);
   });
 
   return {

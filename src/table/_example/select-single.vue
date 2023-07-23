@@ -8,6 +8,7 @@
       :data="data"
       @select-change="rehandleSelectChange"
       select-on-row-click
+      lazyLoad
       @row-click="onRowClick"
       @row-dblclick="onRowDblclick"
     >

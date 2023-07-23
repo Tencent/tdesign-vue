@@ -29,6 +29,7 @@
       :scroll="{ type: 'virtual' }"
       drag-sort="col"
       resizable
+      lazyLoad
       :table-layout="'fixed'"
       @drag-sort="onDragSort"
       @data-change="onDataChange"

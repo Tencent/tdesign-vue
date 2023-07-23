@@ -21,6 +21,7 @@
       :max-height="fixedTopAndBottomRows ? 500 : 300"
       :fixedRows="fixedTopAndBottomRows ? [2, 2] : undefined"
       bordered
+      lazyLoad
     >
       <template #operation="{ row }">
         <t-link theme="primary" hover="color" @click="rehandleClickOp(row)">

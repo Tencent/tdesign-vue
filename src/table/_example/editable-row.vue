@@ -13,6 +13,7 @@
       :editable-row-keys="editableRowKeys"
       table-layout="auto"
       bordered
+      lazyLoad
       @row-edit="onRowEdit"
       @row-validate="onRowValidate"
       @validate="onValidate"

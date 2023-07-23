@@ -1,7 +1,14 @@
 <template>
   <div class="demo-container t-table-demo-sort tdesign-demo__table">
     <div class="item">
-      <t-table row-key="index" :columns="columns" :data="data" dragSort="col" @drag-sort="onDragSort"></t-table>
+      <t-table
+        row-key="index"
+        :columns="columns"
+        :data="data"
+        dragSort="col"
+        @drag-sort="onDragSort"
+        lazyLoad
+      ></t-table>
     </div>
   </div>
 </template>

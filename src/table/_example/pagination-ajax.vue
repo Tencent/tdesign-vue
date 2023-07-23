@@ -11,6 +11,7 @@
     @select-change="onSelectChange"
     bordered
     stripe
+    lazyLoad
   >
   </t-table>
 </template>

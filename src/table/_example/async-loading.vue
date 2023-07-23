@@ -14,6 +14,7 @@
       :columns="columns"
       :data="data"
       :asyncLoading="loadingNode"
+      lazyLoad
       @async-loading-click="onAsyncLoadingClick"
     ></t-table>
   </div>

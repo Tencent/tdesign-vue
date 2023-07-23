@@ -7,6 +7,7 @@ import {
   PropType,
   watch,
   onMounted,
+  toRefs,
 } from '@vue/composition-api';
 import pick from 'lodash/pick';
 import props from './base-table-props';
@@ -19,7 +20,7 @@ import useAffix from './hooks/useAffix';
 import Loading from '../loading';
 import TBody, { extendTableProps } from './tbody';
 import { BaseTableProps } from './interface';
-import { useTNodeJSX } from '../hooks/tnode';
+import { renderTNodeJSX, useElementLazyRender } from '../hooks';
 import useStyle, { formatCSSUnit } from './hooks/useStyle';
 import useClassName from './hooks/useClassName';
 import { useConfig } from '../config-provider/useConfig';
@@ -51,7 +52,7 @@ export default defineComponent({
   },
 
   setup(props: BaseTableProps, context: SetupContext) {
-    const renderTNode = useTNodeJSX();
+    const { lazyLoad } = toRefs(props);
     const tableRef = ref<HTMLDivElement>();
     const tableElmRef = ref<HTMLTableElement>();
     const tableBodyRef = ref<HTMLTableElement>();
@@ -118,6 +119,8 @@ export default defineComponent({
       updateAffixHeaderOrFooter,
       setTableContentRef,
     } = useAffix(props);
+
+    const { showElement } = useElementLazyRender(tableRef, lazyLoad);
 
     const {
       dataSource, innerPagination, isPaginateData, renderPagination,
@@ -319,10 +322,10 @@ export default defineComponent({
       horizontalScrollbarRef,
       tableBodyRef,
       showAffixPagination,
+      showElement,
       updateTableWidthOnColumnChange,
       getListener,
       renderPagination,
-      renderTNode,
       onFixedChange,
       onHorizontalScroll,
       updateAffixHeaderOrFooter,
@@ -510,10 +513,12 @@ export default defineComponent({
       log.warn('Table', 'allowResizeColumnWidth is going to be deprecated, please use resizable instead.');
     }
 
-    // already support resize column for table-layout: auto
-    // if (this.columnResizable && this.tableLayout === 'auto') {
-    //   log.warn('Table', 'table-layout can not be `auto` for resizable column table, set `table-layout: fixed` please.');
-    // }
+    if (this.columnResizable && this.tableLayout === 'auto') {
+      log.warn(
+        'Table',
+        'table-layout can not be `auto`, cause you are using column resizable, set `table-layout: fixed` please.',
+      );
+    }
 
     const translate = `translate(0, ${this.virtualConfig.scrollHeight.value}px)`;
     const virtualStyle = {
@@ -585,7 +590,7 @@ export default defineComponent({
       </div>
     );
 
-    const customLoadingText = this.renderTNode('loading');
+    const customLoadingText = renderTNodeJSX(this, 'loading');
     const loadingContent = this.loading !== undefined && (
       <Loading
         loading={!!this.loading}
@@ -596,9 +601,9 @@ export default defineComponent({
       ></Loading>
     );
 
-    const topContent = this.renderTNode('topContent');
-    const bottomContent = this.renderTNode('bottomContent');
-    const pagination = (
+    const topContent = renderTNodeJSX(this, 'topContent');
+    const bottomContent = renderTNodeJSX(this, 'bottomContent');
+    const pagination = this.pagination ? (
       <div
         ref="paginationRef"
         class={this.tableBaseClass.paginationWrap}
@@ -606,12 +611,16 @@ export default defineComponent({
       >
         {this.renderPagination(h)}
       </div>
-    );
+    ) : null;
     const bottom = !!bottomContent && (
       <div ref="bottomContentRef" class={this.tableBaseClass.bottomContent}>
         {bottomContent}
       </div>
     );
+
+    if (!this.showElement) {
+      return <div ref="tableRef"></div>;
+    }
 
     return (
       <div ref="tableRef" class={this.dynamicBaseTableClasses} style="position: relative">

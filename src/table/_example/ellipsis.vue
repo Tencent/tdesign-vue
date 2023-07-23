@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- :attach="getAttach" 统一控制超出省略等元素浮层的挂载元素 -->
-    <t-table row-key="id" :data="data" :columns="columns" />
+    <t-table row-key="id" :data="data" :columns="columns" lazyLoad />
   </div>
 </template>
 
