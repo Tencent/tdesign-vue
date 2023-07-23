@@ -152,12 +152,18 @@ export default {
   methods: {
     onClick(context) {
       console.info('onClick:', context);
+      const { node } = context;
+      console.info(node.value, 'checked:', node.checked);
     },
     onChange(checked, context) {
       console.info('onChange:', checked, context);
+      const { node } = context;
+      console.info(node.value, 'checked:', node.checked);
     },
     propOnChange(checked, context) {
       console.info('propOnChange:', checked, context);
+      const { node } = context;
+      console.info(node.value, 'checked:', node.checked);
     },
     selectInvert() {
       const { tree } = this.$refs;
