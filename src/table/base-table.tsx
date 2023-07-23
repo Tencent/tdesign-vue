@@ -143,9 +143,7 @@ export default defineComponent({
       updateTableAfterColumnResize,
       onColumnResizeChange: onInnerResizeChange,
     });
-    const {
-      resizeLineRef, resizeLineStyle, setEffectColMap, updateTableWidthOnColumnChange,
-    } = columnResizeParams;
+    const { resizeLineRef, resizeLineStyle, setEffectColMap } = columnResizeParams;
 
     const dynamicBaseTableClasses = computed(() => [
       tableClasses.value,
@@ -324,7 +322,6 @@ export default defineComponent({
       tableBodyRef,
       showAffixPagination,
       showElement,
-      updateTableWidthOnColumnChange,
       getListener,
       renderPagination,
       onFixedChange,

@@ -95386,7 +95386,7 @@ exports[`csr snapshot test > csr test ./src/switch/_example/status.vue 1`] = `
 exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
 <div
   class="tdesign-demo-block-column-large tdesign-demo__table tdesign-demo__table-affix"
-  style="width: 100%;"
+  style="width: 830px;"
 >
   <div>
     <label
@@ -95540,13 +95540,13 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
             style="width: 120px;"
           />
           <col
-            style="min-width: 80px;"
+            style="width: 180px;"
           />
           <col
-            style="min-width: 80px;"
+            style="width: 180px;"
           />
           <col
-            style="min-width: 80px;"
+            style="width: 120px;"
           />
           <col
             style="width: 120px;"
@@ -95593,11 +95593,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  邮箱地址
-                </div>
+                邮箱地址
               </div>
             </th>
             <th
@@ -95607,11 +95603,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
               <div
                 class="t-table__th-cell-inner"
               >
-                <div
-                  class="t-table__ellipsis t-text-ellipsis"
-                >
-                  申请事项
-                </div>
+                申请事项
               </div>
             </th>
             <th
@@ -95677,22 +95669,14 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
               电子签署
             </td>
             <td
-              class="t-table-td--ellipsis"
+              class=""
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                w.cezkdudy@lhll.au
-              </div>
+              w.cezkdudy@lhll.au
             </td>
             <td
-              class="t-table-td--ellipsis"
+              class=""
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                宣传物料制作费用
-              </div>
+              宣传物料制作费用
             </td>
             <td
               class=""
@@ -95748,22 +95732,14 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
               纸质签署
             </td>
             <td
-              class="t-table-td--ellipsis"
+              class=""
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                r.nmgw@peurezgn.sl
-              </div>
+              r.nmgw@peurezgn.sl
             </td>
             <td
-              class="t-table-td--ellipsis"
+              class=""
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                algolia 服务报销
-              </div>
+              algolia 服务报销
             </td>
             <td
               class=""
@@ -95819,22 +95795,14 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
               纸质签署
             </td>
             <td
-              class="t-table-td--ellipsis"
+              class=""
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                p.cumx@rampblpa.ru
-              </div>
+              p.cumx@rampblpa.ru
             </td>
             <td
-              class="t-table-td--ellipsis"
+              class=""
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                相关周边制作费
-              </div>
+              相关周边制作费
             </td>
             <td
               class=""
@@ -95890,22 +95858,14 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
               电子签署
             </td>
             <td
-              class="t-table-td--ellipsis"
+              class=""
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                w.cezkdudy@lhll.au
-              </div>
+              w.cezkdudy@lhll.au
             </td>
             <td
-              class="t-table-td--ellipsis"
+              class=""
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                激励奖品快递费
-              </div>
+              激励奖品快递费
             </td>
             <td
               class=""
@@ -95961,22 +95921,14 @@ exports[`csr snapshot test > csr test ./src/table/_example/affix.vue 1`] = `
               纸质签署
             </td>
             <td
-              class="t-table-td--ellipsis"
+              class=""
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                r.nmgw@peurezgn.sl
-              </div>
+              r.nmgw@peurezgn.sl
             </td>
             <td
-              class="t-table-td--ellipsis"
+              class=""
             >
-              <div
-                class="t-table__ellipsis t-text-ellipsis"
-              >
-                宣传物料制作费用
-              </div>
+              宣传物料制作费用
             </td>
             <td
               class=""
@@ -98472,7 +98424,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-col-button.vue
     </div>
   </div>
   <div
-    class="t-table t-table--bordered t-table--striped t-table--col-draggable"
+    class="t-table t-table--bordered t-table--striped t-table--column-resizable t-table--col-draggable"
     style="position: relative;"
   >
     <div
@@ -98515,7 +98467,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-col-button.vue
       class="t-table__content"
     >
       <table
-        class="t-table--layout-auto"
+        class="t-table--layout-fixed"
       >
         <colgroup>
           <col
@@ -98527,8 +98479,12 @@ exports[`csr snapshot test > csr test ./src/table/_example/custom-col-button.vue
           <col
             style="width: 120px;"
           />
-          <col />
-          <col />
+          <col
+            style="min-width: 80px;"
+          />
+          <col
+            style="min-width: 80px;"
+          />
         </colgroup>
         <thead
           class="t-table__header"
