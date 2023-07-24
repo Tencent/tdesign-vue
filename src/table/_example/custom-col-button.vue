@@ -33,10 +33,10 @@
       }"
       :pagination="{ defaultPageSize: 5, defaultCurrent: 1, total: 100 }"
       :bordered="bordered"
-      tableLayout="auto"
       drag-sort="col"
       stripe
       lazyLoad
+      resizable
       @drag-sort="onDragSortChange"
       @column-change="onColumnChange"
     ></t-table>
