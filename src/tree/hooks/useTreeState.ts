@@ -6,7 +6,10 @@ import TreeNode from '../../_common/js/tree/tree-node';
 export default function useTreeState(props: TreeProps, store: TypeTreeStore) {
   const treeContentRef = ref<HTMLDivElement>();
   const nodes: Ref<TreeNode[]> = ref([]);
+  const allNodes: Ref<TreeNode[]> = ref([]);
   const isScrolling: Ref<boolean> = ref(false);
+
+  allNodes.value = store.getNodes();
 
   const state: TypeTreeState = {
     // tree 数据对象
@@ -15,6 +18,8 @@ export default function useTreeState(props: TreeProps, store: TypeTreeStore) {
     treeContentRef,
     // 渲染节点
     nodes,
+    // 所有节点
+    allNodes,
     // 是否正在滚动
     isScrolling,
     // 缓存点击事件

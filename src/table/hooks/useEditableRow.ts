@@ -54,7 +54,7 @@ export default function useRowEdit(props: PrimaryTableProps, context: SetupConte
           resolve({ ...item, errorList: [] });
           return;
         }
-        validate(editedRow[col.colKey], rules).then((r) => {
+        validate(get(editedRow, col.colKey), rules).then((r) => {
           resolve({ ...item, errorList: r.filter((t) => !t.result) });
         });
       }),

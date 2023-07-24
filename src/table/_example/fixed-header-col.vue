@@ -32,6 +32,7 @@
       :scroll="virtualScroll ? { type: 'virtual' } : undefined"
       :stripe="stripe"
       bordered
+      lazyLoad
     >
       <template #operation="{ row }">
         <t-link theme="primary" hover="color" @click="rehandleClickOp(row)">

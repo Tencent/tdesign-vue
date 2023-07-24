@@ -69,12 +69,18 @@ export default {
   methods: {
     onClick(context) {
       console.info('onClick', context);
+      const { node } = context;
+      console.info(node.value, 'actived:', node.actived);
     },
     onActive(value, context) {
       console.info('onActive', value, context);
+      const { node } = context;
+      console.info(node.value, 'actived:', node.actived);
     },
     propOnActive(value, context) {
       console.info('propOnActive', value, context);
+      const { node } = context;
+      console.info(node.value, 'actived:', node.actived);
     },
     toggleActivable() {
       this.activable = !this.activable;

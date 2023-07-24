@@ -105,6 +105,7 @@ export interface TypeTreeState {
   scope: TypeTreeScope;
   store: TypeTreeStore;
   nodes: Ref<TreeNode[]>;
+  allNodes: Ref<TreeNode[]>;
   isScrolling: Ref<boolean>;
   treeContentRef: Ref<HTMLDivElement>;
   mouseEvent?: Event;
