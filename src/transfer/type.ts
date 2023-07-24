@@ -2,12 +2,12 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-12-12 16:59:59
  * */
 
 import { CheckboxProps } from '../checkbox';
 import { PaginationProps, PageInfo } from '../pagination';
 import { InputProps } from '../input';
+import { TreeProps } from '../tree';
 import { TNode, KeysType } from '../common';
 
 export interface TdTransferProps<T extends DataOption = DataOption> {
@@ -37,14 +37,13 @@ export interface TdTransferProps<T extends DataOption = DataOption> {
   direction?: 'left' | 'right' | 'both';
   /**
    * 禁用全部操作：搜索、选中、移动、分页等。[源列表, 目标列表]，示例：[true, false] 或者 true
-   * @default false
    */
   disabled?: boolean | Array<boolean>;
   /**
    * 列表为空时呈现的内容。值类型为数组，则表示分别控制源列表和目标列表数据为空的呈现内容
    * @default ''
    */
-  empty?: EmptyType | Array<EmptyType> | TNode ;
+  empty?: EmptyType | Array<EmptyType> | TNode;
   /**
    * 穿梭框底部内容
    */
@@ -72,6 +71,11 @@ export interface TdTransferProps<T extends DataOption = DataOption> {
    */
   showCheckAll?: boolean | Array<boolean>;
   /**
+   * 是否允许通过拖拽对目标列表进行排序
+   * @default false
+   */
+  targetDraggable?: boolean;
+  /**
    * 目标数据列表排列顺序
    * @default original
    */
@@ -85,6 +89,11 @@ export interface TdTransferProps<T extends DataOption = DataOption> {
    * 自定义渲染节点
    */
   transferItem?: TNode<TransferItem<T>>;
+  /**
+   * null
+   * @default 传入 Tree 组件定义树形结构
+   */
+  tree?: (tree: TreeProps) => TNode;
   /**
    * 目标数据列表数据
    * @default []
@@ -115,7 +124,7 @@ export interface TdTransferProps<T extends DataOption = DataOption> {
    * 搜索时触发，options.query 表示用户输入的内容
    */
   onSearch?: (options: SearchContext) => void;
-};
+}
 
 export type EmptyType = string | TNode;
 
@@ -125,13 +134,30 @@ export type TitleType = string | TNode;
 
 export type TransferListType = 'source' | 'target';
 
-export interface TransferItem<T extends DataOption = DataOption> { data: T; index: number; type: TransferListType};
+export interface TransferItem<T extends DataOption = DataOption> {
+  data: T;
+  index: number;
+  type: TransferListType;
+}
 
-export interface TargetParams { type: TransferListType; movedValue: Array<TransferValue> };
+export interface TargetParams {
+  type: TransferListType;
+  movedValue: Array<TransferValue>;
+}
 
-export interface CheckedOptions { checked: Array<TransferValue>; sourceChecked: Array<TransferValue>; targetChecked: Array<TransferValue>; type: TransferListType };
+export interface CheckedOptions {
+  checked: Array<TransferValue>;
+  sourceChecked: Array<TransferValue>;
+  targetChecked: Array<TransferValue>;
+  type: TransferListType;
+}
 
-export interface SearchContext { query: string; type: TransferListType; trigger: 'input' | 'enter';  e: InputEvent | KeyboardEvent };
+export interface SearchContext {
+  query: string;
+  type: TransferListType;
+  trigger: 'input' | 'enter';
+  e: InputEvent | KeyboardEvent;
+}
 
 export type DataOption = { label?: string; value?: TransferValue; disabled?: boolean } & Record<string, any>;
 

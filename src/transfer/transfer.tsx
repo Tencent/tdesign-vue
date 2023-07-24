@@ -24,10 +24,9 @@ import {
   getTransferData,
   filterTransferData,
   TRANSFER_NAME,
+  SOURCE,
+  TARGET,
 } from './utils';
-
-const SOURCE = 'source';
-const TARGET = 'target';
 
 export default mixins(getConfigReceiverMixins('transfer')).extend({
   name: TRANSFER_NAME,
@@ -39,7 +38,10 @@ export default mixins(getConfigReceiverMixins('transfer')).extend({
     prop: 'value',
     event: 'change',
   },
-  props,
+  props: {
+    ...props,
+    targetDraggable: Boolean,
+  },
   data(): {
     SOURCE: TransferListType;
     TARGET: TransferListType;
@@ -202,6 +204,9 @@ export default mixins(getConfigReceiverMixins('transfer')).extend({
     handlePageChange(pageInfo: PageInfo, listType: TransferListType) {
       emitEvent<Parameters<TdTransferProps['onPageChange']>>(this, 'page-change', pageInfo, { type: listType });
     },
+    handleDataChange(data: Array<TransferValue>) {
+      this.$emit('change', data, null);
+    },
     renderTransferList(listType: TransferListType) {
       const scopedSlots = pick(this.$scopedSlots, ['title', 'empty', 'footer', 'operation', 'transferItem', 'default']);
       return (
@@ -222,10 +227,13 @@ export default mixins(getConfigReceiverMixins('transfer')).extend({
           onScroll={($event: Event) => this.handleScroll($event, listType)}
           onSearch={this.handleSearch}
           onPageChange={(pageInfo: PageInfo) => this.handlePageChange(pageInfo, listType)}
+          onDataChange={this.handleDataChange}
           scopedSlots={scopedSlots}
           t={this.t}
           global={this.global}
           isTreeMode={this.isTreeMode}
+          currentValue={this.value}
+          draggable={this.targetDraggable && listType === TARGET}
         ></transfer-list>
       );
     },
