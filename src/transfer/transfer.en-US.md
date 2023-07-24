@@ -7,9 +7,10 @@ name | type | default | description | required
 -- | -- | -- | -- | --
 checkboxProps | Object | - | Typescript：`CheckboxProps`，[Checkbox API Documents](./checkbox?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/transfer/type.ts) | N
 checked | Array | [] | `.sync` is supported。Typescript：`Array<TransferValue>` | N
+defaultChecked | Array | [] | uncontrolled property。Typescript：`Array<TransferValue>` | N
 data | Array | [] | Typescript：`Array<T>` | N
 direction | String | both | options: left/right/both | N
-disabled | Boolean / Array | - | Typescript：`boolean \| Array<boolean>` | N
+disabled | Boolean / Array | false | Typescript：`boolean \| Array<boolean>` | N
 empty | String / Array / Slot / Function | '' | Typescript：`EmptyType \| Array<EmptyType> \| TNode` `type EmptyType = string \| TNode `。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/transfer/type.ts) | N
 footer | Array / Slot / Function | - | Typescript：`Array<string \| TNode> \| TNode<{ type: TransferListType }>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 keys | Object | - | Typescript：`KeysType`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N

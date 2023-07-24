@@ -7,7 +7,6 @@
 import { CheckboxProps } from '../checkbox';
 import { PaginationProps, PageInfo } from '../pagination';
 import { InputProps } from '../input';
-import { TreeProps } from '../tree';
 import { TNode, KeysType } from '../common';
 
 export interface TdTransferProps<T extends DataOption = DataOption> {
@@ -89,11 +88,6 @@ export interface TdTransferProps<T extends DataOption = DataOption> {
    * 自定义渲染节点
    */
   transferItem?: TNode<TransferItem<T>>;
-  /**
-   * null
-   * @default 传入 Tree 组件定义树形结构
-   */
-  tree?: (tree: TreeProps) => TNode;
   /**
    * 目标数据列表数据
    * @default []

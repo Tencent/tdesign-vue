@@ -7,9 +7,10 @@
 -- | -- | -- | -- | --
 checkboxProps | Object | - | 用于控制复选框属性。TS 类型：`CheckboxProps`，[Checkbox API Documents](./checkbox?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/transfer/type.ts) | N
 checked | Array | [] | 数据列表选中项。支持语法糖 `.sync`。TS 类型：`Array<TransferValue>` | N
+defaultChecked | Array | [] | 数据列表选中项。非受控属性。TS 类型：`Array<TransferValue>` | N
 data | Array | [] | 全量数据。TS 类型：`Array<T>` | N
 direction | String | both | 穿梭框可操作方向。可选项：left/right/both | N
-disabled | Boolean / Array | - | 禁用全部操作：搜索、选中、移动、分页等。[源列表, 目标列表]，示例：[true, false] 或者 true。TS 类型：`boolean \| Array<boolean>` | N
+disabled | Boolean / Array | false | 禁用全部操作：搜索、选中、移动、分页等。[源列表, 目标列表]，示例：[true, false] 或者 true。TS 类型：`boolean \| Array<boolean>` | N
 empty | String / Array / Slot / Function | '' | 列表为空时呈现的内容。值类型为数组，则表示分别控制源列表和目标列表数据为空的呈现内容。TS 类型：`EmptyType \| Array<EmptyType> \| TNode` `type EmptyType = string \| TNode `。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/transfer/type.ts) | N
 footer | Array / Slot / Function | - | 穿梭框底部内容。TS 类型：`Array<string \| TNode> \| TNode<{ type: TransferListType }>`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 keys | Object | - | 用来定义选项文本和选项值字段，示例：`{ label: 'text', value: 'id' }`，表示选项文本取 `text` 字段，选项值取 `id` 字段。TS 类型：`KeysType`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N

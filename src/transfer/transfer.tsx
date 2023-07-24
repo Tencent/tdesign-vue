@@ -40,7 +40,6 @@ export default mixins(getConfigReceiverMixins('transfer')).extend({
   },
   props: {
     ...props,
-    targetDraggable: Boolean,
   },
   data(): {
     SOURCE: TransferListType;
