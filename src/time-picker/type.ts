@@ -22,13 +22,14 @@ export interface TdTimePickerProps {
    */
   clearable?: boolean;
   /**
-   * 禁用时间项
+   * 禁用时间项的配置函数
    */
   disableTime?: (
     h: number,
     m: number,
     s: number,
-  ) => Partial<{ hour: Array<number>; minute: Array<number>; second: Array<number> }>;
+    ms: number,
+  ) => Partial<{ hour: Array<number>; minute: Array<number>; second: Array<number>; millisecond: Array<number> }>;
   /**
    * 是否禁用组件
    */
