@@ -7,7 +7,7 @@
 -- | -- | -- | -- | --
 allowInput | Boolean | false | 是否允许直接输入时间 | N
 clearable | Boolean | false | 是否允许清除选中值 | N
-disableTime | Function | - | 禁用时间项。TS 类型：`(h: number, m: number, s: number) => Partial<{ hour: Array<number>, minute: Array<number>, second: Array<number> }>` | N
+disableTime | Function | - | 禁用时间项的配置函数。TS 类型：`(h: number, m: number, s: number, ms: number) => Partial<{ hour: Array<number>, minute: Array<number>, second: Array<number>, millisecond: Array<number>  }>` | N
 disabled | Boolean | - | 是否禁用组件 | N
 format | String | HH:mm:ss | 用于格式化时间，[详细文档](https://day.js.org/docs/en/display/format) | N
 hideDisabledTime | Boolean | true | 是否隐藏禁用状态的时间项 | N
@@ -21,7 +21,7 @@ steps | Array | [1, 1, 1] | 时间间隔步数，数组排列 [小时, 分钟, �
 tips | String / Slot / Function | - | 输入框下方提示文本，会根据不同的 `status` 呈现不同的样式。TS 类型：`string \| TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 value | String | - | 选中值。支持语法糖 `v-model`。TS 类型：`TimePickerValue` `type TimePickerValue = string`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/time-picker/type.ts) | N
 defaultValue | String | - | 选中值。非受控属性。TS 类型：`TimePickerValue` `type TimePickerValue = string`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/time-picker/type.ts) | N
-onBlur | Function |  | TS 类型：`(context: { value: TimePickerValue; e: FocusEvent }) => void`<br/>当输入框失去焦点时触发，value 表示组件当前有效值 | N
+onBlur | Function | | TS 类型：`(context: { value: TimePickerValue; e: FocusEvent }) => void`<br/>当输入框失去焦点时触发，value 表示组件当前有效值 | N
 onChange | Function |  | TS 类型：`(value: TimePickerValue) => void`<br/>选中值发生变化时触发 | N
 onClose | Function |  | TS 类型：`(context: { e: MouseEvent }) => void`<br/>面板关闭时触发 | N
 onFocus | Function |  | TS 类型：`(context: { value: TimePickerValue; e: FocusEvent }) => void`<br/>输入框获得焦点时触发，value 表示组件当前有效值 | N
