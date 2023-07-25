@@ -92,7 +92,7 @@ export interface TdTimePickerProps {
   /**
    * 当输入框失去焦点时触发，value 表示组件当前有效值
    */
-  onBlur?: (context: { value: TimePickerValue } & SelectInputBlurContext) => void;
+  onBlur?: (context: { value: TimePickerValue; e: FocusEvent }) => void;
   /**
    * 选中值发生变化时触发
    */

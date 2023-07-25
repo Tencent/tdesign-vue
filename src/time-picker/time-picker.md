@@ -21,7 +21,7 @@ steps | Array | [1, 1, 1] | 时间间隔步数，数组排列 [小时, 分钟, �
 tips | String / Slot / Function | - | 输入框下方提示文本，会根据不同的 `status` 呈现不同的样式。TS 类型：`string \| TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 value | String | - | 选中值。支持语法糖 `v-model`。TS 类型：`TimePickerValue` `type TimePickerValue = string`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/time-picker/type.ts) | N
 defaultValue | String | - | 选中值。非受控属性。TS 类型：`TimePickerValue` `type TimePickerValue = string`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/time-picker/type.ts) | N
-onBlur | Function |  | TS 类型：`(context: { value: TimePickerValue } & SelectInputBlurContext) => void`<br/>当输入框失去焦点时触发，value 表示组件当前有效值。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/time-picker/type.ts)。<br/>`import { SelectInputBlurContext } from '@SelectInput'`<br/> | N
+onBlur | Function | | TS 类型：`(context: { value: TimePickerValue; e: FocusEvent }) => void`<br/>当输入框失去焦点时触发，value 表示组件当前有效值 | N
 onChange | Function |  | TS 类型：`(value: TimePickerValue) => void`<br/>选中值发生变化时触发 | N
 onClose | Function |  | TS 类型：`(context: { e: MouseEvent }) => void`<br/>面板关闭时触发 | N
 onFocus | Function |  | TS 类型：`(context: { value: TimePickerValue; e: FocusEvent }) => void`<br/>输入框获得焦点时触发，value 表示组件当前有效值 | N
@@ -33,7 +33,7 @@ onPick | Function |  | TS 类型：`(value: TimePickerValue, context: { e: Mouse
 
 名称 | 参数 | 描述
 -- | -- | --
-blur | `(context: { value: TimePickerValue } & SelectInputBlurContext)` | 当输入框失去焦点时触发，value 表示组件当前有效值。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/time-picker/type.ts)。<br/>`import { SelectInputBlurContext } from '@SelectInput'`<br/>
+blur | `(context: { value: TimePickerValue; e: FocusEvent })` | 当输入框失去焦点时触发，value 表示组件当前有效值
 change | `(value: TimePickerValue)` | 选中值发生变化时触发
 close | `(context: { e: MouseEvent })` | 面板关闭时触发
 focus | `(context: { value: TimePickerValue; e: FocusEvent })` | 输入框获得焦点时触发，value 表示组件当前有效值

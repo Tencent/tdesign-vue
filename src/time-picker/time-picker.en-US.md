@@ -21,7 +21,7 @@ steps | Array | [1, 1, 1] | Typescript：`Array<string \| number>` | N
 tips | String / Slot / Function | - | Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 value | String | - | `v-model` is supported。Typescript：`TimePickerValue` `type TimePickerValue = string`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/time-picker/type.ts) | N
 defaultValue | String | - | uncontrolled property。Typescript：`TimePickerValue` `type TimePickerValue = string`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/time-picker/type.ts) | N
-onBlur | Function |  | Typescript：`(context: { value: TimePickerValue } & SelectInputBlurContext) => void`<br/>[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/time-picker/type.ts)。<br/>`import { SelectInputBlurContext } from '@SelectInput'`<br/> | N
+onBlur | Function | | Typescript：`(context: { value: TimePickerValue; e: FocusEvent }) => void`<br/> | N
 onChange | Function |  | Typescript：`(value: TimePickerValue) => void`<br/> | N
 onClose | Function |  | Typescript：`(context: { e: MouseEvent }) => void`<br/> | N
 onFocus | Function |  | Typescript：`(context: { value: TimePickerValue; e: FocusEvent }) => void`<br/> | N
@@ -33,7 +33,7 @@ onPick | Function |  | Typescript：`(value: TimePickerValue, context: { e: Mous
 
 name | params | description
 -- | -- | --
-blur | `(context: { value: TimePickerValue } & SelectInputBlurContext)` | [see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/time-picker/type.ts)。<br/>`import { SelectInputBlurContext } from '@SelectInput'`<br/>
+blur | `(context: { value: TimePickerValue; e: FocusEvent })` | \-
 change | `(value: TimePickerValue)` | \-
 close | `(context: { e: MouseEvent })` | \-
 focus | `(context: { value: TimePickerValue; e: FocusEvent })` | \-
