@@ -2,12 +2,16 @@ import {
   defineComponent, ref, toRefs, inject, watch, onBeforeUnmount,
 } from '@vue/composition-api';
 import props from './props';
-import useVModel from '../hooks/useVModel';
-import { renderTNodeJSX, useFormDisabled } from '../hooks';
-import { useCommonClassName, usePrefixClass } from '../hooks/useConfig';
+import {
+  useVModel,
+  useElementLazyRender,
+  renderTNodeJSX,
+  useFormDisabled,
+  useCommonClassName,
+  usePrefixClass,
+} from '../hooks';
 import { CheckboxGroupInjectionKey } from './constants';
 import { getCheckboxStore, ObserverListenerParams } from './store';
-import useCheckboxLazyLoad from './hooks/useCheckboxLazyLoad';
 import useKeyboardEvent from './hooks/useKeyboardEvent';
 
 export default defineComponent({
@@ -173,7 +177,7 @@ export default defineComponent({
       if (props.stopLabelTrigger) e.preventDefault();
     };
 
-    const { showCheckbox } = useCheckboxLazyLoad(labelRef, lazyLoad);
+    const { showElement: showCheckbox } = useElementLazyRender(labelRef, lazyLoad);
 
     const { onCheckboxFocus, onCheckboxBlur } = useKeyboardEvent(handleChange);
 

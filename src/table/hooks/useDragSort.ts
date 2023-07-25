@@ -73,7 +73,6 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
     if (!isRowHandlerDraggable.value && !isRowDraggable.value) return;
     const dragContainer = element?.querySelector('tbody');
     if (!dragContainer) {
-      console.error('tbody does not exist.');
       return null;
     }
     // 拖拽实例

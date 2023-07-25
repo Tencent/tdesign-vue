@@ -1,6 +1,6 @@
 <template>
   <!-- 注意组件父元素的宽度 -->
-  <div class="tdesign-demo-block-column-large tdesign-demo__table tdesign-demo__table-affix" style="width: 100%">
+  <div class="tdesign-demo-block-column-large tdesign-demo__table tdesign-demo__table-affix" style="width: 830px">
     <div>
       <t-checkbox v-model="headerAffixedTop">表头吸顶</t-checkbox>
       <t-checkbox v-model="footerAffixedBottom" style="margin-left: 32px">表尾吸底</t-checkbox>
@@ -15,19 +15,16 @@
       :columns="columns"
       :footData="footData"
       :rowClassName="rowClassName"
-      :pagination="{ defaultCurrent: 1, defaultPageSize: 5, total: TOTAL }"
-      :headerAffixedTop="headerAffixedTop ? { offsetTop: 87, zIndex: 1000 } : undefined"
-      :footerAffixedBottom="
-        footerAffixedBottom ? { offsetBottom: paginationAffixedBottom ? 60 : 0, zIndex: 1000 } : false
-      "
-      :horizontalScrollAffixedBottom="
-        horizontalScrollAffixedBottom ? { offsetBottom: paginationAffixedBottom ? 61 : 0, zIndex: 1000 } : false
-      "
+      :pagination="pagination"
+      :headerAffixedTop="headerAffixedTop ? headerAffixedTopProps : undefined"
+      :footerAffixedBottom="footerAffixedBottom ? footerAffixedBottomProps : false"
+      :horizontalScrollAffixedBottom="horizontalScrollAffixedBottom ? horizontalScrollAffixedBottomProps : false"
       :paginationAffixedBottom="paginationAffixedBottom"
       table-layout="fixed"
       dragSort="col"
       bordered
       resizable
+      lazyLoad
       @drag-sort="onDragSortChange"
     >
       <template #t-foot-required> 插槽渲染表尾 </template>
@@ -87,9 +84,9 @@ function getColumns(h, { fixedLeftColumn, fixedRightColumn }) {
       },
     },
     { colKey: 'channel', title: '签署方式', width: '120' },
-    { colKey: 'detail.email', title: '邮箱地址', ellipsis: true },
-    { colKey: 'matters', title: '申请事项', ellipsis: true },
-    { colKey: 'createTime', title: '申请时间' },
+    { colKey: 'detail.email', title: '邮箱地址', width: '180' },
+    { colKey: 'matters', title: '申请事项', width: '180' },
+    { colKey: 'createTime', title: '申请时间', width: '120' },
     {
       colKey: 'operation',
       title: '操作',
@@ -120,10 +117,27 @@ export default {
       // 表尾有一行数据
       footData: [{ index: 'footer-row-1', type: '全部类型', description: '-' }],
       columns: [],
+      pagination: { defaultCurrent: 1, defaultPageSize: 5, total: TOTAL },
+      headerAffixedTopProps: {
+        offsetTop: 87,
+        zIndex: 1000,
+      },
+      footerAffixedBottomProps: {
+        offsetBottom: this.paginationAffixedBottom ? 60 : 0,
+        zIndex: 1000,
+      },
+      horizontalScrollAffixedBottomProps: {
+        offsetBottom: this.paginationAffixedBottom ? 61 : 0,
+        zIndex: 1000,
+      },
     };
   },
 
   watch: {
+    paginationAffixedBottom(val) {
+      this.footerAffixedBottomProps.offsetBottom = val ? 60 : 0;
+      this.horizontalScrollAffixedBottomProps.offsetBottom = val ? 61 : 0;
+    },
     // 底部滚动条 和 Footer 无需同时出现，二选一即可
     horizontalScrollAffixedBottom(val) {
       val && (this.footerAffixedBottom = false);
@@ -163,17 +177,3 @@ export default {
   },
 };
 </script>
-
-<style>
-/*
- * table-layout: auto 模式下，table 元素的宽度设置很重要很重要。
- * 如果不设置，列多了之后会挤在一起
- * **/
-.tdesign-demo__table-affix table {
-  width: 1200px;
-}
-
-.tdesign-demo__table-affix .t-table {
-  max-width: 800px;
-}
-</style>

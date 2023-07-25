@@ -91,7 +91,11 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
           userInput.value = getUserInput(inputValue);
         }
         const fixedNumber = Number(largeNumberToFixed(inputValue, decimalPlaces, largeNumber));
-        if (decimalPlaces !== undefined && ![undefined, null].includes(val) && Number(fixedNumber) !== Number(tValue)) {
+        if (
+          decimalPlaces !== undefined
+          && ![undefined, null].includes(val)
+          && Number(fixedNumber) !== Number(tValue.value)
+        ) {
           setTValue(fixedNumber, { type: 'props', e: undefined });
         }
       }

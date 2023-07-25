@@ -11,7 +11,9 @@ import {
 } from '../interface';
 import { PageInfo, TdPaginationProps, Pagination as TPagination } from '../../pagination';
 import { Checkbox as TCheckbox, CheckboxGroup as TCheckboxGroup, CheckboxProps } from '../../checkbox';
-import { findTopNode, getLeafCount, getDataValues } from '../utils';
+import {
+  findTopNode, getLeafCount, getDataValues, TARGET,
+} from '../utils';
 import ripple from '../../utils/ripple';
 import Search from './transfer-search';
 import { renderTNodeJSXDefault } from '../../utils/render-tnode';
@@ -76,6 +78,10 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
       type: Boolean as PropType<boolean>,
       default: false,
     },
+    draggable: Boolean,
+    currentValue: {
+      type: Array as PropType<Array<TransferValue>>,
+    },
   },
   data() {
     return {
@@ -84,6 +90,10 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
       defaultCurrent: 1,
       // 用于兼容处理 Pagination 的非受控属性
       defaultPageSize: 0,
+      // 支持targetList 排序
+      draggingIndex: null,
+      dragoverIndex: null,
+      dragoverPos: '',
     };
   },
   computed: {
@@ -191,6 +201,75 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
       };
       this.$emit('search', event);
     },
+    onDragStart(e: DragEvent) {
+      const index = Number((e.target as HTMLElement).dataset.index);
+      this.draggingIndex = index;
+    },
+    onDragOver(e: DragEvent) {
+      e.preventDefault();
+      if (e.currentTarget) {
+        const currentElement = e.currentTarget as HTMLElement;
+        const index = Number(currentElement.dataset.index);
+        const elemHeight = currentElement.offsetHeight;
+        const dragY = e.clientY - currentElement.getBoundingClientRect().top;
+        const insertAreaPercent = 0.3;
+        const insertAreaHeight = elemHeight * insertAreaPercent;
+
+        this.dragoverIndex = index;
+
+        if (this.dragoverIndex === this.draggingIndex) {
+          this.dragoverPos = '';
+          return;
+        }
+        if (dragY < insertAreaHeight) {
+          this.dragoverPos = 'top';
+        } else if (dragY > elemHeight - insertAreaHeight) {
+          this.dragoverPos = 'bottom';
+        } else {
+          this.dragoverPos = 'center';
+        }
+      }
+    },
+    onDragLeave() {
+      this.dragoverPos = '';
+      this.dragoverIndex = null;
+    },
+    onDragEnd() {
+      this.draggingIndex = null;
+      this.dragoverIndex = null;
+      this.dragoverPos = '';
+    },
+    onDrop(e: DragEvent) {
+      e.preventDefault();
+
+      const { draggingIndex, dragoverIndex, dragoverPos } = this;
+
+      this.draggingIndex = null;
+      this.dragoverIndex = null;
+      this.dragoverPos = '';
+      if (draggingIndex === dragoverIndex) {
+        return;
+      }
+
+      const newData = [...this.currentValue];
+
+      const sourceItem = this.curPageData[draggingIndex].value;
+      const targetItem = this.curPageData[dragoverIndex].value;
+      const sourceIndex = newData.indexOf(sourceItem);
+      let targetIndex = newData.indexOf(targetItem);
+
+      newData.splice(sourceIndex, 1);
+
+      if (draggingIndex < dragoverIndex) {
+        targetIndex -= 1;
+      }
+
+      if (dragoverPos === 'bottom') {
+        targetIndex += 1;
+      }
+      newData.splice(targetIndex, 0, sourceItem);
+      this.$emit('dataChange', newData);
+    },
     renderTitle() {
       const defaultNode = this.title && typeof this.title === 'string' ? <template>{this.title}</template> : null;
       const titleNode = renderTNodeJSXDefault(this, 'title', {
@@ -203,25 +282,63 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
     },
     renderContent() {
       const rootNode = findTopNode(this);
-      const defaultNode = (
-        <TCheckboxGroup value={this.checkedValue} onChange={this.handleCheckedChange}>
-          {this.curPageData.map((item, index) => (
-            <TCheckbox
-              disabled={this.disabled || item.disabled}
-              value={item.value}
-              class={[`${this.componentName}__list-item`]}
-              key={item.key}
-              v-ripple={this.keepAnimation.ripple}
-              {...{ props: this.checkboxProps }}
-            >
-              {renderTNodeJSXDefault(this, 'transferItem', {
-                defaultNode: <span>{item.label}</span>,
-                params: { data: item.data, index, type: this.listType },
-              })}
-            </TCheckbox>
-          ))}
-        </TCheckboxGroup>
-      );
+      const isDraggable = this.draggable && this.listType === TARGET;
+      let defaultNode;
+      if (!isDraggable) {
+        defaultNode = (
+          <TCheckboxGroup value={this.checkedValue} onChange={this.handleCheckedChange}>
+            {this.curPageData.map((item, index) => (
+              <TCheckbox
+                disabled={this.disabled || item.disabled}
+                value={item.value}
+                class={[`${this.componentName}__list-item`]}
+                key={item.key}
+                v-ripple={this.keepAnimation.ripple && !this.draggable}
+                {...{ props: this.checkboxProps }}
+              >
+                {renderTNodeJSXDefault(this, 'transferItem', {
+                  defaultNode: <span>{item.label}</span>,
+                  params: { data: item.data, index, type: this.listType },
+                })}
+              </TCheckbox>
+            ))}
+          </TCheckboxGroup>
+        );
+      } else {
+        defaultNode = (
+          <TCheckboxGroup
+            value={this.checkedValue}
+            onChange={this.handleCheckedChange}
+            key={JSON.stringify(this.currentValue)}
+          >
+            {this.curPageData.map((item, index) => (
+              <div
+                draggable={isDraggable}
+                onDragend={this.onDragEnd}
+                onDragstart={this.onDragStart}
+                onDragover={this.onDragOver}
+                onDragleave={this.onDragLeave}
+                onDrop={this.onDrop}
+                data-index={index}
+              >
+                <TCheckbox
+                  disabled={this.disabled || item.disabled}
+                  value={item.value}
+                  class={[`${this.componentName}__list-item`]}
+                  key={item.key}
+                  v-ripple={this.keepAnimation.ripple && !this.draggable}
+                  {...{ props: this.checkboxProps }}
+                >
+                  {renderTNodeJSXDefault(this, 'transferItem', {
+                    defaultNode: <span>{item.label}</span>,
+                    params: { data: item.data, index, type: this.listType },
+                  })}
+                </TCheckbox>
+              </div>
+            ))}
+          </TCheckboxGroup>
+        );
+      }
 
       return (
         <div class={`${this.componentName}__list-content narrow-scrollbar`} onScroll={this.scroll}>
