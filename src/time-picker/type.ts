@@ -22,13 +22,14 @@ export interface TdTimePickerProps {
    */
   clearable?: boolean;
   /**
-   * 禁用时间项
+   * 禁用时间项的配置函数
    */
   disableTime?: (
     h: number,
     m: number,
     s: number,
-  ) => Partial<{ hour: Array<number>; minute: Array<number>; second: Array<number> }>;
+    ms: number,
+  ) => Partial<{ hour: Array<number>; minute: Array<number>; second: Array<number>; millisecond: Array<number> }>;
   /**
    * 是否禁用组件
    */
@@ -91,7 +92,7 @@ export interface TdTimePickerProps {
   /**
    * 当输入框失去焦点时触发，value 表示组件当前有效值
    */
-  onBlur?: (context: { value: TimePickerValue; e: FocusEvent }) => void;
+  onBlur?: (context: { value: TimePickerValue } & SelectInputBlurContext) => void;
   /**
    * 选中值发生变化时触发
    */

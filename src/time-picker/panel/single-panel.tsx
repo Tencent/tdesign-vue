@@ -53,7 +53,7 @@ export default defineComponent({
     const maskRef = ref(null);
 
     const dayjsValue = computed(() => {
-      const isStepsSet = !!steps.value.filter((v) => v > 1).length;
+      const isStepsSet = !!steps.value.filter((v: number) => v > 1).length;
 
       if (value.value) return dayjs(value.value, format.value);
 
@@ -148,10 +148,11 @@ export default defineComponent({
 
         return props.hideDisabledTime && !!props.disableTime
           ? colList.filter((t) => {
-            const params: [number, number, number] = [
+            const params: [number, number, number, number] = [
               dayjsValue.value.hour(),
               dayjsValue.value.minute(),
               dayjsValue.value.second(),
+              dayjsValue.value.millisecond(),
             ];
             params[colIdx] = Number(t);
             return !props
@@ -215,7 +216,11 @@ export default defineComponent({
       if (!dayjs(dayjsValue.value).isValid() || (value.value && !dayjs(value.value, format.value, true).isValid())) return;
 
       if (timeArr.includes(col)) {
-        if (timeItemCanUsed(col, val)) formattedVal = dayjsValue.value[col]?.(val).format(format.value);
+        if (timeItemCanUsed(col, val)) {
+          formattedVal = dayjsValue.value[col]?.(val).format(format.value);
+        } else {
+          formattedVal = dayjsValue.value.format(format.value);
+        }
       } else {
         const currentHour = dayjsValue.value.hour();
         if (meridiem === AM && currentHour >= 12) {
