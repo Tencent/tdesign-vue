@@ -8,6 +8,7 @@ import { TdSliderProps } from './type';
 import { TdTooltipProps } from '../tooltip/type';
 import { renderTNodeJSXDefault } from '../utils/render-tnode';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import { formatLabel } from '../_common/js/slider/utils';
 import mixins from '../utils/mixins';
 
 const classPrefixMixins = getClassPrefixMixins('slider__button');
@@ -123,6 +124,7 @@ export default mixins(classPrefixMixins, Vue as VueConstructor<SliderInstanceTyp
   methods: {
     getTooltipContent() {
       if (typeof this.label === 'boolean') return String(this.value);
+      if (typeof this.label === 'string') return formatLabel(this.label, this.value as number);
       return renderTNodeJSXDefault(this, 'label', {
         params: this.range
           ? {

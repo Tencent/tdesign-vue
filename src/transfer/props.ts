@@ -2,7 +2,6 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-12-12 16:59:59
  * */
 
 import { TdTransferProps } from './type';
@@ -33,13 +32,13 @@ export default {
     type: String as PropType<TdTransferProps['direction']>,
     default: 'both' as TdTransferProps['direction'],
     validator(val: TdTransferProps['direction']): boolean {
+      if (!val) return true;
       return ['left', 'right', 'both'].includes(val);
     },
   },
   /** 禁用全部操作：搜索、选中、移动、分页等。[源列表, 目标列表]，示例：[true, false] 或者 true */
   disabled: {
     type: [Boolean, Array] as PropType<TdTransferProps['disabled']>,
-    default: false,
   },
   /** 列表为空时呈现的内容。值类型为数组，则表示分别控制源列表和目标列表数据为空的呈现内容 */
   empty: {
@@ -72,11 +71,14 @@ export default {
     type: [Boolean, Array] as PropType<TdTransferProps['showCheckAll']>,
     default: true,
   },
+  /** 是否允许通过拖拽对目标列表进行排序 */
+  targetDraggable: Boolean,
   /** 目标数据列表排列顺序 */
   targetSort: {
     type: String as PropType<TdTransferProps['targetSort']>,
     default: 'original' as TdTransferProps['targetSort'],
     validator(val: TdTransferProps['targetSort']): boolean {
+      if (!val) return true;
       return ['original', 'push', 'unshift'].includes(val);
     },
   },

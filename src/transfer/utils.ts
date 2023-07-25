@@ -8,6 +8,9 @@ export { emitEvent } from '../utils/event';
 
 export const TRANSFER_NAME = 'TTransfer';
 
+export const SOURCE = 'source';
+export const TARGET = 'target';
+
 interface TreeNode {
   children?: Array<TreeNode>;
 }
