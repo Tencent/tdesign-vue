@@ -39,7 +39,8 @@ export default defineComponent({
       e.stopPropagation();
       if (props.disabled) return;
       menu.select(props.value);
-      ctx.emit('click');
+      ctx.emit('click', { e });
+      props.onClick?.({ e });
 
       if (props.to || (props.routerLink && props.href)) {
         const router = props.router || (ctx.root as Record<string, any>).$router;
