@@ -38,7 +38,7 @@ export default defineComponent({
       e.stopPropagation();
       if (props.disabled) return;
       menu.select(props.value);
-      ctx.emit('click');
+      ctx.emit('click', e);
 
       if (props.to) {
         const router = props.router || (ctx.root as Record<string, any>).$router;
