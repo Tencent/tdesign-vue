@@ -24,6 +24,7 @@
       :hideSortTips="hideSortTips"
       :showSortColumnBgColor="true"
       bordered
+      lazyLoad
       @sort-change="sortChange"
       @change="onChange"
     >

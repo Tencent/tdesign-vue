@@ -11,6 +11,7 @@
         :columns="columns"
         :data="data"
         :loading="loading"
+        lazyLoad
         dragSort="row-handler"
         @drag-sort="onDragSort"
       >

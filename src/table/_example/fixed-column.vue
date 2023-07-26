@@ -22,14 +22,18 @@
       <t-checkbox v-model="emptyData" style="margin-left: 16px; vertical-align: middle">空数据</t-checkbox>
     </div>
 
-    <!-- 如果希望表格列宽自适应，设置 `table-layout: auto` 即可。这种模式下的固定列，必须指定 tableContentWidth -->
+    <!--
+      如果希望表格列宽自适应，设置 `table-layout: auto`。
+      `table-layout: auto` 模式下的固定列，必须指定 tableContentWidth，表示：表格总宽度固定，列宽随内容自适应。
+      注意：`table-layout: auto` 模式下，不允许使用 resizable
+    -->
     <t-table
       ref="tableRef"
       rowKey="index"
       :data="emptyData ? [] : data"
       :columns="columns"
       :table-layout="tableLayout"
-      :table-content-width="tableLayout === 'fixed' ? undefined : '1200px'"
+      :table-content-width="tableLayout === 'fixed' ? undefined : '1000px'"
       bordered
       resizable
     >
@@ -102,13 +106,13 @@ export default {
         {
           colKey: 'createTime',
           title: '申请日期',
-          width: 120,
+          width: 180,
           fixed: this.rightFixedColumn >= 2 ? 'right' : undefined,
         },
         {
           colKey: 'operation',
           title: '操作',
-          width: 100,
+          width: 120,
           fixed: 'right',
         },
       ];

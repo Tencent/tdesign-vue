@@ -9,9 +9,12 @@
     </t-space>
 
     <!-- key 是避免重复渲染的关键；Checkbox.key is the key point of list render -->
-    <!-- 数据量大的情况下，不建议使用这种方式：因父组件 CheckboxGroup 选中项变化，子组件 Checkbox 一定重新渲染。 -->
+    <!-- 数据量大的情况下，不建议使用这种方式：因 Vue2 框架中，父组件 CheckboxGroup 选中项变化，子组件 Checkbox 一定全量重新渲染。 -->
     <t-space direction="vertical">
-      <div>方式二：组件内置全选功能，使用插槽定义选项。选中值: {{ value2.join(', ') }}</div>
+      <div>
+        方式二：组件内置全选功能，使用插槽定义选项。⚠️注意：数据量大时，不建议使用这种方式。选中值:
+        {{ value2.join(', ') }}。
+      </div>
       <t-checkbox-group v-model="value2" @change="onChange2">
         <t-checkbox key="1" :checkAll="true" label="全选" />
         <t-checkbox key="2" value="选项一">选项一</t-checkbox>
@@ -22,13 +25,18 @@
 
     <!-- 数据量大的情况下，建议使用这种方式，可以避免选中项重复渲染 -->
     <t-space direction="vertical">
-      <div>方式三：组件内置全选功能，使用 `options` 定义选项。选中值: {{ value3.join(', ') }}</div>
+      <div>
+        方式三：组件内置全选功能，使用 `options` 定义选项。数据量大时，可以避免所有元素重新渲染。选中值:
+        {{ value3.join(', ') }}
+      </div>
       <t-checkbox-group v-model="value3" :options="options2" @change="onChange3" />
     </t-space>
 
     <!-- 数据量大的情况下，建议使用这种方式，可以避免选中项重复渲染 -->
     <t-space direction="vertical">
-      <div>方式四：组件内置全选功能，`options` 定义选项列表，插槽定义选项内容</div>
+      <div>
+        方式四：组件内置全选功能，`options` 定义选项列表，插槽定义选项内容。数据量大时，可以避免所有元素重新渲染。
+      </div>
       <t-checkbox-group :defaultValue="['选项一']" :options="options3">
         <template #label="{ data: { label, value, checkAll }, index }">
           <span v-if="checkAll">{{ label }}</span>

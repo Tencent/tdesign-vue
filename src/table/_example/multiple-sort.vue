@@ -4,7 +4,15 @@
       <p style="margin-left: 24px">排序：{{ sort }}</p>
       <br />
       <!-- 支持受控用法 ，也支持非受控用法 -->
-      <t-table rowKey="index" :columns="columns" :data="data" :sort="sort" @sort-change="sortChange" multipleSort>
+      <t-table
+        rowKey="index"
+        :columns="columns"
+        :data="data"
+        :sort="sort"
+        @sort-change="sortChange"
+        multipleSort
+        lazyLoad
+      >
         <template #status="{ row }">
           <p v-if="row.status === 0" class="status">健康</p>
           <p v-if="row.status === 1" class="status warning">警告</p>
