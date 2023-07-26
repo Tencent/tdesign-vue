@@ -100,8 +100,10 @@ export default defineComponent({
       const filterComponentProps: { [key: string]: any } = {
         options: ['single', 'multiple'].includes(column.filter.type) ? column.filter?.list : undefined,
         ...(column.filter?.props || {}),
-        value: this.innerFilterValue?.[column.colKey],
       };
+      if (column.colKey in this.innerFilterValue) {
+        filterComponentProps.value = this.innerFilterValue[column.colKey];
+      }
       // 这个代码必须放在这里，没事儿别改
       if (column.filter.type === 'single') {
         filterComponentProps.onChange = (val: any) => {
@@ -141,13 +143,7 @@ export default defineComponent({
             });
           });
         }
-        return (
-          <component
-            value={this.innerFilterValue?.[column.colKey]}
-            props={{ ...filterComponentProps }}
-            on={{ ...on }}
-          ></component>
-        );
+        return <component props={{ ...filterComponentProps }} on={{ ...on }}></component>;
       };
 
       return (
