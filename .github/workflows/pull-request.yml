@@ -5,7 +5,7 @@ name: MAIN_PULL_REQUEST
 
 on:
   pull_request:
-    branches: [develop, main, feature, feat/2.7]
+    branches: [develop, main, feature, naruto]
     types: [opened, synchronize, reopened]
 
 jobs:
