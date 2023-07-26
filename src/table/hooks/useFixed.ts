@@ -11,6 +11,7 @@ import {
   Ref,
 } from 'vue';
 import get from 'lodash/get';
+import xorWith from 'lodash/xorWith';
 import debounce from 'lodash/debounce';
 import log from '../../_common/js/log';
 import { ClassName, Styles } from '../../common';
@@ -364,6 +365,11 @@ export default function useFixed(
     }, 0);
   };
 
+  const setTableElmWidth = (width: number) => {
+    if (tableElmWidth.value === width) return;
+    tableElmWidth.value = width;
+  };
+
   const updateTableWidth = () => {
     const rect = tableContentRef.value?.getBoundingClientRect();
     if (!rect) return;
@@ -371,7 +377,7 @@ export default function useFixed(
     const reduceWidth = isFixedHeader.value ? scrollbarWidth.value : 0;
     tableWidth.value = rect.width - reduceWidth - (props.bordered ? 1 : 0);
     const elmRect = tableElmRef?.value?.getBoundingClientRect();
-    tableElmWidth.value = elmRect?.width;
+    setTableElmWidth(elmRect?.width);
   };
 
   const updateAffixPosition = () => {
@@ -483,28 +489,36 @@ export default function useFixed(
 
   // 影响表头宽度的元素
   watch(
-    [
-      data,
-      columns,
-      bordered,
-      tableLayout,
-      fixedRows,
-      isFixedHeader,
-      headerAffixedTop,
-      footerAffixedBottom,
-      tableContentWidth,
-    ],
+    [data, bordered, tableLayout, fixedRows, isFixedHeader, headerAffixedTop, footerAffixedBottom, tableContentWidth],
     () => {
-      updateThWidthListHandler();
-      updateAffixPosition();
+      const timer = setTimeout(() => {
+        updateThWidthListHandler();
+        updateAffixPosition();
+        clearTimeout(timer);
+      }, 60);
     },
     { immediate: true },
   );
 
+  watch([finalColumns], ([finalColumns], [preFinalColumns]) => {
+    const finalColKeys = finalColumns.map((t) => t.colKey);
+    const preColKeys = preFinalColumns.map((t) => t.colKey);
+    if (finalColKeys.length < preColKeys.length) {
+      const reduceKeys = xorWith(preColKeys, finalColKeys);
+      const thWidthList = getThWidthList('calculate');
+      let reduceWidth = 0;
+      reduceKeys.forEach((key) => {
+        reduceWidth += thWidthList[key];
+      });
+      const oldTotalWidth = Object.values(thWidthList).reduce((r = 0, n) => r + n);
+      setTableElmWidth(oldTotalWidth - reduceWidth);
+    }
+  });
+
   const refreshTable = () => {
-    updateTableWidth();
-    updateFixedHeader();
+    // updateTableWidth();
     updateThWidthListHandler();
+    updateFixedHeader();
     updateAffixPosition();
 
     if (isFixedColumn.value || isFixedHeader.value) {
@@ -523,11 +537,10 @@ export default function useFixed(
     if (getIEVersion() < 11 || typeof window.ResizeObserver === 'undefined') return;
     off(window, 'resize', onResize);
     resizeObserver = new window.ResizeObserver(() => {
-      refreshTable();
       const timer = setTimeout(() => {
         refreshTable();
         clearTimeout(timer);
-      }, 250);
+      }, 60);
     });
     resizeObserver.observe(tableElement);
     tableRef.value = tableElement;
@@ -536,10 +549,6 @@ export default function useFixed(
   onMounted(() => {
     const scrollWidth = getScrollbarWidthWithCSS();
     scrollbarWidth.value = scrollWidth;
-    const timer = setTimeout(() => {
-      updateTableWidth();
-      clearTimeout(timer);
-    });
     const isWatchResize = isFixedColumn.value || isFixedHeader.value || !notNeedThWidthList.value || !data.value.length;
     // IE 11 以下使用 window resize；IE 11 以上使用 ResizeObserver
     if ((isWatchResize && getIEVersion() < 11) || typeof window.ResizeObserver === 'undefined') {
@@ -555,11 +564,6 @@ export default function useFixed(
 
   const setData = (dataSource: TableRowData[]) => {
     data.value = dataSource;
-  };
-
-  const setTableElmWidth = (width: number) => {
-    if (tableElmWidth.value === width) return;
-    tableElmWidth.value = width;
   };
 
   const updateTableAfterColumnResize = () => {

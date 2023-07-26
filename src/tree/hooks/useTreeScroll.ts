@@ -10,7 +10,7 @@ import { TreeProps, TypeTreeState, TypeTimer } from '../interface';
 export default function useTreeScroll(props: TreeProps, context: SetupContext, state: TypeTreeState) {
   const treeState = state;
   const {
-    scope, treeContentRef, nodes, isScrolling,
+    allNodes, nodes, scope, treeContentRef, isScrolling,
   } = treeState;
 
   const scrollProps: Ref<TScroll> = computed(() => ({
@@ -22,7 +22,7 @@ export default function useTreeScroll(props: TreeProps, context: SetupContext, s
 
   // 虚拟滚动
   const virtualScrollParams = computed(() => {
-    const list = nodes.value.filter((node: TreeNode) => node.visible);
+    const list = allNodes.value.filter((node: TreeNode) => node.visible);
     return {
       data: list,
       scroll: scrollProps.value,
@@ -70,6 +70,7 @@ export default function useTreeScroll(props: TreeProps, context: SetupContext, s
     if (lastScrollY !== top) {
       if (isVirtual) {
         virtualConfig.handleScroll();
+        nodes.value = virtualConfig.visibleData.value;
       }
     } else {
       lastScrollY = 0;

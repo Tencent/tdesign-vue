@@ -24,10 +24,9 @@ import {
   getTransferData,
   filterTransferData,
   TRANSFER_NAME,
+  SOURCE,
+  TARGET,
 } from './utils';
-
-const SOURCE = 'source';
-const TARGET = 'target';
 
 export default mixins(getConfigReceiverMixins('transfer')).extend({
   name: TRANSFER_NAME,
@@ -39,7 +38,9 @@ export default mixins(getConfigReceiverMixins('transfer')).extend({
     prop: 'value',
     event: 'change',
   },
-  props,
+  props: {
+    ...props,
+  },
   data(): {
     SOURCE: TransferListType;
     TARGET: TransferListType;
@@ -129,8 +130,15 @@ export default mixins(getConfigReceiverMixins('transfer')).extend({
         newTargetValue = oldTargetValue.filter((v) => !checkedValue.includes(v));
       } else if (this.targetSort === 'original') {
         // 按照原始顺序
+        const remainValue = this.transferData.reduce((acc, data) => {
+          if (oldTargetValue.includes(data.value) && data.disabled) {
+            return acc.concat(data.value);
+          }
+          return acc;
+        }, []);
         newTargetValue = getDataValues(this.transferData, oldTargetValue.concat(checkedValue), {
           isTreeMode: this.isTreeMode,
+          remainValue,
         });
       } else if (this.targetSort === 'unshift') {
         newTargetValue = checkedValue.concat(oldTargetValue);
@@ -195,6 +203,9 @@ export default mixins(getConfigReceiverMixins('transfer')).extend({
     handlePageChange(pageInfo: PageInfo, listType: TransferListType) {
       emitEvent<Parameters<TdTransferProps['onPageChange']>>(this, 'page-change', pageInfo, { type: listType });
     },
+    handleDataChange(data: Array<TransferValue>) {
+      this.$emit('change', data, null);
+    },
     renderTransferList(listType: TransferListType) {
       const scopedSlots = pick(this.$scopedSlots, ['title', 'empty', 'footer', 'operation', 'transferItem', 'default']);
       return (
@@ -215,10 +226,13 @@ export default mixins(getConfigReceiverMixins('transfer')).extend({
           onScroll={($event: Event) => this.handleScroll($event, listType)}
           onSearch={this.handleSearch}
           onPageChange={(pageInfo: PageInfo) => this.handlePageChange(pageInfo, listType)}
+          onDataChange={this.handleDataChange}
           scopedSlots={scopedSlots}
           t={this.t}
           global={this.global}
           isTreeMode={this.isTreeMode}
+          currentValue={this.value}
+          draggable={this.targetDraggable && listType === TARGET}
         ></transfer-list>
       );
     },

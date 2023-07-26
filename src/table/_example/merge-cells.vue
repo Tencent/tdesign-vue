@@ -7,6 +7,7 @@
     :rowspanAndColspan="rowspanAndColspan"
     table-layout="fixed"
     resizable
+    lazyLoad
   >
   </t-table>
 </template>
