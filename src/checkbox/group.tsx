@@ -209,7 +209,7 @@ export default defineComponent({
           props={option}
           index={index}
           data={option}
-          checked={this.innerValue.includes(option.value)}
+          checked={this.innerValue?.includes(option.value) || false}
           storeKey={this.storeKey}
           scopedSlots={this.$scopedSlots}
         ></Checkbox>
