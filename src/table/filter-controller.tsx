@@ -133,6 +133,7 @@ export default defineComponent({
         if (!component) return null;
         const isVueComponent = component.install && component.component;
         if (typeof component === 'function' && !isVueComponent) {
+          // component() is going to be deprecated
           return component((v: FirstParams, b: SecondParams) => {
             const attributes = typeof b === 'object' && 'attrs' in b ? b.attrs : {};
             return h(v, {
@@ -146,6 +147,8 @@ export default defineComponent({
           <component
             value={this.innerFilterValue?.[column.colKey]}
             attrs={this.column.filter?.attrs}
+            class={this.column.filter?.classNames}
+            style={this.column.filter?.styles}
             props={{ ...filterComponentProps }}
             on={{ ...on }}
           ></component>

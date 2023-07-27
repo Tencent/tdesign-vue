@@ -23,6 +23,7 @@ import {
   OptionData,
   SizeEnum,
   ClassName,
+  Styles,
   AttachNode,
   HTMLElementAttributes,
   ComponentType,
@@ -777,6 +778,11 @@ export interface TableColumnFilter {
    */
   attrs?: HTMLElementAttributes;
   /**
+   * 透传类名到自定义组件 `component`
+   * @default ''
+   */
+  classNames?: ClassName;
+  /**
    * 用于自定义筛选器，只要保证自定义筛选器包含 value 属性 和 change 事件，即可像内置筛选器一样正常使用。示例：`component: DatePicker`
    */
   component?: ComponentType;
@@ -805,6 +811,10 @@ export interface TableColumnFilter {
    * @default false
    */
   showConfirmAndReset?: boolean;
+  /**
+   * 透传内联样式到自定义组件 `component`
+   */
+  styles?: Styles;
   /**
    * 用于设置筛选器类型：单选按钮筛选器、复选框筛选器、输入框筛选器。更多复杂组件，请更为使用 `component` 自定义任意组件
    * @default ''
