@@ -101,7 +101,7 @@ export default defineComponent({
         options: ['single', 'multiple'].includes(column.filter.type) ? column.filter?.list : undefined,
         ...(column.filter?.props || {}),
       };
-      if (column.colKey in this.innerFilterValue) {
+      if (column.colKey && this.innerFilterValue && column.colKey in this.innerFilterValue) {
         filterComponentProps.value = this.innerFilterValue[column.colKey];
       }
       // 这个代码必须放在这里，没事儿别改
