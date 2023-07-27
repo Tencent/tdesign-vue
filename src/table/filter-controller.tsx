@@ -143,12 +143,13 @@ export default defineComponent({
             });
           });
         }
+        const filter = this.column.filter || {};
         return (
           <component
             value={this.innerFilterValue?.[column.colKey]}
-            attrs={this.column.filter?.attrs}
-            class={this.column.filter?.classNames}
-            style={this.column.filter?.styles}
+            attrs={filter.attrs}
+            class={filter.classNames}
+            style={filter.styles}
             props={{ ...filterComponentProps }}
             on={{ ...on }}
           ></component>
