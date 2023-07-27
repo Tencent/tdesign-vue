@@ -134,9 +134,10 @@ export default defineComponent({
         const isVueComponent = component.install && component.component;
         if (typeof component === 'function' && !isVueComponent) {
           return component((v: FirstParams, b: SecondParams) => {
-            const tProps = typeof b === 'object' && 'attrs' in b ? b.attrs : {};
+            const attributes = typeof b === 'object' && 'attrs' in b ? b.attrs : {};
             return h(v, {
-              props: { ...filterComponentProps, ...tProps },
+              props: { ...filterComponentProps },
+              attrs: attributes,
               on,
             });
           });
@@ -144,6 +145,7 @@ export default defineComponent({
         return (
           <component
             value={this.innerFilterValue?.[column.colKey]}
+            attrs={this.column.filter?.attrs}
             props={{ ...filterComponentProps }}
             on={{ ...on }}
           ></component>

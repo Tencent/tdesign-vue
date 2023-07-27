@@ -261,6 +261,7 @@ rowIndex | Number | - | required | Y
 
 name | type | default | description | required
 -- | -- | -- | -- | --
+attrs | Array | - | html attributes of component。Typescript：`HTMLElementAttributes`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 component | Slot / Function | - | Typescript：`ComponentType`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 confirmEvents | Array | - | Typescript：`string[]` | N
 list | Array | - | Typescript：`Array<OptionData>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
