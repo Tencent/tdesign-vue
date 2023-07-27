@@ -4,7 +4,6 @@ import isFunction from 'lodash/isFunction';
 import Tree from '../tree';
 import props from './props';
 import SelectInput from '../select-input';
-import { TagInputChangeContext, TagInputValue } from '../tag-input';
 import FakeArrow from '../common-components/fake-arrow';
 import { TreeSelectValue, TdTreeSelectProps } from './type';
 import { useTNodeJSX, useTNodeDefault } from '../hooks/tnode';
