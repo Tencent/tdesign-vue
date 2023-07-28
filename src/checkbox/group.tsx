@@ -177,12 +177,25 @@ export default defineComponent({
       { immediate: true },
     );
 
+    const addStoreKeyToCheckbox = (nodes: VNode[]) => {
+      for (let i = 0, len = nodes.length; i < len; i++) {
+        const vNode = nodes[i];
+        if (vNode.componentOptions && /TCheckbox/.test(vNode.tag)) {
+          (vNode.componentOptions.propsData as any).storeKey = storeKey;
+        }
+        if (vNode.children?.length) {
+          addStoreKeyToCheckbox(vNode.children);
+        }
+      }
+    };
+
     return {
       storeKey,
       optionList,
       innerValue,
       COMPONENT_NAME,
       getOptionListBySlots,
+      addStoreKeyToCheckbox,
     };
   },
 
@@ -196,7 +209,7 @@ export default defineComponent({
           props={option}
           index={index}
           data={option}
-          checked={this.innerValue.includes(option.value)}
+          checked={this.innerValue?.includes(option.value) || false}
           storeKey={this.storeKey}
           scopedSlots={this.$scopedSlots}
         ></Checkbox>
@@ -204,10 +217,7 @@ export default defineComponent({
     } else {
       const nodes = this.$scopedSlots.default?.(null);
       this.optionList = this.getOptionListBySlots();
-      nodes.forEach((vNode: VNode) => {
-        // eslint-disable-next-line
-        (vNode.componentOptions.propsData as any).storeKey = this.storeKey;
-      });
+      this.addStoreKeyToCheckbox(nodes);
       children = nodes;
     }
     return (

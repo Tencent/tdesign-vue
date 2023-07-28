@@ -70,7 +70,8 @@ export default function useAffix(props: TdBaseTableProps) {
   const isAffixedBottomElementShow = (elementRect: DOMRect, tableRect: DOMRect, headerHeight: number) => tableRect.top + headerHeight < elementRect.top && elementRect.top > elementRect.height;
 
   // 横向滚动条是否显示
-  const isAffixedBottomScrollShow = (elementRect: DOMRect, tableRect: DOMRect, headerHeight: number) => tableContentRef.value.scrollWidth > tableContentRef.value.clientWidth
+  const isAffixedBottomScrollShow = (elementRect: DOMRect, tableRect: DOMRect, headerHeight: number) => !!tableContentRef.value
+    && tableContentRef.value.scrollWidth > tableContentRef.value.clientWidth
     && isAffixedBottomElementShow(elementRect, tableRect, headerHeight);
 
   const getOffsetTop = (props: boolean | AffixProps) => {

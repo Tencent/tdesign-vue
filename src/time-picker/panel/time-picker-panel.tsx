@@ -27,7 +27,7 @@ export default defineComponent({
     const panelClassName = usePrefixClass('time-picker__panel');
     const triggerScroll = ref(false);
     const { global } = useConfig('timePicker');
-    const showNowTimeBtn = computed(() => !!props.steps.filter((v) => v > 1).length);
+    const showNowTimeBtn = computed(() => !!props.steps.filter((v: number) => v > 1).length);
     const defaultValue = computed(() => {
       const isStepsSet = showNowTimeBtn.value;
       const formattedValue = dayjs(props.value, props.format);
@@ -111,6 +111,7 @@ export default defineComponent({
                 disableTime: this.disableTime,
                 resetTriggerScroll: this.resetTriggerScroll,
                 isShowPanel: this.isShowPanel,
+                hideDisabledTime: this.hideDisabledTime,
               },
             }}
           />

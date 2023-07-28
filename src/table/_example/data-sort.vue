@@ -27,6 +27,7 @@
           @sort-change="sortChange"
           @data-change="dataChange"
           :multipleSort="allowMultipleSort"
+          lazyLoad
         >
           <icon slot="op-column" name="descending-order" />
           <template #status="{ row }">

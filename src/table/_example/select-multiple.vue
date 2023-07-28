@@ -6,6 +6,7 @@
       row-key="index"
       :columns="columns"
       :data="data"
+      lazyLoad
       :selected-row-keys="selectedRowKeys"
       @select-change="rehandleSelectChange"
     >

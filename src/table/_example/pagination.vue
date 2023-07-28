@@ -13,6 +13,7 @@
       :pagination="pagination"
       :selected-row-keys.sync="selectedRowKeys"
       :reserve-selected-row-on-paginate="reserveSelectedRowOnPaginate"
+      lazyLoad
       @change="onChange"
       @page-change="onPageChange"
       @select-change="onSelectChange"

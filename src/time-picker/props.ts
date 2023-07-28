@@ -12,7 +12,7 @@ export default {
   allowInput: Boolean,
   /** 是否允许清除选中值 */
   clearable: Boolean,
-  /** 禁用时间项 */
+  /** 禁用时间项的配置函数 */
   disableTime: {
     type: Function as PropType<TdTimePickerProps['disableTime']>,
   },

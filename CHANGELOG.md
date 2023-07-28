@@ -5,6 +5,37 @@ toc: false
 docClass: timeline
 ---
 
+  ## 🌈 1.5.0 `2023-07-25` 
+### 🚀 Features
+- `Table`: 新增 `lazyLoad` 表格元素懒加载，当出现在可视区域时，再渲染表格第一屏数据 @chaishi ([#2605](https://github.com/Tencent/tdesign-vue/pull/2605))
+- `Transfer`: 新增 `targetDraggable` API , 支持对目标列表拖拽排序的功能 @uyarn ([#2612](https://github.com/Tencent/tdesign-vue/pull/2612))
+- `Slider`: label 支持 `${value}%` 格式配置 @uyarn ([#2613](https://github.com/Tencent/tdesign-vue/pull/2613))
+- `Tree`: tree 组件改进列表渲染逻辑 @TabSpace ([#2586](https://github.com/Tencent/tdesign-vue/pull/2586))
+- `Menu`:
+  - 新增 API `routerLink`，可指定菜单项渲染为 Router 控制跳转的 a 标签 @boogie-ben ([#2603](https://github.com/Tencent/tdesign-vue/pull/2603))
+  - 重构侧边栏导航子菜单展开/收起动画实现 @xiaosansiji ([#2561](https://github.com/Tencent/tdesign-vue/pull/2561))
+- `TimePicker`:  @uyarn ([#2618](https://github.com/Tencent/tdesign-vue/pull/2618))
+  - `disableTime` 回调中新增毫秒参数
+  - 优化展示不可选时间选项时滚动到不可选选项的体验
+### 🐞 Bug Fixes
+- `Tabs`:  修复 tabs 组件放在在 dialog 中 tab-bar 不能正常显示的问题 @uyarn ([#2595](https://github.com/Tencent/tdesign-vue/pull/2595))
+- `Transfer`: 修复穿梭框存在默认已选且不允许移除的值被移除的异常问题 @uyarn ([#2599](https://github.com/Tencent/tdesign-vue/pull/2599))
+- `Table`: @chaishi ([#2605](https://github.com/Tencent/tdesign-vue/pull/2605))
+  - 可编辑表格场景，支持设置 `colKey` 值为链式属性，如：`a.b.c`
+  - 可编辑表格场景，行编辑，`edit.props` 和 `edit.on` 为函数时，新增参数 `updateEditedCellValue` 用于更新编辑状态的表格数据，[issue#2577](https://github.com/Tencent/tdesign-vue/issues/2577)
+  - 修复列宽调整 + 表头吸顶 + 列配置自定义综合场景下，列宽变少时，表格宽度无法恢复原来的宽度，[issue#2363](https://github.com/Tencent/tdesign-vue/issues/2363) @chaishi ([#2606](https://github.com/Tencent/tdesign-vue/pull/2606))
+- `Checkbox`: 修复版本 `v1.4.8` 中无法在 CheckboxGroup 内部自定义任意节点的问题 @chaishi ([#2604](https://github.com/Tencent/tdesign-vue/pull/2604))
+- `InputNumber`: 修复 `decimalPlaces` 存在时，数值满足要求，用户未操作，就已经触发 `onChange` 事件问题，[issue#2616](https://github.com/Tencent/tdesign-vue/issues/2616) @chaishi ([#2617](https://github.com/Tencent/tdesign-vue/pull/2617))
+- `Menu`: @boogie-ben ([#2603](https://github.com/Tencent/tdesign-vue/pull/2603))
+  - 渲染为 a 标签时，a 标签覆盖范围扩大至整个菜单项，而不是只有文本部分
+  - 修复当菜单项渲染 a 标签并且 `collapsed = true` 状态时，菜单项内区隐藏导致无法点击跳转的问题
+  - 修复渲染为 a 标签，弹出展示子菜单，文本未对齐的问题
+  - 修复 SubMenu 菜单项过多时无法完整展示的问题 [issue#2262](https://github.com/Tencent/tdesign-vue/issues/2262)
+  - 修复 `MenuItem` click 点击事件未传递 event 参数的问题 @xiaosansiji ([#2561](https://github.com/Tencent/tdesign-vue/pull/2561))
+- `Tree`: @TabSpace ([common#1535](https://github.com/Tencent/tdesign-common/pull/1535))
+  - 修复 `treeNodeModel` 实例未能同步 node 属性的问题
+  - 优化节点状态更新时的性能 
+
  ## 🌈 1.4.8 `2023-07-18` 
 ### 🚀 Features
 - `DatePicker`: 优化关闭浮层后重置默认选中区域 @honkinglin ([#2585](https://github.com/Tencent/tdesign-vue/pull/2585))

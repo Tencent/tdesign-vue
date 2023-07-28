@@ -20,6 +20,7 @@
       :scroll="{ type: 'virtual', rowHeight: 69, bufferSize: 10 }"
       :height="height"
       :bordered="bordered"
+      lazyLoad
     >
     </t-table>
   </t-space>
