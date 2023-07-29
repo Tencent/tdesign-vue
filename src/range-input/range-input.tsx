@@ -40,7 +40,9 @@ export default defineComponent({
     const [innerValue, setInnerValue] = useVModel(value, props.defaultValue, props.onChange, 'change');
 
     const isShowClearIcon = computed(
-      () => ((props.clearable && props.value?.length && !props.disabled) || props.showClearIconOnEmpty) && isHover.value,
+      () => ((props.clearable && (innerValue.value[0] || innerValue.value[1]) && !props.disabled)
+          || props.showClearIconOnEmpty)
+        && isHover.value,
     );
 
     const inputRefs = {
@@ -49,6 +51,7 @@ export default defineComponent({
     };
 
     function handleClear(context: { e: MouseEvent }) {
+      setInnerValue(['', '']);
       props.onClear?.(context);
     }
 
@@ -239,15 +242,13 @@ export default defineComponent({
             {...{ props: calcInputProps[1] }}
           />
           {suffixContent ? <div class={`${COMPONENT_NAME}__suffix`}>{suffixContent}</div> : null}
-          {suffixIconContent && (
-            <span class={`${COMPONENT_NAME}__suffix ${COMPONENT_NAME}__suffix-icon`}>
-              {isShowClearIcon ? (
-                <CloseCircleFilledIcon class={`${COMPONENT_NAME}__suffix-clear`} onClick={handleClear} />
-              ) : (
-                suffixIconContent
-              )}
-            </span>
-          )}
+          <span class={`${COMPONENT_NAME}__suffix ${COMPONENT_NAME}__suffix-icon`}>
+            {isShowClearIcon ? (
+              <CloseCircleFilledIcon class={`${COMPONENT_NAME}__suffix-clear`} onClick={handleClear} />
+            ) : (
+              suffixIconContent
+            )}
+          </span>
         </div>
         {tips && <div class={`${COMPONENT_NAME}__tips`}>{tips}</div>}
       </div>
