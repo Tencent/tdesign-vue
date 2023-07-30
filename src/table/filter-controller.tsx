@@ -148,7 +148,6 @@ export default defineComponent({
         const filter = this.column.filter || {};
         return (
           <component
-            value={this.innerFilterValue?.[column.colKey]}
             attrs={filter.attrs}
             class={filter.classNames}
             style={filter.styles}
