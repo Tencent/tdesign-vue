@@ -150,7 +150,7 @@ export default defineComponent({
           <component
             attrs={filter.attrs}
             class={filter.classNames}
-            style={filter.styles}
+            style={filter.style}
             props={{ ...filterComponentProps }}
             on={{ ...on }}
           ></component>

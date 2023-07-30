@@ -270,7 +270,7 @@ popupProps | Object | - | 透传 Popup 组件全部属性到筛选器浮层。TS
 props | Object | - | 用于透传筛选器属性到自定义组件 `component`，可以对筛选器进行任何原组件支持的属性配置。TS 类型：`FilterProps` `type FilterProps = RadioProps \| CheckboxProps \| InputProps \| { [key: string]: any }`，[Input API Documents](./input?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 resetValue | \- | - | 重置时设置的值，示例：'' 或 []。TS 类型：`any` | N
 showConfirmAndReset | Boolean | false | 是否显示重置和确认。值为真，过滤事件（filter-change）会在确定时触发；值为假，则数据变化时会立即触发过滤事件 | N
-styles | Object | - | 透传内联样式到自定义组件 `component`。TS 类型：`Styles`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+style | Object | - | 透传内联样式到自定义组件 `component`。TS 类型：`Styles`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 type | String | - | 用于设置筛选器类型：单选按钮筛选器、复选框筛选器、输入框筛选器。更多复杂组件，请更为使用 `component` 自定义任意组件。TS 类型：`FilterType` `type FilterType = 'input' \| 'single' \| 'multiple'`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 
 ### TableColumnController

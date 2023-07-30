@@ -814,7 +814,7 @@ export interface TableColumnFilter {
   /**
    * 透传内联样式到自定义组件 `component`
    */
-  styles?: Styles;
+  style?: Styles;
   /**
    * 用于设置筛选器类型：单选按钮筛选器、复选框筛选器、输入框筛选器。更多复杂组件，请更为使用 `component` 自定义任意组件
    * @default ''

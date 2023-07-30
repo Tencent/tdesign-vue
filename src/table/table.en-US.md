@@ -270,7 +270,7 @@ popupProps | Object | - | Typescript：`PopupProps`，[Popup API Documents](./po
 props | Object | - | Typescript：`FilterProps` `type FilterProps = RadioProps \| CheckboxProps \| InputProps \| { [key: string]: any }`，[Input API Documents](./input?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 resetValue | \- | - | Typescript：`any` | N
 showConfirmAndReset | Boolean | false | \- | N
-styles | Object | - | styles of component。Typescript：`Styles`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+style | Object | - | styles of component。Typescript：`Styles`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 type | String | - | Typescript：`FilterType` `type FilterType = 'input' \| 'single' \| 'multiple'`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/table/type.ts) | N
 
 ### TableColumnController
