@@ -1,5 +1,5 @@
 import {
-  computed, defineComponent, ref, watch,
+  computed, defineComponent, ref, toRefs, watch,
 } from '@vue/composition-api';
 import omit from 'lodash/omit';
 import isFunction from 'lodash/isFunction';
@@ -10,15 +10,18 @@ import { TdImageProps } from './type';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import Space from '../space';
+import { useImagePreviewUrl } from '../hooks';
 
 export default defineComponent({
   name: 'TImage',
   components: { Space },
   props,
   setup(props: TdImageProps, { emit }) {
+    const { onLoad, onError } = props;
+
     const {
-      lazy, overlayTrigger, onLoad, onError,
-    } = props;
+      src, lazy, fallback, overlayTrigger,
+    } = toRefs(props);
 
     const rest = omit(props, [
       'className',
@@ -43,17 +46,27 @@ export default defineComponent({
     const imageRef = ref<HTMLElement>(null);
 
     // replace image url
-    const imageSrc = computed(() => isFunction(globalConfig.value.replaceImageSrc) ? globalConfig.value.replaceImageSrc(props) : props.src);
+    const imageStrSrc = ref(src.value);
 
     watch(
-      () => props.src,
-      () => {
-        hasError.value = false;
-        isLoaded.value = false;
+      [src, globalConfig],
+      ([src, globalConfig]) => {
+        const { replaceImageSrc } = globalConfig || {};
+        const tmpUrl = isFunction(replaceImageSrc) ? replaceImageSrc(props) : src;
+        if (tmpUrl === src) return;
+        imageStrSrc.value = tmpUrl;
       },
+      { immediate: true },
     );
 
-    const shouldLoad = ref(!lazy);
+    const { previewUrl } = useImagePreviewUrl(imageStrSrc);
+
+    watch([previewUrl], () => {
+      hasError.value = false;
+      isLoaded.value = false;
+    });
+
+    const shouldLoad = ref(!lazy.value);
     const handleLoadImage = () => {
       shouldLoad.value = true;
     };
@@ -68,11 +81,15 @@ export default defineComponent({
     const hasError = ref(false);
     const handleError = (e: Event) => {
       hasError.value = true;
+      // show fallback url if load failed
+      if (fallback.value) {
+        imageStrSrc.value = fallback.value;
+      }
       emit('error', { e });
       onError?.({ e });
     };
 
-    const hasMouseEvent = overlayTrigger === 'hover';
+    const hasMouseEvent = overlayTrigger.value === 'hover';
 
     const shouldShowOverlay = ref(!hasMouseEvent);
     const handleToggleOverlay = () => {
@@ -96,7 +113,8 @@ export default defineComponent({
       hasMouseEvent,
       handleToggleOverlay,
       shouldShowOverlay,
-      imageSrc,
+      imageStrSrc,
+      previewUrl,
       hasError,
       shouldLoad,
       handleError,
@@ -145,14 +163,23 @@ export default defineComponent({
           {Object.entries(this.srcset).map(([type, url]) => (
             <source type={type} srcset={url} />
           ))}
-          {this.src && this.renderImage(this.src)}
+          {this.src && this.renderImage()}
         </picture>
       );
     },
 
-    renderImage(url: string) {
+    renderImage() {
+      // string / File
+      const url = typeof this.imageStrSrc === 'string' ? this.imageStrSrc : this.previewUrl;
       return (
-        <img src={url} onError={this.handleError} onLoad={this.handleLoad} class={this.imageClasses} alt={this.alt} />
+        <img
+          src={url}
+          onError={this.handleError}
+          onLoad={this.handleLoad}
+          class={this.imageClasses}
+          alt={this.alt}
+          referrerpolicy={this.referrerpolicy}
+        />
       );
     },
   },
@@ -177,7 +204,7 @@ export default defineComponent({
 
         {(this.hasError || !this.shouldLoad) && <div class={`${this.classPrefix}-image`} />}
         {!(this.hasError || !this.shouldLoad)
-          && (this.srcset && Object.keys(this.srcset).length ? this.renderImageSrcset() : this.renderImage(this.imageSrc))}
+          && (this.srcset && Object.keys(this.srcset).length ? this.renderImageSrcset() : this.renderImage())}
         {!(this.hasError || !this.shouldLoad) && !this.isLoaded && (
           <div class={`${this.classPrefix}-image__loading`}>
             {renderTNodeJSX(this, 'loading') || (
