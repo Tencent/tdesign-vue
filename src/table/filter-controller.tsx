@@ -135,15 +135,26 @@ export default defineComponent({
         if (!component) return null;
         const isVueComponent = component.install && component.component;
         if (typeof component === 'function' && !isVueComponent) {
+          // component() is going to be deprecated
           return component((v: FirstParams, b: SecondParams) => {
-            const tProps = typeof b === 'object' && 'attrs' in b ? b.attrs : {};
+            const attributes = typeof b === 'object' && 'attrs' in b ? b.attrs : {};
             return h(v, {
-              props: { ...filterComponentProps, ...tProps },
+              props: { ...filterComponentProps },
+              attrs: attributes,
               on,
             });
           });
         }
-        return <component props={{ ...filterComponentProps }} on={{ ...on }}></component>;
+        const filter = this.column.filter || {};
+        return (
+          <component
+            attrs={filter.attrs}
+            class={filter.classNames}
+            style={filter.style}
+            props={{ ...filterComponentProps }}
+            on={{ ...on }}
+          ></component>
+        );
       };
 
       return (
