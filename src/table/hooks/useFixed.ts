@@ -416,9 +416,9 @@ export default function useFixed(
   };
 
   const updateThWidthListHandler = () => {
-    if (notNeedThWidthList.value) return;
     const timer = setTimeout(() => {
       updateTableWidth();
+      if (notNeedThWidthList.value) return;
       const thead = tableContentRef.value?.querySelector('thead');
       if (!thead) return;
       updateThWidthList(thead.children);
