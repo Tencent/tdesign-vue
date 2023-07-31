@@ -32,6 +32,7 @@ export interface TableBodyProps extends BaseTableProps {
 
 // table 到 body 的相同属性
 export const extendTableProps = [
+  'bordered',
   'rowKey',
   'rowClassName',
   'rowAttributes',
@@ -130,12 +131,13 @@ export default defineComponent({
     const renderEmpty = (h: CreateElement, columns: TableBodyProps['columns']) => {
       // 小于 100 属于异常宽度，不显示
       const showEmptyText = Boolean(this.tableWidth && this.tableWidth > 100) || process.env.NODE_ENV === 'test';
+      const tableWidth = this.bordered ? this.tableWidth - 2 : this.tableWidth;
       return (
         <tr class={[this.tableBaseClass.emptyRow, { [this.tableFullRowClasses.base]: this.isWidthOverflow }]}>
           <td colspan={columns.length}>
             <div
               class={[this.tableBaseClass.empty, { [this.tableFullRowClasses.innerFullRow]: this.isWidthOverflow }]}
-              style={this.isWidthOverflow ? { width: `${this.tableWidth}px` } : {}}
+              style={this.isWidthOverflow ? { width: `${tableWidth}px` } : {}}
             >
               {showEmptyText ? this.renderTNode('empty') || this.t(this.global.empty) : ''}
             </div>
@@ -155,6 +157,7 @@ export default defineComponent({
       if (['', null, undefined, false].includes(fullRowNode)) return null;
       // const isFixedToLeft = this.isWidthOverflow && this.columns.find((col) => col.fixed === 'left');
       const classes = [this.tableFullRowClasses.base, this.tableFullRowClasses[tType]];
+      const tableWidth = this.bordered ? this.tableWidth - 2 : this.tableWidth;
       /** innerFullRow 和 innerFullElement 同时存在，是为了保证 固定列时，当前行不随内容进行横向滚动 */
       return (
         <tr class={classes}>
@@ -163,7 +166,7 @@ export default defineComponent({
               // @ts-ignore
               class={{ [this.tableFullRowClasses.innerFullRow]: this.isFixedToLeft }}
               // @ts-ignore
-              style={this.isFixedToLeft ? { width: `${this.tableWidth}px` } : {}}
+              style={this.isFixedToLeft ? { width: `${tableWidth}px` } : {}}
             >
               <div class={this.tableFullRowClasses.innerFullElement}>{fullRowNode}</div>
             </div>
