@@ -163,7 +163,7 @@ export default defineComponent({
           {Object.entries(this.srcset).map(([type, url]) => (
             <source type={type} srcset={url} />
           ))}
-          {this.src && this.renderImage()}
+          {this.renderImage()}
         </picture>
       );
     },
@@ -210,7 +210,7 @@ export default defineComponent({
             {renderTNodeJSX(this, 'loading') || (
               <Space direction="vertical" size={8} align="center">
                 <ImageIcon size="24px" />
-                {this.globalConfig.loadingText}
+                {typeof this.loading === 'string' ? this.loading : this.globalConfig.loadingText}
               </Space>
             )}
           </div>
@@ -221,7 +221,7 @@ export default defineComponent({
             {renderTNodeJSX(this, 'error') || (
               <Space direction="vertical" size={8} align="center">
                 <ImageErrorIcon size="24px" />
-                {this.globalConfig.errorText}
+                {typeof this.error === 'string' ? this.error : this.globalConfig.errorText}
               </Space>
             )}
           </div>

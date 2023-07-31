@@ -1,10 +1,11 @@
 import {
-  computed, defineComponent, ref, watch,
+  computed, defineComponent, PropType, ref, toRefs, watch,
 } from '@vue/composition-api';
 import { ImageErrorIcon } from 'tdesign-icons-vue';
 import { useConfig } from '../../hooks/useConfig';
 import { useDrag } from '../hooks';
 import { setTransform } from '../../utils/helper';
+import { useImagePreviewUrl } from '../../hooks';
 
 export default defineComponent({
   name: 'TImageItem',
@@ -12,14 +13,19 @@ export default defineComponent({
     rotate: Number,
     scale: Number,
     mirror: Number,
-    src: String,
-    placementSrc: String,
+    src: [String, Object] as PropType<string | File>,
+    placementSrc: [String, Object] as PropType<string | File>,
   },
+
   setup(props) {
+    const { src, placementSrc } = toRefs(props);
     const { classPrefix, global: globalConfig } = useConfig('imageViewer');
     const error = ref(false);
     const loaded = ref(false);
     const { transform, mouseDownHandler } = useDrag({ translateX: 0, translateY: 0 });
+
+    const { previewUrl: mainImagePreviewUrl } = useImagePreviewUrl(src);
+    const { previewUrl: placementImagePreviewUrl } = useImagePreviewUrl(placementSrc);
 
     const imgStyle = computed(() => ({
       ...setTransform(`rotate(${props.rotate}deg) scale(${props.scale})`),
@@ -55,6 +61,8 @@ export default defineComponent({
       mouseDownHandler,
       placementImgStyle,
       imgStyle,
+      mainImagePreviewUrl,
+      placementImagePreviewUrl,
     };
   },
   render() {
@@ -71,28 +79,28 @@ export default defineComponent({
             </div>
           )}
 
-          {!this.error && !!this.placementSrc && (
+          {!this.error && !!this.placementSrc && this.placementImagePreviewUrl && (
             <img
               class={`${this.classPrefix}-image-viewer__modal-image`}
               onMousedown={(event: MouseEvent) => {
                 event.stopPropagation();
                 this.mouseDownHandler(event);
               }}
-              src={this.placementSrc}
+              src={this.placementImagePreviewUrl}
               style={this.placementImgStyle}
               alt="image"
               draggable="false"
             />
           )}
 
-          {!this.error && (
+          {!this.error && this.mainImagePreviewUrl && (
             <img
               class={`${this.classPrefix}-image-viewer__modal-image`}
               onMousedown={(event: MouseEvent) => {
                 event.stopPropagation();
                 this.mouseDownHandler(event);
               }}
-              src={this.src}
+              src={this.mainImagePreviewUrl}
               onLoad={() => (this.loaded = true)}
               onError={() => (this.error = true)}
               style={this.imgStyle}
