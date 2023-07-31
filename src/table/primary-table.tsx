@@ -22,6 +22,7 @@ import useEditableCell from './hooks/useEditableCell';
 import useEditableRow from './hooks/useEditableRow';
 import { EditableCellProps } from './editable-cell';
 import useStyle from './hooks/useStyle';
+import { ComponentScrollToElementParams } from '../common';
 
 export { BASE_TABLE_ALL_EVENTS } from './base-table';
 
@@ -293,8 +294,8 @@ export default defineComponent({
       tRowAttributes,
       primaryTableClasses,
       errorListMap,
-      scrollToElement: (data: any) => {
-        primaryTableRef.value.virtualConfig.scrollToElement(data);
+      scrollToElement: (data: ComponentScrollToElementParams) => {
+        primaryTableRef.value.scrollToElement(data);
       },
       scrollColumnIntoView: (colKey: string) => {
         primaryTableRef.value.scrollColumnIntoView(colKey);
