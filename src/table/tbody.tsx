@@ -130,7 +130,7 @@ export default defineComponent({
     // eslint-disable-next-line
     const renderEmpty = (h: CreateElement, columns: TableBodyProps['columns']) => {
       // 小于 100 属于异常宽度，不显示
-      const showEmptyText = Boolean(this.tableWidth && this.tableWidth > 100) || process.env.NODE_ENV === 'test';
+      const showEmptyText = Boolean(this.tableWidth && this.tableWidth > 100);
       return (
         <tr class={[this.tableBaseClass.emptyRow, { [this.tableFullRowClasses.base]: this.isWidthOverflow }]}>
           <td colspan={columns.length}>
