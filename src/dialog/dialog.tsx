@@ -440,7 +440,9 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       const closeClassName = this.isFullScreen
         ? [`${this.componentName}__close`, `${this.componentName}__close--fullscreen`]
         : `${this.componentName}__close`;
-      const bodyClassName = this.theme === 'default' ? [`${this.componentName}__body`] : [`${this.componentName}__body__icon`];
+      const bodyClassName = this.theme === 'default'
+        ? [`${this.componentName}__body`]
+        : [`${this.componentName}__body`, `${this.componentName}__body__icon`];
 
       const footerContent = renderTNodeJSX(this, 'footer', defaultFooter);
 
