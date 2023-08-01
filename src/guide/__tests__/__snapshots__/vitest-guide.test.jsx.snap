@@ -2536,7 +2536,7 @@ exports[`Guide Component > GuideStep.body works fine 1`] = `
         </button>
       </div>
     </div>
-    <div />
+    <!---->
   </div>
   <div
     style="position: absolute; top: 0px; left: 0px; width: 100%;"
@@ -2638,7 +2638,7 @@ exports[`Guide Component > GuideStep.body works fine 1`] = `
         </button>
       </div>
     </div>
-    <!---->
+    <div />
   </div>
   <div
     style="position: absolute; top: 0px; left: 0px; width: 100%;"
@@ -2646,7 +2646,70 @@ exports[`Guide Component > GuideStep.body works fine 1`] = `
     <transition-stub
       appear="true"
       name="t-popup--animation"
-    />
+    >
+      <div
+        class="t-popup t-guide__popup"
+        data-popper-escaped=""
+        data-popper-placement="bottom-end"
+        data-popper-reference-hidden=""
+        style="z-index: 999999; position: absolute; left: 0px; top: 0px; margin: 0px; right: 0px; transform: translate(0px, 0px);"
+      >
+        <div
+          class="t-popup__content t-popup__content--arrow"
+        >
+          <div
+            class="t-guide__tooltip"
+          >
+            <div
+              class="t-guide__title"
+            >
+              新手引导标题
+            </div>
+            <div
+              class="t-guide__desc"
+            >
+              新手引导的说明文案
+            </div>
+            <div
+              class="t-guide__footer t-guide__footer--popup"
+            >
+              <div
+                class="t-guide__counter"
+              >
+                1/3
+              </div>
+              <div
+                class="t-guide__action"
+              >
+                <button
+                  class="t-button t-button--variant-base t-button--theme-default t-size-s t-guide__skip"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    跳过
+                  </span>
+                </button>
+                <button
+                  class="t-button t-button--variant-base t-button--theme-primary t-size-s t-guide__next"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    下一步
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="t-popup__arrow"
+          />
+        </div>
+      </div>
+    </transition-stub>
   </div>
   <div>
     <div
@@ -5358,108 +5421,6 @@ exports[`Guide Component > GuideStep.content works fine 1`] = `
         </button>
       </div>
     </div>
-    <div />
-  </div>
-  <div
-    style="position: absolute; top: 0px; left: 0px; width: 100%;"
-  >
-    <transition-stub
-      appear="true"
-      name="t-popup--animation"
-    />
-  </div>
-  <div>
-    <div
-      class="guide-container"
-    >
-      <div
-        class="main-title-base"
-      >
-        <div
-          class="title-major"
-        >
-          Guide 用户引导
-        </div>
-        <div
-          class="title-sub"
-        >
-          按钮用于开启一个闭环的操作任务，如“删除”对象、“购买”商品等。
-        </div>
-      </div>
-      <div
-        class="field label-field-base"
-      >
-        <div
-          class="label"
-        >
-          Label
-        </div>
-        <div
-          class="t-input__wrap"
-        >
-          <div
-            class="t-input"
-          >
-            <input
-              autocomplete=""
-              class="t-input__inner"
-              placeholder="请输入内容"
-              type="text"
-              unselectable="off"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="field"
-      >
-        <div
-          class="label"
-        >
-          Label
-        </div>
-        <div
-          class="t-input__wrap"
-        >
-          <div
-            class="t-input"
-          >
-            <input
-              autocomplete=""
-              class="t-input__inner"
-              placeholder="请输入内容"
-              type="text"
-              unselectable="off"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="t-row t-row--start t-row--align-top action action-base"
-        style="margin-left: 0px; margin-right: 0px;"
-      >
-        <button
-          class="t-button t-button--variant-base t-button--theme-primary"
-          type="button"
-        >
-          <span
-            class="t-button__text"
-          >
-            确定
-          </span>
-        </button>
-        <button
-          class="t-button t-button--variant-base t-button--theme-default"
-          type="button"
-        >
-          <span
-            class="t-button__text"
-          >
-            取消
-          </span>
-        </button>
-      </div>
-    </div>
     <!---->
   </div>
   <div
@@ -5673,6 +5634,165 @@ exports[`Guide Component > GuideStep.content works fine 1`] = `
       appear="true"
       name="t-popup--animation"
     />
+  </div>
+  <div>
+    <div
+      class="guide-container"
+    >
+      <div
+        class="main-title-base"
+      >
+        <div
+          class="title-major"
+        >
+          Guide 用户引导
+        </div>
+        <div
+          class="title-sub"
+        >
+          按钮用于开启一个闭环的操作任务，如“删除”对象、“购买”商品等。
+        </div>
+      </div>
+      <div
+        class="field label-field-base"
+      >
+        <div
+          class="label"
+        >
+          Label
+        </div>
+        <div
+          class="t-input__wrap"
+        >
+          <div
+            class="t-input"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入内容"
+              type="text"
+              unselectable="off"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="field"
+      >
+        <div
+          class="label"
+        >
+          Label
+        </div>
+        <div
+          class="t-input__wrap"
+        >
+          <div
+            class="t-input"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入内容"
+              type="text"
+              unselectable="off"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-row t-row--start t-row--align-top action action-base"
+        style="margin-left: 0px; margin-right: 0px;"
+      >
+        <button
+          class="t-button t-button--variant-base t-button--theme-primary"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            确定
+          </span>
+        </button>
+        <button
+          class="t-button t-button--variant-base t-button--theme-default"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            取消
+          </span>
+        </button>
+      </div>
+    </div>
+    <div />
+  </div>
+  <div
+    style="position: absolute; top: 0px; left: 0px; width: 100%;"
+  >
+    <transition-stub
+      appear="true"
+      name="t-popup--animation"
+    >
+      <div
+        class="t-popup t-guide__popup"
+        data-popper-escaped=""
+        data-popper-placement="bottom-end"
+        data-popper-reference-hidden=""
+        style="z-index: 999999; position: absolute; left: 0px; top: 0px; margin: 0px; right: 0px; transform: translate(0px, 0px);"
+      >
+        <div
+          class="t-popup__content t-popup__content--arrow"
+        >
+          <div
+            class="t-guide__tooltip"
+          >
+            <div
+              class="t-guide__title"
+            >
+              新手引导标题
+            </div>
+            <div
+              class="t-guide__desc"
+            >
+              <span
+                class="custom-node"
+              >
+                TNode
+              </span>
+            </div>
+            <div
+              class="t-guide__footer t-guide__footer--popup"
+            >
+              <div
+                class="t-guide__counter"
+              >
+                1/1
+              </div>
+              <div
+                class="t-guide__action"
+              >
+                <button
+                  class="t-button t-button--variant-base t-button--theme-primary t-size-s t-guide__finish"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    完成
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="t-popup__arrow"
+          />
+        </div>
+      </div>
+    </transition-stub>
   </div>
   <div>
     <div
@@ -8345,108 +8465,6 @@ exports[`Guide Component > GuideStep.highlightContent works fine 1`] = `
         </button>
       </div>
     </div>
-    <div />
-  </div>
-  <div
-    style="position: absolute; top: 0px; left: 0px; width: 100%;"
-  >
-    <transition-stub
-      appear="true"
-      name="t-popup--animation"
-    />
-  </div>
-  <div>
-    <div
-      class="guide-container"
-    >
-      <div
-        class="main-title-base"
-      >
-        <div
-          class="title-major"
-        >
-          Guide 用户引导
-        </div>
-        <div
-          class="title-sub"
-        >
-          按钮用于开启一个闭环的操作任务，如“删除”对象、“购买”商品等。
-        </div>
-      </div>
-      <div
-        class="field label-field-base"
-      >
-        <div
-          class="label"
-        >
-          Label
-        </div>
-        <div
-          class="t-input__wrap"
-        >
-          <div
-            class="t-input"
-          >
-            <input
-              autocomplete=""
-              class="t-input__inner"
-              placeholder="请输入内容"
-              type="text"
-              unselectable="off"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="field"
-      >
-        <div
-          class="label"
-        >
-          Label
-        </div>
-        <div
-          class="t-input__wrap"
-        >
-          <div
-            class="t-input"
-          >
-            <input
-              autocomplete=""
-              class="t-input__inner"
-              placeholder="请输入内容"
-              type="text"
-              unselectable="off"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="t-row t-row--start t-row--align-top action action-base"
-        style="margin-left: 0px; margin-right: 0px;"
-      >
-        <button
-          class="t-button t-button--variant-base t-button--theme-primary"
-          type="button"
-        >
-          <span
-            class="t-button__text"
-          >
-            确定
-          </span>
-        </button>
-        <button
-          class="t-button t-button--variant-base t-button--theme-default"
-          type="button"
-        >
-          <span
-            class="t-button__text"
-          >
-            取消
-          </span>
-        </button>
-      </div>
-    </div>
     <!---->
   </div>
   <div
@@ -8864,6 +8882,129 @@ exports[`Guide Component > GuideStep.highlightContent works fine 1`] = `
       appear="true"
       name="t-popup--animation"
     />
+  </div>
+  <div>
+    <div
+      class="guide-container"
+    >
+      <div
+        class="main-title-base"
+      >
+        <div
+          class="title-major"
+        >
+          Guide 用户引导
+        </div>
+        <div
+          class="title-sub"
+        >
+          按钮用于开启一个闭环的操作任务，如“删除”对象、“购买”商品等。
+        </div>
+      </div>
+      <div
+        class="field label-field-base"
+      >
+        <div
+          class="label"
+        >
+          Label
+        </div>
+        <div
+          class="t-input__wrap"
+        >
+          <div
+            class="t-input"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入内容"
+              type="text"
+              unselectable="off"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="field"
+      >
+        <div
+          class="label"
+        >
+          Label
+        </div>
+        <div
+          class="t-input__wrap"
+        >
+          <div
+            class="t-input"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入内容"
+              type="text"
+              unselectable="off"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-row t-row--start t-row--align-top action action-base"
+        style="margin-left: 0px; margin-right: 0px;"
+      >
+        <button
+          class="t-button t-button--variant-base t-button--theme-primary"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            确定
+          </span>
+        </button>
+        <button
+          class="t-button t-button--variant-base t-button--theme-default"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            取消
+          </span>
+        </button>
+      </div>
+    </div>
+    <div />
+  </div>
+  <div
+    style="position: absolute; top: 0px; left: 0px; width: 100%;"
+  >
+    <transition-stub
+      appear="true"
+      name="t-popup--animation"
+    >
+      <div
+        class="t-popup t-guide__popup"
+        data-popper-escaped=""
+        data-popper-placement="bottom-end"
+        data-popper-reference-hidden=""
+        style="z-index: 999999; position: absolute; left: 0px; top: 0px; margin: 0px; right: 0px; transform: translate(0px, 0px);"
+      >
+        <div
+          class="t-popup__content t-popup__content--arrow"
+        >
+          <span
+            class="custom-node"
+          >
+            TNode
+          </span>
+          <div
+            class="t-popup__arrow"
+          />
+        </div>
+      </div>
+    </transition-stub>
   </div>
   <div>
     <div
@@ -11773,7 +11914,7 @@ exports[`Guide Component > GuideStep.placement is equal to bottom-left 1`] = `
         </button>
       </div>
     </div>
-    <div />
+    <!---->
   </div>
   <div
     style="position: absolute; top: 0px; left: 0px; width: 100%;"
@@ -11875,7 +12016,7 @@ exports[`Guide Component > GuideStep.placement is equal to bottom-left 1`] = `
         </button>
       </div>
     </div>
-    <!---->
+    <div />
   </div>
   <div
     style="position: absolute; top: 0px; left: 0px; width: 100%;"
@@ -15711,7 +15852,7 @@ exports[`Guide Component > GuideStep.stepOverlayClass is equal to t-test-guide-s
         </button>
       </div>
     </div>
-    <div />
+    <!---->
   </div>
   <div
     style="position: absolute; top: 0px; left: 0px; width: 100%;"
@@ -15813,7 +15954,7 @@ exports[`Guide Component > GuideStep.stepOverlayClass is equal to t-test-guide-s
         </button>
       </div>
     </div>
-    <!---->
+    <div />
   </div>
   <div
     style="position: absolute; top: 0px; left: 0px; width: 100%;"
@@ -20261,7 +20402,7 @@ exports[`Guide Component > GuideStep.title works fine 1`] = `
         </button>
       </div>
     </div>
-    <div />
+    <!---->
   </div>
   <div
     style="position: absolute; top: 0px; left: 0px; width: 100%;"
@@ -20363,7 +20504,7 @@ exports[`Guide Component > GuideStep.title works fine 1`] = `
         </button>
       </div>
     </div>
-    <!---->
+    <div />
   </div>
   <div
     style="position: absolute; top: 0px; left: 0px; width: 100%;"
@@ -24917,108 +25058,6 @@ exports[`Guide Component > slots.body works fine 1`] = `
         </button>
       </div>
     </div>
-    <div />
-  </div>
-  <div
-    style="position: absolute; top: 0px; left: 0px; width: 100%;"
-  >
-    <transition-stub
-      appear="true"
-      name="t-popup--animation"
-    />
-  </div>
-  <div>
-    <div
-      class="guide-container"
-    >
-      <div
-        class="main-title-base"
-      >
-        <div
-          class="title-major"
-        >
-          Guide 用户引导
-        </div>
-        <div
-          class="title-sub"
-        >
-          按钮用于开启一个闭环的操作任务，如“删除”对象、“购买”商品等。
-        </div>
-      </div>
-      <div
-        class="field label-field-base"
-      >
-        <div
-          class="label"
-        >
-          Label
-        </div>
-        <div
-          class="t-input__wrap"
-        >
-          <div
-            class="t-input"
-          >
-            <input
-              autocomplete=""
-              class="t-input__inner"
-              placeholder="请输入内容"
-              type="text"
-              unselectable="off"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="field"
-      >
-        <div
-          class="label"
-        >
-          Label
-        </div>
-        <div
-          class="t-input__wrap"
-        >
-          <div
-            class="t-input"
-          >
-            <input
-              autocomplete=""
-              class="t-input__inner"
-              placeholder="请输入内容"
-              type="text"
-              unselectable="off"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="t-row t-row--start t-row--align-top action action-base"
-        style="margin-left: 0px; margin-right: 0px;"
-      >
-        <button
-          class="t-button t-button--variant-base t-button--theme-primary"
-          type="button"
-        >
-          <span
-            class="t-button__text"
-          >
-            确定
-          </span>
-        </button>
-        <button
-          class="t-button t-button--variant-base t-button--theme-default"
-          type="button"
-        >
-          <span
-            class="t-button__text"
-          >
-            取消
-          </span>
-        </button>
-      </div>
-    </div>
     <!---->
   </div>
   <div
@@ -25130,6 +25169,165 @@ exports[`Guide Component > slots.body works fine 1`] = `
       appear="true"
       name="t-popup--animation"
     />
+  </div>
+  <div>
+    <div
+      class="guide-container"
+    >
+      <div
+        class="main-title-base"
+      >
+        <div
+          class="title-major"
+        >
+          Guide 用户引导
+        </div>
+        <div
+          class="title-sub"
+        >
+          按钮用于开启一个闭环的操作任务，如“删除”对象、“购买”商品等。
+        </div>
+      </div>
+      <div
+        class="field label-field-base"
+      >
+        <div
+          class="label"
+        >
+          Label
+        </div>
+        <div
+          class="t-input__wrap"
+        >
+          <div
+            class="t-input"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入内容"
+              type="text"
+              unselectable="off"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="field"
+      >
+        <div
+          class="label"
+        >
+          Label
+        </div>
+        <div
+          class="t-input__wrap"
+        >
+          <div
+            class="t-input"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入内容"
+              type="text"
+              unselectable="off"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-row t-row--start t-row--align-top action action-base"
+        style="margin-left: 0px; margin-right: 0px;"
+      >
+        <button
+          class="t-button t-button--variant-base t-button--theme-primary"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            确定
+          </span>
+        </button>
+        <button
+          class="t-button t-button--variant-base t-button--theme-default"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            取消
+          </span>
+        </button>
+      </div>
+    </div>
+    <div />
+  </div>
+  <div
+    style="position: absolute; top: 0px; left: 0px; width: 100%;"
+  >
+    <transition-stub
+      appear="true"
+      name="t-popup--animation"
+    >
+      <div
+        class="t-popup t-guide__popup"
+        data-popper-escaped=""
+        data-popper-placement="bottom-end"
+        data-popper-reference-hidden=""
+        style="z-index: 999999; position: absolute; left: 0px; top: 0px; margin: 0px; right: 0px; transform: translate(0px, 0px);"
+      >
+        <div
+          class="t-popup__content t-popup__content--arrow"
+        >
+          <div
+            class="t-guide__tooltip"
+          >
+            <div
+              class="t-guide__title"
+            >
+              新手引导标题
+            </div>
+            <div
+              class="t-guide__desc"
+            >
+              <span
+                class="custom-node"
+              >
+                TNode
+              </span>
+            </div>
+            <div
+              class="t-guide__footer t-guide__footer--popup"
+            >
+              <div
+                class="t-guide__counter"
+              >
+                1/1
+              </div>
+              <div
+                class="t-guide__action"
+              >
+                <button
+                  class="t-button t-button--variant-base t-button--theme-primary t-size-s t-guide__finish"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    完成
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="t-popup__arrow"
+          />
+        </div>
+      </div>
+    </transition-stub>
   </div>
   <div>
     <div
@@ -27841,108 +28039,6 @@ exports[`Guide Component > slots.content works fine 1`] = `
         </button>
       </div>
     </div>
-    <div />
-  </div>
-  <div
-    style="position: absolute; top: 0px; left: 0px; width: 100%;"
-  >
-    <transition-stub
-      appear="true"
-      name="t-popup--animation"
-    />
-  </div>
-  <div>
-    <div
-      class="guide-container"
-    >
-      <div
-        class="main-title-base"
-      >
-        <div
-          class="title-major"
-        >
-          Guide 用户引导
-        </div>
-        <div
-          class="title-sub"
-        >
-          按钮用于开启一个闭环的操作任务，如“删除”对象、“购买”商品等。
-        </div>
-      </div>
-      <div
-        class="field label-field-base"
-      >
-        <div
-          class="label"
-        >
-          Label
-        </div>
-        <div
-          class="t-input__wrap"
-        >
-          <div
-            class="t-input"
-          >
-            <input
-              autocomplete=""
-              class="t-input__inner"
-              placeholder="请输入内容"
-              type="text"
-              unselectable="off"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="field"
-      >
-        <div
-          class="label"
-        >
-          Label
-        </div>
-        <div
-          class="t-input__wrap"
-        >
-          <div
-            class="t-input"
-          >
-            <input
-              autocomplete=""
-              class="t-input__inner"
-              placeholder="请输入内容"
-              type="text"
-              unselectable="off"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="t-row t-row--start t-row--align-top action action-base"
-        style="margin-left: 0px; margin-right: 0px;"
-      >
-        <button
-          class="t-button t-button--variant-base t-button--theme-primary"
-          type="button"
-        >
-          <span
-            class="t-button__text"
-          >
-            确定
-          </span>
-        </button>
-        <button
-          class="t-button t-button--variant-base t-button--theme-default"
-          type="button"
-        >
-          <span
-            class="t-button__text"
-          >
-            取消
-          </span>
-        </button>
-      </div>
-    </div>
     <!---->
   </div>
   <div
@@ -28258,6 +28354,126 @@ exports[`Guide Component > slots.content works fine 1`] = `
       appear="true"
       name="t-popup--animation"
     />
+  </div>
+  <div>
+    <div
+      class="guide-container"
+    >
+      <div
+        class="main-title-base"
+      >
+        <div
+          class="title-major"
+        >
+          Guide 用户引导
+        </div>
+        <div
+          class="title-sub"
+        >
+          按钮用于开启一个闭环的操作任务，如“删除”对象、“购买”商品等。
+        </div>
+      </div>
+      <div
+        class="field label-field-base"
+      >
+        <div
+          class="label"
+        >
+          Label
+        </div>
+        <div
+          class="t-input__wrap"
+        >
+          <div
+            class="t-input"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入内容"
+              type="text"
+              unselectable="off"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="field"
+      >
+        <div
+          class="label"
+        >
+          Label
+        </div>
+        <div
+          class="t-input__wrap"
+        >
+          <div
+            class="t-input"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入内容"
+              type="text"
+              unselectable="off"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-row t-row--start t-row--align-top action action-base"
+        style="margin-left: 0px; margin-right: 0px;"
+      >
+        <button
+          class="t-button t-button--variant-base t-button--theme-primary"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            确定
+          </span>
+        </button>
+        <button
+          class="t-button t-button--variant-base t-button--theme-default"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            取消
+          </span>
+        </button>
+      </div>
+    </div>
+    <div />
+  </div>
+  <div
+    style="position: absolute; top: 0px; left: 0px; width: 100%;"
+  >
+    <transition-stub
+      appear="true"
+      name="t-popup--animation"
+    >
+      <div
+        class="t-popup t-guide__popup"
+        data-popper-escaped=""
+        data-popper-placement="bottom-end"
+        data-popper-reference-hidden=""
+        style="z-index: 999999; position: absolute; left: 0px; top: 0px; margin: 0px; right: 0px; transform: translate(0px, 0px);"
+      >
+        <div
+          class="t-popup__content t-guide__popup--content"
+        >
+          <span
+            class="custom-node"
+          >
+            TNode
+          </span>
+        </div>
+      </div>
+    </transition-stub>
   </div>
   <div>
     <div
@@ -30933,108 +31149,6 @@ exports[`Guide Component > slots.highlight-content works fine 1`] = `
         </button>
       </div>
     </div>
-    <div />
-  </div>
-  <div
-    style="position: absolute; top: 0px; left: 0px; width: 100%;"
-  >
-    <transition-stub
-      appear="true"
-      name="t-popup--animation"
-    />
-  </div>
-  <div>
-    <div
-      class="guide-container"
-    >
-      <div
-        class="main-title-base"
-      >
-        <div
-          class="title-major"
-        >
-          Guide 用户引导
-        </div>
-        <div
-          class="title-sub"
-        >
-          按钮用于开启一个闭环的操作任务，如“删除”对象、“购买”商品等。
-        </div>
-      </div>
-      <div
-        class="field label-field-base"
-      >
-        <div
-          class="label"
-        >
-          Label
-        </div>
-        <div
-          class="t-input__wrap"
-        >
-          <div
-            class="t-input"
-          >
-            <input
-              autocomplete=""
-              class="t-input__inner"
-              placeholder="请输入内容"
-              type="text"
-              unselectable="off"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="field"
-      >
-        <div
-          class="label"
-        >
-          Label
-        </div>
-        <div
-          class="t-input__wrap"
-        >
-          <div
-            class="t-input"
-          >
-            <input
-              autocomplete=""
-              class="t-input__inner"
-              placeholder="请输入内容"
-              type="text"
-              unselectable="off"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="t-row t-row--start t-row--align-top action action-base"
-        style="margin-left: 0px; margin-right: 0px;"
-      >
-        <button
-          class="t-button t-button--variant-base t-button--theme-primary"
-          type="button"
-        >
-          <span
-            class="t-button__text"
-          >
-            确定
-          </span>
-        </button>
-        <button
-          class="t-button t-button--variant-base t-button--theme-default"
-          type="button"
-        >
-          <span
-            class="t-button__text"
-          >
-            取消
-          </span>
-        </button>
-      </div>
-    </div>
     <!---->
   </div>
   <div
@@ -31656,6 +31770,161 @@ exports[`Guide Component > slots.highlight-content works fine 1`] = `
       appear="true"
       name="t-popup--animation"
     />
+  </div>
+  <div>
+    <div
+      class="guide-container"
+    >
+      <div
+        class="main-title-base"
+      >
+        <div
+          class="title-major"
+        >
+          Guide 用户引导
+        </div>
+        <div
+          class="title-sub"
+        >
+          按钮用于开启一个闭环的操作任务，如“删除”对象、“购买”商品等。
+        </div>
+      </div>
+      <div
+        class="field label-field-base"
+      >
+        <div
+          class="label"
+        >
+          Label
+        </div>
+        <div
+          class="t-input__wrap"
+        >
+          <div
+            class="t-input"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入内容"
+              type="text"
+              unselectable="off"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="field"
+      >
+        <div
+          class="label"
+        >
+          Label
+        </div>
+        <div
+          class="t-input__wrap"
+        >
+          <div
+            class="t-input"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入内容"
+              type="text"
+              unselectable="off"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-row t-row--start t-row--align-top action action-base"
+        style="margin-left: 0px; margin-right: 0px;"
+      >
+        <button
+          class="t-button t-button--variant-base t-button--theme-primary"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            确定
+          </span>
+        </button>
+        <button
+          class="t-button t-button--variant-base t-button--theme-default"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            取消
+          </span>
+        </button>
+      </div>
+    </div>
+    <div />
+  </div>
+  <div
+    style="position: absolute; top: 0px; left: 0px; width: 100%;"
+  >
+    <transition-stub
+      appear="true"
+      name="t-popup--animation"
+    >
+      <div
+        class="t-popup t-guide__popup"
+        data-popper-escaped=""
+        data-popper-placement="bottom-end"
+        data-popper-reference-hidden=""
+        style="z-index: 999999; position: absolute; left: 0px; top: 0px; margin: 0px; right: 0px; transform: translate(0px, 0px);"
+      >
+        <div
+          class="t-popup__content t-popup__content--arrow"
+        >
+          <div
+            class="t-guide__tooltip"
+          >
+            <div
+              class="t-guide__title"
+            >
+              新手引导标题
+            </div>
+            <div
+              class="t-guide__desc"
+            >
+              新手引导的说明文案
+            </div>
+            <div
+              class="t-guide__footer t-guide__footer--popup"
+            >
+              <div
+                class="t-guide__counter"
+              >
+                1/1
+              </div>
+              <div
+                class="t-guide__action"
+              >
+                <button
+                  class="t-button t-button--variant-base t-button--theme-primary t-size-s t-guide__finish"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    完成
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="t-popup__arrow"
+          />
+        </div>
+      </div>
+    </transition-stub>
   </div>
   <div>
     <div
@@ -34369,108 +34638,6 @@ exports[`Guide Component > slots.highlightContent works fine 1`] = `
         </button>
       </div>
     </div>
-    <div />
-  </div>
-  <div
-    style="position: absolute; top: 0px; left: 0px; width: 100%;"
-  >
-    <transition-stub
-      appear="true"
-      name="t-popup--animation"
-    />
-  </div>
-  <div>
-    <div
-      class="guide-container"
-    >
-      <div
-        class="main-title-base"
-      >
-        <div
-          class="title-major"
-        >
-          Guide 用户引导
-        </div>
-        <div
-          class="title-sub"
-        >
-          按钮用于开启一个闭环的操作任务，如“删除”对象、“购买”商品等。
-        </div>
-      </div>
-      <div
-        class="field label-field-base"
-      >
-        <div
-          class="label"
-        >
-          Label
-        </div>
-        <div
-          class="t-input__wrap"
-        >
-          <div
-            class="t-input"
-          >
-            <input
-              autocomplete=""
-              class="t-input__inner"
-              placeholder="请输入内容"
-              type="text"
-              unselectable="off"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="field"
-      >
-        <div
-          class="label"
-        >
-          Label
-        </div>
-        <div
-          class="t-input__wrap"
-        >
-          <div
-            class="t-input"
-          >
-            <input
-              autocomplete=""
-              class="t-input__inner"
-              placeholder="请输入内容"
-              type="text"
-              unselectable="off"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="t-row t-row--start t-row--align-top action action-base"
-        style="margin-left: 0px; margin-right: 0px;"
-      >
-        <button
-          class="t-button t-button--variant-base t-button--theme-primary"
-          type="button"
-        >
-          <span
-            class="t-button__text"
-          >
-            确定
-          </span>
-        </button>
-        <button
-          class="t-button t-button--variant-base t-button--theme-default"
-          type="button"
-        >
-          <span
-            class="t-button__text"
-          >
-            取消
-          </span>
-        </button>
-      </div>
-    </div>
     <!---->
   </div>
   <div
@@ -34990,6 +35157,161 @@ exports[`Guide Component > slots.highlightContent works fine 1`] = `
       appear="true"
       name="t-popup--animation"
     />
+  </div>
+  <div>
+    <div
+      class="guide-container"
+    >
+      <div
+        class="main-title-base"
+      >
+        <div
+          class="title-major"
+        >
+          Guide 用户引导
+        </div>
+        <div
+          class="title-sub"
+        >
+          按钮用于开启一个闭环的操作任务，如“删除”对象、“购买”商品等。
+        </div>
+      </div>
+      <div
+        class="field label-field-base"
+      >
+        <div
+          class="label"
+        >
+          Label
+        </div>
+        <div
+          class="t-input__wrap"
+        >
+          <div
+            class="t-input"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入内容"
+              type="text"
+              unselectable="off"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="field"
+      >
+        <div
+          class="label"
+        >
+          Label
+        </div>
+        <div
+          class="t-input__wrap"
+        >
+          <div
+            class="t-input"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入内容"
+              type="text"
+              unselectable="off"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-row t-row--start t-row--align-top action action-base"
+        style="margin-left: 0px; margin-right: 0px;"
+      >
+        <button
+          class="t-button t-button--variant-base t-button--theme-primary"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            确定
+          </span>
+        </button>
+        <button
+          class="t-button t-button--variant-base t-button--theme-default"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            取消
+          </span>
+        </button>
+      </div>
+    </div>
+    <div />
+  </div>
+  <div
+    style="position: absolute; top: 0px; left: 0px; width: 100%;"
+  >
+    <transition-stub
+      appear="true"
+      name="t-popup--animation"
+    >
+      <div
+        class="t-popup t-guide__popup"
+        data-popper-escaped=""
+        data-popper-placement="bottom-end"
+        data-popper-reference-hidden=""
+        style="z-index: 999999; position: absolute; left: 0px; top: 0px; margin: 0px; right: 0px; transform: translate(0px, 0px);"
+      >
+        <div
+          class="t-popup__content t-popup__content--arrow"
+        >
+          <div
+            class="t-guide__tooltip"
+          >
+            <div
+              class="t-guide__title"
+            >
+              新手引导标题
+            </div>
+            <div
+              class="t-guide__desc"
+            >
+              新手引导的说明文案
+            </div>
+            <div
+              class="t-guide__footer t-guide__footer--popup"
+            >
+              <div
+                class="t-guide__counter"
+              >
+                1/1
+              </div>
+              <div
+                class="t-guide__action"
+              >
+                <button
+                  class="t-button t-button--variant-base t-button--theme-primary t-size-s t-guide__finish"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    完成
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="t-popup__arrow"
+          />
+        </div>
+      </div>
+    </transition-stub>
   </div>
   <div>
     <div
@@ -37703,7 +38025,7 @@ exports[`Guide Component > slots.title works fine 1`] = `
         </button>
       </div>
     </div>
-    <div />
+    <!---->
   </div>
   <div
     style="position: absolute; top: 0px; left: 0px; width: 100%;"
@@ -37805,7 +38127,7 @@ exports[`Guide Component > slots.title works fine 1`] = `
         </button>
       </div>
     </div>
-    <!---->
+    <div />
   </div>
   <div
     style="position: absolute; top: 0px; left: 0px; width: 100%;"
