@@ -416,9 +416,9 @@ export default function useFixed(
   };
 
   const updateThWidthListHandler = () => {
-    if (notNeedThWidthList.value) return;
     const timer = setTimeout(() => {
       updateTableWidth();
+      if (notNeedThWidthList.value) return;
       const thead = tableContentRef.value?.querySelector('thead');
       if (!thead) return;
       updateThWidthList(thead.children);
@@ -549,6 +549,7 @@ export default function useFixed(
   onMounted(() => {
     const scrollWidth = getScrollbarWidthWithCSS();
     scrollbarWidth.value = scrollWidth;
+    updateThWidthListHandler();
     const isWatchResize = isFixedColumn.value || isFixedHeader.value || !notNeedThWidthList.value || !data.value.length;
     // IE 11 以下使用 window resize；IE 11 以上使用 ResizeObserver
     if ((isWatchResize && getIEVersion() < 11) || typeof window.ResizeObserver === 'undefined') {

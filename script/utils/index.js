@@ -1,6 +1,6 @@
+const fs = require('fs');
 const path = require('path');
 const clc = require('cli-color');
-const fs = require('fs');
 
 function deleteFolderRecursive(path) {
   if (fs.existsSync(path)) {

@@ -173,6 +173,11 @@ export default {
             props: {
               firstDayOfWeek: 7,
             },
+            attrs: {
+              'data-id': 'attribute-id-value',
+            },
+            classNames: 'custom-class-name',
+            styles: { fontSize: '14px' },
             // 是否显示重置取消按钮，一般情况不需要显示
             showConfirmAndReset: true,
             // 日期范围是一个组件，重置时需赋值为 []
