@@ -147,40 +147,47 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
   },
 
   watch: {
-    visible(value) {
-      if (value) {
-        this.animationEnd = false;
-        if ((this.isModal && !this.showInAttachedElement) || this.isFullScreen) {
-          if (this.preventScrollThrough) {
-            document.head.appendChild(this.styleEl);
-          }
-
-          this.$nextTick(() => {
-            const target = this.$refs.dialog as HTMLElement;
-            if (mousePosition && target) {
-              target.style.transformOrigin = `${mousePosition.x - target.offsetLeft}px ${
-                mousePosition.y - target.offsetTop
-              }px`;
+    visible: {
+      handler(value) {
+        if (value) {
+          this.animationEnd = false;
+          if ((this.isModal && !this.showInAttachedElement) || this.isFullScreen) {
+            if (this.preventScrollThrough) {
+              this.$nextTick(() => {
+                document.head.appendChild(this.styleEl);
+              });
             }
+
+            this.$nextTick(() => {
+              const target = this.$refs.dialog as HTMLElement;
+              if (mousePosition && target) {
+                target.style.transformOrigin = `${mousePosition.x - target.offsetLeft}px ${
+                  mousePosition.y - target.offsetTop
+                }px`;
+              }
+            });
+          }
+          // 清除鼠标焦点 避免entry事件多次触发（按钮弹出弹窗 不移除焦点 立即按Entry按键 会造成弹窗关闭再弹出）
+          (document.activeElement as HTMLElement).blur();
+        } else {
+          this.clearStyleFunc();
+        }
+        // 多个dialog同时存在时使用esc关闭异常 (#1209)
+        this.storeUid(value);
+        this.addKeyboardEvent(value);
+        if (this.isModeLess && this.draggable) {
+          this.$nextTick(() => {
+            this.initDragEvent(value);
           });
         }
-        // 清除鼠标焦点 避免entry事件多次触发（按钮弹出弹窗 不移除焦点 立即按Entry按键 会造成弹窗关闭再弹出）
-        (document.activeElement as HTMLElement).blur();
-      } else {
-        this.clearStyleFunc();
-      }
-      // 多个dialog同时存在时使用esc关闭异常 (#1209)
-      this.storeUid(value);
-      this.addKeyboardEvent(value);
-      if (this.isModeLess && this.draggable) {
-        this.initDragEvent(value);
-      }
-      // 父元素为 display: none 时，需要更新子元素，避免 Dialog 前套 Table 组件时，固定列等特性失效
-      if (value && !this.destroyOnClose && requestAnimationFrame) {
-        requestAnimationFrame(() => {
-          updateElement(this);
-        });
-      }
+        // 父元素为 display: none 时，需要更新子元素，避免 Dialog 前套 Table 组件时，固定列等特性失效
+        if (value && !this.destroyOnClose && requestAnimationFrame) {
+          requestAnimationFrame(() => {
+            updateElement(this);
+          });
+        }
+      },
+      immediate: true,
     },
   },
   mounted() {
