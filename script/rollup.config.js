@@ -78,8 +78,8 @@ const getPlugins = ({
         include: ['src/**/style/css.js'],
       }),
       ignoreImport({
-        include: ['src/*/style/*'],
-        body: 'import "./css.js";',
+        include: ['src/*/style/*', 'src/*/*/style/*'],
+        body: 'import "./style/css.js";',
       }),
     );
   } else if (ignoreLess) {
@@ -91,7 +91,7 @@ const getPlugins = ({
       }),
       ignoreImport({
         include: ['src/*/style/*'],
-        body: 'import "./index.js";',
+        body: 'import "./style/index.js";',
       }),
     );
   }
