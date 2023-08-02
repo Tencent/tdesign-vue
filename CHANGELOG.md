@@ -5,7 +5,7 @@ toc: false
 docClass: timeline
 ---
 
- ## 🌈 1.5.1 `2023-08-01` 
+## 🌈 1.5.1 `2023-08-01` 
 ### 🚀 Features
 - `Table`:
   - 可筛选表格，支持透传 attrs/style/classNames 属性、样式、类名等信息到自定义组件，[issue#2627](https://github.com/Tencent/tdesign-vue/issues/2627) @chaishi ([#2629](https://github.com/Tencent/tdesign-vue/pull/2629))
