@@ -5,7 +5,7 @@ toc: false
 docClass: timeline
 ---
 
-  ## 🌈 1.5.0 `2023-07-25` 
+## 🌈 1.5.0 `2023-07-25` 
 ### 🚀 Features
 - `Table`: 新增 `lazyLoad` 表格元素懒加载，当出现在可视区域时，再渲染表格第一屏数据 @chaishi ([#2605](https://github.com/Tencent/tdesign-vue/pull/2605))
 - `Transfer`: 新增 `targetDraggable` API , 支持对目标列表拖拽排序的功能 @uyarn ([#2612](https://github.com/Tencent/tdesign-vue/pull/2612))
@@ -36,7 +36,7 @@ docClass: timeline
   - 修复 `treeNodeModel` 实例未能同步 node 属性的问题
   - 优化节点状态更新时的性能 
 
- ## 🌈 1.4.8 `2023-07-18` 
+## 🌈 1.4.8 `2023-07-18` 
 ### 🚀 Features
 - `DatePicker`: 优化关闭浮层后重置默认选中区域 @honkinglin ([#2585](https://github.com/Tencent/tdesign-vue/pull/2585))
 - `Checkbox`: @chaishi ([#2583](https://github.com/Tencent/tdesign-vue/pull/2583)
