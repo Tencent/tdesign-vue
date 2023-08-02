@@ -11,6 +11,7 @@ import {
 } from '@vue/composition-api';
 import pick from 'lodash/pick';
 import isFunction from 'lodash/isFunction';
+import get from 'lodash/get';
 import props from './base-table-props';
 import useTableHeader from './hooks/useTableHeader';
 import useColumnResize from './hooks/useColumnResize';
@@ -32,7 +33,7 @@ import TFoot from './tfoot';
 import log from '../_common/js/log';
 import { getIEVersion } from '../_common/js/utils/helper';
 import { getAffixProps } from './utils';
-import { Styles } from '../common';
+import { ComponentScrollToElementParams, Styles } from '../common';
 import { BaseTableCol, TableRowData } from './type';
 
 export const BASE_TABLE_EVENTS = ['page-change', 'cell-click', 'scroll', 'scrollX', 'scrollY', 'column-resize-change'];
@@ -274,9 +275,26 @@ export default defineComponent({
       addTableResizeObserver(tableRef.value);
     });
 
+    const tableData = computed(() => (isPaginateData.value ? dataSource.value : props.data));
+
+    const scrollToElement = (params: ComponentScrollToElementParams) => {
+      let { index } = params;
+      if (!index && index !== 0) {
+        if (!params.key) {
+          log.error('Table', 'scrollToElement: one of `index` or `key` must exist.');
+          return;
+        }
+        index = tableData.value?.findIndex((item) => get(item, props.rowKey) === params.key);
+        if (index < 0) {
+          log.error('Table', `${params.key} does not exist in data, check \`rowKey\` or \`data\` please.`);
+        }
+      }
+      virtualConfig.scrollToElement({ ...params, index });
+    };
+
     return {
       virtualConfig,
-      scrollToElement: virtualConfig.scrollToElement,
+      scrollToElement,
       columnResizable,
       thList,
       classPrefix,

@@ -1,7 +1,7 @@
 {
   "name": "tdesign-vue",
   "purename": "tdesign",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "tdesign-vue",
   "title": "tdesign-vue",
   "keywords": [
@@ -52,7 +52,7 @@
     "site:preview": "cd site && npm run build:preview",
     "site:intranet": "cd site && npm run build:intranet",
     "postsite:preview": "cp _site/index.html _site/404.html",
-    "prebuild": "rimraf es/* esm/* lib/* cjs/* dist/*",
+    "prebuild": "rimraf es/* esm/* lib/* cjs/* dist/* --glob",
     "build": "cross-env NODE_ENV=production rollup -c script/rollup.config.js && npm run build:tsc",
     "build:tsc": "run-p build:tsc-*",
     "build:tsc-es": "tsc --emitDeclarationOnly -d --outDir es/",
@@ -165,7 +165,7 @@
     "postcss": "^8.3.11",
     "prettier": "^2.6.2",
     "prismjs": "^1.25.0",
-    "rimraf": "^4.4.1",
+    "rimraf": "^5.0.1",
     "rollup": "^2.53.2",
     "rollup-plugin-analyzer": "^3.3.0",
     "rollup-plugin-esbuild": "^4.8.2",

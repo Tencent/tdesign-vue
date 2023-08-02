@@ -100,8 +100,10 @@ export default defineComponent({
       const filterComponentProps: { [key: string]: any } = {
         options: ['single', 'multiple'].includes(column.filter.type) ? column.filter?.list : undefined,
         ...(column.filter?.props || {}),
-        value: this.innerFilterValue?.[column.colKey],
       };
+      if (column.colKey && this.innerFilterValue && column.colKey in this.innerFilterValue) {
+        filterComponentProps.value = this.innerFilterValue[column.colKey];
+      }
       // 这个代码必须放在这里，没事儿别改
       if (column.filter.type === 'single') {
         filterComponentProps.onChange = (val: any) => {
@@ -133,17 +135,22 @@ export default defineComponent({
         if (!component) return null;
         const isVueComponent = component.install && component.component;
         if (typeof component === 'function' && !isVueComponent) {
+          // component() is going to be deprecated
           return component((v: FirstParams, b: SecondParams) => {
-            const tProps = typeof b === 'object' && 'attrs' in b ? b.attrs : {};
+            const attributes = typeof b === 'object' && 'attrs' in b ? b.attrs : {};
             return h(v, {
-              props: { ...filterComponentProps, ...tProps },
+              props: { ...filterComponentProps },
+              attrs: attributes,
               on,
             });
           });
         }
+        const filter = this.column.filter || {};
         return (
           <component
-            value={this.innerFilterValue?.[column.colKey]}
+            attrs={filter.attrs}
+            class={filter.classNames}
+            style={filter.style}
             props={{ ...filterComponentProps }}
             on={{ ...on }}
           ></component>

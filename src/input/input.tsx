@@ -81,7 +81,7 @@ export default mixins(
     },
     showClear(): boolean {
       return (
-        ((this.value && !this.disabled && this.clearable && !this.readonly) || this.showClearIconOnEmpty)
+        ((this.value && !this.tDisabled && this.clearable && !this.readonly) || this.showClearIconOnEmpty)
         && this.isHover
       );
     },
