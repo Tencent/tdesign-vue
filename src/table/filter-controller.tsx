@@ -101,7 +101,11 @@ export default defineComponent({
         options: ['single', 'multiple'].includes(column.filter.type) ? column.filter?.list : undefined,
         ...(column.filter?.props || {}),
       };
-      if (column.colKey && this.innerFilterValue && column.colKey in this.innerFilterValue) {
+      if (
+        column.colKey
+        && this.innerFilterValue
+        && column.colKey in (this.innerFilterValue as PropType<TableFilterControllerProps['innerFilterValue']>)
+      ) {
         filterComponentProps.value = this.innerFilterValue[column.colKey];
       }
       // 这个代码必须放在这里，没事儿别改
@@ -145,7 +149,7 @@ export default defineComponent({
             });
           });
         }
-        const filter = this.column.filter || {};
+        const filter = (this.column as TableFilterControllerProps['column']).filter || {};
         return (
           <component
             attrs={filter.attrs}
