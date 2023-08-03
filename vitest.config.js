@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite';
 import path from 'path';
+import { defineConfig } from 'vite';
 import { createVuePlugin } from 'vite-plugin-vue2';
 import vueJsx from '@vitejs/plugin-vue2-jsx';
 

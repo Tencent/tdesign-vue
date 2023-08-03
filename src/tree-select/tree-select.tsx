@@ -4,11 +4,11 @@ import isFunction from 'lodash/isFunction';
 import Tree, { TreeProps } from '../tree';
 import props from './props';
 import SelectInput, { SelectInputProps } from '../select-input';
-import { TagInputChangeContext, TagInputValue } from '../tag-input';
 import FakeArrow from '../common-components/fake-arrow';
 import { TreeSelectValue, TdTreeSelectProps } from './type';
 import { useTNodeJSX, useTNodeDefault } from '../hooks/tnode';
 import useTreeSelect from './useTreeSelect';
+import { TreeOptionData } from '..';
 
 export default defineComponent({
   name: 'TTreeSelect',
@@ -189,9 +189,14 @@ export default defineComponent({
             valueDisplay: () => this.renderTNodeJSX('valueDisplay', {
               params: this.multiple
                 ? {
-                  value: this.nodeInfo,
-                  onClose: (value: TagInputValue, context: TagInputChangeContext) => {
-                    this.tagChange(value, context);
+                  value: this.nodeInfo as TreeOptionData<string | number>[],
+                  onClose: (index: number) => {
+                    const value = this.nodeInfo.map((node: TreeOptionData) => node.value);
+                    this.tagChange(value, {
+                      trigger: 'tag-remove',
+                      index,
+                      item: value[index],
+                    });
                   },
                 }
                 : {

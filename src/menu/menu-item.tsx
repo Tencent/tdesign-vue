@@ -24,6 +24,7 @@ export default defineComponent({
     const active = computed(() => menu.activeValue.value === props.value);
     const collapsed = computed(() => menu.collapsed?.value);
     const classPrefix = usePrefixClass();
+    const { proxy } = getCurrentInstance();
 
     const classes = computed(() => [
       `${classPrefix.value}-menu__item`,
@@ -44,8 +45,7 @@ export default defineComponent({
 
       if (props.href) {
         window.open(props.href, props.target);
-      } else if (props.to) {
-        const { proxy } = getCurrentInstance();
+      } else if (props.to || props.routerLink) {
         const router = props.router || (proxy as Record<string, any>).$router;
         const methods: string = props.replace ? 'replace' : 'push';
         router[methods](props.to || props.href).catch((err: Error) => {
