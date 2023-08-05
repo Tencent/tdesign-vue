@@ -130,6 +130,8 @@ export default {
   requestMethod: {
     type: Function as PropType<TdUploadProps['requestMethod']>,
   },
+  /** 是否在文件列表中显示缩略图，`theme=file-flow` 时有效 */
+  showThumbnail: Boolean,
   /** 是否显示上传进度 */
   showUploadProgress: {
     type: Boolean,

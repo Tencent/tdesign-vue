@@ -198,6 +198,7 @@ export default defineComponent({
         onMouseenter={this.handleToggleOverlay}
         onMouseleave={this.handleToggleOverlay}
         {...this.rest}
+        on={this.$listeners}
       >
         {this.renderPlaceholder()}
         {this.renderGalleryShadow()}
