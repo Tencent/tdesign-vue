@@ -13,8 +13,8 @@ export default defineComponent({
     rotate: Number,
     scale: Number,
     mirror: Number,
-    src: [String, Object] as PropType<string | File>,
-    placementSrc: [String, Object] as PropType<string | File>,
+    src: [String, File] as PropType<string | File>,
+    placementSrc: [String, File] as PropType<string | File>,
   },
 
   setup(props) {
