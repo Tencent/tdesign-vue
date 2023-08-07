@@ -189,6 +189,7 @@ export default defineComponent({
           uploadFiles={this.uploadFiles}
           cancelUpload={this.cancelUpload}
           onPreview={this.onInnerPreview}
+          showThumbnail={this.showThumbnail}
           scopedSlots={{
             fileListDisplay: this.$scopedSlots.fileListDisplay,
             'file-list-display': this.$scopedSlots['file-list-display'],
