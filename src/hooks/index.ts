@@ -11,3 +11,4 @@ export * from './useLazyLoad';
 export * from './useResizeObserver';
 export * from './useVirtualScrollNew';
 export * from './useVModel';
+export * from './useImagePreviewUrl';
