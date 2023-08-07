@@ -1,13 +1,12 @@
-import { defineComponent, PropType } from 'vue';
+import { computed, defineComponent, PropType } from 'vue';
 import {
   ImageIcon, ZoomInIcon, ZoomOutIcon, DownloadIcon, MirrorIcon, RotationIcon,
 } from 'tdesign-icons-vue';
-
 import TImageViewerIcon from './ImageModalIcon';
 import TToolTip from '../../tooltip';
 import { useConfig } from '../../hooks/useConfig';
 import { downloadFile } from '../utils';
-
+import { useImagePreviewUrl } from '../../hooks';
 import { ImageInfo } from '../type';
 
 const currentImage = {
@@ -28,12 +27,17 @@ export default defineComponent({
     resetHandler: Function as PropType<() => void>,
     currentImage,
   },
-  setup() {
+  setup(props) {
     const { classPrefix, global: globalConfig } = useConfig('imageViewer');
+
+    const imageUrl = computed(() => props.currentImage.mainImage);
+
+    const { previewUrl } = useImagePreviewUrl(imageUrl);
 
     return {
       classPrefix,
       globalConfig,
+      previewUrl,
     };
   },
   render() {
@@ -83,7 +87,7 @@ export default defineComponent({
             <TImageViewerIcon
               icon={() => <DownloadIcon size="medium" />}
               clickHandler={() => {
-                downloadFile(this.currentImage.mainImage);
+                downloadFile(this.previewUrl);
               }}
             />
           )}
