@@ -1,7 +1,7 @@
 {
   "name": "tdesign-vue",
   "purename": "tdesign",
-  "version": "1.5.0",
+  "version": "1.5.2",
   "description": "tdesign-vue",
   "title": "tdesign-vue",
   "keywords": [
@@ -63,7 +63,7 @@
     "lint": "npm run lint:tsc && eslint --ext .vue,.js,.ts,.tsx ./ --max-warnings 0",
     "lint:tsc": "tsc --emitDeclarationOnly",
     "generate:usage": "node script/generate-usage/index.js",
-    "test": "npm run test:unit && npm run test:snap", 
+    "test": "npm run test:unit && npm run test:snap",
     "test:unit": "vitest run --config vitest.config.js",
     "test:update": "vitest run -u && npm run test:snap-update",
     "test:unit-dev": "vitest",
@@ -150,7 +150,7 @@
     "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-vue": "^8.1.1",
-    "fs-extra": "^10.1.0",
+    "fs-extra": "^11.1.1",
     "glob": "^8.0.3",
     "gray-matter": "^4.0.3",
     "husky": "^7.0.4",
