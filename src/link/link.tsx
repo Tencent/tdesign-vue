@@ -36,6 +36,7 @@ export default mixins(classPrefixMixins).extend({
         class={linkClass}
         href={this.disabled || !this.href ? undefined : this.href}
         target={this.target}
+        download={this.download}
         onClick={this.handleClick}
       >
         {prefixContent && <span class={`${this.componentName}__prefix-icon`}>{prefixContent}</span>}
