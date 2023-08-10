@@ -5,6 +5,22 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.6.0 `2023-08-10` 
+### 🚀 Features
+- `Icon`: 新增 960 个图标；调整图标命名 `photo` 为 `camera`，`books`为`bookmark`, `stop-cirle-1`为`stop-circle-stroke`；移除`money-circle`图标，具体请查看图标页面  @uyarn ([#2677](https://github.com/Tencent/tdesign-vue/pull/2677))
+- `Table`: 可编辑表格，新增 `edit.keepEditMode` ，用于控制单元格始终保持为编辑态 @chaishi ([#2662](https://github.com/Tencent/tdesign-vue/pull/2662))
+- `Image`: @chaishi ([#2665](https://github.com/Tencent/tdesign-vue/pull/2665))
+  - 属性 `src` 支持传入 File 文件类型显示图片
+  - 新增支持 `fallback` ，用于设置图片加载失败时的兜底图
+  - 新增支持 `referrerpolicy` 属性
+- `ImageViewer`: 属性 `images` 支持传入 File 文件类型预览图片 @chaishi ([#2665](https://github.com/Tencent/tdesign-vue/pull/2665))
+- `Upload`: 文件上传列表支持显示缩略图，通过 `showThumbnail` 属性控制 @chaishi ([#2665](https://github.com/Tencent/tdesign-vue/pull/2665))
+- `Link`: 新增透传 `download` 属性，支持浏览器直接下载，https://github.com/Tencent/tdesign-vue/issues/2628 @xiaosansiji ([#2659](https://github.com/Tencent/tdesign-vue/pull/2659))
+### 🐞 Bug Fixes
+- `InputAdornment`: 修复装饰文字折行的问题 @PengYYYYY ([common#1553](https://github.com/Tencent/tdesign-common/pull/1553))
+### 🚧 Others
+- `官网`: 新增分类展示全部图标的 UI  @uyarn ([#2677](https://github.com/Tencent/tdesign-vue/pull/2677))
+
 ## 🌈 1.5.2 `2023-08-01` 
 ### 🚀 Features
 - `Table`:

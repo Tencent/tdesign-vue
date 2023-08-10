@@ -29,13 +29,12 @@ exports[`Breadcrumb > <slot> > <separator> 1`] = `
         class="t-icon t-icon-chevron-right"
         fill="none"
         height="1em"
-        viewBox="0 0 16 16"
+        viewBox="0 0 24 24"
         width="1em"
       >
         <path
-          d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
+          d="M8.09 17.5l5.5-5.5-5.5-5.5L9.5 5.09 16.41 12 9.5 18.91 8.09 17.5z"
           fill="currentColor"
-          fill-opacity="0.9"
         />
       </svg>
     </span>
@@ -64,13 +63,12 @@ exports[`Breadcrumb > <slot> > <separator> 1`] = `
         class="t-icon t-icon-chevron-right"
         fill="none"
         height="1em"
-        viewBox="0 0 16 16"
+        viewBox="0 0 24 24"
         width="1em"
       >
         <path
-          d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
+          d="M8.09 17.5l5.5-5.5-5.5-5.5L9.5 5.09 16.41 12 9.5 18.91 8.09 17.5z"
           fill="currentColor"
-          fill-opacity="0.9"
         />
       </svg>
     </span>
