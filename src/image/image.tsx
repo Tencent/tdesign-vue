@@ -6,6 +6,7 @@ import isFunction from 'lodash/isFunction';
 import { ImageErrorIcon, ImageIcon } from 'tdesign-icons-vue';
 import observe from '../_common/js/utils/observe';
 import { useConfig } from '../config-provider/useConfig';
+import { TdImageProps } from './type';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import Space from '../space';
@@ -180,6 +181,7 @@ export default defineComponent({
           onLoad={this.handleLoad}
           class={this.imageClasses}
           alt={this.alt}
+          // @ts-ignore
           referrerpolicy={this.referrerpolicy}
         />
       );
@@ -188,7 +190,6 @@ export default defineComponent({
 
   render() {
     return (
-      // @ts-ignore
       <div
         ref="imageRef"
         class={[
@@ -200,6 +201,7 @@ export default defineComponent({
         onMouseenter={this.handleToggleOverlay}
         onMouseleave={this.handleToggleOverlay}
         {...this.rest}
+        // @ts-ignore
         on={this.$listeners}
       >
         {this.renderPlaceholder()}
