@@ -25,6 +25,12 @@
     </t-space>
   </t-space>
 </template>
-<script setup>
+<script>
 import { IconFont } from 'tdesign-icons-vue';
+
+export default {
+  components: {
+    IconFont,
+  },
+};
 </script>

@@ -20,7 +20,7 @@
     </t-space>
   </t-space>
 </template>
-<script setup>
+<script>
 import {
   LettersTIcon,
   LettersDIcon,
@@ -38,7 +38,27 @@ import {
   ComponentStepsIcon,
 } from 'tdesign-icons-vue';
 
-const onIconClick = () => {
-  console.log('icon was clicked.');
+export default {
+  components: {
+    LettersTIcon,
+    LettersDIcon,
+    LettersSIcon,
+    LettersEIcon,
+    LettersIIcon,
+    LettersNIcon,
+    LettersGIcon,
+    ComponentCheckboxIcon,
+    ComponentInputIcon,
+    ComponentSwitchIcon,
+    ComponentBreadcrumbIcon,
+    ComponentDropdownIcon,
+    ComponentRadioIcon,
+    ComponentStepsIcon,
+  },
+  methods: {
+    onIconClick() {
+      console.log('icon was clicked.');
+    },
+  },
 };
 </script>

@@ -25,10 +25,17 @@
     </t-space>
   </t-space>
 </template>
-<script setup>
+<script>
 import { Icon } from 'tdesign-icons-vue';
 
-const onIconClose = () => {
-  console.log('icon was clicked.');
+export default {
+  components: {
+    Icon,
+  },
+  method: {
+    onIconClose() {
+      console.log('icon was clicked.');
+    },
+  },
 };
 </script>
