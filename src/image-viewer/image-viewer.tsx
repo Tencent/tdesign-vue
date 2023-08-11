@@ -2,7 +2,6 @@ import {
   computed, defineComponent, ref, toRefs, watch,
 } from 'vue';
 import { ChevronLeftIcon, ChevronDownIcon, CloseIcon } from 'tdesign-icons-vue';
-
 import props from './props';
 import Container from './base/Container';
 import TImageViewerIcon from './base/ImageModalIcon';
@@ -14,11 +13,11 @@ import useDefaultValue from '../hooks/useDefaultValue';
 import { usePrefixClass } from '../hooks/useConfig';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { setTransform } from '../utils/helper';
-
 import { TdImageViewerProps } from './type';
 import { useMirror, useRotate, useScale } from './hooks';
 import { formatImages, getOverlay } from './utils';
 import { EVENT_CODE } from './const';
+import Image from '../image';
 
 export default defineComponent({
   name: 'TImageViewer',
@@ -87,7 +86,7 @@ export default defineComponent({
     };
 
     const onImgClick = (i: number) => {
-      setIndexValue(i, { trigger: i > indexValue.value ? 'next' : 'prev' });
+      setIndexValue(i, { trigger: 'current' });
     };
 
     const openHandler = () => {
@@ -223,7 +222,7 @@ export default defineComponent({
                     },
                   ]}
                 >
-                  <img
+                  <Image
                     alt=""
                     src={image.thumbnail || image.mainImage}
                     class={`${this.COMPONENT_NAME}__header-img`}
