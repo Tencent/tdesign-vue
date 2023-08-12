@@ -14,6 +14,8 @@ import { off, on } from '../utils/dom';
 
 const classPrefixMixins = getClassPrefixMixins('radio-group');
 
+const CHECKED_CODE_REG = /(enter|space)/i;
+
 export default mixins(classPrefixMixins).extend({
   name: 'TRadioGroup',
   props: { ...props },
@@ -113,7 +115,9 @@ export default mixins(classPrefixMixins).extend({
 
     // 注意：此处会还原区分 数字 和 数字字符串
     checkRadioInGroup(e: KeyboardEvent) {
-      if (/enter/i.test(e.key) || /enter/i.test(e.code)) {
+      const isCheckedCode = CHECKED_CODE_REG.test(e.key) || CHECKED_CODE_REG.test(e.code);
+      if (isCheckedCode) {
+        e.preventDefault();
         const inputNode = (e.target as HTMLElement).querySelector('input');
         const data = inputNode.dataset;
         if (inputNode.checked && data.allowUncheck) {
