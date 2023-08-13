@@ -105,6 +105,14 @@ exports[`TreeSelect > :props > :defaultValue 1`] = `
           </svg>
         </span>
       </div>
+      <input
+        autocomplete=""
+        class="t-input__inner t-input--soft-hidden"
+        placeholder=""
+        readonly="readonly"
+        type="text"
+        unselectable="on"
+      />
       <span
         class="t-input__input-pre"
       />
@@ -493,6 +501,14 @@ exports[`TreeSelect > :props > :multiple 1`] = `
           </svg>
         </span>
       </div>
+      <input
+        autocomplete=""
+        class="t-input__inner t-input--soft-hidden"
+        placeholder=""
+        readonly="readonly"
+        type="text"
+        unselectable="on"
+      />
       <span
         class="t-input__input-pre"
       />
