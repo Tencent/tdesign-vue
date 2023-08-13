@@ -181,12 +181,12 @@ export default {
         ],
         description: [
           {
-            validator: (val) => val.length >= 5,
+            validator: (val) => !!val && val.length >= 5,
             message: '至少 5 个字，中文长度等于英文长度',
             type: 'warning',
           },
           {
-            validator: (val) => val.length < 20,
+            validator: (val) => !val || val.length < 20,
             message: '不能超过 20 个字，中文长度等于英文长度',
             type: 'warning',
           },

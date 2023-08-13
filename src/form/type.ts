@@ -63,10 +63,9 @@ export interface TdFormProps<FormData extends Data = Data> {
   /**
    * 表单字段校验规则
    */
-  rules?: { [field in keyof FormData]: Array<FormRule> };
+  rules?: FormRules<FormData>;
   /**
    * 表单校验不通过时，是否自动滚动到第一个校验不通过的字段，平滑滚动或是瞬间直达。值为空则表示不滚动
-   * @default ''
    */
   scrollToFirstError?: '' | 'smooth' | 'auto';
   /**
@@ -102,27 +101,27 @@ export interface FormInstanceFunctions<FormData extends Data = Data> {
   /**
    * 清空校验结果。可使用 fields 指定清除部分字段的校验结果，fields 值为空则表示清除所有字段校验结果。清除邮箱校验结果示例：`clearValidate(['email'])`
    */
-  clearValidate?: (fields?: Array<keyof FormData>) => void;
+  clearValidate: (fields?: Array<keyof FormData>) => void;
   /**
    * 重置表单，表单里面没有重置按钮`<button type=\"reset\" />`时可以使用该方法，默认重置全部字段为空，该方法会触发 `reset` 事件。<br />如果表单属性 `resetType='empty'` 或者 `reset.type='empty'` 会重置为空；<br />如果表单属性 `resetType='initial'` 或者 `reset.type='initial'` 会重置为表单初始值。<br />`reset.fields` 用于设置具体重置哪些字段，示例：`reset({ type: 'initial', fields: ['name', 'age'] })`
    */
-  reset?: (params?: FormResetParams<FormData>) => void;
+  reset: (params?: FormResetParams<FormData>) => void;
   /**
    * 设置自定义校验结果，如远程校验信息直接呈现。注意需要在组件挂载结束后使用该方法。`FormData` 指表单数据泛型
    */
-  setValidateMessage?: (message: FormValidateMessage<FormData>) => void;
+  setValidateMessage: (message: FormValidateMessage<FormData>) => void;
   /**
    * 提交表单，表单里面没有提交按钮`<button type=\"submit\" />`时可以使用该方法。`showErrorMessage` 表示是否在提交校验不通过时显示校验不通过的原因，默认显示。该方法会触发 `submit` 事件
    */
-  submit?: (params?: { showErrorMessage?: boolean }) => void;
+  submit: (params?: { showErrorMessage?: boolean }) => void;
   /**
    * 校验函数，包含错误文本提示等功能。泛型 `FormData` 表示表单数据 TS 类型。<br/>【关于参数】`params.fields` 表示校验字段，如果设置了 `fields`，本次校验将仅对这些字段进行校验。`params.trigger` 表示本次触发校验的范围，'params.trigger = blur' 表示只触发校验规则设定为 trigger='blur' 的字段，'params.trigger = change' 表示只触发校验规则设定为 trigger='change' 的字段，默认触发全范围校验。`params.showErrorMessage` 表示校验结束后是否显示错误文本提示，默认显示。<br />【关于返回值】返回值为 true 表示校验通过；如果校验不通过，返回值为校验结果列表
    */
-  validate?: (params?: FormValidateParams) => Promise<FormValidateResult<FormData>>;
+  validate: (params?: FormValidateParams) => Promise<FormValidateResult<FormData>>;
   /**
    * 纯净的校验函数，仅返回校验结果，不对组件进行任何操作。泛型 `FormData` 表示表单数据 TS 类型。参数和返回值含义同 `validate` 方法
    */
-  validateOnly?: (params?: Pick<FormValidateParams, 'fields' | 'trigger'>) => Promise<FormValidateResult<FormData>>;
+  validateOnly: (params?: Pick<FormValidateParams, 'fields' | 'trigger'>) => Promise<FormValidateResult<FormData>>;
 }
 
 export interface TdFormItemProps {
@@ -150,15 +149,15 @@ export interface TdFormItemProps {
   labelWidth?: string | number;
   /**
    * 表单字段名称
+   * @default ''
    */
-  name?: string | number;
+  name?: string;
   /**
    * 是否显示必填符号（*），优先级高于 Form.requiredMark
    */
   requiredMark?: boolean;
   /**
    * 表单字段校验规则
-   * @default []
    */
   rules?: Array<FormRule>;
   /**
@@ -236,7 +235,7 @@ export interface FormRule {
    */
   required?: boolean;
   /**
-   * 内置校验方法，校验值是否为手机号码，校验正则为 `/^1[3-9]\\d{9}$/`，示例：`{ telnumber: true, message: '请输入正确的手机号码' }`
+   * 内置校验方法，校验值是否为手机号码，校验正则为 `/^1[3-9]\d{9}$/`，示例：`{ telnumber: true, message: '请输入正确的手机号码' }`
    */
   telnumber?: boolean;
   /**
@@ -331,10 +330,13 @@ export interface FormErrorMessage {
   validator?: string;
 }
 
+export type FormRules<T extends Data = any> = { [field in keyof T]?: Array<FormRule> };
+
 export interface SubmitContext<T extends Data = Data> {
   e?: FormSubmitEvent;
   validateResult: FormValidateResult<T>;
   firstError?: string;
+  fields?: any;
 }
 
 export type FormValidateResult<T> = boolean | ValidateResultObj<T>;
@@ -353,7 +355,7 @@ export type ValidateResult<T> = { [key in keyof T]: boolean | ErrorList };
 
 export type ErrorList = Array<FormRule>;
 
-export type ValidateResultContext<T> = Omit<SubmitContext<T>, 'e'>;
+export type ValidateResultContext<T extends Data> = Omit<SubmitContext<T>, 'e'>;
 
 export interface FormResetParams<FormData> {
   type?: 'initial' | 'empty';

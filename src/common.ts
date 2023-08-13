@@ -69,6 +69,11 @@ export type CSSSelector = string;
 export interface KeysType {
   value?: string;
   label?: string;
+  disabled?: string;
+}
+
+export interface TreeKeysType extends KeysType {
+  children?: string;
 }
 
 export interface HTMLElementAttributes {

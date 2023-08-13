@@ -48,6 +48,11 @@ export interface FormItemConstructor extends Vue {
   form: FormInstance;
 }
 
+export function getFormItemClassName(componentName: string, name?: string) {
+  if (!name) return '';
+  return `${componentName}-item__${name}`.replace(/(\[|\]\.)/g, '_');
+}
+
 export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('form'), getGlobalIconMixins()).extend({
   name: 'TFormItem',
 
@@ -89,7 +94,7 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
     classes(): ClassName {
       return [
         `${this.componentName}__item`,
-        `${this.componentName}-item__${this.name || ''}`,
+        getFormItemClassName(this.componentName, this.name),
         {
           [`${this.componentName}__item-with-help`]: this.help,
           [`${this.componentName}__item-with-extra`]: this.extraNode,
@@ -98,7 +103,7 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
     },
     extraNode() {
       const list = this.errorList;
-      if (this.needErrorMessage && list && list[0] && list[0].message) {
+      if (this.needErrorMessage && list?.[0]?.message) {
         return <div class={`${this.classPrefix}-input__extra`}>{list[0].message}</div>;
       }
       if (this.successList.length) {
@@ -181,6 +186,14 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
     },
     errorMessages(): FormErrorMessage {
       return this.form.errorMessage ?? this.global.errorMessage;
+    },
+
+    tipsClassNames(): ClassName {
+      return [
+        `${this.classPrefix}-form-item-tips`,
+        `${this.classPrefix}-tips`,
+        `${this.classPrefix}-is-${this.status || 'default'}`,
+      ];
     },
   },
 
@@ -464,6 +477,7 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
 
   render(): VNode {
     const helpNode = renderTNodeJSX(this, 'help');
+    const tipsNode = renderTNodeJSX(this, 'tips');
     return (
       <div class={this.classes}>
         {this.getLabel()}
@@ -473,6 +487,7 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
             {this.getSuffixIcon()}
           </div>
           {helpNode && <div class={`${this.classPrefix}-input__help`}>{helpNode}</div>}
+          {tipsNode && <div class={this.tipsClassNames}>{tipsNode}</div>}
           {this.extraNode}
         </div>
       </div>
