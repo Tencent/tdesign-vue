@@ -1,5 +1,12 @@
 import {
-  computed, defineComponent, onBeforeUnmount, ref, SetupContext, toRefs, watch,
+  computed,
+  defineComponent,
+  onBeforeUnmount,
+  onMounted,
+  ref,
+  SetupContext,
+  toRefs,
+  watch,
 } from '@vue/composition-api';
 import Popup, { PopupVisibleChangeContext } from '../popup';
 import props from './props';
@@ -70,18 +77,20 @@ export default defineComponent({
       }
     };
 
-    watch(
-      [isFocus],
-      ([isFocus]) => {
-        if (popupVisible.value) return;
-        if (isFocus) {
-          selectInputRef.value.addEventListener('keydown', addKeyboardEventListener);
-        } else {
-          selectInputRef.value.removeEventListener('keydown', addKeyboardEventListener);
-        }
-      },
-      { immediate: true },
-    );
+    watch([isFocus], ([isFocus]) => {
+      if (popupVisible.value) return;
+      if (isFocus) {
+        selectInputRef.value.addEventListener('keydown', addKeyboardEventListener);
+      } else {
+        selectInputRef.value.removeEventListener('keydown', addKeyboardEventListener);
+      }
+    });
+
+    onMounted(() => {
+      if (!popupVisible.value && isFocus) {
+        selectInputRef.value.addEventListener('keydown', addKeyboardEventListener);
+      }
+    });
 
     onBeforeUnmount(() => {
       selectInputRef.value.removeEventListener('keydown', addKeyboardEventListener);
