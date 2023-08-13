@@ -5,7 +5,7 @@ import isObject from 'lodash/isObject';
 import Vue from 'vue';
 import { TdSelectInputProps, SelectInputKeys } from './type';
 import { SelectInputCommonProperties } from './interface';
-import TagInput, { TagInputValue, InputValueChangeContext, TagInputProps } from '../tag-input';
+import TagInput, { TagInputValue, TagInputProps } from '../tag-input';
 import Loading from '../loading';
 import useDefaultValue from '../hooks/useDefaultValue';
 import { usePrefixClass } from '../hooks/useConfig';
