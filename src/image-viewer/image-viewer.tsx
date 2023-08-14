@@ -92,7 +92,6 @@ export default defineComponent({
     };
 
     const openHandler = () => {
-      onRest();
       setVisibleValue(true);
     };
 
@@ -148,6 +147,7 @@ export default defineComponent({
       () => visibleValue.value,
       (val) => {
         if (val) {
+          onRest();
           window.addEventListener('keydown', keydownHandler);
           mountContent();
           return;
