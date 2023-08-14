@@ -11,10 +11,9 @@ import { emitEvent } from '../utils/event';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
 import { off, on } from '../utils/dom';
+import { CHECKED_CODE_REG } from '../checkbox/hooks/useKeyboardEvent';
 
 const classPrefixMixins = getClassPrefixMixins('radio-group');
-
-const CHECKED_CODE_REG = /(enter|space)/i;
 
 export default mixins(classPrefixMixins).extend({
   name: 'TRadioGroup',
