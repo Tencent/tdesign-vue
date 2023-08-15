@@ -72,7 +72,7 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
   const onEnter: TagInputProps['onEnter'] = (val, ctx) => {
     const params = { ...ctx, tagInputValue: val };
     props.onEnter?.(props.value, params);
-    context.emit('focus', props.value, params);
+    context.emit('enter', props.value, params);
   };
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
