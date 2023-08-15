@@ -209,15 +209,20 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
   // 注册拖拽事件
   watch([primaryTableRef], ([val]: [any]) => {
     if (!val || !val.$el) return;
-    registerRowDragEvent(val.$el);
-    registerColDragEvent(val.$el);
-    /** 待表头节点准备完成后 */
+    // regis after table tr rendered
     const timer = setTimeout(() => {
-      if (val.$refs.affixHeaderRef) {
-        registerColDragEvent(val.$refs.affixHeaderRef);
-      }
+      registerRowDragEvent(val.$el);
+      registerColDragEvent(val.$el);
+
+      // initial after normal table header
+      const timer1 = setTimeout(() => {
+        if (val.$refs.affixHeaderRef) {
+          registerColDragEvent(val.$refs.affixHeaderRef);
+          clearTimeout(timer1);
+        }
+      });
       clearTimeout(timer);
-    });
+    }, 60);
   });
 
   return {

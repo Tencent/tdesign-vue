@@ -522,6 +522,9 @@ export default defineComponent({
   },
 
   render(h) {
+    if (!this.showElement) {
+      return <div ref="tableRef"></div>;
+    }
     const { rowAndColFixedPosition } = this;
     const data = this.isPaginateData ? this.dataSource : this.data;
     const columns = this.spansAndLeafNodes?.leafColumns || this.columns;
@@ -633,10 +636,6 @@ export default defineComponent({
         {bottomContent}
       </div>
     );
-
-    if (!this.showElement) {
-      return <div ref="tableRef"></div>;
-    }
 
     return (
       <div ref="tableRef" class={this.dynamicBaseTableClasses} style="position: relative">
