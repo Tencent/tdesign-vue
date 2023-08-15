@@ -38,7 +38,9 @@ export default defineComponent({
     const handleClick = (e: MouseEvent) => {
       e.stopPropagation();
       if (props.disabled) return;
-      menu.select(props.value);
+      if (menu.activeValue.value !== props.value) {
+        menu.select(props.value);
+      }
       ctx.emit('click', { e, value: props.value });
       props.onClick?.({ e, value: props.value });
 
