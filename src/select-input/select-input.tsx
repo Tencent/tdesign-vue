@@ -1,5 +1,14 @@
 import {
-  computed, defineComponent, Ref, ref, SetupContext, toRef, toRefs,
+  computed,
+  defineComponent,
+  onBeforeUnmount,
+  onMounted,
+  ref,
+  SetupContext,
+  toRefs,
+  watch,
+  toRef,
+  Ref,
 } from 'vue';
 import Popup, { PopupProps, PopupVisibleChangeContext } from '../popup';
 import props from './props';
@@ -31,12 +40,17 @@ export default defineComponent({
     const popupProps = toRef(props, 'popupProps') as Ref<PopupProps>;
 
     const {
-      commonInputProps, singleInputValue, onInnerClear, renderSelectSingle,
-    } = useSingle(props, context);
-    const { multipleInputValue, renderSelectMultiple } = useMultiple(props, context);
+      isSingleFocus, commonInputProps, singleInputValue, onInnerClear, renderSelectSingle,
+    } = useSingle(
+      props,
+      context,
+    );
+    const { multipleInputValue, isMultipleFocus, renderSelectMultiple } = useMultiple(props, context);
     const { tOverlayInnerStyle, innerPopupVisible, onInnerPopupVisibleChange } = useOverlayInnerStyle(props, {
       afterHidePopup: onInnerBlur,
     });
+
+    const isFocus = computed(() => (props.multiple ? isMultipleFocus.value : isSingleFocus.value));
 
     // SelectInput.blur is not equal to Input or TagInput, example: click popup panel.
     // if trigger blur on click popup panel, filter data of tree select can not be checked.
@@ -45,6 +59,8 @@ export default defineComponent({
       const params: Parameters<TdSelectInputProps['onBlur']>[1] = { e: ctx.e, inputValue };
       props.onBlur?.(props.value, params);
       context.emit('blur', props.value, params);
+      isSingleFocus.value = false;
+      isMultipleFocus.value = false;
     }
 
     const classes = computed(() => [
@@ -56,6 +72,33 @@ export default defineComponent({
         [`${classPrefix.value}-select-input--empty`]: value.value instanceof Array ? !value.value.length : !value.value,
       },
     ]);
+
+    const addKeyboardEventListener = (e: KeyboardEvent) => {
+      if (/(ArrowDown|ArrowUp)/.test(e.code || e.key)) {
+        const ctx: PopupVisibleChangeContext = { ...context, trigger: 'trigger-element-focus' };
+        props.onPopupVisibleChange?.(true, ctx);
+        context.emit('popup-visible-change', true, ctx);
+      }
+    };
+
+    watch([isFocus], ([isFocus]) => {
+      if (popupVisible.value) return;
+      if (isFocus) {
+        selectInputRef.value.addEventListener('keydown', addKeyboardEventListener);
+      } else {
+        selectInputRef.value.removeEventListener('keydown', addKeyboardEventListener);
+      }
+    });
+
+    onMounted(() => {
+      if (!popupVisible.value && isFocus) {
+        selectInputRef.value.addEventListener('keydown', addKeyboardEventListener);
+      }
+    });
+
+    onBeforeUnmount(() => {
+      selectInputRef.value.removeEventListener('keydown', addKeyboardEventListener);
+    });
 
     return {
       selectInputRef,

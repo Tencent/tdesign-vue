@@ -525,18 +525,17 @@ export default mixins(
           <span class={[`${this.componentName}__prefix`, `${this.componentName}__prefix-icon`]}>{prefixIcon}</span>
         ) : null}
         {labelContent}
-        {this.showInput && (
-          <input
-            // @ts-ignore
-            attrs={this.inputAttrs}
-            on={inputEvents}
-            ref="inputRef"
-            class={`${this.componentName}__inner`}
-            value={inputTextValue}
-            onInput={this.handleInput}
-            title={this.disabled ? inputTextValue : undefined}
-          />
-        )}
+        {/* input element must exist, or other select components can not focus by keyboard operation */}
+        <input
+          // @ts-ignore
+          attrs={this.inputAttrs}
+          on={inputEvents}
+          ref="inputRef"
+          class={[`${this.componentName}__inner`, { [`${this.componentName}--soft-hidden`]: !this.showInput }]}
+          value={inputTextValue}
+          onInput={this.handleInput}
+          title={this.disabled ? inputTextValue : undefined}
+        />
         {this.autoWidth && (
           <span ref="inputPreRef" class={`${this.classPrefix}-input__input-pre`}>
             {this.preValue || this.tPlaceholder}
