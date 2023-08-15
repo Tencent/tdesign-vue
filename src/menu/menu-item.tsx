@@ -40,8 +40,8 @@ export default defineComponent({
       e.stopPropagation();
       if (props.disabled) return;
       menu.select(props.value);
-      ctx.emit('click', { e });
-      props.onClick?.({ e });
+      ctx.emit('click', { e, value: props.value });
+      props.onClick?.({ e, value: props.value });
 
       if (props.href) {
         window.open(props.href, props.target);
