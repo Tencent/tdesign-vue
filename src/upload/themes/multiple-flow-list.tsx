@@ -197,7 +197,10 @@ export default defineComponent({
                   <BrowseIcon
                     onClick={({ e }: { e: MouseEvent }) => {
                       this.browseIconClick({
-                        e, index, file, viewFiles: this.displayFiles,
+                        e,
+                        index,
+                        file,
+                        viewFiles: this.displayFiles,
                       });
                     }}
                   />
@@ -384,7 +387,10 @@ export default defineComponent({
             onClick={(e: MouseEvent) => {
               e.preventDefault();
               this.browseIconClick({
-                e, index: 0, file, viewFiles: [file],
+                e,
+                index: 0,
+                file,
+                viewFiles: [file],
               });
             }}
           />
