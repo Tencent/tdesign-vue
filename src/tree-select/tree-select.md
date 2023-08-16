@@ -18,19 +18,22 @@ filterable | Boolean | false | 是否可搜索 | N
 inputProps | Object | - | 透传给 输入框 Input 组件的全部属性。TS 类型：`InputProps`，[Input API Documents](./input?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts) | N
 inputValue | String / Number | - | 输入框的值。支持语法糖 `.sync`。TS 类型：`InputValue`，[Input API Documents](./input?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts) | N
 defaultInputValue | String / Number | - | 输入框的值。非受控属性。TS 类型：`InputValue`，[Input API Documents](./input?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts) | N
-keys | Object | - | 用来定义 `value / label / children` 在 `data` 数据中对应的字段别名，示例：`{ value: 'key', label 'name', children: 'list' }`。TS 类型：`TreeKeysType`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+keys | Object | - | 用来定义 `value / label / disabled / children` 在 `data` 数据中对应的字段别名，示例：`{ value: 'key', label: 'name', children: 'list' }`。TS 类型：`TreeKeysType`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 label | String / Slot / Function | - | 左侧文本。TS 类型：`string \| TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 loading | Boolean | false | 是否正在加载数据 | N
 loadingText | String / Slot / Function | - | 远程加载时显示的文字，支持自定义。如加上超链接。TS 类型：`string \| TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 max | Number | 0 | 用于控制多选数量，值为 0 则不限制 | N
 minCollapsedNum | Number | 0 | 最小折叠数量，用于多选情况下折叠选中项，超出该数值的选中项折叠。值为 0 则表示不折叠 | N
 multiple | Boolean | false | 是否允许多选 | N
+panelBottomContent | String / Slot / Function | - | 面板内的底部内容。TS 类型：`string \| TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+panelTopContent | String / Slot / Function | - | 面板内的顶部内容。TS 类型：`string \| TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 placeholder | String | undefined | 占位符 | N
 popupProps | Object | - | 透传给 popup 组件的全部属性。TS 类型：`PopupProps`，[Popup API Documents](./popup?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts) | N
 popupVisible | Boolean | undefined | 是否显示下拉框。支持语法糖 `.sync` | N
 defaultPopupVisible | Boolean | undefined | 是否显示下拉框。非受控属性 | N
 prefixIcon | Slot / Function | - | 组件前置图标。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 readonly | Boolean | false | 只读状态，值为真会隐藏输入框，且无法打开下拉框 | N
+reserveKeyword | Boolean | false | 多选且可搜索时，是否在选中一个选项后保留当前的搜索关键词 | N
 selectInputProps | Object | - | 【开发中】透传 SelectInput 筛选器输入框组件的全部属性。TS 类型：`SelectInputProps`，[SelectInput API Documents](./select-input?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts) | N
 size | String | medium | 尺寸。可选项：small/medium/large | N
 status | String | default | 输入框状态。可选项：default/success/warning/error | N
