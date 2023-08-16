@@ -41,13 +41,12 @@ export default {
   /** 输入框的值 */
   inputValue: {
     type: [String, Number] as PropType<TdSelectProps['inputValue']>,
-    default: undefined,
   },
   /** 输入框的值，非受控属性 */
   defaultInputValue: {
     type: [String, Number] as PropType<TdSelectProps['defaultInputValue']>,
   },
-  /** 用来定义 value / label 在 `options` 中对应的字段别名 */
+  /** 用来定义 value / label / disabled 在 `options` 中对应的字段别名 */
   keys: {
     type: Object as PropType<TdSelectProps['keys']>,
   },
@@ -95,10 +94,7 @@ export default {
     type: Object as PropType<TdSelectProps['popupProps']>,
   },
   /** 是否显示下拉框 */
-  popupVisible: {
-    type: Boolean,
-    default: undefined,
-  },
+  popupVisible: Boolean,
   /** 是否显示下拉框，非受控属性 */
   defaultPopupVisible: Boolean,
   /** 组件前置图标 */
@@ -163,12 +159,10 @@ export default {
   /** 选中值 */
   value: {
     type: [String, Number, Boolean, Object, Array] as PropType<TdSelectProps['value']>,
-    default: undefined,
   },
   /** 选中值，非受控属性 */
   defaultValue: {
     type: [String, Number, Boolean, Object, Array] as PropType<TdSelectProps['defaultValue']>,
-    default: undefined,
   },
   /** 自定义选中项呈现的内容 */
   valueDisplay: {
