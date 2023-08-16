@@ -5,6 +5,24 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.6.1 `2023-08-15` 
+### 🚀 Features
+- `Menu`: menu-item `click` 事件参数增加 value @dexterBo ([#2689](https://github.com/Tencent/tdesign-vue/pull/2689))
+- `键盘操作`: @chaishi ([#2683](https://github.com/Tencent/tdesign-vue/pull/2683))
+  - `Checkbox`: 支持使用空格键选中或取消选中
+  - `Radio`: 支持使用空格键选中或取消选中
+  - `SelectInput`: 支持键盘事件
+  - `Select`: 支持键盘操作聚焦和显示下拉框，可通过上下键切换选项
+### 🐞 Bug Fixes
+- `SelectInput`: 修复多选情况下按下 Enter 键后触发了 focus 事件而不是 enter 事件的问题 @dexterBo ([#2694](https://github.com/Tencent/tdesign-vue/pull/2694))
+- `Select`: 远程搜索场景下不再进行内部过滤 @uyarn ([#2699](https://github.com/Tencent/tdesign-vue/pull/2699))
+- `Menu`: 修复激活菜单项未发生变化时也会触发 change 事件的的问题 @dexterBo ([#2693](https://github.com/Tencent/tdesign-vue/pull/2693))
+- `ImageViewer`: 前后浏览及关闭浏览时重置图片状态 @sinbadmaster ([#2685](https://github.com/Tencent/tdesign-vue/pull/2685))
+- `Table`: @chaishi ([#2683](https://github.com/Tencent/tdesign-vue/pull/2683))
+  - 拖拽排序在使用懒加载 `lazyLoad` 时，失效问题
+  - 虚拟滚动场景，修复默认滚动条长度和滚动后的长度不一致问题
+  - 补充 SSR 场景，window 变量判断
+
 ## 🌈 1.6.0 `2023-08-10` 
 ### 🚀 Features
 - `Icon`: 新增 960 个图标；调整图标命名 `photo` 为 `camera`，`books`为`bookmark`, `stop-cirle-1`为`stop-circle-stroke`；移除`money-circle`图标，具体请查看图标页面  @uyarn ([#2677](https://github.com/Tencent/tdesign-vue/pull/2677))
