@@ -62,7 +62,7 @@ export default defineComponent({
     FakeArrow,
     SelectPanel,
   },
-  setup(props: TdSelectProps) {
+  setup(props: TdSelectProps, ctx) {
     const { t, global } = useConfig('select');
     const renderTNode = useTNodeJSX();
     const instance = getCurrentInstance();
@@ -529,7 +529,6 @@ export default defineComponent({
         tInputValue.value && setTInputValue('');
       }
     });
-
     provide('tSelect', {
       size,
       multiple,
@@ -545,6 +544,7 @@ export default defineComponent({
       handleValueChange: setInnerValue,
       handlerInputChange: setTInputValue,
       handlePopupVisibleChange: setInnerPopupVisible,
+      isRemoteSearch: Boolean(props.onSearch || ctx.listeners?.search),
     });
 
     return {
