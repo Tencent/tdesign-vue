@@ -176,13 +176,14 @@ export default defineComponent({
     });
     // 左侧文本
     const label = renderTNodeJSX(this, 'label', { silent: true });
+    const readonly = this.readonly || this.inputProps?.readonly;
     return (
       <TInput
         ref="tagInputRef"
-        readonly={this.readonly || this.inputProps?.readonly}
+        readonly={readonly}
         inputClass={this.inputProps?.inputClass} // 展开无效 需直接透传
         value={this.tInputValue}
-        showInput={!this.inputProps?.readonly || !this.tagValue || !this.tagValue?.length}
+        showInput={!readonly || !this.tagValue || !this.tagValue?.length}
         keepWrapperWidth={!this.autoWidth}
         autoWidth={true}
         size={this.size}
