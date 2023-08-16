@@ -23,7 +23,7 @@ export default {
     // 通过监听scroll滚动事件自行判断
     handleScroll({ e }) {
       const { scrollTop, clientHeight, scrollHeight } = e.target;
-      if (scrollHeight - scrollTop === clientHeight) {
+      if (clientHeight + Math.floor(scrollTop) === scrollHeight) {
         console.log('到底部了');
         this.options = this.options.concat({
           label: `滚动新增选项${this.options.length + 1}`,
