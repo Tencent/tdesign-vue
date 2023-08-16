@@ -111,6 +111,7 @@ export default defineComponent({
   },
 
   render(h) {
+    const { classPrefix } = this;
     // 浮层显示的受控与非受控
     const visibleProps = { visible: this.popupVisible ?? this.innerPopupVisible };
 
@@ -149,7 +150,7 @@ export default defineComponent({
       <div ref="selectInputRef" class={this.classes}>
         {mainContent}
         {tipsNode && (
-          <div class={`${this.classPrefix}-input__tips ${this.classPrefix}-input__tips--${this.status || 'normal'}`}>
+          <div class={`${classPrefix}-input__tips ${classPrefix}-tips ${classPrefix}-is-${this.status || 'normal'}`}>
             {tipsNode}
           </div>
         )}

@@ -10,7 +10,7 @@ import TInput from '../input';
 import props from './props';
 import { TdInputNumberProps } from './type';
 import useInputNumber from './useInputNumber';
-import { useGlobalIcon } from '../hooks/useGlobalIcon';
+import { useGlobalIcon, renderTNodeJSX } from '../hooks';
 
 export default defineComponent({
   name: 'TInputNumber',
@@ -44,6 +44,8 @@ export default defineComponent({
     const reduceIcon = this.theme === 'column' ? <ChevronDownIcon size={this.size} /> : <RemoveIcon size={this.size} />;
     const addIcon = this.theme === 'column' ? <ChevronUpIcon size={this.size} /> : <AddIcon size={this.size} />;
     const status = this.isError ? 'error' : this.status;
+    const tipsNode = renderTNodeJSX(this, 'tips');
+
     return (
       <div class={this.wrapClasses}>
         {this.theme !== 'normal' && (
@@ -84,8 +86,10 @@ export default defineComponent({
             icon={() => addIcon}
           />
         )}
-        {this.tips && (
-          <div class={`${this.classPrefix}-input__tips ${this.classPrefix}-input__tips--${status}`}>{this.tips}</div>
+        {tipsNode && (
+          <div class={`${this.classPrefix}-input__tips ${this.classPrefix}-tips ${this.classPrefix}-is-${status}`}>
+            {tipsNode}
+          </div>
         )}
       </div>
     );

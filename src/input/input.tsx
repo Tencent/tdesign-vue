@@ -567,15 +567,16 @@ export default mixins(
     );
 
     const tips = renderTNodeJSX(this, 'tips');
+    const tipsClassName = [
+      `${this.componentName}__tips`,
+      `${this.classPrefix}-tips`,
+      `${this.classPrefix}-is-${this.tStatus || 'default'}`,
+    ];
 
     return (
       <div class={this.inputWrapClass}>
         {inputNode}
-        {tips && (
-          <div class={`${this.componentName}__tips ${this.componentName}__tips--${this.tStatus || 'default'}`}>
-            {tips}
-          </div>
-        )}
+        {tips && <div class={tipsClassName}>{tips}</div>}
       </div>
     );
   },
