@@ -77,11 +77,13 @@ export default defineComponent({
 
     const prevImage = () => {
       const newIndex = indexValue.value - 1;
+      onRest();
       setIndexValue(newIndex < 0 ? 0 : newIndex, { trigger: 'prev' });
     };
 
     const nextImage = () => {
       const newIndex = indexValue.value + 1;
+      onRest();
       setIndexValue(newIndex >= imagesList.value.length ? indexValue.value : newIndex, { trigger: 'next' });
     };
 
@@ -145,6 +147,7 @@ export default defineComponent({
       () => visibleValue.value,
       (val) => {
         if (val) {
+          onRest();
           window.addEventListener('keydown', keydownHandler);
           mountContent();
           return;

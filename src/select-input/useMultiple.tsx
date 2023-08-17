@@ -4,8 +4,7 @@ import Vue, {
 import isObject from 'lodash/isObject';
 import { TdSelectInputProps, SelectInputKeys } from './type';
 import { SelectInputCommonProperties } from './interface';
-import { InputValue } from '../input';
-import TagInput, { TagInputValue, InputValueChangeContext, TagInputProps } from '../tag-input';
+import TagInput, { TagInputValue, TagInputProps } from '../tag-input';
 import Loading from '../loading';
 import useDefaultValue from '../hooks/useDefaultValue';
 import { usePrefixClass } from '../hooks/useConfig';
@@ -26,6 +25,7 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
   const { inputValue } = toRefs(props);
   const classPrefix = usePrefixClass();
   const tagInputRef = ref();
+  const isMultipleFocus = ref(props.autofocus);
   const [tInputValue, setTInputValue] = useDefaultValue(
     inputValue,
     props.defaultInputValue,
@@ -51,6 +51,30 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
     props.onTagChange?.(val, ctx);
     context.emit('tag-change', val, ctx);
   };
+
+  /**
+   * 筛选器统一特性：
+   * 1. 筛选器按下回车时不清空输入框;
+   * 2. SelectInput 的失焦不等于 TagInput。如点击下拉面板时，TagInput 失去焦点，但 SelectInput 依旧保持聚焦，允许继续选择。
+   */
+  const onInputChange: TagInputProps['onInputChange'] = (val, ctx) => {
+    if (ctx.trigger === 'enter' || ctx.trigger === 'blur') return;
+    setTInputValue(val, { trigger: ctx.trigger, e: ctx.e });
+  };
+
+  const onFocus: TagInputProps['onFocus'] = (val, ctx) => {
+    isMultipleFocus.value = true;
+    const params = { ...ctx, tagInputValue: val };
+    props.onFocus?.(props.value, params);
+    context.emit('focus', props.value, params);
+  };
+
+  const onEnter: TagInputProps['onEnter'] = (val, ctx) => {
+    const params = { ...ctx, tagInputValue: val };
+    props.onEnter?.(props.value, params);
+    context.emit('enter', props.value, params);
+  };
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const renderSelectMultiple = (p: RenderSelectMultipleParams, h: Vue.CreateElement) => {
     const tagInputProps = {
@@ -87,29 +111,13 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
         scopedSlots={slots}
         props={tagInputProps}
         on={{
-          'input-change': (val: InputValue, ctx: InputValueChangeContext) => {
-            /**
-             * 筛选器统一特性：
-             * 1. 筛选器按下回车时不清空输入框;
-             * 2. SelectInput 的失焦不等于 TagInput。如点击下拉面板时，TagInput 失去焦点，但 SelectInput 依旧保持聚焦，允许继续选择。
-             */
-            if (ctx.trigger === 'enter' || ctx.trigger === 'blur') return;
-            setTInputValue(val, { trigger: ctx.trigger, e: ctx.e });
-          },
+          'input-change': onInputChange,
           ...newListeners,
           change: onTagInputChange,
           clear: p.onInnerClear,
           // [Important Info]: SelectInput.blur is not equal to TagInput, example: click popup panel
-          focus: (val: TagInputValue, ctx: { inputValue: InputValue; e: FocusEvent }) => {
-            const params = { ...ctx, tagInputValue: val };
-            props.onFocus?.(props.value, params);
-            context.emit('focus', props.value, params);
-          },
-          enter: (val: TagInputValue, ctx: { e: KeyboardEvent; inputValue: InputValue }) => {
-            const params = { ...ctx, tagInputValue: val };
-            props.onEnter?.(props.value, params);
-            context.emit('focus', props.value, params);
-          },
+          focus: onFocus,
+          enter: onEnter,
         }}
       />
     );
@@ -120,6 +128,7 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
     tPlaceholder,
     tagInputRef,
     multipleInputValue: tInputValue,
+    isMultipleFocus,
     renderSelectMultiple,
   };
 }
