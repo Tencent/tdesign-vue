@@ -11,6 +11,7 @@
     @popup-visible-change="onPopupVisibleChange"
     @clear="onClear"
     @input-change="onInputChange"
+    @focus="onFocus"
   >
     <template #panel>
       <ul class="tdesign-demo__select-input-ul-single">
@@ -60,6 +61,9 @@ export default {
     onInputChange(val, context) {
       // 过滤功能
       console.log(val, context);
+    },
+    onFocus(val, context) {
+      console.log('focus:', val, context);
     },
   },
 };

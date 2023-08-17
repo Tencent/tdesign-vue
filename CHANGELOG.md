@@ -5,7 +5,60 @@ toc: false
 docClass: timeline
 ---
 
-  ## 🌈 1.5.0 `2023-07-25` 
+## 🌈 1.6.1 `2023-08-15` 
+### 🚀 Features
+- `Menu`: menu-item `click` 事件参数增加 value @dexterBo ([#2689](https://github.com/Tencent/tdesign-vue/pull/2689))
+- `键盘操作`: @chaishi ([#2683](https://github.com/Tencent/tdesign-vue/pull/2683))
+  - `Checkbox`: 支持使用空格键选中或取消选中
+  - `Radio`: 支持使用空格键选中或取消选中
+  - `SelectInput`: 支持键盘事件
+  - `Select`: 支持键盘操作聚焦和显示下拉框，可通过上下键切换选项
+### 🐞 Bug Fixes
+- `SelectInput`: 修复多选情况下按下 Enter 键后触发了 focus 事件而不是 enter 事件的问题 @dexterBo ([#2694](https://github.com/Tencent/tdesign-vue/pull/2694))
+- `Select`: 远程搜索场景下不再进行内部过滤 @uyarn ([#2699](https://github.com/Tencent/tdesign-vue/pull/2699))
+- `Menu`: 修复激活菜单项未发生变化时也会触发 change 事件的的问题 @dexterBo ([#2693](https://github.com/Tencent/tdesign-vue/pull/2693))
+- `ImageViewer`: 前后浏览及关闭浏览时重置图片状态 @sinbadmaster ([#2685](https://github.com/Tencent/tdesign-vue/pull/2685))
+- `Table`: @chaishi ([#2683](https://github.com/Tencent/tdesign-vue/pull/2683))
+  - 拖拽排序在使用懒加载 `lazyLoad` 时，失效问题
+  - 虚拟滚动场景，修复默认滚动条长度和滚动后的长度不一致问题
+  - 补充 SSR 场景，window 变量判断
+
+## 🌈 1.6.0 `2023-08-10` 
+### 🚀 Features
+- `Icon`: 新增 960 个图标；调整图标命名 `photo` 为 `camera`，`books`为`bookmark`, `stop-cirle-1`为`stop-circle-stroke`；移除`money-circle`图标，具体请查看图标页面  @uyarn ([#2677](https://github.com/Tencent/tdesign-vue/pull/2677))
+- `Table`: 可编辑表格，新增 `edit.keepEditMode` ，用于控制单元格始终保持为编辑态 @chaishi ([#2662](https://github.com/Tencent/tdesign-vue/pull/2662))
+- `Image`: @chaishi ([#2665](https://github.com/Tencent/tdesign-vue/pull/2665))
+  - 属性 `src` 支持传入 File 文件类型显示图片
+  - 新增支持 `fallback` ，用于设置图片加载失败时的兜底图
+  - 新增支持 `referrerpolicy` 属性
+- `ImageViewer`: 属性 `images` 支持传入 File 文件类型预览图片 @chaishi ([#2665](https://github.com/Tencent/tdesign-vue/pull/2665))
+- `Upload`: 文件上传列表支持显示缩略图，通过 `showThumbnail` 属性控制 @chaishi ([#2665](https://github.com/Tencent/tdesign-vue/pull/2665))
+- `Link`: 新增透传 `download` 属性，支持浏览器直接下载，https://github.com/Tencent/tdesign-vue/issues/2628 @xiaosansiji ([#2659](https://github.com/Tencent/tdesign-vue/pull/2659))
+### 🐞 Bug Fixes
+- `InputAdornment`: 修复装饰文字折行的问题 @PengYYYYY ([common#1553](https://github.com/Tencent/tdesign-common/pull/1553))
+### 🚧 Others
+- `官网`: 新增分类展示全部图标的 UI  @uyarn ([#2677](https://github.com/Tencent/tdesign-vue/pull/2677))
+
+## 🌈 1.5.2 `2023-08-01` 
+### 🚀 Features
+- `Table`:
+  - 可筛选表格，支持透传 attrs/style/classNames 属性、样式、类名等信息到自定义组件，[issue#2627](https://github.com/Tencent/tdesign-vue/issues/2627) @chaishi ([#2629](https://github.com/Tencent/tdesign-vue/pull/2629))
+  - 虚拟滚动场景，支持通过行唯一标识跳转到指定行（通过行下标跳转到指定行，以前的版本已支持） @chaishi ([#2643](https://github.com/Tencent/tdesign-vue/pull/2643))
+- `Upload`: 拖拽上传场景，支持 accept 限制可上传的文件类型 @chaishi ([common#1547](https://github.com/Tencent/tdesign-common/pull/1547))
+### 🐞 Bug Fixes
+- `Checkbox`: 支持 `value` 传入 `undefined` @chaishi ([#2623](https://github.com/Tencent/tdesign-vue/pull/2623))
+- `Table`:
+  - 可筛选表格场景，filterValue 透传优化，没有显示写明 value 值的筛选项，不再透传 `undefined` 到子组件，因有些组件的默认值不允许为 undefined @chaishi ([#2623](https://github.com/Tencent/tdesign-vue/pull/2623))
+  - 树形结构表格，修复选中行的值 `selectedRowKeys` 不在数据 `data` 中时，报错问题 @chaishi ([#2629](https://github.com/Tencent/tdesign-vue/pull/2629))
+  - 修复 1.5.0 版本空表格没有显示占位元素问题 @chaishi ([#2641](https://github.com/Tencent/tdesign-vue/pull/2641))
+  - 固定列空数据场景，元素显示错位问题 @chaishi ([#2641](https://github.com/Tencent/tdesign-vue/pull/2641))
+- `Input`: form表单disabled状态下input异常显示clear @sinbadmaster ([#2634](https://github.com/Tencent/tdesign-vue/pull/2634))
+- `Dialog`:
+  - 修复 dialog 初始化时没有执行移动相关的初始化逻辑,导致 image-viewer 小窗口图片查看器无法移动的问题 @yusongh ([#2622](https://github.com/Tencent/tdesign-vue/pull/2622))
+  - 反馈类对话框补齐body class @uyarn ([#2645](https://github.com/Tencent/tdesign-vue/pull/2645))
+- `TreeSelect`: 修复自定义标签，点击关闭异常的问题 @sinbadmaster ([#2631](https://github.com/Tencent/tdesign-vue/pull/2631)) 
+
+## 🌈 1.5.0 `2023-07-25` 
 ### 🚀 Features
 - `Table`: 新增 `lazyLoad` 表格元素懒加载，当出现在可视区域时，再渲染表格第一屏数据 @chaishi ([#2605](https://github.com/Tencent/tdesign-vue/pull/2605))
 - `Transfer`: 新增 `targetDraggable` API , 支持对目标列表拖拽排序的功能 @uyarn ([#2612](https://github.com/Tencent/tdesign-vue/pull/2612))
@@ -36,7 +89,7 @@ docClass: timeline
   - 修复 `treeNodeModel` 实例未能同步 node 属性的问题
   - 优化节点状态更新时的性能 
 
- ## 🌈 1.4.8 `2023-07-18` 
+## 🌈 1.4.8 `2023-07-18` 
 ### 🚀 Features
 - `DatePicker`: 优化关闭浮层后重置默认选中区域 @honkinglin ([#2585](https://github.com/Tencent/tdesign-vue/pull/2585))
 - `Checkbox`: @chaishi ([#2583](https://github.com/Tencent/tdesign-vue/pull/2583)
