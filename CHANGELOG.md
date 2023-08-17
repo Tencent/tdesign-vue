@@ -5,6 +5,22 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.6.2 `2023-08-17` 
+### 🚀 Features
+- `TreeSelect`: 增加 `keys` 字段用于定制数据中对应的字段别名 @PengYYYYY ([#2697](https://github.com/Tencent/tdesign-vue/pull/2697))
+- `Cascader`: 增加 `keys.disabled` 用于定制字段控制节点的禁用([issue #3193](https://github.com/Tencent/tdesign-vue-next/issues/3193)) @PengYYYYY ([#2697](https://github.com/Tencent/tdesign-vue/pull/2697))
+- `Tree`: 增加 `keys.disabled` 用于定制字段控制节点的禁用 @PengYYYYY ([#2697](https://github.com/Tencent/tdesign-vue/pull/2697))
+- `Select`: 增加 `keys.disabled` 用于定制字段控制选项的禁用 @PengYYYYY ([#2697](https://github.com/Tencent/tdesign-vue/pull/2697))
+- `Transfer`: 增加 `keys.disabled` 用于定制字段控制选项的禁用 @PengYYYYY ([#2697](https://github.com/Tencent/tdesign-vue/pull/2697))
+### 🐞 Bug Fixes
+- `checkbox`: 
+  - 修复控制台报错 @yaogengzhu ([#2702](https://github.com/Tencent/tdesign-vue/pull/2702))
+  - 修复 `options` 异步获取时，`disabled` 失效问题 @chaishi ([#2706](https://github.com/Tencent/tdesign-vue/pull/2706))
+  - 修复 `options` 异步获取时，`value` 失效问题 @chaishi ([#2706](https://github.com/Tencent/tdesign-vue/pull/2706))
+- `Image`: 修复 1.6.x 无法动态设置 `src` 问题 @chaishi ([#2709](https://github.com/Tencent/tdesign-vue/pull/2709))
+### 🚧 Others
+- `Cascader`: 补充 `borderless` 文档 @PengYYYYY ([#2697](https://github.com/Tencent/tdesign-vue/pull/2697))
+
 ## 🌈 1.6.1 `2023-08-15` 
 ### 🚀 Features
 - `Menu`: menu-item `click` 事件参数增加 value @dexterBo ([#2689](https://github.com/Tencent/tdesign-vue/pull/2689))
