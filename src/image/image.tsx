@@ -48,16 +48,12 @@ export default defineComponent({
     // replace image url
     const imageStrSrc = ref(src.value);
 
-    watch(
-      [src, globalConfig],
-      ([src, globalConfig]) => {
-        const { replaceImageSrc } = globalConfig || {};
-        const tmpUrl = isFunction(replaceImageSrc) ? replaceImageSrc(props) : src;
-        if (tmpUrl === src) return;
-        imageStrSrc.value = tmpUrl;
-      },
-      { immediate: true },
-    );
+    watch([src, globalConfig], ([src, globalConfig]) => {
+      const { replaceImageSrc } = globalConfig || {};
+      const tmpUrl = isFunction(replaceImageSrc) ? replaceImageSrc(props) : src;
+      if (tmpUrl === src && imageStrSrc.value && tmpUrl) return;
+      imageStrSrc.value = tmpUrl;
+    });
 
     const { previewUrl } = useImagePreviewUrl(imageStrSrc);
 
