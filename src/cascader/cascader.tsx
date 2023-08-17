@@ -11,7 +11,7 @@ import props from './props';
 
 import { useCascaderContext } from './hooks';
 import {
-  CascaderValue, CascaderKeysType, TdSelectInputProps, TdCascaderProps,
+  CascaderValue, TreeKeysType, TdSelectInputProps, TdCascaderProps,
 } from './interface';
 import { useConfig, usePrefixClass, useCommonClassName } from '../hooks/useConfig';
 import { PopupVisibleChangeContext } from '../popup';
@@ -102,7 +102,7 @@ export default defineComponent({
 
     const renderCollapsedItems = () => {
       const cascaderValue = this.innerValue || [];
-      const keys = (this.keys as CascaderKeysType) || DEFAULT_KEYS;
+      const keys = (this.keys as TreeKeysType) || DEFAULT_KEYS;
       const value = Array.isArray(cascaderValue) ? cascaderValue : [cascaderValue];
       const cascaderOptions = value.map((item) => {
         const tmpValue = typeof item === 'object' ? item[keys.value] : item;
