@@ -169,6 +169,7 @@ export default defineComponent({
     );
 
     const addStoreKeyToCheckbox = (nodes: VNode[]) => {
+      if (!nodes) return;
       for (let i = 0, len = nodes.length; i < len; i++) {
         const vNode = nodes[i];
         if (vNode.componentOptions && /TCheckbox/.test(vNode.tag)) {
