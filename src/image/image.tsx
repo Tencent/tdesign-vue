@@ -53,7 +53,7 @@ export default defineComponent({
       ([src, globalConfig]) => {
         const { replaceImageSrc } = globalConfig || {};
         const tmpUrl = isFunction(replaceImageSrc) ? replaceImageSrc(props) : src;
-        if (tmpUrl === src) return;
+        if (tmpUrl === imageStrSrc.value && imageStrSrc.value) return;
         imageStrSrc.value = tmpUrl;
       },
       { immediate: true },
