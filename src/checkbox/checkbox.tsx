@@ -37,7 +37,7 @@ export default defineComponent({
     const checkboxGroupExist = ref(false);
 
     const {
-      checked, indeterminate, disabled, value, lazyLoad,
+      checked, indeterminate, disabled, value, lazyLoad, label, data,
     } = toRefs(props);
     const [innerChecked, setInnerChecked] = useVModel(
       checked,
@@ -153,6 +153,10 @@ export default defineComponent({
     };
 
     subscribeParentData(props.checkAll ? 'CHECK_ALL' : value.value);
+
+    watch([data, label], () => {
+      subscribeParentData(props.checkAll ? 'CHECK_ALL' : value.value);
+    });
 
     onBeforeUnmount(() => {
       checkboxStore.unSubscribe(props.checkAll ? 'CHECK_ALL' : value.value);
