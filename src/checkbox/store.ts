@@ -12,7 +12,7 @@ type ObserverMap = {
 
 export interface UpdateCheckedData {
   checked: CheckboxStoreData['checked'];
-  oldChecked: CheckboxStoreData['checked'];
+  oldChecked?: CheckboxStoreData['checked'];
   isCheckAll: boolean;
   indeterminate: boolean;
 }
@@ -45,7 +45,7 @@ class CheckboxStore {
   updateChecked({
     checked, isCheckAll, oldChecked, indeterminate,
   }: UpdateCheckedData) {
-    const changedChecked = getChangedChecked(checked, oldChecked);
+    const changedChecked = oldChecked ? getChangedChecked(checked, oldChecked) : checked;
     const checkedParams: ObserverListenerParams = {
       parentChecked: checked,
       parentIsCheckAll: isCheckAll,
