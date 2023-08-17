@@ -3,12 +3,10 @@ import {
 } from '@vue/composition-api';
 import isFunction from 'lodash/isFunction';
 import { RemoveOptions, TdTreeSelectProps, TreeSelectValue } from './type';
-import {
-  TreeProps, TreeInstanceFunctions, TreeKeysType, TreeNodeValue,
-} from '../tree';
+import { TreeProps, TreeInstanceFunctions, TreeNodeValue } from '../tree';
 import { usePrefixClass, useConfig } from '../hooks/useConfig';
 import useFormDisabled from '../hooks/useFormDisabled';
-import { TreeOptionData } from '../common';
+import { TreeOptionData, TreeKeysType } from '../common';
 import useVModel from '../hooks/useVModel';
 import useDefaultValue from '../hooks/useDefaultValue';
 import { SelectInputProps } from '../select-input';

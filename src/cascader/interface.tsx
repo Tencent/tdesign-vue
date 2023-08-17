@@ -4,6 +4,8 @@ import TreeStore from '../_common/js/tree/tree-store';
 import TreeNode from '../_common/js/tree/tree-node';
 import { TreeNodeModel, TreeNodeValue } from '../_common/js/tree/types';
 
+export { TreeKeysType } from '../common';
+
 export * from './type';
 export interface CascaderContextType
   extends Pick<
