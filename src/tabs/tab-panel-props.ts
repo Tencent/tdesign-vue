@@ -36,4 +36,9 @@ export default {
   },
   /** 点击删除按钮时触发 */
   onRemove: Function as PropType<TdTabPanelProps['onRemove']>,
+  /** 标签内容是否延迟渲染 */
+  lazy: {
+    type: Boolean,
+    default: false,
+  },
 };

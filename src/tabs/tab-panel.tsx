@@ -18,6 +18,12 @@ export default mixins(Vue as VueConstructor<TabPanel>, classPrefixMixins).extend
 
   props: { ...props },
 
+  data() {
+    return {
+      loaded: false,
+    };
+  },
+
   inject: {
     parent: { default: null },
   },
@@ -25,7 +31,13 @@ export default mixins(Vue as VueConstructor<TabPanel>, classPrefixMixins).extend
   computed: {
     active(): boolean {
       const { value } = this.parent || {};
-      return this.value === value;
+      const result = this.value === value;
+
+      if (result) {
+        this.loaded = true;
+      }
+
+      return result;
     },
   },
 
@@ -41,12 +53,16 @@ export default mixins(Vue as VueConstructor<TabPanel>, classPrefixMixins).extend
   },
 
   render() {
-    const { destroyOnHide, active } = this;
+    const {
+      destroyOnHide, active, lazy, loaded,
+    } = this;
+
     if (destroyOnHide && !active) return null;
-    return (
+
+    return !lazy || loaded ? (
       <div class={this.componentName} v-show={active}>
         {renderContent(this, 'default', 'panel')}
       </div>
-    );
+    ) : null;
   },
 });

@@ -57,7 +57,7 @@ export interface TdTabsProps {
    * 删除选项卡时触发
    */
   onRemove?: (options: { value: TabValue; index: number; e: MouseEvent }) => void;
-};
+}
 
 export interface TdTabPanelProps {
   /**
@@ -95,6 +95,10 @@ export interface TdTabPanelProps {
    * 点击删除按钮时触发
    */
   onRemove?: (options: { value: TabValue; e: MouseEvent }) => void;
-};
+  /**
+   * 标签是否延迟渲染
+   */
+  lazy?: Boolean;
+}
 
 export type TabValue = string | number;
