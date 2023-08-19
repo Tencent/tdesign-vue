@@ -1,14 +1,12 @@
 <template>
   <div>
-    <div>
+    <t-space>
       <t-button @click="appendToRoot">添加根节点</t-button>
-      <t-button theme="default" style="margin-left: 16px" @click="resetData">重置/更新数据</t-button>
-      <t-button theme="default" style="margin-left: 16px" @click="onRowToggle">任意节点展开/收起</t-button>
-      <t-button theme="default" style="margin-left: 16px" @click="onExpandAllToggle">{{
-        expandAll ? '收起全部' : '展开全部'
-      }}</t-button>
-      <t-button theme="default" style="margin-left: 16px" @click="getTreeNode">获取全部树形结构</t-button>
-    </div>
+      <t-button theme="default" @click="resetData">重置/更新数据</t-button>
+      <t-button theme="default" @click="onRowToggle">任意节点展开/收起</t-button>
+      <t-button theme="default" @click="onExpandAllToggle">{{ expandAll ? '收起全部' : '展开全部' }}</t-button>
+      <t-button theme="default" @click="getTreeNode">获取全部树形结构</t-button>
+    </t-space>
     <br />
     <div>
       <t-checkbox v-model="customTreeExpandAndFoldIcon" style="vertical-align: middle">
@@ -16,10 +14,11 @@
       </t-checkbox>
     </div>
     <br />
-    <!-- 第一列展开树结点，缩进为 24px，子节点字段 childrenKey 默认为 children -->
     <!-- !!! 树形结构 EnhancedTable 才支持，普通 Table 不支持 !!! -->
-    <!-- Ref: this.$refs.table.dataSource 查看树形结构平铺数据，获取属性结构使用 this.$refs.table.getTreeNode() -->
+    <!-- 第一列展开树结点，缩进为 24px，子节点字段 childrenKey 默认为 children -->
+    <!-- Ref: this.$refs.table.dataSource 查看树形结构平铺数据。获取属性树形结构使用 this.$refs.table.getTreeNode() -->
     <!-- 可以使用受控属性 :displayColumns.sync="displayColumns" 完全自由控制显示列 -->
+    <!-- expandedTreeNodes.sync is not required. you can control expanded tree node by expandedTreeNodes -->
     <t-enhanced-table
       ref="table"
       rowKey="key"
@@ -30,6 +29,7 @@
       :treeExpandAndFoldIcon="treeExpandIcon"
       :pagination="pagination"
       :beforeDragSort="beforeDragSort"
+      :expandedTreeNodes.sync="expandedTreeNodes"
       :columnController="{
         placement: 'bottom-left',
         // 允许控制哪些列显示或隐藏
@@ -135,6 +135,7 @@ export default {
       data,
       lazyLoadingData: null,
       expandAll: false,
+      expandedTreeNodes: ['申请人 2_1 号', '申请人 30_1 号', '申请人 4_1 号'],
       pagination: {
         current: 1,
         pageSize: 10,
@@ -226,16 +227,15 @@ export default {
     },
   },
 
-  // 默认展开全部。示例代码有效，勿删
-  // mounted() {
-  //   this.$refs.table.expandAll();
-  // },
-
   methods: {
-    // 全新赋值
+    // 全新赋值：
     resetData() {
-      this.data = getData();
-      this.$refs.table.resetData(this.data);
+      const newData = getData();
+      // 方式一
+      this.data = newData;
+
+      // 方式二，和方式一等效
+      // this.$refs.table.resetData(newData);
     },
 
     // 更新
@@ -282,7 +282,7 @@ export default {
     appendMultipleDataTo(row) {
       const randomKey1 = Math.round(Math.random() * Math.random() * 1000) + 10000;
       const randomKey2 = Math.round(Math.random() * Math.random() * 1000) + 10000;
-      const newData = [
+      const appendList = [
         {
           id: randomKey1,
           key: `申请人 ${randomKey1} 号`,
@@ -296,7 +296,7 @@ export default {
           type: 'Number',
         },
       ];
-      this.$refs.table.appendTo(row?.key, newData);
+      this.$refs.table.appendTo(row?.key, appendList);
       MessagePlugin.success(`已插入子节点申请人 ${randomKey1} 和 ${randomKey2} 号，请展开查看`);
     },
 
@@ -343,7 +343,7 @@ export default {
 
     // eslint-disable-next-line
     treeExpandAndFoldIconRender(h, { type, row }) {
-      if (this.lazyLoadingData && this.lazyLoadingData.id === row?.id) {
+      if (this.lazyLoadingData && this.lazyLoadingData.key === row?.key) {
         return <Loading size="14px" />;
       }
       return type === 'expand' ? <ChevronRightIcon /> : <ChevronDownIcon />;
@@ -352,7 +352,7 @@ export default {
     // 懒加载图标渲染
     lazyLoadingTreeIconRender(h, params) {
       const { type, row } = params;
-      if (this.lazyLoadingData?.id === row?.id) {
+      if (this.lazyLoadingData?.key === row?.key) {
         return <Loading size="14px" />;
       }
       return type === 'expand' ? <AddRectangleIcon /> : <MinusRectangleIcon />;

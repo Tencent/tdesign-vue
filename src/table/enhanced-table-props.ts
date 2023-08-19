@@ -12,6 +12,16 @@ export default {
   beforeDragSort: {
     type: Function as PropType<TdEnhancedTableProps['beforeDragSort']>,
   },
+  /** 展开的树形节点。非必须。在需要自由控制展开的树形节点时使用。其他场景无需设置，表格组件有内置展开逻辑 */
+  expandedTreeNodes: {
+    type: Array as PropType<TdEnhancedTableProps['expandedTreeNodes']>,
+    default: undefined,
+  },
+  /** 展开的树形节点。非必须。在需要自由控制展开的树形节点时使用。其他场景无需设置，表格组件有内置展开逻辑，非受控属性 */
+  defaultExpandedTreeNodes: {
+    type: Array as PropType<TdEnhancedTableProps['defaultExpandedTreeNodes']>,
+    default: (): TdEnhancedTableProps['defaultExpandedTreeNodes'] => [],
+  },
   /** 树形结构相关配置。具体属性文档查看 `TableTreeConfig` 相关描述 */
   tree: {
     type: Object as PropType<TdEnhancedTableProps['tree']>,
@@ -22,6 +32,8 @@ export default {
   },
   /** 异常拖拽排序时触发，如：树形结构中，非同层级之间的交换。`context.code` 指交换异常错误码，固定值；`context.reason` 指交换异常的原因 */
   onAbnormalDragSort: Function as PropType<TdEnhancedTableProps['onAbnormalDragSort']>,
+  /** 展开行发生变化时触发，泛型 T 指表格数据类型 */
+  onExpandedTreeNodesChange: Function as PropType<TdEnhancedTableProps['onExpandedTreeNodesChange']>,
   /** 树形结构，用户操作引起节点展开或收起时触发，代码操作不会触发 */
   onTreeExpandChange: Function as PropType<TdEnhancedTableProps['onTreeExpandChange']>,
 };
