@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- :attach="getAttach" 统一控制超出省略等元素浮层的挂载元素 -->
-    <!-- 方式一：超出省略浮层内容定义，全部通过 columns 定义 -->
+    <!-- 方式一：超出省略，全部通过 columns 定义；可使用 jsx 自定义浮层内容 -->
     <t-table row-key="id" :data="data" :columns="columns" lazyLoad> </t-table>
 
     <!-- 方式二：超出省略浮层内容定义，使用插槽名 ellipsis-<colKey> 定义某一列的超出省略浮层内容 -->
