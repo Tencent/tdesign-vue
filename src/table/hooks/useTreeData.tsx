@@ -1,5 +1,5 @@
 import {
-  SetupContext, ref, watch, toRefs, onUnmounted, computed, shallowRef, nextTick,
+  SetupContext, ref, watch, toRefs, onUnmounted, computed, shallowRef,
 } from '@vue/composition-api';
 import { AddRectangleIcon as TdAddRectangleIcon, MinusRectangleIcon as TdMinusRectangleIcon } from 'tdesign-icons-vue';
 import get from 'lodash/get';
@@ -21,7 +21,7 @@ import { useGlobalIcon } from '../../hooks/useGlobalIcon';
 import useTreeDataExpand from './useTreeDataExpand';
 
 export default function useTreeData(props: TdEnhancedTableProps, context: SetupContext) {
-  const { data, columns, tree } = toRefs(props);
+  const { data, columns } = toRefs(props);
   const { t, global } = useConfig('table');
   const { AddRectangleIcon, MinusRectangleIcon } = useGlobalIcon({
     AddRectangleIcon: TdAddRectangleIcon,
