@@ -233,6 +233,7 @@ export default {
       const newData = getData();
       // 方式一
       this.data = newData;
+      this.expandedTreeNodes = [];
 
       // 方式二，和方式一等效
       // this.$refs.table.resetData(newData);
@@ -253,6 +254,8 @@ export default {
     // 删除
     onDeleteConfirm(row) {
       this.$refs.table.remove(row.key);
+      // 移除子节点
+      // this.$refs.table.removeChildren(row.key);
       this.$message.success('删除成功');
     },
 
