@@ -16,7 +16,7 @@ export function useTreeDataExpand(
   },
 ) {
   const { store, dataSource, rowDataKeys } = params;
-  const { expandedTreeNodes, tree } = toRefs(props);
+  const { data, expandedTreeNodes, tree } = toRefs(props);
 
   const isDefaultExpandAllExecute = ref(false);
   const [tExpandedTreeNode, setTExpandedTreeNode] = useDefaultValue(
@@ -36,9 +36,9 @@ export function useTreeDataExpand(
   /**
    * 对外暴露的组件实例方法，展开所有节点
    */
-  function expandAll(type: 'expand-all' | 'default-expand-all' = 'expand-all', data?: TableRowData[]) {
-    const newData = data || dataSource.value;
-    dataSource.value = [...store.value.expandAll(newData, rowDataKeys.value)];
+  function expandAll(type: 'expand-all' | 'default-expand-all' = 'expand-all', list?: TableRowData[]) {
+    const newData = list || data.value;
+    dataSource.value = store.value.expandAll(newData, rowDataKeys.value);
     const expandedNode = dataSource.value.map((t) => getUniqueRowValue(t, rowDataKeys.value.rowKey));
     setTExpandedTreeNode(expandedNode, {
       row: undefined,
