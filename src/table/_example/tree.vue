@@ -16,8 +16,7 @@
     <br />
     <!-- !!! 树形结构 EnhancedTable 才支持，普通 Table 不支持 !!! -->
     <!-- 第一列展开树结点，缩进为 24px，子节点字段 childrenKey 默认为 children -->
-    <!-- Ref: this.$refs.table.dataSource 查看树形结构平铺数据。获取属性树形结构使用 this.$refs.table.getTreeNode() -->
-    <!-- 可以使用受控属性 :displayColumns.sync="displayColumns" 完全自由控制显示列 -->
+    <!-- :displayColumns.sync="displayColumns" used to control displayed columns -->
     <!-- expandedTreeNodes.sync is not required. you can control expanded tree node by expandedTreeNodes -->
     <t-enhanced-table
       ref="table"
@@ -40,8 +39,9 @@
       @page-change="onPageChange"
       @abnormal-drag-sort="onAbnormalDragSort"
       @drag-sort="onDragSort"
-      @tree-expand-change="onTreeExpandChange"
+      @expanded-tree-nodes-change="onExpandedTreeNodesChange"
     ></t-enhanced-table>
+    <!-- @tree-expand-change="onTreeExpandChange" -->
 
     <!-- 第二列展开树结点，缩进为 12px，示例代码有效，勿删 -->
     <!-- indent 定义缩进距离 -->
@@ -358,6 +358,12 @@ export default {
       return type === 'expand' ? <AddRectangleIcon /> : <MinusRectangleIcon />;
     },
 
+    onExpandedTreeNodesChange(expandedTreeNodes, context) {
+      console.log(expandedTreeNodes, context);
+      if (!context.rowState) return;
+      this.onTreeExpandChange(context);
+    },
+
     onTreeExpandChange(context) {
       console.log(context.rowState.expanded ? '展开' : '收起', context);
       /**
@@ -377,6 +383,8 @@ export default {
     },
 
     getTreeNode() {
+      // 查看树形结构平铺数据
+      // this.$refs.table.dataSource
       const treeData = this.$refs.table.getTreeNode();
       console.log(treeData);
       this.$message.success('树形结构获取成功，请打开控制台查看');

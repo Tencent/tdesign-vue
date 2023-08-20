@@ -680,11 +680,15 @@ export interface TdEnhancedTableProps<T extends TableRowData = TableRowData> ext
    */
   onAbnormalDragSort?: (context: TableAbnormalDragSortContext<T>) => void;
   /**
-   * 展开行发生变化时触发，泛型 T 指表格数据类型
+   * 树形结构，展开的树节点发生变化时触发，泛型 T 指表格数据类型
    */
-  onExpandedTreeNodesChange?: (expandedRowKeys: Array<string | number>, options: TableTreeNodeExpandOptions<T>) => void;
+  onExpandedTreeNodesChange?: (
+    expandedTreeNodes: Array<string | number>,
+    options: TableTreeNodeExpandOptions<T>,
+  ) => void;
   /**
-   * 树形结构，用户操作引起节点展开或收起时触发，代码操作不会触发
+   * 树形结构，用户操作引起节点展开或收起时触发。请更为使用 `onExpandedTreeNodesChange`
+   * @deprecated
    */
   onTreeExpandChange?: (context: TableTreeExpandChangeContext<T>) => void;
 }

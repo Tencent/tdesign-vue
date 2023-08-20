@@ -32,8 +32,8 @@ export default {
   },
   /** 异常拖拽排序时触发，如：树形结构中，非同层级之间的交换。`context.code` 指交换异常错误码，固定值；`context.reason` 指交换异常的原因 */
   onAbnormalDragSort: Function as PropType<TdEnhancedTableProps['onAbnormalDragSort']>,
-  /** 展开行发生变化时触发，泛型 T 指表格数据类型 */
+  /** 树形结构，展开的树节点发生变化时触发，泛型 T 指表格数据类型 */
   onExpandedTreeNodesChange: Function as PropType<TdEnhancedTableProps['onExpandedTreeNodesChange']>,
-  /** 树形结构，用户操作引起节点展开或收起时触发，代码操作不会触发 */
+  /** 已废弃。树形结构，用户操作引起节点展开或收起时触发。请更为使用 `onExpandedTreeNodesChange` */
   onTreeExpandChange: Function as PropType<TdEnhancedTableProps['onTreeExpandChange']>,
 };
