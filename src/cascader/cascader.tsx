@@ -216,6 +216,7 @@ export default defineComponent({
           tips: slots.tips,
           tag: slots.tag,
           suffix: slots.suffix,
+          label: slots.label,
         }}
       />
     );
