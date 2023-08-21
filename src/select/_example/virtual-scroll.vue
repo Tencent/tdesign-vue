@@ -4,6 +4,7 @@
     <t-select
       v-model="value1"
       :options="options"
+      filterable
       placeholder="请选择"
       :style="{ width: '300px' }"
       :scroll="{ type: 'virtual' }"
