@@ -5,6 +5,20 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.6.3 `2023-08-22` 
+### 🚀 Features
+- `Table`: @chaishi ([#2719](https://github.com/Tencent/tdesign-vue/pull/2719))
+  - 支持使用名为 `ellipsis` 或者 `ellipsis-<colKey>` 的插槽自定义超出省略时的浮层内容，使用方法可参考示例代码 @chaishi ([#2717](https://github.com/Tencent/tdesign-vue/pull/2717))
+  - 树形结构，新增组件实例方法 `removeChildren`，用于移除子节点
+  - 树形结构，支持通过属性 `expandedTreeNodes.sync` 自由控制展开节点，非必传属性
+### 🐞 Bug Fixes
+- `Select`: 优化 Select 组件在过滤场景中的表现 @moonye6 @uyarn ([#2722](https://github.com/Tencent/tdesign-vue/pull/2722))
+- `Table`: @chaishi ([#2719](https://github.com/Tencent/tdesign-vue/pull/2719))
+  - 树形结构，修复组件实例方法 展开全部 `expandAll` 问题
+  - 点击行展开/点击行选中，修复 `expandOnRowClick`和 `selectOnRowClick` 无法独立控制行点击执行交互问题 [tdesign-vue-next#3254](https://github.com/Tencent/tdesign-vue-next/issues/3254)
+- `Popconfirm`: 修复因变量计算导致的 minx.css 压缩后产物样式改变的问题 @honkinglin ([common#1573](https://github.com/Tencent/tdesign-common/pull/1573))
+- `Cascader`: 修复 `label` 属性自定义插槽不生效的问题 @ubloglab ([#2724](https://github.com/Tencent/tdesign-vue/pull/2724))
+
 ## 🌈 1.6.2 `2023-08-17` 
 ### 🚀 Features
 - `TreeSelect`: 增加 `keys` 字段用于定制数据中对应的字段别名 @PengYYYYY ([#2697](https://github.com/Tencent/tdesign-vue/pull/2697))
