@@ -1,5 +1,9 @@
 <template>
-  <t-cascader label="单选：" v-model="value" :options="options" clearable @change="onChange" />
+  <t-cascader v-model="value" :options="options" clearable @change="onChange">
+    <template #label>
+      <div>单选：</div>
+    </template>
+  </t-cascader>
 </template>
 <script>
 export default {
