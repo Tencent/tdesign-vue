@@ -57,12 +57,12 @@ export default mixins(Vue as VueConstructor<TabPanel>, classPrefixMixins).extend
       destroyOnHide, active, lazy, loaded,
     } = this;
 
-    if (destroyOnHide && !active) return null;
+    if ((destroyOnHide && !active) || (lazy && !loaded)) return null;
 
-    return !lazy || loaded ? (
+    return (
       <div class={this.componentName} v-show={active}>
         {renderContent(this, 'default', 'panel')}
       </div>
-    ) : null;
+    );
   },
 });
