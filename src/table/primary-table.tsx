@@ -270,13 +270,21 @@ export default defineComponent({
       }
     };
 
+    const onSingleRowClick: TdPrimaryTableProps['onRowClick'] = (params) => {
+      if (props.expandOnRowClick) {
+        onInnerExpandRowClick(params);
+      }
+      if (props.selectOnRowClick) {
+        onInnerSelectRowClick(params);
+      }
+    };
+
     let timer: NodeJS.Timeout;
     const DURATION = 250;
     const onInnerRowClick: TdPrimaryTableProps['onRowClick'] = (params) => {
       // no dblclick, no delay
       if (!context.listeners['row-dblclick']) {
-        onInnerExpandRowClick(params);
-        onInnerSelectRowClick(params);
+        onSingleRowClick(params);
         return;
       }
       if (timer) {
@@ -285,8 +293,7 @@ export default defineComponent({
         timer = undefined;
       } else {
         timer = setTimeout(() => {
-          onInnerExpandRowClick(params);
-          onInnerSelectRowClick(params);
+          onSingleRowClick(params);
           timer = undefined;
         }, DURATION);
       }

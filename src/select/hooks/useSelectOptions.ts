@@ -8,8 +8,9 @@ import {
 } from 'vue';
 import get from 'lodash/get';
 import {
-  TdSelectProps, SelectKeysType, TdOptionProps, SelectOptionGroup, SelectValue,
+  TdSelectProps, TdOptionProps, SelectOptionGroup, SelectValue,
 } from '../type';
+import { KeysType } from '../../common';
 
 type UniOption = (TdOptionProps | SelectOptionGroup) & {
   index?: number;
@@ -19,7 +20,7 @@ type UniOption = (TdOptionProps | SelectOptionGroup) & {
 export default function useSelectOptions(
   props: TdSelectProps,
   instance: ComponentInternalInstance,
-  keys: Ref<SelectKeysType>,
+  keys: Ref<KeysType>,
 ) {
   // 内部 options 记录
   const options = ref<UniOption[]>([]);
@@ -33,12 +34,13 @@ export default function useSelectOptions(
     // 解析 props 中 options 字段的配置，以此初始化 innerOptions
     const innerOptions: UniOption[] = props.options?.map((option) => {
       const getFormatOption = (option: TdOptionProps) => {
-        const { value, label } = keys.value;
+        const { value, label, disabled } = keys.value;
         const res = {
           ...option,
           index: dynamicIndex,
           label: get(option, label),
           value: get(option, value),
+          disabled: get(option, disabled),
         };
         dynamicIndex += 1;
         return res;

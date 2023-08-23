@@ -1,5 +1,4 @@
-import { TreeKeysType } from '../tree';
-import { TreeOptionData } from '../common';
+import { TreeOptionData, TreeKeysType } from '../common';
 
 export function getNodeDataByValue(
   values: Array<string | number>,

@@ -397,7 +397,7 @@ export default defineComponent({
     const hoverIndex = ref(-1);
     const keydownEvent = (e: KeyboardEvent) => {
       const displayOptions: (TdOptionProps & { isCreated?: boolean })[] = flattenOptions(
-        selectPanelRef.value?.getDisplayOptions(),
+        selectPanelRef.value?.getDisplayOptions() || [],
       );
 
       const displayOptionsLength = displayOptions.length;
