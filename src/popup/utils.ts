@@ -4,6 +4,8 @@ import { on, off } from '../utils/dom';
 
 const triggers = ['click', 'hover', 'focus', 'context-menu'] as const;
 
+const defaultVisibleDelay = [250, 150];
+
 function getPopperPlacement(placement: TdPopupProps['placement']) {
   return placement.replace(/-(left|top)$/, '-start').replace(/-(right|bottom)$/, '-end') as Placement;
 }
@@ -24,4 +26,6 @@ function attachListeners(elm: Element) {
   };
 }
 
-export { getPopperPlacement, attachListeners, triggers };
+export {
+  getPopperPlacement, attachListeners, triggers, defaultVisibleDelay,
+};
