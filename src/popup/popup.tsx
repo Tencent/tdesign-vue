@@ -11,7 +11,9 @@ import Container from './container';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
 import { emitEvent } from '../utils/event';
-import { getPopperPlacement, attachListeners, triggers } from './utils';
+import {
+  getPopperPlacement, attachListeners, triggers, defaultVisibleDelay,
+} from './utils';
 
 const classPrefixMixins = getClassPrefixMixins('popup');
 
@@ -79,7 +81,7 @@ export default mixins(classPrefixMixins).extend({
       );
     },
     normalizedDelay(): { open: number; close: number } {
-      const delay = [].concat(this.delay ?? [250, 150]);
+      const delay = [].concat(this.delay ?? defaultVisibleDelay);
       return {
         open: delay[0],
         close: delay[1] ?? delay[0],
