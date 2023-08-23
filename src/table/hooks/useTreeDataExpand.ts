@@ -1,6 +1,6 @@
 import {
   ComputedRef, nextTick, ref, Ref, SetupContext, toRefs, watch,
-} from '@vue/composition-api';
+} from 'vue';
 import { TdEnhancedTableProps, TableRowData } from '../type';
 import useDefaultValue from '../../hooks/useDefaultValue';
 import TableTreeStore, { diffExpandedTreeNode, getUniqueRowValue } from '../../_common/js/table/tree-store';
