@@ -19,7 +19,7 @@ import {
   getDisplayFiles,
   formatToUploadFile,
 } from '../../_common/js/upload/main';
-import { getFileUrlByFileRaw, getFileList } from '../../_common/js/upload/utils';
+import { getFileList } from '../../_common/js/upload/utils';
 import useVModel from '../../hooks/useVModel';
 import {
   InnerProgressContext,
