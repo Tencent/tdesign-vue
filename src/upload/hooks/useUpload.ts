@@ -168,31 +168,12 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
   const handleNotAutoUpload = (toFiles: UploadFile[]) => {
     const tmpFiles = props.multiple && !isBatchUpload.value ? uploadValue.value.concat(toFiles) : toFiles;
     if (!tmpFiles.length) return;
-    // 图片需要本地预览
-    if (['image', 'image-flow'].includes(props.theme)) {
-      const list = tmpFiles.map(
-        (file) => new Promise((resolve) => {
-          getFileUrlByFileRaw(file.raw).then((url) => {
-            resolve({ ...file, url: file.url || url });
-          });
-        }),
-      );
-      Promise.all(list).then((files) => {
-        setUploadValue(files, {
-          trigger: 'add',
-          index: uploadValue.value.length,
-          file: toFiles[0],
-          files: toFiles,
-        });
-      });
-    } else {
-      setUploadValue(tmpFiles, {
-        trigger: 'add',
-        index: uploadValue.value.length,
-        file: toFiles[0],
-        files: toFiles,
-      });
-    }
+    setUploadValue(tmpFiles, {
+      trigger: 'add',
+      index: uploadValue.value.length,
+      file: toFiles[0],
+      files: toFiles,
+    });
     toUploadFiles.value = [];
   };
 
