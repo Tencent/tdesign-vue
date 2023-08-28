@@ -256,7 +256,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       }
     },
     keyboardEvent(e: KeyboardEvent) {
-      if (e.code === 'Escape' && stack.top === this.uid) {
+      if (e.code === 'Escape') {
         emitEvent<Parameters<TdDialogProps['onEscKeydown']>>(this, 'esc-keydown', { e });
         // 根据 closeOnEscKeydown 判断按下ESC时是否触发close事件
         if (this.closeOnEscKeydown ?? this.global.closeOnEscKeydown) {

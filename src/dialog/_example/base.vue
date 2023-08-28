@@ -27,17 +27,9 @@
 export default {
   data() {
     return {
-      visible: false,
+      visible: true,
       visible1: false,
     };
-  },
-  mounted() {
-    // 监听键盘事件
-    document.addEventListener('keyup', this.handleKeyup);
-  },
-  beforeDestroy() {
-    // 在组件销毁前移除键盘事件监听
-    document.removeEventListener('keyup', this.handleKeyup);
   },
   methods: {
     onConfirm(context) {
@@ -52,12 +44,6 @@ export default {
     },
     onCancel(context) {
       console.log('点击了取消按钮', context);
-    },
-    handleKeyup(event) {
-      console.log('初始默认显示弹窗时，按esc走监听事件', event);
-      if (event.keyCode === 27) {
-        this.visible = false;
-      }
     },
     onKeydownEsc(context) {
       console.log('按下了ESC', context);
