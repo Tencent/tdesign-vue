@@ -20,7 +20,6 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, fail 
       >
         <div
           class="t-image__wrapper t-image__wrapper--shape-square"
-          style="max-width: 120px; max-height: 120px;"
         >
           <img
             alt=""
@@ -50,11 +49,6 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, fail 
                     fill="currentColor"
                   />
                 </svg>
-              </div>
-              <div
-                class="t-space-item"
-              >
-                图片加载中
               </div>
             </div>
           </div>
@@ -147,7 +141,6 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, progr
       >
         <div
           class="t-image__wrapper t-image__wrapper--shape-square"
-          style="max-width: 120px; max-height: 120px;"
         >
           <img
             alt=""
@@ -177,11 +170,6 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, progr
                     fill="currentColor"
                   />
                 </svg>
-              </div>
-              <div
-                class="t-space-item"
-              >
-                图片加载中
               </div>
             </div>
           </div>
@@ -282,7 +270,6 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, succe
       >
         <div
           class="t-image__wrapper t-image__wrapper--shape-square"
-          style="max-width: 120px; max-height: 120px;"
         >
           <img
             alt=""
@@ -312,11 +299,6 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, succe
                     fill="currentColor"
                   />
                 </svg>
-              </div>
-              <div
-                class="t-space-item"
-              >
-                图片加载中
               </div>
             </div>
           </div>
@@ -409,7 +391,6 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, succe
       >
         <div
           class="t-image__wrapper t-image__wrapper--shape-square"
-          style="max-width: 120px; max-height: 120px;"
         >
           <img
             alt=""
@@ -439,11 +420,6 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, succe
                     fill="currentColor"
                   />
                 </svg>
-              </div>
-              <div
-                class="t-space-item"
-              >
-                图片加载中
               </div>
             </div>
           </div>
@@ -536,7 +512,6 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, waiti
       >
         <div
           class="t-image__wrapper t-image__wrapper--shape-square"
-          style="max-width: 120px; max-height: 120px;"
         >
           <img
             alt=""
@@ -566,11 +541,6 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, waiti
                     fill="currentColor"
                   />
                 </svg>
-              </div>
-              <div
-                class="t-space-item"
-              >
-                图片加载中
               </div>
             </div>
           </div>

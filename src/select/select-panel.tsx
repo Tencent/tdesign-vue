@@ -10,6 +10,7 @@ import {
   TdOptionProps, SelectOptionGroup, TdSelectProps, SelectOption,
 } from './type';
 import Option from './option';
+import OptionGroup from './optionGroup';
 import useVirtualScroll from '../hooks/useVirtualScroll';
 import { flattenOptions } from './util';
 
@@ -47,6 +48,7 @@ export default defineComponent({
 
   components: {
     TOption: Option,
+    TOptionGroup: OptionGroup,
   },
 
   props: [

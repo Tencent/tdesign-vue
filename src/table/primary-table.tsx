@@ -96,7 +96,12 @@ export default defineComponent({
 
     // 拖拽排序功能
     const {
-      isRowHandlerDraggable, isRowDraggable, isColDraggable, setDragSortPrimaryTableRef, setDragSortColumns,
+      isRowHandlerDraggable,
+      isRowDraggable,
+      isColDraggable,
+      innerPagination,
+      setDragSortPrimaryTableRef,
+      setDragSortColumns,
     } = useDragSort(props, context);
 
     const { renderTitleWidthIcon } = useTableHeader(props);
@@ -241,6 +246,7 @@ export default defineComponent({
     });
 
     const onInnerPageChange = (pageInfo: PageInfo, newData: Array<TableRowData>) => {
+      innerPagination.value = { ...innerPagination.value, ...pageInfo };
       currentPaginateData.value = newData;
       props.onPageChange?.(pageInfo, newData);
       // Vue3 ignore next line
