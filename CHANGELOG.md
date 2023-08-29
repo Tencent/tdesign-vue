@@ -5,6 +5,24 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.6.4 `2023-08-29` 
+### 🚀 Features
+- `Tabs`: 支持 `tab-panel` 内容懒加载 @FireBushtree ([#2714](https://github.com/Tencent/tdesign-vue/pull/2714))
+- `Table`: 树形结构，没有设置 `expandedTreeNodes` 情况下，data 数据发生变化时，自动重置收起所有展开节点（如果希望保持展开节点，请使用属性 `expandedTreeNodes` 控制，[issue#2735](https://github.com/Tencent/tdesign-vue/issues/2735) @chaishi ([#2742](https://github.com/Tencent/tdesign-vue/pull/2742))
+- `Input/Textarea`: `maxlength` 属性 `String` 类型设置 @Zz-ZzzZ ([#2733](https://github.com/Tencent/tdesign-vue/pull/2733))
+### 🐞 Bug Fixes
+- `Dropdown`: 修复部分场景下展示下拉菜单异常的问题 @uyarn ([#2619](https://github.com/Tencent/tdesign-vue/pull/2619))
+- `Upload`: @chaishi ([#2741](https://github.com/Tencent/tdesign-vue/pull/2741))
+  - 修复非自动上传场景，无法预览图片问题，[tdesign-vue-next#3273](https://github.com/Tencent/tdesign-vue-next/issues/3273)
+  - 修复非图片组件预览时的文本错位问题
+- `Select`: 按需引入时，OptionGroup未注册 @KMethod ([#2738](https://github.com/Tencent/tdesign-vue/pull/2738))
+- `Table`:  @chaishi ([#2742](https://github.com/Tencent/tdesign-vue/pull/2742))
+  - 分页功能，修复分页非受控用法，数据变化时无法更新数据问题
+  - 拖拽排序 + 本地数据分页场景，修复拖拽排序事件参数 `currentIndex/targetIndex/current/target` 等不正确问题
+  - 拖拽排序 + 本地数据分页场景，修复在第二页 @chaishi ([#2742](https://github.com/Tencent/tdesign-vue/pull/2742))
+  - 支持分页非受控用法的拖拽排序场景
+- `Select`: 修复`1.6.2`改动导致选项 `disabled` 属性失效的问题 @uyarn ([#2744](https://github.com/Tencent/tdesign-vue/pull/2744))
+
 ## 🌈 1.6.3 `2023-08-22` 
 ### 🚀 Features
 - `Table`: @chaishi ([#2719](https://github.com/Tencent/tdesign-vue/pull/2719))
