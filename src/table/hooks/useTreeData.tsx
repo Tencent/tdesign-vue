@@ -38,12 +38,14 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
   }));
 
   const {
-    tExpandedTreeNode, expandAll, foldAll, updateExpandOnDataChange, onExpandFoldIconClick,
-  } = useTreeDataExpand(
-    props,
-    context,
-    { store, dataSource, rowDataKeys },
-  );
+    tExpandedTreeNode,
+    isDefaultExpandAllExecute,
+    isDefaultExpandedTreeNodesExecute,
+    expandAll,
+    foldAll,
+    updateExpandOnDataChange,
+    onExpandFoldIconClick,
+  } = useTreeDataExpand(props, context, { store, dataSource, rowDataKeys });
 
   const checkedColumn = computed(() => columns.value.find((col) => col.colKey === 'row-select'));
 
@@ -97,8 +99,13 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
   );
 
   function resetData(data: TableRowData[]) {
-    store.value.initialTreeStore(data, props.columns, rowDataKeys.value);
-    if (tExpandedTreeNode.value?.length) {
+    const {
+      columns, expandedTreeNodes, defaultExpandedTreeNodes, tree,
+    } = props;
+    store.value.initialTreeStore(data, columns, rowDataKeys.value);
+    const defaultNeedExpand = Boolean(!isDefaultExpandedTreeNodesExecute.value && defaultExpandedTreeNodes?.length);
+    const needExpandAll = Boolean(tree?.defaultExpandAll && !isDefaultExpandAllExecute.value);
+    if ((tExpandedTreeNode.value?.length && !!(expandedTreeNodes || defaultNeedExpand)) || needExpandAll) {
       updateExpandOnDataChange(data);
     } else {
       dataSource.value = [...data];
