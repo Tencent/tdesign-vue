@@ -173,7 +173,9 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
           this.clearStyleFunc();
         }
         // 多个dialog同时存在时使用esc关闭异常 (#1209)
-        this.storeUid(value);
+        this.$nextTick(() => {
+          this.storeUid(value);
+        });
         this.addKeyboardEvent(value);
         if (this.isModeLess && this.draggable) {
           this.$nextTick(() => {
@@ -238,12 +240,12 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     destroySelf() {
       this.$el.parentNode?.removeChild?.(this.$el);
     },
-
+    // 多个dialog情况，若有些给了默认值true，出现ESC关闭不了弹窗问题解决
     storeUid(flag: boolean) {
       if (flag) {
         stack.push(this.uid);
       } else {
-        stack.pop();
+        stack.pop(this.uid);
       }
     },
     addKeyboardEvent(status: boolean) {
@@ -256,7 +258,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       }
     },
     keyboardEvent(e: KeyboardEvent) {
-      if (e.code === 'Escape') {
+      if (e.code === 'Escape' && stack.top === this.uid) {
         emitEvent<Parameters<TdDialogProps['onEscKeydown']>>(this, 'esc-keydown', { e });
         // 根据 closeOnEscKeydown 判断按下ESC时是否触发close事件
         if (this.closeOnEscKeydown ?? this.global.closeOnEscKeydown) {
