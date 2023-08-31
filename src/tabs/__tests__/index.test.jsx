@@ -71,6 +71,72 @@ describe('Tabs', () => {
       });
       expect(wrapper.element).toMatchSnapshot();
     });
+    it(':destroyOnHide', async () => {
+      const wrapper = mount({
+        data() {
+          return {
+            currentTab: 1,
+          };
+        },
+        render() {
+          return (
+            <Tabs value={this.currentTab}>
+              <TabPanel class="tab-panel-1" value={1} label={'1'} destroyOnHide={true}>
+                1
+              </TabPanel>
+              <TabPanel class="tab-panel-2" value={2} label={'2'} destroyOnHide={true}>
+                2
+              </TabPanel>
+            </Tabs>
+          );
+        },
+      });
+
+      expect(wrapper.find('.tab-panel-1').text()).toBe('1');
+      expect(() => wrapper.get('.tab-panel-2')).toThrowError();
+
+      wrapper.setData({ currentTab: 2 });
+      await Vue.nextTick();
+      expect(() => wrapper.get('.tab-panel-1')).toThrowError();
+      expect(wrapper.find('.tab-panel-2').text()).toBe('2');
+    });
+
+    it(':lazy', async () => {
+      const wrapper = mount({
+        data() {
+          return {
+            currentTab: 1,
+          };
+        },
+        render() {
+          return (
+            <Tabs value={this.currentTab}>
+              <TabPanel class="tab-panel-1" lazy value={1} label={'1'} destroyOnHide={false}>
+                1
+              </TabPanel>
+              <TabPanel class="tab-panel-2" lazy value={2} label={'2'} destroyOnHide={false}>
+                2
+              </TabPanel>
+            </Tabs>
+          );
+        },
+      });
+
+      const displayNoneStyle = 'display: none;';
+
+      expect(wrapper.find('.tab-panel-1').attributes().style).toBeFalsy();
+      expect(() => wrapper.get('.tab-panel-2')).toThrowError();
+
+      wrapper.setData({ currentTab: 2 });
+      await Vue.nextTick();
+      expect(wrapper.find('.tab-panel-1').attributes().style).toBe(displayNoneStyle);
+      expect(wrapper.find('.tab-panel-2').attributes().style).toBeFalsy();
+
+      wrapper.setData({ currentTab: 1 });
+      await Vue.nextTick();
+      expect(wrapper.find('.tab-panel-1').attributes().style).toBeFalsy();
+      expect(wrapper.find('.tab-panel-2').attributes().style).toBe(displayNoneStyle);
+    });
   });
 
   // test events
