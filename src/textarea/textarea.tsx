@@ -149,7 +149,9 @@ export default mixins(Vue as VueConstructor<Textarea>, classPrefixMixins).extend
     inputValueChangeHandle(e: InputEvent) {
       const { target } = e;
       let val = (target as HTMLInputElement).value;
-      val = limitUnicodeMaxLength(val, this.maxlength);
+      if (this.maxlength) {
+        val = limitUnicodeMaxLength(val, Number(this.maxlength));
+      }
       if (this.maxcharacter && this.maxcharacter >= 0) {
         const stringInfo = getCharacterLength(val, this.maxcharacter);
         val = typeof stringInfo === 'object' && stringInfo.characters;

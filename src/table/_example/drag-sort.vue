@@ -3,7 +3,16 @@
     <div class="item">
       <!-- 拖拽排序涉及到 data 的变更，相对比较慎重，因此仅支持受控用法 -->
 
-      <t-table rowKey="index" :columns="columns" :data="data" @drag-sort="onDragSort" dragSort="row" lazyLoad>
+      <t-table
+        rowKey="index"
+        :columns="columns"
+        :data="data"
+        :pagination="pagination1"
+        dragSort="row"
+        @drag-sort="onDragSort"
+        @page-change="onPageChange"
+        lazyLoad
+      >
         <template #status="{ row }">
           <p class="status" :class="['', 'warning', 'unhealth'][row && row.status]">
             {{ ['健康', '警告', '异常'][row && row.status] }}
@@ -18,11 +27,11 @@
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 
 const columns = [
-  { colKey: 'applicant', title: '申请人', width: '100' },
+  { colKey: 'index', title: '编号' },
+  { colKey: 'applicant', title: '申请人' },
   {
     colKey: 'status',
     title: '申请状态',
-    width: '150',
     cell: (h, { row }) => {
       const statusNameListMap = {
         0: { label: '审批通过', theme: 'success', icon: <CheckCircleFilledIcon /> },
@@ -37,12 +46,12 @@ const columns = [
       );
     },
   },
-  { colKey: 'channel', title: '签署方式', width: '120' },
+  { colKey: 'channel', title: '签署方式' },
   { colKey: 'detail.email', title: '邮箱地址', ellipsis: true },
   { colKey: 'createTime', title: '申请时间' },
 ];
 
-const initialData = new Array(4).fill(5).map((_, i) => ({
+const initialData = new Array(500).fill(5).map((_, i) => ({
   index: i + 1,
   applicant: ['贾明', '张三', '王芳'][i % 3],
   status: i % 3,
@@ -60,9 +69,24 @@ export default {
     return {
       data: [...initialData],
       columns,
+      pagination: {
+        current: 1,
+        pageSize: 5,
+        total: 500,
+      },
+      // 非受控用法
+      pagination1: {
+        defaultCurrent: 1,
+        defaultPageSize: 5,
+        total: 500,
+      },
     };
   },
   methods: {
+    onPageChange(pageInfo) {
+      this.pagination = { ...this.pagination, ...pageInfo };
+    },
+
     // currentData is going to be deprecated
     onDragSort({
       currentIndex, current, targetIndex, target, data, newData, e,

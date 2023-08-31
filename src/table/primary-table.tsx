@@ -96,7 +96,12 @@ export default defineComponent({
 
     // 拖拽排序功能
     const {
-      isRowHandlerDraggable, isRowDraggable, isColDraggable, setDragSortPrimaryTableRef, setDragSortColumns,
+      isRowHandlerDraggable,
+      isRowDraggable,
+      isColDraggable,
+      innerPagination,
+      setDragSortPrimaryTableRef,
+      setDragSortColumns,
     } = useDragSort(props, context);
 
     const { renderTitleWidthIcon } = useTableHeader(props);
@@ -241,6 +246,7 @@ export default defineComponent({
     });
 
     const onInnerPageChange = (pageInfo: PageInfo, newData: Array<TableRowData>) => {
+      innerPagination.value = { ...innerPagination.value, ...pageInfo };
       currentPaginateData.value = newData;
       props.onPageChange?.(pageInfo, newData);
       // Vue3 ignore next line
@@ -263,13 +269,21 @@ export default defineComponent({
       }
     };
 
+    const onSingleRowClick: TdPrimaryTableProps['onRowClick'] = (params) => {
+      if (props.expandOnRowClick) {
+        onInnerExpandRowClick(params);
+      }
+      if (props.selectOnRowClick) {
+        onInnerSelectRowClick(params);
+      }
+    };
+
     let timer: NodeJS.Timeout;
     const DURATION = 250;
     const onInnerRowClick: TdPrimaryTableProps['onRowClick'] = (params) => {
       // no dblclick, no delay
       if (!context.listeners['row-dblclick']) {
-        onInnerExpandRowClick(params);
-        onInnerSelectRowClick(params);
+        onSingleRowClick(params);
         return;
       }
       if (timer) {
@@ -278,8 +292,7 @@ export default defineComponent({
         timer = undefined;
       } else {
         timer = setTimeout(() => {
-          onInnerExpandRowClick(params);
-          onInnerSelectRowClick(params);
+          onSingleRowClick(params);
           timer = undefined;
         }, DURATION);
       }

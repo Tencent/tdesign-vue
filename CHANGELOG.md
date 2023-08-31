@@ -5,6 +5,54 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.6.4 `2023-08-29` 
+### 🚀 Features
+- `Tabs`: 支持 `tab-panel` 内容懒加载 @FireBushtree ([#2714](https://github.com/Tencent/tdesign-vue/pull/2714))
+- `Table`: 树形结构，没有设置 `expandedTreeNodes` 情况下，data 数据发生变化时，自动重置收起所有展开节点（如果希望保持展开节点，请使用属性 `expandedTreeNodes` 控制，[issue#2735](https://github.com/Tencent/tdesign-vue/issues/2735) @chaishi ([#2742](https://github.com/Tencent/tdesign-vue/pull/2742))
+- `Input/Textarea`: `maxlength` 属性 `String` 类型设置 @Zz-ZzzZ ([#2733](https://github.com/Tencent/tdesign-vue/pull/2733))
+### 🐞 Bug Fixes
+- `Dropdown`: 修复部分场景下展示下拉菜单异常的问题 @uyarn ([#2619](https://github.com/Tencent/tdesign-vue/pull/2619))
+- `Upload`: @chaishi ([#2741](https://github.com/Tencent/tdesign-vue/pull/2741))
+  - 修复非自动上传场景，无法预览图片问题，[tdesign-vue-next#3273](https://github.com/Tencent/tdesign-vue-next/issues/3273)
+  - 修复非图片组件预览时的文本错位问题
+- `Select`: 按需引入时，OptionGroup未注册 @KMethod ([#2738](https://github.com/Tencent/tdesign-vue/pull/2738))
+- `Table`:  @chaishi ([#2742](https://github.com/Tencent/tdesign-vue/pull/2742))
+  - 分页功能，修复分页非受控用法，数据变化时无法更新数据问题
+  - 拖拽排序 + 本地数据分页场景，修复拖拽排序事件参数 `currentIndex/targetIndex/current/target` 等不正确问题
+  - 拖拽排序 + 本地数据分页场景，修复在第二页 @chaishi ([#2742](https://github.com/Tencent/tdesign-vue/pull/2742))
+  - 支持分页非受控用法的拖拽排序场景
+- `Select`: 修复`1.6.2`改动导致选项 `disabled` 属性失效的问题 @uyarn ([#2744](https://github.com/Tencent/tdesign-vue/pull/2744))
+
+## 🌈 1.6.3 `2023-08-22` 
+### 🚀 Features
+- `Table`: @chaishi ([#2719](https://github.com/Tencent/tdesign-vue/pull/2719))
+  - 支持使用名为 `ellipsis` 或者 `ellipsis-<colKey>` 的插槽自定义超出省略时的浮层内容，使用方法可参考示例代码 @chaishi ([#2717](https://github.com/Tencent/tdesign-vue/pull/2717))
+  - 树形结构，新增组件实例方法 `removeChildren`，用于移除子节点
+  - 树形结构，支持通过属性 `expandedTreeNodes.sync` 自由控制展开节点，非必传属性
+### 🐞 Bug Fixes
+- `Select`: 优化 Select 组件在过滤场景中的表现 @moonye6 @uyarn ([#2722](https://github.com/Tencent/tdesign-vue/pull/2722))
+- `Table`: @chaishi ([#2719](https://github.com/Tencent/tdesign-vue/pull/2719))
+  - 树形结构，修复组件实例方法 展开全部 `expandAll` 问题
+  - 点击行展开/点击行选中，修复 `expandOnRowClick`和 `selectOnRowClick` 无法独立控制行点击执行交互问题 [tdesign-vue-next#3254](https://github.com/Tencent/tdesign-vue-next/issues/3254)
+- `Popconfirm`: 修复因变量计算导致的 minx.css 压缩后产物样式改变的问题 @honkinglin ([common#1573](https://github.com/Tencent/tdesign-common/pull/1573))
+- `Cascader`: 修复 `label` 属性自定义插槽不生效的问题 @ubloglab ([#2724](https://github.com/Tencent/tdesign-vue/pull/2724))
+
+## 🌈 1.6.2 `2023-08-17` 
+### 🚀 Features
+- `TreeSelect`: 增加 `keys` 字段用于定制数据中对应的字段别名 @PengYYYYY ([#2697](https://github.com/Tencent/tdesign-vue/pull/2697))
+- `Cascader`: 增加 `keys.disabled` 用于定制字段控制节点的禁用([issue #3193](https://github.com/Tencent/tdesign-vue-next/issues/3193)) @PengYYYYY ([#2697](https://github.com/Tencent/tdesign-vue/pull/2697))
+- `Tree`: 增加 `keys.disabled` 用于定制字段控制节点的禁用 @PengYYYYY ([#2697](https://github.com/Tencent/tdesign-vue/pull/2697))
+- `Select`: 增加 `keys.disabled` 用于定制字段控制选项的禁用 @PengYYYYY ([#2697](https://github.com/Tencent/tdesign-vue/pull/2697))
+- `Transfer`: 增加 `keys.disabled` 用于定制字段控制选项的禁用 @PengYYYYY ([#2697](https://github.com/Tencent/tdesign-vue/pull/2697))
+### 🐞 Bug Fixes
+- `checkbox`: 
+  - 修复控制台报错 @yaogengzhu ([#2702](https://github.com/Tencent/tdesign-vue/pull/2702))
+  - 修复 `options` 异步获取时，`disabled` 失效问题 @chaishi ([#2706](https://github.com/Tencent/tdesign-vue/pull/2706))
+  - 修复 `options` 异步获取时，`value` 失效问题 @chaishi ([#2706](https://github.com/Tencent/tdesign-vue/pull/2706))
+- `Image`: 修复 1.6.x 无法动态设置 `src` 问题 @chaishi ([#2709](https://github.com/Tencent/tdesign-vue/pull/2709))
+### 🚧 Others
+- `Cascader`: 补充 `borderless` 文档 @PengYYYYY ([#2697](https://github.com/Tencent/tdesign-vue/pull/2697))
+
 ## 🌈 1.6.1 `2023-08-15` 
 ### 🚀 Features
 - `Menu`: menu-item `click` 事件参数增加 value @dexterBo ([#2689](https://github.com/Tencent/tdesign-vue/pull/2689))

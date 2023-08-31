@@ -25,7 +25,6 @@
         :abridgeName="[10, 8]"
         draggable
         action="https://service-bv448zsw-1257786608.gz.apigw.tencentcs.com/api/upload-demo"
-        :formatResponse="formatResponse"
         @cancel-upload="onCancelUpload"
         @remove="onRemove"
       />

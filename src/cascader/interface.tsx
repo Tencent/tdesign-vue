@@ -4,8 +4,6 @@ import TreeStore from '../_common/js/tree/tree-store';
 import TreeNode from '../_common/js/tree/tree-node';
 import { TreeNodeModel, TreeNodeValue } from '../_common/js/tree/types';
 
-export { TreeKeysType } from '../common';
-
 export * from './type';
 export interface CascaderContextType
   extends Pick<
@@ -42,5 +40,6 @@ export type { TreeNodeValue } from '../_common/js/tree/types';
 export type { TreeOptionData } from '../_common/js/common';
 export type { TreeNodeModel } from '../tree';
 export type { TdSelectInputProps } from '../select-input/type';
+export type { TreeKeysType } from '../common';
 
 export const EVENT_NAME_WITH_KEBAB = ['remove', 'blur', 'focus'];

@@ -414,7 +414,7 @@ export default mixins(
       if (!(maxlength || maxcharacter) || allowInputOverMax || !inputValue) return inputValue;
       if (maxlength) {
         // input value could be unicode 😊
-        return limitUnicodeMaxLength(inputValue, maxlength);
+        return limitUnicodeMaxLength(inputValue, Number(maxlength));
       }
       if (maxcharacter) {
         const r = getCharacterLength(inputValue, maxcharacter);
