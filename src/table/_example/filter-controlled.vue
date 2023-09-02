@@ -58,7 +58,6 @@ import {
 } from 'tdesign-vue';
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 import isNumber from 'lodash/isNumber';
-import { h } from '@vue/composition-api';
 
 const data = new Array(5).fill(null).map((_, i) => ({
   key: String(i + 1),
@@ -133,7 +132,7 @@ export default {
             type: 'multiple',
             resetValue: [],
             list: [
-              { label: 'All', checkAll: true },
+              { label: 'Check All', checkAll: true },
               { label: '电子签署', value: '电子签署' },
               { label: '纸质签署', value: '纸质签署' },
             ],

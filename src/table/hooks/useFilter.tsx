@@ -35,7 +35,7 @@ export default function useFilter(props: TdPrimaryTableProps, context: SetupCont
   const primaryTableRef = ref(null);
   const { t, global } = useConfig('table');
   const renderTNode = useTNodeDefault();
-  const { filterValue } = toRefs(props);
+  const { filterValue, columns } = toRefs(props);
   const { tableFilterClasses, isFocusClass } = useClassName();
   const isTableOverflowHidden = ref<boolean>();
 
@@ -140,7 +140,13 @@ export default function useFilter(props: TdPrimaryTableProps, context: SetupCont
   }
 
   function onResetAll() {
-    emitFilterChange({}, undefined);
+    const resetValue: { [key: string]: any } = {};
+    columns.value.forEach((col) => {
+      if (col.filter && 'resetValue' in col.filter) {
+        resetValue[col.colKey] = col.filter.resetValue;
+      }
+    });
+    emitFilterChange(resetValue, undefined);
   }
 
   function onConfirm(column: PrimaryTableCol) {
