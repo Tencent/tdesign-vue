@@ -219,7 +219,7 @@ export default function useDragSort(
     columns.value = val;
   }
 
-  // 注册拖拽事件
+  // eslint-disable-next-line
   watch([primaryTableRef, columns, dragSort, params], ([val, columns, dragSort, params]) => {
     const primaryTableCmp = val as any;
     if (!val || !primaryTableCmp.$el || !params.showElement) return;
