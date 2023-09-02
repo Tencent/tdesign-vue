@@ -109,9 +109,27 @@ export function getChangedChecked(
 
 const checkboxStoreInstanceMap: { [key: string]: CheckboxStore } = {};
 
-export function getCheckboxStore(key: string) {
-  if (!checkboxStoreInstanceMap[key]) {
-    checkboxStoreInstanceMap[key] = new CheckboxStore();
+export function createCheckboxStore(): { storeKey: string; checkboxStore: CheckboxStore } {
+  const date = new Date();
+  const storeKey = [
+    date.getDate(),
+    date.getHours(),
+    date.getMinutes(),
+    date.getSeconds(),
+    date.getUTCMilliseconds(),
+  ].join('_');
+
+  if (checkboxStoreInstanceMap[storeKey]) {
+    return createCheckboxStore();
   }
+  checkboxStoreInstanceMap[storeKey] = new CheckboxStore();
+
+  return {
+    storeKey,
+    checkboxStore: checkboxStoreInstanceMap[storeKey],
+  };
+}
+
+export function getCheckboxStore(key: string) {
   return checkboxStoreInstanceMap[key];
 }

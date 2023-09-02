@@ -1,5 +1,5 @@
 import {
-  defineComponent, ref, toRefs, inject, watch, onBeforeUnmount,
+  defineComponent, ref, toRefs, inject, watch, onBeforeUnmount, computed,
 } from '@vue/composition-api';
 import props from './props';
 import {
@@ -31,7 +31,8 @@ export default defineComponent({
   },
 
   setup(props) {
-    const checkboxStore = getCheckboxStore(props.storeKey);
+    const { storeKey } = toRefs(props);
+    const checkboxStore = computed(() => getCheckboxStore(storeKey.value));
     const labelRef = ref<HTMLElement>();
     const { STATUS } = useCommonClassName();
     const checkboxGroupExist = ref(false);
@@ -64,27 +65,27 @@ export default defineComponent({
       } else {
         tChecked.value = parentChecked.includes(value);
       }
-      checkboxGroupExist.value = checkboxStore.parentExist;
+      checkboxGroupExist.value = checkboxStore.value.parentExist;
     };
 
     watch(
-      [innerChecked],
+      [innerChecked, checkboxStore],
       () => {
         // CheckboxGroup does not exist, self checked works
-        if (!checkboxStore.parentExist) {
-          tChecked.value = innerChecked.value;
-        } else {
+        if (checkboxStore.value?.parentExist) {
           checkboxGroupExist.value = true;
+        } else {
+          tChecked.value = innerChecked.value;
         }
       },
       { immediate: true },
     );
 
     watch(
-      [indeterminate],
-      ([val]) => {
+      [indeterminate, checkboxStore],
+      ([val, checkboxStore]) => {
         // CheckboxGroup does not exist, self indeterminate works
-        if (!checkboxStore.parentExist) {
+        if (!checkboxStore?.parentExist) {
           tIndeterminate.value = val;
         }
       },
@@ -113,9 +114,9 @@ export default defineComponent({
     };
 
     watch(
-      [disabled],
+      [disabled, checkboxStore],
       ([val]) => {
-        if (!checkboxStore.parentExist) {
+        if (!checkboxStore.value?.parentExist) {
           tDisabled.value = val;
         }
       },
@@ -140,7 +141,7 @@ export default defineComponent({
     );
 
     const subscribeParentData = (val: string | number | boolean) => {
-      checkboxStore.subscribe(val, (data: ObserverListenerParams) => {
+      checkboxStore.value.subscribe(val, (data: ObserverListenerParams) => {
         if (data.type === 'checked') {
           handleParentCheckedChange(data);
         } else if (data.type === 'checkbox') {
@@ -152,14 +153,17 @@ export default defineComponent({
       });
     };
 
-    subscribeParentData(props.checkAll ? 'CHECK_ALL' : value.value);
-
-    watch([data, label], () => {
-      subscribeParentData(props.checkAll ? 'CHECK_ALL' : value.value);
-    });
+    watch(
+      [data, label, storeKey],
+      () => {
+        if (!storeKey.value) return;
+        subscribeParentData(props.checkAll ? 'CHECK_ALL' : value.value);
+      },
+      { immediate: true },
+    );
 
     onBeforeUnmount(() => {
-      checkboxStore.unSubscribe(props.checkAll ? 'CHECK_ALL' : value.value);
+      checkboxStore.value.unSubscribe(props.checkAll ? 'CHECK_ALL' : value.value);
     });
 
     const handleChange = (e: Event) => {
