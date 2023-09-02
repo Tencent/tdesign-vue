@@ -323,5 +323,6 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
     getTreeNode,
     resetData,
     getTreeExpandedRow,
+    onExpandFoldIconClick,
   };
 }

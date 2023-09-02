@@ -8,7 +8,7 @@ docClass: timeline
 ## 🌈 1.6.4 `2023-08-29` 
 ### 🚀 Features
 - `Tabs`: 支持 `tab-panel` 内容懒加载 @FireBushtree ([#2714](https://github.com/Tencent/tdesign-vue/pull/2714))
-- `Table`: 树形结构，没有设置 `expandedTreeNodes` 情况下，data 数据发生变化时，自动重置收起所有展开节点（如果希望保持展开节点，请使用属性 `expandedTreeNodes` 控制，[issue#2735](https://github.com/Tencent/tdesign-vue/issues/2735) @chaishi ([#2742](https://github.com/Tencent/tdesign-vue/pull/2742))
+- `Table`: 树形结构，没有设置 `expandedTreeNodes` 情况下，data 数据发生变化时，自动重置收起所有展开节点。如果希望保持展开节点，请使用属性 `expandedTreeNodes` 控制变化后的数据展开节点。原因：表格数据变化前后的节点可能会有不同，`expandedTreeNodes`自然也会不同，组件内部无法预判新数据中展开哪些节点。[issue#2735](https://github.com/Tencent/tdesign-vue/issues/2735) @chaishi ([#2742](https://github.com/Tencent/tdesign-vue/pull/2742))
 - `Input/Textarea`: `maxlength` 属性 `String` 类型设置 @Zz-ZzzZ ([#2733](https://github.com/Tencent/tdesign-vue/pull/2733))
 ### 🐞 Bug Fixes
 - `Dropdown`: 修复部分场景下展示下拉菜单异常的问题 @uyarn ([#2619](https://github.com/Tencent/tdesign-vue/pull/2619))
