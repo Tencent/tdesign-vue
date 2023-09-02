@@ -190,8 +190,8 @@ export default {
 
   methods: {
     // filters 参数包含自定义过滤组件 日期选择器 的值
-    onFilterChange(filters) {
-      console.log('filter-change', filters);
+    onFilterChange(filters, ctx) {
+      console.log('filter-change', filters, ctx);
       // 保证日期是一个数组
       this.filterValue = filters;
       // 模拟异步请求进行数据过滤
