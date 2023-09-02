@@ -58,11 +58,12 @@ import {
 } from 'tdesign-vue';
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 import isNumber from 'lodash/isNumber';
+import { h } from '@vue/composition-api';
 
 const data = new Array(5).fill(null).map((_, i) => ({
   key: String(i + 1),
   applicant: ['贾明', '张三', '王芳'][i % 3],
-  status: i % 3,
+  status: (i % 3) + 1,
   channel: ['电子签署', '纸质签署', '纸质签署'][i % 3],
   detail: {
     email: ['w.cezkdudy@lhll.au', 'r.nmgw@peurezgn.sl', 'p.cumx@rampblpa.ru'][i % 3],
@@ -101,9 +102,9 @@ export default {
           filter: {
             type: 'single',
             list: [
-              { label: '审批通过', value: 0 },
-              { label: '已过期', value: 1 },
-              { label: '审批失败', value: 2 },
+              { label: '审批通过', value: 1 },
+              { label: '已过期', value: 2 },
+              { label: '审批失败', value: 3 },
             ],
             // 支持透传全部 Popup 组件属性
             // popupProps: {
@@ -112,9 +113,9 @@ export default {
           },
           cell: (h, { row }) => {
             const statusNameListMap = {
-              0: { label: '审批通过', theme: 'success', icon: <CheckCircleFilledIcon /> },
-              1: { label: '审批失败', theme: 'danger', icon: <CloseCircleFilledIcon /> },
-              2: { label: '审批过期', theme: 'warning', icon: <ErrorCircleFilledIcon /> },
+              1: { label: '审批通过', theme: 'success', icon: <CheckCircleFilledIcon /> },
+              2: { label: '审批失败', theme: 'danger', icon: <CloseCircleFilledIcon /> },
+              3: { label: '审批过期', theme: 'warning', icon: <ErrorCircleFilledIcon /> },
             };
             return (
               <t-tag shape="round" theme={statusNameListMap[row.status].theme} variant="light-outline">
@@ -193,11 +194,7 @@ export default {
     onFilterChange(filters) {
       console.log('filter-change', filters);
       // 保证日期是一个数组
-      this.filterValue = {
-        ...filters,
-        createTime: filters.createTime || [],
-        channel: filters.channel || [],
-      };
+      this.filterValue = filters;
       // 模拟异步请求进行数据过滤
       this.request(this.filterValue);
     },
