@@ -13,7 +13,7 @@ import {
   TableRowData,
   TdPrimaryTableProps,
 } from '../type';
-import { isRowSelectedDisabled } from '../utils';
+import { isRowSelectedDisabled } from '../../_common/js/table/utils';
 import { TableClassName } from './useClassName';
 import Checkbox from '../../checkbox';
 import Radio from '../../radio';

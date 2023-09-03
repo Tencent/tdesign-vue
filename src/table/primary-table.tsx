@@ -66,6 +66,7 @@ export default defineComponent({
     const renderTNode = useTNodeJSX();
     const { columns } = toRefs(props);
     const primaryTableRef = ref(null);
+    const showElement = ref(false);
     const {
       classPrefix, tableDraggableClasses, tableBaseClass, tableSelectedClasses, tableSortClasses,
     } = useClassName();
@@ -96,9 +97,17 @@ export default defineComponent({
     } = useFilter(props, context);
 
     // 拖拽排序功能
+    const dragSortParams = computed(() => ({
+      showElement: showElement.value,
+    }));
     const {
-      isRowHandlerDraggable, isRowDraggable, isColDraggable, setDragSortPrimaryTableRef, setDragSortColumns,
-    } = useDragSort(props, context);
+      isRowHandlerDraggable,
+      isRowDraggable,
+      isColDraggable,
+      innerPagination,
+      setDragSortPrimaryTableRef,
+      setDragSortColumns,
+    } = useDragSort(props, context, dragSortParams);
 
     const { renderTitleWidthIcon } = useTableHeader(props);
     const { renderAsyncLoading } = useAsyncLoading(props, context);
@@ -299,6 +308,10 @@ export default defineComponent({
       }
     };
 
+    const onShowElementChange = (val: boolean) => {
+      showElement.value = val;
+    };
+
     return {
       tColumns,
       showExpandedRow,
@@ -308,6 +321,7 @@ export default defineComponent({
       tRowAttributes,
       primaryTableClasses,
       errorListMap,
+      onShowElementChange,
       scrollToElement: (data: ComponentScrollToElementParams) => {
         primaryTableRef.value.scrollToElement(data);
       },
@@ -397,6 +411,7 @@ export default defineComponent({
     const on: TableListeners = {
       ...this.getListener(),
       'page-change': this.onInnerPageChange,
+      'show-element-change': this.onShowElementChange,
     };
     if (this.expandOnRowClick || this.selectOnRowClick) {
       on['row-click'] = this.onInnerRowClick;

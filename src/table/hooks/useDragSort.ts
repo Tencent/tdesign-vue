@@ -1,6 +1,6 @@
 // 表格 行拖拽 + 列拖拽功能
 import {
-  SetupContext, computed, toRefs, ref, watch, h,
+  SetupContext, computed, toRefs, ref, watch, h, ComputedRef,
 } from 'vue';
 import Sortable, { SortableEvent, SortableOptions, MoveEvent } from 'sortablejs';
 import get from 'lodash/get';
@@ -12,9 +12,16 @@ import {
 import useClassName from './useClassName';
 import log from '../../_common/js/log';
 import swapDragArrayElement from '../../_common/js/utils/swapDragArrayElement';
-import { getColumnDataByKey, getColumnIndexByKey } from '../utils';
+import { getColumnDataByKey, getColumnIndexByKey } from '../../_common/js/table/utils';
+import { SimplePageInfo } from '../interface';
 
-export default function useDragSort(props: TdPrimaryTableProps, context: SetupContext) {
+export default function useDragSort(
+  props: TdPrimaryTableProps,
+  context: SetupContext,
+  params: ComputedRef<{
+    showElement: boolean;
+  }>,
+) {
   const { sortOnRowDraggable, dragSort, data } = toRefs(props);
   const { tableDraggableClasses, tableBaseClass, tableFullRowClasses } = useClassName();
   const columns = ref<PrimaryTableCol[]>(props.columns || []);
@@ -203,21 +210,23 @@ export default function useDragSort(props: TdPrimaryTableProps, context: SetupCo
   }
 
   function setDragSortColumns(val: PrimaryTableCol[]) {
+    // @ts-ignore
     columns.value = val;
   }
 
-  // 注册拖拽事件
-  watch([primaryTableRef], ([val]: [any]) => {
-    if (!val || !val.$el) return;
+  // eslint-disable-next-line
+  watch([primaryTableRef, columns, dragSort, params], ([val, columns, dragSort, params]) => {
+    const primaryTableCmp = val as any;
+    if (!val || !primaryTableCmp.$el || !params.showElement) return;
     // regis after table tr rendered
     const timer = setTimeout(() => {
-      registerRowDragEvent(val.$el);
-      registerColDragEvent(val.$el);
+      registerRowDragEvent(primaryTableCmp.$el);
+      registerColDragEvent(primaryTableCmp.$el);
 
       // initial after normal table header
       const timer1 = setTimeout(() => {
-        if (val.$refs.affixHeaderRef) {
-          registerColDragEvent(val.$refs.affixHeaderRef);
+        if (primaryTableCmp.$refs.affixHeaderRef) {
+          registerColDragEvent(primaryTableCmp.$refs.affixHeaderRef);
           clearTimeout(timer1);
         }
       });

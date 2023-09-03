@@ -284,6 +284,14 @@ export default defineComponent({
       virtualConfig.scrollToElement({ ...params, index });
     };
 
+    watch(
+      [showElement],
+      ([showElement]) => {
+        context.emit('show-element-change', showElement);
+      },
+      { immediate: true },
+    );
+
     return {
       virtualConfig,
       scrollToElement,
