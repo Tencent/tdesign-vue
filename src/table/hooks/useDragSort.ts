@@ -12,7 +12,7 @@ import {
 import useClassName from './useClassName';
 import log from '../../_common/js/log';
 import swapDragArrayElement from '../../_common/js/utils/swapDragArrayElement';
-import { getColumnDataByKey, getColumnIndexByKey } from '../utils';
+import { getColumnDataByKey, getColumnIndexByKey } from '../../_common/js/table/utils';
 import { SimplePageInfo } from '../interface';
 
 export default function useDragSort(
