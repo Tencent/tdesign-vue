@@ -2,7 +2,7 @@ import { ref, computed, SetupContext } from '@vue/composition-api';
 import get from 'lodash/get';
 import isFunction from 'lodash/isFunction';
 import { PrimaryTableProps } from '../interface';
-import { getEditableKeysMap } from '../utils';
+import { getEditableKeysMap } from '../../_common/js/table/utils';
 import { AllValidateResult } from '../../form/type';
 import { validate } from '../../form/form-model';
 import {

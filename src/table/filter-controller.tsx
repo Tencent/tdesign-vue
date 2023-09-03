@@ -105,12 +105,6 @@ export default defineComponent({
         filterComponentProps.value = this.innerFilterValue[column.colKey];
       }
       // 这个代码必须放在这里，没事儿别改
-      if (column.filter.type === 'single') {
-        filterComponentProps.onChange = (val: any) => {
-          this.$emit('inner-filter-change', val, column);
-        };
-      }
-      // 这个代码必须放在这里，没事儿别改
       const on = {
         change: (val: any) => {
           this.$emit('inner-filter-change', val, column);
