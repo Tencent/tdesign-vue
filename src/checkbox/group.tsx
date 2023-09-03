@@ -18,7 +18,7 @@ import props from './checkbox-group-props';
 import { CheckboxOptionObj, TdCheckboxProps, CheckboxGroupValue } from './type';
 import { CheckboxGroupInjectionKey } from './constants';
 import { usePrefixClass, useVModel, useChildComponentSlots } from '../hooks';
-import { getCheckboxStore } from './store';
+import { createCheckboxStore } from './store';
 
 export default defineComponent({
   name: 'TCheckboxGroup',
@@ -28,15 +28,8 @@ export default defineComponent({
   setup(props) {
     /** 样式 */
     const COMPONENT_NAME = usePrefixClass('checkbox-group');
-    const date = new Date();
-    const storeKey = [
-      date.getDate(),
-      date.getHours(),
-      date.getMinutes(),
-      date.getSeconds(),
-      date.getUTCMilliseconds(),
-    ].join('_');
-    const checkboxStore = getCheckboxStore(storeKey);
+
+    const { checkboxStore, storeKey } = createCheckboxStore();
     checkboxStore.init();
 
     const { isArray } = Array;
