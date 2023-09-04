@@ -1,21 +1,19 @@
-import { CreateElement } from 'vue';
-import { SetupContext, computed } from '@vue/composition-api';
 import isBoolean from 'lodash/isBoolean';
-import { TypeVNode, TypeTreeItemProps } from '../interface';
-import { usePrefixClass } from '../../hooks/useConfig';
-
-import TCheckBox from '../../checkbox';
+import {
+  usePrefixClass, TypeCreateElement, TypeSetupContext, computed, TCheckBox, TypeVNode,
+} from '../adapt';
+import { TypeTreeItemProps } from '../interface';
 import { getTNode } from '../util';
 import useItemEvents from './useItemEvents';
 
 // 渲染节点文本与内容
-export default function useRenderLabel(props: TypeTreeItemProps, context: SetupContext) {
+export default function useRenderLabel(props: TypeTreeItemProps, context: TypeSetupContext) {
   const classPrefix = usePrefixClass().value;
   const componentName = usePrefixClass('tree').value;
 
   const { handleChange } = useItemEvents(props, context);
 
-  const renderLabel = (h: CreateElement): TypeVNode => {
+  const renderLabel = (h: TypeCreateElement): TypeVNode => {
     const { node, treeScope, expandOnClickNode } = props;
     const { scopedSlots } = treeScope;
     const treeProps = treeScope?.treeProps || {};

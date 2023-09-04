@@ -1,11 +1,10 @@
-import { SetupContext } from '@vue/composition-api';
+import { TypeSetupContext, TreeNode } from '../adapt';
 import {
   TreeProps, TypDragEventState, TypeTreeState, TypeDragHandle,
 } from '../interface';
 import { emitEvent } from '../util';
-import TreeNode from '../../_common/js/tree/tree-node';
 
-export default function useDragHandle(props: TreeProps, context: SetupContext, state: TypeTreeState) {
+export default function useDragHandle(props: TreeProps, context: TypeSetupContext, state: TypeTreeState) {
   const treeState = state;
   const { store } = treeState;
 

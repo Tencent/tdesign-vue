@@ -1,8 +1,7 @@
-import { SetupContext } from '@vue/composition-api';
 import camelCase from 'lodash/camelCase';
+import { TypeVNode, TypeSetupContext } from './adapt';
 import {
-  TypeTreeProps,
-  TypeVNode,
+  TreeProps,
   TypeTreeStore,
   TypeTreeNode,
   TypeMark,
@@ -12,7 +11,7 @@ import {
   TypeTargetNode,
 } from './interface';
 
-export function emitEvent<T extends any[]>(props: TypeTreeProps, context: SetupContext, evtName: string, ...args: T) {
+export function emitEvent<T extends any[]>(props: TreeProps, context: TypeSetupContext, evtName: string, ...args: T) {
   const apiName = camelCase(`on-${evtName}`);
   evtName.replace(/^on/, '').toLowerCase();
   if (typeof props[apiName] === 'function') {

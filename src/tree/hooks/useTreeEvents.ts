@@ -1,10 +1,10 @@
-import { SetupContext } from '@vue/composition-api';
+import { TypeSetupContext } from '../adapt';
 import { TreeProps, TypeTreeState, TypeEventState } from '../interface';
 import { getMark, emitEvent } from '../util';
 import useTreeAction from './useTreeAction';
 
 // tree 组件一般事件处理
-export default function useTreeEvents(props: TreeProps, context: SetupContext, state: TypeTreeState) {
+export default function useTreeEvents(props: TreeProps, context: TypeSetupContext, state: TypeTreeState) {
   const treeState = state;
   const { toggleExpanded, toggleActived, toggleChecked } = useTreeAction(props, context, state);
 

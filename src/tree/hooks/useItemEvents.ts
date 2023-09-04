@@ -1,15 +1,13 @@
-import { SetupContext } from '@vue/composition-api';
-import { CheckboxProps } from '../../checkbox';
-import { usePrefixClass } from '../../hooks/useConfig';
+import { TypeSetupContext, TypeCheckboxProps, usePrefixClass } from '../adapt';
 import { TypeTreeItemProps, TypeEventState } from '../interface';
 // 这里封装 tree-item 的一般事件
 // 拖动事件，虚拟滚动事件不要安排到这里
-export default function useItemEvents(props: TypeTreeItemProps, context: SetupContext) {
+export default function useItemEvents(props: TypeTreeItemProps, context: TypeSetupContext) {
   const { node } = props;
 
   const classPrefix = usePrefixClass().value;
 
-  const handleChange: CheckboxProps['onChange'] = (_, ctx) => {
+  const handleChange: TypeCheckboxProps['onChange'] = (_, ctx) => {
     const event = new Event('change');
     const state: TypeEventState = {
       event,

@@ -1,5 +1,5 @@
 import throttle from 'lodash/throttle';
-import { Ref, reactive } from '@vue/composition-api';
+import { TypeRef, reactive } from '../adapt';
 import { TypeTreeItemProps } from '../interface';
 
 export interface TypeDragStates {
@@ -10,7 +10,7 @@ export interface TypeDragStates {
 
 type TypeDrag = 'dragStart' | 'dragOver' | 'dragLeave' | 'dragEnd' | 'drop';
 
-export default function useDraggable(props: TypeTreeItemProps, treeItemRef: Ref<HTMLElement>) {
+export default function useDraggable(props: TypeTreeItemProps, treeItemRef: TypeRef<HTMLElement>) {
   const dragStates = reactive({
     isDragOver: false,
     isDragging: false,

@@ -1,11 +1,15 @@
-import { CreateElement } from 'vue';
 import {
-  SetupContext, Ref, onMounted, reactive,
-} from '@vue/composition-api';
-import { TypeVNode, TypeTreeItemProps } from '../interface';
-import { usePrefixClass } from '../../hooks/useConfig';
-import { ClassName } from '../../common';
-import useLazyLoad from '../../hooks/useLazyLoad';
+  TypeRef,
+  onMounted,
+  reactive,
+  TypeSetupContext,
+  TypeCreateElement,
+  TypeClassName,
+  usePrefixClass,
+  useLazyLoad,
+  TypeVNode,
+} from '../adapt';
+import { TypeTreeItemProps } from '../interface';
 import useItemEvents from './useItemEvents';
 import useRenderIcon from './useRenderIcon';
 import useRenderLabel from './useRenderLabel';
@@ -13,7 +17,11 @@ import useRenderLine from './useRenderLine';
 import useRenderOperations from './useRenderOperations';
 import useDraggable from './useDraggable';
 
-export default function useTreeItem(props: TypeTreeItemProps, context: SetupContext, treeItemRef: Ref<HTMLElement>) {
+export default function useTreeItem(
+  props: TypeTreeItemProps,
+  context: TypeSetupContext,
+  treeItemRef: TypeRef<HTMLElement>,
+) {
   const { node, treeScope } = props;
   const { virtualConfig, treeContentRef } = treeScope;
   const scrollProps = treeScope?.scrollProps;
@@ -60,7 +68,7 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
     return strStyle;
   };
 
-  const getItemClassList = (): ClassName => {
+  const getItemClassList = (): TypeClassName => {
     const { isDragOver, isDragging, dropPosition } = dragStates;
     const list = [];
     list.push(`${componentName}__item`);
@@ -93,7 +101,7 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
     return list;
   };
 
-  const renderItem = (h: CreateElement) => {
+  const renderItem = (h: TypeCreateElement) => {
     const itemNodes: TypeVNode[] = [];
 
     // 第一步是渲染图标
@@ -122,7 +130,7 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
     return itemNodes;
   };
 
-  const renderItemNode = (h: CreateElement) => {
+  const renderItemNode = (h: TypeCreateElement) => {
     const { level, value } = node;
     const styles = getItemStyles();
     const classList = getItemClassList();

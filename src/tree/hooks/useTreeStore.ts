@@ -1,6 +1,5 @@
 import pick from 'lodash/pick';
-import { SetupContext } from '@vue/composition-api';
-import TreeStore from '../../_common/js/tree/tree-store';
+import { TypeSetupContext, TreeStore } from '../adapt';
 import {
   TreeProps,
   TypeValueMode,
@@ -10,7 +9,7 @@ import {
   TypeTNodeValue,
 } from '../interface';
 
-export default function useTreeStore(props: TreeProps, context: SetupContext) {
+export default function useTreeStore(props: TreeProps, context: TypeSetupContext) {
   const {
     actived, value, valueMode, filter, keys,
   } = props;

@@ -1,13 +1,12 @@
-import { ref, Ref } from '@vue/composition-api';
+import { ref, TypeRef, TreeNode } from '../adapt';
 import { TreeProps, TypeTreeStore, TypeTreeState } from '../interface';
-import TreeNode from '../../_common/js/tree/tree-node';
 
 // 提供公共对象
 export default function useTreeState(props: TreeProps, store: TypeTreeStore) {
   const treeContentRef = ref<HTMLDivElement>();
-  const nodes: Ref<TreeNode[]> = ref([]);
-  const allNodes: Ref<TreeNode[]> = ref([]);
-  const isScrolling: Ref<boolean> = ref(false);
+  const nodes: TypeRef<TreeNode[]> = ref([]);
+  const allNodes: TypeRef<TreeNode[]> = ref([]);
+  const isScrolling: TypeRef<boolean> = ref(false);
 
   allNodes.value = store.getNodes();
 

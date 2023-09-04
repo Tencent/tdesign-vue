@@ -1,11 +1,16 @@
 import upperFirst from 'lodash/upperFirst';
 import isFunction from 'lodash/isFunction';
-import { watch, toRefs, defineComponent } from '@vue/composition-api';
-import TreeNode from '../_common/js/tree/tree-node';
+import {
+  watch,
+  toRefs,
+  defineComponent,
+  TreeNode,
+  useConfig,
+  usePrefixClass,
+  TypeTreeOptionData,
+  TypeTNodeReturnValue,
+} from './adapt';
 import props from './props';
-import { useConfig, usePrefixClass } from '../hooks/useConfig';
-import { renderTNodeJSX } from '../utils/render-tnode';
-import { TNodeReturnValue, TreeOptionData } from '../common';
 import { TreeNodeValue, TreeNodeState, TypeTreeNodeModel } from './interface';
 import useTreeStore from './hooks/useTreeStore';
 import useTreeStyles from './hooks/useTreeStyles';
@@ -14,6 +19,7 @@ import useTreeAction from './hooks/useTreeAction';
 import useTreeScroll from './hooks/useTreeScroll';
 import useTreeNodes from './hooks/useTreeNodes';
 import useDragHandle from './hooks/useDragHandle';
+import { renderTNodeJSX } from '../utils/render-tnode';
 import { getNode } from './util';
 
 // 2022.11.02 tabliang 备注
@@ -134,7 +140,7 @@ export default defineComponent({
       const nodes = this.store.getNodes(value);
       return nodes.map((node: TreeNode) => node.getModel());
     },
-    appendTo(para?: TreeNodeValue, item?: TreeOptionData | TreeOptionData[]) {
+    appendTo(para?: TreeNodeValue, item?: TypeTreeOptionData | TypeTreeOptionData[]) {
       const { store } = this;
       let list = [];
       if (Array.isArray(item)) {
@@ -152,7 +158,7 @@ export default defineComponent({
         }
       });
     },
-    insertBefore(value: TreeNodeValue, item: TreeOptionData) {
+    insertBefore(value: TreeNodeValue, item: TypeTreeOptionData) {
       const { store } = this;
       const val = item?.value || '';
       const node = getNode(store, val);
@@ -162,7 +168,7 @@ export default defineComponent({
         store.insertBefore(value, item);
       }
     },
-    insertAfter(value: TreeNodeValue, item: TreeOptionData) {
+    insertAfter(value: TreeNodeValue, item: TypeTreeOptionData) {
       const { store } = this;
       const val = item?.value || '';
       const node = getNode(store, val);
@@ -220,7 +226,7 @@ export default defineComponent({
     const isVirtual = virtualConfig.isVirtualScroll.value;
 
     // 空数据判定
-    let emptyNode: TNodeReturnValue = null;
+    let emptyNode: TypeTNodeReturnValue = null;
     if (nodesEmpty) {
       const useLocale = !this.empty && !this.$scopedSlots.empty;
       const emptyContent = useLocale ? this.t(this.global.empty) : renderTNodeJSX(this, 'empty');

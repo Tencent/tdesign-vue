@@ -1,9 +1,7 @@
-import { CreateElement } from 'vue';
-import { CaretRightSmallIcon as TdCaretRightSmallIcon } from 'tdesign-icons-vue';
+import {
+  usePrefixClass, useGlobalIcon, TypeCreateElement, TLoading, TdCaretRightSmallIcon,
+} from '../adapt';
 import { TypeTreeItemProps } from '../interface';
-import { usePrefixClass } from '../../hooks/useConfig';
-import { useGlobalIcon } from '../../hooks/useGlobalIcon';
-import TLoading from '../../loading';
 import { getTNode } from '../util';
 
 // 渲染节点图标
@@ -12,7 +10,7 @@ export default function useRenderIcon(props: TypeTreeItemProps) {
   const componentName = usePrefixClass('tree').value;
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const getFolderIcon = (h: CreateElement) => {
+  const getFolderIcon = (h: TypeCreateElement) => {
     const { CaretRightSmallIcon } = useGlobalIcon({
       CaretRightSmallIcon: TdCaretRightSmallIcon,
     });
@@ -24,7 +22,7 @@ export default function useRenderIcon(props: TypeTreeItemProps) {
     evt.preventDefault();
   };
 
-  const renderIcon = (h: CreateElement) => {
+  const renderIcon = (h: TypeCreateElement) => {
     const { node, treeScope } = props;
     const { scopedSlots } = treeScope;
     const treeProps = treeScope?.treeProps || {};

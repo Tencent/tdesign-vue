@@ -1,7 +1,7 @@
-import { computed, toRefs } from '@vue/composition-api';
+import {
+  computed, toRefs, TypeStyles, usePrefixClass,
+} from '../adapt';
 import { TreeProps, TypeTreeState } from '../interface';
-import { Styles } from '../../common';
-import { usePrefixClass } from '../../hooks/useConfig';
 
 export function formatCSSUnit(unit: string | number) {
   if (!unit) return unit;
@@ -53,12 +53,12 @@ export default function useTreeStyles(props: TreeProps, state: TypeTreeState) {
     return list;
   });
 
-  const treeContentStyles = computed<Styles>(() => ({
+  const treeContentStyles = computed<TypeStyles>(() => ({
     height: formatCSSUnit(height.value),
     maxHeight: formatCSSUnit(maxHeight.value),
   }));
 
-  const scrollStyles = computed<Styles>(() => {
+  const scrollStyles = computed<TypeStyles>(() => {
     // isVirtual 改为函数内取值，可接收属性的变动
     const isVirtual = virtualConfig?.isVirtualScroll.value;
     const translateY = isVirtual ? virtualConfig?.translateY.value : 0;
@@ -72,7 +72,7 @@ export default function useTreeStyles(props: TreeProps, state: TypeTreeState) {
     return posStyle;
   });
 
-  const cursorStyles = computed<Styles>(() => {
+  const cursorStyles = computed<TypeStyles>(() => {
     const isVirtual = virtualConfig?.isVirtualScroll.value;
     const translateY = isVirtual ? virtualConfig?.translateY.value : 0;
     const translate = `translate(0, ${translateY}px)`;

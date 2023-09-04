@@ -1,14 +1,14 @@
-import { CreateElement } from 'vue';
-import { ref, SetupContext } from '@vue/composition-api';
 import {
-  TypeVNode, TypeTreeRow, TypeTreeNode, TreeProps, TypeTreeState,
+  ref, TypeSetupContext, TypeCreateElement, privateKey, TypeVNode,
+} from '../adapt';
+import {
+  TypeTreeRow, TypeTreeNode, TreeProps, TypeTreeState,
 } from '../interface';
 import TreeItem from '../tree-item';
-import { privateKey } from '../../_common/js/tree/tree-node';
 import useTreeEvents from './useTreeEvents';
 
 // tree 节点列表渲染
-export default function useTreeNodes(props: TreeProps, context: SetupContext, state: TypeTreeState) {
+export default function useTreeNodes(props: TreeProps, context: TypeSetupContext, state: TypeTreeState) {
   const treeState = state;
   const {
     store, scope, nodes, virtualConfig,
@@ -54,7 +54,7 @@ export default function useTreeNodes(props: TreeProps, context: SetupContext, st
   };
 
   // 创建单个 tree 节点
-  const renderItem = (h: CreateElement, node: TypeTreeRow, index: number) => {
+  const renderItem = (h: TypeCreateElement, node: TypeTreeRow, index: number) => {
     const { expandOnClickNode } = props;
     const rowIndex = node.__VIRTUAL_SCROLL_INDEX || index;
     const treeItem = (
@@ -71,7 +71,7 @@ export default function useTreeNodes(props: TreeProps, context: SetupContext, st
     return treeItem;
   };
 
-  const renderTreeNodes = (h: CreateElement) => {
+  const renderTreeNodes = (h: TypeCreateElement) => {
     const treeNodeViews: TypeVNode[] = nodes.value.map((node: TypeTreeNode, index) => renderItem(h, node, index));
     return treeNodeViews;
   };

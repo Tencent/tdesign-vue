@@ -1,5 +1,4 @@
-import { SetupContext } from '@vue/composition-api';
-import { usePrefixClass } from '../../hooks/useConfig';
+import { usePrefixClass, TypeSetupContext } from '../adapt';
 import {
   TreeNodeValue,
   TreeProps,
@@ -12,7 +11,7 @@ import {
 import { getNode, emitEvent, pathMatchClass } from '../util';
 
 // tree 组件节点状态设置
-export default function useTreeAction(props: TreeProps, context: SetupContext, state: TypeTreeState) {
+export default function useTreeAction(props: TreeProps, context: TypeSetupContext, state: TypeTreeState) {
   const treeState = state;
   const { store } = treeState;
   const componentName = usePrefixClass('tree').value;

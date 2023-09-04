@@ -1,28 +1,27 @@
-import { PropType } from 'vue';
-import { defineComponent, ref } from '@vue/composition-api';
+import { TypePropType, defineComponent, ref } from './adapt';
+import { TypeTreeItemProps } from './interface';
+import useTreeItem from './hooks/useTreeItem';
 import getConfigReceiverMixins, {
   TreeConfig,
   getKeepAnimationMixins,
   getGlobalIconMixins,
 } from '../config-provider/config-receiver';
-import { TypeTreeItemProps } from './interface';
-import useTreeItem from './hooks/useTreeItem';
 import ripple from '../utils/ripple';
 
 const keepAnimationMixins = getKeepAnimationMixins();
 
 export const treeItemProps = {
   node: {
-    type: Object as PropType<TypeTreeItemProps['node']>,
+    type: Object as TypePropType<TypeTreeItemProps['node']>,
   },
   rowIndex: {
-    type: Number as PropType<TypeTreeItemProps['rowIndex']>,
+    type: Number as TypePropType<TypeTreeItemProps['rowIndex']>,
   },
   treeScope: {
-    type: Object as PropType<TypeTreeItemProps['treeScope']>,
+    type: Object as TypePropType<TypeTreeItemProps['treeScope']>,
   },
   expandOnClickNode: {
-    type: Boolean as PropType<TypeTreeItemProps['expandOnClickNode']>,
+    type: Boolean as TypePropType<TypeTreeItemProps['expandOnClickNode']>,
   },
 };
 
