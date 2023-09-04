@@ -1,6 +1,7 @@
 import {
-  CreateElement, SetupContext, toRefs, ref, watch, computed,
+  SetupContext, toRefs, ref, watch, computed, CreateElement,
 } from 'vue';
+import isFunction from 'lodash/isFunction';
 import useClassName from './useClassName';
 import TButton from '../../button';
 import {
@@ -11,6 +12,7 @@ import { useTNodeDefault } from '../../hooks/tnode';
 import TableFilterController from '../filter-controller';
 import { useConfig } from '../../hooks/useConfig';
 import { getColumnsResetValue } from '../../_common/js/table/utils';
+import { renderTitle } from './useTableHeader';
 
 function isFilterValueExist(value: any) {
   const isArrayTrue = value instanceof Array && value.length;
@@ -60,7 +62,6 @@ export default function useFilter(props: TdPrimaryTableProps, context: SetupCont
     innerFilterValue.value = val;
   });
 
-  // eslint-disable-next-line
   function renderFirstFilterRow(h: CreateElement) {
     if (hasEmptyCondition.value) return null;
     const defaultNode = (
@@ -68,7 +69,7 @@ export default function useFilter(props: TdPrimaryTableProps, context: SetupCont
         {/* <span>搜索 “{getFilterResultContent()}”，</span>
         <span>找到 {props.pagination?.total || props.data?.length} 条结果</span> */}
         {t(global.value.searchResultText, {
-          result: getFilterResultContent(),
+          result: getFilterResultContent(h),
           count: props.pagination?.total || props.data?.length,
         })}
         <TButton theme="primary" variant="text" onClick={onResetAll}>
@@ -82,11 +83,11 @@ export default function useFilter(props: TdPrimaryTableProps, context: SetupCont
   }
 
   // 获取搜索条件内容，存在 options 需要获取其 label 显示
-  function getFilterResultContent(): string {
+  function getFilterResultContent(h: CreateElement): string {
     const arr: string[] = [];
     props.columns
       .filter((col) => col.filter)
-      .forEach((col) => {
+      .forEach((col, index) => {
         let value = tFilterValue.value[col.colKey];
         if (col.filter.list && !['null', '', 'undefined'].includes(String(value))) {
           const formattedValue = value instanceof Array ? value : [value];
@@ -99,7 +100,9 @@ export default function useFilter(props: TdPrimaryTableProps, context: SetupCont
           value = label.join();
         }
         if (isFilterValueExist(value)) {
-          arr.push(`${col.title}：${value}`);
+          const label = isFunction(col.filter?.label) ? col.filter.label(h) : col.filter?.label;
+          const title = renderTitle(h, context.slots, col, index);
+          arr.push(`${label || title}：${value}`);
         }
       });
     return arr.join('；');
