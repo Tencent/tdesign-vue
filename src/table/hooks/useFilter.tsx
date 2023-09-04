@@ -13,7 +13,6 @@ import { useTNodeDefault } from '../../hooks/tnode';
 import TableFilterController from '../filter-controller';
 import { useConfig } from '../../hooks/useConfig';
 import { getColumnsResetValue } from '../../_common/js/table/utils';
-import { renderCell } from '../tr';
 import { renderTitle } from './useTableHeader';
 
 function isFilterValueExist(value: any) {
