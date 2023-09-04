@@ -813,10 +813,9 @@ export interface TableColumnFilter {
    */
   confirmEvents?: string[];
   /**
-   * 过滤项标题文本，显示在“过滤结果行”中的列标题描述。一般用于 `title` 字段不是字符串时，过滤文本行无法正常显示列标题文本的场景
-   * @default ''
+   * 过滤项标题文本，显示在“过滤结果行”中的列标题描述。一般用于表头标题和过滤文本行中的列标题不一样的场景
    */
-  label?: string;
+  label?: string | TNode;
   /**
    * 用于配置当前筛选器可选值有哪些，仅当 `filter.type` 等于 `single` 或 `multiple` 时有效
    */

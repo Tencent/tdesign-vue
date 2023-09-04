@@ -99,8 +99,8 @@ export default {
           align: this.align,
           // 单选过滤配置
           filter: {
-            // 当 title 字段使用函数或插槽动态定义时，则需要使用 filter.label 单独定义标题文本，以便过滤行中显示正常
-            label: '申请状态',
+            // 当 title 字段使用复杂的函数或插槽动态定义时，筛选结果又只需显示简单的文本时，可以使用 filter.label
+            // label: '申请状态',
             type: 'single',
             list: [
               { label: '审批通过', value: 1 },
