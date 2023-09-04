@@ -94,11 +94,13 @@ export default {
           foot: '-',
         },
         {
-          title: '申请状态',
+          title: () => '申请状态',
           colKey: 'status',
           align: this.align,
           // 单选过滤配置
           filter: {
+            // 当 title 字段使用函数或插槽动态定义时，则需要使用 filter.label 单独定义标题文本，以便过滤行中显示正常
+            label: '申请状态',
             type: 'single',
             list: [
               { label: '审批通过', value: 1 },

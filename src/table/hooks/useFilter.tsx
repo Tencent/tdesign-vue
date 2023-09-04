@@ -100,7 +100,7 @@ export default function useFilter(props: TdPrimaryTableProps, context: SetupCont
           value = label.join();
         }
         if (isFilterValueExist(value)) {
-          arr.push(`${col.title}：${value}`);
+          arr.push(`${col.filter?.label || col.title}：${value}`);
         }
       });
     return arr.join('；');

@@ -163,7 +163,7 @@ export default defineComponent({
     );
 
     onBeforeUnmount(() => {
-      checkboxStore.value.unSubscribe(props.checkAll ? 'CHECK_ALL' : value.value);
+      checkboxStore.value?.unSubscribe(props.checkAll ? 'CHECK_ALL' : value.value);
     });
 
     const handleChange = (e: Event) => {
