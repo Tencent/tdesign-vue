@@ -1,4 +1,3 @@
-import { CreateElement } from 'vue';
 import {
   computed, defineComponent, toRefs, PropType, ref,
 } from '@vue/composition-api';
