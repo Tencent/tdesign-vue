@@ -38,6 +38,8 @@ gi submodule update
 git checkout -b fix/tree/debug
 # 分支推送到个人仓库进行维护
 git push {author}
+# 该分支实际第一次推送代码时，配置 upstream
+git push --set-upstream {author} fix/tree/debug
 ```
 
 分支维护完毕后，在 github 选择该分支发起 merge request。
