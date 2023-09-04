@@ -104,8 +104,8 @@ export default {
             type: 'single',
             list: [
               { label: '审批通过', value: 1 },
-              { label: '已过期', value: true },
-              { label: '审批失败', value: false },
+              { label: '已过期', value: 2 },
+              { label: '审批失败', value: 3 },
             ],
             // 支持透传全部 Popup 组件属性
             // popupProps: {
