@@ -1,14 +1,8 @@
-import { TypePropType, defineComponent, ref } from './adapt';
+import {
+  TypePropType, defineComponent, ref, TreeItemDefinition, useRipple,
+} from './adapt';
 import { TypeTreeItemProps } from './interface';
 import useTreeItem from './hooks/useTreeItem';
-import getConfigReceiverMixins, {
-  TreeConfig,
-  getKeepAnimationMixins,
-  getGlobalIconMixins,
-} from '../config-provider/config-receiver';
-import ripple from '../utils/ripple';
-
-const keepAnimationMixins = getKeepAnimationMixins();
 
 export const treeItemProps = {
   node: {
@@ -26,15 +20,12 @@ export const treeItemProps = {
 };
 
 export default defineComponent({
-  name: 'TTreeItem',
   props: treeItemProps,
-  directives: { ripple },
-  mixins: [getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnimationMixins, getGlobalIconMixins()],
-  inject: {
-    onDrag: { default: undefined },
-  },
+  ...TreeItemDefinition,
   setup(props: TypeTreeItemProps, context) {
     const treeItemRef = ref(null);
+    const label = ref<HTMLElement>();
+    useRipple(label);
     const { renderItemNode } = useTreeItem(props, context, treeItemRef);
     return {
       treeItemRef,

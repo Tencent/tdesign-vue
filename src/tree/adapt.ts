@@ -12,16 +12,13 @@ import { VirtualScrollConfig } from '../hooks/useVirtualScrollNew';
 export {
   ref, reactive, computed, watch, onMounted, toRefs, defineComponent,
 } from '@vue/composition-api';
-
 export { CaretRightSmallIcon as TdCaretRightSmallIcon } from 'tdesign-icons-vue';
-
 export { Checkbox as TCheckBox } from '../checkbox';
 export { Loading as TLoading } from '../loading';
 export { useConfig, usePrefixClass } from '../hooks/useConfig';
 export { useGlobalIcon } from '../hooks/useGlobalIcon';
 export { default as useLazyLoad } from '../hooks/useLazyLoad';
 export { default as useVirtualScroll } from '../hooks/useVirtualScrollNew';
-
 export { TreeNode, privateKey } from '../_common/js/tree/tree-node';
 export { TreeStore } from '../_common/js/tree/tree-store';
 
@@ -39,3 +36,21 @@ export type TypeTNodeReturnValue = TNodeReturnValue;
 export type TypeTreeOptionData = TreeOptionData;
 export type TypeTreeEventState = TreeEventState;
 export type TypeVirtualScrollConfig = VirtualScrollConfig;
+
+export interface TypeOnDrag {
+  default?: unknown;
+}
+
+const onDrag: TypeOnDrag = {
+  default: undefined,
+};
+
+export const TreeItemDefinition = {
+  name: 'TTreeItem',
+  inject: {
+    onDrag,
+  },
+};
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export function useRipple(el: unknown) {}

@@ -22,7 +22,7 @@ export default function useDraggable(props: TypeTreeItemProps, treeItemRef: Type
     if (!rootNode) return;
 
     const rect = rootNode?.getBoundingClientRect?.();
-    const offsetY = window.pageYOffset + rect.top;
+    const offsetY = window.scrollY + rect.top;
     const { pageY } = dragEvent;
     const gapHeight = rect.height / 4;
     const diff = pageY - offsetY;

@@ -72,7 +72,6 @@ export default function useRenderLabel(props: TypeTreeItemProps, context: TypeSe
 
       labelNode = (
         <TCheckBox
-          // v-ripple={this.keepAnimation.ripple}
           class={labelClasses}
           checked={node.checked}
           indeterminate={node.indeterminate}
@@ -90,12 +89,7 @@ export default function useRenderLabel(props: TypeTreeItemProps, context: TypeSe
       const inner = <span style="position: relative">{labelNode}</span>;
       // 使用key是为了避免元素复用，从而顺利移除ripple指令
       labelNode = node.isActivable() ? (
-        <span
-          key="1"
-          // v-ripple={this.keepAnimation.ripple}
-          class={labelClasses}
-          title={node.label}
-        >
+        <span key="1" ref="label" class={labelClasses} title={node.label}>
           {inner}
         </span>
       ) : (
