@@ -250,9 +250,6 @@ export default mixins(classPrefixMixins).extend({
       }
       if (this.destroyOnClose) {
         (this.$refs.container as any)?.unmountContent();
-        // Clear queued open action caused by a quick hover action before the leave animation ends
-        clearTimeout(this.timeout);
-        this.mouseInRange = false;
       }
     },
 
