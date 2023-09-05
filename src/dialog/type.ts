@@ -9,18 +9,15 @@ import { TNode, Styles, AttachNode } from '../common';
 
 export interface TdDialogProps {
   /**
-   * 对话框挂载的节点，默认挂在组件本身的位置。数据类型为 String 时，会被当作选择器处理，进行节点查询。示例：'body' 或 () => document.body
-   * @default ''
+   * 对话框挂载的节点。数据类型为 String 时，会被当作选择器处理，进行节点查询。示例：'body' 或 () => document.body
    */
   attach?: AttachNode;
   /**
    * 对话框内容
-   * @default ''
    */
   body?: string | TNode;
   /**
    * 取消按钮，可自定义。值为 null 则不显示取消按钮。值类型为字符串，则表示自定义按钮文本，值类型为 Object 则表示透传 Button 组件属性。使用 TNode 自定义按钮时，需自行控制取消事件
-   * @default ''
    */
   cancelBtn?: string | ButtonProps | TNode | null;
   /**
@@ -38,9 +35,12 @@ export interface TdDialogProps {
   closeOnOverlayClick?: boolean;
   /**
    * 确认按钮。值为 null 则不显示确认按钮。值类型为字符串，则表示自定义按钮文本，值类型为 Object 则表示透传 Button 组件属性。使用 TNode 自定义按钮时，需自行控制确认事件
-   * @default ''
    */
   confirmBtn?: string | ButtonProps | TNode | null;
+  /**
+   * 确认按钮加载状态
+   */
+  confirmLoading?: boolean;
   /**
    * 是否在按下回车键时，触发确认事件
    */
@@ -70,7 +70,7 @@ export interface TdDialogProps {
    */
   header?: string | boolean | TNode;
   /**
-   * 对话框类型，有 4 种：模态对话框、非模态对话框、普通对话框、全屏对话框。弹出「模态对话框」时，只能操作对话框里面的内容，不能操作其他内容。弹出「非模态对话框」时，则可以操作页面内所有内容。「普通对话框」是指没有脱离文档流的对话框，可以在这个基础上开发更多的插件
+   * 对话框类型，有 3 种：模态对话框、非模态对话框、全屏对话框。弹出「模态对话框」时，只能操作对话框里面的内容，不能操作其他内容。弹出「非模态对话框」时，则可以操作页面内所有内容。「普通对话框」是指没有脱离文档流的对话框，可以在这个基础上开发更多的插件
    * @default modal
    */
   mode?: 'modal' | 'modeless' | 'normal' | 'full-screen';
@@ -105,7 +105,6 @@ export interface TdDialogProps {
   top?: string | number;
   /**
    * 控制对话框是否显示
-   * @default false
    */
   visible?: boolean;
   /**
@@ -150,6 +149,21 @@ export interface TdDialogProps {
   onOverlayClick?: (context: { e: MouseEvent }) => void;
 }
 
+export interface TdDialogCardProps
+  extends Pick<
+    TdDialogProps,
+    | 'body'
+    | 'cancelBtn'
+    | 'closeBtn'
+    | 'confirmBtn'
+    | 'footer'
+    | 'header'
+    | 'theme'
+    | 'onCancel'
+    | 'onCloseBtnClick'
+    | 'onConfirm'
+  > {}
+
 export interface DialogOptions extends Omit<TdDialogProps, 'attach'> {
   /**
    * 对话框挂载的节点。数据类型为 String 时，会被当作选择器处理，进行节点查询。示例：'body' 或 () => document.body
@@ -176,6 +190,10 @@ export interface DialogInstance {
    * 隐藏弹框
    */
   hide: () => void;
+  /**
+   * 设置确认按钮加载状态
+   */
+  setConfirmLoading: (loading: boolean) => void;
   /**
    * 显示弹框
    */

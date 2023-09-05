@@ -430,6 +430,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
           {this.getConfirmBtn({
             theme: this.theme,
             confirmBtn: this.confirmBtn,
+            confirmLoading: this.confirmLoading,
             globalConfirm: this.instanceGlobal?.confirm || this.global.confirm,
             globalConfirmBtnTheme: this.instanceGlobal?.confirmBtnTheme || this.global.confirmBtnTheme,
             className: `${this.componentName}__confirm`,
