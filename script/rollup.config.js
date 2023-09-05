@@ -139,7 +139,7 @@ const esConfig = {
   // 为了保留 style/css.js
   treeshake: false,
   external: externalDeps.concat(externalPeerDeps),
-  plugins: [multiInput()].concat(getPlugins({ extractMultiCss: true })),
+  plugins: [multiInput()].concat(getPlugins({ env: 'production', extractMultiCss: true })),
   output: {
     banner,
     dir: 'es/',
@@ -155,7 +155,7 @@ const esmConfig = {
   // 为了保留 style/index.js
   treeshake: false,
   external: externalDeps.concat(externalPeerDeps),
-  plugins: [multiInput()].concat(getPlugins({ ignoreLess: false })),
+  plugins: [multiInput()].concat(getPlugins({ env: 'production', ignoreLess: false })),
   output: {
     banner,
     dir: 'esm/',
@@ -169,7 +169,7 @@ const esmConfig = {
 const libConfig = {
   input: inputList.concat('!src/index-lib.ts'),
   external: externalDeps.concat(externalPeerDeps),
-  plugins: [multiInput()].concat(getPlugins()),
+  plugins: [multiInput()].concat(getPlugins({ env: 'production' })),
   output: {
     banner,
     dir: 'lib/',
@@ -183,7 +183,7 @@ const libConfig = {
 const cjsConfig = {
   input: inputList,
   external: externalDeps.concat(externalPeerDeps),
-  plugins: [multiInput()].concat(getPlugins()),
+  plugins: [multiInput()].concat(getPlugins({ env: 'production' })),
   output: {
     banner,
     dir: 'cjs/',
