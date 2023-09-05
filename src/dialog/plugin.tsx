@@ -53,6 +53,9 @@ const createDialog: DialogMethod = (props: DialogOptions) => {
       dialog.visible = false;
       container.contains(dialog.$el) && container.removeChild(dialog.$el);
     },
+    setConfirmLoading: (val: boolean) => {
+      dialog.confirmLoading = val;
+    },
   };
   return dialogNode;
 };
