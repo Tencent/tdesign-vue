@@ -40,6 +40,7 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
 
   const {
     tExpandedTreeNode,
+    isDefaultExpandAllExecute,
     isDefaultExpandedTreeNodesExecute,
     expandAll,
     foldAll,
@@ -99,10 +100,13 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
   );
 
   function resetData(data: TableRowData[]) {
-    const { columns, expandedTreeNodes, defaultExpandedTreeNodes } = props;
+    const {
+      columns, expandedTreeNodes, defaultExpandedTreeNodes, tree,
+    } = props;
     store.value.initialTreeStore(data, columns, rowDataKeys.value);
     const defaultNeedExpand = Boolean(!isDefaultExpandedTreeNodesExecute.value && defaultExpandedTreeNodes?.length);
-    if (tExpandedTreeNode.value?.length && !!(expandedTreeNodes || defaultNeedExpand)) {
+    const needExpandAll = Boolean(tree?.defaultExpandAll && !isDefaultExpandAllExecute.value);
+    if ((tExpandedTreeNode.value?.length && !!(expandedTreeNodes || defaultNeedExpand)) || needExpandAll) {
       updateExpandOnDataChange(data);
       isDefaultExpandedTreeNodesExecute.value = true;
     } else {
@@ -319,5 +323,6 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
     getTreeNode,
     resetData,
     getTreeExpandedRow,
+    onExpandFoldIconClick,
   };
 }

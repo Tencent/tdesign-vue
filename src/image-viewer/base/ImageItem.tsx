@@ -45,12 +45,9 @@ export default defineComponent({
       loaded.value = false;
     };
 
-    watch(
-      () => props.src,
-      () => {
-        resetStatus();
-      },
-    );
+    watch([mainImagePreviewUrl, placementImagePreviewUrl], () => {
+      resetStatus();
+    });
 
     return {
       globalConfig,

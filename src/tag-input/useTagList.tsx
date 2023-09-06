@@ -68,7 +68,7 @@ export default function useTagList(props: TdTagInputProps, context: SetupContext
     if (!tagValue.value || !tagValue.value.length) return;
     // 回车键删除，输入框值为空时，才允许 Backspace 删除标签
     const isDelete = /(Backspace|NumpadDelete)/.test(e.code) || /(Backspace|NumpadDelete)/.test(e.key);
-    if (!oldInputValue.value && isDelete) {
+    if (!value && isDelete) {
       const index = tagValue.value.length - 1;
       const item = tagValue.value[index];
       const trigger = 'backspace';
