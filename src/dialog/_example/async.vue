@@ -44,17 +44,19 @@ export default {
         header: '提交后不可再编辑会进入审批流程',
         body: '是否确认提交？',
         confirmBtn: {
-          content: '确认',
+          content: '提交',
           theme: 'primary',
           loading: false,
         },
         theme: 'warning',
         onConfirm: () => {
+          confirmDialog.update({ confirmBtn: { content: '提交中', loading: true } });
           // confirmDialog.update({ confirmLoading: true });
-          confirmDialog.setConfirmLoading(true);
+          // confirmDialog.setConfirmLoading(true);
           const timer = setTimeout(() => {
+            confirmDialog.update({ confirmBtn: { content: '提交', loading: false } });
             // confirmDialog.update({ confirmLoading: false });
-            confirmDialog.setConfirmLoading(false);
+            // confirmDialog.setConfirmLoading(false);
             confirmDialog.hide();
             clearTimeout(timer);
           }, 500);
