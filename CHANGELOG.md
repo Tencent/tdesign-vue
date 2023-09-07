@@ -5,6 +5,12 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.6.6 `2023-09-07` 
+### 🐞 Bug Fixes
+- `Checkbox`: 修复动态设置 `options` 无效问题，[issue#2792](https://github.com/Tencent/tdesign-vue/issues/2792) @chaishi ([#2793](https://github.com/Tencent/tdesign-vue/pull/2793))
+- `Upload`: 上传组件 `theme='image'` 时，在 `disabled` 状态不显示上传按钮 @chaishi ([#2793](https://github.com/Tencent/tdesign-vue/pull/2793))
+- `Table`: 可编辑表格，修复多个可编辑表格同时存在时，校验互相影响问题 @chaishi ([#2787](https://github.com/Tencent/tdesign-vue/pull/2787))
+
 ## 🌈 1.6.5 `2023-09-05` 
 ### 🚀 Features
 - `Table`: @chaishi
