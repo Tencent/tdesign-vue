@@ -174,10 +174,12 @@ export default defineComponent({
     );
 
     watch([isCheckAll, indeterminate, options], ([isCheckAll, indeterminate]) => {
-      checkboxStore.updateChecked({
-        checked: innerValue.value,
-        isCheckAll,
-        indeterminate,
+      nextTick(() => {
+        checkboxStore.updateChecked({
+          checked: innerValue.value,
+          isCheckAll,
+          indeterminate,
+        });
       });
     });
 
