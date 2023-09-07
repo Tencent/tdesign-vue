@@ -164,7 +164,7 @@ export default defineComponent({
             );
           })}
 
-          {this.showTrigger && (
+          {this.showTrigger && !this.disabled && (
             <li class={cardItemClasses} onClick={this.triggerUpload}>
               <div
                 class={`${this.classPrefix}-upload__image-add ${this.classPrefix}-upload__card-container ${this.classPrefix}-upload__card-box`}
