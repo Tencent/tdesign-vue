@@ -1,18 +1,28 @@
-import { ref, TypeRef, TreeNode } from '../adapt';
+import {
+  ref, TypeRef, TreeNode, useVModel, toRefs,
+} from '../adapt';
 import { TreeProps, TypeTreeStore, TypeTreeState } from '../tree-types';
 
 // 提供公共对象
-export default function useTreeState(props: TreeProps, store: TypeTreeStore) {
+export default function useTreeState(props: TreeProps) {
   const treeContentRef = ref<HTMLDivElement>();
   const nodes: TypeRef<TreeNode[]> = ref([]);
   const allNodes: TypeRef<TreeNode[]> = ref([]);
   const isScrolling: TypeRef<boolean> = ref(false);
 
-  allNodes.value = store.getNodes();
+  const { value, actived, expanded } = toRefs(props);
+  const vmValue = useVModel(value, props.defaultValue, props.onChange, 'change', 'value');
+  const vmActived = useVModel(actived, props.defaultActived, props.onActive, 'active', 'actived');
+  const vmExpanded = useVModel(expanded, props.defaultExpanded, props.onExpand, 'expand', 'expanded');
+
+  function setStore(store: TypeTreeStore) {
+    state.store = store;
+    allNodes.value = store.getNodes();
+  }
 
   const state: TypeTreeState = {
     // tree 数据对象
-    store,
+    store: null,
     // 内容根节点
     treeContentRef,
     // 渲染节点
@@ -32,6 +42,10 @@ export default function useTreeState(props: TreeProps, store: TypeTreeStore) {
       scopedSlots: {},
       virtualConfig: null,
     },
+    setStore,
+    vmValue,
+    vmActived,
+    vmExpanded,
   };
 
   return {

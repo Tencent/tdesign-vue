@@ -8,6 +8,7 @@ import {
   TypeTreeOptionData,
   TypeScroll,
   TypeTreeEventState,
+  TypeVModel,
 } from './adapt';
 
 import {
@@ -112,6 +113,10 @@ export interface TypeTreeState {
   treeContentRef: TypeRef<HTMLDivElement>;
   mouseEvent?: Event;
   virtualConfig?: TypeVirtualScrollConfig;
+  setStore: (store: TypeTreeStore) => void;
+  vmValue: TypeVModel;
+  vmActived: TypeVModel;
+  vmExpanded: TypeVModel;
 }
 
 export interface TypeTreeItemProps {

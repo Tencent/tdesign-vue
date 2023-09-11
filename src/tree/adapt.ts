@@ -8,7 +8,8 @@ import {
 } from '../common';
 import { TypeTreeEventState as TreeEventState } from '../_common/js/tree/types';
 import { VirtualScrollConfig } from '../hooks/useVirtualScrollNew';
-import withInstall from '../utils/withInstall';
+import tdWithInstall from '../utils/withInstall';
+import tdUseVModel from '../hooks/useVModel';
 
 export {
   ref, reactive, computed, watch, onMounted, toRefs, defineComponent,
@@ -22,6 +23,8 @@ export { default as useLazyLoad } from '../hooks/useLazyLoad';
 export { default as useVirtualScroll } from '../hooks/useVirtualScrollNew';
 export { TreeNode, privateKey } from '../_common/js/tree/tree-node';
 export { TreeStore } from '../_common/js/tree/tree-store';
+export const useVModel = tdUseVModel;
+export type TypeVModel = ReturnType<typeof tdUseVModel>;
 
 export type TypeRef<T> = Ref<T>;
 export type TypeSetupContext = SetupContext;
@@ -56,6 +59,6 @@ export const TreeItemDefinition = {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function useRipple(el: unknown) {}
 
-export function adaptWithInstall<T>(construct: T) {
-  return withInstall(construct, VueCompositionAPI);
+export function withInstall<T>(construct: T) {
+  return tdWithInstall(construct, VueCompositionAPI);
 }

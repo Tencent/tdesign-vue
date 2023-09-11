@@ -44,12 +44,13 @@ export default defineComponent({
     const classPrefix = usePrefixClass();
     const componentName = usePrefixClass('tree');
     const refProps = toRefs(props);
-    const {
-      store, rebuild, updateStoreConfig, checkFilterExpand,
-    } = useTreeStore(props, context);
 
     // 用于 hooks 传递数据
-    const { state, treeContentRef, isScrolling } = useTreeState(props, store);
+    const { state, treeContentRef, isScrolling } = useTreeState(props);
+
+    const {
+      store, rebuild, updateStoreConfig, checkFilterExpand,
+    } = useTreeStore(props, context, state);
 
     useDragHandle(props, context, state);
     const { setActived, setExpanded, setChecked } = useTreeAction(props, context, state);
