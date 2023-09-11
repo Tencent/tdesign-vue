@@ -1,7 +1,8 @@
 import pick from 'lodash/pick';
-import { TypeSetupContext, TreeStore } from '../adapt';
+import { TypeSetupContext, TreeStore, watch } from '../adapt';
 import {
   TreeProps,
+  TreeNodeValue,
   TypeValueMode,
   TypeEventState,
   TypeTreeNodeModel,
@@ -147,35 +148,53 @@ export default function useTreeStore(props: TreeProps, context: TypeSetupContext
     store.refreshState();
   };
 
-  // keys 属性比较特殊，不应该在实例化之后再次变更
-  store.setConfig({
-    keys,
-  });
-  updateStoreConfig();
-  store.append(props.data || []);
+  function initStore() {
+    // keys 属性比较特殊，不应该在实例化之后再次变更
+    store.setConfig({
+      keys,
+    });
+    updateStoreConfig();
+    store.append(props.data || []);
 
-  // 刷新节点，必须在配置选中之前执行
-  // 这样选中态联动判断才能找到父节点
-  store.refreshNodes();
+    // 刷新节点，必须在配置选中之前执行
+    // 这样选中态联动判断才能找到父节点
+    store.refreshNodes();
 
-  // 初始化选中状态
-  if (Array.isArray(tValue.value)) {
-    store.setChecked(tValue.value);
+    // 初始化选中状态
+    if (Array.isArray(tValue.value)) {
+      store.setChecked(tValue.value);
+    }
+
+    // 更新节点展开状态
+    updateExpanded();
+
+    // 初始化激活状态
+    if (Array.isArray(tActived.value)) {
+      store.setActived(tActived.value);
+    }
+
+    store.emitter.on('load', handleLoad);
+    store.emitter.on('update', expandFilterPath);
   }
 
-  // 更新节点展开状态
-  updateExpanded();
-
-  // 初始化激活状态
-  if (Array.isArray(tActived.value)) {
-    store.setActived(tActived.value);
-  }
-
-  store.emitter.on('load', handleLoad);
-  store.emitter.on('update', expandFilterPath);
-
+  // 初始化 store
+  initStore();
   // 设置初始化状态
   state.setStore(store);
+  // 配置属性监听
+  watch(tValue, (nVal: TreeNodeValue[]) => {
+    const previousVal = store.getChecked();
+    if (nVal.join() === previousVal?.join()) return;
+    store.replaceChecked(nVal);
+  });
+  watch(tExpanded, (nVal: TreeNodeValue[]) => {
+    store.replaceExpanded(nVal);
+  });
+  watch(tActived, (nVal: TreeNodeValue[]) => {
+    const previousVal = store.getActived();
+    if (nVal.join() === previousVal?.join()) return;
+    store.replaceActived(nVal);
+  });
 
   return {
     store,

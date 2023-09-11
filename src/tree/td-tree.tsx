@@ -68,17 +68,6 @@ export default defineComponent({
         keys,
       });
     });
-    watch(refProps.value, (nVal, previousVal) => {
-      if (nVal.join() === previousVal?.join()) return;
-      store.replaceChecked(nVal);
-    });
-    watch(refProps.expanded, (nVal) => {
-      store.replaceExpanded(nVal);
-    });
-    watch(refProps.actived, (nVal, previousVal) => {
-      if (nVal.join() === previousVal?.join()) return;
-      store.replaceActived(nVal);
-    });
     watch(refProps.filter, (nVal, previousVal) => {
       checkFilterExpand(nVal, previousVal);
     });
