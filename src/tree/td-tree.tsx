@@ -11,7 +11,7 @@ import {
   TypeTNodeReturnValue,
 } from './adapt';
 import props from './props';
-import { TreeNodeValue, TreeNodeState, TypeTreeNodeModel } from './interface';
+import { TreeNodeValue, TreeNodeState, TypeTreeNodeModel } from './tree-types';
 import useTreeStore from './hooks/useTreeStore';
 import useTreeStyles from './hooks/useTreeStyles';
 import useTreeState from './hooks/useTreeState';

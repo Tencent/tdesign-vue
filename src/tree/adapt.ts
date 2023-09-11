@@ -1,6 +1,6 @@
 // 在这个文件，解决 vue2/vue3 tree 组件依赖的差异问题
 // 除此文件之外的其他组件文件，可从 vue2 项目直接复制到 vue3 项目进行维护
-import { Ref, SetupContext } from '@vue/composition-api';
+import VueCompositionAPI, { Ref, SetupContext } from '@vue/composition-api';
 import { CreateElement, VNode, PropType } from 'vue';
 import { CheckboxProps } from '../checkbox';
 import {
@@ -8,6 +8,7 @@ import {
 } from '../common';
 import { TypeTreeEventState as TreeEventState } from '../_common/js/tree/types';
 import { VirtualScrollConfig } from '../hooks/useVirtualScrollNew';
+import withInstall from '../utils/withInstall';
 
 export {
   ref, reactive, computed, watch, onMounted, toRefs, defineComponent,
@@ -54,3 +55,7 @@ export const TreeItemDefinition = {
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function useRipple(el: unknown) {}
+
+export function adaptWithInstall<T>(construct: T) {
+  return withInstall(construct, VueCompositionAPI);
+}

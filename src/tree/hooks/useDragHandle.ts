@@ -1,7 +1,7 @@
 import { TypeSetupContext, TreeNode } from '../adapt';
 import {
   TreeProps, TypDragEventState, TypeTreeState, TypeDragHandle,
-} from '../interface';
+} from '../tree-types';
 import { emitEvent } from '../util';
 
 export default function useDragHandle(props: TreeProps, context: TypeSetupContext, state: TypeTreeState) {

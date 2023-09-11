@@ -1,6 +1,6 @@
 import throttle from 'lodash/throttle';
 import { TypeRef, reactive } from '../adapt';
-import { TypeTreeItemProps } from '../interface';
+import { TypeTreeItemProps } from '../tree-types';
 
 export interface TypeDragStates {
   isDragOver: boolean;

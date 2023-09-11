@@ -7,7 +7,7 @@ import {
   TypeExpandEventContext,
   TypeActiveEventContext,
   TypeChangeEventContext,
-} from '../interface';
+} from '../tree-types';
 import { getNode, emitEvent, pathMatchClass } from '../util';
 
 // tree 组件节点状态设置

@@ -1,7 +1,7 @@
 import {
   usePrefixClass, useGlobalIcon, TypeCreateElement, TLoading, TdCaretRightSmallIcon,
 } from '../adapt';
-import { TypeTreeItemProps } from '../interface';
+import { TypeTreeItemProps } from '../tree-types';
 import { getTNode } from '../util';
 
 // 渲染节点图标

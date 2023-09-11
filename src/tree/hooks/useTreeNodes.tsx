@@ -3,7 +3,7 @@ import {
 } from '../adapt';
 import {
   TypeTreeRow, TypeTreeNode, TreeProps, TypeTreeState,
-} from '../interface';
+} from '../tree-types';
 import TreeItem from '../tree-item';
 import useTreeEvents from './useTreeEvents';
 

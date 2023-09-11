@@ -1,7 +1,7 @@
 import {
   TypePropType, defineComponent, ref, TreeItemDefinition, useRipple,
 } from './adapt';
-import { TypeTreeItemProps } from './interface';
+import { TypeTreeItemProps } from './tree-types';
 import useTreeItem from './hooks/useTreeItem';
 
 export const treeItemProps = {

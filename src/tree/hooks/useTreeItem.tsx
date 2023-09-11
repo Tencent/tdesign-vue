@@ -9,7 +9,7 @@ import {
   useLazyLoad,
   TypeVNode,
 } from '../adapt';
-import { TypeTreeItemProps } from '../interface';
+import { TypeTreeItemProps } from '../tree-types';
 import useItemEvents from './useItemEvents';
 import useRenderIcon from './useRenderIcon';
 import useRenderLabel from './useRenderLabel';

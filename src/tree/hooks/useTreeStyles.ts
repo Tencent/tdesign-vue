@@ -1,7 +1,7 @@
 import {
   computed, toRefs, TypeStyles, usePrefixClass,
 } from '../adapt';
-import { TreeProps, TypeTreeState } from '../interface';
+import { TreeProps, TypeTreeState } from '../tree-types';
 
 export function formatCSSUnit(unit: string | number) {
   if (!unit) return unit;

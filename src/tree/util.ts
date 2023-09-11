@@ -9,7 +9,7 @@ import {
   TypeTNodeProp,
   TypeGetTNodeOption,
   TypeTargetNode,
-} from './interface';
+} from './tree-types';
 
 export function emitEvent<T extends any[]>(props: TreeProps, context: TypeSetupContext, evtName: string, ...args: T) {
   const apiName = camelCase(`on-${evtName}`);

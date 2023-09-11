@@ -1,5 +1,5 @@
 import { ref, TypeRef, TreeNode } from '../adapt';
-import { TreeProps, TypeTreeStore, TypeTreeState } from '../interface';
+import { TreeProps, TypeTreeStore, TypeTreeState } from '../tree-types';
 
 // 提供公共对象
 export default function useTreeState(props: TreeProps, store: TypeTreeStore) {

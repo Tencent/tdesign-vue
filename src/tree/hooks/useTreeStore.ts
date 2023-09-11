@@ -7,7 +7,7 @@ import {
   TypeTreeNodeModel,
   TypeTreeNode,
   TypeTNodeValue,
-} from '../interface';
+} from '../tree-types';
 
 export default function useTreeStore(props: TreeProps, context: TypeSetupContext) {
   const {

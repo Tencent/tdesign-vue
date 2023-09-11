@@ -2,7 +2,7 @@ import isBoolean from 'lodash/isBoolean';
 import {
   usePrefixClass, TypeCreateElement, TypeSetupContext, computed, TCheckBox, TypeVNode,
 } from '../adapt';
-import { TypeTreeItemProps } from '../interface';
+import { TypeTreeItemProps } from '../tree-types';
 import { getTNode } from '../util';
 import useItemEvents from './useItemEvents';
 

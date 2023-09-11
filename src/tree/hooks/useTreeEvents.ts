@@ -1,5 +1,5 @@
 import { TypeSetupContext } from '../adapt';
-import { TreeProps, TypeTreeState, TypeEventState } from '../interface';
+import { TreeProps, TypeTreeState, TypeEventState } from '../tree-types';
 import { getMark, emitEvent } from '../util';
 import useTreeAction from './useTreeAction';
 
