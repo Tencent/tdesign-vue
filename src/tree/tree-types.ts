@@ -1,7 +1,6 @@
 import {
   TypeRef,
   TypeVNode,
-  TreeStore,
   TreeNode,
   TypeVirtualScrollConfig,
   TypeTNode,
@@ -9,7 +8,9 @@ import {
   TypeScroll,
   TypeTreeEventState,
   TypeVModel,
+  TreeProps as AdaptTreeProps,
 } from './adapt';
+import { TreeStore } from '../_common/js/tree/tree-store';
 
 import {
   TdTreeProps, TreeNodeModel, TreeInstanceFunctions, TreeNodeValue, TreeNodeState,
@@ -20,9 +21,8 @@ import {
 
 export * from './type';
 
-export type TreeProps<T extends TypeTreeOptionData = TypeTreeOptionData> = TdTreeProps<T> & {
-  treeStore?: TreeStore;
-};
+export type TreeProps = AdaptTreeProps;
+
 /**
  * @deprecated
  */
