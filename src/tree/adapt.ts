@@ -40,6 +40,7 @@ export type TypeTNodeReturnValue = TNodeReturnValue;
 export type TypeTreeOptionData = TreeOptionData;
 export type TypeTreeEventState = TreeEventState;
 export type TypeVirtualScrollConfig = VirtualScrollConfig;
+
 export interface TypeTreeInstance extends Vue, TreeInstanceFunctions {}
 
 export type TreeProps<T extends TypeTreeOptionData = TypeTreeOptionData> = TdTreeProps<T> & {

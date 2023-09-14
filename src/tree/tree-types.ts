@@ -8,8 +8,9 @@ import {
   TypeScroll,
   TypeTreeEventState,
   TypeVModel,
-  TreeProps as AdaptTreeProps,
   TypeCreateElement,
+  TreeProps as AdaptTreeProps,
+  TypeTreeInstance as AdaptTypeTreeInstance,
 } from './adapt';
 import { TreeStore } from '../_common/js/tree/tree-store';
 
@@ -17,14 +18,13 @@ import {
   TdTreeProps, TreeNodeModel, TreeNodeValue, TreeNodeState,
 } from './type';
 
-export { TypeTreeInstance } from './adapt';
-
 // 在这个文件做统一的类型梳理
 // 所有类型，接口，都用 Type 作为名称前缀
 
 export * from './type';
 
 export type TreeProps = AdaptTreeProps;
+export type TypeTreeInstance = AdaptTypeTreeInstance;
 
 /**
  * @deprecated
