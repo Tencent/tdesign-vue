@@ -11,6 +11,7 @@ import { TdTreeProps, TreeInstanceFunctions } from './type';
 import { VirtualScrollConfig } from '../hooks/useVirtualScrollNew';
 import tdWithInstall from '../utils/withInstall';
 import tdUseVModel from '../hooks/useVModel';
+import tdUseDefaultValue from '../hooks/useDefaultValue';
 import { TreeStore } from '../_common/js/tree/tree-store';
 
 export {
@@ -79,5 +80,8 @@ export function useVModel(
   eventPropName = 'onChange',
   eventName = 'change',
 ) {
-  return tdUseVModel(refsProps[propName], props[defaultPropName], props[eventPropName], eventName, propName);
+  if (propName === 'value') {
+    return tdUseVModel(refsProps[propName], props[defaultPropName], props[eventPropName], eventName, propName);
+  }
+  return tdUseDefaultValue(refsProps[propName], props[defaultPropName], props[eventPropName], propName, eventName);
 }
