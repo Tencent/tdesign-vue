@@ -72,6 +72,10 @@ export function withInstall<T>(construct: T) {
   return tdWithInstall(construct, VueCompositionAPI);
 }
 
+export function getCreateElement(h: CreateElement) {
+  return h;
+}
+
 export function useVModel(
   props: TreeProps,
   refsProps: ToRefs<TreeProps>,
