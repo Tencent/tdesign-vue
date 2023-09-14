@@ -1,6 +1,6 @@
 <template>
   <t-space direction="vertical">
-    <t-space>
+    <t-space breakLine>
       <t-checkbox v-model="disabled">禁用状态</t-checkbox>
       <t-checkbox v-model="autoUpload">自动上传</t-checkbox>
       <t-checkbox v-model="showThumbnail">显示文件缩略图</t-checkbox>

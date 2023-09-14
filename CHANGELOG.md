@@ -5,6 +5,43 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.6.6 `2023-09-07` 
+### 🐞 Bug Fixes
+- `Checkbox`: 修复动态设置 `options` 无效问题，[issue#2792](https://github.com/Tencent/tdesign-vue/issues/2792) @chaishi ([#2793](https://github.com/Tencent/tdesign-vue/pull/2793))
+- `Upload`: 上传组件 `theme='image'` 时，在 `disabled` 状态不显示上传按钮 @chaishi ([#2793](https://github.com/Tencent/tdesign-vue/pull/2793))
+- `Table`: 可编辑表格，修复多个可编辑表格同时存在时，校验互相影响问题 @chaishi ([#2787](https://github.com/Tencent/tdesign-vue/pull/2787))
+
+## 🌈 1.6.5 `2023-09-05` 
+### 🚀 Features
+- `Table`: @chaishi
+  - 可筛选表格，`onFilterChange` 事件新增参数 `trigger: 'filter-change' | 'confirm' | 'reset' | 'clear'`，表示触发筛选条件变化的来源  ([#2767](https://github.com/Tencent/tdesign-vue/pull/2767))
+  - 可筛选表格，支持使用 `filter.label` 单独定义晒选项别名，可以和 `title` 标题不一样 ([#2771](https://github.com/Tencent/tdesign-vue/pull/2771))
+- `Dialog`: @chaishi ([#2769](https://github.com/Tencent/tdesign-vue/pull/2769))
+  - 支持使用 `confirmLoading` 控制确认按钮加载状态
+  - 组件实例函数新增 `confirmDialog.setConfirmLoading(true)` 和 `confirmDialog.update({ confirmLoading: true })`，用于设置确认按钮加载状态
+- `Watermark`: 水印组件文字新增 `fontFamily` 属性 @LadyChatterleyLover ([common#1580](https://github.com/Tencent/tdesign-common/pull/1580))
+- `GlobalConfig`: 全局配置中，步骤条组件添加已完成状态自定义功能 @Zzongke ([common#1579](https://github.com/Tencent/tdesign-common/pull/1579))
+### 🐞 Bug Fixes
+- `Table`: @chaishi ([#2767](https://github.com/Tencent/tdesign-vue/pull/2767))
+  - 树形结构，修复 v1.6.4 中 `tree.defaultExpandAll` 失效问题 @chaishi ([#2752](https://github.com/Tencent/tdesign-vue/pull/2752))
+  - 树形结构表格，修复 `expandedTreeNodes.sync` 和 `@expanded-tree-nodes-change` 使用 `expandTreeNodeOnClick ` 时无效问题 [issue#2756](https://github.com/Tencent/tdesign-vue/issues/2756)
+  - 可筛选表格，修复 `resetValue` 在清空筛选时，未能重置到指定 `resetValue` 值的问题
+  - 可筛选表格，修复单选筛选器触发两次 `onFilterChange` 事件问题，[issues#2746](https://github.com/Tencent/tdesign-vue/issues/2746)
+  - 拖拽排序表格，修复添加 `lazyLoad` 懒加载属性后，拖拽排序功能失效问题
+  - 可筛选表格，修复晒选项的值为 `false` 时，筛选图标未能高亮问题 ([#2771](https://github.com/Tencent/tdesign-vue/pull/2771))
+  - 可筛选表格，解决 `title` 使用函数或插槽定义时，过滤结果行文本显示问题，[issue#3303](https://github.com/Tencent/tdesign-vue-next/issues/3303)
+- `Form`: 修复调用`form`组件暴露的`reset`方法后未定义`name`的`form-item`也被一同加入清除 @Zz-ZzzZ ([#2760](https://github.com/Tencent/tdesign-vue/pull/2760))
+- `Checkbox`: 修复同时有多个 CheckGroup 时，选中值显示异常问题，[issue#2761](https://github.com/Tencent/tdesign-vue/issues/2761) @chaishi ([#2768](https://github.com/Tencent/tdesign-vue/pull/2768))
+- `Image`: @chaishi ([#2770](https://github.com/Tencent/tdesign-vue/pull/2770))
+  - 修复 `fallback` 在第一次加载失败后无效问题
+  - 修复图片预览出现两个预览按钮问题
+- `Dialog`: 修复组件如果初始默认显示， 按 esc 关不掉的问题 @Zhanjiachun ([#2708](https://github.com/Tencent/tdesign-vue/pull/2708))
+- `Loading`: 修复Plugin在部分场景下设置 false 入参时重新创建实例的问题 @uyarn ([#2778](https://github.com/Tencent/tdesign-vue/pull/2778))
+- `Autocomplete`: 修复错误的移除事件监听时机 @uyarn ([#2777](https://github.com/Tencent/tdesign-vue/pull/2777))
+- `Table`: 修复固定表头/尾错误的移除事件监听时机 @uyarn ([#2777](https://github.com/Tencent/tdesign-vue/pull/2777))
+- `Popup`: 修复产物中 `env` 环境的问题 @uyarn ([#2776](https://github.com/Tencent/tdesign-vue/pull/2776))
+- `Select`: 修复多选且开启`reserveKeyword`的场景下删除 input 中的内容时，会删除已选项的缺陷 @uyarn ([#2779](https://github.com/Tencent/tdesign-vue/pull/2779))
+
 ## 🌈 1.6.4 `2023-08-29` 
 ### 🚀 Features
 - `Tabs`: 支持 `tab-panel` 内容懒加载 @FireBushtree ([#2714](https://github.com/Tencent/tdesign-vue/pull/2714))

@@ -84,6 +84,7 @@ export default defineComponent({
       // show fallback url if load failed
       if (fallback.value) {
         imageStrSrc.value = fallback.value;
+        hasError.value = false;
       }
       emit('error', { e });
       onError?.({ e });
