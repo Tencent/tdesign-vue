@@ -9,12 +9,15 @@ import {
   TypeTreeEventState,
   TypeVModel,
   TreeProps as AdaptTreeProps,
+  TypeCreateElement,
 } from './adapt';
 import { TreeStore } from '../_common/js/tree/tree-store';
 
 import {
-  TdTreeProps, TreeNodeModel, TreeInstanceFunctions, TreeNodeValue, TreeNodeState,
+  TdTreeProps, TreeNodeModel, TreeNodeValue, TreeNodeState,
 } from './type';
+
+export { TypeTreeInstance } from './adapt';
 
 // 在这个文件做统一的类型梳理
 // 所有类型，接口，都用 Type 作为名称前缀
@@ -68,11 +71,9 @@ export interface TypeLineModel {
   left: boolean;
 }
 
-export interface TypeTreeInstance extends Vue, TreeInstanceFunctions {}
-
 export interface TypeGetTNodeOption {
   node?: TreeNode;
-  createElement?: Vue.CreateElement;
+  createElement?: TypeCreateElement;
 }
 
 export interface TypeRenderTNodeOption {

@@ -1,13 +1,13 @@
 // 在这个文件，解决 vue2/vue3 tree 组件依赖的差异问题
 // 除此文件之外的其他组件文件，可从 vue2 项目直接复制到 vue3 项目进行维护
 import VueCompositionAPI, { Ref, SetupContext, ToRefs } from '@vue/composition-api';
-import { CreateElement, VNode, PropType } from 'vue';
+import Vue, { CreateElement, VNode, PropType } from 'vue';
 import { CheckboxProps } from '../checkbox';
 import {
   ClassName, TScroll, Styles, TNode, TreeOptionData, TNodeReturnValue,
 } from '../common';
 import { TypeTreeEventState as TreeEventState } from '../_common/js/tree/types';
-import { TdTreeProps } from './type';
+import { TdTreeProps, TreeInstanceFunctions } from './type';
 import { VirtualScrollConfig } from '../hooks/useVirtualScrollNew';
 import tdWithInstall from '../utils/withInstall';
 import tdUseVModel from '../hooks/useVModel';
@@ -40,6 +40,7 @@ export type TypeTNodeReturnValue = TNodeReturnValue;
 export type TypeTreeOptionData = TreeOptionData;
 export type TypeTreeEventState = TreeEventState;
 export type TypeVirtualScrollConfig = VirtualScrollConfig;
+export interface TypeTreeInstance extends Vue, TreeInstanceFunctions {}
 
 export type TreeProps<T extends TypeTreeOptionData = TypeTreeOptionData> = TdTreeProps<T> & {
   treeStore?: TreeStore;
