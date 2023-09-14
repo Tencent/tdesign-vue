@@ -47,6 +47,8 @@ export type TreeProps<T extends TypeTreeOptionData = TypeTreeOptionData> = TdTre
   treeStore?: TreeStore;
 };
 
+export const TransitionGroup = Vue.component('TransitionGroup');
+
 export interface TypeOnDrag {
   default?: unknown;
 }

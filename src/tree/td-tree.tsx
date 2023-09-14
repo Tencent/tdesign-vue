@@ -10,6 +10,7 @@ import {
   TypeTreeOptionData,
   TypeTNodeReturnValue,
   TypeCreateElement,
+  TransitionGroup,
 } from './adapt';
 import props from './props';
 import { TreeNodeValue, TreeNodeState, TypeTreeNodeModel } from './tree-types';
@@ -210,7 +211,7 @@ export default defineComponent({
 
     const { scope } = state;
     // 更新 scopedSlots
-    scope.scopedSlots = this.$scopedSlots;
+    scope.scopedSlots = this.$slots;
 
     const treeNodeViews = renderTreeNodes(h);
     const cname = this.componentName;
@@ -219,7 +220,7 @@ export default defineComponent({
     // 空数据判定
     let emptyNode: TypeTNodeReturnValue = null;
     if (nodesEmpty) {
-      const useLocale = !this.empty && !this.$scopedSlots.empty;
+      const useLocale = !this.empty && !this.$slots.empty;
       const emptyContent = useLocale ? this.t(this.global.empty) : renderTNodeJSX(this, 'empty');
       emptyNode = <div class={`${cname}__empty`}>{emptyContent}</div>;
     } else if (treeNodeViews.length <= 0) {
@@ -243,7 +244,7 @@ export default defineComponent({
     } else {
       // 启用动画时，需要确保滚动中动画样式失效
       treeNodeList = (
-        <transition-group
+        <TransitionGroup
           tag="div"
           class={`${cname}__list`}
           enter-active-class={`${cname}__item--enter-active`}
@@ -251,7 +252,7 @@ export default defineComponent({
           style={scrollStyles}
         >
           {treeNodeViews}
-        </transition-group>
+        </TransitionGroup>
       );
     }
 
