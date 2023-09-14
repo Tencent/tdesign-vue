@@ -9,6 +9,7 @@ import {
   usePrefixClass,
   TypeTreeOptionData,
   TypeTNodeReturnValue,
+  TypeCreateElement,
 } from './adapt';
 import props from './props';
 import { TreeNodeValue, TreeNodeState, TypeTreeNodeModel } from './tree-types';
@@ -191,7 +192,7 @@ export default defineComponent({
       return pathNodes;
     },
   },
-  render(h) {
+  render(h: TypeCreateElement) {
     const {
       state,
       treeClasses,
