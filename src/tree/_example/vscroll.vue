@@ -3,6 +3,7 @@
     <t-space :size="10" direction="vertical" class="tdesign-tree-vscroll-lazy" style="width: 80%">
       <h3 class="title">虚拟滚动 - lazy模式</h3>
       <t-tree
+        ref="tree"
         :data="lazyItems"
         hover
         activable
@@ -16,13 +17,12 @@
           threshold: 10,
           type: 'lazy',
         }"
-        ref="tree"
       ></t-tree>
     </t-space>
 
     <t-space :size="10" direction="vertical" style="width: 100%">
       <h3 class="title">虚拟滚动 - virtual 模式</h3>
-      <t-form labelWidth="150" style="max-width: 500px">
+      <t-form label-width="150" style="max-width: 500px">
         <t-form-item label="动画">
           <t-switch v-model="transition" />
         </t-form-item>
@@ -42,7 +42,7 @@
       <t-form label-align="left" :label-width="80" style="max-width: 500px">
         <t-form-item>
           <t-input-adornment prepend="插入节点数量:">
-            <t-input v-model="insertCount" />
+            <t-input v-model="textInsertCount" />
           </t-input-adornment>
         </t-form-item>
         <t-form-item>
@@ -51,6 +51,7 @@
       </t-form>
     </t-space>
     <t-tree
+      ref="tree"
       :data="items"
       hover
       activable
@@ -68,10 +69,9 @@
         threshold: 10,
         type: 'virtual',
       }"
-      ref="tree"
     >
       <template #operations="{ node }">
-        <div class="tdesign-demo-block-row" v-if="isOperateAble">
+        <div v-if="isOperateAble" class="tdesign-demo-block-row">
           <t-button size="small" variant="base" @click="append(node)">添加子节点</t-button>
           <t-button size="small" variant="base" theme="danger" @click="remove(node)">删除</t-button>
         </div>
@@ -125,7 +125,7 @@ export default {
     return {
       index: 0,
       transition: true,
-      insertCount: 1,
+      textInsertCount: '1',
       useActived: false,
       enableVScroll: true,
       lazyVScroll: false,
@@ -137,6 +137,11 @@ export default {
       items: virtualTree.items,
       lazyItems: lazyTree.items,
     };
+  },
+  computed: {
+    insertCount() {
+      return parseInt(this.textInsertCount, 10) || 1;
+    },
   },
   methods: {
     label(createElement, node) {
