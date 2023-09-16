@@ -90,7 +90,7 @@ export default defineComponent({
     const {
       data, columns, rowKey, rowspanAndColspan,
     } = toRefs(props);
-    const { t, global } = useConfig('table');
+    const { t, global } = useConfig('table', props.locale);
     const { tableFullRowClasses, tableBaseClass } = useClassName();
     const { skipSpansMap } = useRowspanAndColspan(data, columns, rowKey, rowspanAndColspan);
 
