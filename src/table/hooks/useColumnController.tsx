@@ -5,7 +5,7 @@ import {
   computed, ref, SetupContext, toRefs, h, watch,
 } from '@vue/composition-api';
 import { SettingIcon as TdSettingIcon } from 'tdesign-icons-vue';
-import intersection from 'lodash/intersection';
+// import intersection from 'lodash/intersection';
 import { CreateElement } from 'vue';
 import isFunction from 'lodash/isFunction';
 import { CheckboxGroupValue, CheckboxOptionObj, CheckboxGroupChangeContext } from '../../checkbox';
