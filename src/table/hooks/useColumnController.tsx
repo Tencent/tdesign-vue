@@ -2,7 +2,7 @@
  * 自定义显示列控制器，即列配置
  */
 import {
-  computed, ref, SetupContext, toRefs, h, watch, getCurrentInstance,
+  computed, ref, SetupContext, toRefs, h, watch,
 } from '@vue/composition-api';
 import { SettingIcon as TdSettingIcon } from 'tdesign-icons-vue';
 import intersection from 'lodash/intersection';
@@ -11,9 +11,7 @@ import isFunction from 'lodash/isFunction';
 import { CheckboxGroupValue, CheckboxOptionObj, CheckboxGroupChangeContext } from '../../checkbox';
 import { DialogPlugin } from '../../dialog/plugin';
 import { renderTitle } from './useTableHeader';
-import {
-  PrimaryTableCol, TdPrimaryTableProps, PrimaryTableColumnChange, TableRowData,
-} from '../type';
+import { PrimaryTableCol, TdPrimaryTableProps } from '../type';
 import { useConfig } from '../../config-provider/useConfig';
 import useDefaultValue from '../../hooks/useDefaultValue';
 import { useGlobalIcon } from '../../hooks/useGlobalIcon';
@@ -79,7 +77,7 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
     return [oneItem];
   });
 
-  const intersectionChecked = computed(() => intersection(columnCheckboxKeys.value, [...enabledColKeys.value]));
+  // const intersectionChecked = computed(() => intersection(columnCheckboxKeys.value, [...enabledColKeys.value]));
 
   watch([displayColumns], ([val]) => {
     columnCheckboxKeys.value = val || props.defaultDisplayColumns || keys;
