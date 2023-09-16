@@ -38,7 +38,8 @@ export function useConfig<T extends keyof GlobalConfigProvider>(
   const injectGlobalConfig = inject<GlobalConfigProvider>('globalConfig', null);
   const mergedGlobalConfig = injectGlobalConfig || defaultGlobalConfig;
 
-  const global = computed(() => ({ ...mergedGlobalConfig[componentName], ...componentLocale }));
+  // eslint-disable-next-line
+  const global = computed(() => Object.assign({}, mergedGlobalConfig[componentName], componentLocale));
   const classPrefix = ref(mergedGlobalConfig.classPrefix);
 
   return {

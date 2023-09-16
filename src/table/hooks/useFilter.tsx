@@ -164,6 +164,7 @@ export default function useFilter(props: TdPrimaryTableProps, context: SetupCont
     return (
       <TableFilterController
         scopedSlots={{ filterIcon: context.slots.filterIcon }}
+        local={props.locale}
         column={col}
         colIndex={colIndex}
         filterIcon={props.filterIcon}
