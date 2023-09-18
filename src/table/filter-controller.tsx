@@ -15,12 +15,14 @@ import { PrimaryTableCol, FilterValue } from './type';
 import { useConfig } from '../config-provider/useConfig';
 import log from '../_common/js/log';
 import { AttachNode } from '../common';
+import { TableConfig } from '../config-provider';
 
 type Params = Parameters<CreateElement>;
 type FirstParams = Params[0];
 type SecondParams = Params[1] | Params[2];
 
 export interface TableFilterControllerProps {
+  locale: TableConfig;
   tFilterValue: FilterValue;
   innerFilterValue: FilterValue;
   tableFilterClasses: {
@@ -60,7 +62,7 @@ export default defineComponent({
   setup(props, { emit }) {
     const triggerElementRef = ref<HTMLDivElement>(null);
     const renderTNode = useTNodeDefault();
-    const { t, global } = useConfig('table');
+    const { t, global } = useConfig('table', props.locale);
     const { FilterIcon } = useGlobalIcon({ FilterIcon: TdFilterIcon });
     const filterPopupVisible = ref(false);
 

@@ -60,7 +60,7 @@ export default defineComponent({
     const {
       tableClasses, sizeClassNames, tableContentStyles, tableElementStyles,
     } = useStyle(props);
-    const { global } = useConfig('table');
+    const { global } = useConfig('table', props.locale);
     const { isMultipleHeader, spansAndLeafNodes, thList } = useTableHeader(props);
     const finalColumns = computed(() => spansAndLeafNodes.value?.leafColumns || props.columns);
     const isIE = computed(() => getIEVersion() <= 11);

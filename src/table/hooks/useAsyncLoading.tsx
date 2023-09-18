@@ -8,7 +8,7 @@ import { useConfig } from '../../config-provider/useConfig';
 
 export default function useAsyncLoading(props: TdPrimaryTableProps, context: SetupContext) {
   const renderTNode = useTNodeJSX();
-  const { global } = useConfig('table');
+  const { global } = useConfig('table', props.locale);
   const { isLoadingClass, isLoadMoreClass, asyncLoadingClass } = useClassName();
 
   const classes = computed(() => [
