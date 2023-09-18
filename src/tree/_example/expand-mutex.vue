@@ -1,5 +1,5 @@
 <template>
-  <t-space :size="32" direction="vertical" class="tdesign-tree-demo">
+  <t-space :size="32" direction="vertical">
     <t-space :size="10" direction="vertical">
       <t-form label-align="left" :label-width="120">
         <t-form-item label="互斥展开">

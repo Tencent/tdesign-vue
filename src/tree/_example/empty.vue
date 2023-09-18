@@ -1,5 +1,5 @@
 <template>
-  <t-space :size="32" direction="vertical" class="tdesign-tree-demo">
+  <t-space :size="32" direction="vertical">
     <t-space :size="10" direction="vertical">
       <h3 class="title">默认为空状态</h3>
       <t-tree :data="[]" />

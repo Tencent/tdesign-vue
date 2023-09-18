@@ -1,5 +1,5 @@
 <template>
-  <t-space :size="32" direction="vertical" class="tdesign-tree-demo">
+  <t-space :size="32" direction="vertical">
     <t-space :size="10" direction="vertical">
       <h3 class="title">默认状态</h3>
       <div class="tips">
@@ -166,10 +166,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.tdesign-tree-demo .tips p {
-  line-height: 24px;
-  text-indent: 1em;
-}
-</style>

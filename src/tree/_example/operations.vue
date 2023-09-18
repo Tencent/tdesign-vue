@@ -1,5 +1,5 @@
 <template>
-  <t-space :size="32" direction="vertical" class="tdesign-tree-demo">
+  <t-space :size="32" direction="vertical">
     <t-space :size="10" direction="vertical" style="width: 100%">
       <h3 class="title">属性结合 jsx 形式传递</h3>
       <t-tree :data="items" hover expand-all :label="getLabel" :operations="renderOperations" />

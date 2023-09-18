@@ -1,6 +1,6 @@
 <template>
-  <t-space :size="32" direction="vertical" class="tdesign-tree-demo" style="width: 100%">
-    <t-space :size="10" direction="vertical" class="tdesign-tree-vscroll-lazy" style="width: 80%">
+  <t-space :size="32" direction="vertical" style="width: 100%">
+    <t-space :size="10" direction="vertical" style="width: 80%">
       <h3 class="title">虚拟滚动 - lazy模式</h3>
       <t-tree
         ref="tree"

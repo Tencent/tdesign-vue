@@ -1,5 +1,5 @@
 <template>
-  <t-space :size="32" direction="vertical" class="tdesign-tree-demo">
+  <t-space :size="32" direction="vertical">
     <t-space :size="10" direction="vertical">
       <t-form label-align="left" :label-width="80" style="max-width: 500px">
         <t-form-item label="展开动画">
