@@ -30,7 +30,7 @@
                 :class="{ 'custom-line-cross': item.cross }"
               ></span>
             </div>
-            <i class="custom-line-icon" v-if="node.isLeaf()">
+            <i v-if="node.isLeaf()" class="custom-line-icon">
               <icon name="heart-filled" />
             </i>
           </div>

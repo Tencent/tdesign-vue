@@ -24,10 +24,10 @@
       :label="getLabel"
       :expand-parent="expandParent"
       :filter="filterByText"
+      line
       @expand="onExpand"
       @change="onChange"
       @active="onActive"
-      line
     >
       <template #operations="{ node }">
         <t-space :size="10">
@@ -39,7 +39,7 @@
       </template>
     </t-tree>
     <h3>操作树节点</h3>
-    <t-space :size="10" breakLine>
+    <t-space :size="10" break-line>
       <t-button theme="primary" @click="getItem">获取 value 为 'node1' 的单个节点</t-button>
       <t-button theme="primary" @click="getAllItems">获取所有节点</t-button>
       <t-button theme="primary" @click="getActiveChildren">获取高亮节点的所有子节点</t-button>

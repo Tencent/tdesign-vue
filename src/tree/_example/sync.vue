@@ -16,14 +16,14 @@
       </t-input-adornment>
     </t-space>
     <t-tree
+      :expanded="expanded"
+      :actived="actived"
+      :value="checked"
       :data="items"
       checkable
       activable
       :expand-on-click-node="false"
       :active-multiple="false"
-      :expanded.sync="expanded"
-      :actived.sync="actived"
-      :value.sync="checked"
       :value-mode="valueMode"
     />
   </t-space>

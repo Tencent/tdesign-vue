@@ -18,10 +18,10 @@
       :activable="activable"
       :active-multiple="activeMultiple"
       :expand-on-click-node="expandOnClickNode"
+      :on-active="propOnActive"
+      hover
       @click="onClick"
       @active="onActive"
-      :onActive="propOnActive"
-      hover
     />
   </t-space>
 </template>

@@ -17,7 +17,7 @@
       ref="tree"
       :data="items"
       expand-on-click-node
-      :allowFoldNodeOnFilter="allowFoldNodeOnFilter"
+      :allow-fold-node-on-filter="allowFoldNodeOnFilter"
       :default-expanded="expanded"
       :filter="filterByText"
       :checkable="isCheckable"

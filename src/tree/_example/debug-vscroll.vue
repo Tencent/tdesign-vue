@@ -56,7 +56,7 @@
       }"
     >
       <template #operations="{ node }">
-        <div class="tdesign-demo-block-row" v-if="isOperateAble">
+        <div v-if="isOperateAble" class="tdesign-demo-block-row">
           <t-button size="small" variant="base" @click="append(node)">添加子节点</t-button>
           <t-button size="small" variant="base" theme="danger" @click="remove(node)">删除</t-button>
         </div>

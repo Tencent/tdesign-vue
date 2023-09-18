@@ -13,9 +13,9 @@
       hover
       :expand-mutex="mutex"
       :expand-on-click-node="expandOnClickNode"
+      :on-expand="propOnExpand"
       @click="onClick"
       @expand="onExpand"
-      :onExpand="propOnExpand"
     />
   </t-space>
 </template>

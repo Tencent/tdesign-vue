@@ -10,7 +10,7 @@
         <span>是否只禁用 checkbox:</span>
         <t-switch v-model="disableCheck" />
       </t-space>
-      <t-tree :data="items" hover checkable expand-all :disabled="disabled" :disableCheck="disableCheck" />
+      <t-tree :data="items" hover checkable expand-all :disabled="disabled" :disable-check="disableCheck" />
     </t-space>
     <t-space direction="vertical">
       <h3>禁用指定节点</h3>
@@ -18,7 +18,7 @@
         <span>禁用指定节点 checkbox:</span>
         <t-switch v-model="disableTarget" />
       </t-space>
-      <t-tree :data="items" hover checkable expand-all :disableCheck="fnDisableCheck" />
+      <t-tree :data="items" hover checkable expand-all :disable-check="fnDisableCheck" />
     </t-space>
   </t-space>
 </template>

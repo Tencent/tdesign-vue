@@ -20,9 +20,9 @@
       hover
       expand-all
       :checkable="checkable"
-      :checkStrictly="checkStrictly"
+      :check-strictly="checkStrictly"
       :load="load"
-      valueMode="all"
+      value-mode="all"
       @load="onLoad"
     />
   </t-space>

@@ -32,7 +32,15 @@
           <t-input v-model="demo2Text" @change="demo2Input" />
         </t-input-adornment>
       </t-space>
-      <t-tree ref="tree" :data="items" expand-on-click-node allowFoldNodeOnFilter :filter="demo2Filter" hover line />
+      <t-tree
+        ref="tree"
+        :data="items"
+        expand-on-click-node
+        allow-fold-node-on-filter
+        :filter="demo2Filter"
+        hover
+        line
+      />
     </t-space>
   </t-space>
 </template>

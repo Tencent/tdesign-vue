@@ -4,6 +4,7 @@
       <t-button @click="append()">插入一个根节点</t-button>
     </t-space>
     <t-tree
+      ref="tree"
       :data="items"
       hover
       expand-all
@@ -13,7 +14,6 @@
       line
       :label="label"
       :icon="icon"
-      ref="tree"
     >
       <template #operations="{ node }">
         <div class="tdesign-demo-block-row">

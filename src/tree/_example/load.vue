@@ -4,7 +4,7 @@
       <span>可选:</span>
       <t-switch v-model="checkable" />
     </t-space>
-    <t-tree :data="items" hover expand-all :checkable="checkable" v-model="value" :load="load" :lazy="false" />
+    <t-tree v-model="value" :data="items" hover expand-all :checkable="checkable" :load="load" :lazy="false" />
   </t-space>
 </template>
 
