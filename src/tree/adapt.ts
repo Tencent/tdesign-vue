@@ -1,8 +1,6 @@
 // 在这个文件，解决 vue2/vue3 tree 组件依赖的差异问题
 // 除此文件之外的其他组件文件，可从 vue2 项目直接复制到 vue3 项目进行维护
-import VueCompositionAPI, {
-  Ref, SetupContext, ToRefs, ComponentPublicInstance,
-} from '@vue/composition-api';
+import VueCompositionAPI, { Ref, SetupContext, ToRefs } from '@vue/composition-api';
 import Vue, { CreateElement, VNode, PropType } from 'vue';
 import { CheckboxProps } from '../checkbox';
 import {
@@ -43,12 +41,15 @@ export type TypeTNodeReturnValue = TNodeReturnValue;
 export type TypeTreeOptionData = TreeOptionData;
 export type TypeTreeEventState = TreeEventState;
 export type TypeVirtualScrollConfig = VirtualScrollConfig;
+export type TypeToRefs<T> = ToRefs<T>;
 
 export interface TypeTreeInstance extends Vue, TreeInstanceFunctions {}
 
 export type TreeProps<T extends TypeTreeOptionData = TypeTreeOptionData> = TdTreeProps<T> & {
   treeStore?: TreeStore;
 };
+
+export const isVueNext = false;
 
 export const TransitionGroup = Vue.component('TransitionGroup');
 
