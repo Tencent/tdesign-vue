@@ -1,20 +1,18 @@
 import {
-  ref, TypeSetupContext, TypeCreateElement, privateKey, TypeVNode,
+  ref, TypeCreateElement, privateKey, TypeVNode,
 } from '../adapt';
-import {
-  TypeTreeRow, TypeTreeNode, TreeProps, TypeTreeState,
-} from '../tree-types';
+import { TypeTreeRow, TypeTreeNode, TypeTreeState } from '../tree-types';
 import TreeItem from '../tree-item';
 import useTreeEvents from './useTreeEvents';
 
 // tree 节点列表渲染
-export default function useTreeNodes(props: TreeProps, context: TypeSetupContext, state: TypeTreeState) {
+export default function useTreeNodes(state: TypeTreeState) {
   const treeState = state;
   const {
-    store, scope, nodes, virtualConfig,
+    props, store, scope, nodes, virtualConfig,
   } = treeState;
 
-  const { handleClick, handleChange } = useTreeEvents(props, context, state);
+  const { handleClick, handleChange } = useTreeEvents(state);
   const nodesEmpty = ref(false);
   // 用于存储已呈现节点的缓存
   const cacheMap = new Map();
@@ -61,7 +59,7 @@ export default function useTreeNodes(props: TreeProps, context: TypeSetupContext
       <TreeItem
         key={node[privateKey]}
         rowIndex={rowIndex}
-        node={node}
+        itemkey={node[privateKey]}
         treeScope={scope}
         onClick={handleClick}
         onChange={handleChange}

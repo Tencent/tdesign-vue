@@ -1,20 +1,22 @@
 import isBoolean from 'lodash/isBoolean';
 import {
-  usePrefixClass, TypeCreateElement, TypeSetupContext, computed, TCheckBox, TypeVNode,
+  usePrefixClass, TypeCreateElement, computed, TCheckBox, TypeVNode,
 } from '../adapt';
-import { TypeTreeItemProps } from '../tree-types';
+import { TypeTreeItemState } from '../tree-types';
 import { getTNode } from '../util';
 import useItemEvents from './useItemEvents';
 
 // 渲染节点文本与内容
-export default function useRenderLabel(props: TypeTreeItemProps, context: TypeSetupContext) {
+export default function useRenderLabel(state: TypeTreeItemState) {
+  const { props } = state;
   const classPrefix = usePrefixClass().value;
   const componentName = usePrefixClass('tree').value;
 
-  const { handleChange } = useItemEvents(props, context);
+  const { handleChange } = useItemEvents(state);
 
   const renderLabel = (h: TypeCreateElement): TypeVNode => {
-    const { node, treeScope, expandOnClickNode } = props;
+    const { expandOnClickNode } = props;
+    const { node, treeScope } = state;
     const { scopedSlots } = treeScope;
     const treeProps = treeScope?.treeProps || {};
     const { label, disableCheck } = treeProps;

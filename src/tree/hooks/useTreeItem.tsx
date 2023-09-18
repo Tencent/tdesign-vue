@@ -1,15 +1,7 @@
 import {
-  TypeRef,
-  onMounted,
-  reactive,
-  TypeSetupContext,
-  TypeCreateElement,
-  TypeClassName,
-  usePrefixClass,
-  useLazyLoad,
-  TypeVNode,
+  onMounted, reactive, TypeCreateElement, usePrefixClass, useLazyLoad, TypeVNode,
 } from '../adapt';
-import { TypeTreeItemProps } from '../tree-types';
+import { TypeTreeItemState } from '../tree-types';
 import useItemEvents from './useItemEvents';
 import useRenderIcon from './useRenderIcon';
 import useRenderLabel from './useRenderLabel';
@@ -17,28 +9,20 @@ import useRenderLine from './useRenderLine';
 import useRenderOperations from './useRenderOperations';
 import useDraggable from './useDraggable';
 
-export default function useTreeItem(
-  props: TypeTreeItemProps,
-  context: TypeSetupContext,
-  treeItemRef: TypeRef<HTMLElement>,
-) {
-  const { node, treeScope } = props;
-  const { virtualConfig, treeContentRef } = treeScope;
-  const scrollProps = treeScope?.scrollProps;
+export default function useTreeItem(state: TypeTreeItemState) {
+  const { refNode, treeScope, treeItemRef } = state;
+  const { virtualConfig, treeContentRef, scrollProps } = treeScope;
   const classPrefix = usePrefixClass().value;
   const componentName = usePrefixClass('tree').value;
 
-  const { handleClick } = useItemEvents(props, context);
-  const { renderIcon } = useRenderIcon(props);
-  const { renderLabel } = useRenderLabel(props, context);
-  const { renderLine } = useRenderLine(props);
-  const { renderOperations } = useRenderOperations(props);
+  const { handleClick } = useItemEvents(state);
+  const { renderIcon } = useRenderIcon(state);
+  const { renderLabel } = useRenderLabel(state);
+  const { renderLine } = useRenderLine(state);
+  const { renderOperations } = useRenderOperations(state);
   const {
     dragStates, handleDragStart, handleDragEnd, handleDragOver, handleDragLeave, handleDrop,
-  } = useDraggable(
-    props,
-    treeItemRef,
-  );
+  } = useDraggable(state);
 
   const { hasLazyLoadHolder, tRowHeight } = useLazyLoad(
     treeContentRef,
@@ -51,13 +35,14 @@ export default function useTreeItem(
     if (isVirtual) {
       virtualConfig.handleRowMounted({
         ref: treeItemRef,
-        data: node,
+        data: refNode.value,
       });
     }
   });
 
   // 节点隐藏用 class 切换，不要写在 js 中
   const getItemStyles = (): string => {
+    const node = refNode.value;
     const { level } = node;
     // 原本想在这里计算 --hscale
     // 实际操作中发现 scrollHeight 在动画执行到一半的时候取得了错误的值
@@ -68,7 +53,8 @@ export default function useTreeItem(
     return strStyle;
   };
 
-  const getItemClassList = (): TypeClassName => {
+  const getItemClassList = () => {
+    const { node } = state;
     const { isDragOver, isDragging, dropPosition } = dragStates;
     const list = [];
     list.push(`${componentName}__item`);
@@ -131,6 +117,7 @@ export default function useTreeItem(
   };
 
   const renderItemNode = (h: TypeCreateElement) => {
+    const { node } = state;
     const { level, value } = node;
     const styles = getItemStyles();
     const classList = getItemClassList();

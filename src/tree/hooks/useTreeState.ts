@@ -1,10 +1,10 @@
 import {
-  ref, TypeRef, TreeNode, useVModel, toRefs,
+  ref, TypeRef, TreeNode, useVModel, toRefs, TypeSetupContext,
 } from '../adapt';
 import { TreeProps, TypeTreeStore, TypeTreeState } from '../tree-types';
 
 // 提供公共对象
-export default function useTreeState(props: TreeProps) {
+export default function useTreeState(props: TreeProps, context: TypeSetupContext) {
   const treeContentRef = ref<HTMLDivElement>();
   const nodes: TypeRef<TreeNode[]> = ref([]);
   const allNodes: TypeRef<TreeNode[]> = ref([]);
@@ -17,10 +17,13 @@ export default function useTreeState(props: TreeProps) {
 
   function setStore(store: TypeTreeStore) {
     state.store = store;
+    state.scope.store = store;
     allNodes.value = store.getNodes();
   }
 
   const state: TypeTreeState = {
+    props,
+    context,
     // tree 数据对象
     store: null,
     // 内容根节点
@@ -37,6 +40,7 @@ export default function useTreeState(props: TreeProps) {
     virtualConfig: null,
     // 缓存与节点共享的关联对象
     scope: {
+      store: null,
       treeContentRef,
       treeProps: props,
       scopedSlots: {},

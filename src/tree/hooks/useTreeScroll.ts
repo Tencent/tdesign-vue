@@ -1,13 +1,13 @@
 import {
-  TypeSetupContext, computed, onMounted, TypeRef, useVirtualScroll, TypeScroll, TreeNode,
+  computed, onMounted, TypeRef, useVirtualScroll, TypeScroll, TreeNode,
 } from '../adapt';
-import { TreeProps, TypeTreeState, TypeTimer } from '../tree-types';
+import { TypeTreeState, TypeTimer } from '../tree-types';
 
 // tree 虚拟滚动整合
-export default function useTreeScroll(props: TreeProps, context: TypeSetupContext, state: TypeTreeState) {
+export default function useTreeScroll(state: TypeTreeState) {
   const treeState = state;
   const {
-    allNodes, nodes, scope, treeContentRef, isScrolling,
+    props, context, allNodes, nodes, scope, treeContentRef, isScrolling,
   } = treeState;
 
   const scrollProps: TypeRef<TypeScroll> = computed(() => ({

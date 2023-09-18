@@ -1,9 +1,9 @@
-import { TypeSetupContext, TypeCheckboxProps, usePrefixClass } from '../adapt';
-import { TypeTreeItemProps, TypeEventState } from '../tree-types';
+import { TypeCheckboxProps, usePrefixClass } from '../adapt';
+import { TypeEventState, TypeTreeItemState } from '../tree-types';
 // 这里封装 tree-item 的一般事件
 // 拖动事件，虚拟滚动事件不要安排到这里
-export default function useItemEvents(props: TypeTreeItemProps, context: TypeSetupContext) {
-  const { node } = props;
+export default function useItemEvents(state: TypeTreeItemState) {
+  const { node, context, props } = state;
 
   const classPrefix = usePrefixClass().value;
 
@@ -35,7 +35,9 @@ export default function useItemEvents(props: TypeTreeItemProps, context: TypeSet
     });
 
     // 处理expandOnClickNode时与checkbox的选中的逻辑冲突
-    if (expandOnClickNode && node.children && srcTarget.className?.indexOf?.(`${classPrefix}-tree__label`) !== -1) evt.preventDefault();
+    if (expandOnClickNode && node.children && srcTarget.className?.indexOf?.(`${classPrefix}-tree__label`) !== -1) {
+      evt.preventDefault();
+    }
 
     const state: TypeEventState = {
       mouseEvent: evt,
