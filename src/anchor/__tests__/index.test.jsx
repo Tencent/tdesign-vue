@@ -145,10 +145,10 @@ describe('Anchor', () => {
       }).findComponent(Anchor);
       const links = wrapper.findAllComponents(AnchorItem);
       links.at(0).find('a').trigger('click');
-      expect(onChange).toBeCalledTimes(1);
-      expect(onChange).toBeCalledWith('#test-a', '');
-      links.at(1).find('a').trigger('click');
       expect(onChange).toBeCalledTimes(2);
+      expect(onChange).toBeCalledWith('#test-b', '');
+      links.at(1).find('a').trigger('click');
+      expect(onChange).toBeCalledTimes(3);
       expect(onChange).toBeCalledWith('#test-b', '#test-a');
     });
   });
