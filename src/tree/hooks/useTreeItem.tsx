@@ -43,7 +43,7 @@ export default function useTreeItem(state: TypeTreeItemState) {
 
   // 节点隐藏用 class 切换，不要写在 js 中
   const getItemStyles = (): string => {
-    const node = state.reactNode;
+    const { node } = state;
     const { level } = node;
     // 原本想在这里计算 --hscale
     // 实际操作中发现 scrollHeight 在动画执行到一半的时候取得了错误的值
@@ -55,7 +55,7 @@ export default function useTreeItem(state: TypeTreeItemState) {
   };
 
   const getItemClassList = () => {
-    const node = state.reactNode;
+    const { node } = state;
     const { isDragOver, isDragging, dropPosition } = dragStates;
     const list = [];
     list.push(`${componentName}__item`);
@@ -112,7 +112,7 @@ export default function useTreeItem(state: TypeTreeItemState) {
   };
 
   const renderItemNode = (h: TypeCreateElement) => {
-    const node = state.reactNode;
+    const { node } = state;
     const { level, value } = node;
     const styles = getItemStyles();
     const classList = getItemClassList();
