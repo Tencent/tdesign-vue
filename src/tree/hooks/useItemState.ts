@@ -10,6 +10,7 @@ export default function useItemState(props: TypeTreeItemProps, context: TypeSetu
   const node = store.privateMap.get(props.itemKey);
 
   const state: TypeTreeItemState = {
+    stateId: props.stateId,
     props,
     context,
     treeScope,
