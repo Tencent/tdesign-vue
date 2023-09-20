@@ -124,8 +124,8 @@ export default defineComponent({
           <div class={this.headerWrapperCls}>
             {this.showAvatar && <div class={this.headerAvatarCls}>{renderTNodeJSX(this, 'avatar')}</div>}
             <div>
-              {this.showTitle && <span class={this.headerTitleCls}>{renderTNodeJSX(this, 'title')}</span>}
-              {this.showSubtitle && <span class={this.headerSubTitleCls}>{renderTNodeJSX(this, 'subtitle')}</span>}
+              {this.showTitle && <div class={this.headerTitleCls}>{renderTNodeJSX(this, 'title')}</div>}
+              {this.showSubtitle && <div class={this.headerSubTitleCls}>{renderTNodeJSX(this, 'subtitle')}</div>}
               {this.showDescription && <p class={this.headerDescriptionCls}>{renderTNodeJSX(this, 'description')}</p>}
             </div>
           </div>
