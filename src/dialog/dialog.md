@@ -30,12 +30,6 @@
 {{ plugin }}
 
 ## API
-### DialogCard Props
-
-名称 | 类型 | 默认值 | 说明 | 必传
--- | -- | -- | -- | --
-`Pick<DialogProps, 'body' \| 'cancelBtn' \| 'closeBtn' \| 'confirmBtn' \| 'footer' \| 'header' \| 'theme' \| 'onCancel' \| 'onCloseBtnClick' \| 'onConfirm'>` | String / Slot / Function | - | 继承 `Pick<DialogProps, 'body' \| 'cancelBtn' \| 'closeBtn' \| 'confirmBtn' \| 'footer' \| 'header' \| 'theme' \| 'onCancel' \| 'onCloseBtnClick' \| 'onConfirm'>` 中的全部属性。TS 类型：`string \| TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-
 ### Dialog Props
 
 名称 | 类型 | 默认值 | 说明 | 必传

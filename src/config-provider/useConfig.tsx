@@ -1,4 +1,6 @@
-import { inject, h, ref } from '@vue/composition-api';
+import {
+  inject, h, ref, computed,
+} from '@vue/composition-api';
 import { GlobalConfigProvider, defaultGlobalConfig } from './context';
 
 // 处理正则表达式
@@ -29,11 +31,15 @@ const t = function <T> (pattern: T, ...args: any[]) {
  * @returns {t, global}
  * useConfig('pagination')
  */
-export function useConfig<T extends keyof GlobalConfigProvider>(componentName?: T) {
+export function useConfig<T extends keyof GlobalConfigProvider>(
+  componentName: T = undefined,
+  componentLocale?: GlobalConfigProvider[T],
+) {
   const injectGlobalConfig = inject<GlobalConfigProvider>('globalConfig', null);
   const mergedGlobalConfig = injectGlobalConfig || defaultGlobalConfig;
 
-  const global = ref(mergedGlobalConfig[componentName]);
+  // eslint-disable-next-line
+  const global = computed(() => Object.assign({}, mergedGlobalConfig[componentName], componentLocale));
   const classPrefix = ref(mergedGlobalConfig.classPrefix);
 
   return {

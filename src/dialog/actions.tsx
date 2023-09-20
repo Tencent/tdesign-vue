@@ -38,7 +38,7 @@ export default Vue.extend({
       const defaultButtonProps = this.getDefaultConfirmBtnProps(options);
       // 属性和插槽都不存在，就返回全局默认配置
       if (!confirmBtn && !this.$scopedSlots.confirmBtn) {
-        return <TButton class={className} props={{ ...defaultButtonProps }} />;
+        return <TButton class={className} props={{ loading: confirmLoading, ...defaultButtonProps }} />;
       }
       // 如果属性存在，优先返回属性配置
       if (confirmBtn && ['string', 'object'].includes(typeof confirmBtn)) {

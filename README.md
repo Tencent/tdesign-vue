@@ -76,6 +76,12 @@ TDesign also provides component libraries for other platforms and frameworks.
 
 Contributing is welcome. Read [guidelines for contributing](https://github.com/Tencent/tdesign-vue/blob/develop/CONTRIBUTING.md) before submitting your [Pull Request](https://github.com/Tencent/tdesign-vue/pulls).
 
+# Feedback
+
+Create your [Github issues](https://github.com/Tencent/tdesign-vue/issues) or scan the QR code below to join our user groups
+
+<img src="https://oteam-tdesign-1258344706.cos.ap-guangzhou.myqcloud.com/site/doc/Vue2-IM.png" width="200" />
+
 # License
 
 The MIT License. Please see [the license file](./LICENSE) for more information.
