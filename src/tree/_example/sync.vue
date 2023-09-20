@@ -16,9 +16,9 @@
       </t-input-adornment>
     </t-space>
     <t-tree
-      :expanded="expanded"
-      :actived="actived"
-      :value="checked"
+      v-model="checked"
+      :expanded.sync="expanded"
+      :actived.sync="actived"
       :data="items"
       checkable
       activable
@@ -30,6 +30,7 @@
 </template>
 
 <script>
+// 注意这个示例，同步属性的赋值方式与 vue3 api 不同
 export default {
   data() {
     return {
