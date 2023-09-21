@@ -5,6 +5,19 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.6.7 `2023-09-21` 
+### 🚀 Features
+- `TreeSelect`: 支持`panelTopContent`和 `panelBottomContent` 的使用 @uyarn ([#2797](https://github.com/Tencent/tdesign-vue/pull/2797))
+- `Table`:  @chaishi 
+   - 除全局配置支持语言配置外，本次新增通过属性 `locale` 进行单个组件进行语言配置 ([#2810](https://github.com/Tencent/tdesign-vue/pull/2810))
+   - 列配置功能，支持定义 `columnControllerTopContent` 和 `columnControllerBottomContent` 定义列配置弹框顶部或底部内容 ([#2810](https://github.com/Tencent/tdesign-vue/pull/2810))
+   - 列配置功能，支持分组显示列配置信息，一般用于表格列数量特别多，需要分类显示场景([#2810](https://github.com/Tencent/tdesign-vue/pull/2810))
+- `card`: 卡片标题 `title` 使用 `div` 取代 `span` 在自定义场景下更符合规范 @uyarn ([#2812](https://github.com/Tencent/tdesign-vue/pull/2812))
+### 🐞 Bug Fixes
+- `useResizeObserver`: 修复缺少容器元素判空问题，[issue#2805](https://github.com/Tencent/tdesign-vue/issues/2805) @chaishi ([#2806](https://github.com/Tencent/tdesign-vue/pull/2806))
+- `Table`: 列配置功能，修复每次打开自定义列配置弹框，都会创建一个新的弹框而旧弹框没有消除问题 @chaishi ([#2810](https://github.com/Tencent/tdesign-vue/pull/2810))
+- `Dialog`: 修复没有定义确认按钮属性场景时（即没有设置 confirmBtn），`confirmLoading` 无效问题 @chaishi ([#2814](https://github.com/Tencent/tdesign-vue/pull/2814))
+
 ## 🌈 1.6.6 `2023-09-07` 
 ### 🐞 Bug Fixes
 - `Checkbox`: 修复动态设置 `options` 无效问题，[issue#2792](https://github.com/Tencent/tdesign-vue/issues/2792) @chaishi ([#2793](https://github.com/Tencent/tdesign-vue/pull/2793))
