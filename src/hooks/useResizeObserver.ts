@@ -22,7 +22,7 @@ export default function useResizeObserver(
     containerObserver.observe(el);
   };
 
-  if (container) {
+  if (container?.value) {
     watch(
       container,
       (el) => {

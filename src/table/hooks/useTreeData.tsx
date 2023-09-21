@@ -22,7 +22,7 @@ import useTreeDataExpand from './useTreeDataExpand';
 
 export default function useTreeData(props: TdEnhancedTableProps, context: SetupContext) {
   const { data, columns } = toRefs(props);
-  const { t, global } = useConfig('table');
+  const { t, global } = useConfig('table', props.locale);
   const { AddRectangleIcon, MinusRectangleIcon } = useGlobalIcon({
     AddRectangleIcon: TdAddRectangleIcon,
     MinusRectangleIcon: TdMinusRectangleIcon,

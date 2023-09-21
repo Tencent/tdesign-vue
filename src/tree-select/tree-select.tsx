@@ -74,6 +74,7 @@ export default defineComponent({
             `${this.classPrefix}-select__dropdown-inner--size-${this.dropdownInnerSize}`,
           ]}
         >
+          {this.renderTNodeJSX('panelTopContent')}
           {this.loading && !this.tDisabled ? (
             <p class={[`${this.classPrefix}-select__loading-tips`, `${this.classPrefix}-select__right-icon-polyfill`]}>
               {this.renderDefaultTNode('loadingText', {
@@ -111,6 +112,7 @@ export default defineComponent({
               }}
             />
           ) : null}
+          {this.renderTNodeJSX('panelBottomContent')}
         </div>
       );
     },
