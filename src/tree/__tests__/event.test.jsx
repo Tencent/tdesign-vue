@@ -1,3 +1,4 @@
+/* eslint-disable vue/order-in-components */
 import Vue from 'vue';
 import { mount } from '@vue/test-utils';
 import Tree from '@/src/tree/index.ts';
@@ -8,7 +9,8 @@ describe('Tree:props:events', () => {
     it('onActive 回调可触发', () => new Promise((resolve) => {
       const data = [{ value: 't1' }, { value: 't2' }];
       mount(
-        Vue.component('test', {
+        // eslint-disable-next-line vue/one-component-per-file
+        Vue.component('TestOnactive', {
           components: {
             Tree,
           },
@@ -26,6 +28,11 @@ describe('Tree:props:events', () => {
               items: data,
             };
           },
+          mounted() {
+            this.$refs.tree.setItem('t2', {
+              actived: true,
+            });
+          },
           methods: {
             onActive(actived, context) {
               expect(actived.length).toBe(1);
@@ -34,11 +41,6 @@ describe('Tree:props:events', () => {
               resolve();
             },
           },
-          mounted() {
-            this.$refs.tree.setItem('t2', {
-              actived: true,
-            });
-          },
         }),
       );
     }, 10));
@@ -46,7 +48,8 @@ describe('Tree:props:events', () => {
     it('active 事件可触发', () => new Promise((resolve) => {
       const data = [{ value: 't1' }, { value: 't2' }];
       mount(
-        Vue.component('test', {
+        // eslint-disable-next-line vue/one-component-per-file
+        Vue.component('TestActiveEmit', {
           components: {
             Tree,
           },
@@ -64,6 +67,11 @@ describe('Tree:props:events', () => {
               items: data,
             };
           },
+          mounted() {
+            this.$refs.tree.setItem('t2', {
+              actived: true,
+            });
+          },
           methods: {
             onActive(actived, context) {
               expect(actived.length).toBe(1);
@@ -71,11 +79,6 @@ describe('Tree:props:events', () => {
               expect(context.node.value).toBe('t2');
               resolve();
             },
-          },
-          mounted() {
-            this.$refs.tree.setItem('t2', {
-              actived: true,
-            });
           },
         }),
       );
@@ -104,7 +107,8 @@ describe('Tree:props:events', () => {
       ];
 
       mount(
-        Vue.component('test', {
+        // eslint-disable-next-line vue/one-component-per-file
+        Vue.component('TestOnexpand', {
           components: {
             Tree,
           },
@@ -121,6 +125,11 @@ describe('Tree:props:events', () => {
               items: data,
             };
           },
+          mounted() {
+            this.$refs.tree.setItem('t2', {
+              expanded: true,
+            });
+          },
           methods: {
             onExpand(expanded, context) {
               expect(expanded.length).toBe(1);
@@ -128,11 +137,6 @@ describe('Tree:props:events', () => {
               expect(context.node.value).toBe('t2');
               resolve();
             },
-          },
-          mounted() {
-            this.$refs.tree.setItem('t2', {
-              expanded: true,
-            });
           },
         }),
       );
@@ -159,7 +163,8 @@ describe('Tree:props:events', () => {
       ];
 
       mount(
-        Vue.component('test', {
+        // eslint-disable-next-line vue/one-component-per-file
+        Vue.component('TestExpandEmit', {
           components: {
             Tree,
           },
@@ -176,6 +181,11 @@ describe('Tree:props:events', () => {
               items: data,
             };
           },
+          mounted() {
+            this.$refs.tree.setItem('t2', {
+              expanded: true,
+            });
+          },
           methods: {
             onExpand(expanded, context) {
               expect(expanded.length).toBe(1);
@@ -183,11 +193,6 @@ describe('Tree:props:events', () => {
               expect(context.node.value).toBe('t2');
               resolve();
             },
-          },
-          mounted() {
-            this.$refs.tree.setItem('t2', {
-              expanded: true,
-            });
           },
         }),
       );
