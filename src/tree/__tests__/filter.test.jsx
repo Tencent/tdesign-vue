@@ -31,7 +31,7 @@ describe('Tree:filter', () => {
         },
         render() {
           return (
-            <Tree data={data} expandAll filter={this.filter}>
+            <Tree transition={false} data={data} expandAll filter={this.filter}>
               <div slot="empty" class="tree-empty">
                 暂无数据
               </div>

@@ -9,7 +9,7 @@ describe('Tree:init', () => {
       const wrapper = mount({
         render() {
           return (
-            <Tree data={null}>
+            <Tree transition={false} data={null}>
               <div slot="empty" class="tree-empty">
                 暂无数据
               </div>
@@ -36,7 +36,7 @@ describe('Tree:init', () => {
         },
         render() {
           return (
-              <Tree ref="tree" data={null}>
+              <Tree transition={false} ref="tree" data={null}>
                 <div slot="empty" class="tree-empty">
                   暂无数据
                 </div>
@@ -63,7 +63,7 @@ describe('Tree:init', () => {
       const wrapper = mount({
         render() {
           return (
-            <Tree data={data}>
+            <Tree transition={false} data={data}>
               <div slot="empty" class="tree-empty">
                 暂无数据
               </div>

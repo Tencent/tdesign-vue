@@ -12,9 +12,15 @@ describe('Tree:props:events', () => {
           components: {
             Tree,
           },
-          template: ['<Tree', 'ref="tree"', ':data="items"', 'activable', ':onActive="onActive"', '></Tree>'].join(
-            ' ',
-          ),
+          template: [
+            '<Tree',
+            ':transition="false"',
+            'ref="tree"',
+            ':data="items"',
+            'activable',
+            ':onActive="onActive"',
+            '></Tree>',
+          ].join(' '),
           data() {
             return {
               items: data,
@@ -44,7 +50,15 @@ describe('Tree:props:events', () => {
           components: {
             Tree,
           },
-          template: ['<Tree', 'ref="tree"', ':data="items"', 'activable', '@active="onActive"', '></Tree>'].join(' '),
+          template: [
+            '<Tree',
+            ':transition="false"',
+            'ref="tree"',
+            ':data="items"',
+            'activable',
+            '@active="onActive"',
+            '></Tree>',
+          ].join(' '),
           data() {
             return {
               items: data,
@@ -94,7 +108,14 @@ describe('Tree:props:events', () => {
           components: {
             Tree,
           },
-          template: ['<Tree', 'ref="tree"', ':data="items"', ':onExpand="onExpand"', '></Tree>'].join(' '),
+          template: [
+            '<Tree',
+            ':transition="false"',
+            'ref="tree"',
+            ':data="items"',
+            ':onExpand="onExpand"',
+            '></Tree>',
+          ].join(' '),
           data() {
             return {
               items: data,
@@ -142,7 +163,14 @@ describe('Tree:props:events', () => {
           components: {
             Tree,
           },
-          template: ['<Tree', 'ref="tree"', ':data="items"', '@expand="onExpand"', '></Tree>'].join(' '),
+          template: [
+            '<Tree',
+            ':transition="false"',
+            'ref="tree"',
+            ':data="items"',
+            '@expand="onExpand"',
+            '></Tree>',
+          ].join(' '),
           data() {
             return {
               items: data,
@@ -199,7 +227,7 @@ describe('Tree:props:events', () => {
           });
         },
         render() {
-          return <Tree ref="tree" data={data} checkable onChange={onChange}></Tree>;
+          return <Tree ref="tree" transition={false} data={data} checkable onChange={onChange}></Tree>;
         },
       });
     }, 10));
@@ -244,7 +272,17 @@ describe('Tree:props:events', () => {
 
       mount({
         render() {
-          return <Tree ref="tree" data={data} expand-all lazy={false} load={loadData} onLoad={onLoad}></Tree>;
+          return (
+              <Tree
+                ref="tree"
+                transition={false}
+                data={data}
+                expand-all
+                lazy={false}
+                load={loadData}
+                onLoad={onLoad}
+              ></Tree>
+          );
         },
       });
     }, 20));

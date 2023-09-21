@@ -18,7 +18,7 @@ describe('Tree:checkable', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree data={data} expandAll></Tree>;
+          return <Tree transition={false} data={data} expandAll></Tree>;
         },
       });
       expect(wrapper.find('[data-value="t1"] input[type=checkbox]').exists()).toBe(false);
@@ -37,7 +37,7 @@ describe('Tree:checkable', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree data={data} checkable expandAll></Tree>;
+          return <Tree transition={false} data={data} checkable expandAll></Tree>;
         },
       });
       expect(wrapper.find('[data-value="t1"] input[type=checkbox]').exists()).toBe(true);
@@ -67,7 +67,7 @@ describe('Tree:checkable', () => {
           };
         },
         render() {
-          return <Tree data={data} checkable expandAll defaultValue={this.value}></Tree>;
+          return <Tree transition={false} data={data} checkable expandAll defaultValue={this.value}></Tree>;
         },
       });
       expect(wrapper.find('[data-value="t1"] .t-checkbox').classes('t-is-checked')).toBe(false);
@@ -99,7 +99,7 @@ describe('Tree:checkable', () => {
           };
         },
         render() {
-          return <Tree data={data} checkable expandAll value={this.value}></Tree>;
+          return <Tree transition={false} data={data} checkable expandAll value={this.value}></Tree>;
         },
       });
       expect(wrapper.find('[data-value="t1"] .t-checkbox').classes('t-is-checked')).toBe(false);
@@ -129,7 +129,7 @@ describe('Tree:checkable', () => {
           };
         },
         render() {
-          return <Tree data={data} checkable expandAll value={this.value}></Tree>;
+          return <Tree transition={false} data={data} checkable expandAll value={this.value}></Tree>;
         },
       });
       wrapper.setData({
@@ -166,7 +166,7 @@ describe('Tree:checkable', () => {
           });
         },
         render() {
-          return <Tree ref="tree" data={data} checkable expandAll checkStrictly></Tree>;
+          return <Tree transition={false} ref="tree" data={data} checkable expandAll checkStrictly></Tree>;
         },
       });
 
@@ -197,7 +197,7 @@ describe('Tree:checkable', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} checkable valueMode="onlyLeaf"></Tree>;
+          return <Tree transition={false} ref="tree" data={data} checkable valueMode="onlyLeaf"></Tree>;
         },
       });
 
@@ -226,7 +226,7 @@ describe('Tree:checkable', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} checkable valueMode="all"></Tree>;
+          return <Tree transition={false} ref="tree" data={data} checkable valueMode="all"></Tree>;
         },
       });
       const treeWrapper = wrapper.findComponent(Tree);
@@ -254,7 +254,7 @@ describe('Tree:checkable', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} checkable valueMode="parentFirst"></Tree>;
+          return <Tree transition={false} ref="tree" data={data} checkable valueMode="parentFirst"></Tree>;
         },
       });
       const treeWrapper = wrapper.findComponent(Tree);
