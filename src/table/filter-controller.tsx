@@ -15,12 +15,14 @@ import { PrimaryTableCol, FilterValue } from './type';
 import { useConfig } from '../config-provider/useConfig';
 import log from '../_common/js/log';
 import { AttachNode } from '../common';
+import { TableConfig } from '../config-provider';
 
 type Params = Parameters<CreateElement>;
 type FirstParams = Params[0];
 type SecondParams = Params[1] | Params[2];
 
 export interface TableFilterControllerProps {
+  locale: TableConfig;
   tFilterValue: FilterValue;
   innerFilterValue: FilterValue;
   tableFilterClasses: {
@@ -55,12 +57,13 @@ export default defineComponent({
     primaryTableElement: {},
     popupProps: Object as PropType<TableFilterControllerProps['popupProps']>,
     attach: [String, Function] as PropType<TableFilterControllerProps['attach']>,
+    locale: Object,
   },
 
   setup(props, { emit }) {
     const triggerElementRef = ref<HTMLDivElement>(null);
     const renderTNode = useTNodeDefault();
-    const { t, global } = useConfig('table');
+    const { t, global } = useConfig('table', props.locale);
     const { FilterIcon } = useGlobalIcon({ FilterIcon: TdFilterIcon });
     const filterPopupVisible = ref(false);
 
@@ -107,12 +110,6 @@ export default defineComponent({
         && column.colKey in (this.innerFilterValue as PropType<TableFilterControllerProps['innerFilterValue']>)
       ) {
         filterComponentProps.value = this.innerFilterValue[column.colKey];
-      }
-      // 这个代码必须放在这里，没事儿别改
-      if (column.filter.type === 'single') {
-        filterComponentProps.onChange = (val: any) => {
-          this.$emit('inner-filter-change', val, column);
-        };
       }
       // 这个代码必须放在这里，没事儿别改
       const on = {
@@ -205,7 +202,8 @@ export default defineComponent({
     // @ts-ignore
     const filterValue = this.tFilterValue?.[column.colKey];
     const isObjectTrue = typeof filterValue === 'object' && !isEmpty(filterValue);
-    const isValueTrue = filterValue && typeof filterValue !== 'object';
+    // false is a valid filter value
+    const isValueExist = (filterValue || filterValue === false) && typeof filterValue !== 'object';
     return (
       <Popup
         attach={this.attach || (this.primaryTableElement ? () => this.primaryTableElement : undefined)}
@@ -221,7 +219,7 @@ export default defineComponent({
         class={[
           this.tableFilterClasses.icon,
           {
-            [this.isFocusClass]: isObjectTrue || isValueTrue,
+            [this.isFocusClass]: isObjectTrue || isValueExist,
           },
         ]}
         content={() => (

@@ -1,5 +1,5 @@
 import {
-  CreateElement, computed, defineComponent, toRefs, PropType, Ref, toRef, ref,
+  computed, defineComponent, toRefs, PropType, Ref, toRef, ref,
 } from 'vue';
 import {
   BrowseIcon as TdBrowseIcon,
@@ -204,18 +204,6 @@ export default defineComponent({
                       });
                     }}
                   />
-                  <ImageViewer
-                    images={this.displayFiles.map((t) => t.url)}
-                    defaultIndex={index}
-                    trigger={(h: CreateElement, { open }: any) => (
-                      <BrowseIcon
-                        onClick={({ e }: { e: MouseEvent }) => {
-                          this.$emit('preview', { file, index, e });
-                          open();
-                        }}
-                      />
-                    )}
-                  ></ImageViewer>
                   <span class={`${this.uploadPrefix}__card-mask-item-divider`}></span>
                 </span>
               )}

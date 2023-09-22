@@ -1,5 +1,5 @@
 import {
-  computed, ref, watch, onBeforeMount,
+  computed, ref, watch, onBeforeUnmount,
 } from 'vue';
 import { TdBaseTableProps } from '../type';
 import { on, off } from '../../utils/dom';
@@ -264,7 +264,7 @@ export default function useAffix(props: TdBaseTableProps) {
     },
   );
 
-  onBeforeMount(() => {
+  onBeforeUnmount(() => {
     off(document, 'scroll', onDocumentScroll);
     removeHorizontalScrollListeners();
   });

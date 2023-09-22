@@ -4,8 +4,10 @@ const push = (value: number) => {
   data.push(value);
 };
 
-const pop = () => {
-  data.pop();
+const pop = (value: number) => {
+  if (data.length && data.includes(value)) {
+    data.pop();
+  }
 };
 
 const stack = {

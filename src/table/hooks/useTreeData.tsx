@@ -1,5 +1,5 @@
 import {
-  CreateElement, SetupContext, ref, watch, toRefs, onUnmounted, computed, shallowRef,
+  SetupContext, ref, watch, toRefs, onUnmounted, computed, shallowRef, CreateElement,
 } from 'vue';
 import { AddRectangleIcon as TdAddRectangleIcon, MinusRectangleIcon as TdMinusRectangleIcon } from 'tdesign-icons-vue';
 import get from 'lodash/get';
@@ -21,7 +21,7 @@ import useTreeDataExpand from './useTreeDataExpand';
 
 export default function useTreeData(props: TdEnhancedTableProps, context: SetupContext) {
   const { data, columns } = toRefs(props);
-  const { t, global } = useConfig('table');
+  const { t, global } = useConfig('table', props.locale);
   const { AddRectangleIcon, MinusRectangleIcon } = useGlobalIcon({
     AddRectangleIcon: TdAddRectangleIcon,
     MinusRectangleIcon: TdMinusRectangleIcon,
@@ -38,12 +38,14 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
   }));
 
   const {
-    tExpandedTreeNode, expandAll, foldAll, updateExpandOnDataChange, onExpandFoldIconClick,
-  } = useTreeDataExpand(
-    props,
-    context,
-    { store, dataSource, rowDataKeys },
-  );
+    tExpandedTreeNode,
+    isDefaultExpandAllExecute,
+    isDefaultExpandedTreeNodesExecute,
+    expandAll,
+    foldAll,
+    updateExpandOnDataChange,
+    onExpandFoldIconClick,
+  } = useTreeDataExpand(props, context, { store, dataSource, rowDataKeys });
 
   const checkedColumn = computed(() => columns.value.find((col) => col.colKey === 'row-select'));
 
@@ -97,9 +99,15 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
   );
 
   function resetData(data: TableRowData[]) {
-    store.value.initialTreeStore(data, props.columns, rowDataKeys.value);
-    if (tExpandedTreeNode.value?.length) {
+    const {
+      columns, expandedTreeNodes, defaultExpandedTreeNodes, tree,
+    } = props;
+    store.value.initialTreeStore(data, columns, rowDataKeys.value);
+    const defaultNeedExpand = Boolean(!isDefaultExpandedTreeNodesExecute.value && defaultExpandedTreeNodes?.length);
+    const needExpandAll = Boolean(tree?.defaultExpandAll && !isDefaultExpandAllExecute.value);
+    if ((tExpandedTreeNode.value?.length && !!(expandedTreeNodes || defaultNeedExpand)) || needExpandAll) {
       updateExpandOnDataChange(data);
+      isDefaultExpandedTreeNodesExecute.value = true;
     } else {
       dataSource.value = [...data];
     }
@@ -314,5 +322,6 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
     getTreeNode,
     resetData,
     getTreeExpandedRow,
+    onExpandFoldIconClick,
   };
 }

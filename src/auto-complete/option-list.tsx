@@ -1,5 +1,5 @@
 import {
-  ref, computed, defineComponent, PropType, h, watch, onBeforeMount,
+  ref, computed, defineComponent, PropType, h, watch, onBeforeUnmount,
 } from 'vue';
 import isFunction from 'lodash/isFunction';
 import HighlightOption from './highlight-option';
@@ -123,7 +123,7 @@ export default defineComponent({
       { immediate: true },
     );
 
-    onBeforeMount(() => {
+    onBeforeUnmount(() => {
       removeKeyboardListener();
     });
 
