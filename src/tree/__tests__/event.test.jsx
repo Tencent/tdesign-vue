@@ -14,6 +14,7 @@ describe('Tree:props:events', () => {
           components: {
             Tree,
           },
+          // 使用 template 写法是为了 vue2, vue3 统一测试用例
           template: [
             '<Tree',
             ':transition="false"',
