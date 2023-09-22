@@ -118,7 +118,7 @@ export default defineComponent({
         <div class={`${this.classPrefix}-table__column-controller-block`}>
           <CheckboxGroup
             options={this.options}
-            {...this.checkboxProps}
+            {...(this.checkboxProps as object)}
             value={this.value}
             on={{
               change: this.handleCheckChange,

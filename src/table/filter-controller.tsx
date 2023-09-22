@@ -57,6 +57,7 @@ export default defineComponent({
     primaryTableElement: {},
     popupProps: Object as PropType<TableFilterControllerProps['popupProps']>,
     attach: [String, Function] as PropType<TableFilterControllerProps['attach']>,
+    locale: Object,
   },
 
   setup(props, { emit }) {

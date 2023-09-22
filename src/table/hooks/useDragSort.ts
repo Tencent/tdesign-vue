@@ -23,6 +23,7 @@ export default function useDragSort(
   }>,
 ) {
   const { sortOnRowDraggable, dragSort, data } = toRefs(props);
+  const innerPagination = ref(props.pagination);
   const { tableDraggableClasses, tableBaseClass, tableFullRowClasses } = useClassName();
   const columns = ref<PrimaryTableCol[]>(props.columns || []);
   const primaryTableRef = ref(null);
@@ -66,11 +67,12 @@ export default function useDragSort(
   );
 
   // 本地分页的表格，index 不同，需加上分页计数
-  function getDataPageIndex(index: number) {
-    const { pagination } = props;
+  function getDataPageIndex(index: number, pagination: SimplePageInfo) {
+    const current = pagination.current ?? pagination.defaultCurrent;
+    const pageSize = pagination.pageSize ?? pagination.defaultPageSize;
     // 开启本地分页的场景
-    if (!props.disableDataPage && pagination && data.value.length > pagination.pageSize) {
-      return pagination.pageSize * (pagination.current - 1) + index;
+    if (!props.disableDataPage && pagination && data.value.length > pageSize) {
+      return pageSize * (current - 1) + index;
     }
     return index;
   }
@@ -100,13 +102,17 @@ export default function useDragSort(
           currentIndex -= 1;
           targetIndex -= 1;
         }
+        if (innerPagination.value) {
+          currentIndex = getDataPageIndex(currentIndex, innerPagination.value);
+          targetIndex = getDataPageIndex(targetIndex, innerPagination.value);
+        }
         const params: DragSortContext<TableRowData> = {
           data: data.value,
           currentIndex,
           current: data.value[currentIndex],
           targetIndex,
           target: data.value[targetIndex],
-          newData: swapDragArrayElement([...props.data], getDataPageIndex(currentIndex), getDataPageIndex(targetIndex)),
+          newData: swapDragArrayElement([...props.data], currentIndex, targetIndex),
           e: evt,
           sort: 'row',
         };
@@ -210,7 +216,6 @@ export default function useDragSort(
   }
 
   function setDragSortColumns(val: PrimaryTableCol[]) {
-    // @ts-ignore
     columns.value = val;
   }
 
@@ -238,6 +243,7 @@ export default function useDragSort(
     isRowDraggable,
     isRowHandlerDraggable,
     isColDraggable,
+    innerPagination,
     setDragSortPrimaryTableRef,
     setDragSortColumns,
   };

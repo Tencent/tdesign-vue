@@ -22,7 +22,6 @@ import useEditableCell from './hooks/useEditableCell';
 import useEditableRow from './hooks/useEditableRow';
 import { EditableCellProps } from './editable-cell';
 import useStyle from './hooks/useStyle';
-import { CheckboxGroupValue } from '..';
 import { ComponentScrollToElementParams } from '../common';
 
 export { BASE_TABLE_ALL_EVENTS } from './base-table';
@@ -72,7 +71,7 @@ export default defineComponent({
     } = useClassName();
     const { sizeClassNames } = useStyle(props);
     // 自定义列配置功能
-    const { tDisplayColumns, renderColumnController } = useColumnController(props, context, { onColumnReduce });
+    const { tDisplayColumns, renderColumnController } = useColumnController(props, context);
     // 展开/收起行功能
     const {
       showExpandedRow, showExpandIconColumn, getExpandColumn, renderExpandedRow, onInnerExpandRowClick,
@@ -158,12 +157,6 @@ export default defineComponent({
       setFilterPrimaryTableRef(primaryTableRef.value);
       setDragSortPrimaryTableRef(primaryTableRef.value);
     });
-
-    function onColumnReduce(reduceKeys: CheckboxGroupValue) {
-      if (props.resizable) {
-        primaryTableRef.value.updateTableWidthOnColumnChange(reduceKeys);
-      }
-    }
 
     // 1. 影响列数量的因素有：自定义列配置、展开/收起行、多级表头；2. 影响表头内容的因素有：排序图标、筛选图标
     const getColumns = (columns: PrimaryTableCol<TableRowData>[]) => {
@@ -257,6 +250,7 @@ export default defineComponent({
     });
 
     const onInnerPageChange = (pageInfo: PageInfo, newData: Array<TableRowData>) => {
+      innerPagination.value = { ...innerPagination.value, ...pageInfo };
       currentPaginateData.value = newData;
       props.onPageChange?.(pageInfo, newData);
       // Vue3 ignore next line

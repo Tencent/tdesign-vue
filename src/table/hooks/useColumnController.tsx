@@ -2,7 +2,7 @@
  * 自定义显示列控制器，即列配置
  */
 import {
-  CreateElement, computed, ref, SetupContext, toRefs, h, watch,
+  computed, ref, SetupContext, toRefs, h, watch, CreateElement,
 } from 'vue';
 import { SettingIcon as TdSettingIcon } from 'tdesign-icons-vue';
 // import intersection from 'lodash/intersection';
@@ -78,12 +78,8 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
 
   // const intersectionChecked = computed(() => intersection(columnCheckboxKeys.value, [...enabledColKeys.value]));
 
-  watch([displayColumns], ([val], [oldVal]) => {
+  watch([displayColumns], ([val]) => {
     columnCheckboxKeys.value = val || props.defaultDisplayColumns || keys;
-    if (val.length < oldVal.length) {
-      const reduceKeys = xorWith(oldVal, val);
-      extra?.onColumnReduce?.(reduceKeys);
-    }
   });
 
   function getOneColumnItem(column: PrimaryTableCol, i: number) {

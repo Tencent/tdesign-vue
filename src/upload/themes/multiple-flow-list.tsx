@@ -1,5 +1,5 @@
 import {
-  CreateElement, computed, defineComponent, toRefs, PropType, Ref, toRef, ref,
+  computed, defineComponent, toRefs, PropType, Ref, toRef, ref,
 } from 'vue';
 import {
   BrowseIcon as TdBrowseIcon,
