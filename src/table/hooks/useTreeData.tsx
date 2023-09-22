@@ -1,5 +1,5 @@
 import {
-  CreateElement, SetupContext, ref, watch, toRefs, onUnmounted, computed, shallowRef,
+  SetupContext, ref, watch, toRefs, onUnmounted, computed, shallowRef, CreateElement,
 } from 'vue';
 import { AddRectangleIcon as TdAddRectangleIcon, MinusRectangleIcon as TdMinusRectangleIcon } from 'tdesign-icons-vue';
 import get from 'lodash/get';
@@ -107,6 +107,7 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
     const needExpandAll = Boolean(tree?.defaultExpandAll && !isDefaultExpandAllExecute.value);
     if ((tExpandedTreeNode.value?.length && !!(expandedTreeNodes || defaultNeedExpand)) || needExpandAll) {
       updateExpandOnDataChange(data);
+      isDefaultExpandedTreeNodesExecute.value = true;
     } else {
       dataSource.value = [...data];
     }

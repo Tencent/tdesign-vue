@@ -1,6 +1,6 @@
 import {
   computed, defineComponent, PropType, toRefs,
-} from '@vue/composition-api';
+} from 'vue';
 import intersection from 'lodash/intersection';
 import Checkbox, {
   CheckboxGroup, CheckboxGroupChangeContext, CheckboxGroupProps, CheckboxProps,
