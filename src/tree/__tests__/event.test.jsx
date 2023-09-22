@@ -1,7 +1,7 @@
 /* eslint-disable vue/order-in-components */
 import { mount } from '@vue/test-utils';
-import { defineComponent } from './adapt';
 import Tree from '@/src/tree/index.ts';
+import { defineComponent } from './adapt';
 
 describe('Tree:props:events', () => {
   vi.useRealTimers();
