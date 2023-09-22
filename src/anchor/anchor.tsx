@@ -1,5 +1,6 @@
 import Vue, { VueConstructor } from 'vue';
-import type { ScopedSlotReturnValue } from 'vue/types/vnode';
+import { ScopedSlotReturnValue } from 'vue/types/vnode';
+import { isFunction } from 'lodash';
 import { ANCHOR_SHARP_REGEXP, ANCHOR_CONTAINER, getOffsetTop } from './utils';
 import {
   on, off, getScroll, scrollTo, getScrollContainer,
@@ -120,6 +121,7 @@ export default mixins(Vue as VueConstructor<Anchor>, classPrefixMixins).extend({
         this.activeLineStyle = false;
         return;
       }
+
       const { offsetTop: top, offsetHeight: height } = ele;
       this.activeLineStyle = {
         top: `${top}px`,
@@ -145,9 +147,11 @@ export default mixins(Vue as VueConstructor<Anchor>, classPrefixMixins).extend({
      */
     handleLinkClick(link: { href: string; title: string; e: MouseEvent }): void {
       this.$emit('click', link);
-      if (this.onClick) {
-        this.onClick(link);
-      }
+      this.onClick?.(link);
+
+      const { getCurrentAnchor } = this.$props;
+      const newHref = isFunction(getCurrentAnchor) ? getCurrentAnchor(link.href) : link.href;
+      this.handleScrollTo(newHref);
     },
     /**
      * 滚动到指定锚点
@@ -204,11 +208,14 @@ export default mixins(Vue as VueConstructor<Anchor>, classPrefixMixins).extend({
   },
 
   async mounted() {
-    const { active } = this;
     this.getScrollContainer();
-    if (active) {
-      await Vue.nextTick();
-      this.handleScrollTo(active);
+    const { getCurrentAnchor } = this.$props;
+
+    if (isFunction(getCurrentAnchor)) {
+      this.setCurrentActiveLink(getCurrentAnchor(this.active));
+    } else {
+      const href = window?.location.hash;
+      this.setCurrentActiveLink(decodeURIComponent(href));
     }
   },
 

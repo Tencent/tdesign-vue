@@ -45,7 +45,11 @@ export interface TdAnchorProps {
    * 锚点被点击时触发
    */
   onClick?: (link: { href: string; title: string; e: MouseEvent }) => void;
-};
+  /**
+   * 自定义高亮的锚点
+   */
+  getCurrentAnchor?: (activeLink: string) => string;
+}
 
 export interface TdAnchorTargetProps {
   /**
@@ -58,7 +62,7 @@ export interface TdAnchorTargetProps {
    * @default div
    */
   tag?: string;
-};
+}
 
 export interface TdAnchorItemProps {
   /**
@@ -76,4 +80,4 @@ export interface TdAnchorItemProps {
    * @default ''
    */
   title?: string | TNode;
-};
+}
