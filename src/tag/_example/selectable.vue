@@ -1,15 +1,54 @@
 <template>
-  <t-space size="30px">
-    <t-check-tag
-      v-for="(tag, index) in tags"
-      :key="index"
-      :defaultChecked="tag.defaultChecked"
-      :disabled="!!tag.disabled"
-      @click="handleClick(tag, index)"
-      @change="handleChange"
-    >
-      {{ tag.name }}
-    </t-check-tag>
+  <t-space direction="vertical">
+    <t-space align="center">
+      <label>StyleA</label>
+
+      <t-check-tag v-model="checked1" style="margin-right: 32px">选中/未选态</t-check-tag>
+
+      <t-check-tag :checked="true">选中态</t-check-tag>
+      <t-check-tag :checked="false">未选态</t-check-tag>
+      <t-check-tag :checked="true" disabled>选中禁用</t-check-tag>
+      <t-check-tag :checked="false" disabled>未选禁用</t-check-tag>
+    </t-space>
+
+    <t-space align="center">
+      <label>StyleB</label>
+
+      <t-check-tag
+        v-model="checked2"
+        :unchecked-props="{ theme: 'default', variant: 'outline' }"
+        style="margin-right: 32px"
+      >选中/未选态</t-check-tag
+      >
+
+      <t-check-tag :checked="true">选中态</t-check-tag>
+      <t-check-tag :checked="false" :unchecked-props="{ theme: 'default', variant: 'outline' }">未选态</t-check-tag>
+      <t-check-tag :checked="true" disabled>选中禁用</t-check-tag>
+      <t-check-tag :checked="false" disabled :unchecked-props="{ theme: 'default', variant: 'outline' }"
+      >未选禁用</t-check-tag
+      >
+    </t-space>
+
+    <t-space align="center">
+      <label>StyleC</label>
+
+      <t-check-tag
+        v-model="checked3"
+        :checked-props="{ theme: 'primary', variant: 'outline' }"
+        :unchecked-props="{ theme: 'default', variant: 'outline' }"
+        style="margin-right: 32px"
+      >Outline Tag</t-check-tag
+      >
+
+      <t-check-tag :checked="true" :checked-props="{ theme: 'primary', variant: 'outline' }">Checked</t-check-tag>
+      <t-check-tag :checked="false" :unchecked-props="{ theme: 'default', variant: 'outline' }">Unchecked</t-check-tag>
+      <t-check-tag :checked="true" disabled :checked-props="{ theme: 'primary', variant: 'outline' }"
+      >Disabled</t-check-tag
+      >
+      <t-check-tag :checked="false" disabled :unchecked-props="{ theme: 'default', variant: 'outline' }"
+      >Disabled</t-check-tag
+      >
+    </t-space>
   </t-space>
 </template>
 
@@ -17,28 +56,10 @@
 export default {
   data() {
     return {
-      tags: [
-        {
-          name: '选中',
-          defaultChecked: true,
-        },
-        {
-          name: '未选',
-        },
-        {
-          name: '禁用',
-          disabled: true,
-        },
-      ],
+      checked1: false,
+      checked2: false,
+      checked3: false,
     };
-  },
-  methods: {
-    handleClick(tag, index) {
-      console.log(tag, index);
-    },
-    handleChange(isChecked) {
-      console.log(isChecked);
-    },
   },
 };
 </script>

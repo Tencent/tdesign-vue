@@ -1,47 +1,99 @@
+import { defineComponent, computed, toRefs } from '@vue/composition-api';
 import props from './check-tag-props';
-import { renderContent } from '../utils/render-tnode';
-import { TNodeReturnValue } from '../common';
-import { TdCheckTagProps } from './type';
-import { emitEvent } from '../utils/event';
-import { getClassPrefixMixins } from '../config-provider/config-receiver';
-import mixins from '../utils/mixins';
+import { usePrefixClass, useCommonClassName } from '../hooks/useConfig';
+import useVModel from '../hooks/useVModel';
+import Tag from './tag';
+import { TdCheckTagProps, TdTagProps } from './type';
+import { ENTER_REG, SPACE_REG } from '../_common/js/common';
+import { renderContent } from '../hooks';
 
-const classPrefixMixins = getClassPrefixMixins('tag');
-
-export default mixins(classPrefixMixins).extend({
+export default defineComponent({
   name: 'TCheckTag',
-  props: { ...props },
-  computed: {
-    tagClass(): Array<any> {
-      return [
-        `${this.componentName}`,
-        `${this.componentName}--check`,
-        `${this.componentName}--default`,
-        this.commonSizeClassName[this.size],
-        {
-          [`${this.componentName}--checked`]: !this.disabled && this.checked,
-          [`${this.classPrefix}-is-disabled`]: this.disabled,
-          [`${this.componentName}--disabled`]: this.disabled,
-        },
-      ];
-    },
-  },
-  methods: {
-    handleClick(e: MouseEvent): void {
-      if (!this.disabled) {
-        emitEvent<Parameters<TdCheckTagProps['onClick']>>(this, 'click', { e });
-        emitEvent<Parameters<TdCheckTagProps['onChange']>>(this, 'change', !this.checked);
-      }
-    },
-  },
-  render() {
-    // 标签内容
-    const tagContent: TNodeReturnValue = renderContent(this, 'default', 'content');
 
+  props,
+
+  model: {
+    prop: 'checked',
+    event: 'change',
+  },
+
+  setup(props: TdCheckTagProps, context) {
+    const componentName = usePrefixClass('tag');
+    const { SIZE } = useCommonClassName();
+
+    const { checked } = toRefs(props);
+    const [innerChecked, setInnerChecked] = useVModel(
+      checked,
+      props.defaultChecked,
+      props.onChange,
+      'change',
+      'checked',
+    );
+
+    const tagClass = computed(() => [
+      `${componentName.value}`,
+      `${componentName.value}--check`,
+      SIZE.value[props.size],
+      {
+        [`${componentName.value}--checked`]: innerChecked.value,
+        [`${componentName.value}--disabled`]: props.disabled,
+      },
+    ]);
+
+    const checkTagProps = computed(() => {
+      const checkedProps: TdTagProps = { theme: 'primary', ...props.checkedProps };
+      const uncheckedProps: TdTagProps = { ...props.uncheckedProps };
+      return innerChecked.value ? checkedProps : uncheckedProps;
+    });
+
+    const handleClick = ({ e }: { e: MouseEvent }) => {
+      if (!props.disabled) {
+        props.onClick?.({ e });
+        context.emit('click', { e });
+        setInnerChecked(!innerChecked.value, { e, value: props.value });
+      }
+    };
+
+    const keyboardEventListener = (e: KeyboardEvent) => {
+      const code = e.code || e.key?.trim();
+      const isCheckedCode = SPACE_REG.test(code) || ENTER_REG.test(code);
+      if (isCheckedCode) {
+        e.preventDefault();
+        setInnerChecked(!innerChecked.value, { e, value: props.value });
+      }
+    };
+
+    const onCheckboxFocus = (e: FocusEvent) => {
+      e.currentTarget.addEventListener('keydown', keyboardEventListener);
+    };
+
+    const onCheckboxBlur = (e: FocusEvent) => {
+      e.currentTarget.removeEventListener('keydown', keyboardEventListener);
+    };
+
+    return {
+      tagClass,
+      checkTagProps,
+      onCheckboxFocus,
+      onCheckboxBlur,
+      handleClick,
+    };
+  },
+
+  render() {
+    const tagContent = renderContent(this, 'default', 'content');
     return (
-      <span class={this.tagClass} onClick={this.handleClick}>
+      <Tag
+        class={this.tagClass}
+        disabled={this.disabled}
+        tabindex={this.disabled ? undefined : '0'}
+        onFocus={this.onCheckboxFocus}
+        onBlur={this.onCheckboxBlur}
+        props={this.checkTagProps}
+        onClick={this.handleClick}
+      >
         {tagContent}
-      </span>
+      </Tag>
     );
   },
 });

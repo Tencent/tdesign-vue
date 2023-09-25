@@ -58,7 +58,7 @@ exports[`TreeSelect > :props > :defaultValue 1`] = `
       <div
         class="t-input__prefix"
       >
-        <span
+        <div
           class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
         >
           <span
@@ -79,8 +79,8 @@ exports[`TreeSelect > :props > :defaultValue 1`] = `
               fill="currentColor"
             />
           </svg>
-        </span>
-        <span
+        </div>
+        <div
           class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
         >
           <span
@@ -101,7 +101,7 @@ exports[`TreeSelect > :props > :defaultValue 1`] = `
               fill="currentColor"
             />
           </svg>
-        </span>
+        </div>
       </div>
       <input
         autocomplete=""
@@ -477,7 +477,7 @@ exports[`TreeSelect > :props > :multiple 1`] = `
       <div
         class="t-input__prefix"
       >
-        <span
+        <div
           class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
         >
           <span
@@ -496,7 +496,7 @@ exports[`TreeSelect > :props > :multiple 1`] = `
               fill="currentColor"
             />
           </svg>
-        </span>
+        </div>
       </div>
       <input
         autocomplete=""

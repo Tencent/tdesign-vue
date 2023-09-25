@@ -81,7 +81,7 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalI
     // 图标
     const icon = renderTNodeJSX(this, 'icon');
     return (
-      <span class={this.tagClass} onClick={this.handleClick}>
+      <div class={this.tagClass} onClick={this.handleClick}>
         {icon}
         <span
           class={this.maxWidth ? `${this.componentName}--text` : undefined}
@@ -91,7 +91,7 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalI
           {tagContent}
         </span>
         {!this.disabled ? closeIcon : undefined}
-      </span>
+      </div>
     );
   },
 });
