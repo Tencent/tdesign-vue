@@ -10,7 +10,7 @@
       <t-check-tag-group
         v-model="checkTagValue2"
         :options="options"
-        :unchecked-props="{ theme: 'default', variant: 'outline' }"
+        :unchecked-props="STYLE_B_UNCHECKED_PROPS"
         multiple
       />
     </t-space>
@@ -20,8 +20,8 @@
       <t-check-tag-group
         v-model="checkTagValue3"
         :options="options"
-        :checked-props="{ theme: 'primary', variant: 'outline' }"
-        :unchecked-props="{ theme: 'default', variant: 'outline' }"
+        :checked-props="STYLE_C_CHECKED_PROPS"
+        :unchecked-props="STYLE_B_UNCHECKED_PROPS"
         multiple
       />
     </t-space>
@@ -31,8 +31,8 @@
       <t-check-tag-group
         v-model="checkTagValue4"
         :options="options2"
-        :checked-props="{ theme: 'primary', variant: 'outline' }"
-        :unchecked-props="{ theme: 'default', variant: 'outline' }"
+        :checked-props="STYLE_C_CHECKED_PROPS"
+        :unchecked-props="STYLE_B_UNCHECKED_PROPS"
         multiple
       >
         <template #option="{ label, value, avatar }">
@@ -49,6 +49,15 @@
 <!-- 如果是 TS 项目，请设置 lang="tsx" -->
 <script lang="jsx">
 const AVATAR = 'https://tdesign.gtimg.com/site/avatar.jpg';
+const STYLE_B_UNCHECKED_PROPS = {
+  theme: 'default',
+  variant: 'outline',
+};
+
+const STYLE_C_CHECKED_PROPS = {
+  theme: 'primary',
+  variant: 'outline',
+};
 
 export default {
   name: 'CheckTagGroupDemo',
@@ -59,6 +68,8 @@ export default {
       checkTagValue2: [2],
       checkTagValue3: [3],
       checkTagValue4: [4, 6],
+      STYLE_B_UNCHECKED_PROPS,
+      STYLE_C_CHECKED_PROPS,
       options: [
         { label: '标签1', value: 1 },
         { label: '标签2', value: 2 },
