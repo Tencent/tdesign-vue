@@ -10,6 +10,7 @@
       body="对话框内容"
       :visible.sync="visible"
       @confirm="onConfirm"
+      width="40%"
       :confirmOnEnter="true"
       :onConfirm="onConfirmAnother"
       :onCancel="onCancel"
@@ -18,7 +19,10 @@
       :onOverlayClick="onClickOverlay"
       :onClose="close"
     >
-      <t-button theme="primary" @click="visible1 = true">弹窗二</t-button>
+      <t-space direction="vertical" style="width: 100%">
+        <t-button theme="primary" @click="visible1 = true">弹窗二</t-button>
+        <t-pagination v-model="current" :total="30" />
+      </t-space>
     </t-dialog>
     <t-dialog header="对话框标题二" body="对话框内容二" :visible.sync="visible1" />
   </div>
@@ -29,6 +33,7 @@ export default {
     return {
       visible: false,
       visible1: false,
+      current: 1,
     };
   },
   methods: {
