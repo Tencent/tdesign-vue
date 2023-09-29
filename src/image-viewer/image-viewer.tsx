@@ -97,6 +97,10 @@ export default defineComponent({
 
     const onCloseHandle: TdImageViewerProps['onClose'] = (ctx) => {
       setVisibleValue(false);
+
+      unmountContent();
+      window.removeEventListener('keydown', keydownHandler);
+
       props.onClose?.(ctx);
       emit('close', ctx);
     };
@@ -150,10 +154,7 @@ export default defineComponent({
           onRest();
           window.addEventListener('keydown', keydownHandler);
           mountContent();
-          return;
         }
-        window.removeEventListener('keydown', keydownHandler);
-        unmountContent();
       },
     );
 
