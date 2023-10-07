@@ -113,7 +113,7 @@ export interface TdInputProps {
    * 输入框类型
    * @default text
    */
-  type?: 'text' | 'number' | 'url' | 'tel' | 'password' | 'search' | 'submit' | 'hidden';
+  type?: 'text' | 'number' | 'url' | 'tel' | 'email' | 'password' | 'search' | 'submit' | 'hidden';
   /**
    * 输入框的值
    * @default ''

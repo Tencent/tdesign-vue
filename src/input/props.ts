@@ -108,7 +108,7 @@ export default {
     default: 'text' as TdInputProps['type'],
     validator(val: TdInputProps['type']): boolean {
       if (!val) return true;
-      return ['text', 'number', 'url', 'tel', 'password', 'search', 'submit', 'hidden'].includes(val);
+      return ['text', 'number', 'url', 'tel', 'email', 'password', 'search', 'submit', 'hidden'].includes(val);
     },
   },
   /** 输入框的值 */
