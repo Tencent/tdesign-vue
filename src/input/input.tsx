@@ -385,7 +385,7 @@ export default mixins(
         }
         emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', val, { e, trigger: 'input' });
         // 受控，重要，勿删 input无法直接实现受控
-        if (!this.isIE) {
+        if (!this.isIE && !['number', 'email'].includes(this.$props.type)) {
           // 修复在 popup 弹出层里输入时 光标异常的问题
           const inputRef = this.$refs.inputRef as HTMLInputElement;
           preCursorPos = inputRef.selectionStart;
