@@ -15,6 +15,7 @@ export default {
   /** 高亮的节点值 */
   actived: {
     type: Array as PropType<TdTreeProps['actived']>,
+    default: undefined,
   },
   /** 高亮的节点值，非受控属性 */
   defaultActived: {
@@ -42,7 +43,7 @@ export default {
   },
   /** 是否禁用树操作 */
   disabled: Boolean,
-  /** [开发中]节点是否可拖拽 */
+  /** 节点是否可拖拽 */
   draggable: Boolean,
   /** 数据为空时展示的文本 */
   empty: {
@@ -65,7 +66,7 @@ export default {
   /** 展开的节点值 */
   expanded: {
     type: Array as PropType<TdTreeProps['expanded']>,
-    default: (): TdTreeProps['expanded'] => [],
+    default: undefined,
   },
   /** 展开的节点值，非受控属性 */
   defaultExpanded: {
@@ -127,12 +128,12 @@ export default {
     type: Boolean,
     default: true,
   },
-  /** 选中值（组件为可选状态时） */
+  /** 选中值，组件为可选状态时有效 */
   value: {
     type: Array as PropType<TdTreeProps['value']>,
-    default: (): TdTreeProps['value'] => [],
+    default: undefined,
   },
-  /** 选中值（组件为可选状态时），非受控属性 */
+  /** 选中值，组件为可选状态时有效，非受控属性 */
   defaultValue: {
     type: Array as PropType<TdTreeProps['defaultValue']>,
     default: (): TdTreeProps['defaultValue'] => [],
