@@ -33,7 +33,7 @@ describe('Tree:keys', () => {
           return {};
         },
         render() {
-          return <Tree keys={keys} data={data} expandAll></Tree>;
+          return <Tree transition={false} keys={keys} data={data} expandAll></Tree>;
         },
       });
 

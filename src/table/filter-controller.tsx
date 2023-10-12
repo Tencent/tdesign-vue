@@ -14,12 +14,14 @@ import { PrimaryTableCol, FilterValue } from './type';
 import { useConfig } from '../config-provider/useConfig';
 import log from '../_common/js/log';
 import { AttachNode } from '../common';
+import { TableConfig } from '../config-provider';
 
 type Params = Parameters<CreateElement>;
 type FirstParams = Params[0];
 type SecondParams = Params[1] | Params[2];
 
 export interface TableFilterControllerProps {
+  locale: TableConfig;
   tFilterValue: FilterValue;
   innerFilterValue: FilterValue;
   tableFilterClasses: {
@@ -60,7 +62,7 @@ export default defineComponent({
   setup(props: TableFilterControllerProps, { emit }) {
     const triggerElementRef = ref<HTMLDivElement>(null);
     const renderTNode = useTNodeDefault();
-    const { t, global } = useConfig('table');
+    const { t, global } = useConfig('table', props.locale);
     const { FilterIcon } = useGlobalIcon({ FilterIcon: TdFilterIcon });
     const filterPopupVisible = ref(false);
 
@@ -105,12 +107,6 @@ export default defineComponent({
         filterComponentProps.value = this.innerFilterValue[column.colKey];
       }
       // 这个代码必须放在这里，没事儿别改
-      if (column.filter.type === 'single') {
-        filterComponentProps.onChange = (val: any) => {
-          this.$emit('inner-filter-change', val, column);
-        };
-      }
-      // 这个代码必须放在这里，没事儿别改
       const on = {
         change: (val: any) => {
           this.$emit('inner-filter-change', val, column);
@@ -135,15 +131,26 @@ export default defineComponent({
         if (!component) return null;
         const isVueComponent = component.install && component.component;
         if (typeof component === 'function' && !isVueComponent) {
+          // component() is going to be deprecated
           return component((v: FirstParams, b: SecondParams) => {
-            const tProps = typeof b === 'object' && 'attrs' in b ? b.attrs : {};
+            const attributes = typeof b === 'object' && 'attrs' in b ? b.attrs : {};
             return h(v, {
-              props: { ...filterComponentProps, ...tProps },
+              props: { ...filterComponentProps },
+              attrs: attributes,
               on,
             });
           });
         }
-        return <component props={{ ...filterComponentProps }} on={{ ...on }}></component>;
+        const filter = this.column.filter || {};
+        return (
+          <component
+            attrs={filter.attrs}
+            class={filter.classNames}
+            style={filter.style}
+            props={{ ...filterComponentProps }}
+            on={{ ...on }}
+          ></component>
+        );
       };
 
       return (
@@ -187,7 +194,8 @@ export default defineComponent({
     const defaultFilterIcon = this.t(this.global.filterIcon) || <FilterIcon />;
     const filterValue = this.tFilterValue?.[column.colKey];
     const isObjectTrue = typeof filterValue === 'object' && !isEmpty(filterValue);
-    const isValueTrue = filterValue && typeof filterValue !== 'object';
+    // false is a valid filter value
+    const isValueExist = (filterValue || filterValue === false) && typeof filterValue !== 'object';
     return (
       <Popup
         attach={this.attach || (this.primaryTableElement ? () => this.primaryTableElement : undefined)}
@@ -203,7 +211,7 @@ export default defineComponent({
         class={[
           this.tableFilterClasses.icon,
           {
-            [this.isFocusClass]: isObjectTrue || isValueTrue,
+            [this.isFocusClass]: isObjectTrue || isValueExist,
           },
         ]}
         content={() => (

@@ -8,13 +8,12 @@ exports[`Message > :props > :closeBtn is a function, () => VNode. 1`] = `
     class="t-icon t-icon-info-circle-filled"
     fill="none"
     height="1em"
-    viewBox="0 0 16 16"
+    viewBox="0 0 24 24"
     width="1em"
   >
     <path
-      d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z"
+      d="M12 23a11 11 0 100-22 11 11 0 000 22zM11 8.5v-2h2v2h-2zm2 1.5v7.5h-2V10h2z"
       fill="currentColor"
-      fill-opacity="0.9"
     />
   </svg>
   <span
@@ -37,13 +36,12 @@ exports[`Message > :props > :closeBtn is a string, equal "关闭". 1`] = `
     class="t-icon t-icon-info-circle-filled"
     fill="none"
     height="1em"
-    viewBox="0 0 16 16"
+    viewBox="0 0 24 24"
     width="1em"
   >
     <path
-      d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z"
+      d="M12 23a11 11 0 100-22 11 11 0 000 22zM11 8.5v-2h2v2h-2zm2 1.5v7.5h-2V10h2z"
       fill="currentColor"
-      fill-opacity="0.9"
     />
   </svg>
   <span
@@ -62,13 +60,12 @@ exports[`Message > :props > :closeBtn is true, render default close button. 1`] 
     class="t-icon t-icon-info-circle-filled"
     fill="none"
     height="1em"
-    viewBox="0 0 16 16"
+    viewBox="0 0 24 24"
     width="1em"
   >
     <path
-      d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z"
+      d="M12 23a11 11 0 100-22 11 11 0 000 22zM11 8.5v-2h2v2h-2zm2 1.5v7.5h-2V10h2z"
       fill="currentColor"
-      fill-opacity="0.9"
     />
   </svg>
   <span
@@ -78,13 +75,12 @@ exports[`Message > :props > :closeBtn is true, render default close button. 1`] 
       class="t-icon t-icon-close"
       fill="none"
       height="1em"
-      viewBox="0 0 16 16"
+      viewBox="0 0 24 24"
       width="1em"
     >
       <path
-        d="M8 8.92L11.08 12l.92-.92L8.92 8 12 4.92 11.08 4 8 7.08 4.92 4 4 4.92 7.08 8 4 11.08l.92.92L8 8.92z"
+        d="M7.05 5.64L12 10.59l4.95-4.95 1.41 1.41L13.41 12l4.95 4.95-1.41 1.41L12 13.41l-4.95 4.95-1.41-1.41L10.59 12 5.64 7.05l1.41-1.41z"
         fill="currentColor"
-        fill-opacity="0.9"
       />
     </svg>
   </span>
@@ -99,13 +95,12 @@ exports[`Message > :props > :default is a function, () => <b>这是重要信息<
     class="t-icon t-icon-info-circle-filled"
     fill="none"
     height="1em"
-    viewBox="0 0 16 16"
+    viewBox="0 0 24 24"
     width="1em"
   >
     <path
-      d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z"
+      d="M12 23a11 11 0 100-22 11 11 0 000 22zM11 8.5v-2h2v2h-2zm2 1.5v7.5h-2V10h2z"
       fill="currentColor"
-      fill-opacity="0.9"
     />
   </svg>
   <b>
@@ -125,13 +120,12 @@ exports[`Message > :props > :default is a string, 这是普通信息 1`] = `
     class="t-icon t-icon-info-circle-filled"
     fill="none"
     height="1em"
-    viewBox="0 0 16 16"
+    viewBox="0 0 24 24"
     width="1em"
   >
     <path
-      d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z"
+      d="M12 23a11 11 0 100-22 11 11 0 000 22zM11 8.5v-2h2v2h-2zm2 1.5v7.5h-2V10h2z"
       fill="currentColor"
-      fill-opacity="0.9"
     />
   </svg>
   这是普通信息
@@ -149,13 +143,12 @@ exports[`Message > :props > :icon is a function, () => MoreIcon 1`] = `
     class="t-icon t-icon-more"
     fill="none"
     height="1em"
-    viewBox="0 0 16 16"
+    viewBox="0 0 24 24"
     width="1em"
   >
     <path
-      d="M8 4a1 1 0 100-2 1 1 0 000 2zM8 9a1 1 0 100-2 1 1 0 000 2zM9 13a1 1 0 11-2 0 1 1 0 012 0z"
+      d="M10.5 3h3v3h-3V3zm0 7.5h3v3h-3v-3zm0 7.5h3v3h-3v-3z"
       fill="currentColor"
-      fill-opacity="0.9"
     />
   </svg>
   <span
@@ -182,13 +175,12 @@ exports[`Message > :props > :theme info,success,warning,error,question,loading 1
     class="t-icon t-icon-info-circle-filled"
     fill="none"
     height="1em"
-    viewBox="0 0 16 16"
+    viewBox="0 0 24 24"
     width="1em"
   >
     <path
-      d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z"
+      d="M12 23a11 11 0 100-22 11 11 0 000 22zM11 8.5v-2h2v2h-2zm2 1.5v7.5h-2V10h2z"
       fill="currentColor"
-      fill-opacity="0.9"
     />
   </svg>
   <span
@@ -205,13 +197,12 @@ exports[`Message > :props > :theme info,success,warning,error,question,loading 2
     class="t-icon t-icon-check-circle-filled"
     fill="none"
     height="1em"
-    viewBox="0 0 16 16"
+    viewBox="0 0 24 24"
     width="1em"
   >
     <path
-      d="M8 15A7 7 0 108 1a7 7 0 000 14zM4.5 8.2l.7-.7L7 9.3l3.8-3.8.7.7L7 10.7 4.5 8.2z"
+      d="M12 23a11 11 0 100-22 11 11 0 000 22zM7.5 10.59l3 3 6-6L17.91 9l-7.41 7.41L6.09 12l1.41-1.41z"
       fill="currentColor"
-      fill-opacity="0.9"
     />
   </svg>
   <span
@@ -228,13 +219,12 @@ exports[`Message > :props > :theme info,success,warning,error,question,loading 3
     class="t-icon t-icon-error-circle-filled"
     fill="none"
     height="1em"
-    viewBox="0 0 16 16"
+    viewBox="0 0 24 24"
     width="1em"
   >
     <path
-      d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
+      d="M12 1a11 11 0 110 22 11 11 0 010-22zm-1 13h2V6.5h-2V14zm2 1.5h-2v2h2v-2z"
       fill="currentColor"
-      fill-opacity="0.9"
     />
   </svg>
   <span
@@ -251,13 +241,12 @@ exports[`Message > :props > :theme info,success,warning,error,question,loading 4
     class="t-icon t-icon-error-circle-filled"
     fill="none"
     height="1em"
-    viewBox="0 0 16 16"
+    viewBox="0 0 24 24"
     width="1em"
   >
     <path
-      d="M15 8A7 7 0 101 8a7 7 0 0014 0zM8.5 4v5.5h-1V4h1zm-1.1 7h1.2v1.2H7.4V11z"
+      d="M12 1a11 11 0 110 22 11 11 0 010-22zm-1 13h2V6.5h-2V14zm2 1.5h-2v2h2v-2z"
       fill="currentColor"
-      fill-opacity="0.9"
     />
   </svg>
   <span
@@ -274,13 +263,12 @@ exports[`Message > :props > :theme info,success,warning,error,question,loading 5
     class="t-icon t-icon-help-circle-filled"
     fill="none"
     height="1em"
-    viewBox="0 0 16 16"
+    viewBox="0 0 24 24"
     width="1em"
   >
     <path
-      d="M15 8A7 7 0 101 8a7 7 0 0014 0zM5.8 6.63a2.2 2.2 0 014.39 0c0 .97-.75 1.72-1.49 2.02a.34.34 0 00-.2.32v.8h-1v-.8c0-.56.33-1.04.82-1.24.5-.2.87-.66.87-1.1a1.2 1.2 0 00-2.39 0h-1zm1.67 4.54a.53.53 0 111.05 0 .53.53 0 01-1.05 0z"
+      d="M12 23a11 11 0 100-22 11 11 0 000 22zm-.17-11.11c.43-.53.97-.97 1.4-1.32A2 2 0 0012 7a2 2 0 00-1.89 1.33l-.33.95L7.9 8.6l.34-.94a4 4 0 116.24 4.47 7 7 0 00-1.1 1.01c-.27.34-.37.61-.37.85v1.25h-2V14c0-.87.39-1.57.83-2.11zM11 18.25v-2h2v2h-2z"
       fill="currentColor"
-      fill-opacity="0.9"
     />
   </svg>
   <span
@@ -331,13 +319,12 @@ exports[`Message > :props > pure message contains two classes 1`] = `
     class="t-icon t-icon-info-circle-filled"
     fill="none"
     height="1em"
-    viewBox="0 0 16 16"
+    viewBox="0 0 24 24"
     width="1em"
   >
     <path
-      d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z"
+      d="M12 23a11 11 0 100-22 11 11 0 000 22zM11 8.5v-2h2v2h-2zm2 1.5v7.5h-2V10h2z"
       fill="currentColor"
-      fill-opacity="0.9"
     />
   </svg>
   <span
@@ -354,13 +341,12 @@ exports[`Message > <slot> > <icon> 1`] = `
     class="t-icon t-icon-more"
     fill="none"
     height="1em"
-    viewBox="0 0 16 16"
+    viewBox="0 0 24 24"
     width="1em"
   >
     <path
-      d="M8 4a1 1 0 100-2 1 1 0 000 2zM8 9a1 1 0 100-2 1 1 0 000 2zM9 13a1 1 0 11-2 0 1 1 0 012 0z"
+      d="M10.5 3h3v3h-3V3zm0 7.5h3v3h-3v-3zm0 7.5h3v3h-3v-3z"
       fill="currentColor"
-      fill-opacity="0.9"
     />
   </svg>
   <span

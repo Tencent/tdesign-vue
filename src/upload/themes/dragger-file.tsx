@@ -17,6 +17,7 @@ import useDrag, { UploadDragEvents } from '../hooks/useDrag';
 import useGlobalIcon from '../../hooks/useGlobalIcon';
 import ImageViewer from '../../image-viewer';
 import { renderTNodeJSX } from '../../utils/render-tnode';
+import Image from '../../image';
 
 export interface DraggerProps extends CommonDisplayFileProps {
   trigger?: TdUploadProps['trigger'];
@@ -78,15 +79,12 @@ export default defineComponent({
       const url = file?.url || file?.response?.url;
       return (
         <div class={`${this.uploadPrefix}__dragger-img-wrap`}>
-          {url && (
-            <ImageViewer
-              images={[url]}
-              trigger={(h: CreateElement, { open }: any) => (
-                <img src={url} onClick={open} style={{ maxWidth: '100%', maxHeight: '100%' }} />
-              )}
-              style={{ maxWidth: '120px', maxHeight: '120px' }}
-            ></ImageViewer>
-          )}
+          <ImageViewer
+            images={[url]}
+            trigger={(h: CreateElement, { open }: any) => (
+              <Image src={url || file.raw} onClick={open} error="" loading="" />
+            )}
+          ></ImageViewer>
         </div>
       );
     },

@@ -9,9 +9,9 @@ import { InputValue } from '../input';
 import { PopupProps } from '../popup';
 import { SelectInputProps, SelectInputBlurContext, SelectInputValueChangeContext } from '../select-input';
 import { TagProps } from '../tag';
-import { TreeProps, TreeNodeModel, TreeKeysType } from '../tree';
-import { PopupVisibleChangeContext, PopupTriggerEvent, PopupTriggerSource } from '../popup';
-import { TNode, TreeOptionData } from '../common';
+import { TreeProps, TreeNodeModel } from '../tree';
+import { PopupTriggerEvent, PopupTriggerSource } from '../popup';
+import { TNode, TreeOptionData, TreeKeysType } from '../common';
 
 export interface TdTreeSelectProps<
   DataOption extends TreeOptionData = TreeOptionData,
@@ -76,7 +76,7 @@ export interface TdTreeSelectProps<
    */
   defaultInputValue?: InputValue;
   /**
-   * 用来定义 `value / label / children` 在 `data` 数据中对应的字段别名，示例：`{ value: 'key', label 'name', children: 'list' }`
+   * 用来定义 `value / label / disabled / children` 在 `data` 数据中对应的字段别名，示例：`{ value: 'key', label: 'name', children: 'list' }`
    */
   keys?: TreeKeysType;
   /**
@@ -108,6 +108,14 @@ export interface TdTreeSelectProps<
    */
   multiple?: boolean;
   /**
+   * 面板内的底部内容
+   */
+  panelBottomContent?: string | TNode;
+  /**
+   * 面板内的顶部内容
+   */
+  panelTopContent?: string | TNode;
+  /**
    * 占位符
    */
   placeholder?: string;
@@ -132,6 +140,11 @@ export interface TdTreeSelectProps<
    * @default false
    */
   readonly?: boolean;
+  /**
+   * 多选且可搜索时，是否在选中一个选项后保留当前的搜索关键词
+   * @default false
+   */
+  reserveKeyword?: boolean;
   /**
    * 【开发中】透传 SelectInput 筛选器输入框组件的全部属性
    */

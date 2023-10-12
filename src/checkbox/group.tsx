@@ -18,7 +18,7 @@ import props from './checkbox-group-props';
 import { CheckboxOptionObj, TdCheckboxProps, CheckboxGroupValue } from './type';
 import { CheckboxGroupInjectionKey } from './constants';
 import { usePrefixClass, useVModel, useChildComponentSlots } from '../hooks';
-import { getCheckboxStore } from './store';
+import { createCheckboxStore } from './store';
 
 export default defineComponent({
   name: 'TCheckboxGroup',
@@ -28,19 +28,14 @@ export default defineComponent({
   setup(props) {
     /** 样式 */
     const COMPONENT_NAME = usePrefixClass('checkbox-group');
-    const date = new Date();
-    const storeKey = [
-      date.getDate(),
-      date.getHours(),
-      date.getMinutes(),
-      date.getSeconds(),
-      date.getUTCMilliseconds(),
-    ].join('_');
-    const checkboxStore = getCheckboxStore(storeKey);
+
+    const { checkboxStore, storeKey } = createCheckboxStore();
     checkboxStore.init();
 
     const { isArray } = Array;
-    const { value, disabled, name } = toRefs(props);
+    const {
+      value, disabled, name, options,
+    } = toRefs(props);
     const [innerValue, setInnerValue] = useVModel(value, props.defaultValue, props.onChange);
 
     const optionList = ref<Array<CheckboxOptionObj>>([]);
@@ -66,6 +61,16 @@ export default defineComponent({
 
     watch([disabled, maxExceeded, name], ([disabled, maxExceeded, checkboxName]) => {
       checkboxStore.updateCheckbox({ disabled, maxExceeded, checkboxName });
+    });
+
+    watch([options], () => {
+      nextTick(() => {
+        checkboxStore.updateCheckbox({
+          disabled: disabled.value,
+          maxExceeded: maxExceeded.value,
+          checkboxName: name.value,
+        });
+      });
     });
 
     onMounted(() => {
@@ -163,21 +168,32 @@ export default defineComponent({
     );
 
     watch(
-      [innerValue, isCheckAll, indeterminate],
-      ([val, isCheckAll, indeterminate], [oldValue]) => {
+      [innerValue],
+      ([val], [oldValue]) => {
         nextTick(() => {
           checkboxStore.updateChecked({
             checked: val,
             oldChecked: oldValue,
-            isCheckAll,
-            indeterminate,
+            isCheckAll: isCheckAll.value,
+            indeterminate: indeterminate.value,
           });
         });
       },
       { immediate: true },
     );
 
+    watch([isCheckAll, indeterminate, options], ([isCheckAll, indeterminate]) => {
+      nextTick(() => {
+        checkboxStore.updateChecked({
+          checked: innerValue.value,
+          isCheckAll,
+          indeterminate,
+        });
+      });
+    });
+
     const addStoreKeyToCheckbox = (nodes: VNode[]) => {
+      if (!nodes) return;
       for (let i = 0, len = nodes.length; i < len; i++) {
         const vNode = nodes[i];
         if (vNode.componentOptions && /TCheckbox/.test(vNode.tag)) {

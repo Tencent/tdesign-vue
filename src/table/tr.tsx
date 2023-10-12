@@ -15,6 +15,7 @@ import isString from 'lodash/isString';
 import pick from 'lodash/pick';
 import get from 'lodash/get';
 import { CreateElement } from 'vue';
+import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import { formatClassNames, formatRowAttributes, formatRowClassNames } from './utils';
 import { getRowFixedStyles, getColumnFixedStyles } from './hooks/useFixed';
 import { RowAndColFixedPosition } from './interface';
@@ -242,10 +243,19 @@ export default defineComponent({
     ) {
       const { cellNode } = params;
       const { col } = cellParams;
-      let content = isFunction(col.ellipsis) ? col.ellipsis(h, cellParams) : undefined;
-      if (typeof col.ellipsis === 'object' && isFunction(col.ellipsis.content)) {
+      let content: ScopedSlotReturnValue;
+      if (isFunction(col.ellipsis)) {
+        content = col.ellipsis(h, cellParams);
+      } else if (typeof col.ellipsis === 'object' && isFunction(col.ellipsis.content)) {
         content = col.ellipsis.content(h, cellParams);
+      } else if (this.$scopedSlots[`ellipsis-${col.colKey}`]) {
+        // support ellipsis-<colKey> to define one column cell ellipsis-content
+        content = this.$scopedSlots[`ellipsis-${col.colKey}`](cellParams);
+      } else if (this.$scopedSlots.ellipsis) {
+        // support ellipsis slot to define all table cell ellipsis-content
+        content = this.$scopedSlots.ellipsis(cellParams);
       }
+
       let tooltipProps = {};
       if (typeof col.ellipsis === 'object') {
         tooltipProps = 'props' in col.ellipsis ? col.ellipsis.props : col.ellipsis || undefined;

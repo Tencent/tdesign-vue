@@ -6,6 +6,7 @@
 
 import { AffixProps } from '../affix';
 import { LoadingProps } from '../loading';
+import { TableConfig } from '../config-provider';
 import { PaginationProps, PageInfo } from '../pagination';
 import { TooltipProps } from '../tooltip';
 import { CheckboxGroupValue } from '../checkbox';
@@ -23,6 +24,7 @@ import {
   OptionData,
   SizeEnum,
   ClassName,
+  Styles,
   AttachNode,
   HTMLElementAttributes,
   ComponentType,
@@ -31,6 +33,21 @@ import {
 } from '../common';
 
 export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
+  /**
+   * 高亮行，支持鼠标键盘操作(Shift)连续高亮行，可用于处理行选中等批量操作，模拟操作系统区域选择行为
+   * @default []
+   */
+  activeRowKeys?: Array<string | number>;
+  /**
+   * 高亮行，支持鼠标键盘操作(Shift)连续高亮行，可用于处理行选中等批量操作，模拟操作系统区域选择行为，非受控属性
+   * @default []
+   */
+  defaultActiveRowKeys?: Array<string | number>;
+  /**
+   * 默认不会高亮点击行，`activeRowType=single` 表示鼠标点击仅允许同时高亮一行，Shift 键盘操作加鼠标操作依然可以高亮多行，因为这属于明显的区域选择行为。`activeRowType= multiple ` 表示允许鼠标点击同时高亮多行
+   * @default ''
+   */
+  activeRowType?: 'single' | 'multiple';
   /**
    * 是否允许调整列宽。请更为使用 `resizable`
    * @deprecated
@@ -68,6 +85,10 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    * @default false
    */
   disableDataPage?: boolean;
+  /**
+   * 默认重复按下 Space 键可取消当前行高亮，是否禁用取消
+   */
+  disableSpaceInactiveRow?: boolean;
   /**
    * 空表格呈现样式，支持全局配置 `GlobalConfigProvider`
    * @default ''
@@ -124,6 +145,11 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   hover?: boolean;
   /**
+   * 键盘操作行显示悬浮效果，一般用于键盘操作行选中、行展开、行高亮等功能
+   * @default true
+   */
+  keyboardRowHover?: boolean;
+  /**
    * 尾行内容，横跨所有列
    */
   lastFullRow?: string | TNode;
@@ -140,6 +166,10 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    * 透传加载组件全部属性
    */
   loadingProps?: Partial<LoadingProps>;
+  /**
+   * 语言配置
+   */
+  locale?: TableConfig;
   /**
    * 表格最大高度，超出后会出现滚动条。示例：100, '30%', '300'。值为数字类型，会自动加上单位 px
    */
@@ -216,6 +246,14 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    * @default middle
    */
   verticalAlign?: 'top' | 'middle' | 'bottom';
+  /**
+   * 高亮行发生变化时触发，泛型 T 指表格数据类型。参数 `activeRowList` 表示所有高亮行数据， `currentRowData` 表示当前操作行数据
+   */
+  onActiveChange?: (activeRowKeys: Array<string | number>, context: ActiveChangeContext<T>) => void;
+  /**
+   * 键盘操作事件。开启行高亮功能后，会自动开启键盘操作功能，如：通过键盘(Shift)或鼠标操作连续选中高亮行时触发，一般用于处理行选中等批量操作，模拟操作系统区域选择行为
+   */
+  onActiveRowAction?: (context: ActiveRowActionContext<T>) => void;
   /**
    * 单元格点击时触发
    */
@@ -320,7 +358,7 @@ export interface BaseTableCol<T extends TableRowData = TableRowData> {
    */
   colspan?: number;
   /**
-   * 单元格和表头内容超出时，是否显示省略号。如果仅希望单元格超出省略，可设置 `ellipsisTitle = false`。<br/> 值为 `true`，则超出省略浮层默认显示单元格内容；<br/>值类型为 `Function` 则自定义超出省略浮中层显示的内容；<br/>值类型为 `Object`，则自动透传属性到 Tooltip 组件，可用于调整浮层背景色和方向等特性。<br/> 同时透传 Tooltip 属性和自定义浮层内容，请使用 `{ props: { theme: 'light' }, content: () => 'something' }`
+   * 单元格和表头内容超出时，是否显示省略号。如果仅希望单元格超出省略，可设置 `ellipsisTitle = false`。<br/> 值为 `true`，则超出省略浮层默认显示单元格内容；<br/>值类型为 `Function` 则自定义超出省略浮中层显示的内容；<br/>值类型为 `Object`，则自动透传属性到 Tooltip 组件，可用于调整浮层背景色和方向等特性。<br/> 同时透传 Tooltip 属性和自定义浮层内容，请使用 `{ props: { theme: 'light' }, content: () => 'something' }`。<br /> 请注意单元格超出省略的两个基本点：1. 内容元素是内联元素或样式（自定义单元格内容时需特别注意）；2. 内容超出父元素
    * @default false
    */
   ellipsis?:
@@ -489,12 +527,12 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    */
   selectOnRowClick?: boolean;
   /**
-   * 选中行，控制属性。半选状态行请更为使用 `indeterminateSelectedRowKeys` 控制
+   * 选中行。半选状态行请更为使用 `indeterminateSelectedRowKeys` 控制
    * @default []
    */
   selectedRowKeys?: Array<string | number>;
   /**
-   * 选中行，控制属性。半选状态行请更为使用 `indeterminateSelectedRowKeys` 控制，非受控属性
+   * 选中行。半选状态行请更为使用 `indeterminateSelectedRowKeys` 控制，非受控属性
    * @default []
    */
   defaultSelectedRowKeys?: Array<string | number>;
@@ -560,7 +598,7 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
   /**
    * 过滤参数发生变化时触发，泛型 T 指表格数据类型
    */
-  onFilterChange?: (filterValue: FilterValue, context: { col?: PrimaryTableCol<T> }) => void;
+  onFilterChange?: (filterValue: FilterValue, context: TableFilterChangeContext<T>) => void;
   /**
    * 行编辑时触发
    */
@@ -657,6 +695,16 @@ export interface TdEnhancedTableProps<T extends TableRowData = TableRowData> ext
    */
   beforeDragSort?: (context: DragSortContext<T>) => boolean;
   /**
+   * 展开的树形节点。非必须。在需要自由控制展开的树形节点时使用。其他场景无需设置，表格组件有内置展开逻辑
+   * @default []
+   */
+  expandedTreeNodes?: Array<string | number>;
+  /**
+   * 展开的树形节点。非必须。在需要自由控制展开的树形节点时使用。其他场景无需设置，表格组件有内置展开逻辑，非受控属性
+   * @default []
+   */
+  defaultExpandedTreeNodes?: Array<string | number>;
+  /**
    * 树形结构相关配置。具体属性文档查看 `TableTreeConfig` 相关描述
    */
   tree?: TableTreeConfig;
@@ -669,7 +717,15 @@ export interface TdEnhancedTableProps<T extends TableRowData = TableRowData> ext
    */
   onAbnormalDragSort?: (context: TableAbnormalDragSortContext<T>) => void;
   /**
-   * 树形结构，用户操作引起节点展开或收起时触发，代码操作不会触发
+   * 树形结构，展开的树节点发生变化时触发，泛型 T 指表格数据类型
+   */
+  onExpandedTreeNodesChange?: (
+    expandedTreeNodes: Array<string | number>,
+    options: TableTreeNodeExpandOptions<T>,
+  ) => void;
+  /**
+   * 树形结构，用户操作引起节点展开或收起时触发。请更为使用 `onExpandedTreeNodesChange`
+   * @deprecated
    */
   onTreeExpandChange?: (context: TableTreeExpandChangeContext<T>) => void;
 }
@@ -712,6 +768,10 @@ export interface EnhancedTableInstanceFunctions<T extends TableRowData = TableRo
    * 树形结构中，移除指定节点
    */
   remove: (key: TableRowValue) => void;
+  /**
+   * 树形结构中，移除指定节点的所有子节点
+   */
+  removeChildren: (key: TableRowValue) => void;
   /**
    * 重置或更新整个表格数据
    */
@@ -773,6 +833,15 @@ export interface TableRowState<T extends TableRowData = TableRowData> {
 
 export interface TableColumnFilter {
   /**
+   * 用于透传筛选器属性到自定义组件 `component`，HTML 原生属性
+   */
+  attrs?: HTMLElementAttributes;
+  /**
+   * 透传类名到自定义组件 `component`
+   * @default ''
+   */
+  classNames?: ClassName;
+  /**
    * 用于自定义筛选器，只要保证自定义筛选器包含 value 属性 和 change 事件，即可像内置筛选器一样正常使用。示例：`component: DatePicker`
    */
   component?: ComponentType;
@@ -780,6 +849,10 @@ export interface TableColumnFilter {
    * 哪些事件触发后会进行过滤搜索（确认按钮无需配置，会默认触发搜索）。输入框组件示例：`confirmEvents: ['onEnter']`
    */
   confirmEvents?: string[];
+  /**
+   * 过滤项标题文本，显示在“过滤结果行”中的列标题描述。一般用于表头标题和过滤文本行中的列标题不一样的场景
+   */
+  label?: string | TNode;
   /**
    * 用于配置当前筛选器可选值有哪些，仅当 `filter.type` 等于 `single` 或 `multiple` 时有效
    */
@@ -789,7 +862,7 @@ export interface TableColumnFilter {
    */
   popupProps?: PopupProps;
   /**
-   * 用于透传筛选器属性，可以对筛选器进行任何原组件支持的属性配置
+   * 用于透传筛选器属性到自定义组件 `component`，可以对筛选器进行任何原组件支持的属性配置
    */
   props?: FilterProps;
   /**
@@ -802,7 +875,11 @@ export interface TableColumnFilter {
    */
   showConfirmAndReset?: boolean;
   /**
-   * 用于设置筛选器类型：单选按钮筛选器、复选框筛选器、输入框筛选器
+   * 透传内联样式到自定义组件 `component`
+   */
+  style?: Styles;
+  /**
+   * 用于设置筛选器类型：单选按钮筛选器、复选框筛选器、输入框筛选器。更多复杂组件，请更为使用 `component` 自定义任意组件
    * @default ''
    */
   type?: FilterType;
@@ -818,6 +895,14 @@ export interface TableColumnController {
    */
   checkboxProps?: CheckboxGroupProps;
   /**
+   * 列配置控制器底部内容
+   */
+  columnControllerBottomContent?: TNode;
+  /**
+   * 列配置控制器顶部内容
+   */
+  columnControllerTopContent?: TNode;
+  /**
    * 透传弹框组件全部特性，如：防止滚动穿透
    */
   dialogProps?: DialogProps;
@@ -830,6 +915,10 @@ export interface TableColumnController {
    * 用于设置允许用户对哪些列进行显示或隐藏的控制，默认为全部字段
    */
   fields?: string[];
+  /**
+   * 列分组功能配置，当列数量过多的时候，为了方便阅读，一般需要进行列分组设置
+   */
+  groupColumns?: TableColumnGroup[];
   /**
    * 是否隐藏表格组件内置的“列配置”按钮
    * @default false
@@ -856,6 +945,11 @@ export interface TableEditableCellConfig<T extends TableRowData = TableRowData> 
    * @default false
    */
   defaultEditable?: boolean;
+  /**
+   * 设置当前列的单元格始终保持为编辑态
+   * @default false
+   */
+  keepEditMode?: boolean;
   /**
    * 透传给编辑组件的事件
    */
@@ -887,7 +981,7 @@ export interface TableEditableCellConfig<T extends TableRowData = TableRowData> 
 export interface TableTreeConfig {
   /**
    * 表示树形结构的行选中（多选），父子行选中是否独立
-   * @default true
+   * @default false
    */
   checkStrictly?: boolean;
   /**
@@ -935,6 +1029,19 @@ export interface RowspanColspan {
   rowspan?: number;
 }
 
+export interface ActiveChangeContext<T> {
+  activeRowList: Array<{ row: T; rowIndex: number }>;
+  currentRowData?: T;
+  type: 'active' | 'inactive';
+}
+
+export interface ActiveRowActionContext<T> {
+  action: ActiveRowActionType;
+  activeRowList: Array<{ row: T; rowIndex: number }>;
+}
+
+export type ActiveRowActionType = 'shift-area-selection' | 'space-one-selection' | 'clear' | 'select-all';
+
 export interface BaseTableCellEventContext<T> {
   row: T;
   col: BaseTableCol;
@@ -946,7 +1053,7 @@ export interface BaseTableCellEventContext<T> {
 export interface RowEventContext<T> {
   row: T;
   index: number;
-  e: MouseEvent;
+  e: MouseEvent | KeyboardEvent;
 }
 
 export interface TableRowData {
@@ -1058,6 +1165,11 @@ export interface ExpandOptions<T> {
   currentRowData: T;
 }
 
+export interface TableFilterChangeContext<T> {
+  col?: PrimaryTableCol<T>;
+  trigger: 'filter-change' | 'confirm' | 'reset' | 'clear';
+}
+
 export type PrimaryTableRowEditContext<T> = PrimaryTableCellParams<T> & { value: any; editedRow: T };
 
 export type PrimaryTableRowValidateContext<T> = { result: TableRowValidateResult<T>[]; trigger: TableValidateTrigger };
@@ -1111,6 +1223,14 @@ export interface TableAbnormalDragSortContext<T> {
   reason: string;
 }
 
+export interface TableTreeNodeExpandOptions<T> {
+  row: T;
+  rowIndex: number;
+  rowState: TableRowState<T>;
+  type: 'fold' | 'expand';
+  trigger?: 'expand-fold-icon' | 'row-click' | 'default-expand-all' | 'expand-all' | 'fold-all';
+}
+
 export interface TableTreeExpandChangeContext<T> {
   row: T;
   rowIndex: number;
@@ -1130,6 +1250,12 @@ export interface SwapParams<T> {
 export type FilterProps = RadioProps | CheckboxProps | InputProps | { [key: string]: any };
 
 export type FilterType = 'input' | 'single' | 'multiple';
+
+export interface TableColumnGroup {
+  label: string;
+  value?: string | number;
+  columns: string[];
+}
 
 export type PrimaryTableOnEditedContext<T> = PrimaryTableCellParams<T> & { trigger: string; newRowData: T };
 

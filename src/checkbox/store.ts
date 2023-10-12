@@ -12,7 +12,7 @@ type ObserverMap = {
 
 export interface UpdateCheckedData {
   checked: CheckboxStoreData['checked'];
-  oldChecked: CheckboxStoreData['checked'];
+  oldChecked?: CheckboxStoreData['checked'];
   isCheckAll: boolean;
   indeterminate: boolean;
 }
@@ -45,7 +45,7 @@ class CheckboxStore {
   updateChecked({
     checked, isCheckAll, oldChecked, indeterminate,
   }: UpdateCheckedData) {
-    const changedChecked = getChangedChecked(checked, oldChecked);
+    const changedChecked = oldChecked ? getChangedChecked(checked, oldChecked) : checked;
     const checkedParams: ObserverListenerParams = {
       parentChecked: checked,
       parentIsCheckAll: isCheckAll,
@@ -109,9 +109,29 @@ export function getChangedChecked(
 
 const checkboxStoreInstanceMap: { [key: string]: CheckboxStore } = {};
 
-export function getCheckboxStore(key: string) {
-  if (!checkboxStoreInstanceMap[key]) {
-    checkboxStoreInstanceMap[key] = new CheckboxStore();
+export function createCheckboxStore(key?: string): { storeKey: string; checkboxStore: CheckboxStore } {
+  const date = new Date();
+  const storeKey = key
+    || [
+      date.getDate(),
+      date.getHours(),
+      date.getMinutes(),
+      date.getSeconds(),
+      date.getUTCMilliseconds(),
+      Number((Math.random() * 10000).toFixed(2)),
+    ].join('_');
+
+  if (checkboxStoreInstanceMap[storeKey]) {
+    return createCheckboxStore();
   }
+  checkboxStoreInstanceMap[storeKey] = new CheckboxStore();
+
+  return {
+    storeKey,
+    checkboxStore: checkboxStoreInstanceMap[storeKey],
+  };
+}
+
+export function getCheckboxStore(key: string) {
   return checkboxStoreInstanceMap[key];
 }

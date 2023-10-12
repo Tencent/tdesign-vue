@@ -11,6 +11,7 @@ import {
 } from '@vue/composition-api';
 import pick from 'lodash/pick';
 import isFunction from 'lodash/isFunction';
+import get from 'lodash/get';
 import props from './base-table-props';
 import useTableHeader from './hooks/useTableHeader';
 import useColumnResize from './hooks/useColumnResize';
@@ -32,7 +33,7 @@ import TFoot from './tfoot';
 import log from '../_common/js/log';
 import { getIEVersion } from '../_common/js/utils/helper';
 import { getAffixProps } from './utils';
-import { Styles } from '../common';
+import { ComponentScrollToElementParams, Styles } from '../common';
 import { BaseTableCol, TableRowData } from './type';
 
 export const BASE_TABLE_EVENTS = ['page-change', 'cell-click', 'scroll', 'scrollX', 'scrollY', 'column-resize-change'];
@@ -67,7 +68,7 @@ export default defineComponent({
     const {
       tableClasses, sizeClassNames, tableContentStyles, tableElementStyles,
     } = useStyle(props);
-    const { global } = useConfig('table');
+    const { global } = useConfig('table', props.locale);
     const { isMultipleHeader, spansAndLeafNodes, thList } = useTableHeader(props);
     const finalColumns = computed(() => spansAndLeafNodes.value?.leafColumns || props.columns);
     const isIE = computed(() => getIEVersion() <= 11);
@@ -274,9 +275,34 @@ export default defineComponent({
       addTableResizeObserver(tableRef.value);
     });
 
+    const tableData = computed(() => (isPaginateData.value ? dataSource.value : props.data));
+
+    const scrollToElement = (params: ComponentScrollToElementParams) => {
+      let { index } = params;
+      if (!index && index !== 0) {
+        if (!params.key) {
+          log.error('Table', 'scrollToElement: one of `index` or `key` must exist.');
+          return;
+        }
+        index = tableData.value?.findIndex((item) => get(item, props.rowKey) === params.key);
+        if (index < 0) {
+          log.error('Table', `${params.key} does not exist in data, check \`rowKey\` or \`data\` please.`);
+        }
+      }
+      virtualConfig.scrollToElement({ ...params, index });
+    };
+
+    watch(
+      [showElement],
+      ([showElement]) => {
+        context.emit('show-element-change', showElement);
+      },
+      { immediate: true },
+    );
+
     return {
       virtualConfig,
-      scrollToElement: virtualConfig.scrollToElement,
+      scrollToElement,
       columnResizable,
       thList,
       classPrefix,
@@ -504,6 +530,9 @@ export default defineComponent({
   },
 
   render(h) {
+    if (!this.showElement) {
+      return <div ref="tableRef"></div>;
+    }
     const { rowAndColFixedPosition } = this;
     const data = this.isPaginateData ? this.dataSource : this.data;
     const columns = this.spansAndLeafNodes?.leafColumns || this.columns;
@@ -615,10 +644,6 @@ export default defineComponent({
         {bottomContent}
       </div>
     );
-
-    if (!this.showElement) {
-      return <div ref="tableRef"></div>;
-    }
 
     return (
       <div ref="tableRef" class={this.dynamicBaseTableClasses} style="position: relative">

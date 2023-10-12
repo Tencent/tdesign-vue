@@ -17,6 +17,7 @@ import { TdUploadProps, UploadFile } from '../type';
 import { abridgeName } from '../../_common/js/upload/utils';
 import { renderTNodeJSX } from '../../utils/render-tnode';
 import Link from '../../link';
+import Image from '../../image';
 
 export interface ImageCardUploadProps extends CommonDisplayFileProps {
   multiple: TdUploadProps['multiple'];
@@ -69,11 +70,11 @@ export default defineComponent({
       const { BrowseIcon, DeleteIcon } = this.icons;
       return (
         <div class={`${this.classPrefix}-upload__card-content ${this.classPrefix}-upload__card-box`}>
-          <img class={`${this.classPrefix}-upload__card-image`} src={file.url} />
+          <Image class={`${this.classPrefix}-upload__card-image`} src={file.url || file.raw} error="" />
           <div class={`${this.classPrefix}-upload__card-mask`}>
             <span class={`${this.classPrefix}-upload__card-mask-item`} onClick={(e: MouseEvent) => e.stopPropagation()}>
               <ImageViewer
-                images={this.displayFiles.map((t: UploadFile) => t.url)}
+                images={this.displayFiles.map((t: UploadFile) => t.url || t.raw)}
                 defaultIndex={index}
                 trigger={(h: CreateElement, { open }: any) => (
                   <BrowseIcon
@@ -150,7 +151,7 @@ export default defineComponent({
               <li class={cardItemClasses} key={index}>
                 {file.status === 'progress' && this.renderProgressFile(file, loadCard)}
                 {file.status === 'fail' && this.renderFailFile(file, index, loadCard)}
-                {!['progress', 'fail'].includes(file.status) && file.url && this.renderMainContent(file, index)}
+                {!['progress', 'fail'].includes(file.status) && this.renderMainContent(file, index)}
                 {fileName
                   && (file.url ? (
                     <Link href={file.url} class={fileNameClassName} target="_blank" hover="color" size="small">
@@ -163,7 +164,7 @@ export default defineComponent({
             );
           })}
 
-          {this.showTrigger && (
+          {this.showTrigger && !this.disabled && (
             <li class={cardItemClasses} onClick={this.triggerUpload}>
               <div
                 class={`${this.classPrefix}-upload__image-add ${this.classPrefix}-upload__card-container ${this.classPrefix}-upload__card-box`}

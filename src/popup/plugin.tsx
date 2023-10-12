@@ -165,7 +165,7 @@ const removeOverlayInstance = () => {
   }
 };
 
-export type PluginMethod = (triggerEl: string, content: TNode, popupProps?: TdPopupProps) => Instance;
+export type PluginMethod = (triggerEl: string | HTMLElement, content: TNode, popupProps?: TdPopupProps) => Instance;
 
 export const createPopupPlugin: PluginMethod = (trigger, content, popupProps) => {
   const hasTrigger = triggerType(popupProps?.trigger || 'hover');
