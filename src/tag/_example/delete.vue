@@ -1,5 +1,5 @@
 <template>
-  <t-space direction="vertical" size="30px">
+  <t-space direction="vertical">
     <t-space>
       <t-tag theme="primary" closable>标签一</t-tag>
       <t-tag theme="success" closable>标签二</t-tag>
