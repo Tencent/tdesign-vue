@@ -1,11 +1,23 @@
-import { Ref, VNode } from 'vue';
-import { TNode, TreeOptionData, TScroll } from '../common';
-import TreeStore from '../_common/js/tree/tree-store';
-import TreeNode from '../_common/js/tree/tree-node';
-import { TypeTreeEventState } from '../_common/js/tree/types';
-import { VirtualScrollConfig } from '../hooks/useVirtualScrollNew';
 import {
-  TdTreeProps, TreeNodeModel, TreeInstanceFunctions, TreeNodeValue, TreeNodeState,
+  TypeRef,
+  TypeToRefs,
+  TypeVNode,
+  TreeNode,
+  TypeVirtualScrollConfig,
+  TypeTNode,
+  TypeTreeOptionData,
+  TypeScroll,
+  TypeTreeEventState,
+  TypeVModel,
+  TypeCreateElement,
+  TreeProps as AdaptTreeProps,
+  TypeTreeInstance as AdaptTypeTreeInstance,
+  TypeSetupContext,
+} from './adapt';
+import { TreeStore } from '../_common/js/tree/tree-store';
+
+import {
+  TdTreeProps, TreeNodeModel, TreeNodeValue, TreeNodeState,
 } from './type';
 
 // 在这个文件做统一的类型梳理
@@ -13,28 +25,25 @@ import {
 
 export * from './type';
 
-export type TypeVNode = VNode;
+export type TreeProps = AdaptTreeProps;
+export type TypeTreeInstance = AdaptTypeTreeInstance;
 
-export type TreeProps<T extends TreeOptionData = TreeOptionData> = TdTreeProps<T> & {
-  treeStore?: TreeStore;
-};
 /**
  * @deprecated
  */
-export type TypeTreeProps<T extends TreeOptionData = TreeOptionData> = TdTreeProps<T>;
+export type TypeTreeProps<T extends TypeTreeOptionData = TypeTreeOptionData> = TdTreeProps<T>;
 
 export type TypeTNodeState = TreeNodeState;
 export type TypeTNodeValue = TreeNodeValue;
 export type TypeTreeNode = TreeNode;
 export type TypeTreeStore = TreeStore;
 export type TypeValueMode = TreeProps['valueMode'];
-export type TypeTNodeProp = boolean | string | TNode<TypeTreeNodeModel>;
-export type TypeTreeNodeModel = TreeNodeModel<TreeOptionData>;
+export type TypeTNodeProp = boolean | string | TypeTNode<TypeTreeNodeModel>;
+export type TypeTreeNodeModel = TreeNodeModel<TypeTreeOptionData>;
 export type TypeTargetNode = TreeNodeValue | TypeTreeNode | TypeTreeNodeModel;
-export type TypeVirtualScrollConfig = VirtualScrollConfig;
 export type TypeTimer = ReturnType<typeof setTimeout>;
 
-export interface TypeTreeRow extends TreeNode {
+export interface TypeTreeRow extends TypeTreeNode {
   __VIRTUAL_SCROLL_INDEX?: number;
 }
 
@@ -64,11 +73,9 @@ export interface TypeLineModel {
   left: boolean;
 }
 
-export interface TypeTreeInstance extends Vue, TreeInstanceFunctions {}
-
 export interface TypeGetTNodeOption {
   node?: TreeNode;
-  createElement?: Vue.CreateElement;
+  createElement?: TypeCreateElement;
 }
 
 export interface TypeRenderTNodeOption {
@@ -76,11 +83,11 @@ export interface TypeRenderTNodeOption {
 }
 
 export interface TypeScopedSlots {
-  empty?: (opts?: TypeRenderTNodeOption) => VNode;
-  icon?: (opts?: TypeRenderTNodeOption) => VNode;
-  label?: (opts?: TypeRenderTNodeOption) => VNode;
-  line?: (opts?: TypeRenderTNodeOption) => VNode;
-  operations?: (opts?: TypeRenderTNodeOption) => VNode;
+  empty?: (opts?: TypeRenderTNodeOption) => TypeVNode;
+  icon?: (opts?: TypeRenderTNodeOption) => TypeVNode;
+  label?: (opts?: TypeRenderTNodeOption) => TypeVNode;
+  line?: (opts?: TypeRenderTNodeOption) => TypeVNode;
+  operations?: (opts?: TypeRenderTNodeOption) => TypeVNode;
 }
 
 export interface TypeDragHandle {
@@ -92,29 +99,47 @@ export interface TypeDragHandle {
 }
 
 export interface TypeTreeScope {
-  treeContentRef: Ref<HTMLDivElement>;
+  store: TypeTreeStore;
+  treeContentRef: TypeRef<HTMLDivElement>;
   treeProps?: TreeProps;
   scopedSlots?: TypeScopedSlots;
   drag?: TypeDragHandle;
-  scrollProps?: Ref<TScroll>;
+  scrollProps?: TypeRef<TypeScroll>;
   virtualConfig?: TypeVirtualScrollConfig;
 }
 
 export interface TypeTreeState {
+  props: TreeProps;
+  context: TypeSetupContext;
   scope: TypeTreeScope;
   store: TypeTreeStore;
-  nodes: Ref<TreeNode[]>;
-  allNodes: Ref<TreeNode[]>;
-  isScrolling: Ref<boolean>;
-  treeContentRef: Ref<HTMLDivElement>;
+  nodes: TypeRef<TypeTreeNode[]>;
+  allNodes: TypeRef<TypeTreeNode[]>;
+  isScrolling: TypeRef<boolean>;
+  treeContentRef: TypeRef<HTMLDivElement>;
   mouseEvent?: Event;
   virtualConfig?: TypeVirtualScrollConfig;
+  setStore: (store: TypeTreeStore) => void;
+  refProps: TypeToRefs<TreeProps>;
+  vmValue: TypeVModel;
+  vmActived: TypeVModel;
+  vmExpanded: TypeVModel;
+}
+
+export interface TypeTreeItemState {
+  stateId: string;
+  props: TypeTreeItemProps;
+  context: TypeSetupContext;
+  treeScope: TypeTreeScope;
+  node: TypeTreeNode;
+  refProps: TypeToRefs<TypeTreeItemProps>;
+  treeItemRef: TypeRef<HTMLDivElement>;
 }
 
 export interface TypeTreeItemProps {
-  node: TypeTreeNode;
+  stateId: string;
+  itemKey: string;
   treeScope: TypeTreeScope;
-  expandOnClickNode: boolean;
   rowIndex: number;
 }
 

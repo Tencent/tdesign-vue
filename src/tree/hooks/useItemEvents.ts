@@ -1,27 +1,27 @@
-import { SetupContext } from 'vue';
-import { CheckboxProps } from '../../checkbox';
-import { usePrefixClass } from '../../hooks/useConfig';
-import { TypeTreeItemProps, TypeEventState } from '../interface';
+import { TypeCheckboxProps, usePrefixClass } from '../adapt';
+import { TypeEventState, TypeTreeItemState } from '../tree-types';
 // 这里封装 tree-item 的一般事件
 // 拖动事件，虚拟滚动事件不要安排到这里
-export default function useItemEvents(props: TypeTreeItemProps, context: SetupContext) {
-  const { node } = props;
-
+export default function useItemEvents(state: TypeTreeItemState) {
+  const { context } = state;
   const classPrefix = usePrefixClass().value;
 
-  const handleChange: CheckboxProps['onChange'] = (_, ctx) => {
+  const handleChange: TypeCheckboxProps['onChange'] = (_, ctx) => {
+    const { node } = state;
     const event = new Event('change');
-    const state: TypeEventState = {
+    const evtContext: TypeEventState = {
       event,
       node,
     };
-    context.emit('change', state, ctx);
+    context.emit('change', evtContext, ctx);
   };
 
   let clicked = false;
 
   const handleClick = (evt: MouseEvent) => {
-    const { expandOnClickNode } = props;
+    const { node, treeScope } = state;
+    const { treeProps = {} } = treeScope;
+    const { expandOnClickNode } = treeProps;
     const srcTarget = evt.target as HTMLElement;
     const isBranchTrigger = node.children
       && expandOnClickNode
@@ -37,15 +37,17 @@ export default function useItemEvents(props: TypeTreeItemProps, context: SetupCo
     });
 
     // 处理expandOnClickNode时与checkbox的选中的逻辑冲突
-    if (expandOnClickNode && node.children && srcTarget.className?.indexOf?.(`${classPrefix}-tree__label`) !== -1) evt.preventDefault();
+    if (expandOnClickNode && node.children && srcTarget.className?.indexOf?.(`${classPrefix}-tree__label`) !== -1) {
+      evt.preventDefault();
+    }
 
-    const state: TypeEventState = {
+    const evtContext: TypeEventState = {
       mouseEvent: evt,
       event: evt,
       node,
       path: node.getPath(),
     };
-    context.emit('click', state);
+    context.emit('click', evtContext);
   };
 
   return {

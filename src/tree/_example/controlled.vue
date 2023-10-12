@@ -1,42 +1,55 @@
 <template>
-  <t-space :size="32" direction="vertical" class="tdesign-tree-demo">
-    <t-space :size="10" direction="vertical">
-      <t-form label-align="left" :label-width="80">
-        <t-form-item>
-          <template #label>选中节点</template>
-          <t-input-adornment prepend="checked:">
-            <t-input :value="allChecked" />
-          </t-input-adornment>
-        </t-form-item>
-        <t-form-item>
-          <template #label>展开节点</template>
-          <t-input-adornment prepend="expanded:">
-            <t-input :value="allExpanded" />
-          </t-input-adornment>
-        </t-form-item>
-        <t-form-item>
-          <template #label>高亮节点</template>
-          <t-input-adornment prepend="actived:">
-            <t-input :value="allActived" />
-          </t-input-adornment>
-        </t-form-item>
-      </t-form>
-      <t-tree
-        :data="items"
-        checkable
-        activable
-        :expand-on-click-node="false"
-        :active-multiple="false"
-        :expanded="expanded"
-        :actived="actived"
-        :value="checked"
-        :value-mode="valueMode"
-        @expand="onExpand"
-        @change="onChange"
-        @active="onActive"
-        @click="onClick"
-      />
+  <t-space direction="vertical">
+    <t-space>
+      <span>选中节点:</span>
+      <t-input-adornment prepend="checked:">
+        <t-input :value="allChecked" />
+      </t-input-adornment>
     </t-space>
+    <t-space>
+      <span>展开节点:</span>
+      <t-input-adornment prepend="expanded:">
+        <t-input :value="allExpanded" />
+      </t-input-adornment>
+    </t-space>
+    <t-space>
+      <span>高亮节点:</span>
+      <t-input-adornment prepend="actived:">
+        <t-input :value="allActived" />
+      </t-input-adornment>
+    </t-space>
+    <t-space>
+      <span>可选:</span>
+      <t-switch v-model="checkable" />
+    </t-space>
+    <t-space>
+      <span>节点可高亮: </span>
+      <t-switch v-model="activable" />
+    </t-space>
+    <t-space>
+      <span>受控同步节点:</span>
+      <t-switch v-model="syncProps" />
+    </t-space>
+    <t-space>
+      <t-button theme="primary" variant="outline" @click="selectNode">选中节点 1.1</t-button>
+      <t-button theme="primary" variant="outline" @click="activeNode">激活节点 2</t-button>
+      <t-button theme="primary" variant="outline" @click="expandNode">展开节点 1.2</t-button>
+    </t-space>
+    <t-tree
+      :data="items"
+      :activable="activable"
+      :checkable="checkable"
+      :expand-on-click-node="false"
+      :active-multiple="false"
+      :expanded="expanded"
+      :actived="actived"
+      :value="checked"
+      :value-mode="valueMode"
+      @expand="onExpand"
+      @change="onChange"
+      @active="onActive"
+      @click="onClick"
+    />
   </t-space>
 </template>
 
@@ -44,10 +57,13 @@
 export default {
   data() {
     return {
+      syncProps: false,
+      checkable: true,
+      activable: false,
       valueMode: 'onlyLeaf',
-      checked: ['1.1.1.1', '1.1.1.2'],
-      expanded: ['1', '1.1', '1.1.1', '2'],
-      actived: ['2'],
+      checked: ['1.2.1', '1.2.2'],
+      expanded: ['1', '1.1'],
+      actived: [],
       items: [
         {
           value: '1',
@@ -60,30 +76,10 @@ export default {
                 {
                   value: '1.1.1',
                   label: '1.1.1',
-                  children: [
-                    {
-                      value: '1.1.1.1',
-                      label: '1.1.1.1',
-                    },
-                    {
-                      value: '1.1.1.2',
-                      label: '1.1.1.2',
-                    },
-                  ],
                 },
                 {
                   value: '1.1.2',
                   label: '1.1.2',
-                  children: [
-                    {
-                      value: '1.1.2.1',
-                      label: '1.1.2.1',
-                    },
-                    {
-                      value: '1.1.2.2',
-                      label: '1.1.2.2',
-                    },
-                  ],
                 },
               ],
             },
@@ -94,30 +90,10 @@ export default {
                 {
                   value: '1.2.1',
                   label: '1.2.1',
-                  children: [
-                    {
-                      value: '1.2.1.1',
-                      label: '1.2.1.1',
-                    },
-                    {
-                      value: '1.2.1.2',
-                      label: '1.2.1.2',
-                    },
-                  ],
                 },
                 {
                   value: '1.2.2',
                   label: '1.2.2',
-                  children: [
-                    {
-                      value: '1.2.2.1',
-                      label: '1.2.2.1',
-                    },
-                    {
-                      value: '1.2.2.2',
-                      label: '1.2.2.2',
-                    },
-                  ],
                 },
               ],
             },
@@ -125,18 +101,34 @@ export default {
         },
         {
           value: '2',
-          label: '2 这个节点不允许展开, 不允许激活',
+          label: '2',
           checkable: false,
           children: [
             {
               value: '2.1',
               label: '2.1 这个节点不允许选中',
-              checkable: false,
             },
             {
               value: '2.2',
-              label: '2.2',
+              label: '2.2 这个节点不允许激活',
               checkable: false,
+            },
+            {
+              value: '2.3',
+              label: '2.3 这个节点不允许展开',
+              checkable: false,
+              children: [
+                {
+                  value: '2.3.1',
+                  label: '2.3.1',
+                  checkable: false,
+                },
+                {
+                  value: '2.3.2',
+                  label: '2.3.2',
+                  checkable: false,
+                },
+              ],
             },
           ],
         },
@@ -167,36 +159,49 @@ export default {
     },
   },
   methods: {
+    selectNode() {
+      this.checked = ['1.1'];
+    },
+    activeNode() {
+      this.actived = ['2'];
+    },
+    expandNode() {
+      this.expanded = ['1', '1.2'];
+    },
     onClick(context) {
       console.info('onClick:', context);
       const { node } = context;
-      console.info(node.value, 'checked:', node.checked);
-      console.info(node.value, 'expanded:', node.expanded);
-      console.info(node.value, 'actived:', node.actived);
+      console.info(node.value, 'checked:', node.checked, 'expanded:', node.expanded, 'actived:', node.actived);
     },
     onChange(vals, context) {
       console.info('onChange:', vals, context);
       const checked = vals.filter((val) => val !== '2.1');
       console.info('节点 2.1 不允许选中');
-      this.checked = checked;
+      if (this.syncProps) {
+        this.checked = checked;
+      }
       const { node } = context;
       console.info(node.value, 'checked:', node.checked);
     },
-    onExpand(vals, context) {
-      console.info('onExpand:', vals, context);
-      const expanded = vals.filter((val) => val !== '2');
-      console.info('节点 2 不允许展开');
-      this.expanded = expanded;
-      const { node } = context;
-      console.info(node.value, 'expanded:', node.expanded);
-    },
     onActive(vals, context) {
       console.info('onActive:', vals, context);
-      const actived = vals.filter((val) => val !== '2');
-      console.info('节点 2 不允许激活');
-      this.actived = actived;
+      const actived = vals.filter((val) => val !== '2.2');
+      console.info('节点 2.2 不允许激活', actived);
+      if (this.syncProps) {
+        this.actived = actived;
+      }
       const { node } = context;
       console.info(node.value, 'actived:', node.actived);
+    },
+    onExpand(vals, context) {
+      console.info('onExpand:', vals, context);
+      const expanded = vals.filter((val) => val !== '2.3');
+      console.info('节点 2.3 不允许展开', expanded);
+      if (this.syncProps) {
+        this.expanded = expanded;
+      }
+      const { node } = context;
+      console.info(node.value, 'expanded:', node.expanded);
     },
   },
 };

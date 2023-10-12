@@ -1,27 +1,27 @@
-import { SetupContext } from 'vue';
-import { usePrefixClass } from '../../hooks/useConfig';
+import { usePrefixClass } from '../adapt';
 import {
   TreeNodeValue,
-  TreeProps,
   TypeTreeState,
   TypeTargetNode,
   TypeExpandEventContext,
   TypeActiveEventContext,
   TypeChangeEventContext,
-} from '../interface';
-import { getNode, emitEvent, pathMatchClass } from '../util';
+} from '../tree-types';
+import { getNode, pathMatchClass } from '../util';
 
 // tree 组件节点状态设置
-export default function useTreeAction(props: TreeProps, context: SetupContext, state: TypeTreeState) {
+export default function useTreeAction(state: TypeTreeState) {
   const treeState = state;
   const { store } = treeState;
   const componentName = usePrefixClass('tree').value;
 
+  const [, setTValue] = state.vmValue;
+  const [, setTActived] = state.vmActived;
+  const [, setTExpanded] = state.vmExpanded;
+
   const setExpanded = (item: TypeTargetNode, isExpanded: boolean): TreeNodeValue[] => {
     const node = getNode(store, item);
-    const expanded = node.setExpanded(isExpanded, {
-      directly: true,
-    });
+    const expanded = node.setExpanded(isExpanded);
     const mouseEvent = treeState.mouseEvent as MouseEvent;
     const evtCtx: TypeExpandEventContext = {
       node: node.getModel(),
@@ -36,7 +36,7 @@ export default function useTreeAction(props: TreeProps, context: SetupContext, s
         evtCtx.trigger = 'icon-click';
       }
     }
-    emitEvent<Parameters<TreeProps['onExpand']>>(props, context, 'expand', expanded, evtCtx);
+    setTExpanded(expanded, evtCtx);
     return expanded;
   };
 
@@ -47,9 +47,7 @@ export default function useTreeAction(props: TreeProps, context: SetupContext, s
 
   const setActived = (item: TypeTargetNode, isActived: boolean) => {
     const node = getNode(store, item);
-    const actived = node.setActived(isActived, {
-      directly: true,
-    });
+    const actived = node.setActived(isActived);
     const mouseEvent = treeState.mouseEvent as MouseEvent;
     const evtCtx: TypeActiveEventContext = {
       node: node.getModel(),
@@ -59,7 +57,7 @@ export default function useTreeAction(props: TreeProps, context: SetupContext, s
     if (mouseEvent) {
       evtCtx.trigger = 'node-click';
     }
-    emitEvent<Parameters<TreeProps['onActive']>>(props, context, 'active', actived, evtCtx);
+    setTActived(actived, evtCtx);
     return actived;
   };
 
@@ -70,9 +68,7 @@ export default function useTreeAction(props: TreeProps, context: SetupContext, s
 
   const setChecked = (item: TypeTargetNode, isChecked: boolean, ctx: { e: Event }): TreeNodeValue[] => {
     const node = getNode(store, item);
-    const checked = node.setChecked(isChecked, {
-      directly: true,
-    });
+    const checked = node.setChecked(isChecked);
     const mouseEvent = ctx?.e as MouseEvent;
     const evtCtx: TypeChangeEventContext = {
       node: node.getModel(),
@@ -82,7 +78,7 @@ export default function useTreeAction(props: TreeProps, context: SetupContext, s
     if (mouseEvent) {
       evtCtx.trigger = 'node-click';
     }
-    emitEvent<Parameters<TreeProps['onChange']>>(props, context, 'change', checked, evtCtx);
+    setTValue(checked, evtCtx);
     return checked;
   };
 

@@ -24,7 +24,7 @@ describe('Tree:api', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll={true} />;
+          return <Tree ref="tree" transition={false} data={data} expandAll={true} />;
         },
       });
       expect(wrapper.find('[data-value="t1"]').exists()).toBe(true);
@@ -57,7 +57,7 @@ describe('Tree:api', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll={true} />;
+          return <Tree ref="tree" transition={false} data={data} expandAll={true} />;
         },
       });
 
@@ -86,7 +86,7 @@ describe('Tree:api', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll={true} />;
+          return <Tree ref="tree" transition={false} data={data} expandAll={true} />;
         },
       });
 
@@ -109,7 +109,7 @@ describe('Tree:api', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll={true} />;
+          return <Tree ref="tree" transition={false} data={data} expandAll={true} />;
         },
       });
 
@@ -146,7 +146,7 @@ describe('Tree:api', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll={true} checkable />;
+          return <Tree ref="tree" transition={false} data={data} expandAll={true} checkable />;
         },
       });
 
@@ -186,7 +186,7 @@ describe('Tree:api', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} />;
+          return <Tree ref="tree" transition={false} data={data} />;
         },
       });
 
@@ -224,7 +224,7 @@ describe('Tree:api', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll={true} />;
+          return <Tree ref="tree" transition={false} data={data} expandAll={true} />;
         },
       });
 
@@ -264,7 +264,7 @@ describe('Tree:api', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll={true} />;
+          return <Tree ref="tree" transition={false} data={data} expandAll={true} />;
         },
       });
 
@@ -308,7 +308,7 @@ describe('Tree:api', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll={true} />;
+          return <Tree ref="tree" transition={false} data={data} expandAll={true} />;
         },
       });
 
@@ -354,7 +354,7 @@ describe('Tree:api', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll={true} />;
+          return <Tree ref="tree" transition={false} data={data} expandAll={true} />;
         },
       });
 
@@ -392,7 +392,7 @@ describe('Tree:api', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll={true} />;
+          return <Tree ref="tree" transition={false} data={data} expandAll={true} />;
         },
       });
 
@@ -430,7 +430,7 @@ describe('Tree:api', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll={true} />;
+          return <Tree ref="tree" transition={false} data={data} expandAll={true} />;
         },
       });
 
@@ -472,7 +472,7 @@ describe('Tree:api', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll={true} />;
+          return <Tree ref="tree" transition={false} data={data} expandAll={true} />;
         },
       });
 
@@ -518,7 +518,7 @@ describe('Tree:api', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll={true} />;
+          return <Tree ref="tree" transition={false} data={data} expandAll={true} />;
         },
       });
 
@@ -556,7 +556,7 @@ describe('Tree:api', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll={true} />;
+          return <Tree ref="tree" transition={false} data={data} expandAll={true} />;
         },
       });
 
@@ -594,7 +594,7 @@ describe('Tree:api', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll={true} />;
+          return <Tree ref="tree" transition={false} data={data} expandAll={true} />;
         },
       });
 
@@ -636,7 +636,7 @@ describe('Tree:api', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll={true} />;
+          return <Tree ref="tree" transition={false} data={data} expandAll={true} />;
         },
       });
 
@@ -668,7 +668,7 @@ describe('Tree:api', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll={true} />;
+          return <Tree ref="tree" transition={false} data={data} expandAll={true} />;
         },
       });
 
@@ -690,7 +690,7 @@ describe('Tree:api', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll={true} />;
+          return <Tree ref="tree" transition={false} data={data} expandAll={true} />;
         },
       });
 
@@ -722,7 +722,7 @@ describe('Tree:api', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll={true} />;
+          return <Tree ref="tree" transition={false} data={data} expandAll={true} />;
         },
       });
 
@@ -762,7 +762,7 @@ describe('Tree:api', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data} expandAll={true} />;
+          return <Tree ref="tree" transition={false} data={data} expandAll={true} />;
         },
       });
 
