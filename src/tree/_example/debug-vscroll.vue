@@ -1,41 +1,56 @@
 <template>
-  <t-space :size="32" direction="vertical" class="tdesign-tree-demo" style="width: 100%">
-    <t-space :size="10" direction="vertical" style="width: 100%">
-      <h3 class="title">虚拟滚动 - virtual 模式</h3>
-      <t-form labelWidth="150" style="max-width: 500px">
-        <t-form-item label="动画">
-          <t-switch v-model="transition" />
-        </t-form-item>
-        <t-form-item label="显示连线">
-          <t-switch v-model="showLine" />
-        </t-form-item>
-        <t-form-item label="显示图标">
-          <t-switch v-model="showIcon" />
-        </t-form-item>
-        <t-form-item label="可选">
-          <t-switch v-model="isCheckable" />
-        </t-form-item>
-        <t-form-item label="可操作">
-          <t-switch v-model="isOperateAble" />
-        </t-form-item>
-      </t-form>
-      <t-form label-align="left" :label-width="80" style="max-width: 500px">
-        <t-form-item>
-          <t-input-adornment prepend="插入节点数量:">
-            <t-input v-model="insertCount" />
-          </t-input-adornment>
-        </t-form-item>
-        <t-form-item>
-          <t-button @click="append()">插入根节点</t-button>
-        </t-form-item>
-        <t-form-item label="">
-          <t-input-adornment prepend="filter:">
-            <t-input v-model="filterText" @change="onInput" />
-          </t-input-adornment>
-        </t-form-item>
-      </t-form>
+  <t-space direction="vertical" style="width: 100%">
+    <h3>虚拟滚动 - virtual 模式</h3>
+    <t-space>
+      <span>动画:</span>
+      <t-switch v-model="transition" />
+    </t-space>
+    <t-space>
+      <span>显示连线:</span>
+      <t-switch v-model="showLine" />
+    </t-space>
+    <t-space>
+      <span>显示图标:</span>
+      <t-switch v-model="showIcon" />
+    </t-space>
+    <t-space>
+      <span>可选:</span>
+      <t-switch v-model="isCheckable" />
+    </t-space>
+    <t-space>
+      <span>可操作:</span>
+      <t-switch v-model="isOperateAble" />
+    </t-space>
+    <t-space>
+      <t-button theme="primary" @click="clearTree">清空 tree</t-button>
+    </t-space>
+    <t-space>
+      <t-input-adornment prepend="level1 节点数量:">
+        <t-input v-model="textLevel1Count" />
+      </t-input-adornment>
+      <t-input-adornment prepend="level2 节点数量:">
+        <t-input v-model="textLevel2Count" />
+      </t-input-adornment>
+      <t-input-adornment prepend="level3 节点数量:">
+        <t-input v-model="textLevel3Count" />
+      </t-input-adornment>
+      <t-button theme="primary" @click="createTree">构造 tree</t-button>
+    </t-space>
+    <t-space>
+      <t-input-adornment prepend="插入节点数量:">
+        <t-input v-model="textInsertCount" />
+      </t-input-adornment>
+    </t-space>
+    <t-space>
+      <t-button @click="append()">插入根节点</t-button>
+    </t-space>
+    <t-space>
+      <t-input-adornment prepend="filter:">
+        <t-input v-model="filterText" @change="onInput" />
+      </t-input-adornment>
     </t-space>
     <t-tree
+      ref="tree"
       :data="items"
       hover
       activable
@@ -54,10 +69,9 @@
         threshold: 10,
         type: 'virtual',
       }"
-      ref="tree"
     >
       <template #operations="{ node }">
-        <div class="tdesign-demo-block-row" v-if="isOperateAble">
+        <div v-if="isOperateAble" class="tdesign-demo-block-row">
           <t-button size="small" variant="base" @click="append(node)">添加子节点</t-button>
           <t-button size="small" variant="base" theme="danger" @click="remove(node)">删除</t-button>
         </div>
@@ -68,49 +82,12 @@
 </template>
 
 <script>
-const allLevels = [10, 20, 25];
-
-function createTreeData() {
-  let cacheIndex = 0;
-
-  function getValue() {
-    cacheIndex += 1;
-    return `t${cacheIndex}`;
-  }
-
-  function createNodes(items, level) {
-    const count = allLevels[level];
-    if (count) {
-      let index = 0;
-      for (index = 0; index < count; index += 1) {
-        const value = getValue();
-        const item = { value };
-        items.push(item);
-        if (allLevels[level + 1]) {
-          item.children = [];
-          createNodes(item.children, level + 1);
-        }
-      }
-    }
-  }
-
-  const items = [];
-  createNodes(items, 0);
-
-  return {
-    getValue,
-    items,
-  };
-}
-
-const virtualTree = createTreeData();
-
 export default {
   data() {
     return {
       index: 0,
       transition: true,
-      insertCount: 1,
+      textInsertCount: '1',
       useActived: false,
       enableVScroll: true,
       lazyVScroll: false,
@@ -119,17 +96,34 @@ export default {
       showIcon: true,
       isCheckable: true,
       isOperateAble: true,
-      items: virtualTree.items,
+      items: [],
       filterText: '',
       filterByText: null,
+      textLevel1Count: '10',
+      textLevel2Count: '10',
+      textLevel3Count: '10',
     };
+  },
+  computed: {
+    level1Count() {
+      return parseInt(this.textLevel1Count, 10) || 1;
+    },
+    level2Count() {
+      return parseInt(this.textLevel2Count, 10) || 1;
+    },
+    level3Count() {
+      return parseInt(this.textLevel3Count, 10) || 1;
+    },
+    insertCount() {
+      return parseInt(this.textInsertCount, 10) || 1;
+    },
   },
   methods: {
     label(createElement, node) {
       return `${node.value}`;
     },
     getInsertItem() {
-      const value = virtualTree.getValue();
+      const value = this.getValue();
       return {
         value,
       };
@@ -166,6 +160,37 @@ export default {
         // 过滤文案为空，则还原 tree 为无过滤状态
         this.filterByText = null;
       }
+    },
+    getValue() {
+      this.index += 1;
+      return `t${this.index}`;
+    },
+    createTreeData() {
+      const allLevels = [this.level1Count, this.level2Count, this.level3Count];
+      const createNodes = (items, level) => {
+        const count = allLevels[level];
+        if (count) {
+          let index = 0;
+          for (index = 0; index < count; index += 1) {
+            const value = this.getValue();
+            const item = { value };
+            items.push(item);
+            if (allLevels[level + 1]) {
+              item.children = [];
+              createNodes(item.children, level + 1);
+            }
+          }
+        }
+      };
+      const items = [];
+      createNodes(items, 0);
+      return items;
+    },
+    createTree() {
+      this.items = this.createTreeData();
+    },
+    clearTree() {
+      this.items = [];
     },
   },
 };

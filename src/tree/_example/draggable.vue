@@ -1,20 +1,18 @@
 <template>
-  <t-space :size="32" direction="vertical" class="tdesign-tree-demo">
-    <t-space :size="10" direction="vertical">
-      <t-tree
-        :data="items"
-        activable
-        hover
-        transition
-        expand-all
-        draggable
-        @drag-start="handleDragStart"
-        @drag-end="handleDragEnd"
-        @drag-over="handleDragOver"
-        @drag-leave="handleDragLeave"
-        @drop="handleDrop"
-      />
-    </t-space>
+  <t-space direction="vertical">
+    <t-tree
+      :data="items"
+      activable
+      hover
+      transition
+      expand-all
+      draggable
+      @drag-start="handleDragStart"
+      @drag-end="handleDragEnd"
+      @drag-over="handleDragOver"
+      @drag-leave="handleDragLeave"
+      @drop="handleDrop"
+    />
   </t-space>
 </template>
 
@@ -99,18 +97,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.tdesign-tree-demo .title {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .tips {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .operations {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .t-form__item {
-  margin-bottom: 5px;
-}
-</style>

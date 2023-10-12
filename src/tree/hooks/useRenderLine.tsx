@@ -1,15 +1,15 @@
-import { CreateElement } from 'vue';
-import { TypeVNode, TypeTreeItemProps } from '../interface';
-import { usePrefixClass } from '../../hooks/useConfig';
-import TreeNode from '../../_common/js/tree/tree-node';
+import {
+  usePrefixClass, TypeCreateElement, TreeNode, TypeVNode,
+} from '../adapt';
+import { TypeTreeItemState } from '../tree-types';
 import { getTNode } from '../util';
 
 // 渲染节点连线
-export default function useRenderLine(props: TypeTreeItemProps) {
+export default function useRenderLine(state: TypeTreeItemState) {
   const componentName = usePrefixClass('tree').value;
 
-  const renderLine = (h: CreateElement): TypeVNode => {
-    const { node, treeScope } = props;
+  const renderLine = (h: TypeCreateElement): TypeVNode => {
+    const { node, treeScope } = state;
     const { scopedSlots } = treeScope;
     const treeProps = treeScope?.treeProps || {};
     const { line } = treeProps;
