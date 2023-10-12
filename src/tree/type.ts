@@ -5,7 +5,7 @@
  * */
 
 import { CheckboxProps } from '../checkbox';
-import { TNode, TreeOptionData, TreeKeysType, TScroll } from '../common';
+import { TNode, TreeOptionData, TreeKeysType, TScroll, ScrollToElementParams } from '../common';
 
 export interface TdTreeProps<T extends TreeOptionData = TreeOptionData> {
   /**
@@ -60,7 +60,7 @@ export interface TdTreeProps<T extends TreeOptionData = TreeOptionData> {
    */
   disabled?: boolean;
   /**
-   * [开发中]节点是否可拖拽
+   * 节点是否可拖拽
    */
   draggable?: boolean;
   /**
@@ -161,12 +161,12 @@ export interface TdTreeProps<T extends TreeOptionData = TreeOptionData> {
    */
   transition?: boolean;
   /**
-   * 选中值（组件为可选状态时）
+   * 选中值，组件为可选状态时有效
    * @default []
    */
   value?: Array<TreeNodeValue>;
   /**
-   * 选中值（组件为可选状态时），非受控属性
+   * 选中值，组件为可选状态时有效，非受控属性
    * @default []
    */
   defaultValue?: Array<TreeNodeValue>;
@@ -277,6 +277,10 @@ export interface TreeInstanceFunctions<T extends TreeOptionData = TreeOptionData
    * 移除指定节点
    */
   remove: (value: TreeNodeValue) => void;
+  /**
+   * 虚拟滚动场景下 支持指定滚动到具体的节点
+   */
+  scrollTo?: (scrollToParams: ScrollToElementParams) => void;
   /**
    * 设置节点状态
    */

@@ -5,10 +5,9 @@
 
 name | type | default | description | required
 -- | -- | -- | -- | --
-activable | Boolean | false | \- | N
+activable | Boolean | false | make nodes can be highlight | N
 activeMultiple | Boolean | false | \- | N
 actived | Array | - | `.sync` is supported。Typescript：`Array<TreeNodeValue>` | N
-defaultActived | Array | - | uncontrolled property。Typescript：`Array<TreeNodeValue>` | N
 allowFoldNodeOnFilter | Boolean | false | \- | N
 checkProps | Object | - | Typescript：`CheckboxProps`，[Checkbox API Documents](./checkbox?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree/type.ts) | N
 checkStrictly | Boolean | false | \- | N
@@ -82,6 +81,7 @@ getPath | `(value: TreeNodeValue)` | `TreeNodeModel<T>[]` | required
 insertAfter | `(value: TreeNodeValue, newData: T)` | \- | required
 insertBefore | `(value: TreeNodeValue, newData: T)` | \- | required
 remove | `(value: TreeNodeValue)` | \- | required
+scrollTo | `(scrollToParams: ScrollToElementParams)` | \- | support scrolling to a specific node when virtual scrolling 
 setItem | `(value: TreeNodeValue, options: TreeNodeState)` | \- | required
 
 ### TreeNodeState
@@ -93,6 +93,7 @@ actived | Boolean | false | \- | N
 checkable | Boolean | false | \- | N
 checked | Boolean | false | \- | N
 disabled | Boolean | false | \- | N
+draggable | Boolean | true | \- | N
 expandMutex | Boolean | false | \- | N
 expanded | Boolean | false | \- | N
 indeterminate | Boolean | false | \- | N

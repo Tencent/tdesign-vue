@@ -1,25 +1,22 @@
-import { CreateElement } from 'vue';
-import { SetupContext, computed } from '@vue/composition-api';
 import isBoolean from 'lodash/isBoolean';
-import { TypeVNode, TypeTreeItemProps } from '../interface';
-import { usePrefixClass } from '../../hooks/useConfig';
-
-import TCheckBox from '../../checkbox';
+import {
+  usePrefixClass, TypeCreateElement, computed, TCheckBox, TypeVNode,
+} from '../adapt';
+import { TypeTreeItemState } from '../tree-types';
 import { getTNode } from '../util';
 import useItemEvents from './useItemEvents';
 
 // 渲染节点文本与内容
-export default function useRenderLabel(props: TypeTreeItemProps, context: SetupContext) {
+export default function useRenderLabel(state: TypeTreeItemState) {
   const classPrefix = usePrefixClass().value;
   const componentName = usePrefixClass('tree').value;
 
-  const { handleChange } = useItemEvents(props, context);
+  const { handleChange } = useItemEvents(state);
 
-  const renderLabel = (h: CreateElement): TypeVNode => {
-    const { node, treeScope, expandOnClickNode } = props;
-    const { scopedSlots } = treeScope;
-    const treeProps = treeScope?.treeProps || {};
-    const { label, disableCheck } = treeProps;
+  const renderLabel = (h: TypeCreateElement): TypeVNode => {
+    const { node, treeScope } = state;
+    const { scopedSlots, treeProps = {} } = treeScope;
+    const { label, disableCheck, expandOnClickNode } = treeProps;
     const checkProps = treeProps?.checkProps || {};
 
     let labelNode = null;
@@ -47,10 +44,9 @@ export default function useRenderLabel(props: TypeTreeItemProps, context: SetupC
 
     const shouldStopLabelTrigger = computed(() => {
       const isNormalBranchNode = Array.isArray(node.children) && node.children?.length > 0;
-      const isLazyLoadChildBranchNode = isBoolean(node.children) && node.children; // 懒加载子节点场景
-
+      // 延迟加载子节点场景
+      const isLazyLoadChildBranchNode = isBoolean(node.children) && node.children;
       const isBranchNode = isNormalBranchNode || isLazyLoadChildBranchNode;
-
       return expandOnClickNode && isBranchNode;
     });
 
@@ -74,11 +70,10 @@ export default function useRenderLabel(props: TypeTreeItemProps, context: SetupC
 
       labelNode = (
         <TCheckBox
-          // v-ripple={this.keepAnimation.ripple}
           class={labelClasses}
           checked={node.checked}
           indeterminate={node.indeterminate}
-          disabled={node.isDisabled()}
+          disabled={checkboxDisabled}
           name={String(node.value)}
           onChange={handleChange}
           stopLabelTrigger={shouldStopLabelTrigger.value}
@@ -92,12 +87,7 @@ export default function useRenderLabel(props: TypeTreeItemProps, context: SetupC
       const inner = <span style="position: relative">{labelNode}</span>;
       // 使用key是为了避免元素复用，从而顺利移除ripple指令
       labelNode = node.isActivable() ? (
-        <span
-          key="1"
-          // v-ripple={this.keepAnimation.ripple}
-          class={labelClasses}
-          title={node.label}
-        >
+        <span key="1" ref="label" class={labelClasses} title={node.label}>
           {inner}
         </span>
       ) : (

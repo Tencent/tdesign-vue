@@ -18,7 +18,7 @@ export function getNodeDataByValue(
         // results.push(item);
         results.set(values[index], item);
       }
-      if (item.children?.length) {
+      if (Array.isArray(item.children) && item.children?.length) {
         getTreeNodeData(values, item.children, keys, results);
       }
       if (results.size >= values.length) {
