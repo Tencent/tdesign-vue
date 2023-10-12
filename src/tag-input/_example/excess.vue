@@ -11,7 +11,7 @@
 export default {
   data() {
     return {
-      tags: ['Vue', 'React'],
+      tags: ['Vue', 'React', 'VueNext', 'MiniProgram', 'Angular', 'Starter Kit'],
     };
   },
 };

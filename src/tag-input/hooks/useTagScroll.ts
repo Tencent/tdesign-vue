@@ -7,6 +7,7 @@ import {
   onMounted, onUnmounted, ref, toRefs,
 } from 'vue';
 import isFunction from 'lodash/isFunction';
+
 import { TdTagInputProps } from '../type';
 
 export default function useTagScroll(props: TdTagInputProps) {
@@ -16,6 +17,7 @@ export default function useTagScroll(props: TdTagInputProps) {
   const scrollDistance = ref(0);
   const scrollElement = ref<HTMLElement>();
   const mouseEnterTimer = ref();
+  const isScrollable = ref(false); // 设置可滚动
 
   const updateScrollElement = (element: HTMLElement) => {
     const inputElement = element.children[0] as HTMLElement;
@@ -34,6 +36,9 @@ export default function useTagScroll(props: TdTagInputProps) {
   const scrollToRight = () => {
     updateScrollDistance();
     scrollTo(scrollDistance.value);
+    setTimeout(() => {
+      isScrollable.value = true;
+    }, 200);
   };
 
   const scrollToLeft = () => {
@@ -65,6 +70,7 @@ export default function useTagScroll(props: TdTagInputProps) {
 
   const scrollToLeftOnLeave = () => {
     if (excessTagsDisplayType.value !== 'scroll') return;
+    isScrollable.value = false; // 离开焦点不可滚动
     scrollTo(0);
     clearTimeout(mouseEnterTimer.value);
   };
@@ -95,5 +101,6 @@ export default function useTagScroll(props: TdTagInputProps) {
     onWheel,
     scrollToRightOnEnter,
     scrollToLeftOnLeave,
+    isScrollable,
   };
 }
