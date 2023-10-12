@@ -130,6 +130,7 @@ export default defineComponent({
     watch(
       () => isScrollable.value,
       (v) => {
+        if (props.excessTagsDisplayType !== 'scroll') return;
         const scrollElementClass = `${classPrefix.value}-input__prefix`;
         const scrollElement = tagInputRef.value.$el.querySelector(`.${scrollElementClass}`);
         if (v) scrollElement.classList.add(`${scrollElementClass}--scrollable`);
@@ -239,7 +240,7 @@ export default defineComponent({
           click: this.onInnerClick,
           compositionstart: this.onInputCompositionstart,
           compositionend: this.onInputCompositionend,
-          // scroll: this.onWheel,
+          mousewheel: this.onWheel,
         }}
       />
     );
