@@ -180,11 +180,14 @@ exports[`Calendar > :props > :cell 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <span
-            class="t-tag t-tag--check t-tag--default t-size-l t-calendar__control-tag"
+          <div
+            class="t-tag t-tag--default t-tag--dark t-tag t-tag--check t-size-l t-calendar__control-tag"
+            tabindex="0"
           >
-            隐藏周末
-          </span>
+            <span>
+              隐藏周末
+            </span>
+          </div>
         </div>
         <div
           class="t-calendar__control-section-cell"
@@ -645,11 +648,14 @@ exports[`Calendar > :props > :cell 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <span
-            class="t-tag t-tag--check t-tag--default t-size-l t-calendar__control-tag"
+          <div
+            class="t-tag t-tag--default t-tag--dark t-tag t-tag--check t-size-l t-calendar__control-tag"
+            tabindex="0"
           >
-            隐藏周末
-          </span>
+            <span>
+              隐藏周末
+            </span>
+          </div>
         </div>
         <div
           class="t-calendar__control-section-cell"
@@ -1185,11 +1191,14 @@ exports[`Calendar > :props > :cellAppend 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <span
-            class="t-tag t-tag--check t-tag--default t-size-l t-calendar__control-tag"
+          <div
+            class="t-tag t-tag--default t-tag--dark t-tag t-tag--check t-size-l t-calendar__control-tag"
+            tabindex="0"
           >
-            隐藏周末
-          </span>
+            <span>
+              隐藏周末
+            </span>
+          </div>
         </div>
         <div
           class="t-calendar__control-section-cell"
@@ -2035,11 +2044,14 @@ exports[`Calendar > :props > :cellAppend 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <span
-            class="t-tag t-tag--check t-tag--default t-size-l t-calendar__control-tag"
+          <div
+            class="t-tag t-tag--default t-tag--dark t-tag t-tag--check t-size-l t-calendar__control-tag"
+            tabindex="0"
           >
-            隐藏周末
-          </span>
+            <span>
+              隐藏周末
+            </span>
+          </div>
         </div>
         <div
           class="t-calendar__control-section-cell"
@@ -3545,11 +3557,15 @@ exports[`Calendar > :props > :controllerConfig 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <span
-            class="t-tag t-tag--check t-tag--default t-size-s t-calendar__control-tag"
+          <div
+            class="t-tag t-tag--default t-tag--dark t-tag t-tag--check t-size-s t-calendar__control-tag"
+            size="large"
+            tabindex="0"
           >
-            隐藏周末
-          </span>
+            <span>
+              隐藏周末
+            </span>
+          </div>
         </div>
         <div
           class="t-calendar__control-section-cell"
@@ -4401,11 +4417,14 @@ exports[`Calendar > :props > :fillWithZero 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <span
-            class="t-tag t-tag--check t-tag--default t-size-l t-calendar__control-tag"
+          <div
+            class="t-tag t-tag--default t-tag--dark t-tag t-tag--check t-size-l t-calendar__control-tag"
+            tabindex="0"
           >
-            隐藏周末
-          </span>
+            <span>
+              隐藏周末
+            </span>
+          </div>
         </div>
         <div
           class="t-calendar__control-section-cell"
@@ -5251,11 +5270,14 @@ exports[`Calendar > :props > :fillWithZero 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <span
-            class="t-tag t-tag--check t-tag--default t-size-l t-calendar__control-tag"
+          <div
+            class="t-tag t-tag--default t-tag--dark t-tag t-tag--check t-size-l t-calendar__control-tag"
+            tabindex="0"
           >
-            隐藏周末
-          </span>
+            <span>
+              隐藏周末
+            </span>
+          </div>
         </div>
         <div
           class="t-calendar__control-section-cell"
@@ -6105,11 +6127,14 @@ exports[`Calendar > :props > :firstDayOfWeek 1`] = `
       <div
         class="t-calendar__control-section-cell"
       >
-        <span
-          class="t-tag t-tag--check t-tag--default t-size-l t-calendar__control-tag"
+        <div
+          class="t-tag t-tag--default t-tag--dark t-tag t-tag--check t-size-l t-calendar__control-tag"
+          tabindex="0"
         >
-          隐藏周末
-        </span>
+          <span>
+            隐藏周末
+          </span>
+        </div>
       </div>
       <div
         class="t-calendar__control-section-cell"
@@ -7074,11 +7099,14 @@ exports[`Calendar > :props > :format 1`] = `
       <div
         class="t-calendar__control-section-cell"
       >
-        <span
-          class="t-tag t-tag--check t-tag--default t-size-l t-calendar__control-tag"
+        <div
+          class="t-tag t-tag--default t-tag--dark t-tag t-tag--check t-size-l t-calendar__control-tag"
+          tabindex="0"
         >
-          隐藏周末
-        </span>
+          <span>
+            隐藏周末
+          </span>
+        </div>
       </div>
       <div
         class="t-calendar__control-section-cell"
@@ -7930,11 +7958,14 @@ exports[`Calendar > :props > :head 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <span
-            class="t-tag t-tag--check t-tag--default t-size-l t-calendar__control-tag"
+          <div
+            class="t-tag t-tag--default t-tag--dark t-tag t-tag--check t-size-l t-calendar__control-tag"
+            tabindex="0"
           >
-            隐藏周末
-          </span>
+            <span>
+              隐藏周末
+            </span>
+          </div>
         </div>
         <div
           class="t-calendar__control-section-cell"
@@ -8784,11 +8815,14 @@ exports[`Calendar > :props > :head 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <span
-            class="t-tag t-tag--check t-tag--default t-size-l t-calendar__control-tag"
+          <div
+            class="t-tag t-tag--default t-tag--dark t-tag t-tag--check t-size-l t-calendar__control-tag"
+            tabindex="0"
           >
-            隐藏周末
-          </span>
+            <span>
+              隐藏周末
+            </span>
+          </div>
         </div>
         <div
           class="t-calendar__control-section-cell"
@@ -9639,11 +9673,14 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <span
-            class="t-tag t-tag--check t-tag--default t-size-l t-calendar__control-tag"
+          <div
+            class="t-tag t-tag--default t-tag--dark t-tag t-tag--check t-size-l t-calendar__control-tag"
+            tabindex="0"
           >
-            隐藏周末
-          </span>
+            <span>
+              隐藏周末
+            </span>
+          </div>
         </div>
         <div
           class="t-calendar__control-section-cell"
@@ -10489,11 +10526,14 @@ exports[`Calendar > :props > :isShowWeekendDefault 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <span
-            class="t-tag t-tag--check t-tag--default t-size-l t-tag--checked t-calendar__control-tag"
+          <div
+            class="t-tag t-tag--primary t-tag--dark t-tag t-tag--check t-size-l t-tag--checked t-calendar__control-tag"
+            tabindex="0"
           >
-            显示周末
-          </span>
+            <span>
+              显示周末
+            </span>
+          </div>
         </div>
         <div
           class="t-calendar__control-section-cell"
@@ -11170,11 +11210,14 @@ exports[`Calendar > :props > :mode 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <span
-            class="t-tag t-tag--check t-tag--default t-size-l t-calendar__control-tag"
+          <div
+            class="t-tag t-tag--default t-tag--dark t-tag t-tag--check t-size-l t-calendar__control-tag"
+            tabindex="0"
           >
-            隐藏周末
-          </span>
+            <span>
+              隐藏周末
+            </span>
+          </div>
         </div>
         <div
           class="t-calendar__control-section-cell"
@@ -12377,11 +12420,14 @@ exports[`Calendar > :props > :multiple 1`] = `
       <div
         class="t-calendar__control-section-cell"
       >
-        <span
-          class="t-tag t-tag--check t-tag--default t-size-l t-calendar__control-tag"
+        <div
+          class="t-tag t-tag--default t-tag--dark t-tag t-tag--check t-size-l t-calendar__control-tag"
+          tabindex="0"
         >
-          隐藏周末
-        </span>
+          <span>
+            隐藏周末
+          </span>
+        </div>
       </div>
       <div
         class="t-calendar__control-section-cell"
@@ -13231,11 +13277,14 @@ exports[`Calendar > :props > :preventCellContextmenu 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <span
-            class="t-tag t-tag--check t-tag--default t-size-l t-calendar__control-tag"
+          <div
+            class="t-tag t-tag--default t-tag--dark t-tag t-tag--check t-size-l t-calendar__control-tag"
+            tabindex="0"
           >
-            隐藏周末
-          </span>
+            <span>
+              隐藏周末
+            </span>
+          </div>
         </div>
         <div
           class="t-calendar__control-section-cell"
@@ -14081,11 +14130,14 @@ exports[`Calendar > :props > :preventCellContextmenu 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <span
-            class="t-tag t-tag--check t-tag--default t-size-l t-calendar__control-tag"
+          <div
+            class="t-tag t-tag--default t-tag--dark t-tag t-tag--check t-size-l t-calendar__control-tag"
+            tabindex="0"
           >
-            隐藏周末
-          </span>
+            <span>
+              隐藏周末
+            </span>
+          </div>
         </div>
         <div
           class="t-calendar__control-section-cell"
@@ -14935,11 +14987,14 @@ exports[`Calendar > :props > :range 1`] = `
       <div
         class="t-calendar__control-section-cell"
       >
-        <span
-          class="t-tag t-tag--check t-tag--default t-size-l t-calendar__control-tag"
+        <div
+          class="t-tag t-tag--default t-tag--dark t-tag t-tag--check t-size-l t-calendar__control-tag"
+          tabindex="0"
         >
-          隐藏周末
-        </span>
+          <span>
+            隐藏周末
+          </span>
+        </div>
       </div>
       <div
         class="t-calendar__control-section-cell"
@@ -16616,11 +16671,14 @@ exports[`Calendar > :props > :theme 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <span
-            class="t-tag t-tag--check t-tag--default t-size-l t-calendar__control-tag"
+          <div
+            class="t-tag t-tag--default t-tag--dark t-tag t-tag--check t-size-l t-calendar__control-tag"
+            tabindex="0"
           >
-            隐藏周末
-          </span>
+            <span>
+              隐藏周末
+            </span>
+          </div>
         </div>
         <div
           class="t-calendar__control-section-cell"
@@ -17470,11 +17528,14 @@ exports[`Calendar > :props > :value 1`] = `
       <div
         class="t-calendar__control-section-cell"
       >
-        <span
-          class="t-tag t-tag--check t-tag--default t-size-l t-calendar__control-tag"
+        <div
+          class="t-tag t-tag--default t-tag--dark t-tag t-tag--check t-size-l t-calendar__control-tag"
+          tabindex="0"
         >
-          隐藏周末
-        </span>
+          <span>
+            隐藏周末
+          </span>
+        </div>
       </div>
       <div
         class="t-calendar__control-section-cell"
@@ -18324,11 +18385,14 @@ exports[`Calendar > :props > :week 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <span
-            class="t-tag t-tag--check t-tag--default t-size-l t-calendar__control-tag"
+          <div
+            class="t-tag t-tag--default t-tag--dark t-tag t-tag--check t-size-l t-calendar__control-tag"
+            tabindex="0"
           >
-            隐藏周末
-          </span>
+            <span>
+              隐藏周末
+            </span>
+          </div>
         </div>
         <div
           class="t-calendar__control-section-cell"
@@ -19160,11 +19224,14 @@ exports[`Calendar > :props > :week 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <span
-            class="t-tag t-tag--check t-tag--default t-size-l t-calendar__control-tag"
+          <div
+            class="t-tag t-tag--default t-tag--dark t-tag t-tag--check t-size-l t-calendar__control-tag"
+            tabindex="0"
           >
-            隐藏周末
-          </span>
+            <span>
+              隐藏周末
+            </span>
+          </div>
         </div>
         <div
           class="t-calendar__control-section-cell"
@@ -20015,11 +20082,14 @@ exports[`Calendar > :props > :year:month 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <span
-            class="t-tag t-tag--check t-tag--default t-size-l t-calendar__control-tag"
+          <div
+            class="t-tag t-tag--default t-tag--dark t-tag t-tag--check t-size-l t-calendar__control-tag"
+            tabindex="0"
           >
-            隐藏周末
-          </span>
+            <span>
+              隐藏周末
+            </span>
+          </div>
         </div>
         <div
           class="t-calendar__control-section-cell"
@@ -20865,11 +20935,14 @@ exports[`Calendar > :props > :year:month 1`] = `
         <div
           class="t-calendar__control-section-cell"
         >
-          <span
-            class="t-tag t-tag--check t-tag--default t-size-l t-calendar__control-tag"
+          <div
+            class="t-tag t-tag--default t-tag--dark t-tag t-tag--check t-size-l t-calendar__control-tag"
+            tabindex="0"
           >
-            隐藏周末
-          </span>
+            <span>
+              隐藏周末
+            </span>
+          </div>
         </div>
         <div
           class="t-calendar__control-section-cell"
@@ -21719,11 +21792,14 @@ exports[`Calendar > <slot> > <cell> 1`] = `
       <div
         class="t-calendar__control-section-cell"
       >
-        <span
-          class="t-tag t-tag--check t-tag--default t-size-l t-calendar__control-tag"
+        <div
+          class="t-tag t-tag--default t-tag--dark t-tag t-tag--check t-size-l t-calendar__control-tag"
+          tabindex="0"
         >
-          隐藏周末
-        </span>
+          <span>
+            隐藏周末
+          </span>
+        </div>
       </div>
       <div
         class="t-calendar__control-section-cell"
@@ -22572,11 +22648,14 @@ exports[`Calendar > <slot> > <cellAppend> 1`] = `
       <div
         class="t-calendar__control-section-cell"
       >
-        <span
-          class="t-tag t-tag--check t-tag--default t-size-l t-calendar__control-tag"
+        <div
+          class="t-tag t-tag--default t-tag--dark t-tag t-tag--check t-size-l t-calendar__control-tag"
+          tabindex="0"
         >
-          隐藏周末
-        </span>
+          <span>
+            隐藏周末
+          </span>
+        </div>
       </div>
       <div
         class="t-calendar__control-section-cell"
@@ -23425,11 +23504,14 @@ exports[`Calendar > <slot> > <head> 1`] = `
       <div
         class="t-calendar__control-section-cell"
       >
-        <span
-          class="t-tag t-tag--check t-tag--default t-size-l t-calendar__control-tag"
+        <div
+          class="t-tag t-tag--default t-tag--dark t-tag t-tag--check t-size-l t-calendar__control-tag"
+          tabindex="0"
         >
-          隐藏周末
-        </span>
+          <span>
+            隐藏周末
+          </span>
+        </div>
       </div>
       <div
         class="t-calendar__control-section-cell"
@@ -24278,11 +24360,14 @@ exports[`Calendar > <slot> > <week> 1`] = `
       <div
         class="t-calendar__control-section-cell"
       >
-        <span
-          class="t-tag t-tag--check t-tag--default t-size-l t-calendar__control-tag"
+        <div
+          class="t-tag t-tag--default t-tag--dark t-tag t-tag--check t-size-l t-calendar__control-tag"
+          tabindex="0"
         >
-          隐藏周末
-        </span>
+          <span>
+            隐藏周末
+          </span>
+        </div>
       </div>
       <div
         class="t-calendar__control-section-cell"

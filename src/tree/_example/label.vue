@@ -1,14 +1,14 @@
 <template>
-  <t-space :size="32" direction="vertical" class="tdesign-tree-demo">
-    <t-space :size="10" direction="vertical">
-      <h3 class="title">属性设置 jsx 形式</h3>
+  <t-space :size="32" direction="vertical">
+    <t-space direction="vertical">
+      <h3>属性设置 jsx 形式</h3>
       <t-tree :data="items" expand-all :label="label"></t-tree>
     </t-space>
-    <t-space :size="10" direction="vertical">
+    <t-space direction="vertical">
       <h3>slot 形式</h3>
       <t-tree :data="items" expand-all checkable>
         <template #label="{ node }">
-          <font color="blue">label: {{ node.label }}, value: {{ node.value }}</font>
+          <span style="color: blue">label: {{ node.label }}, value: {{ node.value }}</span>
         </template>
       </t-tree>
     </t-space>
@@ -44,11 +44,8 @@ export default {
         },
       ],
       label(createElement, node) {
-        return createElement('strong', {
-          domProps: {
-            innerHTML: `value: ${node.value}, label: ${node.label}`,
-          },
-        });
+        // 注意 vue2 和 vue3 下 createElement 的使用方法实际上存在差异
+        return createElement('strong', `value: ${node.value}, label: ${node.label}`);
       },
     };
   },

@@ -1,14 +1,13 @@
-import { SetupContext } from '@vue/composition-api';
+import { TreeNode } from '../adapt';
 import {
   TreeProps, TypDragEventState, TypeTreeState, TypeDragHandle,
-} from '../interface';
+} from '../tree-types';
 import { emitEvent } from '../util';
-import TreeNode from '../../_common/js/tree/tree-node';
 
-export default function useDragHandle(props: TreeProps, context: SetupContext, state: TypeTreeState) {
-  const treeState = state;
-  const { store } = treeState;
-
+export default function useDragHandle(state: TypeTreeState) {
+  const {
+    props, context, scope, store,
+  } = state;
   let dragNode: TreeNode = null;
 
   const handleDragStart = (state: TypDragEventState) => {
@@ -86,7 +85,6 @@ export default function useDragHandle(props: TreeProps, context: SetupContext, s
     handleDrop,
   };
 
-  const { scope } = treeState;
   scope.drag = drag;
 
   return {

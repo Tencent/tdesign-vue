@@ -5,6 +5,30 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.7.0 `2023-10-12` 
+### 🚀 Features
+- `Tag`: @chaishi
+    - 支持多种风格标签配置 ([#2824](https://github.com/Tencent/tdesign-vue/pull/2824))
+   -  支持标签组`CheckTagGroup`的使用，详见示例文档 ([#2824](https://github.com/Tencent/tdesign-vue/pull/2824))
+- `Anchor`: `anchor-item` 左侧边距的计算方式由嵌套改为 --level 结合 css 计算 @ontheroad1992 ([#2816](https://github.com/Tencent/tdesign-vue/pull/2816))
+- `TagInput`: 支持在exceedType为scroll的场景下通过滚动对选项进行操作 @uyarn ([#2846](https://github.com/Tencent/tdesign-vue/pull/2846))
+
+### 🐞 Bug Fixes
+- `Dialog`: 修复 Dialog 弹框中打开表格，表格中分页组件信息出现超出省略问题 @LoopZhou ([#2821](https://github.com/Tencent/tdesign-vue/pull/2821))
+- `ImageViewer`: 修复关闭时偶尔会出现抖动现象 @betavs ([#2823](https://github.com/Tencent/tdesign-vue/pull/2823))
+- `DatePicker`
+    - 修复`confirm` 事件无效的问题 @betavs ([#2833](https://github.com/Tencent/tdesign-vue/pull/2833))
+    - 修复禁用日期格式化问题 @honkinglin ([common#1618](https://github.com/Tencent/tdesign-common/pull/1618))
+- `Cascader`:  修复 `change` 事件中 `source` 异常的问题([issue #2835](https://github.com/Tencent/tdesign-vue/issues/2835)) @betavs ([#2837](https://github.com/Tencent/tdesign-vue/pull/2837))
+- `Breadcrumb`: 修复暗黑模式下的样式分隔符样式问题 @uyarn ([common#1608](https://github.com/Tencent/tdesign-common/pull/1608))
+- `List`: 优化滚动条的样式 @liweijie0812 ([common#1601](https://github.com/Tencent/tdesign-common/pull/1601))
+- `Radio` 修复表单验证提示的场景下，右边框颜色不一致的问题 @liweijie0812 ([common#1599](https://github.com/Tencent/tdesign-common/pull/1599))
+- `Tree`: @TabSpace
+    - 解决 setData 方法无法触发属性变更的问题 ([#2820](https://github.com/Tencent/tdesign-vue/pull/2820))
+    -  解决虚拟滚动，滚动条形态错误的问题  ([#2820](https://github.com/Tencent/tdesign-vue/pull/2820))
+### 🚧 Others
+- `Tree`: 实现与 vue3 项目共用业务代码, 提供更多的测试用例 @TabSpace ([#2820](https://github.com/Tencent/tdesign-vue/pull/2820))
+
 ## 🌈 1.6.7 `2023-09-21` 
 ### 🚀 Features
 - `TreeSelect`: 支持`panelTopContent`和 `panelBottomContent` 的使用 @uyarn ([#2797](https://github.com/Tencent/tdesign-vue/pull/2797))

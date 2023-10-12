@@ -28,7 +28,6 @@ describe('AnchorItem', () => {
     it('should render props correctly', async () => {
       const provide = {
         active: '',
-        handleScrollTo: vi.fn(),
         registerLink: vi.fn(),
         unregisterLink: vi.fn(),
         handleLinkClick: vi.fn(),
@@ -56,7 +55,6 @@ describe('AnchorItem', () => {
       expect(a.element.textContent).toEqual(props.title);
       expect(provide.registerLink).toBeCalledWith(props.href);
       a.trigger('click');
-      expect(provide.handleScrollTo).toBeCalledWith(props.href);
       expect(provide.handleLinkClick).toBeCalledWith({ ...omit(props, 'target'), e: expect.any(MouseEvent) });
       wrapper.setData({
         href: '#test-b',
@@ -107,7 +105,7 @@ describe('AnchorItem', () => {
       });
       expect(wrapper.find('a').attributes('title')).toEqual('');
       expect(wrapper.find('#title').element.outerHTML).toMatchSnapshot();
-      expect(wrapper.find('#default').element.outerHTML).toMatchSnapshot();
+      expect(wrapper.find('#default').element?.outerHTML).toMatchSnapshot();
     });
   });
 });
