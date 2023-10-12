@@ -1,5 +1,5 @@
 import {
-  defineComponent, computed, toRefs, ref, nextTick,
+  defineComponent, computed, toRefs, ref, nextTick, watch,
 } from '@vue/composition-api';
 
 import { CloseCircleFilledIcon as TdCloseCircleFilledIcon } from 'tdesign-icons-vue';
@@ -62,7 +62,7 @@ export default defineComponent({
     );
 
     const {
-      scrollToRight, onWheel, scrollToRightOnEnter, scrollToLeftOnLeave, tagInputRef,
+      scrollToRight, onWheel, scrollToRightOnEnter, scrollToLeftOnLeave, tagInputRef, isScrollable,
     } = useTagScroll(props);
     // handle tag add and remove
     const {
@@ -125,6 +125,17 @@ export default defineComponent({
       props.onClear?.(ctx);
       context.emit('clear', ctx);
     };
+
+    // 支持在超长滚动场景下滚动选项进行操作
+    watch(
+      () => isScrollable.value,
+      (v) => {
+        const scrollElementClass = `${classPrefix.value}-input__prefix`;
+        const scrollElement = tagInputRef.value.$el.querySelector(`.${scrollElementClass}`);
+        if (v) scrollElement.classList.add(`${scrollElementClass}--scrollable`);
+        else scrollElement.classList.remove(`${scrollElementClass}--scrollable`);
+      },
+    );
 
     return {
       tagValue,
@@ -228,7 +239,7 @@ export default defineComponent({
           click: this.onInnerClick,
           compositionstart: this.onInputCompositionstart,
           compositionend: this.onInputCompositionend,
-          mousewheel: this.onWheel,
+          // scroll: this.onWheel,
         }}
       />
     );
