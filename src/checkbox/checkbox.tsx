@@ -1,5 +1,12 @@
 import {
-  defineComponent, ref, toRefs, inject, watch, onBeforeUnmount, computed,
+  defineComponent,
+  ref,
+  toRefs,
+  inject,
+  watch,
+  onBeforeUnmount,
+  computed,
+  onMounted,
 } from '@vue/composition-api';
 import props from './props';
 import {
@@ -113,12 +120,16 @@ export default defineComponent({
       }
     };
 
+    watch([checkboxStore], () => {
+      if (!checkboxStore.value?.parentExist) {
+        tDisabled.value = props.disabled;
+      }
+    });
+
     watch(
-      [disabled, checkboxStore],
+      [disabled],
       ([val]) => {
-        if (!checkboxStore.value?.parentExist) {
-          tDisabled.value = val;
-        }
+        tDisabled.value = val;
       },
       { immediate: true },
     );
