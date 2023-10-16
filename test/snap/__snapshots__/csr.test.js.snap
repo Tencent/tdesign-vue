@@ -25023,11 +25023,11 @@ exports[`csr snapshot test > csr test ./src/checkbox/_example/group.vue 1`] = `
             </span>
           </label>
           <label
-            class="t-checkbox"
-            tabindex="0"
+            class="t-checkbox t-is-disabled"
           >
             <input
               class="t-checkbox__former"
+              disabled="disabled"
               tabindex="-1"
               type="checkbox"
               value="选项二"
@@ -36132,11 +36132,11 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
             role="group"
           >
             <label
-              class="t-checkbox t-transfer__list-item"
-              tabindex="0"
+              class="t-checkbox t-is-disabled t-transfer__list-item"
             >
               <input
                 class="t-checkbox__former"
+                disabled="disabled"
                 tabindex="-1"
                 type="checkbox"
                 value="0"
@@ -36216,11 +36216,11 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
-              tabindex="0"
+              class="t-checkbox t-is-disabled t-transfer__list-item"
             >
               <input
                 class="t-checkbox__former"
+                disabled="disabled"
                 tabindex="-1"
                 type="checkbox"
                 value="4"
@@ -36300,11 +36300,11 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
-              tabindex="0"
+              class="t-checkbox t-is-disabled t-transfer__list-item"
             >
               <input
                 class="t-checkbox__former"
+                disabled="disabled"
                 tabindex="-1"
                 type="checkbox"
                 value="8"
@@ -36384,11 +36384,11 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
-              tabindex="0"
+              class="t-checkbox t-is-disabled t-transfer__list-item"
             >
               <input
                 class="t-checkbox__former"
+                disabled="disabled"
                 tabindex="-1"
                 type="checkbox"
                 value="12"
@@ -36468,11 +36468,11 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
-              tabindex="0"
+              class="t-checkbox t-is-disabled t-transfer__list-item"
             >
               <input
                 class="t-checkbox__former"
+                disabled="disabled"
                 tabindex="-1"
                 type="checkbox"
                 value="16"
@@ -136332,11 +136332,11 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/base.vue 1`] = `
           role="group"
         >
           <label
-            class="t-checkbox t-transfer__list-item"
-            tabindex="0"
+            class="t-checkbox t-is-disabled t-transfer__list-item"
           >
             <input
               class="t-checkbox__former"
+              disabled="disabled"
               tabindex="-1"
               type="checkbox"
               value="0"
@@ -136416,11 +136416,11 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/base.vue 1`] = `
             </span>
           </label>
           <label
-            class="t-checkbox t-transfer__list-item"
-            tabindex="0"
+            class="t-checkbox t-is-disabled t-transfer__list-item"
           >
             <input
               class="t-checkbox__former"
+              disabled="disabled"
               tabindex="-1"
               type="checkbox"
               value="4"
@@ -136500,11 +136500,11 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/base.vue 1`] = `
             </span>
           </label>
           <label
-            class="t-checkbox t-transfer__list-item"
-            tabindex="0"
+            class="t-checkbox t-is-disabled t-transfer__list-item"
           >
             <input
               class="t-checkbox__former"
+              disabled="disabled"
               tabindex="-1"
               type="checkbox"
               value="8"
@@ -136584,11 +136584,11 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/base.vue 1`] = `
             </span>
           </label>
           <label
-            class="t-checkbox t-transfer__list-item"
-            tabindex="0"
+            class="t-checkbox t-is-disabled t-transfer__list-item"
           >
             <input
               class="t-checkbox__former"
+              disabled="disabled"
               tabindex="-1"
               type="checkbox"
               value="12"
@@ -136668,11 +136668,11 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/base.vue 1`] = `
             </span>
           </label>
           <label
-            class="t-checkbox t-transfer__list-item"
-            tabindex="0"
+            class="t-checkbox t-is-disabled t-transfer__list-item"
           >
             <input
               class="t-checkbox__former"
+              disabled="disabled"
               tabindex="-1"
               type="checkbox"
               value="16"
@@ -136892,11 +136892,11 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/checked.vue 1`] = 
           role="group"
         >
           <label
-            class="t-checkbox t-transfer__list-item"
-            tabindex="0"
+            class="t-checkbox t-is-disabled t-transfer__list-item"
           >
             <input
               class="t-checkbox__former"
+              disabled="disabled"
               tabindex="-1"
               type="checkbox"
               value=""
@@ -136976,11 +136976,11 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/checked.vue 1`] = 
             </span>
           </label>
           <label
-            class="t-checkbox t-transfer__list-item"
-            tabindex="0"
+            class="t-checkbox t-is-disabled t-transfer__list-item"
           >
             <input
               class="t-checkbox__former"
+              disabled="disabled"
               tabindex="-1"
               type="checkbox"
               value="4"
@@ -137060,11 +137060,11 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/checked.vue 1`] = 
             </span>
           </label>
           <label
-            class="t-checkbox t-transfer__list-item"
-            tabindex="0"
+            class="t-checkbox t-is-disabled t-transfer__list-item"
           >
             <input
               class="t-checkbox__former"
+              disabled="disabled"
               tabindex="-1"
               type="checkbox"
               value="8"
@@ -137144,11 +137144,11 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/checked.vue 1`] = 
             </span>
           </label>
           <label
-            class="t-checkbox t-transfer__list-item"
-            tabindex="0"
+            class="t-checkbox t-is-disabled t-transfer__list-item"
           >
             <input
               class="t-checkbox__former"
+              disabled="disabled"
               tabindex="-1"
               type="checkbox"
               value="12"
@@ -137228,11 +137228,11 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/checked.vue 1`] = 
             </span>
           </label>
           <label
-            class="t-checkbox t-transfer__list-item"
-            tabindex="0"
+            class="t-checkbox t-is-disabled t-transfer__list-item"
           >
             <input
               class="t-checkbox__former"
+              disabled="disabled"
               tabindex="-1"
               type="checkbox"
               value="16"
@@ -138946,11 +138946,11 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/disabled.vue 1`] =
           role="group"
         >
           <label
-            class="t-checkbox t-transfer__list-item"
-            tabindex="0"
+            class="t-checkbox t-is-disabled t-transfer__list-item"
           >
             <input
               class="t-checkbox__former"
+              disabled="disabled"
               tabindex="-1"
               type="checkbox"
               value=""
@@ -138967,11 +138967,11 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/disabled.vue 1`] =
             </span>
           </label>
           <label
-            class="t-checkbox t-transfer__list-item"
-            tabindex="0"
+            class="t-checkbox t-is-disabled t-transfer__list-item"
           >
             <input
               class="t-checkbox__former"
+              disabled="disabled"
               tabindex="-1"
               type="checkbox"
               value="2"
@@ -138988,11 +138988,11 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/disabled.vue 1`] =
             </span>
           </label>
           <label
-            class="t-checkbox t-transfer__list-item"
-            tabindex="0"
+            class="t-checkbox t-is-disabled t-transfer__list-item"
           >
             <input
               class="t-checkbox__former"
+              disabled="disabled"
               tabindex="-1"
               type="checkbox"
               value="4"
@@ -139009,11 +139009,11 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/disabled.vue 1`] =
             </span>
           </label>
           <label
-            class="t-checkbox t-transfer__list-item"
-            tabindex="0"
+            class="t-checkbox t-is-disabled t-transfer__list-item"
           >
             <input
               class="t-checkbox__former"
+              disabled="disabled"
               tabindex="-1"
               type="checkbox"
               value="6"
@@ -139030,11 +139030,11 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/disabled.vue 1`] =
             </span>
           </label>
           <label
-            class="t-checkbox t-transfer__list-item"
-            tabindex="0"
+            class="t-checkbox t-is-disabled t-transfer__list-item"
           >
             <input
               class="t-checkbox__former"
+              disabled="disabled"
               tabindex="-1"
               type="checkbox"
               value="8"
@@ -139051,11 +139051,11 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/disabled.vue 1`] =
             </span>
           </label>
           <label
-            class="t-checkbox t-transfer__list-item"
-            tabindex="0"
+            class="t-checkbox t-is-disabled t-transfer__list-item"
           >
             <input
               class="t-checkbox__former"
+              disabled="disabled"
               tabindex="-1"
               type="checkbox"
               value="10"
@@ -139072,11 +139072,11 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/disabled.vue 1`] =
             </span>
           </label>
           <label
-            class="t-checkbox t-transfer__list-item"
-            tabindex="0"
+            class="t-checkbox t-is-disabled t-transfer__list-item"
           >
             <input
               class="t-checkbox__former"
+              disabled="disabled"
               tabindex="-1"
               type="checkbox"
               value="12"
@@ -139093,11 +139093,11 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/disabled.vue 1`] =
             </span>
           </label>
           <label
-            class="t-checkbox t-transfer__list-item"
-            tabindex="0"
+            class="t-checkbox t-is-disabled t-transfer__list-item"
           >
             <input
               class="t-checkbox__former"
+              disabled="disabled"
               tabindex="-1"
               type="checkbox"
               value="14"
@@ -139114,11 +139114,11 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/disabled.vue 1`] =
             </span>
           </label>
           <label
-            class="t-checkbox t-transfer__list-item"
-            tabindex="0"
+            class="t-checkbox t-is-disabled t-transfer__list-item"
           >
             <input
               class="t-checkbox__former"
+              disabled="disabled"
               tabindex="-1"
               type="checkbox"
               value="16"
@@ -139135,11 +139135,11 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/disabled.vue 1`] =
             </span>
           </label>
           <label
-            class="t-checkbox t-transfer__list-item"
-            tabindex="0"
+            class="t-checkbox t-is-disabled t-transfer__list-item"
           >
             <input
               class="t-checkbox__former"
+              disabled="disabled"
               tabindex="-1"
               type="checkbox"
               value="18"
@@ -140573,11 +140573,11 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/target-draggable.v
             role="group"
           >
             <label
-              class="t-checkbox t-transfer__list-item"
-              tabindex="0"
+              class="t-checkbox t-is-disabled t-transfer__list-item"
             >
               <input
                 class="t-checkbox__former"
+                disabled="disabled"
                 tabindex="-1"
                 type="checkbox"
                 value="0"
@@ -140657,11 +140657,11 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/target-draggable.v
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
-              tabindex="0"
+              class="t-checkbox t-is-disabled t-transfer__list-item"
             >
               <input
                 class="t-checkbox__former"
+                disabled="disabled"
                 tabindex="-1"
                 type="checkbox"
                 value="4"
@@ -140741,11 +140741,11 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/target-draggable.v
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
-              tabindex="0"
+              class="t-checkbox t-is-disabled t-transfer__list-item"
             >
               <input
                 class="t-checkbox__former"
+                disabled="disabled"
                 tabindex="-1"
                 type="checkbox"
                 value="8"
@@ -140825,11 +140825,11 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/target-draggable.v
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
-              tabindex="0"
+              class="t-checkbox t-is-disabled t-transfer__list-item"
             >
               <input
                 class="t-checkbox__former"
+                disabled="disabled"
                 tabindex="-1"
                 type="checkbox"
                 value="12"
@@ -140909,11 +140909,11 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/target-draggable.v
               </span>
             </label>
             <label
-              class="t-checkbox t-transfer__list-item"
-              tabindex="0"
+              class="t-checkbox t-is-disabled t-transfer__list-item"
             >
               <input
                 class="t-checkbox__former"
+                disabled="disabled"
                 tabindex="-1"
                 type="checkbox"
                 value="16"
