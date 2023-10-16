@@ -1,12 +1,5 @@
 import {
-  defineComponent,
-  ref,
-  toRefs,
-  inject,
-  watch,
-  onBeforeUnmount,
-  computed,
-  onMounted,
+  defineComponent, ref, toRefs, inject, watch, onBeforeUnmount, computed,
 } from '@vue/composition-api';
 import props from './props';
 import {
