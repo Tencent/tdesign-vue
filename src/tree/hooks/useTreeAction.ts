@@ -37,6 +37,9 @@ export default function useTreeAction(state: TypeTreeState) {
       }
     }
     setTExpanded(expanded, evtCtx);
+    if (evtCtx.trigger === 'setItem') {
+      store.replaceExpanded(expanded);
+    }
     return expanded;
   };
 
@@ -58,6 +61,9 @@ export default function useTreeAction(state: TypeTreeState) {
       evtCtx.trigger = 'node-click';
     }
     setTActived(actived, evtCtx);
+    if (evtCtx.trigger === 'setItem') {
+      store.replaceActived(actived);
+    }
     return actived;
   };
 
@@ -79,6 +85,9 @@ export default function useTreeAction(state: TypeTreeState) {
       evtCtx.trigger = 'node-click';
     }
     setTValue(checked, evtCtx);
+    if (evtCtx.trigger === 'setItem') {
+      store.replaceChecked(checked);
+    }
     return checked;
   };
 
