@@ -5,6 +5,15 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.7.1 `2023-10-20` 
+### 🚀 Features
+- `Table`: 可筛选表格，支持设置 `confirmEvents: ['onChange']` 后，单选筛选器(Radio) 选择完成后自动关闭筛选器浮层 @chaishi ([#2850](https://github.com/Tencent/tdesign-vue/pull/2850))
+### 🐞 Bug Fixes
+- `Tree`: 
+    - 修复 `setItem` 方法设置 checked, actived, expanded 属性时，未触发 props 变更与相应事件的问题 @TabSpace ([#2852](https://github.com/Tencent/tdesign-vue/pull/2852))
+    - 完善受控逻辑，解决 onChange 事件触发时，组件状态传递有延迟的问题 @TabSpace ([#2861](https://github.com/Tencent/tdesign-vue/pull/2861))
+- `Checkbox`: 修复 `checkbox.disabled` 动态赋值失效问题 @chaishi ([#2849](https://github.com/Tencent/tdesign-vue/pull/2849))
+
 ## 🌈 1.7.0 `2023-10-12` 
 ### 🚀 Features
 - `Tag`: @chaishi
