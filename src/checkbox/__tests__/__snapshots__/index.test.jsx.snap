@@ -129,11 +129,11 @@ exports[`Checkbox CheckboxGroup > :props > :checked 1`] = `
     </span>
   </label>
   <label
-    class="t-checkbox"
-    tabindex="0"
+    class="t-checkbox t-is-disabled"
   >
     <input
       class="t-checkbox__former"
+      disabled="disabled"
       tabindex="-1"
       type="checkbox"
       value="sz"
@@ -177,11 +177,11 @@ exports[`Checkbox CheckboxGroup > :props > :defaultChecked 1`] = `
     </span>
   </label>
   <label
-    class="t-checkbox"
-    tabindex="0"
+    class="t-checkbox t-is-disabled"
   >
     <input
       class="t-checkbox__former"
+      disabled="disabled"
       tabindex="-1"
       type="checkbox"
       value="sz"
@@ -356,11 +356,11 @@ exports[`Checkbox CheckboxGroup > :props > :name 1`] = `
     </span>
   </label>
   <label
-    class="t-checkbox"
-    tabindex="0"
+    class="t-checkbox t-is-disabled"
   >
     <input
       class="t-checkbox__former"
+      disabled="disabled"
       tabindex="-1"
       type="checkbox"
       value="sz"
@@ -384,11 +384,11 @@ exports[`Checkbox CheckboxGroup > :props > :options 1`] = `
   role="group"
 >
   <label
-    class="t-checkbox"
-    tabindex="0"
+    class="t-checkbox t-is-disabled"
   >
     <input
       class="t-checkbox__former"
+      disabled="disabled"
       tabindex="-1"
       type="checkbox"
       value="gz"
