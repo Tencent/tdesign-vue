@@ -1,52 +1,53 @@
-import { PropType, defineComponent, ref } from 'vue';
-import getConfigReceiverMixins, {
-  TreeConfig,
-  getKeepAnimationMixins,
-  getGlobalIconMixins,
-} from '../config-provider/config-receiver';
-import { TypeTreeItemProps } from './interface';
+import {
+  TypePropType,
+  defineComponent,
+  TypeCreateElement,
+  ref,
+  TreeItemDefinition,
+  useRipple,
+  getCreateElement,
+} from './adapt';
+import { TypeTreeItemProps } from './tree-types';
+import useItemState from './hooks/useItemState';
 import useTreeItem from './hooks/useTreeItem';
-import ripple from '../utils/ripple';
-
-const keepAnimationMixins = getKeepAnimationMixins();
 
 export const treeItemProps = {
-  node: {
-    type: Object as PropType<TypeTreeItemProps['node']>,
+  stateId: {
+    type: String as TypePropType<TypeTreeItemProps['stateId']>,
+  },
+  itemKey: {
+    type: String as TypePropType<TypeTreeItemProps['itemKey']>,
   },
   rowIndex: {
-    type: Number as PropType<TypeTreeItemProps['rowIndex']>,
+    type: Number as TypePropType<TypeTreeItemProps['rowIndex']>,
   },
   treeScope: {
-    type: Object as PropType<TypeTreeItemProps['treeScope']>,
-  },
-  expandOnClickNode: {
-    type: Boolean as PropType<TypeTreeItemProps['expandOnClickNode']>,
+    type: Object as TypePropType<TypeTreeItemProps['treeScope']>,
   },
 };
 
 export default defineComponent({
-  name: 'TTreeItem',
   props: treeItemProps,
-  directives: { ripple },
-  mixins: [getConfigReceiverMixins<Vue, TreeConfig>('tree'), keepAnimationMixins, getGlobalIconMixins()],
-  inject: {
-    onDrag: { default: undefined },
-  },
+  ...TreeItemDefinition,
   setup(props: TypeTreeItemProps, context) {
-    const treeItemRef = ref(null);
-    const { renderItemNode } = useTreeItem(props, context, treeItemRef);
+    const { state } = useItemState(props, context);
+    const { treeItemRef } = state;
+    const label = ref<HTMLElement>();
+    useRipple(label);
+    const { renderItemNode } = useTreeItem(state);
+
     return {
       treeItemRef,
       renderItemNode,
     };
   },
-  render(h) {
+  render(h: TypeCreateElement) {
+    const createElement = getCreateElement(h);
     // 这个类型判断看起来多此一举
     // 然而单元测试时没有它却会报错:
     // This expression is not callable. Type '{}' has no call signatures.
     if (typeof this.renderItemNode === 'function') {
-      return this.renderItemNode(h);
+      return this.renderItemNode(createElement);
     }
     return null;
   },

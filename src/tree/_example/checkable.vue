@@ -1,37 +1,35 @@
 <template>
-  <t-space :size="32" direction="vertical" class="tdesign-tree-demo">
-    <t-space :size="10" direction="vertical">
-      <t-form>
-        <t-form-item label="可选">
-          <t-switch v-model="checkable" />
-        </t-form-item>
-        <t-form-item label="严格模式">
-          <t-switch v-model="checkStrictly" />
-        </t-form-item>
-        <t-form-item label="选中值模式">
-          <t-radio-group name="value-mode" variant="default-filled" v-model="valueMode">
-            <t-radio-button v-for="item in valueOptions" :key="item.value" :value="item.value">{{
-              item.label
-            }}</t-radio-button>
-          </t-radio-group>
-        </t-form-item>
-        <t-form-item>
-          <t-button theme="primary" @click="selectInvert">反选</t-button>
-        </t-form-item>
-      </t-form>
-      <t-tree
-        :data="items"
-        hover
-        expand-all
-        :checkable="checkable"
-        :check-strictly="checkStrictly"
-        :value-mode="valueMode"
-        :value="allChecked"
-        @change="onChange"
-        @click="onClick"
-        ref="tree"
-      />
+  <t-space direction="vertical">
+    <t-space>
+      <span>可选:</span>
+      <t-switch v-model="checkable" />
     </t-space>
+    <t-space>
+      <span>严格模式:</span>
+      <t-switch v-model="checkStrictly" />
+    </t-space>
+    <t-space>
+      <t-radio-group v-model="valueMode" name="value-mode" variant="default-filled">
+        <t-radio-button v-for="item in valueOptions" :key="item.value" :value="item.value">{{
+          item.label
+        }}</t-radio-button>
+      </t-radio-group>
+    </t-space>
+    <t-space>
+      <t-button theme="primary" @click="selectInvert">反选</t-button>
+    </t-space>
+    <t-tree
+      ref="tree"
+      v-model="allChecked"
+      :data="items"
+      :checkable="checkable"
+      :check-strictly="checkStrictly"
+      :value-mode="valueMode"
+      hover
+      expand-all
+      @change="onChange"
+      @click="onClick"
+    />
   </t-space>
 </template>
 
@@ -151,19 +149,14 @@ export default {
   },
   methods: {
     onClick(context) {
-      console.info('onClick:', context);
+      console.info('onClick context:', context);
       const { node } = context;
-      console.info(node.value, 'checked:', node.checked);
+      console.info(node.value, 'onClick context.node.checked:', node.checked);
     },
     onChange(checked, context) {
-      console.info('onChange:', checked, context);
+      console.info('onChange checked:', checked, 'context:', context);
       const { node } = context;
-      console.info(node.value, 'checked:', node.checked);
-    },
-    propOnChange(checked, context) {
-      console.info('propOnChange:', checked, context);
-      const { node } = context;
-      console.info(node.value, 'checked:', node.checked);
+      console.info(node.value, 'onChange context.node.checked:', node.checked);
     },
     selectInvert() {
       const { tree } = this.$refs;

@@ -1,6 +1,6 @@
 import throttle from 'lodash/throttle';
-import { Ref, reactive } from 'vue';
-import { TypeTreeItemProps } from '../interface';
+import { reactive } from '../adapt';
+import { TypeTreeItemState } from '../tree-types';
 
 export interface TypeDragStates {
   isDragOver: boolean;
@@ -10,7 +10,8 @@ export interface TypeDragStates {
 
 type TypeDrag = 'dragStart' | 'dragOver' | 'dragLeave' | 'dragEnd' | 'drop';
 
-export default function useDraggable(props: TypeTreeItemProps, treeItemRef: Ref<HTMLElement>) {
+export default function useDraggable(state: TypeTreeItemState) {
+  const { treeItemRef } = state;
   const dragStates = reactive({
     isDragOver: false,
     isDragging: false,
@@ -22,7 +23,7 @@ export default function useDraggable(props: TypeTreeItemProps, treeItemRef: Ref<
     if (!rootNode) return;
 
     const rect = rootNode?.getBoundingClientRect?.();
-    const offsetY = window.pageYOffset + rect.top;
+    const offsetY = window.scrollY + rect.top;
     const { pageY } = dragEvent;
     const gapHeight = rect.height / 4;
     const diff = pageY - offsetY;
@@ -37,7 +38,7 @@ export default function useDraggable(props: TypeTreeItemProps, treeItemRef: Ref<
   };
 
   const setDragStatus = (status: TypeDrag, dragEvent: DragEvent) => {
-    const { node, treeScope } = props;
+    const { node, treeScope } = state;
     const { drag } = treeScope;
     if (!drag) return;
 
@@ -76,7 +77,7 @@ export default function useDraggable(props: TypeTreeItemProps, treeItemRef: Ref<
   };
 
   const handleDragStart = (evt: DragEvent) => {
-    const { node } = props;
+    const { node } = state;
     if (!node.isDraggable()) return;
     evt.stopPropagation();
     setDragStatus('dragStart', evt);
@@ -90,14 +91,14 @@ export default function useDraggable(props: TypeTreeItemProps, treeItemRef: Ref<
   };
 
   const handleDragEnd = (evt: DragEvent) => {
-    const { node } = props;
+    const { node } = state;
     if (!node.isDraggable()) return;
     evt.stopPropagation();
     setDragStatus('dragEnd', evt);
   };
 
   const handleDragOver = (evt: DragEvent) => {
-    const { node } = props;
+    const { node } = state;
     if (!node.isDraggable()) return;
     evt.stopPropagation();
     evt.preventDefault();
@@ -105,14 +106,14 @@ export default function useDraggable(props: TypeTreeItemProps, treeItemRef: Ref<
   };
 
   const handleDragLeave = (evt: DragEvent) => {
-    const { node } = props;
+    const { node } = state;
     if (!node.isDraggable()) return;
     evt.stopPropagation();
     setDragStatus('dragLeave', evt);
   };
 
   const handleDrop = (evt: DragEvent) => {
-    const { node } = props;
+    const { node } = state;
     if (!node.isDraggable()) return;
     evt.stopPropagation();
     evt.preventDefault();

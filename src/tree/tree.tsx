@@ -1,12 +1,19 @@
 import upperFirst from 'lodash/upperFirst';
 import isFunction from 'lodash/isFunction';
-import { watch, toRefs, defineComponent } from 'vue';
-import TreeNode from '../_common/js/tree/tree-node';
+import {
+  defineComponent,
+  TreeNode,
+  useConfig,
+  usePrefixClass,
+  TypeTreeOptionData,
+  TypeTNodeReturnValue,
+  TypeCreateElement,
+  TransitionGroup,
+  getCreateElement,
+  TypeStyles,
+} from './adapt';
 import props from './props';
-import { useConfig, usePrefixClass } from '../hooks/useConfig';
-import { renderTNodeJSX } from '../utils/render-tnode';
-import { TNodeReturnValue, TreeOptionData } from '../common';
-import { TreeNodeValue, TreeNodeState, TypeTreeNodeModel } from './interface';
+import { TreeNodeValue, TreeNodeState, TypeTreeNodeModel } from './tree-types';
 import useTreeStore from './hooks/useTreeStore';
 import useTreeStyles from './hooks/useTreeStyles';
 import useTreeState from './hooks/useTreeState';
@@ -14,6 +21,7 @@ import useTreeAction from './hooks/useTreeAction';
 import useTreeScroll from './hooks/useTreeScroll';
 import useTreeNodes from './hooks/useTreeNodes';
 import useDragHandle from './hooks/useDragHandle';
+import { renderTNodeJSX } from '../utils/render-tnode';
 import { getNode } from './util';
 
 // 2022.11.02 tabliang 备注
@@ -37,44 +45,19 @@ export default defineComponent({
     const { t, global } = useConfig('tree');
     const classPrefix = usePrefixClass();
     const componentName = usePrefixClass('tree');
-    const refProps = toRefs(props);
-    const {
-      store, rebuild, updateStoreConfig, checkFilterExpand,
-    } = useTreeStore(props, context);
 
     // 用于 hooks 传递数据
-    const { state, treeContentRef, isScrolling } = useTreeState(props, store);
+    const { state } = useTreeState(props, context);
+    const { treeContentRef, isScrolling } = state;
+    const { store, updateStoreConfig } = useTreeStore(state);
 
-    useDragHandle(props, context, state);
-    const { setActived, setExpanded, setChecked } = useTreeAction(props, context, state);
-    const { onInnerVirtualScroll, virtualConfig } = useTreeScroll(props, context, state);
-    const { renderTreeNodes, nodesEmpty } = useTreeNodes(props, context, state);
+    useDragHandle(state);
+    const { setActived, setExpanded, setChecked } = useTreeAction(state);
+    const { onInnerVirtualScroll, virtualConfig } = useTreeScroll(state);
+    const { renderTreeNodes, nodesEmpty } = useTreeNodes(state);
     const {
       treeClasses, treeContentStyles, scrollStyles, cursorStyles,
-    } = useTreeStyles(props, state);
-
-    watch(refProps.data, (list) => {
-      rebuild(list);
-    });
-    watch(refProps.keys, (keys) => {
-      store.setConfig({
-        keys,
-      });
-    });
-    watch(refProps.value, (nVal, previousVal) => {
-      if (nVal.join() === previousVal?.join()) return;
-      store.replaceChecked(nVal);
-    });
-    watch(refProps.expanded, (nVal) => {
-      store.replaceExpanded(nVal);
-    });
-    watch(refProps.actived, (nVal, previousVal) => {
-      if (nVal.join() === previousVal?.join()) return;
-      store.replaceActived(nVal);
-    });
-    watch(refProps.filter, (nVal, previousVal) => {
-      checkFilterExpand(nVal, previousVal);
-    });
+    } = useTreeStyles(state);
 
     // 不想暴露给用户的属性与方法，统一挂载到 setup 返回的对象上
     // 实例上无法直接访问这些方法与属性
@@ -119,7 +102,7 @@ export default defineComponent({
             const methodName = `set${upperFirst(name)}`;
             const setupMethod = this[methodName];
             if (isFunction(setupMethod)) {
-              setupMethod(node, val);
+              setupMethod.call(this, node, val);
             }
           }
         });
@@ -134,7 +117,7 @@ export default defineComponent({
       const nodes = this.store.getNodes(value);
       return nodes.map((node: TreeNode) => node.getModel());
     },
-    appendTo(para?: TreeNodeValue, item?: TreeOptionData | TreeOptionData[]) {
+    appendTo(para?: TreeNodeValue, item?: TypeTreeOptionData | TypeTreeOptionData[]) {
       const { store } = this;
       let list = [];
       if (Array.isArray(item)) {
@@ -152,7 +135,7 @@ export default defineComponent({
         }
       });
     },
-    insertBefore(value: TreeNodeValue, item: TreeOptionData) {
+    insertBefore(value: TreeNodeValue, item: TypeTreeOptionData) {
       const { store } = this;
       const val = item?.value || '';
       const node = getNode(store, val);
@@ -162,7 +145,7 @@ export default defineComponent({
         store.insertBefore(value, item);
       }
     },
-    insertAfter(value: TreeNodeValue, item: TreeOptionData) {
+    insertAfter(value: TreeNodeValue, item: TypeTreeOptionData) {
       const { store } = this;
       const val = item?.value || '';
       const node = getNode(store, val);
@@ -195,7 +178,7 @@ export default defineComponent({
       return pathNodes;
     },
   },
-  render(h) {
+  render(h: TypeCreateElement) {
     const {
       state,
       treeClasses,
@@ -209,20 +192,22 @@ export default defineComponent({
       cursorStyles,
     } = this;
 
-    updateStoreConfig();
+    const createElement = getCreateElement(h);
 
-    const { scope } = state;
+    const { scope, allNodes, refProps } = state;
     // 更新 scopedSlots
     scope.scopedSlots = this.$scopedSlots;
 
-    const treeNodeViews = renderTreeNodes(h);
+    updateStoreConfig();
+
+    const treeNodeViews = renderTreeNodes(createElement);
     const cname = this.componentName;
     const isVirtual = virtualConfig.isVirtualScroll.value;
 
     // 空数据判定
-    let emptyNode: TNodeReturnValue = null;
+    let emptyNode: TypeTNodeReturnValue = null;
     if (nodesEmpty) {
-      const useLocale = !this.empty && !this.$scopedSlots.empty;
+      const useLocale = !this.empty && !this.$slots.empty;
       const emptyContent = useLocale ? this.t(this.global.empty) : renderTNodeJSX(this, 'empty');
       emptyNode = <div class={`${cname}__empty`}>{emptyContent}</div>;
     } else if (treeNodeViews.length <= 0) {
@@ -237,7 +222,7 @@ export default defineComponent({
 
     let treeNodeList = null;
     if (!transition || (isVirtual && isScrolling)) {
-      // 关闭动画时，列表不使用 transition-group 以启用更高的性能
+      // vue3 不使用 transition group 会导致展开收起动作异常
       treeNodeList = (
         <div class={`${cname}__list`} style={scrollStyles}>
           {treeNodeViews}
@@ -246,7 +231,7 @@ export default defineComponent({
     } else {
       // 启用动画时，需要确保滚动中动画样式失效
       treeNodeList = (
-        <transition-group
+        <TransitionGroup
           tag="div"
           class={`${cname}__list`}
           enter-active-class={`${cname}__item--enter-active`}
@@ -254,20 +239,28 @@ export default defineComponent({
           style={scrollStyles}
         >
           {treeNodeViews}
-        </transition-group>
+        </TransitionGroup>
       );
     }
 
+    const topValue = (allNodes.value?.filter((node) => node.visible).length ?? 0) * (refProps.scroll.value?.rowHeight ?? 34);
+    const placeholderStyles: TypeStyles = {
+      width: '1px',
+      height: '1px',
+      opacity: 0,
+      pointerEvents: 'none',
+      position: 'absolute',
+      left: 0,
+      top: `${topValue}px`,
+    };
+
+    const placeholderEl = <div style={placeholderStyles} />;
+
     const treeNode = (
-      <div
-        class={treeClasses}
-        ref="treeContentRef"
-        // @ts-ignore
-        on={{ scroll: this.onInnerVirtualScroll }}
-        style={treeContentStyles}
-      >
+      <div class={treeClasses} ref="treeContentRef" onScroll={this.onInnerVirtualScroll} style={treeContentStyles}>
         {isVirtual && <div class={`${cname}__vscroll-cursor`} style={cursorStyles} />}
         {emptyNode || treeNodeList}
+        {isVirtual && placeholderEl}
       </div>
     );
 

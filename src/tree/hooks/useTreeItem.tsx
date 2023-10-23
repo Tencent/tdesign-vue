@@ -1,10 +1,7 @@
 import {
-  CreateElement, SetupContext, Ref, onMounted, reactive,
-} from 'vue';
-import { TypeVNode, TypeTreeItemProps } from '../interface';
-import { usePrefixClass } from '../../hooks/useConfig';
-import { ClassName } from '../../common';
-import useLazyLoad from '../../hooks/useLazyLoad';
+  onMounted, reactive, TypeCreateElement, usePrefixClass, useLazyLoad, TypeVNode,
+} from '../adapt';
+import { TypeTreeItemState } from '../tree-types';
 import useItemEvents from './useItemEvents';
 import useRenderIcon from './useRenderIcon';
 import useRenderLabel from './useRenderLabel';
@@ -12,24 +9,20 @@ import useRenderLine from './useRenderLine';
 import useRenderOperations from './useRenderOperations';
 import useDraggable from './useDraggable';
 
-export default function useTreeItem(props: TypeTreeItemProps, context: SetupContext, treeItemRef: Ref<HTMLElement>) {
-  const { node, treeScope } = props;
-  const { virtualConfig, treeContentRef } = treeScope;
-  const scrollProps = treeScope?.scrollProps;
+export default function useTreeItem(state: TypeTreeItemState) {
+  const { treeScope, treeItemRef } = state;
+  const { virtualConfig, treeContentRef, scrollProps } = treeScope;
   const classPrefix = usePrefixClass().value;
   const componentName = usePrefixClass('tree').value;
 
-  const { handleClick } = useItemEvents(props, context);
-  const { renderIcon } = useRenderIcon(props);
-  const { renderLabel } = useRenderLabel(props, context);
-  const { renderLine } = useRenderLine(props);
-  const { renderOperations } = useRenderOperations(props);
+  const { handleClick } = useItemEvents(state);
+  const { renderIcon } = useRenderIcon(state);
+  const { renderLabel } = useRenderLabel(state);
+  const { renderLine } = useRenderLine(state);
+  const { renderOperations } = useRenderOperations(state);
   const {
     dragStates, handleDragStart, handleDragEnd, handleDragOver, handleDragLeave, handleDrop,
-  } = useDraggable(
-    props,
-    treeItemRef,
-  );
+  } = useDraggable(state);
 
   const { hasLazyLoadHolder, tRowHeight } = useLazyLoad(
     treeContentRef,
@@ -38,6 +31,7 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
   );
 
   onMounted(() => {
+    const { node } = state;
     const isVirtual = virtualConfig?.isVirtualScroll.value;
     if (isVirtual) {
       virtualConfig.handleRowMounted({
@@ -49,6 +43,7 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
 
   // 节点隐藏用 class 切换，不要写在 js 中
   const getItemStyles = (): string => {
+    const { node } = state;
     const { level } = node;
     // 原本想在这里计算 --hscale
     // 实际操作中发现 scrollHeight 在动画执行到一半的时候取得了错误的值
@@ -59,7 +54,8 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
     return strStyle;
   };
 
-  const getItemClassList = (): ClassName => {
+  const getItemClassList = () => {
+    const { node } = state;
     const { isDragOver, isDragging, dropPosition } = dragStates;
     const list = [];
     list.push(`${componentName}__item`);
@@ -92,39 +88,41 @@ export default function useTreeItem(props: TypeTreeItemProps, context: SetupCont
     return list;
   };
 
-  const renderItem = (h: CreateElement) => {
+  const renderItem = (h: TypeCreateElement) => {
     const itemNodes: TypeVNode[] = [];
-
     // 第一步是渲染图标
     const iconNode = renderIcon(h);
-
     // 渲染连线排在渲染图标之后，是为了确认图标是否存在
     const lineNode = renderLine(h);
     if (lineNode) {
       itemNodes.push(lineNode);
     }
-
     if (iconNode) {
       itemNodes.push(iconNode);
     }
-
     const labelNode = renderLabel(h);
     if (labelNode) {
       itemNodes.push(labelNode);
     }
-
     const opNode = renderOperations(h);
     if (opNode) {
       itemNodes.push(opNode);
     }
-
     return itemNodes;
   };
 
-  const renderItemNode = (h: CreateElement) => {
+  const renderItemNode = (h: TypeCreateElement) => {
+    const { node, props } = state;
+    if (!node) return null;
+
     const { level, value } = node;
     const styles = getItemStyles();
     const classList = getItemClassList();
+
+    // 这里的代码用于 vue2 组件触发节点更新
+    // 即使是新增的属性，调用 node.setData 也会触发节点更新
+    const treeState = state;
+    treeState.stateId = props.stateId;
 
     const itemNode = (
       <div

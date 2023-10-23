@@ -111,15 +111,19 @@ export default defineComponent({
       ) {
         filterComponentProps.value = this.innerFilterValue[column.colKey];
       }
-      // 这个代码必须放在这里，没事儿别改
+      // 这个代码必须放在这里，否则会造成顺序错误
       const on = {
         change: (val: any) => {
           this.$emit('inner-filter-change', val, column);
+          if (column.filter?.confirmEvents?.includes('onChange')) {
+            this.filterPopupVisible = false;
+          }
         },
       };
       // 允许自定义触发确认搜索的事件
       if (column.filter.confirmEvents) {
         column.filter.confirmEvents.forEach((event) => {
+          if (event === 'onChange') return;
           const pureEvent = lowerFirst(event.replace('on', ''));
           on[pureEvent] = () => {
             this.$emit('confirm', column);

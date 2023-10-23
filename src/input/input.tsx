@@ -18,6 +18,8 @@ import { renderTNodeJSX } from '../utils/render-tnode';
 import FormItem from '../form/form-item';
 import log from '../_common/js/log';
 
+const ANIMATION_TIME = 100;
+
 function getValidAttrs(obj: object): object {
   const newObj = {};
   Object.keys(obj).forEach((key) => {
@@ -67,9 +69,10 @@ export default mixins(
       inputValue: this.value,
       composingRef: false,
       composingRefValue: this.value,
-      resizeObserver: null as ResizeObserver,
       preValue: this.value,
       timer: null,
+      observerTimer: null,
+      containerObserver: null as ResizeObserver,
     };
   },
   computed: {
@@ -190,7 +193,6 @@ export default mixins(
   },
 
   created() {
-    this.composing = false;
     if (this.autoWidth) {
       this.addListeners();
     }
@@ -204,12 +206,11 @@ export default mixins(
   },
 
   mounted() {
-    this.addTableResizeObserver(this.$refs.inputPreRef as Element);
+    this.addResizeObserver();
   },
 
   beforeDestroy() {
-    this.resizeObserver?.unobserve(this.$refs.inputPreRef as Element);
-    this.resizeObserver?.disconnect();
+    this.cleanupObserver(this.containerObserver, this.$refs.inputRef as Element);
   },
 
   methods: {
@@ -225,14 +226,24 @@ export default mixins(
         { immediate: true },
       );
     },
-    // 当元素默认为 display: none 状态，无法提前准确计算宽度，因此需要监听元素宽度变化。比如：Tabs 场景切换。
-    addTableResizeObserver(element: Element) {
-      // IE 11 以下使用设置 minWidth 兼容；IE 11 以上使用 ResizeObserver
-      if (typeof window.ResizeObserver === 'undefined' || !element || this.isIE) return;
-      this.resizeObserver = new window.ResizeObserver(() => {
-        this.updateInputWidth();
-      });
-      this.resizeObserver.observe(element);
+    addResizeObserver() {
+      if (this.$refs.inputRef) {
+        this.$watch(
+          () => this.$refs.inputRef,
+          () => {
+            this.cleanupObserver(this.containerObserver, this.$refs.inputRef as Element);
+            this.containerObserver = this.useResizeObserver(this.$refs.inputRef as HTMLElement, () => {
+              if (this.autoWidth) {
+                this.observerTimer = setTimeout(() => {
+                  this.updateInputWidth();
+                  clearTimeout(this.observerTimer);
+                }, ANIMATION_TIME);
+              }
+            });
+          },
+          { immediate: true },
+        );
+      }
     },
     renderIcon(
       h: CreateElement,
@@ -428,6 +439,25 @@ export default mixins(
       const error = this.innerStatus ? 'exceed-maximum' : undefined;
       this.onValidate?.({ error });
       this.$emit('validate', { error });
+    },
+
+    useResizeObserver(el: HTMLElement, callback: (data: ResizeObserverEntry[]) => void): ResizeObserver {
+      if (typeof window === 'undefined') return;
+
+      const isSupport = typeof window !== 'undefined' && window.ResizeObserver;
+      // unit tests do not need any warn console; too many warns influence focusing on more important log info
+      if (!isSupport) return;
+
+      const containerObserver = new ResizeObserver(callback);
+      containerObserver.observe(el);
+
+      return containerObserver;
+    },
+
+    cleanupObserver(observer: ResizeObserver, container: Element) {
+      if (!observer || !container) return;
+      observer.unobserve(container);
+      observer.disconnect();
     },
   },
 
