@@ -30,6 +30,8 @@ describe('Transfer', () => {
             return <Transfer data={data} checked={checkedValue} pagination={pagination} />;
           },
         });
+        await wrapper.vm.$nextTick();
+
         const domLabels = wrapper.vm.$el.querySelectorAll('.t-transfer__list-content')[0].querySelectorAll('label');
 
         checkedValue.forEach((item) => {
@@ -67,6 +69,7 @@ describe('Transfer', () => {
             return <Transfer data={data} defaultChecked={checkedValue} pagination={pagination} />;
           },
         });
+        await wrapper.vm.$nextTick();
         const domLabels = wrapper.vm.$el.querySelectorAll('.t-transfer__list-content')[0].querySelectorAll('label');
 
         checkedValue.forEach((item) => {

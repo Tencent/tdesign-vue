@@ -1,6 +1,6 @@
 import {
-  computed, defineComponent, toRefs, h,
-} from '@vue/composition-api';
+  computed, defineComponent, toRefs, h, SetupContext,
+} from 'vue';
 import isFunction from 'lodash/isFunction';
 import { usePrefixClass } from '../hooks/useConfig';
 import props from './check-tag-group-props';
@@ -15,7 +15,7 @@ export default defineComponent({
 
   props,
 
-  setup(props: TdCheckTagGroupProps, context) {
+  setup(props: TdCheckTagGroupProps, context: SetupContext) {
     const { value } = toRefs(props);
     const componentName = usePrefixClass('check-tag-group');
     const checkTagGroupClasses = computed(() => [componentName.value]);

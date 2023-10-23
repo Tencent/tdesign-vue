@@ -10,7 +10,6 @@ import {
   TypeCreateElement,
   TransitionGroup,
   getCreateElement,
-  getScopedSlots,
   TypeStyles,
 } from './adapt';
 import props from './props';
@@ -197,7 +196,7 @@ export default defineComponent({
 
     const { scope, allNodes, refProps } = state;
     // 更新 scopedSlots
-    scope.scopedSlots = getScopedSlots(this);
+    scope.scopedSlots = this.$scopedSlots;
 
     updateStoreConfig();
 

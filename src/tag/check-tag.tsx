@@ -1,4 +1,6 @@
-import { defineComponent, computed, toRefs } from '@vue/composition-api';
+import {
+  defineComponent, computed, toRefs, SetupContext,
+} from 'vue';
 import props from './check-tag-props';
 import { usePrefixClass, useCommonClassName } from '../hooks/useConfig';
 import useVModel from '../hooks/useVModel';
@@ -17,7 +19,7 @@ export default defineComponent({
     event: 'change',
   },
 
-  setup(props: TdCheckTagProps, context) {
+  setup(props: TdCheckTagProps, context: SetupContext) {
     const componentName = usePrefixClass('tag');
     const { SIZE } = useCommonClassName();
 
