@@ -96,11 +96,11 @@ export default defineComponent({
       componentName,
       state,
       store,
-      rebuild,
-      checkFilterExpand,
       treeClasses,
       treeContentRef,
 
+      rebuild,
+      checkFilterExpand,
       updateStoreConfig,
       setActived,
       setExpanded,
