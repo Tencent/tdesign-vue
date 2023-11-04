@@ -2,14 +2,23 @@ import { defineComponent, computed } from '@vue/composition-api';
 import props from './props';
 import { usePrefixClass } from '../hooks/useConfig';
 import { renderTNodeJSX } from '../utils/render-tnode';
+import { getFlexGapPolyFill } from '../_common/js/utils/helper';
+
+const defaultNeedPolyfill = getFlexGapPolyFill();
 
 export default defineComponent({
   name: 'TSpace',
 
-  props: { ...props },
+  props: {
+    ...props,
+    /** 强制使用 margin 间距代替 gap 属性间距（某些浏览器不支持 gap 属性） */
+    forceFlexGapPolyfill: Boolean,
+  },
 
   setup(props) {
     const COMPONENT_NAME = usePrefixClass('space');
+
+    const needPolyfill = computed(() => props.forceFlexGapPolyfill || defaultNeedPolyfill);
 
     const renderStyle = computed(() => {
       const sizeMap = { small: '8px', medium: '16px', large: '24px' };
@@ -29,10 +38,15 @@ export default defineComponent({
         renderGap = `${props.size}px`;
       }
 
-      return {
-        gap: renderGap,
-        ...(props.breakLine ? { 'flex-wrap': 'wrap' } : {}),
-      };
+      const style: { [key: string]: string | number } = {};
+      if (needPolyfill.value) {
+        const [columnGap, rowGap] = renderGap.split(' ');
+        style['--column-gap'] = columnGap;
+        style['--row-gap'] = rowGap || columnGap;
+      } else {
+        style.gap = renderGap;
+      }
+      return style;
     });
 
     const spaceClassNames = computed(() => [
@@ -40,6 +54,8 @@ export default defineComponent({
       {
         [`${COMPONENT_NAME.value}-align-${props.align}`]: props.align,
         [`${COMPONENT_NAME.value}-${props.direction}`]: props.direction,
+        [`${COMPONENT_NAME.value}--break-line`]: props.breakLine,
+        [`${COMPONENT_NAME.value}--polyfill`]: needPolyfill.value,
       },
     ]);
 
@@ -49,6 +65,7 @@ export default defineComponent({
       renderStyle,
     };
   },
+
   render() {
     const { COMPONENT_NAME, spaceClassNames, renderStyle } = this;
     const children = this.$slots.default?.filter((child) => child.tag !== undefined || child.text) || [];
