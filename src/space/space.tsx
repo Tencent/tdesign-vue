@@ -5,6 +5,7 @@ import { renderTNodeJSX } from '../utils/render-tnode';
 import { getFlexGapPolyFill } from '../_common/js/utils/helper';
 
 const defaultNeedPolyfill = getFlexGapPolyFill();
+const sizeMap = { small: '8px', medium: '16px', large: '24px' };
 
 export default defineComponent({
   name: 'TSpace',
@@ -21,8 +22,6 @@ export default defineComponent({
     const needPolyfill = computed(() => props.forceFlexGapPolyfill || defaultNeedPolyfill);
 
     const renderStyle = computed(() => {
-      const sizeMap = { small: '8px', medium: '16px', large: '24px' };
-
       let renderGap = '';
       if (Array.isArray(props.size)) {
         renderGap = props.size
