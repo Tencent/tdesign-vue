@@ -26,7 +26,7 @@ export const downloadFile = function (imgSrc: string) {
   image.src = imgSrc;
 };
 
-const isImageInfo = (image: string | File | ImageInfo): image is ImageInfo => typeof image !== 'string' && !(image instanceof File);
+const isImageInfo = (image: string | File | ImageInfo): image is ImageInfo => !!image && typeof image !== 'string' && !(image instanceof File);
 
 export const formatImages = (images: TdImageViewerProps['images']): ImageInfo[] => {
   if (!Array.isArray(images)) return [];

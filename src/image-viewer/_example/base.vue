@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="tdesign-demo-image-viewer__base">
-      <t-image-viewer v-model="visible" :images="[img]">
+      <t-image-viewer v-model="visible" :images="[img]" :closeOnEscKeydown="false">
         <template #trigger="{ open }">
           <div class="tdesign-demo-image-viewer__ui-image" @click="open">
             <img alt="test" :src="img" class="tdesign-demo-image-viewer__ui-image--img" />
