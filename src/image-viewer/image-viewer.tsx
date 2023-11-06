@@ -128,7 +128,9 @@ export default defineComponent({
           onZoomOut();
           break;
         case EVENT_CODE.esc:
-          onCloseHandle({ e, trigger: 'esc' });
+          if (props.closeOnEscKeydown) {
+            onCloseHandle({ e, trigger: 'esc' });
+          }
           break;
         default:
           break;
