@@ -10,7 +10,7 @@ import {
 } from 'tdesign-icons-vue';
 import Loading from '../../loading';
 import { useGlobalIcon } from '../../hooks/useGlobalIcon';
-import ImageViewer from '../../image-viewer';
+import ImageViewer, { ImageViewerProps } from '../../image-viewer';
 import { CommonDisplayFileProps } from '../interface';
 import { commonProps } from '../constants';
 import { TdUploadProps, UploadFile } from '../type';
@@ -41,6 +41,7 @@ export default defineComponent({
     triggerUpload: Function as PropType<ImageCardUploadProps['triggerUpload']>,
     uploadFiles: Function as PropType<ImageCardUploadProps['uploadFiles']>,
     cancelUpload: Function as PropType<ImageCardUploadProps['cancelUpload']>,
+    showImageFileName: Boolean,
   },
 
   setup(props: ImageCardUploadProps) {
@@ -84,6 +85,7 @@ export default defineComponent({
                     }}
                   />
                 )}
+                props={this.imageViewerProps}
               ></ImageViewer>
             </span>
             {!this.disabled && [
@@ -133,6 +135,14 @@ export default defineComponent({
     const customList = renderTNodeJSX(this, 'fileListDisplay', {
       params: {
         files: this.displayFiles,
+        onPreview: this.onPreview,
+        toUploadFiles: this.toUploadFiles,
+        sizeOverLimitMessage: this.sizeOverLimitMessage,
+        locale: this.locale,
+        triggerUpload: this.triggerUpload,
+        uploadFiles: this.uploadFiles,
+        cancelUpload: this.cancelUpload,
+        onRemove: this.onRemove,
       },
     });
     if (customList) return customList;
@@ -153,6 +163,7 @@ export default defineComponent({
                 {file.status === 'fail' && this.renderFailFile(file, index, loadCard)}
                 {!['progress', 'fail'].includes(file.status) && this.renderMainContent(file, index)}
                 {fileName
+                  && this.showImageFileName
                   && (file.url ? (
                     <Link href={file.url} class={fileNameClassName} target="_blank" hover="color" size="small">
                       {fileName}

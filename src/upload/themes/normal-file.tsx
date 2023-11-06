@@ -162,8 +162,6 @@ const NormalFile = defineComponent({
 
         {fileListDisplay === null ? null : fileListDisplay || this.renderFilePreviewAsText(this.displayFiles)}
 
-        {this.sizeOverLimitMessage && <small class={this.errorClasses}>{this.sizeOverLimitMessage}</small>}
-
         {/* 单文件上传失败要显示失败的原因 */}
         {!this.multiple && this.displayFiles[0]?.status === 'fail' && this.theme === 'file' ? (
           <small class={[this.errorClasses, this.placeholderClass]}>
