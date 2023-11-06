@@ -152,7 +152,10 @@ const NormalFile = defineComponent({
   },
 
   render() {
-    const fileListDisplay = renderTNodeJSX(this, 'fileListDisplay', { params: { files: this.displayFiles } });
+    let fileListDisplay = renderTNodeJSX(this, 'fileListDisplay', { params: { files: this.displayFiles } });
+    if (this.fileListDisplay === null || fileListDisplay === null) {
+      fileListDisplay = null;
+    }
     return (
       <div class={this.classes}>
         {this.theme === 'file-input' && this.renderFilePreviewAsInput()}
@@ -163,7 +166,7 @@ const NormalFile = defineComponent({
           <small class={[this.tipsClasses, this.placeholderClass]}>{this.placeholder}</small>
         )}
 
-        {fileListDisplay || this.renderFilePreviewAsText(this.displayFiles)}
+        {fileListDisplay === null ? null : fileListDisplay || this.renderFilePreviewAsText(this.displayFiles)}
 
         {this.sizeOverLimitMessage && <small class={this.errorClasses}>{this.sizeOverLimitMessage}</small>}
 
