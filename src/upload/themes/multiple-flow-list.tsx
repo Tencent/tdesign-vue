@@ -301,8 +301,8 @@ export default defineComponent({
           <thead>
             <tr>
               <th>{this.locale.file?.fileNameText}</th>
-              <th style={{ width: '120px' }}>{this.locale.file?.fileSizeText}</th>
-              <th style={{ width: '120px' }}>{this.locale.file?.fileStatusText}</th>
+              <th style={{ minWidth: '120px' }}>{this.locale.file?.fileSizeText}</th>
+              <th style={{ minWidth: '120px' }}>{this.locale.file?.fileStatusText}</th>
               {this.disabled ? null : <th>{this.locale.file?.fileOperationText}</th>}
             </tr>
           </thead>
@@ -467,6 +467,7 @@ export default defineComponent({
                   disabled={this.disabled || !this.uploading}
                   class={`${this.uploadPrefix}__cancel`}
                   content={this.locale?.cancelUploadText}
+                  props={isObject(this.cancelUploadButton) ? this.cancelUploadButton : {}}
                   onClick={(e: MouseEvent) => this.cancelUpload?.({ e })}
                 ></TButton>
               ))}
@@ -487,6 +488,7 @@ export default defineComponent({
                   loading={this.uploading}
                   content={this.uploadText}
                   class={`${this.uploadPrefix}__continue`}
+                  props={isObject(this.uploadButton) ? this.uploadButton : {}}
                   onClick={() => this.uploadFiles?.()}
                 ></TButton>
               ))}

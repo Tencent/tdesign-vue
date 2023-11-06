@@ -146,7 +146,15 @@ const NormalFile = defineComponent({
   },
 
   render() {
-    let fileListDisplay = renderTNodeJSX(this, 'fileListDisplay', { params: { files: this.displayFiles } });
+    let fileListDisplay = renderTNodeJSX(this, 'fileListDisplay', {
+      params: {
+        onRemove: this.onRemove,
+        toUploadFiles: this.toUploadFiles,
+        sizeOverLimitMessage: this.sizeOverLimitMessage,
+        locale: this.locale,
+        files: this.displayFiles,
+      },
+    });
     if (this.fileListDisplay === null || fileListDisplay === null) {
       fileListDisplay = null;
     }

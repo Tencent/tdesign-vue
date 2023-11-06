@@ -175,13 +175,20 @@ export default defineComponent({
             );
           })}
 
-          {this.showTrigger && !this.disabled && (
+          {this.showTrigger && (
             <li class={cardItemClasses} onClick={this.triggerUpload}>
               <div
-                class={`${this.classPrefix}-upload__image-add ${this.classPrefix}-upload__card-container ${this.classPrefix}-upload__card-box`}
+                class={[
+                  `${this.classPrefix}-upload__image-add ${this.classPrefix}-upload__card-container ${this.classPrefix}-upload__card-box`,
+                  {
+                    [`${this.classPrefix}-is-disabled`]: this.disabled,
+                  },
+                ]}
               >
                 <AddIcon />
-                <p class={`${this.classPrefix}-size-s`}>{this.locale?.triggerUploadText?.image}</p>
+                <p class={`${this.classPrefix}-size-s ${this.classPrefix}-upload__add-text`}>
+                  {this.locale?.triggerUploadText?.image}
+                </p>
               </div>
             </li>
           )}
