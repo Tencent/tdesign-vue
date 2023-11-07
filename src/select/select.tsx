@@ -283,6 +283,7 @@ export default defineComponent({
             })
             .slice(minCollapsedNum.value),
           count: values.length - minCollapsedNum.value,
+          onClose: (index: number) => removeTag(index),
         }
         : {};
     });
