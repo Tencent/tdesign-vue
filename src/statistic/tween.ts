@@ -1,3 +1,7 @@
+/**
+ * Inspired by https://github.com/PengJiyuan/b-tween
+ */
+
 interface TweenSettings {
   from: Record<string, number>;
   to: Record<string, number>;
