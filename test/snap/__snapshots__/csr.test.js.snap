@@ -84704,7 +84704,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/collapsed.vue 1`] = 
                 class="t-tag t-tag--default t-tag--dark"
               >
                 <span>
-                  +1
+                  +2
                 </span>
               </div>
             </div>
@@ -84783,7 +84783,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/collapsed.vue 1`] = 
               <span
                 style="color: rgb(237, 123, 47); margin-left: 8px;"
               >
-                +1
+                +2
               </span>
             </div>
             <input
@@ -84861,7 +84861,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/collapsed.vue 1`] = 
               <span
                 style="color: rgb(0, 168, 112); margin-left: 8px;"
               >
-                +1
+                +2
               </span>
             </div>
             <input
