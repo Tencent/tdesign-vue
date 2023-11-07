@@ -62,6 +62,7 @@ export default defineComponent({
       autoUpload: props.autoUpload,
       showUploadProgress: props.showUploadProgress,
       abridgeName: props.abridgeName,
+      imageViewerProps: props.imageViewerProps,
       fileListDisplay: props.fileListDisplay,
       onRemove: onInnerRemove,
     }));
@@ -97,6 +98,7 @@ export default defineComponent({
       dragProps,
       uploadClasses,
       triggerButtonProps,
+      sizeOverLimitMessage,
     };
   },
 
@@ -173,6 +175,7 @@ export default defineComponent({
           triggerUpload={this.triggerUpload}
           uploadFiles={this.uploadFiles}
           cancelUpload={this.cancelUpload}
+          showImageFileName={this.showImageFileName}
           on={{
             preview: this.onInnerPreview,
           }}
@@ -195,9 +198,16 @@ export default defineComponent({
           cancelUpload={this.cancelUpload}
           onPreview={this.onInnerPreview}
           showThumbnail={this.showThumbnail}
+          showImageFileName={this.showImageFileName}
+          uploadButton={this.uploadButton}
+          cancelUploadButton={this.cancelUploadButton}
           scopedSlots={{
             fileListDisplay: this.$scopedSlots.fileListDisplay,
             'file-list-display': this.$scopedSlots['file-list-display'],
+            uploadButton: this.$scopedSlots.uploadButton,
+            'upload-button': this.$scopedSlots['upload-button'],
+            cancelUploadButton: this.$scopedSlots.cancelUploadButton,
+            'cancel-upload-button': this.$scopedSlots['cancel-upload-button'],
           }}
         >
           <div class={`${this.classPrefix}-upload__trigger`} onClick={this.triggerUpload}>
@@ -254,6 +264,8 @@ export default defineComponent({
             {renderTNodeJSX(this, 'tips')}
           </small>
         )}
+
+        {this.sizeOverLimitMessage && <small class={this.errorClasses}>{this.sizeOverLimitMessage}</small>}
       </div>
     );
   },

@@ -86,6 +86,7 @@ export default defineComponent({
             trigger={(h: CreateElement, { open }: any) => (
               <Image src={url || file.raw} onClick={open} error="" loading="" />
             )}
+            props={this.imageViewerProps}
           ></ImageViewer>
         </div>
       );
@@ -126,7 +127,20 @@ export default defineComponent({
         <div class={`${this.uploadPrefix}__dragger-progress`}>
           {this.theme === 'image' && this.renderImage()}
           <div class={`${this.uploadPrefix}__dragger-progress-info`}>
-            {renderTNodeJSX(this, 'fileListDisplay', { params: { files: this.displayFiles } }) || fileInfo}
+            {renderTNodeJSX(this, 'fileListDisplay', {
+              params: {
+                files: this.displayFiles,
+                locale: this.locale,
+                disabled: this.disabled,
+                cancelUpload: this.cancelUpload,
+                uploadFiles: this.uploadFiles,
+                triggerUpload: this.triggerUpload,
+                onDrop: this.drag.handleDrop,
+                onDragenter: this.drag.handleDragenter,
+                onDragover: this.drag.handleDragover,
+                onDragleave: this.drag.handleDragleave,
+              },
+            }) || fileInfo}
 
             <div class={`${this.uploadPrefix}__dragger-btns`}>
               {['progress', 'waiting'].includes(file.status) && !this.disabled && (
