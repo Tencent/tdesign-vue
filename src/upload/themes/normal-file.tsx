@@ -146,7 +146,15 @@ const NormalFile = defineComponent({
   },
 
   render() {
-    let fileListDisplay = renderTNodeJSX(this, 'fileListDisplay', { params: { files: this.displayFiles } });
+    let fileListDisplay = renderTNodeJSX(this, 'fileListDisplay', {
+      params: {
+        onRemove: this.onRemove,
+        toUploadFiles: this.toUploadFiles,
+        sizeOverLimitMessage: this.sizeOverLimitMessage,
+        locale: this.locale,
+        files: this.displayFiles,
+      },
+    });
     if (this.fileListDisplay === null || fileListDisplay === null) {
       fileListDisplay = null;
     }
@@ -161,8 +169,6 @@ const NormalFile = defineComponent({
         )}
 
         {fileListDisplay === null ? null : fileListDisplay || this.renderFilePreviewAsText(this.displayFiles)}
-
-        {this.sizeOverLimitMessage && <small class={this.errorClasses}>{this.sizeOverLimitMessage}</small>}
 
         {/* 单文件上传失败要显示失败的原因 */}
         {!this.multiple && this.displayFiles[0]?.status === 'fail' && this.theme === 'file' ? (
