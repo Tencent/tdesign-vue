@@ -17,7 +17,7 @@ import {
 import isFunction from 'lodash/isFunction';
 import isObject from 'lodash/isObject';
 import { useGlobalIcon } from '../../hooks/useGlobalIcon';
-import ImageViewer, { ImageViewerProps } from '../../image-viewer';
+import ImageViewer from '../../image-viewer';
 import { CommonDisplayFileProps } from '../interface';
 import { commonProps } from '../constants';
 import TButton from '../../button';

@@ -10,7 +10,7 @@ import {
 } from 'tdesign-icons-vue';
 import Loading from '../../loading';
 import { useGlobalIcon } from '../../hooks/useGlobalIcon';
-import ImageViewer, { ImageViewerProps } from '../../image-viewer';
+import ImageViewer from '../../image-viewer';
 import { CommonDisplayFileProps } from '../interface';
 import { commonProps } from '../constants';
 import { TdUploadProps, UploadFile } from '../type';
