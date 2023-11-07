@@ -1,6 +1,6 @@
 <template>
   <t-space direction="vertical" size="60px">
-    <t-slider v-model="value1" :show-tooltip="true" :inputNumberProps="inputNumberProps" />
+    <t-slider v-model="value1" :show-tooltip="true" :inputNumberProps="inputNumberProps" :step="0.1" />
     <t-slider v-model="value2" range :show-tooltip="true" :inputNumberProps="inputNumberProps" />
   </t-space>
 </template>
