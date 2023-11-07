@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils';
 import Vue from 'vue';
-import { omit } from 'lodash';
+import omit from 'lodash/omit';
 import { AnchorItem } from '@/src/anchor/index.ts';
 
 const defaultProvide = {
