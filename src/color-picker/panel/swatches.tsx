@@ -2,7 +2,7 @@ import {
   computed, defineComponent, PropType, ref,
 } from '@vue/composition-api';
 import { DeleteIcon as TdDeleteIcon, AddIcon as TdAddIcon } from 'tdesign-icons-vue';
-import { cloneDeep } from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
 import { Select as TSelect, Option as TOption } from '../../select';
 import { Color } from '../utils';
 import { useBaseClassName } from '../hooks';
