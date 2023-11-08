@@ -168,8 +168,8 @@ export default defineComponent({
     );
 
     watch(
-      [innerValue],
-      ([val], [oldValue]) => {
+      () => [...innerValue.value],
+      (val, oldValue) => {
         nextTick(() => {
           checkboxStore.updateChecked({
             checked: val,
