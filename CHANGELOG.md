@@ -5,6 +5,31 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.7.2 `2023-11-07` 
+### 🚀 Features
+- `ImageViewer`: 新增支持 `closeOnEscKeydown` ，用于控制是否允许 ESC 键关闭预览 @chaishi ([#2890](https://github.com/Tencent/tdesign-vue/pull/2890))
+- `Upload`: @chaishi
+   - 批量文件上传支持在列表中显示上传失败的原因，[tdesign-vue-next#2518](https://github.com/Tencent/tdesign-vue-next/issues/2518) ([#2891](https://github.com/Tencent/tdesign-vue/pull/2891))
+   - 支持使用 `fileListDisplay=null` 隐藏文件或文件列表显示 ([#2889](https://github.com/Tencent/tdesign-vue/pull/2889))
+   - 图片预览功能，新增支持透传图片预览全部属性 `imageViewerProps`，[tdesign-vue-next#2928](https://github.com/Tencent/tdesign-vue-next/issues/2928) ([#2891](https://github.com/Tencent/tdesign-vue/pull/2891))
+   -  ⚠️新增图片上传大小超出限制提醒，有额外单独实现此功能的业务需注意是否存在重复显示大小限制提醒问题，[tdesign-vue-next#2736](https://github.com/Tencent/tdesign-vue-next/issues/2736) ([#2891](https://github.com/Tencent/tdesign-vue/pull/2891))
+   - 多文件/图片上传场景下，`autoUpload=false` 时，支持使用 Props 属性/函数/插槽等方法自定义上传按钮和取消上传按钮，[tdesign-vue-next#2469](https://github.com/Tencent/tdesign-vue-next/issues/2469) ([#2891](https://github.com/Tencent/tdesign-vue/pull/2891))
+   - 多文件/图片上传场景下，`autoUpload=false` 时，区分已上传状态和待上传状态 [tdesign-vue-next#2518](https://github.com/Tencent/tdesign-vue-next/issues/2518) ([#2891](https://github.com/Tencent/tdesign-vue/pull/2891))
+- `Select`: 
+   - `collapsedItems` 属性或插槽新增参数 `onClose`，用于删除标签 @ubloglab ([#2863](https://github.com/Tencent/tdesign-vue/pull/2863))
+### 🐞 Bug Fixes
+- `Tree`
+   - 解决 `watch` 回调时间过迟的问题 @TabSpace ([#2873](https://github.com/Tencent/tdesign-vue/pull/2873))
+   - 提供获取树结构数据的API getTreeData @TabSpace ([#2888](https://github.com/Tencent/tdesign-vue/pull/2888))
+- `Upload`: 修复 `max=1 multiple=false` 情况下，无法替换上传文件问题，[tdesign-vue-next#2909](https://github.com/Tencent/tdesign-vue-next/issues/2909) @chaishi ([#2891](https://github.com/Tencent/tdesign-vue/pull/2891))
+- `Cascader`: 选项`disabled`修改后，选项不是禁用状态的问题 #2859 @lxc-orange ([#2872](https://github.com/Tencent/tdesign-vue/pull/2872))
+-  修正部分组件使用 `lodash` 非按需引入导致全量引入的问题 @fennghuang ([#2893](https://github.com/Tencent/tdesign-vue/pull/2893))
+- `Slider`: 修复step小于1无法正常使用的问题 @uyarn ([#2894](https://github.com/Tencent/tdesign-vue/pull/2894))
+- `Link`: 修复样式居中的缺陷 @uyarn ([#2894](https://github.com/Tencent/tdesign-vue/pull/2894))
+- `Checkbox`: 修复 value.splice 无法设置选中项变化问题 @chaishi
+
+
+
 ## 🌈 1.7.1 `2023-10-20` 
 ### 🚀 Features
 - `Table`: 可筛选表格，支持设置 `confirmEvents: ['onChange']` 后，单选筛选器(Radio) 选择完成后自动关闭筛选器浮层 @chaishi ([#2850](https://github.com/Tencent/tdesign-vue/pull/2850))
