@@ -8,6 +8,21 @@ import { TdBaseTableProps } from '../table/type';
 import { PropType } from 'vue';
 
 export default {
+  /** 高亮行，支持鼠标键盘操作(Shift)连续高亮行，可用于处理行选中等批量操作，模拟操作系统区域选择行为 */
+  activeRowKeys: {
+    type: Array as PropType<TdBaseTableProps['activeRowKeys']>,
+    default: undefined,
+  },
+  /** 高亮行，支持鼠标键盘操作(Shift)连续高亮行，可用于处理行选中等批量操作，模拟操作系统区域选择行为，非受控属性 */
+  defaultActiveRowKeys: {
+    type: Array as PropType<TdBaseTableProps['defaultActiveRowKeys']>,
+    default: (): TdBaseTableProps['defaultActiveRowKeys'] => [],
+  },
+  /** 默认不会高亮点击行，`activeRowType=single` 表示鼠标点击仅允许同时高亮一行，Shift 键盘操作加鼠标操作依然可以高亮多行，因为这属于明显的区域选择行为。`activeRowType= multiple ` 表示允许鼠标点击同时高亮多行 */
+  activeRowType: {
+    type: String as PropType<TdBaseTableProps['activeRowType']>,
+    default: '',
+  },
   /** 已废弃。是否允许调整列宽。请更为使用 `resizable` */
   allowResizeColumnWidth: {
     type: Boolean,
@@ -39,6 +54,11 @@ export default {
   },
   /** 是否禁用本地数据分页。当 `data` 数据长度超过分页大小时，会自动进行本地数据分页。如果 `disableDataPage` 设置为 true，则无论何时，都不会进行本地数据分页 */
   disableDataPage: Boolean,
+  /** 默认重复按下 Space 键可取消当前行高亮，是否禁用取消 */
+  disableSpaceInactiveRow: {
+    type: Boolean,
+    default: undefined,
+  },
   /** 空表格呈现样式，支持全局配置 `GlobalConfigProvider` */
   empty: {
     type: [String, Function] as PropType<TdBaseTableProps['empty']>,
@@ -89,10 +109,17 @@ export default {
   },
   /** 是否显示鼠标悬浮状态 */
   hover: Boolean,
+  /** 键盘操作行显示悬浮效果，一般用于键盘操作行选中、行展开、行高亮等功能 */
+  keyboardRowHover: {
+    type: Boolean,
+    default: true,
+  },
   /** 尾行内容，横跨所有列 */
   lastFullRow: {
     type: [String, Function] as PropType<TdBaseTableProps['lastFullRow']>,
   },
+  /** 是否启用整个表格元素的懒加载，当页面滚动到可视区域后再渲染表格。注意和表格内部行滚动懒加载的区别，内部行滚动无论表格是否在可视区域都会默认渲染第一屏的行元素 */
+  lazyLoad: Boolean,
   /** 加载中状态。值为 `true` 会显示默认加载中样式，可以通过 Function 和 插槽 自定义加载状态呈现内容和样式。值为 `false` 则会取消加载状态 */
   loading: {
     type: [Boolean, Function] as PropType<TdBaseTableProps['loading']>,
@@ -101,6 +128,10 @@ export default {
   /** 透传加载组件全部属性 */
   loadingProps: {
     type: Object as PropType<TdBaseTableProps['loadingProps']>,
+  },
+  /** 语言配置 */
+  locale: {
+    type: Object as PropType<TdBaseTableProps['locale']>,
   },
   /** 表格最大高度，超出后会出现滚动条。示例：100, '30%', '300'。值为数字类型，会自动加上单位 px */
   maxHeight: {
@@ -114,7 +145,7 @@ export default {
   paginationAffixedBottom: {
     type: [Boolean, Object] as PropType<TdBaseTableProps['paginationAffixedBottom']>,
   },
-  /** 是否允许调整列宽。如果想要配置宽度可调整的最小值和最大值，请使用 `column.resize`，示例：`columns: [{ resize: { minWidth: 120, maxWidth: 300 } }]`。<br/> 默认规则：因列宽超出存在横向滚动条时，列宽调整仅影响当前列宽和总列宽；表格列较少没有横向滚动条时，列宽调整表现为自身宽度和相邻宽度变化 */
+  /** 是否允许调整列宽，设置 `tableLayout=fixed` 效果更友好，此时不允许通过 CSS 设置 `table`元素宽度，也不允许设置 `tableContentWidth`。一般不建议在列宽调整场景使用 `tableLayout: auto`。如果想要配置宽度可调整的最小值和最大值，请使用 `column.resize`，示例：`columns: [{ resize: { minWidth: 120, maxWidth: 300 } }]`。<br/> 默认规则：因列宽超出存在横向滚动条时，列宽调整仅影响当前列宽和总列宽；表格列较少没有横向滚动条时，列宽调整表现为自身宽度和相邻宽度变化 */
   resizable: Boolean,
   /** HTML 标签 `tr` 的属性。类型为 Function 时，参数说明：`params.row` 表示行数据；`params.rowIndex` 表示行下标；`params.type=body` 表示属性作用于 `tbody` 中的元素；`params.type=foot` 表示属性作用于 `tfoot` 中的元素。<br />示例一：{ draggable: true }，<br />示例二：[{ draggable: true }, { title: '超出省略显示' }]。<br /> 示例三：() => [{ draggable: true }] */
   rowAttributes: {
@@ -163,7 +194,7 @@ export default {
     type: String,
     default: '',
   },
-  /** 表格布局方式 */
+  /** 表格布局方式，`<table>` 元素原生属性。[MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout)。注意，在列宽调整下场景只能使用 `fixed` 模式 */
   tableLayout: {
     type: String as PropType<TdBaseTableProps['tableLayout']>,
     default: 'fixed' as TdBaseTableProps['tableLayout'],
@@ -185,8 +216,14 @@ export default {
       return ['top', 'middle', 'bottom'].includes(val);
     },
   },
+  /** 高亮行发生变化时触发，泛型 T 指表格数据类型。参数 `activeRowList` 表示所有高亮行数据， `currentRowData` 表示当前操作行数据 */
+  onActiveChange: Function as PropType<TdBaseTableProps['onActiveChange']>,
+  /** 键盘操作事件。开启行高亮功能后，会自动开启键盘操作功能，如：通过键盘(Shift)或鼠标操作连续选中高亮行时触发，一般用于处理行选中等批量操作，模拟操作系统区域选择行为 */
+  onActiveRowAction: Function as PropType<TdBaseTableProps['onActiveRowAction']>,
   /** 单元格点击时触发 */
   onCellClick: Function as PropType<TdBaseTableProps['onCellClick']>,
+  /** 列调整大小之后触发。`context.columnsWidth` 表示操作后各个列的宽度； */
+  onColumnResizeChange: Function as PropType<TdBaseTableProps['onColumnResizeChange']>,
   /** 分页发生变化时触发。参数 newDataSource 表示分页后的数据。本地数据进行分页时，newDataSource 和源数据 data 会不一样。泛型 T 指表格数据类型 */
   onPageChange: Function as PropType<TdBaseTableProps['onPageChange']>,
   /** 行点击时触发，泛型 T 指表格数据类型 */

@@ -173,7 +173,7 @@ describe('Grid', () => {
       });
       const cols = wrapper.findAll('.t-col');
       expect(cols.at(0).classes()).toContain('t-col-4');
-      expect(cols.at(1).classes()).toContain('t-col-12');
+      expect(cols.at(1).classes()).toContain('t-col');
     });
     it(':offset', () => {
       const wrapper = mount({

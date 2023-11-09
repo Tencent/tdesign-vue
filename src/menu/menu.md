@@ -62,6 +62,7 @@ content | String / Slot / Function | - | 菜单项内容。TS 类型：`string \
 default | String / Slot / Function | - | 菜单项内容，同 content。TS 类型：`string \| TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 disabled | Boolean | - | 是否禁用菜单项展开/收起/跳转等功能 | N
 icon | Slot / Function | - | 菜单项图标。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+popupProps | Object | - | 透传 Popup 组件全部特性。TS 类型：`PopupProps`，[Popup API Documents](./popup?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/menu/type.ts) | N
 title | String / Slot / Function | - | 二级菜单内容。TS 类型：`string \| TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 value | String / Number | - | 菜单项唯一标识。TS 类型：`MenuValue` | N
 
@@ -79,13 +80,13 @@ router | Object | - | 路由对象。如果项目存在 Router，则默认使用
 target | String | - | 链接或路由跳转方式。可选项：_blank/_self/_parent/_top | N
 to | String / Object | - | 路由跳转目标，当且仅当 Router 存在时，该 API 有效。TS 类型：`MenuRoute` `interface MenuRoute { path?: string; name?: string; hash?: string; query?: MenuQueryData; params?: MenuQueryData }` `type MenuQueryData = { [key: string]: string \| string[] }`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/menu/type.ts) | N
 value | String / Number | - | 菜单项唯一标识。TS 类型：`MenuValue` | N
-onClick | Function |  | TS 类型：`(context: { e: MouseEvent }) => void`<br/>点击时触发 | N
+onClick | Function |  | TS 类型：`(context: { e: MouseEvent, value: MenuValue }) => void`<br/>点击时触发 | N
 
 ### MenuItem Events
 
 名称 | 参数 | 描述
 -- | -- | --
-click | `(context: { e: MouseEvent })` | 点击时触发
+click | `(context: { e: MouseEvent, value: MenuValue })` | 点击时触发
 
 ### MenuGroup Props
 

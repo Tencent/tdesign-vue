@@ -1,5 +1,4 @@
-import { TreeKeysType } from '../tree';
-import { TreeOptionData } from '../common';
+import { TreeOptionData, TreeKeysType } from '../common';
 
 export function getNodeDataByValue(
   values: Array<string | number>,
@@ -19,7 +18,7 @@ export function getNodeDataByValue(
         // results.push(item);
         results.set(values[index], item);
       }
-      if (item.children?.length) {
+      if (Array.isArray(item.children) && item.children?.length) {
         getTreeNodeData(values, item.children, keys, results);
       }
       if (results.size >= values.length) {

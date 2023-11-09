@@ -122,10 +122,13 @@
     "attributes": [
       "container",
       "content",
+      "default",
       "duration",
       "offset",
       "shape",
+      "size",
       "target",
+      "theme",
       "visible-height",
       "click"
     ],
@@ -189,6 +192,7 @@
       "top-content",
       "vertical-align",
       "cell-click",
+      "column-resize-change",
       "page-change",
       "row-click",
       "row-dblclick",
@@ -202,6 +206,52 @@
       "scroll-y"
     ],
     "description": "BaseTable\n\n基础表格\n\n[docs](https://tdesign.tencent.com/vue/components/base-table)"
+  },
+  "t-table": {
+    "attributes": [
+      "async-loading",
+      "column-controller",
+      "column-controller-visible",
+      "columns",
+      "display-columns",
+      "drag-sort",
+      "drag-sort-options",
+      "editable-cell-state",
+      "editable-row-keys",
+      "expand-icon",
+      "expand-on-row-click",
+      "expanded-row",
+      "expanded-row-keys",
+      "filter-icon",
+      "filter-row",
+      "filter-value",
+      "hide-sort-tips",
+      "indeterminate-selected-row-keys",
+      "multiple-sort",
+      "reserve-selected-row-on-paginate",
+      "select-on-row-click",
+      "selected-row-keys",
+      "show-sort-column-bg-color",
+      "sort",
+      "sort-icon",
+      "sort-on-row-draggable",
+      "async-loading-click",
+      "cell-click",
+      "change",
+      "column-change",
+      "column-controller-visible-change",
+      "data-change",
+      "display-columns-change",
+      "drag-sort",
+      "expand-change",
+      "filter-change",
+      "row-edit",
+      "row-validate",
+      "select-change",
+      "sort-change",
+      "validate"
+    ],
+    "description": "PrimaryTable\n\n主表格\n\n[docs](https://tdesign.tencent.com/vue/components/primary-table)"
   },
   "t-breadcrumb": {
     "attributes": [
@@ -319,11 +369,13 @@
       "max",
       "min-collapsed-num",
       "multiple",
+      "option",
       "options",
       "placeholder",
       "popup-props",
       "popup-visible",
       "readonly",
+      "reserve-keyword",
       "select-input-props",
       "show-all-levels",
       "size",
@@ -376,7 +428,6 @@
   },
   "t-checkbox-group": {
     "attributes": [
-      "disabled",
       "max",
       "name",
       "options",
@@ -437,6 +488,7 @@
       "color-modes",
       "disabled",
       "enable-alpha",
+      "enable-multiple-gradient",
       "format",
       "input-props",
       "multiple",
@@ -468,6 +520,7 @@
     "attributes": [
       "allow-input",
       "clearable",
+      "default-time",
       "disable-date",
       "disabled",
       "enable-time-picker",
@@ -480,6 +533,7 @@
       "prefix-icon",
       "presets",
       "presets-placement",
+      "size",
       "status",
       "suffix-icon",
       "time-picker-props",
@@ -488,13 +542,16 @@
       "value-type",
       "blur",
       "change",
+      "confirm",
       "focus",
-      "pick"
+      "pick",
+      "preset-click"
     ],
     "description": "DatePicker\n\n日期选择器\n\n[docs](https://tdesign.tencent.com/vue/components/date-picker)"
   },
   "t-date-picker-panel": {
     "attributes": [
+      "default-time",
       "cell-click",
       "change",
       "confirm",
@@ -510,6 +567,7 @@
     "attributes": [
       "allow-input",
       "clearable",
+      "default-time",
       "disable-date",
       "disabled",
       "enable-time-picker",
@@ -524,6 +582,7 @@
       "presets-placement",
       "range-input-props",
       "separator",
+      "size",
       "status",
       "suffix-icon",
       "time-picker-props",
@@ -532,14 +591,17 @@
       "value-type",
       "blur",
       "change",
+      "confirm",
       "focus",
       "input",
-      "pick"
+      "pick",
+      "preset-click"
     ],
     "description": "DateRangePicker\n\n日期范围选择器\n\n[docs](https://tdesign.tencent.com/vue/components/date-range-picker)"
   },
   "t-date-range-picker-panel": {
     "attributes": [
+      "default-time",
       "cell-click",
       "change",
       "confirm",
@@ -550,6 +612,25 @@
       "year-change"
     ],
     "description": "DateRangePickerPanel\n\n日期范围选择器面板\n\n[docs](https://tdesign.tencent.com/vue/components/date-range-picker-panel)"
+  },
+  "t-description-item": {
+    "attributes": [
+      "label",
+      "span"
+    ],
+    "description": "DescriptionItem\n\n描述项\n\n[docs](https://tdesign.tencent.com/vue/components/description-item)"
+  },
+  "t-descriptions": {
+    "attributes": [
+      "bordered",
+      "colon",
+      "columns",
+      "content-align",
+      "label-align",
+      "layout",
+      "size"
+    ],
+    "description": "Descriptions\n\n描述列表\n\n[docs](https://tdesign.tencent.com/vue/components/descriptions)"
   },
   "t-dialog": {
     "attributes": [
@@ -800,6 +881,7 @@
       "position",
       "shape",
       "src",
+      "srcset",
       "error",
       "load"
     ],
@@ -947,6 +1029,7 @@
       "footer",
       "header",
       "layout",
+      "scroll",
       "size",
       "split",
       "stripe",
@@ -1116,7 +1199,6 @@
     "attributes": [
       "cancel-btn",
       "confirm-btn",
-      "content",
       "default",
       "destroy-on-close",
       "icon",
@@ -1125,7 +1207,6 @@
       "show-arrow",
       "theme",
       "trigger-element",
-      "visible",
       "cancel",
       "confirm",
       "visible-change"
@@ -1135,6 +1216,7 @@
   "t-popup": {
     "attributes": [
       "attach",
+      "close-btn",
       "content",
       "default",
       "delay",
@@ -1218,6 +1300,20 @@
     "description": "Progress\n\n进度条\n\n[docs](https://tdesign.tencent.com/vue/components/progress)"
   },
   "t-radio": {
+    "attributes": [
+      "allow-uncheck",
+      "checked",
+      "default",
+      "disabled",
+      "label",
+      "name",
+      "value",
+      "change",
+      "click"
+    ],
+    "description": "Radio\n\n单选框\n\n[docs](https://tdesign.tencent.com/vue/components/radio)"
+  },
+  "t-radio-button": {
     "attributes": [
       "allow-uncheck",
       "checked",
@@ -1423,6 +1519,7 @@
       "popup-props",
       "popup-visible",
       "readonly",
+      "reserve-keyword",
       "status",
       "suffix",
       "suffix-icon",
@@ -1485,6 +1582,26 @@
     ],
     "description": "Space\n\n间距\n\n[docs](https://tdesign.tencent.com/vue/components/space)"
   },
+  "t-statistic": {
+    "attributes": [
+      "animation",
+      "animation-start",
+      "color",
+      "decimal-places",
+      "extra",
+      "format",
+      "loading",
+      "prefix",
+      "separator",
+      "suffix",
+      "title",
+      "trend",
+      "trend-placement",
+      "unit",
+      "value"
+    ],
+    "description": "Statistic\n\n统计数值\n\n[docs](https://tdesign.tencent.com/vue/components/statistic)"
+  },
   "t-step-item": {
     "attributes": [
       "content",
@@ -1522,12 +1639,12 @@
   },
   "t-sticky-tool": {
     "attributes": [
-      "collapsed",
-      "draggable",
-      "entrance",
       "list",
       "offset",
       "placement",
+      "popup-props",
+      "shape",
+      "type",
       "width",
       "click",
       "hover"
@@ -1540,6 +1657,7 @@
       "default",
       "disabled",
       "icon",
+      "popup-props",
       "title",
       "value"
     ],
@@ -1581,6 +1699,7 @@
       "default",
       "destroy-on-hide",
       "disabled",
+      "draggable",
       "label",
       "panel",
       "removable",
@@ -1830,6 +1949,7 @@
       "expand-parent",
       "expanded",
       "filter",
+      "height",
       "hover",
       "icon",
       "keys",
@@ -1837,7 +1957,9 @@
       "lazy",
       "line",
       "load",
+      "max-height",
       "operations",
+      "scroll",
       "transition",
       "value",
       "value-mode",
@@ -1850,7 +1972,8 @@
       "drag-start",
       "drop",
       "expand",
-      "load"
+      "load",
+      "scroll"
     ],
     "description": "Tree\n\n树\n\n[docs](https://tdesign.tencent.com/vue/components/tree)"
   },
@@ -1875,11 +1998,14 @@
       "max",
       "min-collapsed-num",
       "multiple",
+      "panel-bottom-content",
+      "panel-top-content",
       "placeholder",
       "popup-props",
       "popup-visible",
       "prefix-icon",
       "readonly",
+      "reserve-keyword",
       "select-input-props",
       "size",
       "status",
@@ -1923,6 +2049,7 @@
       "format-request",
       "format-response",
       "headers",
+      "input-attributes",
       "is-batch-upload",
       "locale",
       "max",
@@ -1940,6 +2067,7 @@
       "trigger",
       "trigger-button-props",
       "upload-all-files-in-one-request",
+      "upload-pasted-files",
       "use-mock-progress",
       "value",
       "with-credentials",

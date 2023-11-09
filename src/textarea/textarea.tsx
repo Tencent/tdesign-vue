@@ -1,14 +1,15 @@
 import Vue, { VueConstructor } from 'vue';
 import isFunction from 'lodash/isFunction';
 import { getUnicodeLength, limitUnicodeMaxLength } from '../_common/js/utils/helper';
-import props from './props';
-import { TextareaValue } from './type';
 import { getPropsApiByEvent, getCharacterLength } from '../utils/helper';
 import calcTextareaHeight from './calcTextareaHeight';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { ClassName } from '../common';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
+
+import props from './props';
+import type { TextareaValue } from './type';
 
 const classPrefixMixins = getClassPrefixMixins('textarea');
 
@@ -100,13 +101,19 @@ export default mixins(Vue as VueConstructor<Textarea>, classPrefixMixins).extend
       },
       immediate: true,
     },
+    value: {
+      handler() {
+        this.$nextTick(() => this.adjustTextareaHeight());
+      },
+      immediate: true,
+    },
   },
 
   methods: {
     adjustTextareaHeight() {
       if (this.autosize === true) {
         this.textareaStyle = calcTextareaHeight(this.$refs.refTextareaElem as HTMLTextAreaElement);
-      } else if (typeof this.autosize === 'object') {
+      } else if (this.autosize && typeof this.autosize === 'object') {
         this.textareaStyle = calcTextareaHeight(
           this.$refs.refTextareaElem as HTMLTextAreaElement,
           this.autosize?.minRows,
@@ -116,13 +123,11 @@ export default mixins(Vue as VueConstructor<Textarea>, classPrefixMixins).extend
         this.textareaStyle = { height: 'auto', minHeight: 'auto' };
       }
     },
-
     emitEvent(name: string, value: string | number, context: object) {
       this.$emit(name, value, context);
       const handleName = getPropsApiByEvent(name);
       isFunction(this[handleName]) && this[handleName](value, context);
     },
-
     focus(): void {
       const textArea = this.$refs.refTextareaElem as HTMLInputElement;
       textArea?.focus();
@@ -144,7 +149,9 @@ export default mixins(Vue as VueConstructor<Textarea>, classPrefixMixins).extend
     inputValueChangeHandle(e: InputEvent) {
       const { target } = e;
       let val = (target as HTMLInputElement).value;
-      val = limitUnicodeMaxLength(val, this.maxlength);
+      if (this.maxlength) {
+        val = limitUnicodeMaxLength(val, Number(this.maxlength));
+      }
       if (this.maxcharacter && this.maxcharacter >= 0) {
         const stringInfo = getCharacterLength(val, this.maxcharacter);
         val = typeof stringInfo === 'object' && stringInfo.characters;

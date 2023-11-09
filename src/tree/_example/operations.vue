@@ -1,70 +1,59 @@
 <template>
-  <t-space :size="20" direction="vertical" class="t-tree-demo-operations">
-    <t-space :size="10" direction="vertical" style="width: 100%">
-      <h3>Render:</h3>
-      <t-tree :data="items" hover expand-all :label="getLabel" :operations="renderOperations" />
+  <t-space direction="vertical" style="width: 100%" class="tdesign-tree-operations">
+    <t-space>
+      <span>插入节点使用高亮节点:</span>
+      <t-switch v-model="useActived" />
     </t-space>
-    <!-- <div> -->
-    <t-space :size="10" direction="vertical" style="width: 100%">
-      <h3>Scope Slot:</h3>
-      <t-form labelWidth="200">
-        <t-form-item label="插入节点使用高亮节点" style="margin-bottom: 5px">
-          <t-switch v-model="useActived" />
-        </t-form-item>
-        <t-form-item label="子节点展开触发父节点展开">
-          <t-switch v-model="expandParent" />
-        </t-form-item>
-      </t-form>
-      <!-- <div> -->
+    <t-space>
+      <span>子节点展开触发父节点展开:</span>
+      <t-switch v-model="expandParent" />
+    </t-space>
+    <t-space>
       <t-input-adornment prepend="filter:">
         <t-input v-model="filterText" @change="onInputChange" />
       </t-input-adornment>
-      <!-- </div> -->
-      <t-tree
-        :data="items"
-        hover
-        expand-all
-        activable
-        checkable
-        :expand-on-click-node="false"
-        :label="getLabel"
-        :expand-parent="expandParent"
-        :filter="filterByText"
-        @expand="onExpand"
-        @change="onChange"
-        @active="onActive"
-        line
-        ref="tree"
-      >
-        <template #operations="{ node }">
-          <t-space :size="10">
-            <t-button size="small" variant="base" @click="append(node)">添加子节点</t-button>
-            <t-button size="small" variant="outline" @click="insertBefore(node)">前插节点</t-button>
-            <t-button size="small" variant="outline" @click="insertAfter(node)">后插节点</t-button>
-            <t-button size="small" variant="base" theme="danger" @click="remove(node)">删除</t-button>
-          </t-space>
-        </template>
-      </t-tree>
     </t-space>
-    <!-- </div> -->
-    <t-space :size="10" direction="vertical">
-      <h3>API:</h3>
-      <t-space :size="10" breakLine>
-        <t-button theme="primary" @click="getItem">获取 value 为 'node1' 的单个节点</t-button>
-        <t-button theme="primary" @click="getAllItems">获取所有节点</t-button>
-        <t-button theme="primary" @click="getActiveChildren">获取高亮节点的所有子节点</t-button>
-        <t-button theme="primary" @click="getAllActived">获取所有高亮节点</t-button>
-        <t-button theme="primary" @click="getActiveChecked">获取高亮节点下的选中节点</t-button>
-        <t-button theme="primary" @click="append()">插入一个根节点</t-button>
-        <t-button theme="primary" @click="getActiveParent">获取高亮节点的父节点</t-button>
-        <t-button theme="primary" @click="getActiveParents">获取高亮节点的所有父节点</t-button>
-        <t-button theme="primary" @click="getActiveIndex">获取高亮节点在子节点中的位置</t-button>
-        <t-button theme="primary" @click="setActiveChecked">选中高亮节点</t-button>
-        <t-button theme="primary" @click="setActiveExpanded">展开高亮节点</t-button>
-        <t-button theme="primary" @click="getActivePlainData">获取高亮节点与其子节点的数据</t-button>
-      </t-space>
-      <p class="tips">* 相关信息通过控制台输出</p>
+    <t-tree
+      ref="tree"
+      :data="items"
+      hover
+      expand-all
+      activable
+      checkable
+      :expand-on-click-node="false"
+      :label="getLabel"
+      :expand-parent="expandParent"
+      :filter="filterByText"
+      line
+      @expand="onExpand"
+      @change="onChange"
+      @active="onActive"
+    >
+      <template #operations="{ node }">
+        <t-space :size="10">
+          <t-button size="small" variant="base" @click="append(node)">添加子节点</t-button>
+          <t-button size="small" variant="outline" @click="insertBefore(node)">前插节点</t-button>
+          <t-button size="small" variant="outline" @click="insertAfter(node)">后插节点</t-button>
+          <t-button size="small" variant="base" theme="danger" @click="remove(node)">删除</t-button>
+        </t-space>
+      </template>
+    </t-tree>
+    <h3>操作树节点</h3>
+    <t-space :size="10" break-line>
+      <t-button theme="primary" variant="outline" @click="getItem">获取 value 为 'node1' 的单个节点</t-button>
+      <t-button theme="primary" variant="outline" @click="getAllItems">获取所有节点</t-button>
+      <t-button theme="primary" variant="outline" @click="getActiveChildren">获取高亮节点的所有子节点</t-button>
+      <t-button theme="primary" variant="outline" @click="getAllActived">获取所有高亮节点</t-button>
+      <t-button theme="primary" variant="outline" @click="getActiveChecked">获取高亮节点下的选中节点</t-button>
+      <t-button theme="primary" variant="outline" @click="append()">插入一个根节点</t-button>
+      <t-button theme="primary" variant="outline" @click="getActiveParent">获取高亮节点的父节点</t-button>
+      <t-button theme="primary" variant="outline" @click="getActiveParents">获取高亮节点的所有父节点</t-button>
+      <t-button theme="primary" variant="outline" @click="getActiveIndex">获取高亮节点在子节点中的位置</t-button>
+      <t-button theme="primary" variant="outline" @click="setActiveChecked">选中高亮节点</t-button>
+      <t-button theme="primary" variant="outline" @click="setActiveExpanded">展开高亮节点</t-button>
+      <t-button theme="primary" variant="outline" @click="getActivePlainData">获取高亮节点与其子节点的数据</t-button>
     </t-space>
+    <div>* 相关信息通过控制台输出</div>
   </t-space>
 </template>
 
@@ -101,9 +90,6 @@ export default {
     },
   },
   methods: {
-    renderOperations(createElement, node) {
-      return `value: ${node.value}`;
-    },
     getLabelContent(node) {
       const pathNodes = node.getPath();
       let label = pathNodes.map((itemNode) => itemNode.getIndex() + 1).join('.');
@@ -126,7 +112,7 @@ export default {
     getItem() {
       const { tree } = this.$refs;
       const node = tree.getItem('node1');
-      console.info('getItem:', node.label);
+      console.info('getItem:', node.value);
     },
     getAllItems() {
       const { tree } = this.$refs;
@@ -179,38 +165,6 @@ export default {
         };
       }
       return item;
-    },
-    getPlainData(item) {
-      const root = item;
-      if (!root) return null;
-      const children = item.getChildren(true) || [];
-      const list = [root].concat(children);
-      const nodeMap = {};
-      const nodeList = list.map((item) => {
-        const node = {
-          walkData() {
-            const data = {
-              ...this.data,
-            };
-            const itemChildren = this.getChildren();
-            if (Array.isArray(itemChildren)) {
-              data.children = [];
-              itemChildren.forEach((childItem) => {
-                const childNode = nodeMap[childItem.value];
-                const childData = childNode.walkData();
-                data.children.push(childData);
-              });
-            }
-            return data;
-          },
-          ...item,
-        };
-        nodeMap[item.value] = node;
-        return node;
-      });
-      const [rootNode] = nodeList;
-      const data = rootNode.walkData();
-      return data;
     },
     append(node) {
       const { tree } = this.$refs;
@@ -284,10 +238,15 @@ export default {
       console.info('getIndex', index);
     },
     getActivePlainData() {
+      const { tree } = this.$refs;
       const node = this.getActivedNode();
-      if (!node) return;
-      const data = this.getPlainData(node);
-      return data;
+      let treeNodes = [];
+      if (!node) {
+        treeNodes = tree.getTreeData();
+      } else {
+        treeNodes = tree.getTreeData(node.value);
+      }
+      console.info('树结构数据:', treeNodes);
     },
     remove(node) {
       const { tree } = this.$refs;
@@ -311,22 +270,26 @@ export default {
     },
     onInputChange(state) {
       console.info('on input:', state);
-      this.filterByText = (node) => {
-        const label = node?.data?.label || '';
-        const rs = label.indexOf(this.filterText) >= 0;
-        return rs;
-      };
+      if (this.filterText) {
+        this.filterByText = (node) => {
+          const label = node?.data?.label || '';
+          const rs = label.indexOf(this.filterText) >= 0;
+          return rs;
+        };
+      } else {
+        this.filterByText = null;
+      }
     },
   },
 };
 </script>
 <style>
-.tips {
-  font-size: 10px;
-  color: gray;
-}
-.t-tree-demo-operations .t-is-active .t-tree__label,
-.t-tree-demo-operations .t-is-active .t-checkbox__label {
+.tdesign-tree-operations .t-is-active .t-tree__label,
+.tdesign-tree-operations .t-is-active .t-checkbox__label {
   background-color: rgba(255, 0, 0, 0.3);
+}
+.tdesign-tree-operations .tips p {
+  line-height: 24px;
+  text-indent: 1em;
 }
 </style>

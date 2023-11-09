@@ -6,7 +6,7 @@ import FakeArrow from '../common-components/fake-arrow';
 import { CollapseValue, TdCollapsePanelProps } from './type';
 import { usePrefixClass } from '../hooks/useConfig';
 import { useTNodeJSX, useContent } from '../hooks/tnode';
-import useCollapseAnimation from './useCollapseAnimation';
+import useCollapseAnimation from '../hooks/useCollapseAnimation';
 
 export default defineComponent({
   name: 'TCollapsePanel',

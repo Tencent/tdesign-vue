@@ -1,99 +1,100 @@
-import { CreateElement } from 'vue';
-import { ref, nextTick, SetupContext } from '@vue/composition-api';
 import {
-  TypeVNode, TypeTreeRow, TypeTreeNode, TreeProps, TypeTreeState,
-} from '../interface';
+  ref, watch, TypeCreateElement, privateKey, TypeVNode,
+} from '../adapt';
+import { TypeTreeRow, TypeTreeNode, TypeTreeState } from '../tree-types';
 import TreeItem from '../tree-item';
-import { privateKey } from '../../_common/js/tree/tree-node';
 import useTreeEvents from './useTreeEvents';
 
 // tree 节点列表渲染
-export default function useTreeNodes(props: TreeProps, context: SetupContext, state: TypeTreeState) {
-  const treeState = state;
+export default function useTreeNodes(state: TypeTreeState) {
   const {
-    store, scope, nodes, virtualConfig,
-  } = treeState;
+    store, scope, allNodes, nodes, virtualConfig,
+  } = state;
+  const { handleClick, handleChange } = useTreeEvents(state);
+  const nodesEmpty = ref(false);
+  // 用于存储已呈现节点的缓存
+  const cacheMap = new Map();
 
-  const { handleClick, handleChange } = useTreeEvents(props, context, state);
+  const refresh = () => {
+    allNodes.value = store.getNodes();
+  };
+
+  const refreshVisibleNodes = () => {
+    const isVirtual = virtualConfig?.isVirtualScroll.value;
+    if (isVirtual) return;
+    // 非虚拟滚动，渲染可视节点
+    const list: TypeTreeNode[] = [];
+    // 非虚拟滚动，缓存曾经展示过的节点
+    let hasVisibleNode = false;
+    allNodes.value.forEach((node: TypeTreeNode) => {
+      if (node.visible) {
+        // 曾经展示过的节点加入缓存，避免再次创建
+        hasVisibleNode = true;
+        cacheMap.set(node.value, node.value);
+      }
+      if (cacheMap.get(node.value)) {
+        // 创建的节点是缓存的节点
+        list.push(node);
+      }
+    });
+    cacheMap.forEach((value) => {
+      // 在缓存中清理结构变化后不存在的节点
+      if (!store.getNode(value)) {
+        cacheMap.delete(value);
+      }
+    });
+    // 渲染为平铺列表
+    nodes.value = list;
+    nodesEmpty.value = !hasVisibleNode;
+  };
+
+  const refreshVirtualNodes = () => {
+    const isVirtual = virtualConfig?.isVirtualScroll.value;
+    if (!isVirtual) return;
+    // 虚拟滚动只渲染可见节点
+    const list = virtualConfig.visibleData.value;
+    nodes.value = list;
+    nodesEmpty.value = list.length <= 0;
+  };
 
   // 创建单个 tree 节点
-  const renderItem = (h: CreateElement, node: TypeTreeRow, index: number) => {
-    const { expandOnClickNode } = props;
+  const renderItem = (h: TypeCreateElement, node: TypeTreeRow, index: number, stateId: string) => {
     const rowIndex = node.__VIRTUAL_SCROLL_INDEX || index;
-
+    const nodeUniqueId = node[privateKey];
+    // vue3 中，不使用动画时，传递 node, 或者单纯传递 itemKey 无法触发 treeItem 的 render 方法
+    // 考虑到有必要对所有节点状态更新，所以添加 stateId 属性，专门用于触发 treeItem 的 render 方法
+    // 使用动画时，transition group 触发了所有节点的 render 方法，回头可以研究看下更合适的方案
+    // 未来也可以根据节点数据的具体更新状态，来决定节点更新与否
+    // 考虑到 value 值有冲突可能，所以使用 privateKey 来作为节点标记
     const treeItem = (
       <TreeItem
-        key={node[privateKey]}
+        key={nodeUniqueId}
         rowIndex={rowIndex}
-        node={node}
+        stateId={stateId}
+        itemKey={nodeUniqueId}
         treeScope={scope}
         onClick={handleClick}
         onChange={handleChange}
-        expandOnClickNode={expandOnClickNode}
       />
     );
     return treeItem;
   };
 
-  const cacheMap = new Map();
-
-  const nodesEmpty = ref(false);
-  const refresh = () => {
-    // 渲染为平铺列表
-    nodes.value = store.getNodes();
-  };
-
-  const renderTreeNodes = (h: CreateElement) => {
-    let treeNodeViews: TypeVNode[] = [];
-    let isEmpty = true;
-    let list = nodes.value;
-
-    const isVirtual = virtualConfig?.isVirtualScroll.value;
-    if (isVirtual) {
-      list = virtualConfig.visibleData.value;
-      nodesEmpty.value = list.length <= 0;
-      // 虚拟滚动只渲染可见节点
-      treeNodeViews = list.map((node: TypeTreeNode, index) => renderItem(h, node, index));
-    } else {
-      treeNodeViews = list.map((node: TypeTreeNode, index) => {
-        const nodePrivateKey = node[privateKey];
-        // 如果节点已经存在，则使用缓存节点
-        // 不可见的节点，缓存中存在，则依然会保留
-        let nodeView: TypeVNode = cacheMap.get(nodePrivateKey);
-        if (node.visible) {
-          // 任意一个节点可视，过滤结果就不是空
-          isEmpty = false;
-          // 如果节点未曾创建，则临时创建
-          if (!nodeView) {
-            // 初次仅渲染可显示的节点
-            // 不存在节点视图，则创建该节点视图并插入到当前位置
-            nodeView = renderItem(h, node, index);
-            cacheMap.set(nodePrivateKey, nodeView);
-          }
-        }
-        return nodeView;
-      });
-      nodesEmpty.value = isEmpty;
-
-      // 更新缓存后，被删除的节点要移除掉，避免内存泄露
-      nextTick(() => {
-        cacheMap.forEach((view: TypeVNode, nodePrivateKey: string) => {
-          const node = store.privateMap.get(nodePrivateKey);
-          if (!node) {
-            cacheMap.delete(nodePrivateKey);
-          }
-        });
-      });
-    }
-
+  const renderTreeNodes = (h: TypeCreateElement) => {
+    const stateId = `render-${new Date().getTime()}`;
+    const treeNodeViews: TypeVNode[] = nodes.value.map((node: TypeTreeNode, index) => renderItem(h, node, index, stateId));
     return treeNodeViews;
   };
 
+  watch(allNodes, refreshVisibleNodes);
+  watch(virtualConfig.visibleData, refreshVirtualNodes);
+
   refresh();
+  refreshVisibleNodes();
+  refreshVirtualNodes();
   store.emitter.on('update', refresh);
 
   return {
-    refresh,
     nodesEmpty,
     renderTreeNodes,
   };

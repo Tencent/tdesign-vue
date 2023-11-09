@@ -9,7 +9,7 @@ exports[`Menu > props > :active 1`] = `
     class="t-default-menu__inner"
   >
     <ul
-      class="t-menu t-menu--scroll narrow-scrollbar"
+      class="t-menu t-menu--scroll"
     />
   </div>
 </div>
@@ -24,7 +24,7 @@ exports[`Menu > props > :collapsed 1`] = `
     class="t-default-menu__inner"
   >
     <ul
-      class="t-menu narrow-scrollbar"
+      class="t-menu t-menu--scroll"
     />
   </div>
 </div>
@@ -40,7 +40,7 @@ exports[`Menu > props > :collapsedWidth 1`] = `
     class="t-default-menu__inner"
   >
     <ul
-      class="t-menu t-menu--scroll narrow-scrollbar"
+      class="t-menu t-menu--scroll"
     />
   </div>
 </div>
@@ -56,7 +56,7 @@ exports[`Menu > props > :height 1`] = `
     class="t-default-menu__inner"
   >
     <ul
-      class="t-menu t-menu--scroll narrow-scrollbar"
+      class="t-menu t-menu--scroll"
     />
   </div>
 </div>
@@ -71,7 +71,7 @@ exports[`Menu > props > :theme 1`] = `
     class="t-default-menu__inner"
   >
     <ul
-      class="t-menu t-menu--scroll narrow-scrollbar"
+      class="t-menu t-menu--scroll"
     />
   </div>
 </div>
@@ -86,7 +86,7 @@ exports[`Menu > props > :theme 2`] = `
     class="t-default-menu__inner"
   >
     <ul
-      class="t-menu t-menu--scroll narrow-scrollbar"
+      class="t-menu t-menu--scroll"
     />
   </div>
 </div>
@@ -101,7 +101,7 @@ exports[`Menu > props > :width 1`] = `
     class="t-default-menu__inner"
   >
     <ul
-      class="t-menu t-menu--scroll narrow-scrollbar"
+      class="t-menu t-menu--scroll"
     />
   </div>
 </div>
@@ -116,7 +116,7 @@ exports[`Menu > slot > <default> 1`] = `
     class="t-default-menu__inner"
   >
     <ul
-      class="t-menu t-menu--scroll narrow-scrollbar"
+      class="t-menu t-menu--scroll"
     >
       <div />
     </ul>
@@ -138,7 +138,7 @@ exports[`Menu > slot > <logo> 1`] = `
       <div />
     </div>
     <ul
-      class="t-menu t-menu--scroll narrow-scrollbar"
+      class="t-menu t-menu--scroll"
     />
   </div>
 </div>
@@ -153,7 +153,7 @@ exports[`Menu > slot > <options> 1`] = `
     class="t-default-menu__inner"
   >
     <ul
-      class="t-menu t-menu--scroll narrow-scrollbar"
+      class="t-menu t-menu--scroll"
     />
     <div
       class="t-menu__operations"

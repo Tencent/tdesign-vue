@@ -4,6 +4,7 @@
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
  * */
 
+import { PopupProps } from '../popup';
 import { TNode } from '../common';
 
 export interface TdMenuProps {
@@ -129,6 +130,10 @@ export interface TdSubmenuProps {
    */
   icon?: TNode;
   /**
+   * 透传 Popup 组件全部特性
+   */
+  popupProps?: PopupProps;
+  /**
    * 二级菜单内容
    */
   title?: string | TNode;
@@ -152,7 +157,7 @@ export interface TdMenuItemProps {
    */
   disabled?: boolean;
   /**
-   * 跳转链接
+   * 跳转链接，菜单项渲染为a标签，当routerLink为true时将使用Router进行路由跳转
    * @default ''
    */
   href?: string;
@@ -170,6 +175,10 @@ export interface TdMenuItemProps {
    */
   router?: Record<string, any>;
   /**
+   * 菜单项内容是否渲染为使用Router进行跳转的a标签，当且仅当 Router 存在时，该 API 有效
+   */
+  routerLink?: boolean;
+  /**
    * 链接或路由跳转方式
    */
   target?: '_blank' | '_self' | '_parent' | '_top';
@@ -184,7 +193,7 @@ export interface TdMenuItemProps {
   /**
    * 点击时触发
    */
-  onClick?: (context: { e: MouseEvent }) => void;
+  onClick?: (context: { e: MouseEvent; value: MenuValue }) => void;
 }
 
 export interface TdMenuGroupProps {

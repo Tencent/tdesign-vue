@@ -7,7 +7,7 @@ import { TdLoadingProps, LoadingInstance, LoadingMethod } from './type';
 const lockClass = `${prefix}-loading--lock`;
 
 let fullScreenLoadingInstance: LoadingInstance = null;
-
+let normalLoadingInstance: LoadingInstance = null;
 function createLoading(options: TdLoadingProps): LoadingInstance {
   const props = { ...options };
   const loading = new LoadingComponent({
@@ -33,17 +33,22 @@ function createLoading(options: TdLoadingProps): LoadingInstance {
 
 function produceLoading(props: boolean | TdLoadingProps): LoadingInstance {
   const destroyLoadingInstance = () => {
-    // 销毁全屏实例
+    // 销毁全屏 Loading 实例
     removeClass(document.body, lockClass);
     fullScreenLoadingInstance.hide();
     fullScreenLoadingInstance = null;
   };
+
+  const destroyNormalLoadingInstance = () => {
+    // 销毁 Loading 实例
+    normalLoadingInstance.hide();
+    normalLoadingInstance = null;
+  };
+
   // 全屏加载
   if (props === true) {
-    // 若存在已经创建的全屏实例则先hide
-    if (fullScreenLoadingInstance) {
-      destroyLoadingInstance();
-    }
+    // 若存在已经创建的全屏实例则不需要再创建
+    if (fullScreenLoadingInstance) return;
     fullScreenLoadingInstance = createLoading({
       fullscreen: true,
       loading: true,
@@ -51,12 +56,15 @@ function produceLoading(props: boolean | TdLoadingProps): LoadingInstance {
     });
     return fullScreenLoadingInstance;
   }
+
   if (props === false) {
-    // 销毁全屏实例
-    destroyLoadingInstance();
+    // 销毁实例
+    if (fullScreenLoadingInstance) destroyLoadingInstance();
+    else destroyNormalLoadingInstance();
     return;
   }
-  return createLoading(props);
+  normalLoadingInstance = createLoading(props as TdLoadingProps);
+  return normalLoadingInstance;
 }
 
 export type LoadingPluginType = Vue.PluginObject<undefined> & LoadingMethod;

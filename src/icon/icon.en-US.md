@@ -1,54 +1,66 @@
 :: BASE_DOC ::
 
-### 安装独立 Icon 包
+### Install tdesign-icons-vue-next
 
-图标相对其他基础组件较为独立，所以作为一个独立的 npm 包做发布管理。如果项目中直接使用，请安装`tdesign-icons-vue`。 同时 tdesign-vue 也内置了 icon,支持直接通过 t-icon 来使用
+Icons are published and managed as a separate npm package. If you want to use it directly in your project, please install `tdesign-icons-vue-next`. At the same time, `tdesign-vue-next` also includes icons and supports direct use through `t-icon`.
 
-### SVG 全量引入
+### Import on-demand
 
-图标尺寸单位支持多种， 'small', 'medium', 'large', '35px', '3em' 等。
-图标颜色使用 CSS 控制，如：style="color: red"，或者 style="fill: red"。
-点击右侧导航「全部图标」即可查看组件库全部图标。
+SVG icons can be imported on demand. When using the Icon component in component development, SVG icons are imported on demand.
+
+{{ single }}
+### Full import
+
+The icon size supports multiple units, such as 'small', 'medium', 'large', '35px', '3em', etc. 
+The icon color is controlled by CSS, for example, using style="color: red" or style="fill: red". 
+Click on the 「All Icons」 navigation on the right to view all icons in the component library.
 
 {{ base }}
 
-### SVG 按需引入
 
-图标可以按需引入单个 SVG 图标。组件开发内部使用到 Icon 时，均按需引入 SVG 图标。
 
-{{ single }}
+### Advanced usage of SVG
 
-### SVG 高级用法
+New svg icons can be added by passing in the URL. 
 
-可以传入 url 加入新的 SVG 图标。
-
-引入新的图标 Url 之后，图标名称必须写全称，以作区分，如：`"name='home'"` 需要写成 `"name='t-icon-home'"`。
-
-组件会引入默认的 SVG 图标，如果希望禁止组件加载默认的 SVG 图标，将 `loadDefaultIcons` 置为 false 即可。
+The component will import default svg icons. If you want to disable the loading of default svg icons, set `loadDefaultIcons` to `false`.
 
 {{ enhanced }}
 
-### iconfont 图标
-
-使用 Iconfont 图标需要单独引入 Iconfont 图标组件
+### Iconfont
 
 {{ iconfont }}
 
-### iconfont 高级用法
+### Advanced usage of iconfont
 
-可以传入 url 加入新的 iconfont 图标。
+New iconfont icons can be added by passing in the URL. 
 
-引入新的图标 Url 之后，图标名称必须写全称，以作区分，如：`"name='home'"` 需要写成 `"name='t-icon-home'"`。
+The component will import default iconfont icons. If you want to disable the loading of default iconfont icons, set `loadDefaultIcons` to `false`.
 
-组件会引入默认的 iconfont 图标，如果希望禁止组件加载默认的 iconfont 图标，将 `loadDefaultIcons` 置为 false 即可。
 
 {{ iconfont-enhanced }}
 
-### 全部图标
+### Icon Selector
+
+If you need to select icons in your project, please use `Select` to implement an icon selector.
+
+{{ icon-select }}
+
+### FAQ
+
+#### How to get all the names of icons？
+
+You can get all the name of icon by import manifest from the bundle `import { manifest } from 'tdesign-icons-vue-next'`
+
+#### the usage of full import needs network. What if my project is in a no-network scenario?
+
+if your project is in a no-network scenario, please use on-demand loading of icons. For example,`<t-icon name="add" />` should be changed to `<AddIcon />`
+### All Icons
 
 <td-icons-view />
 
 ## API
+
 ### IconSVG Props
 
 name | type | default | description | required

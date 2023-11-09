@@ -13,6 +13,7 @@ export interface MixinsConfirmBtn {
   className?: ClassName;
   size?: ButtonProps['size'];
   confirmBtn: MixinsFooterButton;
+  confirmLoading?: boolean;
   globalConfirm: PopconfirmConfig['confirm'] | DrawerConfig['confirm'] | DialogConfig['confirm'];
   globalConfirmBtnTheme?: PopconfirmConfig['confirmBtnTheme'] | DialogConfig['confirmBtnTheme'];
 }
@@ -29,7 +30,7 @@ export type MixinsThemeType = keyof (PopconfirmConfig['confirmBtnTheme'] & Dialo
 export default Vue.extend({
   methods: {
     getConfirmBtn(options: MixinsConfirmBtn) {
-      const { confirmBtn, className } = options;
+      const { confirmBtn, className, confirmLoading } = options;
       if (confirmBtn === null) return null;
       if (confirmBtn && this.$scopedSlots.confirmBtn) {
         console.warn('Both $props.confirmBtn and $scopedSlots.confirmBtn exist, $props.confirmBtn is preferred.');
@@ -37,11 +38,15 @@ export default Vue.extend({
       const defaultButtonProps = this.getDefaultConfirmBtnProps(options);
       // 属性和插槽都不存在，就返回全局默认配置
       if (!confirmBtn && !this.$scopedSlots.confirmBtn) {
-        return <TButton class={className} props={{ ...defaultButtonProps }} />;
+        return <TButton class={className} props={{ loading: confirmLoading, ...defaultButtonProps }} />;
       }
       // 如果属性存在，优先返回属性配置
       if (confirmBtn && ['string', 'object'].includes(typeof confirmBtn)) {
-        return this.getButtonByProps(confirmBtn as string | ButtonProps, defaultButtonProps, className);
+        return this.getButtonByProps(confirmBtn as string | ButtonProps, {
+          defaultButtonProps,
+          className,
+          confirmLoading,
+        });
       }
       // 渲染插槽 或 function 类型的 confirmBtn，属性优先级更高
       return renderTNodeJSX(this, 'confirmBtn');
@@ -60,18 +65,29 @@ export default Vue.extend({
       }
       // 如果属性存在，优先返回属性配置
       if (cancelBtn && ['string', 'object'].includes(typeof cancelBtn)) {
-        return this.getButtonByProps(cancelBtn as string | ButtonProps, defaultButtonProps);
+        return this.getButtonByProps(cancelBtn as string | ButtonProps, { defaultButtonProps });
       }
       // 渲染插槽 或 function 类型的 confirmBtn，属性优先级更高
       return renderTNodeJSX(this, 'cancelBtn');
     },
 
-    getButtonByProps(button: string | ButtonProps, defaultButton: ButtonProps, className?: ClassName) {
-      let newOptions = defaultButton;
+    getButtonByProps(
+      button: string | ButtonProps,
+      params: {
+        defaultButtonProps: ButtonProps;
+        className?: ClassName;
+        confirmLoading?: boolean;
+      },
+    ) {
+      const { defaultButtonProps, className, confirmLoading } = params;
+      let newOptions = defaultButtonProps;
       if (isString(button)) {
         newOptions.content = button;
       } else if (isObject(button)) {
         newOptions = { ...newOptions, ...button };
+      }
+      if (confirmLoading !== undefined) {
+        newOptions.loading = confirmLoading;
       }
       return <TButton class={className} props={newOptions} />;
     },

@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <t-space direction="vertical">
     <t-tree :data="items" hover :expand-level="1" />
-  </div>
+  </t-space>
 </template>
 
 <script>

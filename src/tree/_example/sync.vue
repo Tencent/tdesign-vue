@@ -1,31 +1,36 @@
 <template>
-  <t-space :size="32" direction="vertical">
-    <t-space :size="16" direction="vertical" style="width: 100%">
+  <t-space direction="vertical">
+    <t-space>
       <t-input-adornment prepend="checked:">
         <t-input :value="allChecked" @change="onAllCheckedInput" />
       </t-input-adornment>
+    </t-space>
+    <t-space>
       <t-input-adornment prepend="expanded:">
         <t-input :value="allExpanded" @change="onAllExpandedInput" />
       </t-input-adornment>
+    </t-space>
+    <t-space>
       <t-input-adornment prepend="actived:">
         <t-input :value="allActived" @change="onAllActivedInput" />
       </t-input-adornment>
     </t-space>
     <t-tree
+      v-model="checked"
+      :expanded.sync="expanded"
+      :actived.sync="actived"
       :data="items"
       checkable
       activable
       :expand-on-click-node="false"
       :active-multiple="false"
-      :expanded.sync="expanded"
-      :actived.sync="actived"
-      :value.sync="checked"
       :value-mode="valueMode"
     />
   </t-space>
 </template>
 
 <script>
+// 注意这个示例，同步属性的赋值方式与 vue3 api 不同
 export default {
   data() {
     return {

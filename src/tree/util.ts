@@ -1,8 +1,7 @@
-import { SetupContext } from '@vue/composition-api';
 import camelCase from 'lodash/camelCase';
+import { TypeVNode, TypeSetupContext, isVueNext } from './adapt';
 import {
-  TypeTreeProps,
-  TypeVNode,
+  TreeProps,
   TypeTreeStore,
   TypeTreeNode,
   TypeMark,
@@ -10,15 +9,18 @@ import {
   TypeTNodeProp,
   TypeGetTNodeOption,
   TypeTargetNode,
-} from './interface';
+} from './tree-types';
 
-export function emitEvent<T extends any[]>(props: TypeTreeProps, context: SetupContext, evtName: string, ...args: T) {
+export function emitEvent<T extends any[]>(props: TreeProps, context: TypeSetupContext, evtName: string, ...args: T) {
   const apiName = camelCase(`on-${evtName}`);
   evtName.replace(/^on/, '').toLowerCase();
   if (typeof props[apiName] === 'function') {
     props[apiName](...args);
   }
-  context.emit(evtName, ...args);
+  if (!isVueNext) {
+    // vue3 调用 props.onClick 时就已经派发了事件了
+    context.emit(evtName, ...args);
+  }
 }
 
 export function getParentsToRoot(element?: HTMLElement, root?: HTMLElement): HTMLElement[] {

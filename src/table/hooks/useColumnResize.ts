@@ -9,7 +9,7 @@ import {
   ref, Ref, reactive, onMounted,
 } from '@vue/composition-api';
 import isNumber from 'lodash/isNumber';
-import { BaseTableCol, TableRowData } from '../type';
+import { BaseTableCol, TableRowData, TdBaseTableProps } from '../type';
 import { on, off } from '../../utils/dom';
 
 const DEFAULT_MIN_WIDTH = 80;
@@ -28,6 +28,7 @@ export default function useColumnResize(params: {
   updateThWidthList: (data: { [colKey: string]: number }) => void;
   setTableElmWidth: (width: number) => void;
   updateTableAfterColumnResize: () => void;
+  onColumnResizeChange: TdBaseTableProps['onColumnResizeChange'];
 }) {
   const {
     isWidthOverflow,
@@ -37,6 +38,7 @@ export default function useColumnResize(params: {
     updateThWidthList,
     setTableElmWidth,
     updateTableAfterColumnResize,
+    onColumnResizeChange,
   } = params;
   const resizeLineRef = ref<HTMLDivElement>();
   const effectColMap = ref<{ [colKey: string]: any }>({});
@@ -106,7 +108,7 @@ export default function useColumnResize(params: {
   // 频繁事件，仅用于计算是否在表头显示拖拽鼠标形态
   const onColumnMouseover = (e: MouseEvent, col: BaseTableCol<TableRowData>) => {
     // calculate mouse cursor before drag start
-    if (!resizeLineRef.value || resizeLineParams.isDragging) return;
+    if (!resizeLineRef.value || resizeLineParams.isDragging || !e.target) return;
     const target = (e.target as HTMLElement).closest('th');
     // 判断是否为叶子阶段，仅叶子结点允许拖拽
     const colKey = target.getAttribute('data-colkey');
@@ -318,6 +320,7 @@ export default function useColumnResize(params: {
       off(document, 'mousemove', onDragOver);
       document.onselectstart = originalSelectStart;
       document.ondragstart = originalDragStart;
+      onColumnResizeChange?.({ columnsWidth: newThWidthList });
     };
 
     // 注意前后两列最小和最大宽度限制

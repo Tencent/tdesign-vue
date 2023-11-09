@@ -1,12 +1,20 @@
 import upperFirst from 'lodash/upperFirst';
 import isFunction from 'lodash/isFunction';
-import { watch, toRefs, defineComponent } from '@vue/composition-api';
-import TreeNode from '../_common/js/tree/tree-node';
+import {
+  defineComponent,
+  TreeNode,
+  useConfig,
+  usePrefixClass,
+  TypeTreeOptionData,
+  TypeTNodeReturnValue,
+  TypeCreateElement,
+  TransitionGroup,
+  getCreateElement,
+  getScopedSlots,
+  TypeStyles,
+} from './adapt';
 import props from './props';
-import { useConfig, usePrefixClass } from '../hooks/useConfig';
-import { renderTNodeJSX } from '../utils/render-tnode';
-import { TNodeReturnValue, TreeOptionData } from '../common';
-import { TreeNodeValue, TreeNodeState, TypeTreeNodeModel } from './interface';
+import { TreeNodeValue, TreeNodeState, TypeTreeNodeModel } from './tree-types';
 import useTreeStore from './hooks/useTreeStore';
 import useTreeStyles from './hooks/useTreeStyles';
 import useTreeState from './hooks/useTreeState';
@@ -14,6 +22,7 @@ import useTreeAction from './hooks/useTreeAction';
 import useTreeScroll from './hooks/useTreeScroll';
 import useTreeNodes from './hooks/useTreeNodes';
 import useDragHandle from './hooks/useDragHandle';
+import { renderTNodeJSX } from '../utils/render-tnode';
 import { getNode } from './util';
 
 // 2022.11.02 tabliang 备注
@@ -37,39 +46,19 @@ export default defineComponent({
     const { t, global } = useConfig('tree');
     const classPrefix = usePrefixClass();
     const componentName = usePrefixClass('tree');
-    const refProps = toRefs(props);
-    const { store, rebuild, updateStoreConfig } = useTreeStore(props, context);
 
     // 用于 hooks 传递数据
-    const { state, treeContentRef, isScrolling } = useTreeState(props, store);
+    const { state } = useTreeState(props, context);
+    const { treeContentRef, isScrolling } = state;
+    const { store, updateStoreConfig, rebuild } = useTreeStore(state);
 
-    useDragHandle(props, context, state);
-    const { setActived, setExpanded, setChecked } = useTreeAction(props, context, state);
-    const { onInnerVirtualScroll, virtualConfig } = useTreeScroll(props, context, state);
-    const { renderTreeNodes, nodesEmpty } = useTreeNodes(props, context, state);
+    useDragHandle(state);
+    const { setActived, setExpanded, setChecked } = useTreeAction(state);
+    const { onInnerVirtualScroll, virtualConfig } = useTreeScroll(state);
+    const { renderTreeNodes, nodesEmpty } = useTreeNodes(state);
     const {
       treeClasses, treeContentStyles, scrollStyles, cursorStyles,
-    } = useTreeStyles(props, state);
-
-    watch(refProps.data, (list) => {
-      rebuild(list);
-    });
-    watch(refProps.keys, (keys) => {
-      store.setConfig({
-        keys,
-      });
-    });
-    watch(refProps.value, (nVal, previousVal) => {
-      if (nVal.join() === previousVal?.join()) return;
-      store.replaceChecked(nVal);
-    });
-    watch(refProps.expanded, (nVal) => {
-      store.replaceExpanded(nVal);
-    });
-    watch(refProps.actived, (nVal, previousVal) => {
-      if (nVal.join() === previousVal?.join()) return;
-      store.replaceActived(nVal);
-    });
+    } = useTreeStyles(state);
 
     // 不想暴露给用户的属性与方法，统一挂载到 setup 返回的对象上
     // 实例上无法直接访问这些方法与属性
@@ -83,6 +72,7 @@ export default defineComponent({
       treeClasses,
       treeContentRef,
 
+      rebuild,
       updateStoreConfig,
       setActived,
       setExpanded,
@@ -99,9 +89,18 @@ export default defineComponent({
       scrollToElement: virtualConfig.scrollToElement,
     };
   },
+
+  watch: {
+    // 实测发现，composition api 中的 refsProps watch ，回调时间迟于 $nextTick 回调
+    // 因此改为在这里绑定 data 属性监听，实测这里的 watch 回调，早于 $nextTick 回调发生
+    data(list) {
+      this.rebuild(list);
+    },
+  },
   // 在 methods 提供公共方法
   // 实例上可以直接访问
   methods: {
+    // 设置目标节点状态
     setItem(value: TreeNodeValue, options: TreeNodeState): void {
       const node: TreeNode = this.store.getNode(value);
       const spec = options;
@@ -114,22 +113,27 @@ export default defineComponent({
             const methodName = `set${upperFirst(name)}`;
             const setupMethod = this[methodName];
             if (isFunction(setupMethod)) {
-              setupMethod(node, val);
+              setupMethod.call(this, node, val);
             }
           }
         });
         node.set(spec);
       }
     },
+    // 获取目标节点
     getItem(value: TreeNodeValue): TypeTreeNodeModel {
       const node: TreeNode = this.store.getNode(value);
       return node?.getModel();
     },
+    // 无 value 参数: 获取 tree 所有节点，一维结构
+    // 传递 value 参数: 获取节点值对应的目标节点下，包含自己在内的所有子节点
     getItems(value?: TreeNodeValue): TypeTreeNodeModel[] {
       const nodes = this.store.getNodes(value);
       return nodes.map((node: TreeNode) => node.getModel());
     },
-    appendTo(para?: TreeNodeValue, item?: TreeOptionData | TreeOptionData[]) {
+    // 将节点数据插入到目标节点
+    // 无目标节点，则插入为根节点
+    appendTo(para?: TreeNodeValue, item?: TypeTreeOptionData | TypeTreeOptionData[]) {
       const { store } = this;
       let list = [];
       if (Array.isArray(item)) {
@@ -147,7 +151,8 @@ export default defineComponent({
         }
       });
     },
-    insertBefore(value: TreeNodeValue, item: TreeOptionData) {
+    // 在指定节点之前插入单个节点数据
+    insertBefore(value: TreeNodeValue, item: TypeTreeOptionData) {
       const { store } = this;
       const val = item?.value || '';
       const node = getNode(store, val);
@@ -157,7 +162,8 @@ export default defineComponent({
         store.insertBefore(value, item);
       }
     },
-    insertAfter(value: TreeNodeValue, item: TreeOptionData) {
+    // 在指定节点之后插入单个节点数据
+    insertAfter(value: TreeNodeValue, item: TypeTreeOptionData) {
       const { store } = this;
       const val = item?.value || '';
       const node = getNode(store, val);
@@ -167,20 +173,25 @@ export default defineComponent({
         store.insertAfter(value, item);
       }
     },
+    // 移除目标节点
     remove(value?: TreeNodeValue) {
       return this.store.remove(value);
     },
+    // 获取节点在当前层级的 index
     getIndex(value: TreeNodeValue): number {
       return this.store.getNodeIndex(value);
     },
+    // 获取父节点
     getParent(value: TreeNodeValue): TypeTreeNodeModel {
       const node = this.store.getParent(value);
       return node?.getModel();
     },
+    // 获取父节点列表
     getParents(value: TreeNodeValue): TypeTreeNodeModel[] {
       const nodes = this.store.getParents(value);
       return nodes.map((node: TreeNode) => node.getModel());
     },
+    // 获取路径节点列表
     getPath(value: TreeNodeValue): TypeTreeNodeModel[] {
       const node = this.store.getNode(value);
       let pathNodes: TypeTreeNodeModel[] = [];
@@ -189,8 +200,48 @@ export default defineComponent({
       }
       return pathNodes;
     },
+    // 提供树结构原始数据
+    getTreeData(value?: TreeNodeValue): TypeTreeOptionData[] {
+      let list: TreeNode[] = [];
+      if (value) {
+        const node = this.store.getNode(value);
+        if (!node) return [];
+        list = this.store.getNodes(value);
+      } else {
+        list = this.store.getNodes();
+      }
+      // 一维结构树节点转树结构数据
+      const nodeMap = {};
+      const treeNodes: TypeTreeOptionData[] = [];
+      list.forEach((item: TreeNode) => {
+        const { value } = item;
+        const itemData = {
+          ...item.data,
+          value,
+        };
+        delete itemData.children;
+        nodeMap[value] = itemData;
+        const parent = item.getParent();
+        if (!parent) {
+          // 是根节点
+          treeNodes.push(itemData);
+        } else {
+          const parentData = nodeMap[parent.value];
+          if (!parentData) {
+            // 为目标节点范围内的根节点
+            treeNodes.push(itemData);
+          } else {
+            if (!Array.isArray(parentData.children)) {
+              parentData.children = [];
+            }
+            parentData.children.push(itemData);
+          }
+        }
+      });
+      return treeNodes;
+    },
   },
-  render(h) {
+  render(h: TypeCreateElement) {
     const {
       state,
       treeClasses,
@@ -204,20 +255,22 @@ export default defineComponent({
       cursorStyles,
     } = this;
 
+    const createElement = getCreateElement(h);
+
+    const { scope, allNodes, refProps } = state;
+    // 更新 scopedSlots
+    scope.scopedSlots = getScopedSlots(this);
+
     updateStoreConfig();
 
-    const { scope } = state;
-    // 更新 scopedSlots
-    scope.scopedSlots = this.$scopedSlots;
-
-    const treeNodeViews = renderTreeNodes(h);
+    const treeNodeViews = renderTreeNodes(createElement);
     const cname = this.componentName;
     const isVirtual = virtualConfig.isVirtualScroll.value;
 
     // 空数据判定
-    let emptyNode: TNodeReturnValue = null;
+    let emptyNode: TypeTNodeReturnValue = null;
     if (nodesEmpty) {
-      const useLocale = !this.empty && !this.$scopedSlots.empty;
+      const useLocale = !this.empty && !this.$slots.empty;
       const emptyContent = useLocale ? this.t(this.global.empty) : renderTNodeJSX(this, 'empty');
       emptyNode = <div class={`${cname}__empty`}>{emptyContent}</div>;
     } else if (treeNodeViews.length <= 0) {
@@ -232,7 +285,7 @@ export default defineComponent({
 
     let treeNodeList = null;
     if (!transition || (isVirtual && isScrolling)) {
-      // 关闭动画时，列表不使用 transition-group 以启用更高的性能
+      // vue3 不使用 transition group 会导致展开收起动作异常
       treeNodeList = (
         <div class={`${cname}__list`} style={scrollStyles}>
           {treeNodeViews}
@@ -241,7 +294,7 @@ export default defineComponent({
     } else {
       // 启用动画时，需要确保滚动中动画样式失效
       treeNodeList = (
-        <transition-group
+        <TransitionGroup
           tag="div"
           class={`${cname}__list`}
           enter-active-class={`${cname}__item--enter-active`}
@@ -249,19 +302,28 @@ export default defineComponent({
           style={scrollStyles}
         >
           {treeNodeViews}
-        </transition-group>
+        </TransitionGroup>
       );
     }
 
+    const topValue = (allNodes.value?.filter((node) => node.visible).length ?? 0) * (refProps.scroll.value?.rowHeight ?? 34);
+    const placeholderStyles: TypeStyles = {
+      width: '1px',
+      height: '1px',
+      opacity: 0,
+      pointerEvents: 'none',
+      position: 'absolute',
+      left: 0,
+      top: `${topValue}px`,
+    };
+
+    const placeholderEl = <div style={placeholderStyles} />;
+
     const treeNode = (
-      <div
-        class={treeClasses}
-        ref="treeContentRef"
-        on={{ scroll: this.onInnerVirtualScroll }}
-        style={treeContentStyles}
-      >
+      <div class={treeClasses} ref="treeContentRef" onScroll={this.onInnerVirtualScroll} style={treeContentStyles}>
         {isVirtual && <div class={`${cname}__vscroll-cursor`} style={cursorStyles} />}
         {emptyNode || treeNodeList}
+        {isVirtual && placeholderEl}
       </div>
     );
 

@@ -6,10 +6,8 @@ import isObject from 'lodash/isObject';
 import pick from 'lodash/pick';
 import { SelectInputCommonProperties } from './interface';
 import { TdSelectInputProps } from './type';
-
-import Input, { InputValue } from '../input';
+import Input, { InputProps, InputValue } from '../input';
 import Loading from '../loading';
-
 import { useTNodeJSX } from '../hooks/tnode';
 import { usePrefixClass } from '../hooks/useConfig';
 import useDefaultValue from '../hooks/useDefaultValue';
@@ -39,7 +37,6 @@ function getInputValue(value: TdSelectInputProps['value'], keys: TdSelectInputPr
 
 export default function useSingle(props: TdSelectInputProps, context: SetupContext) {
   const instance = getCurrentInstance();
-
   const { value, keys, inputValue: propsInputValue } = toRefs(props);
   const classPrefix = usePrefixClass();
 
@@ -51,6 +48,7 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
     'input-change',
   );
 
+  const isSingleFocus = ref(props.autofocus);
   const inputRef = ref();
   const renderTNode = useTNodeJSX();
 
@@ -67,6 +65,32 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
     if (props.allowInput) {
       setInputValue(value, { ...context, trigger: 'input' });
     }
+  };
+
+  const onEnter: InputProps['onEnter'] = (val, context) => {
+    props.onEnter?.(value.value, { ...context, inputValue: val });
+    instance.emit('enter', value.value, { ...context, inputValue: val });
+  };
+
+  const onFocus: InputProps['onFocus'] = (val, context) => {
+    isSingleFocus.value = true;
+    props.onFocus?.(value.value, { ...context, inputValue: val });
+    instance.emit('focus', value.value, { ...context, tagInputValue: val });
+  };
+
+  const onPaste: InputProps['onPaste'] = (context) => {
+    props.onPaste?.(context);
+    instance.emit('paste', context);
+  };
+
+  const onMouseenter: InputProps['onMouseenter'] = (context) => {
+    props.onMouseenter?.(context);
+    instance.emit('mouseenter', context);
+  };
+
+  const onMouseleave: InputProps['onMouseleave'] = (context: { e: MouseEvent }) => {
+    props.onMouseleave?.(context);
+    instance.emit('mouseenter', context);
   };
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -100,29 +124,12 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
         scopedSlots={slots}
         onChange={onInnerInputChange}
         onClear={onInnerClear}
-        onEnter={(val: InputValue, context: { e: KeyboardEvent }) => {
-          props.onEnter?.(value.value, { ...context, inputValue: val });
-          instance.emit('enter', value.value, { ...context, inputValue: val });
-        }}
+        onEnter={onEnter}
         // [Important Info]: SelectInput.blur is not equal to Input, example: click popup panel
-        onFocus={(val: InputValue, context: { e: MouseEvent }) => {
-          props.onFocus?.(value.value, { ...context, inputValue: val });
-          instance.emit('focus', value.value, { ...context, tagInputValue: val });
-          // TO Discuss: focus might not need to change input value. it will caught some curious errors in tree-select
-          // !popupVisible && setInputValue(getInputValue(value.value, keys.value), { ...context, trigger: 'focus' }); // 聚焦时拿到value
-        }}
-        onPaste={(context: { e: ClipboardEvent; pasteValue: string }) => {
-          props.onPaste?.(context);
-          instance.emit('paste', context);
-        }}
-        onMouseenter={(context: { e: MouseEvent }) => {
-          props.onMouseenter?.(context);
-          instance.emit('mouseenter', context);
-        }}
-        onMouseleave={(context: { e: MouseEvent }) => {
-          props.onMouseleave?.(context);
-          instance.emit('mouseenter', context);
-        }}
+        onFocus={onFocus}
+        onPaste={onPaste}
+        onMouseenter={onMouseenter}
+        onMouseleave={onMouseleave}
       />
     );
   };
@@ -131,6 +138,7 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
     inputRef,
     commonInputProps,
     singleInputValue: inputValue,
+    isSingleFocus,
     onInnerClear,
     renderSelectSingle,
   };

@@ -83,20 +83,28 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     isNormal(): boolean {
       return this.mode === 'normal';
     },
+    isFullScreen(): boolean {
+      return this.mode === 'full-screen';
+    },
     maskClass(): ClassName {
       return [`${this.componentName}__mask`, !this.showOverlay && `${this.classPrefix}-is-hidden`];
     },
     dialogClass(): ClassName {
       const dialogClass = [
         `${this.componentName}`,
-        `${this.componentName}--default`,
         `${this.componentName}__modal-${this.theme}`,
         this.isModeLess && this.draggable && `${this.componentName}--draggable`,
       ];
+      if (this.isFullScreen) {
+        dialogClass.push(`${this.componentName}__fullscreen`);
+      } else {
+        dialogClass.push(`${this.componentName}--default`);
+      }
       return dialogClass;
     },
     positionClass(): ClassName {
       if (this.isNormal) return [];
+      if (this.isFullScreen) return [`${this.componentName}__position_fullscreen`];
       const dialogClass = [
         `${this.componentName}__position`,
         !!this.top && `${this.componentName}--top`,
@@ -107,14 +115,6 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     wrapClass(): ClassName {
       return [!this.isNormal && `${this.componentName}__wrap`];
     },
-    bodyClass(): ClassName {
-      return [
-        `${this.componentName}__body`,
-        {
-          [`${this.componentName}__body--icon`]: this.theme !== 'default',
-        },
-      ];
-    },
     ctxClass(): ClassName {
       // dialog__ctx--fixed 绝对定位
       // dialog__ctx--absolute 挂载在attach元素上 相对定位
@@ -122,15 +122,15 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       return [
         `${this.componentName}__ctx`,
         {
-          [`${this.classPrefix}-dialog__ctx--fixed`]: this.mode === 'modal',
+          [`${this.classPrefix}-dialog__ctx--fixed`]: this.mode === 'modal' || this.isFullScreen,
           [`${this.classPrefix}-dialog__ctx--absolute`]: this.isModal && this.showInAttachedElement,
           [`${this.componentName}__ctx--modeless`]: this.isModeLess,
         },
       ];
     },
     positionStyle(): Styles {
+      if (this.isFullScreen) return {}; // 全屏模式，top属性不生效
       const topStyle = {} as Styles;
-
       if (this.top !== undefined) {
         // 判断是否时数字
         if (isNumber(this.top) && this.top < 0) {
@@ -142,43 +142,54 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       return topStyle;
     },
     dialogStyle(): Styles {
-      return { width: getCSSValue(this.width) };
+      return !this.isFullScreen ? { width: getCSSValue(this.width) } : {}; // width全屏模式不生效;
     },
   },
 
   watch: {
-    visible(value) {
-      if (value) {
-        this.animationEnd = false;
-        if (this.isModal && !this.showInAttachedElement && this.preventScrollThrough) {
-          document.head.appendChild(this.styleEl);
-
-          this.$nextTick(() => {
-            const target = this.$refs.dialog as HTMLElement;
-            if (mousePosition && target) {
-              target.style.transformOrigin = `${mousePosition.x - target.offsetLeft}px ${
-                mousePosition.y - target.offsetTop
-              }px`;
+    visible: {
+      handler(value) {
+        if (value) {
+          this.animationEnd = false;
+          if ((this.isModal && !this.showInAttachedElement) || this.isFullScreen) {
+            if (this.preventScrollThrough) {
+              this.$nextTick(() => {
+                document.head.appendChild(this.styleEl);
+              });
             }
+
+            this.$nextTick(() => {
+              const target = this.$refs.dialog as HTMLElement;
+              if (mousePosition && target) {
+                target.style.transformOrigin = `${mousePosition.x - target.offsetLeft}px ${
+                  mousePosition.y - target.offsetTop
+                }px`;
+              }
+            });
+          }
+          // 清除鼠标焦点 避免entry事件多次触发（按钮弹出弹窗 不移除焦点 立即按Entry按键 会造成弹窗关闭再弹出）
+          (document.activeElement as HTMLElement).blur();
+        } else {
+          this.clearStyleFunc();
+        }
+        // 多个dialog同时存在时使用esc关闭异常 (#1209)
+        this.$nextTick(() => {
+          this.storeUid(value);
+        });
+        this.addKeyboardEvent(value);
+        if (this.isModeLess && this.draggable) {
+          this.$nextTick(() => {
+            this.initDragEvent(value);
           });
         }
-        // 清除鼠标焦点 避免entry事件多次触发（按钮弹出弹窗 不移除焦点 立即按Entry按键 会造成弹窗关闭再弹出）
-        (document.activeElement as HTMLElement).blur();
-      } else {
-        this.clearStyleFunc();
-      }
-      // 多个dialog同时存在时使用esc关闭异常 (#1209)
-      this.storeUid(value);
-      this.addKeyboardEvent(value);
-      if (this.isModeLess && this.draggable) {
-        this.initDragEvent(value);
-      }
-      // 父元素为 display: none 时，需要更新子元素，避免 Dialog 前套 Table 组件时，固定列等特性失效
-      if (value && !this.destroyOnClose && requestAnimationFrame) {
-        requestAnimationFrame(() => {
-          updateElement(this);
-        });
-      }
+        // 父元素为 display: none 时，需要更新子元素，避免 Dialog 前套 Table 组件时，固定列等特性失效
+        if (value && !this.destroyOnClose && requestAnimationFrame) {
+          requestAnimationFrame(() => {
+            updateElement(this);
+          });
+        }
+      },
+      immediate: true,
     },
   },
   mounted() {
@@ -207,6 +218,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
   beforeDestroy() {
     this.addKeyboardEvent(false);
     this.destroySelf();
+    this.destroySelfStyle();
   },
 
   directives: {
@@ -217,19 +229,23 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     clearStyleFunc() {
       clearTimeout(this.timer);
       this.timer = setTimeout(() => {
-        this.destroySelf();
+        this.destroySelfStyle();
       }, 150);
     },
 
-    destroySelf() {
+    destroySelfStyle() {
       this.styleEl.parentNode?.removeChild?.(this.styleEl);
     },
 
+    destroySelf() {
+      this.$el.parentNode?.removeChild?.(this.$el);
+    },
+    // 多个dialog情况，若有些给了默认值true，出现ESC关闭不了弹窗问题解决
     storeUid(flag: boolean) {
       if (flag) {
         stack.push(this.uid);
       } else {
-        stack.pop();
+        stack.pop(this.uid);
       }
     },
     addKeyboardEvent(status: boolean) {
@@ -414,15 +430,37 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
           {this.getConfirmBtn({
             theme: this.theme,
             confirmBtn: this.confirmBtn,
+            confirmLoading: this.confirmLoading,
             globalConfirm: this.instanceGlobal?.confirm || this.global.confirm,
             globalConfirmBtnTheme: this.instanceGlobal?.confirmBtnTheme || this.global.confirmBtnTheme,
             className: `${this.componentName}__confirm`,
           })}
         </div>
       );
+      const headerClassName = this.isFullScreen
+        ? [`${this.componentName}__header`, `${this.componentName}__header--fullscreen`]
+        : `${this.componentName}__header`;
+      const closeClassName = this.isFullScreen
+        ? [`${this.componentName}__close`, `${this.componentName}__close--fullscreen`]
+        : `${this.componentName}__close`;
+      const bodyClassName = this.theme === 'default'
+        ? [`${this.componentName}__body`]
+        : [`${this.componentName}__body`, `${this.componentName}__body__icon`];
+
+      const footerContent = renderTNodeJSX(this, 'footer', defaultFooter);
+
+      if (this.isFullScreen && footerContent) {
+        bodyClassName.push(`${this.componentName}__body--fullscreen`);
+      } else if (this.isFullScreen) {
+        bodyClassName.push(`${this.componentName}__body--fullscreen--without-footer`);
+      }
+      const footerClassName = this.isFullScreen
+        ? [`${this.componentName}__footer`, `${this.componentName}__footer--fullscreen`]
+        : `${this.componentName}__footer`;
+
       const footer = this.footer ? (
-        <div class={`${this.componentName}__footer`} onmousedown={this.onStopDown}>
-          {renderTNodeJSX(this, 'footer', defaultFooter)}
+        <div class={footerClassName} onmousedown={this.onStopDown}>
+          {footerContent}
         </div>
       ) : null;
       // 此处获取定位方式 top 优先级较高 存在时 默认使用top定位
@@ -431,19 +469,19 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
         <div class={this.wrapClass}>
           <div class={this.positionClass} style={this.positionStyle} onClick={this.overlayAction} ref="dialogPosition">
             <div key="dialog" ref="dialog" class={this.dialogClass} style={this.dialogStyle}>
-              <div class={`${this.componentName}__header`} onmousedown={this.onStopDown}>
+              <div class={headerClassName} onmousedown={this.onStopDown}>
                 <div class={`${this.componentName}__header-content`}>
                   {this.getIcon()}
                   {renderTNodeJSX(this, 'header', defaultHeader)}
                 </div>
                 {this.closeBtn ? (
-                  <span class={`${this.componentName}__close`} onClick={this.closeBtnAction}>
+                  <span class={closeClassName} onClick={this.closeBtnAction}>
                     {renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}
                   </span>
                 ) : null}
               </div>
 
-              <div class={this.bodyClass} onmousedown={this.onStopDown}>
+              <div class={bodyClassName} onmousedown={this.onStopDown}>
                 {body}
               </div>
               {footer}
@@ -455,7 +493,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
   },
 
   render() {
-    const maskView = this.isModal && <div key="mask" class={this.maskClass}></div>;
+    const maskView = (this.isModal || this.isFullScreen) && <div key="mask" class={this.maskClass}></div>;
     const dialogView = this.renderDialog();
     const view = [maskView, dialogView];
     const ctxStyle = { zIndex: this.zIndex };

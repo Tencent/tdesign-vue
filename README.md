@@ -19,14 +19,14 @@
   </a>
 </p>
 
-English | [简体中文](./README-zh_CN.md) 
+English | [简体中文](./README-zh_CN.md)
 
 TDesign Vue is a UI component library for Vue 2 and desktop application.
 
 # 🎉 Features
 
 - Desktop application interaction
-- High quality UI components for Vue 2.x (< Vue 2.7)
+- High quality UI components for Vue 2.x
 - Consistent API and UI with TDesign component libraries for other frameworks
 - Dark mode and customizable theme
 - Support tree-shaking
@@ -34,7 +34,9 @@ TDesign Vue is a UI component library for Vue 2 and desktop application.
 # 📦 Installation
 
 ```shell
-npm i tdesign-vue
+npm i tdesign-vue  // for vue 2.6
+npm i tdesign-vue@naruto  // for vue 2.7
+
 ```
 
 # 🔨 Usage
@@ -57,9 +59,8 @@ Visit [TDesign Starter](https://tdesign.tencent.com/starter/vue/) to experience 
 # Browser Support
 
 | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/> IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Safari |
-| --- | --- | --- | --- |
-| Edge >=91 | Firefox >=83 | Chrome >=91 | Safari >=14.1 |
-
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Edge >=91                                                                                                                                                                                                        | Firefox >=83                                                                                                                                                                                                      | Chrome >=91                                                                                                                                                                                                   | Safari >=14.1                                                                                                                                                                                                 |
 
 Read our [browser compatibility](https://github.com/Tencent/tdesign/wiki/Browser-Compatibility) for more details.
 
@@ -74,6 +75,12 @@ TDesign also provides component libraries for other platforms and frameworks.
 # Contributing
 
 Contributing is welcome. Read [guidelines for contributing](https://github.com/Tencent/tdesign-vue/blob/develop/CONTRIBUTING.md) before submitting your [Pull Request](https://github.com/Tencent/tdesign-vue/pulls).
+
+# Feedback
+
+Create your [Github issues](https://github.com/Tencent/tdesign-vue/issues) or scan the QR code below to join our user groups
+
+<img src="https://oteam-tdesign-1258344706.cos.ap-guangzhou.myqcloud.com/site/doc/Vue2-IM.png" width="200" />
 
 # License
 

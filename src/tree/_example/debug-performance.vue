@@ -1,26 +1,27 @@
 <template>
-  <div class="tdesign-tree-demo tdesign-demo-performance">
-    <div class="operations">
+  <t-space direction="vertical">
+    <t-space>
       <t-input-adornment prepend="插入节点数量:">
-        <t-input v-model="insertCount" />
+        <t-input v-model="textInsertCount" />
       </t-input-adornment>
-    </div>
-    <div class="operations">
+    </t-space>
+    <t-space>
+      <span>展开动画:</span>
+      <t-switch v-model="transition" />
+    </t-space>
+    <t-space>
+      <span>显示连线:</span>
+      <t-switch v-model="showLine" />
+    </t-space>
+    <t-space>
+      <span>显示图标:</span>
+      <t-switch v-model="showIcon" />
+    </t-space>
+    <t-space>
       <t-button @click="append()">插入根节点</t-button>
-    </div>
-    <t-form labelWidth="150" style="max-width: 500px">
-      <t-form-item label="展开动画">
-        <t-switch v-model="transition" />
-      </t-form-item>
-      <t-form-item label="显示连线">
-        <t-switch v-model="showLine" />
-      </t-form-item>
-      <t-form-item label="显示图标">
-        <t-switch v-model="showIcon" />
-      </t-form-item>
-    </t-form>
-
+    </t-space>
     <t-tree
+      ref="tree"
       :data="items"
       hover
       activable
@@ -30,7 +31,6 @@
       :line="showLine"
       :icon="showIcon"
       :label="label"
-      ref="tree"
     >
       <template #operations="{ node }">
         <div class="tdesign-demo-block-row">
@@ -39,7 +39,7 @@
         </div>
       </template>
     </t-tree>
-  </div>
+  </t-space>
 </template>
 
 <script>
@@ -79,13 +79,19 @@ export default {
     return {
       index: 0,
       transition: true,
-      insertCount: 1,
+      textInsertCount: '1',
       useActived: false,
       expandParent: true,
       showLine: true,
       showIcon: true,
       items,
     };
+  },
+  computed: {
+    insertCount() {
+      const { textInsertCount } = this;
+      return parseInt(textInsertCount, 10) || 1;
+    },
   },
   methods: {
     label(createElement, node) {
@@ -118,21 +124,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.tdesign-tree-demo .t-tree {
-  margin-bottom: 20px;
-}
-.tdesign-tree-demo .title {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .tips {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .operations {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .t-form__item {
-  margin-bottom: 5px;
-}
-</style>

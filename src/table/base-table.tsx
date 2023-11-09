@@ -7,8 +7,11 @@ import {
   PropType,
   watch,
   onMounted,
+  toRefs,
 } from '@vue/composition-api';
 import pick from 'lodash/pick';
+import isFunction from 'lodash/isFunction';
+import get from 'lodash/get';
 import props from './base-table-props';
 import useTableHeader from './hooks/useTableHeader';
 import useColumnResize from './hooks/useColumnResize';
@@ -19,7 +22,7 @@ import useAffix from './hooks/useAffix';
 import Loading from '../loading';
 import TBody, { extendTableProps } from './tbody';
 import { BaseTableProps } from './interface';
-import { useTNodeJSX } from '../hooks/tnode';
+import { renderTNodeJSX, useElementLazyRender } from '../hooks';
 import useStyle, { formatCSSUnit } from './hooks/useStyle';
 import useClassName from './hooks/useClassName';
 import { useConfig } from '../config-provider/useConfig';
@@ -30,10 +33,10 @@ import TFoot from './tfoot';
 import log from '../_common/js/log';
 import { getIEVersion } from '../_common/js/utils/helper';
 import { getAffixProps } from './utils';
-import { Styles } from '../common';
+import { ComponentScrollToElementParams, Styles } from '../common';
 import { BaseTableCol, TableRowData } from './type';
 
-export const BASE_TABLE_EVENTS = ['page-change', 'cell-click', 'scroll', 'scrollX', 'scrollY'];
+export const BASE_TABLE_EVENTS = ['page-change', 'cell-click', 'scroll', 'scrollX', 'scrollY', 'column-resize-change'];
 export const BASE_TABLE_ALL_EVENTS = ROW_LISTENERS.map((t) => `row-${t}`).concat(BASE_TABLE_EVENTS);
 
 export interface TableListeners {
@@ -51,7 +54,7 @@ export default defineComponent({
   },
 
   setup(props: BaseTableProps, context: SetupContext) {
-    const renderTNode = useTNodeJSX();
+    const { lazyLoad } = toRefs(props);
     const tableRef = ref<HTMLDivElement>();
     const tableElmRef = ref<HTMLTableElement>();
     const tableBodyRef = ref<HTMLTableElement>();
@@ -65,7 +68,7 @@ export default defineComponent({
     const {
       tableClasses, sizeClassNames, tableContentStyles, tableElementStyles,
     } = useStyle(props);
-    const { global } = useConfig('table');
+    const { global } = useConfig('table', props.locale);
     const { isMultipleHeader, spansAndLeafNodes, thList } = useTableHeader(props);
     const finalColumns = computed(() => spansAndLeafNodes.value?.leafColumns || props.columns);
     const isIE = computed(() => getIEVersion() <= 11);
@@ -119,9 +122,16 @@ export default defineComponent({
       setTableContentRef,
     } = useAffix(props);
 
+    const { showElement } = useElementLazyRender(tableRef, lazyLoad);
+
     const {
       dataSource, innerPagination, isPaginateData, renderPagination,
     } = usePagination(props, context);
+
+    const onInnerResizeChange: BaseTableProps['onColumnResizeChange'] = (p) => {
+      props.onColumnResizeChange?.(p);
+      context.emit('column-resize-change', p);
+    };
 
     // 列宽拖拽逻辑
     const columnResizeParams = useColumnResize({
@@ -132,6 +142,7 @@ export default defineComponent({
       updateThWidthList,
       setTableElmWidth,
       updateTableAfterColumnResize,
+      onColumnResizeChange: onInnerResizeChange,
     });
     const { resizeLineRef, resizeLineStyle, setEffectColMap } = columnResizeParams;
 
@@ -264,9 +275,34 @@ export default defineComponent({
       addTableResizeObserver(tableRef.value);
     });
 
+    const tableData = computed(() => (isPaginateData.value ? dataSource.value : props.data));
+
+    const scrollToElement = (params: ComponentScrollToElementParams) => {
+      let { index } = params;
+      if (!index && index !== 0) {
+        if (!params.key) {
+          log.error('Table', 'scrollToElement: one of `index` or `key` must exist.');
+          return;
+        }
+        index = tableData.value?.findIndex((item) => get(item, props.rowKey) === params.key);
+        if (index < 0) {
+          log.error('Table', `${params.key} does not exist in data, check \`rowKey\` or \`data\` please.`);
+        }
+      }
+      virtualConfig.scrollToElement({ ...params, index });
+    };
+
+    watch(
+      [showElement],
+      ([showElement]) => {
+        context.emit('show-element-change', showElement);
+      },
+      { immediate: true },
+    );
+
     return {
       virtualConfig,
-      scrollToElement: virtualConfig.scrollToElement,
+      scrollToElement,
       columnResizable,
       thList,
       classPrefix,
@@ -311,9 +347,9 @@ export default defineComponent({
       horizontalScrollbarRef,
       tableBodyRef,
       showAffixPagination,
+      showElement,
       getListener,
       renderPagination,
-      renderTNode,
       onFixedChange,
       onHorizontalScroll,
       updateAffixHeaderOrFooter,
@@ -494,6 +530,9 @@ export default defineComponent({
   },
 
   render(h) {
+    if (!this.showElement) {
+      return <div ref="tableRef"></div>;
+    }
     const { rowAndColFixedPosition } = this;
     const data = this.isPaginateData ? this.dataSource : this.data;
     const columns = this.spansAndLeafNodes?.leafColumns || this.columns;
@@ -501,10 +540,12 @@ export default defineComponent({
       log.warn('Table', 'allowResizeColumnWidth is going to be deprecated, please use resizable instead.');
     }
 
-    // already support resize column for table-layout: auto
-    // if (this.columnResizable && this.tableLayout === 'auto') {
-    //   log.warn('Table', 'table-layout can not be `auto` for resizable column table, set `table-layout: fixed` please.');
-    // }
+    if (this.columnResizable && this.tableLayout === 'auto') {
+      log.warn(
+        'Table',
+        'table-layout can not be `auto`, cause you are using column resizable, set `table-layout: fixed` please.',
+      );
+    }
 
     const translate = `translate(0, ${this.virtualConfig.scrollHeight.value}px)`;
     const virtualStyle = {
@@ -576,20 +617,20 @@ export default defineComponent({
       </div>
     );
 
-    const customLoadingText = this.renderTNode('loading');
+    const getCustomLoadingText = isFunction(this.loading) ? this.loading : this.$scopedSlots.loading;
     const loadingContent = this.loading !== undefined && (
       <Loading
         loading={!!this.loading}
-        text={customLoadingText ? () => customLoadingText : undefined}
+        text={getCustomLoadingText}
         attach={this.tableRef ? () => this.tableRef : undefined}
         showOverlay
         props={{ size: 'small', ...this.loadingProps }}
       ></Loading>
     );
 
-    const topContent = this.renderTNode('topContent');
-    const bottomContent = this.renderTNode('bottomContent');
-    const pagination = (
+    const topContent = renderTNodeJSX(this, 'topContent');
+    const bottomContent = renderTNodeJSX(this, 'bottomContent');
+    const pagination = this.pagination ? (
       <div
         ref="paginationRef"
         class={this.tableBaseClass.paginationWrap}
@@ -597,7 +638,7 @@ export default defineComponent({
       >
         {this.renderPagination(h)}
       </div>
-    );
+    ) : null;
     const bottom = !!bottomContent && (
       <div ref="bottomContentRef" class={this.tableBaseClass.bottomContent}>
         {bottomContent}

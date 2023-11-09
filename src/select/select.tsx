@@ -62,7 +62,7 @@ export default defineComponent({
     FakeArrow,
     SelectPanel,
   },
-  setup(props: TdSelectProps) {
+  setup(props: TdSelectProps, ctx) {
     const { t, global } = useConfig('select');
     const renderTNode = useTNodeJSX();
     const instance = getCurrentInstance();
@@ -92,6 +92,7 @@ export default defineComponent({
     const keys = computed(() => ({
       label: props.keys?.label || 'label',
       value: props.keys?.value || 'value',
+      disabled: props.keys?.disabled || 'disabled',
     }));
     const { options: innerOptions, optionsMap, optionsList } = useSelectOptions(props, instance, keys);
 
@@ -278,10 +279,11 @@ export default defineComponent({
           collapsedSelectedItems: values
             .map((item: any) => {
               const tmpValue = typeof item === 'object' ? item[props.keys?.value || 'value'] : item;
-              return props.options.find((t: OptionData) => t.value === tmpValue);
+              return props.options?.find((t: OptionData) => t.value === tmpValue);
             })
             .slice(minCollapsedNum.value),
           count: values.length - minCollapsedNum.value,
+          onClose: (index: number) => removeTag(index),
         }
         : {};
     });
@@ -529,7 +531,6 @@ export default defineComponent({
         tInputValue.value && setTInputValue('');
       }
     });
-
     provide('tSelect', {
       size,
       multiple,
@@ -545,6 +546,7 @@ export default defineComponent({
       handleValueChange: setInnerValue,
       handlerInputChange: setTInputValue,
       handlePopupVisibleChange: setInnerPopupVisible,
+      isRemoteSearch: Boolean(props.onSearch || ctx.listeners?.search),
     });
 
     return {
@@ -639,7 +641,7 @@ export default defineComponent({
               value: this.displayText,
               valueDisplay: () => renderTNode('valueDisplay', { params: this.valueDisplayParams }),
               clearable: this.clearable,
-              disabled: this.disabled,
+              disabled: this.isDisabled,
               label: this.renderLabel,
               suffixIcon: this.renderSuffixIcon,
               placeholder: this.placeholderText,

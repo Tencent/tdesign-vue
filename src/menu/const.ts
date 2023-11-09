@@ -1,6 +1,12 @@
 import { Ref } from '@vue/composition-api';
+import { TNode } from '../common';
 import { MenuValue } from './type';
 import VMenu from './v-menu';
+
+export interface TdMenuItem {
+  value: MenuValue;
+  label: TNode;
+}
 
 export type TdOpenType = 'add' | 'remove';
 export interface TdMenuInterface {
@@ -11,11 +17,15 @@ export interface TdMenuInterface {
   theme?: Ref<string>;
   isHead: boolean;
   vMenu?: VMenu;
+  collapsed?: Ref<boolean>;
   select: (val: MenuValue) => void;
   open?: (val: MenuValue, type?: TdOpenType) => boolean | void;
 }
 
 export interface TdSubMenuInterface {
-  value: MenuValue;
+  value?: MenuValue;
   hasIcon?: boolean;
+  addMenuItem?: (item: TdMenuItem) => void;
+  setSubPopup?: (popupRef: HTMLElement) => void;
+  closeParentPopup?: (e: MouseEvent) => void;
 }

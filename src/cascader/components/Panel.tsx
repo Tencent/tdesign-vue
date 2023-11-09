@@ -5,13 +5,14 @@ import { TreeNode, CascaderContextType, CascaderValue } from '../interface';
 import CascaderProps from '../props';
 import { usePrefixClass, useConfig } from '../../hooks/useConfig';
 import { useTNodeDefault } from '../../hooks/tnode';
-
+import { getDefaultNode } from '../../hooks/render-tnode';
 import { getPanels } from '../core/helper';
 import { expendClickEffect, valueChangeEffect } from '../core/effect';
 
 export default defineComponent({
   name: 'TCascaderSubPanel',
   props: {
+    option: CascaderProps.option,
     empty: CascaderProps.empty,
     trigger: CascaderProps.trigger,
     onChange: CascaderProps.onChange,
@@ -28,7 +29,6 @@ export default defineComponent({
     const {
       valueType, cascaderValue, treeStore, multiple,
     } = props.cascaderContext;
-    const { config } = treeStore;
 
     const panels = computed(() => getPanels(props.cascaderContext.treeNodes));
 
@@ -38,12 +38,11 @@ export default defineComponent({
     };
 
     // 异步加载回显时默认触发第一个值
-    if (config.load && valueType === 'full' && (cascaderValue as Array<CascaderValue>).length > 0) {
+    if (treeStore?.config?.load && valueType === 'full' && (cascaderValue as Array<CascaderValue>).length > 0) {
       const firstValue = multiple ? cascaderValue[0][0] : cascaderValue[0];
       const firstExpandNode = treeStore.nodes.find((node: TreeNode) => node.value === firstValue);
       handleExpand(firstExpandNode, 'click');
     }
-
     return {
       global,
       panels,
@@ -58,31 +57,39 @@ export default defineComponent({
       global, COMPONENT_NAME, handleExpand, renderTNodeJSXDefault, cascaderContext, panels, emit,
     } = this;
 
-    const renderItem = (node: TreeNode) => (
-      <Item
-        key={node.value}
-        node={node}
-        cascaderContext={cascaderContext}
-        {...{
-          props: {
-            node,
-            cascaderContext,
-            onClick: () => {
-              emit('click', node.value, node);
-              handleExpand(node, 'click');
+    const renderItem = (node: TreeNode, index: number) => {
+      const optionChild = node.data.content
+        ? getDefaultNode(node.data.content(this.$createElement))
+        : renderTNodeJSXDefault('option', {
+          params: { item: node.data, index },
+        });
+      return (
+        <Item
+          key={node.value}
+          node={node}
+          cascaderContext={cascaderContext}
+          {...{
+            props: {
+              node,
+              optionChild,
+              cascaderContext,
+              onClick: () => {
+                emit('click', node.value, node);
+                handleExpand(node, 'click');
+              },
+              onMouseenter: () => {
+                handleExpand(node, 'hover');
+              },
+              onChange: () => {
+                valueChangeEffect(node, cascaderContext);
+              },
             },
-            onMouseenter: () => {
-              handleExpand(node, 'hover');
-            },
-            onChange: () => {
-              valueChangeEffect(node, cascaderContext);
-            },
-          },
-        }}
-      />
-    );
+          }}
+        />
+      );
+    };
 
-    const renderList = (treeNodes: TreeNode[], isFilter = false, segment = true, key = '1') => (
+    const renderList = (treeNodes: TreeNode[], isFilter = false, segment = true, index = 1) => (
       <ul
         class={[
           `${COMPONENT_NAME}__menu`,
@@ -92,9 +99,9 @@ export default defineComponent({
             [`${COMPONENT_NAME}__menu--filter`]: isFilter,
           },
         ]}
-        key={key}
+        key={`${COMPONENT_NAME}__menu${index}`}
       >
-        {treeNodes.map((node: TreeNode) => renderItem(node))}
+        {treeNodes.map((node: TreeNode) => renderItem(node, index))}
       </ul>
     );
 
@@ -109,7 +116,7 @@ export default defineComponent({
       const { inputVal, treeNodes } = cascaderContext;
       return inputVal
         ? renderList(treeNodes, true)
-        : panels.map((treeNodes, index: number) => renderList(treeNodes, false, index !== panels.length - 1, `${COMPONENT_NAME}__menu${index}`));
+        : panels.map((treeNodes, index: number) => renderList(treeNodes, false, index !== panels.length - 1, index));
     };
 
     let content;
@@ -121,7 +128,6 @@ export default defineComponent({
     } else {
       content = panels.length ? renderPanels() : renderEmpty();
     }
-
     return (
       <div class={[`${COMPONENT_NAME}__panel`, { [`${COMPONENT_NAME}--normal`]: panels.length && !this.loading }]}>
         {content}

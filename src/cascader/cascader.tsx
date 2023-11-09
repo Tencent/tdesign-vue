@@ -11,7 +11,7 @@ import props from './props';
 
 import { useCascaderContext } from './hooks';
 import {
-  CascaderValue, CascaderKeysType, TdSelectInputProps, TdCascaderProps,
+  CascaderValue, TreeKeysType, TdSelectInputProps, TdCascaderProps,
 } from './interface';
 import { useConfig, usePrefixClass, useCommonClassName } from '../hooks/useConfig';
 import { PopupVisibleChangeContext } from '../popup';
@@ -102,7 +102,7 @@ export default defineComponent({
 
     const renderCollapsedItems = () => {
       const cascaderValue = this.innerValue || [];
-      const keys = (this.keys as CascaderKeysType) || DEFAULT_KEYS;
+      const keys = (this.keys as TreeKeysType) || DEFAULT_KEYS;
       const value = Array.isArray(cascaderValue) ? cascaderValue : [cascaderValue];
       const cascaderOptions = value.map((item) => {
         const tmpValue = typeof item === 'object' ? item[keys.value] : item;
@@ -176,7 +176,7 @@ export default defineComponent({
               (this.selectInputProps as TdSelectInputProps)?.onPopupVisibleChange?.(val, context);
             },
             onBlur: (val: CascaderValue, context: SelectInputFocusContext) => {
-              const ctx = { value: cascaderContext.value, e: context.e };
+              const ctx = { value: cascaderContext.value, inputValue: context.inputValue || '', e: context.e };
               this.onBlur?.(ctx);
               emit('blur', ctx);
               (this.selectInputProps as TdSelectInputProps)?.onBlur?.(val, context);
@@ -204,17 +204,19 @@ export default defineComponent({
         scopedSlots={{
           panel: () => (
             <Panel
+              option={this.option}
               empty={this.empty}
               trigger={this.trigger}
               loading={this.loading}
               loadingText={this.loadingText}
               cascaderContext={cascaderContext}
-              scopedSlots={{ empty: slots.empty, loadingText: slots.loadingText }}
+              scopedSlots={{ option: slots.option, empty: slots.empty, loadingText: slots.loadingText }}
             />
           ),
           tips: slots.tips,
           tag: slots.tag,
           suffix: slots.suffix,
+          label: slots.label,
         }}
       />
     );

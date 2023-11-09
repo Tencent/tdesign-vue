@@ -18,6 +18,8 @@ import { renderTNodeJSX } from '../utils/render-tnode';
 import FormItem from '../form/form-item';
 import log from '../_common/js/log';
 
+const ANIMATION_TIME = 100;
+
 function getValidAttrs(obj: object): object {
   const newObj = {};
   Object.keys(obj).forEach((key) => {
@@ -28,12 +30,15 @@ function getValidAttrs(obj: object): object {
   return newObj;
 }
 
-interface InputInstance extends Vue {
+export interface InputParentInjectInstance extends Vue {
   composing: boolean;
   tFormItem: InstanceType<typeof FormItem>;
 }
 
-export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input'), getGlobalIconMixins()).extend({
+export default mixins(
+  getConfigReceiverMixins<InputParentInjectInstance, InputConfig>('input'),
+  getGlobalIconMixins(),
+).extend({
   name: 'TInput',
   inheritAttrs: false,
 
@@ -64,8 +69,10 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       inputValue: this.value,
       composingRef: false,
       composingRefValue: this.value,
-      resizeObserver: null as ResizeObserver,
       preValue: this.value,
+      timer: null,
+      observerTimer: null,
+      containerObserver: null as ResizeObserver,
     };
   },
   computed: {
@@ -77,7 +84,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     },
     showClear(): boolean {
       return (
-        ((this.value && !this.disabled && this.clearable && !this.readonly) || this.showClearIconOnEmpty)
+        ((this.value && !this.tDisabled && this.clearable && !this.readonly) || this.showClearIconOnEmpty)
         && this.isHover
       );
     },
@@ -186,7 +193,6 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
   },
 
   created() {
-    this.composing = false;
     if (this.autoWidth) {
       this.addListeners();
     }
@@ -200,12 +206,11 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
   },
 
   mounted() {
-    this.addTableResizeObserver(this.$refs.inputPreRef as Element);
+    this.addResizeObserver();
   },
 
   beforeDestroy() {
-    this.resizeObserver?.unobserve(this.$refs.inputPreRef as Element);
-    this.resizeObserver?.disconnect();
+    this.cleanupObserver(this.containerObserver, this.$refs.inputRef as Element);
   },
 
   methods: {
@@ -221,14 +226,24 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         { immediate: true },
       );
     },
-    // 当元素默认为 display: none 状态，无法提前准确计算宽度，因此需要监听元素宽度变化。比如：Tabs 场景切换。
-    addTableResizeObserver(element: Element) {
-      // IE 11 以下使用设置 minWidth 兼容；IE 11 以上使用 ResizeObserver
-      if (typeof window.ResizeObserver === 'undefined' || !element || this.isIE) return;
-      this.resizeObserver = new window.ResizeObserver(() => {
-        this.updateInputWidth();
-      });
-      this.resizeObserver.observe(element);
+    addResizeObserver() {
+      if (this.$refs.inputRef) {
+        this.$watch(
+          () => this.$refs.inputRef,
+          () => {
+            this.cleanupObserver(this.containerObserver, this.$refs.inputRef as Element);
+            this.containerObserver = this.useResizeObserver(this.$refs.inputRef as HTMLElement, () => {
+              if (this.autoWidth) {
+                this.observerTimer = setTimeout(() => {
+                  this.updateInputWidth();
+                  clearTimeout(this.observerTimer);
+                }, ANIMATION_TIME);
+              }
+            });
+          },
+          { immediate: true },
+        );
+      }
     },
     renderIcon(
       h: CreateElement,
@@ -352,6 +367,10 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       this.$emit('click', { e });
       this.onClick?.({ e });
     },
+    throttleChangeCursorPos(ref: HTMLInputElement, pos: number) {
+      // eslint-disable-next-line no-param-reassign
+      (ref as HTMLInputElement).selectionEnd = pos;
+    },
     handleInput(e: InputEvent | CompositionEvent) {
       this.preValue = this.inputValue + e.data;
       let {
@@ -367,13 +386,15 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
         emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', val, { e, trigger: 'input' });
         // 受控，重要，勿删 input无法直接实现受控
         if (!this.isIE) {
+          // 修复在 popup 弹出层里输入时 光标异常的问题
           const inputRef = this.$refs.inputRef as HTMLInputElement;
           preCursorPos = inputRef.selectionStart;
-          setTimeout(() => {
-            inputRef.selectionEnd = preCursorPos;
+          // 处理连续快速重复输入异常的问题
+          clearTimeout(this.timer);
+          this.timer = setTimeout(() => {
+            this.throttleChangeCursorPos(inputRef, preCursorPos);
           });
         }
-
         this.$nextTick(() => {
           this.setInputValue(this.value);
         });
@@ -404,7 +425,7 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       if (!(maxlength || maxcharacter) || allowInputOverMax || !inputValue) return inputValue;
       if (maxlength) {
         // input value could be unicode 😊
-        return limitUnicodeMaxLength(inputValue, maxlength);
+        return limitUnicodeMaxLength(inputValue, Number(maxlength));
       }
       if (maxcharacter) {
         const r = getCharacterLength(inputValue, maxcharacter);
@@ -418,6 +439,25 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
       const error = this.innerStatus ? 'exceed-maximum' : undefined;
       this.onValidate?.({ error });
       this.$emit('validate', { error });
+    },
+
+    useResizeObserver(el: HTMLElement, callback: (data: ResizeObserverEntry[]) => void): ResizeObserver {
+      if (typeof window === 'undefined') return;
+
+      const isSupport = typeof window !== 'undefined' && window.ResizeObserver;
+      // unit tests do not need any warn console; too many warns influence focusing on more important log info
+      if (!isSupport) return;
+
+      const containerObserver = new ResizeObserver(callback);
+      containerObserver.observe(el);
+
+      return containerObserver;
+    },
+
+    cleanupObserver(observer: ResizeObserver, container: Element) {
+      if (!observer || !container) return;
+      observer.unobserve(container);
+      observer.disconnect();
     },
   },
 
@@ -446,7 +486,16 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
     const label = renderTNodeJSX(this, 'label');
     const suffix = renderTNodeJSX(this, 'suffix');
     const limitNode = this.limitNumber && this.showLimitNumber ? (
-        <div class={`${this.classPrefix}-input__limit-number`}>{this.limitNumber}</div>
+        <div
+          class={[
+            `${this.classPrefix}-input__limit-number`,
+            {
+              [`${this.classPrefix}-is-disabled`]: this.disabled,
+            },
+          ]}
+        >
+          {this.limitNumber}
+        </div>
     ) : null;
 
     const labelContent = label ? <div class={`${this.componentName}__prefix`}>{label}</div> : null;
@@ -506,17 +555,16 @@ export default mixins(getConfigReceiverMixins<InputInstance, InputConfig>('input
           <span class={[`${this.componentName}__prefix`, `${this.componentName}__prefix-icon`]}>{prefixIcon}</span>
         ) : null}
         {labelContent}
-        {this.showInput && (
-          <input
-            attrs={this.inputAttrs}
-            on={inputEvents}
-            ref="inputRef"
-            class={`${this.componentName}__inner`}
-            value={inputTextValue}
-            onInput={this.handleInput}
-            title={this.disabled ? inputTextValue : undefined}
-          />
-        )}
+        {/* input element must exist, or other select components can not focus by keyboard operation */}
+        <input
+          attrs={this.inputAttrs}
+          on={inputEvents}
+          ref="inputRef"
+          class={[`${this.componentName}__inner`, { [`${this.componentName}--soft-hidden`]: !this.showInput }]}
+          value={inputTextValue}
+          onInput={this.handleInput}
+          title={this.disabled ? inputTextValue : undefined}
+        />
         {this.autoWidth && (
           <span ref="inputPreRef" class={`${this.classPrefix}-input__input-pre`}>
             {this.preValue || this.tPlaceholder}

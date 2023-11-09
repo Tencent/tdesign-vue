@@ -19,7 +19,7 @@ import {
   getDisplayFiles,
   formatToUploadFile,
 } from '../../_common/js/upload/main';
-import { getFileUrlByFileRaw } from '../../_common/js/upload/utils';
+import { getFileList } from '../../_common/js/upload/utils';
 import useVModel from '../../hooks/useVModel';
 import {
   InnerProgressContext,
@@ -87,6 +87,14 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
     autoUpload: autoUpload.value,
     isBatchUpload: isBatchUpload.value,
   }));
+
+  const uploadFilePercent = (params: { file: UploadFile; percent: number }) => {
+    const { file, percent } = params;
+    const index = toUploadFiles.value.findIndex((item) => file.raw === item.raw);
+    const newFiles = [...toUploadFiles.value];
+    newFiles[index] = { ...newFiles[index], percent };
+    toUploadFiles.value = newFiles;
+  };
 
   const updateFilesProgress = () => {
     if (props.autoUpload) {
@@ -160,35 +168,16 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
   const handleNotAutoUpload = (toFiles: UploadFile[]) => {
     const tmpFiles = props.multiple && !isBatchUpload.value ? uploadValue.value.concat(toFiles) : toFiles;
     if (!tmpFiles.length) return;
-    // 图片需要本地预览
-    if (['image', 'image-flow'].includes(props.theme)) {
-      const list = tmpFiles.map(
-        (file) => new Promise((resolve) => {
-          getFileUrlByFileRaw(file.raw).then((url) => {
-            resolve({ ...file, url: file.url || url });
-          });
-        }),
-      );
-      Promise.all(list).then((files) => {
-        setUploadValue(files, {
-          trigger: 'add',
-          index: uploadValue.value.length,
-          file: toFiles[0],
-          files: toFiles,
-        });
-      });
-    } else {
-      setUploadValue(tmpFiles, {
-        trigger: 'add',
-        index: uploadValue.value.length,
-        file: toFiles[0],
-        files: toFiles,
-      });
-    }
+    setUploadValue(tmpFiles, {
+      trigger: 'add',
+      index: uploadValue.value.length,
+      file: toFiles[0],
+      files: toFiles,
+    });
     toUploadFiles.value = [];
   };
 
-  const onFileChange = (files: FileList) => {
+  const onFileChange = (files: File[]) => {
     if (innerDisabled.value) return;
 
     const params = { currentSelectedFiles: formatToUploadFile([...files], props.format) };
@@ -197,10 +186,9 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
 
     validateFile({
       uploadValue: uploadValue.value,
-      // @ts-ignore
       files: [...files],
       allowUploadDuplicateFile: props.allowUploadDuplicateFile,
-      max: props.max,
+      max: props.multiple ? props.max : 0,
       sizeLimit: props.sizeLimit,
       isBatchUpload: isBatchUpload.value,
       autoUpload: autoUpload.value,
@@ -266,11 +254,12 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
   };
 
   const onNormalFileChange = (e: InputEvent) => {
-    onFileChange?.((e.target as HTMLInputElement).files);
+    const fileList = getFileList((e.target as HTMLInputElement).files);
+    onFileChange?.(fileList);
   };
 
-  function onDragFileChange(e: DragEvent) {
-    onFileChange?.(e.dataTransfer.files);
+  function onDragFileChange(files: File[]) {
+    onFileChange?.(files);
   }
 
   /**
@@ -453,6 +442,7 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
     innerDisabled,
     xhrReq,
     uploadFiles,
+    uploadFilePercent,
     onFileChange,
     onNormalFileChange,
     onDragFileChange,

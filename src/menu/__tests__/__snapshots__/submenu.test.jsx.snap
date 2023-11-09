@@ -18,7 +18,7 @@ exports[`Submenu > slot > <default> 1`] = `
   class="t-submenu"
 >
   <div
-    class="t-menu__item"
+    class="t-menu__item t-menu__item-spacer t-menu__item-spacer--right"
   >
     <span
       class="t-menu__content"
@@ -40,12 +40,16 @@ exports[`Submenu > slot > <default> 1`] = `
       />
     </svg>
   </div>
-  <ul
-    class="t-menu__sub"
-    style="--padding-left: 44px;"
+  <transition-stub
+    name="t-slide-down"
   >
-    <div />
-  </ul>
+    <ul
+      class="t-menu__sub"
+      style="--padding-left: 44px; display: none;"
+    >
+      <div />
+    </ul>
+  </transition-stub>
 </li>
 `;
 
@@ -54,17 +58,21 @@ exports[`Submenu > slot > <icon> 1`] = `
   class="t-submenu"
 >
   <div
-    class="t-menu__item"
+    class="t-menu__item t-menu__item-spacer t-menu__item-spacer--right"
   >
     <div />
     <span
       class="t-menu__content"
     />
   </div>
-  <ul
-    class="t-menu__sub"
-    style="--padding-left: 44px;"
-  />
+  <transition-stub
+    name="t-slide-down"
+  >
+    <ul
+      class="t-menu__sub"
+      style="--padding-left: 44px; display: none;"
+    />
+  </transition-stub>
 </li>
 `;
 
@@ -73,7 +81,7 @@ exports[`Submenu > slot > <title> 1`] = `
   class="t-submenu"
 >
   <div
-    class="t-menu__item"
+    class="t-menu__item t-menu__item-spacer t-menu__item-spacer--right"
   >
     <span
       class="t-menu__content"
@@ -81,9 +89,13 @@ exports[`Submenu > slot > <title> 1`] = `
       <div />
     </span>
   </div>
-  <ul
-    class="t-menu__sub"
-    style="--padding-left: 44px;"
-  />
+  <transition-stub
+    name="t-slide-down"
+  >
+    <ul
+      class="t-menu__sub"
+      style="--padding-left: 44px; display: none;"
+    />
+  </transition-stub>
 </li>
 `;

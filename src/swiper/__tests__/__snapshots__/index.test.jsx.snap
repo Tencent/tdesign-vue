@@ -268,13 +268,12 @@ exports[`Swiper > additional function > navigation: VNode 1`] = `
           class="t-icon t-icon-chevron-left"
           fill="none"
           height="1em"
-          viewBox="0 0 16 16"
+          viewBox="0 0 24 24"
           width="1em"
         >
           <path
-            d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z"
+            d="M15.91 17.5l-5.5-5.5 5.5-5.5-1.41-1.41L7.59 12l6.91 6.91 1.41-1.41z"
             fill="currentColor"
-            fill-opacity="0.9"
           />
         </svg>
       </div>
@@ -285,13 +284,12 @@ exports[`Swiper > additional function > navigation: VNode 1`] = `
           class="t-icon t-icon-chevron-right"
           fill="none"
           height="1em"
-          viewBox="0 0 16 16"
+          viewBox="0 0 24 24"
           width="1em"
         >
           <path
-            d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
+            d="M8.09 17.5l5.5-5.5-5.5-5.5L9.5 5.09 16.41 12 9.5 18.91 8.09 17.5z"
             fill="currentColor"
-            fill-opacity="0.9"
           />
         </svg>
       </div>
@@ -328,13 +326,12 @@ exports[`Swiper > additional function > no valid panel 1`] = `
           class="t-icon t-icon-chevron-left"
           fill="none"
           height="1em"
-          viewBox="0 0 16 16"
+          viewBox="0 0 24 24"
           width="1em"
         >
           <path
-            d="M9.54 3.54l.92.92L6.92 8l3.54 3.54-.92.92L5.08 8l4.46-4.46z"
+            d="M15.91 17.5l-5.5-5.5 5.5-5.5-1.41-1.41L7.59 12l6.91 6.91 1.41-1.41z"
             fill="currentColor"
-            fill-opacity="0.9"
           />
         </svg>
       </div>
@@ -345,13 +342,12 @@ exports[`Swiper > additional function > no valid panel 1`] = `
           class="t-icon t-icon-chevron-right"
           fill="none"
           height="1em"
-          viewBox="0 0 16 16"
+          viewBox="0 0 24 24"
           width="1em"
         >
           <path
-            d="M6.46 12.46l-.92-.92L9.08 8 5.54 4.46l.92-.92L10.92 8l-4.46 4.46z"
+            d="M8.09 17.5l5.5-5.5-5.5-5.5L9.5 5.09 16.41 12 9.5 18.91 8.09 17.5z"
             fill="currentColor"
-            fill-opacity="0.9"
           />
         </svg>
       </div>

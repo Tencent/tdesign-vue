@@ -1,23 +1,21 @@
 <template>
-  <t-space :size="10" direction="vertical" class="tdesign-tree-demo">
-    <!-- <div class="operations"> -->
-    <t-form labelWidth="120">
-      <t-form-item label="互斥展开">
-        <t-switch v-model="mutex" />
-      </t-form-item>
-      <t-form-item label="整个节点可点击">
-        <t-switch v-model="expandOnClickNode" />
-      </t-form-item>
-    </t-form>
-    <!-- </div> -->
+  <t-space direction="vertical">
+    <t-space>
+      <span>互斥展开:</span>
+      <t-switch v-model="mutex" />
+    </t-space>
+    <t-space>
+      <span>整个节点可点击:</span>
+      <t-switch v-model="expandOnClickNode" />
+    </t-space>
     <t-tree
       :data="items"
       hover
       :expand-mutex="mutex"
       :expand-on-click-node="expandOnClickNode"
+      :on-expand="propOnExpand"
       @click="onClick"
       @expand="onExpand"
-      :onExpand="propOnExpand"
     />
   </t-space>
 </template>
@@ -105,9 +103,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.tdesign-tree-demo .t-form__item {
-  margin-bottom: 5px;
-}
-</style>

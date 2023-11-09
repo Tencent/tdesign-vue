@@ -2,6 +2,7 @@ import { PropType } from 'vue';
 import { CommonDisplayFileProps } from './interface';
 
 export const commonProps = {
+  accept: String,
   files: Array as PropType<CommonDisplayFileProps['files']>,
   toUploadFiles: Array as PropType<CommonDisplayFileProps['toUploadFiles']>,
   displayFiles: Array as PropType<CommonDisplayFileProps['displayFiles']>,
@@ -23,6 +24,7 @@ export const commonProps = {
   default: Function as PropType<CommonDisplayFileProps['default']>,
   fileListDisplay: Function as PropType<CommonDisplayFileProps['fileListDisplay']>,
   onRemove: Function as PropType<CommonDisplayFileProps['onRemove']>,
+  imageViewerProps: Object as PropType<CommonDisplayFileProps['imageViewerProps']>,
 };
 
 export default commonProps;

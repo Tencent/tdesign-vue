@@ -1,5 +1,6 @@
 import { VNodeDirective } from 'vue';
 import { createPopper } from '@popperjs/core';
+import debounce from 'lodash/debounce';
 import { on, off, once } from '../utils/dom';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import { getIEVersion } from '../utils/helper';
@@ -10,7 +11,9 @@ import Container from './container';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
 import { emitEvent } from '../utils/event';
-import { getPopperPlacement, attachListeners, triggers } from './utils';
+import {
+  getPopperPlacement, attachListeners, triggers, defaultVisibleDelay,
+} from './utils';
 
 const classPrefixMixins = getClassPrefixMixins('popup');
 
@@ -78,7 +81,7 @@ export default mixins(classPrefixMixins).extend({
       );
     },
     normalizedDelay(): { open: number; close: number } {
-      const delay = [].concat(this.delay ?? [250, 150]);
+      const delay = [].concat(this.delay ?? defaultVisibleDelay);
       return {
         open: delay[0],
         close: delay[1] ?? delay[0],
@@ -255,9 +258,13 @@ export default mixins(classPrefixMixins).extend({
     },
     handleOnScroll(e: WheelEvent) {
       const { scrollTop, clientHeight, scrollHeight } = e.target as HTMLDivElement;
-      if (scrollHeight - scrollTop === clientHeight) {
+      // 防止多次触发添加截流
+      const debounceOnScrollBottom = debounce((e) => emitEvent(this, 'scroll-to-bottom', { e }), 100);
+
+      // windows 下 scrollTop 会出现小数，这里取整
+      if (clientHeight + Math.floor(scrollTop) === scrollHeight) {
         // touch bottom
-        emitEvent(this, 'scroll-to-bottom', { e });
+        debounceOnScrollBottom(e);
       }
       emitEvent(this, 'scroll', { e });
     },
@@ -300,7 +307,7 @@ export default mixins(classPrefixMixins).extend({
       });
     },
     emitPopVisible(visible: boolean, context: PopupVisibleChangeContext) {
-      if (this.disabled || visible === this.visible) return;
+      if (this.disabled || visible === !!this.visible) return;
       if (!visible && this.visibleState > 1) return;
       if (visible && this.mouseInRange) return;
       this.$emit('visible-change', visible, context);

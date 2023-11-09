@@ -2,7 +2,7 @@ import { ref, computed, SetupContext } from '@vue/composition-api';
 import get from 'lodash/get';
 import isFunction from 'lodash/isFunction';
 import { PrimaryTableProps } from '../interface';
-import { getEditableKeysMap } from '../utils';
+import { getEditableKeysMap } from '../../_common/js/table/utils';
 import { AllValidateResult } from '../../form/type';
 import { validate } from '../../form/form-model';
 import {
@@ -18,9 +18,8 @@ export interface TablePromiseErrorData {
   errorMap: TableErrorListMap;
 }
 
-const cellRuleMap = new Map<any, PrimaryTableRowEditContext<TableRowData>[]>();
-
 export default function useRowEdit(props: PrimaryTableProps, context: SetupContext) {
+  const cellRuleMap = new Map<any, PrimaryTableRowEditContext<TableRowData>[]>();
   // 校验不通过的错误信息，其中 key 值为 [rowValue, col.colKey].join('__')
   const errorListMap = ref<TableErrorListMap>({});
   // 处于编辑态的表格行
@@ -54,7 +53,7 @@ export default function useRowEdit(props: PrimaryTableProps, context: SetupConte
           resolve({ ...item, errorList: [] });
           return;
         }
-        validate(editedRow[col.colKey], rules).then((r) => {
+        validate(get(editedRow, col.colKey), rules).then((r) => {
           resolve({ ...item, errorList: r.filter((t) => !t.result) });
         });
       }),

@@ -3,12 +3,10 @@ import {
 } from '@vue/composition-api';
 import isFunction from 'lodash/isFunction';
 import { RemoveOptions, TdTreeSelectProps, TreeSelectValue } from './type';
-import {
-  TreeProps, TreeInstanceFunctions, TreeKeysType, TreeNodeValue,
-} from '../tree';
+import { TreeProps, TreeInstanceFunctions, TreeNodeValue } from '../tree';
 import { usePrefixClass, useConfig } from '../hooks/useConfig';
 import useFormDisabled from '../hooks/useFormDisabled';
-import { TreeOptionData } from '../common';
+import { TreeOptionData, TreeKeysType } from '../common';
 import useVModel from '../hooks/useVModel';
 import useDefaultValue from '../hooks/useDefaultValue';
 import { SelectInputProps } from '../select-input';
@@ -109,7 +107,7 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
     const list = Array.isArray(value) ? value : [value];
     if (treeRef.value) {
       return list.map((item) => {
-        const finalValue = typeof item === 'object' ? item[tKeys.value.value] : item;
+        const finalValue = typeof item === 'object' ? item.value : item;
         return (
           treeRef.value.getItem(finalValue)?.data || {
             [tKeys.value.label]: finalValue,
@@ -129,7 +127,7 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
       return undefined;
     }
     const oneValue = Array.isArray(value) ? value[0] : value;
-    const finalValue = typeof oneValue === 'object' ? oneValue[tKeys.value.value] : oneValue;
+    const finalValue = typeof oneValue === 'object' ? oneValue.value : oneValue;
     if (treeRef.value) {
       return (
         treeRef.value.getItem(finalValue)?.data || {
@@ -179,7 +177,10 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
       return;
     }
     const onlyLeafNode = Boolean(
-      !props.multiple && props.treeProps?.valueMode === 'onlyLeaf' && ctx.node?.data?.children?.length,
+      !props.multiple
+        && props.treeProps?.valueMode === 'onlyLeaf'
+        && Array.isArray(ctx.node?.data?.children)
+        && ctx.node?.data?.children?.length,
     );
     let current: TreeSelectValue = value;
     const nodeValue = Array.isArray(value) ? value[0] : value;
@@ -205,7 +206,7 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
   const filterByText = computed<TreeProps['filter'] | undefined>(() => {
     if (props.onSearch || context.listeners.search) return;
     if ((props.filter || props.filterable) && innerInputValue.value && !context.listeners.search) {
-      return props.filter ? (node) => props.filter(innerInputValue.value, node) : defaultFilterFunction;
+      return props.filter ? (node) => props.filter(innerInputValue.value, node) : (node) => defaultFilterFunction(node);
     }
     return undefined;
   });

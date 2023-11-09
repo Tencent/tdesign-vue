@@ -1,28 +1,27 @@
 <template>
-  <t-space :size="10" direction="vertical" class="tdesign-tree-demo">
-    <!-- <t-space class="operations"> -->
-    <t-form labelWidth="120">
-      <t-form-item label="节点可高亮">
-        <t-switch v-model="activable" />
-      </t-form-item>
-      <t-form-item label="节点可多选高亮">
-        <t-switch v-model="activeMultiple" />
-      </t-form-item>
-      <t-form-item label="整个节点可点击">
-        <t-switch v-model="expandOnClickNode" />
-      </t-form-item>
-    </t-form>
-    <!-- </t-space> -->
+  <t-space direction="vertical">
+    <t-space>
+      <span>节点可高亮: </span>
+      <t-switch v-model="activable" />
+    </t-space>
+    <t-space>
+      <span>节点可多选高亮:</span>
+      <t-switch v-model="activeMultiple" />
+    </t-space>
+    <t-space>
+      <span>整个节点可点击:</span>
+      <t-switch v-model="expandOnClickNode" />
+    </t-space>
     <t-tree
       :data="items"
       expand-all
       :activable="activable"
       :active-multiple="activeMultiple"
       :expand-on-click-node="expandOnClickNode"
+      :on-active="propOnActive"
+      hover
       @click="onClick"
       @active="onActive"
-      :onActive="propOnActive"
-      hover
     />
   </t-space>
 </template>
@@ -69,12 +68,18 @@ export default {
   methods: {
     onClick(context) {
       console.info('onClick', context);
+      const { node } = context;
+      console.info(node.value, 'actived:', node.actived);
     },
     onActive(value, context) {
       console.info('onActive', value, context);
+      const { node } = context;
+      console.info(node.value, 'actived:', node.actived);
     },
     propOnActive(value, context) {
       console.info('propOnActive', value, context);
+      const { node } = context;
+      console.info(node.value, 'actived:', node.actived);
     },
     toggleActivable() {
       this.activable = !this.activable;
@@ -88,9 +93,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.tdesign-tree-demo .t-form__item {
-  margin-bottom: 5px;
-}
-</style>

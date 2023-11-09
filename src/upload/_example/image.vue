@@ -1,6 +1,7 @@
 <template>
   <t-space direction="vertical">
     <t-space>
+      <t-checkbox v-model="showImageFileName"> 显示图片名称 </t-checkbox>
       <t-checkbox v-model="disabled"> 禁用状态 </t-checkbox>
       <t-checkbox v-model="uploadAllFilesInOneRequest"> 多个文件一个请求上传 </t-checkbox>
       <t-checkbox v-model="autoUpload"> 自动上传 </t-checkbox>
@@ -25,11 +26,18 @@
         v-model="file1"
         :disabled="disabled"
         :autoUpload="autoUpload"
-        @fail="handleFail"
+        :showImageFileName="showImageFileName"
+        :sizeLimit="sizeLimit"
         theme="image"
         tips="请选择单张图片文件上传（上传成功状态演示）"
         accept="image/*"
-      ></t-upload>
+        @fail="handleFail"
+      >
+        <!-- custom UI -->
+        <!-- <template #fileListDisplay="{ files }">
+          <div>{{ JSON.stringify(files) }}</div>
+        </template> -->
+      </t-upload>
 
       <t-upload
         ref="uploadRef2"
@@ -41,6 +49,7 @@
         tips="请选择单张图片文件上传（上传失败状态演示）"
         accept="image/*"
         :formatResponse="formatResponse"
+        :showImageFileName="showImageFileName"
       ></t-upload>
     </t-space>
 
@@ -55,16 +64,21 @@
       tips="请选择单张图片文件上传（自定义预览图片地址）"
       accept="image/*"
       :formatResponse="formatImgResponse"
+      :imageViewerProps="imageViewerProps"
+      :showImageFileName="showImageFileName"
     ></t-upload>
 
+    <!-- if you want to hide image name, set .t-upload__card-name { display: none } -->
     <t-upload
       ref="uploadRef4"
       action="https://service-bv448zsw-1257786608.gz.apigw.tencentcs.com/api/upload-demo"
       v-model="files"
-      :abridgeName="[6, 6]"
+      :sizeLimit="sizeLimit"
+      :abridgeName="abridgeName"
       :disabled="disabled"
       :autoUpload="autoUpload"
       :uploadAllFilesInOneRequest="uploadAllFilesInOneRequest"
+      :showImageFileName="showImageFileName"
       @fail="handleFail"
       theme="image"
       tips="允许选择多张图片文件上传，最多只能上传 3 张图片"
@@ -85,6 +99,12 @@ export default {
       disabled: false,
       uploadAllFilesInOneRequest: false,
       autoUpload: true,
+      imageViewerProps: {
+        closeOnEscKeydown: false,
+      },
+      sizeLimit: { size: 500, unit: 'KB' },
+      abridgeName: [6, 6],
+      showImageFileName: true,
     };
   },
   methods: {

@@ -8,7 +8,7 @@
       :data="data"
       :editable-cell-state="editableCellState"
       bordered
-      @row-validate="onRowValidate"
+      lazyLoad
     />
     <!-- 示例代码有效，勿删 -->
     <!-- <t-button @click="validateTableData">校验</t-button> -->
@@ -127,6 +127,8 @@ export default {
           cell: (h, { row }) => row.letters.join('、'),
           edit: {
             component: Select,
+            keepEditMode: true,
+            rules: [{ validator: (val) => val.length > 0, message: '至少选择一种' }],
             // props, 透传全部属性到 Select 组件
             // props 为函数时，参数有：col, row, rowIndex, colIndex, editedRow。一般用于实现编辑组件之间的联动
             props: ({
@@ -185,11 +187,9 @@ export default {
   methods: {
     // 用于控制哪些行或哪些单元格不允许出现编辑态
     editableCellState(cellParams) {
-      const { row } = cellParams;
-      return row.status !== 2;
-    },
-    onRowValidate(params) {
-      console.log('validate:', params);
+      const { rowIndex } = cellParams;
+      // return row.status !== 2;
+      return rowIndex !== 2;
     },
 
     // 用于提交前校验数据（示例代码有效，勿删）

@@ -4,11 +4,11 @@ import isFunction from 'lodash/isFunction';
 import Tree from '../tree';
 import props from './props';
 import SelectInput from '../select-input';
-import { TagInputChangeContext, TagInputValue } from '../tag-input';
 import FakeArrow from '../common-components/fake-arrow';
 import { TreeSelectValue, TdTreeSelectProps } from './type';
 import { useTNodeJSX, useTNodeDefault } from '../hooks/tnode';
 import useTreeSelect from './useTreeSelect';
+import { TreeOptionData } from '..';
 
 export default defineComponent({
   name: 'TTreeSelect',
@@ -74,6 +74,7 @@ export default defineComponent({
             `${this.classPrefix}-select__dropdown-inner--size-${this.dropdownInnerSize}`,
           ]}
         >
+          {this.renderTNodeJSX('panelTopContent')}
           {this.loading && !this.tDisabled ? (
             <p class={[`${this.classPrefix}-select__loading-tips`, `${this.classPrefix}-select__right-icon-polyfill`]}>
               {this.renderDefaultTNode('loadingText', {
@@ -84,7 +85,7 @@ export default defineComponent({
           {!this.loading ? (
             <Tree
               ref="treeRef"
-              key={this.treeKey}
+              key={!this.treeProps?.load && this.treeKey}
               props={{
                 keys: this.tKeys,
                 value: [...this.multipleChecked],
@@ -111,6 +112,7 @@ export default defineComponent({
               }}
             />
           ) : null}
+          {this.renderTNodeJSX('panelBottomContent')}
         </div>
       );
     },
@@ -187,9 +189,14 @@ export default defineComponent({
             valueDisplay: () => this.renderTNodeJSX('valueDisplay', {
               params: this.multiple
                 ? {
-                  value: this.nodeInfo,
-                  onClose: (value: TagInputValue, context: TagInputChangeContext) => {
-                    this.tagChange(value, context);
+                  value: this.nodeInfo as TreeOptionData<string | number>[],
+                  onClose: (index: number) => {
+                    const value = this.nodeInfo.map((node: TreeOptionData) => node.value);
+                    this.tagChange(value, {
+                      trigger: 'tag-remove',
+                      index,
+                      item: value[index],
+                    });
                   },
                 }
                 : {

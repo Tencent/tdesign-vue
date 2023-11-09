@@ -104,7 +104,6 @@ export default {
   /** 数字输入框的值。当值为 '' 时，输入框显示为空 */
   value: {
     type: [String, Number] as PropType<TdInputNumberProps['value']>,
-    default: undefined,
   },
   /** 数字输入框的值。当值为 '' 时，输入框显示为空，非受控属性 */
   defaultValue: {

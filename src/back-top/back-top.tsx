@@ -1,5 +1,5 @@
 import {
-  computed, defineComponent, onMounted, ref,
+  computed, defineComponent, onMounted, ref, onBeforeUnmount,
 } from '@vue/composition-api';
 import { BacktopIcon as TdBackTopIcon } from 'tdesign-icons-vue';
 
@@ -81,19 +81,28 @@ export default defineComponent({
         return;
       }
       let scrollDOM: HTMLElement;
-      if (containerRef.value.scrollTop === undefined) {
-        scrollDOM = document.documentElement;
-      } else {
-        scrollDOM = containerRef.value;
-      }
-      containerRef.value.onscroll = () => {
-        const { scrollTop } = scrollDOM;
-        if (scrollTop >= visibleHeight) {
-          visible.value = true;
-          containerRef.value.onscroll = null;
+      if (containerRef.value) {
+        if (containerRef.value.scrollTop === undefined) {
+          scrollDOM = document.documentElement;
+        } else {
+          scrollDOM = containerRef.value;
         }
-      };
+        containerRef.value.onscroll = () => {
+          const { scrollTop } = scrollDOM;
+          if (scrollTop >= visibleHeight) {
+            visible.value = true;
+          }
+          if (scrollTop < visibleHeight && visible.value) {
+            visible.value = false;
+          }
+        };
+      }
     });
+
+    onBeforeUnmount(() => {
+      containerRef.value.onscroll = null;
+    });
+
     return {
       BacktopIcon,
       cls,

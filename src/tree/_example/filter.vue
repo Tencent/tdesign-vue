@@ -1,30 +1,35 @@
 <template>
   <t-space :size="32" direction="vertical">
-    <t-form labelWidth="150">
-      <t-form-item label="">
+    <t-space direction="vertical">
+      <t-space>
         <t-input-adornment prepend="filter:">
-          <t-input v-model="filterText" @change="onInput" />
+          <t-input v-model="demo1Text" style="width: 300px" @change="demo1Input" />
         </t-input-adornment>
-      </t-form-item>
-      <t-form-item label="允许折叠">
-        <t-switch v-model="allowFoldNodeOnFilter" @change="checkExpanded" />
-      </t-form-item>
-      <t-form-item label="可选">
-        <t-switch v-model="isCheckable" />
-      </t-form-item>
-    </t-form>
-    <t-tree
-      ref="tree"
-      :data="items"
-      expand-on-click-node
-      :expandAll="allowFoldNodeOnFilter"
-      :allowFoldNodeOnFilter="allowFoldNodeOnFilter"
-      :default-expanded="expanded"
-      :filter="filterByText"
-      :checkable="isCheckable"
-      hover
-      line
-    />
+      </t-space>
+      <t-tree ref="tree" :data="items" expand-on-click-node :filter="demo1Filter" hover line />
+    </t-space>
+
+    <t-space direction="vertical">
+      <t-space>
+        <t-input-adornment prepend="filter:">
+          <t-input
+            v-model="demo2Text"
+            placeholder="allow expand or fold tree nodes on filter"
+            style="width: 300px"
+            @change="demo2Input"
+          />
+        </t-input-adornment>
+      </t-space>
+      <t-tree
+        ref="tree"
+        :data="items"
+        expand-on-click-node
+        allow-fold-node-on-filter
+        :filter="demo2Filter"
+        hover
+        line
+      />
+    </t-space>
   </t-space>
 </template>
 
@@ -123,31 +128,20 @@ const exampleItems = [
 export default {
   data() {
     return {
-      isCheckable: false,
-      filterText: '',
-      filterByText: null,
-      expanded: ['1.1.1'],
-      allowFoldNodeOnFilter: false,
+      demo1Text: '',
+      demo1Filter: null,
+      demo2Text: '',
+      demo2Filter: null,
       items: exampleItems,
     };
   },
   methods: {
-    checkExpanded() {
-      const { allowFoldNodeOnFilter } = this;
-      const { tree } = this.$refs;
-      const treeItems = tree.getItems();
-      treeItems.forEach((node) => {
-        tree.setItem(node.value, {
-          expanded: allowFoldNodeOnFilter,
-        });
-      });
-    },
-    onInput(state) {
-      console.info('onInput:', state);
-      if (this.filterText) {
+    demo1Input(state) {
+      console.info('demo1 input:', state);
+      if (this.demo1Text) {
         // 存在过滤文案，才启用过滤
-        this.filterByText = (node) => {
-          const rs = node.data.label.indexOf(this.filterText) >= 0;
+        this.demo1Filter = (node) => {
+          const rs = node.data.label.indexOf(this.demo1Text) >= 0;
           // 命中的节点会强制展示
           // 命中节点的路径节点会锁定展示
           // 未命中的节点会隐藏
@@ -155,8 +149,11 @@ export default {
         };
       } else {
         // 过滤文案为空，则还原 tree 为无过滤状态
-        this.filterByText = null;
+        this.demo1Filter = null;
       }
+    },
+    demo2Input() {
+      this.demo2Filter = this.demo2Text ? (node) => node.data.label.indexOf(this.demo2Text) >= 0 : null;
     },
   },
 };

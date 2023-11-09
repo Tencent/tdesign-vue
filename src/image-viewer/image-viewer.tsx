@@ -2,7 +2,6 @@ import {
   computed, defineComponent, ref, toRefs, watch,
 } from '@vue/composition-api';
 import { ChevronLeftIcon, ChevronDownIcon, CloseIcon } from 'tdesign-icons-vue';
-
 import props from './props';
 import Container from './base/Container';
 import TImageViewerIcon from './base/ImageModalIcon';
@@ -14,11 +13,11 @@ import useDefaultValue from '../hooks/useDefaultValue';
 import { usePrefixClass } from '../hooks/useConfig';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { setTransform } from '../utils/helper';
-
 import { TdImageViewerProps } from './type';
 import { useMirror, useRotate, useScale } from './hooks';
 import { formatImages, getOverlay } from './utils';
 import { EVENT_CODE } from './const';
+import Image from '../image';
 
 export default defineComponent({
   name: 'TImageViewer',
@@ -78,16 +77,18 @@ export default defineComponent({
 
     const prevImage = () => {
       const newIndex = indexValue.value - 1;
+      onRest();
       setIndexValue(newIndex < 0 ? 0 : newIndex, { trigger: 'prev' });
     };
 
     const nextImage = () => {
       const newIndex = indexValue.value + 1;
+      onRest();
       setIndexValue(newIndex >= imagesList.value.length ? indexValue.value : newIndex, { trigger: 'next' });
     };
 
     const onImgClick = (i: number) => {
-      setIndexValue(i, { trigger: i > indexValue.value ? 'next' : 'prev' });
+      setIndexValue(i, { trigger: 'current' });
     };
 
     const openHandler = () => {
@@ -96,6 +97,10 @@ export default defineComponent({
 
     const onCloseHandle: TdImageViewerProps['onClose'] = (ctx) => {
       setVisibleValue(false);
+
+      unmountContent();
+      window.removeEventListener('keydown', keydownHandler);
+
       props.onClose?.(ctx);
       emit('close', ctx);
     };
@@ -123,7 +128,9 @@ export default defineComponent({
           onZoomOut();
           break;
         case EVENT_CODE.esc:
-          onCloseHandle({ e, trigger: 'esc' });
+          if (props.closeOnEscKeydown) {
+            onCloseHandle({ e, trigger: 'esc' });
+          }
           break;
         default:
           break;
@@ -146,12 +153,10 @@ export default defineComponent({
       () => visibleValue.value,
       (val) => {
         if (val) {
+          onRest();
           window.addEventListener('keydown', keydownHandler);
           mountContent();
-          return;
         }
-        window.removeEventListener('keydown', keydownHandler);
-        unmountContent();
       },
     );
 
@@ -223,7 +228,7 @@ export default defineComponent({
                     },
                   ]}
                 >
-                  <img
+                  <Image
                     alt=""
                     src={image.thumbnail || image.mainImage}
                     class={`${this.COMPONENT_NAME}__header-img`}
@@ -275,6 +280,19 @@ export default defineComponent({
         />
       );
     },
+    renderCloseBtn() {
+      if (this.closeBtn === false) {
+        return;
+      }
+      return (
+        <div
+          class={[`${this.COMPONENT_NAME}__modal-icon`, `${this.COMPONENT_NAME}__modal-close-bt`]}
+          onClick={this.closeBtnAction}
+        >
+          {renderTNodeJSX(this, 'closeBtn', <CloseIcon size="24px" />)}
+        </div>
+      );
+    },
     renderViewer() {
       return (
         <div class={this.wrapClass} style={{ zIndex: this.zIndexValue }} onWheel={this.onWheel}>
@@ -290,12 +308,7 @@ export default defineComponent({
               {`${this.indexValue + 1}/${this.imagesList.length}`}
             </div>
           )}
-          <div
-            class={[`${this.COMPONENT_NAME}__modal-icon`, `${this.COMPONENT_NAME}__modal-close-bt`]}
-            onClick={this.closeBtnAction}
-          >
-            {renderTNodeJSX(this, 'closeBtn', <CloseIcon size="24px" />)}
-          </div>
+          {this.renderCloseBtn()}
           <TImageViewerUtils
             zoomInHandler={this.onZoomIn}
             zoomOutHandler={this.onZoomOut}

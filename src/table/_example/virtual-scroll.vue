@@ -20,6 +20,7 @@
       :scroll="{ type: 'virtual', rowHeight: 69, bufferSize: 10 }"
       :height="height"
       :bordered="bordered"
+      lazyLoad
     >
     </t-table>
   </t-space>
@@ -92,8 +93,10 @@ export default {
   methods: {
     scrollToElement() {
       this.$refs.tableRef.scrollToElement({
-        // 跳转元素下标（第 256 个元素位置）
-        index: 255,
+        // 方式一：使用下标跳转到指定行（第 256 个元素位置）
+        // index: 255,
+        // 方式二：使用行唯一标识跳转到指定行（id = 255）
+        key: 255,
         // 滚动元素距离顶部的距离（如表头高度）
         top: 47,
         // 行高度动态变化场景场景下，即 isFixedRowHeight = false。延迟设置元素位置，一般用于依赖不同高度异步渲染等场景，单位：毫秒。（固定高度不需要这个）

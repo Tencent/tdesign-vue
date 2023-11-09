@@ -12,7 +12,7 @@ import { TagInputProps } from '../tag-input';
 import { TagProps } from '../tag';
 import { SelectInputValueChangeContext } from '../select-input';
 import { PopupVisibleChangeContext } from '../popup';
-import { PlainObject, TNode, SizeEnum, InfinityScroll } from '../common';
+import { PlainObject, TNode, SizeEnum, KeysType, InfinityScroll } from '../common';
 
 export interface TdSelectProps<T extends SelectOption = SelectOption> {
   /**
@@ -36,9 +36,9 @@ export interface TdSelectProps<T extends SelectOption = SelectOption> {
    */
   clearable?: boolean;
   /**
-   * 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义。`value` 表示当前存在的所有标签，`collapsedTags` 表示折叠的标签，泛型 `T` 继承 `SelectOption`，表示选项数据；`count` 表示折叠的数量
+   * 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义。`value` 表示当前存在的所有标签，`collapsedTags` 表示折叠的标签，泛型 `T` 继承 `SelectOption`，表示选项数据；`count` 表示折叠的数量, `onClose` 表示移除标签
    */
-  collapsedItems?: TNode<{ value: T[]; collapsedSelectedItems: T[]; count: number }>;
+  collapsedItems?: TNode<{ value: T[]; collapsedSelectedItems: T[]; count: number; onClose: (index: number) => void }>;
   /**
    * 是否允许用户创建新条目，需配合 filterable 使用
    * @default false
@@ -73,9 +73,9 @@ export interface TdSelectProps<T extends SelectOption = SelectOption> {
    */
   defaultInputValue?: InputValue;
   /**
-   * 用来定义 value / label 在 `options` 中对应的字段别名
+   * 用来定义 value / label / disabled 在 `options` 中对应的字段别名
    */
-  keys?: SelectKeysType;
+  keys?: KeysType;
   /**
    * 左侧文本
    */
@@ -299,14 +299,9 @@ export interface TdOptionGroupProps {
   label?: string;
 }
 
-export interface SelectKeysType {
-  value?: string;
-  label?: string;
-}
-
 export type SelectValue<T extends SelectOption = SelectOption> = string | number | boolean | T | Array<SelectValue<T>>;
 
-export type SelectValueChangeTrigger = 'clear' | 'tag-remove' | 'backspace' | 'check' | 'uncheck';
+export type SelectValueChangeTrigger = 'clear' | 'tag-remove' | 'backspace' | 'check' | 'uncheck' | 'default';
 
 export interface SelectRemoveContext<T> {
   value: string | number;

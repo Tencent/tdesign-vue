@@ -1,5 +1,5 @@
 <template>
-  <div class="tdesign-tree-demo">
+  <t-space direction="vertical">
     <t-tree
       :data="items"
       activable
@@ -13,7 +13,7 @@
       @drag-leave="handleDragLeave"
       @drop="handleDrop"
     />
-  </div>
+  </t-space>
 </template>
 
 <script>
@@ -97,18 +97,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.tdesign-tree-demo .title {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .tips {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .operations {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .t-form__item {
-  margin-bottom: 5px;
-}
-</style>

@@ -170,7 +170,6 @@ export default mixins(classPrefixMixins).extend({
     },
     calcInputNumberProps(): object {
       const defaultInputNumberProps = {
-        decimalPlaces: 0,
         placeholder: '',
         theme: 'column',
       };

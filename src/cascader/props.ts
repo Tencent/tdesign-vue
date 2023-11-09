@@ -10,6 +10,8 @@ import { PropType } from 'vue';
 export default {
   /** 自动聚焦 */
   autofocus: Boolean,
+  /** 无边框模式 */
+  borderless: Boolean,
   /** 参考 checkbox 组件 API */
   checkProps: {
     type: Object as PropType<TdCascaderProps['checkProps']>,
@@ -18,7 +20,7 @@ export default {
   checkStrictly: Boolean,
   /** 是否支持清空选项 */
   clearable: Boolean,
-  /** 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义。`value` 表示当前存在的所有标签，`collapsedTags` 表示折叠的标签，`count` 表示选中的标签数量  */
+  /** 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义。`value` 表示当前存在的所有标签，`collapsedTags` 表示折叠的标签，`count` 表示折叠的数量 */
   collapsedItems: {
     type: Function as PropType<TdCascaderProps['collapsedItems']>,
   },
@@ -38,7 +40,7 @@ export default {
   inputProps: {
     type: Object as PropType<TdCascaderProps['inputProps']>,
   },
-  /** 用来定义 value / label / children 在 `options` 中对应的字段别名 */
+  /** 用来定义 value / label / children / disabled 在 `options` 中对应的字段别名 */
   keys: {
     type: Object as PropType<TdCascaderProps['keys']>,
   },
@@ -73,6 +75,10 @@ export default {
   },
   /** 是否允许多选 */
   multiple: Boolean,
+  /** 自定义单个级联选项 */
+  option: {
+    type: Function as PropType<TdCascaderProps['option']>,
+  },
   /** 可选项数据源 */
   options: {
     type: Array as PropType<TdCascaderProps['options']>,
@@ -91,6 +97,8 @@ export default {
   popupVisible: Boolean,
   /** 只读状态，值为真会隐藏输入框，且无法打开下拉框 */
   readonly: Boolean,
+  /** 多选且可搜索时，是否在选中一个选项后保留当前的搜索关键词 */
+  reserveKeyword: Boolean,
   /** 透传 SelectInput 筛选器输入框组件的全部属性 */
   selectInputProps: {
     type: Object as PropType<TdCascaderProps['selectInputProps']>,
@@ -150,12 +158,16 @@ export default {
   /** 选中项的值 */
   value: {
     type: [String, Number, Array] as PropType<TdCascaderProps['value']>,
-    default: undefined,
+    default: (): TdCascaderProps['value'] => [],
   },
   /** 选中项的值，非受控属性 */
   defaultValue: {
     type: [String, Number, Array] as PropType<TdCascaderProps['defaultValue']>,
     default: (): TdCascaderProps['defaultValue'] => [],
+  },
+  /** 【开发中】自定义选中项呈现的内容 */
+  valueDisplay: {
+    type: [String, Function] as PropType<TdCascaderProps['valueDisplay']>,
   },
   /** 选中值模式。all 表示父节点和子节点全部会出现在选中值里面；parentFirst 表示当子节点全部选中时，仅父节点在选中值里面；onlyLeaf 表示无论什么情况，选中值仅呈现叶子节点 */
   valueMode: {

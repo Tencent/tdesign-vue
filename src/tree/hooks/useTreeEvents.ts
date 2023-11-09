@@ -1,12 +1,12 @@
-import { SetupContext } from '@vue/composition-api';
-import { TreeProps, TypeTreeState, TypeEventState } from '../interface';
+import { TreeProps, TypeTreeState, TypeEventState } from '../tree-types';
 import { getMark, emitEvent } from '../util';
 import useTreeAction from './useTreeAction';
 
 // tree 组件一般事件处理
-export default function useTreeEvents(props: TreeProps, context: SetupContext, state: TypeTreeState) {
+export default function useTreeEvents(state: TypeTreeState) {
   const treeState = state;
-  const { toggleExpanded, toggleActived, toggleChecked } = useTreeAction(props, context, state);
+  const { props, context } = treeState;
+  const { toggleExpanded, toggleActived, toggleChecked } = useTreeAction(state);
 
   const handleClick = (evtState: TypeEventState) => {
     const { mouseEvent, event, node } = evtState;
@@ -16,7 +16,7 @@ export default function useTreeEvents(props: TreeProps, context: SetupContext, s
     treeState.mouseEvent = mouseEvent;
 
     let shouldExpand = props.expandOnClickNode;
-    let shouldActive = !props.disabled && !node.disabled;
+    let shouldActive = !props.disabled && !node.disabled && node.isActivable();
 
     // 给节点添加属性 trigger="expand,active", ignore="expand,active"
     // 来确认或者屏蔽动作
@@ -59,7 +59,7 @@ export default function useTreeEvents(props: TreeProps, context: SetupContext, s
   const handleChange = (evtState: TypeEventState, ctx: { e: Event }) => {
     const { disabled } = props;
     const { node } = evtState;
-    if (!node || disabled || node.disabled) {
+    if (!node || disabled || node.disabled || !node.isCheckable()) {
       return;
     }
     toggleChecked(node, ctx);

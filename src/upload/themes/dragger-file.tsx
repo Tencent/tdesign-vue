@@ -17,6 +17,7 @@ import useDrag, { UploadDragEvents } from '../hooks/useDrag';
 import useGlobalIcon from '../../hooks/useGlobalIcon';
 import ImageViewer from '../../image-viewer';
 import { renderTNodeJSX } from '../../utils/render-tnode';
+import Image from '../../image';
 
 export interface DraggerProps extends CommonDisplayFileProps {
   trigger?: TdUploadProps['trigger'];
@@ -39,12 +40,12 @@ export default defineComponent({
   },
 
   setup(props: DraggerProps) {
-    const { displayFiles } = toRefs(props);
+    const { displayFiles, accept } = toRefs(props);
 
     const { sizeClassNames } = useCommonClassName();
     const uploadPrefix = `${props.classPrefix}-upload`;
 
-    const drag = useDrag(props.dragEvents);
+    const drag = useDrag(props.dragEvents, accept);
     const { dragActive } = drag;
 
     const draggerFileRef = ref();
@@ -78,15 +79,13 @@ export default defineComponent({
       const url = file?.url || file?.response?.url;
       return (
         <div class={`${this.uploadPrefix}__dragger-img-wrap`}>
-          {url && (
-            <ImageViewer
-              images={[url]}
-              trigger={(h: CreateElement, { open }: any) => (
-                <img src={url} onClick={open} style={{ maxWidth: '100%', maxHeight: '100%' }} />
-              )}
-              style={{ maxWidth: '120px', maxHeight: '120px' }}
-            ></ImageViewer>
-          )}
+          <ImageViewer
+            images={[url]}
+            trigger={(h: CreateElement, { open }: any) => (
+              <Image src={url || file.raw} onClick={open} error="" loading="" />
+            )}
+            props={this.imageViewerProps}
+          ></ImageViewer>
         </div>
       );
     },
@@ -126,7 +125,20 @@ export default defineComponent({
         <div class={`${this.uploadPrefix}__dragger-progress`}>
           {this.theme === 'image' && this.renderImage()}
           <div class={`${this.uploadPrefix}__dragger-progress-info`}>
-            {renderTNodeJSX(this, 'fileListDisplay', { params: { files: this.displayFiles } }) || fileInfo}
+            {renderTNodeJSX(this, 'fileListDisplay', {
+              params: {
+                files: this.displayFiles,
+                locale: this.locale,
+                disabled: this.disabled,
+                cancelUpload: this.cancelUpload,
+                uploadFiles: this.uploadFiles,
+                triggerUpload: this.triggerUpload,
+                onDrop: this.drag.handleDrop,
+                onDragenter: this.drag.handleDragenter,
+                onDragover: this.drag.handleDragover,
+                onDragleave: this.drag.handleDragleave,
+              },
+            }) || fileInfo}
 
             <div class={`${this.uploadPrefix}__dragger-btns`}>
               {['progress', 'waiting'].includes(file.status) && !this.disabled && (

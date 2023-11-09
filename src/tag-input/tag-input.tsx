@@ -1,5 +1,5 @@
 import {
-  defineComponent, computed, toRefs, ref, nextTick,
+  defineComponent, computed, toRefs, ref, nextTick, watch,
 } from '@vue/composition-api';
 
 import { CloseCircleFilledIcon as TdCloseCircleFilledIcon } from 'tdesign-icons-vue';
@@ -40,8 +40,8 @@ export default defineComponent({
     } = toRefs(props);
     const { isHover, addHover, cancelHover } = useHover(
       {
-        readonly: props.readonly,
-        disabled: props.disabled,
+        readonly,
+        disabled,
         onMouseenter: props.onMouseenter,
         onMouseleave: props.onMouseleave,
       },
@@ -62,7 +62,7 @@ export default defineComponent({
     );
 
     const {
-      scrollToRight, onWheel, scrollToRightOnEnter, scrollToLeftOnLeave, tagInputRef,
+      scrollToRight, onWheel, scrollToRightOnEnter, scrollToLeftOnLeave, tagInputRef, isScrollable,
     } = useTagScroll(props);
     // handle tag add and remove
     const {
@@ -126,6 +126,18 @@ export default defineComponent({
       context.emit('clear', ctx);
     };
 
+    // 支持在超长滚动场景下滚动选项进行操作
+    watch(
+      () => isScrollable.value,
+      (v) => {
+        if (props.excessTagsDisplayType !== 'scroll') return;
+        const scrollElementClass = `${classPrefix.value}-input__prefix`;
+        const scrollElement = tagInputRef.value.$el.querySelector(`.${scrollElementClass}`);
+        if (v) scrollElement.classList.add(`${scrollElementClass}--scrollable`);
+        else scrollElement.classList.remove(`${scrollElementClass}--scrollable`);
+      },
+    );
+
     return {
       tagValue,
       tInputValue,
@@ -176,13 +188,14 @@ export default defineComponent({
     });
     // 左侧文本
     const label = renderTNodeJSX(this, 'label', { silent: true });
+    const readonly = this.readonly || this.inputProps?.readonly;
     return (
       <TInput
         ref="tagInputRef"
-        readonly={this.readonly || this.inputProps?.readonly}
+        readonly={readonly}
         inputClass={this.inputProps?.inputClass} // 展开无效 需直接透传
         value={this.tInputValue}
-        showInput={!this.inputProps?.readonly || !this.tagValue || !this.tagValue?.length}
+        showInput={!readonly || !this.tagValue || !this.tagValue?.length}
         keepWrapperWidth={!this.autoWidth}
         autoWidth={true}
         size={this.size}

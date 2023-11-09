@@ -4,6 +4,7 @@
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
  * */
 
+import { ImageViewerProps } from '../image-viewer';
 import { UploadConfig } from '../config-provider/type';
 import { ButtonProps } from '../button';
 import { PlainObject, TNode, UploadDisplayDragEvents } from '../common';
@@ -34,13 +35,20 @@ export interface TdUploadProps<T extends UploadFile = UploadFile> {
    */
   autoUpload?: boolean;
   /**
-   * 如果是自动上传模式 `autoUpload=true`，表示全部文件上传之前的钩子函数，函数参数为上传的文件，函数返回值决定是否继续上传，若返回值为 `false` 则终止上传。<br/>如果是非自动上传模式 `autoUpload=false`，则函数返回值为 `false` 时表示不触发文件变化
+   * 如果是自动上传模式 `autoUpload=true`，表示全部文件上传之前的钩子函数，函数参数为上传的文件，函数返回值决定是否继续上传，若返回值为 `false` 则终止上传。<br/>如果是非自动上传模式 `autoUpload=false`，则函数返回值为 `false` 时表示本次选中的文件不会加入到文件列表中，即不触发 `onChange` 事件
    */
   beforeAllFilesUpload?: (file: UploadFile[]) => boolean | Promise<boolean>;
   /**
    * 如果是自动上传模式 `autoUpload=true`，表示单个文件上传之前的钩子函数，若函数返回值为 `false` 则表示不上传当前文件。<br/>如果是非自动上传模式 `autoUpload=false`，函数返回值为 `false` 时表示从上传文件中剔除当前文件
    */
   beforeUpload?: (file: UploadFile) => boolean | Promise<boolean>;
+  /**
+   * 批量文件/图片上传，`autoUpload=false` 场景下，透传“取消上传”按钮属性
+   */
+  cancelUploadButton?:
+    | null
+    | ButtonProps
+    | TNode<{ disabled: boolean; cancelUploadText: string; cancelUpload: (ctx: { e: MouseEvent }) => void }>;
   /**
    * 上传请求所需的额外字段，默认字段有 `file`，表示文件信息。可以添加额外的文件名字段，如：`{file_name: "custom-file-name.txt"}`。`autoUpload=true` 时有效。也可以使用 `formatRequest` 完全自定义上传请求的字段
    */
@@ -62,7 +70,7 @@ export interface TdUploadProps<T extends UploadFile = UploadFile> {
    */
   draggable?: boolean;
   /**
-   * 用于完全自定义文件列表内容
+   * 用于完全自定义文件列表界面内容(UI)，单文件和多文件均有效
    */
   fileListDisplay?: TNode<{ files: UploadFile[]; dragEvents?: UploadDisplayDragEvents }>;
   /**
@@ -80,17 +88,21 @@ export interface TdUploadProps<T extends UploadFile = UploadFile> {
    */
   format?: (file: File) => UploadFile;
   /**
-   * 用于新增或修改文件上传请求参数。`action` 存在时有效。一个请求上传一个文件时，默认请求字段有 `file`；<br/>一个请求上传多个文件时，默认字段有 `file[0]/file[1]/file[2]/.../length`，其中 `length` 表示本次上传的文件数量。<br/>⚠️非常注意，此处的 `file[0]/file[1]` 仅仅是一个字段名，并非表示 `file` 是一个数组，接口获取字段时注意区分。<br/>可以使用 `name` 定义 `file` 字段的别名，也可以使用 `formatRequest` 自定义任意字段
+   * 用于新增或修改文件上传请求 参数。`action` 存在时有效。一个请求上传一个文件时，默认请求字段有 `file`。<br/>一个请求上传多个文件时，默认字段有 `file[0]/file[1]/file[2]/.../length`，其中 `length` 表示本次上传的文件数量。<br/>⚠️非常注意，此处的 `file[0]/file[1]` 仅仅是一个字段名，并非表示 `file` 是一个数组，接口获取字段时注意区分。<br/>可以使用 `name` 定义 `file` 字段的别名。<br/>也可以使用 `formatRequest` 自定义任意字段，如添加一个字段 `fileList` ，存储文件数组
    */
   formatRequest?: (requestData: { [key: string]: any }) => { [key: string]: any };
   /**
-   * 用于格式化文件上传后的接口响应数据，`response` 便是接口响应的原始数据。`action` 存在时有效。<br/> 此函数的返回值 `error` 或 `response.error` 会作为错误文本提醒，如果存在会判定为本次上传失败。<br/> 此函数的返回值 `url` 或 `response.url` 会作为上传成功后的链接
+   * 用于格式化文件上传后的接口响应数据，`response` 便是接口响应的原始数据。`action` 存在时有效。<br/> 示例返回值：`{ error, url, status, files }` <br/> 此函数的返回值 `error` 会作为错误文本提醒，表示上传失败的原因，如果存在会判定为本次上传失败。<br/> 此函数的返回值 `url` 会作为单个文件上传成功后的链接。<br/> `files` 表示一个请求同时上传多个文件后的文件列表
    */
   formatResponse?: (response: any, context: FormatResponseContext) => ResponseType;
   /**
    * 设置上传的请求头部，`action` 存在时有效
    */
   headers?: { [key: string]: string };
+  /**
+   * 透传图片预览组件全部属性
+   */
+  imageViewerProps?: ImageViewerProps;
   /**
    * 用于添加属性到 HTML 元素 `input`
    */
@@ -105,7 +117,7 @@ export interface TdUploadProps<T extends UploadFile = UploadFile> {
    */
   locale?: UploadConfig;
   /**
-   * 用于控制文件上传数量，值为 0 则不限制
+   * 用于控制文件上传数量，值为 0 则不限制。注意，单文件上传场景，请勿设置 `max` 属性
    * @default 0
    */
   max?: number;
@@ -137,6 +149,16 @@ export interface TdUploadProps<T extends UploadFile = UploadFile> {
    * 自定义上传方法。返回值 `status` 表示上传成功或失败；`error` 或 `response.error` 表示上传失败的原因；<br/>`response` 表示请求上传成功后的返回数据，`response.url` 表示上传成功后的图片/文件地址，`response.files` 表示一个请求上传多个文件/图片后的返回值。<br/>示例一：`{ status: 'fail', error: '上传失败', response }`。<br/>示例二：`{ status: 'success', response: { url: 'https://tdesign.gtimg.com/site/avatar.jpg' } }`。<br/> 示例三：`{ status: 'success', files: [{ url: 'https://xxx.png', name: 'xxx.png' }]}`
    */
   requestMethod?: (files: UploadFile | UploadFile[]) => Promise<RequestMethodResponse>;
+  /**
+   * 是否显示图片的文件名称
+   * @default true
+   */
+  showImageFileName?: boolean;
+  /**
+   * 是否在文件列表中显示缩略图，`theme=file-flow` 时有效
+   * @default false
+   */
+  showThumbnail?: boolean;
   /**
    * 是否显示上传进度
    * @default true
@@ -172,6 +194,18 @@ export interface TdUploadProps<T extends UploadFile = UploadFile> {
    * @default false
    */
   uploadAllFilesInOneRequest?: boolean;
+  /**
+   * 批量文件/图片上传，`autoUpload=false` 场景下，透传“点击上传”按钮属性
+   */
+  uploadButton?:
+    | null
+    | ButtonProps
+    | TNode<{ disabled: boolean; uploading: boolean; uploadFiles: () => void; uploadText: string }>;
+  /**
+   * 是否允许粘贴上传剪贴板中的文件
+   * @default false
+   */
+  uploadPastedFiles?: boolean;
   /**
    * 是否在请求时间超过 300ms 后显示模拟进度。上传进度有模拟进度和真实进度两种。一般大小的文件上传，真实的上传进度只有 0 和 100，不利于交互呈现，因此组件内置模拟上传进度。真实上传进度一般用于大文件上传。
    * @default true
@@ -229,7 +263,7 @@ export interface TdUploadProps<T extends UploadFile = UploadFile> {
    */
   onPreview?: (options: { file: UploadFile; index: number; e: MouseEvent }) => void;
   /**
-   * 上传进度变化时触发，真实进度和模拟进度都会触发。`type=real` 表示真实上传进度，`type=mock` 表示模拟上传进度
+   * 上传进度变化时触发，真实进度和模拟进度都会触发。<br/>⚠️ 原始上传请求，小文件的上传进度只有 0 和 100，故而不会触发 `progress` 事件；只有大文件才有真实的中间进度。如果你希望很小的文件也显示上传进度，保证 `useMockProgress=true` 的情况下，设置 `mockProgressDuration` 为更小的值。<br/>参数 `options.type=real` 表示真实上传进度，`options.type=mock` 表示模拟上传进度
    */
   onProgress?: (options: ProgressContext) => void;
   /**
@@ -263,6 +297,10 @@ export interface UploadInstanceFunctions<T extends UploadFile = UploadFile> {
    * 组件实例方法，打开文件选择器
    */
   triggerUpload: () => void;
+  /**
+   * 设置上传中文件的上传进度
+   */
+  uploadFilePercent: (params: { file: UploadFile; percent: number }) => void;
   /**
    * 组件实例方法，默认上传未成功上传过的所有文件。带参数时，表示上传指定文件
    */
@@ -317,7 +355,10 @@ export interface UploadFile extends PlainObject {
   url?: string;
 }
 
-export type ResponseType = { error?: string; url?: string } & Record<string, any>;
+export type ResponseType = { error?: string; url?: string; status?: 'fail' | 'success'; files?: UploadFile[] } & Record<
+  string,
+  any
+>;
 
 export interface FormatResponseContext {
   file: UploadFile;
