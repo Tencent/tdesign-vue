@@ -114,7 +114,7 @@ expanded | Boolean | - | required | Y
 indeterminate | Boolean | - | required | Y
 loading | Boolean | - | required | Y
 `TreeNodeState` | \- | - | extends `TreeNodeState` | N
-### TreeNodeModel
+### TreeNodeModelFunctions
 
 name | params | return | description
 -- | -- | -- | --
