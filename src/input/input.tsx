@@ -11,7 +11,7 @@ import { InputValue, TdInputProps } from './type';
 import { getCharacterLength, omit } from '../utils/helper';
 import getConfigReceiverMixins, { InputConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
-import { ClassName } from '../common';
+import { ClassName, PlainObject } from '../common';
 import { emitEvent } from '../utils/event';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
@@ -20,8 +20,8 @@ import log from '../_common/js/log';
 
 const ANIMATION_TIME = 100;
 
-function getValidAttrs(obj: object): object {
-  const newObj = {};
+function getValidAttrs(obj: PlainObject): PlainObject {
+  const newObj: PlainObject = {};
   Object.keys(obj).forEach((key) => {
     if (typeof obj[key] !== 'undefined') {
       newObj[key] = obj[key];
