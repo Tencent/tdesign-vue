@@ -214,7 +214,7 @@ export default mixins(
   },
 
   methods: {
-    getOutputValue(val: string | number) {
+    getOutputValue<T>(val: T) {
       if (this.type === 'number') {
         return val || val === 0 ? Number(val) : undefined;
       }
