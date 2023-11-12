@@ -113,12 +113,16 @@ export default defineComponent({
       }
     };
 
+    watch([checkboxStore], () => {
+      if (!checkboxStore.value?.parentExist) {
+        tDisabled.value = props.disabled;
+      }
+    });
+
     watch(
-      [disabled, checkboxStore],
+      [disabled],
       ([val]) => {
-        if (!checkboxStore.value?.parentExist) {
-          tDisabled.value = val;
-        }
+        tDisabled.value = val;
       },
       { immediate: true },
     );

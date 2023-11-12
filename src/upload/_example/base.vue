@@ -74,10 +74,10 @@
         @fail="handleFail"
       >
         <!-- 自定义文件列表，示例代码有效，勿删 -->
-        <!-- <template #fileListDisplay>
+        <!-- <template #fileListDisplay="{ files }">
           <div>
             <div
-              v-for="(file, index) in files3"
+              v-for="(file, index) in files"
               :key="file.name"
               class="t-upload__single-display-text t-upload__display-text--margin"
             >

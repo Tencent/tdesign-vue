@@ -34,6 +34,97 @@
 </template>
 
 <script>
+const treeItems = [
+  {
+    value: '1',
+    label: '1',
+    children: [
+      {
+        value: '1.1',
+        label: '1.1',
+        children: [
+          {
+            value: '1.1.1',
+            label: '1.1.1',
+            children: [
+              {
+                value: '1.1.1.1',
+                label: '1.1.1.1',
+              },
+              {
+                value: '1.1.1.2',
+                label: '1.1.1.2',
+              },
+            ],
+          },
+          {
+            value: '1.1.2',
+            label: '1.1.2',
+            children: [
+              {
+                value: '1.1.2.1',
+                label: '1.1.2.1',
+              },
+              {
+                value: '1.1.2.2',
+                label: '1.1.2.2',
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: '1.2',
+        label: '1.2',
+        children: [
+          {
+            value: '1.2.1',
+            label: '1.2.1',
+            children: [
+              {
+                value: '1.2.1.1',
+                label: '1.2.1.1',
+              },
+              {
+                value: '1.2.1.2',
+                label: '1.2.1.2',
+              },
+            ],
+          },
+          {
+            value: '1.2.2',
+            label: '1.2.2',
+            children: [
+              {
+                value: '1.2.2.1',
+                label: '1.2.2.1',
+              },
+              {
+                value: '1.2.2.2',
+                label: '1.2.2.2',
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    value: '2',
+    label: '2',
+    children: [
+      {
+        value: '2.1',
+        label: '2.1',
+      },
+      {
+        value: '2.2',
+        label: '2.2',
+      },
+    ],
+  },
+];
+
 export default {
   data() {
     return {
@@ -55,113 +146,19 @@ export default {
           label: 'all',
         },
       ],
-      items: [
-        {
-          value: '1',
-          label: '1',
-          children: [
-            {
-              value: '1.1',
-              label: '1.1',
-              children: [
-                {
-                  value: '1.1.1',
-                  label: '1.1.1',
-                  children: [
-                    {
-                      value: '1.1.1.1',
-                      label: '1.1.1.1',
-                    },
-                    {
-                      value: '1.1.1.2',
-                      label: '1.1.1.2',
-                    },
-                  ],
-                },
-                {
-                  value: '1.1.2',
-                  label: '1.1.2',
-                  children: [
-                    {
-                      value: '1.1.2.1',
-                      label: '1.1.2.1',
-                    },
-                    {
-                      value: '1.1.2.2',
-                      label: '1.1.2.2',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              value: '1.2',
-              label: '1.2',
-              children: [
-                {
-                  value: '1.2.1',
-                  label: '1.2.1',
-                  children: [
-                    {
-                      value: '1.2.1.1',
-                      label: '1.2.1.1',
-                    },
-                    {
-                      value: '1.2.1.2',
-                      label: '1.2.1.2',
-                    },
-                  ],
-                },
-                {
-                  value: '1.2.2',
-                  label: '1.2.2',
-                  children: [
-                    {
-                      value: '1.2.2.1',
-                      label: '1.2.2.1',
-                    },
-                    {
-                      value: '1.2.2.2',
-                      label: '1.2.2.2',
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-        {
-          value: '2',
-          label: '2',
-          children: [
-            {
-              value: '2.1',
-              label: '2.1',
-            },
-            {
-              value: '2.2',
-              label: '2.2',
-            },
-          ],
-        },
-      ],
+      items: treeItems,
     };
   },
   methods: {
     onClick(context) {
-      console.info('onClick:', context);
+      console.info('onClick context:', context);
       const { node } = context;
-      console.info(node.value, 'checked:', node.checked);
+      console.info(node.value, 'onClick context.node.checked:', node.checked);
     },
     onChange(checked, context) {
-      console.info('onChange:', checked, context);
+      console.info('onChange checked:', checked, 'context:', context);
       const { node } = context;
-      console.info(node.value, 'checked:', node.checked);
-    },
-    propOnChange(checked, context) {
-      console.info('propOnChange:', checked, context);
-      const { node } = context;
-      console.info(node.value, 'checked:', node.checked);
+      console.info(node.value, 'onChange context.node.checked:', node.checked);
     },
     selectInvert() {
       const { tree } = this.$refs;

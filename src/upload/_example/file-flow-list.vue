@@ -25,6 +25,7 @@
       :allow-upload-duplicate-file="allowUploadDuplicateFile"
       :is-batch-upload="isBatchUpload"
       :upload-all-files-in-one-request="uploadAllFilesInOneRequest"
+      :format-response="formatResponse"
       @dragenter="onDragenter"
       @dragleave="onDragleave"
       @drop="onDrop"
@@ -59,6 +60,12 @@ export default {
     },
     onDrop(p) {
       console.log('drop', p);
+    },
+    formatResponse(res) {
+      if (!res) {
+        return { status: 'fail', error: '上传失败，原因：文件过大或网络不通' };
+      }
+      return res;
     },
   },
 };

@@ -54,6 +54,7 @@ describe('Tree:props:events', () => {
       expect(rsActived.length).toBe(1);
       expect(rsActived[0]).toBe('t2');
       expect(rsContext.node.value).toBe('t2');
+      expect(rsContext.node.actived).toBe(true);
     }, 300);
 
     it('active 事件可触发', async () => {
@@ -98,6 +99,7 @@ describe('Tree:props:events', () => {
       expect(rsActived.length).toBe(1);
       expect(rsActived[0]).toBe('t2');
       expect(rsContext.node.value).toBe('t2');
+      expect(rsContext.node.actived).toBe(true);
     }, 300);
   });
 
@@ -161,6 +163,7 @@ describe('Tree:props:events', () => {
       expect(rsExpanded.length).toBe(1);
       expect(rsExpanded[0]).toBe('t2');
       expect(rsContext.node.value).toBe('t2');
+      expect(rsContext.node.expanded).toBe(true);
     }, 300);
 
     it('expand 事件可触发', async () => {
@@ -222,6 +225,7 @@ describe('Tree:props:events', () => {
       expect(rsExpanded.length).toBe(1);
       expect(rsExpanded[0]).toBe('t2');
       expect(rsContext.node.value).toBe('t2');
+      expect(rsContext.node.expanded).toBe(true);
     }, 300);
   });
 
@@ -286,6 +290,7 @@ describe('Tree:props:events', () => {
       expect(rsValue.length).toBe(1);
       expect(rsValue[0]).toBe('t2.1');
       expect(rsContext.node.value).toBe('t2');
+      expect(rsContext.node.checked).toBe(true);
     }, 300);
 
     it('change 事件可触发', async () => {
@@ -348,6 +353,7 @@ describe('Tree:props:events', () => {
       expect(rsValue.length).toBe(1);
       expect(rsValue[0]).toBe('t2.1');
       expect(rsContext.node.value).toBe('t2');
+      expect(rsContext.node.checked).toBe(true);
     }, 300);
   });
 
@@ -361,10 +367,12 @@ describe('Tree:props:events', () => {
         },
       ];
 
+      const step1 = step();
       const loadedValues = [];
       const onLoad = (context) => {
         // 这个事件会被触发多次
         loadedValues.push(context.node.value);
+        step1.ready();
       };
 
       const loadData = (node) => new Promise((resolve) => {
@@ -399,7 +407,8 @@ describe('Tree:props:events', () => {
         },
       });
 
-      await delay(10);
+      await delay(1);
+      await step1;
       expect(loadedValues[0]).toBe('t1');
     }, 300);
   });

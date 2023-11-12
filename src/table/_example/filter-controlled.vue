@@ -107,6 +107,8 @@ export default {
               { label: '已过期', value: 2 },
               { label: '审批失败', value: 3 },
             ],
+            // confirm to search and hide filter popup
+            confirmEvents: ['onChange'],
             // 支持透传全部 Popup 组件属性
             // popupProps: {
             //   attach: () => document.body,
