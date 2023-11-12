@@ -214,6 +214,12 @@ export default mixins(
   },
 
   methods: {
+    getOutputValue(val: string | number) {
+      if (this.type === 'number') {
+        return val || val === 0 ? Number(val) : undefined;
+      }
+      return val;
+    },
     addListeners() {
       this.$watch(
         () => this.value + this.placeholder,
@@ -284,10 +290,11 @@ export default mixins(
       const {
         currentTarget: { value },
       }: any = e;
+      const tmpValue = this.getOutputValue(value);
       if (/enter/i.test(e.key) || /enter/i.test(e.code)) {
-        emitEvent<Parameters<TdInputProps['onEnter']>>(this, 'enter', value, { e });
+        emitEvent<Parameters<TdInputProps['onEnter']>>(this, 'enter', tmpValue, { e });
       } else {
-        emitEvent<Parameters<TdInputProps['onKeydown']>>(this, 'keydown', value, { e });
+        emitEvent<Parameters<TdInputProps['onKeydown']>>(this, 'keydown', tmpValue, { e });
       }
     },
     handleKeyUp(e: KeyboardEvent) {
@@ -298,14 +305,16 @@ export default mixins(
       if (e.key === 'Process') {
         return;
       }
-      emitEvent<Parameters<TdInputProps['onKeyup']>>(this, 'keyup', value, { e });
+      const tmpValue = this.getOutputValue(value);
+      emitEvent<Parameters<TdInputProps['onKeyup']>>(this, 'keyup', tmpValue, { e });
     },
     handleKeypress(e: KeyboardEvent) {
       if (this.tDisabled) return;
       const {
         currentTarget: { value },
       }: any = e;
-      emitEvent<Parameters<TdInputProps['onKeypress']>>(this, 'keypress', value, { e });
+      const tmpValue = this.getOutputValue(value);
+      emitEvent<Parameters<TdInputProps['onKeypress']>>(this, 'keypress', tmpValue, { e });
     },
     handlePaste(e: ClipboardEvent) {
       if (this.tDisabled) return;
@@ -335,7 +344,7 @@ export default mixins(
     },
     formatAndEmitBlur(e: FocusEvent) {
       if (this.format) {
-        this.inputValue = this.format(this.value);
+        this.inputValue = this.type === 'number' || typeof this.value === 'number' ? this.value : this.format(this.value);
       }
       this.focused = false;
       this.tFormItem?.validate('blur');
@@ -368,6 +377,7 @@ export default mixins(
       this.onClick?.({ e });
     },
     throttleChangeCursorPos(ref: HTMLInputElement, pos: number) {
+      if (this.type === 'number') return;
       // eslint-disable-next-line no-param-reassign
       (ref as HTMLInputElement).selectionEnd = pos;
     },
@@ -380,7 +390,9 @@ export default mixins(
       if (this.composingRef) {
         this.composingRefValue = val;
       } else {
-        if (this.type !== 'number') {
+        if (this.type === 'number') {
+          val = this.getOutputValue(val);
+        } else {
           val = this.getValueByLimitNumber(val);
         }
         emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', val, { e, trigger: 'input' });
