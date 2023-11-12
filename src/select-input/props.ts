@@ -76,6 +76,8 @@ export default {
   defaultPopupVisible: Boolean,
   /** 只读状态，值为真会隐藏输入框，且无法打开下拉框 */
   readonly: Boolean,
+  /** 多选且可搜索时，是否在选中一个选项后保留当前的搜索关键词 */
+  reserveKeyword: Boolean,
   /** 输入框状态 */
   status: {
     type: String as PropType<TdSelectInputProps['status']>,

@@ -6,7 +6,7 @@
 
 import { TNode, SizeEnum, ClassName } from '../common';
 
-export interface TdInputProps<T = string> {
+export interface TdInputProps<T = InputValue> {
   /**
    * 文本内容位置，居左/居中/居右
    * @default left

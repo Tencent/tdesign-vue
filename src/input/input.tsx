@@ -214,7 +214,7 @@ export default mixins(
   },
 
   methods: {
-    getOutputValue<T>(val: T) {
+    getOutputValue(val: InputValue) {
       if (this.type === 'number') {
         return val || val === 0 ? Number(val) : undefined;
       }
@@ -333,7 +333,8 @@ export default mixins(
       this.renderType = toggleType;
     },
     emitClear(e: MouseEvent) {
-      emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', '', { e, trigger: 'clear' });
+      const val = this.type === 'number' ? undefined : '';
+      emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', val, { e, trigger: 'clear' });
       emitEvent<Parameters<TdInputProps['onClear']>>(this, 'clear', { e });
     },
     emitFocus(e: FocusEvent) {

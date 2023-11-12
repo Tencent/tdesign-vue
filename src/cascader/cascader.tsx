@@ -159,7 +159,7 @@ export default defineComponent({
             inputProps: { size: this.size, ...(this.inputProps as TdCascaderProps['inputProps']) },
             tagInputProps: { size: this.size, ...(this.tagInputProps as TdCascaderProps['tagInputProps']) },
             tagProps: { ...(this.tagProps as TdCascaderProps['tagProps']) },
-            onInputChange: (value: InputValue, ctx: SelectInputValueChangeContext) => {
+            onInputChange: (value: string, ctx: SelectInputValueChangeContext) => {
               if (!this.isFilterable) return;
               setInputVal(`${value}`);
               (this?.selectInputProps as TdSelectInputProps)?.onInputChange?.(value, ctx);
