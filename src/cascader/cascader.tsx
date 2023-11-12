@@ -15,8 +15,6 @@ import {
 } from './interface';
 import { useConfig, usePrefixClass, useCommonClassName } from '../hooks/useConfig';
 import { PopupVisibleChangeContext } from '../popup';
-import { InputValue } from '../input';
-
 import { closeIconClickEffect, handleRemoveTagEffect } from './core/effect';
 import { getPanels, getSingleContent, getMultipleContent } from './core/helper';
 import { getFakeArrowIconClass } from './core/className';
