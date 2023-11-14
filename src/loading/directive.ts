@@ -1,4 +1,4 @@
-import type { DirectiveBinding } from 'vue/types/options';
+import type { DirectiveBinding, DirectiveOptions } from 'vue/types/options';
 import isObject from 'lodash/isObject';
 import mapKeys from 'lodash/mapKeys';
 import isEqual from 'lodash/isEqual';
@@ -29,7 +29,7 @@ const createInstance = (el: HTMLElement, binding: DirectiveBinding) => {
   };
 };
 
-const vLoading = {
+const vLoading: DirectiveOptions = {
   inserted(el: HTMLElement, binding: DirectiveBinding) {
     if (binding.value) {
       createInstance(el, binding);
@@ -46,6 +46,9 @@ const vLoading = {
         instance?.instance.hide();
       }
     }
+  },
+  unbind(el) {
+    el[INSTANCE_KEY]?.instance.hide();
   },
 };
 
