@@ -390,6 +390,7 @@ export default function useFixed(
 
   const calculateThWidthList = (trList: HTMLCollection) => {
     const widthMap: { [colKey: string]: number } = {};
+    if (!trList) return widthMap;
     for (let i = 0, len = trList.length; i < len; i++) {
       const thList = trList[i].children;
       // second for used for multiple row header
@@ -501,6 +502,7 @@ export default function useFixed(
   );
 
   watch([finalColumns], ([finalColumns], [preFinalColumns]) => {
+    if (!props.showHeader) return;
     const finalColKeys = finalColumns.map((t) => t.colKey);
     const preColKeys = preFinalColumns.map((t) => t.colKey);
     if (finalColKeys.length < preColKeys.length) {
