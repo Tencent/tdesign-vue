@@ -81818,6 +81818,9 @@ exports[`csr snapshot test > csr test ./src/range-input/_example/base.vue 1`] = 
         />
       </div>
     </div>
+    <span
+      class="t-range-input__suffix t-range-input__suffix-icon"
+    />
   </div>
 </div>
 `;
@@ -81867,6 +81870,9 @@ exports[`csr snapshot test > csr test ./src/range-input/_example/popup.vue 1`] =
           />
         </div>
       </div>
+      <span
+        class="t-range-input__suffix t-range-input__suffix-icon"
+      />
     </div>
   </div>
 </div>
@@ -81921,6 +81927,9 @@ exports[`csr snapshot test > csr test ./src/range-input/_example/size.vue 1`] = 
             />
           </div>
         </div>
+        <span
+          class="t-range-input__suffix t-range-input__suffix-icon"
+        />
       </div>
     </div>
   </div>
@@ -81968,6 +81977,9 @@ exports[`csr snapshot test > csr test ./src/range-input/_example/size.vue 1`] = 
             />
           </div>
         </div>
+        <span
+          class="t-range-input__suffix t-range-input__suffix-icon"
+        />
       </div>
     </div>
   </div>
@@ -82015,6 +82027,9 @@ exports[`csr snapshot test > csr test ./src/range-input/_example/size.vue 1`] = 
             />
           </div>
         </div>
+        <span
+          class="t-range-input__suffix t-range-input__suffix-icon"
+        />
       </div>
     </div>
   </div>
@@ -82070,6 +82085,9 @@ exports[`csr snapshot test > csr test ./src/range-input/_example/status.vue 1`] 
             />
           </div>
         </div>
+        <span
+          class="t-range-input__suffix t-range-input__suffix-icon"
+        />
       </div>
     </div>
   </div>
@@ -82117,6 +82135,9 @@ exports[`csr snapshot test > csr test ./src/range-input/_example/status.vue 1`] 
             />
           </div>
         </div>
+        <span
+          class="t-range-input__suffix t-range-input__suffix-icon"
+        />
       </div>
     </div>
   </div>
@@ -82164,6 +82185,9 @@ exports[`csr snapshot test > csr test ./src/range-input/_example/status.vue 1`] 
             />
           </div>
         </div>
+        <span
+          class="t-range-input__suffix t-range-input__suffix-icon"
+        />
       </div>
     </div>
   </div>
