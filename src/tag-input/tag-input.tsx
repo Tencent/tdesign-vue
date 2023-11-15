@@ -179,6 +179,7 @@ export default defineComponent({
     if (suffixIconNode && !this.classes.includes(suffixClass)) {
       this.classes.push(suffixClass);
     }
+    const prefixIconNode = renderTNodeJSX(this, 'prefixIcon');
     // 自定义 Tag 节点
     const displayNode = renderTNodeJSX(this, 'valueDisplay', {
       params: {
@@ -207,6 +208,7 @@ export default defineComponent({
         placeholder={this.tagInputPlaceholder}
         suffix={this.suffix}
         suffixIcon={() => suffixIconNode}
+        prefixIcon={() => prefixIconNode}
         props={this.inputProps}
         scopedSlots={this.$scopedSlots}
         on={{
