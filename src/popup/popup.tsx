@@ -57,6 +57,8 @@ export default mixins(classPrefixMixins).extend({
       mouseInRange: false,
       /** mark popup as clicked when mousedown, reset after mouseup */
       contentClicked: false,
+      /** is popup leaving */
+      isLeaving: false,
     };
   },
   computed: {
@@ -316,6 +318,10 @@ export default mixins(classPrefixMixins).extend({
       }
     },
     onMouseEnter() {
+      if (this.destroyOnClose && this.isLeaving) {
+        // 如果 popup 在关闭的时候会被销毁，那在它消失的过程中，不响应鼠标进入事件，因为否则不会触发 mouseleave
+        return;
+      }
       this.mouseInRange = true;
       this.handleOpen({});
     },
@@ -344,6 +350,13 @@ export default mixins(classPrefixMixins).extend({
       if (this.visible) {
         this.updatePopper();
       }
+    },
+    onLeave() {
+      this.isLeaving = true;
+    },
+    onAfterLeave() {
+      this.isLeaving = false;
+      this.destroyPopper();
     },
     preventClosing(preventing: boolean) {
       const parent = (this as any).popup;
@@ -441,7 +454,8 @@ export default mixins(classPrefixMixins).extend({
           appear
           onBeforeEnter={this.onBeforeEnter}
           onAfterEnter={this.onAfterEnter}
-          onAfterLeave={this.destroyPopper}
+          onLeave={this.onLeave}
+          onAfterLeave={this.onAfterLeave}
         >
           {overlay}
         </transition>

@@ -1,6 +1,6 @@
 import Vue, { VueConstructor } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
-import { isEmpty } from 'lodash';
+import isEmpty from 'lodash/isEmpty';
 import { VNode } from 'vue/types/umd';
 import { ANCHOR_SHARP_REGEXP } from './utils';
 import props from './anchor-item-props';

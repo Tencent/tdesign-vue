@@ -38,21 +38,38 @@ export default {
         { label: '选项一', value: '1' },
         { label: '选项二', value: '2' },
         { label: '选项三', value: '3' },
+        { label: '选项四', value: '4' },
+        { label: '选项五', value: '5' },
+        { label: '选项六', value: '6' },
+        { label: '选项七', value: '7' },
+        { label: '选项八', value: '8' },
+        { label: '选项九', value: '9' },
       ],
-      value: ['1', '3'],
+      value: ['1', '3', '9'],
       minCollapsedNum: 1,
     };
   },
   methods: {
-    collapsedItems(h, { value, count, collapsedSelectedItems }) {
-      console.log('collapsedItems: ', value, collapsedSelectedItems, count);
+    collapsedItems(h, {
+      value, count, collapsedSelectedItems, onClose,
+    }) {
+      console.log('collapsedItems: ', value, collapsedSelectedItems, count, onClose);
       if (!count) return;
       // hover展示全部已选项
       return (
         <t-popup>
           <div slot="content">
-            {collapsedSelectedItems.map((item) => (
-              <p style="padding: 8px;">{item.label}</p>
+            {collapsedSelectedItems.map((item, index) => (
+              <p style="padding: 2px;">
+                <t-tag
+                  closable={true}
+                  onClick={() => {
+                    onClose(index + 1);
+                  }}
+                >
+                  {item.label}
+                </t-tag>
+              </p>
             ))}
           </div>
           <span v-show={count > 0} style="color: #ED7B2F; margin-left: 8px">
