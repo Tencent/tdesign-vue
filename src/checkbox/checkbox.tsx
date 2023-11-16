@@ -1,5 +1,5 @@
 import {
-  defineComponent, ref, toRefs, inject, watch, onBeforeUnmount, computed,
+  defineComponent, ref, toRefs, inject, watch, onBeforeUnmount, computed, nextTick,
 } from '@vue/composition-api';
 import props from './props';
 import {
@@ -99,18 +99,22 @@ export default defineComponent({
     const tDisabled = ref<boolean>();
     const { formDisabled } = useFormDisabled();
     const handleParentDisabled = ({ parentDisabled, parentMaxExceeded }: ObserverListenerParams) => {
-      const { checkAll, disabled } = props;
-      if (!checkAll && !tChecked.value && parentMaxExceeded) {
-        tDisabled.value = true;
-        return;
-      }
-      if (disabled !== undefined) {
-        tDisabled.value = disabled;
-        return;
-      }
-      if (parentDisabled !== undefined) {
-        tDisabled.value = parentDisabled;
-      }
+      nextTick(() => {
+        const { checkAll, disabled, readonly } = props;
+        if (!checkAll && !tChecked.value && parentMaxExceeded) {
+          tDisabled.value = true;
+          return;
+        }
+        if (disabled !== undefined) {
+          tDisabled.value = disabled;
+          return;
+        }
+        if (parentDisabled !== undefined) {
+          tDisabled.value = parentDisabled;
+          return;
+        }
+        tDisabled.value = disabled || readonly;
+      });
     };
 
     watch([checkboxStore], () => {
