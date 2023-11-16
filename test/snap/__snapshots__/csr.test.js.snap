@@ -92638,8 +92638,8 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/color.vue 1`] = `
 
 exports[`csr snapshot test > csr test ./src/statistic/_example/combination.vue 1`] = `
 <div
-  class="t-space t-space-horizontal"
-  style="gap: 100px; flex-wrap: wrap;"
+  class="t-space t-space-horizontal t-space--break-line"
+  style="gap: 100px;"
 >
   <div
     class="t-space-item"
