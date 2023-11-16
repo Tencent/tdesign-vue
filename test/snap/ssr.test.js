@@ -7,8 +7,12 @@ const transitionStub = () => ({
 });
 config.stubs.transition = transitionStub();
 
+const IGNORE_ASYNC_EXAMPLE_LIST = ['./src/table/_example/pagination-ajax.vue'];
+
 function ssrSnapshotTest() {
-  const files = glob.sync('./src/**/_example/*.vue');
+  const files = glob
+    .sync('./src/**/_example/*.vue')
+    .filter((filePath) => !IGNORE_ASYNC_EXAMPLE_LIST.includes(filePath));
   describe('ssr snapshot test', () => {
     beforeAll(() => {
       vi.useFakeTimers().setSystemTime(new Date('2021-12-31').getTime());

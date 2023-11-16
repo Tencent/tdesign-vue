@@ -2428,8 +2428,8 @@ exports[`csr snapshot test > csr test ./src/avatar/_example/group.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-space t-space-horizontal"
-      style="gap: 16px; flex-wrap: wrap;"
+      class="t-space t-space-horizontal t-space--break-line"
+      style="gap: 16px;"
     >
       <div
         class="t-space-item"
@@ -2486,8 +2486,8 @@ exports[`csr snapshot test > csr test ./src/avatar/_example/group.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-space t-space-horizontal"
-      style="gap: 16px; flex-wrap: wrap;"
+      class="t-space t-space-horizontal t-space--break-line"
+      style="gap: 16px;"
     >
       <div
         class="t-space-item"
@@ -2552,8 +2552,8 @@ exports[`csr snapshot test > csr test ./src/avatar/_example/group-cascading.vue 
     class="t-space-item"
   >
     <div
-      class="t-space t-space-horizontal"
-      style="gap: 16px; flex-wrap: wrap;"
+      class="t-space t-space-horizontal t-space--break-line"
+      style="gap: 16px;"
     >
       <div
         class="t-space-item"
@@ -2610,8 +2610,8 @@ exports[`csr snapshot test > csr test ./src/avatar/_example/group-cascading.vue 
     class="t-space-item"
   >
     <div
-      class="t-space t-space-horizontal"
-      style="gap: 16px; flex-wrap: wrap;"
+      class="t-space t-space-horizontal t-space--break-line"
+      style="gap: 16px;"
     >
       <div
         class="t-space-item"
@@ -2676,8 +2676,8 @@ exports[`csr snapshot test > csr test ./src/avatar/_example/group-max.vue 1`] = 
     class="t-space-item"
   >
     <div
-      class="t-space t-space-horizontal"
-      style="gap: 16px; flex-wrap: wrap;"
+      class="t-space t-space-horizontal t-space--break-line"
+      style="gap: 16px;"
     >
       <div
         class="t-space-item"
@@ -2725,8 +2725,8 @@ exports[`csr snapshot test > csr test ./src/avatar/_example/group-max.vue 1`] = 
     class="t-space-item"
   >
     <div
-      class="t-space t-space-horizontal"
-      style="gap: 16px; flex-wrap: wrap;"
+      class="t-space t-space-horizontal t-space--break-line"
+      style="gap: 16px;"
     >
       <div
         class="t-space-item"
@@ -2783,8 +2783,8 @@ exports[`csr snapshot test > csr test ./src/avatar/_example/group-max.vue 1`] = 
     class="t-space-item"
   >
     <div
-      class="t-space t-space-horizontal"
-      style="gap: 16px; flex-wrap: wrap;"
+      class="t-space t-space-horizontal t-space--break-line"
+      style="gap: 16px;"
     >
       <div
         class="t-space-item"
@@ -2870,8 +2870,8 @@ exports[`csr snapshot test > csr test ./src/avatar/_example/size.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-space t-space-align-center t-space-horizontal"
-      style="gap: 16px; flex-wrap: wrap;"
+      class="t-space t-space-align-center t-space-horizontal t-space--break-line"
+      style="gap: 16px;"
     >
       <div
         class="t-space-item"
@@ -2924,8 +2924,8 @@ exports[`csr snapshot test > csr test ./src/avatar/_example/size.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-space t-space-align-center t-space-horizontal"
-      style="gap: 16px; flex-wrap: wrap;"
+      class="t-space t-space-align-center t-space-horizontal t-space--break-line"
+      style="gap: 16px;"
     >
       <div
         class="t-space-item"
@@ -43365,9 +43365,9 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/attach.vue 1`] = `
   data-v-d38b880a=""
 >
   <div
-    class="t-space t-space-horizontal"
+    class="t-space t-space-horizontal t-space--break-line"
     data-v-d38b880a=""
-    style="gap: 16px; flex-wrap: wrap;"
+    style="gap: 16px;"
   >
     <div
       class="t-space-item"
@@ -44047,8 +44047,8 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/custom.vue 1`] = `
   <br />
   <div>
     <div
-      class="t-space t-space-horizontal"
-      style="gap: 16px; flex-wrap: wrap;"
+      class="t-space t-space-horizontal t-space--break-line"
+      style="gap: 16px;"
     >
       <div
         class="t-space-item"
@@ -44353,8 +44353,8 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/custom.vue 1`] = `
   </p>
   <br />
   <div
-    class="t-space t-space-horizontal"
-    style="gap: 16px; flex-wrap: wrap;"
+    class="t-space t-space-horizontal t-space--break-line"
+    style="gap: 16px;"
   >
     <div
       class="t-space-item"
@@ -44722,8 +44722,8 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/custom.vue 1`] = `
 exports[`csr snapshot test > csr test ./src/dialog/_example/drag.vue 1`] = `
 <div>
   <div
-    class="t-space t-space-horizontal"
-    style="gap: 16px; flex-wrap: wrap;"
+    class="t-space t-space-horizontal t-space--break-line"
+    style="gap: 16px;"
   >
     <div
       class="t-space-item"
@@ -45406,8 +45406,8 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/icon.vue 1`] = `
 exports[`csr snapshot test > csr test ./src/dialog/_example/modal.vue 1`] = `
 <div>
   <div
-    class="t-space t-space-horizontal"
-    style="gap: 16px; flex-wrap: wrap;"
+    class="t-space t-space-horizontal t-space--break-line"
+    style="gap: 16px;"
   >
     <div
       class="t-space-item"
@@ -45805,9 +45805,9 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/modal.vue 1`] = `
 
 exports[`csr snapshot test > csr test ./src/dialog/_example/plugin.vue 1`] = `
 <div
-  class="t-space t-space-horizontal"
+  class="t-space t-space-horizontal t-space--break-line"
   data-v-1786d42e=""
-  style="gap: 16px; flex-wrap: wrap;"
+  style="gap: 16px;"
 >
   <div
     class="t-space-item"
@@ -45890,8 +45890,8 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/plugin.vue 1`] = `
 exports[`csr snapshot test > csr test ./src/dialog/_example/position.vue 1`] = `
 <div>
   <div
-    class="t-space t-space-horizontal"
-    style="gap: 16px; flex-wrap: wrap;"
+    class="t-space t-space-horizontal t-space--break-line"
+    style="gap: 16px;"
   >
     <div
       class="t-space-item"
@@ -46417,8 +46417,8 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/position.vue 1`] = `
 exports[`csr snapshot test > csr test ./src/dialog/_example/warning.vue 1`] = `
 <div>
   <div
-    class="t-space t-space-horizontal"
-    style="gap: 16px; flex-wrap: wrap;"
+    class="t-space t-space-horizontal t-space--break-line"
+    style="gap: 16px;"
   >
     <div
       class="t-space-item"
@@ -47015,8 +47015,8 @@ exports[`csr snapshot test > csr test ./src/divider/_example/text.vue 1`] = `
 
 exports[`csr snapshot test > csr test ./src/divider/_example/vertical.vue 1`] = `
 <div
-  class="t-space t-space-horizontal"
-  style="gap: 16px; flex-wrap: wrap;"
+  class="t-space t-space-horizontal t-space--break-line"
+  style="gap: 16px;"
 >
   <div
     class="t-space-item"
@@ -57139,8 +57139,8 @@ exports[`csr snapshot test > csr test ./src/icon/_example/base.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-space t-space-horizontal"
-      style="gap: 16px; flex-wrap: wrap;"
+      class="t-space t-space-horizontal t-space--break-line"
+      style="gap: 16px;"
     >
       <div
         class="t-space-item"
@@ -57210,8 +57210,8 @@ exports[`csr snapshot test > csr test ./src/icon/_example/base.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-space t-space-align-center t-space-horizontal"
-      style="gap: 16px; flex-wrap: wrap;"
+      class="t-space t-space-align-center t-space-horizontal t-space--break-line"
+      style="gap: 16px;"
     >
       <div
         class="t-space-item"
@@ -57286,8 +57286,8 @@ exports[`csr snapshot test > csr test ./src/icon/_example/base.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-space t-space-horizontal"
-      style="gap: 16px; flex-wrap: wrap;"
+      class="t-space t-space-horizontal t-space--break-line"
+      style="gap: 16px;"
     >
       <div
         class="t-space-item"
@@ -57354,8 +57354,8 @@ exports[`csr snapshot test > csr test ./src/icon/_example/enhanced.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-space t-space-align-center t-space-horizontal"
-      style="gap: 16px; flex-wrap: wrap;"
+      class="t-space t-space-align-center t-space-horizontal t-space--break-line"
+      style="gap: 16px;"
     >
       <div
         class="t-space-item"
@@ -57420,8 +57420,8 @@ exports[`csr snapshot test > csr test ./src/icon/_example/enhanced.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-space t-space-align-center t-space-horizontal"
-      style="gap: 16px; flex-wrap: wrap;"
+      class="t-space t-space-align-center t-space-horizontal t-space--break-line"
+      style="gap: 16px;"
     >
       <div
         class="t-space-item"
@@ -57546,8 +57546,8 @@ exports[`csr snapshot test > csr test ./src/icon/_example/iconfont.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-space t-space-horizontal"
-      style="gap: 16px; flex-wrap: wrap;"
+      class="t-space t-space-horizontal t-space--break-line"
+      style="gap: 16px;"
     >
       <div
         class="t-space-item"
@@ -57597,8 +57597,8 @@ exports[`csr snapshot test > csr test ./src/icon/_example/iconfont.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-space t-space-horizontal"
-      style="gap: 16px; flex-wrap: wrap;"
+      class="t-space t-space-horizontal t-space--break-line"
+      style="gap: 16px;"
     >
       <div
         class="t-space-item"
@@ -57653,8 +57653,8 @@ exports[`csr snapshot test > csr test ./src/icon/_example/iconfont.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-space t-space-horizontal"
-      style="gap: 16px; flex-wrap: wrap;"
+      class="t-space t-space-horizontal t-space--break-line"
+      style="gap: 16px;"
     >
       <div
         class="t-space-item"
@@ -57705,8 +57705,8 @@ exports[`csr snapshot test > csr test ./src/icon/_example/iconfont-enhanced.vue 
     class="t-space-item"
   >
     <div
-      class="t-space t-space-align-center t-space-horizontal"
-      style="gap: 16px; flex-wrap: wrap;"
+      class="t-space t-space-align-center t-space-horizontal t-space--break-line"
+      style="gap: 16px;"
     >
       <div
         class="t-space-item"
@@ -57751,8 +57751,8 @@ exports[`csr snapshot test > csr test ./src/icon/_example/iconfont-enhanced.vue 
     class="t-space-item"
   >
     <div
-      class="t-space t-space-align-center t-space-horizontal"
-      style="gap: 16px; flex-wrap: wrap;"
+      class="t-space t-space-align-center t-space-horizontal t-space--break-line"
+      style="gap: 16px;"
     >
       <div
         class="t-space-item"
@@ -57804,8 +57804,8 @@ exports[`csr snapshot test > csr test ./src/icon/_example/single.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-space t-space-horizontal"
-      style="gap: 16px; flex-wrap: wrap;"
+      class="t-space t-space-horizontal t-space--break-line"
+      style="gap: 16px;"
     >
       <div
         class="t-space-item"
@@ -57925,8 +57925,8 @@ exports[`csr snapshot test > csr test ./src/icon/_example/single.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-space t-space-horizontal"
-      style="gap: 16px; flex-wrap: wrap;"
+      class="t-space t-space-horizontal t-space--break-line"
+      style="gap: 16px;"
     >
       <div
         class="t-space-item"
@@ -58356,8 +58356,8 @@ exports[`csr snapshot test > csr test ./src/image/_example/extra-hover.vue 1`] =
 
 exports[`csr snapshot test > csr test ./src/image/_example/fill-mode.vue 1`] = `
 <div
-  class="t-space t-space-horizontal"
-  style="gap: 16px; flex-wrap: wrap;"
+  class="t-space t-space-horizontal t-space--break-line"
+  style="gap: 16px;"
 >
   <div
     class="t-space-item"
@@ -58676,8 +58676,8 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-position.vue 1`]
     class="t-space-item"
   >
     <div
-      class="t-space t-space-horizontal"
-      style="gap: 16px; flex-wrap: wrap;"
+      class="t-space t-space-horizontal t-space--break-line"
+      style="gap: 16px;"
     >
       <div
         class="t-space-item"
@@ -58868,8 +58868,8 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-position.vue 1`]
     class="t-space-item"
   >
     <div
-      class="t-space t-space-horizontal"
-      style="gap: 16px; flex-wrap: wrap;"
+      class="t-space t-space-horizontal t-space--break-line"
+      style="gap: 16px;"
     >
       <div
         class="t-space-item"
@@ -58999,8 +58999,8 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-position.vue 1`]
     class="t-space-item"
   >
     <div
-      class="t-space t-space-horizontal"
-      style="gap: 16px; flex-wrap: wrap;"
+      class="t-space t-space-horizontal t-space--break-line"
+      style="gap: 16px;"
     >
       <div
         class="t-space-item"
@@ -59189,8 +59189,8 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-position.vue 1`]
         class="t-space-item"
       >
         <div
-          class="t-space t-space-horizontal"
-          style="gap: 16px; flex-wrap: wrap;"
+          class="t-space t-space-horizontal t-space--break-line"
+          style="gap: 16px;"
         >
           <div
             class="t-space-item"
@@ -59389,8 +59389,8 @@ exports[`csr snapshot test > csr test ./src/image/_example/lazy-list.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-space t-space-horizontal"
-      style="gap: 16px; flex-wrap: wrap; height: 240px; overflow-y: scroll;"
+      class="t-space t-space-horizontal t-space--break-line"
+      style="gap: 16px; height: 240px; overflow-y: scroll;"
     >
       <div
         class="t-space-item"
@@ -91574,9 +91574,9 @@ exports[`csr snapshot test > csr test ./src/slider/_example/vertical-marks.vue 1
 
 exports[`csr snapshot test > csr test ./src/space/_example/align.vue 1`] = `
 <div
-  class="t-space t-space-horizontal"
+  class="t-space t-space-horizontal t-space--break-line"
   data-v-2418d6a3=""
-  style="gap: 16px; flex-wrap: wrap;"
+  style="gap: 16px;"
 >
   <div
     class="t-space-item"
@@ -91801,8 +91801,8 @@ exports[`csr snapshot test > csr test ./src/space/_example/base.vue 1`] = `
 
 exports[`csr snapshot test > csr test ./src/space/_example/break-line.vue 1`] = `
 <div
-  class="t-space t-space-horizontal"
-  style="gap: 16px; flex-wrap: wrap;"
+  class="t-space t-space-horizontal t-space--break-line"
+  style="gap: 16px;"
 >
   <div
     class="t-space-item"
@@ -94920,8 +94920,8 @@ exports[`csr snapshot test > csr test ./src/switch/_example/describe.vue 1`] = `
 
 exports[`csr snapshot test > csr test ./src/switch/_example/size.vue 1`] = `
 <div
-  class="t-space t-space-horizontal"
-  style="gap: 16px; flex-wrap: wrap;"
+  class="t-space t-space-horizontal t-space--break-line"
+  style="gap: 16px;"
 >
   <div
     class="t-space-item"
@@ -94970,8 +94970,8 @@ exports[`csr snapshot test > csr test ./src/switch/_example/size.vue 1`] = `
 
 exports[`csr snapshot test > csr test ./src/switch/_example/status.vue 1`] = `
 <div
-  class="t-space t-space-horizontal"
-  style="gap: 16px; flex-wrap: wrap;"
+  class="t-space t-space-horizontal t-space--break-line"
+  style="gap: 16px;"
 >
   <div
     class="t-space-item"
@@ -151478,8 +151478,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-space t-space-horizontal"
-      style="gap: 10px; flex-wrap: wrap;"
+      class="t-space t-space-horizontal t-space--break-line"
+      style="gap: 10px;"
     >
       <div
         class="t-space-item"
@@ -158100,8 +158100,8 @@ exports[`csr snapshot test > csr test ./src/upload/_example/file-flow-list.vue 1
     class="t-space-item"
   >
     <div
-      class="t-space t-space-horizontal"
-      style="gap: 16px; flex-wrap: wrap;"
+      class="t-space t-space-horizontal t-space--break-line"
+      style="gap: 16px;"
     >
       <div
         class="t-space-item"
