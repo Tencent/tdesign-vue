@@ -13,7 +13,8 @@ import { usePrefixClass } from '../hooks/useConfig';
 import { useGlobalIcon } from '../hooks/useGlobalIcon';
 
 import Skeleton from '../skeleton';
-import Tween from './tween';
+import Tween from '../_common/js/statistic/tween';
+import { COLOR_MAP } from '../_common/js/statistic/utils';
 
 export default defineComponent({
   name: 'Statistic',
@@ -67,13 +68,6 @@ export default defineComponent({
 
       return _value;
     });
-
-    const COLOR_MAP = {
-      blue: 'var(--td-brand-color)',
-      red: 'var(--td-error-color)',
-      orange: 'var(--td-warning-color)',
-      green: 'var(--td-success-color)',
-    };
 
     const valueStyle = computed(() => {
       const { color } = props;

@@ -47,9 +47,9 @@ export default {
 <style>
 .icon {
   font-size: 32px;
-  color: #0052d9;
-  background: #f2f3ffff;
-  border-radius: 6px;
+  color: var(--td-brand-color);
+  background: var(--td-brand-color-light);
+  border-radius: var(--td-radius-medium);
   padding: 12px;
 }
 </style>
