@@ -36,6 +36,8 @@ export type ObserverListenerParams = {
 class CheckboxStore {
   observerMap: ObserverMap = {};
 
+  parentChecked: CheckboxGroupValue;
+
   parentExist: boolean;
 
   init() {
@@ -45,6 +47,7 @@ class CheckboxStore {
   updateChecked({
     checked, isCheckAll, oldChecked, indeterminate,
   }: UpdateCheckedData) {
+    this.parentChecked = checked;
     const changedChecked = oldChecked ? getChangedChecked(checked, oldChecked) : checked;
     const checkedParams: ObserverListenerParams = {
       parentChecked: checked,
