@@ -99,22 +99,20 @@ export default defineComponent({
     const tDisabled = ref<boolean>();
     const { formDisabled } = useFormDisabled();
     const handleParentDisabled = ({ parentDisabled, parentMaxExceeded }: ObserverListenerParams) => {
-      nextTick(() => {
-        const { checkAll, disabled, readonly } = props;
-        if (!checkAll && !tChecked.value && parentMaxExceeded) {
-          tDisabled.value = true;
-          return;
-        }
-        if (disabled !== undefined) {
-          tDisabled.value = disabled;
-          return;
-        }
-        if (parentDisabled !== undefined) {
-          tDisabled.value = parentDisabled;
-          return;
-        }
-        tDisabled.value = disabled || readonly;
-      });
+      const { checkAll, disabled } = props;
+      if (!checkAll && !tChecked.value && parentMaxExceeded) {
+        tDisabled.value = true;
+        return;
+      }
+      if (disabled !== undefined) {
+        tDisabled.value = disabled;
+        return;
+      }
+      if (parentDisabled !== undefined) {
+        tDisabled.value = parentDisabled;
+        return;
+      }
+      tDisabled.value = disabled;
     };
 
     watch([checkboxStore], () => {
@@ -153,7 +151,13 @@ export default defineComponent({
         if (data.type === 'checked') {
           handleParentCheckedChange(data);
         } else if (data.type === 'checkbox') {
-          handleParentDisabled(data);
+          /**
+           * checked state can influence disabled state because of `max`,
+           * therefore we need to update disabled state after checked state changed
+           */
+          nextTick(() => {
+            handleParentDisabled(data);
+          });
           if (data.checkboxName) {
             tName.value = data.checkboxName;
           }
