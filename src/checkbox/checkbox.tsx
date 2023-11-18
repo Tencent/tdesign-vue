@@ -1,5 +1,5 @@
 import {
-  defineComponent, ref, toRefs, inject, watch, onBeforeUnmount, computed,
+  defineComponent, ref, toRefs, inject, watch, onBeforeUnmount, computed, nextTick,
 } from '@vue/composition-api';
 import props from './props';
 import {
@@ -110,7 +110,9 @@ export default defineComponent({
       }
       if (parentDisabled !== undefined) {
         tDisabled.value = parentDisabled;
+        return;
       }
+      tDisabled.value = disabled;
     };
 
     watch([checkboxStore], () => {
@@ -149,7 +151,13 @@ export default defineComponent({
         if (data.type === 'checked') {
           handleParentCheckedChange(data);
         } else if (data.type === 'checkbox') {
-          handleParentDisabled(data);
+          /**
+           * checked state can influence disabled state because of `max`,
+           * therefore we need to update disabled state after checked state changed
+           */
+          nextTick(() => {
+            handleParentDisabled(data);
+          });
           if (data.checkboxName) {
             tName.value = data.checkboxName;
           }
