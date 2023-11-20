@@ -111,7 +111,6 @@ export default defineComponent({
     const { renderTitleWidthIcon } = useTableHeader(props);
     const { renderAsyncLoading } = useAsyncLoading(props, context);
 
-    const { renderEditableCell } = useEditableCell(props, context);
     const {
       errorListMap,
       editableKeysMap,
@@ -119,10 +118,15 @@ export default defineComponent({
       validateTableData,
       onRuleChange,
       clearValidateData,
+      getEditRowData,
+      onUpdateEditedCell,
       onPrimaryTableRowValidate,
-      onPrimaryTableRowEdit,
       onPrimaryTableCellEditChange,
     } = useEditableRow(props, context);
+
+    const { renderEditableCell } = useEditableCell(props, context, {
+      'update-edited-cell': onUpdateEditedCell,
+    });
 
     const primaryTableClasses = computed(() => ({
       [tableDraggableClasses.colDraggable]: isColDraggable.value,
@@ -157,6 +161,14 @@ export default defineComponent({
       setFilterPrimaryTableRef(primaryTableRef.value);
       setDragSortPrimaryTableRef(primaryTableRef.value);
     });
+
+    const onEditableCellChange: EditableCellProps['onChange'] = (params) => {
+      props.onRowEdit?.(params);
+      const rowValue = get(params.editedRow, props.rowKey || 'id');
+      onUpdateEditedCell(rowValue, params.row, {
+        [params.col.colKey]: params.value,
+      });
+    };
 
     // 1. 影响列数量的因素有：自定义列配置、展开/收起行、多级表头；2. 影响表头内容的因素有：排序图标、筛选图标
     const getColumns = (columns: PrimaryTableCol<TableRowData>[]) => {
@@ -209,10 +221,12 @@ export default defineComponent({
           item.cell = (h, p) => {
             const cellProps: EditableCellProps = {
               ...p,
+              row: getEditRowData(p),
+              rowKey: props.rowKey || 'id',
               oldCell,
               tableBaseClass,
               cellEmptyContent: props.cellEmptyContent,
-              onChange: onPrimaryTableRowEdit,
+              onChange: onEditableCellChange,
               onValidate: onPrimaryTableRowValidate,
               onRuleChange,
               onEditableChange: onPrimaryTableCellEditChange,

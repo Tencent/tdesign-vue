@@ -1,12 +1,20 @@
-import { ref, computed, SetupContext } from 'vue';
+import {
+  ref, computed, SetupContext, toRefs, watch,
+} from 'vue';
 import get from 'lodash/get';
+import set from 'lodash/set';
+import cloneDeep from 'lodash/cloneDeep';
 import isFunction from 'lodash/isFunction';
 import { PrimaryTableProps } from '../interface';
 import { getEditableKeysMap } from '../../_common/js/table/utils';
 import { AllValidateResult } from '../../form/type';
 import { validate } from '../../form/form-model';
 import {
-  PrimaryTableRowEditContext, PrimaryTableRowValidateContext, TableRowData, TableErrorListMap,
+  PrimaryTableRowEditContext,
+  PrimaryTableRowValidateContext,
+  TableRowData,
+  TableErrorListMap,
+  PrimaryTableCellParams,
 } from '../type';
 import { getCellKey } from './useRowspanAndColspan';
 import { OnEditableChangeContext } from '../editable-cell';
@@ -19,6 +27,7 @@ export interface TablePromiseErrorData {
 }
 
 export default function useRowEdit(props: PrimaryTableProps, context: SetupContext) {
+  const { editableRowKeys } = toRefs(props);
   const cellRuleMap = new Map<any, PrimaryTableRowEditContext<TableRowData>[]>();
   // 校验不通过的错误信息，其中 key 值为 [rowValue, col.colKey].join('__')
   const errorListMap = ref<TableErrorListMap>({});
@@ -26,6 +35,8 @@ export default function useRowEdit(props: PrimaryTableProps, context: SetupConte
   const editableKeysMap = computed(() => getEditableKeysMap(props.editableRowKeys, props.data, props.rowKey || 'id'));
   // 当前编辑的单元格
   const editingCells = ref<{ [cellKey: string]: OnEditableChangeContext<TableRowData> }>({});
+  // 编辑状态的数据
+  const editedFormData = ref<{ [rowValue: string]: { [colKey: string]: any } }>({});
 
   const getErrorListMapByErrors = (errors: ErrorListObjectType[]): TableErrorListMap => {
     const errorMap: TableErrorListMap = {};
@@ -124,6 +135,18 @@ export default function useRowEdit(props: PrimaryTableProps, context: SetupConte
     });
   };
 
+  /** 更新编辑态单元格数据 */
+  const onUpdateEditedCell = (rowValue: any, lastRowData: TableRowData, data: { [key: string]: any }) => {
+    if (!editedFormData.value[rowValue]) {
+      editedFormData.value[rowValue] = cloneDeep(lastRowData);
+    }
+    const tmpEditedData = { ...editedFormData.value };
+    Object.entries(data).forEach(([key, val]) => {
+      set(tmpEditedData[rowValue], key, val);
+    });
+    editedFormData.value = tmpEditedData;
+  };
+
   const onRuleChange = (context: PrimaryTableRowEditContext<TableRowData>) => {
     // 编辑行，预存校验信息，方便最终校验
     if (props.editableRowKeys) {
@@ -169,13 +192,41 @@ export default function useRowEdit(props: PrimaryTableProps, context: SetupConte
     context.emit('row-validate', params);
   };
 
+  const getEditRowData = ({ row, col }: PrimaryTableCellParams<TableRowData>) => {
+    const rowValue = get(row, props.rowKey || 'id');
+    const editedRowData = editedFormData.value[rowValue];
+    if (editedRowData && props.editableRowKeys?.includes(rowValue)) {
+      const tmpRow = { ...editedRowData };
+      set(tmpRow, col.colKey, get(editedRowData, col.colKey));
+      return tmpRow;
+    }
+    return row;
+  };
+
+  watch(
+    () => editableRowKeys.value?.join(','),
+    (keyStr) => {
+      const editableRowKeys = keyStr.split(',');
+      const rowValueList = Object.keys(editedFormData.value);
+      rowValueList.forEach((key) => {
+        if (!editableRowKeys.includes(key)) {
+          // clear exited editable state row data
+          delete editedFormData.value[key];
+        }
+      });
+    },
+  );
+
   return {
+    editedFormData,
     errorListMap,
     editableKeysMap,
     validateTableData,
     validateRowData,
     onRuleChange,
     clearValidateData,
+    getEditRowData,
+    onUpdateEditedCell,
     onPrimaryTableRowEdit,
     onPrimaryTableRowValidate,
     onPrimaryTableCellEditChange,
