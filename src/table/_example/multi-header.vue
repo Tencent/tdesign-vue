@@ -26,6 +26,7 @@
       :columnController="{ displayType: 'auto-width' }"
       :filterRow="() => null"
       :headerAffixedTop="headerAffixedTop ? { offsetTop: 87 } : false"
+      :scroll="{ type: 'virtual' }"
       drag-sort="col"
       resizable
       lazyLoad
