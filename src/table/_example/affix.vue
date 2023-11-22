@@ -1,14 +1,14 @@
 <template>
   <!-- 注意组件父元素的宽度 -->
   <div class="tdesign-demo-block-column-large tdesign-demo__table tdesign-demo__table-affix" style="width: 830px">
-    <div>
+    <t-space>
       <t-checkbox v-model="headerAffixedTop">表头吸顶</t-checkbox>
-      <t-checkbox v-model="footerAffixedBottom" style="margin-left: 32px">表尾吸底</t-checkbox>
-      <t-checkbox v-model="horizontalScrollAffixedBottom" style="margin-left: 32px">滚动条吸底</t-checkbox>
-      <t-checkbox v-model="paginationAffixedBottom" style="margin-left: 32px">分页器吸底</t-checkbox>
-      <t-checkbox v-model="fixedLeftColumn" style="margin-left: 32px">固定左侧列</t-checkbox>
-      <t-checkbox v-model="fixedRightColumn" style="margin-left: 32px">固定右侧列</t-checkbox>
-    </div>
+      <t-checkbox v-model="footerAffixedBottom">表尾吸底</t-checkbox>
+      <t-checkbox v-model="horizontalScrollAffixedBottom">滚动条吸底</t-checkbox>
+      <t-checkbox v-model="paginationAffixedBottom">分页器吸底</t-checkbox>
+      <t-checkbox v-model="fixedLeftColumn">固定左侧列</t-checkbox>
+      <t-checkbox v-model="fixedRightColumn">固定右侧列</t-checkbox>
+    </t-space>
     <t-table
       rowKey="index"
       :data="data"
@@ -16,9 +16,9 @@
       :footData="footData"
       :rowClassName="rowClassName"
       :pagination="pagination"
-      :headerAffixedTop="headerAffixedTop ? headerAffixedTopProps : undefined"
-      :footerAffixedBottom="footerAffixedBottom ? footerAffixedBottomProps : false"
-      :horizontalScrollAffixedBottom="horizontalScrollAffixedBottom ? horizontalScrollAffixedBottomProps : false"
+      :header-affixed-top="headerAffixedTopProps"
+      :footer-affixed-bottom="footerAffixedBottomProps"
+      :horizontal-scroll-affixed-bottom="horizontalScrollAffixedBottomProps"
       :paginationAffixedBottom="paginationAffixedBottom"
       table-layout="fixed"
       dragSort="col"
@@ -109,43 +109,52 @@ export default {
       TOTAL,
       // 重要：如果在预渲染场景下，初次渲染的表格宽度和最终呈现宽度不一样，请异步设置表头吸顶
       headerAffixedTop: true,
-      footerAffixedBottom: true,
+      footerAffixedBottom: false,
       fixedLeftColumn: true,
       fixedRightColumn: true,
-      horizontalScrollAffixedBottom: false,
-      paginationAffixedBottom: false,
+      horizontalScrollAffixedBottom: true,
+      paginationAffixedBottom: true,
       // 表尾有一行数据
       footData: [{ index: 'footer-row-1', type: '全部类型', description: '-' }],
       columns: [],
       pagination: { defaultCurrent: 1, defaultPageSize: 5, total: TOTAL },
-      headerAffixedTopProps: {
-        offsetTop: 87,
-        zIndex: 1000,
-      },
-      footerAffixedBottomProps: {
-        offsetBottom: this.paginationAffixedBottom ? 60 : 0,
-        zIndex: 1000,
-      },
-      horizontalScrollAffixedBottomProps: {
-        offsetBottom: this.paginationAffixedBottom ? 61 : 0,
-        zIndex: 1000,
-      },
     };
   },
 
+  computed: {
+    headerAffixedTopProps() {
+      if (this.headerAffixedTop) {
+        return {
+          offsetTop: 87,
+          zIndex: 1000,
+          // container used to set scroll container, default container is body
+          // container: () => document.body,
+        };
+      }
+      return false;
+    },
+    footerAffixedBottomProps() {
+      if (this.footerAffixedBottom) {
+        return {
+          offsetBottom: this.paginationAffixedBottom ? 64 : 0,
+          zIndex: 1000,
+        };
+      }
+      return false;
+    },
+    horizontalScrollAffixedBottomProps() {
+      if (this.horizontalScrollAffixedBottom) {
+        return {
+          // height of pagination component is 64
+          offsetBottom: this.paginationAffixedBottom ? 64 : 0,
+          zIndex: 1000,
+        };
+      }
+      return false;
+    },
+  },
+
   watch: {
-    paginationAffixedBottom(val) {
-      this.footerAffixedBottomProps.offsetBottom = val ? 60 : 0;
-      this.horizontalScrollAffixedBottomProps.offsetBottom = val ? 61 : 0;
-    },
-    // 底部滚动条 和 Footer 无需同时出现，二选一即可
-    horizontalScrollAffixedBottom(val) {
-      val && (this.footerAffixedBottom = false);
-    },
-    // 底部滚动条 和 Footer 无需同时出现，二选一即可
-    footerAffixedBottom(val) {
-      val && (this.horizontalScrollAffixedBottom = false);
-    },
     // 左侧固定列发生变化时
     fixedLeftColumn: {
       handler(val) {
