@@ -15,8 +15,6 @@ import {
 } from './interface';
 import { useConfig, usePrefixClass, useCommonClassName } from '../hooks/useConfig';
 import { PopupVisibleChangeContext } from '../popup';
-import { InputValue } from '../input';
-
 import { closeIconClickEffect, handleRemoveTagEffect } from './core/effect';
 import { getPanels, getSingleContent, getMultipleContent } from './core/helper';
 import { getFakeArrowIconClass } from './core/className';
@@ -159,7 +157,7 @@ export default defineComponent({
             inputProps: { size: this.size, ...(this.inputProps as TdCascaderProps['inputProps']) },
             tagInputProps: { size: this.size, ...(this.tagInputProps as TdCascaderProps['tagInputProps']) },
             tagProps: { ...(this.tagProps as TdCascaderProps['tagProps']) },
-            onInputChange: (value: InputValue, ctx: SelectInputValueChangeContext) => {
+            onInputChange: (value: string, ctx: SelectInputValueChangeContext) => {
               if (!this.isFilterable) return;
               setInputVal(`${value}`);
               (this?.selectInputProps as TdSelectInputProps)?.onInputChange?.(value, ctx);
