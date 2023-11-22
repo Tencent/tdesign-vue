@@ -61,6 +61,10 @@ export default {
     type: String,
     default: undefined,
   },
+  /** 组件前置图标 */
+  prefixIcon: {
+    type: Function as PropType<TdTagInputProps['prefixIcon']>,
+  },
   /** 只读状态，值为真会隐藏标签移除按钮和输入框 */
   readonly: Boolean,
   /** 尺寸 */
