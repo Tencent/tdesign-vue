@@ -169,6 +169,9 @@ export default defineComponent({
       [data, label, storeKey],
       () => {
         if (!storeKey.value) return;
+        if (!tChecked.value && checkboxStore.value?.parentChecked?.includes(props.value)) {
+          tChecked.value = true;
+        }
         subscribeParentData(props.checkAll ? 'CHECK_ALL' : value.value);
       },
       { immediate: true },
@@ -182,7 +185,7 @@ export default defineComponent({
       if (props.readonly) return;
       const checked = !tChecked.value;
       setInnerChecked(checked, { e });
-      if (checkboxGroupData?.value.handleCheckboxChange) {
+      if (checkboxGroupData?.value.onCheckedChange) {
         checkboxGroupData.value.onCheckedChange({
           checked,
           checkAll: props.checkAll,
