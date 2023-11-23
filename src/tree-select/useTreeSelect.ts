@@ -57,7 +57,8 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
   const tKeys = computed<TreeKeysType>(() => ({ ...DEFAULT_KEYS, ...props.treeProps?.keys, ...props.keys }));
 
   const inputPlaceholder = computed(() => {
-    const label = nodeInfo.value?.[tKeys.value.label];
+    let label = nodeInfo.value?.[tKeys.value.label];
+    if (typeof label === 'number') label = String(label);
     return (innerVisible.value && label) || props.placeholder || global.value.placeholder;
   });
 
