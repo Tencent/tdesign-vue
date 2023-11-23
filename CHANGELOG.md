@@ -5,6 +5,38 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.8.0 `2023-11-23`
+
+### 🚀 Features
+
+- `Statistic`: 新增`Statistic`统计数值组件 @LIjiAngChen8 ([#2397](https://github.com/Tencent/tdesign-vue/pull/2397))
+- `Loading`: 支持使用 v-if 和 v-loading 混用的场景 @Zz-ZzzZ ([#2902](https://github.com/Tencent/tdesign-vue/pull/2902))
+- `Space`: 支持老旧浏览器也能正常显示子元素之间的间距，[#1901](https://github.com/Tencent/tdesign-vue/issues/1901) @chaishi ([#2887](https://github.com/Tencent/tdesign-vue/pull/2887))
+- `Table`: 可编辑单元格/可编辑行场景，支持使用参数 `updateEditedCellValue` 更新其他处于编辑态的列数据 @chaishi ([#2917](https://github.com/Tencent/tdesign-vue/pull/2917))
+- `Input`: 恢复 `value` 对`number`的支持 @chaishi ([#2906](https://github.com/Tencent/tdesign-vue/pull/2906))
+
+### 🐞 Bug Fixes
+
+- `Radio`: 修复误判删除键(backspace)是空格键(space)的问题 @liweijie0812 ([#2905](https://github.com/Tencent/tdesign-vue/pull/2905))
+- `Checkbox`: 修复误判删除键(backspace)是空格键(space)的问题 @liweijie0812 ([#2905](https://github.com/Tencent/tdesign-vue/pull/2905))
+- `Table`: @chaishi
+  - 列配置操作场景，修复表头不显示时，报错问题 ([#2909](https://github.com/Tencent/tdesign-vue/pull/2909))
+  - 优化多级表头的列配置功能，不再显示非叶子节点 ([#2916](https://github.com/Tencent/tdesign-vue/pull/2916))
+  - 修复列宽调整在某种情况下的列宽问题 ([#2916](https://github.com/Tencent/tdesign-vue/pull/2916))
+  - 修复懒加载场景默认依然会执行内部逻辑问题 @chaishi ([#2915](https://github.com/Tencent/tdesign-vue/pull/2915))
+- `Checkbox`: 修复 `CheckboxGroup.max` 超出数量限制时的禁用态显示问题，[issue#2908](https://github.com/Tencent/tdesign-vue/issues/2908) @betavs ([#2911](https://github.com/Tencent/tdesign-vue/pull/2911))
+- `Checkbox`: 修复提前设置某个选项的值在选中项 `CheckboxGorup.value` 里面，再放入选项到 `options` 中，选项呈现状态为非选中问题 @chaishi ([#2914](https://github.com/Tencent/tdesign-vue/pull/2914))
+- `Checkbox`: 修复懒加载场景默认依然会执行内部逻辑问题 @chaishi ([#2915](https://github.com/Tencent/tdesign-vue/pull/2915))
+- `Cascader`: 修复数字为 value 时的告警问题 @uyarn ([#2924](https://github.com/Tencent/tdesign-vue/pull/2924))
+- `TreeSelect`: 修复数字为 value 时的告警问题 @uyarn ([#2924](https://github.com/Tencent/tdesign-vue/pull/2924))
+- `Popup`: 修复`destroyOnClose`时，快速重复 hover 后组件无法正常展示的问题 @guxi11 ([#2898](https://github.com/Tencent/tdesign-vue/pull/2898))
+- `Textarea`: 修复表格中使用 `Textarea` 且设置`autosize`为 true 报错的问题 ([#2912](https://github.com/Tencent/tdesign-vue/issues/2912)) @nined9 ([#2921](https://github.com/Tencent/tdesign-vue/pull/2921))
+
+### 🚧 Others
+
+- `Table`: 优化吸顶表头/表尾示例代码 @chaishi ([#2916](https://github.com/Tencent/tdesign-vue/pull/2916))
+
+
 ## 🌈 1.7.2 `2023-11-07` 
 ### 🚀 Features
 - `ImageViewer`: 新增支持 `closeOnEscKeydown` ，用于控制是否允许 ESC 键关闭预览 @chaishi ([#2890](https://github.com/Tencent/tdesign-vue/pull/2890))
