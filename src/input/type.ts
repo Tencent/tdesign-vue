@@ -64,7 +64,7 @@ export interface TdInputProps<T = InputValue> {
   /**
    * 用户最多可以输入的文本长度，一个中文等于一个计数长度。值为空，则表示不限制输入长度。`maxcharacter` 和 `maxlength` 二选一使用
    */
-  maxlength?: string | number;
+  maxlength?: number;
   /**
    * 名称
    * @default ''

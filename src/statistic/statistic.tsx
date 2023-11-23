@@ -1,6 +1,6 @@
 import {
   defineComponent, computed, ref, onMounted, watch, toRefs,
-} from '@vue/composition-api';
+} from 'vue';
 import {
   ArrowTriangleDownFilledIcon as TDArrowTriangleDownFilledIcon,
   ArrowTriangleUpFilledIcon as TDArrowTriangleUpFilledIcon,

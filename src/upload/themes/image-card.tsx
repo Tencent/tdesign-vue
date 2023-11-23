@@ -42,6 +42,7 @@ export default defineComponent({
     uploadFiles: Function as PropType<ImageCardUploadProps['uploadFiles']>,
     cancelUpload: Function as PropType<ImageCardUploadProps['cancelUpload']>,
     showImageFileName: Boolean,
+    onPreview: Function,
   },
 
   setup(props) {

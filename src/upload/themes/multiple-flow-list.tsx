@@ -38,6 +38,7 @@ import TLoading from '../../loading';
 import Link from '../../link';
 import { renderTNodeJSX } from '../../utils/render-tnode';
 import Image from '../../image';
+import { UploadConfig } from '../../config-provider/type';
 
 export interface ImageFlowListProps extends CommonDisplayFileProps {
   uploadFiles?: (toFiles?: UploadFile[]) => void;

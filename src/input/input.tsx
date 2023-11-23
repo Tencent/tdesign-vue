@@ -577,7 +577,7 @@ export default mixins(
           class={[`${this.componentName}__inner`, { [`${this.componentName}--soft-hidden`]: !this.showInput }]}
           value={inputTextValue}
           onInput={this.handleInput}
-          title={this.disabled ? inputTextValue : undefined}
+          title={this.disabled ? (inputTextValue as string) : undefined}
         />
         {this.autoWidth && (
           <span ref="inputPreRef" class={`${this.classPrefix}-input__input-pre`}>

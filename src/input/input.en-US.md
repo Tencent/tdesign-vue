@@ -17,7 +17,7 @@ format | Function | - | input value formatter, `type=number` does not work. if y
 inputClass | String / Object / Array | - | add className to the element with `t-input` class。Typescript：`ClassName`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 label | String / Slot / Function | - | text on the left of input。Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 maxcharacter | Number | - | \- | N
-maxlength | String / Number | - | \- | N
+maxlength | String | - | \- | N
 name | String | - | \- | N
 placeholder | String | undefined | \- | N
 prefixIcon | Slot / Function | - | Typescript：`TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
