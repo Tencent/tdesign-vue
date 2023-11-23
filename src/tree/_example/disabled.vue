@@ -13,6 +13,7 @@
       <t-switch v-model="activable" />
     </t-space>
     <t-tree
+      ref="tree"
       hover
       expand-all
       :checkable="checkable"
@@ -25,9 +26,12 @@
     >
       <template #operations="{ node }">
         <t-space :size="10">
-          <t-button size="small" variant="base" @click="toggleDisable(node)">{{
-            node.disabled ? 'enable' : 'disable'
-          }}</t-button>
+          <t-button v-if="node.disabled" size="small" theme="success" variant="base" @click="setEnable(node)"
+          >enable</t-button
+          >
+          <t-button v-if="!node.disabled" size="small" theme="warning" variant="base" @click="setDisable(node)"
+          >disable</t-button
+          >
         </t-space>
       </template>
     </t-tree>
@@ -119,20 +123,26 @@ export default {
     label(createElement, node) {
       return node.value;
     },
-    toggleDisable(node) {
+    setEnable(node) {
       const { tree } = this.$refs;
       const map = this.disabledMap;
       if (node.disabled) {
         map.delete(node.value);
         // 移除节点本身的 disabled 属性
-        // 如果不移除，该节点仍然被视为禁用状态
+        // 这个属性在 data 中被预先定义
+        // 如果不更新状态，则该节点仍然被视为禁用状态
         tree.setItem(node.value, {
           disabled: false,
         });
-      } else {
-        // 交给 disable-check 接管 disabled 属性判断
-        map.set(node.value, true);
+        tree.refresh();
       }
+    },
+    setDisable(node) {
+      const { tree } = this.$refs;
+      const map = this.disabledMap;
+      // 交给 disable-check 接管 disabled 属性判断
+      map.set(node.value, true);
+      tree.refresh();
     },
   },
 };
