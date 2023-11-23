@@ -4,10 +4,19 @@
       <span>是否禁用整个 tree:</span>
       <t-switch v-model="disabled" />
     </t-space>
+    <t-space>
+      <span>可选:</span>
+      <t-switch v-model="checkable" />
+    </t-space>
+    <t-space>
+      <span>可激活:</span>
+      <t-switch v-model="activable" />
+    </t-space>
     <t-tree
       hover
-      checkable
       expand-all
+      :checkable="checkable"
+      :activable="activable"
       :data="items"
       :label="label"
       :disabled="disabled"
@@ -34,9 +43,9 @@
 export default {
   data() {
     return {
+      checkable: true,
+      activable: false,
       disabled: false,
-      disableCheck: false,
-      disableTarget: true,
       disabledMap: new Map([['1.1', true]]),
       items: [
         {

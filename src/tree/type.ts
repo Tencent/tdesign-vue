@@ -384,6 +384,10 @@ export interface TreeNodeModel<T extends TreeOptionData = TreeOptionData> extend
    */
   loading: boolean;
   /**
+   * 当前节点是否被禁用
+   */
+  disabled: boolean;
+  /**
    * 追加子节点数据，泛型 `T` 表示树节点 TS 类型，继承 `TreeOptionData`
    */
   appendData: (data: T | Array<T>) => void;
