@@ -4,9 +4,13 @@ import { TableRowData, PrimaryTableCellParams, TdPrimaryTableProps } from '../ty
 import EditableCell from '../editable-cell';
 
 // 必须使用这个 Hook，否则无法在 setup 中渲染
-export default function useEditableCell(props: TdPrimaryTableProps, context: SetupContext) {
+export default function useEditableCell(
+  props: TdPrimaryTableProps,
+  context: SetupContext,
+  events: { [key: string]: any },
+) {
   const renderEditableCell = (h: CreateElement, p: PrimaryTableCellParams<TableRowData>) => (
-    <EditableCell props={p} scopedSlots={context.slots} />
+    <EditableCell props={p} on={events} scopedSlots={context.slots} />
   );
 
   return {

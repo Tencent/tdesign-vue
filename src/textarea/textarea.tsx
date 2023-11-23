@@ -111,6 +111,7 @@ export default mixins(Vue as VueConstructor<Textarea>, classPrefixMixins).extend
 
   methods: {
     adjustTextareaHeight() {
+      if (!this.$refs.refTextareaElem) return;
       if (this.autosize === true) {
         this.textareaStyle = calcTextareaHeight(this.$refs.refTextareaElem as HTMLTextAreaElement);
       } else if (this.autosize && typeof this.autosize === 'object') {

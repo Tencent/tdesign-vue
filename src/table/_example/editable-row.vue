@@ -108,6 +108,25 @@ export default {
             // 校验规则，此处同 Form 表单
             rules: [{ required: true, message: '不能为空' }],
             showEditIcon: false,
+            on: ({ updateEditedCellValue }) => ({
+              onChange: () => {
+                /**
+                 * change other columns edited cell value
+                 * 更新本行其他编辑态单元格的数据(to update editedRow)
+                 */
+                updateEditedCellValue({
+                  isUpdateCurrentRow: true,
+                  letters: [],
+                  // 'user.firstName': '',
+                  // createTime: dayjs().add(1, 'day').toDate(),
+                });
+                /**
+                 * update edited row data with row unique value is qual to 2
+                 * 更新行唯一标识值为 2 的编辑态数据
+                 */
+                // updateEditedCellValue({ rowValue: 2, letters: [] });
+              },
+            }),
           },
         },
         {
@@ -117,8 +136,7 @@ export default {
           edit: {
             component: Select,
             // props, 透传全部属性到 Select 组件
-            // props 为函数时，参数有：col, row, rowIndex, colIndex, editedRow。一般用于实现编辑组件之间的联动
-            // updateEditedCellValue 用于主动更新设置编辑状态的组件值
+            // props 为函数时，参数有：col, row, rowIndex, colIndex, editedRow, updateEditedCellValue。一般用于实现编辑组件之间的联动
             props: ({
               col, row, rowIndex, colIndex, editedRow, updateEditedCellValue,
             }) => {
@@ -136,7 +154,10 @@ export default {
               };
             },
             // 校验规则，此处同 Form 表单
-            rules: [{ validator: (val) => val && val.length < 3, message: '数量不能超过 2 个' }],
+            rules: [
+              { validator: (val) => Boolean(val && val.length < 3), message: '数量不能超过 2 个' },
+              { validator: (val) => Boolean(val?.length), message: '至少选择一个' },
+            ],
             showEditIcon: false,
           },
         },
