@@ -1,25 +1,26 @@
 <template>
-  <t-space :size="32" direction="vertical">
-    <t-space direction="vertical">
-      <h3>禁用整个 tree</h3>
-      <t-space>
-        <span>是否禁用整个 tree:</span>
-        <t-switch v-model="disabled" />
-      </t-space>
-      <t-space>
-        <span>是否只禁用 checkbox:</span>
-        <t-switch v-model="disableCheck" />
-      </t-space>
-      <t-tree :data="items" hover checkable expand-all :disabled="disabled" :disable-check="disableCheck" />
+  <t-space direction="vertical" style="width: 90%">
+    <t-space>
+      <span>是否禁用整个 tree:</span>
+      <t-switch v-model="disabled" />
     </t-space>
-    <t-space direction="vertical">
-      <h3>禁用指定节点</h3>
-      <t-space>
-        <span>禁用指定节点 checkbox:</span>
-        <t-switch v-model="disableTarget" />
-      </t-space>
-      <t-tree :data="items" hover checkable expand-all :disable-check="fnDisableCheck" />
-    </t-space>
+    <t-tree
+      hover
+      checkable
+      expand-all
+      :data="items"
+      :label="label"
+      :disabled="disabled"
+      :disable-check="fnDisableCheck"
+    >
+      <template #operations="{ node }">
+        <t-space :size="10">
+          <t-button size="small" variant="base" @click="disable(node)">{{
+            node.disabled ? 'enable' : 'disable'
+          }}</t-button>
+        </t-space>
+      </template>
+    </t-tree>
   </t-space>
 </template>
 
@@ -27,58 +28,72 @@
 export default {
   data() {
     return {
-      disabled: true,
+      disabled: false,
       disableCheck: false,
       disableTarget: true,
+      disabledMap: new Map([['1.1', true]]),
       items: [
         {
-          label: '1',
+          value: '1',
           children: [
             {
-              label: '1.1',
+              value: '1.1',
               children: [
                 {
-                  label: '1.1.1',
+                  value: '1.1.1',
                 },
                 {
-                  label: '1.1.2',
+                  value: '1.1.2',
                 },
               ],
             },
             {
-              label: '1.2',
+              value: '1.2',
               children: [
                 {
-                  label: '1.2.1',
+                  value: '1.2.1',
                 },
                 {
-                  label: '1.2.2',
+                  value: '1.2.2',
                 },
               ],
             },
           ],
         },
         {
-          label: '2',
+          value: '2',
           children: [
             {
-              label: '2.1',
+              value: '2.1',
             },
             {
-              label: '2.2',
+              value: '2.2',
             },
           ],
         },
       ],
     };
   },
+  computed: {
+    disabledList() {
+      return this.disabledMap.keys();
+    },
+  },
   methods: {
     fnDisableCheck(node) {
-      const list = ['1.1', '1.2', '2.1'];
-      if (list.indexOf(node.label) >= 0) {
-        return this.disableTarget;
+      const map = this.disabledMap;
+      return map.get(node.value);
+    },
+    label(createElement, node) {
+      return node.value;
+    },
+    disable(node) {
+      const map = this.disabledMap;
+      if (map.get(node.value)) {
+        map.delete(node.value);
+      } else {
+        map.set(node.value, true);
       }
-      return false;
     },
   },
 };
