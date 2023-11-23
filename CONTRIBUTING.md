@@ -68,7 +68,7 @@ npm run start
 
 当一个 md 文件插入了很多个 demo 之后，一些组件生命周期方法调试起来会变得困难，若想对某个 demo 单独调试，可以访问路由：/demos/组件名/demo 名，
 
-例如：<http://127.0.0.1:17000/vue/demos/button/base>
+例如：<http://127.0.0.1:16000/vue/demos/button/base>
 
 ### 单元测试 & e2e 测试文档
 
