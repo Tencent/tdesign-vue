@@ -30,9 +30,10 @@ interface CheckboxGroupOptionsType {
 export function getColumnKeys(columns: PrimaryTableCol[], keys = new Set<string>()) {
   for (let i = 0, len = columns.length; i < len; i++) {
     const col = columns[i];
-    col.colKey && keys.add(col.colKey);
     if (col.children?.length) {
       getColumnKeys(col.children, keys);
+    } else {
+      col.colKey && keys.add(col.colKey);
     }
   }
   return keys;
@@ -123,11 +124,10 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
     // 减少循环次数
     for (let i = 0, len = columns.length; i < len; i++) {
       const item = columns[i];
-      if (item.colKey) {
-        arr.push(getOneColumnItem(item, i));
-      }
       if (item.children?.length) {
         getCheckboxOptions(item.children, arr);
+      } else if (item.colKey) {
+        arr.push(getOneColumnItem(item, i));
       }
     }
     return arr;

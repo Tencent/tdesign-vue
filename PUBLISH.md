@@ -11,8 +11,6 @@
 
 ## 版本号说明
 
-目前还没有发布 1.0.0 正式版本，因此可以随时发布 PATCH、MINOR 及 MAJOR 版本，1.0.0 发布后 MINOR 及 MAJOR 版本的发布需要 PMC 团队决策后发布。
-
 版本号设置遵循 [SemVer 语义化版本控制规范 2.0.0](https://semver.org/lang/zh-CN/)，一切以保证用户版本稳定性为前提，原则如下：
 
 - 当进行不兼容的 API 更改时，升级 MAJOR 版本

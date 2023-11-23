@@ -55,6 +55,7 @@ export * from './list';
 export * from './loading';
 export * from './progress';
 export * from './skeleton';
+export * from './statistic';
 export * from './swiper';
 export * from './table';
 export * from './tag';

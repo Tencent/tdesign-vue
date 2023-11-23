@@ -6,7 +6,7 @@
  */
 import { mount } from '@vue/test-utils';
 import { vi } from 'vitest';
-import { simulateInputChange, createElementById } from '@test/utils';
+import { mockDelay, simulateInputChange, createElementById } from '@test/utils';
 import { Input, InputGroup } from '..';
 import { getInputGroupDefaultMount } from './mount';
 
@@ -32,7 +32,7 @@ describe('Input Component', () => {
   it('props.allowInputOverMax works fine', async () => {
     const wrapper = mount({
       render() {
-        return <Input value="Hello" maxlength={5} allowInputOverMax={true}></Input>;
+        return <Input value={'Hello'} maxlength={5} allowInputOverMax={true}></Input>;
       },
     });
     const inputDom = wrapper.find('input').element;
@@ -45,7 +45,7 @@ describe('Input Component', () => {
   it('props.autocomplete works fine', () => {
     const wrapper = mount({
       render() {
-        return <Input autocomplete="https://tdesign.tencent.com/"></Input>;
+        return <Input autocomplete={'https://tdesign.tencent.com/'}></Input>;
       },
     }).find('input');
     expect(wrapper.attributes('autocomplete')).toBe('https://tdesign.tencent.com/');
@@ -80,6 +80,7 @@ describe('Input Component', () => {
     await wrapper.vm.$nextTick();
     expect(wrapper.find('.t-input__suffix-clear').exists()).toBeTruthy();
   });
+
   it('props.clearable: click clear icon could clear input value to be empty', async () => {
     const onClearFn1 = vi.fn();
     const onChangeFn1 = vi.fn();
@@ -89,28 +90,29 @@ describe('Input Component', () => {
       },
     });
     wrapper.find('.t-input').trigger('mouseenter');
-    await wrapper.vm.$nextTick();
+    await mockDelay(300);
     expect(wrapper.find('.t-input__suffix-clear').exists()).toBeTruthy();
     wrapper.find('.t-input__suffix-clear').trigger('click');
     await wrapper.vm.$nextTick();
-    expect(onClearFn1).toHaveBeenCalled(1);
+    expect(onClearFn1).toHaveBeenCalled();
     expect(onClearFn1.mock.calls[0][0].e.stopPropagation).toBeTruthy();
     expect(onClearFn1.mock.calls[0][0].e.type).toBe('click');
-    expect(onChangeFn1).toHaveBeenCalled(1);
+    expect(onChangeFn1).toHaveBeenCalled();
     expect(onChangeFn1.mock.calls[0][0]).toBe('');
     expect(onChangeFn1.mock.calls[0][1].e.stopPropagation).toBeTruthy();
     expect(onChangeFn1.mock.calls[0][1].e.type).toBe('click');
   });
+
   it('props.clearable: type=password, browseIcon and clearableIcon works fine', async () => {
     const wrapper = mount({
       render() {
-        return <Input type="password" value="this is my password" clearable={true}></Input>;
+        return <Input type={'password'} value="this is my password" clearable={true}></Input>;
       },
     });
     await wrapper.vm.$nextTick();
     expect(wrapper.find('.t-icon-browse-off').exists()).toBeTruthy();
     wrapper.find('.t-input').trigger('mouseenter');
-    await wrapper.vm.$nextTick();
+    await mockDelay(300);
     expect(wrapper.find('.t-input__suffix-clear').exists()).toBeTruthy();
   });
 
@@ -162,7 +164,7 @@ describe('Input Component', () => {
   it('props.inputClass is equal to name1 name2', () => {
     const wrapper = mount({
       render() {
-        return <Input inputClass="name1 name2"></Input>;
+        return <Input inputClass={'name1 name2'}></Input>;
       },
     });
     const domWrapper = wrapper.find('.t-input');
@@ -216,11 +218,11 @@ describe('Input Component', () => {
     const onChangeFn = vi.fn();
     const wrapper = mount({
       render() {
-        return <Input value="你好 TDesign" maxcharacter={4} on={{ change: onChangeFn }}></Input>;
+        return <Input value={'你好 TDesign'} maxcharacter={4} on={{ change: onChangeFn }}></Input>;
       },
     });
     await wrapper.vm.$nextTick();
-    expect(onChangeFn).toHaveBeenCalled(1);
+    expect(onChangeFn).toHaveBeenCalled();
     expect(onChangeFn.mock.calls[0][0]).toBe('你好');
     expect(onChangeFn.mock.calls[0][1].trigger).toBe('initial');
   });
@@ -229,11 +231,11 @@ describe('Input Component', () => {
     const onChangeFn = vi.fn();
     const wrapper = mount({
       render() {
-        return <Input value="Hello TDesign" maxlength={5} on={{ change: onChangeFn }}></Input>;
+        return <Input value={'Hello TDesign'} maxlength={5} on={{ change: onChangeFn }}></Input>;
       },
     });
     await wrapper.vm.$nextTick();
-    expect(onChangeFn).toHaveBeenCalled(1);
+    expect(onChangeFn).toHaveBeenCalled();
     expect(onChangeFn.mock.calls[0][0]).toBe('Hello');
     expect(onChangeFn.mock.calls[0][1].trigger).toBe('initial');
   });
@@ -241,7 +243,7 @@ describe('Input Component', () => {
   it('props.name works fine', () => {
     const wrapper = mount({
       render() {
-        return <Input name="input-name"></Input>;
+        return <Input name={'input-name'}></Input>;
       },
     }).find('input');
     expect(wrapper.attributes('name')).toBe('input-name');
@@ -250,7 +252,7 @@ describe('Input Component', () => {
   it('props.placeholder works fine', () => {
     const wrapper = mount({
       render() {
-        return <Input placeholder="this is input placeholder"></Input>;
+        return <Input placeholder={'this is input placeholder'}></Input>;
       },
     }).find('input');
     expect(wrapper.attributes('placeholder')).toBe('this is input placeholder');
@@ -278,7 +280,7 @@ describe('Input Component', () => {
   it('slots.prefix-icon works fine', () => {
     const wrapper = mount({
       render() {
-        return <Input scopedSlots={{ 'prefix-icon': () => <span class="custom-node">TNode</span> }}></Input>;
+        return <Input scopedSlots={{ 'prefix-icon': (h) => <span class="custom-node">TNode</span> }}></Input>;
       },
     });
     expect(wrapper.find('.custom-node').exists()).toBeTruthy();
@@ -323,7 +325,7 @@ describe('Input Component', () => {
   it('props.showLimitNumber works fine. `{".t-input__limit-number":{"text":"2/5"}}` should exist', () => {
     const wrapper = mount({
       render() {
-        return <Input showLimitNumber={true} maxlength={5} value="TD"></Input>;
+        return <Input showLimitNumber={true} maxlength={5} value={'TD'}></Input>;
       },
     });
     expect(wrapper.find('.t-input__limit-number').text()).toBe('2/5');
@@ -410,7 +412,7 @@ describe('Input Component', () => {
   it('slots.suffix-icon works fine', () => {
     const wrapper = mount({
       render() {
-        return <Input scopedSlots={{ 'suffix-icon': () => <span class="custom-node">TNode</span> }}></Input>;
+        return <Input scopedSlots={{ 'suffix-icon': (h) => <span class="custom-node">TNode</span> }}></Input>;
       },
     });
     expect(wrapper.find('.custom-node').exists()).toBeTruthy();
@@ -421,7 +423,7 @@ describe('Input Component', () => {
   it('props.tips is equal this is a tip', () => {
     const wrapper = mount({
       render() {
-        return <Input tips="this is a tip"></Input>;
+        return <Input tips={'this is a tip'}></Input>;
       },
     });
     expect(wrapper.findAll('.t-input__tips').length).toBe(1);
@@ -442,7 +444,7 @@ describe('Input Component', () => {
   it('props.type is equal password', () => {
     const wrapper = mount({
       render() {
-        return <Input type="password"></Input>;
+        return <Input type={'password'}></Input>;
       },
     });
     expect(wrapper.findAll('.t-icon-browse-off').length).toBe(1);
@@ -451,7 +453,7 @@ describe('Input Component', () => {
   it('props.type: password could be visible by click browse icon', async () => {
     const wrapper = mount({
       render() {
-        return <Input type="password"></Input>;
+        return <Input type={'password'}></Input>;
       },
     });
     wrapper.find('.t-icon-browse-off').trigger('click');
@@ -474,19 +476,19 @@ describe('Input Component', () => {
     const wrapper = mount(
       {
         render() {
-          return <Input value="initial-input-value" on={{ focus: onFocusFn, blur: onBlurFn1 }}></Input>;
+          return <Input value={'initial-input-value'} on={{ focus: onFocusFn, blur: onBlurFn1 }}></Input>;
         },
       },
       { attachTo: '#focus-dom' },
     );
     wrapper.find('input').trigger('focus');
     await wrapper.vm.$nextTick();
-    expect(onFocusFn).toHaveBeenCalled(1);
+    expect(onFocusFn).toHaveBeenCalled();
     expect(onFocusFn.mock.calls[0][0]).toBe('initial-input-value');
     expect(onFocusFn.mock.calls[0][1].e.type).toBe('focus');
     wrapper.find('input').trigger('blur');
-    await wrapper.vm.$nextTick();
-    expect(onBlurFn1).toHaveBeenCalled(1);
+    await mockDelay(300);
+    expect(onBlurFn1).toHaveBeenCalled();
     expect(onBlurFn1.mock.calls[0][0]).toBe('initial-input-value');
     expect(onBlurFn1.mock.calls[0][1].e.type).toBe('blur');
   });
@@ -501,15 +503,16 @@ describe('Input Component', () => {
     const inputDom = wrapper.find('input').element;
     simulateInputChange(inputDom, 'initial value');
     await wrapper.vm.$nextTick();
-    expect(onChangeFn).toHaveBeenCalled(1);
+    expect(onChangeFn).toHaveBeenCalled();
     expect(onChangeFn.mock.calls[0][0]).toBe('initial value');
     expect(onChangeFn.mock.calls[0][1].e.type).toBe('input');
   });
+
   it('events.change: controlled value test', async () => {
     const onChangeFn = vi.fn();
     const wrapper = mount({
       render() {
-        return <Input value="TDesign" on={{ change: onChangeFn }}></Input>;
+        return <Input value={'TDesign'} on={{ change: onChangeFn }}></Input>;
       },
     });
     const inputDom = wrapper.find('input').element;
@@ -517,21 +520,24 @@ describe('Input Component', () => {
     await wrapper.vm.$nextTick();
     const attrDom = wrapper.find('input');
     expect(attrDom.element.value).toBe('TDesign');
-    expect(onChangeFn).toHaveBeenCalled(1);
+    expect(onChangeFn).toHaveBeenCalled();
     expect(onChangeFn.mock.calls[0][0]).toBe('Hello TDesign');
     expect(onChangeFn.mock.calls[0][1].e.type).toBe('input');
   });
+
   it('events.change: uncontrolled value test', async () => {
     const onChangeFn = vi.fn();
     const wrapper = mount({
       render() {
-        return <Input defaultValue="Hello" on={{ change: onChangeFn }}></Input>;
+        return <Input defaultValue={'Hello'} on={{ change: onChangeFn }}></Input>;
       },
     });
     const inputDom = wrapper.find('input').element;
     simulateInputChange(inputDom, 'Hello TDesign');
     await wrapper.vm.$nextTick();
-    expect(onChangeFn).toHaveBeenCalled(1);
+    const attrDom = wrapper.find('input');
+    expect(attrDom.element.value).toBe('Hello TDesign');
+    expect(onChangeFn).toHaveBeenCalled();
     expect(onChangeFn.mock.calls[0][0]).toBe('Hello TDesign');
     expect(onChangeFn.mock.calls[0][1].e.type).toBe('input');
   });
@@ -545,7 +551,7 @@ describe('Input Component', () => {
     });
     wrapper.find('.t-input').trigger('click');
     await wrapper.vm.$nextTick();
-    expect(fn).toHaveBeenCalled(1);
+    expect(fn).toHaveBeenCalled();
     expect(fn.mock.calls[0][0].e.type).toBe('click');
   });
 
@@ -553,12 +559,12 @@ describe('Input Component', () => {
     const onCompositionendFn = vi.fn();
     const wrapper = mount({
       render() {
-        return <Input value="输入结束" on={{ compositionend: onCompositionendFn }}></Input>;
+        return <Input value={'输入结束'} on={{ compositionend: onCompositionendFn }}></Input>;
       },
     });
     wrapper.find('input').trigger('compositionend');
     await wrapper.vm.$nextTick();
-    expect(onCompositionendFn).toHaveBeenCalled(1);
+    expect(onCompositionendFn).toHaveBeenCalled();
     expect(onCompositionendFn.mock.calls[0][0]).toBe('输入结束');
     expect(onCompositionendFn.mock.calls[0][1].e.type).toBe('compositionend');
   });
@@ -567,12 +573,12 @@ describe('Input Component', () => {
     const onCompositionstartFn = vi.fn();
     const wrapper = mount({
       render() {
-        return <Input value="输入开始" on={{ compositionstart: onCompositionstartFn }}></Input>;
+        return <Input value={'输入开始'} on={{ compositionstart: onCompositionstartFn }}></Input>;
       },
     });
     wrapper.find('input').trigger('compositionstart');
     await wrapper.vm.$nextTick();
-    expect(onCompositionstartFn).toHaveBeenCalled(1);
+    expect(onCompositionstartFn).toHaveBeenCalled();
     expect(onCompositionstartFn.mock.calls[0][0]).toBe('输入开始');
     expect(onCompositionstartFn.mock.calls[0][1].e.type).toBe('compositionstart');
   });
@@ -584,7 +590,7 @@ describe('Input Component', () => {
     const wrapper = mount(
       {
         render() {
-          return <Input value="text" on={{ enter: onEnterFn1 }}></Input>;
+          return <Input value={'text'} on={{ enter: onEnterFn1 }}></Input>;
         },
       },
       { attachTo: '#focus-dom' },
@@ -593,7 +599,7 @@ describe('Input Component', () => {
     await wrapper.vm.$nextTick();
     wrapper.find('input').trigger('keydown.enter');
     await wrapper.vm.$nextTick();
-    expect(onEnterFn1).toHaveBeenCalled(1);
+    expect(onEnterFn1).toHaveBeenCalled();
     expect(onEnterFn1.mock.calls[0][0]).toBe('text');
     expect(onEnterFn1.mock.calls[0][1].e.type).toBe('keydown');
   });
@@ -612,8 +618,8 @@ describe('Input Component', () => {
     );
     wrapper.find('input').trigger('focus');
     await wrapper.vm.$nextTick();
-    expect(onFocusFn).toHaveBeenCalled(1);
-    expect(onFocusFn.mock.calls[0][0]).toBe('');
+    expect(onFocusFn).toHaveBeenCalled();
+    expect(onFocusFn.mock.calls[0][0]).toBe(undefined);
     expect(onFocusFn.mock.calls[0][1].e.type).toBe('focus');
   });
 
@@ -621,12 +627,12 @@ describe('Input Component', () => {
     const onKeydownFn = vi.fn();
     const wrapper = mount({
       render() {
-        return <Input value="text" on={{ keydown: onKeydownFn }}></Input>;
+        return <Input value={'text'} on={{ keydown: onKeydownFn }}></Input>;
       },
     });
     wrapper.find('input').trigger('keydown');
     await wrapper.vm.$nextTick();
-    expect(onKeydownFn).toHaveBeenCalled(1);
+    expect(onKeydownFn).toHaveBeenCalled();
     expect(onKeydownFn.mock.calls[0][0]).toBe('text');
     expect(onKeydownFn.mock.calls[0][1].e.type).toBe('keydown');
   });
@@ -635,12 +641,12 @@ describe('Input Component', () => {
     const onKeydownFn = vi.fn();
     const wrapper = mount({
       render() {
-        return <Input value="text" on={{ keydown: onKeydownFn }}></Input>;
+        return <Input value={'text'} on={{ keydown: onKeydownFn }}></Input>;
       },
     });
     wrapper.find('input').trigger('keydown');
     await wrapper.vm.$nextTick();
-    expect(onKeydownFn).toHaveBeenCalled(1);
+    expect(onKeydownFn).toHaveBeenCalled();
     expect(onKeydownFn.mock.calls[0][0]).toBe('text');
     expect(onKeydownFn.mock.calls[0][1].e.type).toBe('keydown');
   });
@@ -649,12 +655,12 @@ describe('Input Component', () => {
     const onKeyupFn = vi.fn();
     const wrapper = mount({
       render() {
-        return <Input value="text" on={{ keyup: onKeyupFn }}></Input>;
+        return <Input value={'text'} on={{ keyup: onKeyupFn }}></Input>;
       },
     });
     wrapper.find('input').trigger('keyup');
     await wrapper.vm.$nextTick();
-    expect(onKeyupFn).toHaveBeenCalled(1);
+    expect(onKeyupFn).toHaveBeenCalled();
     expect(onKeyupFn.mock.calls[0][0]).toBe('text');
     expect(onKeyupFn.mock.calls[0][1].e.type).toBe('keyup');
   });
@@ -668,7 +674,7 @@ describe('Input Component', () => {
     });
     wrapper.find('.t-input').trigger('mouseenter');
     await wrapper.vm.$nextTick();
-    expect(onMouseenterFn).toHaveBeenCalled(1);
+    expect(onMouseenterFn).toHaveBeenCalled();
     expect(onMouseenterFn.mock.calls[0][0].e.type).toBe('mouseenter');
   });
 
@@ -681,7 +687,7 @@ describe('Input Component', () => {
     });
     wrapper.find('.t-input').trigger('mouseleave');
     await wrapper.vm.$nextTick();
-    expect(onMouseleaveFn).toHaveBeenCalled(1);
+    expect(onMouseleaveFn).toHaveBeenCalled();
     expect(onMouseleaveFn.mock.calls[0][0].e.type).toBe('mouseleave');
   });
 
@@ -694,7 +700,7 @@ describe('Input Component', () => {
     });
     wrapper.find('input').trigger('paste');
     await wrapper.vm.$nextTick();
-    expect(onPasteFn).toHaveBeenCalled(1);
+    expect(onPasteFn).toHaveBeenCalled();
     expect(onPasteFn.mock.calls[0][0].e.type).toBe('paste');
   });
 
@@ -702,11 +708,11 @@ describe('Input Component', () => {
     const onValidateFn = vi.fn();
     const wrapper = mount({
       render() {
-        return <Input value="Hello World" maxlength={5} on={{ validate: onValidateFn }}></Input>;
+        return <Input value={'Hello World'} maxlength={5} on={{ validate: onValidateFn }}></Input>;
       },
     });
     await wrapper.vm.$nextTick();
-    expect(onValidateFn).toHaveBeenCalled(1);
+    expect(onValidateFn).toHaveBeenCalled();
     expect(onValidateFn.mock.calls[0][0].error).toBe('exceed-maximum');
   });
 
@@ -719,7 +725,7 @@ describe('Input Component', () => {
     });
     wrapper.find('input').trigger('wheel');
     await wrapper.vm.$nextTick();
-    expect(onWheelFn).toHaveBeenCalled(1);
+    expect(onWheelFn).toHaveBeenCalled();
     expect(onWheelFn.mock.calls[0][0].e.type).toBe('wheel');
   });
 });

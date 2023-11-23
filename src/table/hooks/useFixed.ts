@@ -13,6 +13,7 @@ import {
 import get from 'lodash/get';
 import xorWith from 'lodash/xorWith';
 import debounce from 'lodash/debounce';
+import pick from 'lodash/pick';
 import log from '../../_common/js/log';
 import { ClassName, Styles } from '../../common';
 import { BaseTableCol, TableRowData, TdBaseTableProps } from '../type';
@@ -390,6 +391,7 @@ export default function useFixed(
 
   const calculateThWidthList = (trList: HTMLCollection) => {
     const widthMap: { [colKey: string]: number } = {};
+    if (!trList) return widthMap;
     for (let i = 0, len = trList.length; i < len; i++) {
       const thList = trList[i].children;
       // second for used for multiple row header
@@ -501,6 +503,7 @@ export default function useFixed(
   );
 
   watch([finalColumns], ([finalColumns], [preFinalColumns]) => {
+    if (!props.showHeader) return;
     const finalColKeys = finalColumns.map((t) => t.colKey);
     const preColKeys = preFinalColumns.map((t) => t.colKey);
     if (finalColKeys.length < preColKeys.length) {
@@ -510,8 +513,12 @@ export default function useFixed(
       reduceKeys.forEach((key) => {
         reduceWidth += thWidthList[key];
       });
-      const oldTotalWidth = Object.values(thWidthList).reduce((r = 0, n) => r + n);
-      setTableElmWidth(oldTotalWidth - reduceWidth);
+      const rootThWidthList = pick(thWidthList, preColKeys);
+      const oldTotalWidth = Object.values(rootThWidthList).reduce((r = 0, n) => r + n);
+      // 保留原有可能编辑过的列宽度，但是当剩余列过小时，表头小于内容宽，需要缩放回内容宽度
+      const contentWidth = tableContentRef.value.clientWidth;
+      const widthToReserve = oldTotalWidth - reduceWidth;
+      setTableElmWidth(Math.max(contentWidth, widthToReserve));
     }
   });
 
