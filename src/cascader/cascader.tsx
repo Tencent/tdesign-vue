@@ -47,10 +47,14 @@ export default defineComponent({
 
     const panels = computed(() => getPanels(cascaderContext.value.treeNodes));
 
-    const inputPlaceholder = computed(
-      () => (cascaderContext.value.visible && !props.multiple && getSingleContent(cascaderContext.value))
-        || (props.placeholder ?? global.value.placeholder),
-    );
+    const inputPlaceholder = computed(() => {
+      if (cascaderContext.value.visible && !props.multiple) {
+        let placeholder = getSingleContent(cascaderContext.value);
+        if (typeof placeholder === 'number') placeholder = String(placeholder);
+        return placeholder;
+      }
+      return props.placeholder ?? global.value.placeholder;
+    });
 
     const { formDisabled } = useFormDisabled();
     const isDisabled = computed(() => formDisabled.value || cascaderContext.value.disabled);
