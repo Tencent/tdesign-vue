@@ -3,7 +3,7 @@ import {
 } from 'vue';
 
 import { CloseCircleFilledIcon as TdCloseCircleFilledIcon } from 'tdesign-icons-vue';
-import TInput, { InputProps, InputValue } from '../input';
+import TInput, { InputProps } from '../input';
 import { TdTagInputProps } from './type';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
@@ -93,17 +93,17 @@ export default defineComponent({
           && (tagValue.value?.length || tInputValue.value),
     ));
 
-    const onInputCompositionstart = (value: InputValue, context: { e: CompositionEvent }) => {
+    const onInputCompositionstart = (value: string, context: { e: CompositionEvent }) => {
       isComposition.value = true;
       inputProps.value?.onCompositionstart?.(value, context);
     };
 
-    const onInputCompositionend = (value: InputValue, context: { e: CompositionEvent }) => {
+    const onInputCompositionend = (value: string, context: { e: CompositionEvent }) => {
       isComposition.value = false;
       inputProps.value?.onCompositionend?.(value, context);
     };
 
-    const onInputEnter = (value: InputValue, context: { e: KeyboardEvent }) => {
+    const onInputEnter = (value: string, context: { e: KeyboardEvent }) => {
       // 阻止 Enter 默认行为，避免在 Form 中触发 submit 事件
       context.e?.preventDefault();
       setTInputValue('', { e: context.e, trigger: 'enter' });
@@ -180,6 +180,7 @@ export default defineComponent({
     if (suffixIconNode && !this.classes.includes(suffixClass)) {
       this.classes.push(suffixClass);
     }
+    const prefixIconNode = renderTNodeJSX(this, 'prefixIcon');
     // 自定义 Tag 节点
     const displayNode = renderTNodeJSX(this, 'valueDisplay', {
       params: {
@@ -208,10 +209,11 @@ export default defineComponent({
         placeholder={this.tagInputPlaceholder}
         suffix={this.suffix}
         suffixIcon={() => suffixIconNode}
+        prefixIcon={() => prefixIconNode}
         props={this.inputProps}
         scopedSlots={this.$scopedSlots}
         on={{
-          change: (val: InputValue, context?: { e?: InputEvent | MouseEvent }) => {
+          change: (val: string, context?: { e?: InputEvent | MouseEvent }) => {
             this.setTInputValue(val, { ...context, trigger: 'input' });
           },
           enter: this.onInputEnter,
@@ -225,11 +227,11 @@ export default defineComponent({
             this.cancelHover(context);
             this.scrollToLeftOnLeave();
           },
-          focus: (inputValue: InputValue, context: { e: MouseEvent }) => {
+          focus: (inputValue: string, context: { e: MouseEvent }) => {
             this.onFocus?.(this.tagValue, { e: context.e, inputValue });
             this.$emit('focus', this.tagValue, { e: context.e, inputValue });
           },
-          blur: (inputValue: InputValue, context: { e: MouseEvent }) => {
+          blur: (inputValue: string, context: { e: MouseEvent }) => {
             this.setTInputValue('', { e: context.e, trigger: 'blur' });
             this.onBlur?.(this.tagValue, { e: context.e, inputValue: '' });
             this.$emit('blur', this.tagValue, { e: context.e, inputValue: '' });

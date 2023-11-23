@@ -6,7 +6,7 @@ import isObject from 'lodash/isObject';
 import pick from 'lodash/pick';
 import { SelectInputCommonProperties } from './interface';
 import { TdSelectInputProps } from './type';
-import Input, { InputProps, InputValue } from '../input';
+import Input, { InputProps, StrInputProps } from '../input';
 import Loading from '../loading';
 import { useTNodeJSX } from '../hooks/tnode';
 import { usePrefixClass } from '../hooks/useConfig';
@@ -62,18 +62,18 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
     setInputValue('', { trigger: 'clear' });
   };
 
-  const onInnerInputChange = (value: InputValue, context: { e: InputEvent | MouseEvent }) => {
+  const onInnerInputChange = (value: string, context: { e: InputEvent | MouseEvent }) => {
     if (props.allowInput) {
       setInputValue(value, { ...context, trigger: 'input' });
     }
   };
 
-  const onEnter: InputProps['onEnter'] = (val, context) => {
+  const onEnter: StrInputProps['onEnter'] = (val, context) => {
     props.onEnter?.(value.value, { ...context, inputValue: val });
     instance.$emit('enter', value.value, { ...context, inputValue: val });
   };
 
-  const onFocus: InputProps['onFocus'] = (val, context) => {
+  const onFocus: StrInputProps['onFocus'] = (val, context) => {
     isSingleFocus.value = true;
     props.onFocus?.(value.value, { ...context, inputValue: val });
     instance.$emit('focus', value.value, { ...context, tagInputValue: val });

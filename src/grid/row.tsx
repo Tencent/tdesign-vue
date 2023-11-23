@@ -24,7 +24,7 @@ export default mixins(classPrefixMixins).extend({
   props: { ...props },
 
   setup(props) {
-    provide('rowContext', props.gutter);
+    provide('rowContext', { gutter: props.gutter });
   },
 
   data() {

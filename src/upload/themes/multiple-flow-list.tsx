@@ -14,13 +14,14 @@ import {
   FileIcon,
   VideoIcon,
 } from 'tdesign-icons-vue';
-import { UploadConfig } from '@src/config-provider';
+import isFunction from 'lodash/isFunction';
+import isObject from 'lodash/isObject';
 import { useGlobalIcon } from '../../hooks/useGlobalIcon';
 import ImageViewer from '../../image-viewer';
 import { CommonDisplayFileProps } from '../interface';
 import { commonProps } from '../constants';
 import TButton from '../../button';
-import { UploadFile } from '../type';
+import { TdUploadProps, UploadFile } from '../type';
 import { UploadDisplayDragEvents } from '../../common';
 import useDrag, { UploadDragEvents } from '../hooks/useDrag';
 import {
@@ -37,6 +38,7 @@ import TLoading from '../../loading';
 import Link from '../../link';
 import { renderTNodeJSX } from '../../utils/render-tnode';
 import Image from '../../image';
+import { UploadConfig } from '../../config-provider/type';
 
 export interface ImageFlowListProps extends CommonDisplayFileProps {
   uploadFiles?: (toFiles?: UploadFile[]) => void;
@@ -46,6 +48,8 @@ export interface ImageFlowListProps extends CommonDisplayFileProps {
   isBatchUpload?: boolean;
   draggable?: boolean;
   showThumbnail?: boolean;
+  uploadButton?: TdUploadProps['uploadButton'];
+  cancelUploadButton?: TdUploadProps['cancelUploadButton'];
 }
 
 export default defineComponent({
@@ -60,6 +64,9 @@ export default defineComponent({
     isBatchUpload: Boolean,
     draggable: Boolean,
     showThumbnail: Boolean,
+    showImageFileName: Boolean,
+    uploadButton: Object as PropType<ImageFlowListProps['uploadButton']>,
+    cancelUploadButton: Object as PropType<ImageFlowListProps['cancelUploadButton']>,
   },
 
   setup(props, context) {
@@ -122,6 +129,10 @@ export default defineComponent({
       currentPreviewFile.value = [];
     };
 
+    const onVue2Preview = (params: { file: UploadFile; index: number; e: MouseEvent }) => {
+      context.emit('preview', params);
+    };
+
     return {
       icons,
       dragActive: drag.dragActive,
@@ -131,6 +142,7 @@ export default defineComponent({
       locale,
       currentPreviewFile,
       previewIndex,
+      onVue2Preview,
       browseIconClick,
       closePreview,
       previewIndexChange,
@@ -192,7 +204,7 @@ export default defineComponent({
               <Image class={`${this.uploadPrefix}__card-image`} src={file.url || file.raw} error="" loading="" />
             )}
             <div class={`${this.uploadPrefix}__card-mask`}>
-              {file.url && (
+              {(file.url || file.raw) && !['progress', 'fail'].includes(file.status) && (
                 <span class={`${this.uploadPrefix}__card-mask-item`}>
                   <BrowseIcon
                     onClick={({ e }: { e: MouseEvent }) => {
@@ -217,7 +229,12 @@ export default defineComponent({
               )}
             </div>
           </div>
-          <p class={`${this.uploadPrefix}__card-name`}>{fileName}</p>
+          {this.showImageFileName && (
+            <p class={[`${this.uploadPrefix}__card-name`, `${this.uploadPrefix}__flow-status`]}>
+              {['success', 'waiting'].includes(file.status) && iconMap[file.status]}
+              {fileName}
+            </p>
+          )}
         </li>
       );
     },
@@ -228,7 +245,7 @@ export default defineComponent({
         <div class={`${this.uploadPrefix}__flow-status`}>
           {iconMap[file.status]}
           <span class={`${this.uploadPrefix}__${this.theme}-${file.status}`}>
-            {textMap[file.status]}
+            {file.response?.error ? file.response?.error || textMap[file.status] : textMap[file.status]}
             {this.showUploadProgress && file.status === 'progress' ? ` ${file.percent || 0}%` : ''}
           </span>
         </div>
@@ -268,6 +285,12 @@ export default defineComponent({
     renderFileList() {
       const list = renderTNodeJSX(this, 'fileListDisplay', {
         params: {
+          cancelUpload: this.cancelUpload,
+          uploadFiles: this.uploadFiles,
+          onRemove: this.onRemove,
+          toUploadFiles: this.toUploadFiles,
+          sizeOverLimitMessage: this.sizeOverLimitMessage,
+          locale: this.locale,
           files: this.displayFiles,
           dragEvents: this.innerDragEvents,
         },
@@ -283,8 +306,8 @@ export default defineComponent({
           <thead>
             <tr>
               <th>{this.locale.file?.fileNameText}</th>
-              <th style={{ width: '120px' }}>{this.locale.file?.fileSizeText}</th>
-              <th style={{ width: '120px' }}>{this.locale.file?.fileStatusText}</th>
+              <th style={{ minWidth: '120px' }}>{this.locale.file?.fileSizeText}</th>
+              <th style={{ minWidth: '120px' }}>{this.locale.file?.fileStatusText}</th>
               {this.disabled ? null : <th>{this.locale.file?.fileOperationText}</th>}
             </tr>
           </thead>
@@ -333,6 +356,13 @@ export default defineComponent({
     renderImageList() {
       const customList = renderTNodeJSX(this, 'fileListDisplay', {
         params: {
+          cancelUpload: this.cancelUpload,
+          uploadFiles: this.uploadFiles,
+          onRemove: this.onRemove,
+          onPreview: this.onVue2Preview,
+          toUploadFiles: this.toUploadFiles,
+          sizeOverLimitMessage: this.sizeOverLimitMessage,
+          locale: this.locale,
           files: this.displayFiles,
           dragEvents: this.innerDragEvents,
         },
@@ -393,6 +423,11 @@ export default defineComponent({
 
   render() {
     const cardClassName = `${this.uploadPrefix}__flow-card-area`;
+    const isShowBottomButton = !this.autoUpload && (this.uploadButton !== null || this.cancelUploadButton !== null);
+    const cancelUploadDisabled = this.disabled || !this.uploading;
+    const hasCancelUploadTNode = this.$scopedSlots.uploadButton || isFunction(this.uploadButton);
+    const uploadButtonDisabled = Boolean(this.disabled || this.uploading || !this.displayFiles.length);
+    const hasUploadButtonTNode = this.$scopedSlots.cancelUploadButton || isFunction(this.cancelUploadButton);
     return (
       <div class={`${this.uploadPrefix}__flow ${this.uploadPrefix}__flow-${this.theme}`}>
         <div class={`${this.uploadPrefix}__flow-op`}>
@@ -427,23 +462,48 @@ export default defineComponent({
             </div>
           ))}
 
-        {!this.autoUpload && (
+        {isShowBottomButton && (
           <div class={`${this.uploadPrefix}__flow-bottom`}>
-            <TButton
-              theme="default"
-              disabled={this.disabled || !this.uploading}
-              class={`${this.uploadPrefix}__cancel`}
-              content={this.locale?.cancelUploadText}
-              onClick={(e: MouseEvent) => this.cancelUpload?.({ e })}
-            ></TButton>
-            <TButton
-              disabled={this.disabled || this.uploading || !this.displayFiles.length}
-              theme="primary"
-              loading={this.uploading}
-              content={this.uploadText}
-              class={`${this.uploadPrefix}__continue`}
-              onClick={() => this.uploadFiles?.()}
-            ></TButton>
+            {this.cancelUploadButton !== null
+              && (hasCancelUploadTNode ? (
+                renderTNodeJSX(this, 'cancelUploadButton', {
+                  params: {
+                    disabled: cancelUploadDisabled,
+                    cancelUploadText: this.locale?.cancelUploadText,
+                    cancelUpload: this.cancelUpload,
+                  },
+                })
+              ) : (
+                <TButton
+                  theme="default"
+                  disabled={this.disabled || !this.uploading}
+                  class={`${this.uploadPrefix}__cancel`}
+                  content={this.locale?.cancelUploadText}
+                  props={isObject(this.cancelUploadButton) ? this.cancelUploadButton : {}}
+                  onClick={(e: MouseEvent) => this.cancelUpload?.({ e })}
+                ></TButton>
+              ))}
+            {this.uploadButton !== null
+              && (hasUploadButtonTNode ? (
+                renderTNodeJSX(this, 'uploadButton', {
+                  params: {
+                    disabled: uploadButtonDisabled,
+                    uploading: this.uploading,
+                    uploadText: this.uploadText,
+                    uploadFiles: this.uploadFiles,
+                  },
+                })
+              ) : (
+                <TButton
+                  disabled={this.disabled || this.uploading || !this.displayFiles.length}
+                  theme="primary"
+                  loading={this.uploading}
+                  content={this.uploadText}
+                  class={`${this.uploadPrefix}__continue`}
+                  props={isObject(this.uploadButton) ? this.uploadButton : {}}
+                  onClick={() => this.uploadFiles?.()}
+                ></TButton>
+              ))}
           </div>
         )}
         <ImageViewer
@@ -452,6 +512,7 @@ export default defineComponent({
           onClose={this.closePreview}
           index={this.previewIndex}
           onIndexChange={this.previewIndexChange}
+          props={this.imageViewerProps}
         ></ImageViewer>
       </div>
     );

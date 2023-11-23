@@ -11,7 +11,7 @@ import { InputValue, TdInputProps } from './type';
 import { getCharacterLength, omit } from '../utils/helper';
 import getConfigReceiverMixins, { InputConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
-import { ClassName } from '../common';
+import { ClassName, PlainObject } from '../common';
 import { emitEvent } from '../utils/event';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
@@ -20,8 +20,8 @@ import log from '../_common/js/log';
 
 const ANIMATION_TIME = 100;
 
-function getValidAttrs(obj: object): object {
-  const newObj = {};
+function getValidAttrs(obj: PlainObject): PlainObject {
+  const newObj: PlainObject = {};
   Object.keys(obj).forEach((key) => {
     if (typeof obj[key] !== 'undefined') {
       newObj[key] = obj[key];
@@ -214,6 +214,12 @@ export default mixins(
   },
 
   methods: {
+    getOutputValue(val: InputValue) {
+      if (this.type === 'number') {
+        return val || val === 0 ? Number(val) : undefined;
+      }
+      return val;
+    },
     addListeners() {
       this.$watch(
         () => this.value + this.placeholder,
@@ -284,10 +290,11 @@ export default mixins(
       const {
         currentTarget: { value },
       }: any = e;
+      const tmpValue = this.getOutputValue(value);
       if (/enter/i.test(e.key) || /enter/i.test(e.code)) {
-        emitEvent<Parameters<TdInputProps['onEnter']>>(this, 'enter', value, { e });
+        emitEvent<Parameters<TdInputProps['onEnter']>>(this, 'enter', tmpValue, { e });
       } else {
-        emitEvent<Parameters<TdInputProps['onKeydown']>>(this, 'keydown', value, { e });
+        emitEvent<Parameters<TdInputProps['onKeydown']>>(this, 'keydown', tmpValue, { e });
       }
     },
     handleKeyUp(e: KeyboardEvent) {
@@ -298,14 +305,16 @@ export default mixins(
       if (e.key === 'Process') {
         return;
       }
-      emitEvent<Parameters<TdInputProps['onKeyup']>>(this, 'keyup', value, { e });
+      const tmpValue = this.getOutputValue(value);
+      emitEvent<Parameters<TdInputProps['onKeyup']>>(this, 'keyup', tmpValue, { e });
     },
     handleKeypress(e: KeyboardEvent) {
       if (this.tDisabled) return;
       const {
         currentTarget: { value },
       }: any = e;
-      emitEvent<Parameters<TdInputProps['onKeypress']>>(this, 'keypress', value, { e });
+      const tmpValue = this.getOutputValue(value);
+      emitEvent<Parameters<TdInputProps['onKeypress']>>(this, 'keypress', tmpValue, { e });
     },
     handlePaste(e: ClipboardEvent) {
       if (this.tDisabled) return;
@@ -324,7 +333,8 @@ export default mixins(
       this.renderType = toggleType;
     },
     emitClear(e: MouseEvent) {
-      emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', '', { e, trigger: 'clear' });
+      const val = this.type === 'number' ? undefined : '';
+      emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', val, { e, trigger: 'clear' });
       emitEvent<Parameters<TdInputProps['onClear']>>(this, 'clear', { e });
     },
     emitFocus(e: FocusEvent) {
@@ -335,7 +345,7 @@ export default mixins(
     },
     formatAndEmitBlur(e: FocusEvent) {
       if (this.format) {
-        this.inputValue = this.format(this.value);
+        this.inputValue = this.type === 'number' || typeof this.value === 'number' ? this.value : this.format(this.value);
       }
       this.focused = false;
       this.tFormItem?.validate('blur');
@@ -368,6 +378,7 @@ export default mixins(
       this.onClick?.({ e });
     },
     throttleChangeCursorPos(ref: HTMLInputElement, pos: number) {
+      if (this.type === 'number') return;
       // eslint-disable-next-line no-param-reassign
       (ref as HTMLInputElement).selectionEnd = pos;
     },
@@ -380,7 +391,9 @@ export default mixins(
       if (this.composingRef) {
         this.composingRefValue = val;
       } else {
-        if (this.type !== 'number') {
+        if (this.type === 'number') {
+          val = this.getOutputValue(val);
+        } else {
           val = this.getValueByLimitNumber(val);
         }
         emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', val, { e, trigger: 'input' });
@@ -564,7 +577,7 @@ export default mixins(
           class={[`${this.componentName}__inner`, { [`${this.componentName}--soft-hidden`]: !this.showInput }]}
           value={inputTextValue}
           onInput={this.handleInput}
-          title={this.disabled ? inputTextValue : undefined}
+          title={this.disabled ? (inputTextValue as string) : undefined}
         />
         {this.autoWidth && (
           <span ref="inputPreRef" class={`${this.classPrefix}-input__input-pre`}>

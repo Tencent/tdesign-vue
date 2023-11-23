@@ -24,6 +24,7 @@ export const commonProps = {
   default: Function as PropType<CommonDisplayFileProps['default']>,
   fileListDisplay: Function as PropType<CommonDisplayFileProps['fileListDisplay']>,
   onRemove: Function as PropType<CommonDisplayFileProps['onRemove']>,
+  imageViewerProps: Object as PropType<CommonDisplayFileProps['imageViewerProps']>,
 };
 
 export default commonProps;

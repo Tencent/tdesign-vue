@@ -15,8 +15,6 @@ import {
 } from './interface';
 import { useConfig, usePrefixClass, useCommonClassName } from '../hooks/useConfig';
 import { PopupVisibleChangeContext } from '../popup';
-import { InputValue } from '../input';
-
 import { closeIconClickEffect, handleRemoveTagEffect } from './core/effect';
 import { getPanels, getSingleContent, getMultipleContent } from './core/helper';
 import { getFakeArrowIconClass } from './core/className';
@@ -49,10 +47,14 @@ export default defineComponent({
 
     const panels = computed(() => getPanels(cascaderContext.value.treeNodes));
 
-    const inputPlaceholder = computed(
-      () => (cascaderContext.value.visible && !props.multiple && getSingleContent(cascaderContext.value))
-        || (props.placeholder ?? global.value.placeholder),
-    );
+    const inputPlaceholder = computed(() => {
+      if (cascaderContext.value.visible && !props.multiple) {
+        let placeholder = getSingleContent(cascaderContext.value);
+        if (typeof placeholder === 'number') placeholder = String(placeholder);
+        return placeholder;
+      }
+      return props.placeholder ?? global.value.placeholder;
+    });
 
     const { formDisabled } = useFormDisabled();
     const isDisabled = computed(() => formDisabled.value || cascaderContext.value.disabled);
@@ -160,7 +162,7 @@ export default defineComponent({
             inputProps: { size: this.size, ...(this.inputProps as TdCascaderProps['inputProps']) },
             tagInputProps: { size: this.size, ...(this.tagInputProps as TdCascaderProps['tagInputProps']) },
             tagProps: { ...(this.tagProps as TdCascaderProps['tagProps']) },
-            onInputChange: (value: InputValue, ctx: SelectInputValueChangeContext) => {
+            onInputChange: (value: string, ctx: SelectInputValueChangeContext) => {
               if (!this.isFilterable) return;
               setInputVal(`${value}`);
               (this?.selectInputProps as TdSelectInputProps)?.onInputChange?.(value, ctx);
