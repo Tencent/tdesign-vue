@@ -11,7 +11,7 @@ import { emitEvent } from '../utils/event';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
 import { off, on } from '../utils/dom';
-import { CHECKED_CODE } from '../checkbox/hooks/useKeyboardEvent';
+import { CHECKED_CODE_REG } from '../_common/js/common';
 
 const classPrefixMixins = getClassPrefixMixins('radio-group');
 
@@ -114,7 +114,7 @@ export default mixins(classPrefixMixins).extend({
 
     // 注意：此处会还原区分 数字 和 数字字符串
     checkRadioInGroup(e: KeyboardEvent) {
-      const isCheckedCode = CHECKED_CODE.includes(e.key) || CHECKED_CODE.includes(e.code);
+      const isCheckedCode = CHECKED_CODE_REG.test(e.key) || CHECKED_CODE_REG.test(e.code);
       if (isCheckedCode) {
         e.preventDefault();
         const inputNode = (e.target as HTMLElement).querySelector('input');
