@@ -102,6 +102,10 @@ export default function useTreeAction(state: TypeTreeState) {
 
   const toggleChecked = (item: TypeTargetNode, ctx: { e: Event }): TreeNodeValue[] => {
     const node = getNode(store, item);
+    if (node.isIndeterminate()) {
+      const expectState = node.hasEnableUnCheckedChild();
+      return setChecked(node, expectState, ctx);
+    }
     return setChecked(node, !node.isChecked(), ctx);
   };
 

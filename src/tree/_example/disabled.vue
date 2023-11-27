@@ -142,7 +142,11 @@ export default {
       const { tree } = this.$refs;
       const map = this.disabledMap;
       // 交给 disable-check 接管 disabled 属性判断
+      // 注意这里的逻辑: 如果先禁用了某个子节点，再禁用其父节点
+      // 启用父节点时，子节点会仍然为禁用状态，因为它还在 map 当中，这是符合逻辑的
       map.set(node.value, true);
+      // 由于传递给 tree 的 disableCheck 函数未变更，所以不会自动更新节点状态
+      // 需要调用 refresh 方法来更新节点状态
       tree.refresh();
     },
   },
