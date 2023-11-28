@@ -23,12 +23,18 @@ export default defineComponent({
 
   setup(props) {
     const classPrefix = usePrefixClass('statistic');
+    const {
+      value, decimalPlaces, separator, color,
+    } = toRefs(props);
+
+    const innerValue = ref(props.animation?.valueFrom ?? props.value);
+    const tween = ref(null);
 
     const numberValue = computed(() => (isNumber(props.value) ? props.value : 0));
-    const innerValue = ref(props.animation?.valueFrom ?? props.value);
-
-    const tween = ref(null);
-    const { value } = toRefs(props);
+    const valueStyle = computed(() => ({ color: COLOR_MAP[color.value] || color.value }));
+    const innerDecimalPlaces = computed(
+      () => decimalPlaces.value ?? numberValue.value.toString().split('.')[1]?.length ?? 0,
+    );
 
     const start = (from: number = props.animation?.valueFrom ?? 0, to: number = numberValue.value) => {
       if (from !== to) {
@@ -41,7 +47,7 @@ export default defineComponent({
           },
           duration: props.animation.duration,
           onUpdate: (keys) => {
-            innerValue.value = keys.value;
+            innerValue.value = Number(keys.value.toFixed(innerDecimalPlaces.value));
           },
           onFinish: () => {
             innerValue.value = to;
@@ -53,27 +59,19 @@ export default defineComponent({
 
     const formatValue = computed(() => {
       let _value: number | undefined | string = innerValue.value;
-      const { decimalPlaces, separator } = props;
 
       if (isFunction(props.format)) {
         return props.format(_value);
       }
       const options = {
-        minimumFractionDigits: decimalPlaces || 0,
-        maximumFractionDigits: decimalPlaces || 20,
+        minimumFractionDigits: decimalPlaces.value || 0,
+        maximumFractionDigits: decimalPlaces.value || 20,
         useGrouping: !!separator,
       };
       // replace的替换的方案仅能应对大部分地区
-      _value = _value.toLocaleString(undefined, options).replace(/,|，/g, separator);
+      _value = _value.toLocaleString(undefined, options).replace(/,|，/g, separator.value);
 
       return _value;
-    });
-
-    const valueStyle = computed(() => {
-      const { color } = props;
-      return {
-        color: COLOR_MAP[color] || color,
-      };
     });
 
     onMounted(() => props.animation && props.animationStart && start());
