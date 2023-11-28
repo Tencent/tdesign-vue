@@ -164,6 +164,7 @@ export default defineComponent({
 
     const onEditableCellChange: EditableCellProps['onChange'] = (params) => {
       props.onRowEdit?.(params);
+      context.emit('row-edit', params);
       const rowValue = get(params.editedRow, props.rowKey || 'id');
       onUpdateEditedCell(rowValue, params.row, {
         [params.col.colKey]: params.value,
