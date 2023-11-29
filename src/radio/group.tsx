@@ -92,7 +92,12 @@ export default mixins(classPrefixMixins).extend({
   mounted() {
     this.calcBarStyle();
     const observer = new MutationObserver(this.calcBarStyle);
-    observer.observe(this.$el, { childList: true, attributes: true, subtree: true });
+    observer.observe(this.$el, {
+      childList: true,
+      attributes: true,
+      subtree: true,
+      characterData: true,
+    });
     this.observer = observer;
     this.addKeyboardListeners();
   },
@@ -137,7 +142,7 @@ export default mixins(classPrefixMixins).extend({
       emitEvent<Parameters<TdRadioGroupProps['onChange']>>(this, 'change', value, context);
     },
 
-    calcDefaultBarStyle(): void {
+    calcDefaultBarStyle() {
       const defaultNode = this.$el.cloneNode(true);
       const div = document.createElement('div');
       div.setAttribute('style', 'position: absolute; visibility: hidden;');
@@ -146,8 +151,8 @@ export default mixins(classPrefixMixins).extend({
 
       const defaultCheckedRadio: HTMLElement = div.querySelector(this.checkedClassName);
       const { offsetWidth, offsetLeft } = defaultCheckedRadio;
-      this.barStyle = { width: `${offsetWidth}px`, left: `${offsetLeft}px` };
       document.body.removeChild(div);
+      return { offsetWidth, offsetLeft };
     },
     calcBarStyle(): void {
       if (this.variant === 'outline') return;
@@ -155,13 +160,17 @@ export default mixins(classPrefixMixins).extend({
       const checkedRadio: HTMLElement = this.$el.querySelector(this.checkedClassName);
       if (!checkedRadio) return;
 
-      const { offsetWidth, offsetLeft } = checkedRadio;
+      let { offsetWidth, offsetLeft } = checkedRadio;
       // current node is not rendered，fallback to default render
       if (!offsetWidth) {
-        this.calcDefaultBarStyle();
-      } else {
-        this.barStyle = { width: `${offsetWidth}px`, left: `${offsetLeft}px` };
+        const { offsetWidth: width, offsetLeft: left } = this.calcDefaultBarStyle();
+        offsetWidth = width;
+        offsetLeft = left;
       }
+      const width = `${offsetWidth}px`;
+      const left = `${offsetLeft}px`;
+      if (this.barStyle.width === width && this.barStyle.left === left) return;
+      this.barStyle = { width, left };
     },
   },
 });
