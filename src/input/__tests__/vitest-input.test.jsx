@@ -171,7 +171,7 @@ describe('Input Component', () => {
     expect(domWrapper.classes('name1')).toBeTruthy();
     expect(domWrapper.classes('name2')).toBeTruthy();
   });
-  it('props.inputClass is equal to [\'name1\', \'name2\']', () => {
+  it("props.inputClass is equal to ['name1', 'name2']", () => {
     const wrapper = mount({
       render() {
         return <Input inputClass={['name1', 'name2']}></Input>;

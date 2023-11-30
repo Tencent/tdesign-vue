@@ -251,7 +251,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
       }
       const pageSize: number = parseInt(e, 10);
       let pageCount = 1;
-      if (pageSize > 0) {
+      if (pageSize > 0 && this.total > 0) {
         pageCount = Math.ceil(this.total / pageSize);
       }
 

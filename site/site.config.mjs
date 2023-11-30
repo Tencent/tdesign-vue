@@ -505,6 +505,14 @@ const docs = [
         componentEn: () => import('tdesign-vue/skeleton/skeleton.en-US.md'),
       },
       {
+        title: 'Statistic 统计数值',
+        titleEn: 'Statistic',
+        name: 'statistic',
+        path: '/vue/components/statistic',
+        component: () => import('tdesign-vue/statistic/statistic.md'),
+        componentEn: () => import('tdesign-vue/statistic/statistic.en-US.md'),
+      },
+      {
         title: 'Swiper 轮播框',
         titleEn: 'Swiper',
         name: 'swiper',

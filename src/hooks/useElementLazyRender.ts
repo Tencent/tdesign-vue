@@ -5,7 +5,7 @@ import observe from '../_common/js/utils/observe';
 
 export function useElementLazyRender(labelRef: Ref<HTMLElement>, lazyLoad: Ref<boolean>) {
   const ioObserver = ref<IntersectionObserver>();
-  const showElement = ref(true);
+  const showElement = ref(!lazyLoad.value);
 
   const handleLazyLoad = () => {
     if (!lazyLoad.value || !labelRef.value || ioObserver.value) return;
