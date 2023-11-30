@@ -118487,495 +118487,34 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-vscroll.vue 1`] 
 exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
 <div
   class="t-space t-space-vertical"
-  style="gap: 32px;"
+  style="gap: 16px; width: 90%;"
 >
   <div
     class="t-space-item"
   >
     <div
-      class="t-space t-space-vertical"
+      class="t-space t-space-horizontal"
       style="gap: 16px;"
     >
       <div
         class="t-space-item"
       >
-        <h3>
-          禁用整个 tree
-        </h3>
+        <span>
+          是否禁用整个 tree:
+        </span>
       </div>
       <div
         class="t-space-item"
       >
         <div
-          class="t-space t-space-horizontal"
-          style="gap: 16px;"
+          class="t-switch t-size-m"
         >
+          <span
+            class="t-switch__handle"
+          />
           <div
-            class="t-space-item"
-          >
-            <span>
-              是否禁用整个 tree:
-            </span>
-          </div>
-          <div
-            class="t-space-item"
-          >
-            <div
-              class="t-switch t-size-m t-is-checked"
-            >
-              <span
-                class="t-switch__handle"
-              />
-              <div
-                class="t-switch__content t-size-m"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="t-space-item"
-      >
-        <div
-          class="t-space t-space-horizontal"
-          style="gap: 16px;"
-        >
-          <div
-            class="t-space-item"
-          >
-            <span>
-              是否只禁用 checkbox:
-            </span>
-          </div>
-          <div
-            class="t-space-item"
-          >
-            <div
-              class="t-switch t-size-m"
-            >
-              <span
-                class="t-switch__handle"
-              />
-              <div
-                class="t-switch__content t-size-m"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="t-space-item"
-      >
-        <div
-          class="t-tree t-is-disabled t-tree--hoverable t-tree--checkable t-tree--transition"
-        >
-          <div
-            class="t-tree__list"
-            style="transform: translateY(0px);"
-          >
-            <div
-              class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
-              data-level="0"
-              data-value="t426"
-              draggable="false"
-              style="--level: 0;"
-            >
-              <span
-                class="t-tree__icon t-folder-icon t-tree__icon--default"
-                ignore="active"
-                trigger="expand"
-              >
-                <svg
-                  class="t-icon t-icon-caret-right-small"
-                  fill="none"
-                  height="1em"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                >
-                  <path
-                    d="M16.5 12l-7-7v14l7-7z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </span>
-              <label
-                class="t-checkbox t-is-disabled t-tree__label"
-                disabled="disabled"
-                ignore="expand,active"
-              >
-                <input
-                  class="t-checkbox__former"
-                  disabled="disabled"
-                  name="t426"
-                  tabindex="-1"
-                  type="checkbox"
-                  value=""
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                >
-                  1
-                </span>
-              </label>
-            </div>
-            <div
-              class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
-              data-level="1"
-              data-value="t427"
-              draggable="false"
-              style="--level: 1;"
-            >
-              <span
-                class="t-tree__icon t-folder-icon t-tree__icon--default"
-                ignore="active"
-                trigger="expand"
-              >
-                <svg
-                  class="t-icon t-icon-caret-right-small"
-                  fill="none"
-                  height="1em"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                >
-                  <path
-                    d="M16.5 12l-7-7v14l7-7z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </span>
-              <label
-                class="t-checkbox t-is-disabled t-tree__label"
-                disabled="disabled"
-                ignore="expand,active"
-              >
-                <input
-                  class="t-checkbox__former"
-                  disabled="disabled"
-                  name="t427"
-                  tabindex="-1"
-                  type="checkbox"
-                  value=""
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                >
-                  1.1
-                </span>
-              </label>
-            </div>
-            <div
-              class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
-              data-level="2"
-              data-value="t428"
-              draggable="false"
-              style="--level: 2;"
-            >
-              <span
-                class="t-tree__icon t-folder-icon"
-                ignore="active"
-                trigger="expand"
-              />
-              <label
-                class="t-checkbox t-is-disabled t-tree__label"
-                disabled="disabled"
-                ignore="expand,active"
-              >
-                <input
-                  class="t-checkbox__former"
-                  disabled="disabled"
-                  name="t428"
-                  tabindex="-1"
-                  type="checkbox"
-                  value=""
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                >
-                  1.1.1
-                </span>
-              </label>
-            </div>
-            <div
-              class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
-              data-level="2"
-              data-value="t429"
-              draggable="false"
-              style="--level: 2;"
-            >
-              <span
-                class="t-tree__icon t-folder-icon"
-                ignore="active"
-                trigger="expand"
-              />
-              <label
-                class="t-checkbox t-is-disabled t-tree__label"
-                disabled="disabled"
-                ignore="expand,active"
-              >
-                <input
-                  class="t-checkbox__former"
-                  disabled="disabled"
-                  name="t429"
-                  tabindex="-1"
-                  type="checkbox"
-                  value=""
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                >
-                  1.1.2
-                </span>
-              </label>
-            </div>
-            <div
-              class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
-              data-level="1"
-              data-value="t430"
-              draggable="false"
-              style="--level: 1;"
-            >
-              <span
-                class="t-tree__icon t-folder-icon t-tree__icon--default"
-                ignore="active"
-                trigger="expand"
-              >
-                <svg
-                  class="t-icon t-icon-caret-right-small"
-                  fill="none"
-                  height="1em"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                >
-                  <path
-                    d="M16.5 12l-7-7v14l7-7z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </span>
-              <label
-                class="t-checkbox t-is-disabled t-tree__label"
-                disabled="disabled"
-                ignore="expand,active"
-              >
-                <input
-                  class="t-checkbox__former"
-                  disabled="disabled"
-                  name="t430"
-                  tabindex="-1"
-                  type="checkbox"
-                  value=""
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                >
-                  1.2
-                </span>
-              </label>
-            </div>
-            <div
-              class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
-              data-level="2"
-              data-value="t431"
-              draggable="false"
-              style="--level: 2;"
-            >
-              <span
-                class="t-tree__icon t-folder-icon"
-                ignore="active"
-                trigger="expand"
-              />
-              <label
-                class="t-checkbox t-is-disabled t-tree__label"
-                disabled="disabled"
-                ignore="expand,active"
-              >
-                <input
-                  class="t-checkbox__former"
-                  disabled="disabled"
-                  name="t431"
-                  tabindex="-1"
-                  type="checkbox"
-                  value=""
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                >
-                  1.2.1
-                </span>
-              </label>
-            </div>
-            <div
-              class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
-              data-level="2"
-              data-value="t432"
-              draggable="false"
-              style="--level: 2;"
-            >
-              <span
-                class="t-tree__icon t-folder-icon"
-                ignore="active"
-                trigger="expand"
-              />
-              <label
-                class="t-checkbox t-is-disabled t-tree__label"
-                disabled="disabled"
-                ignore="expand,active"
-              >
-                <input
-                  class="t-checkbox__former"
-                  disabled="disabled"
-                  name="t432"
-                  tabindex="-1"
-                  type="checkbox"
-                  value=""
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                >
-                  1.2.2
-                </span>
-              </label>
-            </div>
-            <div
-              class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
-              data-level="0"
-              data-value="t433"
-              draggable="false"
-              style="--level: 0;"
-            >
-              <span
-                class="t-tree__icon t-folder-icon t-tree__icon--default"
-                ignore="active"
-                trigger="expand"
-              >
-                <svg
-                  class="t-icon t-icon-caret-right-small"
-                  fill="none"
-                  height="1em"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                >
-                  <path
-                    d="M16.5 12l-7-7v14l7-7z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </span>
-              <label
-                class="t-checkbox t-is-disabled t-tree__label"
-                disabled="disabled"
-                ignore="expand,active"
-              >
-                <input
-                  class="t-checkbox__former"
-                  disabled="disabled"
-                  name="t433"
-                  tabindex="-1"
-                  type="checkbox"
-                  value=""
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                >
-                  2
-                </span>
-              </label>
-            </div>
-            <div
-              class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
-              data-level="1"
-              data-value="t434"
-              draggable="false"
-              style="--level: 1;"
-            >
-              <span
-                class="t-tree__icon t-folder-icon"
-                ignore="active"
-                trigger="expand"
-              />
-              <label
-                class="t-checkbox t-is-disabled t-tree__label"
-                disabled="disabled"
-                ignore="expand,active"
-              >
-                <input
-                  class="t-checkbox__former"
-                  disabled="disabled"
-                  name="t434"
-                  tabindex="-1"
-                  type="checkbox"
-                  value=""
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                >
-                  2.1
-                </span>
-              </label>
-            </div>
-            <div
-              class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
-              data-level="1"
-              data-value="t435"
-              draggable="false"
-              style="--level: 1;"
-            >
-              <span
-                class="t-tree__icon t-folder-icon"
-                ignore="active"
-                trigger="expand"
-              />
-              <label
-                class="t-checkbox t-is-disabled t-tree__label"
-                disabled="disabled"
-                ignore="expand,active"
-              >
-                <input
-                  class="t-checkbox__former"
-                  disabled="disabled"
-                  name="t435"
-                  tabindex="-1"
-                  type="checkbox"
-                  value=""
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                >
-                  2.2
-                </span>
-              </label>
-            </div>
-          </div>
+            class="t-switch__content t-size-m"
+          />
         </div>
       </div>
     </div>
@@ -118984,452 +118523,967 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
     class="t-space-item"
   >
     <div
-      class="t-space t-space-vertical"
+      class="t-space t-space-horizontal"
       style="gap: 16px;"
     >
       <div
         class="t-space-item"
       >
-        <h3>
-          禁用指定节点
-        </h3>
+        <span>
+          可选:
+        </span>
       </div>
       <div
         class="t-space-item"
       >
         <div
-          class="t-space t-space-horizontal"
-          style="gap: 16px;"
+          class="t-switch t-size-m t-is-checked"
         >
+          <span
+            class="t-switch__handle"
+          />
           <div
-            class="t-space-item"
-          >
-            <span>
-              禁用指定节点 checkbox:
-            </span>
-          </div>
-          <div
-            class="t-space-item"
-          >
-            <div
-              class="t-switch t-size-m t-is-checked"
-            >
-              <span
-                class="t-switch__handle"
-              />
-              <div
-                class="t-switch__content t-size-m"
-              />
-            </div>
-          </div>
+            class="t-switch__content t-size-m"
+          />
         </div>
       </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-space t-space-horizontal"
+      style="gap: 16px;"
+    >
+      <div
+        class="t-space-item"
+      >
+        <span>
+          可激活:
+        </span>
+      </div>
       <div
         class="t-space-item"
       >
         <div
-          class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"
+          class="t-switch t-size-m"
         >
+          <span
+            class="t-switch__handle"
+          />
           <div
-            class="t-tree__list"
-            style="transform: translateY(0px);"
+            class="t-switch__content t-size-m"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"
+    >
+      <div
+        class="t-tree__list"
+        style="transform: translateY(0px);"
+      >
+        <div
+          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          data-level="0"
+          data-value="1"
+          draggable="false"
+          style="--level: 0;"
+        >
+          <span
+            class="t-tree__icon t-folder-icon t-tree__icon--default"
+            ignore="active"
+            trigger="expand"
+          >
+            <svg
+              class="t-icon t-icon-caret-right-small"
+              fill="none"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M16.5 12l-7-7v14l7-7z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+          <label
+            class="t-checkbox t-tree__label"
+            ignore="expand,active"
+            tabindex="0"
+          >
+            <input
+              class="t-checkbox__former"
+              name="1"
+              tabindex="-1"
+              type="checkbox"
+              value=""
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
+            >
+              1
+            </span>
+          </label>
+          <span
+            class="t-tree__operations"
+            ignore="active,expand"
           >
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
-              data-level="0"
-              data-value="t436"
-              draggable="false"
-              style="--level: 0;"
+              class="t-space t-space-horizontal"
+              style="gap: 10px;"
             >
-              <span
-                class="t-tree__icon t-folder-icon t-tree__icon--default"
-                ignore="active"
-                trigger="expand"
+              <div
+                class="t-space-item"
               >
-                <svg
-                  class="t-icon t-icon-caret-right-small"
-                  fill="none"
-                  height="1em"
-                  viewBox="0 0 24 24"
-                  width="1em"
+                <button
+                  class="t-button t-button--variant-base t-button--theme-warning t-size-s"
+                  type="button"
                 >
-                  <path
-                    d="M16.5 12l-7-7v14l7-7z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </span>
-              <label
-                class="t-checkbox t-tree__label"
-                ignore="expand,active"
-                tabindex="0"
-              >
-                <input
-                  class="t-checkbox__former"
-                  name="t436"
-                  tabindex="-1"
-                  type="checkbox"
-                  value=""
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                >
-                  1
-                </span>
-              </label>
+                  <span
+                    class="t-button__text"
+                  >
+                     disable 
+                  </span>
+                </button>
+              </div>
             </div>
-            <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
-              data-level="1"
-              data-value="t437"
-              draggable="false"
-              style="--level: 1;"
+          </span>
+        </div>
+        <div
+          class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
+          data-level="1"
+          data-value="1.1"
+          draggable="false"
+          style="--level: 1;"
+        >
+          <span
+            class="t-tree__icon t-folder-icon t-tree__icon--default"
+            ignore="active"
+            trigger="expand"
+          >
+            <svg
+              class="t-icon t-icon-caret-right-small"
+              fill="none"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
             >
-              <span
-                class="t-tree__icon t-folder-icon t-tree__icon--default"
-                ignore="active"
-                trigger="expand"
-              >
-                <svg
-                  class="t-icon t-icon-caret-right-small"
-                  fill="none"
-                  height="1em"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                >
-                  <path
-                    d="M16.5 12l-7-7v14l7-7z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </span>
-              <label
-                class="t-checkbox t-is-disabled t-tree__label"
-                disabled="disabled"
-                ignore="expand,active"
-              >
-                <input
-                  class="t-checkbox__former"
-                  disabled="disabled"
-                  name="t437"
-                  tabindex="-1"
-                  type="checkbox"
-                  value=""
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                >
-                  1.1
-                </span>
-              </label>
-            </div>
-            <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
-              data-level="2"
-              data-value="t438"
-              draggable="false"
-              style="--level: 2;"
-            >
-              <span
-                class="t-tree__icon t-folder-icon"
-                ignore="active"
-                trigger="expand"
+              <path
+                d="M16.5 12l-7-7v14l7-7z"
+                fill="currentColor"
               />
-              <label
-                class="t-checkbox t-tree__label"
-                ignore="expand,active"
-                tabindex="0"
-              >
-                <input
-                  class="t-checkbox__former"
-                  name="t438"
-                  tabindex="-1"
-                  type="checkbox"
-                  value=""
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                >
-                  1.1.1
-                </span>
-              </label>
-            </div>
-            <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
-              data-level="2"
-              data-value="t439"
-              draggable="false"
-              style="--level: 2;"
+            </svg>
+          </span>
+          <label
+            class="t-checkbox t-is-disabled t-tree__label"
+            disabled="disabled"
+            ignore="expand,active"
+          >
+            <input
+              class="t-checkbox__former"
+              disabled="disabled"
+              name="1.1"
+              tabindex="-1"
+              type="checkbox"
+              value=""
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
             >
-              <span
-                class="t-tree__icon t-folder-icon"
-                ignore="active"
-                trigger="expand"
+              1.1
+            </span>
+          </label>
+          <span
+            class="t-tree__operations"
+            ignore="active,expand"
+          >
+            <div
+              class="t-space t-space-horizontal"
+              style="gap: 10px;"
+            >
+              <div
+                class="t-space-item"
+              >
+                <button
+                  class="t-button t-button--variant-base t-button--theme-success t-size-s"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                     enable 
+                  </span>
+                </button>
+              </div>
+            </div>
+          </span>
+        </div>
+        <div
+          class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
+          data-level="2"
+          data-value="1.1.1"
+          draggable="false"
+          style="--level: 2;"
+        >
+          <span
+            class="t-tree__icon t-folder-icon"
+            ignore="active"
+            trigger="expand"
+          />
+          <label
+            class="t-checkbox t-is-disabled t-tree__label"
+            disabled="disabled"
+            ignore="expand,active"
+          >
+            <input
+              class="t-checkbox__former"
+              disabled="disabled"
+              name="1.1.1"
+              tabindex="-1"
+              type="checkbox"
+              value=""
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
+            >
+              1.1.1
+            </span>
+          </label>
+          <span
+            class="t-tree__operations"
+            ignore="active,expand"
+          >
+            <div
+              class="t-space t-space-horizontal"
+              style="gap: 10px;"
+            >
+              <div
+                class="t-space-item"
+              >
+                <button
+                  class="t-button t-button--variant-base t-button--theme-success t-size-s"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                     enable 
+                  </span>
+                </button>
+              </div>
+            </div>
+          </span>
+        </div>
+        <div
+          class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
+          data-level="2"
+          data-value="1.1.2"
+          draggable="false"
+          style="--level: 2;"
+        >
+          <span
+            class="t-tree__icon t-folder-icon"
+            ignore="active"
+            trigger="expand"
+          />
+          <label
+            class="t-checkbox t-is-disabled t-tree__label"
+            disabled="disabled"
+            ignore="expand,active"
+          >
+            <input
+              class="t-checkbox__former"
+              disabled="disabled"
+              name="1.1.2"
+              tabindex="-1"
+              type="checkbox"
+              value=""
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
+            >
+              1.1.2
+            </span>
+          </label>
+          <span
+            class="t-tree__operations"
+            ignore="active,expand"
+          >
+            <div
+              class="t-space t-space-horizontal"
+              style="gap: 10px;"
+            >
+              <div
+                class="t-space-item"
+              >
+                <button
+                  class="t-button t-button--variant-base t-button--theme-success t-size-s"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                     enable 
+                  </span>
+                </button>
+              </div>
+            </div>
+          </span>
+        </div>
+        <div
+          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          data-level="1"
+          data-value="1.2"
+          draggable="false"
+          style="--level: 1;"
+        >
+          <span
+            class="t-tree__icon t-folder-icon t-tree__icon--default"
+            ignore="active"
+            trigger="expand"
+          >
+            <svg
+              class="t-icon t-icon-caret-right-small"
+              fill="none"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M16.5 12l-7-7v14l7-7z"
+                fill="currentColor"
               />
-              <label
-                class="t-checkbox t-tree__label"
-                ignore="expand,active"
-                tabindex="0"
-              >
-                <input
-                  class="t-checkbox__former"
-                  name="t439"
-                  tabindex="-1"
-                  type="checkbox"
-                  value=""
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                >
-                  1.1.2
-                </span>
-              </label>
-            </div>
-            <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
-              data-level="1"
-              data-value="t440"
-              draggable="false"
-              style="--level: 1;"
+            </svg>
+          </span>
+          <label
+            class="t-checkbox t-tree__label"
+            ignore="expand,active"
+            tabindex="0"
+          >
+            <input
+              class="t-checkbox__former"
+              name="1.2"
+              tabindex="-1"
+              type="checkbox"
+              value=""
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
             >
-              <span
-                class="t-tree__icon t-folder-icon t-tree__icon--default"
-                ignore="active"
-                trigger="expand"
-              >
-                <svg
-                  class="t-icon t-icon-caret-right-small"
-                  fill="none"
-                  height="1em"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                >
-                  <path
-                    d="M16.5 12l-7-7v14l7-7z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </span>
-              <label
-                class="t-checkbox t-is-disabled t-tree__label"
-                disabled="disabled"
-                ignore="expand,active"
-              >
-                <input
-                  class="t-checkbox__former"
-                  disabled="disabled"
-                  name="t440"
-                  tabindex="-1"
-                  type="checkbox"
-                  value=""
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                >
-                  1.2
-                </span>
-              </label>
-            </div>
+              1.2
+            </span>
+          </label>
+          <span
+            class="t-tree__operations"
+            ignore="active,expand"
+          >
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
-              data-level="2"
-              data-value="t441"
-              draggable="false"
-              style="--level: 2;"
+              class="t-space t-space-horizontal"
+              style="gap: 10px;"
             >
-              <span
-                class="t-tree__icon t-folder-icon"
-                ignore="active"
-                trigger="expand"
+              <div
+                class="t-space-item"
+              >
+                <button
+                  class="t-button t-button--variant-base t-button--theme-warning t-size-s"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                     disable 
+                  </span>
+                </button>
+              </div>
+            </div>
+          </span>
+        </div>
+        <div
+          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          data-level="2"
+          data-value="1.2.1"
+          draggable="false"
+          style="--level: 2;"
+        >
+          <span
+            class="t-tree__icon t-folder-icon"
+            ignore="active"
+            trigger="expand"
+          />
+          <label
+            class="t-checkbox t-tree__label"
+            ignore="expand,active"
+            tabindex="0"
+          >
+            <input
+              class="t-checkbox__former"
+              name="1.2.1"
+              tabindex="-1"
+              type="checkbox"
+              value=""
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
+            >
+              1.2.1
+            </span>
+          </label>
+          <span
+            class="t-tree__operations"
+            ignore="active,expand"
+          >
+            <div
+              class="t-space t-space-horizontal"
+              style="gap: 10px;"
+            >
+              <div
+                class="t-space-item"
+              >
+                <button
+                  class="t-button t-button--variant-base t-button--theme-warning t-size-s"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                     disable 
+                  </span>
+                </button>
+              </div>
+            </div>
+          </span>
+        </div>
+        <div
+          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          data-level="2"
+          data-value="1.2.2"
+          draggable="false"
+          style="--level: 2;"
+        >
+          <span
+            class="t-tree__icon t-folder-icon"
+            ignore="active"
+            trigger="expand"
+          />
+          <label
+            class="t-checkbox t-tree__label"
+            ignore="expand,active"
+            tabindex="0"
+          >
+            <input
+              class="t-checkbox__former"
+              name="1.2.2"
+              tabindex="-1"
+              type="checkbox"
+              value=""
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
+            >
+              1.2.2
+            </span>
+          </label>
+          <span
+            class="t-tree__operations"
+            ignore="active,expand"
+          >
+            <div
+              class="t-space t-space-horizontal"
+              style="gap: 10px;"
+            >
+              <div
+                class="t-space-item"
+              >
+                <button
+                  class="t-button t-button--variant-base t-button--theme-warning t-size-s"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                     disable 
+                  </span>
+                </button>
+              </div>
+            </div>
+          </span>
+        </div>
+        <div
+          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          data-level="0"
+          data-value="2"
+          draggable="false"
+          style="--level: 0;"
+        >
+          <span
+            class="t-tree__icon t-folder-icon t-tree__icon--default"
+            ignore="active"
+            trigger="expand"
+          >
+            <svg
+              class="t-icon t-icon-caret-right-small"
+              fill="none"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M16.5 12l-7-7v14l7-7z"
+                fill="currentColor"
               />
-              <label
-                class="t-checkbox t-tree__label"
-                ignore="expand,active"
-                tabindex="0"
-              >
-                <input
-                  class="t-checkbox__former"
-                  name="t441"
-                  tabindex="-1"
-                  type="checkbox"
-                  value=""
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                >
-                  1.2.1
-                </span>
-              </label>
-            </div>
-            <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
-              data-level="2"
-              data-value="t442"
-              draggable="false"
-              style="--level: 2;"
+            </svg>
+          </span>
+          <label
+            class="t-checkbox t-tree__label"
+            ignore="expand,active"
+            tabindex="0"
+          >
+            <input
+              class="t-checkbox__former"
+              name="2"
+              tabindex="-1"
+              type="checkbox"
+              value=""
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
             >
-              <span
-                class="t-tree__icon t-folder-icon"
-                ignore="active"
-                trigger="expand"
+              2
+            </span>
+          </label>
+          <span
+            class="t-tree__operations"
+            ignore="active,expand"
+          >
+            <div
+              class="t-space t-space-horizontal"
+              style="gap: 10px;"
+            >
+              <div
+                class="t-space-item"
+              >
+                <button
+                  class="t-button t-button--variant-base t-button--theme-warning t-size-s"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                     disable 
+                  </span>
+                </button>
+              </div>
+            </div>
+          </span>
+        </div>
+        <div
+          class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
+          data-level="1"
+          data-value="2.1"
+          draggable="false"
+          style="--level: 1;"
+        >
+          <span
+            class="t-tree__icon t-folder-icon t-tree__icon--default"
+            ignore="active"
+            trigger="expand"
+          >
+            <svg
+              class="t-icon t-icon-caret-right-small"
+              fill="none"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M16.5 12l-7-7v14l7-7z"
+                fill="currentColor"
               />
-              <label
-                class="t-checkbox t-tree__label"
-                ignore="expand,active"
-                tabindex="0"
-              >
-                <input
-                  class="t-checkbox__former"
-                  name="t442"
-                  tabindex="-1"
-                  type="checkbox"
-                  value=""
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                >
-                  1.2.2
-                </span>
-              </label>
-            </div>
-            <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
-              data-level="0"
-              data-value="t443"
-              draggable="false"
-              style="--level: 0;"
+            </svg>
+          </span>
+          <label
+            class="t-checkbox t-is-disabled t-tree__label"
+            disabled="disabled"
+            ignore="expand,active"
+          >
+            <input
+              class="t-checkbox__former"
+              disabled="disabled"
+              name="2.1"
+              tabindex="-1"
+              type="checkbox"
+              value=""
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
             >
-              <span
-                class="t-tree__icon t-folder-icon t-tree__icon--default"
-                ignore="active"
-                trigger="expand"
-              >
-                <svg
-                  class="t-icon t-icon-caret-right-small"
-                  fill="none"
-                  height="1em"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                >
-                  <path
-                    d="M16.5 12l-7-7v14l7-7z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </span>
-              <label
-                class="t-checkbox t-tree__label"
-                ignore="expand,active"
-                tabindex="0"
-              >
-                <input
-                  class="t-checkbox__former"
-                  name="t443"
-                  tabindex="-1"
-                  type="checkbox"
-                  value=""
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                >
-                  2
-                </span>
-              </label>
-            </div>
+              2.1
+            </span>
+          </label>
+          <span
+            class="t-tree__operations"
+            ignore="active,expand"
+          >
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
-              data-level="1"
-              data-value="t444"
-              draggable="false"
-              style="--level: 1;"
+              class="t-space t-space-horizontal"
+              style="gap: 10px;"
             >
-              <span
-                class="t-tree__icon t-folder-icon"
-                ignore="active"
-                trigger="expand"
+              <div
+                class="t-space-item"
+              >
+                <button
+                  class="t-button t-button--variant-base t-button--theme-success t-size-s"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                     enable 
+                  </span>
+                </button>
+              </div>
+            </div>
+          </span>
+        </div>
+        <div
+          class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
+          data-level="2"
+          data-value="2.1.1"
+          draggable="false"
+          style="--level: 2;"
+        >
+          <span
+            class="t-tree__icon t-folder-icon"
+            ignore="active"
+            trigger="expand"
+          />
+          <label
+            class="t-checkbox t-is-disabled t-tree__label"
+            disabled="disabled"
+            ignore="expand,active"
+          >
+            <input
+              class="t-checkbox__former"
+              disabled="disabled"
+              name="2.1.1"
+              tabindex="-1"
+              type="checkbox"
+              value=""
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
+            >
+              2.1.1
+            </span>
+          </label>
+          <span
+            class="t-tree__operations"
+            ignore="active,expand"
+          >
+            <div
+              class="t-space t-space-horizontal"
+              style="gap: 10px;"
+            >
+              <div
+                class="t-space-item"
+              >
+                <button
+                  class="t-button t-button--variant-base t-button--theme-success t-size-s"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                     enable 
+                  </span>
+                </button>
+              </div>
+            </div>
+          </span>
+        </div>
+        <div
+          class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
+          data-level="2"
+          data-value="2.1.2"
+          draggable="false"
+          style="--level: 2;"
+        >
+          <span
+            class="t-tree__icon t-folder-icon"
+            ignore="active"
+            trigger="expand"
+          />
+          <label
+            class="t-checkbox t-is-disabled t-tree__label"
+            disabled="disabled"
+            ignore="expand,active"
+          >
+            <input
+              class="t-checkbox__former"
+              disabled="disabled"
+              name="2.1.2"
+              tabindex="-1"
+              type="checkbox"
+              value=""
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
+            >
+              2.1.2
+            </span>
+          </label>
+          <span
+            class="t-tree__operations"
+            ignore="active,expand"
+          >
+            <div
+              class="t-space t-space-horizontal"
+              style="gap: 10px;"
+            >
+              <div
+                class="t-space-item"
+              >
+                <button
+                  class="t-button t-button--variant-base t-button--theme-success t-size-s"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                     enable 
+                  </span>
+                </button>
+              </div>
+            </div>
+          </span>
+        </div>
+        <div
+          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          data-level="1"
+          data-value="2.2"
+          draggable="false"
+          style="--level: 1;"
+        >
+          <span
+            class="t-tree__icon t-folder-icon t-tree__icon--default"
+            ignore="active"
+            trigger="expand"
+          >
+            <svg
+              class="t-icon t-icon-caret-right-small"
+              fill="none"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M16.5 12l-7-7v14l7-7z"
+                fill="currentColor"
               />
-              <label
-                class="t-checkbox t-is-disabled t-tree__label"
-                disabled="disabled"
-                ignore="expand,active"
-              >
-                <input
-                  class="t-checkbox__former"
-                  disabled="disabled"
-                  name="t444"
-                  tabindex="-1"
-                  type="checkbox"
-                  value=""
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
-                >
-                  2.1
-                </span>
-              </label>
-            </div>
-            <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
-              data-level="1"
-              data-value="t445"
-              draggable="false"
-              style="--level: 1;"
+            </svg>
+          </span>
+          <label
+            class="t-checkbox t-tree__label"
+            ignore="expand,active"
+            tabindex="0"
+          >
+            <input
+              class="t-checkbox__former"
+              name="2.2"
+              tabindex="-1"
+              type="checkbox"
+              value=""
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
             >
-              <span
-                class="t-tree__icon t-folder-icon"
-                ignore="active"
-                trigger="expand"
-              />
-              <label
-                class="t-checkbox t-tree__label"
-                ignore="expand,active"
-                tabindex="0"
+              2.2
+            </span>
+          </label>
+          <span
+            class="t-tree__operations"
+            ignore="active,expand"
+          >
+            <div
+              class="t-space t-space-horizontal"
+              style="gap: 10px;"
+            >
+              <div
+                class="t-space-item"
               >
-                <input
-                  class="t-checkbox__former"
-                  name="t445"
-                  tabindex="-1"
-                  type="checkbox"
-                  value=""
-                />
-                <span
-                  class="t-checkbox__input"
-                />
-                <span
-                  class="t-checkbox__label"
+                <button
+                  class="t-button t-button--variant-base t-button--theme-warning t-size-s"
+                  type="button"
                 >
-                  2.2
-                </span>
-              </label>
+                  <span
+                    class="t-button__text"
+                  >
+                     disable 
+                  </span>
+                </button>
+              </div>
             </div>
-          </div>
+          </span>
+        </div>
+        <div
+          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          data-level="2"
+          data-value="2.2.1"
+          draggable="false"
+          style="--level: 2;"
+        >
+          <span
+            class="t-tree__icon t-folder-icon"
+            ignore="active"
+            trigger="expand"
+          />
+          <label
+            class="t-checkbox t-tree__label"
+            ignore="expand,active"
+            tabindex="0"
+          >
+            <input
+              class="t-checkbox__former"
+              name="2.2.1"
+              tabindex="-1"
+              type="checkbox"
+              value=""
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
+            >
+              2.2.1
+            </span>
+          </label>
+          <span
+            class="t-tree__operations"
+            ignore="active,expand"
+          >
+            <div
+              class="t-space t-space-horizontal"
+              style="gap: 10px;"
+            >
+              <div
+                class="t-space-item"
+              >
+                <button
+                  class="t-button t-button--variant-base t-button--theme-warning t-size-s"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                     disable 
+                  </span>
+                </button>
+              </div>
+            </div>
+          </span>
+        </div>
+        <div
+          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          data-level="2"
+          data-value="2.2.2"
+          draggable="false"
+          style="--level: 2;"
+        >
+          <span
+            class="t-tree__icon t-folder-icon"
+            ignore="active"
+            trigger="expand"
+          />
+          <label
+            class="t-checkbox t-tree__label"
+            ignore="expand,active"
+            tabindex="0"
+          >
+            <input
+              class="t-checkbox__former"
+              name="2.2.2"
+              tabindex="-1"
+              type="checkbox"
+              value=""
+            />
+            <span
+              class="t-checkbox__input"
+            />
+            <span
+              class="t-checkbox__label"
+            >
+              2.2.2
+            </span>
+          </label>
+          <span
+            class="t-tree__operations"
+            ignore="active,expand"
+          >
+            <div
+              class="t-space t-space-horizontal"
+              style="gap: 10px;"
+            >
+              <div
+                class="t-space-item"
+              >
+                <button
+                  class="t-button t-button--variant-base t-button--theme-warning t-size-s"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                     disable 
+                  </span>
+                </button>
+              </div>
+            </div>
+          </span>
         </div>
       </div>
     </div>
@@ -120285,7 +120339,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
           data-level="0"
-          data-value="t467"
+          data-value="t461"
           draggable="false"
           style="--level: 0;"
         >
@@ -120321,7 +120375,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
         <div
           class="t-tree__item t-tree__item--visible"
           data-level="1"
-          data-value="t468"
+          data-value="t462"
           draggable="false"
           style="--level: 1;"
         >
@@ -120357,7 +120411,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
         <div
           class="t-tree__item t-tree__item--visible"
           data-level="1"
-          data-value="t471"
+          data-value="t465"
           draggable="false"
           style="--level: 1;"
         >
@@ -120393,7 +120447,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
           data-level="0"
-          data-value="t474"
+          data-value="t468"
           draggable="false"
           style="--level: 0;"
         >
@@ -120429,7 +120483,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
         <div
           class="t-tree__item t-tree__item--visible"
           data-level="1"
-          data-value="t475"
+          data-value="t469"
           draggable="false"
           style="--level: 1;"
         >
@@ -120452,7 +120506,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
         <div
           class="t-tree__item t-tree__item--visible"
           data-level="1"
-          data-value="t476"
+          data-value="t470"
           draggable="false"
           style="--level: 1;"
         >
@@ -120556,7 +120610,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-mutex.vue 1`] =
         <div
           class="t-tree__item t-tree__item--visible"
           data-level="0"
-          data-value="t477"
+          data-value="t471"
           draggable="false"
           style="--level: 0;"
         >
@@ -120592,7 +120646,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-mutex.vue 1`] =
         <div
           class="t-tree__item t-tree__item--visible"
           data-level="0"
-          data-value="t484"
+          data-value="t478"
           draggable="false"
           style="--level: 0;"
         >
@@ -120943,7 +120997,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/icon.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--visible"
               data-level="0"
-              data-value="t527"
+              data-value="t521"
               draggable="false"
               style="--level: 0;"
             >
@@ -120974,7 +121028,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/icon.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--visible"
               data-level="0"
-              data-value="t528"
+              data-value="t522"
               draggable="false"
               style="--level: 0;"
             >
@@ -121034,7 +121088,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/icon.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--visible"
               data-level="0"
-              data-value="t529"
+              data-value="t523"
               draggable="false"
               style="--level: 0;"
             >
@@ -121065,7 +121119,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/icon.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--visible"
               data-level="0"
-              data-value="t530"
+              data-value="t524"
               draggable="false"
               style="--level: 0;"
             >
@@ -121133,7 +121187,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
               data-level="0"
-              data-value="t531"
+              data-value="t525"
               draggable="false"
               style="--level: 0;"
             >
@@ -121163,7 +121217,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                   style="position: relative;"
                 >
                   <strong>
-                    value: t531, label: 1
+                    value: t525, label: 1
                   </strong>
                 </span>
               </span>
@@ -121171,7 +121225,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
               data-level="1"
-              data-value="t532"
+              data-value="t526"
               draggable="false"
               style="--level: 1;"
             >
@@ -121188,7 +121242,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                   style="position: relative;"
                 >
                   <strong>
-                    value: t532, label: 1.1
+                    value: t526, label: 1.1
                   </strong>
                 </span>
               </span>
@@ -121196,7 +121250,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
               data-level="1"
-              data-value="t533"
+              data-value="t527"
               draggable="false"
               style="--level: 1;"
             >
@@ -121213,7 +121267,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                   style="position: relative;"
                 >
                   <strong>
-                    value: t533, label: 1.2
+                    value: t527, label: 1.2
                   </strong>
                 </span>
               </span>
@@ -121221,7 +121275,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
               data-level="0"
-              data-value="t534"
+              data-value="t528"
               draggable="false"
               style="--level: 0;"
             >
@@ -121251,7 +121305,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                   style="position: relative;"
                 >
                   <strong>
-                    value: t534, label: 2
+                    value: t528, label: 2
                   </strong>
                 </span>
               </span>
@@ -121259,7 +121313,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
               data-level="1"
-              data-value="t535"
+              data-value="t529"
               draggable="false"
               style="--level: 1;"
             >
@@ -121276,7 +121330,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                   style="position: relative;"
                 >
                   <strong>
-                    value: t535, label: 2.1
+                    value: t529, label: 2.1
                   </strong>
                 </span>
               </span>
@@ -121284,7 +121338,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
               data-level="1"
-              data-value="t536"
+              data-value="t530"
               draggable="false"
               style="--level: 1;"
             >
@@ -121301,7 +121355,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                   style="position: relative;"
                 >
                   <strong>
-                    value: t536, label: 2.2
+                    value: t530, label: 2.2
                   </strong>
                 </span>
               </span>
@@ -121338,7 +121392,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
               data-level="0"
-              data-value="t537"
+              data-value="t531"
               draggable="false"
               style="--level: 0;"
             >
@@ -121367,7 +121421,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
               >
                 <input
                   class="t-checkbox__former"
-                  name="t537"
+                  name="t531"
                   tabindex="-1"
                   type="checkbox"
                   value=""
@@ -121381,7 +121435,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                   <span
                     style="color: blue;"
                   >
-                    label: 1, value: t537
+                    label: 1, value: t531
                   </span>
                 </span>
               </label>
@@ -121389,7 +121443,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
               data-level="1"
-              data-value="t538"
+              data-value="t532"
               draggable="false"
               style="--level: 1;"
             >
@@ -121405,7 +121459,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
               >
                 <input
                   class="t-checkbox__former"
-                  name="t538"
+                  name="t532"
                   tabindex="-1"
                   type="checkbox"
                   value=""
@@ -121419,7 +121473,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                   <span
                     style="color: blue;"
                   >
-                    label: 1.1, value: t538
+                    label: 1.1, value: t532
                   </span>
                 </span>
               </label>
@@ -121427,7 +121481,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
               data-level="1"
-              data-value="t539"
+              data-value="t533"
               draggable="false"
               style="--level: 1;"
             >
@@ -121443,7 +121497,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
               >
                 <input
                   class="t-checkbox__former"
-                  name="t539"
+                  name="t533"
                   tabindex="-1"
                   type="checkbox"
                   value=""
@@ -121457,7 +121511,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                   <span
                     style="color: blue;"
                   >
-                    label: 1.2, value: t539
+                    label: 1.2, value: t533
                   </span>
                 </span>
               </label>
@@ -121465,7 +121519,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
               data-level="0"
-              data-value="t540"
+              data-value="t534"
               draggable="false"
               style="--level: 0;"
             >
@@ -121494,7 +121548,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
               >
                 <input
                   class="t-checkbox__former"
-                  name="t540"
+                  name="t534"
                   tabindex="-1"
                   type="checkbox"
                   value=""
@@ -121508,7 +121562,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                   <span
                     style="color: blue;"
                   >
-                    label: 2, value: t540
+                    label: 2, value: t534
                   </span>
                 </span>
               </label>
@@ -121516,7 +121570,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
               data-level="1"
-              data-value="t541"
+              data-value="t535"
               draggable="false"
               style="--level: 1;"
             >
@@ -121532,7 +121586,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
               >
                 <input
                   class="t-checkbox__former"
-                  name="t541"
+                  name="t535"
                   tabindex="-1"
                   type="checkbox"
                   value=""
@@ -121546,7 +121600,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                   <span
                     style="color: blue;"
                   >
-                    label: 2.1, value: t541
+                    label: 2.1, value: t535
                   </span>
                 </span>
               </label>
@@ -121554,7 +121608,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
               data-level="1"
-              data-value="t542"
+              data-value="t536"
               draggable="false"
               style="--level: 1;"
             >
@@ -121570,7 +121624,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
               >
                 <input
                   class="t-checkbox__former"
-                  name="t542"
+                  name="t536"
                   tabindex="-1"
                   type="checkbox"
                   value=""
@@ -121584,7 +121638,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                   <span
                     style="color: blue;"
                   >
-                    label: 2.2, value: t542
+                    label: 2.2, value: t536
                   </span>
                 </span>
               </label>
@@ -124188,6 +124242,20 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
                 class="t-space-item"
               >
                 <button
+                  class="t-button t-button--variant-base t-button--theme-warning t-size-s"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                     disable 
+                  </span>
+                </button>
+              </div>
+              <div
+                class="t-space-item"
+              >
+                <button
                   class="t-button t-button--variant-base t-button--theme-danger t-size-s"
                   type="button"
                 >
@@ -124281,6 +124349,20 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
                     class="t-button__text"
                   >
                     后插节点
+                  </span>
+                </button>
+              </div>
+              <div
+                class="t-space-item"
+              >
+                <button
+                  class="t-button t-button--variant-base t-button--theme-warning t-size-s"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                     disable 
                   </span>
                 </button>
               </div>
@@ -124455,6 +124537,20 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
             class="t-button__text"
           >
             选中高亮节点
+          </span>
+        </button>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <button
+          class="t-button t-button--variant-outline t-button--theme-primary"
+          type="button"
+        >
+          <span
+            class="t-button__text"
+          >
+            取消选中高亮节点
           </span>
         </button>
       </div>
