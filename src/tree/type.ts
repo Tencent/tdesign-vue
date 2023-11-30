@@ -372,6 +372,10 @@ export interface TreeNodeModel<T extends TreeOptionData = TreeOptionData> extend
    */
   data: T;
   /**
+   * 禁用状态
+   */
+  disabled: boolean;
+  /**
    * 当前节点是否展开
    */
   expanded: boolean;
@@ -383,10 +387,6 @@ export interface TreeNodeModel<T extends TreeOptionData = TreeOptionData> extend
    * 当前节点是否处于加载中状态
    */
   loading: boolean;
-  /**
-   * 当前节点是否被禁用
-   */
-  disabled: boolean;
   /**
    * 追加子节点数据，泛型 `T` 表示树节点 TS 类型，继承 `TreeOptionData`
    */
