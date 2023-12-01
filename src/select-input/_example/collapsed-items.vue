@@ -1,5 +1,7 @@
 <template>
   <t-space direction="vertical" class="tdesign-demo__select-input-collapsed-items">
+
+    <h3>default: </h3>
     <t-select-input
       :value="value"
       :min-collapsed-num="1"
@@ -20,16 +22,32 @@
       </template>
     </t-select-input>
 
+    <h3>use collapsedItems: </h3>
+    <t-space>
+      <div>size control:</div>
+      <t-radio-group :value="size" :options="['small', 'medium', 'large']" @change="(value) => size = value" />
+    </t-space>
+    <t-space>
+      <span>disabled control:</span>
+      <t-checkbox :checked="disabled" @change="(value) => disabled = value" />
+    </t-space>
+    <t-space>
+      <span>readonly control:</span>
+      <t-checkbox :checked="readonly" @change="(value) => readonly = value" />
+    </t-space>
     <!-- 第一种方式：使用渲染函数 collapsed-items 自定义折叠项 -->
     <t-select-input
       :value="value"
-      :min-collapsed-num="2"
-      :collapsed-items="renderCollapsedItems"
       :popup-props="{ overlayInnerStyle: { padding: '6px' } }"
       placeholder="请选择"
       allow-input
       clearable
       multiple
+      :min-collapsed-num="minCollapsedNum"
+      :collapsed-items="collapsedItems"
+      :tagInputProps="{ size }"
+      :disabled="disabled"
+      :readonly="readonly"
       @tag-change="onTagChange"
     >
       <template #panel>
@@ -45,23 +63,26 @@
     <!-- 第二种方式：使用插槽 collapsedItems 自定义折叠项 -->
     <t-select-input
       :value="value"
-      :min-collapsed-num="3"
       :popup-props="{ overlayInnerStyle: { padding: '6px' } }"
       placeholder="请选择"
       allow-input
       clearable
-      multiple
+       multiple
+      :min-collapsed-num="minCollapsedNum"
+      :tagInputProps="{ size }"
+      :disabled="disabled"
+      :readonly="readonly"
       @tag-change="onTagChange"
     >
-      <template #collapsedItems="{ collapsedTags }">
-        <t-popup>
-          <t-tag>More({{ collapsedTags.length }})</t-tag>
-          <template #content>
-            <t-tag v-for="item in collapsedTags" :key="item" style="margin: 4px 4px 4px 0">
-              {{ item }}
-            </t-tag>
-          </template>
-        </t-popup>
+      <template #collapsedItems="{ value, onClose }">
+        <SlotCollapsedItems 
+          :value="value"
+          :min-collapsed-num="minCollapsedNum"
+          :size="size"
+          :disabled="disabled"
+          :closable="!readonly && !disabled"
+          @close="onClose"
+        />
       </template>
       <template #panel>
         <t-checkbox-group
@@ -75,7 +96,7 @@
   </t-space>
 </template>
 <script lang="jsx">
-import { Tag } from 'tdesign-vue';
+import SlotCollapsedItems from '../../tag-input/_example/slot-collapsed-items.vue';
 
 const OPTIONS = [
   // 全选
@@ -89,10 +110,17 @@ const OPTIONS = [
 ];
 
 export default {
+  components: {
+    SlotCollapsedItems,
+  },
   data() {
     return {
       options: [...OPTIONS],
       value: OPTIONS.slice(1),
+      size: 'medium',
+      disabled: false,
+      readonly: false,
+      minCollapsedNum: 1,
     };
   },
   computed: {
@@ -136,8 +164,30 @@ export default {
         this.options = this.options.concat(current);
       }
     },
-    renderCollapsedItems(_, { collapsedTags }) {
-      return <Tag>更多({collapsedTags.length})</Tag>;
+    collapsedItems(h, { value, onClose }) {
+      if (!(value instanceof Array)) return null;
+      const count = value.length - this.minCollapsedNum;
+      const collapsedTags = value.slice(this.minCollapsedNum, value.length);
+      if (count <= 0) return null;
+      return (
+        <t-popup>
+          <div slot="content">
+            {collapsedTags.map((item, index) => (
+              <t-tag
+                key={item}
+                style={{ marginRight: '4px' }}
+                size={this.size}
+                disabled={this.disabled}
+                closable={!this.readonly && !this.disabled}
+                onClose={(context) => onClose({ e: context.e, index: this.minCollapsedNum + index })}
+              >
+                {item}
+              </t-tag>
+            ))}
+          </div>
+          <t-tag size={this.size} disabled={this.disabled}>Function - More({count})</t-tag>
+        </t-popup>
+      );
     },
   },
 };

@@ -1,37 +1,65 @@
 <template>
   <t-space direction="vertical">
+
+    <h3>default: </h3>
     <!-- 选项过多时，可折叠 -->
     <t-select v-model="value" placeholder="请选择" multiple :minCollapsedNum="minCollapsedNum" :options="options" />
 
+    <h3>use collapsedItems: </h3>
+    <t-space>
+      <div>size control:</div>
+      <t-radio-group :value="size" :options="['small', 'medium', 'large']" @change="(value) => size = value" />
+    </t-space>
+    <t-space>
+      <span>disabled control:</span>
+      <t-checkbox :checked="disabled" @change="(value) => disabled = value" />
+    </t-space>
+    <t-space>
+      <span>readonly control:</span>
+      <t-checkbox :checked="readonly" @change="(value) => readonly = value" />
+    </t-space>
     <!-- 自定义折叠项内容，collapsedItems 为渲染函数 (value, count, collapsedSelectedItems) -->
     <t-select
       v-model="value"
-      placeholder="请选择"
-      multiple
-      :minCollapsedNum="minCollapsedNum"
-      :collapsedItems="collapsedItems"
       :options="options"
+      multiple
+      :min-collapsed-num="minCollapsedNum"
+      :collapsed-items="collapsedItems"
+      :size="size"
+      :disabled="disabled"
+      :readonly="readonly"
     />
-
-    <!-- 自定义折叠项内容，collapsedItems 为 插槽(slot) { value, count, collapsedSelectedItems }-->
-    <t-select v-model="value" placeholder="请选择" multiple :minCollapsedNum="minCollapsedNum" :options="options">
-      <!-- hover展示折叠部分的已选项 -->
-      <template #collapsedItems="{ collapsedSelectedItems, count }">
-        <t-popup>
-          <template #content>
-            <p v-for="(item, index) in collapsedSelectedItems" :key="index" style="padding: 8px">
-              {{ item.label }}
-            </p>
-          </template>
-          <span v-show="count > 0" style="color: #00a870; margin-left: 8px">+{{ count }}</span>
-        </t-popup>
+    <!-- 自定义折叠项内容，collapsedItems 为 插槽(slot) -->
+    <t-select
+      v-model="value"
+      :options="options"
+      multiple
+      :min-collapsed-num="minCollapsedNum"
+      :size="size"
+      :disabled="disabled"
+      :readonly="readonly"
+    >
+      <template #collapsedItems="{ value, onClose }">
+        <SlotCollapsedItems 
+          :value="value"
+          :min-collapsed-num="minCollapsedNum"
+          :size="size"
+          :disabled="disabled"
+          :closable="!readonly && !disabled"
+          @close="onClose"
+        />
       </template>
     </t-select>
   </t-space>
 </template>
 
 <script lang="jsx">
+import SlotCollapsedItems from '../../tag-input/_example/slot-collapsed-items.vue';
+
 export default {
+  components: {
+    SlotCollapsedItems,
+  },
   data() {
     return {
       options: [
@@ -46,35 +74,35 @@ export default {
         { label: '选项九', value: '9' },
       ],
       value: ['1', '3', '9'],
+      size: 'medium',
+      disabled: false,
+      readonly: false,
       minCollapsedNum: 1,
     };
   },
   methods: {
-    collapsedItems(h, {
-      value, count, collapsedSelectedItems, onClose,
-    }) {
-      console.log('collapsedItems: ', value, collapsedSelectedItems, count, onClose);
-      if (!count) return;
-      // hover展示全部已选项
+    collapsedItems(h, { value, onClose }) {
+      if (!(value instanceof Array)) return null;
+      const count = value.length - this.minCollapsedNum;
+      const collapsedTags = value.slice(this.minCollapsedNum, value.length);
+      if (count <= 0) return null;
       return (
         <t-popup>
           <div slot="content">
-            {collapsedSelectedItems.map((item, index) => (
-              <p style="padding: 2px;">
-                <t-tag
-                  closable={true}
-                  onClick={() => {
-                    onClose(index + 1);
-                  }}
-                >
-                  {item.label}
-                </t-tag>
-              </p>
+            {collapsedTags.map((item, index) => (
+              <t-tag
+                key={item}
+                style={{ marginRight: '4px' }}
+                size={this.size}
+                disabled={this.disabled}
+                closable={!this.readonly && !this.disabled}
+                onClose={(context) => onClose({ e: context.e, index: this.minCollapsedNum + index })}
+              >
+                {item}
+              </t-tag>
             ))}
           </div>
-          <span v-show={count > 0} style="color: #ED7B2F; margin-left: 8px">
-            +{count}
-          </span>
+          <t-tag size={this.size} disabled={this.disabled}>Function - More({count})</t-tag>
         </t-popup>
       );
     },
