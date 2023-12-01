@@ -56,20 +56,6 @@ export default function useRowSelect(
   });
 
   watch(
-    [data, pagination, reserveSelectedRowOnPaginate],
-    () => {
-      if (reserveSelectedRowOnPaginate.value) return;
-      const {
-        pageSize, current, defaultPageSize, defaultCurrent,
-      } = pagination.value;
-      const tPageSize = pageSize || defaultPageSize;
-      const tCurrent = current || defaultCurrent;
-      currentPaginateData.value = data.value.slice(tPageSize * (tCurrent - 1), tPageSize * tCurrent);
-    },
-    { immediate: true },
-  );
-
-  watch(
     [data, columns, tSelectedRowKeys, selectColumn, rowKey],
     () => {
       const disabledRowFunc = (p: RowClassNameParams<TableRowData>): ClassName => selectColumn.value.disabled(p) ? tableSelectedClasses.disabled : '';
