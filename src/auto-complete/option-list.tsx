@@ -2,6 +2,7 @@ import {
   ref, computed, defineComponent, PropType, h, watch, onBeforeUnmount,
 } from '@vue/composition-api';
 import isFunction from 'lodash/isFunction';
+import escapeRegExp from 'lodash/escapeRegExp';
 import HighlightOption from './highlight-option';
 import { CommonClassNameType } from '../hooks/useCommonClassName';
 import { AutoCompleteOptionObj, TdAutoCompleteProps } from './type';
@@ -62,7 +63,7 @@ export default defineComponent({
         options = options.filter((option) => props.filter(props.value, option));
       } else if (props.filterable) {
         // 默认过滤规则
-        const regExp = new RegExp(props.value, 'i');
+        const regExp = new RegExp(escapeRegExp(props.value), 'i');
         options = options.filter((item) => regExp.test(item.text));
       }
       return options;
