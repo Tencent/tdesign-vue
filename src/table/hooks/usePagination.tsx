@@ -43,7 +43,13 @@ export default function usePagination(props: TdBaseTableProps, context: SetupCon
     [data],
     () => {
       if (!pagination.value || !pagination.value.defaultCurrent) return;
-      updateDataSourceAndPaginate(pagination.value.defaultCurrent, pagination.value.defaultPageSize);
+      const isControlled = Boolean(pagination.value.current);
+      // 存在受控属性时，立即返回不再执行后续内容
+      if (isControlled) return;
+      updateDataSourceAndPaginate(
+        innerPagination.value?.current ?? pagination.value.defaultCurrent,
+        innerPagination.value?.pageSize ?? pagination.value.defaultPageSize,
+      );
     },
     { immediate: true },
   );
@@ -58,7 +64,7 @@ export default function usePagination(props: TdBaseTableProps, context: SetupCon
             props: pagination.value,
             on: {
               change: (pageInfo: PageInfo) => {
-                Object.assign(innerPagination.value, pageInfo);
+                innerPagination.value = pageInfo;
                 updateDataSourceAndPaginate(pageInfo.current, pageInfo.pageSize);
                 // Vue3 ignore this line
                 context.emit('page-change', pageInfo, dataSource.value);
