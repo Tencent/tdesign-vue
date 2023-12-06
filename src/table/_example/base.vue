@@ -1,105 +1,161 @@
 <template>
-  <t-space direction="vertical">
-    <!-- 按钮操作区域 -->
-    <div>
-      <t-radio-group v-model="size" variant="default-filled">
-        <t-radio-button value="small">小尺寸</t-radio-button>
-        <t-radio-button value="medium">中尺寸</t-radio-button>
-        <t-radio-button value="large">大尺寸</t-radio-button>
-      </t-radio-group>
-    </div>
-
-    <t-space>
-      <t-checkbox v-model="stripe">显示斑马纹</t-checkbox>
-      <t-checkbox v-model="bordered">显示表格边框</t-checkbox>
-      <t-checkbox v-model="hover">显示悬浮效果</t-checkbox>
-      <t-checkbox v-model="tableLayout">宽度自适应</t-checkbox>
-      <t-checkbox v-model="showHeader">显示表头</t-checkbox>
-    </t-space>
-
-    <!-- 当数据为空需要占位时，会显示 cellEmptyContent -->
+  <div>
+    <t-button @click="prev">上一页</t-button>
+    <t-button @click="next">下一页</t-button>
+    <t-checkbox v-model="showPagination">showPagination</t-checkbox>
     <t-table
-      rowKey="index"
       :data="data"
       :columns="columns"
-      :stripe="stripe"
-      :bordered="bordered"
-      :hover="hover"
-      :size="size"
-      :table-layout="tableLayout ? 'auto' : 'fixed'"
+      :rowKey="rowKey"
       :pagination="pagination"
-      :showHeader="showHeader"
-      cellEmptyContent="-"
-      resizable
-    ></t-table>
-  </t-space>
+      @change="rehandleChange"
+      @page-change="onPageChange"
+      bordered
+      stripe
+    >
+    </t-table>
+  </div>
 </template>
-<script lang="jsx">
-import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 
-const data = [];
-const total = 28;
-for (let i = 0; i < total; i++) {
-  data.push({
-    index: i + 1,
-    applicant: ['贾明', '张三', '王芳'][i % 3],
-    status: i % 3,
-    channel: ['电子签署', '纸质签署', '纸质签署'][i % 3],
-    detail: {
-      email: ['w.cezkdudy@lhll.au', 'r.nmgw@peurezgn.sl', 'p.cumx@rampblpa.ru'][i % 3],
-    },
-    matters: ['宣传物料制作费用', 'algolia 服务报销', '相关周边制作费', '激励奖品快递费'][i % 4],
-    time: [2, 3, 1, 4][i % 4],
-    createTime: ['2022-01-01', '2022-02-01', '2022-03-01', '2022-04-01', '2022-05-01'][i % 4],
-  });
-}
+<script>
+import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
+import WorkHistory from 'tdesign-icons-vue/lib/components/work-history';
+
 export default {
   data() {
     return {
-      data,
-      size: 'medium',
-      tableLayout: false,
-      stripe: true,
-      bordered: true,
-      hover: false,
-      showHeader: true,
+      data: [],
+      isLoading: false,
+      showPagination: false,
+      selectedRowKeys: [],
       columns: [
-        { colKey: 'applicant', title: '申请人', width: '100' },
+        {
+          colKey: 'serial-number',
+          title: '序号',
+          width: 80,
+        },
+        {
+          colKey: 'row-select',
+          type: 'multiple',
+          width: 46,
+        },
+        {
+          width: 200,
+          colKey: 'name',
+          title: '姓名',
+          render(h, { type, row: { name } }) {
+            if (type === 'title') return '申请人';
+            return name ? `${name.first} ${name.last}` : 'UNKNOWN_USER';
+          },
+        },
         {
           colKey: 'status',
           title: '申请状态',
           width: '150',
-          cell: (h, { row }) => {
-            const statusNameListMap = {
-              0: { label: '审批通过', theme: 'success', icon: <CheckCircleFilledIcon /> },
-              1: { label: '审批失败', theme: 'danger', icon: <CloseCircleFilledIcon /> },
-              2: { label: '审批过期', theme: 'warning', icon: <ErrorCircleFilledIcon /> },
-            };
-            return (
-              <t-tag shape="round" theme={statusNameListMap[row.status].theme} variant="light-outline">
-                {statusNameListMap[row.status].icon}
-                {statusNameListMap[row.status].label}
-              </t-tag>
-            );
+        },
+        {
+          width: 200,
+          colKey: 'phone',
+          title: '联系方式',
+          render(h, { row: { phone } }) {
+            return phone;
           },
         },
-        { colKey: 'channel', title: '签署方式' },
-        { colKey: 'detail.email', title: '邮箱地址', ellipsis: true },
-        { colKey: 'createTime', title: '申请时间' },
+        {
+          colKey: 'email',
+          title: '邮箱',
+          width: 180,
+          ellipsis: true,
+        },
       ],
-      /** 非受控用法：与分页组件对齐 */
-      pagination: {
-        defaultCurrent: 1,
-        defaultPageSize: 5,
-        total,
-      },
+      rowKey: 'phone',
+      tableLayout: 'auto',
+      rowClassName: 'property-class',
+      // pagination: {
+      //   current: 1,
+      //   pageSize: 10,
+      //   // defaultCurrent: 1,
+      //   // defaultPageSize: 10,
+      //   showJumper: true,
+      // },
     };
+  },
+  computed: {
+    pagination() {
+      return this.showPagination ? {
+        // current: 1,
+        // pageSize: 10,
+        defaultCurrent: 1,
+        defaultPageSize: 3,
+        showJumper: true,
+        total: 102,
+      }: undefined;
+    },
+  },
+  async mounted() {
+    await this.fetchData({
+      current: this.pagination?.current || this.pagination?.defaultCurrent || 1,
+      pageSize: this.pagination?.pageSize || this.pagination?.defaultPageSize || 3,
+    });
+  },
+  watch: {
+    async pagination(val) {
+      // if (!this.pagination) return;
+      // await this.fetchData({
+      //   current: this.pagination.current || this.pagination.defaultCurrent,
+      //   pageSize: this.pagination.pageSize || this.pagination.defaultPageSize,
+      // });
+    }
+  },
+  methods: {
+    async fetchData(pagination = { current: 1, pageSize: 3 }) {
+      try {
+        this.isLoading = true;
+        const { current, pageSize } = pagination;
+        // 请求可能存在跨域问题
+        const url = new URL('https://randomuser.me/api');
+        const params = { page: 1, results: 13 };
+        Object.keys(params).forEach((key) => url.searchParams.append(key, params[key]));
+        const response = await fetch(url).then((x) => x.json());
+        this.data = response.results;
+        // 数据加载完成，设置数据总条数
+        // this.pagination.total = 120;
+      } catch (err) {
+        this.data = [];
+      }
+      this.isLoading = false;
+    },
+
+    // BaseTable 中只有 page-change 事件，没有 change 事件
+    rehandleChange(changeParams, triggerAndData) {
+      console.log('分页、排序、过滤等发生变化时会触发 change 事件：', changeParams, triggerAndData);
+    },
+
+    // BaseTable 中只有 page-change 事件，没有 change 事件
+    async onPageChange(pageInfo) {
+      console.log('page-change', pageInfo);
+      this.pagination.current = pageInfo.current;
+      this.pagination.pageSize = pageInfo.pageSize;
+      await this.fetchData(pageInfo);
+    },
+
+    onSelectChange(value, { selectedRowData }) {
+      this.selectedRowKeys = value;
+      console.log(value, selectedRowData);
+    },
+    // 上一页
+    prev() {
+      this.pagination.current = Math.max(1, this.pagination.current - 1);
+      // this.onPageChange(this.pagination);
+    },
+    // 下一页
+    next() {
+      this.pagination.current = Math.min(
+        Math.ceil(this.pagination.total, this.pagination.pageSize),
+        this.pagination.current + 1,
+      );
+      // this.onPageChange(this.pagination);
+    },
   },
 };
 </script>
-<style lang="less">
-.t-table__body .t-tag span {
-  display: inline-flex;
-  align-items: center;
-}
-</style>
