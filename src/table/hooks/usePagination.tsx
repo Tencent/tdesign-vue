@@ -30,7 +30,9 @@ export function usePaginationValue(
     const isControlled = Boolean(pagination?.current);
     if (isControlled) {
       innerPagination.value = pagination;
+      return;
     }
+
     if (!innerPagination.value && pagination.defaultCurrent) {
       innerPagination.value = {
         ...pagination,

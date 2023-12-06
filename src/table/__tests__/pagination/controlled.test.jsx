@@ -7,17 +7,9 @@ import { getAjaxDataTableMount, getLocalDataTableMount, getSwitchPaginationTable
 
 // 4 类表格组件同时测试
 const TABLES = [Table, BaseTable, PrimaryTable, EnhancedTable];
-afterEach(() => {
-  document.querySelector('.t-popup')?.remove();
-  document.querySelector('.t-table')?.remove();
-});
 
 TABLES.forEach((TTable) => {
   describe(TTable.name, () => {
-    afterEach(() => {
-      document.querySelector('.t-popup')?.remove();
-      document.querySelector('.t-table')?.remove();
-    });
 
     describe('ajax data pagination: data.length = pageSize', () => {
       afterEach(() => {
