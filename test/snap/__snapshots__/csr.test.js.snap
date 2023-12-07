@@ -101167,15 +101167,25 @@ exports[`csr snapshot test > csr test ./src/tabs/_example/combination.vue 1`] = 
         <!---->
         <!---->
         <!---->
+        <!---->
+        <!---->
+        <!---->
         <div
           class="t-tab-panel"
         >
           <p
             style="padding: 25px;"
           >
-            选项卡19
+            选项卡22
           </p>
         </div>
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
         <!---->
       </div>
     </div>
