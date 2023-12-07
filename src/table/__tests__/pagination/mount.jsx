@@ -19,7 +19,7 @@ const SIMPLE_COLUMNS = [
 ];
 
 /** 远程数据分页；分页属性为受控属性 */
-export function getAjaxDataTableMount() {
+export function getAjaxDataTableMount(TTable) {
   const DATA_TOTAL = 5;
   return mount({
     data() {
@@ -60,9 +60,15 @@ export function getAjaxDataTableMount() {
     render() {
       return (
         <div>
-          <button class='prev-page' onClick={this.goToPrevPage}>PrevPage</button>
-          <button class='next-page' onClick={this.goToNextPage}>NextPage</button>
-          <button class='change-page-size' onClick={this.changePageSize}>NextPage</button>
+          <button class="prev-page" onClick={this.goToPrevPage}>
+            PrevPage
+          </button>
+          <button class="next-page" onClick={this.goToNextPage}>
+            NextPage
+          </button>
+          <button class="change-page-size" onClick={this.changePageSize}>
+            NextPage
+          </button>
           <TTable
             rowKey="id"
             data={this.data}
@@ -78,8 +84,7 @@ export function getAjaxDataTableMount() {
   });
 }
 
-
-export function getSwitchPaginationTableMount() {
+export function getSwitchPaginationTableMount(TTable) {
   const DATA_TOTAL = 38;
   return mount({
     data() {
@@ -90,11 +95,13 @@ export function getSwitchPaginationTableMount() {
     },
     computed: {
       pagination() {
-        return this.showPagination ?  {
-          current: 1,
-          pageSize: 5,
-          total: DATA_TOTAL,
-        } : undefined;
+        return this.showPagination
+          ? {
+            current: 1,
+            pageSize: 5,
+            total: DATA_TOTAL,
+          }
+          : undefined;
       },
     },
     methods: {
@@ -105,17 +112,14 @@ export function getSwitchPaginationTableMount() {
       },
       onCheckboxChange(val) {
         this.showPagination = val;
-        console.log('showPagination: ', this.pagination);
       },
     },
     render() {
       return (
         <div>
-          <Checkbox
-            class='toggle-pagination'
-            checked={this.showPagination}
-            on={{ change: this.onCheckboxChange }}
-          >Toggle Pagination</Checkbox>
+          <Checkbox class="toggle-pagination" checked={this.showPagination} on={{ change: this.onCheckboxChange }}>
+            Toggle Pagination
+          </Checkbox>
           <TTable
             rowKey="id"
             data={this.data}
@@ -132,7 +136,7 @@ export function getSwitchPaginationTableMount() {
 }
 
 /** 远程数据分页；分页属性为非受控属性 */
-export function getDefaultPaginationAjaxDataTableMount() {
+export function getDefaultPaginationAjaxDataTableMount(TTable) {
   const DATA_TOTAL = 5;
   return mount({
     data() {
@@ -181,7 +185,7 @@ function getLocalTableData(total) {
   }));
 }
 
-export function getLocalDataTableMount() {
+export function getLocalDataTableMount(TTable) {
   const DATA_TOTAL = 38;
   return mount({
     data() {
@@ -218,9 +222,15 @@ export function getLocalDataTableMount() {
     render() {
       return (
         <div>
-          <button class='prev-page' onClick={this.goToPrevPage}>PrevPage</button>
-          <button class='next-page' onClick={this.goToNextPage}>NextPage</button>
-          <button class='change-page-size' onClick={this.changePageSize}>NextPage</button>
+          <button class="prev-page" onClick={this.goToPrevPage}>
+            PrevPage
+          </button>
+          <button class="next-page" onClick={this.goToNextPage}>
+            NextPage
+          </button>
+          <button class="change-page-size" onClick={this.changePageSize}>
+            NextPage
+          </button>
           <TTable
             rowKey="id"
             data={this.data}
@@ -236,7 +246,7 @@ export function getLocalDataTableMount() {
   });
 }
 
-export function getDefaultPaginationLocalDataTableMount() {
+export function getDefaultPaginationLocalDataTableMount(TTable) {
   const DATA_TOTAL = 38;
   return mount({
     data() {
@@ -274,7 +284,7 @@ export function getDefaultPaginationLocalDataTableMount() {
   });
 }
 
-export function getSwitchDefaultPaginationTableMount() {
+export function getSwitchDefaultPaginationTableMount(TTable) {
   const DATA_TOTAL = 36;
   return mount({
     data() {
@@ -285,11 +295,13 @@ export function getSwitchDefaultPaginationTableMount() {
     },
     computed: {
       pagination() {
-        return this.showPagination ?  {
-          defaultCurrent: 1,
-          defaultPageSize: 5,
-          total: DATA_TOTAL,
-        } : undefined;
+        return this.showPagination
+          ? {
+            defaultCurrent: 1,
+            defaultPageSize: 5,
+            total: DATA_TOTAL,
+          }
+          : undefined;
       },
     },
     methods: {
@@ -300,17 +312,10 @@ export function getSwitchDefaultPaginationTableMount() {
     render() {
       return (
         <div>
-          <Checkbox
-            class='toggle-pagination'
-            checked={this.showPagination}
-            on={{ change: this.onCheckboxChange }}
-          >Toggle Pagination</Checkbox>
-          <TTable
-            rowKey="id"
-            data={this.data}
-            columns={SIMPLE_COLUMNS}
-            pagination={this.pagination}
-          ></TTable>
+          <Checkbox class="toggle-pagination" checked={this.showPagination} on={{ change: this.onCheckboxChange }}>
+            Toggle Pagination
+          </Checkbox>
+          <TTable rowKey="id" data={this.data} columns={SIMPLE_COLUMNS} pagination={this.pagination}></TTable>
         </div>
       );
     },

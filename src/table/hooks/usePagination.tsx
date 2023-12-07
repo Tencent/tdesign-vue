@@ -1,7 +1,5 @@
 import {
-  computed,
-  Ref,
-  ref, SetupContext, toRefs, watch,
+  computed, Ref, ref, SetupContext, toRefs, watch,
 } from '@vue/composition-api';
 import { CreateElement } from 'vue';
 import { useConfig } from '../../config-provider/useConfig';
@@ -14,46 +12,50 @@ const DEFAULT_PAGE_SIZE = 10;
 export function usePaginationValue(
   pagination: Ref<PaginationProps>,
   onPageChange: TdBaseTableProps['onPageChange'],
-): [Ref<PaginationProps>, TdBaseTableProps['onPageChange']] {
-  if (pagination.value?.current && pagination.value?.defaultPageSize
-    || pagination.value?.defaultCurrent && pagination?.value.pageSize
+): [Ref<PaginationProps>, Ref<TdBaseTableProps['onPageChange']>] {
+  if (
+    (pagination.value?.current && pagination.value?.defaultPageSize)
+    || (pagination.value?.defaultCurrent && pagination?.value.pageSize)
   ) {
-    log.error('Table', 'cannot set both current and defaultPageSize, or defaultCurrent and pagesize. current/pageSize and defaultCurrent/defaultPageSize are allowed.');
+    log.error(
+      'Table',
+      'cannot set both current and defaultPageSize, or defaultCurrent and pagesize. current/pageSize and defaultCurrent/defaultPageSize are allowed.',
+    );
   }
 
   const innerPagination = ref<PaginationProps>();
-  let setInnerPagination = onPageChange;
+  const setInnerPagination = ref(onPageChange);
 
   // switch value of pagination from undefined to truthy value
-  watch(() => ({...pagination.value}), (pagination) => {
-    if (!pagination) return [ref(pagination)];
-    const isControlled = Boolean(pagination?.current);
-    if (isControlled) {
-      innerPagination.value = pagination;
-      return;
-    }
+  watch(
+    () => ({ ...pagination.value }),
+    (pagination) => {
+      if (!pagination) return [innerPagination, setInnerPagination];
+      const isControlled = Boolean(pagination?.current);
+      if (isControlled) {
+        innerPagination.value = pagination;
+        return;
+      }
 
-    if (!innerPagination.value && pagination.defaultCurrent) {
-      innerPagination.value = {
-        ...pagination,
-        current: pagination.defaultCurrent,
-        pageSize: pagination.defaultPageSize || DEFAULT_PAGE_SIZE,
+      if (!innerPagination.value && pagination.defaultCurrent) {
+        innerPagination.value = {
+          ...pagination,
+          current: pagination.defaultCurrent,
+          pageSize: pagination.defaultPageSize || DEFAULT_PAGE_SIZE,
+        };
+      } else if (innerPagination.value && !pagination.defaultCurrent) {
+        innerPagination.value = undefined;
+      }
+
+      setInnerPagination.value = (newPagination: PageInfo, newData: TableRowData[]) => {
+        innerPagination.value = { ...innerPagination.value, ...newPagination };
+        onPageChange?.(newPagination, newData);
       };
-    } else if (innerPagination.value && !pagination.defaultCurrent) {
-      innerPagination.value = undefined;
-    }
+    },
+    { immediate: true },
+  );
 
-    setInnerPagination = (newPagination: PageInfo, newData: TableRowData[]) => {
-      innerPagination.value = { ...innerPagination.value, ...newPagination };
-      onPageChange?.(newPagination, newData);
-    };
-
-  }, { immediate: true });
-
-  return [
-    innerPagination,
-    setInnerPagination,
-  ];
+  return [innerPagination, setInnerPagination];
 }
 
 export default function usePagination(props: TdBaseTableProps, context: SetupContext) {
@@ -89,7 +91,7 @@ export default function usePagination(props: TdBaseTableProps, context: SetupCon
   };
 
   watch(
-    () => [{...innerPagination.value}, [...data.value]],
+    () => [{ ...innerPagination.value }, [...data.value]],
     ([innerPagination, data]: [PaginationProps, TableRowData[]]) => {
       if (!innerPagination?.current) {
         dataSource.value = data;
@@ -112,7 +114,7 @@ export default function usePagination(props: TdBaseTableProps, context: SetupCon
             on: {
               change: (pageInfo: PageInfo) => {
                 const dataSource = getDataSourceAndPaginate(pageInfo.current, pageInfo.pageSize);
-                setInnerPagination?.({ ...innerPagination.value, ...pageInfo }, dataSource);
+                setInnerPagination?.value?.({ ...innerPagination.value, ...pageInfo }, dataSource);
               },
             },
           }}
