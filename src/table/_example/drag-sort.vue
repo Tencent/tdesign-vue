@@ -10,7 +10,6 @@
         :pagination="pagination1"
         dragSort="row"
         @drag-sort="onDragSort"
-        @page-change="onPageChange"
         lazyLoad
       >
         <template #status="{ row }">
@@ -83,10 +82,6 @@ export default {
     };
   },
   methods: {
-    onPageChange(pageInfo) {
-      this.pagination = { ...this.pagination, ...pageInfo };
-    },
-
     // currentData is going to be deprecated
     onDragSort({
       currentIndex, current, targetIndex, target, data, newData, e,
