@@ -5,6 +5,25 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.8.1 `2023-12-07` 
+### 🚀 Features
+- `Cascader`:  新增 `valueDisplay` API @PengYYYYY ([#2938](https://github.com/Tencent/tdesign-vue/pull/2938))
+- `Menu`: 选中后关闭菜单，与其他组件保持交互行为一致 @uyarn ([#2963](https://github.com/Tencent/tdesign-vue/pull/2963))
+- `Tabs`: 优化初始化滚动的场景，对处于中间的部分场景进行进一步优化 @uyarn ([#2964](https://github.com/Tencent/tdesign-vue/pull/2964))
+### 🐞 Bug Fixes
+- `Radio`: 选项内容变化后样式问题修复 @hkaikai ([#2936](https://github.com/Tencent/tdesign-vue/pull/2936))
+- `Pagination`: 修复当 `total` 为 0 并且 `pageSize` 改变时， `current` 值为 0 的问题 @betavs ([#2937](https://github.com/Tencent/tdesign-vue/pull/2937))
+- `Tree`: @TabSpace
+   - 改进节点禁用状态的逻辑  ([#2935](https://github.com/Tencent/tdesign-vue/pull/2935))
+   - value、active和expanded 属性, 支持数组操作触发视图变更 ([#2951](https://github.com/Tencent/tdesign-vue/pull/2951))
+- `Table`: @chaishi
+    - 修复分页场景，动态切换分页数据从 undefined 到具体真实数据时，分页无效的问题 [#2867](https://github.com/Tencent/tdesign-vue/issues/2867) ([#2954](https://github.com/Tencent/tdesign-vue/pull/2954))
+    - 修复分页功能在序号、行选择、行拖拽排序等场景的问题 ([#2962](https://github.com/Tencent/tdesign-vue/pull/2962))
+    - 修复可编辑表格的 `row-edit` 事件没有触发问题 ([#2934](https://github.com/Tencent/tdesign-vue/pull/2934))
+ - `ImageViewer`: 修复在抽屉组件等组件中使用图片预览组件，按下 `esc` 键抽屉组件和图片预览组件会同时关闭的问题 @sinbadmaster ([#2958](https://github.com/Tencent/tdesign-vue/pull/2958))
+ - `AutoComplete`: 修复匹配特殊字符报错的问题  @ZWkang ([#2943](https://github.com/Tencent/tdesign-vue/pull/2943))
+ - `Dropdown`:处理禁用状态可点击的问题 @betavs ([issue #3693](https://github.com/Tencent/tdesign-vue-next/issues/3693)) 
+
 ## 🌈 1.8.0 `2023-11-23`
 
 ### 🚀 Features
