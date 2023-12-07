@@ -41,7 +41,9 @@ export default defineComponent({
     const { global } = useConfig('cascader');
 
     // 全局状态的上下文
-    const { innerValue, cascaderContext, isFilterable } = useCascaderContext(props);
+    const {
+      innerValue, cascaderContext, isFilterable, getCascaderItems,
+    } = useCascaderContext(props);
 
     const displayValue = computed(() => props.multiple ? getMultipleContent(cascaderContext.value) : getSingleContent(cascaderContext.value));
 
@@ -59,6 +61,20 @@ export default defineComponent({
     const { formDisabled } = useFormDisabled();
     const isDisabled = computed(() => formDisabled.value || cascaderContext.value.disabled);
 
+    const valueDisplayParams = computed(() => {
+      const arrayValue = innerValue.value instanceof Array ? innerValue.value : [innerValue.value];
+      const displayValue = props.multiple && props.minCollapsedNum ? arrayValue.slice(0, props.minCollapsedNum) : innerValue.value;
+      const options = getCascaderItems(arrayValue);
+      return {
+        value: innerValue.value,
+        selectedOptions: options,
+        onClose: (index: number) => {
+          handleRemoveTagEffect(cascaderContext.value, index, props.onRemove);
+        },
+        displayValue,
+      };
+    });
+
     return {
       COMPONENT_NAME,
       overlayClassName,
@@ -72,10 +88,12 @@ export default defineComponent({
       classPrefix,
       cascaderContext,
       emit,
+      valueDisplayParams,
     };
   },
   render() {
     const {
+      valueDisplayParams,
       COMPONENT_NAME,
       overlayClassName,
       panels,
@@ -88,6 +106,10 @@ export default defineComponent({
       cascaderContext,
       emit,
     } = this;
+
+    const renderValueDisplay = () => renderTNodeJSX(this, 'valueDisplay', {
+      params: valueDisplayParams,
+    });
 
     const renderSuffixIcon = () => {
       const suffixIcon = renderTNodeJSX(this, 'suffixIcon');
@@ -139,6 +161,7 @@ export default defineComponent({
             minCollapsedNum: this.minCollapsedNum,
             collapsedItems: renderCollapsedItems,
             label: this.label,
+            valueDisplay: renderValueDisplay,
             suffix: this.suffix,
             tag: this.tag,
             readonly: this.readonly,

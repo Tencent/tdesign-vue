@@ -78,10 +78,10 @@ export default {
        *    此时，注意需要在 onPageChange 中对 pagination.current 和 pagination.pageSize 进行赋值
        * */
       pagination: {
-        // current: 2,
-        // pageSize: 5,
-        defaultCurrent: 2,
-        defaultPageSize: 5,
+        current: 2,
+        pageSize: 5,
+        // defaultCurrent: 2,
+        // defaultPageSize: 5,
         total: TOTAL,
         showJumper: true,
       },
@@ -94,9 +94,11 @@ export default {
     },
     // 分页变化时触发该事件
     onPageChange(pageInfo, newData) {
-      // 受控用法所需，即使用 pagination.current 和 pagination.pageSize 时，必须保留恢复下面 2 行代码
-      // this.pagination.current = pageInfo.current;
-      // this.pagination.pageSize = pageInfo.pageSize;
+      if (!this.pagination.defaultCurrent) {
+        // 受控用法所需，即使用 pagination.current 和 pagination.pageSize 时，必须保留恢复下面 2 行代码
+        this.pagination.current = pageInfo.current;
+        this.pagination.pageSize = pageInfo.pageSize;
+      }
       console.log('page-change:', pageInfo, newData);
     },
     onSelectChange(selectedRowKeys, context) {

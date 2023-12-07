@@ -110,11 +110,12 @@ name | type | default | description | required
 actived | Boolean | - | required | Y
 checked | Boolean | - | required | Y
 data | Object | - | required。node data, extends `TreeOptionData`。Typescript：`T` | Y
+disabled | Boolean | - | required。node disabled state | Y
 expanded | Boolean | - | required | Y
 indeterminate | Boolean | - | required | Y
 loading | Boolean | - | required | Y
 `TreeNodeState` | \- | - | extends `TreeNodeState` | N
-### TreeNodeModelFunctions
+### TreeNodeModel
 
 name | params | return | description
 -- | -- | -- | --

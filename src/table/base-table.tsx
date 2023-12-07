@@ -630,7 +630,7 @@ export default defineComponent({
 
     const topContent = renderTNodeJSX(this, 'topContent');
     const bottomContent = renderTNodeJSX(this, 'bottomContent');
-    const pagination = this.pagination ? (
+    const paginationContent = this.innerPagination ? (
       <div
         ref="paginationRef"
         class={this.tableBaseClass.paginationWrap}
@@ -700,10 +700,10 @@ export default defineComponent({
         {/* 吸底的分页器 */}
         {this.paginationAffixedBottom ? (
           <Affix offsetBottom={0} props={getAffixProps(this.paginationAffixedBottom)} ref="paginationAffixRef">
-            {pagination}
+            {paginationContent}
           </Affix>
         ) : (
-          pagination
+          paginationContent
         )}
 
         {/* 调整列宽时的指示线。由于层级需要比较高，因而放在根节点，避免被吸顶表头覆盖。非必要情况，请勿调整辅助线位置 */}
