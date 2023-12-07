@@ -62,6 +62,7 @@ export default defineComponent({
           }
         });
       }
+      submenu?.closeParentPopup?.(e);
     };
 
     // lifetimes
