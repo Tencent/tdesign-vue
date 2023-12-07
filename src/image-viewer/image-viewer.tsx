@@ -99,7 +99,6 @@ export default defineComponent({
       setVisibleValue(false);
 
       unmountContent();
-      window.removeEventListener('keydown', keydownHandler);
 
       props.onClose?.(ctx);
       emit('close', ctx);
@@ -114,6 +113,8 @@ export default defineComponent({
     };
 
     const keydownHandler = (e: KeyboardEvent) => {
+      e.stopPropagation();
+
       switch (e.code) {
         case EVENT_CODE.left:
           prevImage();
@@ -148,14 +149,20 @@ export default defineComponent({
         containerRef.value.unmountContent();
       }
     };
-
+    const divRef = ref<HTMLDivElement>();
+    const getFocus = () => {
+      if (divRef.value) {
+        // 只设置tabindex值无法自动获取到焦点，使用focus获取焦点
+        divRef.value.focus();
+      }
+    };
     watch(
       () => visibleValue.value,
       (val) => {
         if (val) {
           onRest();
-          window.addEventListener('keydown', keydownHandler);
           mountContent();
+          getFocus();
         }
       },
     );
@@ -205,6 +212,8 @@ export default defineComponent({
       scale,
       isMultipleImg,
       containerRef,
+      keydownHandler,
+      divRef,
     };
   },
   methods: {
@@ -295,7 +304,14 @@ export default defineComponent({
     },
     renderViewer() {
       return (
-        <div class={this.wrapClass} style={{ zIndex: this.zIndexValue }} onWheel={this.onWheel}>
+        <div
+          tabindex={-1}
+          onKeydown={this.keydownHandler}
+          ref="divRef"
+          class={this.wrapClass}
+          style={{ zIndex: this.zIndexValue }}
+          onWheel={this.onWheel}
+        >
           {!!this.showOverlayValue && (
             <div class={`${this.COMPONENT_NAME}__modal-mask`} onClick={this.clickOverlayHandler} />
           )}
