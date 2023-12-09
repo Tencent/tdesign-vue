@@ -1,9 +1,9 @@
 import { mount } from '@vue/test-utils';
+import { mockDelay } from '@test/utils';
+import { afterEach } from 'vitest';
 import {
   Table, BaseTable, PrimaryTable, EnhancedTable,
 } from '@/src/table/index.ts';
-import { mockDelay } from '@test/utils';
-import { afterEach } from 'vitest';
 
 // 4 类表格组件同时测试
 const TABLES = [Table, BaseTable, PrimaryTable, EnhancedTable];
@@ -24,7 +24,7 @@ const SIMPLE_COLUMNS = [
   { title: 'Instance', colKey: 'instance' },
 ];
 
-function getTableMount() {
+function getTableMount(TTable) {
   return mount({
     data() {
       return {
@@ -42,7 +42,7 @@ function getTableMount() {
       },
       goToNextPage() {
         const { current, total, pageSize } = this.pagination;
-        this.pagination.current = Math.min(current + 1, Math.ceil(total / pageSize) );
+        this.pagination.current = Math.min(current + 1, Math.ceil(total / pageSize));
       },
       onPaginationChange(pageInfo) {
         this.pagination.current = pageInfo.current;
@@ -53,8 +53,12 @@ function getTableMount() {
     render() {
       return (
         <div>
-          <button class='prev-page' onClick={this.goToPrevPage}>PrevPage</button>
-          <button class='next-page' onClick={this.goToNextPage}>NextPage</button>
+          <button class="prev-page" onClick={this.goToPrevPage}>
+            PrevPage
+          </button>
+          <button class="next-page" onClick={this.goToNextPage}>
+            NextPage
+          </button>
           <TTable
             rowKey="id"
             data={this.data}
@@ -79,7 +83,7 @@ TABLES.forEach((TTable) => {
       });
 
       it('controlled mode', async () => {
-        const wrapper = getTableMount();
+        const wrapper = getTableMount(TTable);
 
         const firstSerialNumberClass = '.t-table tbody tr td:first-child';
         expect(wrapper.find('.t-table__pagination').exists()).toBeTruthy();
