@@ -12,6 +12,9 @@ import { CommonDisplayFileProps, UploadProps } from './interface';
 import { UploadDragEvents } from './hooks/useDrag';
 import CustomFile from './themes/custom-file';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
+import { getFileList } from '../_common/js/upload/utils';
+import { formatToUploadFile } from '../_common/js/upload/main';
+import { UploadFile } from './type';
 
 export default defineComponent({
   name: 'TUpload',
@@ -88,8 +91,19 @@ export default defineComponent({
       },
     ]);
 
+    const onUploadPaste = (event: ClipboardEvent) => {
+      if (!props.uploadPastedFiles) return;
+      const validFiles: File[] = getFileList(event.clipboardData.files, props.accept);
+      if (!validFiles.length) return;
+      const status: UploadFile['status'] = props.autoUpload ? 'progress' : 'waiting';
+      const files = formatToUploadFile(validFiles, props.format, status);
+      toUploadFiles.value = files;
+      uploadData.uploadFiles();
+    };
+
     return {
       ...uploadData,
+      onUploadPaste,
       commonDisplayFileProps,
       dragProps,
       uploadClasses,
@@ -236,7 +250,7 @@ export default defineComponent({
 
   render() {
     return (
-      <div class={this.uploadClasses}>
+      <div class={this.uploadClasses} onPaste={this.onUploadPaste}>
         <input
           ref="inputRef"
           type="file"

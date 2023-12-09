@@ -399,8 +399,9 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
     });
     uploading.value = false;
 
+    // autoUpload do not need to reset to waiting state
     if (autoUpload.value) {
-      toUploadFiles.value = toUploadFiles.value.map((item) => ({ ...item, status: 'waiting' }));
+      toUploadFiles.value = [];
     } else {
       setUploadValue(
         uploadValue.value.map((item) => {
