@@ -118475,7 +118475,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-vscroll.vue 1`] 
   >
     <div
       class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition"
-      style="height: 300px;"
+      style="height: 300px; overflow-y: auto;"
     >
       <div
         class="t-tree__empty"
@@ -125873,7 +125873,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
   >
     <div
       class="t-tree t-tree--hoverable t-tree--checkable t-tree--transition t-tree__vscroll"
-      style="height: 300px;"
+      style="height: 300px; overflow-y: auto;"
     >
       <div
         class="t-tree__vscroll-cursor"
@@ -128007,7 +128007,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
       >
         <div
           class="t-tree t-tree--hoverable t-tree--transition t-tree__lazyload"
-          style="height: 300px;"
+          style="height: 300px; overflow-y: auto;"
         >
           <div
             class="t-tree__list"
