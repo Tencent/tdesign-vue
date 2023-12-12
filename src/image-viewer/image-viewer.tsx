@@ -169,12 +169,9 @@ export default defineComponent({
 
     const onWheel = (e: WheelEvent) => {
       e.preventDefault();
-      const { deltaY, ctrlKey } = e;
-      // mac触摸板双指缩放时ctrlKey=true，deltaY>0为缩小  <0为放大
-      if (ctrlKey) {
-        return deltaY > 0 ? onZoomOut() : onZoomIn();
-      }
-      deltaY > 0 ? onZoomIn() : onZoomOut();
+      const { deltaY } = e;
+
+      deltaY > 0 ? onZoomOut() : onZoomIn();
     };
 
     const transStyle = computed(() => setTransform(`translateX(calc(-${indexValue.value} * (40px / 9 * 16 + 4px)))`));
