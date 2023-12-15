@@ -8,6 +8,7 @@ docClass: timeline
 ## 🌈 1.8.3 `2023-12-15` 
 ### 🚀 Features
 - `Upload`: 新增支持 `uploadPastedFiles`，用于控制是否允许用户粘贴文件上传，默认允许 @chaishi ([#2966](https://github.com/Tencent/tdesign-vue/pull/2966))
+- Dropdown: 移除对left的item样式特殊处理 @uyarn [common#1677](https://github.com/Tencent/tdesign-common/pull/1677)
 ### 🐞 Bug Fixes
 - `DatePicker`: 修复选择同一个月内的日期后，打开面板左右月份一样的问题 @Lyan-u ([#2972](https://github.com/Tencent/tdesign-vue/pull/2972))
 - `Drawer`: 处理点击esc无法关闭的问题 @betavs ([#2967](https://github.com/Tencent/tdesign-vue/pull/2967))
