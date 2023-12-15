@@ -1,6 +1,6 @@
 // 行选中相关功能：单选 + 多选
 import {
-  CreateElement, computed, toRefs, h, ref, watch,
+  CreateElement, computed, toRefs, h, ref, watch, Ref,
 } from 'vue';
 import intersection from 'lodash/intersection';
 import get from 'lodash/get';
@@ -19,13 +19,15 @@ import Checkbox from '../../checkbox';
 import Radio from '../../radio';
 import { ClassName } from '../../common';
 import log from '../../_common/js/log';
+import { PaginationProps } from '../../pagination';
 
 export default function useRowSelect(
   props: TdPrimaryTableProps,
   tableSelectedClasses: TableClassName['tableSelectedClasses'],
+  pagination: Ref<PaginationProps>,
 ) {
   const {
-    selectedRowKeys, columns, data, rowKey, pagination, reserveSelectedRowOnPaginate,
+    selectedRowKeys, columns, data, rowKey, reserveSelectedRowOnPaginate,
   } = toRefs(props);
   const currentPaginateData = ref<TableRowData[]>(data.value);
   const selectedRowClassNames = ref();

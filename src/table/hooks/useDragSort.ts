@@ -14,16 +14,17 @@ import log from '../../_common/js/log';
 import swapDragArrayElement from '../../_common/js/utils/swapDragArrayElement';
 import { getColumnDataByKey, getColumnIndexByKey } from '../../_common/js/table/utils';
 import { SimplePageInfo } from '../interface';
+import { PaginationProps } from '../../pagination';
 
 export default function useDragSort(
   props: TdPrimaryTableProps,
   context: SetupContext,
-  params: ComputedRef<{
+  extraParams: ComputedRef<{
     showElement: boolean;
+    pagination: PaginationProps;
   }>,
 ) {
   const { sortOnRowDraggable, dragSort, data } = toRefs(props);
-  const innerPagination = ref(props.pagination);
   const { tableDraggableClasses, tableBaseClass, tableFullRowClasses } = useClassName();
   const columns = ref<PrimaryTableCol[]>(props.columns || []);
   const primaryTableRef = ref(null);
@@ -102,9 +103,9 @@ export default function useDragSort(
           currentIndex -= 1;
           targetIndex -= 1;
         }
-        if (innerPagination.value) {
-          currentIndex = getDataPageIndex(currentIndex, innerPagination.value);
-          targetIndex = getDataPageIndex(targetIndex, innerPagination.value);
+        if (extraParams.value.pagination) {
+          currentIndex = getDataPageIndex(currentIndex, extraParams.value.pagination);
+          targetIndex = getDataPageIndex(targetIndex, extraParams.value.pagination);
         }
         const params: DragSortContext<TableRowData> = {
           data: data.value,
@@ -220,9 +221,9 @@ export default function useDragSort(
   }
 
   // eslint-disable-next-line
-  watch([primaryTableRef, columns, dragSort, params], ([val, columns, dragSort, params]) => {
+  watch([primaryTableRef, columns, dragSort, extraParams], ([val, columns, dragSort, extraParams]) => {
     const primaryTableCmp = val as any;
-    if (!val || !primaryTableCmp.$el || !params.showElement) return;
+    if (!val || !primaryTableCmp.$el || !extraParams.showElement) return;
     // regis after table tr rendered
     const timer = setTimeout(() => {
       registerRowDragEvent(primaryTableCmp.$el);
@@ -243,7 +244,6 @@ export default function useDragSort(
     isRowDraggable,
     isRowHandlerDraggable,
     isColDraggable,
-    innerPagination,
     setDragSortPrimaryTableRef,
     setDragSortColumns,
   };

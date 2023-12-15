@@ -3,7 +3,15 @@
     <div class="item">
       <!-- 拖拽排序涉及到 data 的变更，相对比较慎重，因此仅支持受控用法 -->
 
-      <t-table rowKey="index" :columns="columns" :data="data" @drag-sort="onDragSort" dragSort="row" lazyLoad>
+      <t-table
+        rowKey="index"
+        :columns="columns"
+        :data="data"
+        :pagination="pagination1"
+        dragSort="row"
+        @drag-sort="onDragSort"
+        lazyLoad
+      >
         <template #status="{ row }">
           <p class="status" :class="['', 'warning', 'unhealth'][row && row.status]">
             {{ ['健康', '警告', '异常'][row && row.status] }}

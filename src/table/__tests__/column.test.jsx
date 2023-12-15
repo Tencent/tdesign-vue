@@ -21,7 +21,7 @@ TABLES.forEach((TTable) => {
       const columns = [
         { title: 'Index', colKey: 'index', align: 'center' },
         { title: 'Instance', colKey: 'instance', align: 'left' },
-        { title: 'description', colKey: 'instance' },
+        { title: 'description', colKey: 'description' },
         { title: 'Owner', colKey: 'owner', align: 'right' },
       ];
       const wrapper = mount({
@@ -41,7 +41,7 @@ TABLES.forEach((TTable) => {
       const columns = [
         { title: 'Index', colKey: 'index' },
         { title: 'Instance', colKey: 'instance', attrs: { 'col-key': 'instance' } },
-        { title: 'description', colKey: 'instance' },
+        { title: 'description', colKey: 'description' },
         { title: 'Owner', colKey: 'owner' },
       ];
       const wrapper = mount({
@@ -58,7 +58,7 @@ TABLES.forEach((TTable) => {
       const columns = [
         { title: 'Index', colKey: 'index', className: () => ['tdesign-class'] },
         { title: 'Instance', colKey: 'instance', className: 'tdesign-class' },
-        { title: 'description', colKey: 'instance', className: [{ 'tdesign-class': true }] },
+        { title: 'description', colKey: 'description', className: [{ 'tdesign-class': true }] },
         { title: 'Owner', colKey: 'owner', className: { 'tdesign-class': true, 'tdesign-class1': false } },
       ];
       const wrapper = mount({
