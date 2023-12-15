@@ -5,6 +5,18 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.8.2 `2023-12-15` 
+### 🚀 Features
+- `Upload`: 新增支持 `uploadPastedFiles`，用于控制是否允许用户粘贴文件上传，默认允许 @chaishi ([#2966](https://github.com/Tencent/tdesign-vue/pull/2966))
+### 🐞 Bug Fixes
+- `DatePicker`: 修复选择同一个月内的日期后，打开面板左右月份一样的问题 @Lyan-u ([#2972](https://github.com/Tencent/tdesign-vue/pull/2972))
+- `Drawer`: 处理点击esc无法关闭的问题 @betavs ([#2967](https://github.com/Tencent/tdesign-vue/pull/2967))
+- `ImageViewer`: 滚轮缩放符合操作直觉 @sinbadmaster ([#2974](https://github.com/Tencent/tdesign-vue/pull/2974))
+- `SSR`: 修复 `SSR` 场景使用报错的问题  @uyarn ([#2985](https://github.com/Tencent/tdesign-vue/pull/2985))
+- `Tree`: 处理 `height` 属性无效的问题 @betavs ([#2968](https://github.com/Tencent/tdesign-vue/pull/2968))
+- `Tree`: 解决初始化节点选中态异常的问题 @TabSpace ([#2985](https://github.com/Tencent/tdesign-vue/pull/2985))
+- `Upload`: 卡片式文件上传，修复取消上传时，文件依然显示问题，[issue#2955](https://github.com/Tencent/tdesign-vue/issues/2955) @chaishi ([#2966](https://github.com/Tencent/tdesign-vue/pull/2966))
+
 ## 🌈 1.8.1 `2023-12-07` 
 ### 🚀 Features
 - `Cascader`:  新增 `valueDisplay` API @PengYYYYY ([#2938](https://github.com/Tencent/tdesign-vue/pull/2938))
