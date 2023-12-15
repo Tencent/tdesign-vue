@@ -5,9 +5,10 @@ toc: false
 docClass: timeline
 ---
 
-## 🌈 1.8.2 `2023-12-15` 
+## 🌈 1.8.3 `2023-12-15` 
 ### 🚀 Features
 - `Upload`: 新增支持 `uploadPastedFiles`，用于控制是否允许用户粘贴文件上传，默认允许 @chaishi ([#2966](https://github.com/Tencent/tdesign-vue/pull/2966))
+- Dropdown: 移除对left的item样式特殊处理 @uyarn [common#1677](https://github.com/Tencent/tdesign-common/pull/1677)
 ### 🐞 Bug Fixes
 - `DatePicker`: 修复选择同一个月内的日期后，打开面板左右月份一样的问题 @Lyan-u ([#2972](https://github.com/Tencent/tdesign-vue/pull/2972))
 - `Drawer`: 处理点击esc无法关闭的问题 @betavs ([#2967](https://github.com/Tencent/tdesign-vue/pull/2967))
@@ -15,7 +16,7 @@ docClass: timeline
 - `SSR`: 修复 `SSR` 场景使用报错的问题  @uyarn ([#2985](https://github.com/Tencent/tdesign-vue/pull/2985))
 - `Tree`: 处理 `height` 属性无效的问题 @betavs ([#2968](https://github.com/Tencent/tdesign-vue/pull/2968))
 - `Tree`: 解决初始化节点选中态异常的问题 @TabSpace ([#2985](https://github.com/Tencent/tdesign-vue/pull/2985))
-- `Upload`: 卡片式文件上传，修复取消上传时，文件依然显示问题，[issue#2955](https://github.com/Tencent/tdesign-vue/issues/2955) @chaishi ([#2966](https://github.com/Tencent/tdesign-vue/pull/2966))
+- `Upload`: 卡片式文件上传，修复取消上传时，文件依然显示的问题 [issue#2955](https://github.com/Tencent/tdesign-vue/issues/2955) @chaishi ([#2966](https://github.com/Tencent/tdesign-vue/pull/2966))
 
 ## 🌈 1.8.1 `2023-12-07` 
 ### 🚀 Features
@@ -31,7 +32,7 @@ docClass: timeline
 - `Table`: @chaishi
     - 修复分页场景，动态切换分页数据从 undefined 到具体真实数据时，分页无效的问题 [#2867](https://github.com/Tencent/tdesign-vue/issues/2867) ([#2954](https://github.com/Tencent/tdesign-vue/pull/2954))
     - 修复分页功能在序号、行选择、行拖拽排序等场景的问题 ([#2962](https://github.com/Tencent/tdesign-vue/pull/2962))
-    - 修复可编辑表格的 `row-edit` 事件没有触发问题 ([#2934](https://github.com/Tencent/tdesign-vue/pull/2934))
+    - 修复可编辑表格的 `row-edit` 事件没有触发的问题 ([#2934](https://github.com/Tencent/tdesign-vue/pull/2934))
  - `ImageViewer`: 修复在抽屉组件等组件中使用图片预览组件，按下 `esc` 键抽屉组件和图片预览组件会同时关闭的问题 @sinbadmaster ([#2958](https://github.com/Tencent/tdesign-vue/pull/2958))
  - `AutoComplete`: 修复匹配特殊字符报错的问题  @ZWkang ([#2943](https://github.com/Tencent/tdesign-vue/pull/2943))
  - `Dropdown`:处理禁用状态可点击的问题 @betavs ([issue #3693](https://github.com/Tencent/tdesign-vue-next/issues/3693)) 
