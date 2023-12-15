@@ -3,7 +3,7 @@ import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import {
   defineComponent, h, ref, onMounted, reactive, set,
 } from '@vue/composition-api';
-import { ChevronRightIcon as TdChevronRightIcon, ChevronLeftIcon as TdChevronLeftIcon } from 'tdesign-icons-vue';
+import { ChevronRightIcon as TdChevronRightIcon } from 'tdesign-icons-vue';
 import isFunction from 'lodash/isFunction';
 
 import DropdownItem from './dropdown-item';
@@ -65,9 +65,8 @@ export default defineComponent({
     },
     // 处理options渲染的场景
     renderOptions(data: Array<DropdownOption>, deep: number) {
-      const { ChevronRightIcon, ChevronLeftIcon } = useGlobalIcon({
+      const { ChevronRightIcon } = useGlobalIcon({
         ChevronRightIcon: TdChevronRightIcon,
-        ChevronLeftIcon: TdChevronLeftIcon,
       });
       const arr: Array<unknown> = [];
       let renderContent;
