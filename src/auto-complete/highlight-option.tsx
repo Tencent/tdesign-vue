@@ -1,4 +1,5 @@
 import { computed, defineComponent } from 'vue';
+import escapeRegExp from 'lodash/escapeRegExp';
 import { usePrefixClass } from '../hooks/useConfig';
 
 export default defineComponent({
@@ -17,7 +18,7 @@ export default defineComponent({
       const { content, keyword } = props;
       if (!content) return { list: [] };
       if (typeof content !== 'string' || !keyword) return { list: [content] };
-      const regExp = new RegExp(keyword, 'i');
+      const regExp = new RegExp(escapeRegExp(keyword), 'i');
       const splitKeyword = content.match(regExp)?.[0];
       return {
         list: content.split(splitKeyword),

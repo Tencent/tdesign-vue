@@ -267,9 +267,15 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
 
       const container = this.$refs.navsContainer as HTMLElement;
       const activeTabEl: HTMLElement = this.activeElement;
-      const totalWidthBeforeActiveTab = activeTabEl?.offsetLeft;
       const containerWidth = getDomWidth(container);
-      if (totalWidthBeforeActiveTab > containerWidth) this.scrollLeft = totalWidthBeforeActiveTab;
+      const activeTabWidth = activeTabEl?.offsetWidth || 0;
+      // index of the active tab
+      const activeElIndex = Array.prototype.indexOf.call((this.$refs.navsWrap as HTMLElement).children, activeTabEl);
+      // calculate whether the right btn is display or not
+      const isRightBtnShow = this.navs?.length - activeElIndex >= Math.round((containerWidth - activeTabWidth) / activeTabWidth) ? 1 : 0;
+
+      const totalWidthBeforeActiveTab = activeTabEl?.offsetLeft;
+      if (totalWidthBeforeActiveTab > containerWidth - activeTabWidth) this.scrollLeft = totalWidthBeforeActiveTab - isRightBtnShow * activeTabWidth;
     },
 
     watchDomChange() {

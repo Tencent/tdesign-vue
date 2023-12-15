@@ -1,49 +1,103 @@
 import {
-  CreateElement, ref, SetupContext, toRefs, watch,
+  CreateElement, computed, Ref, ref, SetupContext, toRefs, watch,
 } from 'vue';
 import { useConfig } from '../../config-provider/useConfig';
 import Pagination, { PageInfo, PaginationProps } from '../../pagination';
 import { TdBaseTableProps, TableRowData } from '../type';
+import log from '../../_common/js/log';
 
-export default function usePagination(props: TdBaseTableProps, context: SetupContext) {
-  const { pagination, data, disableDataPage } = toRefs(props);
-  const { classPrefix } = useConfig();
-  const innerPagination = ref<PaginationProps>(props.pagination);
-  const pageSize = pagination.value?.pageSize || pagination.value?.defaultPageSize || 10;
-  const dataSource = ref<TableRowData[]>(props.data?.slice(0, pageSize) || []);
-  const isPaginateData = ref(false);
+const DEFAULT_PAGE_SIZE = 10;
 
-  const updateDataSourceAndPaginate = (current = 1, pageSize = 10) => {
-    const { data } = props;
-    // data 数据数量超出分页大小时，则自动启动本地数据分页
-    const t = Boolean(!disableDataPage.value && data.length > pageSize);
-    isPaginateData.value = t;
-    if (t) {
-      const start = (current - 1) * pageSize;
-      const end = current * pageSize;
-      dataSource.value = data.slice(start, end);
-    } else {
-      dataSource.value = data;
-    }
-    return dataSource.value;
-  };
+export function usePaginationValue(
+  pagination: Ref<PaginationProps>,
+  onPageChange: TdBaseTableProps['onPageChange'],
+): [Ref<PaginationProps>, Ref<TdBaseTableProps['onPageChange']>] {
+  if (
+    (pagination.value?.current && pagination.value?.defaultPageSize)
+    || (pagination.value?.defaultCurrent && pagination?.value.pageSize)
+  ) {
+    log.error(
+      'Table',
+      'cannot set both current and defaultPageSize, or defaultCurrent and pagesize. current/pageSize and defaultCurrent/defaultPageSize are allowed.',
+    );
+  }
 
-  // 受控情况，只有 pagination.current 或者 pagination.pageSize 变化，才对数据进行排序
+  const innerPagination = ref<PaginationProps>();
+  const setInnerPagination = ref(onPageChange);
+
+  // switch value of pagination from undefined to truthy value
   watch(
-    () => [pagination.value?.current, pagination.value?.pageSize, data.value.length, disableDataPage],
-    () => {
-      if (!pagination.value || !pagination.value.current) return;
-      updateDataSourceAndPaginate(pagination.value.current, pagination.value.pageSize);
+    () => ({ ...pagination.value }),
+    (pagination) => {
+      if (!pagination) return [innerPagination, setInnerPagination];
+      const isControlled = Boolean(pagination?.current);
+      if (isControlled) {
+        innerPagination.value = pagination;
+        return;
+      }
+
+      if (!innerPagination.value && pagination.defaultCurrent) {
+        innerPagination.value = {
+          ...pagination,
+          current: pagination.defaultCurrent,
+          pageSize: pagination.defaultPageSize || DEFAULT_PAGE_SIZE,
+        };
+      } else if (innerPagination.value && !pagination.defaultCurrent) {
+        innerPagination.value = undefined;
+      }
+
+      setInnerPagination.value = (newPagination: PageInfo, newData: TableRowData[]) => {
+        innerPagination.value = { ...innerPagination.value, ...newPagination };
+        onPageChange?.(newPagination, newData);
+      };
     },
     { immediate: true },
   );
 
-  // 非受控情况，只执行一次 Props 数据更新（pagination.defaultCurrent 和 pagination.defaultPageSize）
+  return [innerPagination, setInnerPagination];
+}
+
+export default function usePagination(props: TdBaseTableProps, context: SetupContext) {
+  const { pagination, disableDataPage, data } = toRefs(props);
+  const { classPrefix } = useConfig();
+  const dataSource = ref<TableRowData[]>([]);
+
+  const onPageChange = (pageInfo: PageInfo, newData: TableRowData[]) => {
+    // Vue3 ignore this line
+    context.emit('page-change', pageInfo, newData);
+    props.onPageChange?.(pageInfo, newData);
+  };
+
+  const [innerPagination, setInnerPagination] = usePaginationValue(pagination, onPageChange);
+
+  // data 数据数量超出分页大小时，则自动启动本地数据分页
+  const isPaginateData = computed(() => {
+    const pageSize = innerPagination?.value?.pageSize || DEFAULT_PAGE_SIZE;
+    return Boolean(!disableDataPage.value && props.data.length > pageSize);
+  });
+
+  const getDataSourceAndPaginate = (current = 1, pageSize = DEFAULT_PAGE_SIZE) => {
+    const { data } = props;
+    let paginationData = [];
+    if (isPaginateData.value) {
+      const start = (current - 1) * pageSize;
+      const end = current * pageSize;
+      paginationData = data.slice(start, end);
+    } else {
+      paginationData = data;
+    }
+    return paginationData;
+  };
+
   watch(
-    [data],
-    () => {
-      if (!pagination.value || !pagination.value.defaultCurrent) return;
-      updateDataSourceAndPaginate(pagination.value.defaultCurrent, pagination.value.defaultPageSize);
+    () => [{ ...innerPagination.value }, [...data.value]],
+    ([innerPagination, data]: [PaginationProps, TableRowData[]]) => {
+      if (!innerPagination?.current) {
+        dataSource.value = data;
+        return;
+      }
+      const { current, pageSize } = innerPagination;
+      dataSource.value = getDataSourceAndPaginate(current, pageSize);
     },
     { immediate: true },
   );
@@ -58,11 +112,8 @@ export default function usePagination(props: TdBaseTableProps, context: SetupCon
             props: pagination.value,
             on: {
               change: (pageInfo: PageInfo) => {
-                Object.assign(innerPagination.value, pageInfo);
-                updateDataSourceAndPaginate(pageInfo.current, pageInfo.pageSize);
-                // Vue3 ignore this line
-                context.emit('page-change', pageInfo, dataSource.value);
-                props.onPageChange?.(pageInfo, dataSource.value);
+                const dataSource = getDataSourceAndPaginate(pageInfo.current, pageInfo.pageSize);
+                setInnerPagination?.value?.({ ...innerPagination.value, ...pageInfo }, dataSource);
               },
             },
           }}
