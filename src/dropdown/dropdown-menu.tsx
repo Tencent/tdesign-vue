@@ -95,21 +95,10 @@ export default defineComponent({
                   },
                 }}
               >
-                {this.direction === 'right' ? (
-                  <div class={`${this.dropdownClass}__item-content`}>
-                    <span class={`${this.dropdownClass}__item-text`}>
-                      {this.renderOptionContent(optionItem.content)}
-                    </span>
-                    <ChevronRightIcon class={`${this.dropdownClass}__item-direction`} size="16" />
-                  </div>
-                ) : (
-                  <div class={`${this.dropdownClass}__item-content`}>
-                    <ChevronLeftIcon class={`${this.dropdownClass}__item-direction`} size="16" />
-                    <span class={`${this.dropdownClass}__item-text`}>
-                      {this.renderOptionContent(optionItem.content)}
-                    </span>
-                  </div>
-                )}
+                <div class={`${this.dropdownClass}__item-content`}>
+                  <span class={`${this.dropdownClass}__item-text`}>{this.renderOptionContent(optionItem.content)}</span>
+                  <ChevronRightIcon class={`${this.dropdownClass}__item-direction`} size="16" />
+                </div>
                 <div
                   class={[
                     `${this.dropdownClass}__submenu-wrapper`,
