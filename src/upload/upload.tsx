@@ -12,9 +12,6 @@ import { CommonDisplayFileProps, UploadProps } from './interface';
 import { UploadDragEvents } from './hooks/useDrag';
 import CustomFile from './themes/custom-file';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
-import { getFileList } from '../_common/js/upload/utils';
-import { formatToUploadFile } from '../_common/js/upload/main';
-import { UploadFile } from './type';
 
 export default defineComponent({
   name: 'TUpload',
