@@ -236,6 +236,7 @@ export default defineComponent({
                 >
                   <Image
                     alt=""
+                    error=""
                     src={image.thumbnail || image.mainImage}
                     class={`${this.COMPONENT_NAME}__header-img`}
                     onClick={() => this.onImgClick(index)}

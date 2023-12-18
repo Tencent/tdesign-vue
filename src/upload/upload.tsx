@@ -41,6 +41,7 @@ export default defineComponent({
       innerDisabled,
       onInnerRemove,
       onDragFileChange,
+      onPasteFileChange,
     } = uploadData;
 
     const disabled = computed<boolean>(() => formDisabled.value || innerDisabled.value);
@@ -107,6 +108,7 @@ export default defineComponent({
     return {
       ...uploadData,
       onUploadPaste,
+      onPasteFileChange,
       commonDisplayFileProps,
       dragProps,
       uploadClasses,
@@ -254,7 +256,7 @@ export default defineComponent({
 
   render() {
     return (
-      <div class={this.uploadClasses} onPaste={this.onUploadPaste}>
+      <div class={this.uploadClasses} onPaste={this.uploadPastedFiles ? this.onPasteFileChange : undefined}>
         <input
           ref="inputRef"
           type="file"

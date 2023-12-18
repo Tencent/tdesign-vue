@@ -511,7 +511,9 @@ export default defineComponent({
           visible={!!this.currentPreviewFile.length}
           onClose={this.closePreview}
           index={this.previewIndex}
-          onIndexChange={this.previewIndexChange}
+          on={{
+            'index-change': this.previewIndexChange,
+          }}
           props={this.imageViewerProps}
         ></ImageViewer>
       </div>
