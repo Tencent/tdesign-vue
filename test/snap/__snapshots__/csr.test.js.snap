@@ -21215,7 +21215,28 @@ exports[`csr snapshot test > csr test ./src/card/_example/custom-loading-props.v
 >
   <div
     class="t-card t-card--bordered"
-  />
+  >
+    <div
+      class="t-card__header"
+    >
+      <div
+        class="t-card__header-wrapper"
+      >
+        <div>
+          <div
+            class="t-card__title"
+          >
+            自定义loadingProps Card
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="t-card__body"
+    >
+       卡片内容，以描述性为主，可以是文字、图片或图文组合的形式。按业务需求进行自定义组合。 
+    </div>
+  </div>
   <div
     class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay"
   >
