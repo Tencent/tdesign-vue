@@ -21208,6 +21208,67 @@ exports[`csr snapshot test > csr test ./src/card/_example/bordered-none.vue 1`] 
 </div>
 `;
 
+exports[`csr snapshot test > csr test ./src/card/_example/custom-loading-props.vue 1`] = `
+<div
+  class="t-loading__parent"
+  style="width: 400px;"
+>
+  <div
+    class="t-card t-card--bordered"
+  >
+    <div
+      class="t-card__header"
+    >
+      <div
+        class="t-card__header-wrapper"
+      >
+        <div>
+          <div
+            class="t-card__title"
+          >
+            自定义loadingProps Card
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="t-card__body"
+    >
+       卡片内容，以描述性为主，可以是文字、图片或图文组合的形式。按业务需求进行自定义组合。 
+    </div>
+  </div>
+  <div
+    class="t-loading--center t-size-m t-loading t-loading--full t-loading__overlay"
+  >
+    <svg
+      class="t-loading__gradient t-icon-loading"
+      height="1em"
+      size="medium"
+      version="1.1"
+      viewBox="0 0 12 12"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <foreignobject
+        height="12"
+        width="12"
+        x="0"
+        y="0"
+      >
+        <div
+          class="t-loading__gradient-conic"
+        />
+      </foreignobject>
+    </svg>
+    <div
+      class="t-loading__text"
+    >
+      TDesign努力加载中...
+    </div>
+  </div>
+</div>
+`;
+
 exports[`csr snapshot test > csr test ./src/card/_example/footer.vue 1`] = `
 <div
   class="t-card t-card--bordered"
