@@ -123,18 +123,20 @@ export default mixins(Vue as VueConstructor<Textarea>, classPrefixMixins).extend
 
   methods: {
     adjustTextareaHeight() {
-      if (!this.$refs.refTextareaElem) return;
-      if (this.autosize === true) {
-        this.textareaStyle = calcTextareaHeight(this.$refs.refTextareaElem as HTMLTextAreaElement);
-      } else if (this.autosize && typeof this.autosize === 'object') {
-        this.textareaStyle = calcTextareaHeight(
-          this.$refs.refTextareaElem as HTMLTextAreaElement,
-          this.autosize?.minRows,
-          this.autosize?.maxRows,
-        );
-      } else if (this.$attrs.rows) {
-        this.textareaStyle = { height: 'auto', minHeight: 'auto' };
-      }
+      this.$nextTick(() => {
+        if (!this.$refs.refTextareaElem) return;
+        if (this.autosize === true) {
+          this.textareaStyle = calcTextareaHeight(this.$refs.refTextareaElem as HTMLTextAreaElement);
+        } else if (this.autosize && typeof this.autosize === 'object') {
+          this.textareaStyle = calcTextareaHeight(
+            this.$refs.refTextareaElem as HTMLTextAreaElement,
+            this.autosize?.minRows,
+            this.autosize?.maxRows,
+          );
+        } else if (this.$attrs.rows) {
+          this.textareaStyle = { height: 'auto', minHeight: 'auto' };
+        }
+      });
     },
     /**
      * Provide a method to calculate the height of textArea component after DOM mounted
