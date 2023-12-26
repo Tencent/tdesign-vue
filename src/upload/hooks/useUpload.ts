@@ -90,10 +90,9 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
 
   const uploadFilePercent = (params: { file: UploadFile; percent: number }) => {
     const { file, percent } = params;
-    const index = toUploadFiles.value.findIndex((item) => file.raw === item.raw);
-    const newFiles = [...toUploadFiles.value];
-    newFiles[index] = { ...newFiles[index], percent };
-    toUploadFiles.value = newFiles;
+    const operationUploadFiles = autoUpload.value ? toUploadFiles : uploadValue;
+    const index = operationUploadFiles.value.findIndex((item) => file.raw === item.raw);
+    operationUploadFiles.value[index] = { ...operationUploadFiles.value[index], percent };
   };
 
   const updateFilesProgress = () => {
@@ -260,6 +259,10 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
 
   function onDragFileChange(files: File[]) {
     onFileChange?.(files);
+  }
+
+  function onPasteFileChange(e: ClipboardEvent) {
+    onFileChange?.([...e.clipboardData.files]);
   }
 
   /**
@@ -452,5 +455,6 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
     cancelUpload,
     onInnerPreview,
     innerCancelUpload,
+    onPasteFileChange,
   };
 }

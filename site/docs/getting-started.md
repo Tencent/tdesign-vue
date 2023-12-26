@@ -192,4 +192,4 @@ Q: 为什么使用有些组件的时候会出现一些奇怪的错误？
 
 A: 使用组件的时候看到这类错误 `vue.runtime.esm.js:4605 [Vue warn]: inject() can only be used inside setup() or functional components.` 说明虽然 `package.json` 中设置的版本号为 `^2.6.14`，但实际上安装了 Vue2.7 的版本，可以在 `node_modules` 目录中检查实际安装的版本号。
 
-由于 Vue2.7 和 Vue2.6 不兼容，请务必确保自己安装的版本号是 Vue2.6.x。如果您确实需要使用 Vue2.7 请安装 `tdesign-vue@naruto`
+由于 tdesign-vue 正常版本中使用的 `@vue/composition-api`，无法在 Vue2.7 中使用，使用 tdesign-vue 正常版本时，请确保自己安装的版本号是 Vue2.6.x。如果您确实需要使用 Vue2.7 请安装 `tdesign-vue@naruto`
