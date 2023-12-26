@@ -86,7 +86,19 @@ export default mixins(Vue as VueConstructor<Textarea>, classPrefixMixins).extend
     },
   },
   mounted() {
-    this.adjustTextareaHeight();
+    const textareaElem = this.$refs.refTextareaElem as HTMLInputElement;
+    if (textareaElem) {
+      textareaElem.addEventListener('transitionend', this.adjustTextareaHeight);
+    } else {
+      this.adjustTextareaHeight();
+    }
+  },
+
+  beforeDestroy() {
+    const textareaElem = this.$refs.refTextareaElem as HTMLInputElement;
+    if (textareaElem) {
+      textareaElem.removeEventListener('transitionend', this.adjustTextareaHeight);
+    }
   },
 
   watch: {
