@@ -44112,7 +44112,7 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/base.vue 1`] = `
                     <div
                       class="t-pagination__total"
                     >
-                      共 30 项数据
+                      共 30 条数据
                     </div>
                     <div
                       class="t-select__wrap t-pagination__select"
@@ -75507,7 +75507,7 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/base.vue 1`] = `
     <div
       class="t-pagination__total"
     >
-      共 36 项数据
+      共 36 条数据
     </div>
     <div
       class="t-select__wrap t-pagination__select"
@@ -75645,7 +75645,7 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/base.vue 1`] = `
     <div
       class="t-pagination__total"
     >
-      共 36 项数据
+      共 36 条数据
     </div>
     <div
       class="t-select__wrap t-pagination__select"
@@ -75799,7 +75799,7 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/customizable.vue
     <div
       class="t-pagination__total"
     >
-      共 200 项数据
+      共 200 条数据
     </div>
     <div
       class="t-select__wrap t-pagination__select"
@@ -75989,7 +75989,7 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/disabled.vue 1`]
     <div
       class="t-pagination__total"
     >
-      共 100 项数据
+      共 100 条数据
     </div>
     <div
       class="t-select__wrap t-pagination__select"
@@ -76177,7 +76177,7 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/few.vue 1`] = `
     <div
       class="t-pagination__total"
     >
-      共 49 项数据
+      共 49 条数据
     </div>
     <div
       class="t-select__wrap t-pagination__select"
@@ -76303,7 +76303,7 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/jump.vue 1`] = `
     <div
       class="t-pagination__total"
     >
-      共 101 项数据
+      共 101 条数据
     </div>
     <div
       class="t-select__wrap t-pagination__select"
@@ -76472,7 +76472,7 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/mini.vue 1`] = `
     <div
       class="t-pagination__total"
     >
-      共 100 项数据
+      共 100 条数据
     </div>
     <div
       class="t-select__wrap t-pagination__select"
@@ -76634,7 +76634,7 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/more.vue 1`] = `
         <div
           class="t-pagination__total"
         >
-          共 100 项数据
+          共 100 条数据
         </div>
         <div
           class="t-select__wrap t-pagination__select"
@@ -76808,7 +76808,7 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/more.vue 1`] = `
         <div
           class="t-pagination__total"
         >
-          共 100 项数据
+          共 100 条数据
         </div>
         <div
           class="t-select__wrap t-pagination__select"
@@ -76937,7 +76937,7 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/page-num.vue 1`]
     <div
       class="t-pagination__total"
     >
-      共 645 项数据
+      共 645 条数据
     </div>
     <div
       class="t-select__wrap t-pagination__select"
@@ -77311,7 +77311,7 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/simple.vue 1`] =
     <div
       class="t-pagination__total"
     >
-      共 100 项数据
+      共 100 条数据
     </div>
     <div
       class="t-select__wrap t-pagination__select"
@@ -77445,7 +77445,7 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/simple-mini.vue 
   <div
     class="t-pagination__total"
   >
-    共 100 项数据
+    共 100 条数据
   </div>
   <div
     class="t-select__wrap t-pagination__select"
@@ -97266,7 +97266,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
             <div
               class="t-pagination__total"
             >
-              共 28 项数据
+              共 28 条数据
             </div>
             <div
               class="t-select__wrap t-pagination__select"
