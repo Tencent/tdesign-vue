@@ -44,7 +44,7 @@ export default defineComponent({
       onPasteFileChange,
     } = uploadData;
 
-    const disabled = computed<boolean>(() => formDisabled.value || innerDisabled.value);
+    const tDisabled = computed<boolean>(() => formDisabled.value || innerDisabled.value);
 
     const commonDisplayFileProps = computed<CommonDisplayFileProps>(() => ({
       accept: props.accept,
@@ -53,7 +53,7 @@ export default defineComponent({
       displayFiles: displayFiles.value,
       theme: props.theme,
       placeholder: props.placeholder,
-      disabled: disabled.value,
+      disabled: tDisabled.value,
       tips: props.tips,
       status: props.status,
       sizeOverLimitMessage: sizeOverLimitMessage.value,
@@ -114,6 +114,7 @@ export default defineComponent({
       uploadClasses,
       triggerButtonProps,
       sizeOverLimitMessage,
+      tDisabled,
     };
   },
 
@@ -122,14 +123,14 @@ export default defineComponent({
       const getDefaultTrigger = () => {
         if (this.theme === 'file-input') {
           return (
-            <Button disabled={this.disabled} variant="outline" {...this.triggerButtonProps}>
+            <Button disabled={this.tDisabled} variant="outline" {...this.triggerButtonProps}>
               {this.triggerUploadText}
             </Button>
           );
         }
         return (
           <Button
-            disabled={this.disabled}
+            disabled={this.tDisabled}
             variant="outline"
             icon={() => <UploadIcon />}
             props={this.triggerButtonProps}
@@ -260,7 +261,7 @@ export default defineComponent({
         <input
           ref="inputRef"
           type="file"
-          disabled={this.disabled}
+          disabled={this.tDisabled}
           onChange={this.onNormalFileChange}
           multiple={this.multiple}
           accept={this.accept}
