@@ -78305,7 +78305,8 @@ exports[`csr snapshot test > csr test ./src/popup/_example/placement.vue 1`] = `
 
 exports[`csr snapshot test > csr test ./src/popup/_example/plugin.vue 1`] = `
 <div
-  class="t-space t-space-horizontal"
+  class="t-space t-space-vertical"
+  data-v-5909da2b=""
   style="gap: 16px;"
 >
   <div
@@ -78313,12 +78314,13 @@ exports[`csr snapshot test > csr test ./src/popup/_example/plugin.vue 1`] = `
   >
     <button
       class="trigger-element1 t-button t-button--variant-outline t-button--theme-default"
+      data-v-5909da2b=""
       type="button"
     >
       <span
         class="t-button__text"
       >
-        已渲染的节点1
+        正常的方式打开
       </span>
     </button>
   </div>
@@ -78327,28 +78329,34 @@ exports[`csr snapshot test > csr test ./src/popup/_example/plugin.vue 1`] = `
   >
     <button
       class="trigger-element2 t-button t-button--variant-outline t-button--theme-default"
+      data-v-5909da2b=""
       type="button"
     >
       <span
         class="t-button__text"
       >
-        已渲染的节点2
+        通过Plugin打开，并修改不同浮层的配置
       </span>
     </button>
   </div>
   <div
     class="t-space-item"
   >
-    <button
-      class="trigger-element3 t-button t-button--variant-outline t-button--theme-default"
-      type="button"
+    <div
+      data-v-5909da2b=""
     >
       <span
-        class="t-button__text"
+        data-v-5909da2b=""
       >
-        已渲染的节点3
+        这里是一个日志查询的例子，在很长的日志内容中，日志内容存在换行的情况，可以点击链接进行日志查询操作
       </span>
-    </button>
+      <a
+        class="trigger-element3"
+        data-v-5909da2b=""
+      >
+        点击此链接，会打开浮层进行跳转操作
+      </a>
+    </div>
   </div>
 </div>
 `;
