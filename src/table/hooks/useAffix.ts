@@ -1,6 +1,7 @@
 import {
   computed, ref, watch, onBeforeUnmount,
 } from 'vue';
+import debounce from 'lodash/debounce';
 import { TdBaseTableProps } from '../type';
 import { on, off } from '../../utils/dom';
 import { AffixProps } from '../../affix';
@@ -27,7 +28,7 @@ export default function useAffix(props: TdBaseTableProps) {
   const showAffixFooter = ref(true);
   // 当表格完全滚动消失在视野时，需要隐藏吸底分页器
   const showAffixPagination = ref(true);
-  // 当鼠标按下拖动内容来滚动时，需要更新表头位置
+  // 当鼠标按下拖动内容来滚动时，需要更新表头位置（Windows 按下鼠标横向滚动，滚动结束后，再松开鼠标）
   let isMousedown = false;
   let isMouseInScrollableArea = false;
 
@@ -189,6 +190,8 @@ export default function useAffix(props: TdBaseTableProps) {
     on(window, 'mousedown', onMousedown);
     on(window, 'mouseup', onMouseup);
 
+    removeHorizontalScrollListeners();
+
     if (affixHeaderRef.value) {
       on(affixHeaderRef.value, 'mouseenter', onHeaderMouseEnter);
       on(affixHeaderRef.value, 'mouseleave', onHeaderMouseLeave);
@@ -210,25 +213,81 @@ export default function useAffix(props: TdBaseTableProps) {
     }
   };
 
+  // 记录激活中的 scroll，在新元素点击时要进行抢占
+  const activatingTouchScrollListenerCleanups: Array<() => void> = [];
+  const setupElementTouchScrollListener = (element: HTMLElement) => {
+    // 思路来源 https://github.com/vueuse/vueuse/blob/main/packages/core/useScroll/index.ts
+    // 兼容不支持 scrollend 但是又存在惯性滑动的场景，例如 safari
+    const debounceOffScrollListener = debounce((listener) => {
+      off(element, 'scroll', listener);
+    }, 200);
+
+    function onElementTouchScroll() {
+      onHorizontalScroll(element);
+      debounceOffScrollListener(onElementTouchScroll);
+    }
+    function onElementTouchStart(e: UIEvent) {
+      if (e.composedPath().includes(element)) {
+        // 下一次 touch 清理所有的 scroll，不同于 pc 端的 enter，触碰打断是合理的
+        activatingTouchScrollListenerCleanups.forEach((cleanup) => cleanup());
+        activatingTouchScrollListenerCleanups.length = 0;
+        // 即使是相同元素也重新绑定，因为 touch 必定带来滑动停止
+        on(element, 'scroll', onElementTouchScroll);
+        // 有可能触碰了一下，没触发 scroll，也销毁
+        debounceOffScrollListener(onElementTouchScroll);
+        activatingTouchScrollListenerCleanups.push(() => {
+          off(element, 'scroll', onElementTouchScroll);
+        });
+      }
+    }
+
+    on(element, 'touchstart', onElementTouchStart);
+
+    function removeElementTouchScrollListener() {
+      off(element, 'touchstart', onElementTouchStart);
+    }
+
+    return {
+      removeElementTouchScrollListener,
+    };
+  };
+
+  // 清理所有 touch 相关的逻辑
+  const elementTouchScrollCleanups: Array<() => void> = [];
+  const cleanupElementTouchScroll = () => {
+    elementTouchScrollCleanups.forEach((cleanup) => cleanup());
+    elementTouchScrollCleanups.length = 0;
+  };
+
   const removeHorizontalScrollListeners = () => {
     off(window, 'mousedown', onMousedown);
     off(window, 'mouseup', onMouseup);
 
+    cleanupElementTouchScroll();
+
     if (affixHeaderRef.value) {
       off(affixHeaderRef.value, 'mouseenter', onHeaderMouseEnter);
       off(affixHeaderRef.value, 'mouseleave', onHeaderMouseLeave);
+      const { removeElementTouchScrollListener } = setupElementTouchScrollListener(affixHeaderRef.value);
+      elementTouchScrollCleanups.push(removeElementTouchScrollListener);
     }
     if (affixFooterRef.value) {
       off(affixFooterRef.value, 'mouseenter', onFootMouseEnter);
       off(affixFooterRef.value, 'mouseleave', onFootMouseLeave);
+      const { removeElementTouchScrollListener } = setupElementTouchScrollListener(affixFooterRef.value);
+      elementTouchScrollCleanups.push(removeElementTouchScrollListener);
     }
     if (tableContentRef.value) {
       off(tableContentRef.value, 'mouseenter', onTableContentMouseEnter);
       off(tableContentRef.value, 'mouseleave', onTableContentMouseLeave);
+      const { removeElementTouchScrollListener } = setupElementTouchScrollListener(horizontalScrollbarRef.value);
+      elementTouchScrollCleanups.push(removeElementTouchScrollListener);
     }
     if (horizontalScrollbarRef.value) {
       off(horizontalScrollbarRef.value, 'mouseenter', onScrollbarMouseEnter);
       off(horizontalScrollbarRef.value, 'mouseleave', onScrollbarMouseLeave);
+      const { removeElementTouchScrollListener } = setupElementTouchScrollListener(tableContentRef.value);
+      elementTouchScrollCleanups.push(removeElementTouchScrollListener);
     }
   };
 
@@ -268,6 +327,10 @@ export default function useAffix(props: TdBaseTableProps) {
   onBeforeUnmount(() => {
     off(document, 'scroll', onDocumentScroll);
     removeHorizontalScrollListeners();
+    affixHeaderRef.value = null;
+    affixFooterRef.value = null;
+    horizontalScrollbarRef.value = null;
+    tableContentRef.value = null;
   });
 
   const setTableContentRef = (tableContent: HTMLDivElement) => {

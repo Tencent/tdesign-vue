@@ -54,6 +54,10 @@ export default {
     type: [Boolean, Function] as PropType<TdCardProps['loading']>,
     default: false,
   },
+  /** 透传加载组件(Loading)全部属性 */
+  loadingProps: {
+    type: Object as PropType<TdCardProps['loadingProps']>,
+  },
   /** 是否显示卡片阴影，默认不显示 */
   shadow: Boolean,
   /** 尺寸 */

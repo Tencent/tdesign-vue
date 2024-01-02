@@ -5,6 +5,29 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.8.4 `2024-01-02` 
+### 🚀 Features
+- `Upload`: 手动上传场景，支持进行粘贴上传 @chaishi ([#2991](https://github.com/Tencent/tdesign-vue/pull/2991))
+- `Card`: 支持传入`loadingProps`参数修改加载状态的展示 @iiimix ([#2959](https://github.com/Tencent/tdesign-vue/pull/2959))
+
+### 🐞 Bug Fixes
+- `Upload`: @chaishi 
+   - 修复手动上传时，无法更新上传进度问题 ([#2991](https://github.com/Tencent/tdesign-vue/pull/2991))
+    - 修复图片预览时，无法切换预览图片问题 ([#2991](https://github.com/Tencent/tdesign-vue/pull/2991))
+- `Table`: @chaishi 
+    - 横向滚动场景，修复吸顶表头在移动端无法跟随滚动的问题 [#2976](https://github.com/Tencent/tdesign-vue/issues/2976) ([#2990](https://github.com/Tencent/tdesign-vue/pull/2990))
+    - 横向滚动场景，修复横向滚动在有惯性滚动浏览器中的滚动的问题 ([#2990](https://github.com/Tencent/tdesign-vue/pull/2990))
+   -  横向滚动场景，修复在 Windows 场景中，按下鼠标（不松开鼠标）横向滚动时，表头没有跟随滚动的问题 ([#2990](https://github.com/Tencent/tdesign-vue/pull/2990))
+   -  修复可筛选表格，修复筛选值为 `0` 时，筛选图表没有高亮的问题，[#2987](https://github.com/Tencent/tdesign-vue/issues/2987)  ([#2990](https://github.com/Tencent/tdesign-vue/pull/2990))
+- `Pagination`: 将总数单位 `项` 改为 `条` , 保持内容一致性 @dinghuihua ([#2996](https://github.com/Tencent/tdesign-vue/pull/2996))
+- `Radio`: 处理选中状态也会触发 `change` 事件的问题 @betavs ([#3000](https://github.com/Tencent/tdesign-vue/pull/3000))
+- `Textarea`: 修复组件初始处于隐藏状态，可视后未做高度再计算的问题 @azx1573 ([#3003](https://github.com/Tencent/tdesign-vue/pull/3003))
+- `ImageViewer`: 添加defaultScale @sinbadmaster ([#3013](https://github.com/Tencent/tdesign-vue/pull/3013))
+- `Upload`: 修复 `Form` 的 `disabled` 属性没有作用到上传组件部分按钮的问题 @uyarn ([#3012](https://github.com/Tencent/tdesign-vue/pull/3012))
+- `Select`: 修复`naruto`版本`minCollapsedNum`与`disabled` API的功能异常问题  @uyarn
+### 🚧 Others
+- `Popup`: 丰富插件使用方式的使用示例 @uyarn ([#3014](https://github.com/Tencent/tdesign-vue/pull/3014))
+
 ## 🌈 1.8.3 `2023-12-15` 
 ### 🚀 Features
 - `Upload`: 新增支持 `uploadPastedFiles`，用于控制是否允许用户粘贴文件上传，默认允许 @chaishi ([#2966](https://github.com/Tencent/tdesign-vue/pull/2966))

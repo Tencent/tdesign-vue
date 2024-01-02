@@ -136,16 +136,7 @@ export default defineComponent({
     },
   },
   render() {
-    if (this.loading) {
-      return renderTNodeJSX(this, 'loading', {
-        defaultNode: (
-          <TLoading>
-            <div class={this.baseCls}></div>
-          </TLoading>
-        ),
-      });
-    }
-    return (
+    const content = (
       <div class={this.baseCls}>
         {this.isHeaderRender ? this.renderHeader() : null}
         {this.showCover ? this.renderCover() : null}
@@ -158,5 +149,12 @@ export default defineComponent({
         )}
       </div>
     );
+
+    if (this.loading) {
+      return renderTNodeJSX(this, 'loading', {
+        defaultNode: <t-loading props={this.loadingProps}>{content}</t-loading>,
+      });
+    }
+    return content;
   },
 });
