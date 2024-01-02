@@ -51747,6 +51747,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
             >
               <input
                 accept="image/*"
+                disabled="disabled"
                 hidden="hidden"
                 type="file"
               />
