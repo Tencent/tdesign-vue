@@ -1,7 +1,7 @@
 {
   "name": "tdesign-vue",
   "purename": "tdesign",
-  "version": "1.8.3",
+  "version": "1.8.4",
   "description": "tdesign-vue",
   "title": "tdesign-vue",
   "keywords": [
@@ -126,7 +126,7 @@
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/experimental-utils": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
-    "@typescript-eslint/typescript-estree": "^5.4.0",
+    "@typescript-eslint/typescript-estree": "^6.16.0",
     "@vitest/coverage-c8": "^0.28.3",
     "@vitest/ui": "^0.24.3",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.2.1",

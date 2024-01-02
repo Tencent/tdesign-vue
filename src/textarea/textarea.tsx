@@ -86,7 +86,19 @@ export default mixins(Vue as VueConstructor<Textarea>, classPrefixMixins).extend
     },
   },
   mounted() {
-    this.adjustTextareaHeight();
+    const textareaElem = this.$refs.refTextareaElem as HTMLInputElement;
+    if (textareaElem) {
+      textareaElem.addEventListener('transitionend', this.adjustTextareaHeightAfterReady);
+    } else {
+      this.adjustTextareaHeightAfterReady();
+    }
+  },
+
+  beforeDestroy() {
+    const textareaElem = this.$refs.refTextareaElem as HTMLInputElement;
+    if (textareaElem) {
+      textareaElem.removeEventListener('transitionend', this.adjustTextareaHeightAfterReady);
+    }
   },
 
   watch: {
@@ -123,6 +135,12 @@ export default mixins(Vue as VueConstructor<Textarea>, classPrefixMixins).extend
       } else if (this.$attrs.rows) {
         this.textareaStyle = { height: 'auto', minHeight: 'auto' };
       }
+    },
+    /**
+     * Provide a method to calculate the height of textArea component after DOM mounted
+     */
+    adjustTextareaHeightAfterReady() {
+      this.$nextTick(() => this.adjustTextareaHeight());
     },
     emitEvent(name: string, value: string | number, context: object) {
       this.$emit(name, value, context);

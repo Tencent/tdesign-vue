@@ -16,7 +16,7 @@ import { setTransform } from '../utils/helper';
 import { TdImageViewerProps } from './type';
 import { useMirror, useRotate, useScale } from './hooks';
 import { formatImages, getOverlay } from './utils';
-import { EVENT_CODE } from './const';
+import { EVENT_CODE, DEFAULT_IMAGE_SCALE } from './const';
 import Image from '../image';
 
 export default defineComponent({
@@ -61,10 +61,11 @@ export default defineComponent({
       isExpand.value = !isExpand.value;
     };
 
+    const imageScaleRef = computed(() => props.imageScale ?? DEFAULT_IMAGE_SCALE);
     const { mirror, onMirror, resetMirror } = useMirror();
     const {
       scale, onZoomIn, onZoomOut, resetScale,
-    } = useScale(props.imageScale);
+    } = useScale(imageScaleRef);
     const { rotate, onRotate, resetRotate } = useRotate();
     const onRest = () => {
       resetMirror();
