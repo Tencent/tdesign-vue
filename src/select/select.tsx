@@ -90,6 +90,7 @@ export default defineComponent({
     const keys = computed(() => ({
       label: props.keys?.label || 'label',
       value: props.keys?.value || 'value',
+      disabled: props.keys?.disabled || 'disabled',
     }));
     const { options: innerOptions, optionsMap, optionsList } = useSelectOptions(props, instance, keys);
 
@@ -265,7 +266,7 @@ export default defineComponent({
           collapsedSelectedItems: values
             .map((item: any) => {
               const tmpValue = typeof item === 'object' ? item[props.keys?.value || 'value'] : item;
-              return props.options.find((t: OptionData) => t.value === tmpValue);
+              return props.options?.find((t: OptionData) => t.value === tmpValue);
             })
             .slice(minCollapsedNum.value),
           count: values.length - minCollapsedNum.value,
