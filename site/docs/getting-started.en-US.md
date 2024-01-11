@@ -115,10 +115,10 @@ const { TDesignResolver } = require('unplugin-vue-components/resolvers');
 module.exports = {
   // ...
   plugins: [
-    AutoImport({
+    AutoImport.default({
       resolvers: [TDesignResolver()],
     }),
-    Components({
+    Components.default({
       resolvers: [TDesignResolver()],
     }),
   ],
