@@ -19,12 +19,15 @@
   </t-space>
 </template>
 
-<script setup>
-import { ref } from 'vue';
-
-const layout = ref('horizontal');
-const itemLayout = ref('horizontal');
-
-const layoutOptions = ['horizontal', 'vertical'];
-const itemLayoutOptions = ['horizontal', 'vertical'];
+<script>
+export default {
+  data() {
+    return {
+      layout: 'horizontal',
+      itemLayout: 'horizontal',
+      layoutOptions: ['horizontal', 'vertical'],
+      itemLayoutOptions: ['horizontal', 'vertical'],
+    };
+  },
+};
 </script>

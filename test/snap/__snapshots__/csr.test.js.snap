@@ -43537,6 +43537,908 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/year.vue 1`] = 
 </div>
 `;
 
+exports[`csr snapshot test > csr test ./src/descriptions/_example/base.vue 1`] = `
+<div
+  class="t-descriptions"
+>
+  <div
+    class="t-descriptions__header"
+  >
+    Shipping address
+  </div>
+  <table
+    class="t-descriptions__body t-size-m t-descriptions__body--border"
+  >
+    <tbody>
+      <div
+        style="display: contents;"
+      >
+        <tr>
+          <td
+            class="t-descriptions__label"
+            colspan="1"
+          >
+            Name
+          </td>
+          <td
+            class="t-descriptions__content"
+            colspan="1"
+          >
+            TDesign
+          </td>
+          <td
+            class="t-descriptions__label"
+            colspan="1"
+          >
+            Telephone Number
+          </td>
+          <td
+            class="t-descriptions__content"
+            colspan="1"
+          >
+            139****0609
+          </td>
+        </tr>
+         
+      </div>
+      <div
+        style="display: contents;"
+      >
+        <tr>
+          <td
+            class="t-descriptions__label"
+            colspan="1"
+          >
+            Area
+          </td>
+          <td
+            class="t-descriptions__content"
+            colspan="1"
+          >
+            China Tencent Headquarters
+          </td>
+          <td
+            class="t-descriptions__label"
+            colspan="1"
+          >
+            Address
+          </td>
+          <td
+            class="t-descriptions__content"
+            colspan="1"
+          >
+            asds
+          </td>
+        </tr>
+         
+      </div>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/descriptions/_example/bordered.vue 1`] = `
+<div
+  class="t-descriptions"
+>
+  <div
+    class="t-descriptions__header"
+  >
+    Shipping address
+  </div>
+  <table
+    class="t-descriptions__body t-size-m t-descriptions__body--border"
+  >
+    <tbody>
+      <div
+        style="display: contents;"
+      >
+        <tr>
+          <td
+            class="t-descriptions__label"
+            colspan="1"
+          >
+            Name
+          </td>
+          <td
+            class="t-descriptions__content"
+            colspan="1"
+          >
+            TDesign
+          </td>
+          <td
+            class="t-descriptions__label"
+            colspan="1"
+          >
+            Telephone Number
+          </td>
+          <td
+            class="t-descriptions__content"
+            colspan="1"
+          >
+            139****0609
+          </td>
+          <td
+            class="t-descriptions__label"
+            colspan="1"
+          >
+            Area
+          </td>
+          <td
+            class="t-descriptions__content"
+            colspan="1"
+          >
+            China Tencent Headquarters
+          </td>
+        </tr>
+         
+      </div>
+      <div
+        style="display: contents;"
+      >
+        <tr>
+          <td
+            class="t-descriptions__label"
+            colspan="1"
+          >
+            Address
+          </td>
+          <td
+            class="t-descriptions__content"
+            colspan="5"
+          >
+            Shenzhen Penguin Island D1 4A Mail Center
+          </td>
+        </tr>
+         
+      </div>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/descriptions/_example/colon.vue 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <label
+      class="t-checkbox"
+      tabindex="0"
+    >
+      <input
+        class="t-checkbox__former"
+        tabindex="-1"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        展示引号
+      </span>
+    </label>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-descriptions"
+    >
+      <div
+        class="t-descriptions__header"
+      >
+        Shipping address
+      </div>
+      <table
+        class="t-descriptions__body t-size-m t-descriptions__body--border"
+      >
+        <tbody>
+          <div
+            style="display: contents;"
+          >
+            <tr>
+              <td
+                class="t-descriptions__label"
+                colspan="1"
+              >
+                Name
+              </td>
+              <td
+                class="t-descriptions__content"
+                colspan="1"
+              >
+                TDesign
+              </td>
+              <td
+                class="t-descriptions__label"
+                colspan="1"
+              >
+                Telephone Number
+              </td>
+              <td
+                class="t-descriptions__content"
+                colspan="1"
+              >
+                139****0609
+              </td>
+              <td
+                class="t-descriptions__label"
+                colspan="1"
+              >
+                Area
+              </td>
+              <td
+                class="t-descriptions__content"
+                colspan="1"
+              >
+                China Tencent Headquarters
+              </td>
+            </tr>
+             
+          </div>
+          <div
+            style="display: contents;"
+          >
+            <tr>
+              <td
+                class="t-descriptions__label"
+                colspan="1"
+              >
+                Address
+              </td>
+              <td
+                class="t-descriptions__content"
+                colspan="5"
+              >
+                Shenzhen Penguin Island D1 4A Mail Center
+              </td>
+            </tr>
+             
+          </div>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/descriptions/_example/column.vue 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-radio-group t-size-m t-radio-group__outline"
+    >
+      <label
+        class="t-radio t-is-checked"
+        tabindex="0"
+      >
+        <input
+          class="t-radio__former"
+          data-value="2"
+          tabindex="-1"
+          type="radio"
+          value="2"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          2
+        </span>
+      </label>
+      <label
+        class="t-radio"
+        tabindex="0"
+      >
+        <input
+          class="t-radio__former"
+          data-value="3"
+          tabindex="-1"
+          type="radio"
+          value="3"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          3
+        </span>
+      </label>
+      <label
+        class="t-radio"
+        tabindex="0"
+      >
+        <input
+          class="t-radio__former"
+          data-value="4"
+          tabindex="-1"
+          type="radio"
+          value="4"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          4
+        </span>
+      </label>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-descriptions"
+    >
+      <table
+        class="t-descriptions__body t-size-m t-descriptions__body--border"
+      >
+        <tbody>
+          <div
+            style="display: contents;"
+          >
+            <tr>
+              <td
+                class="t-descriptions__label"
+                colspan="1"
+              >
+                Name
+              </td>
+              <td
+                class="t-descriptions__content"
+                colspan="1"
+              >
+                TDesign
+              </td>
+              <td
+                class="t-descriptions__label"
+                colspan="1"
+              >
+                Telephone Number
+              </td>
+              <td
+                class="t-descriptions__content"
+                colspan="1"
+              >
+                139****0609
+              </td>
+            </tr>
+             
+          </div>
+          <div
+            style="display: contents;"
+          >
+            <tr>
+              <td
+                class="t-descriptions__label"
+                colspan="1"
+              >
+                Area
+              </td>
+              <td
+                class="t-descriptions__content"
+                colspan="1"
+              >
+                China Tencent Headquarters
+              </td>
+              <td
+                class="t-descriptions__label"
+                colspan="1"
+              >
+                Address
+              </td>
+              <td
+                class="t-descriptions__content"
+                colspan="1"
+              >
+                Shenzhen Penguin Island D1 4A Mail Center
+              </td>
+            </tr>
+             
+          </div>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/descriptions/_example/custom-style.vue 1`] = `
+<div
+  class="t-descriptions"
+>
+  <div
+    class="t-descriptions__header"
+  >
+    Shipping address
+  </div>
+  <table
+    class="t-descriptions__body t-size-m t-descriptions__body--border"
+  >
+    <tbody>
+      <div
+        style="display: contents;"
+      >
+        <tr>
+          <td
+            class="t-descriptions__label"
+            colspan="1"
+            style="width: 100px; text-align: left;"
+          >
+            Name
+          </td>
+          <td
+            class="t-descriptions__content"
+            colspan="1"
+            style="text-align: right;"
+          >
+            TDesign
+          </td>
+          <td
+            class="t-descriptions__label"
+            colspan="1"
+            style="width: 100px; text-align: left;"
+          >
+            Telephone Number
+          </td>
+          <td
+            class="t-descriptions__content"
+            colspan="1"
+            style="text-align: right;"
+          >
+            139****0609
+          </td>
+          <td
+            class="t-descriptions__label"
+            colspan="1"
+            style="width: 100px; text-align: left;"
+          >
+            Area
+          </td>
+          <td
+            class="t-descriptions__content"
+            colspan="1"
+            style="text-align: right;"
+          >
+            China Tencent Headquarters
+          </td>
+        </tr>
+         
+      </div>
+      <div
+        style="display: contents;"
+      >
+        <tr>
+          <td
+            class="t-descriptions__label"
+            colspan="1"
+            style="width: 100px; text-align: left;"
+          >
+            Address
+          </td>
+          <td
+            class="t-descriptions__content"
+            colspan="5"
+            style="text-align: right;"
+          >
+            Shenzhen Penguin Island D1 4A Mail Center
+          </td>
+        </tr>
+         
+      </div>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/descriptions/_example/items.vue 1`] = `
+<div
+  class="t-descriptions"
+>
+  <div
+    class="t-descriptions__header"
+  >
+    Shipping address
+  </div>
+  <table
+    class="t-descriptions__body t-size-m t-descriptions__body--border"
+  >
+    <tbody>
+      <div
+        style="display: contents;"
+      >
+        <tr>
+          <td
+            class="t-descriptions__label"
+            colspan="1"
+          >
+            Name
+          </td>
+          <td
+            class="t-descriptions__content"
+            colspan="5"
+          >
+            TDesign
+          </td>
+        </tr>
+         
+      </div>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/descriptions/_example/layout.vue 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-row t-row--start t-row--align-top"
+      style="margin-left: 0px; margin-right: 0px;"
+    >
+      <span>
+        layout：
+      </span>
+      <div
+        class="t-radio-group t-size-m t-radio-group__outline"
+      >
+        <label
+          class="t-radio t-is-checked"
+          tabindex="0"
+        >
+          <input
+            class="t-radio__former"
+            data-value="'horizontal'"
+            tabindex="-1"
+            type="radio"
+            value="horizontal"
+          />
+          <span
+            class="t-radio__input"
+          />
+          <span
+            class="t-radio__label"
+          >
+            horizontal
+          </span>
+        </label>
+        <label
+          class="t-radio"
+          tabindex="0"
+        >
+          <input
+            class="t-radio__former"
+            data-value="'vertical'"
+            tabindex="-1"
+            type="radio"
+            value="vertical"
+          />
+          <span
+            class="t-radio__input"
+          />
+          <span
+            class="t-radio__label"
+          >
+            vertical
+          </span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-row t-row--start t-row--align-top"
+      style="margin-left: 0px; margin-right: 0px;"
+    >
+      <span>
+        itemLayout：
+      </span>
+      <div
+        class="t-radio-group t-size-m t-radio-group__outline"
+      >
+        <label
+          class="t-radio t-is-checked"
+          tabindex="0"
+        >
+          <input
+            class="t-radio__former"
+            data-value="'horizontal'"
+            tabindex="-1"
+            type="radio"
+            value="horizontal"
+          />
+          <span
+            class="t-radio__input"
+          />
+          <span
+            class="t-radio__label"
+          >
+            horizontal
+          </span>
+        </label>
+        <label
+          class="t-radio"
+          tabindex="0"
+        >
+          <input
+            class="t-radio__former"
+            data-value="'vertical'"
+            tabindex="-1"
+            type="radio"
+            value="vertical"
+          />
+          <span
+            class="t-radio__input"
+          />
+          <span
+            class="t-radio__label"
+          >
+            vertical
+          </span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-descriptions"
+    >
+      <div
+        class="t-descriptions__header"
+      >
+        Shipping address
+      </div>
+      <table
+        class="t-descriptions__body t-size-m t-descriptions__body--border"
+      >
+        <tbody>
+          <div
+            style="display: contents;"
+          >
+            <tr>
+              <td
+                class="t-descriptions__label"
+                colspan="1"
+              >
+                Name
+              </td>
+              <td
+                class="t-descriptions__content"
+                colspan="1"
+              >
+                TDesign
+              </td>
+              <td
+                class="t-descriptions__label"
+                colspan="1"
+              >
+                Telephone Number
+              </td>
+              <td
+                class="t-descriptions__content"
+                colspan="1"
+              >
+                139****0609
+              </td>
+              <td
+                class="t-descriptions__label"
+                colspan="1"
+              >
+                Area
+              </td>
+              <td
+                class="t-descriptions__content"
+                colspan="1"
+              >
+                China Tencent Headquarters
+              </td>
+            </tr>
+             
+          </div>
+          <div
+            style="display: contents;"
+          >
+            <tr>
+              <td
+                class="t-descriptions__label"
+                colspan="1"
+              >
+                Address
+              </td>
+              <td
+                class="t-descriptions__content"
+                colspan="5"
+              >
+                Shenzhen Penguin Island D1 4A Mail Center
+              </td>
+            </tr>
+             
+          </div>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/descriptions/_example/size.vue 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-radio-group t-size-m t-radio-group__outline"
+    >
+      <label
+        class="t-radio"
+        tabindex="0"
+      >
+        <input
+          class="t-radio__former"
+          data-value="'large'"
+          tabindex="-1"
+          type="radio"
+          value="large"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          large
+        </span>
+      </label>
+      <label
+        class="t-radio t-is-checked"
+        tabindex="0"
+      >
+        <input
+          class="t-radio__former"
+          data-value="'medium'"
+          tabindex="-1"
+          type="radio"
+          value="medium"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          medium
+        </span>
+      </label>
+      <label
+        class="t-radio"
+        tabindex="0"
+      >
+        <input
+          class="t-radio__former"
+          data-value="'small'"
+          tabindex="-1"
+          type="radio"
+          value="small"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          small
+        </span>
+      </label>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-descriptions"
+    >
+      <table
+        class="t-descriptions__body t-size-m t-descriptions__body--border"
+      >
+        <tbody>
+          <div
+            style="display: contents;"
+          >
+            <tr>
+              <td
+                class="t-descriptions__label"
+                colspan="1"
+              >
+                Name
+              </td>
+              <td
+                class="t-descriptions__content"
+                colspan="1"
+              >
+                TDesign
+              </td>
+              <td
+                class="t-descriptions__label"
+                colspan="1"
+              >
+                Telephone Number
+              </td>
+              <td
+                class="t-descriptions__content"
+                colspan="1"
+              >
+                139****0609
+              </td>
+              <td
+                class="t-descriptions__label"
+                colspan="1"
+              >
+                Area
+              </td>
+              <td
+                class="t-descriptions__content"
+                colspan="1"
+              >
+                China Tencent Headquarters
+              </td>
+            </tr>
+             
+          </div>
+          <div
+            style="display: contents;"
+          >
+            <tr>
+              <td
+                class="t-descriptions__label"
+                colspan="1"
+              >
+                Address
+              </td>
+              <td
+                class="t-descriptions__content"
+                colspan="5"
+              >
+                Shenzhen Penguin Island D1 4A Mail Center
+              </td>
+            </tr>
+             
+          </div>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`csr snapshot test > csr test ./src/dialog/_example/async.vue 1`] = `
 <div>
   <div

@@ -2,13 +2,16 @@
   <t-descriptions title="Shipping address" :items="items" :column="3" />
 </template>
 
-<script setup lang="jsx">
-const items = [
-  { label: 'Name', content: 'TDesign' },
-  { label: <button>Telephone Number</button>, content: '139****0609' },
-  { label: 'Area', content: <h3>China Tencent Headquarters</h3> },
-  { label: () => <i>'Address'</i>, content: () => <mark> 'Shenzhen Penguin Island D1 4A Mail Center'</mark> },
-];
+<script lang="jsx">
+const items = [{ label: 'Name', content: 'TDesign' }];
+
+export default {
+  data() {
+    return {
+      items,
+    };
+  },
+};
 </script>
 
 <!-- <template>

@@ -35,7 +35,6 @@ export default defineComponent({
     const COMPONENT_NAME = usePrefixClass('descriptions');
     const { SIZE } = useCommonClassName();
     const getChildByName = useChildComponentSlots();
-    const renderTNodeJSX = useTNodeJSX();
     const itemsType = ref<ItemsType>(ItemsType.props);
 
     // 计算渲染的行内容
@@ -121,17 +120,25 @@ export default defineComponent({
 
     provide(descriptionsKey, props);
 
+    return {
+      COMPONENT_NAME,
+      SIZE,
+      getRows,
+      itemsType,
+    };
+  },
+  render() {
     const renderBody = () => {
       const tableClass = [
-        `${COMPONENT_NAME.value}__body`,
-        SIZE.value[props.size],
-        { [`${COMPONENT_NAME.value}__body--border`]: props.bordered },
+        `${this.COMPONENT_NAME}__body`,
+        this.SIZE[this.$props.size],
+        { [`${this.COMPONENT_NAME}__body--border`]: props.bordered },
       ];
       return (
         <table class={tableClass}>
           <tbody>
-            {getRows().map((row) => (
-              <DescriptionsRow item-type={itemsType.value} row={row} />
+            {this.getRows().map((row) => (
+              <DescriptionsRow item-type={this.itemsType} row={row} />
             ))}
           </tbody>
         </table>
@@ -139,12 +146,13 @@ export default defineComponent({
     };
 
     const renderHeader = () => {
+      const renderTNodeJSX = useTNodeJSX();
       const title = renderTNodeJSX('title');
-      return title ? <div class={`${COMPONENT_NAME.value}__header`}>{title}</div> : '';
+      return title ? <div class={`${this.COMPONENT_NAME}__header`}>{title}</div> : '';
     };
 
-    return () => (
-      <div class={COMPONENT_NAME.value}>
+    return (
+      <div class={this.COMPONENT_NAME}>
         {renderHeader()}
         {renderBody()}
       </div>

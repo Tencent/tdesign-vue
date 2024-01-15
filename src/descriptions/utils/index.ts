@@ -1,6 +1,5 @@
-import {
-  VNode, Slots, h, ComponentOptions,
-} from 'vue';
+import { h } from '@vue/composition-api';
+import { VNode } from 'vue';
 import isFunction from 'lodash/isFunction';
 import isString from 'lodash/isString';
 
@@ -16,7 +15,7 @@ import { TdDescriptionItemProps } from '../type';
  * @param params
  * @returns
  */
-export function renderCustomNode(node: string | ((...args: any[]) => any) | ComponentOptions, params = {}) {
+export function renderCustomNode(node: string | ((...args: any[]) => any), params = {}) {
   if (isString(node)) {
     return node;
   }
@@ -38,15 +37,13 @@ export function renderCustomNode(node: string | ((...args: any[]) => any) | Comp
  * @returns
  */
 export function renderVNodeTNode(node: VNode, name1: string, name2?: string) {
-  const prop = node.props?.[name1];
+  const prop = node.componentOptions.propsData?.[name1];
   if (prop) return prop;
 
-  const children = node.children as Slots;
-  const slot = children?.[name1] || children?.[name2];
+  const slot = node.data.scopedSlots?.[name1]?.() || node.data.scopedSlots?.[name2]?.();
+  if (slot) return slot;
 
-  if (slot) return slot?.();
-
-  return null;
+  return node.componentOptions.children;
 }
 
 /**

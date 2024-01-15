@@ -10,8 +10,12 @@
   </t-space>
 </template>
 
-<script setup>
-import { ref } from 'vue';
-
-const checked = ref(true);
+<script>
+export default {
+  data() {
+    return {
+      checked: false,
+    };
+  },
+};
 </script>

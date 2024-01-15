@@ -14,9 +14,10 @@ export default defineComponent({
     row: Array as PropType<TdDescriptionItem[]>,
     itemType: String as PropType<ItemsType>,
   },
-  setup(props) {
+  render() {
     const descriptionsProps = inject<TdDescriptionsProps>(descriptionsKey);
     const COMPONENT_NAME = usePrefixClass('descriptions');
+    const props = this.$props;
 
     const label = (node: TdDescriptionItem, layout: LayoutEnum = LayoutEnum.HORIZONTAL) => {
       const labelClass = [`${COMPONENT_NAME.value}__label`];
@@ -67,47 +68,23 @@ export default defineComponent({
     // Layout horizontal vertical
     // itemLayout horizontal vertical
 
-    const hh = () => (
-      <tr>
-        {props.row.map((node) => (
-          <>
-            {label(node)}
-            {content(node)}
-          </>
-        ))}
-      </tr>
-    );
+    const hh = () => <tr>{props.row.map((node) => [label(node), content(node)])}</tr>;
 
-    const hv = () => (
-      <>
-        <tr>{props.row.map((node) => label(node, LayoutEnum.VERTICAL))}</tr>
-        <tr>{props.row.map((node) => content(node, LayoutEnum.VERTICAL))}</tr>
-      </>
-    );
+    const hv = () => [
+      <tr>{props.row.map((node) => label(node, LayoutEnum.VERTICAL))}</tr>,
+      <tr>{props.row.map((node) => content(node, LayoutEnum.VERTICAL))}</tr>,
+    ];
 
-    const vh = () => (
-      <>
-        {props.row.map((node) => (
-          <tr>
-            {label(node)}
-            {content(node)}
-          </tr>
-        ))}
-      </>
-    );
+    const vh = () => props.row.map((node) => (
+        <tr>
+          {label(node)}
+          {content(node)}
+        </tr>
+    ));
 
-    const vv = () => (
-      <>
-        {props.row.map((node) => (
-          <>
-            <tr>{label(node)}</tr>
-            <tr>{content(node)}</tr>
-          </>
-        ))}
-      </>
-    );
+    const vv = () => props.row.map((node) => [<tr>{label(node)}</tr>, <tr>{content(node)}</tr>]);
 
-    return () => {
+    const renderRow = () => {
       if (descriptionsProps.layout === LayoutEnum.HORIZONTAL) {
         if (descriptionsProps.itemLayout === LayoutEnum.HORIZONTAL) {
           return hh();
@@ -119,5 +96,7 @@ export default defineComponent({
       }
       return vv();
     };
+
+    return <div style={{ display: 'contents' }}>{renderRow()} </div>;
   },
 });

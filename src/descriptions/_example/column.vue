@@ -10,10 +10,13 @@
   </t-space>
 </template>
 
-<script setup>
-import { ref } from 'vue';
-
-const columnOptions = [2, 3, 4];
-
-const column = ref(2);
+<script>
+export default {
+  data() {
+    return {
+      columnOptions: [2, 3, 4],
+      column: 2,
+    };
+  },
+};
 </script>

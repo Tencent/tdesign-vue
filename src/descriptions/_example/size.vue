@@ -10,9 +10,13 @@
   </t-space>
 </template>
 
-<script setup>
-import { ref } from 'vue';
-
-const sizeOptions = ['large', 'medium', 'small'];
-const size = ref('medium');
+<script>
+export default {
+  data() {
+    return {
+      size: 'medium',
+      sizeOptions: ['large', 'medium', 'small'],
+    };
+  },
+};
 </script>
