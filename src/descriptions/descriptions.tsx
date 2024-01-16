@@ -5,12 +5,12 @@ import { defineComponent, provide, ref } from '@vue/composition-api';
 import { LayoutEnum } from '../common';
 import { useTNodeJSX } from '../hooks/tnode';
 import { useChildComponentSlots } from '../hooks';
-import { usePrefixClass, useCommonClassName } from '../hooks/useConfig';
+import { usePrefixClass } from '../hooks/useConfig';
 
 import props from './props';
 import descriptionsKey from './const';
 import { TdDescriptionsProps } from './type';
-import DescriptionsRow from './descriptions-row';
+import DescriptionsBody from './descriptions-body';
 import { renderCustomNode, itemTypeIsProps } from './utils';
 import { ItemsType, TdDescriptionItem } from './interface';
 
@@ -33,9 +33,10 @@ export default defineComponent({
   props,
   setup(props: TdDescriptionsProps) {
     const COMPONENT_NAME = usePrefixClass('descriptions');
-    const { SIZE } = useCommonClassName();
     const getChildByName = useChildComponentSlots();
     const itemsType = ref<ItemsType>(ItemsType.props);
+    const renderTNodeJSX = useTNodeJSX();
+    const title = renderTNodeJSX('title');
 
     // 计算渲染的行内容
     const getRows = () => {
@@ -121,40 +122,19 @@ export default defineComponent({
     provide(descriptionsKey, props);
 
     return {
-      COMPONENT_NAME,
-      SIZE,
+      title,
       getRows,
       itemsType,
+      COMPONENT_NAME,
     };
   },
   render() {
-    const renderBody = () => {
-      const tableClass = [
-        `${this.COMPONENT_NAME}__body`,
-        this.SIZE[this.$props.size],
-        { [`${this.COMPONENT_NAME}__body--border`]: props.bordered },
-      ];
-      return (
-        <table class={tableClass}>
-          <tbody>
-            {this.getRows().map((row) => (
-              <DescriptionsRow item-type={this.itemsType} row={row} />
-            ))}
-          </tbody>
-        </table>
-      );
-    };
-
-    const renderHeader = () => {
-      const renderTNodeJSX = useTNodeJSX();
-      const title = renderTNodeJSX('title');
-      return title ? <div class={`${this.COMPONENT_NAME}__header`}>{title}</div> : '';
-    };
+    const renderHeader = () => (this.title ? <div class={`${this.COMPONENT_NAME}__header`}>{this.title}</div> : '');
 
     return (
       <div class={this.COMPONENT_NAME}>
         {renderHeader()}
-        {renderBody()}
+        <DescriptionsBody item-type={this.itemsType} rows={this.getRows()} />
       </div>
     );
   },

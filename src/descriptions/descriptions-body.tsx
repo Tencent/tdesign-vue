@@ -1,7 +1,7 @@
 import { defineComponent, inject, PropType } from '@vue/composition-api';
 
 import { LayoutEnum } from '../common';
-import { usePrefixClass } from '../hooks/useConfig';
+import { usePrefixClass, useCommonClassName } from '../hooks/useConfig';
 
 import descriptionsKey from './const';
 import { ItemsType, TdDescriptionItem } from './interface';
@@ -11,16 +11,25 @@ import { TdDescriptionsProps } from './type';
 export default defineComponent({
   name: 'TDescriptionsRow',
   props: {
-    row: Array as PropType<TdDescriptionItem[]>,
+    rows: Array as PropType<TdDescriptionItem[][]>,
     itemType: String as PropType<ItemsType>,
   },
-  render() {
+  setup() {
     const descriptionsProps = inject<TdDescriptionsProps>(descriptionsKey);
     const COMPONENT_NAME = usePrefixClass('descriptions');
+    const { SIZE } = useCommonClassName();
+
+    return {
+      descriptionsProps,
+      COMPONENT_NAME,
+      SIZE,
+    };
+  },
+  render() {
     const props = this.$props;
 
     const label = (node: TdDescriptionItem, layout: LayoutEnum = LayoutEnum.HORIZONTAL) => {
-      const labelClass = [`${COMPONENT_NAME.value}__label`];
+      const labelClass = [`${this.COMPONENT_NAME}__label`];
 
       let label = null;
       let span = null;
@@ -35,15 +44,15 @@ export default defineComponent({
       const labelSpan = layout === LayoutEnum.HORIZONTAL ? 1 : span;
 
       return (
-        <td colspan={labelSpan} class={labelClass} {...{ style: descriptionsProps.labelStyle }}>
+        <td colspan={labelSpan} class={labelClass} {...{ style: this.descriptionsProps.labelStyle }}>
           {label}
-          {descriptionsProps.colon && ':'}
+          {this.descriptionsProps.colon && ':'}
         </td>
       );
     };
 
     const content = (node: TdDescriptionItem, layout: LayoutEnum = LayoutEnum.HORIZONTAL) => {
-      const contentClass = [`${COMPONENT_NAME.value}__content`];
+      const contentClass = [`${this.COMPONENT_NAME}__content`];
 
       let content = null;
       let span = null;
@@ -58,7 +67,7 @@ export default defineComponent({
       const contentSpan = span > 1 && layout === LayoutEnum.HORIZONTAL ? span * 2 - 1 : span;
 
       return (
-        <td colspan={contentSpan} class={contentClass} {...{ style: descriptionsProps.contentStyle }}>
+        <td colspan={contentSpan} class={contentClass} {...{ style: this.descriptionsProps.contentStyle }}>
           {content}
         </td>
       );
@@ -68,35 +77,45 @@ export default defineComponent({
     // Layout horizontal vertical
     // itemLayout horizontal vertical
 
-    const hh = () => <tr>{props.row.map((node) => [label(node), content(node)])}</tr>;
+    const hh = (row: TdDescriptionItem[]) => <tr>{row.map((node) => [label(node), content(node)])}</tr>;
 
-    const hv = () => [
-      <tr>{props.row.map((node) => label(node, LayoutEnum.VERTICAL))}</tr>,
-      <tr>{props.row.map((node) => content(node, LayoutEnum.VERTICAL))}</tr>,
+    const hv = (row: TdDescriptionItem[]) => [
+      <tr>{row.map((node) => label(node, LayoutEnum.VERTICAL))}</tr>,
+      <tr>{row.map((node) => content(node, LayoutEnum.VERTICAL))}</tr>,
     ];
 
-    const vh = () => props.row.map((node) => (
+    const vh = (row: TdDescriptionItem[]) => row.map((node) => (
         <tr>
           {label(node)}
           {content(node)}
         </tr>
     ));
 
-    const vv = () => props.row.map((node) => [<tr>{label(node)}</tr>, <tr>{content(node)}</tr>]);
+    const vv = (row: TdDescriptionItem[]) => row.map((node) => [<tr>{label(node)}</tr>, <tr>{content(node)}</tr>]);
 
-    const renderRow = () => {
-      if (descriptionsProps.layout === LayoutEnum.HORIZONTAL) {
-        if (descriptionsProps.itemLayout === LayoutEnum.HORIZONTAL) {
-          return hh();
+    const renderRow = (row: TdDescriptionItem[]) => {
+      if (this.descriptionsProps.layout === LayoutEnum.HORIZONTAL) {
+        if (this.descriptionsProps.itemLayout === LayoutEnum.HORIZONTAL) {
+          return hh(row);
         }
-        return hv();
+        return hv(row);
       }
-      if (descriptionsProps.itemLayout === LayoutEnum.HORIZONTAL) {
-        return vh();
+      if (this.descriptionsProps.itemLayout === LayoutEnum.HORIZONTAL) {
+        return vh(row);
       }
-      return vv();
+      return vv(row);
     };
 
-    return <div style={{ display: 'contents' }}>{renderRow()} </div>;
+    const tableClass = [
+      `${this.COMPONENT_NAME}__body`,
+      this.SIZE[this.descriptionsProps.size],
+      { [`${this.COMPONENT_NAME}__body--border`]: this.descriptionsProps.bordered },
+    ];
+
+    return (
+      <table class={tableClass}>
+        <tbody>{props.rows.map((row) => renderRow(row))}</tbody>
+      </table>
+    );
   },
 });
