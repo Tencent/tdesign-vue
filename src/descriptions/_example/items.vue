@@ -3,7 +3,12 @@
 </template>
 
 <script lang="jsx">
-const items = [{ label: 'Name', content: 'TDesign' }];
+import Base from './base.vue';
+
+const items = [
+  { label: 'Name', content: 'TDesign' },
+  { label: Base, content: '139****0609' },
+];
 
 export default {
   data() {
@@ -13,15 +18,3 @@ export default {
   },
 };
 </script>
-
-<!-- <template>
-  <t-descriptions title="Shipping address" :items="items" />
-</template>
-
-<script setup>
-import Base from './base.vue';
-const items = [
-  { label: 'Name', content: 'TDesign' },
-  { label: Base, content: '139****0609' },
-];
-</script> -->

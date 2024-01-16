@@ -1,4 +1,4 @@
-import { h } from '@vue/composition-api';
+import { h, ComponentInternalInstance } from '@vue/composition-api';
 import { VNode } from 'vue';
 import isFunction from 'lodash/isFunction';
 import isString from 'lodash/isString';
@@ -15,7 +15,7 @@ import { TdDescriptionItemProps } from '../type';
  * @param params
  * @returns
  */
-export function renderCustomNode(node: string | ((...args: any[]) => any), params = {}) {
+export function renderCustomNode(node: string | ((...args: any[]) => any) | ComponentInternalInstance, params = {}) {
   if (isString(node)) {
     return node;
   }
@@ -23,7 +23,7 @@ export function renderCustomNode(node: string | ((...args: any[]) => any), param
     return node(h, params);
   }
   if (isFunction(node.render)) {
-    return node.render(h, params);
+    return <node />;
   }
 
   return node;
@@ -36,7 +36,7 @@ export function renderCustomNode(node: string | ((...args: any[]) => any), param
  * @param name2 slot 别名
  * @returns
  */
-export function renderVNodeTNode(node: VNode, name1: string, name2?: string) {
+export function renderVNodeTNode(node: VNode | ComponentInternalInstance, name1: string, name2?: string) {
   const prop = node.componentOptions.propsData?.[name1];
   if (prop) return prop;
 

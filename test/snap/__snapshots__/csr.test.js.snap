@@ -44074,9 +44074,97 @@ exports[`csr snapshot test > csr test ./src/descriptions/_example/items.vue 1`] 
           </td>
           <td
             class="t-descriptions__content"
-            colspan="5"
+            colspan="1"
           >
             TDesign
+          </td>
+          <td
+            class="t-descriptions__label"
+            colspan="1"
+          >
+            <div
+              class="t-descriptions"
+            >
+              <div
+                class="t-descriptions__header"
+              >
+                Shipping address
+              </div>
+              <table
+                class="t-descriptions__body t-size-m t-descriptions__body--border"
+              >
+                <tbody>
+                  <div
+                    style="display: contents;"
+                  >
+                    <tr>
+                      <td
+                        class="t-descriptions__label"
+                        colspan="1"
+                      >
+                        Name
+                      </td>
+                      <td
+                        class="t-descriptions__content"
+                        colspan="1"
+                      >
+                        TDesign
+                      </td>
+                      <td
+                        class="t-descriptions__label"
+                        colspan="1"
+                      >
+                        Telephone Number
+                      </td>
+                      <td
+                        class="t-descriptions__content"
+                        colspan="1"
+                      >
+                        139****0609
+                      </td>
+                    </tr>
+                     
+                  </div>
+                  <div
+                    style="display: contents;"
+                  >
+                    <tr>
+                      <td
+                        class="t-descriptions__label"
+                        colspan="1"
+                      >
+                        Area
+                      </td>
+                      <td
+                        class="t-descriptions__content"
+                        colspan="1"
+                      >
+                        China Tencent Headquarters
+                      </td>
+                      <td
+                        class="t-descriptions__label"
+                        colspan="1"
+                      >
+                        Address
+                      </td>
+                      <td
+                        class="t-descriptions__content"
+                        colspan="1"
+                      >
+                        asds
+                      </td>
+                    </tr>
+                     
+                  </div>
+                </tbody>
+              </table>
+            </div>
+          </td>
+          <td
+            class="t-descriptions__content"
+            colspan="3"
+          >
+            139****0609
           </td>
         </tr>
          
