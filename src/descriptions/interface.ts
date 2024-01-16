@@ -7,8 +7,3 @@ export enum ItemsType {
 }
 
 export type TdDescriptionItem = TdDescriptionItemProps | VNode;
-
-export type TdDescriptionRowProps = {
-  row: TdDescriptionItem[];
-  itemType: ItemsType;
-};
