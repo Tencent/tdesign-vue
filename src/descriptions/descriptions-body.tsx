@@ -9,7 +9,7 @@ import { renderVNodeTNode, itemTypeIsProps } from './utils';
 import { TdDescriptionsProps } from './type';
 
 export default defineComponent({
-  name: 'TDescriptionsRow',
+  name: 'TDescriptionsBody',
   props: {
     rows: Array as PropType<TdDescriptionItem[][]>,
     itemType: String as PropType<ItemsType>,
