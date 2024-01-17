@@ -170,16 +170,21 @@ export default mixins(Vue as VueConstructor<Textarea>, classPrefixMixins).extend
     inputValueChangeHandle(e: InputEvent) {
       const { target } = e;
       let val = (target as HTMLInputElement).value;
-      if (this.maxlength) {
-        val = limitUnicodeMaxLength(val, Number(this.maxlength));
+      if (!this.isComposing) {
+        if (this.maxlength) {
+          val = limitUnicodeMaxLength(val, Number(this.maxlength));
+        }
+        if (this.maxcharacter && this.maxcharacter >= 0) {
+          const stringInfo = getCharacterLength(val, this.maxcharacter);
+          val = typeof stringInfo === 'object' && stringInfo.characters;
+        }
       }
-      if (this.maxcharacter && this.maxcharacter >= 0) {
-        const stringInfo = getCharacterLength(val, this.maxcharacter);
-        val = typeof stringInfo === 'object' && stringInfo.characters;
-      }
+
       this.$emit('input', val);
-      // 中文输入时不触发 onChange
-      !this.isComposing && this.emitEvent('change', val, { e });
+      // 中文输入结束才触发 onChange
+      if (!this.isComposing) {
+        this.emitEvent('change', val, { e });
+      }
 
       this.$nextTick(() => this.setInputValue(val));
       this.adjustTextareaHeight();
