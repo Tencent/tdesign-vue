@@ -104,17 +104,15 @@ export default function usePagination(props: TdBaseTableProps, context: SetupCon
 
   // eslint-disable-next-line
   const renderPagination = (h: CreateElement) => {
-    if (!pagination.value) return null;
+    if (!innerPagination.value) return null;
     return (
       <div class={`${classPrefix.value}-table__pagination`}>
         <Pagination
-          {...{
-            props: pagination.value,
-            on: {
-              change: (pageInfo: PageInfo) => {
-                const dataSource = getDataSourceAndPaginate(pageInfo.current, pageInfo.pageSize);
-                setInnerPagination?.value?.({ ...innerPagination.value, ...pageInfo }, dataSource);
-              },
+          props={{ ...props.pagination, ...innerPagination.value }}
+          on={{
+            change: (pageInfo: PageInfo) => {
+              const dataSource = getDataSourceAndPaginate(pageInfo.current, pageInfo.pageSize);
+              setInnerPagination?.value?.({ ...innerPagination.value, ...pageInfo }, dataSource);
             },
           }}
           scopedSlots={{ totalContent: context.slots.totalContent }}

@@ -95,7 +95,7 @@ export default defineComponent({
       formatToRowSelectColumn,
       setTSelectedRowKeys,
       onInnerSelectRowClick,
-    } = useRowSelect(props, tableSelectedClasses, dataPagination);
+    } = useRowSelect(props, tableSelectedClasses);
     // 过滤功能
     const {
       hasEmptyCondition,
