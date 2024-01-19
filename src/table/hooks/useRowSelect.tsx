@@ -1,6 +1,6 @@
 // 行选中相关功能：单选 + 多选
 import {
-  computed, toRefs, h, ref, watch, Ref,
+  computed, toRefs, h, ref, watch,
 } from '@vue/composition-api';
 import intersection from 'lodash/intersection';
 import get from 'lodash/get';
@@ -20,12 +20,10 @@ import Checkbox from '../../checkbox';
 import Radio from '../../radio';
 import { ClassName } from '../../common';
 import log from '../../_common/js/log';
-import { PaginationProps } from '../../pagination';
 
 export default function useRowSelect(
   props: TdPrimaryTableProps,
   tableSelectedClasses: TableClassName['tableSelectedClasses'],
-  pagination: Ref<PaginationProps>,
 ) {
   const {
     selectedRowKeys, columns, data, rowKey, reserveSelectedRowOnPaginate,
@@ -56,20 +54,6 @@ export default function useRowSelect(
     if (!singleSelectCol || !singleSelectCol.checkProps || !('allowUncheck' in singleSelectCol.checkProps)) return false;
     return singleSelectCol.checkProps.allowUncheck;
   });
-
-  watch(
-    [data, pagination, reserveSelectedRowOnPaginate],
-    () => {
-      if (reserveSelectedRowOnPaginate.value) return;
-      const {
-        pageSize, current, defaultPageSize, defaultCurrent,
-      } = pagination.value;
-      const tPageSize = pageSize || defaultPageSize;
-      const tCurrent = current || defaultCurrent;
-      currentPaginateData.value = data.value.slice(tPageSize * (tCurrent - 1), tPageSize * tCurrent);
-    },
-    { immediate: true },
-  );
 
   watch(
     [data, columns, tSelectedRowKeys, selectColumn, rowKey],

@@ -34,6 +34,7 @@
       table-layout="auto"
       tableContentWidth="1200"
       lazyLoad
+      resizable
       @expand-change="rehandleExpandChange"
     >
       <template #operation="{ row }">

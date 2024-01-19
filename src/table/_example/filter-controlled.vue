@@ -172,7 +172,6 @@ export default {
           sorter: true,
           // 自定义过滤组件：日期过滤配置，请确保自定义组件包含 value 和 onChange 属性
           filter: {
-            type: 'custom',
             component: DateRangePickerPanel,
             props: {
               firstDayOfWeek: 7,
