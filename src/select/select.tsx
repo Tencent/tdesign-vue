@@ -346,7 +346,7 @@ export default defineComponent({
     };
 
     const handleTagChange = (currentTags: SelectInputValue, context: SelectInputChangeContext) => {
-      const { trigger, index, e } = context;
+      const { trigger, index } = context;
 
       if (['tag-remove', 'backspace'].includes(trigger)) {
         removeTag(index);
