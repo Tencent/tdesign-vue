@@ -1,5 +1,6 @@
 import Vue, { VueConstructor } from 'vue';
 import isFunction from 'lodash/isFunction';
+import merge from 'lodash/merge';
 import { getUnicodeLength, limitUnicodeMaxLength } from '../_common/js/utils/helper';
 import { getPropsApiByEvent, getCharacterLength } from '../utils/helper';
 import calcTextareaHeight from './calcTextareaHeight';
@@ -7,6 +8,7 @@ import { renderTNodeJSX } from '../utils/render-tnode';
 import { ClassName } from '../common';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
+import setStyle from '../_common/js/utils/set-style';
 
 import props from './props';
 import type { TextareaValue } from './type';
@@ -116,6 +118,13 @@ export default mixins(Vue as VueConstructor<Textarea>, classPrefixMixins).extend
     value: {
       handler() {
         this.$nextTick(() => this.adjustTextareaHeight());
+      },
+      immediate: true,
+    },
+    textareaStyle: {
+      handler(val) {
+        const { style } = this.$attrs;
+        setStyle(this.$refs.refTextareaElem as HTMLTextAreaElement, merge(style, val));
       },
       immediate: true,
     },
@@ -265,7 +274,6 @@ export default mixins(Vue as VueConstructor<Textarea>, classPrefixMixins).extend
           {...{ attrs: { ...this.$attrs, ...this.inputAttrs }, on: inputEvents }}
           value={this.value}
           class={classes}
-          style={this.textareaStyle}
           ref="refTextareaElem"
         ></textarea>
         {textTips || limitText ? (
