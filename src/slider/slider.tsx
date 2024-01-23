@@ -276,10 +276,6 @@ export default mixins(classPrefixMixins).extend({
       this.prevValue = prevValue;
       return prevValue;
     },
-    getChangeEndValue() {
-      const changeEndValue = this.range ? [this.firstValue, this.secondValue] : this.firstValue;
-      return this.setValues(changeEndValue);
-    },
     // 相应button的位置
     setPosition(percent: number): void {
       let targetValue = (percent * this.rangeDiff) / 100;
@@ -312,7 +308,6 @@ export default mixins(classPrefixMixins).extend({
         value = ((event.clientX - sliderOffsetLeft) / this.sliderSize) * 100;
         this.setPosition(value);
       }
-      this.emitChangeEnd();
     },
     resetSize(): void {
       if (this.$refs.slider) {
@@ -333,7 +328,7 @@ export default mixins(classPrefixMixins).extend({
       emitEvent<Parameters<TdSliderProps['onChange']>>(this, 'change', fixValue);
     },
     emitChangeEnd() {
-      const changeEndValue = this.getChangeEndValue();
+      const changeEndValue = this.range ? [this.firstValue, this.secondValue] : this.firstValue;
       emitEvent<Parameters<TdSliderProps['onChangeEnd']>>(this, 'changeEnd', changeEndValue);
     },
     getStopStyle(position: number) {
