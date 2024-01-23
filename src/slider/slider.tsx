@@ -276,6 +276,10 @@ export default mixins(classPrefixMixins).extend({
       this.prevValue = prevValue;
       return prevValue;
     },
+    getChangeEndValue() {
+      const changeEndValue = this.range ? [this.firstValue, this.secondValue] : this.firstValue;
+      return this.setValues(changeEndValue);
+    },
     // 相应button的位置
     setPosition(percent: number): void {
       let targetValue = (percent * this.rangeDiff) / 100;
@@ -308,6 +312,7 @@ export default mixins(classPrefixMixins).extend({
         value = ((event.clientX - sliderOffsetLeft) / this.sliderSize) * 100;
         this.setPosition(value);
       }
+      this.emitChangeEnd();
     },
     resetSize(): void {
       if (this.$refs.slider) {
@@ -327,10 +332,13 @@ export default mixins(classPrefixMixins).extend({
       const fixValue: SliderValue = this.setValues(changeValue);
       emitEvent<Parameters<TdSliderProps['onChange']>>(this, 'change', fixValue);
     },
+    emitChangeEnd() {
+      const changeEndValue = this.getChangeEndValue();
+      emitEvent<Parameters<TdSliderProps['onChangeEnd']>>(this, 'changeEnd', changeEndValue);
+    },
     getStopStyle(position: number) {
       return this.vertical ? { top: `calc(${100 - position}% - 1px)` } : { left: `${position}%` };
     },
-
     // mark 点击触发修改事件
     changeValue(point: number) {
       if (this.tDisabled || this.dragging) {
@@ -448,6 +456,7 @@ export default mixins(classPrefixMixins).extend({
               onInput={(v: number) => {
                 this.range ? (this.firstValue = v) : (this.prevValue = v);
               }}
+              onMouseup={this.emitChangeEnd}
             ></TSliderButton>
             {this.range && (
               <TSliderButton
@@ -459,6 +468,7 @@ export default mixins(classPrefixMixins).extend({
                 position="end"
                 label={this.label}
                 tooltip-props={this.tooltipProps}
+                onMouseup={this.emitChangeEnd}
               ></TSliderButton>
             )}
 
