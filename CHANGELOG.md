@@ -5,6 +5,24 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.9.0 `2024-01-23` 
+### 🚀 Features
+- `Descriptions`: 新增 `Descriptions` 描述组件 @zhangpaopao0609 ([#3035](https://github.com/Tencent/tdesign-vue/pull/3035))
+- `Slider`:  新增 `changeEnd` 事件 API @uyarn ([#3056](https://github.com/Tencent/tdesign-vue/pull/3056))
+### 🐞 Bug Fixes
+- `Loading`: 修复重复调用`LoadingPlugin()`时报错 @Zz-ZzzZ ([#3025](https://github.com/Tencent/tdesign-vue/pull/3025))
+- `Textarea`: 修复设置`maxlength`后，在windows自带输入法中，中文时不到最大长度也会自动覆盖之前已输入内容的缺陷 @azx1573 ([#3044](https://github.com/Tencent/tdesign-vue/pull/3044))
+- `Textarea`: value绑定值时，autosize时无法输入中文问题 @LoopZhou ([#3057](https://github.com/Tencent/tdesign-vue/pull/3057))
+- `TagInput`: 修复`size` API 没有作用到折叠选项的问题 @uyarn ([#3055](https://github.com/Tencent/tdesign-vue/pull/3055))
+- `Select`: 修复点击清除按钮触发多次`onChange`事件的异常 @uyarn ([#3054](https://github.com/Tencent/tdesign-vue/pull/3054))
+- `Form`: 修复计算`^`字符长度异常的问题 @uyarn ([#3058](https://github.com/Tencent/tdesign-vue/pull/3058))
+- `Form`: 更正表单组件实例方法为非`required`类型 @iiimix ([#3034](https://github.com/Tencent/tdesign-vue/pull/3034))
+### 🚧 Others
+- docs(Card): 更新组件 API 文档 @liweijie0812 ([#3021](https://github.com/Tencent/tdesign-vue/pull/3021))
+- docs: 更正 `webpack` 中使用 `unplugin-auto-import`的说明文档 @uyarn ([#3030](https://github.com/Tencent/tdesign-vue/pull/3030))
+
+
+
 ## 🌈 1.8.4 `2024-01-02` 
 ### 🚀 Features
 - `Upload`: 手动上传场景，支持进行粘贴上传 @chaishi ([#2991](https://github.com/Tencent/tdesign-vue/pull/2991))

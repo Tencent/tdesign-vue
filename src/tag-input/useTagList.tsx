@@ -140,7 +140,13 @@ export default function useTagList(props: TdTagInputProps, context: SetupContext
           collapsedTags: tagValue.value.slice(minCollapsedNum.value, tagValue.value.length),
         },
       });
-      list.push(more ?? <Tag key="more">+{len}</Tag>);
+      list.push(
+        more ?? (
+          <Tag key="more" size={size.value}>
+            +{len}
+          </Tag>
+        ),
+      );
     }
     return list;
   };
