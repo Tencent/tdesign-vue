@@ -1,5 +1,4 @@
-import { h, ComponentInternalInstance } from '@vue/composition-api';
-import { VNode } from 'vue';
+import { h, ComponentInternalInstance, VNode } from 'vue';
 import isFunction from 'lodash/isFunction';
 import isString from 'lodash/isString';
 

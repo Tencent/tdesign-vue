@@ -1,6 +1,6 @@
 import isNil from 'lodash/isNil';
 import isArray from 'lodash/isArray';
-import { defineComponent, provide, ref } from '@vue/composition-api';
+import { defineComponent, provide, ref } from 'vue';
 
 import { LayoutEnum } from '../common';
 import { useTNodeJSX } from '../hooks/tnode';

@@ -1,4 +1,4 @@
-import { defineComponent, inject, PropType } from '@vue/composition-api';
+import { defineComponent, inject, PropType } from 'vue';
 
 import { LayoutEnum } from '../common';
 import { usePrefixClass, useCommonClassName } from '../hooks/useConfig';
