@@ -283,6 +283,7 @@ export default mixins(classPrefixMixins, Vue as VueConstructor<SliderInstanceTyp
         window.removeEventListener('mouseup', this.onDragEnd);
         window.removeEventListener('touchend', this.onDragEnd);
         window.removeEventListener('contextmenu', this.onDragEnd);
+        this.$emit('mouseup');
       }
     },
     setPosition(pos: number) {
