@@ -110,7 +110,7 @@ export function getCharacterLength(str: string, maxCharacter?: number) {
   let len = 0;
   for (let i = 0; i < str.length; i++) {
     let currentStringLength = 0;
-    if (str.charCodeAt(i) > 127 || str.charCodeAt(i) === 94) {
+    if (str.charCodeAt(i) > 127) {
       currentStringLength = 2;
     } else {
       currentStringLength = 1;
