@@ -43537,6 +43537,751 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/year.vue 1`] = 
 </div>
 `;
 
+exports[`csr snapshot test > csr test ./src/descriptions/_example/base.vue 1`] = `
+<div
+  class="t-descriptions"
+>
+  <div
+    class="t-descriptions__header"
+  >
+    Shipping address
+  </div>
+  <table
+    class="t-descriptions__body t-size-m"
+  >
+    <tbody>
+      <tr>
+        <td
+          class="t-descriptions__label"
+          colspan="1"
+        />
+        <td
+          class="t-descriptions__content"
+        />
+        <td
+          class="t-descriptions__label"
+          colspan="1"
+        />
+        <td
+          class="t-descriptions__content"
+        />
+      </tr>
+      <tr>
+        <td
+          class="t-descriptions__label"
+          colspan="1"
+        />
+        <td
+          class="t-descriptions__content"
+        />
+        <td
+          class="t-descriptions__label"
+          colspan="1"
+        />
+        <td
+          class="t-descriptions__content"
+        />
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/descriptions/_example/bordered.vue 1`] = `
+<div
+  class="t-descriptions"
+>
+  <div
+    class="t-descriptions__header"
+  >
+    Shipping address
+  </div>
+  <table
+    class="t-descriptions__body t-size-m t-descriptions__body--border"
+  >
+    <tbody>
+      <tr>
+        <td
+          class="t-descriptions__label"
+          colspan="1"
+        />
+        <td
+          class="t-descriptions__content"
+        />
+        <td
+          class="t-descriptions__label"
+          colspan="1"
+        />
+        <td
+          class="t-descriptions__content"
+        />
+        <td
+          class="t-descriptions__label"
+          colspan="1"
+        />
+        <td
+          class="t-descriptions__content"
+        />
+      </tr>
+      <tr>
+        <td
+          class="t-descriptions__label"
+          colspan="1"
+        />
+        <td
+          class="t-descriptions__content"
+        />
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/descriptions/_example/colon.vue 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <label
+      class="t-checkbox"
+      tabindex="0"
+    >
+      <input
+        class="t-checkbox__former"
+        tabindex="-1"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="t-checkbox__input"
+      />
+      <span
+        class="t-checkbox__label"
+      >
+        colon
+      </span>
+    </label>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-descriptions"
+    >
+      <div
+        class="t-descriptions__header"
+      >
+        Shipping address
+      </div>
+      <table
+        class="t-descriptions__body t-size-m t-descriptions__body--border"
+      >
+        <tbody>
+          <tr>
+            <td
+              class="t-descriptions__label"
+              colspan="1"
+            />
+            <td
+              class="t-descriptions__content"
+            />
+            <td
+              class="t-descriptions__label"
+              colspan="1"
+            />
+            <td
+              class="t-descriptions__content"
+            />
+            <td
+              class="t-descriptions__label"
+              colspan="1"
+            />
+            <td
+              class="t-descriptions__content"
+            />
+          </tr>
+          <tr>
+            <td
+              class="t-descriptions__label"
+              colspan="1"
+            />
+            <td
+              class="t-descriptions__content"
+            />
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/descriptions/_example/column.vue 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-radio-group t-size-m t-radio-group__outline"
+    >
+      <label
+        class="t-radio t-is-checked"
+        tabindex="0"
+      >
+        <input
+          class="t-radio__former"
+          data-value="2"
+          tabindex="-1"
+          type="radio"
+          value="2"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          2
+        </span>
+      </label>
+      <label
+        class="t-radio"
+        tabindex="0"
+      >
+        <input
+          class="t-radio__former"
+          data-value="3"
+          tabindex="-1"
+          type="radio"
+          value="3"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          3
+        </span>
+      </label>
+      <label
+        class="t-radio"
+        tabindex="0"
+      >
+        <input
+          class="t-radio__former"
+          data-value="4"
+          tabindex="-1"
+          type="radio"
+          value="4"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          4
+        </span>
+      </label>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-descriptions"
+    >
+      <table
+        class="t-descriptions__body t-size-m t-descriptions__body--border"
+      >
+        <tbody>
+          <tr>
+            <td
+              class="t-descriptions__label"
+              colspan="1"
+            />
+            <td
+              class="t-descriptions__content"
+            />
+            <td
+              class="t-descriptions__label"
+              colspan="1"
+            />
+            <td
+              class="t-descriptions__content"
+            />
+          </tr>
+          <tr>
+            <td
+              class="t-descriptions__label"
+              colspan="1"
+            />
+            <td
+              class="t-descriptions__content"
+            />
+            <td
+              class="t-descriptions__label"
+              colspan="1"
+            />
+            <td
+              class="t-descriptions__content"
+            />
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/descriptions/_example/custom-style.vue 1`] = `
+<div
+  class="t-descriptions"
+>
+  <div
+    class="t-descriptions__header"
+  >
+    Shipping address
+  </div>
+  <table
+    class="t-descriptions__body t-size-m t-descriptions__body--border"
+  >
+    <tbody>
+      <tr>
+        <td
+          class="t-descriptions__label"
+          colspan="1"
+          style="width: 100px; text-align: left;"
+        />
+        <td
+          class="t-descriptions__content"
+          style="text-align: right;"
+        />
+        <td
+          class="t-descriptions__label"
+          colspan="1"
+          style="width: 100px; text-align: left;"
+        />
+        <td
+          class="t-descriptions__content"
+          style="text-align: right;"
+        />
+        <td
+          class="t-descriptions__label"
+          colspan="1"
+          style="width: 100px; text-align: left;"
+        />
+        <td
+          class="t-descriptions__content"
+          style="text-align: right;"
+        />
+      </tr>
+      <tr>
+        <td
+          class="t-descriptions__label"
+          colspan="1"
+          style="width: 100px; text-align: left;"
+        />
+        <td
+          class="t-descriptions__content"
+          style="text-align: right;"
+        />
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/descriptions/_example/items.vue 1`] = `
+<div
+  class="t-descriptions"
+>
+  <div
+    class="t-descriptions__header"
+  >
+    Shipping address
+  </div>
+  <table
+    class="t-descriptions__body t-size-m"
+  >
+    <tbody>
+      <tr>
+        <td
+          class="t-descriptions__label"
+          colspan="1"
+        >
+          Name
+        </td>
+        <td
+          class="t-descriptions__content"
+          colspan="1"
+        >
+          TDesign
+        </td>
+        <td
+          class="t-descriptions__label"
+          colspan="1"
+        >
+          <div
+            class="t-descriptions"
+          >
+            <div
+              class="t-descriptions__header"
+            >
+              Shipping address
+            </div>
+            <table
+              class="t-descriptions__body t-size-m"
+            >
+              <tbody>
+                <tr>
+                  <td
+                    class="t-descriptions__label"
+                    colspan="1"
+                  />
+                  <td
+                    class="t-descriptions__content"
+                  />
+                  <td
+                    class="t-descriptions__label"
+                    colspan="1"
+                  />
+                  <td
+                    class="t-descriptions__content"
+                  />
+                </tr>
+                <tr>
+                  <td
+                    class="t-descriptions__label"
+                    colspan="1"
+                  />
+                  <td
+                    class="t-descriptions__content"
+                  />
+                  <td
+                    class="t-descriptions__label"
+                    colspan="1"
+                  />
+                  <td
+                    class="t-descriptions__content"
+                  />
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+        <td
+          class="t-descriptions__content"
+          colspan="3"
+        >
+          139****0609
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/descriptions/_example/layout.vue 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-row t-row--start t-row--align-top"
+      style="margin-left: 0px; margin-right: 0px;"
+    >
+      <span>
+        layout：
+      </span>
+      <div
+        class="t-radio-group t-size-m t-radio-group__outline"
+      >
+        <label
+          class="t-radio t-is-checked"
+          tabindex="0"
+        >
+          <input
+            class="t-radio__former"
+            data-value="'horizontal'"
+            tabindex="-1"
+            type="radio"
+            value="horizontal"
+          />
+          <span
+            class="t-radio__input"
+          />
+          <span
+            class="t-radio__label"
+          >
+            horizontal
+          </span>
+        </label>
+        <label
+          class="t-radio"
+          tabindex="0"
+        >
+          <input
+            class="t-radio__former"
+            data-value="'vertical'"
+            tabindex="-1"
+            type="radio"
+            value="vertical"
+          />
+          <span
+            class="t-radio__input"
+          />
+          <span
+            class="t-radio__label"
+          >
+            vertical
+          </span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-row t-row--start t-row--align-top"
+      style="margin-left: 0px; margin-right: 0px;"
+    >
+      <span>
+        itemLayout：
+      </span>
+      <div
+        class="t-radio-group t-size-m t-radio-group__outline"
+      >
+        <label
+          class="t-radio t-is-checked"
+          tabindex="0"
+        >
+          <input
+            class="t-radio__former"
+            data-value="'horizontal'"
+            tabindex="-1"
+            type="radio"
+            value="horizontal"
+          />
+          <span
+            class="t-radio__input"
+          />
+          <span
+            class="t-radio__label"
+          >
+            horizontal
+          </span>
+        </label>
+        <label
+          class="t-radio"
+          tabindex="0"
+        >
+          <input
+            class="t-radio__former"
+            data-value="'vertical'"
+            tabindex="-1"
+            type="radio"
+            value="vertical"
+          />
+          <span
+            class="t-radio__input"
+          />
+          <span
+            class="t-radio__label"
+          >
+            vertical
+          </span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-descriptions"
+    >
+      <div
+        class="t-descriptions__header"
+      >
+        Shipping address
+      </div>
+      <table
+        class="t-descriptions__body t-size-m t-descriptions__body--border"
+      >
+        <tbody>
+          <tr>
+            <td
+              class="t-descriptions__label"
+              colspan="1"
+            />
+            <td
+              class="t-descriptions__content"
+            />
+            <td
+              class="t-descriptions__label"
+              colspan="1"
+            />
+            <td
+              class="t-descriptions__content"
+            />
+            <td
+              class="t-descriptions__label"
+              colspan="1"
+            />
+            <td
+              class="t-descriptions__content"
+            />
+          </tr>
+          <tr>
+            <td
+              class="t-descriptions__label"
+              colspan="1"
+            />
+            <td
+              class="t-descriptions__content"
+            />
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/descriptions/_example/size.vue 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-radio-group t-size-m t-radio-group__outline"
+    >
+      <label
+        class="t-radio"
+        tabindex="0"
+      >
+        <input
+          class="t-radio__former"
+          data-value="'large'"
+          tabindex="-1"
+          type="radio"
+          value="large"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          large
+        </span>
+      </label>
+      <label
+        class="t-radio t-is-checked"
+        tabindex="0"
+      >
+        <input
+          class="t-radio__former"
+          data-value="'medium'"
+          tabindex="-1"
+          type="radio"
+          value="medium"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          medium
+        </span>
+      </label>
+      <label
+        class="t-radio"
+        tabindex="0"
+      >
+        <input
+          class="t-radio__former"
+          data-value="'small'"
+          tabindex="-1"
+          type="radio"
+          value="small"
+        />
+        <span
+          class="t-radio__input"
+        />
+        <span
+          class="t-radio__label"
+        >
+          small
+        </span>
+      </label>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-descriptions"
+    >
+      <table
+        class="t-descriptions__body t-size-m t-descriptions__body--border"
+      >
+        <tbody>
+          <tr>
+            <td
+              class="t-descriptions__label"
+              colspan="1"
+            />
+            <td
+              class="t-descriptions__content"
+            />
+            <td
+              class="t-descriptions__label"
+              colspan="1"
+            />
+            <td
+              class="t-descriptions__content"
+            />
+            <td
+              class="t-descriptions__label"
+              colspan="1"
+            />
+            <td
+              class="t-descriptions__content"
+            />
+          </tr>
+          <tr>
+            <td
+              class="t-descriptions__label"
+              colspan="1"
+            />
+            <td
+              class="t-descriptions__content"
+            />
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`csr snapshot test > csr test ./src/dialog/_example/async.vue 1`] = `
 <div>
   <div
@@ -44112,7 +44857,7 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/base.vue 1`] = `
                     <div
                       class="t-pagination__total"
                     >
-                      共 30 项数据
+                      共 30 条数据
                     </div>
                     <div
                       class="t-select__wrap t-pagination__select"
@@ -75506,7 +76251,7 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/base.vue 1`] = `
     <div
       class="t-pagination__total"
     >
-      共 36 项数据
+      共 36 条数据
     </div>
     <div
       class="t-select__wrap t-pagination__select"
@@ -75644,7 +76389,7 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/base.vue 1`] = `
     <div
       class="t-pagination__total"
     >
-      共 36 项数据
+      共 36 条数据
     </div>
     <div
       class="t-select__wrap t-pagination__select"
@@ -75798,7 +76543,7 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/customizable.vue
     <div
       class="t-pagination__total"
     >
-      共 200 项数据
+      共 200 条数据
     </div>
     <div
       class="t-select__wrap t-pagination__select"
@@ -75988,7 +76733,7 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/disabled.vue 1`]
     <div
       class="t-pagination__total"
     >
-      共 100 项数据
+      共 100 条数据
     </div>
     <div
       class="t-select__wrap t-pagination__select"
@@ -76176,7 +76921,7 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/few.vue 1`] = `
     <div
       class="t-pagination__total"
     >
-      共 49 项数据
+      共 49 条数据
     </div>
     <div
       class="t-select__wrap t-pagination__select"
@@ -76302,7 +77047,7 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/jump.vue 1`] = `
     <div
       class="t-pagination__total"
     >
-      共 101 项数据
+      共 101 条数据
     </div>
     <div
       class="t-select__wrap t-pagination__select"
@@ -76471,7 +77216,7 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/mini.vue 1`] = `
     <div
       class="t-pagination__total"
     >
-      共 100 项数据
+      共 100 条数据
     </div>
     <div
       class="t-select__wrap t-pagination__select"
@@ -76633,7 +77378,7 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/more.vue 1`] = `
         <div
           class="t-pagination__total"
         >
-          共 100 项数据
+          共 100 条数据
         </div>
         <div
           class="t-select__wrap t-pagination__select"
@@ -76807,7 +77552,7 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/more.vue 1`] = `
         <div
           class="t-pagination__total"
         >
-          共 100 项数据
+          共 100 条数据
         </div>
         <div
           class="t-select__wrap t-pagination__select"
@@ -76936,7 +77681,7 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/page-num.vue 1`]
     <div
       class="t-pagination__total"
     >
-      共 645 项数据
+      共 645 条数据
     </div>
     <div
       class="t-select__wrap t-pagination__select"
@@ -77310,7 +78055,7 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/simple.vue 1`] =
     <div
       class="t-pagination__total"
     >
-      共 100 项数据
+      共 100 条数据
     </div>
     <div
       class="t-select__wrap t-pagination__select"
@@ -77444,7 +78189,7 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/simple-mini.vue 
   <div
     class="t-pagination__total"
   >
-    共 100 项数据
+    共 100 条数据
   </div>
   <div
     class="t-select__wrap t-pagination__select"
@@ -97273,7 +98018,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
             <div
               class="t-pagination__total"
             >
-              共 28 项数据
+              共 28 条数据
             </div>
             <div
               class="t-select__wrap t-pagination__select"

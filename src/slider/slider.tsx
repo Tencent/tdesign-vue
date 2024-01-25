@@ -327,10 +327,13 @@ export default mixins(classPrefixMixins).extend({
       const fixValue: SliderValue = this.setValues(changeValue);
       emitEvent<Parameters<TdSliderProps['onChange']>>(this, 'change', fixValue);
     },
+    emitChangeEnd() {
+      const changeEndValue = this.range ? [this.firstValue, this.secondValue] : this.firstValue;
+      emitEvent<Parameters<TdSliderProps['onChangeEnd']>>(this, 'changeEnd', changeEndValue);
+    },
     getStopStyle(position: number) {
       return this.vertical ? { top: `calc(${100 - position}% - 1px)` } : { left: `${position}%` };
     },
-
     // mark 点击触发修改事件
     changeValue(point: number) {
       if (this.tDisabled || this.dragging) {
@@ -448,6 +451,7 @@ export default mixins(classPrefixMixins).extend({
               onInput={(v: number) => {
                 this.range ? (this.firstValue = v) : (this.prevValue = v);
               }}
+              onMouseup={this.emitChangeEnd}
             ></TSliderButton>
             {this.range && (
               <TSliderButton
@@ -459,6 +463,7 @@ export default mixins(classPrefixMixins).extend({
                 position="end"
                 label={this.label}
                 tooltip-props={this.tooltipProps}
+                onMouseup={this.emitChangeEnd}
               ></TSliderButton>
             )}
 
