@@ -63,10 +63,9 @@ export interface TdFormProps<FormData extends Data = Data> {
   /**
    * 表单字段校验规则
    */
-  rules?: { [field in keyof FormData]: Array<FormRule> };
+  rules?: FormRules<FormData>;
   /**
    * 表单校验不通过时，是否自动滚动到第一个校验不通过的字段，平滑滚动或是瞬间直达。值为空则表示不滚动
-   * @default ''
    */
   scrollToFirstError?: '' | 'smooth' | 'auto';
   /**
@@ -150,15 +149,15 @@ export interface TdFormItemProps {
   labelWidth?: string | number;
   /**
    * 表单字段名称
+   * @default ''
    */
-  name?: string | number;
+  name?: string;
   /**
    * 是否显示必填符号（*），优先级高于 Form.requiredMark
    */
   requiredMark?: boolean;
   /**
    * 表单字段校验规则
-   * @default []
    */
   rules?: Array<FormRule>;
   /**
@@ -236,14 +235,14 @@ export interface FormRule {
    */
   required?: boolean;
   /**
-   * 内置校验方法，校验值是否为手机号码，校验正则为 `/^1[3-9]\\d{9}$/`，示例：`{ telnumber: true, message: '请输入正确的手机号码' }`
+   * 内置校验方法，校验值是否为手机号码，校验正则为 `/^1[3-9]\d{9}$/`，示例：`{ telnumber: true, message: '请输入正确的手机号码' }`
    */
   telnumber?: boolean;
   /**
    * 校验触发方式
    * @default change
    */
-  trigger?: 'change' | 'blur';
+  trigger?: ValidateTriggerType;
   /**
    * 校验未通过时呈现的错误信息类型，有 告警信息提示 和 错误信息提示 等两种
    * @default error
@@ -331,10 +330,13 @@ export interface FormErrorMessage {
   validator?: string;
 }
 
+export type FormRules<T extends Data = any> = { [field in keyof T]?: Array<FormRule> };
+
 export interface SubmitContext<T extends Data = Data> {
   e?: FormSubmitEvent;
   validateResult: FormValidateResult<T>;
   firstError?: string;
+  fields?: any;
 }
 
 export type FormValidateResult<T> = boolean | ValidateResultObj<T>;
@@ -353,7 +355,7 @@ export type ValidateResult<T> = { [key in keyof T]: boolean | ErrorList };
 
 export type ErrorList = Array<FormRule>;
 
-export type ValidateResultContext<T> = Omit<SubmitContext<T>, 'e'>;
+export type ValidateResultContext<T extends Data> = Omit<SubmitContext<T>, 'e'>;
 
 export interface FormResetParams<FormData> {
   type?: 'initial' | 'empty';
@@ -373,7 +375,7 @@ export interface FormValidateParams {
   trigger?: ValidateTriggerType;
 }
 
-export type ValidateTriggerType = 'blur' | 'change' | 'all';
+export type ValidateTriggerType = 'blur' | 'change' | 'submit' | 'all';
 
 export type Data = { [key: string]: any };
 
