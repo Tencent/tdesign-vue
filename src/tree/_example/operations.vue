@@ -89,15 +89,6 @@ export default {
       ],
     };
   },
-  computed: {
-    btnSetActivedVariant() {
-      let variant = 'outline';
-      if (this.useActived) {
-        variant = 'base';
-      }
-      return variant;
-    },
-  },
   methods: {
     getLabelContent(node) {
       const pathNodes = node.getPath();
@@ -105,7 +96,7 @@ export default {
       label = `${label} | value: ${node.value}`;
       return label;
     },
-    getLabel(createElement, node) {
+    getLabel(h, node) {
       const label = this.getLabelContent(node);
       const { data } = node;
       data.label = label;
@@ -274,9 +265,6 @@ export default {
     remove(node) {
       const { tree } = this.$refs;
       tree.remove(node.value);
-    },
-    toggleExpandParent() {
-      this.expandParent = !this.expandParent;
     },
     onChange(vals, state) {
       console.info('on change:', vals, state);

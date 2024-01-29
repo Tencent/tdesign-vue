@@ -68,7 +68,7 @@ export default {
     };
   },
   methods: {
-    label(createElement, node) {
+    label(h, node) {
       return `${node.value}`;
     },
   },

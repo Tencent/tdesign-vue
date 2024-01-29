@@ -81,15 +81,6 @@ export default {
       const { node } = context;
       console.info(node.value, 'actived:', node.actived);
     },
-    toggleActivable() {
-      this.activable = !this.activable;
-    },
-    toggleActiveMultiple() {
-      this.activeMultiple = !this.activeMultiple;
-    },
-    toggleExpandOnClickNode() {
-      this.expandOnClickNode = !this.expandOnClickNode;
-    },
   },
 };
 </script>

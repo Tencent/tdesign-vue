@@ -43,9 +43,9 @@ export default {
           ],
         },
       ],
-      label(createElement, node) {
-        // 注意 vue2 和 vue3 下 createElement 的使用方法实际上存在差异
-        return createElement('strong', `value: ${node.value}, label: ${node.label}`);
+      label(h, node) {
+        // 注意 vue2 和 vue3 下 h 的使用方法实际上存在差异
+        return h('strong', `value: ${node.value}, label: ${node.label}`);
       },
     };
   },

@@ -88,10 +88,6 @@ export default {
       index: 0,
       transition: true,
       textInsertCount: '1',
-      useActived: false,
-      enableVScroll: true,
-      lazyVScroll: false,
-      expandParent: true,
       showLine: true,
       showIcon: true,
       isCheckable: true,
@@ -119,7 +115,7 @@ export default {
     },
   },
   methods: {
-    label(createElement, node) {
+    label(h, node) {
       return `${node.value}`;
     },
     getInsertItem() {

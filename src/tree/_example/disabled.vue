@@ -111,17 +111,12 @@ export default {
       ],
     };
   },
-  computed: {
-    disabledList() {
-      return this.disabledMap.keys();
-    },
-  },
   methods: {
     fnDisableCheck(node) {
       const map = this.disabledMap;
       return map.get(node.value);
     },
-    label(createElement, node) {
+    label(h, node) {
       return node.value;
     },
     setEnable(node) {

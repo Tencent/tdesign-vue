@@ -40,7 +40,7 @@ export default {
     };
   },
   methods: {
-    icon(createElement, node) {
+    icon(h, node) {
       let name = 'file';
       if (node.getChildren()) {
         if (node.expanded) {
