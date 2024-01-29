@@ -36,7 +36,7 @@ export default defineComponent({
     const getChildByName = useChildComponentSlots();
     const itemsType = ref<ItemsType>(ItemsType.props);
     const renderTNodeJSX = useTNodeJSX();
-    const title = renderTNodeJSX('title');
+    const renderTitle = renderTNodeJSX('title');
 
     // 计算渲染的行内容
     const getRows = () => {
@@ -122,14 +122,14 @@ export default defineComponent({
     provide(descriptionsKey, props);
 
     return {
-      title,
+      renderTitle,
       getRows,
       itemsType,
       COMPONENT_NAME,
     };
   },
   render() {
-    const renderHeader = () => (this.title ? <div class={`${this.COMPONENT_NAME}__header`}>{this.title}</div> : '');
+    const renderHeader = () => this.renderTitle ? <div class={`${this.COMPONENT_NAME}__header`}>{this.renderTitle}</div> : '';
 
     return (
       <div class={this.COMPONENT_NAME}>
