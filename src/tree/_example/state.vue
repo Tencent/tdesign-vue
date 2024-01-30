@@ -35,8 +35,6 @@ export default {
   data() {
     return {
       index: 2,
-      useActived: false,
-      expandParent: true,
       items: [
         {
           value: 'node1',
@@ -48,7 +46,7 @@ export default {
     };
   },
   methods: {
-    icon(createElement, node) {
+    icon(h, node) {
       const { data } = node;
       let name = 'file';
       if (node.getChildren()) {
@@ -63,7 +61,7 @@ export default {
       }
       return <Icon name={name} />;
     },
-    label(createElement, node) {
+    label(h, node) {
       const timeStamp = node.data.timeStamp || '--';
       return `${node.value}: ${timeStamp}`;
     },

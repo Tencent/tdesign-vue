@@ -177,7 +177,7 @@ export default {
       // onChange 事件发生时，context.node 状态预先发生变更，此时拿到预先变更的节点状态
       console.info(node.value, 'context.node.checked:', node.checked);
       if (this.syncProps) {
-        const checked = vals.filter((val) => {
+        const tmpChecked = vals.filter((val) => {
           if (val === '2.1') {
             console.info('节点 2.1 不允许选中');
             return false;
@@ -185,8 +185,8 @@ export default {
           return true;
         });
         // 受控状态下, tree 的 props.value 可被修改为预期的值
-        console.log('before set this.checked, expect checked:', checked);
-        this.checked = checked;
+        console.log('before set this.checked, expect checked:', tmpChecked);
+        this.checked = tmpChecked;
       }
       // 赋值变更后的选中态之后，nextTick 之后触发视图更新
       // node.checked 状态发生变更，符合 tree 的 props.value 的取值
