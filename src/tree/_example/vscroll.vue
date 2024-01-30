@@ -103,7 +103,6 @@ const virtualTree = createTreeData();
 export default {
   data() {
     return {
-      index: 0,
       transition: true,
       textInsertCount: '1',
       showLine: true,
@@ -119,7 +118,7 @@ export default {
     },
   },
   methods: {
-    label(createElement, node) {
+    label(h, node) {
       return `${node.value}`;
     },
     getInsertItem() {
