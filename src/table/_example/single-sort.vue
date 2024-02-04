@@ -35,7 +35,7 @@
 <script lang="jsx">
 import { CheckCircleFilledIcon, ErrorCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 
-const columns = [
+const initialColumns = [
   { colKey: 'applicant', title: '申请人', width: '100' },
   {
     colKey: 'status',
@@ -68,7 +68,7 @@ const columns = [
   { colKey: 'channel', title: '签署方式', width: '120' },
   { colKey: 'createTime', title: '申请时间' },
 ];
-const data = new Array(4).fill(null).map((_, i) => ({
+const initialData = new Array(4).fill(null).map((_, i) => ({
   index: i + 1,
   applicant: ['贾明', '张三', '王芳'][i % 3],
   status: i % 3,
@@ -84,8 +84,8 @@ const data = new Array(4).fill(null).map((_, i) => ({
 export default {
   data() {
     return {
-      data,
-      columns,
+      data: initialData,
+      columns: initialColumns,
       hideSortTips: false,
       sort: {
         // 按照 status 字段进行排序
@@ -114,11 +114,11 @@ export default {
       // 模拟异步请求，进行数据排序
       const timer = setTimeout(() => {
         if (sort) {
-          this.data = data
+          this.data = initialData
             .concat()
             .sort((a, b) => (sort.descending ? b[sort.sortBy] - a[sort.sortBy] : a[sort.sortBy] - b[sort.sortBy]));
         } else {
-          this.data = data.concat();
+          this.data = initialData.concat();
         }
         clearTimeout(timer);
       }, 100);

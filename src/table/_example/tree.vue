@@ -125,14 +125,12 @@ function getData(currentPage = 1) {
   return data;
 }
 
-const data = getData();
-
 export default {
   components: { TEnhancedTable: EnhancedTable },
   data() {
     return {
       customTreeExpandAndFoldIcon: false,
-      data,
+      data: getData(),
       lazyLoadingData: null,
       expandAll: false,
       expandedTreeNodes: ['申请人 2_1 号', '申请人 30_1 号', '申请人 4_1 号'],

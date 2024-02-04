@@ -50,7 +50,7 @@ import {
   CloseCircleFilledIcon,
 } from 'tdesign-icons-vue';
 
-const columns = [
+const initialColumns = [
   { colKey: 'applicant', title: '申请人', width: '100' },
   {
     colKey: 'status',
@@ -86,7 +86,7 @@ const columns = [
 ];
 
 // 本地数据排序，表示组件内部会对参数 data 进行数据排序。如果 data 数据为 10 条，就仅对这 10 条数据进行排序。
-const data = new Array(4).fill(null).map((_, i) => ({
+const initialData = new Array(4).fill(null).map((_, i) => ({
   index: i + 1,
   applicant: ['贾明', '张三', '王芳'][i % 3],
   status: i % 3,
@@ -105,8 +105,8 @@ export default {
   },
   data() {
     return {
-      data,
-      columns,
+      data: initialData,
+      columns: initialColumns,
       sort: {},
       singleSort: {
         sortBy: 'status',
@@ -142,10 +142,10 @@ export default {
       this.sort = sort;
       // this.data = options.currentDataSource;
     },
-    dataChange(data) {
+    dataChange(newData) {
       // 除了 sortChange，也可以在这里对 data.value 进行赋值
-      this.data = data;
-      console.log('data-change', data);
+      this.data = newData;
+      console.log('data-change', newData);
     },
   },
 };
