@@ -28,38 +28,31 @@
     </t-upload>
   </div>
 </template>
-<script>
+<script setup>
+import { MessagePlugin } from 'tdesign-vue';
+import { ref } from 'vue';
 import { CloudUploadIcon } from 'tdesign-icons-vue';
-
-export default {
-  components: { CloudUploadIcon },
-  data() {
-    return {
-      files: [],
-      progress: 0,
-    };
-  },
-  methods: {
-    onDrop(e) {
-      const file = e.e.dataTransfer.items;
-      console.log(file, 'file');
-      for (let i = 0; i < file.length; i++) {
-        console.log(file[i].type, 'type');
-      }
-    },
-    handleFail({ file }) {
-      this.$message.error(`文件 ${file.name} 上传失败`);
-    },
-    handleSuccess({ file }) {
-      this.$message.success(`文件 ${file.name} 上传成功`);
-    },
-    upload() {
-      this.$refs.uploadRef.triggerUpload();
-    },
-    onProgress(val) {
-      console.log(val);
-      this.progress = val;
-    },
-  },
+const uploadRef = ref();
+const files = ref([]);
+const progress = ref(0);
+const onDrop = (e) => {
+  const file = e.e.dataTransfer.items;
+  console.log(file, 'file');
+  for (let i = 0; i < file.length; i++) {
+    console.log(file[i].type, 'type');
+  }
+};
+const handleFail = ({ file }) => {
+  MessagePlugin.error(`文件 ${file.name} 上传失败`);
+};
+const handleSuccess = ({ file }) => {
+  MessagePlugin.success(`文件 ${file.name} 上传成功`);
+};
+const upload = () => {
+  uploadRef.value.triggerUpload();
+};
+const onProgress = (val) => {
+  console.log(val);
+  progress.value = val;
 };
 </script>
