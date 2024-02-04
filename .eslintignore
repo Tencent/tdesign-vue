@@ -13,3 +13,4 @@ _site
 temp*
 static/
 site/
+**/_example-composition/**
