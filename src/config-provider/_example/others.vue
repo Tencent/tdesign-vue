@@ -89,9 +89,9 @@ import {
 import merge from 'lodash/merge';
 import enConfig from 'tdesign-vue/es/locale/en_US';
 
-const transferList = [];
+const initialTransferList = [];
 for (let i = 0; i < 20; i++) {
-  transferList.push({
+  initialTransferList.push({
     value: i.toString(),
     label: `content ${i + 1}`,
     disabled: i % 4 < 1,
@@ -187,7 +187,7 @@ export default {
           errorIcon: (h) => h && <ErrorIcon />,
         },
       }),
-      transferList,
+      transferList: initialTransferList,
       transferChecked: [],
       transferTargetValue: [],
       options1: SELECT_OPTIONS.concat(),

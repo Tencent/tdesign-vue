@@ -6,18 +6,11 @@
   </t-card>
 </template>
 <script lang="jsx">
-import { MessagePlugin } from 'tdesign-vue';
-
 export default {
   data() {
     return {
       cover: 'https://tdesign.gtimg.com/site/source/card-demo.png',
     };
-  },
-  methods: {
-    clickHandler(data) {
-      MessagePlugin.success(`选中【${data.content}】`);
-    },
   },
 };
 </script>
