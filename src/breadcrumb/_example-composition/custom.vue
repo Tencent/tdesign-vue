@@ -8,12 +8,6 @@
     <template v-slot:separator> <chevron-right-icon name="chevron-right" /> </template>
   </t-breadcrumb>
 </template>
-<script>
+<script setup>
 import { ChevronRightIcon } from 'tdesign-icons-vue';
-
-export default {
-  components: {
-    ChevronRightIcon,
-  },
-};
 </script>

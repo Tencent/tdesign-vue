@@ -5,12 +5,6 @@
     <t-breadcrumbItem>页面3</t-breadcrumbItem>
   </t-breadcrumb>
 </template>
-<script>
+<script setup>
 import { ChevronDownIcon } from 'tdesign-icons-vue';
-
-export default {
-  components: {
-    ChevronDownIcon,
-  },
-};
 </script>
