@@ -13,10 +13,5 @@ export default {
       checked: true,
     };
   },
-  methods: {
-    onChange(val) {
-      console.log(val);
-    },
-  },
 };
 </script>

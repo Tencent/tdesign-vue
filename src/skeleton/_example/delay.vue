@@ -25,8 +25,8 @@ export default {
     };
   },
   methods: {
-    loadingData(delay) {
-      this.delay = delay;
+    loadingData(delayTime) {
+      this.delay = delayTime;
       this.loading = true;
       const timer = setTimeout(() => {
         this.loading = false;
