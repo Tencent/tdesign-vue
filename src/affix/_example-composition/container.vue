@@ -17,22 +17,15 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      open: 0,
-    };
-  },
-  methods: {
-    getContainer() {
-      return this.$refs?.affixContainer;
-    },
-    handleFixedChange(affixed, { top }) {
-      console.log('top', top);
-      this.open = affixed;
-    },
-  },
+<script setup>
+import { ref } from 'vue';
+
+const affixContainer = ref();
+const open = ref(0);
+const getContainer = () => affixContainer.value;
+const handleFixedChange = (affixed, { top }) => {
+  console.log('top', top);
+  open.value = affixed;
 };
 </script>
 

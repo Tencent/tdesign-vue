@@ -22,27 +22,16 @@
   </t-space>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue';
 import escapeRegExp from 'lodash/escapeRegExp';
 
 const LIST = ['第一个 AutoComplete 默认联想词', '第二个 AutoComplete 默认联想词', '第三个 AutoComplete 默认联想词'];
-
-export default {
-  name: 'AutoCompleteFilter',
-
-  data() {
-    return {
-      value1: '',
-      value2: '',
-      options: [...LIST],
-    };
-  },
-
-  methods: {
-    filterWords(keyword, option) {
-      const regExp = new RegExp(escapeRegExp(keyword));
-      return regExp.test(option.text);
-    },
-  },
+const value1 = ref('');
+const value2 = ref('');
+const options = ref([...LIST]);
+const filterWords = (keyword, option) => {
+  const regExp = new RegExp(escapeRegExp(keyword));
+  return regExp.test(option.text);
 };
 </script>

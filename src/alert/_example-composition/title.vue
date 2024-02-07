@@ -7,12 +7,8 @@
     </t-alert>
   </t-space>
 </template>
-<script lang="jsx">
-export default {
-  methods: {
-    handleOperation() {
-      alert('operation clicked');
-    },
-  },
+<script setup lang="jsx">
+const handleOperation = () => {
+  alert('operation clicked');
 };
 </script>
