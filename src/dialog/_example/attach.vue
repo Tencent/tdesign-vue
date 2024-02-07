@@ -1,5 +1,5 @@
 <template>
-  <div class="dialog-attach-wrap">
+  <div class="dialog-attach-wrap" ref="attachRef">
     <!-- attach挂载 -->
     <t-space break-line>
       <t-button theme="primary" @click="visibleBody = true">挂载在body</t-button>
@@ -61,9 +61,7 @@
   </div>
 </template>
 <script>
-import Vue from 'vue';
-
-export default Vue.extend({
+export default {
   data() {
     return {
       visibleBody: false,
@@ -74,10 +72,10 @@ export default Vue.extend({
   },
   methods: {
     getAttach() {
-      return this.$root.$el;
+      return this.$refs.attachRef;
     },
   },
-});
+};
 </script>
 <style scoped>
 .dialog-attach-wrap {
