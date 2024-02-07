@@ -14,9 +14,10 @@ export default function renderDemo(md, container) {
         const demoName = path.basename(demoPath);
         const demoDefName = `Demo${demoPathOnlyLetters}`;
         const demoCodeDefName = `Demo${demoPathOnlyLetters}Code`;
+        const demoCompositionCodeDefName = `Demo${demoPathOnlyLetters}CompositionCode`; // composition示例
 
         const tpl = `
-          <td-doc-demo :code=${demoCodeDefName} demo-name="${demoName}" language="markup">
+          <td-doc-demo :code=${demoCodeDefName} demo-name="${demoName}" :composition-code=${demoCompositionCodeDefName} language="markup">
             <div slot="action">
               <Stackblitz demo-name="${demoName}" component-name="${componentName}" :code=${demoCodeDefName} />
               <Codesandbox demo-name="${demoName}" component-name="${componentName}" :code=${demoCodeDefName} />
