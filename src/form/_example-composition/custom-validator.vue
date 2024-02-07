@@ -19,14 +19,13 @@
 </template>
 <script setup>
 import { MessagePlugin } from 'tdesign-vue';
-import { ref, reactive } from 'vue';
+import { reactive } from 'vue';
 
 const INITIAL_DATA = {
   account: '',
   password: '',
   rePassword: '',
 };
-const form = ref();
 const formData = reactive({
   ...INITIAL_DATA,
 });

@@ -19,14 +19,15 @@
     </t-form-item>
   </t-form>
 </template>
-<script>
+<script setup>
+import { MessagePlugin } from 'tdesign-vue';
+import { onMounted, ref, reactive } from 'vue';
 /* eslint-disable no-template-curly-in-string */
 const INITIAL_DATA = {
   account: '',
   description: '',
   password: '',
 };
-
 const validateMessage = {
   account: [
     {
@@ -41,37 +42,55 @@ const validateMessage = {
     },
   ],
 };
-
-export default {
-  data() {
-    return {
-      formData: { ...INITIAL_DATA },
-      rules: {
-        account: [{ required: true }, { min: 2 }, { max: 10, type: 'warning' }],
-        description: [{ validator: (val) => val.length < 10, message: '不能超过 20 个字，中文长度等于英文长度' }],
-        password: [{ required: true }, { len: 8, message: '请输入 8 位密码' }],
-      },
-    };
-  },
-  mounted() {
-    this.$refs.form.setValidateMessage(validateMessage);
-  },
-  methods: {
-    onReset() {
-      this.$message.success('重置成功');
+const form = ref();
+const formData = reactive({
+  ...INITIAL_DATA,
+});
+const rules = reactive({
+  account: [
+    {
+      required: true,
     },
-    onSubmit({ validateResult, firstError }) {
-      if (validateResult === true) {
-        this.$message.success('提交成功');
-      } else {
-        console.log('Errors: ', validateResult);
-        this.$message.warning(firstError);
-      }
+    {
+      min: 2,
     },
-    handleValidateMessage() {
-      this.$message.success('设置表单校验信息提示成功');
-      this.$refs.form.setValidateMessage(validateMessage);
+    {
+      max: 10,
+      type: 'warning',
     },
-  },
+  ],
+  description: [
+    {
+      validator: (val) => val.length < 10,
+      message: '不能超过 20 个字，中文长度等于英文长度',
+    },
+  ],
+  password: [
+    {
+      required: true,
+    },
+    {
+      len: 8,
+      message: '请输入 8 位密码',
+    },
+  ],
+});
+const onReset = () => {
+  MessagePlugin.success('重置成功');
 };
+const onSubmit = ({ validateResult, firstError }) => {
+  if (validateResult === true) {
+    MessagePlugin.success('提交成功');
+  } else {
+    console.log('Errors: ', validateResult);
+    MessagePlugin.warning(firstError);
+  }
+};
+const handleValidateMessage = () => {
+  MessagePlugin.success('设置表单校验信息提示成功');
+  form.value.setValidateMessage(validateMessage);
+};
+onMounted(() => {
+  form.value.setValidateMessage(validateMessage);
+});
 </script>
