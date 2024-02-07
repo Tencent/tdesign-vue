@@ -12,21 +12,11 @@
 </template>
 
 <script>
-import Vue from 'vue';
-
-export default Vue.extend({
+export default {
   data() {
     return {
       mode: ['fill', 'contain', 'cover', 'none', 'scale-down'],
     };
   },
-  methods: {
-    onEnter() {
-      console.log('trigger enter');
-    },
-    onChange(val) {
-      console.log(this.input, val);
-    },
-  },
-});
+};
 </script>

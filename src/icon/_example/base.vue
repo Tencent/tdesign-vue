@@ -32,7 +32,7 @@ export default {
   components: {
     Icon,
   },
-  method: {
+  methods: {
     onIconClose() {
       console.log('icon was clicked.');
     },

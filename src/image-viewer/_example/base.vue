@@ -27,14 +27,6 @@ export default {
       visible: false,
     };
   },
-  methods: {
-    onOpen() {
-      this.visible = true;
-    },
-    close() {
-      this.visible = false;
-    },
-  },
 };
 </script>
 <style scoped>
