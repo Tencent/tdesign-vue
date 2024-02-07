@@ -28,17 +28,17 @@
   </t-space>
 </template>
 <script lang="jsx">
-const list = [];
+const initialList = [];
 for (let i = 0; i < 20; i++) {
-  list.push({
+  initialList.push({
     value: i.toString(),
     label: `内容${i + 1}`,
   });
 }
 
-const customList = [];
+const initialCustomList = [];
 for (let i = 0; i < 20; i++) {
-  customList.push({
+  initialCustomList.push({
     value: i.toString(),
     label: `内容${i + 1}`,
     description: `第${i + 1}段信息`,
@@ -47,10 +47,8 @@ for (let i = 0; i < 20; i++) {
 export default {
   data() {
     return {
-      list,
-      customList,
-      targetValue: [],
-      checkedValue: [],
+      list: initialList,
+      customList: initialCustomList,
       targetValue2: [],
       checkedValue2: [],
     };

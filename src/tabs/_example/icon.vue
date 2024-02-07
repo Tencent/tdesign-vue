@@ -8,15 +8,15 @@
     </t-space>
     <t-tabs :value="value" :theme="theme" @change="(newValue) => (value = newValue)">
       <t-tab-panel value="first">
-        <template #label> <icon name="home" style="margin-right: 4px" /> 首页 </template>
+        <template #label> <home-icon style="margin-right: 4px" /> 首页 </template>
         <p style="padding: 25px">首页的内容</p>
       </t-tab-panel>
       <t-tab-panel value="second">
-        <template #label> <icon name="calendar" style="margin-right: 4px" /> 日程 </template>
+        <template #label> <calendar-icon style="margin-right: 4px" /> 日程 </template>
         <p style="padding: 25px">日程的内容</p>
       </t-tab-panel>
       <t-tab-panel value="third">
-        <template #label> <icon name="layers" style="margin-right: 4px" /> 事项 </template>
+        <template #label> <layers-icon style="margin-right: 4px" /> 事项 </template>
         <p style="padding: 25px">事项的内容</p>
       </t-tab-panel>
     </t-tabs>
@@ -24,11 +24,13 @@
 </template>
 
 <script>
-import { Icon } from 'tdesign-icons-vue';
+import { HomeIcon, CalendarIcon, LayersIcon } from 'tdesign-icons-vue';
 
 export default {
   components: {
-    Icon,
+    HomeIcon,
+    CalendarIcon,
+    LayersIcon,
   },
   data() {
     return {

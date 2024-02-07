@@ -17,10 +17,5 @@ export default {
       disabledClear: false,
     };
   },
-  methods: {
-    onClear() {
-      this.time1 = null;
-    },
-  },
 };
 </script>
