@@ -32,6 +32,7 @@
 import { MessagePlugin } from 'tdesign-vue';
 import { ref } from 'vue';
 import { CloudUploadIcon } from 'tdesign-icons-vue';
+
 const uploadRef = ref();
 const files = ref([]);
 const progress = ref(0);

@@ -6,7 +6,10 @@
 </template>
 <script setup lang="jsx">
 import { ref } from 'vue';
-import { UserCircleIcon, CheckCircleFilledIcon, ErrorCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
+import {
+  UserCircleIcon, CheckCircleFilledIcon, ErrorCircleFilledIcon, CloseCircleFilledIcon,
+} from 'tdesign-icons-vue';
+
 const initialData = [];
 for (let i = 0; i < 5; i++) {
   initialData.push({

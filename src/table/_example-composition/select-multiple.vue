@@ -26,6 +26,7 @@
 <script setup lang="jsx">
 import { ref } from 'vue';
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
+
 const initialData = new Array(5).fill(null).map((item, i) => ({
   index: i + 1,
   applicant: ['贾明', '张三', '王芳'][i % 3],

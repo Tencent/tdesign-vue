@@ -58,7 +58,9 @@
 </template>
 
 <script setup lang="jsx">
-import { ref, reactive, computed, watch } from 'vue';
+import {
+  ref, reactive, computed, watch,
+} from 'vue';
 import {
   ChevronRightCircleIcon,
   ChevronRightIcon,
@@ -66,6 +68,7 @@ import {
   ErrorCircleFilledIcon,
   CloseCircleFilledIcon,
 } from 'tdesign-icons-vue';
+
 const getColumns = (isFixedColumn) => [
   {
     colKey: 'applicant',
@@ -165,9 +168,7 @@ const globalLocale = reactive({
     expandIcon: (h) => h && <ChevronRightIcon />,
   },
 });
-const columns = computed(() => {
-  return getColumns(fixedColumns.value);
-});
+const columns = computed(() => getColumns(fixedColumns.value));
 const rehandleClickOp = (data) => {
   console.log(data);
 };

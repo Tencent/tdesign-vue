@@ -21,12 +21,12 @@ import { ref, computed, watch } from 'vue';
 const uploadRef = ref();
 const files = ref([]);
 const uploadMethod = ref('requestSuccessMethod');
-const requestMethod = computed(() => {
-  return {
-    requestSuccessMethod: requestSuccessMethod,
-    requestFailMethod: requestFailMethod,
-  }[uploadMethod.value];
-});
+const requestMethod = computed(
+  () => ({
+    requestSuccessMethod,
+    requestFailMethod,
+  }[uploadMethod.value]),
+);
 // file 为等待上传的文件信息，用于提供给上传接口。file.raw 表示原始文件
 const requestSuccessMethod = (file /** UploadFile */) => {
   console.log(file, file.raw);

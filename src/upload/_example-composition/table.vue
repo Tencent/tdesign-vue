@@ -50,6 +50,7 @@
 <script setup>
 import { ref } from 'vue';
 import { UploadIcon, Icon } from 'tdesign-icons-vue';
+
 const files = ref([]);
 const handleChange = (files) => {
   console.log(files);
@@ -57,33 +58,30 @@ const handleChange = (files) => {
 const handleDelete = (file) => {
   files.value = files.value.filter((item) => item.uid !== file.uid);
 };
-const beforeUpload = () => {
-  return true;
-};
-const getStatusText = (status) => {
-  return {
-    success: '上传成功',
-    fail: '上传失败',
-    progress: '上传中',
-  }[status];
-};
-const getFileSize = (size) => {
-  return `${(size / 1024 / 1024).toFixed(2)}Mb`;
-};
-const getIcon = (status) => {
-  return {
-    success: {
-      name: 'check-circle-filled',
-      fill: 'green',
-    },
-    fail: {
-      name: 'error-circle-filled',
-      fill: '#ff3e00',
-    },
-    progress: {
-      name: 'loading',
-      fill: '#0052d9',
-    },
-  }[status];
-};
+const beforeUpload = () => true;
+const getStatusText = (status) => ({
+  success: '上传成功',
+  fail: '上传失败',
+  progress: '上传中',
+  waiting: '等待中',
+}[status]);
+const getFileSize = (size) => `${(size / 1024 / 1024).toFixed(2)}Mb`;
+const getIcon = (status) => ({
+  success: {
+    name: 'check-circle-filled',
+    fill: 'green',
+  },
+  fail: {
+    name: 'error-circle-filled',
+    fill: '#ff3e00',
+  },
+  progress: {
+    name: 'loading',
+    fill: '#0052d9',
+  },
+  waiting: {
+    name: 'time-filled',
+    fill: 'rgba(0,0,0,0.4)',
+  },
+}[status]);
 </script>

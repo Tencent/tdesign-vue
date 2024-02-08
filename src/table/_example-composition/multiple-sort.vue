@@ -26,6 +26,7 @@
 <script setup lang="jsx">
 import { ref } from 'vue';
 import { CheckCircleFilledIcon, ErrorCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
+
 const initialColumns = [
   {
     colKey: 'applicant',

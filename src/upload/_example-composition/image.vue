@@ -91,6 +91,7 @@
 <script setup>
 import { MessagePlugin } from 'tdesign-vue';
 import { ref, reactive } from 'vue';
+
 const uploadRef1 = ref();
 const uploadRef2 = ref();
 const uploadRef3 = ref();
@@ -117,17 +118,13 @@ const sizeLimit = reactive({
 const abridgeName = ref([6, 6]);
 const showImageFileName = ref(true);
 // formatResponse 返回后的 url 优先级高于接口返回的 url
-const formatImgResponse = () => {
-  return {
-    url: 'https://tdesign.gtimg.com/site/avatar.jpg',
-  };
-};
+const formatImgResponse = () => ({
+  url: 'https://tdesign.gtimg.com/site/avatar.jpg',
+});
 // 一旦 formatResponse 返回值包含 error，便会被组件判定为上传失败
-const formatResponse = () => {
-  return {
-    error: '网络异常，图片上传失败',
-  };
-};
+const formatResponse = () => ({
+  error: '网络异常，图片上传失败',
+});
 const handleFail = ({ file }) => {
   MessagePlugin.error(`文件 ${file.name} 上传失败`);
 };

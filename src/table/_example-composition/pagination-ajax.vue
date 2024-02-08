@@ -19,6 +19,7 @@
 <script setup lang="jsx">
 import { onMounted, ref, reactive } from 'vue';
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
+
 const data = ref([]);
 const isLoading = ref(false);
 const selectedRowKeys = ref([]);
@@ -96,10 +97,10 @@ const pagination = reactive({
     console.log('pagination.onChange', pageInfo);
   },
 });
-const fetchData = async (pagination = pagination) => {
+const fetchData = async (paginationData = pagination) => {
   try {
     isLoading.value = true;
-    const { current, pageSize } = pagination;
+    const { current, pageSize } = paginationData;
     // 请求可能存在跨域问题
     const url = new URL('https://randomuser.me/api');
     const params = {

@@ -93,6 +93,7 @@
 <script setup>
 import { MessagePlugin } from 'tdesign-vue';
 import { ref, watch } from 'vue';
+
 const uploadRef1 = ref();
 const uploadRef2 = ref();
 const uploadRef3 = ref();
@@ -140,12 +141,10 @@ const onValidate = (params) => {
 };
 // 用于格式化接口响应值，error 会被用于上传失败的提示文字；url 表示文件/图片地址
 // error 为真时，组件会判定为上传失败
-const formatResponse = (res) => {
-  return {
-    error: '上传失败，请重试',
-    url: res.url,
-  };
-};
+const formatResponse = (res) => ({
+  error: '上传失败，请重试',
+  url: res.url,
+});
 const outsideRemove = (index) => {
   files3.value.splice(index, 1);
 };
@@ -167,32 +166,32 @@ const beforeAllFilesUpload = () => {
 watch(multiple, (val) => {
   files3.value = val
     ? [
-        {
-          name: '这是一个上传成功的文件',
-          status: 'success',
-          url: 'https://tdesign.gtimg.com/site/source/figma-pc.png',
-          size: 1000,
-        },
-        {
-          name: '这是一个上传中的文件',
-          status: 'progress',
-          percent: 30,
-          url: 'https://tdesign.gtimg.com/site/source/figma-pc.png',
-          size: 1000,
-        },
-        {
-          name: '这是一个上传失败的文件',
-          status: 'fail',
-          url: 'https://tdesign.gtimg.com/site/source/figma-pc.png',
-          size: 1000,
-        },
-        {
-          name: '这是一个等待上传的文件',
-          status: 'waiting',
-          url: 'https://tdesign.gtimg.com/site/source/figma-pc.png',
-          size: 1000,
-        },
-      ]
+      {
+        name: '这是一个上传成功的文件',
+        status: 'success',
+        url: 'https://tdesign.gtimg.com/site/source/figma-pc.png',
+        size: 1000,
+      },
+      {
+        name: '这是一个上传中的文件',
+        status: 'progress',
+        percent: 30,
+        url: 'https://tdesign.gtimg.com/site/source/figma-pc.png',
+        size: 1000,
+      },
+      {
+        name: '这是一个上传失败的文件',
+        status: 'fail',
+        url: 'https://tdesign.gtimg.com/site/source/figma-pc.png',
+        size: 1000,
+      },
+      {
+        name: '这是一个等待上传的文件',
+        status: 'waiting',
+        url: 'https://tdesign.gtimg.com/site/source/figma-pc.png',
+        size: 1000,
+      },
+    ]
     : [];
 });
 </script>

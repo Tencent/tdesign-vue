@@ -32,8 +32,11 @@
   </div>
 </template>
 <script setup lang="jsx">
-import { h, ref, reactive, computed, watch } from 'vue';
+import {
+  h, ref, reactive, computed, watch,
+} from 'vue';
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
+
 function getData(count) {
   const initialColumns = [];
   for (let i = 0; i < count; i++) {

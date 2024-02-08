@@ -53,6 +53,7 @@
 <script setup lang="jsx">
 import { ref, computed } from 'vue';
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
+
 const initialData = [];
 for (let i = 0; i < 100; i++) {
   initialData.push({
@@ -167,26 +168,24 @@ const columns = ref([
     align: 'right',
   },
 ]);
-const columnControllerConfig = computed(() => {
-  return {
-    placement: placement.value,
-    fields: ['channel', 'detail.email', 'createTime', 'data1', 'data2', 'data3', 'data4'],
-    // 弹框组件属性透传
-    dialogProps: {
-      preventScrollThrough: true,
-    },
-    // 列配置按钮属性头像
-    buttonProps: customText.value
-      ? {
-          content: '显示列控制',
-          theme: 'primary',
-          variant: 'base',
-        }
-      : undefined,
-    // 数据字段分组显示
-    groupColumns: groupColumn.value ? GROUP_COLUMNS : undefined,
-  };
-});
+const columnControllerConfig = computed(() => ({
+  placement: placement.value,
+  fields: ['channel', 'detail.email', 'createTime', 'data1', 'data2', 'data3', 'data4'],
+  // 弹框组件属性透传
+  dialogProps: {
+    preventScrollThrough: true,
+  },
+  // 列配置按钮属性头像
+  buttonProps: customText.value
+    ? {
+      content: '显示列控制',
+      theme: 'primary',
+      variant: 'base',
+    }
+    : undefined,
+  // 数据字段分组显示
+  groupColumns: groupColumn.value ? GROUP_COLUMNS : undefined,
+}));
 const onColumnChange = (params) => {
   console.log(params);
 };

@@ -48,6 +48,7 @@
 <script setup lang="jsx">
 import { ref, computed } from 'vue';
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
+
 const initialData = [];
 for (let i = 0; i < 5; i++) {
   initialData.push({
@@ -69,69 +70,67 @@ const tableLayout = ref('fixed');
 const leftFixedColumn = ref(2);
 const rightFixedColumn = ref(1);
 const emptyData = ref(false);
-const columns = computed(() => {
-  return [
-    {
-      colKey: 'applicant',
-      title: '申请人',
-      width: 100,
-      fixed: 'left',
+const columns = computed(() => [
+  {
+    colKey: 'applicant',
+    title: '申请人',
+    width: 100,
+    fixed: 'left',
+  },
+  {
+    colKey: 'status',
+    title: '审批状态',
+    width: 120,
+    fixed: leftFixedColumn.value >= 2 ? 'left' : undefined,
+    cell: (h, { row }) => {
+      const statusNameListMap = {
+        0: {
+          label: '审批通过',
+          theme: 'success',
+          icon: <CheckCircleFilledIcon />,
+        },
+        1: {
+          label: '审批失败',
+          theme: 'danger',
+          icon: <CloseCircleFilledIcon />,
+        },
+        2: {
+          label: '审批过期',
+          theme: 'warning',
+          icon: <ErrorCircleFilledIcon />,
+        },
+      };
+      return (
+        <t-tag shape="round" theme={statusNameListMap[row.status].theme} variant="light-outline">
+          {statusNameListMap[row.status].icon}
+          {statusNameListMap[row.status].label}
+        </t-tag>
+      );
     },
-    {
-      colKey: 'status',
-      title: '审批状态',
-      width: 120,
-      fixed: leftFixedColumn.value >= 2 ? 'left' : undefined,
-      cell: (h, { row }) => {
-        const statusNameListMap = {
-          0: {
-            label: '审批通过',
-            theme: 'success',
-            icon: <CheckCircleFilledIcon />,
-          },
-          1: {
-            label: '审批失败',
-            theme: 'danger',
-            icon: <CloseCircleFilledIcon />,
-          },
-          2: {
-            label: '审批过期',
-            theme: 'warning',
-            icon: <ErrorCircleFilledIcon />,
-          },
-        };
-        return (
-          <t-tag shape="round" theme={statusNameListMap[row.status].theme} variant="light-outline">
-            {statusNameListMap[row.status].icon}
-            {statusNameListMap[row.status].label}
-          </t-tag>
-        );
-      },
-    },
-    {
-      colKey: 'detail.email',
-      title: '邮箱地址',
-      width: 180,
-    },
-    {
-      colKey: 'matters',
-      title: '申请事项',
-      width: 200,
-    },
-    {
-      colKey: 'createTime',
-      title: '申请日期',
-      width: 180,
-      fixed: rightFixedColumn.value >= 2 ? 'right' : undefined,
-    },
-    {
-      colKey: 'operation',
-      title: '操作',
-      width: 120,
-      fixed: 'right',
-    },
-  ];
-});
+  },
+  {
+    colKey: 'detail.email',
+    title: '邮箱地址',
+    width: 180,
+  },
+  {
+    colKey: 'matters',
+    title: '申请事项',
+    width: 200,
+  },
+  {
+    colKey: 'createTime',
+    title: '申请日期',
+    width: 180,
+    fixed: rightFixedColumn.value >= 2 ? 'right' : undefined,
+  },
+  {
+    colKey: 'operation',
+    title: '操作',
+    width: 120,
+    fixed: 'right',
+  },
+]);
 const rehandleClickOp = (data) => {
   console.log(data);
 };

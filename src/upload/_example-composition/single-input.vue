@@ -16,6 +16,7 @@
 <script setup>
 import { MessagePlugin } from 'tdesign-vue';
 import { ref } from 'vue';
+
 const files = ref([]);
 const tips = ref('上传文件大小在 5M 以内');
 const handleFail = ({ file }) => {
