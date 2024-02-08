@@ -137,9 +137,9 @@ const onChange = (info, context) => {
   console.log('change', info, context);
 };
 // 非受控用法，不需要传递 sort 给 Table 组件，因而此处无需执行 this.sort = sort 进行赋值
-const defaultSortChange = (sort) => {
-  request(sort);
-};
+// const defaultSortChange = (sort) => {
+//   request(sort);
+// };
 </script>
 <style lang="less">
 /deep/ [class*='t-table-expandable-icon-cell'] .t-icon {

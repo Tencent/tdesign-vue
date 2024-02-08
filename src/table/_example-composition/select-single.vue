@@ -45,7 +45,7 @@ for (let i = 0; i < 5; i++) {
   });
 }
 const disabledFunc = ({ rowIndex }) => rowIndex === 1 || rowIndex === 3;
-const highlightSelectedRow = ref(false);
+// const highlightSelectedRow = ref(false);
 const selectedOnRowClick = ref(false);
 const selectedRowKeys = ref([2]);
 const columns = ref([

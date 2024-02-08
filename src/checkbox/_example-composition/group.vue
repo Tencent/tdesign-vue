@@ -62,7 +62,7 @@ const OPTION_LIST = [
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   {
     value: '选项二',
-    label: (h) => <div>选项二</div>,
+    label: () => <div>选项二</div>,
   },
   {
     value: '选项三',

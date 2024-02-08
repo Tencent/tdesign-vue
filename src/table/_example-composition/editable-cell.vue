@@ -213,12 +213,12 @@ const editableCellState = (cellParams) => {
   return rowIndex !== 2;
 };
 // 用于提交前校验数据（示例代码有效，勿删）
-const validateTableData = () => {
-  // 仅校验处于编辑态的单元格
-  tableRef.value.validateTableData().then((result) => {
-    console.log('validate result: ', result);
-  });
-};
+// const validateTableData = () => {
+//   // 仅校验处于编辑态的单元格
+//   tableRef.value.validateTableData().then((result) => {
+//     console.log('validate result: ', result);
+//   });
+// };
 </script>
 
 <style scoped>

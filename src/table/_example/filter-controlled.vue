@@ -208,10 +208,10 @@ export default {
       this.filterValue = {};
       this.data = initialData;
     },
-    filterIcon(h) {
-      console.log(h);
-      return <i>icon</i>;
-    },
+    // filterIcon(h) {
+    //   console.log(h);
+    //   return <i>icon</i>;
+    // },
     oneEmailChange(val, ctx) {
       console.log(val, ctx);
     },

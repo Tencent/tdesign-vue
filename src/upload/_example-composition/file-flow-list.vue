@@ -21,7 +21,7 @@
       :abridge-name="ABRIDGE_NAME"
       :auto-upload="autoUpload"
       :show-thumbnail="showThumbnail"
-      :max="10"
+      :max="max"
       :allow-upload-duplicate-file="allowUploadDuplicateFile"
       :is-batch-upload="isBatchUpload"
       :upload-all-files-in-one-request="uploadAllFilesInOneRequest"
@@ -36,7 +36,7 @@
 <script setup>
 import { ref } from 'vue';
 
-const max = ref(5);
+const max = ref(10);
 const files = ref([]);
 const disabled = ref(false);
 const autoUpload = ref(false);

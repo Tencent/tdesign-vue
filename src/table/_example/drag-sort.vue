@@ -68,11 +68,11 @@ export default {
     return {
       data: [...initialData],
       columns: initialColumns,
-      pagination: {
-        current: 1,
-        pageSize: 5,
-        total: 500,
-      },
+      // pagination: {
+      //   current: 1,
+      //   pageSize: 5,
+      //   total: 500,
+      // },
       // 非受控用法
       pagination1: {
         defaultCurrent: 1,

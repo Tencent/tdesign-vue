@@ -5,7 +5,7 @@
   </t-space>
 </template>
 <script setup>
-import { ref, reactive } from 'vue';
+import { ref } from 'vue';
 
 const value1 = ref(12);
 const value2 = ref([30, 70]);

@@ -139,12 +139,12 @@ export default {
         pageSize: 10,
         total: TOTAL,
       },
-      defaultPagination: {
-        defaultCurrent: 1,
-        defaultPageSize: 10,
-        total: TOTAL,
-      },
-      displayColumns: ['drag', 'id', 'key', 'platform', 'operate'],
+      // defaultPagination: {
+      //   defaultCurrent: 1,
+      //   defaultPageSize: 10,
+      //   total: TOTAL,
+      // },
+      // displayColumns: ['drag', 'id', 'key', 'platform', 'operate'],
       columns: [
         {
           // 列拖拽排序必要参数

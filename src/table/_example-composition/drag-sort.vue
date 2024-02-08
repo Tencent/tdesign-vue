@@ -92,11 +92,11 @@ const initialData = new Array(500).fill(5).map((_, i) => ({
 }));
 const data = ref([...initialData]);
 const columns = ref(initialColumns);
-const pagination = reactive({
-  current: 1,
-  pageSize: 5,
-  total: 500,
-});
+// const pagination = reactive({
+//   current: 1,
+//   pageSize: 5,
+//   total: 500,
+// });
 // 非受控用法
 const pagination1 = reactive({
   defaultCurrent: 1,
