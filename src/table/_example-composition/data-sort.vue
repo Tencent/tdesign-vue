@@ -23,7 +23,7 @@
           rowKey="index"
           :columns="columns"
           :data="data"
-          :sort="sortObject"
+          :sort="sort"
           @sort-change="sortChange"
           @data-change="dataChange"
           :multipleSort="allowMultipleSort"
@@ -128,7 +128,7 @@ const initialData = new Array(4).fill(null).map((_, i) => ({
 }));
 const data = ref(initialData);
 const columns = ref(initialColumns);
-let sortObject = reactive({});
+const sort = ref({});
 const singleSort = reactive({
   sortBy: 'status',
   descending: true,
@@ -146,10 +146,10 @@ const globalLocale = reactive({
   },
 });
 // 除了监听 sortChange 事件调整排序，也可以监听 change 事件
-const sortChange = (sort, options) => {
-  console.log('sort-change', sort, options);
+const sortChange = (sortInfo, options) => {
+  console.log('sort-change', sortInfo, options);
   // 受控操作当中，this.sort 和 this.data 的赋值都是必须
-  sortObject = sort;
+  sort.value = sortInfo;
   // this.data = options.currentDataSource;
 };
 const dataChange = (newData) => {
@@ -160,7 +160,7 @@ const dataChange = (newData) => {
 watch(
   allowMultipleSort,
   (val) => {
-    sortObject = val ? multipleSorts.value : singleSort;
+    sort.value = val ? multipleSorts.value : singleSort;
   },
   {
     immediate: true,
