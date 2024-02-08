@@ -136,10 +136,10 @@ export default {
   },
   methods: {
     // 除了监听 sortChange 事件调整排序，也可以监听 change 事件
-    sortChange(sort, options) {
-      console.log('sort-change', sort, options);
+    sortChange(sortInfo, options) {
+      console.log('sort-change', sortInfo, options);
       // 受控操作当中，this.sort 和 this.data 的赋值都是必须
-      this.sort = sort;
+      this.sort = sortInfo;
       // this.data = options.currentDataSource;
     },
     dataChange(newData) {

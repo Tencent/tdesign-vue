@@ -96,11 +96,11 @@ export default {
     };
   },
   methods: {
-    sortChange(sort) {
+    sortChange(sortInfo) {
       // 对于受控属性而言，这里的赋值很重要，不可缺少
-      this.sort = sort;
-      this.request(sort);
-      console.log('sort-change', sort);
+      this.sort = sortInfo;
+      this.request(sortInfo);
+      console.log('sort-change', sortInfo);
     },
     // 排序、分页、过滤等发生变化时会出发 change 事件
     onChange(info, context) {

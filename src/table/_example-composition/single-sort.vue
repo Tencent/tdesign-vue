@@ -129,8 +129,8 @@ const request = (sort) => {
 const sortChange = (sortInfo) => {
   // 对于受控属性而言，这里的赋值很重要，不可缺少
   sort.value = sortInfo;
-  request(sort.value);
-  console.log('sort-change', sort.value);
+  request(sortInfo);
+  console.log('sort-change', sortInfo);
 };
 // 排序、分页、过滤等发生变化时会出发 change 事件
 const onChange = (info, context) => {
