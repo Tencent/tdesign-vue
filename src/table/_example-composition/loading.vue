@@ -20,7 +20,7 @@
   </div>
 </template>
 <script setup lang="jsx">
-import { ref, reactive } from 'vue';
+import { ref } from 'vue';
 
 const data = ref([]);
 const columns = ref([
@@ -75,11 +75,11 @@ const columns = ref([
 ]);
 const rowKey = ref('property');
 const size = ref('small');
-const style = reactive({
-  height: '100px',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-});
+// const style = reactive({
+//   height: '100px',
+//   display: 'flex',
+//   alignItems: 'center',
+//   justifyContent: 'center',
+// });
 const renderLoading = () => <div class="t-table--loading-message">这里使用渲染函数定义加载状态</div>;
 </script>

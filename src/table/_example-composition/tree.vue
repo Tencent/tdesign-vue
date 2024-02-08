@@ -134,12 +134,12 @@ const pagination = reactive({
   pageSize: 10,
   total: TOTAL,
 });
-const defaultPagination = reactive({
-  defaultCurrent: 1,
-  defaultPageSize: 10,
-  total: TOTAL,
-});
-const displayColumns = ref(['drag', 'id', 'key', 'platform', 'operate']);
+// const defaultPagination = reactive({
+//   defaultCurrent: 1,
+//   defaultPageSize: 10,
+//   total: TOTAL,
+// });
+// const displayColumns = ref(['drag', 'id', 'key', 'platform', 'operate']);
 const columns = ref([
   {
     // 列拖拽排序必要参数

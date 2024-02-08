@@ -53,7 +53,7 @@ const options2 = ref([
     avatar: 'https://tdesign.gtimg.com/site/avatar.jpg',
   },
 ]);
-const timer = ref(null);
+// const timer = ref(null);
 const options1 = computed(() => TEXTS.map((text) => ({
   text,
   label: () => (

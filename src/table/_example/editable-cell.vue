@@ -193,12 +193,12 @@ export default {
     },
 
     // 用于提交前校验数据（示例代码有效，勿删）
-    validateTableData() {
-      // 仅校验处于编辑态的单元格
-      this.$refs.tableRef.validateTableData().then((result) => {
-        console.log('validate result: ', result);
-      });
-    },
+    // validateTableData() {
+    //   // 仅校验处于编辑态的单元格
+    //   this.$refs.tableRef.validateTableData().then((result) => {
+    //     console.log('validate result: ', result);
+    //   });
+    // },
   },
 };
 </script>

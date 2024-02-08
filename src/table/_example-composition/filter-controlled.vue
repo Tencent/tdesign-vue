@@ -230,10 +230,10 @@ const setFilters = () => {
   filterValue = {};
   data.value = initialData;
 };
-const filterIcon = (h) => {
-  console.log(h);
-  return <i>icon</i>;
-};
+// const filterIcon = (h) => {
+//   console.log(h);
+//   return <i>icon</i>;
+// };
 // // 统一配置筛选、省略等浮层绑定的位置
 // getAttach() {
 //   return document.body;

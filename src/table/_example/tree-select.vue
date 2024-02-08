@@ -140,9 +140,9 @@ export default {
   },
 
   methods: {
-    rehandleClickOp(context) {
-      console.log(context);
-    },
+    // rehandleClickOp(context) {
+    //   console.log(context);
+    // },
 
     rehandleSelectChange(value, { selectedRowData }) {
       this.selectedRowKeys = value;
