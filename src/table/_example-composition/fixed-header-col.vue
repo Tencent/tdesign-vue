@@ -45,6 +45,7 @@
 <script setup lang="jsx">
 import { ref, watch } from 'vue';
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
+
 function getData(count) {
   const initialData = [];
   for (let i = 0; i < count; i++) {

@@ -25,7 +25,9 @@
 <script setup lang="jsx">
 import { ref } from 'vue';
 import { MessagePlugin } from 'tdesign-vue';
-import { FileCopyIcon, ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
+import {
+  FileCopyIcon, ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon,
+} from 'tdesign-icons-vue';
 
 // thanks to https://www.zhangxinxu.com/wordpress/2021/10/js-copy-paste-clipboard/
 function copyToClipboard(text) {

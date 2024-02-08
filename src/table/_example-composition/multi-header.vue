@@ -40,6 +40,7 @@
 <script setup lang="jsx">
 import { ref, reactive, computed } from 'vue';
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
+
 const initialData = [];
 for (let i = 0; i < 1000; i++) {
   initialData.push({
@@ -233,9 +234,7 @@ const fixedRightCol = ref(false);
 const headerAffixedTop = ref(false);
 const virtualScroll = ref(true);
 const data = ref(initialData);
-const columns = computed(() => {
-  return getColumns(fixedLeftCol.value, fixedRightCol.value);
-});
+const columns = computed(() => getColumns(fixedLeftCol.value, fixedRightCol.value));
 const onDataChange = (val) => {
   data.value = val.concat();
 };

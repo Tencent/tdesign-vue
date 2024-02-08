@@ -28,6 +28,7 @@
 <script setup lang="jsx">
 import { ref } from 'vue';
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
+
 const initialData = [];
 for (let i = 0; i < 5; i++) {
   initialData.push({
@@ -126,8 +127,8 @@ const rehandleSelectChange = (value, { selectedRowData }) => {
 // 整行选中示例
 const onRowClick = ({ row, index }) => {
   if (
-    selectedOnRowClick.value &&
-    !disabledFunc({
+    selectedOnRowClick.value
+    && !disabledFunc({
       row,
       rowIndex: index,
     })

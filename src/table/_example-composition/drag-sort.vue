@@ -25,6 +25,7 @@
 <script setup lang="jsx">
 import { ref, reactive } from 'vue';
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
+
 const initialColumns = [
   {
     colKey: 'index',
@@ -103,8 +104,10 @@ const pagination1 = reactive({
   total: 500,
 });
 // currentData is going to be deprecated
-const onDragSort = ({ currentIndex, current, targetIndex, target, data, newData, e }) => {
-  console.log('重新排序', currentIndex, current, targetIndex, target, data, newData, e);
+const onDragSort = ({
+  currentIndex, current, targetIndex, target, data: dragSortData, newData, e,
+}) => {
+  console.log('重新排序', currentIndex, current, targetIndex, target, dragSortData, newData, e);
   data.value = newData;
 };
 </script>

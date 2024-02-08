@@ -59,6 +59,7 @@ import {
 } from 'tdesign-vue';
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 import isNumber from 'lodash/isNumber';
+
 const initialData = new Array(5).fill(null).map((_, i) => ({
   key: String(i + 1),
   applicant: ['贾明', '张三', '王芳'][i % 3],
@@ -72,7 +73,7 @@ const initialData = new Array(5).fill(null).map((_, i) => ({
   createTime: ['2022-01-01', '2022-02-01', '2022-03-01', '2022-04-01', '2022-05-01'][i % 4],
 }));
 const data = ref(initialData);
-const filterValue = reactive({
+let filterValue = reactive({
   createTime: [],
 });
 const bordered = ref(true);
@@ -80,141 +81,139 @@ const align = ref('left');
 const oneEmailChange = (val, ctx) => {
   console.log(val, ctx);
 };
-const columns = computed(() => {
-  return [
-    {
-      colKey: 'applicant',
-      title: '申请人',
-      width: 100,
-      foot: '-',
+const columns = computed(() => [
+  {
+    colKey: 'applicant',
+    title: '申请人',
+    width: 100,
+    foot: '-',
+  },
+  {
+    title: () => '申请状态',
+    colKey: 'status',
+    align: align.value,
+    // 单选过滤配置
+    filter: {
+      // 当 title 字段使用复杂的函数或插槽动态定义时，筛选结果又只需显示简单的文本时，可以使用 filter.label
+      // label: '申请状态',
+      type: 'single',
+      list: [
+        {
+          label: '审批通过',
+          value: 1,
+        },
+        {
+          label: '已过期',
+          value: 2,
+        },
+        {
+          label: '审批失败',
+          value: 3,
+        },
+      ],
+      // confirm to search and hide filter popup
+      confirmEvents: ['onChange'],
+      // 支持透传全部 Popup 组件属性
+      // popupProps: {
+      //   attach: () => document.body,
+      // },
     },
-    {
-      title: () => '申请状态',
-      colKey: 'status',
-      align: align.value,
-      // 单选过滤配置
-      filter: {
-        // 当 title 字段使用复杂的函数或插槽动态定义时，筛选结果又只需显示简单的文本时，可以使用 filter.label
-        // label: '申请状态',
-        type: 'single',
-        list: [
-          {
-            label: '审批通过',
-            value: 1,
-          },
-          {
-            label: '已过期',
-            value: 2,
-          },
-          {
-            label: '审批失败',
-            value: 3,
-          },
-        ],
-        // confirm to search and hide filter popup
-        confirmEvents: ['onChange'],
-        // 支持透传全部 Popup 组件属性
-        // popupProps: {
-        //   attach: () => document.body,
-        // },
-      },
-      cell: (h, { row }) => {
-        const statusNameListMap = {
-          1: {
-            label: '审批通过',
-            theme: 'success',
-            icon: <CheckCircleFilledIcon />,
-          },
-          2: {
-            label: '审批失败',
-            theme: 'danger',
-            icon: <CloseCircleFilledIcon />,
-          },
-          3: {
-            label: '审批过期',
-            theme: 'warning',
-            icon: <ErrorCircleFilledIcon />,
-          },
-        };
-        return (
-          <t-tag shape="round" theme={statusNameListMap[row.status].theme} variant="light-outline">
-            {statusNameListMap[row.status].icon}
-            {statusNameListMap[row.status].label}
-          </t-tag>
-        );
-      },
+    cell: (h, { row }) => {
+      const statusNameListMap = {
+        1: {
+          label: '审批通过',
+          theme: 'success',
+          icon: <CheckCircleFilledIcon />,
+        },
+        2: {
+          label: '审批失败',
+          theme: 'danger',
+          icon: <CloseCircleFilledIcon />,
+        },
+        3: {
+          label: '审批过期',
+          theme: 'warning',
+          icon: <ErrorCircleFilledIcon />,
+        },
+      };
+      return (
+        <t-tag shape="round" theme={statusNameListMap[row.status].theme} variant="light-outline">
+          {statusNameListMap[row.status].icon}
+          {statusNameListMap[row.status].label}
+        </t-tag>
+      );
     },
-    {
-      title: '签署方式',
-      colKey: 'channel',
-      // 多选过滤配置
-      filter: {
-        type: 'multiple',
-        resetValue: [],
-        list: [
-          {
-            label: 'Check All',
-            checkAll: true,
-          },
-          {
-            label: '电子签署',
-            value: '电子签署',
-          },
-          {
-            label: '纸质签署',
-            value: '纸质签署',
-          },
-        ],
-        // 是否显示重置取消按钮，一般情况不需要显示
-        showConfirmAndReset: true,
-      },
+  },
+  {
+    title: '签署方式',
+    colKey: 'channel',
+    // 多选过滤配置
+    filter: {
+      type: 'multiple',
+      resetValue: [],
+      list: [
+        {
+          label: 'Check All',
+          checkAll: true,
+        },
+        {
+          label: '电子签署',
+          value: '电子签署',
+        },
+        {
+          label: '纸质签署',
+          value: '纸质签署',
+        },
+      ],
+      // 是否显示重置取消按钮，一般情况不需要显示
+      showConfirmAndReset: true,
     },
-    {
-      title: '邮箱地址',
-      colKey: 'detail.email',
-      // 输入框过滤配置
-      filter: {
-        type: 'input',
-        // 文本域搜索
-        // component: Textarea,
+  },
+  {
+    title: '邮箱地址',
+    colKey: 'detail.email',
+    // 输入框过滤配置
+    filter: {
+      type: 'input',
+      // 文本域搜索
+      // component: Textarea,
 
-        resetValue: '',
-        // 按下 Enter 键时也触发确认搜索
-        confirmEvents: ['onEnter'],
-        props: {
-          placeholder: '输入关键词过滤',
-          onChange: oneEmailChange,
-        },
-        // 是否显示重置取消按钮，一般情况不需要显示
-        showConfirmAndReset: true,
+      resetValue: '',
+      // 按下 Enter 键时也触发确认搜索
+      confirmEvents: ['onEnter'],
+      props: {
+        placeholder: '输入关键词过滤',
+        onChange: oneEmailChange,
       },
+      // 是否显示重置取消按钮，一般情况不需要显示
+      showConfirmAndReset: true,
     },
-    {
-      title: '申请时间',
-      colKey: 'createTime',
-      // 用于查看同时存在排序和过滤时的图标显示是否正常
-      sorter: true,
-      // 自定义过滤组件：日期过滤配置，请确保自定义组件包含 value 和 onChange 属性
-      filter: {
-        component: DateRangePickerPanel,
-        props: {
-          firstDayOfWeek: 7,
-        },
-        attrs: {
-          'data-id': 'attribute-id-value',
-        },
-        classNames: 'custom-class-name',
-        styles: {
-          fontSize: '14px',
-        },
-        // 是否显示重置取消按钮，一般情况不需要显示
-        showConfirmAndReset: true,
-        // 日期范围是一个组件，重置时需赋值为 []
-        resetValue: [],
+  },
+  {
+    title: '申请时间',
+    colKey: 'createTime',
+    // 用于查看同时存在排序和过滤时的图标显示是否正常
+    sorter: true,
+    // 自定义过滤组件：日期过滤配置，请确保自定义组件包含 value 和 onChange 属性
+    filter: {
+      component: DateRangePickerPanel,
+      props: {
+        firstDayOfWeek: 7,
       },
+      attrs: {
+        'data-id': 'attribute-id-value',
+      },
+      classNames: 'custom-class-name',
+      styles: {
+        fontSize: '14px',
+      },
+      // 是否显示重置取消按钮，一般情况不需要显示
+      showConfirmAndReset: true,
+      // 日期范围是一个组件，重置时需赋值为 []
+      resetValue: [],
     },
-  ];
-});
+  },
+]);
 // filters 参数包含自定义过滤组件 日期选择器 的值
 const onFilterChange = (filters, ctx) => {
   console.log('filter-change', filters, ctx);

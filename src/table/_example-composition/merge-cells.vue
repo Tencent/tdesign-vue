@@ -14,6 +14,7 @@
 <script setup lang="jsx">
 import { ref } from 'vue';
 import { CheckCircleFilledIcon, ErrorCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
+
 const initialData = new Array(6).fill(null).map((_, i) => ({
   i,
   status: i % 3,

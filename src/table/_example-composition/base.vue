@@ -37,6 +37,7 @@
 <script setup lang="jsx">
 import { ref, reactive } from 'vue';
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
+
 const initialData = [];
 const total = 28;
 for (let i = 0; i < total; i++) {

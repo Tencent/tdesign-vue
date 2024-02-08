@@ -60,7 +60,10 @@
 <script setup lang="jsx">
 import { ref, reactive, computed } from 'vue';
 import { MessagePlugin, EnhancedTable as TEnhancedTable, Loading } from 'tdesign-vue';
-import { ChevronRightIcon, ChevronDownIcon, MoveIcon, AddRectangleIcon, MinusRectangleIcon } from 'tdesign-icons-vue';
+import {
+  ChevronRightIcon, ChevronDownIcon, MoveIcon, AddRectangleIcon, MinusRectangleIcon,
+} from 'tdesign-icons-vue';
+
 const TOTAL = 5;
 function getObject(i, currentPage) {
   return {
@@ -82,27 +85,26 @@ function getData(currentPage = 1) {
   for (let i = 0; i < TOTAL; i++) {
     const obj = getObject(i, currentPage);
     // 第一行不设置子节点
-    obj.list =
-      i === 0
-        ? []
-        : new Array(2).fill(null).map((t, j) => {
-            const secondIndex = 100 * j + (i + 1) * 10;
-            const secondObj = {
-              ...obj,
-              id: secondIndex,
-              key: `申请人 ${secondIndex}_${currentPage} 号`,
-            };
-            secondObj.list = new Array(3).fill(null).map((m, n) => {
-              const thirdIndex = secondIndex * 1000 + 100 * m + (n + 1) * 10;
-              return {
-                ...obj,
-                id: thirdIndex,
-                key: `申请人 ${thirdIndex}_${currentPage} 号`,
-                list: true,
-              };
-            });
-            return secondObj;
-          });
+    obj.list = i === 0
+      ? []
+      : new Array(2).fill(null).map((t, j) => {
+        const secondIndex = 100 * j + (i + 1) * 10;
+        const secondObj = {
+          ...obj,
+          id: secondIndex,
+          key: `申请人 ${secondIndex}_${currentPage} 号`,
+        };
+        secondObj.list = new Array(3).fill(null).map((m, n) => {
+          const thirdIndex = secondIndex * 1000 + 100 * m + (n + 1) * 10;
+          return {
+            ...obj,
+            id: thirdIndex,
+            key: `申请人 ${thirdIndex}_${currentPage} 号`,
+            list: true,
+          };
+        });
+        return secondObj;
+      });
     data.push(obj);
   }
   // 懒加载1
@@ -163,14 +165,13 @@ const columns = ref([
     colKey: 'platform',
     title: '签署方式',
     width: 100,
-    cell: (h, { row }) =>
-      row.platform === '电子签署' ? (
+    cell: (h, { row }) => row.platform === '电子签署' ? (
         <t-tag size="small" theme="primary">
           {row.platform}
         </t-tag>
-      ) : (
-        row.platform
-      ),
+    ) : (
+      row.platform
+    ),
   },
   {
     colKey: 'operate',

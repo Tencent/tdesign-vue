@@ -35,6 +35,7 @@
 <script setup lang="jsx">
 import { ref, reactive } from 'vue';
 import { CheckCircleFilledIcon, ErrorCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
+
 const initialColumns = [
   {
     colKey: 'applicant',
@@ -106,7 +107,7 @@ const initialData = new Array(4).fill(null).map((_, i) => ({
 const data = ref(initialData);
 const columns = ref(initialColumns);
 const hideSortTips = ref(false);
-const sort = reactive({
+let sortObject = reactive({
   // 按照 status 字段进行排序
   sortBy: 'status',
   // 是否按照降序进行排序
@@ -127,7 +128,7 @@ const request = (sort) => {
 };
 const sortChange = (sort) => {
   // 对于受控属性而言，这里的赋值很重要，不可缺少
-  sort = sort;
+  sortObject = sort;
   request(sort);
   console.log('sort-change', sort);
 };

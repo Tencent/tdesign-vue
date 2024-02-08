@@ -22,7 +22,10 @@
 
 <script setup lang="jsx">
 import { ref } from 'vue';
-import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon, MoveIcon } from 'tdesign-icons-vue';
+import {
+  ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon, MoveIcon,
+} from 'tdesign-icons-vue';
+
 const initialColumns = [
   {
     colKey: 'drag',

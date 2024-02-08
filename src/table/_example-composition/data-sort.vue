@@ -23,7 +23,7 @@
           rowKey="index"
           :columns="columns"
           :data="data"
-          :sort="sort"
+          :sort="sortObject"
           @sort-change="sortChange"
           @data-change="dataChange"
           :multipleSort="allowMultipleSort"
@@ -50,6 +50,7 @@ import {
   ErrorCircleFilledIcon,
   CloseCircleFilledIcon,
 } from 'tdesign-icons-vue';
+
 const initialColumns = [
   {
     colKey: 'applicant',
@@ -127,7 +128,7 @@ const initialData = new Array(4).fill(null).map((_, i) => ({
 }));
 const data = ref(initialData);
 const columns = ref(initialColumns);
-const sort = reactive({});
+let sortObject = reactive({});
 const singleSort = reactive({
   sortBy: 'status',
   descending: true,
@@ -148,7 +149,7 @@ const globalLocale = reactive({
 const sortChange = (sort, options) => {
   console.log('sort-change', sort, options);
   // 受控操作当中，this.sort 和 this.data 的赋值都是必须
-  sort = sort;
+  sortObject = sort;
   // this.data = options.currentDataSource;
 };
 const dataChange = (newData) => {
@@ -159,7 +160,7 @@ const dataChange = (newData) => {
 watch(
   allowMultipleSort,
   (val) => {
-    sort = val ? multipleSorts.value : singleSort;
+    sortObject = val ? multipleSorts.value : singleSort;
   },
   {
     immediate: true,

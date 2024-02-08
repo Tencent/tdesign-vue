@@ -48,6 +48,7 @@ import { ref, watch } from 'vue';
 import { EnhancedTable as TEnhancedTable, MessagePlugin } from 'tdesign-vue';
 import cloneDeep from 'lodash/cloneDeep';
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
+
 const initialData = [];
 for (let i = 0; i < 500; i++) {
   const obj = {
@@ -159,9 +160,7 @@ const rehandleSelectChange = (value, { selectedRowData }) => {
   selectedRowKeys.value = value;
   console.log(value, selectedRowData);
 };
-const expandedRowRender = (h, { row }) => {
-  return <div>这是展开项数据，我是 {row.key} 号</div>;
-};
+const expandedRowRender = (h, { row }) => <div>这是展开项数据，我是 {row.key} 号</div>;
 const onExpandChange = (val) => {
   expandedRowKeys.value = val;
 };

@@ -17,6 +17,7 @@
 </template>
 <script setup lang="jsx">
 import { ref } from 'vue';
+
 const columns = ref([
   {
     colKey: 'type',

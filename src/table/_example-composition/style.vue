@@ -12,6 +12,7 @@
 <script setup lang="jsx">
 import { ref } from 'vue';
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
+
 const initialData = [];
 const total = 5;
 for (let i = 0; i < total; i++) {

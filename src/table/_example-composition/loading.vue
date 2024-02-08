@@ -21,6 +21,7 @@
 </template>
 <script setup lang="jsx">
 import { ref, reactive } from 'vue';
+
 const data = ref([]);
 const columns = ref([
   {
@@ -80,7 +81,5 @@ const style = reactive({
   alignItems: 'center',
   justifyContent: 'center',
 });
-const renderLoading = () => {
-  return <div class="t-table--loading-message">这里使用渲染函数定义加载状态</div>;
-};
+const renderLoading = () => <div class="t-table--loading-message">这里使用渲染函数定义加载状态</div>;
 </script>

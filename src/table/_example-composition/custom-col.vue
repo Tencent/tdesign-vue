@@ -39,6 +39,7 @@
 <script setup lang="jsx">
 import { ref, reactive, computed } from 'vue';
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
+
 const initialData = [];
 for (let i = 0; i < 100; i++) {
   initialData.push({
@@ -155,20 +156,18 @@ const columns = ref([
     align: 'right',
   },
 ]);
-const columnControllerConfig = computed(() => {
-  return {
-    // 隐藏组件内部的 列配置按钮
-    hideTriggerButton: true,
-    // 允许哪些列参与显示-隐藏控制
-    fields: ['channel', 'detail.email', 'createTime', 'data1', 'data2', 'data3', 'data4'],
-    // 透传弹框组件全部属性
-    dialogProps: {
-      preventScrollThrough: true,
-    },
-    // 数据字段分组显示
-    groupColumns: groupColumn.value ? GROUP_COLUMNS : undefined,
-  };
-});
+const columnControllerConfig = computed(() => ({
+  // 隐藏组件内部的 列配置按钮
+  hideTriggerButton: true,
+  // 允许哪些列参与显示-隐藏控制
+  fields: ['channel', 'detail.email', 'createTime', 'data1', 'data2', 'data3', 'data4'],
+  // 透传弹框组件全部属性
+  dialogProps: {
+    preventScrollThrough: true,
+  },
+  // 数据字段分组显示
+  groupColumns: groupColumn.value ? GROUP_COLUMNS : undefined,
+}));
 const onColumnChange = (params) => {
   console.log(params);
 };

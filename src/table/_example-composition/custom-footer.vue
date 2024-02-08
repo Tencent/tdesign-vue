@@ -31,6 +31,7 @@
 <script setup lang="jsx">
 import { ref } from 'vue';
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
+
 const initialData = [];
 for (let i = 0; i < 5; i++) {
   initialData.push({
@@ -127,10 +128,11 @@ const rowClassName = ({ type }) => {
 };
 const rowspanAndColspanInFooter = ({ rowIndex, colIndex }) => {
   // 中间列合并，收尾两列不合并
-  if (rowIndex === 0 && colIndex === 1)
+  if (rowIndex === 0 && colIndex === 1) {
     return {
       colspan: columns.value.length - 2,
     };
+  }
   return {};
 };
 </script>

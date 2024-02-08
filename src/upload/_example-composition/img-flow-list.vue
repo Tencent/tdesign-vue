@@ -58,6 +58,7 @@
 
 <script setup>
 import { ref } from 'vue';
+
 const autoUpload = ref(false);
 const showImageFileName = ref(true);
 const showUploadButton = ref(true);
@@ -91,16 +92,14 @@ const staticFiles = ref([
     status: 'fail',
   },
 ]);
-const requestMethod1 = () => {
-  return new Promise((resolve) => {
-    resolve({
-      status: 'success',
-      response: {
-        url: 'https://tdesign.gtimg.com/site/avatar.jpg',
-      },
-    });
+const requestMethod1 = () => new Promise((resolve) => {
+  resolve({
+    status: 'success',
+    response: {
+      url: 'https://tdesign.gtimg.com/site/avatar.jpg',
+    },
   });
-};
+});
 // const requestMethod2 = () => {
 //   return new Promise(resolve => {
 //     resolve({
