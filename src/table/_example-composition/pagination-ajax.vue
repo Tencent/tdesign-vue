@@ -85,8 +85,8 @@ const columns = ref([
   },
 ]);
 const rowKey = ref('phone');
-const tableLayout = ref('auto');
-const rowClassName = ref('property-class');
+// const tableLayout = ref('auto');
+// const rowClassName = ref('property-class');
 const pagination = reactive({
   current: 1,
   pageSize: 10,

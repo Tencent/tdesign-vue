@@ -58,9 +58,7 @@
 </template>
 
 <script setup lang="jsx">
-import {
-  ref, reactive, computed, watch,
-} from 'vue';
+import { ref, computed, watch } from 'vue';
 import {
   ChevronRightCircleIcon,
   ChevronRightIcon,
@@ -163,11 +161,11 @@ const expandedRow = ref((h, { row }) => (
     <p class="content">{row.channel}</p>
   </div>
 ));
-const globalLocale = reactive({
-  table: {
-    expandIcon: (h) => h && <ChevronRightIcon />,
-  },
-});
+// const globalLocale = reactive({
+//   table: {
+//     expandIcon: (h) => h && <ChevronRightIcon />,
+//   },
+// });
 const columns = computed(() => getColumns(fixedColumns.value));
 const rehandleClickOp = (data) => {
   console.log(data);

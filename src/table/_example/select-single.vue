@@ -49,7 +49,7 @@ const disabledFunc = ({ rowIndex }) => rowIndex === 1 || rowIndex === 3;
 export default {
   data() {
     return {
-      highlightSelectedRow: false,
+      // highlightSelectedRow: false,
       selectedOnRowClick: false,
       selectedRowKeys: [2],
       columns: [

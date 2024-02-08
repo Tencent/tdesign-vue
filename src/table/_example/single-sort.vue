@@ -107,9 +107,9 @@ export default {
       console.log('change', info, context);
     },
     // 非受控用法，不需要传递 sort 给 Table 组件，因而此处无需执行 this.sort = sort 进行赋值
-    defaultSortChange(sort) {
-      this.request(sort);
-    },
+    // defaultSortChange(sort) {
+    //   this.request(sort);
+    // },
     request(sort) {
       // 模拟异步请求，进行数据排序
       const timer = setTimeout(() => {

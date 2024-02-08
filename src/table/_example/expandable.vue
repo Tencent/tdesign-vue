@@ -139,11 +139,11 @@ export default {
           <p class="content">{row.channel}</p>
         </div>
       ),
-      globalLocale: {
-        table: {
-          expandIcon: (h) => h && <ChevronRightIcon />,
-        },
-      },
+      // globalLocale: {
+      //   table: {
+      //     expandIcon: (h) => h && <ChevronRightIcon />,
+      //   },
+      // },
     };
   },
   computed: {

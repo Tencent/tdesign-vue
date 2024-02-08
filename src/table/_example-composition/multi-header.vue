@@ -232,7 +232,7 @@ const fixedHeader = ref(true);
 const fixedLeftCol = ref(false);
 const fixedRightCol = ref(false);
 const headerAffixedTop = ref(false);
-const virtualScroll = ref(true);
+// const virtualScroll = ref(true);
 const data = ref(initialData);
 const columns = computed(() => getColumns(fixedLeftCol.value, fixedRightCol.value));
 const onDataChange = (val) => {

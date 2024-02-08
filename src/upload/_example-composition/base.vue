@@ -145,24 +145,24 @@ const formatResponse = (res) => ({
   error: '上传失败，请重试',
   url: res.url,
 });
-const outsideRemove = (index) => {
-  files3.value.splice(index, 1);
-};
+// const outsideRemove = (index) => {
+//   files3.value.splice(index, 1);
+// };
 const uploadFiles = () => {
   uploadRef1.value.uploadFiles();
   uploadRef2.value.uploadFiles();
   uploadRef3.value.uploadFiles();
 };
 /** 单个文件校验方法，示例代码有效，勿删 */
-const beforeUpload = (file) => {
-  MessagePlugin.error(`文件 ${file.name} 不满足条件`);
-  return false;
-};
+// const beforeUpload = (file) => {
+//   MessagePlugin.error(`文件 ${file.name} 不满足条件`);
+//   return false;
+// };
 /** 全部文件一次性校验方法，示例代码有效，勿删 */
-const beforeAllFilesUpload = () => {
-  MessagePlugin.error('文件不满足条件');
-  return false;
-};
+// const beforeAllFilesUpload = () => {
+//   MessagePlugin.error('文件不满足条件');
+//   return false;
+// };
 watch(multiple, (val) => {
   files3.value = val
     ? [

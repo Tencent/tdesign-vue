@@ -212,7 +212,7 @@ export default {
       fixedLeftCol: false,
       fixedRightCol: false,
       headerAffixedTop: false,
-      virtualScroll: true,
+      // virtualScroll: true,
       data: initialData,
     };
   },

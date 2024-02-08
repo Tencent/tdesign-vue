@@ -153,9 +153,9 @@ const columns = ref([
   },
 ]);
 const data = ref(initialData);
-const rehandleClickOp = (context) => {
-  console.log(context);
-};
+// const rehandleClickOp = (context) => {
+//   console.log(context);
+// };
 const rehandleSelectChange = (value, { selectedRowData }) => {
   selectedRowKeys.value = value;
   console.log(value, selectedRowData);
