@@ -106,7 +106,7 @@
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "~7.22.5",
-    "@babel/eslint-parser": "~7.19.1",
+    "@babel/eslint-parser": "~7.23.10",
     "@babel/plugin-transform-class-properties": "^7.22.3",
     "@babel/plugin-transform-modules-commonjs": "^7.9.6",
     "@babel/plugin-transform-object-assign": "^7.2.0",
