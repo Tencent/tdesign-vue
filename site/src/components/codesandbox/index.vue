@@ -21,18 +21,14 @@
 
 <script>
 import {
-  mainJsContent,
   htmlContent,
-  pkgContent,
+  mainJsContent,
   styleContent,
-  babelContent,
-  pkgContentForComposition,
+  packageJSONContent,
+  viteConfigContent,
+  packageJSONContentForComposition,
+  viteConfigContentForComposition,
 } from './content';
-
-// lang="jsx" 在 webpack 环境中会报错
-function getDemoContent(demoContent) {
-  return demoContent.replace(/lang="jsx"/g, '');
-}
 
 export default {
   name: 'CodeSandbox',
@@ -50,8 +46,8 @@ export default {
       const code = tdDocDemoDom.currentRenderCode;
 
       const currentLangIndex = tdDocDemoDom.currentLangIndex;
-      const pkgJson = currentLangIndex === 0 ? pkgContent : pkgContentForComposition;
-
+      const pkgJson = currentLangIndex === 0 ? packageJSONContent : packageJSONContentForComposition;
+      const viteConfig = currentLangIndex === 0 ? viteConfigContent : viteConfigContentForComposition;
       this.loading = true;
 
       fetch('https://codesandbox.io/api/v1/sandboxes/define?json=1', {
@@ -65,7 +61,10 @@ export default {
             'package.json': {
               content: pkgJson,
             },
-            'public/index.html': {
+            'vite.config.js': {
+              content: viteConfig,
+            },
+            'index.html': {
               content: htmlContent,
             },
             'src/main.js': {
@@ -75,10 +74,7 @@ export default {
               content: styleContent,
             },
             'src/demo.vue': {
-              content: getDemoContent(code),
-            },
-            '.babelrc': {
-              content: babelContent,
+              content: code,
             },
           },
         }),
