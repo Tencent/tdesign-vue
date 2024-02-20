@@ -65,12 +65,12 @@ export const viteConfigContent = `
 
 export const viteConfigContentForComposition = `
   import { defineConfig } from 'vite';
-  import { createVuePlugin } from 'vite-plugin-vue2';
+  import vue from '@vitejs/plugin-vue2'
   import vueJsx from '@vitejs/plugin-vue2-jsx';
 
   export default defineConfig({
     plugins: [
-      createVuePlugin({ jsx: true }),
+      vue(),
       vueJsx()
     ],
   });
@@ -120,7 +120,7 @@ export const packageJSONContentForComposition = JSON.stringify(
     devDependencies: {
       vite: '^2.9.6',
       less: orgPkg.devDependencies.less,
-      'vite-plugin-vue2': orgPkg.devDependencies['vite-plugin-vue2'],
+      '@vitejs/plugin-vue2': '^1.1.2',
       'vue-template-compiler': '2.7.14',
       '@vitejs/plugin-vue2-jsx': '^1.1.0',
     },
