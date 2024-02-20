@@ -21,7 +21,12 @@
 
 <script>
 import {
-  mainJsContent, htmlContent, pkgContent, styleContent, babelContent,
+  mainJsContent,
+  htmlContent,
+  pkgContent,
+  styleContent,
+  babelContent,
+  pkgContentForComposition,
 } from './content';
 
 // lang="jsx" 在 webpack 环境中会报错
@@ -41,7 +46,12 @@ export default {
   },
   methods: {
     onRunOnline() {
-      const { code } = this;
+      const tdDocDemoDom = document.querySelector(`td-doc-demo[demo-name='${this.demoName}']`);
+      const code = tdDocDemoDom.currentRenderCode;
+
+      const currentLangIndex = tdDocDemoDom.currentLangIndex;
+      const pkgJson = currentLangIndex === 0 ? pkgContent : pkgContentForComposition;
+
       this.loading = true;
 
       fetch('https://codesandbox.io/api/v1/sandboxes/define?json=1', {
@@ -53,7 +63,7 @@ export default {
         body: JSON.stringify({
           files: {
             'package.json': {
-              content: pkgContent,
+              content: pkgJson,
             },
             'public/index.html': {
               content: htmlContent,

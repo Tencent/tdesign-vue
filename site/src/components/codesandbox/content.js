@@ -86,6 +86,50 @@ export const pkgContent = JSON.stringify(
   2,
 );
 
+export const pkgContentForComposition = JSON.stringify(
+  {
+    name: 'tdesign-vue-demo',
+    version: '0.1.0',
+    private: true,
+    scripts: {
+      serve: 'vue-cli-service serve',
+      build: 'vue-cli-service build',
+      lint: 'vue-cli-service lint',
+    },
+    dependencies: {
+      dayjs: orgPkg.devDependencies.dayjs,
+      'tdesign-vue': orgPkg.version + '-naruto',
+      'tdesign-icons-vue': orgPkg.dependencies['tdesign-icons-vue'],
+      vue: '2.7.14',
+    },
+    devDependencies: {
+      eslint: '^8.6.0',
+      '@vue/cli-plugin-babel': '4.5.18',
+      '@vue/cli-plugin-eslint': '4.5.18',
+      '@vue/cli-service': '4.5.18',
+      '@vue/babel-plugin-transform-vue-jsx': '^1.2.1',
+      '@vue/babel-helper-vue-jsx-merge-props': '^1.2.1',
+      'babel-eslint': '^10.1.0',
+      'eslint-plugin-vue': '^9.0.0',
+      'vue-loader': '^15.10.0',
+    },
+    eslintConfig: {
+      root: true,
+      env: {
+        node: true,
+      },
+      extends: ['plugin:vue/essential', 'eslint:recommended'],
+      parserOptions: {
+        parser: '@babel/eslint-parser',
+      },
+      rules: {},
+    },
+    browserslist: ['> 1%', 'last 2 versions', 'not dead'],
+  },
+  null,
+  2,
+);
+
 export const babelContent = `
   {
     "plugins": ["transform-vue-jsx"]
