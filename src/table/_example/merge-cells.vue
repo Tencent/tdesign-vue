@@ -14,7 +14,7 @@
 <script lang="jsx">
 import { CheckCircleFilledIcon, ErrorCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 
-const data = new Array(6).fill(null).map((_, i) => ({
+const initialData = new Array(6).fill(null).map((_, i) => ({
   i,
   status: i % 3,
   applicant: ['贾明', '张三', '王芳'][i % 3],
@@ -36,7 +36,7 @@ const data = new Array(6).fill(null).map((_, i) => ({
 export default {
   data() {
     return {
-      data,
+      data: initialData,
       columns: [
         { colKey: 'applicant', title: '申请人', width: '100' },
         {

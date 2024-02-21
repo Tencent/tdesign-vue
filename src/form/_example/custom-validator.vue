@@ -67,12 +67,6 @@ export default {
         console.log('Validate Errors: ', firstError, validateResult);
       }
     },
-    handleBlur() {
-      this.$refs.form.validate({
-        fields: ['account'],
-        trigger: 'blur',
-      });
-    },
     // 自定义异步校验器，使用 resolve 返回结果控制校验结果、校验信息、校验结果类型
     userNameValidator(val) {
       return new Promise((resolve) => {

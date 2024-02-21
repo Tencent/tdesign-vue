@@ -125,14 +125,12 @@ function getData(currentPage = 1) {
   return data;
 }
 
-const data = getData();
-
 export default {
   components: { TEnhancedTable: EnhancedTable },
   data() {
     return {
       customTreeExpandAndFoldIcon: false,
-      data,
+      data: getData(),
       lazyLoadingData: null,
       expandAll: false,
       expandedTreeNodes: ['申请人 2_1 号', '申请人 30_1 号', '申请人 4_1 号'],
@@ -141,12 +139,12 @@ export default {
         pageSize: 10,
         total: TOTAL,
       },
-      defaultPagination: {
-        defaultCurrent: 1,
-        defaultPageSize: 10,
-        total: TOTAL,
-      },
-      displayColumns: ['drag', 'id', 'key', 'platform', 'operate'],
+      // defaultPagination: {
+      //   defaultCurrent: 1,
+      //   defaultPageSize: 10,
+      //   total: TOTAL,
+      // },
+      // displayColumns: ['drag', 'id', 'key', 'platform', 'operate'],
       columns: [
         {
           // 列拖拽排序必要参数

@@ -17,7 +17,6 @@ export default {
   data() {
     return {
       replyData: '',
-      NotifyPlugin,
     };
   },
   methods: {

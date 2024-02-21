@@ -24,17 +24,17 @@
       >
         <template #author>
           <span>评论作者名B</span>
-          <icon name="caret-right-small" size="small" class="author-icon" />
+          <caret-right-small-icon size="small" class="author-icon" />
           <span>评论作者名A</span>
         </template>
 
         <template #actions>
           <span key="thumbUp">
-            <icon name="thumb-up" />
+            <thumb-up-icon />
             <span class="action-text">6</span>
           </span>
           <span key="chat">
-            <icon name="chat" />
+            <chat-icon />
             <span class="action-text">回复</span>
           </span>
         </template>
@@ -44,11 +44,13 @@
 </template>
 
 <script>
-import { Icon } from 'tdesign-icons-vue';
+import { CaretRightSmallIcon, ThumbUpIcon, ChatIcon } from 'tdesign-icons-vue';
 
 export default {
   components: {
-    Icon,
+    CaretRightSmallIcon,
+    ThumbUpIcon,
+    ChatIcon,
   },
 };
 </script>

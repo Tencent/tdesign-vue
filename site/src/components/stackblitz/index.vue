@@ -11,8 +11,8 @@
       <input type="hidden" name="project[files][src/index.css]" :value="styleContent" />
       <input type="hidden" name="project[files][src/main.js]" :value="mainJsContent" />
       <input type="hidden" name="project[files][index.html]" :value="htmlContent" />
-      <input type="hidden" name="project[files][package.json]" :value="packageJSONContent" />
-      <input type="hidden" name="project[files][vite.config.js]" :value="viteConfigContent" />
+      <input type="hidden" name="project[files][package.json]" :value="pkgJson" />
+      <input type="hidden" name="project[files][vite.config.js]" :value="viteConfig" />
       <input type="hidden" name="project[files][.stackblitzrc]" :value="stackblitzRc" />
       <input type="hidden" name="project[template]" value="node" />
 
@@ -36,12 +36,13 @@ import {
   packageJSONContent,
   stackblitzRc,
   viteConfigContent,
+  packageJSONContentForComposition,
+  viteConfigContentForComposition,
 } from './content';
 
 export default {
   name: 'Stackblitz',
   props: {
-    code: String,
     demoName: String,
     componentName: String,
   },
@@ -52,14 +53,23 @@ export default {
       mainJsContent,
       styleContent,
       stackblitzRc,
-      viteConfigContent,
-      packageJSONContent,
+      pkgJson: '',
+      viteConfig: '',
+      code: '',
     };
   },
-
   methods: {
     submit() {
-      this.$refs.formRef.submit();
+      const tdDocDemoDom = document.querySelector(`td-doc-demo[demo-name='${this.demoName}']`);
+
+      const currentLangIndex = tdDocDemoDom.currentLangIndex;
+      this.viteConfig = currentLangIndex === 0 ? viteConfigContent : viteConfigContentForComposition;
+      this.pkgJson = currentLangIndex === 0 ? packageJSONContent : packageJSONContentForComposition;
+
+      this.code = tdDocDemoDom.currentRenderCode;
+      setTimeout(() => {
+        this.$refs.formRef.submit();
+      });
     },
   },
 };

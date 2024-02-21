@@ -44,14 +44,12 @@
 </template>
 
 <script lang="jsx">
-import { AddIcon, DiscountIcon } from 'tdesign-icons-vue';
+import { AddIcon } from 'tdesign-icons-vue';
 import Vue from 'vue';
 
 export default {
   components: {
     AddIcon,
-    // eslint-disable-next-line vue/no-unused-components
-    DiscountIcon,
   },
   data() {
     return {

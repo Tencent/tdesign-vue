@@ -82,7 +82,6 @@ const initialData = [
 export default {
   data() {
     return {
-      index: 0,
       transition: true,
       showLine: true,
       showIcon: true,

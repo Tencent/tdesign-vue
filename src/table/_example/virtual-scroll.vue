@@ -29,7 +29,7 @@
 <script lang="jsx">
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 
-const columns = [
+const initialColumns = [
   { colKey: 'serial-number', width: 80, title: '序号' },
   { colKey: 'applicant', title: '申请人', width: '100' },
   {
@@ -84,7 +84,7 @@ export default {
     return {
       tableRef: null,
       data: [...testData],
-      columns,
+      columns: initialColumns,
       bordered: true,
       height: 300,
     };

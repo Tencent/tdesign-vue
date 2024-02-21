@@ -95,8 +95,8 @@ export default {
     };
   },
   methods: {
-    changeHandler(active) {
-      this.active = active;
+    changeHandler(activeState) {
+      this.active = activeState;
     },
   },
 };

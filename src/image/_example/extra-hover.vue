@@ -8,9 +8,7 @@
 </template>
 
 <script lang="jsx">
-import Vue from 'vue';
-
-export default Vue.extend({
+export default {
   data() {
     return {
       // renderMask 支持插槽
@@ -32,5 +30,5 @@ export default Vue.extend({
     };
   },
   methods: {},
-});
+};
 </script>

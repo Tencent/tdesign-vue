@@ -7,11 +7,11 @@
   >
     <template #actions>
       <span key="thumbUp">
-        <icon name="thumb-up" />
+        <thumb-up-icon />
         <span class="action-text">6</span>
       </span>
       <span key="chat">
-        <icon name="chat" />
+        <chat-icon />
         <span class="action-text">回复</span>
       </span>
     </template>
@@ -23,11 +23,12 @@
 </template>
 
 <script>
-import { Icon } from 'tdesign-icons-vue';
+import { ThumbUpIcon, ChatIcon } from 'tdesign-icons-vue';
 
 export default {
   components: {
-    Icon,
+    ThumbUpIcon,
+    ChatIcon,
   },
 };
 </script>

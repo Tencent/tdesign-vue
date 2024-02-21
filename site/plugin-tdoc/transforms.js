@@ -21,6 +21,7 @@ export default {
     if (fileName && source.includes(':: BASE_DOC ::')) {
       const localeDocPath = path.resolve(__dirname, `../../src/_common/docs/web/api/${fileName}`);
       const defaultDocPath = path.resolve(__dirname, `../../src/_common/docs/web/api/${componentName}.md`);
+
       let baseDoc = '';
       if (fs.existsSync(localeDocPath)) {
         // 优先载入语言版本
@@ -37,10 +38,6 @@ export default {
     // 替换成对应 demo 文件
     source = source.replace(/\{\{\s+(.+)\s+\}\}/g, (demoStr, demoFileName) => {
       const defaultDemoPath = path.resolve(resourceDir, `./_example/${demoFileName}.vue`);
-      const localeDemoPath = path.resolve(resourceDir, `../_example/${demoFileName}.${localeName}.vue`);
-      // localeDemo 优先级最高
-      if (fs.existsSync(localeDemoPath))
-        return `\n::: demo _example/${demoFileName}.${localeName} ${componentName}\n:::\n`;
 
       if (!fs.existsSync(defaultDemoPath)) {
         console.log('\x1B[36m%s\x1B[0m', `${componentName} 组件需要实现 _example/${demoFileName}.vue 示例!`);
@@ -51,11 +48,19 @@ export default {
     });
 
     source.replace(/:::\s*demo\s+([\\/.\w-]+)/g, (demoStr, relativeDemoPath) => {
+      const compositionDemoPath = `_example-composition/${relativeDemoPath.split('/')?.[1]}`;
+      console.log(compositionDemoPath, 'compositionDemoPath');
       const demoPathOnlyLetters = relativeDemoPath.replace(/[^a-zA-Z\d]/g, '');
       const demoDefName = `Demo${demoPathOnlyLetters}`;
       const demoCodeDefName = `Demo${demoPathOnlyLetters}Code`;
+      const demoCompositionCodeDefName = `Demo${demoPathOnlyLetters}CompositionCode`; // composition示例
+
       demoImports[demoDefName] = `import ${demoDefName} from './${relativeDemoPath}.vue';`;
       demoCodesImports[demoCodeDefName] = `import ${demoCodeDefName} from './${relativeDemoPath}.vue?raw';`;
+      if (fs.existsSync(path.resolve(resourceDir, `${compositionDemoPath}.vue`)))
+        demoCodesImports[
+          demoCompositionCodeDefName
+        ] = `import ${demoCompositionCodeDefName} from './${compositionDemoPath}.vue?raw'`;
     });
 
     return source;

@@ -54,23 +54,14 @@ export default {
     handleChange(v, ctx) {
       console.info('change', v, ctx);
     },
-    onValidate({ error }) {
-      this.error = error;
+    onValidate(r) {
+      this.error = r.error;
     },
     handleFocus(v, ctx) {
       console.info('focus', v, ctx);
     },
     handleBlur(v, ctx) {
       console.info('blur', v, ctx);
-    },
-    handleKeydown(v, ctx) {
-      console.info('keydown', v, ctx);
-    },
-    handleKeyup(v, ctx) {
-      console.info('keyup', v, ctx);
-    },
-    handleKeypress(v, ctx) {
-      console.info('keypress', v, ctx);
     },
     handleEnter(v, ctx) {
       console.info('enter', v, ctx);

@@ -163,9 +163,9 @@ export default {
       }, 300);
     },
     // eslint-disable-next-line
-    loadingText(h) {
-      return <div>123</div>;
-    },
+    // loadingText(h) {
+    //   return <div>123</div>;
+    // },
     onFocus() {
       console.log('focus');
     },

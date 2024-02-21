@@ -17,7 +17,6 @@ export default {
     return {
       date: '',
       date2: '',
-      firstDayOfWeek: 3,
       inputProps: { inputClass: 'test-inputClass' },
     };
   },
