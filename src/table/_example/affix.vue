@@ -35,9 +35,9 @@
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 
 function getData(count) {
-  const data = [];
+  const initialColumns = [];
   for (let i = 0; i < count; i++) {
-    data.push({
+    initialColumns.push({
       index: i + 1,
       applicant: ['贾明', '张三', '王芳'][i % 3],
       status: i % 3,
@@ -50,7 +50,7 @@ function getData(count) {
       createTime: ['2022-01-01', '2022-02-01', '2022-03-01', '2022-04-01', '2022-05-01'][i % 4],
     });
   }
-  return data;
+  return initialColumns;
 }
 
 const TOTAL = 38;
@@ -106,7 +106,6 @@ export default {
   data() {
     return {
       data: getData(TOTAL),
-      TOTAL,
       // 重要：如果在预渲染场景下，初次渲染的表格宽度和最终呈现宽度不一样，请异步设置表头吸顶
       headerAffixedTop: true,
       footerAffixedBottom: false,

@@ -15,7 +15,7 @@ import { ChevronRightIcon, CaretDownSmallIcon /** , ChevronDownIcon */ } from 't
 import merge from 'lodash/merge';
 import enConfig from 'tdesign-vue/es/locale/en_US';
 
-const columns = [
+const initialColumns = [
   {
     colKey: 'type',
     title: 'Type',
@@ -38,7 +38,7 @@ const columns = [
   },
 ];
 
-const data = [
+const initialData = [
   { type: 'Array', platform: 'Vue(PC)', property: 'A' },
   { type: 'String', platform: 'React(PC)', property: 'B' },
   { type: 'Object', platform: 'Miniprogram', property: 'C' },
@@ -68,8 +68,8 @@ export default {
           // treeExpandAndFoldIcon: (h, { type }) => type === 'expand' ? <ChevronRightIcon /> : <ChevronDownIcon />,
         },
       }),
-      columns,
-      data,
+      columns: initialColumns,
+      data: initialData,
     };
   },
   methods: {

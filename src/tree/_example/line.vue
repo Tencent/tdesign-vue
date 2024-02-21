@@ -128,12 +128,6 @@ export default {
     };
   },
   methods: {
-    toggleLine() {
-      this.showLine = !this.showLine;
-    },
-    toggleIcon() {
-      this.showIcon = !this.showIcon;
-    },
     getLineNodes(node) {
       const nodes = node.getParents().reverse();
       const lineNodes = [];
@@ -160,19 +154,19 @@ export default {
       }
       return list;
     },
-    renderLine(createElement, node) {
+    renderLine(h, node) {
       if (!this.showLine) return null;
 
       const lineChildren = [];
 
-      const lines = this.getLineNodes(node).map((item) => createElement('span', {
+      const lines = this.getLineNodes(node).map((item) => h('span', {
         class: {
           'custom-line-cross': item.cross,
         },
       }));
 
       lineChildren.push(
-        createElement(
+        h(
           'div',
           {
             class: 'custom-line-box',
@@ -183,7 +177,7 @@ export default {
 
       if (node.isLeaf()) {
         const tIcon = <Icon name="heart-filled" />;
-        const iconNode = createElement(
+        const iconNode = h(
           'i',
           {
             class: 'custom-line-icon',
@@ -193,7 +187,7 @@ export default {
         lineChildren.push(iconNode);
       }
 
-      return createElement(
+      return h(
         'div',
         {
           class: this.lineClass(node),

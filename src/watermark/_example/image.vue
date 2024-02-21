@@ -13,4 +13,3 @@
     <div style="height: 300px" />
   </t-watermark>
 </template>
-Footer

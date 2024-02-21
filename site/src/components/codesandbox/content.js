@@ -1,6 +1,9 @@
 import orgPkg from '../../../../package.json';
 
-export const htmlContent = '<div id="app"></div>';
+export const htmlContent = `
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+`;
 
 export const mainJsContent = `
   import Vue from 'vue';
@@ -42,52 +45,86 @@ export const styleContent = `
   }
 `;
 
-export const pkgContent = JSON.stringify(
+export const stackblitzRc = `
+  {
+    "installDependencies": false,
+    "startCommand": "turbo && turbo dev"
+  }
+`;
+
+export const viteConfigContent = `
+  import { defineConfig } from 'vite';
+  import { createVuePlugin } from 'vite-plugin-vue2';
+
+  export default defineConfig({
+    plugins: [
+      createVuePlugin({ jsx: true }),
+    ],
+  });
+`;
+
+export const viteConfigContentForComposition = `
+  import { defineConfig } from 'vite';
+  import vue from '@vitejs/plugin-vue2'
+  import vueJsx from '@vitejs/plugin-vue2-jsx';
+
+  export default defineConfig({
+    plugins: [
+      vue(),
+      vueJsx()
+    ],
+  });
+`;
+
+export const packageJSONContent = JSON.stringify(
   {
     name: 'tdesign-vue-demo',
-    version: '0.1.0',
+    version: '0.0.0',
     private: true,
     scripts: {
-      serve: 'vue-cli-service serve',
-      build: 'vue-cli-service build',
-      lint: 'vue-cli-service lint',
+      dev: 'vite',
+      build: 'vite build',
+      serve: 'vite preview',
     },
     dependencies: {
-      dayjs: orgPkg.devDependencies.dayjs,
       'tdesign-vue': orgPkg.version,
       'tdesign-icons-vue': orgPkg.dependencies['tdesign-icons-vue'],
       vue: orgPkg.devDependencies.vue,
     },
     devDependencies: {
-      eslint: '^8.6.0',
-      '@vue/cli-plugin-babel': '4.5.15',
-      '@vue/cli-plugin-eslint': '4.5.15',
-      '@vue/cli-service': '4.5.15',
-      '@vue/babel-plugin-transform-vue-jsx': '^1.2.1',
-      '@vue/babel-helper-vue-jsx-merge-props': '^1.2.1',
-      'babel-eslint': '^10.1.0',
-      'eslint-plugin-vue': '^8.2.0',
-      'vue-template-compiler': '^2.6.14',
+      vite: orgPkg.devDependencies.vite,
+      less: orgPkg.devDependencies.less,
+      'vite-plugin-vue2': orgPkg.devDependencies['vite-plugin-vue2'],
+      'vue-template-compiler': orgPkg.devDependencies['vue-template-compiler'],
     },
-    eslintConfig: {
-      root: true,
-      env: {
-        node: true,
-      },
-      extends: ['plugin:vue/essential', 'eslint:recommended'],
-      parserOptions: {
-        parser: '@babel/eslint-parser',
-      },
-      rules: {},
-    },
-    browserslist: ['> 1%', 'last 2 versions', 'not dead'],
   },
   null,
   2,
 );
 
-export const babelContent = `
+export const packageJSONContentForComposition = JSON.stringify(
   {
-    "plugins": ["transform-vue-jsx"]
-  }
-`;
+    name: 'tdesign-vue-demo',
+    version: '0.0.0',
+    private: true,
+    scripts: {
+      dev: 'vite',
+      build: 'vite build',
+      serve: 'vite preview',
+    },
+    dependencies: {
+      'tdesign-vue': orgPkg.version + '-naruto',
+      'tdesign-icons-vue': orgPkg.dependencies['tdesign-icons-vue'],
+      vue: '2.7.14',
+    },
+    devDependencies: {
+      vite: '^2.9.6',
+      less: orgPkg.devDependencies.less,
+      '@vitejs/plugin-vue2': '^1.1.2',
+      'vue-template-compiler': '2.7.14',
+      '@vitejs/plugin-vue2-jsx': '^1.1.0',
+    },
+  },
+  null,
+  2,
+);

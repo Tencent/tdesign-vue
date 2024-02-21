@@ -7,11 +7,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      msg: null,
-    };
-  },
   methods: {
     openSomeNotification() {
       this.$notify.info({ title: '这是第一条通知' });

@@ -28,7 +28,6 @@ export default {
     return {
       checkable: true,
       checkStrictly: false,
-      value: ['1.1', '1.1.1'],
       items: [
         {
           label: '1',

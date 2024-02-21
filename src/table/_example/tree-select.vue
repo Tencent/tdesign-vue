@@ -48,7 +48,7 @@ import { EnhancedTable, MessagePlugin } from 'tdesign-vue';
 import cloneDeep from 'lodash/cloneDeep';
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 
-const data = [];
+const initialData = [];
 for (let i = 0; i < 500; i++) {
   const obj = {
     key: `first_level_${i}`,
@@ -79,7 +79,7 @@ for (let i = 0; i < 500; i++) {
     });
     return secondObj;
   });
-  data.push(obj);
+  initialData.push(obj);
 }
 
 export default {
@@ -127,7 +127,7 @@ export default {
         { colKey: 'matters', title: '申请事项', width: '150' },
         { colKey: 'email', title: '邮箱地址' },
       ],
-      data,
+      data: initialData,
     };
   },
 
@@ -135,14 +135,14 @@ export default {
     // 切换模式，重置数据，避免互相影响
     checkStrictly() {
       this.selectedRowKeys = [];
-      this.data = cloneDeep(data);
+      this.data = cloneDeep(initialData);
     },
   },
 
   methods: {
-    rehandleClickOp(context) {
-      console.log(context);
-    },
+    // rehandleClickOp(context) {
+    //   console.log(context);
+    // },
 
     rehandleSelectChange(value, { selectedRowData }) {
       this.selectedRowKeys = value;

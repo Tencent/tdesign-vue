@@ -46,9 +46,6 @@ export default {
     };
   },
   methods: {
-    onChange(val) {
-      console.log(val);
-    },
     renderActiveContent() {
       return <CheckIcon />;
     },

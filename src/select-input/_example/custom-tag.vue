@@ -62,7 +62,7 @@
 <script>
 import { ControlPlatformIcon } from 'tdesign-icons-vue';
 
-const options = [
+const initialOptions = [
   { label: 'tdesign-vue', value: 1 },
   { label: 'tdesign-react', value: 2 },
   { label: 'tdesign-miniprogram', value: 3 },
@@ -74,7 +74,7 @@ export default {
   components: { ControlPlatformIcon },
   data() {
     return {
-      options,
+      options: initialOptions,
       selectValue1: { label: 'tdesign-vue', value: 1 },
       selectValue2: ['tdesign-vue', 'tdesign-react'],
       selectValue3: ['tdesign-vue', 'tdesign-react', 'tdesign-mobile-vue'],

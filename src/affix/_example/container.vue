@@ -22,17 +22,7 @@ export default {
   data() {
     return {
       open: 0,
-      fixedBottom: 0,
     };
-  },
-  mounted() {
-    // 相对 window 的移动，使用会影响性能
-    this.$nextTick(() => {
-      window.addEventListener('scroll', this.$refs?.affix.handleScroll);
-    });
-  },
-  beforeDestroy() {
-    window.removeEventListener('scroll', this.$refs?.affix.handleScroll);
   },
   methods: {
     getContainer() {

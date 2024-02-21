@@ -8,10 +8,9 @@
 </template>
 
 <script>
-import Vue from 'vue';
 import { MessagePlugin as Message } from 'tdesign-vue';
 
-export default Vue.extend({
+export default {
   data() {
     return {
       visible: false,
@@ -30,7 +29,7 @@ export default Vue.extend({
       }, 1000);
     },
   },
-});
+};
 </script>
 <style scoped>
 .t-button {

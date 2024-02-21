@@ -15,11 +15,10 @@
 </template>
 
 <script lang="jsx">
-import Vue from 'vue';
 import { RefreshIcon } from 'tdesign-icons-vue';
 import { Loading } from 'tdesign-vue';
 
-export default Vue.extend({
+export default {
   data() {
     return {
       loadingCount: 0,
@@ -63,5 +62,5 @@ export default Vue.extend({
       return <RefreshIcon />;
     },
   },
-});
+};
 </script>

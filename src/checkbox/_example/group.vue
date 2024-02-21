@@ -68,12 +68,10 @@ export default {
     return {
       value1: ['选项一'],
       options1: [
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        { value: '选项一', label: (h) => <div>选项一</div> },
+        { value: '选项一', label: () => <div>选项一</div> },
         { value: '选项二', label: '选项二' },
         { value: '选项三', label: '选项三' },
       ],
-
       value2: ['选项一'],
       value3: ['选项一', '选项二', '选项三'],
       options2: [...OPTION_LIST],

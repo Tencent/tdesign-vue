@@ -23,10 +23,10 @@
 <script lang="jsx">
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 
-const data = [];
+const initialData = [];
 const TOTAL = 59;
 for (let i = 0; i < TOTAL; i++) {
-  data.push({
+  initialData.push({
     index: i + 1,
     applicant: ['贾明', '张三', '王芳'][i % 3],
     status: i % 3,
@@ -42,7 +42,7 @@ for (let i = 0; i < TOTAL; i++) {
 export default {
   data() {
     return {
-      data,
+      data: initialData,
       reserveSelectedRowOnPaginate: true,
       selectedRowKeys: [],
       columns: [

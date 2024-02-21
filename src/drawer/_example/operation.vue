@@ -19,9 +19,7 @@
 </template>
 
 <script>
-import Vue from 'vue';
-
-export default Vue.extend({
+export default {
   data() {
     return {
       visible: false,
@@ -38,7 +36,7 @@ export default Vue.extend({
       this.setVisible(false);
     },
   },
-});
+};
 </script>
 <style scoped>
 .t-button {

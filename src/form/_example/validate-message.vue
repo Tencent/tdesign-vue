@@ -46,7 +46,6 @@ export default {
   data() {
     return {
       formData: { ...INITIAL_DATA },
-      validateMessage,
       rules: {
         account: [{ required: true }, { min: 2 }, { max: 10, type: 'warning' }],
         description: [{ validator: (val) => val.length < 10, message: '不能超过 20 个字，中文长度等于英文长度' }],

@@ -96,7 +96,7 @@ const getColumns = (isFixedColumn) => [
   { colKey: 'operation', title: '操作', fixed: isFixedColumn ? 'right' : '' },
 ];
 
-const data = new Array(5).fill(null).map((item, i) => ({
+const initialData = new Array(5).fill(null).map((item, i) => ({
   index: i + 1,
   applicant: ['贾明', '张三', '王芳'][i % 3],
   status: i % 3,
@@ -117,7 +117,7 @@ export default {
       expandOnRowClick: true,
       fixedColumns: false,
       emptyData: false,
-      data,
+      data: initialData,
       // 有哪些 data.id 在 expandedRowKeys 中，就显示这些 id 对应的行
       expandedRowKeys: [102],
       // defaultExpandedRowKeys: [102, 104],
@@ -139,11 +139,11 @@ export default {
           <p class="content">{row.channel}</p>
         </div>
       ),
-      globalLocale: {
-        table: {
-          expandIcon: (h) => h && <ChevronRightIcon />,
-        },
-      },
+      // globalLocale: {
+      //   table: {
+      //     expandIcon: (h) => h && <ChevronRightIcon />,
+      //   },
+      // },
     };
   },
   computed: {

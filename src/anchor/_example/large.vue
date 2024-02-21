@@ -7,7 +7,5 @@
     <t-anchor-item href="#尺寸" title="尺寸"></t-anchor-item>
   </t-anchor>
 </template>
-<script>
-export default {};
-</script>
+
 <style lang="less" scoped></style>

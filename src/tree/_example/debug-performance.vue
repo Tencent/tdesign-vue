@@ -75,16 +75,13 @@ function createTreeData() {
 
 export default {
   data() {
-    const items = createTreeData();
+    const initialData = createTreeData();
     return {
-      index: 0,
       transition: true,
       textInsertCount: '1',
-      useActived: false,
-      expandParent: true,
       showLine: true,
       showIcon: true,
-      items,
+      items: initialData,
     };
   },
   computed: {
@@ -94,7 +91,7 @@ export default {
     },
   },
   methods: {
-    label(createElement, node) {
+    label(h, node) {
       return `${node.value}`;
     },
 

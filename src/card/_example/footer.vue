@@ -24,9 +24,7 @@
   </t-card>
 </template>
 <script lang="jsx">
-import {
-  ThumbUpIcon, ChatIcon, ShareIcon, UserIcon,
-} from 'tdesign-icons-vue';
+import { ThumbUpIcon, ChatIcon, ShareIcon } from 'tdesign-icons-vue';
 
 export default {
   components: {
@@ -36,16 +34,8 @@ export default {
   },
   data() {
     return {
-      title: '标题',
-      subtitle: '副标题',
-      actions: '默认标签',
       cover: 'https://tdesign.gtimg.com/site/source/card-demo.png',
     };
-  },
-  methods: {
-    icon() {
-      return <UserIcon />;
-    },
   },
 };
 </script>

@@ -13,7 +13,7 @@
 import { BrowseIcon } from 'tdesign-icons-vue';
 
 const img = 'https://tdesign.gtimg.com/demo/demo-image-1.png';
-const images = [
+const initialImages = [
   {
     mainImage: 'https://tdesign.gtimg.com/demo/demo-image-2.png',
     thumbnail: 'https://tdesign.gtimg.com/demo/demo-image-1.png',
@@ -23,8 +23,12 @@ const images = [
 export default {
   data() {
     return {
-      images,
-      trigger: (h, { open }) => (
+      images: initialImages,
+    };
+  },
+  methods: {
+    trigger(h, { open }) {
+      return (
         <div class="tdesign-demo-image-viewer__ui-image">
           <img alt="test" src={img} class="tdesign-demo-image-viewer__ui-image--img" />
           <div class="tdesign-demo-image-viewer__ui-image--hover" onClick={open}>
@@ -33,8 +37,8 @@ export default {
             </span>
           </div>
         </div>
-      ),
-    };
+      );
+    },
   },
 };
 </script>
