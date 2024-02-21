@@ -37,10 +37,5 @@ export default {
       tags: ['StudentA', 'StudentB', 'StudentC'],
     };
   },
-  methods: {
-    onTagDelete(index) {
-      this.tags.splice(index, 1);
-    },
-  },
 };
 </script>

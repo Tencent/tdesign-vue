@@ -42,10 +42,5 @@ export default {
       value: ['1.1'],
     };
   },
-  methods: {
-    handleValueChange(e) {
-      this.value = e;
-    },
-  },
 };
 </script>

@@ -43,9 +43,7 @@
   </div>
 </template>
 <script>
-import Vue from 'vue';
-
-export default Vue.extend({
+export default {
   data() {
     return {
       visible1: false,
@@ -72,5 +70,5 @@ export default Vue.extend({
       this.visible4 = false;
     },
   },
-});
+};
 </script>

@@ -76,8 +76,8 @@ export default {
         },
       ],
       rowKey: 'phone',
-      tableLayout: 'auto',
-      rowClassName: 'property-class',
+      // tableLayout: 'auto',
+      // rowClassName: 'property-class',
       pagination: {
         current: 1,
         pageSize: 10,

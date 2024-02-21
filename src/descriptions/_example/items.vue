@@ -5,7 +5,7 @@
 <script lang="jsx">
 import Base from './base.vue';
 
-const items = [
+const initialItems = [
   { label: 'Name', content: 'TDesign' },
   { label: Base, content: '139****0609' },
 ];
@@ -13,7 +13,7 @@ const items = [
 export default {
   data() {
     return {
-      items,
+      items: initialItems,
     };
   },
 };

@@ -26,7 +26,10 @@ export default {
   },
   computed: {
     requestMethod() {
-      return this[this.uploadMethod];
+      return {
+        requestSuccessMethod: this.requestSuccessMethod,
+        requestFailMethod: this.requestFailMethod,
+      }[this.uploadMethod];
     },
   },
   watch: {

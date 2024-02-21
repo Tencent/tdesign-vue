@@ -52,19 +52,18 @@
       :cancelBtn="null"
     >
       <div slot="header">
-        <icon name="check-circle-filled" color="orange" />
+        <check-circle-filled-icon color="orange" />
         <span style="vertical-align: middle">对话框标题</span>
       </div>
     </t-dialog>
   </div>
 </template>
 <script>
-import Vue from 'vue';
-import { Icon } from 'tdesign-icons-vue';
+import { CheckCircleFilledIcon } from 'tdesign-icons-vue';
 
-export default Vue.extend({
+export default {
   components: {
-    Icon,
+    CheckCircleFilledIcon,
   },
   data() {
     return {
@@ -107,5 +106,5 @@ export default Vue.extend({
       this.visible5 = false;
     },
   },
-});
+};
 </script>

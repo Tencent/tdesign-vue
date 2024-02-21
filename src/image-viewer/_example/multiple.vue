@@ -20,14 +20,13 @@ const img3 = 'https://tdesign.gtimg.com/demo/demo-image-3.png';
 const img2 = 'https://tdesign.gtimg.com/demo/demo-image-2.png';
 const img1 = 'https://tdesign.gtimg.com/demo/demo-image-1.png';
 
-const images = [img1, img2, img3];
 export default {
   components: {
     BrowseIcon,
   },
   data() {
     return {
-      images,
+      images: [img1, img2, img3],
     };
   },
 };

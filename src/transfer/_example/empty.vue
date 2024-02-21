@@ -7,11 +7,11 @@
   </t-space>
 </template>
 <script>
-const list = [];
+const initialList = [];
 export default {
   data() {
     return {
-      list,
+      list: initialList,
     };
   },
 };

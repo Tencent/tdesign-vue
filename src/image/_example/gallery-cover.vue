@@ -8,10 +8,9 @@
 </template>
 
 <script lang="jsx">
-import Vue from 'vue';
 import { Tag } from 'tdesign-vue';
 
-export default Vue.extend({
+export default {
   data() {
     return {
       // overlayContent 支持插槽
@@ -33,5 +32,5 @@ export default Vue.extend({
     };
   },
   methods: {},
-});
+};
 </script>

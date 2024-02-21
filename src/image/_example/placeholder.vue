@@ -60,10 +60,9 @@
 </template>
 
 <script lang="jsx">
-import Vue from 'vue';
 import { RefreshIcon, ImageErrorIcon, QrcodeIcon } from 'tdesign-icons-vue';
 
-export default Vue.extend({
+export default {
   components: { RefreshIcon, QrcodeIcon },
   data() {
     return {
@@ -76,5 +75,5 @@ export default Vue.extend({
       return <ImageErrorIcon size="24" />;
     },
   },
-});
+};
 </script>

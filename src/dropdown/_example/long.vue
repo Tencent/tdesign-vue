@@ -8,12 +8,12 @@
 <script>
 export default {
   data() {
-    const options = Array.from({ length: 20 }).map((v, k) => ({
+    const initialOptions = Array.from({ length: 20 }).map((v, k) => ({
       content: `操作${k + 1}`,
       value: k + 1,
     }));
     return {
-      options,
+      options: initialOptions,
     };
   },
 };

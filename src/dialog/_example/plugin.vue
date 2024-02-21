@@ -8,10 +8,9 @@
   </t-space>
 </template>
 <script>
-import Vue from 'vue';
 import { DialogPlugin } from 'tdesign-vue';
 
-export default Vue.extend({
+export default {
   data() {
     return {
       mydialog: null,
@@ -112,7 +111,7 @@ export default Vue.extend({
       });
     },
   },
-});
+};
 </script>
 <style scoped>
 p {

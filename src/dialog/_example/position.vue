@@ -76,9 +76,7 @@
   </div>
 </template>
 <script>
-import Vue from 'vue';
-
-export default Vue.extend({
+export default {
   data() {
     return {
       visible: false,
@@ -86,7 +84,6 @@ export default Vue.extend({
       visibleTop: false,
       visibleOverflow: false,
       placement: 'top',
-      top: '50px',
     };
   },
   methods: {
@@ -103,5 +100,5 @@ export default Vue.extend({
       this.visibleOverflow = false;
     },
   },
-});
+};
 </script>

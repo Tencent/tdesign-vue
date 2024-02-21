@@ -28,9 +28,9 @@
 <script lang="jsx">
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 
-const data = [];
+const initialData = [];
 for (let i = 0; i < 5; i++) {
-  data.push({
+  initialData.push({
     index: i + 1,
     applicant: ['贾明', '张三', '王芳'][i % 3],
     status: i % 3,
@@ -49,7 +49,7 @@ const disabledFunc = ({ rowIndex }) => rowIndex === 1 || rowIndex === 3;
 export default {
   data() {
     return {
-      highlightSelectedRow: false,
+      // highlightSelectedRow: false,
       selectedOnRowClick: false,
       selectedRowKeys: [2],
       columns: [
@@ -93,7 +93,7 @@ export default {
         { colKey: 'detail.email', title: '邮箱地址', ellipsis: true },
         { colKey: 'createTime', title: '申请时间' },
       ],
-      data,
+      data: initialData,
     };
   },
   methods: {

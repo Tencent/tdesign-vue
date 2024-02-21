@@ -19,10 +19,10 @@
 <script lang="jsx">
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 
-const data = [];
+const initialData = [];
 
 for (let i = 0; i < 5; i++) {
-  data.push({
+  initialData.push({
     index: i + 1,
     applicant: ['贾明', '张三', '王芳'][i % 3],
     status: i % 3,
@@ -42,7 +42,7 @@ export default {
   },
   data() {
     return {
-      data,
+      data: initialData,
       statusNameListMap: {
         0: { label: '审批通过', theme: 'success', icon: <CheckCircleFilledIcon /> },
         1: { label: '审批失败', theme: 'danger', icon: <CloseCircleFilledIcon /> },

@@ -8,7 +8,7 @@
 <script>
 import { MessagePlugin } from 'tdesign-vue';
 
-const options = [
+const initialOptions = [
   {
     content: '选项一',
     value: 1,
@@ -58,7 +58,7 @@ const options = [
 export default {
   data() {
     return {
-      options,
+      options: initialOptions,
     };
   },
   methods: {

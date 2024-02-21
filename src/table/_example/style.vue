@@ -12,10 +12,10 @@
 <script lang="jsx">
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 
-const data = [];
+const initialData = [];
 const total = 5;
 for (let i = 0; i < total; i++) {
-  data.push({
+  initialData.push({
     index: i,
     applicant: ['贾明', '张三', '王芳'][i % 3],
     status: i % 3,
@@ -31,7 +31,7 @@ for (let i = 0; i < total; i++) {
 export default {
   data() {
     return {
-      data,
+      data: initialData,
       columns: [
         { colKey: 'applicant', title: '申请人', width: 100 },
         {

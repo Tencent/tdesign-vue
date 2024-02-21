@@ -133,6 +133,7 @@
     {
       "files": [
         "**/_example/*",
+        "**/_example-composition/*",
         "**/__tests__/*",
         "script/**/*",
         "script/*",
