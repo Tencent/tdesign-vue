@@ -136,7 +136,7 @@
     "autoprefixer": "^9.7.6",
     "babel-core": "^7.0.0-bridge.0",
     "babel-polyfill": "^6.26.0",
-    "c8": "^7.12.0",
+    "c8": "^9.1.0",
     "camelcase": "~6.3.0",
     "cli-color": "^2.0.0",
     "commitizen": "^4.0.3",
