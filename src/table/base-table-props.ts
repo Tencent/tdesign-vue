@@ -181,7 +181,6 @@ export default {
   /** 表格尺寸 */
   size: {
     type: String as PropType<TdBaseTableProps['size']>,
-    default: 'medium' as TdBaseTableProps['size'],
     validator(val: TdBaseTableProps['size']): boolean {
       if (!val) return true;
       return ['small', 'medium', 'large'].includes(val);
