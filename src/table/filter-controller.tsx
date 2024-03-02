@@ -1,6 +1,4 @@
-import {
-  computed, defineComponent, PropType, ref,
-} from '@vue/composition-api';
+import { defineComponent, PropType, ref } from '@vue/composition-api';
 import { CreateElement } from 'vue';
 import { SearchIcon, FilterIcon as TdFilterIcon } from 'tdesign-icons-vue';
 import isEmpty from 'lodash/isEmpty';
