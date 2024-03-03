@@ -191,7 +191,7 @@ export default defineComponent({
             <Input
               v-model={this.listFilterValue}
               borderless
-              class={[this.tableFilterClasses.inputFilter, inputObj.className]}
+              class={[this.tableFilterClasses.inputFilter, inputObj.className].filter(Boolean)}
               scopedSlots={{ prefixIcon: () => <SearchIcon />, ...inputObj.slots }}
               props={inputObj.props}
               style={inputObj.style}
