@@ -23,8 +23,6 @@ type Params = Parameters<CreateElement>;
 type FirstParams = Params[0];
 type SecondParams = Params[1] | Params[2];
 
-// const TEXT_FILTER_REGEXP = new RegExp
-
 export interface TableFilterControllerProps {
   locale: TableConfig;
   tFilterValue: FilterValue;
