@@ -154,6 +154,7 @@ export default function useClassName() {
       bottomButtons: `${classPrefix.value}-table__filter--bottom-buttons`,
       contentInner: `${classPrefix.value}-table__filter-pop-content-inner`,
       iconWrap: `${classPrefix.value}-table__filter-icon-wrap`,
+      inputFilter: `${classPrefix.value}-table__filter-popup-input`,
     },
 
     // 通用类名

@@ -111,12 +111,21 @@ const columns = computed(() => [
           value: 3,
         },
       ],
+      // you can also set listFilterConfig to be `true`
+      listFilterConfig: {
+        props: { placeholder: 'Search' },
+        style: { width: '120px' },
+        // className: '',
+        // slots: {},
+        // filterMethod: (option, keyword) => option.label.includes(keyword),
+      },
       // confirm to search and hide filter popup
       confirmEvents: ['onChange'],
       // 支持透传全部 Popup 组件属性
-      // popupProps: {
-      //   attach: () => document.body,
-      // },
+      popupProps: {
+        // attach: () => document.body,
+        overlayInnerStyle: { maxHeight: '280px', overflow: 'auto' },
+      },
     },
     cell: (h, { row }) => {
       const statusNameListMap = {
