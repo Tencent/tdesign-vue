@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import { CloseIcon as TdCloseIcon } from 'tdesign-icons-vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
+import tinycolor from 'tinycolor2';
 import props from './props';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { TagConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
@@ -35,6 +36,27 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalI
         return {
           maxWidth: isNaN(Number(this.maxWidth)) ? this.maxWidth : `${this.maxWidth}px`,
         };
+      }
+      return {};
+    },
+    tagStyle(): Styles {
+      if (this.color) {
+        const luminance = tinycolor(this.color).getLuminance();
+
+        const style: Styles = {
+          color: luminance > 0.5 ? 'black' : 'white',
+        };
+
+        if (this.variant === 'outline' || this.variant === 'light-outline') {
+          style.borderColor = this.color;
+        }
+        if (this.variant !== 'outline') {
+          style.backgroundColor = this.variant === 'dark' ? this.color : this.color;
+        }
+        if (this.variant !== 'dark') {
+          style.color = this.color;
+        }
+        return style;
       }
       return {};
     },
@@ -81,7 +103,7 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalI
     // 图标
     const icon = renderTNodeJSX(this, 'icon');
     return (
-      <div class={this.tagClass} onClick={this.handleClick}>
+      <div class={this.tagClass} onClick={this.handleClick} style={this.tagStyle}>
         {icon}
         <span
           class={this.maxWidth ? `${this.componentName}--text` : undefined}

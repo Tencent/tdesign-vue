@@ -6,6 +6,11 @@
     "options": []
   },
   {
+    "name": "color",
+    "type": "string",
+    "defaultValue": ""
+  },
+  {
     "name": "disabled",
     "type": "Boolean",
     "defaultValue": false,
