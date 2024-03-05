@@ -123,8 +123,9 @@ const columns = computed(() => [
       confirmEvents: ['onChange'],
       // 支持透传全部 Popup 组件属性
       popupProps: {
+        overlayInnerClassName: 't-table__list-filter-input--sticky',
+        // overlayInnerStyle: { maxHeight: '280px', overflow: 'auto' },
         // attach: () => document.body,
-        overlayInnerStyle: { maxHeight: '280px', overflow: 'auto' },
       },
     },
     cell: (h, { row }) => {
