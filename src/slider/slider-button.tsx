@@ -123,7 +123,7 @@ export default mixins(classPrefixMixins, Vue as VueConstructor<SliderInstanceTyp
   },
   methods: {
     getTooltipContent() {
-      if (typeof this.label === 'boolean') return String(this.value);
+      if (this.label === true) return String(this.value);
       if (typeof this.label === 'string') return formatLabel(this.label, this.value as number);
       return renderTNodeJSX(this, 'label', {
         params: this.range
