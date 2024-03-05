@@ -334,6 +334,7 @@ export default mixins(classPrefixMixins, Vue as VueConstructor<SliderInstanceTyp
       >
         <Tooltip
           ref="tooltip"
+          hideEmptyPopup
           props={this.getTooltipProps()}
           visible={this.label && this.visible}
           content={this.getTooltipContent}
