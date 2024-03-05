@@ -2,6 +2,7 @@ import Vue from 'vue';
 import { CloseIcon as TdCloseIcon } from 'tdesign-icons-vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import tinycolor from 'tinycolor2';
+import { Color } from 'tvision-color';
 import props from './props';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { TagConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
@@ -51,7 +52,15 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalI
           style.borderColor = this.color;
         }
         if (this.variant !== 'outline') {
-          style.backgroundColor = this.variant === 'dark' ? this.color : this.color;
+          const getLightestShade = () => {
+            const [{ colors }] = Color.getColorGradations({
+              colors: [tinycolor(this.color).toHex()],
+              step: 10,
+              remainInput: true,
+            });
+            return colors[0];
+          };
+          style.backgroundColor = this.variant === 'dark' ? this.color : getLightestShade();
         }
         if (this.variant !== 'dark') {
           style.color = this.color;

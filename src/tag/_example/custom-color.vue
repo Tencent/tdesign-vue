@@ -3,7 +3,7 @@
     <p class="color-picker">
       <t-space align="center">
         <label>调整颜色查看效果</label>
-        <t-color-picker v-model="color"></t-color-picker>
+        <t-color-picker :color-modes="['monochrome']" v-model="color"></t-color-picker>
       </t-space>
     </p>
     <t-space direction="horizontal">
