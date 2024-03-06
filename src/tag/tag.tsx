@@ -42,30 +42,7 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalI
     },
     tagStyle(): Styles {
       if (this.color) {
-        const luminance = tinycolor(this.color).getLuminance();
-
-        const style: Styles = {
-          color: luminance > 0.5 ? 'black' : 'white',
-        };
-
-        if (this.variant === 'outline' || this.variant === 'light-outline') {
-          style.borderColor = this.color;
-        }
-        if (this.variant !== 'outline') {
-          const getLightestShade = () => {
-            const [{ colors }] = Color.getColorGradations({
-              colors: [tinycolor(this.color).toHex()],
-              step: 10,
-              remainInput: true,
-            });
-            return colors[0];
-          };
-          style.backgroundColor = this.variant === 'dark' ? this.color : getLightestShade();
-        }
-        if (this.variant !== 'dark') {
-          style.color = this.color;
-        }
-        return style;
+        return this.getTagColorStyle();
       }
       return {};
     },
@@ -98,6 +75,32 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalI
       const { CloseIcon } = this.useGlobalIcon({ CloseIcon: TdCloseIcon });
 
       return <CloseIcon nativeOnClick={this.handleClose} class={iconClassName} />;
+    },
+    getTagColorStyle(): Styles {
+      const luminance = tinycolor(this.color).getLuminance();
+
+      const style: Styles = {
+        color: luminance > 0.5 ? 'black' : 'white',
+      };
+
+      if (this.variant === 'outline' || this.variant === 'light-outline') {
+        style.borderColor = this.color;
+      }
+      if (this.variant !== 'outline') {
+        const getLightestShade = () => {
+          const [{ colors }] = Color.getColorGradations({
+            colors: [tinycolor(this.color).toHex()],
+            step: 10,
+            remainInput: true,
+          });
+          return colors[0];
+        };
+        style.backgroundColor = this.variant === 'dark' ? this.color : getLightestShade();
+      }
+      if (this.variant !== 'dark') {
+        style.color = this.color;
+      }
+      return style;
     },
   },
 
