@@ -11,7 +11,7 @@ export default {
   /** 高亮行，支持鼠标键盘操作(Shift)连续高亮行，可用于处理行选中等批量操作，模拟操作系统区域选择行为 */
   activeRowKeys: {
     type: Array as PropType<TdBaseTableProps['activeRowKeys']>,
-    default: undefined,
+    default: (): TdBaseTableProps['activeRowKeys'] => [],
   },
   /** 高亮行，支持鼠标键盘操作(Shift)连续高亮行，可用于处理行选中等批量操作，模拟操作系统区域选择行为，非受控属性 */
   defaultActiveRowKeys: {
@@ -178,10 +178,9 @@ export default {
     type: Boolean,
     default: true,
   },
-  /** 表格尺寸 */
+  /** 表格尺寸，支持全局配置 `GlobalConfigProvider`，默认全局配置值为 `medium` */
   size: {
     type: String as PropType<TdBaseTableProps['size']>,
-    default: 'medium' as TdBaseTableProps['size'],
     validator(val: TdBaseTableProps['size']): boolean {
       if (!val) return true;
       return ['small', 'medium', 'large'].includes(val);
