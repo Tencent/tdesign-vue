@@ -218,7 +218,7 @@ export interface TdBaseTableProps<T extends TableRowData = TableRowData> {
    */
   showHeader?: boolean;
   /**
-   * 表格尺寸
+   * 表格尺寸，支持全局配置 `GlobalConfigProvider`，默认全局配置值为 `medium`
    */
   size?: SizeEnum;
   /**

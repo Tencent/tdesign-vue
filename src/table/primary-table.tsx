@@ -23,6 +23,7 @@ import useEditableRow from './hooks/useEditableRow';
 import { EditableCellProps } from './editable-cell';
 import useStyle from './hooks/useStyle';
 import { ComponentScrollToElementParams } from '../common';
+import { useConfig } from '../config-provider/useConfig';
 
 export { BASE_TABLE_ALL_EVENTS } from './base-table';
 
@@ -69,7 +70,9 @@ export default defineComponent({
     const {
       classPrefix, tableDraggableClasses, tableBaseClass, tableSelectedClasses, tableSortClasses,
     } = useClassName();
+    const { global } = useConfig('table', props.locale);
     const { sizeClassNames } = useStyle(props);
+    const tableSize = computed(() => props.size ?? global.value.size);
     const innerPagination = ref<PaginationProps>(props.pagination);
     const dataPagination = computed(() => innerPagination.value
       ? {
@@ -220,7 +223,7 @@ export default defineComponent({
               attach,
               {
                 classPrefix,
-                ellipsisOverlayClassName: props.size !== 'medium' ? sizeClassNames[props.size] : '',
+                ellipsisOverlayClassName: tableSize.value !== 'medium' ? sizeClassNames[tableSize.value] : '',
               },
             );
           };
