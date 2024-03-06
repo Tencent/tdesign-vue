@@ -1,6 +1,7 @@
 :: BASE_DOC ::
 
 ## API
+
 ### BaseTable Props
 
 name | type | default | description | required
@@ -46,7 +47,7 @@ rowspanAndColspan | Function | - | rowspan and colspan。Typescript：`TableRows
 rowspanAndColspanInFooter | Function | - | rowspan and colspan for footer。Typescript：`TableRowspanAndColspanFunc<T>` | N
 scroll | Object | - | lazy load and virtual scroll。Typescript：`TScroll`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 showHeader | Boolean | true | show table header | N
-size | String | - | options: small/medium/large。Typescript：`SizeEnum`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+size | String | - | table size, support `GlobalConfigProvider`, default value is `medium`。options: small/medium/large。Typescript：`SizeEnum`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 stripe | Boolean | false | show stripe style | N
 tableContentWidth | String | - | \- | N
 tableLayout | String | fixed | table-layout css properties, [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout). set value to be `fixed` on `resizable=true` please。options: auto/fixed | N
@@ -119,6 +120,7 @@ stopPropagation | Boolean | - | stop cells of current col to propagation | N
 thClassName | String / Object / Array / Function | - | th classnames。Typescript：`TableColumnClassName<T> \| TableColumnClassName<T>[]`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 title | String / Function | - | th content。Typescript：`string \| TNode<{ col: BaseTableCol; colIndex: number }>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 width | String / Number | - | column width | N
+
 
 ### PrimaryTable Props
 
@@ -219,6 +221,7 @@ sorter | Boolean / Function | false | sort configs。Typescript：`boolean \| So
 title | String / Function | - | to render table head。Typescript：`string \| TNode<{ col: PrimaryTableCol; colIndex: number }>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 type | String | single | row select type。options: single/multiple | N
 `Omit<BaseTableCol, 'cell' \| 'title' \| 'render' \| 'children'>` | \- | - | extends `Omit<BaseTableCol, 'cell' \| 'title' \| 'render' \| 'children'>` | N
+
 
 ### EnhancedTable Props
 
