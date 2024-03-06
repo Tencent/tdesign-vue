@@ -122,6 +122,7 @@
     "@rollup/plugin-replace": "^2.4.2",
     "@rollup/plugin-url": "^5.0.1",
     "@testing-library/dom": "^8.20.0",
+    "@types/chroma-js": "^2.4.4",
     "@types/estree": "0.0.50",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/experimental-utils": "^5.4.0",
