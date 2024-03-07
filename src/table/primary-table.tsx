@@ -350,6 +350,9 @@ export default defineComponent({
       scrollColumnIntoView: (colKey: string) => {
         primaryTableRef.value.scrollColumnIntoView(colKey);
       },
+      refreshTable: () => {
+        primaryTableRef.value.refreshTable();
+      },
       validateRowData,
       validateTableData,
       clearValidateData,
