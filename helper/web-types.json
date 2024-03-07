@@ -5671,17 +5671,17 @@
           "slots": []
         },
         {
-          "name": "t-description-item",
+          "name": "t-descriptions-item",
           "source": {
-            "symbol": "DescriptionItem"
+            "symbol": "DescriptionsItem"
           },
-          "description": "DescriptionItem\n\n描述项",
-          "doc-url": "https://tdesign.tencent.com/vue/components/description-item",
+          "description": "DescriptionsItem\n\n描述项",
+          "doc-url": "https://tdesign.tencent.com/vue/components/descriptions-item",
           "props": [
             {
               "name": "label",
               "description": "label of description item\n\n描述项字段名",
-              "doc-url": "https://tdesign.tencent.com/vue/components/description-item?tab=api#descriptionitem-props",
+              "doc-url": "https://tdesign.tencent.com/vue/components/descriptions-item?tab=api#descriptionsitem-props",
               "type": [
                 "String",
                 "TNode"
@@ -5690,7 +5690,7 @@
             {
               "name": "span",
               "description": "width count\n\n占用的宽度数量",
-              "doc-url": "https://tdesign.tencent.com/vue/components/description-item?tab=api#descriptionitem-props",
+              "doc-url": "https://tdesign.tencent.com/vue/components/descriptions-item?tab=api#descriptionsitem-props",
               "type": [
                 "Number"
               ],
@@ -5701,7 +5701,7 @@
             {
               "name": "label",
               "description": "label of description item\n\n描述项字段名",
-              "doc-url": "https://tdesign.tencent.com/vue/components/description-item?tab=api#descriptionitem-props"
+              "doc-url": "https://tdesign.tencent.com/vue/components/descriptions-item?tab=api#descriptionsitem-props"
             }
           ]
         },
@@ -5732,7 +5732,7 @@
             },
             {
               "name": "columns",
-              "description": "count of DescriptionItem in one row\n\n一行 DescriptionItem 的数量",
+              "description": "count of DescriptionsItem in one row\n\n一行 DescriptionsItem 的数量",
               "doc-url": "https://tdesign.tencent.com/vue/components/descriptions?tab=api#descriptions-props",
               "type": [
                 "Number"
