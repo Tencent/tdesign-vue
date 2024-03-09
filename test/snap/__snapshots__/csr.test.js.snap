@@ -59310,7 +59310,7 @@ exports[`csr snapshot test > csr test ./src/image/_example/extra-always.vue 1`] 
             >
               <div
                 class="t-tag t-tag--warning t-tag--dark t-tag--mark"
-                style="border-radius: 3px; background: transparent; color: rgb(255, 255, 255);"
+                style="border-radius: 3px; color: rgb(255, 255, 255); background: transparent;"
               >
                 <span>
                   <svg
@@ -59398,7 +59398,7 @@ exports[`csr snapshot test > csr test ./src/image/_example/extra-always.vue 1`] 
           >
             <div
               class="t-tag t-tag--warning t-tag--dark t-tag--mark"
-              style="position: absolute; right: 8px; bottom: 8px; border-radius: 3px; background: rgb(236, 242, 254); color: rgb(0, 82, 217);"
+              style="position: absolute; right: 8px; bottom: 8px; border-radius: 3px; color: rgb(0, 82, 217); background: rgb(236, 242, 254);"
             >
               <span>
                 <svg
@@ -60493,7 +60493,7 @@ exports[`csr snapshot test > csr test ./src/image/_example/gallery-cover.vue 1`]
   >
     <div
       class="t-tag t-tag--warning t-tag--dark t-tag--mark"
-      style="margin: 8px; border-radius: 3px; background: rgb(236, 242, 254); color: rgb(0, 82, 217);"
+      style="margin: 8px; border-radius: 3px; color: rgb(0, 82, 217); background: rgb(236, 242, 254);"
     >
       <span>
         标签一
@@ -103540,6 +103540,176 @@ exports[`csr snapshot test > csr test ./src/tag/_example/check-tag-group.vue 1`]
                   TAG_F(6)
                 </span>
               </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/tag/_example/custom-color.vue 1`] = `
+<div
+  data-v-d3a6e7a6=""
+>
+  <p
+    class="color-picker"
+    data-v-d3a6e7a6=""
+  >
+    <div
+      class="t-space t-space-align-center t-space-horizontal"
+      data-v-d3a6e7a6=""
+      style="gap: 16px;"
+    >
+      <div
+        class="t-space-item"
+      >
+        <label
+          data-v-d3a6e7a6=""
+        >
+          调整颜色查看效果
+        </label>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <div
+          class="t-color-picker__trigger"
+          data-v-d3a6e7a6=""
+        >
+          <div
+            class="t-color-picker__trigger--default"
+          >
+            <div
+              class="t-input__wrap t-input--auto-width"
+            >
+              <div
+                class="t-input t-input--prefix"
+              >
+                <div
+                  class="t-input__prefix"
+                >
+                  <div
+                    class="t-color-picker__trigger--default__color t-color-picker--bg-alpha"
+                  >
+                    <span
+                      class="color-inner"
+                      style="background: rgb(0, 82, 217);"
+                    />
+                  </div>
+                </div>
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请输入"
+                  type="text"
+                  unselectable="off"
+                />
+                <span
+                  class="t-input__input-pre"
+                >
+                  rgb(0, 82, 217)
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </p>
+  <div
+    class="t-space t-space-horizontal"
+    data-v-d3a6e7a6=""
+    style="gap: 16px;"
+  >
+    <div
+      class="t-space-item"
+    >
+      <div
+        class="t-space t-space-horizontal"
+        data-v-d3a6e7a6=""
+        style="gap: 16px;"
+      >
+        <div
+          class="t-space-item"
+        >
+          <div
+            class="t-tag t-tag--primary t-tag--dark"
+            data-v-d3a6e7a6=""
+            style="color: white; background-color: rgb(0, 82, 217);"
+          >
+            <span>
+              默认
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="t-space-item"
+    >
+      <div
+        class="t-space t-space-horizontal"
+        data-v-d3a6e7a6=""
+        style="gap: 16px;"
+      >
+        <div
+          class="t-space-item"
+        >
+          <div
+            class="t-tag t-tag--default t-tag--light"
+            data-v-d3a6e7a6=""
+            style="color: rgb(0, 82, 217); background-color: rgb(198, 217, 247);"
+          >
+            <span>
+              浅色
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="t-space-item"
+    >
+      <div
+        class="t-space t-space-horizontal"
+        data-v-d3a6e7a6=""
+        style="gap: 16px;"
+      >
+        <div
+          class="t-space-item"
+        >
+          <div
+            class="t-tag t-tag--default t-tag--outline"
+            data-v-d3a6e7a6=""
+            style="color: rgb(0, 82, 217); border-color: rgb(0, 82, 217);"
+          >
+            <span>
+              outline
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="t-space-item"
+    >
+      <div
+        class="t-space t-space-horizontal"
+        data-v-d3a6e7a6=""
+        style="gap: 16px;"
+      >
+        <div
+          class="t-space-item"
+        >
+          <div
+            class="t-tag t-tag--default t-tag--light-outline"
+            data-v-d3a6e7a6=""
+            style="color: rgb(0, 82, 217); border-color: rgb(0, 82, 217); background-color: rgb(198, 217, 247);"
+          >
+            <span>
+              light-outline
             </span>
           </div>
         </div>
