@@ -1,5 +1,9 @@
 :: BASE_DOC ::
 
+### 自定义颜色
+
+{{ custom-color }}
+
 ## API
 ### Tag Props
 
