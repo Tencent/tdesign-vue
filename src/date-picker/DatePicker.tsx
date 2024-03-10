@@ -51,7 +51,7 @@ export default defineComponent({
     const isDisabled = computed(() => formDisabled.value || props.disabled);
 
     watch(popupVisible, (visible) => {
-      const dateValue = covertToDate(value.value as string, formatRef.value?.valueType);
+      const dateValue = value.value ? covertToDate(value.value as string, formatRef.value?.valueType) : value.value;
 
       cacheValue.value = formatDate(dateValue, {
         format: formatRef.value.format,
