@@ -4747,9 +4747,15 @@ exports[`csr snapshot test > csr test ./src/breadcrumb/_example/custom.vue 1`] =
     >
       <svg
         class="t-icon t-icon-chevron-right"
+        fill="none"
+        height="1em"
+        name="chevron-right"
+        viewBox="0 0 24 24"
+        width="1em"
       >
-        <use
-          href="#t-icon-chevron-right"
+        <path
+          d="M8.09 17.5l5.5-5.5-5.5-5.5L9.5 5.09 16.41 12 9.5 18.91 8.09 17.5z"
+          fill="currentColor"
         />
       </svg>
     </span>
@@ -4776,9 +4782,15 @@ exports[`csr snapshot test > csr test ./src/breadcrumb/_example/custom.vue 1`] =
     >
       <svg
         class="t-icon t-icon-chevron-right"
+        fill="none"
+        height="1em"
+        name="chevron-right"
+        viewBox="0 0 24 24"
+        width="1em"
       >
-        <use
-          href="#t-icon-chevron-right"
+        <path
+          d="M8.09 17.5l5.5-5.5-5.5-5.5L9.5 5.09 16.41 12 9.5 18.91 8.09 17.5z"
+          fill="currentColor"
         />
       </svg>
     </span>
@@ -4805,9 +4817,15 @@ exports[`csr snapshot test > csr test ./src/breadcrumb/_example/custom.vue 1`] =
     >
       <svg
         class="t-icon t-icon-chevron-right"
+        fill="none"
+        height="1em"
+        name="chevron-right"
+        viewBox="0 0 24 24"
+        width="1em"
       >
-        <use
-          href="#t-icon-chevron-right"
+        <path
+          d="M8.09 17.5l5.5-5.5-5.5-5.5L9.5 5.09 16.41 12 9.5 18.91 8.09 17.5z"
+          fill="currentColor"
         />
       </svg>
     </span>
@@ -4858,9 +4876,15 @@ exports[`csr snapshot test > csr test ./src/breadcrumb/_example/dropdown.vue 1`]
           页面2 
           <svg
             class="t-icon t-icon-chevron-down"
+            fill="none"
+            height="1em"
+            name="chevron-down"
+            viewBox="0 0 24 24"
+            width="1em"
           >
-            <use
-              href="#t-icon-chevron-down"
+            <path
+              d="M17.5 8.09l-5.5 5.5-5.5-5.5L5.09 9.5 12 16.41l6.91-6.91-1.41-1.41z"
+              fill="currentColor"
             />
           </svg>
         </span>
@@ -5111,9 +5135,15 @@ exports[`csr snapshot test > csr test ./src/breadcrumb/_example/icon.vue 1`] = `
       >
         <svg
           class="t-icon t-icon-bookmark"
+          fill="none"
+          height="1em"
+          name="bookmark"
+          viewBox="0 0 24 24"
+          width="1em"
         >
-          <use
-            href="#t-icon-bookmark"
+          <path
+            d="M4 3h16v19.94l-8-5.71-8 5.71V3zm2 2v14.06l6-4.29 6 4.29V5H6z"
+            fill="currentColor"
           />
         </svg>
         <span
@@ -5152,9 +5182,15 @@ exports[`csr snapshot test > csr test ./src/breadcrumb/_example/icon.vue 1`] = `
       >
         <svg
           class="t-icon t-icon-bookmark"
+          fill="none"
+          height="1em"
+          name="bookmark"
+          viewBox="0 0 24 24"
+          width="1em"
         >
-          <use
-            href="#t-icon-bookmark"
+          <path
+            d="M4 3h16v19.94l-8-5.71-8 5.71V3zm2 2v14.06l6-4.29 6 4.29V5H6z"
+            fill="currentColor"
           />
         </svg>
         <span
@@ -5193,9 +5229,15 @@ exports[`csr snapshot test > csr test ./src/breadcrumb/_example/icon.vue 1`] = `
       >
         <svg
           class="t-icon t-icon-bookmark"
+          fill="none"
+          height="1em"
+          name="bookmark"
+          viewBox="0 0 24 24"
+          width="1em"
         >
-          <use
-            href="#t-icon-bookmark"
+          <path
+            d="M4 3h16v19.94l-8-5.71-8 5.71V3zm2 2v14.06l6-4.29 6 4.29V5H6z"
+            fill="currentColor"
           />
         </svg>
         <span
@@ -34053,9 +34095,15 @@ exports[`csr snapshot test > csr test ./src/comment/_example/operation.vue 1`] =
               <svg
                 class="t-icon t-icon-thumb-up"
                 data-v-70d43968=""
+                fill="none"
+                height="1em"
+                viewBox="0 0 24 24"
+                width="1em"
               >
-                <use
-                  href="#t-icon-thumb-up"
+                <path
+                  d="M10.88 1.38l1.28.22a4 4 0 013.34 3.94V8h5.32a2 2 0 011.97 2.33l-1.66 10A2 2 0 0119.15 22H7V10.8l3.88-9.42zm1.23 2.26L9 11.2V20h10.15l1.67-10H13.5V5.54a2 2 0 00-1.39-1.9zM4 10v12H2V10h2z"
+                  data-v-70d43968=""
+                  fill="currentColor"
                 />
               </svg>
               <span
@@ -34080,9 +34128,15 @@ exports[`csr snapshot test > csr test ./src/comment/_example/operation.vue 1`] =
               <svg
                 class="t-icon t-icon-chat"
                 data-v-70d43968=""
+                fill="none"
+                height="1em"
+                viewBox="0 0 24 24"
+                width="1em"
               >
-                <use
-                  href="#t-icon-chat"
+                <path
+                  d="M1.5 2h21v16H6.88L1.5 22.7V2zm2 2v14.3L6.12 16H20.5V4h-17z"
+                  data-v-70d43968=""
+                  fill="currentColor"
                 />
               </svg>
               <span
@@ -34186,9 +34240,15 @@ exports[`csr snapshot test > csr test ./src/comment/_example/quote.vue 1`] = `
               <svg
                 class="t-icon t-icon-thumb-up"
                 data-v-4829af3e=""
+                fill="none"
+                height="1em"
+                viewBox="0 0 24 24"
+                width="1em"
               >
-                <use
-                  href="#t-icon-thumb-up"
+                <path
+                  d="M10.88 1.38l1.28.22a4 4 0 013.34 3.94V8h5.32a2 2 0 011.97 2.33l-1.66 10A2 2 0 0119.15 22H7V10.8l3.88-9.42zm1.23 2.26L9 11.2V20h10.15l1.67-10H13.5V5.54a2 2 0 00-1.39-1.9zM4 10v12H2V10h2z"
+                  data-v-4829af3e=""
+                  fill="currentColor"
                 />
               </svg>
               <span
@@ -34213,9 +34273,15 @@ exports[`csr snapshot test > csr test ./src/comment/_example/quote.vue 1`] = `
               <svg
                 class="t-icon t-icon-chat"
                 data-v-4829af3e=""
+                fill="none"
+                height="1em"
+                viewBox="0 0 24 24"
+                width="1em"
               >
-                <use
-                  href="#t-icon-chat"
+                <path
+                  d="M1.5 2h21v16H6.88L1.5 22.7V2zm2 2v14.3L6.12 16H20.5V4h-17z"
+                  data-v-4829af3e=""
+                  fill="currentColor"
                 />
               </svg>
               <span
@@ -34285,14 +34351,10 @@ exports[`csr snapshot test > csr test ./src/comment/_example/reply.vue 1`] = `
             <span
               data-v-1a7615cf=""
             >
-              <svg
-                class="t-icon t-icon-thumb-up"
+              <icon
                 data-v-1a7615cf=""
-              >
-                <use
-                  href="#t-icon-thumb-up"
-                />
-              </svg>
+                name="thumb-up"
+              />
               <span
                 class="action-text"
                 data-v-1a7615cf=""
@@ -34312,14 +34374,10 @@ exports[`csr snapshot test > csr test ./src/comment/_example/reply.vue 1`] = `
             <span
               data-v-1a7615cf=""
             >
-              <svg
-                class="t-icon t-icon-chat"
+              <icon
                 data-v-1a7615cf=""
-              >
-                <use
-                  href="#t-icon-chat"
-                />
-              </svg>
+                name="chat"
+              />
               <span
                 class="action-text"
                 data-v-1a7615cf=""
@@ -34366,11 +34424,17 @@ exports[`csr snapshot test > csr test ./src/comment/_example/reply.vue 1`] = `
                 评论作者名B
               </span>
               <svg
-                class="author-icon t-icon t-icon-caret-right-small t-size-s"
+                class="t-icon t-icon-caret-right-small t-size-s author-icon"
                 data-v-1a7615cf=""
+                fill="none"
+                height="1em"
+                viewBox="0 0 24 24"
+                width="1em"
               >
-                <use
-                  href="#t-icon-caret-right-small"
+                <path
+                  d="M16.5 12l-7-7v14l7-7z"
+                  data-v-1a7615cf=""
+                  fill="currentColor"
                 />
               </svg>
               <span
@@ -34406,9 +34470,15 @@ exports[`csr snapshot test > csr test ./src/comment/_example/reply.vue 1`] = `
                   <svg
                     class="t-icon t-icon-thumb-up"
                     data-v-1a7615cf=""
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                    width="1em"
                   >
-                    <use
-                      href="#t-icon-thumb-up"
+                    <path
+                      d="M10.88 1.38l1.28.22a4 4 0 013.34 3.94V8h5.32a2 2 0 011.97 2.33l-1.66 10A2 2 0 0119.15 22H7V10.8l3.88-9.42zm1.23 2.26L9 11.2V20h10.15l1.67-10H13.5V5.54a2 2 0 00-1.39-1.9zM4 10v12H2V10h2z"
+                      data-v-1a7615cf=""
+                      fill="currentColor"
                     />
                   </svg>
                   <span
@@ -34433,9 +34503,15 @@ exports[`csr snapshot test > csr test ./src/comment/_example/reply.vue 1`] = `
                   <svg
                     class="t-icon t-icon-chat"
                     data-v-1a7615cf=""
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                    width="1em"
                   >
-                    <use
-                      href="#t-icon-chat"
+                    <path
+                      d="M1.5 2h21v16H6.88L1.5 22.7V2zm2 2v14.3L6.12 16H20.5V4h-17z"
+                      data-v-1a7615cf=""
+                      fill="currentColor"
                     />
                   </svg>
                   <span
@@ -47895,9 +47971,14 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/warning.vue 1`] = `
                   <svg
                     class="t-icon t-icon-check-circle-filled"
                     color="orange"
+                    fill="none"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                    width="1em"
                   >
-                    <use
-                      href="#t-icon-check-circle-filled"
+                    <path
+                      d="M12 23a11 11 0 100-22 11 11 0 000 22zM7.5 10.59l3 3 6-6L17.91 9l-7.41 7.41L6.09 12l1.41-1.41z"
+                      fill="currentColor"
                     />
                   </svg>
                   <span
@@ -87840,11 +87921,20 @@ exports[`csr snapshot test > csr test ./src/select/_example/prefix.vue 1`] = `
         >
           <svg
             class="t-icon t-icon-browse"
+            fill="none"
+            height="1em"
             style="margin-right: 8px;"
+            viewBox="0 0 24 24"
+            width="1em"
           >
-            <use
-              href="#t-icon-browse"
-            />
+            <g
+              clip-path="url(#clip0_8726_7319)"
+            >
+              <path
+                d="M2.1 12a10.5 10.5 0 0019.8 0 10.5 10.5 0 00-19.8 0zm-2.01-.3a12.5 12.5 0 0123.82 0l.1.3-.1.3a12.5 12.5 0 01-23.82 0l-.1-.3.1-.3zM12 9a3 3 0 100 6 3 3 0 000-6zm-5 3a5 5 0 1110 0 5 5 0 01-10 0z"
+                fill="currentColor"
+              />
+            </g>
           </svg>
         </div>
         <input
@@ -93505,7 +93595,6 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/color.vue 1`] = `
       <div>
         <div
           class="t-statistic-content"
-          style="color: black;"
         >
           <span
             class="t-statistic-content-prefix"
@@ -103823,20 +103912,9 @@ exports[`csr snapshot test > csr test ./src/tag/_example/delete.vue 1`] = `
           class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
           data-v-48c2675e=""
         >
-          <svg
-            class="t-icon t-icon-discount"
+          <discount-icon
             data-v-48c2675e=""
-            fill="none"
-            height="1em"
-            viewBox="0 0 24 24"
-            width="1em"
-          >
-            <path
-              d="M11.5 1.19l10.5.8.81 10.51-10.93 10.93L.56 12.13 11.5 1.18zm.76 2.06l-8.87 8.87 8.49 8.49 8.87-8.87-.61-7.88-7.88-.6zm3.86 4.63a1 1 0 10-1.41 1.41 1 1 0 001.41-1.41zm-2.83-1.42a3 3 0 114.24 4.25 3 3 0 01-4.24-4.25z"
-              data-v-48c2675e=""
-              fill="currentColor"
-            />
-          </svg>
+          />
           <span
             class="t-tag--text"
             style="max-width: 100px;"
@@ -123328,7 +123406,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                 >
                   <svg
                     class="t-icon t-icon-heart-filled"
-                    data-v-225666c0=""
                   >
                     <use
                       href="#t-icon-heart-filled"
@@ -123374,7 +123451,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                 >
                   <svg
                     class="t-icon t-icon-heart-filled"
-                    data-v-225666c0=""
                   >
                     <use
                       href="#t-icon-heart-filled"
@@ -123622,7 +123698,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                 >
                   <svg
                     class="t-icon t-icon-heart-filled"
-                    data-v-225666c0=""
                   >
                     <use
                       href="#t-icon-heart-filled"
@@ -123677,7 +123752,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                 >
                   <svg
                     class="t-icon t-icon-heart-filled"
-                    data-v-225666c0=""
                   >
                     <use
                       href="#t-icon-heart-filled"
@@ -123726,7 +123800,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                 >
                   <svg
                     class="t-icon t-icon-heart-filled"
-                    data-v-225666c0=""
                   >
                     <use
                       href="#t-icon-heart-filled"
@@ -123772,7 +123845,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                 >
                   <svg
                     class="t-icon t-icon-heart-filled"
-                    data-v-225666c0=""
                   >
                     <use
                       href="#t-icon-heart-filled"
@@ -123861,7 +123933,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                 >
                   <svg
                     class="t-icon t-icon-heart-filled"
-                    data-v-225666c0=""
                   >
                     <use
                       href="#t-icon-heart-filled"
@@ -123907,7 +123978,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                 >
                   <svg
                     class="t-icon t-icon-heart-filled"
-                    data-v-225666c0=""
                   >
                     <use
                       href="#t-icon-heart-filled"
@@ -123949,7 +124019,6 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                 >
                   <svg
                     class="t-icon t-icon-heart-filled"
-                    data-v-225666c0=""
                   >
                     <use
                       href="#t-icon-heart-filled"

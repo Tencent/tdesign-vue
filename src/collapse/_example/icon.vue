@@ -40,7 +40,6 @@ export default {
   data() {
     return {
       direction: 'left',
-      disable: false,
       onlyIcon: false,
     };
   },

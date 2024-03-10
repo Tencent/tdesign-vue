@@ -35,7 +35,6 @@ export default {
       value1: '',
       value2: '',
       options: [...LIST],
-      timer: null,
     };
   },
 

@@ -63,7 +63,7 @@ export default {
           avatar: 'https://tdesign.gtimg.com/site/avatar.jpg',
         },
       ],
-      timer: null,
+      // timer: null,
     };
   },
 

@@ -15,7 +15,7 @@ export default {
   /** 展开的树形节点。非必须。在需要自由控制展开的树形节点时使用。其他场景无需设置，表格组件有内置展开逻辑 */
   expandedTreeNodes: {
     type: Array as PropType<TdEnhancedTableProps['expandedTreeNodes']>,
-    default: undefined,
+    default: (): TdEnhancedTableProps['expandedTreeNodes'] => [],
   },
   /** 展开的树形节点。非必须。在需要自由控制展开的树形节点时使用。其他场景无需设置，表格组件有内置展开逻辑，非受控属性 */
   defaultExpandedTreeNodes: {

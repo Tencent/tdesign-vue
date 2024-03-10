@@ -9,11 +9,6 @@
 </template>
 <script lang="jsx">
 export default {
-  data() {
-    return {
-      warningClose: () => 'FunctionPropClose',
-    };
-  },
   methods: {
     handleOperation() {
       alert('operation clicked');

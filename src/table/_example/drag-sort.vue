@@ -25,8 +25,9 @@
 <script lang="jsx">
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 
-const columns = [
-  { colKey: 'applicant', title: '申请人', width: '100' },
+const initialColumns = [
+  { colKey: 'index', title: '编号' },
+  { colKey: 'applicant', title: '申请人' },
   {
     colKey: 'status',
     title: '申请状态',
@@ -67,7 +68,18 @@ export default {
   data() {
     return {
       data: [...initialData],
-      columns,
+      columns: initialColumns,
+      // pagination: {
+      //   current: 1,
+      //   pageSize: 5,
+      //   total: 500,
+      // },
+      // 非受控用法
+      pagination1: {
+        defaultCurrent: 1,
+        defaultPageSize: 5,
+        total: 500,
+      },
     };
   },
   methods: {

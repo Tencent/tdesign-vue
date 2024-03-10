@@ -20,7 +20,6 @@ export default {
   data() {
     return {
       theme: 'card',
-      isShowWeekendDefault: true,
       fillWithZero: true,
       options: [
         { value: 'full', label: '全屏风格' },

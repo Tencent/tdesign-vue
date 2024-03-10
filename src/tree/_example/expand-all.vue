@@ -102,10 +102,10 @@ export default {
   },
   methods: {
     toggleData() {
-      const items = this.items[0].value === 't1' ? data2 : data1;
-      this.items = items;
+      const tmpItems = this.items[0].value === 't1' ? data2 : data1;
+      this.items = tmpItems;
     },
-    label(createElement, node) {
+    label(h, node) {
       return node.label || node.value;
     },
   },

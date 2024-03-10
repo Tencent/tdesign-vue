@@ -9,9 +9,9 @@
   />
 </template>
 <script>
-const list = [];
+const initialList = [];
 for (let i = 0; i < 20; i++) {
-  list.push({
+  initialList.push({
     value: i.toString(),
     label: `内容${i + 1}`,
   });
@@ -19,7 +19,7 @@ for (let i = 0; i < 20; i++) {
 export default {
   data() {
     return {
-      list,
+      list: initialList,
       targetValue: [],
       checkedValue: [],
       pagination: [

@@ -7,11 +7,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      msg: null,
-    };
-  },
   methods: {
     openSomeMsg() {
       this.$message.info('这是第一条消息');

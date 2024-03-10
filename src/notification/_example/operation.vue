@@ -24,24 +24,6 @@ export default {
   data() {
     return {
       visible: true,
-      options: [
-        {
-          text: '操作一',
-          id: 1,
-        },
-        {
-          text: '操作二',
-          id: 2,
-        },
-        {
-          text: '操作三',
-          id: 3,
-        },
-        {
-          text: '操作四',
-          id: 4,
-        },
-      ],
     };
   },
   methods: {
@@ -66,13 +48,13 @@ export default {
     content() {
       return '文案不限长度，但在实际使用时建议文案显示内容不易过多，建议最大展示行数数量以三行为宜，最后一行折行末尾处超出文本建议会变为省略号显示。';
     },
-    title() {
-      return (
-        <div>
-          自定义标题 <small>我是副标题</small>
-        </div>
-      );
-    },
+    // title() {
+    //   return (
+    //     <div>
+    //       自定义标题 <small>我是副标题</small>
+    //     </div>
+    //   );
+    // },
     remind() {
       this.visible = false;
       setTimeout(() => {

@@ -21,7 +21,7 @@
       :abridge-name="ABRIDGE_NAME"
       :auto-upload="autoUpload"
       :show-thumbnail="showThumbnail"
-      :max="10"
+      :max="max"
       :allow-upload-duplicate-file="allowUploadDuplicateFile"
       :is-batch-upload="isBatchUpload"
       :upload-all-files-in-one-request="uploadAllFilesInOneRequest"
@@ -39,7 +39,7 @@ export default {
 
   data() {
     return {
-      max: 5,
+      max: 10,
       files: [],
       disabled: false,
       autoUpload: false,

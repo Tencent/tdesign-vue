@@ -11,10 +11,9 @@
   </div>
 </template>
 <script>
-import Vue from 'vue';
 import { ChevronDownIcon } from 'tdesign-icons-vue';
 
-export default Vue.extend({
+export default {
   components: {
     ChevronDownIcon,
   },
@@ -42,5 +41,5 @@ export default Vue.extend({
       ],
     };
   },
-});
+};
 </script>

@@ -58,16 +58,16 @@ export default {
       this.value = `${id}`;
       id += 1;
     },
-    removeTab({ value }) {
-      const index = this.panelData.findIndex((data) => data.value === value);
+    removeTab(item) {
+      const index = this.panelData.findIndex((data) => data.value === item.value);
       if (index < 0) return false;
       this.panelData.splice(index, 1);
-      if (this.value === value && this.panelData.length) {
+      if (this.value === item.value && this.panelData.length) {
         this.value = this.panelData[Math.max(index - 1, 0)].value;
       }
     },
-    changeTab(value) {
-      this.value = value;
+    changeTab(newValue) {
+      this.value = newValue;
     },
   },
 };

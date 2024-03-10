@@ -1,9 +1,12 @@
 import {
   CreateElement, defineComponent, PropType, ref,
 } from 'vue';
-import { FilterIcon as TdFilterIcon } from 'tdesign-icons-vue';
+import { SearchIcon, FilterIcon as TdFilterIcon } from 'tdesign-icons-vue';
 import isEmpty from 'lodash/isEmpty';
+import isObject from 'lodash/isObject';
+import isFunction from 'lodash/isFunction';
 import lowerFirst from 'lodash/lowerFirst';
+import escapeRegExp from 'lodash/escapeRegExp';
 import Popup, { PopupProps } from '../popup';
 import { CheckboxGroup } from '../checkbox';
 import { RadioGroup } from '../radio';
@@ -34,6 +37,7 @@ export interface TableFilterControllerProps {
     inner: string;
     bottomButtons: string;
     contentInner: string;
+    inputFilter: string;
     iconWrap: string;
   };
   isFocusClass: string;
@@ -66,10 +70,28 @@ export default defineComponent({
     const { t, global } = useConfig('table', props.locale);
     const { FilterIcon } = useGlobalIcon({ FilterIcon: TdFilterIcon });
     const filterPopupVisible = ref(false);
+    const listFilterValue = ref('');
 
     const onFilterPopupVisibleChange = (visible: boolean) => {
       filterPopupVisible.value = visible;
       emit('visible-change', visible);
+    };
+
+    const getFilterDisplayList = (column: PrimaryTableCol) => {
+      const { filter = {} } = column;
+      const { listFilterConfig } = filter;
+      if (!listFilterValue.value || !filter.listFilterConfig) {
+        return filter.list;
+      }
+      const regExp = new RegExp(escapeRegExp(listFilterValue.value));
+      if (listFilterConfig === true) {
+        return filter.list.filter((item) => regExp.test(item.label));
+      }
+      if (isObject(listFilterConfig)) {
+        return isFunction(listFilterConfig.filterMethod)
+          ? filter.list.filter((item) => listFilterConfig.filterMethod(item, listFilterValue.value))
+          : filter.list.filter((item) => regExp.test(item.label));
+      }
     };
 
     return {
@@ -78,7 +100,9 @@ export default defineComponent({
       FilterIcon,
       filterPopupVisible,
       triggerElementRef,
+      listFilterValue,
       renderTNode,
+      getFilterDisplayList,
       onFilterPopupVisibleChange,
     };
   },
@@ -101,7 +125,7 @@ export default defineComponent({
       }[column.filter.type] || column.filter.component;
       if (!component && !column.filter.component) return;
       const filterComponentProps: { [key: string]: any } = {
-        options: ['single', 'multiple'].includes(column.filter.type) ? column.filter?.list : undefined,
+        options: ['single', 'multiple'].includes(column.filter.type) ? this.getFilterDisplayList(column) : undefined,
         ...(column.filter?.props || {}),
       };
       if (
@@ -162,9 +186,21 @@ export default defineComponent({
         );
       };
 
+      const inputObj = isObject(column.filter.listFilterConfig) ? column.filter.listFilterConfig : {};
+
       return (
         // @ts-ignore
         <div class={this.tableFilterClasses.contentInner} on={wrapperListeners}>
+          {column.filter.listFilterConfig && (
+            <Input
+              v-model={this.listFilterValue}
+              borderless
+              class={[this.tableFilterClasses.inputFilter, inputObj.className].filter(Boolean)}
+              scopedSlots={{ prefixIcon: () => <SearchIcon />, ...inputObj.slots }}
+              props={inputObj.props}
+              style={inputObj.style}
+            ></Input>
+          )}
           {renderComponent()}
         </div>
       );

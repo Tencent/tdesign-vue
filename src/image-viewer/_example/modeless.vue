@@ -16,15 +16,13 @@
 <script lang="jsx">
 import { BrowseIcon } from 'tdesign-icons-vue';
 
-const img = 'https://tdesign.gtimg.com/demo/demo-image-1.png';
-
 export default {
   components: {
     BrowseIcon,
   },
   data() {
     return {
-      img,
+      img: 'https://tdesign.gtimg.com/demo/demo-image-1.png',
       visible: false,
     };
   },

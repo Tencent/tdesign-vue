@@ -59,7 +59,7 @@ import {
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 import isNumber from 'lodash/isNumber';
 
-const data = new Array(5).fill(null).map((_, i) => ({
+const initialData = new Array(5).fill(null).map((_, i) => ({
   key: String(i + 1),
   applicant: ['贾明', '张三', '王芳'][i % 3],
   status: (i % 3) + 1,
@@ -75,7 +75,7 @@ const data = new Array(5).fill(null).map((_, i) => ({
 export default {
   data() {
     return {
-      data,
+      data: initialData,
       filterValue: {
         createTime: [],
       },
@@ -107,12 +107,22 @@ export default {
               { label: '已过期', value: 2 },
               { label: '审批失败', value: 3 },
             ],
+            // you can also set listFilterConfig to be `true`
+            listFilterConfig: {
+              props: { placeholder: 'Search' },
+              style: { width: '120px' },
+              // className: '',
+              // slots: {},
+              // filterMethod: (option, keyword) => option.label.includes(keyword),
+            },
             // confirm to search and hide filter popup
             confirmEvents: ['onChange'],
             // 支持透传全部 Popup 组件属性
-            // popupProps: {
-            //   attach: () => document.body,
-            // },
+            popupProps: {
+              overlayInnerClassName: 't-table__list-filter-input--sticky',
+              // overlayInnerStyle: { maxHeight: '280px', overflow: 'auto' },
+              // attach: () => document.body,
+            },
           },
           cell: (h, { row }) => {
             const statusNameListMap = {
@@ -206,12 +216,12 @@ export default {
     },
     setFilters() {
       this.filterValue = {};
-      this.data = data;
+      this.data = initialData;
     },
-    filterIcon(h) {
-      console.log(h);
-      return <i>icon</i>;
-    },
+    // filterIcon(h) {
+    //   console.log(h);
+    //   return <i>icon</i>;
+    // },
     oneEmailChange(val, ctx) {
       console.log(val, ctx);
     },
@@ -222,7 +232,7 @@ export default {
     request(filters) {
       const timer = setTimeout(() => {
         clearTimeout(timer);
-        this.data = data.filter((item) => {
+        this.data = initialData.filter((item) => {
           let result = true;
           if (isNumber(filters.status)) {
             result = item.status === filters.status;

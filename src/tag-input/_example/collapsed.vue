@@ -27,8 +27,12 @@ export default {
   data() {
     return {
       tags: ['Vue', 'React', 'Miniprogram', 'Angular', 'Flutter'],
-      renderCollapsedItems: (_, { collapsedTags }) => <Tag>更多({collapsedTags.length})</Tag>,
     };
+  },
+  methods: {
+    renderCollapsedItems(_, { collapsedTags }) {
+      return <Tag>更多({collapsedTags.length})</Tag>;
+    },
   },
 };
 </script>

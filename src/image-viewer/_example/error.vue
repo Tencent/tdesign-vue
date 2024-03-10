@@ -27,10 +27,8 @@
 <script>
 import { BrowseIcon, ImageErrorIcon } from 'tdesign-icons-vue';
 
-const img = 'https://tdesign.gtimg.com/demo/demo-image-1.png';
-
-const images = [
-  img,
+const initialImages = [
+  'https://tdesign.gtimg.com/demo/demo-image-1.png',
   'https://tdesign.gtimg.com/demo/demo-image-error1.png',
   'https://tdesign.gtimg.com/demo/demo-image-error2.png',
   'https://tdesign.gtimg.com/demo/demo-image-error3.png',
@@ -43,7 +41,7 @@ export default {
   },
   data() {
     return {
-      images,
+      images: initialImages,
       visible: [false, false, false, false],
       isError: [false, false, false, false],
     };

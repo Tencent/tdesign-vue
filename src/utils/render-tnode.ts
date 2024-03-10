@@ -112,7 +112,7 @@ export const renderTNodeJSX = (vm: VmType, name: string, options?: ScopedSlotRet
   const slotFirst = typeof options === 'object' && 'slotFirst' in options ? options.slotFirst : false;
   const defaultNode = typeof options === 'object' && 'defaultNode' in options ? options.defaultNode : options;
   const propsNode = vm[name];
-  if (propsNode === false) return;
+  if (propsNode === false || propsNode === null) return;
   if (propsNode === true && defaultNode) {
     return handleSlots(vm, params, name) || defaultNode;
   }

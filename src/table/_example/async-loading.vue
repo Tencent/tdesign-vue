@@ -23,9 +23,9 @@
 <script lang="jsx">
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 
-const data = [];
+const initialData = [];
 for (let i = 0; i < 5; i++) {
-  data.push({
+  initialData.push({
     index: i + 1,
     applicant: ['贾明', '张三', '王芳'][i % 3],
     status: i % 3,
@@ -39,7 +39,7 @@ for (let i = 0; i < 5; i++) {
   });
 }
 
-const columns = [
+const initialColumns = [
   { colKey: 'applicant', title: '申请人', width: '100' },
   {
     colKey: 'status',
@@ -67,8 +67,8 @@ const columns = [
 export default {
   data() {
     return {
-      data,
-      columns,
+      data: initialData,
+      columns: initialColumns,
       asyncLoading: 'loading',
     };
   },

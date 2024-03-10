@@ -19,23 +19,25 @@
 
 <script lang="jsx">
 export default {
-  data() {
-    return {
-      protocolSelect: () => (
+  methods: {
+    protocolSelect() {
+      return (
         <t-select
           autoWidth
           options={['http://', 'https://'].map((value) => ({ label: value, value }))}
           defaultValue="http://"
         />
-      ),
-      tldSelect: () => (
+      );
+    },
+    tldSelect() {
+      return (
         <t-select
           autoWidth
           options={['.com', '.cn', '.net', '.org'].map((value) => ({ label: value, value }))}
           defaultValue=".cn"
         />
-      ),
-    };
+      );
+    },
   },
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
   <t-space direction="vertical" size="60px">
     <t-slider v-model="value1" @changeEnd="handleChangeEnd" />
-    <t-slider v-model="value2" range :tooltipProps="{}" :label="renderLabel" />
+    <t-slider v-model="value2" range :tooltipProps="tooltipProps" :label="renderLabel" />
   </t-space>
 </template>
 <script>

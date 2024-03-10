@@ -8,10 +8,10 @@
 
 <script lang="jsx">
 export default {
-  data() {
-    return {
-      separator: () => <t-divider layout="vertical" />,
-    };
+  methods: {
+    separator() {
+      return <t-divider layout="vertical" />;
+    },
   },
 };
 </script>
