@@ -38262,7 +38262,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/table.vue 1
   style="padding: 16px;"
 >
   <div
-    class="t-table t-table--bordered"
+    class="t-table undefined t-table--bordered"
     data-v-7dcbc254=""
     style="position: relative;"
   >
@@ -38499,7 +38499,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/table.vue 1
     data-v-7dcbc254=""
   />
   <div
-    class="t-table"
+    class="t-table undefined"
     data-v-7dcbc254=""
     style="position: relative;"
   >
@@ -93595,6 +93595,7 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/color.vue 1`] = `
       <div>
         <div
           class="t-statistic-content"
+          style="color: black;"
         >
           <span
             class="t-statistic-content-prefix"
@@ -98727,7 +98728,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/empty.vue 1`] = `
   class="tdesign-demo-block-column-large"
 >
   <div
-    class="t-table"
+    class="t-table undefined"
     style="position: relative;"
   >
     <div
@@ -98846,7 +98847,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/empty.vue 1`] = `
     />
   </div>
   <div
-    class="t-table"
+    class="t-table undefined"
     style="position: relative;"
   >
     <div
@@ -98965,7 +98966,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/empty.vue 1`] = `
     />
   </div>
   <div
-    class="t-table"
+    class="t-table undefined"
     style="position: relative;"
   >
     <div
@@ -99553,7 +99554,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-column.vue 1`] 
     </label>
   </div>
   <div
-    class="t-table t-table--bordered t-table--column-fixed t-table--column-resizable"
+    class="t-table undefined t-table--bordered t-table--column-fixed t-table--column-resizable"
     data-v-c5be352e=""
     style="position: relative;"
   >
@@ -100965,7 +100966,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/style.vue 1`] = `
   class="t-demo__style"
 >
   <div
-    class="t-table"
+    class="t-table undefined"
     style="position: relative;"
   >
     <div
