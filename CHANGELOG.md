@@ -5,6 +5,27 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.9.1 `2024-03-10`
+
+### 🚀 Features
+- `Slider`: 支持通过 `label=null` 或 `label=false` 隐藏滑块数字浮层 @chaishi ([#3100](https://github.com/Tencent/tdesign-vue/pull/3100))
+- `Table`: 支持全局配置 size @Lyan-u ([#3103](https://github.com/Tencent/tdesign-vue/pull/3103))
+- `Table`: 可筛选表格，单选/多选筛选条件,支持搜索选项 [issue#3988](https://github.com/Tencent/tdesign-vue-next/issues/3988) @chaishi ([#3098](https://github.com/Tencent/tdesign-vue/pull/3098))
+- Tabs: 调整激活 Tab下划线与 TabHeader边框的层级关系 @uyarn 
+
+### 🐞 Bug Fixes
+- `DatePicker`: 修复 `format` 与 `valueType` 不一致的场景下计算错误的问题 @uyarn ([#3106](https://github.com/Tencent/tdesign-vue/pull/3106))
+- `Descriptions`: 解决控制台报错绑定属性 `title` 已声明为属性的问题 @betavs ([#3065](https://github.com/Tencent/tdesign-vue/pull/3065))
+- `Descriptions`: 优化自适应宽度的问题 @uyarn ([#3105](https://github.com/Tencent/tdesign-vue/pull/3105))
+- `Table`: 树形结构表格，修复同时异步设置 data 和 expandedTreeNodes 时，展开节点无效问题（延迟设置有效），[tdesign-vue-next#3873](https://github.com/Tencent/tdesign-vue-next/issues/3873) @chaishi ([#3098](https://github.com/Tencent/tdesign-vue/pull/3098))
+- `Table`: 固定列表格，修复固定多列时，在 Dialog 中固定列位置压缩问题 @chaishi ([#3098](https://github.com/Tencent/tdesign-vue/pull/3098))
+- `Table`: 修复`Table`缺失`refreshTable`方法的异常 @uyarn ([#3104](https://github.com/Tencent/tdesign-vue/pull/3104))
+
+### 🚧 Others
+- `Form` 文档更新 @liweijie0812 ([#3064](https://github.com/Tencent/tdesign-vue/pull/3064))
+- 新增 `composition API` 示例，详情请参考官网各示例代码 @chaishi @uyarn @HaixingOoO ([#3081](https://github.com/Tencent/tdesign-vue/pull/3081))
+
+
 ## 🌈 1.9.0 `2024-01-23` 
 ### 🚀 Features
 - `Descriptions`: 新增 `Descriptions` 描述组件 @zhangpaopao0609 ([#3035](https://github.com/Tencent/tdesign-vue/pull/3035))
