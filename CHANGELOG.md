@@ -17,7 +17,7 @@ docClass: timeline
 - `DatePicker`: 修复 `format` 与 `valueType` 不一致的场景下计算错误的问题 @uyarn ([#3106](https://github.com/Tencent/tdesign-vue/pull/3106))
 - `Descriptions`: 解决控制台报错绑定属性 `title` 已声明为属性的问题 @betavs ([#3065](https://github.com/Tencent/tdesign-vue/pull/3065))
 - `Descriptions`: 优化自适应宽度的问题 @uyarn ([#3105](https://github.com/Tencent/tdesign-vue/pull/3105))
-- `Table`: 树形结构表格，修复同时异步设置 data 和 expandedTreeNodes 时，展开节点无效问题（延迟设置有效），[tdesign-vue-next#3873](https://github.com/Tencent/tdesign-vue-next/issues/3873) @chaishi ([#3098](https://github.com/Tencent/tdesign-vue/pull/3098))
+- `Table`: 树形结构表格，修复同时异步设置 data 和 expandedTreeNodes 时，展开节点的无效问题 [tdesign-vue-next#3873](https://github.com/Tencent/tdesign-vue-next/issues/3873) @chaishi ([#3098](https://github.com/Tencent/tdesign-vue/pull/3098))
 - `Table`: 固定列表格，修复固定多列时，在 Dialog 中固定列位置压缩问题 @chaishi ([#3098](https://github.com/Tencent/tdesign-vue/pull/3098))
 - `Table`: 修复`Table`缺失`refreshTable`方法的异常 @uyarn ([#3104](https://github.com/Tencent/tdesign-vue/pull/3104))
 
