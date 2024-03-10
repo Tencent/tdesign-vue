@@ -93597,7 +93597,6 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/color.vue 1`] = `
       <div>
         <div
           class="t-statistic-content"
-          style="color: black;"
         >
           <span
             class="t-statistic-content-prefix"
