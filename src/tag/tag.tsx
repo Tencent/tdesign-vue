@@ -2,7 +2,6 @@ import Vue from 'vue';
 import { CloseIcon as TdCloseIcon } from 'tdesign-icons-vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import tinycolor from 'tinycolor2';
-import chroma from 'chroma-js';
 import props from './props';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { TagConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
@@ -88,8 +87,8 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalI
       }
       if (this.variant !== 'outline') {
         const getLightestShade = () => {
-          const colorScale = chroma.scale(['white', this.color, 'black']).colors(10, 'hex');
-          return colorScale[1];
+          const { r, g, b } = tinycolor(this.color).toRgb();
+          return `rgba(${r}, ${g}, ${b}, 0.1)`;
         };
         style.backgroundColor = this.variant === 'dark' ? this.color : getLightestShade();
       }
