@@ -103660,7 +103660,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/custom-color.vue 1`] = 
           <div
             class="t-tag t-tag--default t-tag--light"
             data-v-d3a6e7a6=""
-            style="color: rgb(0, 82, 217); background-color: rgb(198, 217, 247);"
+            style="color: rgb(0, 82, 217); background-color: rgba(0, 82, 217, 0.1);"
           >
             <span>
               浅色
@@ -103706,7 +103706,7 @@ exports[`csr snapshot test > csr test ./src/tag/_example/custom-color.vue 1`] = 
           <div
             class="t-tag t-tag--default t-tag--light-outline"
             data-v-d3a6e7a6=""
-            style="color: rgb(0, 82, 217); border-color: rgb(0, 82, 217); background-color: rgb(198, 217, 247);"
+            style="color: rgb(0, 82, 217); border-color: rgb(0, 82, 217); background-color: rgba(0, 82, 217, 0.1);"
           >
             <span>
               light-outline
