@@ -84,7 +84,7 @@ TDesign 欢迎任何愿意参与贡献的参与者。如果需要本地运行代
 
 有任何问题，建议通过 [Github issues](https://github.com/Tencent/tdesign-vue/issues) 反馈或扫码加入用户微信群。
 
-<img src="https://oteam-tdesign-1258344706.cos.ap-guangzhou.myqcloud.com/site/doc/Vue2-IM.png" width="200" />
+<img src="https://raw.githubusercontent.com/Tencent/tdesign/main/packages/components/src/images/groups/vue2-group.png" width="200" />
 
 # 开源协议
 
