@@ -88,6 +88,7 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalI
       if (this.variant !== 'outline') {
         const getLightestShade = () => {
           const { r, g, b } = tinycolor(this.color).toRgb();
+          // alpha 0.1  is designed by @wen1kang
           return `rgba(${r}, ${g}, ${b}, 0.1)`;
         };
         style.backgroundColor = this.variant === 'dark' ? this.color : getLightestShade();
