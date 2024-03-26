@@ -37953,7 +37953,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
         <div
           class="t-space-item"
         >
-          图片加载中
+          loading
         </div>
       </div>
     </div>
@@ -43264,7 +43264,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/quarter.vue 1`]
             <input
               autocomplete=""
               class="t-input__inner"
-              placeholder="请输入"
+              placeholder="请选择季度"
               type="text"
               unselectable="off"
             />
@@ -43313,7 +43313,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/quarter.vue 1`]
                 <input
                   autocomplete=""
                   class="t-input__inner"
-                  placeholder="请输入"
+                  placeholder="请选择季度"
                   type="text"
                   unselectable="off"
                 />
@@ -43333,7 +43333,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/quarter.vue 1`]
                 <input
                   autocomplete=""
                   class="t-input__inner"
-                  placeholder="请输入"
+                  placeholder="请选择季度"
                   type="text"
                   unselectable="off"
                 />
@@ -43389,7 +43389,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/week.vue 1`] = 
             <input
               autocomplete=""
               class="t-input__inner"
-              placeholder="请输入"
+              placeholder="请选择周"
               type="text"
               unselectable="off"
             />
@@ -43438,7 +43438,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/week.vue 1`] = 
                 <input
                   autocomplete=""
                   class="t-input__inner"
-                  placeholder="请输入"
+                  placeholder="请选择周"
                   type="text"
                   unselectable="off"
                 />
@@ -43458,7 +43458,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/week.vue 1`] = 
                 <input
                   autocomplete=""
                   class="t-input__inner"
-                  placeholder="请输入"
+                  placeholder="请选择周"
                   type="text"
                   unselectable="off"
                 />
