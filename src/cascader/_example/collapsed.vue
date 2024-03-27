@@ -1,19 +1,31 @@
 <template>
   <t-space direction="vertical">
+    <h3>default:</h3>
     <t-cascader v-model="value" :options="options" :on-remove="handleBlur" multiple :min-collapsed-num="1" />
-    <t-cascader v-model="value" :options="options" :collapsed-items="collapsedItems" multiple :min-collapsed-num="1" />
-    <t-cascader v-model="value" :options="options" multiple clearable :min-collapsed-num="1">
-      <template #collapsedItems="{ collapsedSelectedItems, count }">
-        <t-popup>
-          <template #content>
-            <p v-for="(item, index) in collapsedSelectedItems" :key="index" style="padding: 10px">
-              {{ item }}
-            </p>
-          </template>
-          <span v-show="count > 0" style="color: #00a870; margin-left: 10px">+{{ count }}</span>
-        </t-popup>
-      </template>
-    </t-cascader>
+
+    <h3>use collapsedItems:</h3>
+    <t-space>
+      <div>size control:</div>
+      <t-radio-group :value="size" :options="['small', 'medium', 'large']" @change="(value) => (size = value)" />
+    </t-space>
+    <t-space>
+      <span>disabled control:</span>
+      <t-checkbox :checked="disabled" @change="(value) => (disabled = value)" />
+    </t-space>
+    <t-space>
+      <span>readonly control:</span>
+      <t-checkbox :checked="readonly" @change="(value) => (readonly = value)" />
+    </t-space>
+    <t-cascader
+      v-model="value"
+      :options="options"
+      multiple
+      :min-collapsed-num="minCollapsedNum"
+      :collapsed-items="collapsedItems"
+      :size="size"
+      :disabled="disabled"
+      :readonly="readonly"
+    />
   </t-space>
 </template>
 <script lang="jsx">
@@ -55,23 +67,37 @@ export default {
         },
       ],
       value: ['1.1', '1.2', '1.3'],
+      size: 'medium',
+      disabled: false,
+      readonly: false,
+      minCollapsedNum: 1,
     };
   },
   methods: {
-    collapsedItems(h, { value: selectedValue, count }) {
-      if (!count) return;
-      const value = selectedValue instanceof Array ? selectedValue : [selectedValue];
-      // hover展示全部已选项
+    collapsedItems(h, { value, onClose }) {
+      if (!(value instanceof Array)) return null;
+      const count = value.length - this.minCollapsedNum;
+      const collapsedTags = value.slice(this.minCollapsedNum, value.length);
+      if (count <= 0) return null;
       return (
         <t-popup>
           <div slot="content">
-            {value.map((item) => (
-              <p style="padding: 10px;">{item.label}</p>
+            {collapsedTags.map((item, index) => (
+              <t-tag
+                key={item}
+                style={{ marginRight: '4px' }}
+                size={this.size}
+                disabled={this.disabled}
+                closable={!this.readonly && !this.disabled}
+                onClose={(context) => onClose({ e: context.e, index: this.minCollapsedNum + index })}
+              >
+                {item}
+              </t-tag>
             ))}
           </div>
-          <span v-show={count > 0} style="color: #ED7B2F; margin-left: 10px;">
-            +{count}
-          </span>
+          <t-tag size={this.size} disabled={this.disabled}>
+            Function - More({count})
+          </t-tag>
         </t-popup>
       );
     },
