@@ -26,35 +26,10 @@
       :disabled="disabled"
       :readonly="readonly"
     />
-    <t-cascader
-      v-model="value"
-      :options="options"
-      multiple
-      :min-collapsed-num="minCollapsedNum"
-      :size="size"
-      :disabled="disabled"
-      :readonly="readonly"
-    >
-      <template #collapsedItems="{ value, onClose }">
-        <slot-collapsed-items
-          :value="value"
-          :min-collapsed-num="minCollapsedNum"
-          :size="size"
-          :disabled="disabled"
-          :closable="!readonly && !disabled"
-          @close="onClose"
-        />
-      </template>
-    </t-cascader>
   </t-space>
 </template>
 <script lang="jsx">
-import SlotCollapsedItems from '../../tag-input/_example/slot-collapsed-items.vue';
-
 export default {
-  components: {
-    SlotCollapsedItems,
-  },
   data() {
     return {
       options: [
