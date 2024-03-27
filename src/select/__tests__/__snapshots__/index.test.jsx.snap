@@ -6,7 +6,7 @@ exports[`Select > :props > :bordered 1`] = `
   class="t-select__wrap"
 >
   <div
-    class="t-select-input t-select-input--empty t-select"
+    class="t-select-input t-select"
   >
     <div
       class="t-input__wrap"
@@ -55,7 +55,7 @@ exports[`Select > :props > :clearable 1`] = `
   class="t-select__wrap"
 >
   <div
-    class="t-select-input t-select-input--empty t-select"
+    class="t-select-input t-select"
   >
     <div
       class="t-input__wrap"
@@ -104,7 +104,7 @@ exports[`Select > :props > :creatable 1`] = `
   class="t-select__wrap"
 >
   <div
-    class="t-select-input t-select-input--empty t-select"
+    class="t-select-input t-select"
   >
     <div
       class="t-input__wrap"
@@ -153,7 +153,7 @@ exports[`Select > :props > :disabled 1`] = `
   class="t-select__wrap"
 >
   <div
-    class="t-select-input t-select-input--empty t-select"
+    class="t-select-input t-select"
   >
     <div
       class="t-input__wrap"
@@ -170,6 +170,7 @@ exports[`Select > :props > :disabled 1`] = `
           disabled="disabled"
           placeholder="请选择"
           readonly="readonly"
+          title="false"
           type="text"
           unselectable="on"
         />
@@ -203,7 +204,7 @@ exports[`Select > :props > :labelInValue 1`] = `
   class="t-select__wrap"
 >
   <div
-    class="t-select-input t-select-input--empty t-select"
+    class="t-select-input t-select"
   >
     <div
       class="t-input__wrap"
@@ -252,7 +253,7 @@ exports[`Select > :props > :loading 1`] = `
   class="t-select__wrap"
 >
   <div
-    class="t-select-input t-select-input--empty t-select"
+    class="t-select-input t-select"
   >
     <div
       class="t-input__wrap"
@@ -364,7 +365,7 @@ exports[`Select > :props > :placeholder 1`] = `
   class="t-select__wrap"
 >
   <div
-    class="t-select-input t-select-input--empty t-select"
+    class="t-select-input t-select"
   >
     <div
       class="t-input__wrap"
@@ -414,7 +415,7 @@ exports[`Select > :props > :remote 1`] = `
   remote="true"
 >
   <div
-    class="t-select-input t-select-input--empty t-select"
+    class="t-select-input t-select"
   >
     <div
       class="t-input__wrap"
@@ -463,7 +464,7 @@ exports[`Select > :props > :reserveKeyword 1`] = `
   class="t-select__wrap"
 >
   <div
-    class="t-select-input t-select-input--empty t-select"
+    class="t-select-input t-select"
   >
     <div
       class="t-input__wrap"
@@ -512,7 +513,7 @@ exports[`Select > :props > :size 1`] = `
   class="t-select__wrap"
 >
   <div
-    class="t-select-input t-select-input--empty t-select"
+    class="t-select-input t-select"
   >
     <div
       class="t-input__wrap"

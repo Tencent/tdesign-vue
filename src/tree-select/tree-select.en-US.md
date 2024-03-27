@@ -1,6 +1,7 @@
 :: BASE_DOC ::
 
 ## API
+
 ### TreeSelect Props
 
 name | type | default | description | required
@@ -9,15 +10,15 @@ autoWidth | Boolean | false | \- | N
 autofocus | Boolean | false | \- | N
 borderless | Boolean | false | \- | N
 clearable | Boolean | false | \- | N
-collapsedItems | Slot / Function | - | Typescript：`TNode<{ value: DataOption[]; onClose: (p: { e?: MouseEvent; index: number; }) => void; }>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+collapsedItems | Slot / Function | - | Typescript：`TNode<{ value: DataOption[]; collapsedSelectedItems: DataOption[]; count: number; onClose: (context: { index: number, e?: MouseEvent }) => void }>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 data | Array | [] | Typescript：`Array<DataOption>` | N
 disabled | Boolean | - | \- | N
 empty | String / Slot / Function | - | Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 filter | Function | - | Typescript：`(filterWords: string, option: DataOption) => boolean` | N
 filterable | Boolean | false | \- | N
 inputProps | Object | - | Typescript：`InputProps`，[Input API Documents](./input?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts) | N
-inputValue | String / Number | - | input value。`.sync` is supported。Typescript：`InputValue`，[Input API Documents](./input?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts) | N
-defaultInputValue | String / Number | - | input value。uncontrolled property。Typescript：`InputValue`，[Input API Documents](./input?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts) | N
+inputValue | String / Number | - | input value。`.sync` is supported。Typescript：`string` | N
+defaultInputValue | String / Number | - | input value。uncontrolled property。Typescript：`string` | N
 keys | Object | - | alias filed name in data。Typescript：`TreeKeysType`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 label | String / Slot / Function | - | Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 loading | Boolean | false | \- | N
@@ -51,7 +52,7 @@ onChange | Function |  | Typescript：`(value: TreeValueType, context: TreeSelec
 onClear | Function |  | Typescript：`(context: { e: MouseEvent }) => void`<br/> | N
 onEnter | Function |  | Typescript：`(context: { inputValue: string; e: KeyboardEvent; value: TreeValueType }) => void`<br/> | N
 onFocus | Function |  | Typescript：`(context: { value: TreeSelectValue; e: FocusEvent }) => void`<br/> | N
-onInputChange | Function |  | Typescript：`(value: InputValue, context: SelectInputValueChangeContext) => void`<br/> | N
+onInputChange | Function |  | Typescript：`(value: string, context: SelectInputValueChangeContext) => void`<br/> | N
 onPopupVisibleChange | Function |  | Typescript：`(visible: boolean, context: TreeSelectPopupVisibleContext<DataOption>) => void`<br/>[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts)。<br/>`import { PopupVisibleChangeContext, PopupTriggerEvent, PopupTriggerSource } from '@Popup'`<br/><br/>`interface TreeSelectPopupVisibleContext<T> {   e?: PopupTriggerEvent \| Event;   node?: TreeNodeModel<T>;   trigger?: PopupTriggerSource \| 'clear'; }`<br/> | N
 onRemove | Function |  | Typescript：`(options: RemoveOptions<DataOption, TreeValueType>) => void`<br/>[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts)。<br/>`export interface RemoveOptions<T extends TreeOptionData = TreeOptionData, N extends TreeSelectValue = TreeSelectValue> {   value: N;   data: T;  index: number; node: TreeNodeModel<T>;   e?: MouseEvent \| KeyboardEvent;   trigger: 'tag-remove' \| 'backspace'; }`<br/> | N
 onSearch | Function |  | Typescript：`(filterWords: string, context: { e: KeyboardEvent \| SelectInputValueChangeContext['e'] }) => void`<br/> | N
@@ -65,7 +66,7 @@ change | `(value: TreeValueType, context: TreeSelectChangeContext<DataOption>)` 
 clear | `(context: { e: MouseEvent })` | \-
 enter | `(context: { inputValue: string; e: KeyboardEvent; value: TreeValueType })` | \-
 focus | `(context: { value: TreeSelectValue; e: FocusEvent })` | \-
-input-change | `(value: InputValue, context: SelectInputValueChangeContext)` | \-
+input-change | `(value: string, context: SelectInputValueChangeContext)` | \-
 popup-visible-change | `(visible: boolean, context: TreeSelectPopupVisibleContext<DataOption>)` | [see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts)。<br/>`import { PopupVisibleChangeContext, PopupTriggerEvent, PopupTriggerSource } from '@Popup'`<br/><br/>`interface TreeSelectPopupVisibleContext<T> {   e?: PopupTriggerEvent \| Event;   node?: TreeNodeModel<T>;   trigger?: PopupTriggerSource \| 'clear'; }`<br/>
 remove | `(options: RemoveOptions<DataOption, TreeValueType>)` | [see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree-select/type.ts)。<br/>`export interface RemoveOptions<T extends TreeOptionData = TreeOptionData, N extends TreeSelectValue = TreeSelectValue> {   value: N;   data: T;  index: number; node: TreeNodeModel<T>;   e?: MouseEvent \| KeyboardEvent;   trigger: 'tag-remove' \| 'backspace'; }`<br/>
 search | `(filterWords: string, context: { e: KeyboardEvent \| SelectInputValueChangeContext['e'] })` | \-

@@ -39,9 +39,14 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
    */
   clearable?: boolean;
   /**
-   * 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义。`value` 表示当前存在的所有标签，`onClose` 表示关闭标签时触发的事件
+   * 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义。`value` 表示当前存在的所有标签，`collapsedSelectedItems` 表示折叠的标签，`count` 表示折叠的数量，`onClose` 表示移除标签的事件回调
    */
-  collapsedItems?: TNode<{ value: CascaderOption[]; onClose: (p: { e?: MouseEvent; index: number; }) => void; }>;
+  collapsedItems?: TNode<{
+    value: CascaderOption[];
+    collapsedSelectedItems: CascaderOption[];
+    count: number;
+    onClose: (context: { index: number; e?: MouseEvent }) => void;
+  }>;
   /**
    * 是否禁用组件
    */
@@ -126,6 +131,10 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
    */
   popupVisible?: boolean;
   /**
+   * 组件前置图标
+   */
+  prefixIcon?: TNode;
+  /**
    * 只读状态，值为真会隐藏输入框，且无法打开下拉框
    * @default false
    */
@@ -190,7 +199,7 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
    */
   defaultValue?: CascaderValue<CascaderOption>;
   /**
-   * 【开发中】自定义选中项呈现的内容
+   * 自定义选中项呈现的内容
    */
   valueDisplay?:
     | string
@@ -198,6 +207,7 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
         value: CascaderValue<CascaderOption>;
         onClose: (index: number) => void;
         displayValue?: CascaderValue<CascaderOption>;
+        selectedOptions: CascaderOption[];
       }>;
   /**
    * 选中值模式。all 表示父节点和子节点全部会出现在选中值里面；parentFirst 表示当子节点全部选中时，仅父节点在选中值里面；onlyLeaf 表示无论什么情况，选中值仅呈现叶子节点
@@ -230,6 +240,8 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
    */
   onRemove?: (context: RemoveContext<CascaderOption>) => void;
 }
+
+export type CascaderValue<T extends TreeOptionData = TreeOptionData> = string | number | T | Array<CascaderValue<T>>;
 
 export type CascaderValue<T extends TreeOptionData = TreeOptionData> = string | number | T | Array<CascaderValue<T>>;
 
