@@ -34,10 +34,10 @@
 <script lang="jsx">
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 
-const data = [];
+const initialData = [];
 
 for (let i = 0; i < 20; i++) {
-  data.push({
+  initialData.push({
     index: i + 1,
     applicant: ['贾明', '张三', '王芳'][i % 3],
     status: i % 3,
@@ -57,7 +57,7 @@ export default {
       tableLayout: 'fixed',
       // 是否冻结首尾两行
       fixedTopAndBottomRows: false,
-      data,
+      data: initialData,
       columns: [
         {
           colKey: 'applicant',

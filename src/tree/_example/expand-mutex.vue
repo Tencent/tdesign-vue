@@ -94,12 +94,6 @@ export default {
     propOnExpand(value, context) {
       console.info('propOnExpand', value, context);
     },
-    toggleMutex() {
-      this.mutex = !this.mutex;
-    },
-    toggleExpandOnClickNode() {
-      this.expandOnClickNode = !this.expandOnClickNode;
-    },
   },
 };
 </script>

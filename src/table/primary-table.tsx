@@ -16,13 +16,14 @@ import useSorter from './hooks/useSorter';
 import useFilter from './hooks/useFilter';
 import useDragSort from './hooks/useDragSort';
 import useAsyncLoading from './hooks/useAsyncLoading';
-import { PageInfo } from '../pagination';
+import { PageInfo, PaginationProps } from '../pagination';
 import useClassName from './hooks/useClassName';
 import useEditableCell from './hooks/useEditableCell';
 import useEditableRow from './hooks/useEditableRow';
 import { EditableCellProps } from './editable-cell';
 import useStyle from './hooks/useStyle';
 import { ComponentScrollToElementParams } from '../common';
+import { useConfig } from '../config-provider/useConfig';
 
 export { BASE_TABLE_ALL_EVENTS } from './base-table';
 
@@ -69,7 +70,19 @@ export default defineComponent({
     const {
       classPrefix, tableDraggableClasses, tableBaseClass, tableSelectedClasses, tableSortClasses,
     } = useClassName();
+    const { global } = useConfig('table', props.locale);
     const { sizeClassNames } = useStyle(props);
+    const tableSize = computed(() => props.size ?? global.value.size);
+    const innerPagination = ref<PaginationProps>(props.pagination);
+    const dataPagination = computed(() => innerPagination.value
+      ? {
+        current: innerPagination.value.current,
+        pageSize: innerPagination.value.pageSize,
+        defaultCurrent: innerPagination.value.defaultCurrent,
+        defaultPageSize: innerPagination.value.defaultPageSize,
+      }
+      : {});
+
     // 自定义列配置功能
     const { tDisplayColumns, renderColumnController } = useColumnController(props, context);
     // 展开/收起行功能
@@ -98,14 +111,11 @@ export default defineComponent({
     // 拖拽排序功能
     const dragSortParams = computed(() => ({
       showElement: showElement.value,
+      pagination: dataPagination.value,
     }));
+
     const {
-      isRowHandlerDraggable,
-      isRowDraggable,
-      isColDraggable,
-      innerPagination,
-      setDragSortPrimaryTableRef,
-      setDragSortColumns,
+      isRowHandlerDraggable, isRowDraggable, isColDraggable, setDragSortPrimaryTableRef, setDragSortColumns,
     } = useDragSort(props, context, dragSortParams);
 
     const { renderTitleWidthIcon } = useTableHeader(props);
@@ -213,7 +223,7 @@ export default defineComponent({
               attach,
               {
                 classPrefix,
-                ellipsisOverlayClassName: props.size !== 'medium' ? sizeClassNames[props.size] : '',
+                ellipsisOverlayClassName: tableSize.value !== 'medium' ? sizeClassNames[tableSize.value] : '',
               },
             );
           };
@@ -339,6 +349,9 @@ export default defineComponent({
       },
       scrollColumnIntoView: (colKey: string) => {
         primaryTableRef.value.scrollColumnIntoView(colKey);
+      },
+      refreshTable: () => {
+        primaryTableRef.value.refreshTable();
       },
       validateRowData,
       validateTableData,

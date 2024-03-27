@@ -1,7 +1,7 @@
 {
   "name": "tdesign-vue",
   "purename": "tdesign",
-  "version": "1.8.0",
+  "version": "1.9.1",
   "description": "tdesign-vue",
   "title": "tdesign-vue",
   "keywords": [
@@ -107,7 +107,8 @@
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "~7.22.5",
-    "@babel/eslint-parser": "~7.19.1",
+    "@babel/helper-module-imports": "7.22.5",
+    "@babel/eslint-parser": "~7.23.10",
     "@babel/plugin-transform-class-properties": "^7.22.3",
     "@babel/plugin-transform-modules-commonjs": "^7.9.6",
     "@babel/plugin-transform-object-assign": "^7.2.0",
@@ -126,7 +127,7 @@
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/experimental-utils": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
-    "@typescript-eslint/typescript-estree": "^5.4.0",
+    "@typescript-eslint/typescript-estree": "^6.16.0",
     "@vitest/coverage-c8": "^0.28.3",
     "@vitest/ui": "^0.24.3",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.2.1",
@@ -178,7 +179,7 @@
     "rollup-plugin-vue": "^5.1.9",
     "tdesign-icons-view": "^0.2.0",
     "tdesign-publish-cli": "^0.0.12",
-    "tdesign-site-components": "^0.13.0",
+    "tdesign-site-components": "^0.14.1",
     "tdesign-theme-generator": "^1.0.0",
     "typescript": "~4.5.4",
     "unplugin-vue2-script-setup": "^0.10.2",

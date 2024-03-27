@@ -27,7 +27,7 @@
 </template>
 
 <script>
-const items = [
+const initialData = [
   {
     value: 't1',
     children: [
@@ -82,15 +82,14 @@ const items = [
 export default {
   data() {
     return {
-      index: 0,
       transition: true,
       showLine: true,
       showIcon: true,
-      items,
+      items: initialData,
     };
   },
   methods: {
-    label(createElement, node) {
+    label(h, node) {
       return `${node.value}`;
     },
   },

@@ -90,10 +90,9 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
 
   const uploadFilePercent = (params: { file: UploadFile; percent: number }) => {
     const { file, percent } = params;
-    const index = toUploadFiles.value.findIndex((item) => file.raw === item.raw);
-    const newFiles = [...toUploadFiles.value];
-    newFiles[index] = { ...newFiles[index], percent };
-    toUploadFiles.value = newFiles;
+    const operationUploadFiles = autoUpload.value ? toUploadFiles : uploadValue;
+    const index = operationUploadFiles.value.findIndex((item) => file.raw === item.raw);
+    operationUploadFiles.value[index] = { ...operationUploadFiles.value[index], percent };
   };
 
   const updateFilesProgress = () => {
@@ -262,6 +261,10 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
     onFileChange?.(files);
   }
 
+  function onPasteFileChange(e: ClipboardEvent) {
+    onFileChange?.([...e.clipboardData.files]);
+  }
+
   /**
    * 上传文件。对外暴露方法，修改时需谨慎
    * @param toFiles 本地上传的文件列表
@@ -399,8 +402,9 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
     });
     uploading.value = false;
 
+    // autoUpload do not need to reset to waiting state
     if (autoUpload.value) {
-      toUploadFiles.value = toUploadFiles.value.map((item) => ({ ...item, status: 'waiting' }));
+      toUploadFiles.value = [];
     } else {
       setUploadValue(
         uploadValue.value.map((item) => {
@@ -451,5 +455,6 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
     cancelUpload,
     onInnerPreview,
     innerCancelUpload,
+    onPasteFileChange,
   };
 }

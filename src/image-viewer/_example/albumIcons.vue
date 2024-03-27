@@ -43,10 +43,9 @@
 <script>
 import { BrowseIcon, EllipsisIcon } from 'tdesign-icons-vue';
 
-const img3 = 'https://tdesign.gtimg.com/demo/demo-image-3.png';
-const img2 = 'https://tdesign.gtimg.com/demo/demo-image-2.png';
-const img1 = 'https://tdesign.gtimg.com/demo/demo-image-1.png';
-const images = [img1, img2, img3];
+const IMAGE3 = 'https://tdesign.gtimg.com/demo/demo-image-3.png';
+const IMAGE2 = 'https://tdesign.gtimg.com/demo/demo-image-2.png';
+const IMAGE1 = 'https://tdesign.gtimg.com/demo/demo-image-1.png';
 
 export default {
   components: {
@@ -55,10 +54,10 @@ export default {
   },
   data() {
     return {
-      images,
+      images: [IMAGE1, IMAGE2, IMAGE3],
       index: 0,
       visible: false,
-      img1,
+      img1: IMAGE1,
       title: '相册封面标题',
     };
   },

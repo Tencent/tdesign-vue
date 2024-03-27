@@ -6,7 +6,7 @@ import ITooltip from '../tooltip/tooltip';
 import { getIEVersion } from '../_common/js/utils/helper';
 import { TdSliderProps } from './type';
 import { TdTooltipProps } from '../tooltip/type';
-import { renderTNodeJSXDefault } from '../utils/render-tnode';
+import { renderTNodeJSX } from '../utils/render-tnode';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
 import { formatLabel } from '../_common/js/slider/utils';
 import mixins from '../utils/mixins';
@@ -123,9 +123,9 @@ export default mixins(classPrefixMixins, Vue as VueConstructor<SliderInstanceTyp
   },
   methods: {
     getTooltipContent() {
-      if (typeof this.label === 'boolean') return String(this.value);
+      if (this.label === true) return String(this.value);
       if (typeof this.label === 'string') return formatLabel(this.label, this.value as number);
-      return renderTNodeJSXDefault(this, 'label', {
+      return renderTNodeJSX(this, 'label', {
         params: this.range
           ? {
             value: this.value,
@@ -283,6 +283,7 @@ export default mixins(classPrefixMixins, Vue as VueConstructor<SliderInstanceTyp
         window.removeEventListener('mouseup', this.onDragEnd);
         window.removeEventListener('touchend', this.onDragEnd);
         window.removeEventListener('contextmenu', this.onDragEnd);
+        this.$emit('mouseup');
       }
     },
     setPosition(pos: number) {
@@ -333,6 +334,7 @@ export default mixins(classPrefixMixins, Vue as VueConstructor<SliderInstanceTyp
       >
         <Tooltip
           ref="tooltip"
+          hideEmptyPopup
           props={this.getTooltipProps()}
           visible={this.label && this.visible}
           content={this.getTooltipContent}

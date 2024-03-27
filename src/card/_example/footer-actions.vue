@@ -80,10 +80,6 @@ export default {
   data() {
     return {
       cover: 'https://tdesign.gtimg.com/site/source/card-demo.png',
-      infoMessage: `这是一段很长很长很长很长很长很长很长很长很长很长很长很长
-  很长很长很长很长很长很长很长很长很长很长很长很长很长很长
-  很长很长很长很长很长很长很长很长很长很长很长很长很长很长
-  很长很长很长很长很长很长很长很长很长很长很长的内容示例。`,
       image: 'https://tdesign.gtimg.com/site/avatar-boy.jpg',
       options: [
         {

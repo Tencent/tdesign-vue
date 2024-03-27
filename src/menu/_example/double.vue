@@ -82,12 +82,11 @@
 </template>
 
 <script>
-import Vue from 'vue';
 import {
   SearchIcon, MailIcon, UserIcon, EllipsisIcon,
 } from 'tdesign-icons-vue';
 
-export default Vue.extend({
+export default {
   components: {
     SearchIcon,
     MailIcon,
@@ -100,7 +99,7 @@ export default Vue.extend({
       expanded2: ['1'],
     };
   },
-});
+};
 </script>
 <style lang="less" scoped>
 .t-menu__operations {

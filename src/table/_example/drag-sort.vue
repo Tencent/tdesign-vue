@@ -10,7 +10,6 @@
         :pagination="pagination1"
         dragSort="row"
         @drag-sort="onDragSort"
-        @page-change="onPageChange"
         lazyLoad
       >
         <template #status="{ row }">
@@ -26,7 +25,7 @@
 <script lang="jsx">
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 
-const columns = [
+const initialColumns = [
   { colKey: 'index', title: '编号' },
   { colKey: 'applicant', title: '申请人' },
   {
@@ -68,12 +67,12 @@ export default {
   data() {
     return {
       data: [...initialData],
-      columns,
-      pagination: {
-        current: 1,
-        pageSize: 5,
-        total: 500,
-      },
+      columns: initialColumns,
+      // pagination: {
+      //   current: 1,
+      //   pageSize: 5,
+      //   total: 500,
+      // },
       // 非受控用法
       pagination1: {
         defaultCurrent: 1,
@@ -83,10 +82,6 @@ export default {
     };
   },
   methods: {
-    onPageChange(pageInfo) {
-      this.pagination = { ...this.pagination, ...pageInfo };
-    },
-
     // currentData is going to be deprecated
     onDragSort({
       currentIndex, current, targetIndex, target, data, newData, e,

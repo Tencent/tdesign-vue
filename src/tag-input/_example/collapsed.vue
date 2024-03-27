@@ -1,21 +1,20 @@
 <template>
   <t-space direction="vertical" style="width: 80%">
-
-    <h3>default: </h3>
+    <h3>default:</h3>
     <t-tag-input v-model="tags" :min-collapsed-num="1" />
 
-    <h3>use collapsedItems: </h3>
+    <h3>use collapsedItems:</h3>
     <t-space>
       <div>size control:</div>
-      <t-radio-group :value="size" :options="['small', 'medium', 'large']" @change="(value) => size = value" />
+      <t-radio-group :value="size" :options="['small', 'medium', 'large']" @change="(value) => (size = value)" />
     </t-space>
     <t-space>
       <span>disabled control:</span>
-      <t-checkbox :checked="disabled" @change="(value) => disabled = value" />
+      <t-checkbox :checked="disabled" @change="(value) => (disabled = value)" />
     </t-space>
     <t-space>
       <span>readonly control:</span>
-      <t-checkbox :checked="readonly" @change="(value) => readonly = value" />
+      <t-checkbox :checked="readonly" @change="(value) => (readonly = value)" />
     </t-space>
     <!-- 方式一：使用渲染函数自定义折叠项 -->
     <t-tag-input
@@ -38,7 +37,7 @@
       :readonly="readonly"
     >
       <template #collapsedItems="{ value, onClose }">
-        <SlotCollapsedItems 
+        <slot-collapsed-items
           :value="value"
           :min-collapsed-num="minCollapsedNum"
           :size="size"
@@ -88,7 +87,9 @@ export default {
               </t-tag>
             ))}
           </div>
-          <t-tag size={this.size} disabled={this.disabled}>Function - More({count})</t-tag>
+          <t-tag size={this.size} disabled={this.disabled}>
+            Function - More({count})
+          </t-tag>
         </t-popup>
       );
     },

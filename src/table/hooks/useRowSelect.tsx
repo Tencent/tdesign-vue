@@ -26,7 +26,7 @@ export default function useRowSelect(
   tableSelectedClasses: TableClassName['tableSelectedClasses'],
 ) {
   const {
-    selectedRowKeys, columns, data, rowKey, pagination, reserveSelectedRowOnPaginate,
+    selectedRowKeys, columns, data, rowKey, reserveSelectedRowOnPaginate,
   } = toRefs(props);
   const currentPaginateData = ref<TableRowData[]>(data.value);
   const selectedRowClassNames = ref();
@@ -54,20 +54,6 @@ export default function useRowSelect(
     if (!singleSelectCol || !singleSelectCol.checkProps || !('allowUncheck' in singleSelectCol.checkProps)) return false;
     return singleSelectCol.checkProps.allowUncheck;
   });
-
-  watch(
-    [data, pagination, reserveSelectedRowOnPaginate],
-    () => {
-      if (reserveSelectedRowOnPaginate.value) return;
-      const {
-        pageSize, current, defaultPageSize, defaultCurrent,
-      } = pagination.value;
-      const tPageSize = pageSize || defaultPageSize;
-      const tCurrent = current || defaultCurrent;
-      currentPaginateData.value = data.value.slice(tPageSize * (tCurrent - 1), tPageSize * tCurrent);
-    },
-    { immediate: true },
-  );
 
   watch(
     [data, columns, tSelectedRowKeys, selectColumn, rowKey],

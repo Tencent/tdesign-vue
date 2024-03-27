@@ -16,11 +16,10 @@
 </template>
 
 <script lang="jsx">
-import Vue from 'vue';
 import { PrintIcon } from 'tdesign-icons-vue';
 import { Tag } from 'tdesign-vue';
 
-export default Vue.extend({
+export default {
   data() {
     return {
       src: '',
@@ -78,5 +77,5 @@ export default Vue.extend({
     }, 100);
   },
   methods: {},
-});
+};
 </script>

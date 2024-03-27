@@ -145,7 +145,6 @@ export default {
     return {
       expanded: ['2', '3'],
       expanded2: ['2'],
-      disabled: true,
       collapsed: false,
       collapsed2: false,
     };

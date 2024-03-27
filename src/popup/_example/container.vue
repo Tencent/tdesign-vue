@@ -18,7 +18,9 @@
 <script>
 export default {
   methods: {
-    getAttach: () => document.querySelector('#second-popup'),
+    getAttach() {
+      return document.querySelector('#second-popup');
+    },
   },
 };
 </script>

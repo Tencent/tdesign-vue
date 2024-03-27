@@ -46,10 +46,10 @@ function copyToClipboard(text) {
   MessagePlugin.success('文本复制成功');
 }
 
-const data = [];
+const initialData = [];
 const total = 5;
 for (let i = 0; i < total; i++) {
-  data.push({
+  initialData.push({
     id: i + 1,
     applicant: ['贾明（kyrieJia）', '张三（threeZhang)', '王芳（fangWang)'][i % 3],
     status: i % 3,
@@ -69,7 +69,7 @@ for (let i = 0; i < total; i++) {
 export default {
   data() {
     return {
-      data,
+      data: initialData,
       columns: [
         {
           colKey: 'applicant',

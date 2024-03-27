@@ -76,12 +76,12 @@ export default {
       ],
       rowKey: 'property',
       size: 'small',
-      style: {
-        height: '100px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      },
+      // style: {
+      //   height: '100px',
+      //   display: 'flex',
+      //   alignItems: 'center',
+      //   justifyContent: 'center',
+      // },
     };
   },
   methods: {

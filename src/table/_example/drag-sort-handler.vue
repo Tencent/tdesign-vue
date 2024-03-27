@@ -25,7 +25,7 @@ import {
   ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon, MoveIcon,
 } from 'tdesign-icons-vue';
 
-const columns = [
+const initialColumns = [
   {
     colKey: 'drag', // 列拖拽排序必要参数
     title: '排序',
@@ -79,7 +79,7 @@ export default {
     return {
       loading: false,
       data: [...initialData],
-      columns,
+      columns: initialColumns,
     };
   },
   methods: {

@@ -1,5 +1,6 @@
-import { ref } from '@vue/composition-api';
+import { ref, ComputedRef } from '@vue/composition-api';
 import { ImageScale } from './type';
+import { DEFAULT_IMAGE_SCALE } from './const';
 
 interface InitTransform {
   translateX: number;
@@ -47,20 +48,17 @@ export function useMirror() {
   return { mirror, onMirror, resetMirror };
 }
 
-export function useScale(imageScale: ImageScale = { max: 2, min: 0.5, step: 0.5 }) {
-  const { max, min, step } = imageScale;
-  const scale = ref(1);
-  const onZoomIn = () => {
-    setScale(scale.value + step);
-  };
-  const onZoomOut = () => {
-    setScale(scale.value - step);
-  };
-  const resetScale = () => {
-    scale.value = 1;
-  };
+export function useScale(imageScale: ComputedRef<ImageScale>) {
+  const {
+    max = DEFAULT_IMAGE_SCALE.max,
+    min = DEFAULT_IMAGE_SCALE.min,
+    defaultScale = DEFAULT_IMAGE_SCALE.defaultScale,
+  } = imageScale.value;
+  const scaleVal = Math.min(Math.max(defaultScale, min), max);
+  const scale = ref(scaleVal);
 
   const setScale = (newScale: number) => {
+    const { max = DEFAULT_IMAGE_SCALE.max, min = DEFAULT_IMAGE_SCALE.min } = imageScale.value;
     let value = newScale;
     if (newScale < min) {
       value = min;
@@ -69,6 +67,18 @@ export function useScale(imageScale: ImageScale = { max: 2, min: 0.5, step: 0.5 
       value = max;
     }
     scale.value = value;
+  };
+
+  const onZoomIn = () => {
+    const { step = DEFAULT_IMAGE_SCALE.step } = imageScale.value;
+    setScale(scale.value + step);
+  };
+  const onZoomOut = () => {
+    const { step = DEFAULT_IMAGE_SCALE.step } = imageScale.value;
+    setScale(scale.value - step);
+  };
+  const resetScale = () => {
+    scale.value = scaleVal;
   };
 
   return {

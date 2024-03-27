@@ -94,6 +94,9 @@ export default mixins(Vue as VueConstructor<RadioParentInjectInstance>, classPre
     checkRadio(e: MouseEvent) {
       const tChecked = this.getChecked();
       const allowUncheck = this.allowUncheck || this.radioGroup?.allowUncheck;
+
+      if (tChecked && !allowUncheck) return;
+
       if (this.radioGroup) {
         const value = tChecked && allowUncheck ? undefined : this.value;
         this.radioGroup.handleRadioChange(value, { e });

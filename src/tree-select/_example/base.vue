@@ -54,7 +54,7 @@ export default {
     return {
       value1: '',
       value2: '',
-      popupVisible: false,
+      // popupVisible: false,
       options: [
         {
           label: '广东省',
@@ -101,11 +101,11 @@ export default {
     onChange(value, context) {
       console.log('change:', value, context, context.node?.getPath());
     },
-    onVisibleChange(v, c) {
-      if (c.trigger || c.node?.label !== '广州市') {
-        this.popupVisible = v;
-      }
-    },
+    // onVisibleChange(v, c) {
+    //   if (c.trigger || c.node?.label !== '广州市') {
+    //     this.popupVisible = v;
+    //   }
+    // },
     getNodePath(nodeInfo) {
       if (!nodeInfo.value || !this.$refs['single-tree-select']) return;
       const path = this.$refs['single-tree-select'].$refs.treeRef?.getPath(nodeInfo.value);

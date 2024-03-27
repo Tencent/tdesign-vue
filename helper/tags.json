@@ -613,12 +613,12 @@
     ],
     "description": "DateRangePickerPanel\n\n日期范围选择器面板\n\n[docs](https://tdesign.tencent.com/vue/components/date-range-picker-panel)"
   },
-  "t-description-item": {
+  "t-descriptions-item": {
     "attributes": [
       "label",
       "span"
     ],
-    "description": "DescriptionItem\n\n描述项\n\n[docs](https://tdesign.tencent.com/vue/components/description-item)"
+    "description": "DescriptionsItem\n\n描述项\n\n[docs](https://tdesign.tencent.com/vue/components/descriptions-item)"
   },
   "t-descriptions": {
     "attributes": [

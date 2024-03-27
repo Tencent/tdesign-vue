@@ -72,6 +72,7 @@ export default defineComponent({
     const { isMultipleHeader, spansAndLeafNodes, thList } = useTableHeader(props);
     const finalColumns = computed(() => spansAndLeafNodes.value?.leafColumns || props.columns);
     const isIE = computed(() => getIEVersion() <= 11);
+    const tableSize = computed(() => props.size ?? global.value.size);
 
     // 吸附相关ref 用来做视图resize后重新定位
     const paginationAffixRef = ref();
@@ -308,6 +309,7 @@ export default defineComponent({
       classPrefix,
       innerPagination,
       global,
+      tableSize,
       tableFootHeight,
       tableWidth,
       tableElmWidth,
@@ -403,7 +405,7 @@ export default defineComponent({
         resizable: this.resizable,
         columnResizeParams: this.columnResizeParams,
         classPrefix: this.classPrefix,
-        ellipsisOverlayClassName: this.size !== 'medium' ? this.sizeClassNames[this.size] : '',
+        ellipsisOverlayClassName: this.tableSize !== 'medium' ? this.sizeClassNames[this.tableSize] : '',
         attach: this.attach,
       };
       return headProps;
@@ -630,7 +632,7 @@ export default defineComponent({
 
     const topContent = renderTNodeJSX(this, 'topContent');
     const bottomContent = renderTNodeJSX(this, 'bottomContent');
-    const pagination = this.pagination ? (
+    const paginationContent = this.innerPagination ? (
       <div
         ref="paginationRef"
         class={this.tableBaseClass.paginationWrap}
@@ -700,10 +702,10 @@ export default defineComponent({
         {/* 吸底的分页器 */}
         {this.paginationAffixedBottom ? (
           <Affix offsetBottom={0} props={getAffixProps(this.paginationAffixedBottom)} ref="paginationAffixRef">
-            {pagination}
+            {paginationContent}
           </Affix>
         ) : (
-          pagination
+          paginationContent
         )}
 
         {/* 调整列宽时的指示线。由于层级需要比较高，因而放在根节点，避免被吸顶表头覆盖。非必要情况，请勿调整辅助线位置 */}

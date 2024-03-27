@@ -8,7 +8,9 @@ import useSingle from './hooks/useSingle';
 import {
   parseToDayjs, getDefaultFormat, formatTime, formatDate,
 } from '../_common/js/date-picker/format';
-import { subtractMonth, addMonth, extractTimeObj } from '../_common/js/date-picker/utils';
+import {
+  subtractMonth, addMonth, extractTimeObj, covertToDate,
+} from '../_common/js/date-picker/utils';
 import type { DateValue } from './type';
 import props from './props';
 
@@ -49,10 +51,12 @@ export default defineComponent({
     const isDisabled = computed(() => formDisabled.value || props.disabled);
 
     watch(popupVisible, (visible) => {
-      cacheValue.value = formatDate(value.value, {
+      const dateValue = value.value ? covertToDate(value.value as string, formatRef.value?.valueType) : value.value;
+
+      cacheValue.value = formatDate(dateValue, {
         format: formatRef.value.format,
       });
-      inputValue.value = formatDate(value.value, {
+      inputValue.value = formatDate(dateValue, {
         format: formatRef.value.format,
       });
 

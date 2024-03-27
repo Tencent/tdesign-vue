@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import escapeRegExp from 'lodash/escapeRegExp';
+
 const LIST = ['第一个 AutoComplete 默认联想词', '第二个 AutoComplete 默认联想词', '第三个 AutoComplete 默认联想词'];
 
 export default {
@@ -33,13 +35,12 @@ export default {
       value1: '',
       value2: '',
       options: [...LIST],
-      timer: null,
     };
   },
 
   methods: {
     filterWords(keyword, option) {
-      const regExp = new RegExp(keyword);
+      const regExp = new RegExp(escapeRegExp(keyword));
       return regExp.test(option.text);
     },
   },

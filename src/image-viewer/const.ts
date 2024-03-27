@@ -6,4 +6,11 @@ export const enum EVENT_CODE {
   esc = 'Escape',
 }
 
+export const DEFAULT_IMAGE_SCALE = {
+  max: 2,
+  min: 0.5,
+  step: 0.5,
+  defaultScale: 1,
+};
+
 export default EVENT_CODE;
