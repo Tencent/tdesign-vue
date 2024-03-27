@@ -43,7 +43,7 @@ import { ref, computed } from 'vue';
 import { Icon } from 'tdesign-icons-vue';
 
 const collapsed = ref(true);
-const iconName = computed(() => collapsed.value ? 'chevron-right' : 'chevron-left');
+const iconName = computed(() => (collapsed.value ? 'chevron-right' : 'chevron-left'));
 const changeCollapsed = () => {
   collapsed.value = !collapsed.value;
 };

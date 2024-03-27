@@ -25,7 +25,9 @@ import { ChatIcon, AddIcon, QrcodeIcon } from 'tdesign-icons-vue';
 const renderChatIcon = () => <ChatIcon />;
 const renderAddIcon = () => <AddIcon />;
 const renderQrIcon = () => <QrcodeIcon />;
-const renderPopup = () => <img alt="TDesign Logo" width="120" height="120" src="https://tdesign.gtimg.com/site/site.jpg" />;
+const renderPopup = () => (
+  <img alt="TDesign Logo" width="120" height="120" src="https://tdesign.gtimg.com/site/site.jpg" />
+);
 const handleClick = (context) => {
   console.log('click', context);
 };

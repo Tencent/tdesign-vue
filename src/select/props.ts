@@ -16,7 +16,7 @@ export default {
   borderless: Boolean,
   /** 是否可以清空选项 */
   clearable: Boolean,
-  /** 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义。`value` 表示当前存在的所有标签，`collapsedTags` 表示折叠的标签，泛型 `T` 继承 `SelectOption`，表示选项数据；`count` 表示折叠的数量, `onClose` 表示移除标签 */
+  /** 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义。`value` 表示当前存在的所有标签，`collapsedSelectedItems` 表示折叠的标签，泛型 `T` 继承 `SelectOption`，表示选项数据；`count` 表示折叠的数量, `onClose` 表示移除标签 */
   collapsedItems: {
     type: Function as PropType<TdSelectProps['collapsedItems']>,
   },
@@ -41,7 +41,6 @@ export default {
   /** 输入框的值 */
   inputValue: {
     type: [String, Number] as PropType<TdSelectProps['inputValue']>,
-    default: undefined,
   },
   /** 输入框的值，非受控属性 */
   defaultInputValue: {
@@ -95,10 +94,7 @@ export default {
     type: Object as PropType<TdSelectProps['popupProps']>,
   },
   /** 是否显示下拉框 */
-  popupVisible: {
-    type: Boolean,
-    default: undefined,
-  },
+  popupVisible: Boolean,
   /** 是否显示下拉框，非受控属性 */
   defaultPopupVisible: Boolean,
   /** 组件前置图标 */
@@ -163,12 +159,10 @@ export default {
   /** 选中值 */
   value: {
     type: [String, Number, Boolean, Object, Array] as PropType<TdSelectProps['value']>,
-    default: undefined,
   },
   /** 选中值，非受控属性 */
   defaultValue: {
     type: [String, Number, Boolean, Object, Array] as PropType<TdSelectProps['defaultValue']>,
-    default: undefined,
   },
   /** 自定义选中项呈现的内容 */
   valueDisplay: {

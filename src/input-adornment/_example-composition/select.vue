@@ -19,23 +19,23 @@
 
 <script setup lang="jsx">
 const protocolSelect = () => (
-    <t-select
-      autoWidth
-      options={['http://', 'https://'].map((value) => ({
-        label: value,
-        value,
-      }))}
-      defaultValue="http://"
-    />
+  <t-select
+    autoWidth
+    options={['http://', 'https://'].map((value) => ({
+      label: value,
+      value,
+    }))}
+    defaultValue="http://"
+  />
 );
 const tldSelect = () => (
-    <t-select
-      autoWidth
-      options={['.com', '.cn', '.net', '.org'].map((value) => ({
-        label: value,
-        value,
-      }))}
-      defaultValue=".cn"
-    />
+  <t-select
+    autoWidth
+    options={['.com', '.cn', '.net', '.org'].map((value) => ({
+      label: value,
+      value,
+    }))}
+    defaultValue=".cn"
+  />
 );
 </script>

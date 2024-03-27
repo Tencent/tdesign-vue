@@ -109,9 +109,9 @@ const bodyVisible1 = ref(false);
 const bodyVisible2 = ref(false);
 const bodyVisible3 = ref(false);
 const getConfirmBtn = () => (
-    <t-button theme="primary" disabled>
-      我知道了
-    </t-button>
+  <t-button theme="primary" disabled>
+    我知道了
+  </t-button>
 );
 // 使用 button.content 渲染函数输出
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

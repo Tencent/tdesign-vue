@@ -85,8 +85,8 @@
 import { MessagePlugin } from 'tdesign-vue';
 
 const content = () => (
-    <div>
-      操作有误，<a href="#">前往查看</a>
-    </div>
+  <div>
+    操作有误，<a href="#">前往查看</a>
+  </div>
 );
 </script>

@@ -18,7 +18,7 @@ export default {
   borderless: Boolean,
   /** 是否可清空 */
   clearable: Boolean,
-  /** 标签过多的情况下，折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 `collapsedItems` 自定义。`value` 表示所有标签值，`collapsedTags` 表示折叠标签值，`count` 表示折叠的数量 */
+  /** 标签过多的情况下，折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 `collapsedItems` 自定义。`value` 表示所有标签值，`collapsedSelectedItems` 表示折叠标签值，`count` 表示折叠的数量，`onClose` 表示移除标签的事件回调 */
   collapsedItems: {
     type: Function as PropType<TdSelectInputProps['collapsedItems']>,
   },
@@ -76,6 +76,8 @@ export default {
   defaultPopupVisible: Boolean,
   /** 只读状态，值为真会隐藏输入框，且无法打开下拉框 */
   readonly: Boolean,
+  /** 多选且可搜索时，是否在选中一个选项后保留当前的搜索关键词 */
+  reserveKeyword: Boolean,
   /** 输入框状态 */
   status: {
     type: String as PropType<TdSelectInputProps['status']>,
