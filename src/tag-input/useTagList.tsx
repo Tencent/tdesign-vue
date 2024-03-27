@@ -31,7 +31,10 @@ export default function useTagList(props: TdTagInputProps, context: SetupContext
     const [item] = arr.splice(p.index, 1); // 当前删除的item无需参数传递
     setTagValue(arr, { trigger: 'tag-remove', ...p });
     const removeParams: TagInputRemoveContext = {
-      ...p, item, trigger: 'tag-remove', value: arr,
+      ...p,
+      item,
+      trigger: 'tag-remove',
+      value: arr,
     };
     onRemove.value?.(removeParams);
     context.emit('remove', removeParams);
@@ -138,6 +141,9 @@ export default function useTagList(props: TdTagInputProps, context: SetupContext
       const more = renderTNode('collapsedItems', {
         params: {
           value: tagValue.value,
+          count: tagValue.value.length - minCollapsedNum.value,
+          collapsedTags: tagValue.value.slice(minCollapsedNum.value, tagValue.value.length), // deprecated
+          collapsedSelectedItems: tagValue.value.slice(minCollapsedNum.value, tagValue.value.length),
           onClose,
         },
       });

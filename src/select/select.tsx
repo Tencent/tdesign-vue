@@ -46,6 +46,7 @@ import useSelectOptions from './hooks/useSelectOptions';
 import { SelectPanelInstance } from './instance';
 import log from '../_common/js/log';
 import useFormDisabled from '../hooks/useFormDisabled';
+import type { OptionData } from '../common';
 
 export type OptionInstance = InstanceType<typeof Option>;
 
@@ -267,6 +268,24 @@ export default defineComponent({
         };
       }
       return params;
+    });
+
+    const collapsedItemsParams = computed(() => {
+      const tValue = innerValue.value || [];
+      const values = Array.isArray(tValue) ? tValue : [tValue];
+      return multiple.value
+        ? {
+          value: values,
+          collapsedSelectedItems: values
+            .map((item: any) => {
+              const tmpValue = typeof item === 'object' ? item[props.keys?.value || 'value'] : item;
+              return props.options?.find((t: OptionData) => t.value === tmpValue);
+            })
+            .slice(minCollapsedNum.value),
+          count: values.length - minCollapsedNum.value,
+          onClose: (index: number) => removeTag(index),
+        }
+        : {};
     });
 
     const removeTag = (index: number, context?: { e?: MouseEvent | KeyboardEvent }) => {
@@ -539,6 +558,7 @@ export default defineComponent({
       innerPopupVisible,
       displayText,
       tInputValue,
+      collapsedItemsParams,
       valueDisplayParams,
       handleFocus,
       handleBlur,
@@ -603,7 +623,6 @@ export default defineComponent({
             tips: this.$scopedSlots.tips,
             tag: this.$scopedSlots.tag,
             suffix: this.$scopedSlots.suffix,
-            collapsedItems: this.$scopedSlots.collapsedItems,
           }}
           {...{
             props: {
@@ -632,7 +651,7 @@ export default defineComponent({
               tagInputProps: { size: this.size, ...this.tagInputProps },
               tagProps: this.tagProps,
               minCollapsedNum: this.minCollapsedNum,
-              collapsedItems: this.collapsedItems,
+              collapsedItems: () => renderTNode('collapsedItems', { params: this.collapsedItemsParams }),
               popupVisible: this.innerPopupVisible,
               popupProps: {
                 overlayClassName: [`${this.componentName}__dropdown`, overlayClassName],

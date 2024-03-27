@@ -99,7 +99,7 @@ export default {
     };
   },
   methods: {
-    collapsedItems(h, { value, onClose, ...args }) {
+    collapsedItems(h, { value, onClose }) {
       if (!(value instanceof Array)) return null;
       const count = value.length - this.minCollapsedNum;
       const collapsedTags = value.slice(this.minCollapsedNum, value.length);

@@ -131,10 +131,6 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
    */
   popupVisible?: boolean;
   /**
-   * 组件前置图标
-   */
-  prefixIcon?: TNode;
-  /**
    * 只读状态，值为真会隐藏输入框，且无法打开下拉框
    * @default false
    */
@@ -240,8 +236,6 @@ export interface TdCascaderProps<CascaderOption extends TreeOptionData = TreeOpt
    */
   onRemove?: (context: RemoveContext<CascaderOption>) => void;
 }
-
-export type CascaderValue<T extends TreeOptionData = TreeOptionData> = string | number | T | Array<CascaderValue<T>>;
 
 export type CascaderValue<T extends TreeOptionData = TreeOptionData> = string | number | T | Array<CascaderValue<T>>;
 

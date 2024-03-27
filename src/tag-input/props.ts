@@ -36,7 +36,7 @@ export default {
   /** 输入框的值 */
   inputValue: {
     type: [String, Number] as PropType<TdTagInputProps['inputValue']>,
-    default: '',
+    default: undefined,
   },
   /** 输入框的值，非受控属性 */
   defaultInputValue: {
@@ -107,7 +107,7 @@ export default {
   /** 值 */
   value: {
     type: Array as PropType<TdTagInputProps['value']>,
-    default: (): TdTagInputProps['value'] => [],
+    default: undefined,
   },
   /** 值，非受控属性 */
   defaultValue: {

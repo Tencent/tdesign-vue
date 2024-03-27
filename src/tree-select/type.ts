@@ -8,8 +8,8 @@ import { InputProps } from '../input';
 import { PopupProps } from '../popup';
 import { SelectInputProps, SelectInputBlurContext, SelectInputValueChangeContext } from '../select-input';
 import { TagProps } from '../tag';
-import { TreeProps, TreeNodeModel, TreeKeysType } from '../tree';
-import { PopupVisibleChangeContext, PopupTriggerEvent, PopupTriggerSource } from '../popup';
+import { TreeProps, TreeNodeModel } from '../tree';
+import { PopupTriggerEvent, PopupTriggerSource } from '../popup';
 import { TNode, TreeOptionData, TreeKeysType } from '../common';
 
 export interface TdTreeSelectProps<
@@ -237,8 +237,6 @@ export interface TdTreeSelectProps<
    */
   onSearch?: (filterWords: string, context: { e: KeyboardEvent | SelectInputValueChangeContext['e'] }) => void;
 }
-
-export type TreeSelectValue = string | number | TreeOptionData | Array<string | number | TreeOptionData>;
 
 export type TreeSelectValue = string | number | TreeOptionData | Array<string | number | TreeOptionData>;
 
