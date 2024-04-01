@@ -47,6 +47,7 @@ const handleDN = () => {
     },
   });
 };
+// 每一次执行方法，都会创建一个新的弹框，注意使用方法，避免多次创建重复内容
 const onConfirm = () => {
   const confirmDia = DialogPlugin.confirm({
     header: 'Dialog-Confirm-Plugin',
