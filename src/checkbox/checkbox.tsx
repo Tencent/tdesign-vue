@@ -1,5 +1,5 @@
 import {
-  defineComponent, ref, toRefs, inject, watch, onBeforeUnmount, computed, nextTick,
+  defineComponent, ref, toRefs, inject, watch, onBeforeUnmount, computed,
 } from '@vue/composition-api';
 import props from './props';
 import {
@@ -155,9 +155,9 @@ export default defineComponent({
            * checked state can influence disabled state because of `max`,
            * therefore we need to update disabled state after checked state changed
            */
-          nextTick(() => {
+          setTimeout(() => {
             handleParentDisabled(data);
-          });
+          }, 0);
           if (data.checkboxName) {
             tName.value = data.checkboxName;
           }
