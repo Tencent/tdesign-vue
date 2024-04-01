@@ -51,8 +51,12 @@ export default defineComponent({
     const isDisabled = computed(() => formDisabled.value || props.disabled);
 
     watch(popupVisible, (visible) => {
-      const dateValue = value.value ? covertToDate(value.value as string, formatRef.value?.valueType) : value.value;
-
+      const dateValue =
+        // Date 属性不再 parse，避免 dayjs 处理成 Invalid
+        value.value && !isDate(value.value)
+          ? covertToDate(value.value as string, formatRef.value?.valueType)
+          : value.value;
+      
       cacheValue.value = formatDate(dateValue, {
         format: formatRef.value.format,
       });
