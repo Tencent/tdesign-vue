@@ -1,5 +1,5 @@
 <template>
-  <t-menu theme="light" defaultValue="item2" :collapsed="collapsed" @change="changeHandler" height="550px">
+  <t-menu theme="light" defaultValue="item2" :collapsed="collapsed" @change="changeHandler">
     <template #logo>
       <img :width="collapsed ? 35 : 136" :src="iconUrl" alt="logo" />
     </template>
