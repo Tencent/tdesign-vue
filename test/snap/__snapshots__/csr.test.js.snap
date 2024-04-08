@@ -69739,7 +69739,6 @@ exports[`csr snapshot test > csr test ./src/loading/_example/wrap.vue 1`] = `
 exports[`csr snapshot test > csr test ./src/menu/_example/closable-side.vue 1`] = `
 <div
   class="t-default-menu t-menu--light t-is-collapsed"
-  height="550px"
   style="height: 100%; width: 64px;"
 >
   <div
@@ -70492,7 +70491,6 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
 exports[`csr snapshot test > csr test ./src/menu/_example/group-side.vue 1`] = `
 <div
   class="t-default-menu t-menu--light"
-  height="550px"
   style="height: 100%; width: 232px;"
 >
   <div
@@ -71347,7 +71345,6 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
   <div
     class="t-default-menu t-menu--light"
     data-v-3a81e078=""
-    height="550px"
     style="height: 100%; width: 232px;"
   >
     <div
@@ -71724,7 +71721,6 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
   <div
     class="t-default-menu t-menu--dark"
     data-v-3a81e078=""
-    height="550px"
     style="height: 100%; width: 232px; margin-left: 40px;"
   >
     <div
@@ -72694,7 +72690,6 @@ exports[`csr snapshot test > csr test ./src/menu/_example/side-menu-width.vue 1`
 >
   <div
     class="t-default-menu t-menu--light"
-    height="550px"
     style="height: 100%; width: 200px; margin-right: 20px;"
   >
     <div
@@ -72753,7 +72748,6 @@ exports[`csr snapshot test > csr test ./src/menu/_example/side-menu-width.vue 1`
   </div>
   <div
     class="t-default-menu t-menu--light"
-    height="550px"
     style="height: 100%; width: 300px;"
   >
     <div
@@ -73158,7 +73152,6 @@ exports[`csr snapshot test > csr test ./src/menu/_example/single-side.vue 1`] = 
 >
   <div
     class="t-default-menu t-menu--light"
-    height="550px"
     style="height: 100%; width: 232px; margin-right: 40px;"
   >
     <div
@@ -73268,7 +73261,6 @@ exports[`csr snapshot test > csr test ./src/menu/_example/single-side.vue 1`] = 
   </div>
   <div
     class="t-default-menu t-menu--light"
-    height="550px"
     style="height: 100%; width: 232px; margin-right: 40px;"
   >
     <div
@@ -73435,7 +73427,6 @@ exports[`csr snapshot test > csr test ./src/menu/_example/single-side.vue 1`] = 
   </div>
   <div
     class="t-default-menu t-menu--dark"
-    height="550px"
     style="height: 100%; width: 232px;"
   >
     <div
