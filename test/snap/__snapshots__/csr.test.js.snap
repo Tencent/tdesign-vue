@@ -115655,7 +115655,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/target-value.vue 1
 
 exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
 <div
-  class="t-transfer t-transfer--with-tree"
+  class="t-transfer t-transfer__search t-transfer--with-tree"
 >
   <div
     class="t-transfer__list t-transfer__list-source"
@@ -115688,8 +115688,43 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
       <span />
     </div>
     <div
-      class="t-transfer__list-body"
+      class="t-transfer__list-body t-transfer__list--with-search"
     >
+      <div
+        class="t-transfer__search-wrapper"
+      >
+        <div
+          class="t-input__wrap"
+        >
+          <div
+            class="t-input t-input--suffix"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入关键词搜索"
+              type="text"
+              unselectable="off"
+            />
+            <span
+              class="t-input__suffix t-input__suffix-icon"
+            >
+              <svg
+                class="t-icon t-icon-search"
+                fill="none"
+                height="1em"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  d="M15.1 5.9a6.5 6.5 0 10-9.2 9.2 6.5 6.5 0 009.2-9.2zM4.49 4.5a8.5 8.5 0 0112.69 11.27l5.34 5.35-1.41 1.41-5.35-5.34A8.5 8.5 0 014.5 4.49z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
       <div
         class="t-transfer__list-content narrow-scrollbar"
       >
@@ -116137,8 +116172,43 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
       <span />
     </div>
     <div
-      class="t-transfer__list-body"
+      class="t-transfer__list-body t-transfer__list--with-search"
     >
+      <div
+        class="t-transfer__search-wrapper"
+      >
+        <div
+          class="t-input__wrap"
+        >
+          <div
+            class="t-input t-input--suffix"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入关键词搜索"
+              type="text"
+              unselectable="off"
+            />
+            <span
+              class="t-input__suffix t-input__suffix-icon"
+            >
+              <svg
+                class="t-icon t-icon-search"
+                fill="none"
+                height="1em"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  d="M15.1 5.9a6.5 6.5 0 10-9.2 9.2 6.5 6.5 0 009.2-9.2zM4.49 4.5a8.5 8.5 0 0112.69 11.27l5.34 5.35-1.41 1.41-5.35-5.34A8.5 8.5 0 014.5 4.49z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
       <div
         class="t-transfer__empty"
       >
