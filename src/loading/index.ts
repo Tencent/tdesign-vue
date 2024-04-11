@@ -10,5 +10,6 @@ export * from './type';
 export * from './plugin';
 
 export { default as LoadingPlugin } from './plugin';
+export { default as LoadingDirective } from './directive';
 export const Loading = withInstall(_Loading, null, { name: 'loading', comp: vLoading });
 export default Loading;

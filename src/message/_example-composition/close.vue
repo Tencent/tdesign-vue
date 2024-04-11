@@ -29,14 +29,14 @@ const closableMsg = ref(true);
 const closableMsg1 = ref(true);
 const closableMsg2 = ref(true);
 const closeBtn = () => (
-    <div
-      class="t-message__close"
-      onClick={() => {
-        closableMsg1.value = false;
-      }}
-    >
-      <b>x</b>
-    </div>
+  <div
+    class="t-message__close"
+    onClick={() => {
+      closableMsg1.value = false;
+    }}
+  >
+    <b>x</b>
+  </div>
 );
 </script>
 

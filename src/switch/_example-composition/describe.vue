@@ -42,5 +42,5 @@ const renderChecked2 = ref(true);
 const slotChecked = ref(true);
 const renderActiveContent = () => <CheckIcon />;
 const renderInactiveContent = () => <CloseIcon />;
-const renderContent = (h, data) => data.value ? <CheckIcon /> : <CloseIcon />;
+const renderContent = (h, data) => (data.value ? <CheckIcon /> : <CloseIcon />);
 </script>

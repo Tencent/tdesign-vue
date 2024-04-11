@@ -46,11 +46,11 @@ const visible = ref(false);
 const visible2 = ref(false);
 const visible3 = ref(false);
 const renderFooter = () => (
-    <div>
-      <t-button>confirm</t-button>
-      <t-button variant="outline" onClick={() => (visible2.value = false)}>
-        cancel
-      </t-button>
-    </div>
+  <div>
+    <t-button>confirm</t-button>
+    <t-button variant="outline" onClick={() => (visible2.value = false)}>
+      cancel
+    </t-button>
+  </div>
 );
 </script>

@@ -22,14 +22,14 @@ const initialImages = [
 ];
 const images = ref(initialImages);
 const trigger = (h, { open }) => (
-    <div class="tdesign-demo-image-viewer__ui-image">
-      <img alt="test" src={img} class="tdesign-demo-image-viewer__ui-image--img" />
-      <div class="tdesign-demo-image-viewer__ui-image--hover" onClick={open}>
-        <span>
-          <BrowseIcon size="1.4em" /> 预览
-        </span>
-      </div>
+  <div class="tdesign-demo-image-viewer__ui-image">
+    <img alt="test" src={img} class="tdesign-demo-image-viewer__ui-image--img" />
+    <div class="tdesign-demo-image-viewer__ui-image--hover" onClick={open}>
+      <span>
+        <BrowseIcon size="1.4em" /> 预览
+      </span>
     </div>
+  </div>
 );
 </script>
 

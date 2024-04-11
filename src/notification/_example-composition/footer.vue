@@ -14,9 +14,9 @@
 
 <script setup lang="jsx">
 const footer = () => (
-    <div slot="footer" class="t-notification__detail">
-      <span class="t-notification__detail-item t-is-active">查看详情</span>
-    </div>
+  <div slot="footer" class="t-notification__detail">
+    <span class="t-notification__detail-item t-is-active">查看详情</span>
+  </div>
 );
 </script>
 

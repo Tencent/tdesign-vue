@@ -73,12 +73,12 @@ import { NotifyPlugin } from 'tdesign-vue';
 import { CloseCircleFilledIcon } from 'tdesign-icons-vue';
 
 const iconRender = () => (
-    <CloseCircleFilledIcon
-      size="24px"
-      style={{
-        color: 'rgb(227, 77, 89)',
-        marginRight: '8px',
-      }}
-    />
+  <CloseCircleFilledIcon
+    size="24px"
+    style={{
+      color: 'rgb(227, 77, 89)',
+      marginRight: '8px',
+    }}
+  />
 );
 </script>

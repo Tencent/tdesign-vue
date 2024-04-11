@@ -25,18 +25,18 @@ import { ref } from 'vue';
 const visible = ref(true);
 
 const footer = () => (
-    <div slot="footer" class="t-notification__detail">
-      <t-button class="t-notification__detail-item" theme="primary" variant="text">
-        查看详情
-      </t-button>
-    </div>
+  <div slot="footer" class="t-notification__detail">
+    <t-button class="t-notification__detail-item" theme="primary" variant="text">
+      查看详情
+    </t-button>
+  </div>
 );
 const footer2 = () => (
-    <div slot="footer" class="t-notification__detail">
-      <t-button class="t-notification__detail-item" theme="primary" variant="text">
-        查看详情
-      </t-button>
-    </div>
+  <div slot="footer" class="t-notification__detail">
+    <t-button class="t-notification__detail-item" theme="primary" variant="text">
+      查看详情
+    </t-button>
+  </div>
 );
 const content = () => '文案不限长度，但在实际使用时建议文案显示内容不易过多，建议最大展示行数数量以三行为宜，最后一行折行末尾处超出文本建议会变为省略号显示。';
 // const title = () => {

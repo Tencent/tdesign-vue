@@ -22674,6 +22674,13 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/collapsed.vue 1`] 
   <div
     class="t-space-item"
   >
+    <h3>
+      default:
+    </h3>
+  </div>
+  <div
+    class="t-space-item"
+  >
     <div
       class="t-select-input t-select-input--multiple t-cascader"
     >
@@ -22750,74 +22757,165 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/collapsed.vue 1`] 
   <div
     class="t-space-item"
   >
+    <h3>
+      use collapsedItems:
+    </h3>
+  </div>
+  <div
+    class="t-space-item"
+  >
     <div
-      class="t-select-input t-select-input--multiple t-cascader"
+      class="t-space t-space-horizontal"
+      style="gap: 16px;"
     >
       <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon"
+        class="t-space-item"
+      >
+        <div>
+          size control:
+        </div>
+      </div>
+      <div
+        class="t-space-item"
       >
         <div
-          class="t-input t-is-readonly t-input--prefix t-input--suffix"
+          class="t-radio-group t-size-m t-radio-group__outline"
         >
-          <div
-            class="t-input__prefix"
+          <label
+            class="t-radio"
+            tabindex="0"
           >
-            <div
-              class="t-tag t-tag--default t-tag--dark t-tag--close"
-            >
-              <span>
-                选项一/子选项一
-              </span>
-              <svg
-                class="t-icon t-icon-close t-tag__icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 24 24"
-                width="1em"
-              >
-                <path
-                  d="M7.05 5.64L12 10.59l4.95-4.95 1.41 1.41L13.41 12l4.95 4.95-1.41 1.41L12 13.41l-4.95 4.95-1.41-1.41L10.59 12 5.64 7.05l1.41-1.41z"
-                  fill="currentColor"
-                />
-              </svg>
-            </div>
+            <input
+              class="t-radio__former"
+              data-value="'small'"
+              tabindex="-1"
+              type="radio"
+              value="small"
+            />
             <span
-              style="color: rgb(237, 123, 47); margin-left: 10px;"
+              class="t-radio__input"
+            />
+            <span
+              class="t-radio__label"
             >
-              +2
+              small
             </span>
-          </div>
-          <input
-            autocomplete=""
-            class="t-input__inner t-input--soft-hidden"
-            placeholder=""
-            readonly="readonly"
-            type="text"
-            unselectable="on"
-          />
-          <span
-            class="t-input__input-pre"
-          />
-          <span
-            class="t-input__suffix t-input__suffix-icon"
+          </label>
+          <label
+            class="t-radio t-is-checked"
+            tabindex="0"
           >
-            <svg
-              class="t-fake-arrow t-cascader__icon"
-              fill="none"
-              height="16"
-              viewBox="0 0 16 16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
+            <input
+              class="t-radio__former"
+              data-value="'medium'"
+              tabindex="-1"
+              type="radio"
+              value="medium"
+            />
+            <span
+              class="t-radio__input"
+            />
+            <span
+              class="t-radio__label"
             >
-              <path
-                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                stroke="black"
-                stroke-opacity="0.9"
-                stroke-width="1.3"
-              />
-            </svg>
-          </span>
+              medium
+            </span>
+          </label>
+          <label
+            class="t-radio"
+            tabindex="0"
+          >
+            <input
+              class="t-radio__former"
+              data-value="'large'"
+              tabindex="-1"
+              type="radio"
+              value="large"
+            />
+            <span
+              class="t-radio__input"
+            />
+            <span
+              class="t-radio__label"
+            >
+              large
+            </span>
+          </label>
         </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-space t-space-horizontal"
+      style="gap: 16px;"
+    >
+      <div
+        class="t-space-item"
+      >
+        <span>
+          disabled control:
+        </span>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <label
+          class="t-checkbox"
+          tabindex="0"
+        >
+          <input
+            class="t-checkbox__former"
+            tabindex="-1"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          />
+        </label>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-space t-space-horizontal"
+      style="gap: 16px;"
+    >
+      <div
+        class="t-space-item"
+      >
+        <span>
+          readonly control:
+        </span>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <label
+          class="t-checkbox"
+          tabindex="0"
+        >
+          <input
+            class="t-checkbox__former"
+            tabindex="-1"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          />
+        </label>
       </div>
     </div>
   </div>
@@ -22855,11 +22953,13 @@ exports[`csr snapshot test > csr test ./src/cascader/_example/collapsed.vue 1`] 
                 />
               </svg>
             </div>
-            <span
-              style="color: rgb(0, 168, 112); margin-left: 10px;"
+            <div
+              class="t-tag t-tag--default t-tag--dark"
             >
-              +2
-            </span>
+              <span>
+                Function - More(2)
+              </span>
+            </div>
           </div>
           <input
             autocomplete=""
@@ -37064,7 +37164,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
     style="width: 400px;"
   >
     <div
-      class="t-select-input t-select-input--empty t-select"
+      class="t-select-input t-select"
     >
       <div
         class="t-input__wrap"
@@ -37118,7 +37218,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
     style="width: 400px;"
   >
     <div
-      class="t-select-input t-select-input--empty t-select"
+      class="t-select-input t-select"
     >
       <div
         class="t-input__wrap"
@@ -37172,7 +37272,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
     style="width: 400px;"
   >
     <div
-      class="t-select-input t-select-input--empty t-select"
+      class="t-select-input t-select"
     >
       <div
         class="t-input__wrap"
@@ -37953,7 +38053,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
         <div
           class="t-space-item"
         >
-          图片加载中
+          loading
         </div>
       </div>
     </div>
@@ -43264,7 +43364,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/quarter.vue 1`]
             <input
               autocomplete=""
               class="t-input__inner"
-              placeholder="请输入"
+              placeholder="请选择季度"
               type="text"
               unselectable="off"
             />
@@ -43313,7 +43413,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/quarter.vue 1`]
                 <input
                   autocomplete=""
                   class="t-input__inner"
-                  placeholder="请输入"
+                  placeholder="请选择季度"
                   type="text"
                   unselectable="off"
                 />
@@ -43333,7 +43433,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/quarter.vue 1`]
                 <input
                   autocomplete=""
                   class="t-input__inner"
-                  placeholder="请输入"
+                  placeholder="请选择季度"
                   type="text"
                   unselectable="off"
                 />
@@ -43389,7 +43489,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/week.vue 1`] = 
             <input
               autocomplete=""
               class="t-input__inner"
-              placeholder="请输入"
+              placeholder="请选择周"
               type="text"
               unselectable="off"
             />
@@ -43438,7 +43538,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/week.vue 1`] = 
                 <input
                   autocomplete=""
                   class="t-input__inner"
-                  placeholder="请输入"
+                  placeholder="请选择周"
                   type="text"
                   unselectable="off"
                 />
@@ -43458,7 +43558,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/week.vue 1`] = 
                 <input
                   autocomplete=""
                   class="t-input__inner"
-                  placeholder="请输入"
+                  placeholder="请选择周"
                   type="text"
                   unselectable="off"
                 />
@@ -59310,7 +59410,7 @@ exports[`csr snapshot test > csr test ./src/image/_example/extra-always.vue 1`] 
             >
               <div
                 class="t-tag t-tag--warning t-tag--dark t-tag--mark"
-                style="border-radius: 3px; background: transparent; color: rgb(255, 255, 255);"
+                style="border-radius: 3px; color: rgb(255, 255, 255); background: transparent;"
               >
                 <span>
                   <svg
@@ -59398,7 +59498,7 @@ exports[`csr snapshot test > csr test ./src/image/_example/extra-always.vue 1`] 
           >
             <div
               class="t-tag t-tag--warning t-tag--dark t-tag--mark"
-              style="position: absolute; right: 8px; bottom: 8px; border-radius: 3px; background: rgb(236, 242, 254); color: rgb(0, 82, 217);"
+              style="position: absolute; right: 8px; bottom: 8px; border-radius: 3px; color: rgb(0, 82, 217); background: rgb(236, 242, 254);"
             >
               <span>
                 <svg
@@ -60493,7 +60593,7 @@ exports[`csr snapshot test > csr test ./src/image/_example/gallery-cover.vue 1`]
   >
     <div
       class="t-tag t-tag--warning t-tag--dark t-tag--mark"
-      style="margin: 8px; border-radius: 3px; background: rgb(236, 242, 254); color: rgb(0, 82, 217);"
+      style="margin: 8px; border-radius: 3px; color: rgb(0, 82, 217); background: rgb(236, 242, 254);"
     >
       <span>
         标签一
@@ -69639,7 +69739,6 @@ exports[`csr snapshot test > csr test ./src/loading/_example/wrap.vue 1`] = `
 exports[`csr snapshot test > csr test ./src/menu/_example/closable-side.vue 1`] = `
 <div
   class="t-default-menu t-menu--light t-is-collapsed"
-  height="550px"
   style="height: 100%; width: 64px;"
 >
   <div
@@ -70392,7 +70491,6 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
 exports[`csr snapshot test > csr test ./src/menu/_example/group-side.vue 1`] = `
 <div
   class="t-default-menu t-menu--light"
-  height="550px"
   style="height: 100%; width: 232px;"
 >
   <div
@@ -71247,7 +71345,6 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
   <div
     class="t-default-menu t-menu--light"
     data-v-3a81e078=""
-    height="550px"
     style="height: 100%; width: 232px;"
   >
     <div
@@ -71624,7 +71721,6 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
   <div
     class="t-default-menu t-menu--dark"
     data-v-3a81e078=""
-    height="550px"
     style="height: 100%; width: 232px; margin-left: 40px;"
   >
     <div
@@ -72594,7 +72690,6 @@ exports[`csr snapshot test > csr test ./src/menu/_example/side-menu-width.vue 1`
 >
   <div
     class="t-default-menu t-menu--light"
-    height="550px"
     style="height: 100%; width: 200px; margin-right: 20px;"
   >
     <div
@@ -72653,7 +72748,6 @@ exports[`csr snapshot test > csr test ./src/menu/_example/side-menu-width.vue 1`
   </div>
   <div
     class="t-default-menu t-menu--light"
-    height="550px"
     style="height: 100%; width: 300px;"
   >
     <div
@@ -73058,7 +73152,6 @@ exports[`csr snapshot test > csr test ./src/menu/_example/single-side.vue 1`] = 
 >
   <div
     class="t-default-menu t-menu--light"
-    height="550px"
     style="height: 100%; width: 232px; margin-right: 40px;"
   >
     <div
@@ -73168,7 +73261,6 @@ exports[`csr snapshot test > csr test ./src/menu/_example/single-side.vue 1`] = 
   </div>
   <div
     class="t-default-menu t-menu--light"
-    height="550px"
     style="height: 100%; width: 232px; margin-right: 40px;"
   >
     <div
@@ -73335,7 +73427,6 @@ exports[`csr snapshot test > csr test ./src/menu/_example/single-side.vue 1`] = 
   </div>
   <div
     class="t-default-menu t-menu--dark"
-    height="550px"
     style="height: 100%; width: 232px;"
   >
     <div
@@ -88098,7 +88189,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/scroll-bottom.vue 1`
       style="width: 300px;"
     >
       <div
-        class="t-select-input t-select-input--empty t-select"
+        class="t-select-input t-select"
       >
         <div
           class="t-input__wrap"
@@ -103548,6 +103639,176 @@ exports[`csr snapshot test > csr test ./src/tag/_example/check-tag-group.vue 1`]
 </div>
 `;
 
+exports[`csr snapshot test > csr test ./src/tag/_example/custom-color.vue 1`] = `
+<div
+  data-v-d3a6e7a6=""
+>
+  <p
+    class="color-picker"
+    data-v-d3a6e7a6=""
+  >
+    <div
+      class="t-space t-space-align-center t-space-horizontal"
+      data-v-d3a6e7a6=""
+      style="gap: 16px;"
+    >
+      <div
+        class="t-space-item"
+      >
+        <label
+          data-v-d3a6e7a6=""
+        >
+          调整颜色查看效果
+        </label>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <div
+          class="t-color-picker__trigger"
+          data-v-d3a6e7a6=""
+        >
+          <div
+            class="t-color-picker__trigger--default"
+          >
+            <div
+              class="t-input__wrap t-input--auto-width"
+            >
+              <div
+                class="t-input t-input--prefix"
+              >
+                <div
+                  class="t-input__prefix"
+                >
+                  <div
+                    class="t-color-picker__trigger--default__color t-color-picker--bg-alpha"
+                  >
+                    <span
+                      class="color-inner"
+                      style="background: rgb(0, 82, 217);"
+                    />
+                  </div>
+                </div>
+                <input
+                  autocomplete=""
+                  class="t-input__inner"
+                  placeholder="请输入"
+                  type="text"
+                  unselectable="off"
+                />
+                <span
+                  class="t-input__input-pre"
+                >
+                  rgb(0, 82, 217)
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </p>
+  <div
+    class="t-space t-space-horizontal"
+    data-v-d3a6e7a6=""
+    style="gap: 16px;"
+  >
+    <div
+      class="t-space-item"
+    >
+      <div
+        class="t-space t-space-horizontal"
+        data-v-d3a6e7a6=""
+        style="gap: 16px;"
+      >
+        <div
+          class="t-space-item"
+        >
+          <div
+            class="t-tag t-tag--primary t-tag--dark"
+            data-v-d3a6e7a6=""
+            style="color: white; background-color: rgb(0, 82, 217);"
+          >
+            <span>
+              默认
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="t-space-item"
+    >
+      <div
+        class="t-space t-space-horizontal"
+        data-v-d3a6e7a6=""
+        style="gap: 16px;"
+      >
+        <div
+          class="t-space-item"
+        >
+          <div
+            class="t-tag t-tag--default t-tag--light"
+            data-v-d3a6e7a6=""
+            style="color: rgb(0, 82, 217); background-color: rgba(0, 82, 217, 0.1);"
+          >
+            <span>
+              浅色
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="t-space-item"
+    >
+      <div
+        class="t-space t-space-horizontal"
+        data-v-d3a6e7a6=""
+        style="gap: 16px;"
+      >
+        <div
+          class="t-space-item"
+        >
+          <div
+            class="t-tag t-tag--default t-tag--outline"
+            data-v-d3a6e7a6=""
+            style="color: rgb(0, 82, 217); border-color: rgb(0, 82, 217);"
+          >
+            <span>
+              outline
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="t-space-item"
+    >
+      <div
+        class="t-space t-space-horizontal"
+        data-v-d3a6e7a6=""
+        style="gap: 16px;"
+      >
+        <div
+          class="t-space-item"
+        >
+          <div
+            class="t-tag t-tag--default t-tag--light-outline"
+            data-v-d3a6e7a6=""
+            style="color: rgb(0, 82, 217); border-color: rgb(0, 82, 217); background-color: rgba(0, 82, 217, 0.1);"
+          >
+            <span>
+              light-outline
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`csr snapshot test > csr test ./src/tag/_example/delete.vue 1`] = `
 <div
   class="t-space t-space-vertical"
@@ -115394,7 +115655,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/target-value.vue 1
 
 exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
 <div
-  class="t-transfer t-transfer--with-tree"
+  class="t-transfer t-transfer__search t-transfer--with-tree"
 >
   <div
     class="t-transfer__list t-transfer__list-source"
@@ -115427,8 +115688,43 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
       <span />
     </div>
     <div
-      class="t-transfer__list-body"
+      class="t-transfer__list-body t-transfer__list--with-search"
     >
+      <div
+        class="t-transfer__search-wrapper"
+      >
+        <div
+          class="t-input__wrap"
+        >
+          <div
+            class="t-input t-input--suffix"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入关键词搜索"
+              type="text"
+              unselectable="off"
+            />
+            <span
+              class="t-input__suffix t-input__suffix-icon"
+            >
+              <svg
+                class="t-icon t-icon-search"
+                fill="none"
+                height="1em"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  d="M15.1 5.9a6.5 6.5 0 10-9.2 9.2 6.5 6.5 0 009.2-9.2zM4.49 4.5a8.5 8.5 0 0112.69 11.27l5.34 5.35-1.41 1.41-5.35-5.34A8.5 8.5 0 014.5 4.49z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
       <div
         class="t-transfer__list-content narrow-scrollbar"
       >
@@ -115876,8 +116172,43 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
       <span />
     </div>
     <div
-      class="t-transfer__list-body"
+      class="t-transfer__list-body t-transfer__list--with-search"
     >
+      <div
+        class="t-transfer__search-wrapper"
+      >
+        <div
+          class="t-input__wrap"
+        >
+          <div
+            class="t-input t-input--suffix"
+          >
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="请输入关键词搜索"
+              type="text"
+              unselectable="off"
+            />
+            <span
+              class="t-input__suffix t-input__suffix-icon"
+            >
+              <svg
+                class="t-icon t-icon-search"
+                fill="none"
+                height="1em"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  d="M15.1 5.9a6.5 6.5 0 10-9.2 9.2 6.5 6.5 0 009.2-9.2zM4.49 4.5a8.5 8.5 0 0112.69 11.27l5.34 5.35-1.41 1.41-5.35-5.34A8.5 8.5 0 014.5 4.49z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
       <div
         class="t-transfer__empty"
       >
@@ -116186,7 +116517,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/base.vue 1`] = `
         <div
           class="t-tree__item t-tree__item--visible"
           data-level="0"
-          data-value="t316"
+          data-value="t309"
           draggable="false"
           style="--level: 0;"
         >
@@ -116222,7 +116553,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/base.vue 1`] = `
         <div
           class="t-tree__item t-tree__item--visible"
           data-level="0"
-          data-value="t319"
+          data-value="t312"
           draggable="false"
           style="--level: 0;"
         >
@@ -116258,7 +116589,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/base.vue 1`] = `
         <div
           class="t-tree__item t-tree__item--visible"
           data-level="0"
-          data-value="t322"
+          data-value="t315"
           draggable="false"
           style="--level: 0;"
         >
@@ -116294,7 +116625,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/base.vue 1`] = `
         <div
           class="t-tree__item t-tree__item--visible"
           data-level="0"
-          data-value="t325"
+          data-value="t318"
           draggable="false"
           style="--level: 0;"
         >
@@ -121244,7 +121575,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
           data-level="0"
-          data-value="t461"
+          data-value="t454"
           draggable="false"
           style="--level: 0;"
         >
@@ -121280,7 +121611,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
         <div
           class="t-tree__item t-tree__item--visible"
           data-level="1"
-          data-value="t462"
+          data-value="t455"
           draggable="false"
           style="--level: 1;"
         >
@@ -121316,7 +121647,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
         <div
           class="t-tree__item t-tree__item--visible"
           data-level="1"
-          data-value="t465"
+          data-value="t458"
           draggable="false"
           style="--level: 1;"
         >
@@ -121352,7 +121683,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
           data-level="0"
-          data-value="t468"
+          data-value="t461"
           draggable="false"
           style="--level: 0;"
         >
@@ -121388,7 +121719,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
         <div
           class="t-tree__item t-tree__item--visible"
           data-level="1"
-          data-value="t469"
+          data-value="t462"
           draggable="false"
           style="--level: 1;"
         >
@@ -121411,7 +121742,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
         <div
           class="t-tree__item t-tree__item--visible"
           data-level="1"
-          data-value="t470"
+          data-value="t463"
           draggable="false"
           style="--level: 1;"
         >
@@ -121515,7 +121846,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-mutex.vue 1`] =
         <div
           class="t-tree__item t-tree__item--visible"
           data-level="0"
-          data-value="t471"
+          data-value="t464"
           draggable="false"
           style="--level: 0;"
         >
@@ -121551,7 +121882,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-mutex.vue 1`] =
         <div
           class="t-tree__item t-tree__item--visible"
           data-level="0"
-          data-value="t478"
+          data-value="t471"
           draggable="false"
           style="--level: 0;"
         >
@@ -121902,7 +122233,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/icon.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--visible"
               data-level="0"
-              data-value="t521"
+              data-value="t514"
               draggable="false"
               style="--level: 0;"
             >
@@ -121933,7 +122264,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/icon.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--visible"
               data-level="0"
-              data-value="t522"
+              data-value="t515"
               draggable="false"
               style="--level: 0;"
             >
@@ -121993,7 +122324,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/icon.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--visible"
               data-level="0"
-              data-value="t523"
+              data-value="t516"
               draggable="false"
               style="--level: 0;"
             >
@@ -122024,7 +122355,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/icon.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--visible"
               data-level="0"
-              data-value="t524"
+              data-value="t517"
               draggable="false"
               style="--level: 0;"
             >
@@ -122092,7 +122423,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
               data-level="0"
-              data-value="t525"
+              data-value="t518"
               draggable="false"
               style="--level: 0;"
             >
@@ -122122,7 +122453,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                   style="position: relative;"
                 >
                   <strong>
-                    value: t525, label: 1
+                    value: t518, label: 1
                   </strong>
                 </span>
               </span>
@@ -122130,7 +122461,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
               data-level="1"
-              data-value="t526"
+              data-value="t519"
               draggable="false"
               style="--level: 1;"
             >
@@ -122147,7 +122478,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                   style="position: relative;"
                 >
                   <strong>
-                    value: t526, label: 1.1
+                    value: t519, label: 1.1
                   </strong>
                 </span>
               </span>
@@ -122155,7 +122486,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
               data-level="1"
-              data-value="t527"
+              data-value="t520"
               draggable="false"
               style="--level: 1;"
             >
@@ -122172,7 +122503,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                   style="position: relative;"
                 >
                   <strong>
-                    value: t527, label: 1.2
+                    value: t520, label: 1.2
                   </strong>
                 </span>
               </span>
@@ -122180,7 +122511,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
               data-level="0"
-              data-value="t528"
+              data-value="t521"
               draggable="false"
               style="--level: 0;"
             >
@@ -122210,7 +122541,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                   style="position: relative;"
                 >
                   <strong>
-                    value: t528, label: 2
+                    value: t521, label: 2
                   </strong>
                 </span>
               </span>
@@ -122218,7 +122549,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
               data-level="1"
-              data-value="t529"
+              data-value="t522"
               draggable="false"
               style="--level: 1;"
             >
@@ -122235,7 +122566,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                   style="position: relative;"
                 >
                   <strong>
-                    value: t529, label: 2.1
+                    value: t522, label: 2.1
                   </strong>
                 </span>
               </span>
@@ -122243,7 +122574,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
               data-level="1"
-              data-value="t530"
+              data-value="t523"
               draggable="false"
               style="--level: 1;"
             >
@@ -122260,7 +122591,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                   style="position: relative;"
                 >
                   <strong>
-                    value: t530, label: 2.2
+                    value: t523, label: 2.2
                   </strong>
                 </span>
               </span>
@@ -122297,7 +122628,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
               data-level="0"
-              data-value="t531"
+              data-value="t524"
               draggable="false"
               style="--level: 0;"
             >
@@ -122326,7 +122657,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
               >
                 <input
                   class="t-checkbox__former"
-                  name="t531"
+                  name="t524"
                   tabindex="-1"
                   type="checkbox"
                   value=""
@@ -122340,7 +122671,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                   <span
                     style="color: blue;"
                   >
-                    label: 1, value: t531
+                    label: 1, value: t524
                   </span>
                 </span>
               </label>
@@ -122348,7 +122679,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
               data-level="1"
-              data-value="t532"
+              data-value="t525"
               draggable="false"
               style="--level: 1;"
             >
@@ -122364,7 +122695,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
               >
                 <input
                   class="t-checkbox__former"
-                  name="t532"
+                  name="t525"
                   tabindex="-1"
                   type="checkbox"
                   value=""
@@ -122378,7 +122709,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                   <span
                     style="color: blue;"
                   >
-                    label: 1.1, value: t532
+                    label: 1.1, value: t525
                   </span>
                 </span>
               </label>
@@ -122386,7 +122717,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
               data-level="1"
-              data-value="t533"
+              data-value="t526"
               draggable="false"
               style="--level: 1;"
             >
@@ -122402,7 +122733,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
               >
                 <input
                   class="t-checkbox__former"
-                  name="t533"
+                  name="t526"
                   tabindex="-1"
                   type="checkbox"
                   value=""
@@ -122416,7 +122747,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                   <span
                     style="color: blue;"
                   >
-                    label: 1.2, value: t533
+                    label: 1.2, value: t526
                   </span>
                 </span>
               </label>
@@ -122424,7 +122755,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
               data-level="0"
-              data-value="t534"
+              data-value="t527"
               draggable="false"
               style="--level: 0;"
             >
@@ -122453,7 +122784,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
               >
                 <input
                   class="t-checkbox__former"
-                  name="t534"
+                  name="t527"
                   tabindex="-1"
                   type="checkbox"
                   value=""
@@ -122467,7 +122798,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                   <span
                     style="color: blue;"
                   >
-                    label: 2, value: t534
+                    label: 2, value: t527
                   </span>
                 </span>
               </label>
@@ -122475,7 +122806,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
               data-level="1"
-              data-value="t535"
+              data-value="t528"
               draggable="false"
               style="--level: 1;"
             >
@@ -122491,7 +122822,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
               >
                 <input
                   class="t-checkbox__former"
-                  name="t535"
+                  name="t528"
                   tabindex="-1"
                   type="checkbox"
                   value=""
@@ -122505,7 +122836,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                   <span
                     style="color: blue;"
                   >
-                    label: 2.1, value: t535
+                    label: 2.1, value: t528
                   </span>
                 </span>
               </label>
@@ -122513,7 +122844,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
               data-level="1"
-              data-value="t536"
+              data-value="t529"
               draggable="false"
               style="--level: 1;"
             >
@@ -122529,7 +122860,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
               >
                 <input
                   class="t-checkbox__former"
-                  name="t536"
+                  name="t529"
                   tabindex="-1"
                   type="checkbox"
                   value=""
@@ -122543,7 +122874,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                   <span
                     style="color: blue;"
                   >
-                    label: 2.2, value: t536
+                    label: 2.2, value: t529
                   </span>
                 </span>
               </label>
@@ -130459,87 +130790,7 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/collapsed.vue 1
               class="t-tag t-tag--default t-tag--dark"
             >
               <span>
-                +1
-              </span>
-            </div>
-          </div>
-          <input
-            autocomplete=""
-            class="t-input__inner t-input--soft-hidden"
-            placeholder=""
-            readonly="readonly"
-            type="text"
-            unselectable="on"
-          />
-          <span
-            class="t-input__input-pre"
-          />
-          <span
-            class="t-input__suffix t-input__suffix-icon"
-          >
-            <svg
-              class="t-fake-arrow"
-              fill="none"
-              height="16"
-              viewBox="0 0 16 16"
-              width="16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                stroke="black"
-                stroke-opacity="0.9"
-                stroke-width="1.3"
-              />
-            </svg>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    class="t-space-item"
-  >
-    <div
-      class="t-select-input t-select-input--multiple t-tree-select"
-      style="width: 300px;"
-    >
-      <div
-        class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon"
-      >
-        <div
-          class="t-input t-is-readonly t-input--prefix t-input--suffix"
-        >
-          <div
-            class="t-input__prefix"
-          >
-            <div
-              class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
-            >
-              <span
-                class="t-tag--text"
-                style="max-width: 300px;"
-              >
-                广州市
-              </span>
-              <svg
-                class="t-icon t-icon-close t-tag__icon-close"
-                fill="none"
-                height="1em"
-                viewBox="0 0 24 24"
-                width="1em"
-              >
-                <path
-                  d="M7.05 5.64L12 10.59l4.95-4.95 1.41 1.41L13.41 12l4.95 4.95-1.41 1.41L12 13.41l-4.95 4.95-1.41-1.41L10.59 12 5.64 7.05l1.41-1.41z"
-                  fill="currentColor"
-                />
-              </svg>
-            </div>
-            <div
-              class="t-tag t-tag--default t-tag--dark"
-            >
-              <span>
-                更多...
+                (1)
               </span>
             </div>
           </div>

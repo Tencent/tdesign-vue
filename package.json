@@ -1,7 +1,7 @@
 {
   "name": "tdesign-vue",
   "purename": "tdesign",
-  "version": "1.9.1",
+  "version": "1.9.2",
   "description": "tdesign-vue",
   "title": "tdesign-vue",
   "keywords": [
@@ -107,6 +107,7 @@
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "~7.22.5",
+    "@babel/helper-module-imports": "7.22.5",
     "@babel/eslint-parser": "~7.23.10",
     "@babel/plugin-transform-class-properties": "^7.22.3",
     "@babel/plugin-transform-modules-commonjs": "^7.9.6",

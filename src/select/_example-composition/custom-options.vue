@@ -83,13 +83,13 @@ const options = ref([
   },
 ]);
 const optionRender = (h, option) => (
-    <div class="tdesign-demo__user-option">
-      <img src="https://tdesign.gtimg.com/site/avatar.jpg" />
-      <div class="tdesign-demo__user-option-info">
-        <div>{option.label}</div>
-        <div class="tdesign-demo__user-option-desc">{option.description}</div>
-      </div>
+  <div class="tdesign-demo__user-option">
+    <img src="https://tdesign.gtimg.com/site/avatar.jpg" />
+    <div class="tdesign-demo__user-option-info">
+      <div>{option.label}</div>
+      <div class="tdesign-demo__user-option-desc">{option.description}</div>
     </div>
+  </div>
 );
 const optionsData = computed(() => options.value.map((item) => ({
   ...item,

@@ -44,8 +44,8 @@ const visible1 = ref(false);
 const visible2 = ref(false);
 const visible3 = ref(false);
 const getConfirmBtn = () => (
-    <t-button theme="primary" disabled>
-      我知道了
-    </t-button>
+  <t-button theme="primary" disabled>
+    我知道了
+  </t-button>
 );
 </script>

@@ -11,7 +11,7 @@ import props from './props';
 
 import { useCascaderContext } from './hooks';
 import {
-  CascaderValue, TreeKeysType, TdSelectInputProps, TdCascaderProps,
+  CascaderValue, TdSelectInputProps, TdCascaderProps,
 } from './interface';
 import { useConfig, usePrefixClass, useCommonClassName } from '../hooks/useConfig';
 import { PopupVisibleChangeContext } from '../popup';
@@ -21,12 +21,6 @@ import { getFakeArrowIconClass } from './core/className';
 import useFormDisabled from '../hooks/useFormDisabled';
 import { TagInputValue } from '../tag-input';
 import { renderTNodeJSX } from '../utils/render-tnode';
-
-const DEFAULT_KEYS = {
-  label: 'label',
-  value: 'value',
-  children: 'children',
-};
 
 export default defineComponent({
   name: 'TCascader',
@@ -124,24 +118,6 @@ export default defineComponent({
       );
     };
 
-    const renderCollapsedItems = () => {
-      const cascaderValue = this.innerValue || [];
-      const keys = (this.keys as TreeKeysType) || DEFAULT_KEYS;
-      const value = Array.isArray(cascaderValue) ? cascaderValue : [cascaderValue];
-      const cascaderOptions = value.map((item) => {
-        const tmpValue = typeof item === 'object' ? item[keys.value] : item;
-        if (tmpValue === undefined) return null;
-        return cascaderContext.treeStore.getNode(tmpValue).data;
-      });
-      return renderTNodeJSX(this, 'collapsedItems', {
-        params: {
-          value: cascaderOptions,
-          collapsedSelectedItems: cascaderOptions.slice(0, this.minCollapsedNum),
-          count: value.length - this.minCollapsedNum,
-        },
-      });
-    };
-
     const {
       setVisible, visible, inputVal, setInputVal,
     } = cascaderContext;
@@ -159,7 +135,7 @@ export default defineComponent({
             keys: this.keys,
             allowInput: isFilterable,
             minCollapsedNum: this.minCollapsedNum,
-            collapsedItems: renderCollapsedItems,
+            collapsedItems: this.collapsedItems,
             label: this.label,
             valueDisplay: renderValueDisplay,
             suffix: this.suffix,
@@ -242,6 +218,7 @@ export default defineComponent({
           tag: slots.tag,
           suffix: slots.suffix,
           label: slots.label,
+          collapsedItems: slots.collapsedItems,
         }}
       />
     );

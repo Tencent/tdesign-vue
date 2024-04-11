@@ -78,13 +78,13 @@ const options = ref([
 ]);
 const optionsData = computed(() => getDeepOptions(options.value));
 const optionRender = (h, { item }) => (
-    <div class="tdesign-demo__user-option">
-      <img src="https://tdesign.gtimg.com/site/avatar.jpg" />
-      <div class="tdesign-demo__user-option-info">
-        <div>{item.label}</div>
-        <div>{item.value}</div>
-      </div>
+  <div class="tdesign-demo__user-option">
+    <img src="https://tdesign.gtimg.com/site/avatar.jpg" />
+    <div class="tdesign-demo__user-option-info">
+      <div>{item.label}</div>
+      <div>{item.value}</div>
     </div>
+  </div>
 );
 const getDeepOptions = (options) => {
   if (!options) return null;
