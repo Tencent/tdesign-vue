@@ -52,8 +52,8 @@ export default defineComponent({
     const isDisabled = computed(() => formDisabled.value || props.disabled);
 
     watch(popupVisible, (visible) => {
-      // Date valueType add empty string don't need to be parsed
-      const dateValue = value.value && !isDate(value.value)
+      // Date valueType、week mode 、quarter mode nad empty string don't need to be parsed
+      const dateValue = value.value && !isDate(value.value) && !['week', 'quarter'].includes(props.mode)
         ? covertToDate(value.value as string, formatRef.value?.valueType)
         : value.value;
 
