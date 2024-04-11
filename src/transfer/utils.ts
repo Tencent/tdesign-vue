@@ -1,5 +1,7 @@
 import Vue from 'vue';
 import cloneDeep from 'lodash/cloneDeep';
+import filter from 'lodash/filter';
+
 import {
   TransferListOptionBase, TransferItemOption, TdTransferProps, TransferValue, DataOption,
 } from './interface';
@@ -199,6 +201,24 @@ function getLeafCount(nodes: Array<TreeNode>): number {
   return total;
 }
 
+// 递归过滤树结构
+// sync from https://github.com/Tencent/tdesign-vue-next/pull/3336
+function filterTreeData(tree: Array<TransferItemOption>, filterStr: string): Array<TransferItemOption> {
+  const res = filter(cloneDeep(tree), (node) => {
+    if (node.label.toLowerCase().indexOf(filterStr.toLowerCase()) > -1) {
+      return true;
+    }
+    if (node?.children?.length > 0) {
+      // eslint-disable-next-line no-param-reassign
+      node.children = filterTreeData(node.children, filterStr);
+
+      return node.children.length > 0;
+    }
+    return false;
+  });
+  return res;
+}
+
 export {
   findTopNode,
   getTransferListOption,
@@ -207,4 +227,5 @@ export {
   cloneTreeWithFilter,
   filterTransferData,
   getLeafCount,
+  filterTreeData,
 };
