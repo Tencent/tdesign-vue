@@ -40,7 +40,7 @@ import useSelectOptions from './hooks/useSelectOptions';
 import { SelectPanelInstance } from './instance';
 import log from '../_common/js/log';
 import useFormDisabled from '../hooks/useFormDisabled';
-import { OptionData } from '../common';
+import type { OptionData } from '../common';
 
 export type OptionInstance = InstanceType<typeof Option>;
 

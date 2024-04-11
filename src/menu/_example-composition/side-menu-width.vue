@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <t-menu defaultValue="item2" width="200px" height="550px" style="margin-right: 20px">
+    <t-menu defaultValue="item2" width="200px" style="margin-right: 20px">
       <template #logo>
         <img height="28" src="https://tdesign.gtimg.com/site/baseLogo-light.png" alt="logo" />
       </template>
@@ -10,7 +10,7 @@
       <t-menu-item value="item4">资源区</t-menu-item>
     </t-menu>
 
-    <t-menu defaultValue="item2" :collapsed="collapsed" :width="['300px', 150]" height="550px">
+    <t-menu defaultValue="item2" :collapsed="collapsed" :width="['300px', 150]">
       <template #logo>
         <img height="28" src="https://tdesign.gtimg.com/site/baseLogo-light.png" alt="logo" />
       </template>

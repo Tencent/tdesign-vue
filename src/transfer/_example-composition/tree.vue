@@ -1,6 +1,7 @@
 <template>
   <t-transfer
     :data="items"
+    :search="true"
     v-model="targetValue"
     :checked.sync="checked"
     @change="onChange"

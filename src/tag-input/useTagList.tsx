@@ -26,11 +26,16 @@ export default function useTagList(props: TdTagInputProps, context: SetupContext
   const oldInputValue = ref<InputValue>();
 
   // 点击标签关闭按钮，删除标签
-  const onClose = (p: { e?: MouseEvent; index: number; item: string | number }) => {
+  const onClose = (p: { e?: MouseEvent; index: number }) => {
     const arr = [...tagValue.value];
-    arr.splice(p.index, 1);
+    const [item] = arr.splice(p.index, 1); // 当前删除的item无需参数传递
     setTagValue(arr, { trigger: 'tag-remove', ...p });
-    const removeParams: TagInputRemoveContext = { ...p, trigger: 'tag-remove', value: arr };
+    const removeParams: TagInputRemoveContext = {
+      ...p,
+      item,
+      trigger: 'tag-remove',
+      value: arr,
+    };
     onRemove.value?.(removeParams);
     context.emit('remove', removeParams);
   };
@@ -99,7 +104,7 @@ export default function useTagList(props: TdTagInputProps, context: SetupContext
               key={index}
               size={size.value}
               disabled={disabled.value}
-              onClose={(context: { e: MouseEvent }) => onClose({ e: context.e, item, index })}
+              onClose={(context: { e: MouseEvent }) => onClose({ e: context.e, index })}
               closable={!readonly.value && !disabled.value}
               props={tagProps.value}
             >
@@ -137,7 +142,9 @@ export default function useTagList(props: TdTagInputProps, context: SetupContext
         params: {
           value: tagValue.value,
           count: tagValue.value.length - minCollapsedNum.value,
-          collapsedTags: tagValue.value.slice(minCollapsedNum.value, tagValue.value.length),
+          collapsedTags: tagValue.value.slice(minCollapsedNum.value, tagValue.value.length), // deprecated
+          collapsedSelectedItems: tagValue.value.slice(minCollapsedNum.value, tagValue.value.length),
+          onClose,
         },
       });
       list.push(
