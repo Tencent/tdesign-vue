@@ -25,6 +25,7 @@ npm i tdesign-vue@naruto  // for Vue 2.7
   Vue.use(TDesign);
 </script>
 ```
+> Please note that unpkg usage is not recommended as it cannot achieve optimization measures such as on-demand loading. Production projects will be directly affected by version updates, and may also be affected by the stability of the CDN.
 
 The package of tdesign-vue provides kinds of bundles, read [the documentation](https://github.com/Tencent/tdesign/blob/main/docs/develop-install.md) for the detail of differences between bundles.
 
