@@ -20,7 +20,8 @@ docClass: timeline
     - 修复周和季度模式选择异常的问题 @uyarn ([#3138](https://github.com/Tencent/tdesign-vue/pull/3138))
 - `Table`: 修复使用 `fixedRows` 时的报错问题 @betavs ([#3134](https://github.com/Tencent/tdesign-vue/pull/3134))
 - `Loading`:导出 `LoadingDirective` 使用 @XBIsland ([#3120](https://github.com/Tencent/tdesign-vue/pull/3120))
-- `Scroll`: 修复由于Chrome 121版本支持scroll width之后导致`Table`、`Select`及部分出现滚动条组件的样式异常问题 @loopzhou ([common#1765](https://github.com/Tencent/tdesign-vue/pull/1765))
+- `Scroll`: 修复由于Chrome 121版本支持scroll width之后导致`Table`、`Select`及部分出现滚动条组件的样式异常问题 @loopzhou ([common#1765](https://github.com/Tencent/tdesign-vue/pull/1765))。请注意，基于 `@vue/cli-service 4.x` 及以下版本初始化的项目由于依赖的 postcss 版本过低，会因为这个修复受影响，需要升级postcss至8.0以上或整体升级`@vue/cli-service`至5.0以上
+
 ### 🚧 Others
 - `Dialog`: 优化插件部分的使用示例 @Lyan-u ([#3126](https://github.com/Tencent/tdesign-vue/pull/3126))
 - `Dialog`: 优化插件部分的使用说明 @Summer-Shen ([#3125](https://github.com/Tencent/tdesign-vue/pull/3125))
