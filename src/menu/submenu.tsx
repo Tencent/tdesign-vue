@@ -263,6 +263,7 @@ export default defineComponent({
       );
       const realPopup = (
         <Popup
+          {...((this.popupProps ?? {}) as TdSubmenuProps['popupProps'])}
           overlayInnerClassName={[...this.overlayInnerClassName]}
           overlayClassName={[...this.overlayClassName]}
           visible={this.popupVisible}
