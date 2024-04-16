@@ -263,10 +263,11 @@ export default defineComponent({
       );
       const realPopup = (
         <Popup
+          {...((this.popupProps ?? {}) as TdSubmenuProps['popupProps'])}
           overlayInnerClassName={[...this.overlayInnerClassName]}
           overlayClassName={[...this.overlayClassName]}
           visible={this.popupVisible}
-          placement={placement as PopupPlacement}
+          placement={(this.popupProps as TdSubmenuProps['popupProps'])?.placement ?? (placement as PopupPlacement)}
           content={() => popupWrapper}
         >
           <div ref="submenuRef" class={this.submenuClass}>
