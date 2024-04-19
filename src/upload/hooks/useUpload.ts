@@ -92,7 +92,7 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
     const { file, percent } = params;
     const operationUploadFiles = autoUpload.value ? toUploadFiles : uploadValue;
     const index = operationUploadFiles.value.findIndex((item) => file.raw === item.raw);
-    operationUploadFiles.value[index] = { ...operationUploadFiles.value[index], percent };
+    operationUploadFiles.value[index].percent = percent;
   };
 
   const updateFilesProgress = () => {
