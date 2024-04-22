@@ -4,8 +4,8 @@
 type RowsType = number | null;
 
 type ResultType = {
-  height?: string,
-  minHeight?: string
+  height?: string;
+  minHeight?: string;
 };
 
 let hiddenTextarea: HTMLTextAreaElement;
@@ -15,7 +15,7 @@ const HIDDEN_TEXTAREA_STYLE = `
   max-height:none !important;
   height:0 !important;
   visibility:hidden !important;
-  overflow:hidden !important;
+  overflow-y:hidden !important;
   position:absolute !important;
   z-index:-1000 !important;
   top:0 !important;
@@ -45,25 +45,20 @@ function calculateNodeStyling(targetElement: HTMLTextAreaElement) {
   const style = window.getComputedStyle(targetElement);
 
   const boxSizing = style.getPropertyValue('box-sizing')
-  || style.getPropertyValue('-moz-box-sizing')
-  || style.getPropertyValue('-webkit-box-sizing');
+    || style.getPropertyValue('-moz-box-sizing')
+    || style.getPropertyValue('-webkit-box-sizing');
 
-  const paddingSize = (
-    parseFloat(style.getPropertyValue('padding-bottom'))
-    + parseFloat(style.getPropertyValue('padding-top'))
-  );
+  const paddingSize = parseFloat(style.getPropertyValue('padding-bottom')) + parseFloat(style.getPropertyValue('padding-top'));
 
-  const borderSize = (
-    parseFloat(style.getPropertyValue('border-bottom-width'))
-    + parseFloat(style.getPropertyValue('border-top-width'))
-  );
+  const borderSize = parseFloat(style.getPropertyValue('border-bottom-width')) + parseFloat(style.getPropertyValue('border-top-width'));
 
-  const sizingStyle = SIZING_PROPS
-    .map((name) => `${name}:${style.getPropertyValue(name)}`)
-    .join(';');
+  const sizingStyle = SIZING_PROPS.map((name) => `${name}:${style.getPropertyValue(name)}`).join(';');
 
   return {
-    sizingStyle, paddingSize, borderSize, boxSizing,
+    sizingStyle,
+    paddingSize,
+    borderSize,
+    boxSizing,
   };
 }
 
@@ -78,10 +73,7 @@ export default function calcTextareaHeight(
   }
 
   const {
-    paddingSize,
-    borderSize,
-    boxSizing,
-    sizingStyle,
+    paddingSize, borderSize, boxSizing, sizingStyle,
   } = calculateNodeStyling(targetElement);
 
   hiddenTextarea.setAttribute('style', `${sizingStyle};${HIDDEN_TEXTAREA_STYLE}`);
