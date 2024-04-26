@@ -5,6 +5,43 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.9.3 `2024-04-26` 
+### 🚀 Features
+- `Menu`: `Submenu`透传 `Popup` 组件全部特性 @betavs ([#3145](https://github.com/Tencent/tdesign-vue/pull/3145))
+### 🐞 Bug Fixes
+- `Submenu`: 修复设置 `popup-props` 中 `placement` 属性无效的问题 @betavs ([#3145](https://github.com/Tencent/tdesign-vue/pull/3145))
+- `Textarea`: 修复`autosize` 在 `Firefox` 中不生效的问题 @XBIsland ([#3148](https://github.com/Tencent/tdesign-vue/pull/3148))
+- `Select`: 修复 `option` 插槽 value 为 `Boolean` 类型的报错问题 @uyarn ([#3154](https://github.com/Tencent/tdesign-vue/pull/3154))
+- `Upload`: 修复自定义方法通过`uploadFilePercent`更新百分比无效的问题 @XBIsland ([#3149](https://github.com/Tencent/tdesign-vue/pull/3149))
+- `Style`: 修复部分节点前缀无法统一替换的缺陷 @ZWkang [common#1773](https://github.com/Tencent/tdesign-common/pull/1773)
+
+### 🚧 Others
+- docs: 更新关于CDN资源用法的说明文档  @uyarn ([#3144](https://github.com/Tencent/tdesign-vue/pull/3144))
+
+
+## 🌈 1.9.2 `2024-04-11` 
+### 🚀 Features
+- `Tag`: 新增`color`API，支持自定义颜色  @maoyiluo ([#3101](https://github.com/Tencent/tdesign-vue/pull/3101))
+- `CollapsedItems`: `TagInput`、`SelectInput`、`TreeSelect`和`Cascader`的`CollapsedItems`统一新增`onClose`回调，支持对折叠选项的删除操作  @topazur @uyarn ([#2942](https://github.com/Tencent/tdesign-vue/pull/2942))
+### 🐞 Bug Fixes
+- `Transfer`: 
+    -  修复`search` 事件的 `trigger` 的异常 @betavs ([#3118](https://github.com/Tencent/tdesign-vue/pull/3118))
+    - 修复树形结构数据过滤异常的问题 @uyarn ([#3137](https://github.com/Tencent/tdesign-vue/pull/3137))
+- `Locale`: 修复`Image`和`ImageViewer`组件英文语言包异常的问题，优化`DatePicker`部分语言配置 @uyarn ([#3119](https://github.com/Tencent/tdesign-vue/pull/3119))
+- `Checkbox`: 修复 `checkboxGroup.max` 禁用态显示的问题 @LoopZhou ([#3124](https://github.com/Tencent/tdesign-vue/pull/3124))
+- `DatePicker`: 
+    - 修复`valueType` 为 `Date` 类型时仍然进行转换的缺陷 @uyarn ([#3127](https://github.com/Tencent/tdesign-vue/pull/3127))
+    - 修复周和季度模式选择异常的问题 @uyarn ([#3138](https://github.com/Tencent/tdesign-vue/pull/3138))
+- `Table`: 修复使用 `fixedRows` 时的报错问题 @betavs ([#3134](https://github.com/Tencent/tdesign-vue/pull/3134))
+- `Loading`:导出 `LoadingDirective` 使用 @XBIsland ([#3120](https://github.com/Tencent/tdesign-vue/pull/3120))
+- `Scroll`: 修复由于Chrome 121版本支持scroll width之后导致`Table`、`Select`及部分出现滚动条组件的样式异常问题 @loopzhou ([common#1765](https://github.com/Tencent/tdesign-vue/pull/1765))。请注意，基于 `@vue/cli-service 4.x` 及以下版本初始化的项目由于依赖的 postcss 版本过低，会因为这个修复受影响，需要升级postcss至8.0以上或整体升级`@vue/cli-service`至5.0以上
+
+### 🚧 Others
+- `Dialog`: 优化插件部分的使用示例 @Lyan-u ([#3126](https://github.com/Tencent/tdesign-vue/pull/3126))
+- `Dialog`: 优化插件部分的使用说明 @Summer-Shen ([#3125](https://github.com/Tencent/tdesign-vue/pull/3125))
+- `Menu`: 移除示例代码中废弃的高度示例 @Summer-Shen ([#3135](https://github.com/Tencent/tdesign-vue/pull/3135))
+
+
 ## 🌈 1.9.1 `2024-03-10`
 
 ### 🚀 Features
