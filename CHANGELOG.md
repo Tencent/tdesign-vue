@@ -5,6 +5,20 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.9.3 `2024-04-26` 
+### 🚀 Features
+- `Menu`: `Submenu`透传 `Popup` 组件全部特性 @betavs ([#3145](https://github.com/Tencent/tdesign-vue/pull/3145))
+### 🐞 Bug Fixes
+- `Submenu`: 修复设置 `popup-props` 中 `placement` 属性无效的问题 @betavs ([#3145](https://github.com/Tencent/tdesign-vue/pull/3145))
+- `Textarea`: 修复`autosize` 在 `Firefox` 中不生效的问题 @XBIsland ([#3148](https://github.com/Tencent/tdesign-vue/pull/3148))
+- `Select`: 修复 `option` 插槽 value 为 `Boolean` 类型的报错问题 @uyarn ([#3154](https://github.com/Tencent/tdesign-vue/pull/3154))
+- `Upload`: 修复自定义方法通过`uploadFilePercent`更新百分比无效的问题 @XBIsland ([#3149](https://github.com/Tencent/tdesign-vue/pull/3149))
+- `Style`: 修复部分节点前缀无法统一替换的缺陷 @ZWkang [common#1773](https://github.com/Tencent/tdesign-common/pull/1773)
+
+### 🚧 Others
+- docs: 更新关于CDN资源用法的说明文档  @uyarn ([#3144](https://github.com/Tencent/tdesign-vue/pull/3144))
+
+
 ## 🌈 1.9.2 `2024-04-11` 
 ### 🚀 Features
 - `Tag`: 新增`color`API，支持自定义颜色  @maoyiluo ([#3101](https://github.com/Tencent/tdesign-vue/pull/3101))
