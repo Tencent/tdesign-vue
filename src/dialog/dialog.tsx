@@ -266,7 +266,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
         }
       }
     },
-    // 回车出发确认事件
+    // 回车触发确认事件
     keyboardEnterEvent(e: KeyboardEvent) {
       const { code } = e;
       if ((code === 'Enter' || code === 'NumpadEnter') && stack.top === this.uid) {
