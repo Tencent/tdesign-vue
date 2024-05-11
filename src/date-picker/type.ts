@@ -53,6 +53,10 @@ export interface TdDatePickerProps {
    */
   inputProps?: InputProps;
   /**
+   * 左侧内容
+   */
+  label?: string | TNode;
+  /**
    * 选择器模式
    * @default date
    */
@@ -179,6 +183,10 @@ export interface TdDateRangePickerProps {
    * @default ''
    */
   format?: string;
+  /**
+   * 左侧文本
+   */
+  label?: string | TNode;
   /**
    * 选择器模式
    * @default date

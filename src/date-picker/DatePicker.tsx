@@ -291,6 +291,7 @@ export default defineComponent({
           disabled={isDisabled}
           value={inputValue}
           inputValue={inputValue}
+          label={this.label}
           status={this.status}
           tips={this.tips}
           popupProps={datePickerPopupProps}
