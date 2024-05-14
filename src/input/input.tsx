@@ -111,6 +111,7 @@ export default mixins(
           [`${this.classPrefix}-align-${this.align}`]: this.align !== 'left',
           [`${this.classPrefix}-is-disabled`]: this.tDisabled,
           [`${this.classPrefix}-is-readonly`]: this.readonly,
+          [`${this.componentName}--borderless`]: this.borderless,
           [`${this.componentName}--focused`]: this.focused,
         },
       ];
