@@ -62486,6 +62486,52 @@ exports[`csr snapshot test > csr test ./src/input/_example/base.vue 1`] = `
 </div>
 `;
 
+exports[`csr snapshot test > csr test ./src/input/_example/borderless.vue 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px; max-width: 500px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-input__wrap"
+    >
+      <div
+        class="t-input"
+      >
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder="please input"
+          type="text"
+          unselectable="off"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-input__wrap"
+    >
+      <div
+        class="t-input t-input--borderless"
+      >
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder="borderless input"
+          type="text"
+          unselectable="off"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`csr snapshot test > csr test ./src/input/_example/clearable.vue 1`] = `
 <div
   class="t-input__wrap"
