@@ -42,6 +42,10 @@ export default {
   inputProps: {
     type: Object as PropType<TdDatePickerProps['inputProps']>,
   },
+  /** 左侧文本 */
+  label: {
+    type: [String, Function] as PropType<TdDatePickerProps['label']>,
+  },
   /** 选择器模式 */
   mode: {
     type: String as PropType<TdDatePickerProps['mode']>,
