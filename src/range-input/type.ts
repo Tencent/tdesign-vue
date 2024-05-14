@@ -163,6 +163,10 @@ export interface TdRangeInputPopupProps {
    */
   inputValue?: RangeInputValue;
   /**
+   * 左侧文本
+   */
+  label?: string | TNode;
+  /**
    * 输入框的值，非受控属性
    */
   defaultInputValue?: RangeInputValue;

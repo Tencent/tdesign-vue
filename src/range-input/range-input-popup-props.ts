@@ -37,6 +37,10 @@ export default {
   },
   /** 只读状态，值为真会隐藏输入框，且无法打开下拉框 */
   readonly: Boolean,
+  /** 左侧文本 */
+  label: {
+    type: [String, Function] as PropType<TdRangeInputPopupProps['label']>,
+  },
   /** 输入框状态 */
   status: {
     type: String as PropType<TdRangeInputPopupProps['status']>,
