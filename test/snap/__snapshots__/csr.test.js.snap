@@ -28216,7 +28216,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/enable-alpha.v
             <span
               class="t-color-picker__thumb"
               role="slider"
-              style="left: 0px; color: rgb(255, 0, 0);"
+              style="left: 0%; color: rgb(255, 0, 0);"
               tabindex="0"
             />
           </div>
@@ -28236,7 +28236,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/enable-alpha.v
             <span
               class="t-color-picker__thumb"
               role="slider"
-              style="left: 186px; color: rgb(255, 0, 0);"
+              style="left: 100%; color: rgb(255, 0, 0);"
               tabindex="0"
             />
           </div>
@@ -29009,7 +29009,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/panel.vue 1`] 
                     <span
                       class="t-color-picker__thumb"
                       role="slider"
-                      style="left: 112px; color: rgb(0, 82, 217);"
+                      style="left: 60%; color: rgb(0, 82, 217);"
                       tabindex="0"
                     />
                   </div>
@@ -29811,7 +29811,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/panel.vue 1`] 
                     <span
                       class="t-color-picker__thumb"
                       role="slider"
-                      style="left: 108px; color: rgb(79, 172, 254);"
+                      style="left: 58%; color: rgb(79, 172, 254);"
                       tabindex="0"
                     />
                   </div>
@@ -29831,7 +29831,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/panel.vue 1`] 
                     <span
                       class="t-color-picker__thumb"
                       role="slider"
-                      style="left: 186px; color: rgb(79, 172, 254);"
+                      style="left: 100%; color: rgb(79, 172, 254);"
                       tabindex="0"
                     />
                   </div>
@@ -30608,7 +30608,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/recent-color.v
                     <span
                       class="t-color-picker__thumb"
                       role="slider"
-                      style="left: 0px; color: rgb(255, 0, 0);"
+                      style="left: 0%; color: rgb(255, 0, 0);"
                       tabindex="0"
                     />
                   </div>
@@ -31518,7 +31518,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/recent-color.v
                     <span
                       class="t-color-picker__thumb"
                       role="slider"
-                      style="left: 0px; color: rgb(255, 0, 0);"
+                      style="left: 0%; color: rgb(255, 0, 0);"
                       tabindex="0"
                     />
                   </div>
@@ -32314,7 +32314,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/status-readonl
             <span
               class="t-color-picker__thumb"
               role="slider"
-              style="left: 112px; color: rgb(0, 82, 217);"
+              style="left: 60%; color: rgb(0, 82, 217);"
               tabindex="0"
             />
           </div>
@@ -33125,7 +33125,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/swatch-color.v
                     <span
                       class="t-color-picker__thumb"
                       role="slider"
-                      style="left: 112px; color: rgb(0, 82, 217);"
+                      style="left: 60%; color: rgb(0, 82, 217);"
                       tabindex="0"
                     />
                   </div>
@@ -33504,7 +33504,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/swatch-color.v
                     <span
                       class="t-color-picker__thumb"
                       role="slider"
-                      style="left: 112px; color: rgb(0, 82, 217);"
+                      style="left: 60%; color: rgb(0, 82, 217);"
                       tabindex="0"
                     />
                   </div>
@@ -37164,7 +37164,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
     style="width: 400px;"
   >
     <div
-      class="t-select-input t-select"
+      class="t-select-input t-select-input--empty t-select"
     >
       <div
         class="t-input__wrap"
@@ -37218,7 +37218,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
     style="width: 400px;"
   >
     <div
-      class="t-select-input t-select"
+      class="t-select-input t-select-input--empty t-select"
     >
       <div
         class="t-input__wrap"
@@ -37272,7 +37272,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
     style="width: 400px;"
   >
     <div
-      class="t-select-input t-select"
+      class="t-select-input t-select-input--empty t-select"
     >
       <div
         class="t-input__wrap"
@@ -39146,7 +39146,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/date-presets-al
         class="t-range-input-popup"
       >
         <div
-          class="t-range-input"
+          class="t-range-input t-range-input--suffix"
         >
           <div
             class="t-range-input__inner"
@@ -39219,7 +39219,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/date-presets-al
         class="t-range-input-popup"
       >
         <div
-          class="t-range-input"
+          class="t-range-input t-range-input--suffix"
         >
           <div
             class="t-range-input__inner"
@@ -39300,7 +39300,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/date-range.vue 
         class="t-range-input-popup"
       >
         <div
-          class="t-range-input"
+          class="t-range-input t-range-input--suffix"
         >
           <div
             class="t-range-input__inner"
@@ -39371,7 +39371,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/date-range.vue 
         class="t-range-input-popup"
       >
         <div
-          class="t-range-input"
+          class="t-range-input t-range-input--suffix"
         >
           <div
             class="t-range-input__inner"
@@ -39785,7 +39785,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/disable-date.vu
         class="t-range-input-popup"
       >
         <div
-          class="t-range-input"
+          class="t-range-input t-range-input--suffix"
         >
           <div
             class="t-range-input__inner"
@@ -40119,7 +40119,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/month.vue 1`] =
         class="t-range-input-popup"
       >
         <div
-          class="t-range-input"
+          class="t-range-input t-range-input--suffix"
         >
           <div
             class="t-range-input__inner"
@@ -43399,7 +43399,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/quarter.vue 1`]
         class="t-range-input-popup"
       >
         <div
-          class="t-range-input"
+          class="t-range-input t-range-input--suffix"
         >
           <div
             class="t-range-input__inner"
@@ -43524,7 +43524,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/week.vue 1`] = 
         class="t-range-input-popup"
       >
         <div
-          class="t-range-input"
+          class="t-range-input t-range-input--suffix"
         >
           <div
             class="t-range-input__inner"
@@ -43649,7 +43649,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/year.vue 1`] = 
         class="t-range-input-popup"
       >
         <div
-          class="t-range-input"
+          class="t-range-input t-range-input--suffix"
         >
           <div
             class="t-range-input__inner"
@@ -62482,6 +62482,52 @@ exports[`csr snapshot test > csr test ./src/input/_example/base.vue 1`] = `
             />
           </svg>
         </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/input/_example/borderless.vue 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px; max-width: 500px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-input__wrap"
+    >
+      <div
+        class="t-input"
+      >
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder="please input"
+          type="text"
+          unselectable="off"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-input__wrap"
+    >
+      <div
+        class="t-input t-input--borderless"
+      >
+        <input
+          autocomplete=""
+          class="t-input__inner"
+          placeholder="borderless input"
+          type="text"
+          unselectable="off"
+        />
       </div>
     </div>
   </div>
@@ -88189,7 +88235,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/scroll-bottom.vue 1`
       style="width: 300px;"
     >
       <div
-        class="t-select-input t-select"
+        class="t-select-input t-select-input--empty t-select"
       >
         <div
           class="t-input__wrap"
@@ -108332,7 +108378,7 @@ exports[`csr snapshot test > csr test ./src/time-picker/_example/range.vue 1`] =
         class="t-range-input-popup"
       >
         <div
-          class="t-range-input"
+          class="t-range-input t-range-input--suffix"
         >
           <div
             class="t-range-input__inner"

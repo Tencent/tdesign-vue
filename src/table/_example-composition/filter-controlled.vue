@@ -232,7 +232,7 @@ const onFilterChange = (filters, ctx) => {
   // 模拟异步请求进行数据过滤
   request(filterValue);
 };
-// 筛选、分页、排序等功能发生变化时，均会出发 change 事件
+// 筛选、分页、排序等功能发生变化时，均会触发 change 事件
 const onChange = (info, context) => {
   console.log('change', info, context, '筛选、分页、排序等功能发生变化均会触发');
 };
