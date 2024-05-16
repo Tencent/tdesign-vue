@@ -5,6 +5,26 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.9.4 `2024-05-16`
+### 🚀 Features
+- `Input`: 新增 `borderless` 无边框模式输入框 @uyarn ([#3162](https://github.com/Tencent/tdesign-vue/pull/3162))
+- `Scroll`: 调整 `Chrome 121` 升级带来的滚动条样式的兼容方式，不再依赖 `autoprefixer`或`vue-cli` 的版本 @loopZhou ([#3162](https://github.com/Tencent/tdesign-vue/pull/3162))
+- `DatePicker`:  `DatePicker` 及 `DateRangePicker` 组件新增 `label` 属性 @fython ([#3169](https://github.com/Tencent/tdesign-vue/pull/3169))
+- `RangeInput`: 新增 `label` 属性 @fython ([#3169](https://github.com/Tencent/tdesign-vue/pull/3169))
+### 🐞 Bug Fixes
+- `ColorPicker`: 修复切换预览颜色时，通道按钮位置不变的问题 @fennghuang ([#3163](https://github.com/Tencent/tdesign-vue/pull/3163))
+- `RangeInput`: 修复 `prefix/suffix` 未垂直居中对齐的问题 @fython ([#3175](https://github.com/Tencent/tdesign-vue/pull/3175))
+- `Menu`: 提升 `t-popup__menu` 的样式优先级，解决 dist 内样式优先级一致导致样式异常的问题 @uyarn ([#3178](https://github.com/Tencent/tdesign-vue/pull/3178))
+- `Select`: 
+    - 优化已选样式覆盖已禁用样式的问题 @fython ([#3178](https://github.com/Tencent/tdesign-vue/pull/3178))
+    - 修复`1.9.2` 版本错误移除 `value` 默认值的问题 @uyarn ([#3177](https://github.com/Tencent/tdesign-vue/pull/3177))
+- `Upload`: 修复图片上传错误类型下的样式异常的问题 @uyarn ([#3178](https://github.com/Tencent/tdesign-vue/pull/3178))
+### 🚧 Others
+- `Upload`: 
+  - 修复文档中`locale`跳转链接异常的问题 @uyarn ([#3178](https://github.com/Tencent/tdesign-vue/pull/3178))
+  - 修复文档中关于 `OPTIONS` 方法的说明 @Summer-Shen ([#3155](https://github.com/Tencent/tdesign-vue/pull/3155))
+
+
 ## 🌈 1.9.3 `2024-04-26` 
 ### 🚀 Features
 - `Menu`: `Submenu`透传 `Popup` 组件全部特性 @betavs ([#3145](https://github.com/Tencent/tdesign-vue/pull/3145))
