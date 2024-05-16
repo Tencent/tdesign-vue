@@ -37164,7 +37164,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
     style="width: 400px;"
   >
     <div
-      class="t-select-input t-select"
+      class="t-select-input t-select-input--empty t-select"
     >
       <div
         class="t-input__wrap"
@@ -37218,7 +37218,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
     style="width: 400px;"
   >
     <div
-      class="t-select-input t-select"
+      class="t-select-input t-select-input--empty t-select"
     >
       <div
         class="t-input__wrap"
@@ -37272,7 +37272,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
     style="width: 400px;"
   >
     <div
-      class="t-select-input t-select"
+      class="t-select-input t-select-input--empty t-select"
     >
       <div
         class="t-input__wrap"
@@ -88233,7 +88233,7 @@ exports[`csr snapshot test > csr test ./src/select/_example/scroll-bottom.vue 1`
       style="width: 300px;"
     >
       <div
-        class="t-select-input t-select"
+        class="t-select-input t-select-input--empty t-select"
       >
         <div
           class="t-input__wrap"
