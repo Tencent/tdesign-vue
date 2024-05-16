@@ -451,6 +451,7 @@ export default defineComponent({
       <div class={COMPONENT_NAME}>
         <TRangeInputPopup
           disabled={this.isDisabled}
+          label={this.label}
           status={this.status}
           tips={this.tips || this.$scopedSlots.tips}
           inputValue={inputValue as string[]}
