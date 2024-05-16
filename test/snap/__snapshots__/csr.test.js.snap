@@ -39146,7 +39146,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/date-presets-al
         class="t-range-input-popup"
       >
         <div
-          class="t-range-input"
+          class="t-range-input t-range-input--suffix"
         >
           <div
             class="t-range-input__inner"
@@ -39219,7 +39219,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/date-presets-al
         class="t-range-input-popup"
       >
         <div
-          class="t-range-input"
+          class="t-range-input t-range-input--suffix"
         >
           <div
             class="t-range-input__inner"
@@ -39300,7 +39300,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/date-range.vue 
         class="t-range-input-popup"
       >
         <div
-          class="t-range-input"
+          class="t-range-input t-range-input--suffix"
         >
           <div
             class="t-range-input__inner"
@@ -39371,7 +39371,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/date-range.vue 
         class="t-range-input-popup"
       >
         <div
-          class="t-range-input"
+          class="t-range-input t-range-input--suffix"
         >
           <div
             class="t-range-input__inner"
@@ -39785,7 +39785,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/disable-date.vu
         class="t-range-input-popup"
       >
         <div
-          class="t-range-input"
+          class="t-range-input t-range-input--suffix"
         >
           <div
             class="t-range-input__inner"
@@ -40119,7 +40119,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/month.vue 1`] =
         class="t-range-input-popup"
       >
         <div
-          class="t-range-input"
+          class="t-range-input t-range-input--suffix"
         >
           <div
             class="t-range-input__inner"
@@ -43399,7 +43399,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/quarter.vue 1`]
         class="t-range-input-popup"
       >
         <div
-          class="t-range-input"
+          class="t-range-input t-range-input--suffix"
         >
           <div
             class="t-range-input__inner"
@@ -43524,7 +43524,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/week.vue 1`] = 
         class="t-range-input-popup"
       >
         <div
-          class="t-range-input"
+          class="t-range-input t-range-input--suffix"
         >
           <div
             class="t-range-input__inner"
@@ -43649,7 +43649,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/year.vue 1`] = 
         class="t-range-input-popup"
       >
         <div
-          class="t-range-input"
+          class="t-range-input t-range-input--suffix"
         >
           <div
             class="t-range-input__inner"
@@ -108376,7 +108376,7 @@ exports[`csr snapshot test > csr test ./src/time-picker/_example/range.vue 1`] =
         class="t-range-input-popup"
       >
         <div
-          class="t-range-input"
+          class="t-range-input t-range-input--suffix"
         >
           <div
             class="t-range-input__inner"

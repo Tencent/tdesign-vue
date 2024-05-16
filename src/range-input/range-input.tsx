@@ -163,6 +163,8 @@ export default defineComponent({
             [STATUS.success]: this.status === 'success',
             [STATUS.warning]: this.status === 'warning',
             [STATUS.error]: this.status === 'error',
+            [`${COMPONENT_NAME}--prefix`]: prefixIconContent || labelContent,
+            [`${COMPONENT_NAME}--suffix`]: suffixIconContent || suffixContent,
           },
         ]}
         onMouseenter={handleMouseEnter}
