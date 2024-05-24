@@ -35,7 +35,7 @@
     </t-transfer>
   </t-space>
 </template>
-<script setup>
+<script setup lang='jsx'>
 import { ref } from 'vue';
 
 const items = ref([
