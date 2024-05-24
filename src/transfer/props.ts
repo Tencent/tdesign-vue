@@ -91,6 +91,10 @@ export default {
   transferItem: {
     type: Function as PropType<TdTransferProps['transferItem']>,
   },
+  /** 传入 Tree 组件定义树形结构 */
+  tree: {
+    type: Function as PropType<TdTransferProps['tree']>,
+  },
   /** 目标数据列表数据 */
   value: {
     type: Array as PropType<TdTransferProps['value']>,
