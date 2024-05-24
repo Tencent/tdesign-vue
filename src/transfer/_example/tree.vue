@@ -35,7 +35,7 @@
     </t-transfer>
   </t-space>
 </template>
-<script lang="tsx">
+<script lang="jsx">
 export default {
   data() {
     return {
