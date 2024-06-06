@@ -111,8 +111,8 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
         scopedSlots={slots}
         props={tagInputProps}
         on={{
-          'input-change': onInputChange,
           ...newListeners,
+          'input-change': onInputChange,
           change: onTagInputChange,
           clear: p.onInnerClear,
           // [Important Info]: SelectInput.blur is not equal to TagInput, example: click popup panel
