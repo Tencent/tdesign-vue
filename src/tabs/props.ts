@@ -2,7 +2,6 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-19 10:44:26
  * */
 
 import { TdTabsProps } from './type';
@@ -22,7 +21,17 @@ export default {
     type: String as PropType<TdTabsProps['placement']>,
     default: 'top' as TdTabsProps['placement'],
     validator(val: TdTabsProps['placement']): boolean {
+      if (!val) return true;
       return ['left', 'top', 'bottom', 'right'].includes(val);
+    },
+  },
+  /** Tab较多的时候，选中滑块滚动最终停留的位置 */
+  scrollPosition: {
+    type: String as PropType<TdTabsProps['scrollPosition']>,
+    default: 'auto' as TdTabsProps['scrollPosition'],
+    validator(val: TdTabsProps['scrollPosition']): boolean {
+      if (!val) return true;
+      return ['auto', 'start', 'center', 'end'].includes(val);
     },
   },
   /** 组件尺寸 */
@@ -30,6 +39,7 @@ export default {
     type: String as PropType<TdTabsProps['size']>,
     default: 'medium' as TdTabsProps['size'],
     validator(val: TdTabsProps['size']): boolean {
+      if (!val) return true;
       return ['medium', 'large'].includes(val);
     },
   },
@@ -38,6 +48,7 @@ export default {
     type: String as PropType<TdTabsProps['theme']>,
     default: 'normal' as TdTabsProps['theme'],
     validator(val: TdTabsProps['theme']): boolean {
+      if (!val) return true;
       return ['normal', 'card'].includes(val);
     },
   },

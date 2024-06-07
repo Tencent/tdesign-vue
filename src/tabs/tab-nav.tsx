@@ -34,6 +34,7 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
     },
     value: tabProps.value,
     placement: tabProps.placement,
+    scrollPosition: tabProps.scrollPosition,
     size: tabProps.size,
     disabled: tabProps.disabled,
     addable: tabProps.addable,
@@ -255,7 +256,7 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
             rightOperations: this.$refs.rightOperationsZone as HTMLElement,
           },
           this.scrollLeft,
-          'auto',
+          this.scrollPosition,
         ),
       );
     },

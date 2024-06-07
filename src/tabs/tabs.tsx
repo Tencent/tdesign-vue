@@ -101,6 +101,7 @@ export default mixins(Vue as VueConstructor<TabParentInjectVue>, classPrefixMixi
         placement: this.placement,
         addable: this.addable,
         panels: this.panels,
+        scrollPosition: this.scrollPosition,
       };
       return (
         <div
