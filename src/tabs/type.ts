@@ -2,7 +2,6 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-19 10:44:26
  * */
 
 import { TNode } from '../common';
@@ -27,6 +26,11 @@ export interface TdTabsProps {
    * @default top
    */
   placement?: 'left' | 'top' | 'bottom' | 'right';
+  /**
+   * Tab较多的时候，选中滑块滚动最终停留的位置
+   * @default auto
+   */
+  scrollPosition?: 'auto' | 'start' | 'center' | 'end';
   /**
    * 组件尺寸
    * @default medium
