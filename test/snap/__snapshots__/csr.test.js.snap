@@ -102084,61 +102084,144 @@ exports[`csr snapshot test > csr test ./src/tabs/_example/combination.vue 1`] = 
     class="t-space-item"
   >
     <div
-      class="t-space t-space-horizontal"
-      style="gap: 16px;"
+      class="t-radio-group t-size-m t-radio-group--filled"
     >
-      <div
-        class="t-space-item"
+      <label
+        class="t-radio-button t-is-checked"
+        tabindex="0"
       >
-        <div
-          class="t-radio-group t-size-m t-radio-group--filled"
+        <input
+          class="t-radio-button__former"
+          data-value="'normal'"
+          tabindex="-1"
+          type="radio"
+          value="normal"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
         >
-          <label
-            class="t-radio-button t-is-checked"
-            tabindex="0"
-          >
-            <input
-              class="t-radio-button__former"
-              data-value="'normal'"
-              tabindex="-1"
-              type="radio"
-              value="normal"
-            />
-            <span
-              class="t-radio-button__input"
-            />
-            <span
-              class="t-radio-button__label"
-            >
-              常规型
-            </span>
-          </label>
-          <label
-            class="t-radio-button"
-            tabindex="0"
-          >
-            <input
-              class="t-radio-button__former"
-              data-value="'card'"
-              tabindex="-1"
-              type="radio"
-              value="card"
-            />
-            <span
-              class="t-radio-button__input"
-            />
-            <span
-              class="t-radio-button__label"
-            >
-              卡片型
-            </span>
-          </label>
-          <div
-            class="t-radio-group__bg-block"
-            style="width: 0px; left: 0px;"
-          />
-        </div>
-      </div>
+          常规型
+        </span>
+      </label>
+      <label
+        class="t-radio-button"
+        tabindex="0"
+      >
+        <input
+          class="t-radio-button__former"
+          data-value="'card'"
+          tabindex="-1"
+          type="radio"
+          value="card"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          卡片型
+        </span>
+      </label>
+      <div
+        class="t-radio-group__bg-block"
+        style="width: 0px; left: 0px;"
+      />
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-radio-group t-size-m t-radio-group--filled"
+    >
+      <label
+        class="t-radio-button t-is-checked"
+        tabindex="0"
+      >
+        <input
+          class="t-radio-button__former"
+          data-value="'auto'"
+          tabindex="-1"
+          type="radio"
+          value="auto"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          Auto
+        </span>
+      </label>
+      <label
+        class="t-radio-button"
+        tabindex="0"
+      >
+        <input
+          class="t-radio-button__former"
+          data-value="'start'"
+          tabindex="-1"
+          type="radio"
+          value="start"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          Start
+        </span>
+      </label>
+      <label
+        class="t-radio-button"
+        tabindex="0"
+      >
+        <input
+          class="t-radio-button__former"
+          data-value="'center'"
+          tabindex="-1"
+          type="radio"
+          value="center"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          Center
+        </span>
+      </label>
+      <label
+        class="t-radio-button"
+        tabindex="0"
+      >
+        <input
+          class="t-radio-button__former"
+          data-value="'end'"
+          tabindex="-1"
+          type="radio"
+          value="end"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          End
+        </span>
+      </label>
+      <div
+        class="t-radio-group__bg-block"
+        style="width: 0px; left: 0px;"
+      />
     </div>
   </div>
   <div
