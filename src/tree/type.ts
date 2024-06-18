@@ -210,6 +210,15 @@ export interface TdTreeProps<T extends TreeOptionData = TreeOptionData> {
    */
   onDragStart?: (context: { e: DragEvent; node: TreeNodeModel<T> }) => void;
   /**
+   * 判断节点是否可以 drop
+   */
+  allowDrop?: (context: {
+    e: DragEvent;
+    dragNode: TreeNodeModel<T>;
+    dropNode: TreeNodeModel<T>;
+    dropPosition: number;
+  }) => boolean;
+  /**
    * 节点在目标元素上释放时触发，泛型 `T` 表示树节点 TS 类型
    */
   onDrop?: (context: {

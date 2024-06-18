@@ -147,6 +147,8 @@ export default {
       return ['onlyLeaf', 'parentFirst', 'all'].includes(val);
     },
   },
+  /** 节点在目标元素上释放时是否可以 drop */
+  allowDrop: Function as PropType<TdTreeProps['allowDrop']>,
   /** 节点激活时触发，泛型 `T` 表示树节点 TS 类型 */
   onActive: Function as PropType<TdTreeProps['onActive']>,
   /** 节点选中状态变化时触发，context.node 表示当前变化的选项，泛型 `T` 表示树节点 TS 类型 */
