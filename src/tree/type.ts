@@ -27,6 +27,15 @@ export interface TdTreeProps<T extends TreeOptionData = TreeOptionData> {
    */
   defaultActived?: Array<TreeNodeValue>;
   /**
+   * 判断节点是否可以执行 drop 操作，泛型 `T` 表示树节点 TS 类型
+   */
+  allowDrop?: (context: {
+    e: DragEvent;
+    dragNode: TreeNodeModel<T>;
+    dropNode: TreeNodeModel<T>;
+    dropPosition: number;
+  }) => boolean;
+  /**
    * 是否允许在过滤时节点折叠节点
    * @default false
    */
@@ -210,15 +219,6 @@ export interface TdTreeProps<T extends TreeOptionData = TreeOptionData> {
    */
   onDragStart?: (context: { e: DragEvent; node: TreeNodeModel<T> }) => void;
   /**
-   * 判断节点是否可以 drop
-   */
-  allowDrop?: (context: {
-    e: DragEvent;
-    dragNode: TreeNodeModel<T>;
-    dropNode: TreeNodeModel<T>;
-    dropPosition: number;
-  }) => boolean;
-  /**
    * 节点在目标元素上释放时触发，泛型 `T` 表示树节点 TS 类型
    */
   onDrop?: (context: {
@@ -286,6 +286,10 @@ export interface TreeInstanceFunctions<T extends TreeOptionData = TreeOptionData
    * 插入新节点到指定节点前面，泛型 `T` 表示树节点 TS 类型
    */
   insertBefore: (value: TreeNodeValue, newData: T) => void;
+  /**
+   * 刷新树节点状态，可用于搜索场景刷新
+   */
+  refresh: () => void;
   /**
    * 移除指定节点
    */
