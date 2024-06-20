@@ -59,7 +59,7 @@ export default mixins(getConfigReceiverMixins('transfer')).extend({
     },
     isTreeMode(): boolean {
       const treeSlot = this.$scopedSlots.tree;
-      return typeof treeSlot === 'function';
+      return typeof treeSlot === 'function' || typeof this.tree === 'function';
     },
     leftButtonDisabled(): boolean {
       return this.direction === 'right';
