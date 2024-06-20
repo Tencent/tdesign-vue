@@ -5,6 +5,20 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.9.5 `2024-06-20` 
+### 🚀 Features
+- `Transfer`: 修复通过 `Function` 方法使用 `Tree` 属性的能力 @sinbadmaster ([#3185](https://github.com/Tencent/tdesign-vue/pull/3185))
+- `Tabs`
+   - 支持通过滚轮或者触摸板进行滚动的操作 @oljc ([#3187](https://github.com/Tencent/tdesign-vue/pull/3187))
+   - 新增 `scrollPosition` API, 支持自定义选中滑块滚动最终停留的位置 @oljc ([#3196](https://github.com/Tencent/tdesign-vue/pull/3196))
+- `DatePicker`: 优化日期区间选择器头部区间的变化逻辑，选择后左侧区间大于右侧区间，则默认调整为左侧区间始终比右侧区间小 1 @uyarn ([#3207](https://github.com/Tencent/tdesign-vue/pull/3207))
+### 🐞 Bug Fixes
+- `Tree`: 新增 `allowDrop` API，支持拖放限制的能力，具体参考相关示例 @TabSpace ([#3206](https://github.com/Tencent/tdesign-vue/pull/3206))
+- `Cascader`: 修复无children选项点击时仍然显示之前列表的问题 @1379255913 ([#3201](https://github.com/Tencent/tdesign-vue/pull/3201))
+- `InputNumber`: 修复 `allowInputOverLimit=false` 大小值判断时，`value` 为 `undefined` 时，会出现显示 Infinity 的问题 @HaixingOoO
+- `SelectInput`: 修复多选情况下设置 `allowInput` 为 true 无法输入的问题 @hy212 ([#3195](https://github.com/Tencent/tdesign-vue/pull/3195))
+
+
 ## 🌈 1.9.4 `2024-05-16`
 ### 🚀 Features
 - `Input`: 新增 `borderless` 无边框模式输入框 @uyarn ([#3162](https://github.com/Tencent/tdesign-vue/pull/3162))
