@@ -17,6 +17,7 @@ import TRangePanel from './panel/RangePanel';
 import useRangeValue from './hooks/useRangeValue';
 import { formatDate, getDefaultFormat, parseToDayjs } from '../_common/js/date-picker/format';
 import { subtractMonth, addMonth, extractTimeObj } from '../_common/js/date-picker/utils';
+import { dateCorrection } from './utils';
 
 export default defineComponent({
   name: 'TDateRangePickerPanel',
@@ -147,28 +148,16 @@ export default defineComponent({
         next = addMonth(current, monthCount);
       }
 
-      const nextYear = [...year.value];
+      let nextYear = [...year.value];
       nextYear[partialIndex] = next.getFullYear();
-      const nextMonth = [...month.value];
+      let nextMonth = [...month.value];
       nextMonth[partialIndex] = next.getMonth();
+      const onlyYearSelect = ['year', 'quarter', 'month'].includes(props.mode);
 
-      // 保证左侧时间不大于右侧
-      if (partialIndex === 0) {
-        nextYear[1] = Math.max(nextYear[0], nextYear[1]);
-
-        if (nextYear[0] === nextYear[1]) {
-          nextMonth[1] = Math.max(nextMonth[0], nextMonth[1]);
-        }
-      }
-
-      // 保证左侧时间不大于右侧
-      if (partialIndex === 1) {
-        nextYear[0] = Math.min(nextYear[0], nextYear[1]);
-
-        if (nextYear[0] === nextYear[1]) {
-          nextMonth[0] = Math.min(nextMonth[0], nextMonth[1]);
-        }
-      }
+      // 头部日期切换修正
+      const correctedDate = dateCorrection(partialIndex, nextYear, nextMonth, onlyYearSelect);
+      nextYear = correctedDate.nextYear;
+      nextMonth = correctedDate.nextMonth;
 
       if (year.value.some((y) => !nextYear.includes(y))) {
         props.onYearChange?.({
@@ -301,13 +290,19 @@ export default defineComponent({
       let partialIndex = partial === 'start' ? 0 : 1;
       if (props.enableTimePicker) partialIndex = activeIndex.value;
 
-      const nextYear = [...year.value];
+      let nextYear = [...year.value];
       nextYear[partialIndex] = nextVal;
-      // 保证左侧时间不大于右侧
-      if (partialIndex === 0) nextYear[1] = Math.max(nextYear[0], nextYear[1]);
-      if (partialIndex === 1) nextYear[0] = Math.min(nextYear[0], nextYear[1]);
+      let nextMonth = [...month.value];
+      // 年/季度/月份场景下，头部只有年选择器
+      const onlyYearSelect = ['year', 'quarter', 'month'].includes(props.mode);
+
+      // 头部日期切换修正
+      const correctedDate = dateCorrection(partialIndex, nextYear, nextMonth, onlyYearSelect);
+      nextYear = correctedDate.nextYear;
+      nextMonth = correctedDate.nextMonth;
 
       year.value = nextYear;
+      if (!onlyYearSelect) month.value = nextMonth;
 
       props.onYearChange?.({
         partial,
@@ -331,8 +326,29 @@ export default defineComponent({
       nextMonth[partialIndex] = nextVal;
       // 保证左侧时间不大于右侧
       if (year[0] === year[1]) {
-        if (partialIndex === 0) nextMonth[1] = Math.max(nextMonth[0], nextMonth[1]);
-        if (partialIndex === 1) nextMonth[0] = Math.min(nextMonth[0], nextMonth[1]);
+        if (partialIndex === 0) {
+          // 操作了左侧区间, 处理右侧区间小于或等于左侧区间的场景，交互上始终报错右侧比左侧大 1
+          if (nextMonth[1] <= nextMonth[0]) {
+            nextMonth[1] = nextMonth[0] + 1;
+            if (nextMonth[1] === 12) {
+              // 处理跨年的边界场景
+              nextMonth[1] = 0;
+              year.value = [year.value?.[0], year.value?.[1] + 1];
+            }
+          }
+        }
+        if (partialIndex === 1) {
+          // 操作了右侧区间, 处理右侧区间小于或等于左侧区间的场景，交互上始终报错左侧比右侧小 1
+          nextMonth[0] = Math.min(nextMonth[0], nextMonth[1]);
+          if (nextMonth[0] >= nextMonth[1]) {
+            nextMonth[0] -= 1;
+            if (nextMonth[0] === -1) {
+              // 处理跨年的边界场景
+              nextMonth[0] = 11;
+              year.value = [year.value?.[0] - 1, year.value?.[1]];
+            }
+          }
+        }
       }
 
       month.value = nextMonth;
