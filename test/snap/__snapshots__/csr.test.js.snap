@@ -121779,12 +121779,12 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
           />
           <span
             class="t-tree__label"
-            title="2.2"
+            title="2.2 不允许拖放为 2.2 的子节点"
           >
             <span
               style="position: relative;"
             >
-              2.2
+              2.2 不允许拖放为 2.2 的子节点
             </span>
           </span>
         </div>
