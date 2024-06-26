@@ -7,7 +7,6 @@
       transition
       expand-all
       draggable
-      :allow-drop="handleAllowDrop"
       @drag-start="handleDragStart"
       @drag-end="handleDragEnd"
       @drag-over="handleDragOver"
