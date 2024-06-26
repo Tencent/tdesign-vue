@@ -5,6 +5,10 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.9.6 `2024-06-26` 
+### 🐞 Bug Fixes
+- `Tree`: 修复 `1.9.5` 版本使用拖拽功能的报错问题 @uyarn ([#3212](https://github.com/Tencent/tdesign-vue/pull/3212))
+
 ## 🌈 1.9.5 `2024-06-20` 
 ### 🚀 Features
 - `Transfer`: 修复通过 `Function` 方法使用 `Tree` 属性的能力 @sinbadmaster ([#3185](https://github.com/Tencent/tdesign-vue/pull/3185))
