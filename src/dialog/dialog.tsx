@@ -149,6 +149,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
   watch: {
     visible: {
       handler(value) {
+        if (typeof window === 'undefined') return;
         if (value) {
           this.animationEnd = false;
           if ((this.isModal && !this.showInAttachedElement) || this.isFullScreen) {
