@@ -5,6 +5,10 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.9.7 `2024-06-28` 
+### 🐞 Bug Fixes
+- `Dialog`: 修复 `Dialog` 组件在 `SSR` 环境下的使用问题 @qqw78901 ([#3219](https://github.com/Tencent/tdesign-vue/pull/3219))
+
 ## 🌈 1.9.6 `2024-06-26` 
 ### 🐞 Bug Fixes
 - `Tree`: 修复 `1.9.5` 版本使用拖拽功能的报错问题 @uyarn ([#3212](https://github.com/Tencent/tdesign-vue/pull/3212))
