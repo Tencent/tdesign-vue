@@ -144,7 +144,7 @@
     "cross-env": "^7.0.2",
     "cypress": "^9.5.3",
     "cz-conventional-changelog": "^3.3.0",
-    "dom-parser": "^0.1.6",
+    "dom-parser": "^1.1.5",
     "esbuild": "^0.14.9",
     "eslint": "^7.1.0",
     "eslint-config-airbnb-base": "^14.2.1",
