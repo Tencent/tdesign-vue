@@ -329,6 +329,7 @@ export default mixins(
     },
 
     emitPassword() {
+      if (this.tDisabled) return;
       const { renderType } = this;
       const toggleType = renderType === 'password' ? 'text' : 'password';
       this.renderType = toggleType;
@@ -528,9 +529,19 @@ export default mixins(
 
     if (this.type === 'password') {
       if (this.renderType === 'password') {
-        suffixIcon = <BrowseOffIcon class={`${this.componentName}__suffix-clear`} nativeOnClick={this.emitPassword} />;
+        suffixIcon = (
+          <BrowseOffIcon
+            class={{ [`${this.componentName}__suffix-clear`]: !this.tDisabled }}
+            nativeOnClick={this.emitPassword}
+          />
+        );
       } else if (this.renderType === 'text') {
-        suffixIcon = <BrowseIcon class={`${this.componentName}__suffix-clear`} nativeOnClick={this.emitPassword} />;
+        suffixIcon = (
+          <BrowseIcon
+            class={{ [`${this.componentName}__suffix-clear`]: !this.tDisabled }}
+            nativeOnClick={this.emitPassword}
+          />
+        );
       }
     }
 
