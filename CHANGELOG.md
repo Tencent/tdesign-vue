@@ -5,6 +5,16 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.9.8 `2024-07-11` 
+### 🚀 Features
+- `Icon`: 新增有序列表图标 `list-numbered`，优化`lock-off`图标的绘制路径 @DOUBLE-DENG ([icon#9f4acfd](https://github.com/Tencent/tdesign-icons/commit/9f4acfdda58f84f9bca71a22f033e27127dd26db))
+### 🐞 Bug Fixes
+- `Icon`: 修复图标`chart-column`的命名错误问题，如果使用旧错误命名请注意 @uyarn ([#3229](https://github.com/Tencent/tdesign-vue/pull/3229))
+- `Tree`: 修复树形组件错误过滤 `value` 为 `0` 的节点的问题 @uyarn ([#3233](https://github.com/Tencent/tdesign-vue/pull/3233))
+- `Input`: 修复禁用状态下仍可以切换明文密文的问题 @jby0107 ([#3230](https://github.com/Tencent/tdesign-vue/pull/3230))
+- `Input`: 修复禁用状态下超出问题文字长度异常的问题 @uyarn ([common#1831](https://github.com/Tencent/tdesign-common/pull/1831))
+- `Menu`: 修复样式文件多余的空格导致部分场景打包异常的问题 @liweijie0812 ([common#1828](https://github.com/Tencent/tdesign-common/pull/1828))
+
 ## 🌈 1.9.7 `2024-06-28` 
 ### 🐞 Bug Fixes
 - `Dialog`: 修复 `Dialog` 组件在 `SSR` 环境下的使用问题 @qqw78901 ([#3219](https://github.com/Tencent/tdesign-vue/pull/3219))

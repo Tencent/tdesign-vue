@@ -57,6 +57,7 @@ describe('Tree:init', () => {
 
     it('可以传递一个树结构的数据来完成初始化', () => {
       const data = [
+        { value: 0 },
         {
           value: 't1',
           children: [
@@ -89,6 +90,7 @@ describe('Tree:init', () => {
         }),
       );
       expect(wrapper.find('.tree-empty').exists()).toBe(false);
+      expect(wrapper.find('[data-value="0"]').exists()).toBe(true);
       expect(wrapper.find('[data-value="t1"]').exists()).toBe(true);
       expect(wrapper.find('[data-value="t1.1"]').exists()).toBe(false);
       expect(wrapper.find('[data-value="t2"]').exists()).toBe(true);
