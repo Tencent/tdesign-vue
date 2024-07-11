@@ -8,36 +8,14 @@
       </t-space>
       <t-tree ref="tree" :data="items" expand-on-click-node :filter="demo1Filter" hover line />
     </t-space>
-
-    <t-space direction="vertical">
-      <t-space>
-        <t-input-adornment prepend="filter:">
-          <t-input
-            v-model="demo2Text"
-            placeholder="allow expand or fold tree nodes on filter"
-            style="width: 300px"
-            @change="demo2Input"
-          />
-        </t-input-adornment>
-      </t-space>
-      <t-tree
-        ref="tree"
-        :data="items"
-        expand-on-click-node
-        allow-fold-node-on-filter
-        :filter="demo2Filter"
-        hover
-        line
-      />
-    </t-space>
   </t-space>
 </template>
 
 <script>
 const exampleItems = [
   {
-    value: '1',
-    label: '1',
+    value: 0,
+    label: '0',
     children: [
       {
         value: '1.1',

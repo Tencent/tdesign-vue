@@ -1,3 +1,4 @@
+import isUndefined from 'lodash/isUndefined';
 import {
   ref, watch, TypeCreateElement, privateKey, TypeVNode,
 } from '../adapt';
@@ -26,13 +27,14 @@ export default function useTreeNodes(state: TypeTreeState) {
     const list: TypeTreeNode[] = [];
     // 非虚拟滚动，缓存曾经展示过的节点
     let hasVisibleNode = false;
+
     allNodes.value.forEach((node: TypeTreeNode) => {
       if (node.visible) {
         // 曾经展示过的节点加入缓存，避免再次创建
         hasVisibleNode = true;
         cacheMap.set(node.value, node.value);
       }
-      if (cacheMap.get(node.value)) {
+      if (!isUndefined(cacheMap.get(node.value))) {
         // 创建的节点是缓存的节点
         list.push(node);
       }
