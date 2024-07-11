@@ -1,7 +1,7 @@
 {
   "name": "tdesign-vue",
   "purename": "tdesign",
-  "version": "1.9.7-naruto",
+  "version": "1.9.8-naruto",
   "description": "tdesign-vue",
   "title": "tdesign-vue",
   "keywords": [
@@ -96,7 +96,7 @@
     "mitt": "^3.0.0",
     "raf": "^3.4.1",
     "sortablejs": "^1.15.0",
-    "tdesign-icons-vue": "^0.2.0",
+    "tdesign-icons-vue": "^0.2.4",
     "tinycolor2": "^1.4.2",
     "validator": "^13.5.1"
   },
@@ -142,7 +142,7 @@
     "cli-color": "^2.0.0",
     "commitizen": "^4.0.3",
     "cross-env": "^7.0.2",
-    "cypress": "^9.5.3",
+    "cypress": "^13.12.0",
     "cz-conventional-changelog": "^3.3.0",
     "dom-parser": "^0.1.6",
     "esbuild": "^0.14.9",
