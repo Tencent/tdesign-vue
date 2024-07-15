@@ -84,7 +84,7 @@ npm run start
 
 ### 单元测试 & e2e 测试文档
 
-[组件测试文档](./test/README.md)
+[组件测试文档](./TEST_GUIDE.md)
 
 ## 子仓库 tdesign-common
 
