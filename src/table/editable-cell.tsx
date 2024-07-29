@@ -12,6 +12,7 @@ import {
   PrimaryTableRowEditContext,
   PrimaryTableRowValidateContext,
   TdBaseTableProps,
+  TableEditableCellPropsParams,
 } from './type';
 import { TableClassName } from './hooks/useClassName';
 import { useGlobalIcon } from '../hooks/useGlobalIcon';
@@ -28,6 +29,7 @@ export interface OnEditableChangeContext<T> extends PrimaryTableRowEditContext<T
 }
 
 export interface EditableCellProps {
+  rowKey: string;
   row: TableRowData;
   rowIndex: number;
   col: PrimaryTableCol<TableRowData>;
@@ -52,6 +54,7 @@ export interface EditableCellProps {
 export default defineComponent({
   name: 'TableEditableCell',
   props: {
+    rowKey: String,
     row: Object as PropType<EditableCellProps['row']>,
     rowIndex: Number,
     col: Object as PropType<EditableCellProps['col']>,
@@ -76,19 +79,38 @@ export default defineComponent({
     onEditableChange: Function as PropType<EditableCellProps['onEditableChange']>,
   },
 
+  emits: ['update-edited-cell'],
+
   setup(props: EditableCellProps, context: SetupContext) {
     const { row, col } = toRefs(props);
     const tableEditableCellRef = ref(null);
-    const isEdit = ref(props.col.edit?.defaultEditable || false);
+
+    const isKeepEditMode = computed(() => col.value.edit?.keepEditMode);
+
+    const isEdit = ref(isKeepEditMode.value || col.value.edit?.defaultEditable || false);
     const editValue = ref();
     const errorList = ref<AllValidateResult[]>();
     const classPrefix = usePrefixClass();
 
     const { Edit1Icon } = useGlobalIcon({ Edit1Icon: TdEdit1Icon });
 
-    const updateEditedCellValue = (val: any) => {
-      editValue.value = val;
+    const updateEditedCellValue: TableEditableCellPropsParams<TableRowData>['updateEditedCellValue'] = (obj) => {
+      if (typeof obj === 'object' && ('rowValue' in obj || obj.isUpdateCurrentRow)) {
+        const newObj = { ...obj };
+        const rowValue = newObj.isUpdateCurrentRow ? get(row.value, props.rowKey) : newObj.rowValue;
+        delete newObj.rowValue;
+        delete newObj.isUpdateCurrentRow;
+        context.emit('update-edited-cell', rowValue, row.value, newObj);
+      } else {
+        editValue.value = obj;
+      }
     };
+
+    watch([isKeepEditMode], (val) => {
+      if (val) {
+        isEdit.value = true;
+      }
+    });
 
     const editOnListeners = computed(() => {
       const listeners = col.value.edit?.on?.({ ...cellParams.value, editedRow: currentRow.value, updateEditedCellValue }) || {};
@@ -213,7 +235,9 @@ export default defineComponent({
         editOnListeners.value[eventName]?.(args[2]);
         // 此处必须在事件执行完成后异步销毁编辑组件，否则会导致事件清除不及时引起的其他问题
         const timer = setTimeout(() => {
-          isEdit.value = false;
+          if (!isKeepEditMode.value) {
+            isEdit.value = false;
+          }
           errorList.value = [];
           props.onEditableChange?.({
             ...cellParams.value,

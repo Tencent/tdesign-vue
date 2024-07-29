@@ -13,6 +13,10 @@ export interface TdTagProps {
    */
   closable?: boolean;
   /**
+   * 自定义颜色
+   */
+  color?: string;
+  /**
    * 组件子元素
    */
   content?: string | TNode;
@@ -73,6 +77,10 @@ export interface TdCheckTagProps {
    */
   defaultChecked?: boolean;
   /**
+   * 透传标签选中态属性
+   */
+  checkedProps?: TdTagProps;
+  /**
    * 组件子元素；传入数组时：[选中内容，非选中内容]
    */
   content?: string | number | string[] | TNode;
@@ -91,11 +99,71 @@ export interface TdCheckTagProps {
    */
   size?: SizeEnum;
   /**
+   * 透传标签未选态属性
+   */
+  uncheckedProps?: TdTagProps;
+  /**
+   * 标签唯一标识，一般用于标签组场景，单个可选择标签无需设置
+   */
+  value?: string | number;
+  /**
    * 状态切换时触发
    */
-  onChange?: (checked: boolean) => void;
+  onChange?: (checked: boolean, context: CheckTagChangeContext) => void;
   /**
    * 点击标签时触发
    */
   onClick?: (context: { e: MouseEvent }) => void;
+}
+
+export interface TdCheckTagGroupProps {
+  /**
+   * 透传标签选中态属性
+   */
+  checkedProps?: TdTagProps;
+  /**
+   * 是否支持选中多个标签
+   * @default false
+   */
+  multiple?: boolean;
+  /**
+   * 标签选项列表
+   */
+  options?: CheckTagGroupOption[];
+  /**
+   * 透传标签未选态属性
+   */
+  uncheckedProps?: TdTagProps;
+  /**
+   * 选中标签值
+   * @default []
+   */
+  value?: CheckTagGroupValue;
+  /**
+   * 选中标签值，非受控属性
+   * @default []
+   */
+  defaultValue?: CheckTagGroupValue;
+  /**
+   * null
+   */
+  onChange?: (value: CheckTagGroupValue, context: CheckTagGroupChangeContext) => void;
+}
+
+export interface CheckTagChangeContext {
+  e: MouseEvent | KeyboardEvent;
+  value: string | number;
+}
+
+export interface CheckTagGroupOption extends TdCheckTagProps {
+  label: string | TNode;
+  value: string | number;
+}
+
+export type CheckTagGroupValue = Array<string | number>;
+
+export interface CheckTagGroupChangeContext {
+  type: 'check' | 'uncheck';
+  e: MouseEvent | KeyboardEvent;
+  value: string | number;
 }

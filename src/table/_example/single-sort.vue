@@ -35,7 +35,7 @@
 <script lang="jsx">
 import { CheckCircleFilledIcon, ErrorCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 
-const columns = [
+const initialColumns = [
   { colKey: 'applicant', title: '申请人', width: '100' },
   {
     colKey: 'status',
@@ -68,7 +68,7 @@ const columns = [
   { colKey: 'channel', title: '签署方式', width: '120' },
   { colKey: 'createTime', title: '申请时间' },
 ];
-const data = new Array(4).fill(null).map((_, i) => ({
+const initialData = new Array(4).fill(null).map((_, i) => ({
   index: i + 1,
   applicant: ['贾明', '张三', '王芳'][i % 3],
   status: i % 3,
@@ -84,8 +84,8 @@ const data = new Array(4).fill(null).map((_, i) => ({
 export default {
   data() {
     return {
-      data,
-      columns,
+      data: initialData,
+      columns: initialColumns,
       hideSortTips: false,
       sort: {
         // 按照 status 字段进行排序
@@ -96,29 +96,29 @@ export default {
     };
   },
   methods: {
-    sortChange(sort) {
+    sortChange(sortInfo) {
       // 对于受控属性而言，这里的赋值很重要，不可缺少
-      this.sort = sort;
-      this.request(sort);
-      console.log('sort-change', sort);
+      this.sort = sortInfo;
+      this.request(sortInfo);
+      console.log('sort-change', sortInfo);
     },
-    // 排序、分页、过滤等发生变化时会出发 change 事件
+    // 排序、分页、过滤等发生变化时会触发 change 事件
     onChange(info, context) {
       console.log('change', info, context);
     },
     // 非受控用法，不需要传递 sort 给 Table 组件，因而此处无需执行 this.sort = sort 进行赋值
-    defaultSortChange(sort) {
-      this.request(sort);
-    },
+    // defaultSortChange(sort) {
+    //   this.request(sort);
+    // },
     request(sort) {
       // 模拟异步请求，进行数据排序
       const timer = setTimeout(() => {
         if (sort) {
-          this.data = data
+          this.data = initialData
             .concat()
             .sort((a, b) => (sort.descending ? b[sort.sortBy] - a[sort.sortBy] : a[sort.sortBy] - b[sort.sortBy]));
         } else {
-          this.data = data.concat();
+          this.data = initialData.concat();
         }
         clearTimeout(timer);
       }, 100);

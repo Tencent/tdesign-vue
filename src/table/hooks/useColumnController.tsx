@@ -5,43 +5,47 @@ import {
   computed, ref, SetupContext, toRefs, h, watch,
 } from '@vue/composition-api';
 import { SettingIcon as TdSettingIcon } from 'tdesign-icons-vue';
-import intersection from 'lodash/intersection';
+// import intersection from 'lodash/intersection';
 import { CreateElement } from 'vue';
-import Checkbox, {
-  CheckboxGroup,
-  CheckboxGroupValue,
-  CheckboxOptionObj,
-  CheckboxGroupChangeContext,
-} from '../../checkbox';
+import isFunction from 'lodash/isFunction';
+import { CheckboxGroupValue, CheckboxOptionObj, CheckboxGroupChangeContext } from '../../checkbox';
 import { DialogPlugin } from '../../dialog/plugin';
 import { renderTitle } from './useTableHeader';
-import {
-  PrimaryTableCol, TdPrimaryTableProps, PrimaryTableColumnChange, TableRowData,
-} from '../type';
+import { PrimaryTableCol, TdPrimaryTableProps } from '../type';
 import { useConfig } from '../../config-provider/useConfig';
 import useDefaultValue from '../../hooks/useDefaultValue';
 import { useGlobalIcon } from '../../hooks/useGlobalIcon';
 import { getCurrentRowByKey } from '../utils';
 import { DialogInstance } from '../../dialog';
 import TButton from '../../button';
+import ColumnCheckboxGroup from '../column-checkbox-group';
+import { useTNodeJSX } from '../../hooks/tnode';
+
+interface CheckboxGroupOptionsType {
+  options: CheckboxOptionObj[];
+  label: string;
+  value?: string | number;
+}
 
 export function getColumnKeys(columns: PrimaryTableCol[], keys = new Set<string>()) {
   for (let i = 0, len = columns.length; i < len; i++) {
     const col = columns[i];
-    col.colKey && keys.add(col.colKey);
     if (col.children?.length) {
       getColumnKeys(col.children, keys);
+    } else {
+      col.colKey && keys.add(col.colKey);
     }
   }
   return keys;
 }
 
 export default function useColumnController(props: TdPrimaryTableProps, context: SetupContext) {
-  const { classPrefix, global } = useConfig('table');
+  const { classPrefix, globalConfig } = useConfig('table', props.locale);
   const { SettingIcon } = useGlobalIcon({ SettingIcon: TdSettingIcon });
   const {
     columns, columnController, displayColumns, columnControllerVisible,
   } = toRefs(props);
+  const renderTNodeJSX = useTNodeJSX();
   const dialogInstance = ref<DialogInstance>(null);
   const enabledColKeys = computed(() => {
     const arr = (columnController.value?.fields || [...getColumnKeys(columns.value)] || []).filter((v) => v);
@@ -63,25 +67,67 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
 
   const checkboxOptions = computed<CheckboxOptionObj[]>(() => getCheckboxOptions(columns.value));
 
-  const intersectionChecked = computed(() => intersection(columnCheckboxKeys.value, [...enabledColKeys.value]));
+  const checkboxGroupList = computed<CheckboxGroupOptionsType[]>(() => {
+    if (columnController.value?.groupColumns?.length) {
+      return getCheckboxGroupOptions(columns.value);
+    }
+    const oneItem: CheckboxGroupOptionsType = {
+      label: globalConfig.value.selectAllText,
+      options: getCheckboxOptions(columns.value),
+    };
+    return [oneItem];
+  });
+
+  // const intersectionChecked = computed(() => intersection(columnCheckboxKeys.value, [...enabledColKeys.value]));
 
   watch([displayColumns], ([val]) => {
     columnCheckboxKeys.value = val || props.defaultDisplayColumns || keys;
   });
 
+  function getOneColumnItem(column: PrimaryTableCol, i: number) {
+    return {
+      label: () => renderTitle(h, context.slots, column, i),
+      value: column.colKey,
+      disabled: !enabledColKeys.value.has(column.colKey),
+    };
+  }
+
+  // 列配置分组
+  function getCheckboxGroupOptions(columns: PrimaryTableCol[]) {
+    const groupColumns = columnController.value?.groupColumns;
+    if (!groupColumns?.length) return [];
+    const groupList: CheckboxGroupOptionsType[] = [];
+    const loop = (columns: PrimaryTableCol[]) => {
+      for (let i = 0, len = columns.length; i < len; i++) {
+        const column = columns[i];
+        const oneItem = getOneColumnItem(column, i);
+        for (let j = 0, len1 = groupColumns.length; j < len1; j++) {
+          const groupInfo = groupColumns[j];
+          if (!groupInfo.columns.includes(column.colKey)) continue;
+          if (groupList[j]?.options?.length) {
+            groupList[j].options.push(oneItem);
+          } else {
+            groupList[j] = { ...groupColumns[j], options: [oneItem] };
+          }
+        }
+        if (column.children?.length) {
+          loop(column.children);
+        }
+      }
+    };
+    loop(columns);
+    return groupList;
+  }
+
   function getCheckboxOptions(columns: PrimaryTableCol[], arr: CheckboxOptionObj[] = []) {
+    if (columnController.value?.groupColumns?.length) return [];
     // 减少循环次数
     for (let i = 0, len = columns.length; i < len; i++) {
       const item = columns[i];
-      if (item.colKey) {
-        arr.push({
-          label: () => renderTitle(h, context.slots, item, i),
-          value: item.colKey,
-          disabled: !enabledColKeys.value.has(item.colKey),
-        });
-      }
       if (item.children?.length) {
         getCheckboxOptions(item.children, arr);
+      } else if (item.colKey) {
+        arr.push(getOneColumnItem(item, i));
       }
     }
     return arr;
@@ -100,60 +146,81 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
     context.emit('column-change', params);
   };
 
-  const handleClickAllShowColumns = (checked: boolean, ctx: { e: Event }) => {
-    if (checked) {
-      const newData = checkboxOptions.value?.map((t) => t.value) || [];
-      columnCheckboxKeys.value = newData;
-      const params: PrimaryTableColumnChange<TableRowData> = { type: 'check', columns: newData, e: ctx.e };
-      props.onColumnChange?.(params);
-      // Vue3 ignore next line
-      context.emit('column-change', params);
-    } else {
-      const disabledColKeys = checkboxOptions.value.filter((t) => t.disabled).map((t) => t.value);
-      columnCheckboxKeys.value = disabledColKeys;
-      const params: PrimaryTableColumnChange<TableRowData> = { type: 'uncheck', columns: disabledColKeys, e: ctx.e };
-      props.onColumnChange?.(params);
-      // Vue3 ignore next line
-      context.emit('column-change', params);
-    }
-  };
+  // const handleClickAllShowColumns = (checked: boolean, ctx: { e: Event }) => {
+  //   if (checked) {
+  //     const newData = checkboxOptions.value?.map((t) => t.value) || [];
+  //     columnCheckboxKeys.value = newData;
+  //     const params: PrimaryTableColumnChange<TableRowData> = { type: 'check', columns: newData, e: ctx.e };
+  //     props.onColumnChange?.(params);
+  //     // Vue3 ignore next line
+  //     context.emit('column-change', params);
+  //   } else {
+  //     const disabledColKeys = checkboxOptions.value.filter((t) => t.disabled).map((t) => t.value);
+  //     columnCheckboxKeys.value = disabledColKeys;
+  //     const params: PrimaryTableColumnChange<TableRowData> = { type: 'uncheck', columns: disabledColKeys, e: ctx.e };
+  //     props.onColumnChange?.(params);
+  //     // Vue3 ignore next line
+  //     context.emit('column-change', params);
+  //   }
+  // };
 
   const handleToggleColumnController = () => {
+    if (dialogInstance.value) {
+      dialogInstance.value.show();
+      return;
+    }
     dialogInstance.value = DialogPlugin.confirm({
-      header: global.value.columnConfigTitleText,
+      header: globalConfig.value.columnConfigTitleText,
       // eslint-disable-next-line
       body: (h: CreateElement) => {
         const widthMode = columnController.value?.displayType === 'fixed-width' ? 'fixed' : 'auto';
-        const checkedLength = intersectionChecked.value.length;
-        const isCheckedAll = checkedLength === enabledColKeys.value.size;
-        const isIndeterminate = checkedLength > 0 && checkedLength < enabledColKeys.value.size;
+        // const checkedLength = intersectionChecked.value.length;
+        // const isCheckedAll = checkedLength === enabledColKeys.value.size;
+        // const isIndeterminate = checkedLength > 0 && checkedLength < enabledColKeys.value.size;
+        const { columnControllerTopContent, columnControllerBottomContent } = columnController.value || {};
         const prefix = classPrefix.value;
         const classes = [`${prefix}-table__column-controller`, `${prefix}-table__column-controller--${widthMode}`];
         const defaultNode = (
           <div class={classes}>
             <div class={`${prefix}-table__column-controller-body`}>
+              {isFunction(columnControllerTopContent)
+                ? columnControllerTopContent(h)
+                : renderTNodeJSX('columnControllerTopContent')}
               {/* 请选择需要在表格中显示的数据列 */}
-              <p class={`${prefix}-table__column-controller-desc`}>{global.value.columnConfigDescriptionText}</p>
-              <div class={`${prefix}-table__column-controller-block`}>
-                <Checkbox indeterminate={isIndeterminate} checked={isCheckedAll} onChange={handleClickAllShowColumns}>
-                  {global.value.selectAllText}
-                </Checkbox>
-              </div>
-              <div class={`${prefix}-table__column-controller-block`}>
-                <CheckboxGroup
-                  options={checkboxOptions.value}
-                  props={columnController.value?.checkboxProps}
-                  value={columnCheckboxKeys.value}
-                  onChange={handleCheckChange}
-                />
-              </div>
+
+              {globalConfig.value.columnConfigDescriptionText && (
+                <p class={`${prefix}-table__column-controller-desc`}>
+                  {globalConfig.value.columnConfigDescriptionText}
+                </p>
+              )}
+
+              {checkboxGroupList.value.map((group, index) => {
+                const uniqueKey = columnController.value?.groupColumns?.length
+                  ? String(group.value || index)
+                  : undefined;
+                return (
+                  <ColumnCheckboxGroup
+                    key={group.value || index}
+                    uniqueKey={uniqueKey}
+                    value={columnCheckboxKeys.value}
+                    label={group.label}
+                    options={group.options}
+                    on={{ change: handleCheckChange }}
+                    checkboxProps={columnController.value?.checkboxProps}
+                  />
+                );
+              })}
+
+              {isFunction(columnControllerBottomContent)
+                ? columnControllerBottomContent(h)
+                : renderTNodeJSX('columnControllerBottomContent')}
             </div>
           </div>
         );
         return defaultNode;
       },
-      confirmBtn: global.value.confirmText,
-      cancelBtn: global.value.cancelText,
+      confirmBtn: globalConfig.value.confirmText,
+      cancelBtn: globalConfig.value.cancelText,
       width: 612,
       onConfirm: () => {
         setTDisplayColumns([...columnCheckboxKeys.value]);
@@ -207,7 +274,7 @@ export default function useColumnController(props: TdPrimaryTableProps, context:
           theme="default"
           variant="outline"
           onClick={handleToggleColumnController}
-          content={global.value.columnConfigButtonText}
+          content={globalConfig.value.columnConfigButtonText}
           scopedSlots={{
             icon: () => <SettingIcon />,
           }}

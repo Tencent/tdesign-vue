@@ -5,10 +5,10 @@ import observe from '../_common/js/utils/observe';
 
 export function useElementLazyRender(labelRef: Ref<HTMLElement>, lazyLoad: Ref<boolean>) {
   const ioObserver = ref<IntersectionObserver>();
-  const showElement = ref(true);
+  const showElement = ref(!lazyLoad.value);
 
   const handleLazyLoad = () => {
-    if (!lazyLoad.value) return;
+    if (!lazyLoad.value || !labelRef.value || ioObserver.value) return;
     showElement.value = false;
     const io = observe(
       labelRef.value,
@@ -23,11 +23,11 @@ export function useElementLazyRender(labelRef: Ref<HTMLElement>, lazyLoad: Ref<b
 
   onMounted(handleLazyLoad);
 
-  lazyLoad.value && watch([lazyLoad], handleLazyLoad);
+  lazyLoad.value && watch([lazyLoad, labelRef], handleLazyLoad);
 
   onBeforeUnmount(() => {
     if (!lazyLoad.value) return;
-    ioObserver.value?.unobserve(labelRef.value);
+    ioObserver.value?.unobserve?.(labelRef.value);
   });
 
   return {

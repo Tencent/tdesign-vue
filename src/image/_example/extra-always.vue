@@ -2,11 +2,7 @@
   <t-space :size="32">
     <t-space direction="vertical">
       <strong :style="{ fontSize: '20px' }">有遮罩</strong>
-      <t-image
-        src="https://tdesign.gtimg.com/demo/demo-image-1.png"
-        :style="{ width: '284px', height: '160px' }"
-        :overlayContent="renderMask"
-      />
+      <t-image :src="src" :style="{ width: '284px', height: '160px' }" :overlayContent="renderMask" />
     </t-space>
     <t-space direction="vertical">
       <strong :style="{ fontSize: '20px' }">无遮罩</strong>
@@ -20,13 +16,13 @@
 </template>
 
 <script lang="jsx">
-import Vue from 'vue';
 import { PrintIcon } from 'tdesign-icons-vue';
 import { Tag } from 'tdesign-vue';
 
-export default Vue.extend({
+export default {
   data() {
     return {
+      src: '',
       // renderMask 支持插槽
       // eslint-disable-next-line
       renderMask: (h) => (
@@ -74,6 +70,12 @@ export default Vue.extend({
       ),
     };
   },
+  created() {
+    const timer = setTimeout(() => {
+      this.src = 'https://tdesign.gtimg.com/demo/demo-image-1.png';
+      clearTimeout(timer);
+    }, 100);
+  },
   methods: {},
-});
+};
 </script>

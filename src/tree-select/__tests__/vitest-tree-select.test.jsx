@@ -122,7 +122,7 @@ describe('TreeSelect Component', () => {
   });
   it('slots.collapsed-items works fine', () => {
     const wrapper = getTreeSelectMultipleMount(TreeSelect, {
-      scopedSlots: { 'collapsed-items': (h) => <span class="custom-node">TNode</span> },
+      scopedSlots: { collapsedItems: (h) => <span class="custom-node">TNode</span> },
       minCollapsedNum: 2,
       value: [1, 3, '5'],
       data: [
@@ -152,12 +152,8 @@ describe('TreeSelect Component', () => {
     });
     expect(fn).toHaveBeenCalled();
     expect(fn.mock.calls[0][1].count).toBe(1);
-    expect(fn.mock.calls[0][1].value).toEqual([
-      { label: 'tdesign-vue', value: 1 },
-      { label: 'tdesign-miniprogram', value: 3 },
-      { label: 'tdesign-angular', value: '5' },
-    ]);
-    expect(fn.mock.calls[0][1].collapsedSelectedItems).toEqual([{ label: 'tdesign-angular', value: '5' }]);
+    expect(fn.mock.calls[0][1].value).toEqual(['tdesign-vue', 'tdesign-miniprogram', 'tdesign-angular']);
+    expect(fn.mock.calls[0][1].collapsedSelectedItems).toEqual(['tdesign-angular']);
   });
   it('slots.collapsedItems: a function with params', () => {
     const fn = vi.fn();
@@ -176,12 +172,8 @@ describe('TreeSelect Component', () => {
 
     expect(fn).toHaveBeenCalled();
     expect(fn.mock.calls[0][0].count).toBe(1);
-    expect(fn.mock.calls[0][0].value).toEqual([
-      { label: 'tdesign-vue', value: 1 },
-      { label: 'tdesign-miniprogram', value: 3 },
-      { label: 'tdesign-angular', value: '5' },
-    ]);
-    expect(fn.mock.calls[0][0].collapsedSelectedItems).toEqual([{ label: 'tdesign-angular', value: '5' }]);
+    expect(fn.mock.calls[0][0].value).toEqual(['tdesign-vue', 'tdesign-miniprogram', 'tdesign-angular']);
+    expect(fn.mock.calls[0][0].collapsedSelectedItems).toEqual(['tdesign-angular']);
   });
 
   it('props.data: empty data with panel content node', async () => {

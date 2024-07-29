@@ -1,9 +1,9 @@
 import {
-  defineComponent, computed, toRefs, ref, nextTick,
+  defineComponent, computed, toRefs, ref, nextTick, watch,
 } from '@vue/composition-api';
 
 import { CloseCircleFilledIcon as TdCloseCircleFilledIcon } from 'tdesign-icons-vue';
-import TInput, { InputProps, InputValue } from '../input';
+import TInput, { InputProps } from '../input';
 import { TdTagInputProps } from './type';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
@@ -62,7 +62,7 @@ export default defineComponent({
     );
 
     const {
-      scrollToRight, onWheel, scrollToRightOnEnter, scrollToLeftOnLeave, tagInputRef,
+      scrollToRight, onWheel, scrollToRightOnEnter, scrollToLeftOnLeave, tagInputRef, isScrollable,
     } = useTagScroll(props);
     // handle tag add and remove
     const {
@@ -93,17 +93,17 @@ export default defineComponent({
           && (tagValue.value?.length || tInputValue.value),
     ));
 
-    const onInputCompositionstart = (value: InputValue, context: { e: CompositionEvent }) => {
+    const onInputCompositionstart = (value: string, context: { e: CompositionEvent }) => {
       isComposition.value = true;
       inputProps.value?.onCompositionstart?.(value, context);
     };
 
-    const onInputCompositionend = (value: InputValue, context: { e: CompositionEvent }) => {
+    const onInputCompositionend = (value: string, context: { e: CompositionEvent }) => {
       isComposition.value = false;
       inputProps.value?.onCompositionend?.(value, context);
     };
 
-    const onInputEnter = (value: InputValue, context: { e: KeyboardEvent }) => {
+    const onInputEnter = (value: string, context: { e: KeyboardEvent }) => {
       // 阻止 Enter 默认行为，避免在 Form 中触发 submit 事件
       context.e?.preventDefault();
       setTInputValue('', { e: context.e, trigger: 'enter' });
@@ -125,6 +125,18 @@ export default defineComponent({
       props.onClear?.(ctx);
       context.emit('clear', ctx);
     };
+
+    // 支持在超长滚动场景下滚动选项进行操作
+    watch(
+      () => isScrollable.value,
+      (v) => {
+        if (props.excessTagsDisplayType !== 'scroll') return;
+        const scrollElementClass = `${classPrefix.value}-input__prefix`;
+        const scrollElement = tagInputRef.value.$el.querySelector(`.${scrollElementClass}`);
+        if (v) scrollElement.classList.add(`${scrollElementClass}--scrollable`);
+        else scrollElement.classList.remove(`${scrollElementClass}--scrollable`);
+      },
+    );
 
     return {
       tagValue,
@@ -167,22 +179,24 @@ export default defineComponent({
     if (suffixIconNode && !this.classes.includes(suffixClass)) {
       this.classes.push(suffixClass);
     }
+    const prefixIconNode = renderTNodeJSX(this, 'prefixIcon');
     // 自定义 Tag 节点
     const displayNode = renderTNodeJSX(this, 'valueDisplay', {
       params: {
         value: this.tagValue,
-        onClose: (index: number, item: any) => this.onClose({ index, item }),
+        onClose: (index: number) => this.onClose({ index }),
       },
     });
     // 左侧文本
     const label = renderTNodeJSX(this, 'label', { silent: true });
+    const readonly = this.readonly || this.inputProps?.readonly;
     return (
       <TInput
         ref="tagInputRef"
-        readonly={this.readonly || this.inputProps?.readonly}
+        readonly={readonly}
         inputClass={this.inputProps?.inputClass} // 展开无效 需直接透传
         value={this.tInputValue}
-        showInput={!this.inputProps?.readonly || !this.tagValue || !this.tagValue?.length}
+        showInput={!readonly || !this.tagValue || !this.tagValue?.length}
         keepWrapperWidth={!this.autoWidth}
         autoWidth={true}
         size={this.size}
@@ -194,10 +208,11 @@ export default defineComponent({
         placeholder={this.tagInputPlaceholder}
         suffix={this.suffix}
         suffixIcon={() => suffixIconNode}
+        prefixIcon={() => prefixIconNode}
         props={this.inputProps}
         scopedSlots={this.$scopedSlots}
         on={{
-          change: (val: InputValue, context?: { e?: InputEvent | MouseEvent }) => {
+          change: (val: string, context?: { e?: InputEvent | MouseEvent }) => {
             this.setTInputValue(val, { ...context, trigger: 'input' });
           },
           enter: this.onInputEnter,
@@ -211,11 +226,11 @@ export default defineComponent({
             this.cancelHover(context);
             this.scrollToLeftOnLeave();
           },
-          focus: (inputValue: InputValue, context: { e: MouseEvent }) => {
+          focus: (inputValue: string, context: { e: MouseEvent }) => {
             this.onFocus?.(this.tagValue, { e: context.e, inputValue });
             this.$emit('focus', this.tagValue, { e: context.e, inputValue });
           },
-          blur: (inputValue: InputValue, context: { e: MouseEvent }) => {
+          blur: (inputValue: string, context: { e: MouseEvent }) => {
             this.setTInputValue('', { e: context.e, trigger: 'blur' });
             this.onBlur?.(this.tagValue, { e: context.e, inputValue: '' });
             this.$emit('blur', this.tagValue, { e: context.e, inputValue: '' });

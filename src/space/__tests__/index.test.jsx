@@ -59,7 +59,7 @@ describe('Space', () => {
           );
         },
       });
-      expect(wrapper.element.style.flexWrap).toEqual('wrap');
+      expect(wrapper.element.classList.contains('t-space--break-line')).toBeTruthy();
     });
 
     it('separator', () => {

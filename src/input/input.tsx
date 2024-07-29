@@ -11,15 +11,17 @@ import { InputValue, TdInputProps } from './type';
 import { getCharacterLength, omit } from '../utils/helper';
 import getConfigReceiverMixins, { InputConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
-import { ClassName } from '../common';
+import { ClassName, PlainObject } from '../common';
 import { emitEvent } from '../utils/event';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import FormItem from '../form/form-item';
 import log from '../_common/js/log';
 
-function getValidAttrs(obj: object): object {
-  const newObj = {};
+const ANIMATION_TIME = 100;
+
+function getValidAttrs(obj: PlainObject): PlainObject {
+  const newObj: PlainObject = {};
   Object.keys(obj).forEach((key) => {
     if (typeof obj[key] !== 'undefined') {
       newObj[key] = obj[key];
@@ -67,9 +69,10 @@ export default mixins(
       inputValue: this.value,
       composingRef: false,
       composingRefValue: this.value,
-      resizeObserver: null as ResizeObserver,
       preValue: this.value,
       timer: null,
+      observerTimer: null,
+      containerObserver: null as ResizeObserver,
     };
   },
   computed: {
@@ -81,7 +84,7 @@ export default mixins(
     },
     showClear(): boolean {
       return (
-        ((this.value && !this.disabled && this.clearable && !this.readonly) || this.showClearIconOnEmpty)
+        ((this.value && !this.tDisabled && this.clearable && !this.readonly) || this.showClearIconOnEmpty)
         && this.isHover
       );
     },
@@ -108,6 +111,7 @@ export default mixins(
           [`${this.classPrefix}-align-${this.align}`]: this.align !== 'left',
           [`${this.classPrefix}-is-disabled`]: this.tDisabled,
           [`${this.classPrefix}-is-readonly`]: this.readonly,
+          [`${this.componentName}--borderless`]: this.borderless,
           [`${this.componentName}--focused`]: this.focused,
         },
       ];
@@ -190,7 +194,6 @@ export default mixins(
   },
 
   created() {
-    this.composing = false;
     if (this.autoWidth) {
       this.addListeners();
     }
@@ -204,15 +207,20 @@ export default mixins(
   },
 
   mounted() {
-    this.addTableResizeObserver(this.$refs.inputPreRef as Element);
+    this.addResizeObserver();
   },
 
   beforeDestroy() {
-    this.resizeObserver?.unobserve(this.$refs.inputPreRef as Element);
-    this.resizeObserver?.disconnect();
+    this.cleanupObserver(this.containerObserver, this.$refs.inputRef as Element);
   },
 
   methods: {
+    getOutputValue(val: InputValue) {
+      if (this.type === 'number') {
+        return val || val === 0 ? Number(val) : undefined;
+      }
+      return val;
+    },
     addListeners() {
       this.$watch(
         () => this.value + this.placeholder,
@@ -225,14 +233,24 @@ export default mixins(
         { immediate: true },
       );
     },
-    // 当元素默认为 display: none 状态，无法提前准确计算宽度，因此需要监听元素宽度变化。比如：Tabs 场景切换。
-    addTableResizeObserver(element: Element) {
-      // IE 11 以下使用设置 minWidth 兼容；IE 11 以上使用 ResizeObserver
-      if (typeof window.ResizeObserver === 'undefined' || !element || this.isIE) return;
-      this.resizeObserver = new window.ResizeObserver(() => {
-        this.updateInputWidth();
-      });
-      this.resizeObserver.observe(element);
+    addResizeObserver() {
+      if (this.$refs.inputRef) {
+        this.$watch(
+          () => this.$refs.inputRef,
+          () => {
+            this.cleanupObserver(this.containerObserver, this.$refs.inputRef as Element);
+            this.containerObserver = this.useResizeObserver(this.$refs.inputRef as HTMLElement, () => {
+              if (this.autoWidth) {
+                this.observerTimer = setTimeout(() => {
+                  this.updateInputWidth();
+                  clearTimeout(this.observerTimer);
+                }, ANIMATION_TIME);
+              }
+            });
+          },
+          { immediate: true },
+        );
+      }
     },
     renderIcon(
       h: CreateElement,
@@ -273,10 +291,11 @@ export default mixins(
       const {
         currentTarget: { value },
       }: any = e;
+      const tmpValue = this.getOutputValue(value);
       if (/enter/i.test(e.key) || /enter/i.test(e.code)) {
-        emitEvent<Parameters<TdInputProps['onEnter']>>(this, 'enter', value, { e });
+        emitEvent<Parameters<TdInputProps['onEnter']>>(this, 'enter', tmpValue, { e });
       } else {
-        emitEvent<Parameters<TdInputProps['onKeydown']>>(this, 'keydown', value, { e });
+        emitEvent<Parameters<TdInputProps['onKeydown']>>(this, 'keydown', tmpValue, { e });
       }
     },
     handleKeyUp(e: KeyboardEvent) {
@@ -287,14 +306,16 @@ export default mixins(
       if (e.key === 'Process') {
         return;
       }
-      emitEvent<Parameters<TdInputProps['onKeyup']>>(this, 'keyup', value, { e });
+      const tmpValue = this.getOutputValue(value);
+      emitEvent<Parameters<TdInputProps['onKeyup']>>(this, 'keyup', tmpValue, { e });
     },
     handleKeypress(e: KeyboardEvent) {
       if (this.tDisabled) return;
       const {
         currentTarget: { value },
       }: any = e;
-      emitEvent<Parameters<TdInputProps['onKeypress']>>(this, 'keypress', value, { e });
+      const tmpValue = this.getOutputValue(value);
+      emitEvent<Parameters<TdInputProps['onKeypress']>>(this, 'keypress', tmpValue, { e });
     },
     handlePaste(e: ClipboardEvent) {
       if (this.tDisabled) return;
@@ -308,12 +329,14 @@ export default mixins(
     },
 
     emitPassword() {
+      if (this.tDisabled) return;
       const { renderType } = this;
       const toggleType = renderType === 'password' ? 'text' : 'password';
       this.renderType = toggleType;
     },
     emitClear(e: MouseEvent) {
-      emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', '', { e, trigger: 'clear' });
+      const val = this.type === 'number' ? undefined : '';
+      emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', val, { e, trigger: 'clear' });
       emitEvent<Parameters<TdInputProps['onClear']>>(this, 'clear', { e });
     },
     emitFocus(e: FocusEvent) {
@@ -324,7 +347,7 @@ export default mixins(
     },
     formatAndEmitBlur(e: FocusEvent) {
       if (this.format) {
-        this.inputValue = this.format(this.value);
+        this.inputValue = this.type === 'number' || typeof this.value === 'number' ? this.value : this.format(this.value);
       }
       this.focused = false;
       this.tFormItem?.validate('blur');
@@ -357,6 +380,7 @@ export default mixins(
       this.onClick?.({ e });
     },
     throttleChangeCursorPos(ref: HTMLInputElement, pos: number) {
+      if (this.type === 'number') return;
       // eslint-disable-next-line no-param-reassign
       (ref as HTMLInputElement).selectionEnd = pos;
     },
@@ -369,7 +393,9 @@ export default mixins(
       if (this.composingRef) {
         this.composingRefValue = val;
       } else {
-        if (this.type !== 'number') {
+        if (this.type === 'number') {
+          val = this.getOutputValue(val);
+        } else {
           val = this.getValueByLimitNumber(val);
         }
         emitEvent<Parameters<TdInputProps['onChange']>>(this, 'change', val, { e, trigger: 'input' });
@@ -414,7 +440,7 @@ export default mixins(
       if (!(maxlength || maxcharacter) || allowInputOverMax || !inputValue) return inputValue;
       if (maxlength) {
         // input value could be unicode 😊
-        return limitUnicodeMaxLength(inputValue, maxlength);
+        return limitUnicodeMaxLength(inputValue, Number(maxlength));
       }
       if (maxcharacter) {
         const r = getCharacterLength(inputValue, maxcharacter);
@@ -428,6 +454,25 @@ export default mixins(
       const error = this.innerStatus ? 'exceed-maximum' : undefined;
       this.onValidate?.({ error });
       this.$emit('validate', { error });
+    },
+
+    useResizeObserver(el: HTMLElement, callback: (data: ResizeObserverEntry[]) => void): ResizeObserver {
+      if (typeof window === 'undefined') return;
+
+      const isSupport = typeof window !== 'undefined' && window.ResizeObserver;
+      // unit tests do not need any warn console; too many warns influence focusing on more important log info
+      if (!isSupport) return;
+
+      const containerObserver = new ResizeObserver(callback);
+      containerObserver.observe(el);
+
+      return containerObserver;
+    },
+
+    cleanupObserver(observer: ResizeObserver, container: Element) {
+      if (!observer || !container) return;
+      observer.unobserve(container);
+      observer.disconnect();
     },
   },
 
@@ -484,9 +529,19 @@ export default mixins(
 
     if (this.type === 'password') {
       if (this.renderType === 'password') {
-        suffixIcon = <BrowseOffIcon class={`${this.componentName}__suffix-clear`} nativeOnClick={this.emitPassword} />;
+        suffixIcon = (
+          <BrowseOffIcon
+            class={{ [`${this.componentName}__suffix-clear`]: !this.tDisabled }}
+            nativeOnClick={this.emitPassword}
+          />
+        );
       } else if (this.renderType === 'text') {
-        suffixIcon = <BrowseIcon class={`${this.componentName}__suffix-clear`} nativeOnClick={this.emitPassword} />;
+        suffixIcon = (
+          <BrowseIcon
+            class={{ [`${this.componentName}__suffix-clear`]: !this.tDisabled }}
+            nativeOnClick={this.emitPassword}
+          />
+        );
       }
     }
 
@@ -525,17 +580,16 @@ export default mixins(
           <span class={[`${this.componentName}__prefix`, `${this.componentName}__prefix-icon`]}>{prefixIcon}</span>
         ) : null}
         {labelContent}
-        {this.showInput && (
-          <input
-            attrs={this.inputAttrs}
-            on={inputEvents}
-            ref="inputRef"
-            class={`${this.componentName}__inner`}
-            value={inputTextValue}
-            onInput={this.handleInput}
-            title={this.disabled ? inputTextValue : undefined}
-          />
-        )}
+        {/* input element must exist, or other select components can not focus by keyboard operation */}
+        <input
+          attrs={this.inputAttrs}
+          on={inputEvents}
+          ref="inputRef"
+          class={[`${this.componentName}__inner`, { [`${this.componentName}--soft-hidden`]: !this.showInput }]}
+          value={inputTextValue}
+          onInput={this.handleInput}
+          title={this.disabled ? inputTextValue : undefined}
+        />
         {this.autoWidth && (
           <span ref="inputPreRef" class={`${this.classPrefix}-input__input-pre`}>
             {this.preValue || this.tPlaceholder}

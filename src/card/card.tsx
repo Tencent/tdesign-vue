@@ -122,8 +122,8 @@ export default defineComponent({
           <div class={this.headerWrapperCls}>
             {this.showAvatar && <div class={this.headerAvatarCls}>{renderTNodeJSX(this, 'avatar')}</div>}
             <div>
-              {this.showTitle && <span class={this.headerTitleCls}>{renderTNodeJSX(this, 'title')}</span>}
-              {this.showSubtitle && <span class={this.headerSubTitleCls}>{renderTNodeJSX(this, 'subtitle')}</span>}
+              {this.showTitle && <div class={this.headerTitleCls}>{renderTNodeJSX(this, 'title')}</div>}
+              {this.showSubtitle && <div class={this.headerSubTitleCls}>{renderTNodeJSX(this, 'subtitle')}</div>}
               {this.showDescription && <p class={this.headerDescriptionCls}>{renderTNodeJSX(this, 'description')}</p>}
             </div>
           </div>
@@ -134,16 +134,7 @@ export default defineComponent({
     },
   },
   render() {
-    if (this.loading) {
-      return renderTNodeJSX(this, 'loading', {
-        defaultNode: (
-          <t-loading>
-            <div class={this.baseCls}></div>
-          </t-loading>
-        ),
-      });
-    }
-    return (
+    const content = (
       <div class={this.baseCls}>
         {this.isHeaderRender ? this.renderHeader() : null}
         {this.showCover ? this.renderCover() : null}
@@ -156,5 +147,12 @@ export default defineComponent({
         )}
       </div>
     );
+
+    if (this.loading) {
+      return renderTNodeJSX(this, 'loading', {
+        defaultNode: <t-loading props={this.loadingProps}>{content}</t-loading>,
+      });
+    }
+    return content;
   },
 });

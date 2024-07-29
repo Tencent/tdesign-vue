@@ -15,10 +15,15 @@ export default {
   /** 高亮的节点值 */
   actived: {
     type: Array as PropType<TdTreeProps['actived']>,
+    default: undefined,
   },
   /** 高亮的节点值，非受控属性 */
   defaultActived: {
     type: Array as PropType<TdTreeProps['defaultActived']>,
+  },
+  /** 判断节点是否可以执行 drop 操作，泛型 `T` 表示树节点 TS 类型 */
+  allowDrop: {
+    type: Function as PropType<TdTreeProps['allowDrop']>,
   },
   /** 是否允许在过滤时节点折叠节点 */
   allowFoldNodeOnFilter: Boolean,
@@ -42,7 +47,7 @@ export default {
   },
   /** 是否禁用树操作 */
   disabled: Boolean,
-  /** [开发中]节点是否可拖拽 */
+  /** 节点是否可拖拽 */
   draggable: Boolean,
   /** 数据为空时展示的文本 */
   empty: {
@@ -65,7 +70,7 @@ export default {
   /** 展开的节点值 */
   expanded: {
     type: Array as PropType<TdTreeProps['expanded']>,
-    default: (): TdTreeProps['expanded'] => [],
+    default: undefined,
   },
   /** 展开的节点值，非受控属性 */
   defaultExpanded: {
@@ -76,7 +81,7 @@ export default {
   filter: {
     type: Function as PropType<TdTreeProps['filter']>,
   },
-  /** 表格高度，超出后会出现滚动条。示例：100,  '30%',  '300'。值为数字类型，会自动加上单位 px。如果不是绝对固定表格高度，建议使用 `maxHeight` */
+  /** 树的高度，超出后会出现滚动条。示例：100,  '30%',  '300'。值为数字类型，会自动加上单位 px。如果不是绝对固定树的高度，建议使用 `maxHeight` */
   height: {
     type: [String, Number] as PropType<TdTreeProps['height']>,
   },
@@ -87,7 +92,7 @@ export default {
     type: [Boolean, Function] as PropType<TdTreeProps['icon']>,
     default: true,
   },
-  /** 用来定义 `value / label / children` 在 `data` 数据中对应的字段别名，示例：`{ value: 'key', label 'name', children: 'list' }` */
+  /** 用来定义 `value / label / disabled / children` 在 `data` 数据中对应的字段别名，示例：`{ value: 'key', label 'name', children: 'list' }`。其中，disabled 待开发。 */
   keys: {
     type: Object as PropType<TdTreeProps['keys']>,
   },
@@ -110,7 +115,7 @@ export default {
   load: {
     type: Function as PropType<TdTreeProps['load']>,
   },
-  /** 表格最大高度，超出后会出现滚动条。示例：100, '30%', '300'。值为数字类型，会自动加上单位 px */
+  /** 树的最大高度，超出后会出现滚动条。示例：100, '30%', '300'。值为数字类型，会自动加上单位 px */
   maxHeight: {
     type: [String, Number] as PropType<TdTreeProps['maxHeight']>,
   },
@@ -127,12 +132,12 @@ export default {
     type: Boolean,
     default: true,
   },
-  /** 选中值（组件为可选状态时） */
+  /** 选中值，组件为可选状态时有效 */
   value: {
     type: Array as PropType<TdTreeProps['value']>,
-    default: (): TdTreeProps['value'] => [],
+    default: undefined,
   },
-  /** 选中值（组件为可选状态时），非受控属性 */
+  /** 选中值，组件为可选状态时有效，非受控属性 */
   defaultValue: {
     type: Array as PropType<TdTreeProps['defaultValue']>,
     default: (): TdTreeProps['defaultValue'] => [],

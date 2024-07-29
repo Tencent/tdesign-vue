@@ -12,12 +12,13 @@ import {
 import { PageInfo, TdPaginationProps, Pagination as TPagination } from '../../pagination';
 import { Checkbox as TCheckbox, CheckboxGroup as TCheckboxGroup, CheckboxProps } from '../../checkbox';
 import {
-  findTopNode, getLeafCount, getDataValues, TARGET,
+  findTopNode, getLeafCount, getDataValues, TARGET, filterTreeData,
 } from '../utils';
 import ripple from '../../utils/ripple';
 import Search from './transfer-search';
 import { renderTNodeJSXDefault } from '../../utils/render-tnode';
 import { getKeepAnimationMixins, getClassPrefixMixins } from '../../config-provider/config-receiver';
+import props from '../props';
 
 const classPrefixMixins = getClassPrefixMixins('transfer');
 
@@ -74,6 +75,7 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
     checkAll: Boolean,
     t: Function,
     global: Object,
+    tree: props.tree,
     isTreeMode: {
       type: Boolean as PropType<boolean>,
       default: false,
@@ -109,10 +111,13 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
       return (this.filteredData && this.filteredData.length) || 0;
     },
     filteredData(): Array<TransferItemOption> {
-      return this.dataSource.filter((item: TransferItemOption) => {
-        const label = item && item.label.toString();
-        return label.toLowerCase().indexOf(this.filterValue.toLowerCase()) > -1;
-      });
+      if (!this.isTreeMode) {
+        return this.dataSource.filter((item: TransferItemOption) => {
+          const label = item && item.label.toString();
+          return label.toLowerCase().indexOf(this.filterValue.toLowerCase()) > -1;
+        });
+      }
+      return filterTreeData(this.dataSource, this.filterValue);
     },
     curPageData(): Array<TransferItemOption> {
       let pageData = this.filteredData;

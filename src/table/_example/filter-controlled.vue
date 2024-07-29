@@ -59,10 +59,10 @@ import {
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 import isNumber from 'lodash/isNumber';
 
-const data = new Array(5).fill(null).map((_, i) => ({
+const initialData = new Array(5).fill(null).map((_, i) => ({
   key: String(i + 1),
   applicant: ['贾明', '张三', '王芳'][i % 3],
-  status: i % 3,
+  status: (i % 3) + 1,
   channel: ['电子签署', '纸质签署', '纸质签署'][i % 3],
   detail: {
     email: ['w.cezkdudy@lhll.au', 'r.nmgw@peurezgn.sl', 'p.cumx@rampblpa.ru'][i % 3],
@@ -75,7 +75,7 @@ const data = new Array(5).fill(null).map((_, i) => ({
 export default {
   data() {
     return {
-      data,
+      data: initialData,
       filterValue: {
         createTime: [],
       },
@@ -94,27 +94,41 @@ export default {
           foot: '-',
         },
         {
-          title: '申请状态',
+          title: () => '申请状态',
           colKey: 'status',
           align: this.align,
           // 单选过滤配置
           filter: {
+            // 当 title 字段使用复杂的函数或插槽动态定义时，筛选结果又只需显示简单的文本时，可以使用 filter.label
+            // label: '申请状态',
             type: 'single',
             list: [
-              { label: '审批通过', value: 0 },
-              { label: '已过期', value: 1 },
-              { label: '审批失败', value: 2 },
+              { label: '审批通过', value: 1 },
+              { label: '已过期', value: 2 },
+              { label: '审批失败', value: 3 },
             ],
+            // you can also set listFilterConfig to be `true`
+            listFilterConfig: {
+              props: { placeholder: 'Search' },
+              style: { width: '120px' },
+              // className: '',
+              // slots: {},
+              // filterMethod: (option, keyword) => option.label.includes(keyword),
+            },
+            // confirm to search and hide filter popup
+            confirmEvents: ['onChange'],
             // 支持透传全部 Popup 组件属性
-            // popupProps: {
-            //   attach: () => document.body,
-            // },
+            popupProps: {
+              overlayInnerClassName: 't-table__list-filter-input--sticky',
+              // overlayInnerStyle: { maxHeight: '280px', overflow: 'auto' },
+              // attach: () => document.body,
+            },
           },
           cell: (h, { row }) => {
             const statusNameListMap = {
-              0: { label: '审批通过', theme: 'success', icon: <CheckCircleFilledIcon /> },
-              1: { label: '审批失败', theme: 'danger', icon: <CloseCircleFilledIcon /> },
-              2: { label: '审批过期', theme: 'warning', icon: <ErrorCircleFilledIcon /> },
+              1: { label: '审批通过', theme: 'success', icon: <CheckCircleFilledIcon /> },
+              2: { label: '审批失败', theme: 'danger', icon: <CloseCircleFilledIcon /> },
+              3: { label: '审批过期', theme: 'warning', icon: <ErrorCircleFilledIcon /> },
             };
             return (
               <t-tag shape="round" theme={statusNameListMap[row.status].theme} variant="light-outline">
@@ -132,7 +146,7 @@ export default {
             type: 'multiple',
             resetValue: [],
             list: [
-              { label: 'All', checkAll: true },
+              { label: 'Check All', checkAll: true },
               { label: '电子签署', value: '电子签署' },
               { label: '纸质签署', value: '纸质签署' },
             ],
@@ -168,11 +182,15 @@ export default {
           sorter: true,
           // 自定义过滤组件：日期过滤配置，请确保自定义组件包含 value 和 onChange 属性
           filter: {
-            type: 'custom',
             component: DateRangePickerPanel,
             props: {
               firstDayOfWeek: 7,
             },
+            attrs: {
+              'data-id': 'attribute-id-value',
+            },
+            classNames: 'custom-class-name',
+            styles: { fontSize: '14px' },
             // 是否显示重置取消按钮，一般情况不需要显示
             showConfirmAndReset: true,
             // 日期范围是一个组件，重置时需赋值为 []
@@ -185,29 +203,25 @@ export default {
 
   methods: {
     // filters 参数包含自定义过滤组件 日期选择器 的值
-    onFilterChange(filters) {
-      console.log('filter-change', filters);
+    onFilterChange(filters, ctx) {
+      console.log('filter-change', filters, ctx);
       // 保证日期是一个数组
-      this.filterValue = {
-        ...filters,
-        createTime: filters.createTime || [],
-        channel: filters.channel || [],
-      };
+      this.filterValue = filters;
       // 模拟异步请求进行数据过滤
       this.request(this.filterValue);
     },
-    // 筛选、分页、排序等功能发生变化时，均会出发 change 事件
+    // 筛选、分页、排序等功能发生变化时，均会触发 change 事件
     onChange(info, context) {
       console.log('change', info, context, '筛选、分页、排序等功能发生变化均会触发');
     },
     setFilters() {
       this.filterValue = {};
-      this.data = data;
+      this.data = initialData;
     },
-    filterIcon(h) {
-      console.log(h);
-      return <i>icon</i>;
-    },
+    // filterIcon(h) {
+    //   console.log(h);
+    //   return <i>icon</i>;
+    // },
     oneEmailChange(val, ctx) {
       console.log(val, ctx);
     },
@@ -218,7 +232,7 @@ export default {
     request(filters) {
       const timer = setTimeout(() => {
         clearTimeout(timer);
-        this.data = data.filter((item) => {
+        this.data = initialData.filter((item) => {
           let result = true;
           if (isNumber(filters.status)) {
             result = item.status === filters.status;

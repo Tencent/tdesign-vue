@@ -1,34 +1,33 @@
 <template>
-  <t-space :size="32" direction="vertical" class="tdesign-tree-demo">
-    <t-space :size="10" direction="vertical">
-      <t-form label-align="left" :label-width="80" style="max-width: 500px">
-        <t-form-item label="展开动画">
-          <t-switch v-model="transition" />
-        </t-form-item>
-        <t-form-item label="显示连线">
-          <t-switch v-model="showLine" />
-        </t-form-item>
-        <t-form-item label="显示图标">
-          <t-switch v-model="showIcon" />
-        </t-form-item>
-      </t-form>
-      <t-tree
-        :data="items"
-        hover
-        activable
-        checkable
-        :transition="transition"
-        :expand-on-click-node="false"
-        :line="showLine"
-        :icon="showIcon"
-        :label="label"
-      ></t-tree>
+  <t-space direction="vertical">
+    <t-space>
+      <span>展开动画:</span>
+      <t-switch v-model="transition" />
     </t-space>
+    <t-space>
+      <span>显示连线:</span>
+      <t-switch v-model="showLine" />
+    </t-space>
+    <t-space>
+      <span>显示图标:</span>
+      <t-switch v-model="showIcon" />
+    </t-space>
+    <t-tree
+      :data="items"
+      hover
+      activable
+      checkable
+      :transition="transition"
+      :expand-on-click-node="false"
+      :line="showLine"
+      :icon="showIcon"
+      :label="label"
+    ></t-tree>
   </t-space>
 </template>
 
 <script>
-const items = [
+const initialData = [
   {
     value: 't1',
     children: [
@@ -83,15 +82,14 @@ const items = [
 export default {
   data() {
     return {
-      index: 0,
       transition: true,
       showLine: true,
       showIcon: true,
-      items,
+      items: initialData,
     };
   },
   methods: {
-    label(createElement, node) {
+    label(h, node) {
       return `${node.value}`;
     },
   },

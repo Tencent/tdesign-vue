@@ -1,8 +1,9 @@
 <template>
   <t-space direction="vertical">
-    <t-space>
+    <t-space breakLine>
       <t-checkbox v-model="disabled">禁用状态</t-checkbox>
       <t-checkbox v-model="autoUpload">自动上传</t-checkbox>
+      <t-checkbox v-model="showThumbnail">显示文件缩略图</t-checkbox>
       <t-checkbox v-model="allowUploadDuplicateFile"> 允许上传同名文件 </t-checkbox>
       <t-checkbox v-model="isBatchUpload"> 整体替换上传 </t-checkbox>
       <t-checkbox v-model="uploadAllFilesInOneRequest"> 多个文件一个请求上传 </t-checkbox>
@@ -17,11 +18,14 @@
       theme="file-flow"
       multiple
       :disabled="disabled"
+      :abridge-name="ABRIDGE_NAME"
       :auto-upload="autoUpload"
-      :max="10"
+      :show-thumbnail="showThumbnail"
+      :max="max"
       :allow-upload-duplicate-file="allowUploadDuplicateFile"
       :is-batch-upload="isBatchUpload"
       :upload-all-files-in-one-request="uploadAllFilesInOneRequest"
+      :format-response="formatResponse"
       @dragenter="onDragenter"
       @dragleave="onDragleave"
       @drop="onDrop"
@@ -35,13 +39,15 @@ export default {
 
   data() {
     return {
-      max: 5,
+      max: 10,
       files: [],
       disabled: false,
       autoUpload: false,
       allowUploadDuplicateFile: false,
       isBatchUpload: false,
       uploadAllFilesInOneRequest: false,
+      ABRIDGE_NAME: [10, 7],
+      showThumbnail: false,
     };
   },
 
@@ -54,6 +60,12 @@ export default {
     },
     onDrop(p) {
       console.log('drop', p);
+    },
+    formatResponse(res) {
+      if (!res) {
+        return { status: 'fail', error: '上传失败，原因：文件过大或网络不通' };
+      }
+      return res;
     },
   },
 };

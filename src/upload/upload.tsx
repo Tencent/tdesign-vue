@@ -1,5 +1,5 @@
 import { computed, defineComponent, SetupContext } from '@vue/composition-api';
-import { UploadIcon } from 'tdesign-icons-vue';
+import { UploadIcon as TdUploadIcon } from 'tdesign-icons-vue';
 import useFormDisabled from '../hooks/useFormDisabled';
 import props from './props';
 import NormalFile from './themes/normal-file';
@@ -12,6 +12,8 @@ import { CommonDisplayFileProps, UploadProps } from './interface';
 import { UploadDragEvents } from './hooks/useDrag';
 import CustomFile from './themes/custom-file';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
+
+import useGlobalIcon from '../hooks/useGlobalIcon';
 
 export default defineComponent({
   name: 'TUpload',
@@ -36,9 +38,13 @@ export default defineComponent({
       innerDisabled,
       onInnerRemove,
       onDragFileChange,
+      onPasteFileChange,
     } = uploadData;
 
-    const disabled = computed<boolean>(() => formDisabled.value || innerDisabled.value);
+    const tDisabled = computed<boolean>(() => formDisabled.value || innerDisabled.value);
+    const icons = useGlobalIcon({
+      UploadIcon: TdUploadIcon,
+    });
 
     const commonDisplayFileProps = computed<CommonDisplayFileProps>(() => ({
       accept: props.accept,
@@ -47,7 +53,7 @@ export default defineComponent({
       displayFiles: displayFiles.value,
       theme: props.theme,
       placeholder: props.placeholder,
-      disabled: disabled.value,
+      disabled: tDisabled.value,
       tips: props.tips,
       status: props.status,
       sizeOverLimitMessage: sizeOverLimitMessage.value,
@@ -60,6 +66,7 @@ export default defineComponent({
       autoUpload: props.autoUpload,
       showUploadProgress: props.showUploadProgress,
       abridgeName: props.abridgeName,
+      imageViewerProps: props.imageViewerProps,
       fileListDisplay: props.fileListDisplay,
       onRemove: onInnerRemove,
     }));
@@ -89,25 +96,30 @@ export default defineComponent({
 
     return {
       ...uploadData,
+      onPasteFileChange,
       commonDisplayFileProps,
       dragProps,
       uploadClasses,
+      sizeOverLimitMessage,
+      tDisabled,
+      icons,
     };
   },
 
   methods: {
     renderTrigger() {
+      const { UploadIcon } = this.icons;
       const getDefaultTrigger = () => {
         if (this.theme === 'file-input') {
           return (
-            <Button disabled={this.disabled} variant="outline" props={this.triggerButtonProps}>
+            <Button disabled={this.tDisabled} variant="outline" props={this.triggerButtonProps}>
               {this.triggerUploadText}
             </Button>
           );
         }
         return (
           <Button
-            disabled={this.disabled}
+            disabled={this.tDisabled}
             variant="outline"
             icon={() => <UploadIcon />}
             props={this.triggerButtonProps}
@@ -168,6 +180,7 @@ export default defineComponent({
           triggerUpload={this.triggerUpload}
           uploadFiles={this.uploadFiles}
           cancelUpload={this.cancelUpload}
+          showImageFileName={this.showImageFileName}
           on={{
             preview: this.onInnerPreview,
           }}
@@ -189,9 +202,17 @@ export default defineComponent({
           uploadFiles={this.uploadFiles}
           cancelUpload={this.cancelUpload}
           onPreview={this.onInnerPreview}
+          showThumbnail={this.showThumbnail}
+          showImageFileName={this.showImageFileName}
+          uploadButton={this.uploadButton}
+          cancelUploadButton={this.cancelUploadButton}
           scopedSlots={{
             fileListDisplay: this.$scopedSlots.fileListDisplay,
             'file-list-display': this.$scopedSlots['file-list-display'],
+            uploadButton: this.$scopedSlots.uploadButton,
+            'upload-button': this.$scopedSlots['upload-button'],
+            cancelUploadButton: this.$scopedSlots.cancelUploadButton,
+            'cancel-upload-button': this.$scopedSlots['cancel-upload-button'],
           }}
         >
           <div class={`${this.classPrefix}-upload__trigger`} onClick={this.triggerUpload}>
@@ -225,11 +246,11 @@ export default defineComponent({
 
   render() {
     return (
-      <div class={this.uploadClasses}>
+      <div class={this.uploadClasses} onPaste={this.uploadPastedFiles ? this.onPasteFileChange : undefined}>
         <input
           ref="inputRef"
           type="file"
-          disabled={this.disabled}
+          disabled={this.tDisabled}
           onChange={this.onNormalFileChange}
           multiple={this.multiple}
           accept={this.accept}
@@ -247,6 +268,8 @@ export default defineComponent({
             {renderTNodeJSX(this, 'tips')}
           </small>
         )}
+
+        {this.sizeOverLimitMessage && <small class={this.errorClasses}>{this.sizeOverLimitMessage}</small>}
       </div>
     );
   },

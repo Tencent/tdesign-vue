@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite';
 import path from 'path';
+import { defineConfig } from 'vite';
 import { createVuePlugin } from 'vite-plugin-vue2';
 import ScriptSetup from 'unplugin-vue2-script-setup/vite';
 
@@ -8,7 +8,7 @@ const testConfig = {
   include:
     process.env.NODE_ENV === 'test-snap'
       ? ['test/snap/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}']
-      : ['src/**/__tests__/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+      : ['src/**/__tests__/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
   globals: true,
   environment: 'jsdom',
   testTimeout: 5000,

@@ -45,9 +45,7 @@
   </div>
 </template>
 <script>
-import Vue from 'vue';
-
-export default Vue.extend({
+export default {
   data() {
     return {
       visibleModal: false,
@@ -55,10 +53,5 @@ export default Vue.extend({
       visibleModeless: false,
     };
   },
-  methods: {
-    getAttach() {
-      return this.$root.$el;
-    },
-  },
-});
+};
 </script>

@@ -2,9 +2,15 @@
 
 ### 安装独立 Icon 包
 
-图标相对其他基础组件较为独立，所以作为一个独立的 npm 包做发布管理。如果项目中直接使用，请安装`tdesign-icons-vue`。 同时 tdesign-vue 也内置了 icon,支持直接通过 t-icon 来使用。
+图标相对其他基础组件较为独立，所以作为一个独立的 `npm` 包做发布管理。如果项目中直接使用，请安装 `tdesign-icons-vue`。 同时 `tdesign-vue` 也内置了 `icon`, 支持直接通过 `t-icon` 来使用。
+图标库中共包含超过 **25** 类，**1200+** 个图标，推荐您按需引用图标，减少产物的体积。
 
-### SVG 全量引入
+### 按需引入使用图标
+
+图标可以按需引入单个 SVG 图标。组件开发内部使用到 Icon 时，均按需引入 SVG 图标。
+
+{{ single }}
+### 全量引入使用图标
 
 图标尺寸单位支持多种， 'small', 'medium', 'large', '35px', '3em' 等。
 图标颜色使用 CSS 控制，如：style="color: red"，或者 style="fill: red"。
@@ -12,12 +18,11 @@
 
 {{ base }}
 
-### SVG 按需引入
+### iconfont 图标
 
-图标可以按需引入单个 SVG 图标。组件开发内部使用到 Icon 时，均按需引入 SVG 图标。
+TDesign 支持通过使用 Iconfont 图标，使用时需要单独引入 Iconfont 图标组件。
 
-{{ single }}
-
+{{ iconfont }}
 ### SVG 高级用法
 
 可以传入 url 加入新的 SVG 图标。
@@ -28,11 +33,7 @@
 
 {{ enhanced }}
 
-### iconfont 图标
 
-使用 Iconfont 图标需要单独引入 Iconfont 图标组件。
-
-{{ iconfont }}
 
 ### iconfont 高级用法
 
@@ -54,7 +55,7 @@
 
 #### 如何获取全部图标的名称列表？
 
-如果有需要获取全部图标的名称列表，可以通过`import { manifest } from 'tdesign-icons-vue'` 获取全部图标的名称列表。
+可以通过`import { manifest } from 'tdesign-icons-vue-next'` 获取全部图标的名称列表。
 
 ### t-icon、iconfont和icon使用时都会发起网络请求，我的项目是无网络场景，如何使用？
 
@@ -65,6 +66,13 @@
 所以如果你的项目是无网络场景，请使用按需加载的图标，如`<t-icon name="add" />`请改为`<AddIcon />`。
 
 ### 全部图标
+
+<div style="background: #ecf2fe; display: flex; align-items: center; line-height: 20px; padding: 14px 24px; border-radius: 3px; color: #555a65;margin:16px 0">
+  <svg fill="none" viewBox="0 0 16 16" width="16px" height="16px" style="margin-right: 5px">
+    <path fill="#0052d9" d="M8 15A7 7 0 108 1a7 7 0 000 14zM7.4 4h1.2v1.2H7.4V4zm.1 2.5h1V12h-1V6.5z" fillOpacity="0.9"></path>
+  </svg>
+ 大部分图标在 0.2.0 版本后的图标库新增，如果发现图标引入后无法正常展示，请检查安装的图标库`tdesign-icons-vue`的版本。
+</div>
 
 <td-icons-view />
 

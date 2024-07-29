@@ -44,9 +44,6 @@ export default {
     };
   },
   methods: {
-    handleChange(value) {
-      console.log(value);
-    },
     remoteMethod(search) {
       console.log('search', search);
       this.loading = true;

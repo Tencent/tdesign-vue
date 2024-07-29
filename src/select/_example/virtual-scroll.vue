@@ -4,6 +4,7 @@
     <t-select
       v-model="value1"
       :options="options"
+      filterable
       placeholder="请选择"
       :style="{ width: '300px' }"
       :scroll="{ type: 'virtual' }"
@@ -25,14 +26,14 @@
 <script lang="jsx">
 export default {
   data() {
-    const options = [];
+    const initialOptions = [];
     for (let i = 0; i < 10000; i++) {
-      options.push({ label: `选项${i + 1}`, value: String(i) });
+      initialOptions.push({ label: `选项${i + 1}`, value: String(i) });
     }
     return {
       value1: '',
       value2: '',
-      options,
+      options: initialOptions,
     };
   },
 };

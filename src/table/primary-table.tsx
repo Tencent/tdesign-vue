@@ -16,12 +16,14 @@ import useSorter from './hooks/useSorter';
 import useFilter from './hooks/useFilter';
 import useDragSort from './hooks/useDragSort';
 import useAsyncLoading from './hooks/useAsyncLoading';
-import { PageInfo } from '../pagination';
+import { PageInfo, PaginationProps } from '../pagination';
 import useClassName from './hooks/useClassName';
 import useEditableCell from './hooks/useEditableCell';
 import useEditableRow from './hooks/useEditableRow';
 import { EditableCellProps } from './editable-cell';
 import useStyle from './hooks/useStyle';
+import { ComponentScrollToElementParams } from '../common';
+import { useConfig } from '../config-provider/useConfig';
 
 export { BASE_TABLE_ALL_EVENTS } from './base-table';
 
@@ -64,10 +66,23 @@ export default defineComponent({
     const renderTNode = useTNodeJSX();
     const { columns } = toRefs(props);
     const primaryTableRef = ref(null);
+    const showElement = ref(false);
     const {
       classPrefix, tableDraggableClasses, tableBaseClass, tableSelectedClasses, tableSortClasses,
     } = useClassName();
+    const { global } = useConfig('table', props.locale);
     const { sizeClassNames } = useStyle(props);
+    const tableSize = computed(() => props.size ?? global.value.size);
+    const innerPagination = ref<PaginationProps>(props.pagination);
+    const dataPagination = computed(() => innerPagination.value
+      ? {
+        current: innerPagination.value.current,
+        pageSize: innerPagination.value.pageSize,
+        defaultCurrent: innerPagination.value.defaultCurrent,
+        defaultPageSize: innerPagination.value.defaultPageSize,
+      }
+      : {});
+
     // 自定义列配置功能
     const { tDisplayColumns, renderColumnController } = useColumnController(props, context);
     // 展开/收起行功能
@@ -94,14 +109,18 @@ export default defineComponent({
     } = useFilter(props, context);
 
     // 拖拽排序功能
+    const dragSortParams = computed(() => ({
+      showElement: showElement.value,
+      pagination: dataPagination.value,
+    }));
+
     const {
       isRowHandlerDraggable, isRowDraggable, isColDraggable, setDragSortPrimaryTableRef, setDragSortColumns,
-    } = useDragSort(props, context);
+    } = useDragSort(props, context, dragSortParams);
 
     const { renderTitleWidthIcon } = useTableHeader(props);
     const { renderAsyncLoading } = useAsyncLoading(props, context);
 
-    const { renderEditableCell } = useEditableCell(props, context);
     const {
       errorListMap,
       editableKeysMap,
@@ -109,10 +128,15 @@ export default defineComponent({
       validateTableData,
       onRuleChange,
       clearValidateData,
+      getEditRowData,
+      onUpdateEditedCell,
       onPrimaryTableRowValidate,
-      onPrimaryTableRowEdit,
       onPrimaryTableCellEditChange,
     } = useEditableRow(props, context);
+
+    const { renderEditableCell } = useEditableCell(props, context, {
+      'update-edited-cell': onUpdateEditedCell,
+    });
 
     const primaryTableClasses = computed(() => ({
       [tableDraggableClasses.colDraggable]: isColDraggable.value,
@@ -148,14 +172,26 @@ export default defineComponent({
       setDragSortPrimaryTableRef(primaryTableRef.value);
     });
 
+    const onEditableCellChange: EditableCellProps['onChange'] = (params) => {
+      props.onRowEdit?.(params);
+      context.emit('row-edit', params);
+      const rowValue = get(params.editedRow, props.rowKey || 'id');
+      onUpdateEditedCell(rowValue, params.row, {
+        [params.col.colKey]: params.value,
+      });
+    };
+
     // 1. 影响列数量的因素有：自定义列配置、展开/收起行、多级表头；2. 影响表头内容的因素有：排序图标、筛选图标
-    const getColumns = (columns: PrimaryTableCol<TableRowData>[]) => {
+    const getColumns = (columns: PrimaryTableCol<TableRowData>[], parentDisplay = false) => {
       const arr: PrimaryTableCol<TableRowData>[] = [];
       for (let i = 0, len = columns.length; i < len; i++) {
         let item = { ...columns[i] };
         // 自定义列显示控制
         const isDisplayColumn = item.children?.length || tDisplayColumns.value?.includes(item.colKey);
-        if (!isDisplayColumn && props.columnController) continue;
+        const isColumnController = Boolean(
+          props.columnController || props.displayColumns || props.defaultDisplayColumns,
+        );
+        if (!isDisplayColumn && isColumnController && !parentDisplay) continue;
         item = formatToRowSelectColumn(item);
         const { sort } = props;
         if (item.sorter && props.showSortColumnBgColor) {
@@ -187,7 +223,7 @@ export default defineComponent({
               attach,
               {
                 classPrefix,
-                ellipsisOverlayClassName: props.size !== 'medium' ? sizeClassNames[props.size] : '',
+                ellipsisOverlayClassName: tableSize.value !== 'medium' ? sizeClassNames[tableSize.value] : '',
               },
             );
           };
@@ -199,10 +235,12 @@ export default defineComponent({
           item.cell = (h, p) => {
             const cellProps: EditableCellProps = {
               ...p,
+              row: getEditRowData(p),
+              rowKey: props.rowKey || 'id',
               oldCell,
               tableBaseClass,
               cellEmptyContent: props.cellEmptyContent,
-              onChange: onPrimaryTableRowEdit,
+              onChange: onEditableCellChange,
               onValidate: onPrimaryTableRowValidate,
               onRuleChange,
               onEditableChange: onPrimaryTableCellEditChange,
@@ -221,7 +259,7 @@ export default defineComponent({
           };
         }
         if (item.children?.length) {
-          item.children = getColumns(item.children);
+          item.children = getColumns(item.children, parentDisplay || tDisplayColumns.value?.includes(item.colKey));
         }
         // 多级表头和自定义列配置特殊逻辑：要么子节点不存在，要么子节点长度大于 1，方便做自定义列配置
         if (!item.children || item.children?.length) {
@@ -240,6 +278,7 @@ export default defineComponent({
     });
 
     const onInnerPageChange = (pageInfo: PageInfo, newData: Array<TableRowData>) => {
+      innerPagination.value = { ...innerPagination.value, ...pageInfo };
       currentPaginateData.value = newData;
       props.onPageChange?.(pageInfo, newData);
       // Vue3 ignore next line
@@ -262,13 +301,21 @@ export default defineComponent({
       }
     };
 
+    const onSingleRowClick: TdPrimaryTableProps['onRowClick'] = (params) => {
+      if (props.expandOnRowClick) {
+        onInnerExpandRowClick(params);
+      }
+      if (props.selectOnRowClick) {
+        onInnerSelectRowClick(params);
+      }
+    };
+
     let timer: NodeJS.Timeout;
     const DURATION = 250;
     const onInnerRowClick: TdPrimaryTableProps['onRowClick'] = (params) => {
       // no dblclick, no delay
       if (!context.listeners['row-dblclick']) {
-        onInnerExpandRowClick(params);
-        onInnerSelectRowClick(params);
+        onSingleRowClick(params);
         return;
       }
       if (timer) {
@@ -277,11 +324,14 @@ export default defineComponent({
         timer = undefined;
       } else {
         timer = setTimeout(() => {
-          onInnerExpandRowClick(params);
-          onInnerSelectRowClick(params);
+          onSingleRowClick(params);
           timer = undefined;
         }, DURATION);
       }
+    };
+
+    const onShowElementChange = (val: boolean) => {
+      showElement.value = val;
     };
 
     return {
@@ -293,11 +343,15 @@ export default defineComponent({
       tRowAttributes,
       primaryTableClasses,
       errorListMap,
-      scrollToElement: (data: any) => {
-        primaryTableRef.value.virtualConfig.scrollToElement(data);
+      onShowElementChange,
+      scrollToElement: (data: ComponentScrollToElementParams) => {
+        primaryTableRef.value.scrollToElement(data);
       },
       scrollColumnIntoView: (colKey: string) => {
         primaryTableRef.value.scrollColumnIntoView(colKey);
+      },
+      refreshTable: () => {
+        primaryTableRef.value.refreshTable();
       },
       validateRowData,
       validateTableData,
@@ -381,6 +435,7 @@ export default defineComponent({
     const on: TableListeners = {
       ...this.getListener(),
       'page-change': this.onInnerPageChange,
+      'show-element-change': this.onShowElementChange,
     };
     if (this.expandOnRowClick || this.selectOnRowClick) {
       on['row-click'] = this.onInnerRowClick;

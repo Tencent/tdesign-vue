@@ -10,8 +10,12 @@ export default {
   data() {
     return {
       visible: false,
-      trigger: (h, { open }) => <t-button onClick={open}>预览单张图片</t-button>,
     };
+  },
+  methods: {
+    trigger(h, { open }) {
+      return <t-button onClick={open}>预览单张图片</t-button>;
+    },
   },
 };
 </script>

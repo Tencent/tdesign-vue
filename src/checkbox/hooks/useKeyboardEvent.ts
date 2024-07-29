@@ -1,6 +1,10 @@
+import { CHECKED_CODE_REG } from '../../_common/js/common';
+
 export function useKeyboardEvent(handleChange: (e: Event) => void) {
   const keyboardEventListener = (e: KeyboardEvent) => {
-    if (e.code === 'Enter') {
+    const isCheckedCode = CHECKED_CODE_REG.test(e.key) || CHECKED_CODE_REG.test(e.code);
+    if (isCheckedCode) {
+      e.preventDefault();
       const { disabled } = (e.currentTarget as HTMLElement).querySelector('input');
       !disabled && handleChange(e);
     }

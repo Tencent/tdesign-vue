@@ -8,10 +8,9 @@
   </t-space>
 </template>
 <script>
-import Vue from 'vue';
 import { DialogPlugin } from 'tdesign-vue';
 
-export default Vue.extend({
+export default {
   data() {
     return {
       mydialog: null,
@@ -53,6 +52,7 @@ export default Vue.extend({
         },
       });
     },
+    // 每一次执行方法，都会创建一个新的弹框，注意使用方法，避免多次创建重复内容
     onConfirm() {
       const confirmDia = this.$dialog.confirm({
         header: 'Dialog-Confirm-Plugin',
@@ -112,7 +112,7 @@ export default Vue.extend({
       });
     },
   },
-});
+};
 </script>
 <style scoped>
 p {

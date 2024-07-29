@@ -1,13 +1,6 @@
 <template>
   <div class="box">
-    <t-menu
-      theme="light"
-      defaultValue="3-2"
-      expandMutex
-      :defaultExpanded="expanded"
-      height="550px"
-      :collapsed="collapsed"
-    >
+    <t-menu theme="light" defaultValue="3-2" expandMutex :defaultExpanded="expanded" :collapsed="collapsed">
       <t-submenu title="消息区" value="3">
         <template #icon>
           <icon name="mail" />
@@ -61,7 +54,6 @@
       style="margin-left: 40px"
       :expanded="expanded2"
       @expand="expanded2 = $event"
-      height="550px"
       :collapsed="collapsed2"
     >
       <t-menu-item value="item1">
@@ -145,7 +137,6 @@ export default {
     return {
       expanded: ['2', '3'],
       expanded2: ['2'],
-      disabled: true,
       collapsed: false,
       collapsed2: false,
     };

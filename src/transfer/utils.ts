@@ -1,5 +1,7 @@
 import Vue from 'vue';
 import cloneDeep from 'lodash/cloneDeep';
+import filter from 'lodash/filter';
+
 import {
   TransferListOptionBase, TransferItemOption, TdTransferProps, TransferValue, DataOption,
 } from './interface';
@@ -92,6 +94,7 @@ function getTransferData(
   const list: Array<TransferItemOption> = data.map((transferDataItem, index): TransferItemOption => {
     const labelKey = keys?.label || 'label';
     const valueKey = keys?.value || 'value';
+    const disabledKey = keys?.disabled || 'disabled';
     if (transferDataItem[labelKey] === undefined) {
       throw `${labelKey} is not in DataOption ${JSON.stringify(transferDataItem)}`;
     }
@@ -102,7 +105,7 @@ function getTransferData(
       label: transferDataItem[labelKey] as string,
       value: transferDataItem[valueKey],
       key: `key__value_${transferDataItem[valueKey]}_index_${index}`,
-      disabled: transferDataItem.disabled ?? false,
+      disabled: transferDataItem[disabledKey] ?? false,
       data: transferDataItem,
     };
     if (isTreeMode && transferDataItem.children) {
@@ -198,6 +201,24 @@ function getLeafCount(nodes: Array<TreeNode>): number {
   return total;
 }
 
+// 递归过滤树结构
+// sync from https://github.com/Tencent/tdesign-vue-next/pull/3336
+function filterTreeData(tree: Array<TransferItemOption>, filterStr: string): Array<TransferItemOption> {
+  const res = filter(cloneDeep(tree), (node) => {
+    if (node.label.toLowerCase().indexOf(filterStr.toLowerCase()) > -1) {
+      return true;
+    }
+    if (node?.children?.length > 0) {
+      // eslint-disable-next-line no-param-reassign
+      node.children = filterTreeData(node.children, filterStr);
+
+      return node.children.length > 0;
+    }
+    return false;
+  });
+  return res;
+}
+
 export {
   findTopNode,
   getTransferListOption,
@@ -206,4 +227,5 @@ export {
   cloneTreeWithFilter,
   filterTransferData,
   getLeafCount,
+  filterTreeData,
 };

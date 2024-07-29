@@ -1,6 +1,6 @@
 import { PropType, VNode } from 'vue';
 import { SearchIcon as TdSearchIcon } from 'tdesign-icons-vue';
-import { SearchOption } from '../interface';
+import { SearchContext, SearchOption } from '../interface';
 import TInput from '../../input';
 
 import mixins from '../../utils/mixins';
@@ -34,21 +34,20 @@ export default mixins(getGlobalIconMixins()).extend({
       : {
         clearable: true,
       };
+
+    const handleSearch = (value: string, trigger: SearchContext['trigger'], changeCtx: any) => {
+      this.$emit('search', { value, trigger, e: changeCtx.e });
+    };
+
     const handleChange = (value: string, changeCtx: any) => {
       this.$emit('change', value);
-      this.$emit('search', {
-        value,
-        trigger: 'input',
-        e: changeCtx.e,
-      });
+      handleSearch(value, 'input', changeCtx);
     };
+
     const handleEnter = (value: string, changeCtx: any) => {
-      this.$emit('search', {
-        value,
-        trigger: 'input',
-        e: changeCtx.e,
-      });
+      handleSearch(value, 'enter', changeCtx);
     };
+
     return (
       <div class={`${classPrefix}-transfer__search-wrapper`}>
         <TInput

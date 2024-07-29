@@ -1,5 +1,5 @@
 <template>
-  <t-space direction="vertical" size="30px">
+  <t-space direction="vertical">
     <t-space>
       <t-tag theme="primary" closable>标签一</t-tag>
       <t-tag theme="success" closable>标签二</t-tag>
@@ -44,14 +44,12 @@
 </template>
 
 <script lang="jsx">
-import { AddIcon, DiscountIcon } from 'tdesign-icons-vue';
+import { AddIcon } from 'tdesign-icons-vue';
 import Vue from 'vue';
 
 export default {
   components: {
     AddIcon,
-    // eslint-disable-next-line vue/no-unused-components
-    DiscountIcon,
   },
   data() {
     return {

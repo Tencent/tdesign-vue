@@ -91,13 +91,6 @@ export default {
     };
   },
   methods: {
-    closeBtn(close) {
-      return (
-        <b class="t-message__close" onClick={close}>
-          x
-        </b>
-      );
-    },
     content() {
       return (
         <div>

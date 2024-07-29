@@ -21,7 +21,7 @@ TABLES.forEach((TTable) => {
       const columns = [
         { title: 'Index', colKey: 'index', align: 'center' },
         { title: 'Instance', colKey: 'instance', align: 'left' },
-        { title: 'description', colKey: 'instance' },
+        { title: 'description', colKey: 'description' },
         { title: 'Owner', colKey: 'owner', align: 'right' },
       ];
       const wrapper = mount({
@@ -41,7 +41,7 @@ TABLES.forEach((TTable) => {
       const columns = [
         { title: 'Index', colKey: 'index' },
         { title: 'Instance', colKey: 'instance', attrs: { 'col-key': 'instance' } },
-        { title: 'description', colKey: 'instance' },
+        { title: 'description', colKey: 'description' },
         { title: 'Owner', colKey: 'owner' },
       ];
       const wrapper = mount({
@@ -58,7 +58,7 @@ TABLES.forEach((TTable) => {
       const columns = [
         { title: 'Index', colKey: 'index', className: () => ['tdesign-class'] },
         { title: 'Instance', colKey: 'instance', className: 'tdesign-class' },
-        { title: 'description', colKey: 'instance', className: [{ 'tdesign-class': true }] },
+        { title: 'description', colKey: 'description', className: [{ 'tdesign-class': true }] },
         { title: 'Owner', colKey: 'owner', className: { 'tdesign-class': true, 'tdesign-class1': false } },
       ];
       const wrapper = mount({
@@ -73,6 +73,28 @@ TABLES.forEach((TTable) => {
       expect(tdList.at(2).classes('tdesign-class')).toBeTruthy();
       expect(tdList.at(3).classes('tdesign-class')).toBeTruthy();
       expect(tdList.at(3).classes('tdesign-class1')).toBeFalsy();
+    });
+
+    // 校验逻辑与上面columns.className一致
+    it('Props.columns.thClassName works fine', () => {
+      const columns = [
+        { title: 'Index', colKey: 'index', thClassName: () => ['th-class'] },
+        { title: 'Instance', colKey: 'instance', thClassName: 'th-class' },
+        { title: 'description', colKey: 'description', thClassName: [{ 'th-class': true }] },
+        { title: 'Owner', colKey: 'owner', thClassName: { 'th-class': true, 'th-class1': false } },
+      ];
+      const wrapper = mount({
+        render() {
+          return <TTable rowKey="index" data={data} columns={columns}></TTable>;
+        },
+      });
+      const thWrapper = wrapper.find('thead > tr');
+      const thList = thWrapper.findAll('th');
+      expect(thList.at(0).classes('th-class')).toBeTruthy();
+      expect(thList.at(1).classes('th-class')).toBeTruthy();
+      expect(thList.at(2).classes('th-class')).toBeTruthy();
+      expect(thList.at(3).classes('th-class')).toBeTruthy();
+      expect(thList.at(3).classes('th-class1')).toBeFalsy();
     });
   });
 });

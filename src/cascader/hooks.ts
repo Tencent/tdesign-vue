@@ -19,6 +19,7 @@ import {
   TreeNodeModel,
   CascaderChangeSource,
   CascaderValue,
+  TreeOptionData,
 } from './interface';
 
 // 全局状态
@@ -188,7 +189,7 @@ export const useCascaderContext = (props: TdCascaderProps) => {
       updateExpend();
       updatedTreeNodes();
     },
-    { immediate: true },
+    { immediate: true, deep: true },
   );
 
   // tree插件配置变化
@@ -262,9 +263,19 @@ export const useCascaderContext = (props: TdCascaderProps) => {
     },
   );
 
+  const getCascaderItems = (arrValue: CascaderValue[]) => {
+    const options: TreeOptionData[] = [];
+    arrValue.forEach((value) => {
+      const nodes = statusContext.treeStore?.getNodes(value);
+      nodes && nodes[0] && options.push(nodes[0].data);
+    });
+    return options;
+  };
+
   return {
     innerValue,
     cascaderContext,
     isFilterable,
+    getCascaderItems,
   };
 };

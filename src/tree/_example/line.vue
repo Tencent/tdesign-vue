@@ -1,25 +1,25 @@
 <template>
-  <t-space :size="32" direction="vertical" class="tdesign-tree-demo">
-    <t-space :size="10" direction="vertical">
-      <t-form label-align="left">
-        <t-form-item label="显示连线">
-          <t-switch v-model="showLine" />
-        </t-form-item>
-        <t-form-item label="显示图标">
-          <t-switch v-model="showIcon" />
-        </t-form-item>
-      </t-form>
+  <t-space :size="32" direction="vertical">
+    <t-space direction="vertical">
+      <t-space>
+        <span>显示连线:</span>
+        <t-switch v-model="showLine" />
+      </t-space>
+      <t-space>
+        <span>显示图标:</span>
+        <t-switch v-model="showIcon" />
+      </t-space>
     </t-space>
-    <t-space :size="10" direction="vertical">
-      <h3 class="title">默认样式</h3>
+    <t-space direction="vertical">
+      <h3>默认样式</h3>
       <t-tree :data="items" :line="showLine" :icon="showIcon" expand-all />
     </t-space>
-    <t-space :size="10" direction="vertical" class="tdesign-tree-line">
-      <h3 class="title">使用属性结合 jsx 来自定义呈现</h3>
+    <t-space direction="vertical" class="tdesign-tree-line">
+      <h3>使用属性结合 jsx 来自定义呈现</h3>
       <t-tree :data="items" :icon="showIcon" expand-all :line="renderLine" />
     </t-space>
-    <t-space :size="10" direction="vertical" class="tdesign-tree-line">
-      <h3 class="title">slot 形式</h3>
+    <t-space direction="vertical" class="tdesign-tree-line">
+      <h3>slot 形式</h3>
       <t-tree :data="items" :icon="showIcon" line expand-all>
         <template #line="{ node }">
           <div v-if="showLine" :class="lineClass(node)">
@@ -30,7 +30,7 @@
                 :class="{ 'custom-line-cross': item.cross }"
               ></span>
             </div>
-            <i class="custom-line-icon" v-if="node.isLeaf()">
+            <i v-if="node.isLeaf()" class="custom-line-icon">
               <icon name="heart-filled" />
             </i>
           </div>
@@ -128,12 +128,6 @@ export default {
     };
   },
   methods: {
-    toggleLine() {
-      this.showLine = !this.showLine;
-    },
-    toggleIcon() {
-      this.showIcon = !this.showIcon;
-    },
     getLineNodes(node) {
       const nodes = node.getParents().reverse();
       const lineNodes = [];
@@ -160,19 +154,19 @@ export default {
       }
       return list;
     },
-    renderLine(createElement, node) {
+    renderLine(h, node) {
       if (!this.showLine) return null;
 
       const lineChildren = [];
 
-      const lines = this.getLineNodes(node).map((item) => createElement('span', {
+      const lines = this.getLineNodes(node).map((item) => h('span', {
         class: {
           'custom-line-cross': item.cross,
         },
       }));
 
       lineChildren.push(
-        createElement(
+        h(
           'div',
           {
             class: 'custom-line-box',
@@ -183,7 +177,7 @@ export default {
 
       if (node.isLeaf()) {
         const tIcon = <Icon name="heart-filled" />;
-        const iconNode = createElement(
+        const iconNode = h(
           'i',
           {
             class: 'custom-line-icon',
@@ -193,7 +187,7 @@ export default {
         lineChildren.push(iconNode);
       }
 
-      return createElement(
+      return h(
         'div',
         {
           class: this.lineClass(node),

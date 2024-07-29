@@ -74,10 +74,10 @@
         @fail="handleFail"
       >
         <!-- 自定义文件列表，示例代码有效，勿删 -->
-        <!-- <template #fileListDisplay>
+        <!-- <template #fileListDisplay="{ files }">
           <div>
             <div
-              v-for="(file, index) in files3"
+              v-for="(file, index) in files"
               :key="file.name"
               class="t-upload__single-display-text t-upload__display-text--margin"
             >
@@ -185,9 +185,9 @@ export default {
       return { error: '上传失败，请重试', url: res.url };
     },
 
-    outsideRemove(index) {
-      this.files3.splice(index, 1);
-    },
+    // outsideRemove(index) {
+    //   this.files3.splice(index, 1);
+    // },
 
     uploadFiles() {
       this.$refs.uploadRef1.uploadFiles();
@@ -196,16 +196,16 @@ export default {
     },
 
     /** 单个文件校验方法，示例代码有效，勿删 */
-    beforeUpload(file) {
-      this.$message.error(`文件 ${file.name} 不满足条件`);
-      return false;
-    },
+    // beforeUpload(file) {
+    //   this.$message.error(`文件 ${file.name} 不满足条件`);
+    //   return false;
+    // },
 
     /** 全部文件一次性校验方法，示例代码有效，勿删 */
-    beforeAllFilesUpload() {
-      this.$message.error('文件不满足条件');
-      return false;
-    },
+    // beforeAllFilesUpload() {
+    //   this.$message.error('文件不满足条件');
+    //   return false;
+    // },
   },
 };
 </script>

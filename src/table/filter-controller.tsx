@@ -1,8 +1,11 @@
 import { defineComponent, PropType, ref } from '@vue/composition-api';
 import { CreateElement } from 'vue';
-import { FilterIcon as TdFilterIcon } from 'tdesign-icons-vue';
+import { SearchIcon, FilterIcon as TdFilterIcon } from 'tdesign-icons-vue';
 import isEmpty from 'lodash/isEmpty';
+import isObject from 'lodash/isObject';
+import isFunction from 'lodash/isFunction';
 import lowerFirst from 'lodash/lowerFirst';
+import escapeRegExp from 'lodash/escapeRegExp';
 import Popup, { PopupProps } from '../popup';
 import { CheckboxGroup } from '../checkbox';
 import { RadioGroup } from '../radio';
@@ -14,12 +17,14 @@ import { PrimaryTableCol, FilterValue } from './type';
 import { useConfig } from '../config-provider/useConfig';
 import log from '../_common/js/log';
 import { AttachNode } from '../common';
+import { TableConfig } from '../config-provider';
 
 type Params = Parameters<CreateElement>;
 type FirstParams = Params[0];
 type SecondParams = Params[1] | Params[2];
 
 export interface TableFilterControllerProps {
+  locale: TableConfig;
   tFilterValue: FilterValue;
   innerFilterValue: FilterValue;
   tableFilterClasses: {
@@ -31,6 +36,7 @@ export interface TableFilterControllerProps {
     inner: string;
     bottomButtons: string;
     contentInner: string;
+    inputFilter: string;
     iconWrap: string;
   };
   isFocusClass: string;
@@ -60,13 +66,31 @@ export default defineComponent({
   setup(props: TableFilterControllerProps, { emit }) {
     const triggerElementRef = ref<HTMLDivElement>(null);
     const renderTNode = useTNodeDefault();
-    const { t, global } = useConfig('table');
+    const { t, global } = useConfig('table', props.locale);
     const { FilterIcon } = useGlobalIcon({ FilterIcon: TdFilterIcon });
     const filterPopupVisible = ref(false);
+    const listFilterValue = ref('');
 
     const onFilterPopupVisibleChange = (visible: boolean) => {
       filterPopupVisible.value = visible;
       emit('visible-change', visible);
+    };
+
+    const getFilterDisplayList = (column: PrimaryTableCol) => {
+      const { filter = {} } = column;
+      const { listFilterConfig } = filter;
+      if (!listFilterValue.value || !filter.listFilterConfig) {
+        return filter.list;
+      }
+      const regExp = new RegExp(escapeRegExp(listFilterValue.value));
+      if (listFilterConfig === true) {
+        return filter.list.filter((item) => regExp.test(item.label));
+      }
+      if (isObject(listFilterConfig)) {
+        return isFunction(listFilterConfig.filterMethod)
+          ? filter.list.filter((item) => listFilterConfig.filterMethod(item, listFilterValue.value))
+          : filter.list.filter((item) => regExp.test(item.label));
+      }
     };
 
     return {
@@ -75,7 +99,9 @@ export default defineComponent({
       FilterIcon,
       filterPopupVisible,
       triggerElementRef,
+      listFilterValue,
       renderTNode,
+      getFilterDisplayList,
       onFilterPopupVisibleChange,
     };
   },
@@ -98,27 +124,25 @@ export default defineComponent({
       }[column.filter.type] || column.filter.component;
       if (!component && !column.filter.component) return;
       const filterComponentProps: { [key: string]: any } = {
-        options: ['single', 'multiple'].includes(column.filter.type) ? column.filter?.list : undefined,
+        options: ['single', 'multiple'].includes(column.filter.type) ? this.getFilterDisplayList(column) : undefined,
         ...(column.filter?.props || {}),
       };
       if (column.colKey && this.innerFilterValue && column.colKey in this.innerFilterValue) {
         filterComponentProps.value = this.innerFilterValue[column.colKey];
       }
-      // 这个代码必须放在这里，没事儿别改
-      if (column.filter.type === 'single') {
-        filterComponentProps.onChange = (val: any) => {
-          this.$emit('inner-filter-change', val, column);
-        };
-      }
-      // 这个代码必须放在这里，没事儿别改
+      // 这个代码必须放在这里，否则会造成顺序错误
       const on = {
         change: (val: any) => {
           this.$emit('inner-filter-change', val, column);
+          if (column.filter?.confirmEvents?.includes('onChange')) {
+            this.filterPopupVisible = false;
+          }
         },
       };
       // 允许自定义触发确认搜索的事件
       if (column.filter.confirmEvents) {
         column.filter.confirmEvents.forEach((event) => {
+          if (event === 'onChange') return;
           const pureEvent = lowerFirst(event.replace('on', ''));
           on[pureEvent] = () => {
             this.$emit('confirm', column);
@@ -135,19 +159,42 @@ export default defineComponent({
         if (!component) return null;
         const isVueComponent = component.install && component.component;
         if (typeof component === 'function' && !isVueComponent) {
+          // component() is going to be deprecated
           return component((v: FirstParams, b: SecondParams) => {
-            const tProps = typeof b === 'object' && 'attrs' in b ? b.attrs : {};
+            const attributes = typeof b === 'object' && 'attrs' in b ? b.attrs : {};
             return h(v, {
-              props: { ...filterComponentProps, ...tProps },
+              props: { ...filterComponentProps },
+              attrs: attributes,
               on,
             });
           });
         }
-        return <component props={{ ...filterComponentProps }} on={{ ...on }}></component>;
+        const filter = this.column.filter || {};
+        return (
+          <component
+            attrs={filter.attrs}
+            class={filter.classNames}
+            style={filter.style}
+            props={{ ...filterComponentProps }}
+            on={{ ...on }}
+          ></component>
+        );
       };
+
+      const inputObj = isObject(column.filter.listFilterConfig) ? column.filter.listFilterConfig : {};
 
       return (
         <div class={this.tableFilterClasses.contentInner} on={wrapperListeners}>
+          {column.filter.listFilterConfig && (
+            <Input
+              v-model={this.listFilterValue}
+              borderless
+              class={[this.tableFilterClasses.inputFilter, inputObj.className].filter(Boolean)}
+              scopedSlots={{ prefixIcon: () => <SearchIcon />, ...inputObj.slots }}
+              props={inputObj.props}
+              style={inputObj.style}
+            ></Input>
+          )}
           {renderComponent()}
         </div>
       );
@@ -187,7 +234,8 @@ export default defineComponent({
     const defaultFilterIcon = this.t(this.global.filterIcon) || <FilterIcon />;
     const filterValue = this.tFilterValue?.[column.colKey];
     const isObjectTrue = typeof filterValue === 'object' && !isEmpty(filterValue);
-    const isValueTrue = filterValue && typeof filterValue !== 'object';
+    // false is a valid filter value
+    const isValueExist = ![null, undefined, ''].includes(filterValue) && typeof filterValue !== 'object';
     return (
       <Popup
         attach={this.attach || (this.primaryTableElement ? () => this.primaryTableElement : undefined)}
@@ -203,7 +251,7 @@ export default defineComponent({
         class={[
           this.tableFilterClasses.icon,
           {
-            [this.isFocusClass]: isObjectTrue || isValueTrue,
+            [this.isFocusClass]: isObjectTrue || isValueExist,
           },
         ]}
         content={() => (

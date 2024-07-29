@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import { CloseIcon as TdCloseIcon } from 'tdesign-icons-vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
+import tinycolor from 'tinycolor2';
 import props from './props';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { TagConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
@@ -38,6 +39,12 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalI
       }
       return {};
     },
+    tagStyle(): Styles {
+      if (this.color) {
+        return this.getTagColorStyle();
+      }
+      return {};
+    },
   },
 
   methods: {
@@ -68,6 +75,29 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalI
 
       return <CloseIcon nativeOnClick={this.handleClose} class={iconClassName} />;
     },
+    getTagColorStyle(): Styles {
+      const luminance = tinycolor(this.color).getLuminance();
+
+      const style: Styles = {
+        color: luminance > 0.5 ? 'black' : 'white',
+      };
+
+      if (this.variant === 'outline' || this.variant === 'light-outline') {
+        style.borderColor = this.color;
+      }
+      if (this.variant !== 'outline') {
+        const getLightestShade = () => {
+          const { r, g, b } = tinycolor(this.color).toRgb();
+          // alpha 0.1  is designed by @wen1kang
+          return `rgba(${r}, ${g}, ${b}, 0.1)`;
+        };
+        style.backgroundColor = this.variant === 'dark' ? this.color : getLightestShade();
+      }
+      if (this.variant !== 'dark') {
+        style.color = this.color;
+      }
+      return style;
+    },
   },
 
   render() {
@@ -81,7 +111,7 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalI
     // 图标
     const icon = renderTNodeJSX(this, 'icon');
     return (
-      <span class={this.tagClass} onClick={this.handleClick}>
+      <div class={this.tagClass} onClick={this.handleClick} style={this.tagStyle}>
         {icon}
         <span
           class={this.maxWidth ? `${this.componentName}--text` : undefined}
@@ -91,7 +121,7 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalI
           {tagContent}
         </span>
         {!this.disabled ? closeIcon : undefined}
-      </span>
+      </div>
     );
   },
 });

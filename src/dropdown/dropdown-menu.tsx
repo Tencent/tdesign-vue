@@ -3,7 +3,7 @@ import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import {
   defineComponent, h, ref, onMounted, reactive, set,
 } from '@vue/composition-api';
-import { ChevronRightIcon as TdChevronRightIcon, ChevronLeftIcon as TdChevronLeftIcon } from 'tdesign-icons-vue';
+import { ChevronRightIcon as TdChevronRightIcon } from 'tdesign-icons-vue';
 import isFunction from 'lodash/isFunction';
 
 import DropdownItem from './dropdown-item';
@@ -65,9 +65,8 @@ export default defineComponent({
     },
     // 处理options渲染的场景
     renderOptions(data: Array<DropdownOption>, deep: number) {
-      const { ChevronRightIcon, ChevronLeftIcon } = useGlobalIcon({
+      const { ChevronRightIcon } = useGlobalIcon({
         ChevronRightIcon: TdChevronRightIcon,
-        ChevronLeftIcon: TdChevronLeftIcon,
       });
       const arr: Array<unknown> = [];
       let renderContent;
@@ -95,21 +94,10 @@ export default defineComponent({
                   },
                 }}
               >
-                {this.direction === 'right' ? (
-                  <div class={`${this.dropdownClass}__item-content`}>
-                    <span class={`${this.dropdownClass}__item-text`}>
-                      {this.renderOptionContent(optionItem.content)}
-                    </span>
-                    <ChevronRightIcon class={`${this.dropdownClass}__item-direction`} size="16" />
-                  </div>
-                ) : (
-                  <div class={`${this.dropdownClass}__item-content`}>
-                    <ChevronLeftIcon class={`${this.dropdownClass}__item-direction`} size="16" />
-                    <span class={`${this.dropdownClass}__item-text`}>
-                      {this.renderOptionContent(optionItem.content)}
-                    </span>
-                  </div>
-                )}
+                <div class={`${this.dropdownClass}__item-content`}>
+                  <span class={`${this.dropdownClass}__item-text`}>{this.renderOptionContent(optionItem.content)}</span>
+                  <ChevronRightIcon class={`${this.dropdownClass}__item-direction`} size="16" />
+                </div>
                 <div
                   class={[
                     `${this.dropdownClass}__submenu-wrapper`,

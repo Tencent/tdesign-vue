@@ -1,15 +1,15 @@
 <template>
   <t-select v-model="value" style="width: 200px" :options="options" clearable placeholder="-请选择-">
-    <icon name="browse" slot="prefixIcon" style="margin-right: 8px" />
+    <browse-icon slot="prefixIcon" style="margin-right: 8px" />
   </t-select>
 </template>
 
 <script>
-import { Icon } from 'tdesign-icons-vue';
+import { BrowseIcon } from 'tdesign-icons-vue';
 
 export default {
   components: {
-    Icon,
+    BrowseIcon,
   },
   data() {
     return {

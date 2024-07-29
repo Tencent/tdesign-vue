@@ -4,11 +4,11 @@ import isFunction from 'lodash/isFunction';
 import Tree from '../tree';
 import props from './props';
 import SelectInput from '../select-input';
-import { TagInputChangeContext, TagInputValue } from '../tag-input';
 import FakeArrow from '../common-components/fake-arrow';
 import { TreeSelectValue, TdTreeSelectProps } from './type';
 import { useTNodeJSX, useTNodeDefault } from '../hooks/tnode';
 import useTreeSelect from './useTreeSelect';
+import { TreeOptionData } from '..';
 
 export default defineComponent({
   name: 'TTreeSelect',
@@ -74,6 +74,7 @@ export default defineComponent({
             `${this.classPrefix}-select__dropdown-inner--size-${this.dropdownInnerSize}`,
           ]}
         >
+          {this.renderTNodeJSX('panelTopContent')}
           {this.loading && !this.tDisabled ? (
             <p class={[`${this.classPrefix}-select__loading-tips`, `${this.classPrefix}-select__right-icon-polyfill`]}>
               {this.renderDefaultTNode('loadingText', {
@@ -111,20 +112,9 @@ export default defineComponent({
               }}
             />
           ) : null}
+          {this.renderTNodeJSX('panelBottomContent')}
         </div>
       );
-    },
-
-    renderCollapsedItems() {
-      const selectedNodeInfo = this.nodeInfo || [];
-      const value = Array.isArray(selectedNodeInfo) ? selectedNodeInfo : [selectedNodeInfo];
-      return this.renderTNodeJSX('collapsedItems', {
-        params: {
-          value,
-          collapsedSelectedItems: value.slice(this.minCollapsedNum),
-          count: value.length - this.minCollapsedNum,
-        },
-      });
     },
   },
 
@@ -135,6 +125,7 @@ export default defineComponent({
         scopedSlots={{
           tips: slots.tips,
           suffix: slots.suffix,
+          collapsedItems: slots.collapsedItems,
         }}
         class={`${this.classPrefix}-tree-select`}
         {...{
@@ -157,7 +148,7 @@ export default defineComponent({
             suffix: this.suffix,
             allowInput: Boolean(this.filterable || isFunction(this.filter) || this.$listeners.search || this.onSearch),
             minCollapsedNum: this.minCollapsedNum,
-            collapsedItems: this.renderCollapsedItems,
+            collapsedItems: this.collapsedItems,
             popupProps: {
               overlayClassName: this.popupClass,
               ...(this.popupProps as TdTreeSelectProps['popupProps']),
@@ -187,9 +178,14 @@ export default defineComponent({
             valueDisplay: () => this.renderTNodeJSX('valueDisplay', {
               params: this.multiple
                 ? {
-                  value: this.nodeInfo,
-                  onClose: (value: TagInputValue, context: TagInputChangeContext) => {
-                    this.tagChange(value, context);
+                  value: this.nodeInfo as TreeOptionData<string | number>[],
+                  onClose: (index: number) => {
+                    const value = this.nodeInfo.map((node: TreeOptionData) => node.value);
+                    this.tagChange(value, {
+                      trigger: 'tag-remove',
+                      index,
+                      item: value[index],
+                    });
                   },
                 }
                 : {

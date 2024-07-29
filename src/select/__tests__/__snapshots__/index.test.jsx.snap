@@ -170,7 +170,6 @@ exports[`Select > :props > :disabled 1`] = `
           disabled="disabled"
           placeholder="请选择"
           readonly="readonly"
-          title=""
           type="text"
           unselectable="on"
         />

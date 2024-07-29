@@ -1,6 +1,7 @@
 import { mount } from '@vue/test-utils';
 import Tree from '@/src/tree/index.ts';
 import { delay } from './kit';
+import { ref } from './adapt';
 
 describe('Tree:expand', () => {
   vi.useRealTimers();
@@ -18,7 +19,7 @@ describe('Tree:expand', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree data={data} expandAll></Tree>;
+          return <Tree transition={false} data={data} expandAll></Tree>;
         },
       });
       expect(wrapper.find('[data-value="t1.1"]').exists()).toBe(true);
@@ -37,7 +38,7 @@ describe('Tree:expand', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree data={data}></Tree>;
+          return <Tree transition={false} data={data}></Tree>;
         },
       });
       expect(wrapper.find('[data-value="t1.1"]').exists()).toBe(false);
@@ -66,7 +67,7 @@ describe('Tree:expand', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree data={data} defaultExpanded={['t2']}></Tree>;
+          return <Tree transition={false} data={data} defaultExpanded={['t2']}></Tree>;
         },
       });
 
@@ -97,7 +98,7 @@ describe('Tree:expand', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree data={data} expanded={['t2']}></Tree>;
+          return <Tree transition={false} data={data} expanded={['t2']}></Tree>;
         },
       });
 
@@ -152,6 +153,58 @@ describe('Tree:expand', () => {
       expect(t2d1.classes('t-tree__item--visible')).toBe(false);
       expect(t2d1.classes('t-tree__item--hidden')).toBe(true);
     });
+
+    it('操作 expanded 数组可变更展开节点', async () => {
+      const data = [
+        {
+          value: 't1',
+          children: [
+            {
+              value: 't1.1',
+            },
+          ],
+        },
+        {
+          value: 't2',
+          children: [
+            {
+              value: 't2.1',
+            },
+          ],
+        },
+      ];
+      const refExpanded = ref(['t2']);
+      const wrapper = mount({
+        render() {
+          return <Tree data={data} expanded={refExpanded.value} transition={false}></Tree>;
+        },
+      });
+
+      expect(wrapper.find('[data-value="t1.1"]').exists()).toBe(false);
+      expect(wrapper.find('[data-value="t2.1"]').exists()).toBe(true);
+
+      await delay(1);
+
+      let t1d1 = wrapper.find('[data-value="t1.1"]');
+      const t2d1 = wrapper.find('[data-value="t2.1"]');
+      expect(t1d1.exists()).toBe(false);
+      expect(t2d1.exists()).toBe(true);
+      expect(t2d1.classes('t-tree__item--visible')).toBe(true);
+      expect(t2d1.classes('t-tree__item--hidden')).toBe(false);
+
+      refExpanded.value.push('t1');
+      await delay(1);
+      t1d1 = wrapper.find('[data-value="t1.1"]');
+      expect(t1d1.exists()).toBe(true);
+      expect(t1d1.classes('t-tree__item--visible')).toBe(true);
+      expect(t1d1.classes('t-tree__item--hidden')).toBe(false);
+
+      refExpanded.value.shift();
+      await delay(1);
+      expect(t2d1.exists()).toBe(true);
+      expect(t2d1.classes('t-tree__item--visible')).toBe(false);
+      expect(t2d1.classes('t-tree__item--hidden')).toBe(true);
+    });
   });
 
   describe('props.expandLevel', () => {
@@ -196,7 +249,7 @@ describe('Tree:expand', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree data={data} expandLevel={2}></Tree>;
+          return <Tree transition={false} data={data} expandLevel={2}></Tree>;
         },
       });
 
@@ -245,7 +298,7 @@ describe('Tree:expand', () => {
 
       const wrapper = mount({
         render() {
-          return <Tree data={data} expandMutex></Tree>;
+          return <Tree transition={false} data={data} expandMutex></Tree>;
         },
       });
 
@@ -315,7 +368,7 @@ describe('Tree:expand', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree data={data}></Tree>;
+          return <Tree transition={false} data={data}></Tree>;
         },
       });
       wrapper.find('[data-value="t1"] .t-tree__icon').trigger('click');
@@ -360,7 +413,7 @@ describe('Tree:expand', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree data={data}></Tree>;
+          return <Tree transition={false} data={data}></Tree>;
         },
       });
       wrapper.find('[data-value="t1"]').trigger('click');
@@ -381,7 +434,7 @@ describe('Tree:expand', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree data={data} expandOnClickNode></Tree>;
+          return <Tree transition={false} data={data} expandOnClickNode></Tree>;
         },
       });
       wrapper.find('[data-value="t1"]').trigger('click');
@@ -409,7 +462,7 @@ describe('Tree:expand', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" data={data}></Tree>;
+          return <Tree transition={false} ref="tree" data={data}></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;
@@ -441,7 +494,7 @@ describe('Tree:expand', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" expandParent data={data}></Tree>;
+          return <Tree transition={false} ref="tree" expandParent data={data}></Tree>;
         },
       });
       const { tree } = wrapper.vm.$refs;

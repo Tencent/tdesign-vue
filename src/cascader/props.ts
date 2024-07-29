@@ -10,6 +10,8 @@ import { PropType } from 'vue';
 export default {
   /** 自动聚焦 */
   autofocus: Boolean,
+  /** 无边框模式 */
+  borderless: Boolean,
   /** 参考 checkbox 组件 API */
   checkProps: {
     type: Object as PropType<TdCascaderProps['checkProps']>,
@@ -18,7 +20,7 @@ export default {
   checkStrictly: Boolean,
   /** 是否支持清空选项 */
   clearable: Boolean,
-  /** 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义。`value` 表示当前存在的所有标签，`collapsedTags` 表示折叠的标签，`count` 表示折叠的数量 */
+  /** 多选情况下，用于设置折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 collapsedItems 自定义。`value` 表示当前存在的所有标签，`collapsedSelectedItems` 表示折叠的标签，`count` 表示折叠的数量，`onClose` 表示移除标签的事件回调 */
   collapsedItems: {
     type: Function as PropType<TdCascaderProps['collapsedItems']>,
   },
@@ -38,7 +40,7 @@ export default {
   inputProps: {
     type: Object as PropType<TdCascaderProps['inputProps']>,
   },
-  /** 用来定义 value / label / children 在 `options` 中对应的字段别名 */
+  /** 用来定义 value / label / children / disabled 在 `options` 中对应的字段别名 */
   keys: {
     type: Object as PropType<TdCascaderProps['keys']>,
   },
@@ -163,7 +165,7 @@ export default {
     type: [String, Number, Array] as PropType<TdCascaderProps['defaultValue']>,
     default: (): TdCascaderProps['defaultValue'] => [],
   },
-  /** 【开发中】自定义选中项呈现的内容 */
+  /** 自定义选中项呈现的内容 */
   valueDisplay: {
     type: [String, Function] as PropType<TdCascaderProps['valueDisplay']>,
   },

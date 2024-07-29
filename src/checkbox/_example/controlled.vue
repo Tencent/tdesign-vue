@@ -7,7 +7,7 @@
       <t-checkbox :defaultChecked="false" :onChange="onChange2">非受控属性</t-checkbox>
     </t-space>
     <!-- 复选框框组受控模式 -->
-    <t-checkbox-group :value="checked2" :options="options" :onChange="onChange2" />
+    <t-checkbox-group :value="checked2" :options="options" :onChange="onChange5" />
   </t-space>
 </template>
 
@@ -30,6 +30,10 @@ export default {
       console.log('change:', this.checked1, val);
     },
     onChange2(value, context) {
+      console.log('change: ', value, context);
+    },
+    onChange5(value, context) {
+      this.checked2 = value;
       console.log('change: ', value, context);
     },
   },

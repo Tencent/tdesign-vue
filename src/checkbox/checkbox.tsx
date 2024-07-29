@@ -1,5 +1,5 @@
 import {
-  defineComponent, ref, toRefs, inject, watch, onBeforeUnmount,
+  defineComponent, ref, toRefs, inject, watch, onBeforeUnmount, computed,
 } from '@vue/composition-api';
 import props from './props';
 import {
@@ -31,13 +31,14 @@ export default defineComponent({
   },
 
   setup(props) {
-    const checkboxStore = getCheckboxStore(props.storeKey);
+    const { storeKey } = toRefs(props);
+    const checkboxStore = computed(() => getCheckboxStore(storeKey.value));
     const labelRef = ref<HTMLElement>();
     const { STATUS } = useCommonClassName();
     const checkboxGroupExist = ref(false);
 
     const {
-      checked, indeterminate, disabled, value, lazyLoad,
+      checked, indeterminate, disabled, value, lazyLoad, label, data,
     } = toRefs(props);
     const [innerChecked, setInnerChecked] = useVModel(
       checked,
@@ -64,27 +65,27 @@ export default defineComponent({
       } else {
         tChecked.value = parentChecked.includes(value);
       }
-      checkboxGroupExist.value = checkboxStore.parentExist;
+      checkboxGroupExist.value = checkboxStore.value.parentExist;
     };
 
     watch(
-      [innerChecked],
+      [innerChecked, checkboxStore],
       () => {
         // CheckboxGroup does not exist, self checked works
-        if (!checkboxStore.parentExist) {
-          tChecked.value = innerChecked.value;
-        } else {
+        if (checkboxStore.value?.parentExist) {
           checkboxGroupExist.value = true;
+        } else {
+          tChecked.value = innerChecked.value;
         }
       },
       { immediate: true },
     );
 
     watch(
-      [indeterminate],
-      ([val]) => {
+      [indeterminate, checkboxStore],
+      ([val, checkboxStore]) => {
         // CheckboxGroup does not exist, self indeterminate works
-        if (!checkboxStore.parentExist) {
+        if (!checkboxStore?.parentExist) {
           tIndeterminate.value = val;
         }
       },
@@ -109,15 +110,21 @@ export default defineComponent({
       }
       if (parentDisabled !== undefined) {
         tDisabled.value = parentDisabled;
+        return;
       }
+      tDisabled.value = disabled;
     };
+
+    watch([checkboxStore], () => {
+      if (!checkboxStore.value?.parentExist) {
+        tDisabled.value = props.disabled;
+      }
+    });
 
     watch(
       [disabled],
       ([val]) => {
-        if (!checkboxStore.parentExist) {
-          tDisabled.value = val;
-        }
+        tDisabled.value = val;
       },
       { immediate: true },
     );
@@ -140,11 +147,17 @@ export default defineComponent({
     );
 
     const subscribeParentData = (val: string | number | boolean) => {
-      checkboxStore.subscribe(val, (data: ObserverListenerParams) => {
+      checkboxStore.value.subscribe(val, (data: ObserverListenerParams) => {
         if (data.type === 'checked') {
           handleParentCheckedChange(data);
         } else if (data.type === 'checkbox') {
-          handleParentDisabled(data);
+          /**
+           * checked state can influence disabled state because of `max`,
+           * therefore we need to update disabled state after checked state changed
+           */
+          setTimeout(() => {
+            handleParentDisabled(data);
+          }, 0);
           if (data.checkboxName) {
             tName.value = data.checkboxName;
           }
@@ -152,17 +165,27 @@ export default defineComponent({
       });
     };
 
-    subscribeParentData(props.checkAll ? 'CHECK_ALL' : value.value);
+    watch(
+      [data, label, storeKey],
+      () => {
+        if (!storeKey.value) return;
+        if (!tChecked.value && checkboxStore.value?.parentChecked?.includes(props.value)) {
+          tChecked.value = true;
+        }
+        subscribeParentData(props.checkAll ? 'CHECK_ALL' : value.value);
+      },
+      { immediate: true },
+    );
 
     onBeforeUnmount(() => {
-      checkboxStore.unSubscribe(props.checkAll ? 'CHECK_ALL' : value.value);
+      checkboxStore.value?.unSubscribe(props.checkAll ? 'CHECK_ALL' : value.value);
     });
 
     const handleChange = (e: Event) => {
       if (props.readonly) return;
       const checked = !tChecked.value;
       setInnerChecked(checked, { e });
-      if (checkboxGroupData?.value.handleCheckboxChange) {
+      if (checkboxGroupData?.value.onCheckedChange) {
         checkboxGroupData.value.onCheckedChange({
           checked,
           checkAll: props.checkAll,

@@ -15,7 +15,7 @@
 
     <!-- tableContentWidth 必须大于表格的外层宽度，否则请设置 width: 100% -->
     <!-- 多级表头中，如果要使用固定列功能，则必须设置 colKey 和 fixed -->
-    <!-- :scroll="{ type: 'virtual' }" 表示虚拟滚动 -->
+    <!-- :scroll="{ type: 'virtual' }" virtual scroll for a lot of data rendered-->
     <t-table
       row-key="index"
       :data="data"
@@ -40,9 +40,9 @@
 <script lang="jsx">
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 
-const data = [];
+const initialData = [];
 for (let i = 0; i < 1000; i++) {
-  data.push({
+  initialData.push({
     index: i + 1,
     applicant: ['贾明', '张三', '王芳'][i % 3],
     status: i % 3,
@@ -212,8 +212,8 @@ export default {
       fixedLeftCol: false,
       fixedRightCol: false,
       headerAffixedTop: false,
-      virtualScroll: true,
-      data,
+      // virtualScroll: true,
+      data: initialData,
     };
   },
   computed: {
@@ -226,7 +226,7 @@ export default {
       this.data = val.concat();
     },
     onFilterChange(filterValue) {
-      this.data = data.filter((t) => !filterValue.property || filterValue.property === t.property);
+      this.data = initialData.filter((t) => !filterValue.property || filterValue.property === t.property);
     },
     onDragSort(params) {
       console.log('拖拽排序事件参数：', params);

@@ -46,7 +46,7 @@ import useSelectOptions from './hooks/useSelectOptions';
 import { SelectPanelInstance } from './instance';
 import log from '../_common/js/log';
 import useFormDisabled from '../hooks/useFormDisabled';
-import { OptionData } from '../common';
+import type { OptionData } from '../common';
 
 export type OptionInstance = InstanceType<typeof Option>;
 
@@ -62,7 +62,7 @@ export default defineComponent({
     FakeArrow,
     SelectPanel,
   },
-  setup(props: TdSelectProps) {
+  setup(props: TdSelectProps, ctx) {
     const { t, global } = useConfig('select');
     const renderTNode = useTNodeJSX();
     const instance = getCurrentInstance();
@@ -92,6 +92,7 @@ export default defineComponent({
     const keys = computed(() => ({
       label: props.keys?.label || 'label',
       value: props.keys?.value || 'value',
+      disabled: props.keys?.disabled || 'disabled',
     }));
     const { options: innerOptions, optionsMap, optionsList } = useSelectOptions(props, instance, keys);
 
@@ -282,6 +283,7 @@ export default defineComponent({
             })
             .slice(minCollapsedNum.value),
           count: values.length - minCollapsedNum.value,
+          onClose: (index: number) => removeTag(index),
         }
         : {};
     });
@@ -344,10 +346,8 @@ export default defineComponent({
     };
 
     const handleTagChange = (currentTags: SelectInputValue, context: SelectInputChangeContext) => {
-      const { trigger, index, e } = context;
-      if (trigger === 'clear') {
-        setInnerValue([], { trigger: 'tag-remove', e });
-      }
+      const { trigger, index } = context;
+
       if (['tag-remove', 'backspace'].includes(trigger)) {
         removeTag(index);
       }
@@ -529,7 +529,6 @@ export default defineComponent({
         tInputValue.value && setTInputValue('');
       }
     });
-
     provide('tSelect', {
       size,
       multiple,
@@ -545,6 +544,7 @@ export default defineComponent({
       handleValueChange: setInnerValue,
       handlerInputChange: setTInputValue,
       handlePopupVisibleChange: setInnerPopupVisible,
+      isRemoteSearch: Boolean(props.onSearch || ctx.listeners?.search),
     });
 
     return {

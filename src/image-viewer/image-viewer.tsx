@@ -2,7 +2,6 @@ import {
   computed, defineComponent, ref, toRefs, watch,
 } from '@vue/composition-api';
 import { ChevronLeftIcon, ChevronDownIcon, CloseIcon } from 'tdesign-icons-vue';
-
 import props from './props';
 import Container from './base/Container';
 import TImageViewerIcon from './base/ImageModalIcon';
@@ -14,11 +13,11 @@ import useDefaultValue from '../hooks/useDefaultValue';
 import { usePrefixClass } from '../hooks/useConfig';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { setTransform } from '../utils/helper';
-
 import { TdImageViewerProps } from './type';
 import { useMirror, useRotate, useScale } from './hooks';
 import { formatImages, getOverlay } from './utils';
-import { EVENT_CODE } from './const';
+import { EVENT_CODE, DEFAULT_IMAGE_SCALE } from './const';
+import Image from '../image';
 
 export default defineComponent({
   name: 'TImageViewer',
@@ -62,10 +61,11 @@ export default defineComponent({
       isExpand.value = !isExpand.value;
     };
 
+    const imageScaleRef = computed(() => props.imageScale ?? DEFAULT_IMAGE_SCALE);
     const { mirror, onMirror, resetMirror } = useMirror();
     const {
       scale, onZoomIn, onZoomOut, resetScale,
-    } = useScale(props.imageScale);
+    } = useScale(imageScaleRef);
     const { rotate, onRotate, resetRotate } = useRotate();
     const onRest = () => {
       resetMirror();
@@ -78,16 +78,18 @@ export default defineComponent({
 
     const prevImage = () => {
       const newIndex = indexValue.value - 1;
+      onRest();
       setIndexValue(newIndex < 0 ? 0 : newIndex, { trigger: 'prev' });
     };
 
     const nextImage = () => {
       const newIndex = indexValue.value + 1;
+      onRest();
       setIndexValue(newIndex >= imagesList.value.length ? indexValue.value : newIndex, { trigger: 'next' });
     };
 
     const onImgClick = (i: number) => {
-      setIndexValue(i, { trigger: i > indexValue.value ? 'next' : 'prev' });
+      setIndexValue(i, { trigger: 'current' });
     };
 
     const openHandler = () => {
@@ -96,6 +98,9 @@ export default defineComponent({
 
     const onCloseHandle: TdImageViewerProps['onClose'] = (ctx) => {
       setVisibleValue(false);
+
+      unmountContent();
+
       props.onClose?.(ctx);
       emit('close', ctx);
     };
@@ -109,6 +114,8 @@ export default defineComponent({
     };
 
     const keydownHandler = (e: KeyboardEvent) => {
+      e.stopPropagation();
+
       switch (e.code) {
         case EVENT_CODE.left:
           prevImage();
@@ -123,7 +130,9 @@ export default defineComponent({
           onZoomOut();
           break;
         case EVENT_CODE.esc:
-          onCloseHandle({ e, trigger: 'esc' });
+          if (props.closeOnEscKeydown) {
+            onCloseHandle({ e, trigger: 'esc' });
+          }
           break;
         default:
           break;
@@ -141,28 +150,29 @@ export default defineComponent({
         containerRef.value.unmountContent();
       }
     };
-
+    const divRef = ref<HTMLDivElement>();
+    const getFocus = () => {
+      if (divRef.value) {
+        // 只设置tabindex值无法自动获取到焦点，使用focus获取焦点
+        divRef.value.focus();
+      }
+    };
     watch(
       () => visibleValue.value,
       (val) => {
         if (val) {
-          window.addEventListener('keydown', keydownHandler);
+          onRest();
           mountContent();
-          return;
+          getFocus();
         }
-        window.removeEventListener('keydown', keydownHandler);
-        unmountContent();
       },
     );
 
     const onWheel = (e: WheelEvent) => {
       e.preventDefault();
-      const { deltaY, ctrlKey } = e;
-      // mac触摸板双指缩放时ctrlKey=true，deltaY>0为缩小  <0为放大
-      if (ctrlKey) {
-        return deltaY > 0 ? onZoomOut() : onZoomIn();
-      }
-      deltaY > 0 ? onZoomIn() : onZoomOut();
+      const { deltaY } = e;
+
+      deltaY > 0 ? onZoomOut() : onZoomIn();
     };
 
     const transStyle = computed(() => setTransform(`translateX(calc(-${indexValue.value} * (40px / 9 * 16 + 4px)))`));
@@ -200,6 +210,8 @@ export default defineComponent({
       scale,
       isMultipleImg,
       containerRef,
+      keydownHandler,
+      divRef,
     };
   },
   methods: {
@@ -223,8 +235,9 @@ export default defineComponent({
                     },
                   ]}
                 >
-                  <img
+                  <Image
                     alt=""
+                    error=""
                     src={image.thumbnail || image.mainImage}
                     class={`${this.COMPONENT_NAME}__header-img`}
                     onClick={() => this.onImgClick(index)}
@@ -290,7 +303,14 @@ export default defineComponent({
     },
     renderViewer() {
       return (
-        <div class={this.wrapClass} style={{ zIndex: this.zIndexValue }} onWheel={this.onWheel}>
+        <div
+          tabindex={-1}
+          onKeydown={this.keydownHandler}
+          ref="divRef"
+          class={this.wrapClass}
+          style={{ zIndex: this.zIndexValue }}
+          onWheel={this.onWheel}
+        >
           {!!this.showOverlayValue && (
             <div class={`${this.COMPONENT_NAME}__modal-mask`} onClick={this.clickOverlayHandler} />
           )}

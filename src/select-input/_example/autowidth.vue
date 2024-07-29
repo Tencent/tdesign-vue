@@ -26,7 +26,7 @@
 <script>
 import { ChevronDownIcon } from 'tdesign-icons-vue';
 
-const options = [
+const initialOptions = [
   // 全选
   { label: 'all frameworks', checkAll: true },
   { label: 'tdesign-vue', value: 1 },
@@ -42,7 +42,7 @@ export default {
   data() {
     return {
       selectValue: { label: 'tdesign-vue', value: 1 },
-      options,
+      options: initialOptions,
       popupVisible: false,
     };
   },

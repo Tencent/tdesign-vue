@@ -19,7 +19,7 @@
 <script lang="jsx">
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 
-const columns = [
+const initialColumns = [
   { colKey: 'applicant', title: '申请人', width: '100' },
   {
     colKey: 'status',
@@ -73,7 +73,7 @@ export default {
   data() {
     return {
       data: [...testData],
-      columns,
+      columns: initialColumns,
     };
   },
   methods: {

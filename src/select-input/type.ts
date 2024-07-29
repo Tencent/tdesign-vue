@@ -5,7 +5,6 @@
  * */
 
 import { InputProps } from '../input';
-import { InputValue } from '../input';
 import { PopupProps } from '../popup';
 import { TagInputProps, TagInputValue, TagInputChangeContext } from '../tag-input';
 import { TagProps } from '../tag';
@@ -39,9 +38,14 @@ export interface TdSelectInputProps {
    */
   clearable?: boolean;
   /**
-   * 标签过多的情况下，折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 `collapsedItems` 自定义。`value` 表示所有标签值，`collapsedTags` 表示折叠标签值，`count` 表示折叠的数量
+   * 标签过多的情况下，折叠项内容，默认为 `+N`。如果需要悬浮就显示其他内容，可以使用 `collapsedItems` 自定义。`value` 表示所有标签值，`collapsedSelectedItems` 表示折叠标签值，`count` 表示折叠的数量，`onClose` 表示移除标签的事件回调
    */
-  collapsedItems?: TNode<{ value: SelectInputValue; collapsedTags: SelectInputValue; count: number }>;
+  collapsedItems?: TNode<{
+    value: SelectInputValue;
+    collapsedSelectedItems: SelectInputValue;
+    count: number;
+    onClose: (context: { index: number; e?: MouseEvent }) => void;
+  }>;
   /**
    * 是否禁用
    */
@@ -53,11 +57,11 @@ export interface TdSelectInputProps {
   /**
    * 输入框的值
    */
-  inputValue?: InputValue;
+  inputValue?: string;
   /**
    * 输入框的值，非受控属性
    */
-  defaultInputValue?: InputValue;
+  defaultInputValue?: string;
   /**
    * 定义字段别名，示例：`{ label: 'text', value: 'id', children: 'list' }`
    */
@@ -108,6 +112,11 @@ export interface TdSelectInputProps {
    */
   readonly?: boolean;
   /**
+   * 多选且可搜索时，是否在选中一个选项后保留当前的搜索关键词
+   * @default false
+   */
+  reserveKeyword?: boolean;
+  /**
    * 输入框状态
    * @default default
    */
@@ -157,7 +166,7 @@ export interface TdSelectInputProps {
    */
   onEnter?: (
     value: SelectInputValue,
-    context: { e: KeyboardEvent; inputValue: InputValue; tagInputValue?: TagInputValue },
+    context: { e: KeyboardEvent; inputValue: string; tagInputValue?: TagInputValue },
   ) => void;
   /**
    * 聚焦时触发
@@ -166,7 +175,7 @@ export interface TdSelectInputProps {
   /**
    * 输入框值发生变化时触发，`context.trigger` 表示触发输入框值变化的来源：文本输入触发、清除按钮触发等
    */
-  onInputChange?: (value: InputValue, context?: SelectInputValueChangeContext) => void;
+  onInputChange?: (value: string, context?: SelectInputValueChangeContext) => void;
   /**
    * 进入输入框时触发
    */
@@ -195,12 +204,18 @@ export interface SelectInputKeys {
   children?: string;
 }
 
+export interface SelectInputKeys {
+  label?: string;
+  value?: string;
+  children?: string;
+}
+
 export type SelectInputValue = string | number | boolean | Date | Object | Array<any> | Array<SelectInputValue>;
 
 export type SelectInputBlurContext = PopupVisibleChangeContext & { inputValue: string; tagInputValue?: TagInputValue };
 
 export interface SelectInputFocusContext {
-  inputValue: InputValue;
+  inputValue: string;
   tagInputValue?: TagInputValue;
   e: FocusEvent;
 }

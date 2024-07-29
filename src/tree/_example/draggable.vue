@@ -1,20 +1,19 @@
 <template>
-  <t-space :size="32" direction="vertical" class="tdesign-tree-demo">
-    <t-space :size="10" direction="vertical">
-      <t-tree
-        :data="items"
-        activable
-        hover
-        transition
-        expand-all
-        draggable
-        @drag-start="handleDragStart"
-        @drag-end="handleDragEnd"
-        @drag-over="handleDragOver"
-        @drag-leave="handleDragLeave"
-        @drop="handleDrop"
-      />
-    </t-space>
+  <t-space direction="vertical">
+    <t-tree
+      :data="items"
+      activable
+      hover
+      transition
+      expand-all
+      draggable
+      :allow-drop="handleAllowDrop"
+      @drag-start="handleDragStart"
+      @drag-end="handleDragEnd"
+      @drag-over="handleDragOver"
+      @drag-leave="handleDragLeave"
+      @drop="handleDrop"
+    />
   </t-space>
 </template>
 
@@ -73,7 +72,7 @@ export default {
             },
             {
               value: '2.2',
-              label: '2.2',
+              label: '2.2 不允许拖放为 2.2 的子节点',
             },
           ],
         },
@@ -96,21 +95,12 @@ export default {
     handleDrop(ctx) {
       console.log('handleDrop', ctx);
     },
+    handleAllowDrop(ctx) {
+      const { dropNode, dropPosition } = ctx;
+      if (dropNode.value === '2.2' && dropPosition === 0) {
+        return false;
+      }
+    },
   },
 };
 </script>
-
-<style scoped>
-.tdesign-tree-demo .title {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .tips {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .operations {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .t-form__item {
-  margin-bottom: 5px;
-}
-</style>

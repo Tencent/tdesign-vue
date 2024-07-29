@@ -34,7 +34,7 @@
 </template>
 <script lang="jsx">
 import {
-  ThumbUpIcon, ChatIcon, ShareIcon, MoreIcon, UserIcon,
+  ThumbUpIcon, ChatIcon, ShareIcon, MoreIcon,
 } from 'tdesign-icons-vue';
 import { MessagePlugin } from 'tdesign-vue';
 
@@ -49,7 +49,6 @@ export default {
     return {
       title: '标题',
       subtitle: '副标题',
-      image: 'https://tdesign.gtimg.com/site/avatar-boy.jpg',
       cover: 'https://tdesign.gtimg.com/site/source/card-demo.png',
       options: [
         {
@@ -64,9 +63,6 @@ export default {
     };
   },
   methods: {
-    icon() {
-      return <UserIcon />;
-    },
     clickHandler() {
       MessagePlugin.success('操作');
     },

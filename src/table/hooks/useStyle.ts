@@ -3,6 +3,7 @@ import { TdBaseTableProps } from '../type';
 import { ClassName, Styles } from '../../common';
 import useClassName from './useClassName';
 import useCommonClassName from '../../hooks/useCommonClassName';
+import { useConfig } from '../../config-provider/useConfig';
 
 export function formatCSSUnit(unit: string | number) {
   if (!unit) return unit;
@@ -16,11 +17,13 @@ export default function useStyle(props: TdBaseTableProps) {
 
   const { tableBaseClass, tableAlignClasses } = useClassName();
   const { sizeClassNames } = useCommonClassName();
+  const { global } = useConfig('table', props.locale);
+  const tableSize = computed(() => props.size ?? global.value.size);
 
   const tableClasses = computed<ClassName>(() => [
     tableBaseClass.table,
     {
-      [sizeClassNames[props.size]]: props.size !== 'medium',
+      [sizeClassNames[tableSize.value]]: tableSize.value !== 'medium',
       [tableBaseClass.bordered]: bordered.value,
       [tableBaseClass.striped]: stripe.value,
       [tableBaseClass.hover]: hover.value,

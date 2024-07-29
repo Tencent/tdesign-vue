@@ -1,46 +1,44 @@
 <template>
-  <t-space :size="32" direction="vertical" class="tdesign-tree-demo">
-    <t-space :size="10" direction="vertical">
-      <t-form labelWidth="150" style="max-width: 500px">
-        <t-form-item>
-          <t-input-adornment prepend="插入节点数量:">
-            <t-input v-model="insertCount" />
-          </t-input-adornment>
-        </t-form-item>
-        <t-form-item label="展开动画">
-          <t-switch v-model="transition" />
-        </t-form-item>
-        <t-form-item label="显示连线">
-          <t-switch v-model="showLine" />
-        </t-form-item>
-        <t-form-item label="显示图标">
-          <t-switch v-model="showIcon" />
-        </t-form-item>
-        <t-form-item>
-          <t-button @click="append()">插入根节点</t-button>
-        </t-form-item>
-      </t-form>
-
-      <t-tree
-        :data="items"
-        hover
-        activable
-        checkable
-        :transition="transition"
-        :expand-on-click-node="false"
-        :line="showLine"
-        :icon="showIcon"
-        :label="label"
-        ref="tree"
-      >
-        <template #operations="{ node }">
-          <div class="tdesign-demo-block-row">
-            <t-button size="small" variant="base" @click="append(node)">添加子节点</t-button>
-            <t-button size="small" variant="base" theme="danger" @click="remove(node)">删除</t-button>
-          </div>
-        </template>
-      </t-tree>
+  <t-space direction="vertical">
+    <t-space>
+      <t-input-adornment prepend="插入节点数量:">
+        <t-input v-model="textInsertCount" />
+      </t-input-adornment>
     </t-space>
+    <t-space>
+      <span>展开动画:</span>
+      <t-switch v-model="transition" />
+    </t-space>
+    <t-space>
+      <span>显示连线:</span>
+      <t-switch v-model="showLine" />
+    </t-space>
+    <t-space>
+      <span>显示图标:</span>
+      <t-switch v-model="showIcon" />
+    </t-space>
+    <t-space>
+      <t-button @click="append()">插入根节点</t-button>
+    </t-space>
+    <t-tree
+      ref="tree"
+      :data="items"
+      hover
+      activable
+      checkable
+      :transition="transition"
+      :expand-on-click-node="false"
+      :line="showLine"
+      :icon="showIcon"
+      :label="label"
+    >
+      <template #operations="{ node }">
+        <div class="tdesign-demo-block-row">
+          <t-button size="small" variant="base" @click="append(node)">添加子节点</t-button>
+          <t-button size="small" variant="base" theme="danger" @click="remove(node)">删除</t-button>
+        </div>
+      </template>
+    </t-tree>
   </t-space>
 </template>
 
@@ -77,20 +75,23 @@ function createTreeData() {
 
 export default {
   data() {
-    const items = createTreeData();
+    const initialData = createTreeData();
     return {
-      index: 0,
       transition: true,
-      insertCount: 1,
-      useActived: false,
-      expandParent: true,
+      textInsertCount: '1',
       showLine: true,
       showIcon: true,
-      items,
+      items: initialData,
     };
   },
+  computed: {
+    insertCount() {
+      const { textInsertCount } = this;
+      return parseInt(textInsertCount, 10) || 1;
+    },
+  },
   methods: {
-    label(createElement, node) {
+    label(h, node) {
       return `${node.value}`;
     },
 
@@ -120,21 +121,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.tdesign-tree-demo .t-tree {
-  margin-bottom: 20px;
-}
-.tdesign-tree-demo .title {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .tips {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .operations {
-  margin-bottom: 10px;
-}
-.tdesign-tree-demo .t-form__item {
-  margin-bottom: 5px;
-}
-</style>

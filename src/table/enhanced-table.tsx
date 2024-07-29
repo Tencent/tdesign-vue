@@ -7,12 +7,19 @@ import primaryTableProps from './primary-table-props';
 import enhancedTableProps from './enhanced-table-props';
 import PrimaryTable, { BASE_TABLE_ALL_EVENTS } from './primary-table';
 import {
-  TdEnhancedTableProps, PrimaryTableCol, TableRowData, DragSortContext, TdPrimaryTableProps,
+  TdEnhancedTableProps,
+  PrimaryTableCol,
+  TableRowData,
+  DragSortContext,
+  TdPrimaryTableProps,
+  TableRowState,
 } from './type';
 import useTreeData from './hooks/useTreeData';
 import useTreeSelect from './hooks/useTreeSelect';
 import { TableListeners } from './base-table';
 import { usePrefixClass } from '../hooks/useConfig';
+import { ComponentScrollToElementParams } from '../common';
+import log from '../_common/js/log';
 
 const PRIMARY_B_EVENTS = [
   'cell-click',
@@ -49,7 +56,7 @@ export default defineComponent({
     const classPrefix = usePrefixClass();
 
     const {
-      store, dataSource, formatTreeColumn, swapData, ...treeInstanceFunctions
+      store, dataSource, formatTreeColumn, swapData, onExpandFoldIconClick, ...treeInstanceFunctions
     } = useTreeData(props, context);
 
     const treeDataMap = ref(store.value.treeDataMap);
@@ -94,7 +101,7 @@ export default defineComponent({
 
     const onEnhancedTableRowClick: TdPrimaryTableProps['onRowClick'] = (p) => {
       if (props.tree?.expandTreeNodeOnClick) {
-        treeInstanceFunctions.toggleExpandData(
+        onExpandFoldIconClick(
           {
             row: p.row,
             rowIndex: p.index,
@@ -104,6 +111,30 @@ export default defineComponent({
       }
       props.onRowClick?.(p);
       context.emit('row-click', p);
+    };
+
+    const getScrollRowIndex = (rowStateData: TableRowState, key: string | number): number => {
+      if (!rowStateData) return -1;
+      if (rowStateData.rowIndex >= 0) return rowStateData.rowIndex;
+      if (rowStateData.rowIndex < 0) {
+        return getScrollRowIndex(rowStateData.parent, key);
+      }
+    };
+
+    const scrollToElement = (params: ComponentScrollToElementParams) => {
+      let { index } = params;
+      if (!index && index !== 0) {
+        if (!params.key) {
+          log.error('Table', 'scrollToElement: one of `index` or `key` must exist.');
+          return;
+        }
+        const rowStateData = treeDataMap.value.get(params.key);
+        index = getScrollRowIndex(rowStateData, params.key);
+        if (index < 0 || index === undefined) {
+          log.error('Table', `${params.key} does not exist in data, check \`rowKey\` or \`data\` please.`);
+        }
+      }
+      primaryTableRef.value.scrollToElement({ ...params, index });
     };
 
     return {
@@ -119,6 +150,7 @@ export default defineComponent({
       onInnerSelectChange,
       onEnhancedTableRowClick,
       ...treeInstanceFunctions,
+      scrollToElement,
     };
   },
 

@@ -34,7 +34,6 @@ export default {
   /** 列配置功能中，当前显示的列 */
   displayColumns: {
     type: Array as PropType<TdPrimaryTableProps['displayColumns']>,
-    default: undefined,
   },
   /** 列配置功能中，当前显示的列，非受控属性 */
   defaultDisplayColumns: {
@@ -74,7 +73,7 @@ export default {
   /** 展开行 */
   expandedRowKeys: {
     type: Array as PropType<TdPrimaryTableProps['expandedRowKeys']>,
-    default: undefined,
+    default: (): TdPrimaryTableProps['expandedRowKeys'] => [],
   },
   /** 展开行，非受控属性 */
   defaultExpandedRowKeys: {
@@ -92,7 +91,6 @@ export default {
   /** 过滤数据的值 */
   filterValue: {
     type: Object as PropType<TdPrimaryTableProps['filterValue']>,
-    default: undefined,
   },
   /** 过滤数据的值，非受控属性 */
   defaultFilterValue: {
@@ -111,14 +109,24 @@ export default {
     type: Boolean,
     default: true,
   },
+  /** 行选中单选场景，是否允许取消选中 */
+  rowSelectionAllowUncheck: Boolean,
+  /** 行选中类型，单选或多选。效果和 `columns` 中配置的 `{ colKey: 'row-select', type: 'single' }` 一样 */
+  rowSelectionType: {
+    type: String as PropType<TdPrimaryTableProps['rowSelectionType']>,
+    validator(val: TdPrimaryTableProps['rowSelectionType']): boolean {
+      if (!val) return true;
+      return ['single', 'multiple'].includes(val);
+    },
+  },
   /** 是否在点击整行时选中 */
   selectOnRowClick: Boolean,
-  /** 选中行，控制属性。半选状态行请更为使用 `indeterminateSelectedRowKeys` 控制 */
+  /** 选中行。半选状态行请更为使用 `indeterminateSelectedRowKeys` 控制 */
   selectedRowKeys: {
     type: Array as PropType<TdPrimaryTableProps['selectedRowKeys']>,
-    default: undefined,
+    default: (): TdPrimaryTableProps['selectedRowKeys'] => [],
   },
-  /** 选中行，控制属性。半选状态行请更为使用 `indeterminateSelectedRowKeys` 控制，非受控属性 */
+  /** 选中行。半选状态行请更为使用 `indeterminateSelectedRowKeys` 控制，非受控属性 */
   defaultSelectedRowKeys: {
     type: Array as PropType<TdPrimaryTableProps['defaultSelectedRowKeys']>,
     default: (): TdPrimaryTableProps['defaultSelectedRowKeys'] => [],
@@ -128,7 +136,6 @@ export default {
   /** 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序 */
   sort: {
     type: [Object, Array] as PropType<TdPrimaryTableProps['sort']>,
-    default: undefined,
   },
   /** 排序控制。sortBy 排序字段；descending 是否进行降序排列。值为数组时，表示正进行多字段排序，非受控属性 */
   defaultSort: {

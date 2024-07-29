@@ -27,7 +27,7 @@ export function expendClickEffect(
 
   if (isDisabled) return;
   // 点击展开节点，设置展开状态
-  if (propsTrigger === trigger && !node.isLeaf()) {
+  if (propsTrigger === trigger) {
     const expanded = node.setExpanded(true);
     treeStore.refreshNodes();
     treeStore.replaceExpanded(expanded);
@@ -104,7 +104,7 @@ export function valueChangeEffect(node: TreeNode, cascaderContext: CascaderConte
       .getPath()
       .map((item) => item.value));
 
-  setValue(resValue, 'check', node.getModel());
+  setValue(resValue, node.checked ? 'uncheck' : 'check', node.getModel());
 }
 
 /**

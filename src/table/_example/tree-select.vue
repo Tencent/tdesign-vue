@@ -48,7 +48,7 @@ import { EnhancedTable, MessagePlugin } from 'tdesign-vue';
 import cloneDeep from 'lodash/cloneDeep';
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 
-const data = [];
+const initialData = [];
 for (let i = 0; i < 500; i++) {
   const obj = {
     key: `first_level_${i}`,
@@ -79,7 +79,7 @@ for (let i = 0; i < 500; i++) {
     });
     return secondObj;
   });
-  data.push(obj);
+  initialData.push(obj);
 }
 
 export default {
@@ -127,7 +127,7 @@ export default {
         { colKey: 'matters', title: '申请事项', width: '150' },
         { colKey: 'email', title: '邮箱地址' },
       ],
-      data,
+      data: initialData,
     };
   },
 
@@ -135,14 +135,14 @@ export default {
     // 切换模式，重置数据，避免互相影响
     checkStrictly() {
       this.selectedRowKeys = [];
-      this.data = cloneDeep(data);
+      this.data = cloneDeep(initialData);
     },
   },
 
   methods: {
-    rehandleClickOp(context) {
-      console.log(context);
-    },
+    // rehandleClickOp(context) {
+    //   console.log(context);
+    // },
 
     rehandleSelectChange(value, { selectedRowData }) {
       this.selectedRowKeys = value;
@@ -170,19 +170,32 @@ export default {
       MessagePlugin.success('获取成功，请打开控制台查看');
     },
 
+    // 虚拟滚动场景：滚动到指定行
     scrollToElement() {
       const { enhancedTableRef } = this.$refs;
-      const treeNodeData = enhancedTableRef.getData('first_level_150');
-      console.log(treeNodeData);
-      // 因为可能会存在前面的元素节点展开，或行展开，故而下标跟序号不一定一样，不一定是 150
-      enhancedTableRef.primaryTableRef.scrollToElement({
-        // 跳转元素下标（第 151 个元素位置）
-        index: treeNodeData.rowIndex - this.selectedRowKeys.length,
+
+      // 方式一：通过行唯一标识跳转到指定行
+      enhancedTableRef.scrollToElement({
+        // 滚动到指定元素
+        key: 'first_level_150',
+        // 如果元素没有被展开，则跳转到父元素所在位置
+        // key: 'second_level_1510',
         // 滚动元素距离顶部的距离（如表头高度）
         top: 47,
         // 高度动态变化场景下，即 isFixedRowHeight = false。延迟设置元素位置，一般用于依赖不同高度异步渲染等场景，单位：毫秒。（固定高度不需要这个）
         time: 60,
       });
+
+      // 方式二：通过行下标跳转到指定行（示例代码有效：勿删）
+      // const treeNodeData = enhancedTableRef.getData('first_level_150');
+      // enhancedTableRef.primaryTableRef.scrollToElement({
+      //   // 跳转元素下标（第 151 个元素位置）
+      //   index: treeNodeData.rowIndex - this.expandedRowKeys.length,
+      //   // 滚动元素距离顶部的距离（如表头高度）
+      //   top: 47,
+      //   // 高度动态变化场景下，即 isFixedRowHeight = false。延迟设置元素位置，一般用于依赖不同高度异步渲染等场景，单位：毫秒。（固定高度不需要这个）
+      //   time: 60,
+      // });
     },
 
     onRowClick(data) {

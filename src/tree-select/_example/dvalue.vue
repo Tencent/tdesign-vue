@@ -1,11 +1,11 @@
 <template>
-  <t-tree-select style="width: 300px" :data="options" :value="defaultValue" placeholder="请选择" />
+  <t-tree-select style="width: 300px" :data="options" :value="value" placeholder="请选择" />
 </template>
 <script>
-const defaultValue = ['shenzhen', 'guangzhou'];
+const initialDefaultValue = ['shenzhen', 'guangzhou'];
 // const defaultValue = 'guangzhou';
 
-const options = [
+const initialOptions = [
   {
     label: '广东省',
     value: 'guangdong',
@@ -39,9 +39,8 @@ const options = [
 export default {
   data() {
     return {
-      value: '',
-      defaultValue,
-      options,
+      value: initialDefaultValue,
+      options: initialOptions,
     };
   },
 };

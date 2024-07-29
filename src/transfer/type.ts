@@ -7,6 +7,7 @@
 import { CheckboxProps } from '../checkbox';
 import { PaginationProps, PageInfo } from '../pagination';
 import { InputProps } from '../input';
+import { TreeProps } from '../tree';
 import { TNode, KeysType } from '../common';
 
 export interface TdTransferProps<T extends DataOption = DataOption> {
@@ -48,7 +49,7 @@ export interface TdTransferProps<T extends DataOption = DataOption> {
    */
   footer?: Array<string | TNode> | TNode<{ type: TransferListType }>;
   /**
-   * 用来定义选项文本和选项值字段，示例：`{ label: 'text', value: 'id' }`，表示选项文本取 `text` 字段，选项值取 `id` 字段
+   * 用来定义 value / label / disabled 在 `data` 中对应的字段别名，示例：`{ label: 'text', value: 'id' }`，表示选项文本取 `text` 字段，选项值取 `id` 字段
    */
   keys?: KeysType;
   /**
@@ -88,6 +89,10 @@ export interface TdTransferProps<T extends DataOption = DataOption> {
    * 自定义渲染节点
    */
   transferItem?: TNode<TransferItem<T>>;
+  /**
+   * 传入 Tree 组件定义树形结构
+   */
+  tree?: (tree: TreeProps) => TNode;
   /**
    * 目标数据列表数据
    * @default []

@@ -1,20 +1,18 @@
-import { computed, toRefs } from '@vue/composition-api';
-import { TreeProps, TypeTreeState } from '../interface';
-import { Styles } from '../../common';
-import { usePrefixClass } from '../../hooks/useConfig';
+import { computed, TypeStyles, usePrefixClass } from '../adapt';
+import { TypeTreeState } from '../tree-types';
 
 export function formatCSSUnit(unit: string | number) {
   if (!unit) return unit;
   return isNaN(Number(unit)) ? unit : `${unit}px`;
 }
 
-export default function useTreeStyles(props: TreeProps, state: TypeTreeState) {
+export default function useTreeStyles(state: TypeTreeState) {
+  const { props } = state;
   const componentName = usePrefixClass('tree').value;
   const classPrefix = usePrefixClass().value;
-  const treeState = state;
-  const { virtualConfig, isScrolling } = treeState;
+  const { virtualConfig, isScrolling, refProps } = state;
 
-  const { height, maxHeight } = toRefs(props);
+  const { height, maxHeight } = refProps;
 
   const treeClasses = computed(() => {
     const list: Array<string> = [componentName];
@@ -53,12 +51,13 @@ export default function useTreeStyles(props: TreeProps, state: TypeTreeState) {
     return list;
   });
 
-  const treeContentStyles = computed<Styles>(() => ({
+  const treeContentStyles = computed<TypeStyles>(() => ({
     height: formatCSSUnit(height.value),
     maxHeight: formatCSSUnit(maxHeight.value),
+    overflowY: formatCSSUnit(height.value) || formatCSSUnit(maxHeight.value) ? 'auto' : undefined,
   }));
 
-  const scrollStyles = computed<Styles>(() => {
+  const scrollStyles = computed<TypeStyles>(() => {
     // isVirtual 改为函数内取值，可接收属性的变动
     const isVirtual = virtualConfig?.isVirtualScroll.value;
     const translateY = isVirtual ? virtualConfig?.translateY.value : 0;
@@ -72,7 +71,7 @@ export default function useTreeStyles(props: TreeProps, state: TypeTreeState) {
     return posStyle;
   });
 
-  const cursorStyles = computed<Styles>(() => {
+  const cursorStyles = computed<TypeStyles>(() => {
     const isVirtual = virtualConfig?.isVirtualScroll.value;
     const translateY = isVirtual ? virtualConfig?.translateY.value : 0;
     const translate = `translate(0, ${translateY}px)`;

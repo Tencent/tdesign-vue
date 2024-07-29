@@ -1,6 +1,6 @@
 import throttle from 'lodash/throttle';
-import { Ref, reactive } from '@vue/composition-api';
-import { TypeTreeItemProps } from '../interface';
+import { reactive } from '../adapt';
+import { TypeTreeItemState } from '../tree-types';
 
 export interface TypeDragStates {
   isDragOver: boolean;
@@ -8,13 +8,20 @@ export interface TypeDragStates {
   dropPosition: number;
 }
 
+export enum DragPosition {
+  Before = -1,
+  Inside = 0,
+  After = 1,
+}
+
 type TypeDrag = 'dragStart' | 'dragOver' | 'dragLeave' | 'dragEnd' | 'drop';
 
-export default function useDraggable(props: TypeTreeItemProps, treeItemRef: Ref<HTMLElement>) {
+export default function useDraggable(state: TypeTreeItemState) {
+  const { treeItemRef } = state;
   const dragStates = reactive({
     isDragOver: false,
     isDragging: false,
-    dropPosition: 0,
+    dropPosition: DragPosition.Inside,
   });
 
   const updateDropPosition = (dragEvent: DragEvent) => {
@@ -22,35 +29,35 @@ export default function useDraggable(props: TypeTreeItemProps, treeItemRef: Ref<
     if (!rootNode) return;
 
     const rect = rootNode?.getBoundingClientRect?.();
-    const offsetY = window.pageYOffset + rect.top;
+    const offsetY = window.scrollY + rect.top;
     const { pageY } = dragEvent;
     const gapHeight = rect.height / 4;
     const diff = pageY - offsetY;
 
     if (diff < gapHeight) {
-      dragStates.dropPosition = -1;
+      dragStates.dropPosition = DragPosition.Before;
     } else if (diff < rect.height - gapHeight) {
-      dragStates.dropPosition = 0;
+      dragStates.dropPosition = DragPosition.Inside;
     } else {
-      dragStates.dropPosition = 1;
+      dragStates.dropPosition = DragPosition.After;
     }
   };
 
   const setDragStatus = (status: TypeDrag, dragEvent: DragEvent) => {
-    const { node, treeScope } = props;
+    const { node, treeScope } = state;
     const { drag } = treeScope;
     if (!drag) return;
 
     switch (status) {
       case 'dragStart':
         dragStates.isDragging = true;
-        dragStates.dropPosition = 0;
+        dragStates.dropPosition = DragPosition.Inside;
         drag.handleDragStart?.({ node, dragEvent });
         break;
       case 'dragEnd':
         dragStates.isDragging = false;
         dragStates.isDragOver = false;
-        dragStates.dropPosition = 0;
+        dragStates.dropPosition = DragPosition.Inside;
         throttleUpdateDropPosition.cancel();
         drag.handleDragEnd?.({ node, dragEvent });
         break;
@@ -61,7 +68,7 @@ export default function useDraggable(props: TypeTreeItemProps, treeItemRef: Ref<
         break;
       case 'dragLeave':
         dragStates.isDragOver = false;
-        dragStates.dropPosition = 0;
+        dragStates.dropPosition = DragPosition.Inside;
         throttleUpdateDropPosition.cancel();
         drag.handleDragLeave?.({ node, dragEvent });
         break;
@@ -76,7 +83,7 @@ export default function useDraggable(props: TypeTreeItemProps, treeItemRef: Ref<
   };
 
   const handleDragStart = (evt: DragEvent) => {
-    const { node } = props;
+    const { node } = state;
     if (!node.isDraggable()) return;
     evt.stopPropagation();
     setDragStatus('dragStart', evt);
@@ -90,14 +97,14 @@ export default function useDraggable(props: TypeTreeItemProps, treeItemRef: Ref<
   };
 
   const handleDragEnd = (evt: DragEvent) => {
-    const { node } = props;
+    const { node } = state;
     if (!node.isDraggable()) return;
     evt.stopPropagation();
     setDragStatus('dragEnd', evt);
   };
 
   const handleDragOver = (evt: DragEvent) => {
-    const { node } = props;
+    const { node } = state;
     if (!node.isDraggable()) return;
     evt.stopPropagation();
     evt.preventDefault();
@@ -105,14 +112,14 @@ export default function useDraggable(props: TypeTreeItemProps, treeItemRef: Ref<
   };
 
   const handleDragLeave = (evt: DragEvent) => {
-    const { node } = props;
+    const { node } = state;
     if (!node.isDraggable()) return;
     evt.stopPropagation();
     setDragStatus('dragLeave', evt);
   };
 
   const handleDrop = (evt: DragEvent) => {
-    const { node } = props;
+    const { node } = state;
     if (!node.isDraggable()) return;
     evt.stopPropagation();
     evt.preventDefault();

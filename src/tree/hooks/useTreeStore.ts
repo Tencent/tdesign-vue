@@ -1,24 +1,32 @@
 import pick from 'lodash/pick';
-import { SetupContext } from '@vue/composition-api';
-import TreeStore from '../../_common/js/tree/tree-store';
+import { TreeStore } from '../../_common/js/tree/tree-store';
+import { watch, TypeRef } from '../adapt';
 import {
   TreeProps,
   TypeValueMode,
+  TreeNodeValue,
   TypeEventState,
   TypeTreeNodeModel,
   TypeTreeNode,
   TypeTNodeValue,
-} from '../interface';
+  TypeTreeState,
+} from '../tree-types';
 
-export default function useTreeStore(props: TreeProps, context: SetupContext) {
-  const {
-    actived, value, valueMode, filter, keys,
-  } = props;
+export default function useTreeStore(state: TypeTreeState) {
+  const { props, context, refProps } = state;
+  const { valueMode, filter, keys } = props;
 
   const store: TreeStore = new TreeStore({
     valueMode: valueMode as TypeValueMode,
     filter,
   });
+
+  // tValue 就是 refProps.value
+  const tValue = state.vmValue[0] as TypeRef<TreeNodeValue[]>;
+  // tActived 就是 refProps.actived
+  const tActived = state.vmActived[0] as TypeRef<TypeTNodeValue[]>;
+  // tExpanded 就是 refProps.expanded
+  const tExpanded = state.vmExpanded[0] as TypeRef<TypeTNodeValue[]>;
 
   // 同步 Store 选项
   const updateStoreConfig = () => {
@@ -32,6 +40,7 @@ export default function useTreeStore(props: TreeProps, context: SetupContext) {
       'activable',
       'activeMultiple',
       'disabled',
+      'disableCheck',
       'checkable',
       'draggable',
       'checkStrictly',
@@ -45,12 +54,12 @@ export default function useTreeStore(props: TreeProps, context: SetupContext) {
   };
 
   const updateExpanded = () => {
-    const { expanded, expandParent } = props;
-    if (!Array.isArray(expanded)) return;
+    const { expandParent } = props;
+    if (!Array.isArray(tExpanded.value)) return;
     // 初始化展开状态
     // 校验是否自动展开父节点
     const expandedMap = new Map();
-    expanded.forEach((val) => {
+    tExpanded.value.forEach((val) => {
       expandedMap.set(val, true);
       if (expandParent) {
         const node = store.getNode(val);
@@ -114,15 +123,14 @@ export default function useTreeStore(props: TreeProps, context: SetupContext) {
     const evtCtx = {
       node: node.getModel(),
     };
-    const { value, expanded, actived } = props;
-    if (value && value.length > 0) {
-      store.replaceChecked(value);
+    if (Array.isArray(tValue.value) && tValue.value.length > 0) {
+      store.replaceChecked(tValue.value);
     }
-    if (expanded && expanded.length > 0) {
-      store.replaceExpanded(expanded);
+    if (Array.isArray(tExpanded.value) && tExpanded.value.length > 0) {
+      store.replaceExpanded(tExpanded.value);
     }
-    if (actived && actived.length > 0) {
-      store.replaceActived(actived);
+    if (Array.isArray(tActived.value) && tActived.value.length > 0) {
+      store.replaceActived(tActived.value);
     }
     if (props?.onLoad) {
       props?.onLoad(evtCtx);
@@ -131,55 +139,90 @@ export default function useTreeStore(props: TreeProps, context: SetupContext) {
   };
 
   const rebuild = (list: TreeProps['data']) => {
-    const { value, actived } = props;
     store.reload(list || []);
+    store.refreshNodes();
     // 初始化选中状态
-    if (Array.isArray(value)) {
-      store.setChecked(value);
+    if (Array.isArray(tValue.value)) {
+      store.setChecked(tValue.value);
     }
     // 更新展开状态
     updateExpanded();
     // 初始化激活状态
-    if (Array.isArray(actived)) {
-      store.setActived(actived);
+    if (Array.isArray(tActived.value)) {
+      store.setActived(tActived.value);
     }
     // 刷新节点状态
     store.refreshState();
   };
 
-  // keys 属性比较特殊，不应该在实例化之后再次变更
-  store.setConfig({
-    keys,
+  function initStore() {
+    // keys 属性比较特殊，不应该在实例化之后再次变更
+    store.setConfig({
+      keys,
+    });
+    updateStoreConfig();
+    store.append(props.data || []);
+
+    // 刷新节点，必须在配置选中之前执行
+    // 这样选中态联动判断才能找到父节点
+    store.refreshNodes();
+
+    // 初始化选中状态
+    if (Array.isArray(tValue.value)) {
+      store.setChecked(tValue.value);
+    }
+
+    // 更新节点展开状态
+    updateExpanded();
+
+    // 初始化激活状态
+    if (Array.isArray(tActived.value)) {
+      store.setActived(tActived.value);
+    }
+
+    store.emitter.on('load', handleLoad);
+    store.emitter.on('update', expandFilterPath);
+  }
+
+  // 初始化 store
+  initStore();
+  // 设置初始化状态
+  state.setStore(store);
+  // 配置属性监听
+  watch(
+    () => [...(tValue.value || [])],
+    (nVal: TreeNodeValue[]) => {
+      store.replaceChecked(nVal);
+    },
+  );
+  watch(
+    () => [...(tExpanded.value || [])],
+    (nVal: TreeNodeValue[]) => {
+      store.replaceExpanded(nVal);
+    },
+  );
+  watch(
+    () => [...(tActived.value || [])],
+    (nVal: TreeNodeValue[]) => {
+      store.replaceActived(nVal);
+    },
+  );
+
+  watch(refProps.filter, (nVal, previousVal) => {
+    checkFilterExpand(nVal, previousVal);
   });
-  updateStoreConfig();
-  store.append(props.data || []);
-
-  // 刷新节点，必须在配置选中之前执行
-  // 这样选中态联动判断才能找到父节点
-  store.refreshNodes();
-
-  // 初始化选中状态
-  if (Array.isArray(value)) {
-    store.setChecked(value);
-  }
-
-  // 更新节点展开状态
-  updateExpanded();
-
-  // 初始化激活状态
-  if (Array.isArray(actived)) {
-    store.setActived(actived);
-  }
-
-  store.emitter.on('load', handleLoad);
-  store.emitter.on('update', expandFilterPath);
+  watch(refProps.keys, (keys) => {
+    store.setConfig({
+      keys,
+    });
+  });
 
   return {
     store,
     rebuild,
+    checkFilterExpand,
     updateStoreConfig,
     updateExpanded,
-    checkFilterExpand,
     expandFilterPath,
   };
 }

@@ -19,7 +19,7 @@ import { useGlobalIcon } from '../../hooks/useGlobalIcon';
 export default function useRowExpand(props: TdPrimaryTableProps, context: SetupContext) {
   const { expandedRowKeys } = toRefs(props);
   const renderTNode = useTNodeJSX();
-  const { t, global } = useConfig('table');
+  const { t, global } = useConfig('table', props.locale);
   const { ChevronRightCircleIcon } = useGlobalIcon({ ChevronRightCircleIcon: TdChevronRightCircleIcon });
   const { tableExpandClasses, positiveRotate90, tableFullRowClasses } = useClassName();
   // controlled and uncontrolled
@@ -37,7 +37,7 @@ export default function useRowExpand(props: TdPrimaryTableProps, context: SetupC
 
   const isFirstColumnFixed = computed(() => props.columns?.[0]?.fixed === 'left');
 
-  const onToggleExpand = (e: MouseEvent, row: TableRowData) => {
+  const onToggleExpand = (e: MouseEvent | KeyboardEvent, row: TableRowData) => {
     props.expandOnRowClick && e.stopPropagation();
     const currentId = get(row, props.rowKey || 'id');
     const index = tExpandedRowKeys.value.indexOf(currentId);

@@ -2,9 +2,9 @@
   <t-transfer :data="list" :checked.sync="checked" />
 </template>
 <script>
-const list = [];
+const initialList = [];
 for (let i = 0; i < 20; i++) {
-  list.push({
+  initialList.push({
     value: i,
     label: `内容${i + 1}`,
     disabled: i % 4 < 1,
@@ -13,8 +13,8 @@ for (let i = 0; i < 20; i++) {
 export default {
   data() {
     return {
-      list,
-      checked: list.map((item) => item.value).filter((v) => v % 2 === 0), // 偶数
+      list: initialList,
+      checked: initialList.map((item) => item.value).filter((v) => v % 2 === 0), // 偶数
     };
   },
 };

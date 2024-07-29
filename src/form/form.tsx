@@ -48,6 +48,9 @@ export default mixins(classPrefixMixins).extend({
         },
       ];
     },
+    formDataKeys(): string[] {
+      return keys(this.data);
+    },
     controlledComponents(): string[] {
       let fields = FORM_CONTROL_COMPONENTS;
       if (this.formControlledComponents?.length) {
@@ -165,9 +168,10 @@ export default mixins(classPrefixMixins).extend({
         e?.preventDefault();
         e?.stopPropagation();
       }
-      const fields = keys(this.data);
       this.children
-        .filter((child) => this.isFunction(child.resetField) && this.needValidate(String(child.name), fields))
+        .filter(
+          (child) => this.isFunction(child.resetField) && this.needValidate(String(child.name), this.formDataKeys),
+        )
         .forEach((child) => child.resetField(this.resetType || 'initial'));
       emitEvent<Parameters<TdFormProps['onReset']>>(this, 'reset', { e });
     },
@@ -183,7 +187,9 @@ export default mixins(classPrefixMixins).extend({
     // exposure function, If there is no reset button in form, this function can be used
     reset<T = FormData>(params: FormResetParams<T> = {}) {
       this.children
-        .filter((child) => this.isFunction(child.resetField))
+        .filter(
+          (child) => this.isFunction(child.resetField) && this.needValidate(String(child.name), this.formDataKeys),
+        )
         .forEach((child) => {
           const resetType = params.type || this.resetType || 'initial';
           if (!params.fields || (params.fields && params.fields.includes(child.name as keyof T))) {

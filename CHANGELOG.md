@@ -5,7 +5,431 @@ toc: false
 docClass: timeline
 ---
 
-  ## 🌈 1.5.0 `2023-07-25` 
+## 🌈 1.9.8 `2024-07-11` 
+### 🚀 Features
+- `Icon`: 新增有序列表图标 `list-numbered`，优化`lock-off`图标的绘制路径 @DOUBLE-DENG ([icon#9f4acfd](https://github.com/Tencent/tdesign-icons/commit/9f4acfdda58f84f9bca71a22f033e27127dd26db))
+### 🐞 Bug Fixes
+- `Icon`: 修复图标`chart-column`的命名错误问题，如果使用旧错误命名请注意 @uyarn ([#3229](https://github.com/Tencent/tdesign-vue/pull/3229))
+- `Tree`: 修复树形组件错误过滤 `value` 为 `0` 的节点的问题 @uyarn ([#3233](https://github.com/Tencent/tdesign-vue/pull/3233))
+- `Input`: 修复禁用状态下仍可以切换明文密文的问题 @jby0107 ([#3230](https://github.com/Tencent/tdesign-vue/pull/3230))
+- `Input`: 修复禁用状态下超出问题文字长度异常的问题 @uyarn ([common#1831](https://github.com/Tencent/tdesign-common/pull/1831))
+- `Menu`: 修复样式文件多余的空格导致部分场景打包异常的问题 @liweijie0812 ([common#1828](https://github.com/Tencent/tdesign-common/pull/1828))
+
+## 🌈 1.9.7 `2024-06-28` 
+### 🐞 Bug Fixes
+- `Dialog`: 修复 `Dialog` 组件在 `SSR` 环境下的使用问题 @qqw78901 ([#3219](https://github.com/Tencent/tdesign-vue/pull/3219))
+
+## 🌈 1.9.6 `2024-06-26` 
+### 🐞 Bug Fixes
+- `Tree`: 修复 `1.9.5` 版本使用拖拽功能的报错问题 @uyarn ([#3212](https://github.com/Tencent/tdesign-vue/pull/3212))
+
+## 🌈 1.9.5 `2024-06-20` 
+### 🚀 Features
+- `Transfer`: 修复通过 `Function` 方法使用 `Tree` 属性的能力 @sinbadmaster ([#3185](https://github.com/Tencent/tdesign-vue/pull/3185))
+- `Tabs`
+   - 支持通过滚轮或者触摸板进行滚动的操作 @oljc ([#3187](https://github.com/Tencent/tdesign-vue/pull/3187))
+   - 新增 `scrollPosition` API, 支持自定义选中滑块滚动最终停留的位置 @oljc ([#3196](https://github.com/Tencent/tdesign-vue/pull/3196))
+- `DatePicker`: 优化日期区间选择器头部区间的变化逻辑，选择后左侧区间大于右侧区间，则默认调整为左侧区间始终比右侧区间小 1 @uyarn ([#3207](https://github.com/Tencent/tdesign-vue/pull/3207))
+### 🐞 Bug Fixes
+- `Tree`: 新增 `allowDrop` API，支持拖放限制的能力，具体参考相关示例 @TabSpace ([#3206](https://github.com/Tencent/tdesign-vue/pull/3206))
+- `Cascader`: 修复无children选项点击时仍然显示之前列表的问题 @1379255913 ([#3201](https://github.com/Tencent/tdesign-vue/pull/3201))
+- `InputNumber`: 修复 `allowInputOverLimit=false` 大小值判断时，`value` 为 `undefined` 时，会出现显示 Infinity 的问题 @HaixingOoO
+- `SelectInput`: 修复多选情况下设置 `allowInput` 为 true 无法输入的问题 @hy212 ([#3195](https://github.com/Tencent/tdesign-vue/pull/3195))
+
+
+## 🌈 1.9.4 `2024-05-16`
+### 🚀 Features
+- `Input`: 新增 `borderless` 无边框模式输入框 @uyarn ([#3162](https://github.com/Tencent/tdesign-vue/pull/3162))
+- `Scroll`: 调整 `Chrome 121` 升级带来的滚动条样式的兼容方式，不再依赖 `autoprefixer`或`vue-cli` 的版本 @loopZhou ([#3162](https://github.com/Tencent/tdesign-vue/pull/3162))
+- `DatePicker`:  `DatePicker` 及 `DateRangePicker` 组件新增 `label` 属性 @fython ([#3169](https://github.com/Tencent/tdesign-vue/pull/3169))
+- `RangeInput`: 新增 `label` 属性 @fython ([#3169](https://github.com/Tencent/tdesign-vue/pull/3169))
+### 🐞 Bug Fixes
+- `ColorPicker`: 修复切换预览颜色时，通道按钮位置不变的问题 @fennghuang ([#3163](https://github.com/Tencent/tdesign-vue/pull/3163))
+- `RangeInput`: 修复 `prefix/suffix` 未垂直居中对齐的问题 @fython ([#3175](https://github.com/Tencent/tdesign-vue/pull/3175))
+- `Menu`: 提升 `t-popup__menu` 的样式优先级，解决 dist 内样式优先级一致导致样式异常的问题 @uyarn ([#3178](https://github.com/Tencent/tdesign-vue/pull/3178))
+- `Select`: 
+    - 优化已选样式覆盖已禁用样式的问题 @fython ([#3178](https://github.com/Tencent/tdesign-vue/pull/3178))
+    - 修复`1.9.2` 版本错误移除 `value` 默认值的问题 @uyarn ([#3177](https://github.com/Tencent/tdesign-vue/pull/3177))
+- `Upload`: 修复图片上传错误类型下的样式异常的问题 @uyarn ([#3178](https://github.com/Tencent/tdesign-vue/pull/3178))
+### 🚧 Others
+- `Upload`: 
+  - 修复文档中`locale`跳转链接异常的问题 @uyarn ([#3178](https://github.com/Tencent/tdesign-vue/pull/3178))
+  - 修复文档中关于 `OPTIONS` 方法的说明 @Summer-Shen ([#3155](https://github.com/Tencent/tdesign-vue/pull/3155))
+
+
+## 🌈 1.9.3 `2024-04-26` 
+### 🚀 Features
+- `Menu`: `Submenu`透传 `Popup` 组件全部特性 @betavs ([#3145](https://github.com/Tencent/tdesign-vue/pull/3145))
+### 🐞 Bug Fixes
+- `Submenu`: 修复设置 `popup-props` 中 `placement` 属性无效的问题 @betavs ([#3145](https://github.com/Tencent/tdesign-vue/pull/3145))
+- `Textarea`: 修复`autosize` 在 `Firefox` 中不生效的问题 @XBIsland ([#3148](https://github.com/Tencent/tdesign-vue/pull/3148))
+- `Select`: 修复 `option` 插槽 value 为 `Boolean` 类型的报错问题 @uyarn ([#3154](https://github.com/Tencent/tdesign-vue/pull/3154))
+- `Upload`: 修复自定义方法通过`uploadFilePercent`更新百分比无效的问题 @XBIsland ([#3149](https://github.com/Tencent/tdesign-vue/pull/3149))
+- `Style`: 修复部分节点前缀无法统一替换的缺陷 @ZWkang [common#1773](https://github.com/Tencent/tdesign-common/pull/1773)
+
+### 🚧 Others
+- docs: 更新关于CDN资源用法的说明文档  @uyarn ([#3144](https://github.com/Tencent/tdesign-vue/pull/3144))
+
+
+## 🌈 1.9.2 `2024-04-11` 
+### 🚀 Features
+- `Tag`: 新增`color`API，支持自定义颜色  @maoyiluo ([#3101](https://github.com/Tencent/tdesign-vue/pull/3101))
+- `CollapsedItems`: `TagInput`、`SelectInput`、`TreeSelect`和`Cascader`的`CollapsedItems`统一新增`onClose`回调，支持对折叠选项的删除操作  @topazur @uyarn ([#2942](https://github.com/Tencent/tdesign-vue/pull/2942))
+### 🐞 Bug Fixes
+- `Transfer`: 
+    -  修复`search` 事件的 `trigger` 的异常 @betavs ([#3118](https://github.com/Tencent/tdesign-vue/pull/3118))
+    - 修复树形结构数据过滤异常的问题 @uyarn ([#3137](https://github.com/Tencent/tdesign-vue/pull/3137))
+- `Locale`: 修复`Image`和`ImageViewer`组件英文语言包异常的问题，优化`DatePicker`部分语言配置 @uyarn ([#3119](https://github.com/Tencent/tdesign-vue/pull/3119))
+- `Checkbox`: 修复 `checkboxGroup.max` 禁用态显示的问题 @LoopZhou ([#3124](https://github.com/Tencent/tdesign-vue/pull/3124))
+- `DatePicker`: 
+    - 修复`valueType` 为 `Date` 类型时仍然进行转换的缺陷 @uyarn ([#3127](https://github.com/Tencent/tdesign-vue/pull/3127))
+    - 修复周和季度模式选择异常的问题 @uyarn ([#3138](https://github.com/Tencent/tdesign-vue/pull/3138))
+- `Table`: 修复使用 `fixedRows` 时的报错问题 @betavs ([#3134](https://github.com/Tencent/tdesign-vue/pull/3134))
+- `Loading`:导出 `LoadingDirective` 使用 @XBIsland ([#3120](https://github.com/Tencent/tdesign-vue/pull/3120))
+- `Scroll`: 修复由于Chrome 121版本支持scroll width之后导致`Table`、`Select`及部分出现滚动条组件的样式异常问题 @loopzhou ([common#1765](https://github.com/Tencent/tdesign-vue/pull/1765))。请注意，基于 `@vue/cli-service 4.x` 及以下版本初始化的项目由于依赖的 postcss 版本过低，会因为这个修复受影响，需要升级postcss至8.0以上或整体升级`@vue/cli-service`至5.0以上
+
+### 🚧 Others
+- `Dialog`: 优化插件部分的使用示例 @Lyan-u ([#3126](https://github.com/Tencent/tdesign-vue/pull/3126))
+- `Dialog`: 优化插件部分的使用说明 @Summer-Shen ([#3125](https://github.com/Tencent/tdesign-vue/pull/3125))
+- `Menu`: 移除示例代码中废弃的高度示例 @Summer-Shen ([#3135](https://github.com/Tencent/tdesign-vue/pull/3135))
+
+
+## 🌈 1.9.1 `2024-03-10`
+
+### 🚀 Features
+- `Slider`: 支持通过 `label=null` 或 `label=false` 隐藏滑块数字浮层 @chaishi ([#3100](https://github.com/Tencent/tdesign-vue/pull/3100))
+- `Table`: 支持全局配置 size @Lyan-u ([#3103](https://github.com/Tencent/tdesign-vue/pull/3103))
+- `Table`: 可筛选表格，单选/多选筛选条件,支持搜索选项 [issue#3988](https://github.com/Tencent/tdesign-vue-next/issues/3988) @chaishi ([#3098](https://github.com/Tencent/tdesign-vue/pull/3098))
+- Tabs: 调整激活 Tab下划线与 TabHeader边框的层级关系 @uyarn 
+
+### 🐞 Bug Fixes
+- `DatePicker`: 修复 `format` 与 `valueType` 不一致的场景下计算错误的问题 @uyarn ([#3106](https://github.com/Tencent/tdesign-vue/pull/3106))
+- `Descriptions`: 解决控制台报错绑定属性 `title` 已声明为属性的问题 @betavs ([#3065](https://github.com/Tencent/tdesign-vue/pull/3065))
+- `Descriptions`: 优化自适应宽度的问题 @uyarn ([#3105](https://github.com/Tencent/tdesign-vue/pull/3105))
+- `Table`: 树形结构表格，修复同时异步设置 data 和 expandedTreeNodes 时，展开节点的无效问题 [tdesign-vue-next#3873](https://github.com/Tencent/tdesign-vue-next/issues/3873) @chaishi ([#3098](https://github.com/Tencent/tdesign-vue/pull/3098))
+- `Table`: 固定列表格，修复固定多列时，在 Dialog 中固定列位置压缩问题 @chaishi ([#3098](https://github.com/Tencent/tdesign-vue/pull/3098))
+- `Table`: 修复`Table`缺失`refreshTable`方法的异常 @uyarn ([#3104](https://github.com/Tencent/tdesign-vue/pull/3104))
+
+### 🚧 Others
+- `Form` 文档更新 @liweijie0812 ([#3064](https://github.com/Tencent/tdesign-vue/pull/3064))
+- 新增 `composition API` 示例，详情请参考官网各示例代码 @chaishi @uyarn @HaixingOoO ([#3081](https://github.com/Tencent/tdesign-vue/pull/3081))
+
+
+## 🌈 1.9.0 `2024-01-23` 
+### 🚀 Features
+- `Descriptions`: 新增 `Descriptions` 描述组件 @zhangpaopao0609 ([#3035](https://github.com/Tencent/tdesign-vue/pull/3035))
+- `Slider`:  新增 `changeEnd` 事件 API @uyarn ([#3056](https://github.com/Tencent/tdesign-vue/pull/3056))
+### 🐞 Bug Fixes
+- `Loading`: 修复重复调用`LoadingPlugin()`时报错 @Zz-ZzzZ ([#3025](https://github.com/Tencent/tdesign-vue/pull/3025))
+- `Textarea`: 修复设置`maxlength`后，在windows自带输入法中，中文时不到最大长度也会自动覆盖之前已输入内容的缺陷 @azx1573 ([#3044](https://github.com/Tencent/tdesign-vue/pull/3044))
+- `Textarea`: value绑定值时，autosize时无法输入中文问题 @LoopZhou ([#3057](https://github.com/Tencent/tdesign-vue/pull/3057))
+- `TagInput`: 修复`size` API 没有作用到折叠选项的问题 @uyarn ([#3055](https://github.com/Tencent/tdesign-vue/pull/3055))
+- `Select`: 修复点击清除按钮触发多次`onChange`事件的异常 @uyarn ([#3054](https://github.com/Tencent/tdesign-vue/pull/3054))
+- `Form`: 修复计算`^`字符长度异常的问题 @uyarn ([#3058](https://github.com/Tencent/tdesign-vue/pull/3058))
+- `Form`: 更正表单组件实例方法为非`required`类型 @iiimix ([#3034](https://github.com/Tencent/tdesign-vue/pull/3034))
+### 🚧 Others
+- docs(Card): 更新组件 API 文档 @liweijie0812 ([#3021](https://github.com/Tencent/tdesign-vue/pull/3021))
+- docs: 更正 `webpack` 中使用 `unplugin-auto-import`的说明文档 @uyarn ([#3030](https://github.com/Tencent/tdesign-vue/pull/3030))
+
+
+
+## 🌈 1.8.4 `2024-01-02` 
+### 🚀 Features
+- `Upload`: 手动上传场景，支持进行粘贴上传 @chaishi ([#2991](https://github.com/Tencent/tdesign-vue/pull/2991))
+- `Card`: 支持传入`loadingProps`参数修改加载状态的展示 @iiimix ([#2959](https://github.com/Tencent/tdesign-vue/pull/2959))
+
+### 🐞 Bug Fixes
+- `Upload`: @chaishi 
+   - 修复手动上传时，无法更新上传进度问题 ([#2991](https://github.com/Tencent/tdesign-vue/pull/2991))
+    - 修复图片预览时，无法切换预览图片问题 ([#2991](https://github.com/Tencent/tdesign-vue/pull/2991))
+- `Table`: @chaishi 
+    - 横向滚动场景，修复吸顶表头在移动端无法跟随滚动的问题 [#2976](https://github.com/Tencent/tdesign-vue/issues/2976) ([#2990](https://github.com/Tencent/tdesign-vue/pull/2990))
+    - 横向滚动场景，修复横向滚动在有惯性滚动浏览器中的滚动的问题 ([#2990](https://github.com/Tencent/tdesign-vue/pull/2990))
+   -  横向滚动场景，修复在 Windows 场景中，按下鼠标（不松开鼠标）横向滚动时，表头没有跟随滚动的问题 ([#2990](https://github.com/Tencent/tdesign-vue/pull/2990))
+   -  修复可筛选表格，修复筛选值为 `0` 时，筛选图表没有高亮的问题，[#2987](https://github.com/Tencent/tdesign-vue/issues/2987)  ([#2990](https://github.com/Tencent/tdesign-vue/pull/2990))
+- `Pagination`: 将总数单位 `项` 改为 `条` , 保持内容一致性 @dinghuihua ([#2996](https://github.com/Tencent/tdesign-vue/pull/2996))
+- `Radio`: 处理选中状态也会触发 `change` 事件的问题 @betavs ([#3000](https://github.com/Tencent/tdesign-vue/pull/3000))
+- `Textarea`: 修复组件初始处于隐藏状态，可视后未做高度再计算的问题 @azx1573 ([#3003](https://github.com/Tencent/tdesign-vue/pull/3003))
+- `ImageViewer`: 添加defaultScale @sinbadmaster ([#3013](https://github.com/Tencent/tdesign-vue/pull/3013))
+- `Upload`: 修复 `Form` 的 `disabled` 属性没有作用到上传组件部分按钮的问题 @uyarn ([#3012](https://github.com/Tencent/tdesign-vue/pull/3012))
+- `Select`: 修复`naruto`版本`minCollapsedNum`与`disabled` API的功能异常问题  @uyarn
+### 🚧 Others
+- `Popup`: 丰富插件使用方式的使用示例 @uyarn ([#3014](https://github.com/Tencent/tdesign-vue/pull/3014))
+
+## 🌈 1.8.3 `2023-12-15` 
+### 🚀 Features
+- `Upload`: 新增支持 `uploadPastedFiles`，用于控制是否允许用户粘贴文件上传，默认允许 @chaishi ([#2966](https://github.com/Tencent/tdesign-vue/pull/2966))
+- Dropdown: 移除对left的item样式特殊处理 @uyarn [common#1677](https://github.com/Tencent/tdesign-common/pull/1677)
+### 🐞 Bug Fixes
+- `DatePicker`: 修复选择同一个月内的日期后，打开面板左右月份一样的问题 @Lyan-u ([#2972](https://github.com/Tencent/tdesign-vue/pull/2972))
+- `Drawer`: 处理点击esc无法关闭的问题 @betavs ([#2967](https://github.com/Tencent/tdesign-vue/pull/2967))
+- `ImageViewer`: 滚轮缩放符合操作直觉 @sinbadmaster ([#2974](https://github.com/Tencent/tdesign-vue/pull/2974))
+- `SSR`: 修复 `SSR` 场景使用报错的问题  @uyarn ([#2985](https://github.com/Tencent/tdesign-vue/pull/2985))
+- `Tree`: 处理 `height` 属性无效的问题 @betavs ([#2968](https://github.com/Tencent/tdesign-vue/pull/2968))
+- `Tree`: 解决初始化节点选中态异常的问题 @TabSpace ([#2985](https://github.com/Tencent/tdesign-vue/pull/2985))
+- `Upload`: 卡片式文件上传，修复取消上传时，文件依然显示的问题 [issue#2955](https://github.com/Tencent/tdesign-vue/issues/2955) @chaishi ([#2966](https://github.com/Tencent/tdesign-vue/pull/2966))
+
+## 🌈 1.8.1 `2023-12-07` 
+### 🚀 Features
+- `Cascader`:  新增 `valueDisplay` API @PengYYYYY ([#2938](https://github.com/Tencent/tdesign-vue/pull/2938))
+- `Menu`: 选中后关闭菜单，与其他组件保持交互行为一致 @uyarn ([#2963](https://github.com/Tencent/tdesign-vue/pull/2963))
+- `Tabs`: 优化初始化滚动的场景，对处于中间的部分场景进行进一步优化 @uyarn ([#2964](https://github.com/Tencent/tdesign-vue/pull/2964))
+### 🐞 Bug Fixes
+- `Radio`: 选项内容变化后样式问题修复 @hkaikai ([#2936](https://github.com/Tencent/tdesign-vue/pull/2936))
+- `Pagination`: 修复当 `total` 为 0 并且 `pageSize` 改变时， `current` 值为 0 的问题 @betavs ([#2937](https://github.com/Tencent/tdesign-vue/pull/2937))
+- `Tree`: @TabSpace
+   - 改进节点禁用状态的逻辑  ([#2935](https://github.com/Tencent/tdesign-vue/pull/2935))
+   - value、active和expanded 属性, 支持数组操作触发视图变更 ([#2951](https://github.com/Tencent/tdesign-vue/pull/2951))
+- `Table`: @chaishi
+    - 修复分页场景，动态切换分页数据从 undefined 到具体真实数据时，分页无效的问题 [#2867](https://github.com/Tencent/tdesign-vue/issues/2867) ([#2954](https://github.com/Tencent/tdesign-vue/pull/2954))
+    - 修复分页功能在序号、行选择、行拖拽排序等场景的问题 ([#2962](https://github.com/Tencent/tdesign-vue/pull/2962))
+    - 修复可编辑表格的 `row-edit` 事件没有触发的问题 ([#2934](https://github.com/Tencent/tdesign-vue/pull/2934))
+ - `ImageViewer`: 修复在抽屉组件等组件中使用图片预览组件，按下 `esc` 键抽屉组件和图片预览组件会同时关闭的问题 @sinbadmaster ([#2958](https://github.com/Tencent/tdesign-vue/pull/2958))
+ - `AutoComplete`: 修复匹配特殊字符报错的问题  @ZWkang ([#2943](https://github.com/Tencent/tdesign-vue/pull/2943))
+ - `Dropdown`:处理禁用状态可点击的问题 @betavs ([issue #3693](https://github.com/Tencent/tdesign-vue-next/issues/3693)) 
+
+## 🌈 1.8.0 `2023-11-23`
+
+### 🚀 Features
+
+- `Statistic`: 新增`Statistic`统计数值组件 @LIjiAngChen8 ([#2397](https://github.com/Tencent/tdesign-vue/pull/2397))
+- `Loading`: 支持使用 v-if 和 v-loading 混用的场景 @Zz-ZzzZ ([#2902](https://github.com/Tencent/tdesign-vue/pull/2902))
+- `Space`: 支持老旧浏览器也能正常显示子元素之间的间距，[#1901](https://github.com/Tencent/tdesign-vue/issues/1901) @chaishi ([#2887](https://github.com/Tencent/tdesign-vue/pull/2887))
+- `Table`: 可编辑单元格/可编辑行场景，支持使用参数 `updateEditedCellValue` 更新其他处于编辑态的列数据 @chaishi ([#2917](https://github.com/Tencent/tdesign-vue/pull/2917))
+- `Input`: 恢复 `value` 对`number`的支持 @chaishi ([#2906](https://github.com/Tencent/tdesign-vue/pull/2906))
+
+### 🐞 Bug Fixes
+
+- `Radio`: 修复误判删除键(backspace)是空格键(space)的问题 @liweijie0812 ([#2905](https://github.com/Tencent/tdesign-vue/pull/2905))
+- `Checkbox`: 修复误判删除键(backspace)是空格键(space)的问题 @liweijie0812 ([#2905](https://github.com/Tencent/tdesign-vue/pull/2905))
+- `Table`: @chaishi
+  - 列配置操作场景，修复表头不显示时，报错问题 ([#2909](https://github.com/Tencent/tdesign-vue/pull/2909))
+  - 优化多级表头的列配置功能，不再显示非叶子节点 ([#2916](https://github.com/Tencent/tdesign-vue/pull/2916))
+  - 修复列宽调整在某种情况下的列宽问题 ([#2916](https://github.com/Tencent/tdesign-vue/pull/2916))
+  - 修复懒加载场景默认依然会执行内部逻辑问题 @chaishi ([#2915](https://github.com/Tencent/tdesign-vue/pull/2915))
+- `Checkbox`: 修复 `CheckboxGroup.max` 超出数量限制时的禁用态显示问题，[issue#2908](https://github.com/Tencent/tdesign-vue/issues/2908) @betavs ([#2911](https://github.com/Tencent/tdesign-vue/pull/2911))
+- `Checkbox`: 修复提前设置某个选项的值在选中项 `CheckboxGorup.value` 里面，再放入选项到 `options` 中，选项呈现状态为非选中问题 @chaishi ([#2914](https://github.com/Tencent/tdesign-vue/pull/2914))
+- `Checkbox`: 修复懒加载场景默认依然会执行内部逻辑问题 @chaishi ([#2915](https://github.com/Tencent/tdesign-vue/pull/2915))
+- `Cascader`: 修复数字为 value 时的告警问题 @uyarn ([#2924](https://github.com/Tencent/tdesign-vue/pull/2924))
+- `TreeSelect`: 修复数字为 value 时的告警问题 @uyarn ([#2924](https://github.com/Tencent/tdesign-vue/pull/2924))
+- `Popup`: 修复`destroyOnClose`时，快速重复 hover 后组件无法正常展示的问题 @guxi11 ([#2898](https://github.com/Tencent/tdesign-vue/pull/2898))
+- `Textarea`: 修复表格中使用 `Textarea` 且设置`autosize`为 true 报错的问题 ([#2912](https://github.com/Tencent/tdesign-vue/issues/2912)) @nined9 ([#2921](https://github.com/Tencent/tdesign-vue/pull/2921))
+
+### 🚧 Others
+
+- `Table`: 优化吸顶表头/表尾示例代码 @chaishi ([#2916](https://github.com/Tencent/tdesign-vue/pull/2916))
+
+
+## 🌈 1.7.2 `2023-11-07` 
+### 🚀 Features
+- `ImageViewer`: 新增支持 `closeOnEscKeydown` ，用于控制是否允许 ESC 键关闭预览 @chaishi ([#2890](https://github.com/Tencent/tdesign-vue/pull/2890))
+- `Upload`: @chaishi
+   - 批量文件上传支持在列表中显示上传失败的原因，[tdesign-vue-next#2518](https://github.com/Tencent/tdesign-vue-next/issues/2518) ([#2891](https://github.com/Tencent/tdesign-vue/pull/2891))
+   - 支持使用 `fileListDisplay=null` 隐藏文件或文件列表显示 ([#2889](https://github.com/Tencent/tdesign-vue/pull/2889))
+   - 图片预览功能，新增支持透传图片预览全部属性 `imageViewerProps`，[tdesign-vue-next#2928](https://github.com/Tencent/tdesign-vue-next/issues/2928) ([#2891](https://github.com/Tencent/tdesign-vue/pull/2891))
+   -  ⚠️新增图片上传大小超出限制提醒，有额外单独实现此功能的业务需注意是否存在重复显示大小限制提醒问题，[tdesign-vue-next#2736](https://github.com/Tencent/tdesign-vue-next/issues/2736) ([#2891](https://github.com/Tencent/tdesign-vue/pull/2891))
+   - 多文件/图片上传场景下，`autoUpload=false` 时，支持使用 Props 属性/函数/插槽等方法自定义上传按钮和取消上传按钮，[tdesign-vue-next#2469](https://github.com/Tencent/tdesign-vue-next/issues/2469) ([#2891](https://github.com/Tencent/tdesign-vue/pull/2891))
+   - 多文件/图片上传场景下，`autoUpload=false` 时，区分已上传状态和待上传状态 [tdesign-vue-next#2518](https://github.com/Tencent/tdesign-vue-next/issues/2518) ([#2891](https://github.com/Tencent/tdesign-vue/pull/2891))
+- `Select`: 
+   - `collapsedItems` 属性或插槽新增参数 `onClose`，用于删除标签 @ubloglab ([#2863](https://github.com/Tencent/tdesign-vue/pull/2863))
+### 🐞 Bug Fixes
+- `Tree`
+   - 解决 `watch` 回调时间过迟的问题 @TabSpace ([#2873](https://github.com/Tencent/tdesign-vue/pull/2873))
+   - 提供获取树结构数据的API getTreeData @TabSpace ([#2888](https://github.com/Tencent/tdesign-vue/pull/2888))
+- `Upload`: 修复 `max=1 multiple=false` 情况下，无法替换上传文件问题，[tdesign-vue-next#2909](https://github.com/Tencent/tdesign-vue-next/issues/2909) @chaishi ([#2891](https://github.com/Tencent/tdesign-vue/pull/2891))
+- `Cascader`: 选项`disabled`修改后，选项不是禁用状态的问题 #2859 @lxc-orange ([#2872](https://github.com/Tencent/tdesign-vue/pull/2872))
+-  修正部分组件使用 `lodash` 非按需引入导致全量引入的问题 @fennghuang ([#2893](https://github.com/Tencent/tdesign-vue/pull/2893))
+- `Slider`: 修复step小于1无法正常使用的问题 @uyarn ([#2894](https://github.com/Tencent/tdesign-vue/pull/2894))
+- `Link`: 修复样式居中的缺陷 @uyarn ([#2894](https://github.com/Tencent/tdesign-vue/pull/2894))
+- `Checkbox`: 修复 value.splice 无法设置选中项变化问题 @chaishi
+
+
+
+## 🌈 1.7.1 `2023-10-20` 
+### 🚀 Features
+- `Table`: 可筛选表格，支持设置 `confirmEvents: ['onChange']` 后，单选筛选器(Radio) 选择完成后自动关闭筛选器浮层 @chaishi ([#2850](https://github.com/Tencent/tdesign-vue/pull/2850))
+### 🐞 Bug Fixes
+- `Tree`: 
+    - 修复 `setItem` 方法设置 checked, actived, expanded 属性时，未触发 props 变更与相应事件的问题 @TabSpace ([#2852](https://github.com/Tencent/tdesign-vue/pull/2852))
+    - 完善受控逻辑，解决 onChange 事件触发时，组件状态传递有延迟的问题 @TabSpace ([#2861](https://github.com/Tencent/tdesign-vue/pull/2861))
+- `Checkbox`: 修复 `checkbox.disabled` 动态赋值失效问题 @chaishi ([#2849](https://github.com/Tencent/tdesign-vue/pull/2849))
+
+## 🌈 1.7.0 `2023-10-12` 
+### 🚀 Features
+- `Tag`: @chaishi
+    - 支持多种风格标签配置 ([#2824](https://github.com/Tencent/tdesign-vue/pull/2824))
+   -  支持标签组`CheckTagGroup`的使用，详见示例文档 ([#2824](https://github.com/Tencent/tdesign-vue/pull/2824))
+- `Anchor`: `anchor-item` 左侧边距的计算方式由嵌套改为 --level 结合 css 计算 @ontheroad1992 ([#2816](https://github.com/Tencent/tdesign-vue/pull/2816))
+- `TagInput`: 支持在exceedType为scroll的场景下通过滚动对选项进行操作 @uyarn ([#2846](https://github.com/Tencent/tdesign-vue/pull/2846))
+
+### 🐞 Bug Fixes
+- `Dialog`: 修复 Dialog 弹框中打开表格，表格中分页组件信息出现超出省略问题 @LoopZhou ([#2821](https://github.com/Tencent/tdesign-vue/pull/2821))
+- `ImageViewer`: 修复关闭时偶尔会出现抖动现象 @betavs ([#2823](https://github.com/Tencent/tdesign-vue/pull/2823))
+- `DatePicker`
+    - 修复`confirm` 事件无效的问题 @betavs ([#2833](https://github.com/Tencent/tdesign-vue/pull/2833))
+    - 修复禁用日期格式化问题 @honkinglin ([common#1618](https://github.com/Tencent/tdesign-common/pull/1618))
+- `Cascader`:  修复 `change` 事件中 `source` 异常的问题([issue #2835](https://github.com/Tencent/tdesign-vue/issues/2835)) @betavs ([#2837](https://github.com/Tencent/tdesign-vue/pull/2837))
+- `Breadcrumb`: 修复暗黑模式下的样式分隔符样式问题 @uyarn ([common#1608](https://github.com/Tencent/tdesign-common/pull/1608))
+- `List`: 优化滚动条的样式 @liweijie0812 ([common#1601](https://github.com/Tencent/tdesign-common/pull/1601))
+- `Radio`: 修复表单验证提示的场景下，右边框颜色不一致的问题 @liweijie0812 ([common#1599](https://github.com/Tencent/tdesign-common/pull/1599))
+- `Tree`: @TabSpace
+    - 解决 setData 方法无法触发属性变更的问题 ([#2820](https://github.com/Tencent/tdesign-vue/pull/2820))
+    -  解决虚拟滚动，滚动条形态错误的问题  ([#2820](https://github.com/Tencent/tdesign-vue/pull/2820))
+### 🚧 Others
+- `Tree`: 实现与 vue3 项目共用业务代码, 提供更多的测试用例 @TabSpace ([#2820](https://github.com/Tencent/tdesign-vue/pull/2820))
+
+## 🌈 1.6.7 `2023-09-21` 
+### 🚀 Features
+- `TreeSelect`: 支持`panelTopContent`和 `panelBottomContent` 的使用 @uyarn ([#2797](https://github.com/Tencent/tdesign-vue/pull/2797))
+- `Table`:  @chaishi 
+   - 除全局配置支持语言配置外，本次新增通过属性 `locale` 进行单个组件进行语言配置 ([#2810](https://github.com/Tencent/tdesign-vue/pull/2810))
+   - 列配置功能，支持定义 `columnControllerTopContent` 和 `columnControllerBottomContent` 定义列配置弹框顶部或底部内容 ([#2810](https://github.com/Tencent/tdesign-vue/pull/2810))
+   - 列配置功能，支持分组显示列配置信息，一般用于表格列数量特别多，需要分类显示场景([#2810](https://github.com/Tencent/tdesign-vue/pull/2810))
+- `card`: 卡片标题 `title` 使用 `div` 取代 `span` 在自定义场景下更符合规范 @uyarn ([#2812](https://github.com/Tencent/tdesign-vue/pull/2812))
+### 🐞 Bug Fixes
+- `useResizeObserver`: 修复缺少容器元素判空问题，[issue#2805](https://github.com/Tencent/tdesign-vue/issues/2805) @chaishi ([#2806](https://github.com/Tencent/tdesign-vue/pull/2806))
+- `Table`: 列配置功能，修复每次打开自定义列配置弹框，都会创建一个新的弹框而旧弹框没有消除问题 @chaishi ([#2810](https://github.com/Tencent/tdesign-vue/pull/2810))
+- `Dialog`: 修复没有定义确认按钮属性场景时（即没有设置 confirmBtn），`confirmLoading` 无效问题 @chaishi ([#2814](https://github.com/Tencent/tdesign-vue/pull/2814))
+
+## 🌈 1.6.6 `2023-09-07` 
+### 🐞 Bug Fixes
+- `Checkbox`: 修复动态设置 `options` 无效问题，[issue#2792](https://github.com/Tencent/tdesign-vue/issues/2792) @chaishi ([#2793](https://github.com/Tencent/tdesign-vue/pull/2793))
+- `Upload`: 上传组件 `theme='image'` 时，在 `disabled` 状态不显示上传按钮 @chaishi ([#2793](https://github.com/Tencent/tdesign-vue/pull/2793))
+- `Table`: 可编辑表格，修复多个可编辑表格同时存在时，校验互相影响问题 @chaishi ([#2787](https://github.com/Tencent/tdesign-vue/pull/2787))
+
+## 🌈 1.6.5 `2023-09-05` 
+### 🚀 Features
+- `Table`: @chaishi
+  - 可筛选表格，`onFilterChange` 事件新增参数 `trigger: 'filter-change' | 'confirm' | 'reset' | 'clear'`，表示触发筛选条件变化的来源  ([#2767](https://github.com/Tencent/tdesign-vue/pull/2767))
+  - 可筛选表格，支持使用 `filter.label` 单独定义晒选项别名，可以和 `title` 标题不一样 ([#2771](https://github.com/Tencent/tdesign-vue/pull/2771))
+- `Dialog`: @chaishi ([#2769](https://github.com/Tencent/tdesign-vue/pull/2769))
+  - 支持使用 `confirmLoading` 控制确认按钮加载状态
+  - 组件实例函数新增 `confirmDialog.setConfirmLoading(true)` 和 `confirmDialog.update({ confirmLoading: true })`，用于设置确认按钮加载状态
+- `Watermark`: 水印组件文字新增 `fontFamily` 属性 @LadyChatterleyLover ([common#1580](https://github.com/Tencent/tdesign-common/pull/1580))
+- `GlobalConfig`: 全局配置中，步骤条组件添加已完成状态自定义功能 @Zzongke ([common#1579](https://github.com/Tencent/tdesign-common/pull/1579))
+### 🐞 Bug Fixes
+- `Table`: @chaishi ([#2767](https://github.com/Tencent/tdesign-vue/pull/2767))
+  - 树形结构，修复 v1.6.4 中 `tree.defaultExpandAll` 失效问题 @chaishi ([#2752](https://github.com/Tencent/tdesign-vue/pull/2752))
+  - 树形结构表格，修复 `expandedTreeNodes.sync` 和 `@expanded-tree-nodes-change` 使用 `expandTreeNodeOnClick ` 时无效问题 [issue#2756](https://github.com/Tencent/tdesign-vue/issues/2756)
+  - 可筛选表格，修复 `resetValue` 在清空筛选时，未能重置到指定 `resetValue` 值的问题
+  - 可筛选表格，修复单选筛选器触发两次 `onFilterChange` 事件问题，[issues#2746](https://github.com/Tencent/tdesign-vue/issues/2746)
+  - 拖拽排序表格，修复添加 `lazyLoad` 懒加载属性后，拖拽排序功能失效问题
+  - 可筛选表格，修复晒选项的值为 `false` 时，筛选图标未能高亮问题 ([#2771](https://github.com/Tencent/tdesign-vue/pull/2771))
+  - 可筛选表格，解决 `title` 使用函数或插槽定义时，过滤结果行文本显示问题，[issue#3303](https://github.com/Tencent/tdesign-vue-next/issues/3303)
+- `Form`: 修复调用`form`组件暴露的`reset`方法后未定义`name`的`form-item`也被一同加入清除 @Zz-ZzzZ ([#2760](https://github.com/Tencent/tdesign-vue/pull/2760))
+- `Checkbox`: 修复同时有多个 CheckGroup 时，选中值显示异常问题，[issue#2761](https://github.com/Tencent/tdesign-vue/issues/2761) @chaishi ([#2768](https://github.com/Tencent/tdesign-vue/pull/2768))
+- `Image`: @chaishi ([#2770](https://github.com/Tencent/tdesign-vue/pull/2770))
+  - 修复 `fallback` 在第一次加载失败后无效问题
+  - 修复图片预览出现两个预览按钮问题
+- `Dialog`: 修复组件如果初始默认显示， 按 esc 关不掉的问题 @Zhanjiachun ([#2708](https://github.com/Tencent/tdesign-vue/pull/2708))
+- `Loading`: 修复Plugin在部分场景下设置 false 入参时重新创建实例的问题 @uyarn ([#2778](https://github.com/Tencent/tdesign-vue/pull/2778))
+- `Autocomplete`: 修复错误的移除事件监听时机 @uyarn ([#2777](https://github.com/Tencent/tdesign-vue/pull/2777))
+- `Table`: 修复固定表头/尾错误的移除事件监听时机 @uyarn ([#2777](https://github.com/Tencent/tdesign-vue/pull/2777))
+- `Popup`: 修复产物中 `env` 环境的问题 @uyarn ([#2776](https://github.com/Tencent/tdesign-vue/pull/2776))
+- `Select`: 修复多选且开启`reserveKeyword`的场景下删除 input 中的内容时，会删除已选项的缺陷 @uyarn ([#2779](https://github.com/Tencent/tdesign-vue/pull/2779))
+
+## 🌈 1.6.4 `2023-08-29` 
+### 🚀 Features
+- `Tabs`: 支持 `tab-panel` 内容懒加载 @FireBushtree ([#2714](https://github.com/Tencent/tdesign-vue/pull/2714))
+- `Table`: 树形结构，没有设置 `expandedTreeNodes` 情况下，data 数据发生变化时，自动重置收起所有展开节点。如果希望保持展开节点，请使用属性 `expandedTreeNodes` 控制变化后的数据展开节点。原因：表格数据变化前后的节点可能会有不同，`expandedTreeNodes`自然也会不同，组件内部无法预判新数据中展开哪些节点。[issue#2735](https://github.com/Tencent/tdesign-vue/issues/2735) @chaishi ([#2742](https://github.com/Tencent/tdesign-vue/pull/2742))
+- `Input/Textarea`: `maxlength` 属性 `String` 类型设置 @Zz-ZzzZ ([#2733](https://github.com/Tencent/tdesign-vue/pull/2733))
+### 🐞 Bug Fixes
+- `Dropdown`: 修复部分场景下展示下拉菜单异常的问题 @uyarn ([#2619](https://github.com/Tencent/tdesign-vue/pull/2619))
+- `Upload`: @chaishi ([#2741](https://github.com/Tencent/tdesign-vue/pull/2741))
+  - 修复非自动上传场景，无法预览图片问题，[tdesign-vue-next#3273](https://github.com/Tencent/tdesign-vue-next/issues/3273)
+  - 修复非图片组件预览时的文本错位问题
+- `Select`: 按需引入时，OptionGroup未注册 @KMethod ([#2738](https://github.com/Tencent/tdesign-vue/pull/2738))
+- `Table`:  @chaishi ([#2742](https://github.com/Tencent/tdesign-vue/pull/2742))
+  - 分页功能，修复分页非受控用法，数据变化时无法更新数据问题
+  - 拖拽排序 + 本地数据分页场景，修复拖拽排序事件参数 `currentIndex/targetIndex/current/target` 等不正确问题
+  - 拖拽排序 + 本地数据分页场景，修复在第二页 @chaishi ([#2742](https://github.com/Tencent/tdesign-vue/pull/2742))
+  - 支持分页非受控用法的拖拽排序场景
+- `Select`: 修复`1.6.2`改动导致选项 `disabled` 属性失效的问题 @uyarn ([#2744](https://github.com/Tencent/tdesign-vue/pull/2744))
+
+## 🌈 1.6.3 `2023-08-22` 
+### 🚀 Features
+- `Table`: @chaishi ([#2719](https://github.com/Tencent/tdesign-vue/pull/2719))
+  - 支持使用名为 `ellipsis` 或者 `ellipsis-<colKey>` 的插槽自定义超出省略时的浮层内容，使用方法可参考示例代码 @chaishi ([#2717](https://github.com/Tencent/tdesign-vue/pull/2717))
+  - 树形结构，新增组件实例方法 `removeChildren`，用于移除子节点
+  - 树形结构，支持通过属性 `expandedTreeNodes.sync` 自由控制展开节点，非必传属性
+### 🐞 Bug Fixes
+- `Select`: 优化 Select 组件在过滤场景中的表现 @moonye6 @uyarn ([#2722](https://github.com/Tencent/tdesign-vue/pull/2722))
+- `Table`: @chaishi ([#2719](https://github.com/Tencent/tdesign-vue/pull/2719))
+  - 树形结构，修复组件实例方法 展开全部 `expandAll` 问题
+  - 点击行展开/点击行选中，修复 `expandOnRowClick`和 `selectOnRowClick` 无法独立控制行点击执行交互问题 [tdesign-vue-next#3254](https://github.com/Tencent/tdesign-vue-next/issues/3254)
+- `Popconfirm`: 修复因变量计算导致的 minx.css 压缩后产物样式改变的问题 @honkinglin ([common#1573](https://github.com/Tencent/tdesign-common/pull/1573))
+- `Cascader`: 修复 `label` 属性自定义插槽不生效的问题 @ubloglab ([#2724](https://github.com/Tencent/tdesign-vue/pull/2724))
+
+## 🌈 1.6.2 `2023-08-17` 
+### 🚀 Features
+- `TreeSelect`: 增加 `keys` 字段用于定制数据中对应的字段别名 @PengYYYYY ([#2697](https://github.com/Tencent/tdesign-vue/pull/2697))
+- `Cascader`: 增加 `keys.disabled` 用于定制字段控制节点的禁用([issue #3193](https://github.com/Tencent/tdesign-vue-next/issues/3193)) @PengYYYYY ([#2697](https://github.com/Tencent/tdesign-vue/pull/2697))
+- `Tree`: 增加 `keys.disabled` 用于定制字段控制节点的禁用 @PengYYYYY ([#2697](https://github.com/Tencent/tdesign-vue/pull/2697))
+- `Select`: 增加 `keys.disabled` 用于定制字段控制选项的禁用 @PengYYYYY ([#2697](https://github.com/Tencent/tdesign-vue/pull/2697))
+- `Transfer`: 增加 `keys.disabled` 用于定制字段控制选项的禁用 @PengYYYYY ([#2697](https://github.com/Tencent/tdesign-vue/pull/2697))
+### 🐞 Bug Fixes
+- `checkbox`: 
+  - 修复控制台报错 @yaogengzhu ([#2702](https://github.com/Tencent/tdesign-vue/pull/2702))
+  - 修复 `options` 异步获取时，`disabled` 失效问题 @chaishi ([#2706](https://github.com/Tencent/tdesign-vue/pull/2706))
+  - 修复 `options` 异步获取时，`value` 失效问题 @chaishi ([#2706](https://github.com/Tencent/tdesign-vue/pull/2706))
+- `Image`: 修复 1.6.x 无法动态设置 `src` 问题 @chaishi ([#2709](https://github.com/Tencent/tdesign-vue/pull/2709))
+### 🚧 Others
+- `Cascader`: 补充 `borderless` 文档 @PengYYYYY ([#2697](https://github.com/Tencent/tdesign-vue/pull/2697))
+
+## 🌈 1.6.1 `2023-08-15` 
+### 🚀 Features
+- `Menu`: menu-item `click` 事件参数增加 value @dexterBo ([#2689](https://github.com/Tencent/tdesign-vue/pull/2689))
+- `键盘操作`: @chaishi ([#2683](https://github.com/Tencent/tdesign-vue/pull/2683))
+  - `Checkbox`: 支持使用空格键选中或取消选中
+  - `Radio`: 支持使用空格键选中或取消选中
+  - `SelectInput`: 支持键盘事件
+  - `Select`: 支持键盘操作聚焦和显示下拉框，可通过上下键切换选项
+### 🐞 Bug Fixes
+- `SelectInput`: 修复多选情况下按下 Enter 键后触发了 focus 事件而不是 enter 事件的问题 @dexterBo ([#2694](https://github.com/Tencent/tdesign-vue/pull/2694))
+- `Select`: 远程搜索场景下不再进行内部过滤 @uyarn ([#2699](https://github.com/Tencent/tdesign-vue/pull/2699))
+- `Menu`: 修复激活菜单项未发生变化时也会触发 change 事件的的问题 @dexterBo ([#2693](https://github.com/Tencent/tdesign-vue/pull/2693))
+- `ImageViewer`: 前后浏览及关闭浏览时重置图片状态 @sinbadmaster ([#2685](https://github.com/Tencent/tdesign-vue/pull/2685))
+- `Table`: @chaishi ([#2683](https://github.com/Tencent/tdesign-vue/pull/2683))
+  - 拖拽排序在使用懒加载 `lazyLoad` 时，失效问题
+  - 虚拟滚动场景，修复默认滚动条长度和滚动后的长度不一致问题
+  - 补充 SSR 场景，window 变量判断
+
+## 🌈 1.6.0 `2023-08-10` 
+### 🚀 Features
+- `Icon`: 新增 960 个图标；调整图标命名 `photo` 为 `camera`，`books`为`bookmark`, `stop-cirle-1`为`stop-circle-stroke`；移除`money-circle`图标，具体请查看图标页面  @uyarn ([#2677](https://github.com/Tencent/tdesign-vue/pull/2677))
+- `Table`: 可编辑表格，新增 `edit.keepEditMode` ，用于控制单元格始终保持为编辑态 @chaishi ([#2662](https://github.com/Tencent/tdesign-vue/pull/2662))
+- `Image`: @chaishi ([#2665](https://github.com/Tencent/tdesign-vue/pull/2665))
+  - 属性 `src` 支持传入 File 文件类型显示图片
+  - 新增支持 `fallback` ，用于设置图片加载失败时的兜底图
+  - 新增支持 `referrerpolicy` 属性
+- `ImageViewer`: 属性 `images` 支持传入 File 文件类型预览图片 @chaishi ([#2665](https://github.com/Tencent/tdesign-vue/pull/2665))
+- `Upload`: 文件上传列表支持显示缩略图，通过 `showThumbnail` 属性控制 @chaishi ([#2665](https://github.com/Tencent/tdesign-vue/pull/2665))
+- `Link`: 新增透传 `download` 属性，支持浏览器直接下载，https://github.com/Tencent/tdesign-vue/issues/2628 @xiaosansiji ([#2659](https://github.com/Tencent/tdesign-vue/pull/2659))
+### 🐞 Bug Fixes
+- `InputAdornment`: 修复装饰文字折行的问题 @PengYYYYY ([common#1553](https://github.com/Tencent/tdesign-common/pull/1553))
+### 🚧 Others
+- `官网`: 新增分类展示全部图标的 UI  @uyarn ([#2677](https://github.com/Tencent/tdesign-vue/pull/2677))
+
+## 🌈 1.5.2 `2023-08-01` 
+### 🚀 Features
+- `Table`:
+  - 可筛选表格，支持透传 attrs/style/classNames 属性、样式、类名等信息到自定义组件，[issue#2627](https://github.com/Tencent/tdesign-vue/issues/2627) @chaishi ([#2629](https://github.com/Tencent/tdesign-vue/pull/2629))
+  - 虚拟滚动场景，支持通过行唯一标识跳转到指定行（通过行下标跳转到指定行，以前的版本已支持） @chaishi ([#2643](https://github.com/Tencent/tdesign-vue/pull/2643))
+- `Upload`: 拖拽上传场景，支持 accept 限制可上传的文件类型 @chaishi ([common#1547](https://github.com/Tencent/tdesign-common/pull/1547))
+### 🐞 Bug Fixes
+- `Checkbox`: 支持 `value` 传入 `undefined` @chaishi ([#2623](https://github.com/Tencent/tdesign-vue/pull/2623))
+- `Table`:
+  - 可筛选表格场景，filterValue 透传优化，没有显示写明 value 值的筛选项，不再透传 `undefined` 到子组件，因有些组件的默认值不允许为 undefined @chaishi ([#2623](https://github.com/Tencent/tdesign-vue/pull/2623))
+  - 树形结构表格，修复选中行的值 `selectedRowKeys` 不在数据 `data` 中时，报错问题 @chaishi ([#2629](https://github.com/Tencent/tdesign-vue/pull/2629))
+  - 修复 1.5.0 版本空表格没有显示占位元素问题 @chaishi ([#2641](https://github.com/Tencent/tdesign-vue/pull/2641))
+  - 固定列空数据场景，元素显示错位问题 @chaishi ([#2641](https://github.com/Tencent/tdesign-vue/pull/2641))
+- `Input`: form表单disabled状态下input异常显示clear @sinbadmaster ([#2634](https://github.com/Tencent/tdesign-vue/pull/2634))
+- `Dialog`:
+  - 修复 dialog 初始化时没有执行移动相关的初始化逻辑,导致 image-viewer 小窗口图片查看器无法移动的问题 @yusongh ([#2622](https://github.com/Tencent/tdesign-vue/pull/2622))
+  - 反馈类对话框补齐body class @uyarn ([#2645](https://github.com/Tencent/tdesign-vue/pull/2645))
+- `TreeSelect`: 修复自定义标签，点击关闭异常的问题 @sinbadmaster ([#2631](https://github.com/Tencent/tdesign-vue/pull/2631)) 
+
+## 🌈 1.5.0 `2023-07-25` 
 ### 🚀 Features
 - `Table`: 新增 `lazyLoad` 表格元素懒加载，当出现在可视区域时，再渲染表格第一屏数据 @chaishi ([#2605](https://github.com/Tencent/tdesign-vue/pull/2605))
 - `Transfer`: 新增 `targetDraggable` API , 支持对目标列表拖拽排序的功能 @uyarn ([#2612](https://github.com/Tencent/tdesign-vue/pull/2612))
@@ -36,7 +460,7 @@ docClass: timeline
   - 修复 `treeNodeModel` 实例未能同步 node 属性的问题
   - 优化节点状态更新时的性能 
 
- ## 🌈 1.4.8 `2023-07-18` 
+## 🌈 1.4.8 `2023-07-18` 
 ### 🚀 Features
 - `DatePicker`: 优化关闭浮层后重置默认选中区域 @honkinglin ([#2585](https://github.com/Tencent/tdesign-vue/pull/2585))
 - `Checkbox`: @chaishi ([#2583](https://github.com/Tencent/tdesign-vue/pull/2583)
@@ -1988,1187 +2412,3 @@ CSS 类名规范:
 - Form: 过滤 validate 结果，当字段校验不通过时，只返回校验失败的结果，[pr 55](https://github.com/TDesignOteam/tdesign-vue/pull/55)，[@dellyoung](https://github.com/dellyoung)
 - Pagination: 支持受控用法，[pr 42](https://github.com/TDesignOteam/tdesign-vue/pull/42)，[@chaishi](https://github.com/chaishi)
 - Tabs: 没有选项卡时依然可以显示新增选项卡按钮，[pr 10](https://github.com/Tencent/tdesign-vue/pull/10)，[@start940315](https://github.com/start940315)
-
-
-## 🌈 0.31.0 `2021-12-09`
-
-### ❗️ BREAKING CHANGES
-
-- Loading: CSS 类名规范，[@chaishi](https://github.com/chaishi)
-- Anchor: CSS 类名规范，[@zWingz](https://github.com/zWingz)
-- Slider:
-  - `inputNumberProps` 默认值改为 `false`，[@pengYYYYY](https://github.com/pengYYYYY)
-  - 内置 inputNumber 组件 DOM 层级调整，[@pengYYYYY](https://github.com/pengYYYYY)
-
-### 🐞 Bug Fixes
-
-- Table:
-  - 修复第一列跨行且夸列时，单元格合并设置不生效的问题，[@realyuyanan](https://github.com/realyuyanan)
-  - 修复表格二级行数据使用 $set 无法更新的问题，[@chaishi](https://github.com/chaishi)
-- Swiper: 修复在 esm 引用下样式丢失的问题，[@cong-min](https://github.com/cong-min)
-- Radio: 修复 `click` 事件被 emit 两次的问题，[@chaishi](https://github.com/chaishi)
-- Checkbox: 修复 `click` 事件没有 emit，[@chaishi](https://github.com/chaishi)
-- Dialog: 修复切换显示/隐藏动画存在闪动的问题，[@pengYYYYY](https://github.com/pengYYYYY)
-- Nofication: 修复 icon 不能自定义配置的问题，[@chaishi](https://github.com/chaishi)
-- Radio: 修复 Radio Group 初始化未被渲染导致滑块缺失的问题，[@HQ-Lin](https://github.com/HQ-Lin)
-- Datepicker: [@xiaosansiji](https://github.com/xiaosansiji)
-  - 修复 `prefixIcon` 和 `suffixIcon` 支持 slot 用法的问题
-  - 修复清空操作会唤起日期选择框的问题
-
-### 🚀 Features
-
-- Loading: `size` 支持传入 `string` 类型字体大小单位，[@chaishi](https://github.com/chaishi)
-- Menu: 优化侧边导航栏滚动条样式，[@pengYYYYY](https://github.com/pengYYYYY)
-- 兼容项目中使用了 [@vue/composition-api](https://www.npmjs.com/package/@vue/composition-api) 的情况：默认使用项目中引入的 `composition-api` 包，[@LeeJim](https://github.com/LeeJim)
-- Dropdown: [@uyarn](https://github.com/uyarn)
-  - `minColumnWidth` 和 `maxColumnWidth` 支持 `string` 类型
-  - DropdownItem `value` 支持 `object` 类型
-- Cascader: [@pengYYYYY](https://github.com/pengYYYYY)
-  - 补充 `onChange` args
-  - 空数据时下拉框宽度跟随 input 宽度设置
-
-## 🌈 0.30.0 `2021-12-02`
-
-### ❗️ BREAKING CHANGES
-
-- CSS 类名规范: [@chaishi](https://github.com/chaishi)
-  - Dialog: `t-dialog-confirm` 更为 `t-dialog__confirm`，`t-dialog-cancel` 更为 `t-dialog__cancel`
-  - Drawer: `t-drawer-confirm` 更为 `t-drawer__confirm`，`t-drawer-cancel` 更为 `t-drawer__cancel`
-
-### 🐞 Bug Fixes
-
-- Dialog: 修复设置按钮为 null，无法隐藏按钮的问题 [@chaishi](https://github.com/chaishi)
-- Drawer: 修复确认/取消按钮无法支持插槽渲染问题 [@chaishi](https://github.com/chaishi)
-- Transfer: 修复全选状态展示有误的问题 [@BigLiao](https://github.com/BigLiao)
-- Checkbox: 修复 `change` 事件值返回不正确的问题 [@chaishi](https://github.com/chaishi)
-- Button: 修复幽灵按钮无点击动效的问题 [@xiaosansiji](https://github.com/xiaosansiji)
-- Memu: 修复暗黑模式下菜单分组标题颜色使用错误的问题 [@LeeJim](https://github.com/LeeJim)
-- Input: [@chaishi](https://github.com/chaishi)
-  - 修复 `change` 事件无法获取到最新数据的问题
-  - 修复重复触发 `onChange` 事件的问题
-- Datepicker: 修复区间选择跨年情况下月份展示错误的问题 [@xiaosansiji](https://github.com/xiaosansiji)
-
-### 🚀 Features
-
-- Upload: [@chaishi](https://github.com/chaishi)
-  - 自动上传模式删除非必要上传按钮
-  - 输入框模式新增删除按钮
-- Popconfirm: 移除 确认/取消按钮 外层元素 `<span>` [@chaishi](https://github.com/chaishi)
-- Textarea: 支持 `maxcharacter` 用于字符文本长度控制 [@zhaodanchun](https://github.com/zhaodanchun)
-- Table: `expandedRow` 支持插槽写法 [@realyuyanan](https://github.com/realyuyanan)
-- Cascader: 补充 `change` 事件缺失的 `context` 参数，包含触发节点和触发来源 `{ node, source }` [@chaishi](https://github.com/chaishi)
-- TreeSelect: 补充 `blur` 和 `focus` 事件参数 `FocusEvent` [@chaishi](https://github.com/chaishi)
-- Checkbox: 全选功能支持插槽写法 [@chaishi](https://github.com/chaishi)
-
-## 🌈 0.29.1 `2021-11-30`
-
-### 🐞 Bug Fixes
-
-- Popup: 修复嵌套使用 Popup 时不能正确响应 hover trigger 的问题 [@ikeq](https://github.com/ikeq)
-- Datepicker: 修复 0.29.0 版本中星期显示错误的问题
-- Upload: 修复图片预览框闪动的问题 [@chaishi](https://github.com/chaishi)
-
-### 🚀 Features
-
-- Upload: 新增开关，用于控制是否显示为模拟进度 [@chaishi](https://github.com/chaishi)
-- Datepicker [@xiaosansiji](https://github.com/xiaosansiji)
-- `firstDayOfWeek` API 重构，官网新增设置星期开始样例
-- 全局配置星期和月份文案格式修改
-
-## 🌈 0.29.0 `2021-11-24`
-
-### ❗️ BREAKING CHANGES
-
-- Menu: `expanded` 优化为受控属性，`defaultExpanded` 为非受控属性 [@LeeJim](https://github.com/LeeJim)
-- LocalProvider 配置多语言方案已废弃，请升级为 ConfigProvider，参考 [文档](https://tdesign.tencent.com/vue/components/config)，[@chaishi](https://github.com/chaishi)
-- Select: TS 类型 `Options` 更为 `SelectOption`，[@chaishi](https://github.com/chaishi)
-
-### 🐞 Bug Fixes
-
-- TreeSelect:
-  - 修复 `data` 为空时，显示异常的问题 [@Godlike-meteor](https://github.com/Godlike-meteor)
-  - 修复节点选择后重新展开了子树的问题，[@LeeJim](https://github.com/LeeJim)
-- Popup: 优化动画实现，修复基于 Popup 组件的相关组件收起动画未正常展示的问题 [@uyarn](https://github.com/uyarn)
-- Select:
-  - 修复 `options` 有相同 `value` 时不重新渲染的问题，[@geff1991](https://github.com/geff1991)
-  - 修复透传 `popupProps` 属性失效的问题，[@HQ-Lin](https://github.com/HQ-Lin)
-  - 修复多选情况下，选项宽度不够时 Checkbox 选择框展示不全的问题 [@uyarn](https://github.com/uyarn)
-- Table: ，[@realyuyanan](https://github.com/realyuyanan)
-  - 修复表格内容溢出问题，、
-  - 修复只有一列时，固定表头与内容无法对齐的问题，
-- Tree: 修复节点数据更新后，丢失选中状态的问题 [@TabSpace](https://github.com/TabSpace)
-- Radio: 修复 `radio-group` value 不存在时渲染异常的问题 [@HQ-Lin](https://github.com/HQ-Lin)
-- 修复构建后 d.ts 文件丢失的问题，[@BuptStEve](https://github.com/BuptStEve)
-
-### 🚀 Features
-
-- Steps: 组件部分逻辑重构，`direction` 即将在下个版本废弃，请改用 `layout` API，可选项类型不变，[@LeeJim](https://github.com/LeeJim)
-- Menu: 支持子菜单 `disabled` 配置，[@LeeJim](https://github.com/LeeJim)
-- Cascader: `checkStrictly=true` 时，点击选项，级联选择器不会收起；`collapsedItems` 支持 function/slot 自定义配置用法，[@yc910920](https://github.com/yc910920)
-- Select: ，[@chaishi](https://github.com/chaishi)
-  - 优化分组选择器标签语义，
-  - 加载状态新增显示右侧加载图标，
-  - `options` 配置支持分组选择器，
-  - `options` 新增参数 `content`，用于定义复杂的选项内容，如：`content: (h) => <div>复杂标签内容</div>`
-  - `t-option` 支持 `content: TNode`，用于渲染子元素，支持 function/slot 用法，同 `default`
-  - 分组选择器支持使用 `divider` 控制分隔线是否显示
-- Tree: 实现 `disableCheck` 属性，优化减少使用 `watch` 特性，[@TabSpace](https://github.com/TabSpace)
-- Upload: ，[@chaishi](https://github.com/chaishi)
-  - 补充上传失败判定条件，`formatResponse` 返回值 `error` 为真，则表示上传失败
-  - progress 事件参数新增 `type: 'real' | 'mock'`，分别表示真实进度和模拟进度
-  - 如果接口和 `formatResponse` 都没有返回 url，组件会默认填充一个图片预览地址
-  - progress 事件返回的进度不会超过 100
-  - 上传成功后执行 `formatResponse`
-- Tabs: 优化 Panel 渲染实现 [@start940315](https://github.com/start940315)
-
-## 🌈 0.28.2 `2021-11-16`
-
-### ❗️ BREAKING CHANGES
-
-- 从 0.28.0 版本开始，将只在外网 npm registry 上发布，请安装外网包 [tdesign-vue](https://www.npmjs.com/package/tdesign-vue)
-- 有单独引入图标使用的小伙伴请改为引入外网包 `tdesign-icons-vue`
-
-### 🐞 Bug Fixes
-
-- Select: 监听 options 中 label value 变化，修复多选模式下默认值传字符串的展示问题，[@geff1991](https://github.com/geff1991)
-- Menu: ，[@LeeJim](https://github.com/LeeJim)
-  - 修复顶部导航下拉菜单与双层导航激活样式效果丢失的问题，
-  - 修复动态设置菜单内容时交互异常的问题，
-  - 修复切换菜单收起时，`expanded` 状态不同步的问题，
-- Radio: 修复 `value` 不支持 `boolean` 类型的问题 [@ikeq](https://github.com/ikeq)
-- Loading: 修复 Safari 浏览器下加载中样式展示异常的问题，[@uyarn](https://github.com/uyarn)
-- Popup: 修复 Popup/Popconfirm 等弹出组件 arrow 定位未跟随弹出框内容的问题，[@HQ-Lin](https://github.com/HQ-Lin)
-- Upload: 修复组件 disabled 态下依然响应点击事件的问题，[@pengYYYYY](https://github.com/pengYYYYY)
-- Input/InputNumber: 修复小键盘未能正常触发 Enter 事件的问题 [@mokywu](https://github.com/mokywu)
-- Transfer: 修复 Tree 属性结构模式无法使用的问题，[@BigLiao](https://github.com/BigLiao)
-- Table:
-  - 修复 `Column.width` 传入百分比不生效的问题 [@LeeJim](https://github.com/LeeJim)
-  - 修复树型结构 disabled 状态的行数据仍可被选择的问题，[@chaishi](https://github.com/chaishi)
-- Form:
-  - 修复配置自定义校验规则时，清空输入框以及下拉框无法触发自定义校验函数的问题 [@dellyoung](https://github.com/dellyoung)
-  - Form 组件去除校验成功后的绿色边框，如果需要可以添加 `successBorder` 设置 [@dellyoung](https://github.com/dellyoung)
-- TimePicker: ，[@uyarn](https://github.com/uyarn)
-  - 修复 `step` 设置值大于 1 时处理逻辑，
-  - 修复清空输入框图标展示逻辑，
-- InputNumber:
-  - 修复小键盘未能正常触发 Enter 事件的问题，[@chaishi](https://github.com/chaishi)
-  - 修复过程数据未清空导致显示异常的问题 [@jchalex](https://github.com/jchalex)
-- CheckBox: 修复 CheckBox Group 受控用法数据同步问题 [@uyarn](https://github.com/uyarn)
-
-### 🚀 Features
-
-- Menu: 优化多级菜单的缩进，处理 popup 箭头旋转，[@LeeJim](https://github.com/LeeJim)
-- Avatar: 新增头像组件，使用请参考 [官网文档](https://tdesign.tencent.com/vue/components/avatar)，[@gh1198843222](https://github.com/gh1198843222)
-- Loading: 所有官方组件中的加载状态，统一修改为 Loading 组件实现，统一体验，[@uyarn](https://github.com/uyarn)
-- Table: `rowClassName` 支持传入 `string` 类型，[@realyuyanan](https://github.com/realyuyanan)
-- Calendar: 组件及 ConfigProvider 均新增 `fillWithZero` 属性，用于控制日期以 'dd' 格式展示，[@PsTiu](https://github.com/PsTiu)
-- Tabs: 组件重构，修复滚动问题，[@start940315](https://github.com/start940315)
-
-## 🌈 0.27.2 `2021-11-09`
-
-### 🐞 Bug Fixes
-
-- Table: 修复 `size=small` 时，排序按钮被遮挡的问题 [@realyuyanan](https://github.com/realyuyanan)
-
-### 🚀 Features
-
-- Popconfirm: 确认及取消按钮支持 slot 用法 [@zhaodanchun](https://github.com/zhaodanchun)
-- Icon: 包中默认导出及注册 Icon 组件，兼容全量引入图标的用法，[@uyarn](https://github.com/uyarn)
-
-## 🌈 0.27.0 `2021-11-08`
-
-### ❗️ BREAKING CHANGES
-
-- Icon: 官方提供的默认 Icon 拆分为 npm 独立包发布，有单独引入图标使用的小伙伴请改为引入 `tdesign-icons-vue`。
-- Table: 优化样式类名，`t-table-row--selected` 更为 `t-table__row--selected`，`t-table-row--disabled` 更为 `t-table__row--disabled`
-
-### 🐞 Bug Fixes
-
-- Tree: 修复异步加载用法下 `checkStrictly === true` 未生效的问题 [@TabSpace](https://github.com/TabSpace)
-- TreeSelect: 修复 v-model 绑定数据展示异常的问题 [@Godlike-meteor](https://github.com/Godlike-meteor)
-- Tab: 修复 `destroyOnHide` 不生效的问题 [@zhaodanchun](https://github.com/zhaodanchun)
-- Tag: 修复 `icon` 属性只实现了 render function, 不支持 `slot` 用法的问题，[@pengYYYYY](https://github.com/pengYYYYY)
-- Pagination: 修复 `totalContent` 不支持 Function 用法的问题 [@uyarn](https://github.com/uyarn)
-- Select: 修复未提供默认 `placeholder` 内容的问题，[@pengYYYYY](https://github.com/pengYYYYY)
-- Radio: 修复动态修改数据时，选中渲染展示异常的问题 [@HQ-Lin](https://github.com/HQ-Lin)
-- Datepicker: 修复快捷选项较多时，展示异常的问题 [@xiaosansiji](https://github.com/xiaosansiji)
-- Select: 修复在 Form 表单中使用时，表单验证样式异常的问题 [@uyarn](https://github.com/uyarn)
-- Table:
-  - 修复切换分页配置会重复触发 pageChange 事件的问题 [@uyarn](https://github.com/uyarn)
-  - 修复空数据状态下样式展示问题 [@realyuyanan](https://github.com/realyuyanan)
-  - 修复 `small` 尺寸下展开按钮被遮挡的问题 [@realyuyanan](https://github.com/realyuyanan)
-  - 修复设置 `maxHeight` 后固定滚动展示异常的问题 [@realyuyanan](https://github.com/realyuyanan)
-  - 修复配置多级表头时，表格列排序消失的问题 [@realyuyanan](https://github.com/realyuyanan)
-  - 修复 Table 类型定义问题 [@chaishi](https://github.com/chaishi)
-
-### 🚀 Features
-
-- Upload: 支持抛出上传模拟进度，[@byq1213](https://github.com/byq1213)
-- Form: FormItem 支持 `requiredMark` 属性，用于控制是否显示必填符号 [@dellyoung](https://github.com/dellyoung)
-- Table: 新增 `filter.component` 属性用于自定义表格中的过滤组件，[@chaishi](https://github.com/chaishi)
-- Popconfirm、Dialog: 新增主题相关的样式 `class` 配置 [@uyarn](https://github.com/uyarn)
-- Grid: 优化 `gutter` 计算逻辑，[@HQ-Lin](https://github.com/HQ-Lin)
-- Table: 新增 `tree` 属性，支持在表格中展示树形结构，[@chaishi](https://github.com/chaishi)
-  - `tree.indent` 控制树结点缩进距离，单位：px，默认为 24px
-  - `tree.treeNodeColumnIndex` 控制树结点在第几列渲染，默认为 0 ，第一列
-  - `tree.childrenKey` 控制树形结构子节点字段，默认为 children
-  - `tree.checkStrictly` 控制树形结构的行选中（多选），父子行选中是否独立，默认独立，值为 true
-  - `selectChange` 事件回调参数新增 `type`，用以区分操作类型
-
-## 🌈 0.26.0 `2021-11-01`
-
-### 🐞 Bug Fixes
-
-- 全局注册：自动全局注册所有组件，防止使用 umd 资源时组件无法渲染的问题 [@BuptStEve](https://github.com/BuptStEve)
-- Popup: 修复 popperjs 2.10.0 版本类型校验导致的报错 ，[@ikeq](https://github.com/ikeq)
-- InputNumber: 修复增加/减少控制按钮 Icon 无法正常显示的问题 [@HQ-Lin](https://github.com/HQ-Lin)
-- Table: 修复隐藏行展开控制图标时，点击仍然响应的问题 [@chaishi](https://github.com/chaishi)
-- Cascader: ，[@pengYYYYY](https://github.com/pengYYYYY)
-  - 修复 `filterable` 属性设置无效的问题，
-  - 修复 Cascader 不支持完全受控用法的问题，
-  - 修复 设置为 `check-strictly` 模式时，点击非叶子节点报错的问题，
-- Datepicker: 修复 `placeholder` 属性传入数组类型报错的问题 [@xiaosansiji](https://github.com/xiaosansiji)
-
-### 🚀 Features
-
-- 暗黑模式：组件支持暗黑模式在线切换，使用请参考 [文档](http://tdesign.tencent.com/vue/components/dark-mode)，[@xiaosansiji](https://github.com/xiaosansiji)
-- Cascader: ，[@pengYYYYY](https://github.com/pengYYYYY)
-  - 新增 `minCollapsedNum` 属性，用于多选情况下，控制超出该数值的选中项折叠显示
-  - 新增 `collapsedItems` 属性，用于设置折叠项内容，默认为 `+N`
-- Form: 优化 FormItem 提示文案展示效果，防止出现提示时出现页面闪动或滚动的效果，[@HQ-Lin](https://github.com/HQ-Lin)
-- Textarea: 透传外层属性，[@zhaodanchun](https://github.com/zhaodanchun)
-- Datepicker: [@xiaosansiji](https://github.com/xiaosansiji)
-  - 新增 `pick` 事件，面板中选中日期时触发，
-  - 选择时间段时，开始时间优化为 `00:00:00`，结束时间为 `23:59:59`，
-
-## 🌈 0.25.0 `2021-10-21`
-
-### ❗️ BREAKING CHANGES
-
-- Button: `shape` 默认值由 `square` 调整为 `rectangle`，支持正方形按钮展示，手动设置 `shape = square` 的小伙伴请删除设置，没有设置过 `shape` 属性的可以忽略，[@HQ-Lin](https://github.com/HQ-Lin)
-
-### 🐞 Bug Fixes
-
-- InputNumber: 修复 `value = undefined` 时报错的问题 [@jchalex](https://github.com/jchalex)
-- Radio: 修复 RadioButton `options` 为空数组时报错的问题 [@HQ-Lin](https://github.com/HQ-Lin)
-- Popup/Tooltip: 修复 reference 宽度过小时箭头位置展示错位的问题 [@ikeq](https://github.com/ikeq)
-- Select: 修复多选模式下，选项无法点击选中的问题 [@geff1991](https://github.com/geff1991)
-- Table:
-  - 修复固定列时投影样式溢出的问题 [@realyuyanan](https://github.com/realyuyanan)
-  - 修复跨表格拖拽时会交换行的问题，[@cool-518](https://github.com/cool-518)
-
-### 🚀 Features
-
-- Tooltip: `theme` 新增可选值 `light`，支持白色风格 tooltip 弹窗 [@ikeq](https://github.com/ikeq)
-- Table: ，[@chaishi](https://github.com/chaishi)
-  - 新增 `expandIcon` 属性，支持自定义展开图标
-  - 新增 `expandOnRowClick` 属性，允许点击整行展开/收起
-  - 支持 `row-mouseenter` 和 `row-mouseleave` 事件
-- Dropdown: 支持 `dropdown-item` slot 用法，[@uyarn](https://github.com/uyarn)
-- Popup: 优化弹出层方向判断逻辑 [@uyarn](https://github.com/uyarn)
-
-## 🌈 0.24.0 `2021-10-14`
-
-### ❗️ BREAKING CHANGES
-
-组件注册名称统一为大驼峰，支持在 Webstorm 中使用组件时代码提示能力 [@chaishi](https://github.com/chaishi)
-
-### 🐞 Bug Fixes
-
-- Table: 修复固定列时表格内容不居中的问题 ，[@realyuyanan](https://github.com/realyuyanan)
-- Textarea: 修复字符长度默认显示错误的问题 ，[@zhaodanchun](https://github.com/zhaodanchun)
-- Popup: 移除 button disable 状态判断，修复 popup 无法正常弹出的问题 [@ikeq](https://github.com/ikeq)
-- Transfer:
-  - 修复被禁用选项，仍然可以被全选选中的问题，[@uyarn](https://github.com/uyarn)
-  - 修复 button 存在重复 key 的问题，[@chaishi](https://github.com/chaishi)
-- Button、Select、Input: 修复默认浅色模式下背景颜色异常的问题
-- TreeSelect: 修复多选时使用 checkbox 报错的问题 [@Godlike-meteor](https://github.com/Godlike-meteor)
-- Select: 修复 `filterable` 模式下点击输入框右侧空白处时未能正常显示 `focus` 态的问题，[@geff1991](https://github.com/geff1991)
-
-### 🚀 Features
-
-- TreeSelect: 新增 `collapsedItems` 和 `minCollapsedNum`，用于支持选择过多时省略显示 [@Godlike-meteor](https://github.com/Godlike-meteor)
-- Select: 新增 `collapsedItems` 和 `minCollapsedNum`，用于支持选择过多时省略显示；增加 `onEnter` 事件，[@geff1991](https://github.com/geff1991)
-
-## 🌈 0.23.5 `2021-09-29`
-
-### 🐞 Bug Fixes
-
-- Button: 修复 loading 状态下样式异常问题 [@gnauhca](https://github.com/gnauhca)
-- Datepicker: 修复国际化配置时日期面板展示样式错位的问题 [@xiaosansiji](https://github.com/xiaosansiji)
-- Breadcrumb: 修复内容超长时未正常显示省略样式的问题 [@yeshanshan](https://github.com/yeshanshan)
-- Tooltip: 修复 `slot` 用法下，`class` 属性未能正常响应变化的问题 [@ikeq](https://github.com/ikeq)
-- Menu: [@LeeJim](https://github.com/LeeJim)
-  - 修复菜单项展开逻辑错误问题，
-  - 修复受控用法下 `value` 值未同步的问题，
-- Select: 修复受控用法下取消勾选状态同步的问题 [@geff1991](https://github.com/geff1991)
-- Slider: 修复 `value` 无法更新的问题 [@byq1213](https://github.com/byq1213)
-- Dropdown: 修复 `overlayClassName` 属性设置无效的问题， ，[@thinkanymore](https://github.com/thinkanymore)
-
-### 🚀 Features
-
-- Datepicker:
-  - 支持根据 `format` 属性配置，自动处理 Timepicker 时间选择器展示，[@uyarn](https://github.com/uyarn)
-  - 支持区域日期时间选择模式 [@uyarn](https://github.com/uyarn)
-  - `disabledData` 属性支持单独设置 after 或者 before [@xiaosansiji](https://github.com/xiaosansiji)
-- Select: 支持自定义选中项的呈现方式，、，[@chaishi](https://github.com/chaishi)
-- Table: 选中行增加类名 `t-table-row--selected` [@realyuyanan](https://github.com/realyuyanan)
-- Swiper: 轮播组件开启 3D 加速，[@vnues](https://github.com/vnues)
-- Upload: [@chaishi](https://github.com/chaishi)
-  - 新增取消上传事件 `cancel-upload`
-  - 新增自定义上传方法 `requestMethod`
-  - 新增 `showUploadProgress` 属性，用于表示「是否显示上传进度」
-  - 新增 `sizeLimit` 属性，表示文件大小限制，支持 1000 和 `{ size: 3, unit: 'MB', message: '文件过大' }` 等方式，支持单位有 'B' | 'KB' | 'MB' | 'GB'
-- Form: 阻止 reset 默认事件，支持清除校验结果、，[@dellyoung](https://github.com/dellyoung)
-- Popup: 优化弹出方向判断逻辑，解决小屏幕使用下适配的问题，[@uyarn](https://github.com/uyarn)
-
-### Performance Improvements
-
-优化点击动画实现方式，[@vnues](https://github.com/vnues)
-
-## 🌈 0.23.4 `2021-09-22`
-
-### 🐞 Bug Fixes
-
-- Select:
-  - 修复 disabled 态下仍然展示响应态的问题 [@geff1991](https://github.com/geff1991)
-  - 修复受控用法下使用异常的问题 [@geff1991](https://github.com/geff1991)
-
-### 🚀 Features
-
-- Anchor: 支持自定义游标，详情参见官网 [demo](https://tdesign.tencent.com/vue/components/anchor#自定义游标)
-- Menu: 支持超过两级的菜单展示，[@LeeJim](https://github.com/LeeJim)
-- Form: FormItem 支持单独设置 `labelWidth`、`labelAlign`，优先级高于 Form 的同名属性，[@HQ-Lin](https://github.com/HQ-Lin)
-
-## 🌈 0.23.2 `2021-09-16`
-
-### 🐞 Bug Fixes
-
-- Tag: 修复主题配置模式下关闭按钮显示异常的问题，
-- Tooltip: 修复 `overlayClassName` 不能正常向 Popup 组件传递的问题
-- Datepicker: 修复 v-model 使用场景下 value 未同步的问题，、、
-
-### 🚀 Features
-
-- Textarea: 新增 `autosize` 属性，`autosize = true` 时允许文本框高度自动撑开，同时允许手动拖动控制高度
-
-## 🌈 0.23.1 `2021-09-14`
-
-### ❗️ BREAKING CHANGES
-
-- Menu: 去除顶部导航菜单 operations 区域内 icon 默认样式，解决 ，升级到 0.23.0 版本的用户请手动为 icon 实现样式，或增加 `t-menu__operations-icon` class 名称。
-- List: `avatar` 属性更名为 `image`，用于配置列表项图片，
-
-### 🐞 Bug Fixes
-
-- Transfer: 修复点击操作按钮过程中，动画展示异常的问题，
-- Upload: 修复服务端渲染场景下报错的问题，
-- Input: 修复 `keypress` 事件未生效的问题，
-- Drawer: 修复 `header=false` 时仍展示头部区域的问题，
-- Tag: 修复可删除和 `maxWidth` 属性并存时，“删除” icon 未正常显示的问题，
-- List: 修复 `asyncLoading` 为空时，控制台报错的问题，
-- Table:
-  - 修复在 Dialog 中使用 Table 组件，`ellipsis=true` 且文字过长时 tooltip 未正常展示的问题，、
-  - 修复列动态变化时，固定列无效的问题，
-
-### 🚀 Features
-
-- Slider: 新增滑块输入组件，[官网 Slider](http://tdesign.tencent.com/vue/components/slider)
-- Radio:
-  - 新增 `variant` 属性用于控制单选框组件按钮形式
-  - RadioOption 中的 `label` 和 `value` 更改为非必传，
-- Transfer: 新增树形内容展示支持，使用请参考官网 [样例](https://tdesign.tencent.com/vue/components/transfer#%E4%B8%8Etree%E7%BB%93%E5%90%88%E4%BD%BF%E7%94%A8)
-- Table:
-  - `ellipsis` 支持自定义浮层内容，
-  - 优化表格固定列时滚动阴影显示体验
-  - `asyncLoading` 支持 `slot` 用法
-- Checkbox:
-  - 同时支持 `default` 和 `label` 以及同名插槽用法
-  - 新增 `max` 属性，用于控制最多选中项
-- Dropdown: dropdown-item `content` 支持 `function` 类型，
-- Dialog: 插槽支持透传 `style` 和 `className`
-- Form: 自定义校验支持返回 `{ result: boolean, message: string, type: string }` 对象，便于自定义实现校验逻辑，
-- Divider:
-  - 带文字的分割线支持虚线展示样式
-  - 新增 `content` 和 `default` 属性用于定制渲染子元素
-- Tooltip: 新增 `visibleChange` 事件
-
-## 🌈 0.22.8 `2021-09-03`
-
-### 🐞 Bug Fixes
-
-- Datepicker: 修复未设置 `disableDate` 属性时，时间选项被禁用的问题。
-
-## 🌈 0.22.7 `2021-09-03`
-
-### 🐞 Bug Fixes
-
-- Dropdown: 修复未设置 `onClick` 属性时，浏览器控制台中有 vue warning 的问题，
-- TreeSelect:
-  - 修复自定义 `Options` 时 `filterable` 功能不生效的问题，
-  - 输入框中展示了已选中节点的 `value` 值，而非 label 的问题，
-- Tabs: 修复 `value` 不支持 `number` 类型的问题
-- Datepicker: 修复 `disableDate` 传入 `function` 时不生效的问题，
-- Select:
-  - 修复 `options` 不能设置为 `null` 的问题，
-  - `value` 不在选项范围内的，不再显示到输入框中，
-- Dialog: 修复确定按钮插槽 `slot` 方式使用无效的问题，
-- Form: 修复行内布局下 `labelWidth` 属性配置无效的问题
-- Popup: 修复文字过长时不能自动换行的问题，内容为文字时默认增加 `maxwidth = 480px` 样式，
-- Upload: 增加对上传中发生异常时的处理，
-- Calendar: 修复下拉框中年份显示不完整的问题，
-- Cascader: 修复选项过长时，无法展示全部内容的问题，
-
-### 🚀 Features
-
-- TreeSelect:
-  - 支持整行节点被选中
-  - 新增 `valueType` 属性，用于控制选中项选中时返回类型，可选值为 `value/object`
-- Table: 支持拖拽排序，使用参见官网 [示例](http://tdesign.tencent.com/vue/components/table#%E6%8B%96%E6%8B%BD%E6%8E%92%E5%BA%8F)
-
-## 🌈 0.22.6 `2021-08-27`
-
-### 🐞 Bug Fixes
-
-- Select: 修复多选时 `v-model` 绑定的值不支持 `undefined` 的问题，
-- Form: 修复 `inline` 模式下 `labelWidth` 失效的问题
-- DatePicker:
-  - 修复 `onchange` 事件触发回调两次问题，
-  - `defaultValue` 支持 `Date` 类型
-
-### 🚀 Features
-
-- Dropdown: 新组件上线，详情参见 [官网](http://tdesign.tencent.com/vue/components/dropdown)
-
-### Performance Improvements
-
-- Select: 改进有较多 option 时卡顿的问题
-
-## 🌈 0.22.5 `2021-08-20`
-
-### 🐞 Bug Fixes
-
-- Loading:
-  - 修复有包裹内容用法时，`size` 属性设置不生效的问题
-  - 设置 text 内容，文案未居中显示的问题
-- Dialog:
-  - 修复 `cancelBtn` 为 null 时，确认按钮也被隐藏的问题
-  - 修复非模态框情况下，拖动结束时未移除鼠标监听时间的问题，
-- Menu: 修复鼠标长按后菜单项持续显示高亮的问题
-- Datepicker: 修复快捷输入区间面板关闭后日期未正常显示的问题，
-- Form:
-  - 修复表单项失焦未触发校验的问题，
-  - 支持触发制定表单项的校验，
-  - 新增 `validate` 方法用于提供表单校验结果，
-- Select: 组件内不直接操作 options，增加 `realOptions` 进行状态管理，防止数据更新异常
-- Timepicker: 12 小时制下滚动选择异常的问题，
-
-### 🚀 Features
-
-- Select、Transfer 选项选中、hover 等交互统一，、
-- Table:
-  - 补充加载态和异步加载状态示例，
-  - 排序功能：修复多字段排序初始值缺陷，新增 `onDataChange` 方法，响应本地数据排序后的数据变化，
-  - 加载状态 UI 重构，详情可以参见官网异步加载示例
-- Loading: 支持通过设置父级 font-size 来控制 icon 显示大小
-- InputNumber:
-  - 支持键盘交互，
-  - 支持数值为空的情况，
-
-## 🌈 0.22.3 `2021-08-11`
-
-### 🐞 Bug Fixes
-
-- 整理组件声明导出顺序，修复构建产物中组件样式优先级错误的问题
-
-## 🌈 0.22.2 `2021-08-11`
-
-### 🐞 Bug Fixes
-
-- Anchor: ponit 在 line 范围外显示的问题
-- Pagination: 修复未正确引入 Select Option 导致的控制台报错问题
-- Popup: 修复 Select、Pagination 等依赖 Popup 实现的组件，弹窗方向错误的问题，、
-- Table: 修复当启用合并单元格，并有除了 columns 外的数据时出现问题，表格无法正常渲染的问题
-- Menu: 移除了 logo slot 的预置样式，以及修复了收起时的抖动问题
-
-### 🚀 Features
-
-- Input: 新增 `maxcharacter` 属性，区别于现有的 `maxlength`，用于控制最多输入的字符个数
-- Cascader: 增加展开动画
-- Tab: TabPanel `label` 支持 Slot 方式自定义标签内容
-
-## 🌈 0.22.1 `2021-08-05`
-
-### 🐞 Bug Fixes
-
-- 修复 0.22.0 版本构建产物中，部分全局样式丢失问题，
-- DatePicker: 修复区间时间选择时，先选择结束时间后无法选择开始时间的问题，
-- Upload: 修复不能取消上传，及图片批量上传时只显示“上传中”，没有“百分比”进度的问题，[common # 19]
-- Input: 修复 suffix icon 在 `clearable = true` 且有值时不展示原设置的 icon 的问题
-- Tabs: 修复选项卡区域出现滚动条时，滚动交互异常的问题，
-
-### 🚀 Features
-
-- DatePicker:
-  - 有时间选择时，才显示底部操作栏区域中的确认按钮，
-  - 区间日期选择时，头部按钮不再同步前进、后退面板区间，支持跨多个月份日期选择，
-- DatePicker、TimePicker、TreeSelect、Select 组件统一增加展开收起动画；Select 箭头增加动画效果。
-
-## 🌈 0.22.0 `2021-07-29`
-
-### 🐞 Bug Fixes
-
-- Table: 使用 `minWidth` 属性时时自动设置 `width`，防止出现 `minWidth` 不生效的问题，
-- Pagination: 修复页数显示错误的问题，
-- Cascader: 修复渲染了额外 CSS class 类名的问题，
-
-### 🚀 Features
-
-- 推荐引入组件方式修改，不需要手动引入样式文件；less 技术栈项目中支持自定义 design token 变量。请参考官网 [使用](https://tdesign.tencent.com/vue/components/explain#%E4%BD%BF%E7%94%A8) 章节
-- Popconfirm:
-  - 新增 `destroyOnClose，默认值为` true，表示 tips 消失的时候会销毁浮层
-  - 新增 `showArrow` 用于控制是否显示浮层箭头
-  - 新增 `placement` 用于控制浮层出现位置
-- Form: help 与 error message 不再同时显示
-- Table: 固定列添加阴影
-- 语言文本全局配置：不再要求配置所有组件参数，可以按需配置
-- Tooltip:
-  - 新增 `destroyOnClose`，默认值为 `true`，表示 Tooltip 消失时会销毁浮层
-  - 新增 duration，用于设置浮层消失的时间
-- Popup: `visible = true` 前不再创建 DOM 元素
-- 新增 Swiper 组件，见 [官网](https://tdesign.tencent.com/vue/components/swiper)
-
-## 🌈 0.21.5 `2021-07-21`
-
-### 🐞 Bug Fixes
-
-- Table: 修复 `rowKey` 值不为 `id` 时，`selectedRowData` 返回值为空的问题，
-
-## 🌈 0.21.4 `2021-07-21`
-
-### 🐞 Bug Fixes
-
-- Drawer: `footer = false` 时，不再渲染 footer，
-- Select:
-  - 修复数据为空时，未正常显示"暂无数据"空节点的问题，
-  - 修复 `options` 被错误置空的问题，、
-  - 修复远程搜索时，内容和加载中状态共存的问题，
-- Popup: 修复实例销毁时报错的问题，
-- Icon: 修复单独导入 icon 报错问题，
-- RadioButton: 修复 `size=small` 时，高度显示异常的问题，
-- Input: 修复 `type=search` 时会显示多余默认 icon 的问题，
-- Breadcrumb: 修复使用 router 模式时跳转失败的问题，
-
-### 🚀 Features
-
-- 新增 Cascader 级联选择器，详情参见 [官网](https://tdesign.tencent.com/vue/components/cascader)
-- Popup: 新增 `zIndex` 用于自定义 z-index 层级，
-- Messege: 插件式调用时，`duration` 不再是必传参数，
-- TS 支持：导出所有组件 ts 定义，方便在 typescript 项目中使用组件
-- 支持 less@4.x 环境下编译
-
-## 🌈 0.21.0 `2021-07-14`
-
-### ❗️ BREAKING CHANGES
-
-- Table API 规范：详情参见
-  - 移除 `BaseTable` 组件非必要参数 `width`
-  - PrimaryTable 中，`checkboxProps` 更名为 `checkProps`，数据类型为 `RadioProps | CheckboxProps | (({ row, rowIndex }) => RadioProps | CheckboxProps)`
-  - BaseTable 中 `rowClassName` 参数由 `(rowKey, row)` 变为 `({ row: RowData; rowIndex: number })`
-  - 移除 BaseTableCol 中 `scopedSlots`，转而使用 `cell/title` 自定义插槽名称。默认依旧使用 `colKey` 作为插槽名称
-
-### 🚀 Features
-
-- Notification、Message、Loading: 支持插件方式调用、
-- Table: 详情参见
-  - 新增 `maxHeight` 用于控制表格最大高度
-  - PrimaryTable:
-    - `expandedRowRender` 更名为 `expandedRow`， 参数 `record` 更为 `row`，`record` 用法保留，将在下个 breaking change 版本中删除
-    - `expandedRowKeys`、`selectedRowKeys` 增加 `.sync` 语法糖支持
-    - `defaultExpandedRowKeys`、`defaultSelectedRowKeys` 支持非受控用法
-  - 支持自定义单元格和表头
-  - 新增支持排序功能
-  - 新增支持过滤功能
-
-## 🌈 0.20.1 `2021-07-13`
-
-### 🐞 Bug Fixes
-
-- Transfer:
-  - 修复禁用项仍可被全选的问题
-  - 修复列表为空时，依然可以勾选全选的问题
-- Button:
-  - 修改 button theme 默认值，修复不写 theme 出现 theme-undefined 的类名问题
-  - 修复 css 构建产物异常问题，
-
-### 🚀 Features
-
-- Loading:
-  - 支持 `LoadingPlugin` 方式调用，
-  - 支持 loading icon 部分自定义颜色设置
-- Upload: 输入框文件上传，新增上传状态显示
-- TreeSelect: `filterable` 和 `filter` 可以单独使用，`filter` 用于自定义本地搜索功能，`filterable` 和 `onSearch` 配合使用用作远程搜索功能配置，
-
-## 🌈 0.20.0 `2021-07-07`
-
-### ❗️ BREAKING CHANGES
-
-- Anchor: 透传 Affix 组件配置能力的 API 命名调整，`affix` 更名为 `affixProps`
-
-### 🐞 Bug Fixes
-
-- InputNumber: 修复输入进位时值未同步的问题
-- Pagination: 修复 `pageCount = 1` 时意外隐藏的问题，
-- Popconfirm: 修复禁用按钮点击文字区域会触发的问题，
-- Table: 修复出现滚动条时列展示错位的问题
-
-### 🚀 Features
-
-- Button: 新增支持 `success/warning` 主题配置，
-- Menu: 增加动画效果
-- 新增语言文本全局配置的组件：Tree、Select、TreeSelect
-
-## 🌈 0.19.0 `2021-07-02`
-
-### ❗️ BREAKING CHANGES
-
-- Form API 规范: submit 事件参数由 `result` 更为 `validateResult`
-
-### 🐞 Bug Fixes
-
-- Upload: 修复上传进度条展示异常的问题，
-- Menu: 修复 submenu 父级高亮显示异常的问题，
-- Form:
-
-  - 修复表单校验可能出现无法 resolve 的情况，
-  - 修复 `labelWidth` 设置为 0 时，依旧显示 label 的问题，
-  - 修复父级元素不是 Form 时，`labelWidth`、`labelAlign` 设置不生效的问题，、、
-
-- Tree: 修复初始化 value 时，子节点选中态未联动父节点状态的问题
-- Table:
-
-  - 删除 DOM 节点上设置多余 columnsProps 数据，
-  - 修复表格滚动问题，
-
-- Tag: 修复 icon 未居中展示的问题，
-
-### 🚀 Features
-
-- Form: 新增组件函数 `submit` 和 `reset`，用于处理提交和重置按钮不在 Form 表单内的场景
-
-## 🌈 0.18.0 `2021-06-24`
-
-### ❗️ BREAKING CHANGES
-
-- Popconfirm API 规范：详情参见
-  - `cancelText` 重命名为 `cancelBtn`，并新增数据类型 `Object/Function`
-  - `confirmText` 重命名为 `confirmBtn`，并新增数据类型 `Object/Function`
-  - `theme` 可选值由 `default/info/warning/error` 更为 `default/warning/danger`
-  - `icon` 移除数据类型 `string`
-- Loading API 规范：
-  - `preventScrollThrough` 默认值更为 `true`
-  - props 不再支持传入 `className`
-
-### 🐞 Bug Fixes
-
-- Menu: 修复当前菜单重复点击时报错的问题
-- Popup: 修复 overlayStyle 动态更新不生效的问题
-- Select:
-  - 支持自适应下拉框宽度设置，修复 、
-  - 修复多选选择器，删除选择项时报错的问题，
-- Message、Layout: 修复文案内容超长时溢出的问题，
-- Loading: loading 状态修改时包裹元素消失问题
-
-### 🚀 Features
-
-- 新增 DatePicker，使用见 [文档](http://tdesign.tencent.com/vue/components/datepicker)
-- Timepicker: 新交互样式修改，支持滑动选取时间
-- Transfer: 支持全局配置 `placeholder` 属性
-- Dialog、Drawer: `cancelBtn` 值为 `null/undefined` 时，不显示取消按钮
-- Popconfirm: 详情参见
-  - 支持自由控制展开或隐藏浮层
-  - `overlayStyle` 支持 `function` 类型，用于自定义浮层宽度
-  - `visible-change` 事件新增参数 `PopupVisibleChangeContext`，用于描述事件来源
-- 新增语言文本全局配置的组件：Popconfirm、Pagination、Calendar、Transfer、Drawer、Dialog
-
-## 🌈 0.17.0 `2021-06-16`
-
-### ❗️ BREAKING CHANGES
-
-- Icon: 图标库移除及名称变更 icon，参见
-- Steps 组件 API 规范 、、
-
-### 🐞 Bug Fixes
-
-- Icon: 修复.native 修饰才能触发事件问题
-- InputNumber: 修复无默认值时报错的问题
-- Upload: 修复设置 `header` 属性后上传失败的问题
-
-### 🚀 Features
-
-- Tree-shaking: 组件库增加 `sideEffects` 设置，支持业务系统打包时按需加载组件库
-- Notification: `title` 新增支持插槽及 render function
-- Upload: 新增图片预览功能
-- Button 组件新增动画
-- Menu: 组件重构，全新 UI，修复问题如下：
-  - active 属性无法动态响应
-  - active 绑定参数有误&初始化阶段多次触发 onChange
-  - 传入’to‘属性后 dom 样式错乱
-  - route 无反应、popup 不收起
-  - 使用 router-to 导致样式异常
-  - t-head-menu 子菜单无法选中
-  - t-menu 不支持主题为 dark 模式
-  - 无 logo 插槽时样式问题
-  - MenuItem Props 里的 routes 属性不生效
-  - meun 嵌套在 t-layout 中，会被 layout 影响背景色
-- Calendar: 新增自定义星期标题能力，见 [官网 demo](http://tdesign.tencent.com/vue/components/calendar#46-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%91%A8%E6%98%BE%E7%A4%BA)
-
-## 🌈 0.16.0 `2021-06-08`
-
-### 🐞 Bug Fixes
-
-- Grid: 修复 flex 布局问题
-- InputNumber: 修复无默认值时报错的问题
-
-### 🚀 Features
-
-- Dialog & Drawer: 默认 `z-index` 改为 css 控制
-
-## 🌈 0.15.3 `2021-06-03`
-
-### 🐞 Bug Fixes
-
-- Table: 修复表头省略显示问题
-- Tree:
-  - 修复更新 data 属性值后，dom 未同步更新的问题
-  - 解决空数据初始化时不能插入数据的问题
-  - 修复 treeItem 图标呈现时，loading 状态覆盖了自定义图标的问题
-
-### 🚀 Features
-
-- Breadcrumb: 面包屑超长部分使用 tooltip 展示
-- 📦 打包构建：使用 `typescript2` 替代 `esbuild`
-
-## 🌈 0.15.2 `2021-05-27`
-
-### ❗️ BREAKING CHANGES
-
-- Anchor: API 规范，`attach` 属性改为 `container`
-
-### 🐞 Bug Fixes
-
-- Tree: 组件解决空数据初始化时不能插入数据的问题
-- Button: icon only 判断修复
-- Layout: 修复组件动态监听 aside 组件问题
-- Checkbox: 修复 checkbox display 样式影响 Tree、Select、TreeSelect、Table 组件部分功能体验的问题
-
-### 🚀 Features
-
-- TreeSelect: 增加 TreeSelect 新组件，支持树形选择需求，见[官网](http://tdesign.tencent.com/vue/components/treeselect)
-- Popup: 支持通过接受 trigger 元素作为参数的函数定制 overlayStyle
-- Select: 扩展 `Options` 类型
-
-## 🌈 0.14.0 `2021-05-17`
-
-- Transfer: `page-change` 事件参数和 API 文档保持一致，由 `{page: pageInfo, context: { type: listType }}` 修改为 `(pageInfo, { type: listType })`
-
-### 🐞 Bug Fixes
-
-- Dialog: 告警和失败类确认对话框，默认 icon 不对的问题修复
-- Select: 修复在 Form 表单中使用时，无默认宽度的问题
-- Tree: 修复点击事件未携带节点对象的问题
-- Form: 修复无法通过 `refs` 访问实例对象的问题
-
-### 🚀 Features
-
-- Popup: 使用 jsx 重构
-- Progress:
-  - 使用 jsx 重构
-  - 去除进度百分比信息内联样式实现
-  - 优化 label 展示，进度在 10% 内时自动展示在进度条外侧
-  - 支持自定义进度百分比
-- Tag: 支持禁用态设置
-
-## 🌈 0.13.0 `2021-04-30`
-
-### ❗️ BREAKING CHANGES
-
-- Pagination: API 规范，`pageSizeOption` 更名为 `pageSizeOptions`
-- Upload: API 规范，`limit` 修改为 `max` 控制最大上传数量 、
-- Dialog: API 规范，`theme` 可选值 `error` 更为 `danger`
-- Select: API 规范，详情见
-
-### 🐞 Bug Fixes
-
-- Select: 修复 value 传入数字时不能正常展示的问题
-- Table:
-  - 修复无法按需加载的问题
-  - 修复 Tips 展示内容错误的问题
-- Tabs: 修复点击导航删除按钮时, 未正确 emit remove 事件的问题
-- Drawer: 修复设置 `cancelBtn = ''` 时无法将取消按钮渲染为空的问题
-
-### 🚀 Features
-
-- Upload: 新增 `formatResponse` API，用于上传成功后格式化响应数据
-
-## 🌈 0.12.1 `2021-04-26`
-
-### 🐞 Bug Fixes
-
-- Dialog: 修复组件按需加载场景下不支持插件方式使用的问题
-- Menu: 修复因依赖路径错误，导致组件库包引入后运行报错的问题
-
-## 🌈 0.12.0 `2021-04-22) 废弃，构建产物有问题，请直接升级到 0.12.1 版`
-
-### ❗️ BREAKING CHANGES
-
-- Menu: API 规范，详情见 、、、、
-- Upload: API 规范，详情见 、、
-- Pagination & Table: 详情见
-  - Pagination 当分页大小和当前页发生变化时均会触发事件 change，且参数由 `(current, pageInfo)` 调整为 `(pageInfo)`
-  - Table page-change 事件参数由 `(current, pageInfo)` 调整为 `(pageInfo)`
-- InputNumber: API 规范， `formatter` 修改为 `format`
-
-### 🐞 Bug Fixes
-
-- Drawer:
-  - 修复 `confirmBtn` 和 `cancelBtn` 无法正常呈现 `Function` 类型返回的内容的问题
-  - 修复自定义关闭按钮无法关闭 Drawer 弹窗的问题
-  - 修复在 Safari 浏览器下，使用 Drawer 组件后白屏的问题
-- Upload: 修复 `auto-upload` 属性设置不生效的问题
-
-### 🚀 Features
-
-- Form: help 与 tips 展示分离
-- Pagination: 新增 current-change 事件，参数为 `(current, pageInfo)`
-- Message: 支持 `zIndex` 配置
-
-## 🌈 0.11.0 `2021-04-14`
-
-### ❗️ BREAKING CHANGES
-
-- Drawer:
-  - `footer` 不再支持 `string` 类型
-  - `attach` 不再支持 `boolean` 类型，调整挂载元素实现
-
-### 🐞 Bug Fixes
-
-- Dialog: 修复挂载元素实现错误的问题
-- RadioGroup: 修复 `disabled` 设置失效的问题
-- Drawer: 修复不能正常展示关闭图标的问题
-- Input: 修复回车键 enter 时触发 change 事件问题 ，无法粘贴内容的问题
-
-### 🚀 Features
-
-- 官网新增 shapan 在线 demo 能力，详情请访问[官网体验](http://tdesign.tencent.com/vue/components/button)
-- Drawer
-  - 新增 `showInAttachedElement` 表示抽屉在父元素打开
-  - 新增：`click-close-btn` `click-cancel` `keydown-esc` `click-confirm` 等事件
-  - `closeBtn` 新增支持 `string/function` 类型，用于自定义关闭按钮展示
-  - 新增 `closeOnKeydownEsc`，控制是否在 ESC 键按下时触发关闭
-  - 重构：`attach` 的实现和 Dialog 组件保持一致
-  - `close` 事件新增参数 `{ trigger: EventSource; e: MouseEvent | KeyboardEvent }` `EventSource` 有如下枚举： `'keydownEsc' | 'clickCloseBtn' | 'clickCancel' | 'clickOverlay'`
-
-## 🌈 0.10.0 `2021-04-08`
-
-### ❗️ BREAKING CHANGES
-
-- Badge: API 规范，详情见
-- Tree: API 规范，详情见
-- Pagination: API 规范，`curr` 修改为 `current`，`prev` 修改为 `previous`
-- Table: API 规范，分页器部分的定义 `curr` 修改为 `current`，`prev` 修改为 `previous`，与 Pagination 组件 API 定义保持一致
-
-### 🐞 Bug Fixes
-
-- Form: 修复 Date 对象判断为空的逻辑
-- Input: 兼容 safari 浏览器中文输入时多次触发 change 的问题，问题描述见 、，修复见 、
-- Layout: 修复侧边栏宽度设置失败不生效的问题
-- Radio: 修复禁用且选中状态时的样式问题
-- Table: rowKey 获取 id 问题修复
-- Timepicker: 去除输入框内多余背景色
-
-### 🚀 Features
-
-- Form: 新增 API `preventSubmitDefault`，用于控制是否阻止默认 submit 事件，默认值为 true
-- Table: 新增 `ellipsis` 配置，支持 hover 呈现完整的内容
-
-## 🌈 0.9.0 `2021-03-30`
-
-### ❗️ BREAKING CHANGES
-
-- InputNumber: API 规范，`mode` 变更为 `theme`
-
-### 🐞 Bug Fixes
-
-- Input: 解决 input 组件中文输入过程中不断触发 change 的问题
-
-### 🚀 Features
-
-- 新增 [Textarea 多行文本框组件](http://tdesign.tencent.com/vue/components/textarea)
-- Checkbox:
-  - 支持 `readonly` 属性
-  - CheckboxGroup `options` 支持全选配置
-  - CheckboxGroup `options` 支持传入形如 ['A', 'B', 'C'] 一类的参数
-- InputNumber:
-  - `theme` 新增可选值 normal ，用于表示 “没有 + - 控制的数字输入框”
-  - 新增 `decimalPlaces`，支持配置小数位数
-  - 其他调整详情参见
-
-## 🌈 0.8.0 `2021-03-23`
-
-### ❗️ BREAKING CHANGES
-
-- Tabs: API 规范，详情参见
-
-### 🐞 Bug Fixes
-
-- Form: 手机号码校验正则修改
-- map-props: 修复 JSX 调用 map-props 组件时无法解构传值的问题，详情参见
-
-### 🚀 Features
-
-- Table: 新增鼠标事件相关 API，支持非受控属性 defaultCurrent 和 defaultPagiSize 用法，详情参见
-- Pagination: 支持非受控属性 defaultCurrent 和 defaultPagiSize 用法
-
-## 🌈 0.7.1 `2021-03-11`
-
-### 🐞 Bug Fixes
-
-- Select: 修复构建产物 `@TdTypes/` 路径失效问题
-
-## 🌈 0.7.0 `2021-03-11`
-
-### ❗️ BREAKING CHANGES
-
-- List: API 规范，loading 修改为 async-loading
-
-### 🐞 Bug Fixes
-
-- InputNumber: v-model 绑定值不生效问题修复
-
-### 🚀 Features
-
-- Input: type 支持 Number 类型
-
-## 🌈 0.6.0 `2021-03-10`
-
-### ❗️ BREAKING CHANGES
-
-- Calendar: 规范 API，详情参见
-- Alert: 规范 API，详情参见
-- Tag: 规范 API，详情参见
-- List: 规范 API，详情参见
-
-### 🐞 Bug Fixes
-
-- Dialog: 修复 duration 为 0 时 Message 组件自动关闭的问题
-
-### 🚀 Features
-
-- Progress: label 支持 Slot/TNode 类型，详情参见
-
-## 🌈 0.5.0 `2021-02-24`
-
-### ❗️ BREAKING CHANGES
-
-- InputNumber: 规范 API，详情参见
-- Input: 规范 API，详情参见
-- Progress: 规范 API，详情参见
-- Breadcrumb: 规范 API，详情参见
-- Dialog: 规范 API
-
-### 🐞 Bug Fixes
-
-- Dropdown,Popconfirm 解决抖动问题
-- Form: 解决 resetField 异步场景下失效问题，
-- Select: 修复在 Dialog 场景下 select 下拉宽度判断为 0 不能正常展示的问题，
-
-### 🚀 Features
-
-- Form: rules 支持设置对象类型，
-
-## 🌈 0.4.0 `2021-02-07`
-
-### ❗️ BREAKING CHANGES
-
-- Button: 规范 API，`variant` 参数默认值更改为 `base`
-
-### 🐞 Bug Fixes
-
-- switch: 修复开关无法正常切换问题
-- Table:
-  - 修复无法监听 pagination.current 问题
-  - 修复无法监听 pagination.pageSize 问题
-  - 修复数据分页问题：当数据长度等于 pageSize 时，从第 2 页开始，无法正常渲染表格数据
-
-### 🚀 Features
-
-- Tag: 新增 content 属性
-
-## 🌈 0.3.0 `2021-01-26`
-
-### ❗️ BREAKING CHANGES
-
-- Button: 规范 API
-- Checkbox/CheckboxGroup: 规范 API，详情见：
-
-### 🐞 Bug Fixes
-
-- Select: 修复多个 Select 组件，使用远程数据时，第二个选项开始弹不出来的问题
-- Pagination: 官网 demo total 值改变时分页数据未响应的问题
-
-### 🚀 Features
-
-- Select: 多选且可搜索时，输入搜索项并选择一个选项后，保持搜索框 focusing
-
-## 🌈 0.2.5 `2021-01-20`
-
-### ❗️ BREAKING CHANGES
-
-- Popup: 规范 API，visibleArrow 更名为 showArrow；placement 枚举值修改，不再使用小驼峰命名；
-- Radio: 规范 API，size 可选值更为 small/medium/large，默认值为 medium；详情见：
-- Tag: 规范 API，icon 属性不再支持 String 类型
-- Notification: 规范 API，theme 默认值更为 info；icon 属性不再支持 String 类型；default 属性已更为 content
-
-### 🐞 Bug Fixes
-
-- Select: 修复不设置宽度时，下拉选项宽度异常问题
-- Anchor: 修复复制链接未成功的问题
-
-### 🚀 Features
-
-- Popup: 增加 API 支持 onVisibleChange
-- Message & Notification: 支持函数引入调用，见
-- Tag: 增加 onClick & onClose 事件
-- Radio/RadioGroup: value 同时支持 String 和 Number 类型；Radio/RadioGroup 新增 onChange API
-
-## 🌈 0.2.4 `2021-01-14`
-
-### 🐞 Bug Fixes
-
-- Message/Notification: 插件无法弹出问题修复，
-
-## 🌈 0.2.3 `2021-01-12`
-
-### ❗️ BREAKING CHANGES
-
-- Divider: 规范 API，详情见：
-- Form: size 默认值由 default 改为 medium
-- Tag: rename effect to variant
-- Icon: size 去除 xs 和 xl，默认值更为 undefined，详情见：
-- Notification: 规范 API，详情见：
-
-### 🐞 Bug Fixes
-
-- Table: 修复横向滚动时左侧固定列晃动问题，
-- Input: active 状态边框颜色与组件库统一，
-- Select: 为 Select 组件依赖的 Popup 组件增加 z-index 样式设置，默认值为 5500
-
-### 🚀 Features
-
-- Transfer 中使用分页组件改为迷你极简模式
-- Form: 校验状态 type 去掉 success
-- Table: 普通的加载状态，数据内容和加载状态互斥的，不共存,
-- Tooltip: 默认增加箭头样式，
-
-### 🌈 0.2.2 `2021-01-05`
-
-### ❗️ BREAKING CHANGES
-
-- Pagination: 规范 API
-- Select: size 默认值由 `default` 改为 `medium`
-- Message: 规范 API，详情见：
-- Grid: span 默认值修改为 12
-- Tag: 事件名称 `change` 更为 `click，去除` `disabled` / `checked`，详情见：
-- Switch: 规范 API，详情见：
-
-### 🐞 Bug Fixes
-
-- Pagination: 样式问题修复
-- timepikcer: 下拉展开后，组件选中样式修复&&展开后框选背景色加投影丢失问题
-- table:
-  - 修复为 Column 的设置 className 不生效的问题
-  - ellipsis 失效问题
-  - 处理固定宽度时文本溢出问题
-  - id 为非数字类型时，expandChange 事件不响应的问题
-  - 折叠状态 icon 展示错误问题
-- tag: 修复在有默认 icon 值的时候，展示会多出一个 icon 元素的问题
-- select: placeholder 长度被限制被限制的问题
-
-### 🚀 Features
-
-- Checkbox: value & option.value 同时支持传入 string 和 number 类型 closes
-- Dialog: 将 close 点击事件放到外层 div，避免点击区域过小的问题
-- Pagination: 新增极简迷你版，适应轻量化翻页使用场景，见 [官网示例 1.7](http://tdesign.tencent.com/vue/components/pagination)
-- Anchor: title 属性中增加 TNode 支持，change 支持透传
-- 使用 mockdate 在 jest 运行时 mock 当前时间为固定值，防止 snapshot 失效
-
-## 🌈 0.2.0 `2020-12-21`
-
-### ❗️ BREAKING CHANGES
-
-#### 组件默认尺寸命名修改
-
-middle 改为 medium，涉及到一期已经发布的组件：
-
-- Button
-- Icon
-- Input
-- Pagination
-- Radio
-- Select
-- Switch
-- Tabs
-- Tag
-- List
-- Table
-
-#### Button
-
-button 不再支持 name 属性设置 icon，改为使用 slot
-
-### 🚀 Features
-
-#### 新增组件
-
-- **[Layout 布局](http://tdesign.tencent.com/vue/components/layout)**
-- **[Grid 栅格](http://tdesign.tencent.com/vue/components/grid)**
-- **[Divider 分割线](http://tdesign.tencent.com/vue/components/divider)**
-- **[Form 表单](http://tdesign.tencent.com/vue/components/form)**
-- **[Tree 树](http://tdesign.tencent.com/vue/components/tree)**
-- **[Tooltip 文字提示](http://tdesign.tencent.com/vue/components/tooltip)**
-- **[Loading 加载中](http://tdesign.tencent.com/vue/components/loading)**
-- **[Badge 徽标](http://tdesign.tencent.com/vue/components/badge)**
-- **[TimePicker 时间选择器](http://tdesign.tencent.com/vue/components/timepicker)**
-- **[Transfer 穿梭框](http://tdesign.tencent.com/vue/components/transfer)**
-- **[Drawer 模态抽屉](http://tdesign.tencent.com/vue/components/drawer)**
-- **[Anchor 锚点](http://tdesign.tencent.com/vue/components/anchor)**
-- **[Calendar 日历](http://tdesign.tencent.com/vue/components/calendar)**
-- **[InputNumber 数字输入框](http://tdesign.tencent.com/vue/components/inputnumber)**
-- **[Progress 进度条](http://tdesign.tencent.com/vue/components/progress)**
-
-#### 新增特性
-
-- Input size 支持 small
-- Select 过滤时不区分大小写 [issue]
-
-### 🐞 Bug Fixes
-
-#### Table
-
-- 未透传 pagination change 事件 [issue]
-- renderColgroup minWidth 失效 [issue]
-- 动态修改 columns 的值，table 组件无法动态渲染 [issue]
-- 固定列样式问题 [issue]
-- 当存在固定列时，hover 效果无法同步到固定列 [issue]
-- 表格超出时允许滚动 [issue]
-- 固定表头表格时，表头和表格未对齐&滚动条问题 [issue][issue]
-
-#### Select
-
-- 初始箭头方向错误 [issue]
-- 下拉框样式偏移 [issue][issue]
-
-#### Icon
-
-资源不支持 HTTPS 访问 [issue]

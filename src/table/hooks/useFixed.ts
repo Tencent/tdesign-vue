@@ -13,6 +13,7 @@ import {
 import get from 'lodash/get';
 import xorWith from 'lodash/xorWith';
 import debounce from 'lodash/debounce';
+import pick from 'lodash/pick';
 import log from '../../_common/js/log';
 import { ClassName, Styles } from '../../common';
 import { BaseTableCol, TableRowData, TdBaseTableProps } from '../type';
@@ -270,7 +271,7 @@ export default function useFixed(
         defaultBottom = thead?.getBoundingClientRect().height || 0;
       }
       thisRowInfo.top = (lastRowInfo.top || defaultBottom) + (lastRowInfo.height || 0);
-      initialColumnMap.set(rowId, { ...thisRowInfo, height: tr.getBoundingClientRect().height });
+      initialColumnMap.set(rowId, { ...thisRowInfo, height: tr?.getBoundingClientRect().height });
     }
     for (let i = data.length - 1; i >= data.length - fixedBottomRows; i--) {
       const tr = trList[i] as HTMLElement;
@@ -283,7 +284,7 @@ export default function useFixed(
         defaultBottom = tfoot?.getBoundingClientRect().height || 0;
       }
       thisRowInfo.bottom = (lastRowInfo.bottom || defaultBottom) + (lastRowInfo.height || 0);
-      initialColumnMap.set(rowId, { ...thisRowInfo, height: tr.getBoundingClientRect().height });
+      initialColumnMap.set(rowId, { ...thisRowInfo, height: tr?.getBoundingClientRect().height });
     }
   };
 
@@ -390,6 +391,7 @@ export default function useFixed(
 
   const calculateThWidthList = (trList: HTMLCollection) => {
     const widthMap: { [colKey: string]: number } = {};
+    if (!trList) return widthMap;
     for (let i = 0, len = trList.length; i < len; i++) {
       const thList = trList[i].children;
       // second for used for multiple row header
@@ -416,9 +418,9 @@ export default function useFixed(
   };
 
   const updateThWidthListHandler = () => {
-    if (notNeedThWidthList.value) return;
     const timer = setTimeout(() => {
       updateTableWidth();
+      if (notNeedThWidthList.value) return;
       const thead = tableContentRef.value?.querySelector('thead');
       if (!thead) return;
       updateThWidthList(thead.children);
@@ -501,6 +503,7 @@ export default function useFixed(
   );
 
   watch([finalColumns], ([finalColumns], [preFinalColumns]) => {
+    if (!props.showHeader) return;
     const finalColKeys = finalColumns.map((t) => t.colKey);
     const preColKeys = preFinalColumns.map((t) => t.colKey);
     if (finalColKeys.length < preColKeys.length) {
@@ -510,8 +513,12 @@ export default function useFixed(
       reduceKeys.forEach((key) => {
         reduceWidth += thWidthList[key];
       });
-      const oldTotalWidth = Object.values(thWidthList).reduce((r = 0, n) => r + n);
-      setTableElmWidth(oldTotalWidth - reduceWidth);
+      const rootThWidthList = pick(thWidthList, preColKeys);
+      const oldTotalWidth = Object.values(rootThWidthList).reduce((r = 0, n) => r + n);
+      // 保留原有可能编辑过的列宽度，但是当剩余列过小时，表头小于内容宽，需要缩放回内容宽度
+      const contentWidth = tableContentRef.value.clientWidth;
+      const widthToReserve = oldTotalWidth - reduceWidth;
+      setTableElmWidth(Math.max(contentWidth, widthToReserve));
     }
   });
 
@@ -533,6 +540,7 @@ export default function useFixed(
 
   let resizeObserver: ResizeObserver = null;
   function addTableResizeObserver(tableElement: HTMLDivElement) {
+    if (typeof window === 'undefined') return;
     // IE 11 以下使用 window resize；IE 11 以上使用 ResizeObserver
     if (getIEVersion() < 11 || typeof window.ResizeObserver === 'undefined') return;
     off(window, 'resize', onResize);
@@ -540,7 +548,7 @@ export default function useFixed(
       const timer = setTimeout(() => {
         refreshTable();
         clearTimeout(timer);
-      }, 60);
+      }, 200);
     });
     resizeObserver.observe(tableElement);
     tableRef.value = tableElement;
@@ -549,15 +557,20 @@ export default function useFixed(
   onMounted(() => {
     const scrollWidth = getScrollbarWidthWithCSS();
     scrollbarWidth.value = scrollWidth;
+    updateThWidthListHandler();
     const isWatchResize = isFixedColumn.value || isFixedHeader.value || !notNeedThWidthList.value || !data.value.length;
     // IE 11 以下使用 window resize；IE 11 以上使用 ResizeObserver
-    if ((isWatchResize && getIEVersion() < 11) || typeof window.ResizeObserver === 'undefined') {
+    const hasWindow = typeof window !== 'undefined';
+    const hasResizeObserver = hasWindow && typeof window.ResizeObserver !== 'undefined';
+    if ((isWatchResize && getIEVersion() < 11) || !hasResizeObserver) {
       on(window, 'resize', onResize);
     }
   });
 
   onBeforeUnmount(() => {
-    off(window, 'resize', onResize);
+    if (typeof window !== 'undefined') {
+      off(window, 'resize', onResize);
+    }
     resizeObserver?.unobserve(tableRef.value);
     resizeObserver?.disconnect();
   });

@@ -11,6 +11,7 @@ import {
 } from '@vue/composition-api';
 import pick from 'lodash/pick';
 import isFunction from 'lodash/isFunction';
+import get from 'lodash/get';
 import props from './base-table-props';
 import useTableHeader from './hooks/useTableHeader';
 import useColumnResize from './hooks/useColumnResize';
@@ -32,7 +33,7 @@ import TFoot from './tfoot';
 import log from '../_common/js/log';
 import { getIEVersion } from '../_common/js/utils/helper';
 import { getAffixProps } from './utils';
-import { Styles } from '../common';
+import { ComponentScrollToElementParams, Styles } from '../common';
 import { BaseTableCol, TableRowData } from './type';
 
 export const BASE_TABLE_EVENTS = ['page-change', 'cell-click', 'scroll', 'scrollX', 'scrollY', 'column-resize-change'];
@@ -67,10 +68,11 @@ export default defineComponent({
     const {
       tableClasses, sizeClassNames, tableContentStyles, tableElementStyles,
     } = useStyle(props);
-    const { global } = useConfig('table');
+    const { global } = useConfig('table', props.locale);
     const { isMultipleHeader, spansAndLeafNodes, thList } = useTableHeader(props);
     const finalColumns = computed(() => spansAndLeafNodes.value?.leafColumns || props.columns);
     const isIE = computed(() => getIEVersion() <= 11);
+    const tableSize = computed(() => props.size ?? global.value.size);
 
     // 吸附相关ref 用来做视图resize后重新定位
     const paginationAffixRef = ref();
@@ -226,7 +228,7 @@ export default defineComponent({
     const onInnerVirtualScroll = (e: WheelEvent) => {
       const target = (e.target || e.srcElement) as HTMLElement;
       const top = target.scrollTop;
-      // 排除横向滚动出发的纵向虚拟滚动计算
+      // 排除横向滚动触发的纵向虚拟滚动计算
       if (lastScrollY !== top) {
         virtualConfig.isVirtualScroll.value && virtualConfig.handleScroll();
       } else {
@@ -274,14 +276,40 @@ export default defineComponent({
       addTableResizeObserver(tableRef.value);
     });
 
+    const tableData = computed(() => (isPaginateData.value ? dataSource.value : props.data));
+
+    const scrollToElement = (params: ComponentScrollToElementParams) => {
+      let { index } = params;
+      if (!index && index !== 0) {
+        if (!params.key) {
+          log.error('Table', 'scrollToElement: one of `index` or `key` must exist.');
+          return;
+        }
+        index = tableData.value?.findIndex((item) => get(item, props.rowKey) === params.key);
+        if (index < 0) {
+          log.error('Table', `${params.key} does not exist in data, check \`rowKey\` or \`data\` please.`);
+        }
+      }
+      virtualConfig.scrollToElement({ ...params, index });
+    };
+
+    watch(
+      [showElement],
+      ([showElement]) => {
+        context.emit('show-element-change', showElement);
+      },
+      { immediate: true },
+    );
+
     return {
       virtualConfig,
-      scrollToElement: virtualConfig.scrollToElement,
+      scrollToElement,
       columnResizable,
       thList,
       classPrefix,
       innerPagination,
       global,
+      tableSize,
       tableFootHeight,
       tableWidth,
       tableElmWidth,
@@ -377,7 +405,7 @@ export default defineComponent({
         resizable: this.resizable,
         columnResizeParams: this.columnResizeParams,
         classPrefix: this.classPrefix,
-        ellipsisOverlayClassName: this.size !== 'medium' ? this.sizeClassNames[this.size] : '',
+        ellipsisOverlayClassName: this.tableSize !== 'medium' ? this.sizeClassNames[this.tableSize] : '',
         attach: this.attach,
       };
       return headProps;
@@ -504,6 +532,9 @@ export default defineComponent({
   },
 
   render(h) {
+    if (!this.showElement) {
+      return <div ref="tableRef"></div>;
+    }
     const { rowAndColFixedPosition } = this;
     const data = this.isPaginateData ? this.dataSource : this.data;
     const columns = this.spansAndLeafNodes?.leafColumns || this.columns;
@@ -601,7 +632,7 @@ export default defineComponent({
 
     const topContent = renderTNodeJSX(this, 'topContent');
     const bottomContent = renderTNodeJSX(this, 'bottomContent');
-    const pagination = this.pagination ? (
+    const paginationContent = this.innerPagination ? (
       <div
         ref="paginationRef"
         class={this.tableBaseClass.paginationWrap}
@@ -615,10 +646,6 @@ export default defineComponent({
         {bottomContent}
       </div>
     );
-
-    if (!this.showElement) {
-      return <div ref="tableRef"></div>;
-    }
 
     return (
       <div ref="tableRef" class={this.dynamicBaseTableClasses} style="position: relative">
@@ -675,10 +702,10 @@ export default defineComponent({
         {/* 吸底的分页器 */}
         {this.paginationAffixedBottom ? (
           <Affix offsetBottom={0} props={getAffixProps(this.paginationAffixedBottom)} ref="paginationAffixRef">
-            {pagination}
+            {paginationContent}
           </Affix>
         ) : (
-          pagination
+          paginationContent
         )}
 
         {/* 调整列宽时的指示线。由于层级需要比较高，因而放在根节点，避免被吸顶表头覆盖。非必要情况，请勿调整辅助线位置 */}

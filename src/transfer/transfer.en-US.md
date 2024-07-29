@@ -10,10 +10,10 @@ checked | Array | [] | `.sync` is supported。Typescript：`Array<TransferValue>
 defaultChecked | Array | [] | uncontrolled property。Typescript：`Array<TransferValue>` | N
 data | Array | [] | Typescript：`Array<T>` | N
 direction | String | both | options: left/right/both | N
-disabled | Boolean / Array | false | Typescript：`boolean \| Array<boolean>` | N
+disabled | Boolean / Array | - | Typescript：`boolean \| Array<boolean>` | N
 empty | String / Array / Slot / Function | '' | Typescript：`EmptyType \| Array<EmptyType> \| TNode` `type EmptyType = string \| TNode `。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/transfer/type.ts) | N
 footer | Array / Slot / Function | - | Typescript：`Array<string \| TNode> \| TNode<{ type: TransferListType }>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-keys | Object | - | Typescript：`KeysType`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+keys | Object | - | alias field name in data。Typescript：`KeysType`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 operation | Array / Slot / Function | - | Typescript：`Array<string \| TNode> \| TNode<{ direction: 'left' \| 'right' }>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 pagination | Object / Array | - | Typescript：`PaginationProps \| Array<PaginationProps>`，[Pagination API Documents](./pagination?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/transfer/type.ts) | N
 search | Boolean / Object / Array | false | Typescript：`SearchOption \| Array<SearchOption>` `type SearchOption = boolean \| InputProps`，[Input API Documents](./input?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/transfer/type.ts) | N

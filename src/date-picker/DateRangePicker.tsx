@@ -22,6 +22,7 @@ import {
 } from '../_common/js/date-picker/format';
 import { subtractMonth, addMonth, extractTimeObj } from '../_common/js/date-picker/utils';
 import useFormDisabled from '../hooks/useFormDisabled';
+import { dateCorrection } from './utils';
 
 export default defineComponent({
   name: 'TDateRangePicker',
@@ -85,11 +86,11 @@ export default defineComponent({
         } else if (value.value.length === 2 && !props.enableTimePicker) {
           // 确保右侧面板月份比左侧大 避免两侧面板月份一致
           const nextMonth = value.value.map((v: string) => parseToDayjs(v, formatRef.value.format).month());
+          year.value = value.value.map((v: string) => parseToDayjs(v, formatRef.value.format).year());
           if (year.value[0] === year.value[1] && nextMonth[0] === nextMonth[1]) {
             nextMonth[0] === 11 ? (nextMonth[0] -= 1) : (nextMonth[1] += 1);
           }
           month.value = nextMonth;
-          year.value = value.value.map((v: string) => parseToDayjs(v, formatRef.value.format).year());
           // 月份季度选择时需要确保右侧面板年份比左侧大
           if ((props.mode === 'month' || props.mode === 'quarter') && year.value[0] === year.value[1]) {
             year.value = [year.value[0], year.value[0] + 1];
@@ -132,7 +133,7 @@ export default defineComponent({
     }
 
     // 日期点击
-    function onCellClick(nextDate: Date, { e, partial }: { e: MouseEvent; partial: DateRangePickerPartial }) {
+    function onCellClick(nextDate: Date, { e }: { e: MouseEvent; partial: DateRangePickerPartial }) {
       const date = nextDate;
       // 不开启时间选择时 结束时间默认重置为 23:59:59
       if (activeIndex.value && !props.enableTimePicker) date.setHours(23, 59, 59);
@@ -149,18 +150,6 @@ export default defineComponent({
       }) as string;
       cacheValue.value = nextValue;
       inputValue.value = nextValue;
-
-      // date 模式自动切换年月
-      if (props.mode === 'date') {
-        // 选择了不属于面板中展示月份的日期
-        const partialIndex = partial === 'start' ? 0 : 1;
-        const isAdditional = dayjs(date).month() !== month.value[partialIndex];
-        if (isAdditional) {
-          // 保证左侧时间小于右侧
-          if (activeIndex.value === 0) month.value = [dayjs(date).month(), Math.min(dayjs(date).month() + 1, 11)];
-          if (activeIndex.value === 1) month.value = [Math.max(dayjs(date).month() - 1, 0), dayjs(date).month()];
-        }
-      }
 
       // 有时间选择器走 confirm 逻辑
       if (props.enableTimePicker) return;
@@ -227,28 +216,16 @@ export default defineComponent({
         next = addMonth(current, monthCount);
       }
 
-      const nextYear = [...year.value];
+      let nextYear = [...year.value];
       nextYear[partialIndex] = next.getFullYear();
-      const nextMonth = [...month.value];
+      let nextMonth = [...month.value];
       nextMonth[partialIndex] = next.getMonth();
+      const onlyYearSelect = ['year', 'quarter', 'month'].includes(props.mode);
 
-      // 保证左侧时间不大于右侧
-      if (partialIndex === 0) {
-        nextYear[1] = Math.max(nextYear[0], nextYear[1]);
-
-        if (nextYear[0] === nextYear[1]) {
-          nextMonth[1] = Math.max(nextMonth[0], nextMonth[1]);
-        }
-      }
-
-      // 保证左侧时间不大于右侧
-      if (partialIndex === 1) {
-        nextYear[0] = Math.min(nextYear[0], nextYear[1]);
-
-        if (nextYear[0] === nextYear[1]) {
-          nextMonth[0] = Math.min(nextMonth[0], nextMonth[1]);
-        }
-      }
+      // 头部日期切换修正
+      const correctedDate = dateCorrection(partialIndex, nextYear, nextMonth, onlyYearSelect);
+      nextYear = correctedDate.nextYear;
+      nextMonth = correctedDate.nextMonth;
 
       year.value = nextYear;
       month.value = nextMonth;
@@ -364,13 +341,18 @@ export default defineComponent({
       let partialIndex = partial === 'start' ? 0 : 1;
       if (props.enableTimePicker) partialIndex = activeIndex.value;
 
-      const nextYear = [...year.value];
+      let nextYear = [...year.value];
+      let nextMonth = [...month.value];
       nextYear[partialIndex] = nextVal;
-      // 保证左侧时间不大于右侧
-      if (partialIndex === 0) nextYear[1] = Math.max(nextYear[0], nextYear[1]);
-      if (partialIndex === 1) nextYear[0] = Math.min(nextYear[0], nextYear[1]);
+      const onlyYearSelect = ['year', 'quarter', 'month'].includes(props.mode);
+
+      // 头部日期切换修正
+      const correctedDate = dateCorrection(partialIndex, nextYear, nextMonth, onlyYearSelect);
+      nextYear = correctedDate.nextYear;
+      nextMonth = correctedDate.nextMonth;
 
       year.value = nextYear;
+      if (!onlyYearSelect) month.value = nextMonth;
     }
 
     function onMonthChange(nextVal: number, { partial }: { partial: DateRangePickerPartial }) {
@@ -381,8 +363,29 @@ export default defineComponent({
       nextMonth[partialIndex] = nextVal;
       // 保证左侧时间不大于右侧
       if (year.value[0] === year.value[1]) {
-        if (partialIndex === 0) nextMonth[1] = Math.max(nextMonth[0], nextMonth[1]);
-        if (partialIndex === 1) nextMonth[0] = Math.min(nextMonth[0], nextMonth[1]);
+        if (partialIndex === 0) {
+          // 操作了左侧区间, 处理右侧区间小于或等于左侧区间的场景，交互上始终报错右侧比左侧大 1
+          if (nextMonth[1] <= nextMonth[0]) {
+            nextMonth[1] = nextMonth[0] + 1;
+            if (nextMonth[1] === 12) {
+              // 处理跨年的边界场景
+              nextMonth[1] = 0;
+              year.value = [year.value?.[0], year.value?.[1] + 1];
+            }
+          }
+        }
+        if (partialIndex === 1) {
+          // 操作了右侧区间, 处理右侧区间小于或等于左侧区间的场景，交互上始终报错左侧比右侧小 1
+          nextMonth[0] = Math.min(nextMonth[0], nextMonth[1]);
+          if (nextMonth[0] >= nextMonth[1]) {
+            nextMonth[0] -= 1;
+            if (nextMonth[0] === -1) {
+              // 处理跨年的边界场景
+              nextMonth[0] = 11;
+              year.value = [year.value?.[0] - 1, year.value?.[1]];
+            }
+          }
+        }
       }
 
       month.value = nextMonth;
@@ -451,6 +454,7 @@ export default defineComponent({
       <div class={COMPONENT_NAME}>
         <TRangeInputPopup
           disabled={this.isDisabled}
+          label={this.label}
           status={this.status}
           tips={this.tips || this.$scopedSlots.tips}
           inputValue={inputValue as string[]}

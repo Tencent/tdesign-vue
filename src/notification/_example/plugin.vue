@@ -79,27 +79,6 @@ export default {
     };
   },
   methods: {
-    closeBtn(close) {
-      return (
-        <b class="t-message__close" onClick={close}>
-          x
-        </b>
-      );
-    },
-    content() {
-      return (
-        <div>
-          操作有误，<a href="#">前往查看</a>
-        </div>
-      );
-    },
-    footer() {
-      return (
-        <div class="t-notification__detail">
-          <span class="t-notification__detail-item t-is-active">查看详情</span>
-        </div>
-      );
-    },
     iconRender() {
       return <CloseCircleFilledIcon size="24px" style={{ color: 'rgb(227, 77, 89)', marginRight: '8px' }} />;
     },

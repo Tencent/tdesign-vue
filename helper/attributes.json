@@ -1505,7 +1505,7 @@
   },
   "t-checkbox/click": {
     "type": "event",
-    "description": "trigger on click\n\n点击时出发，一般用于外层阻止冒泡场景\n\n[docs](https://tdesign.tencent.com/vue/components/checkbox?tab=api#checkbox-events)"
+    "description": "trigger on click\n\n点击时触发，一般用于外层阻止冒泡场景\n\n[docs](https://tdesign.tencent.com/vue/components/checkbox?tab=api#checkbox-events)"
   },
   "t-checkbox-group/max": {
     "type": "Number",
@@ -2148,13 +2148,13 @@
     "type": "event",
     "description": "年份切换发生变化时触发\n\n[docs](https://tdesign.tencent.com/vue/components/date-range-picker-panel?tab=api#daterangepickerpanel-events)"
   },
-  "t-description-item/label": {
+  "t-descriptions-item/label": {
     "type": "String|TNode",
-    "description": "label of description item\n\n描述项字段名\n\n[docs](https://tdesign.tencent.com/vue/components/description-item?tab=api#descriptionitem-props)"
+    "description": "label of description item\n\n描述项字段名\n\n[docs](https://tdesign.tencent.com/vue/components/descriptions-item?tab=api#descriptionsitem-props)"
   },
-  "t-description-item/span": {
+  "t-descriptions-item/span": {
     "type": "Number",
-    "description": "width count\n\n占用的宽度数量\n\ndefault: 1\n\n[docs](https://tdesign.tencent.com/vue/components/description-item?tab=api#descriptionitem-props)"
+    "description": "width count\n\n占用的宽度数量\n\ndefault: 1\n\n[docs](https://tdesign.tencent.com/vue/components/descriptions-item?tab=api#descriptionsitem-props)"
   },
   "t-descriptions/bordered": {
     "type": "Boolean",
@@ -2166,7 +2166,7 @@
   },
   "t-descriptions/columns": {
     "type": "Number",
-    "description": "count of DescriptionItem in one row\n\n一行 DescriptionItem 的数量\n\ndefault: 2\n\n[docs](https://tdesign.tencent.com/vue/components/descriptions?tab=api#descriptions-props)"
+    "description": "count of DescriptionsItem in one row\n\n一行 DescriptionsItem 的数量\n\ndefault: 2\n\n[docs](https://tdesign.tencent.com/vue/components/descriptions?tab=api#descriptions-props)"
   },
   "t-descriptions/content-align": {
     "type": "String",
@@ -4572,11 +4572,11 @@
   },
   "t-radio/click": {
     "type": "event",
-    "description": "trigger on click\n\n点击时出发，一般用于外层阻止冒泡场景\n\n[docs](https://tdesign.tencent.com/vue/components/radio?tab=api#radio-events)"
+    "description": "trigger on click\n\n点击时触发，一般用于外层阻止冒泡场景\n\n[docs](https://tdesign.tencent.com/vue/components/radio?tab=api#radio-events)"
   },
   "t-radio-button/click": {
     "type": "event",
-    "description": "trigger on click\n\n点击时出发，一般用于外层阻止冒泡场景\n\n[docs](https://tdesign.tencent.com/vue/components/radio?tab=api#radio-events)"
+    "description": "trigger on click\n\n点击时触发，一般用于外层阻止冒泡场景\n\n[docs](https://tdesign.tencent.com/vue/components/radio?tab=api#radio-events)"
   },
   "t-radio-group/allow-uncheck": {
     "type": "Boolean",
