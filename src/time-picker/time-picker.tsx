@@ -133,6 +133,7 @@ export default defineComponent({
               onClear: this.handleClear,
               onBlur: this.handleInputBlur,
               onInputChange: this.handleInputChange,
+              borderless: this.borderless,
               disabled: this.isDisabled,
               clearable: this.clearable,
               allowInput: this.allowInput,

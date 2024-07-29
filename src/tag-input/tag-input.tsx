@@ -193,6 +193,7 @@ export default defineComponent({
     return (
       <TInput
         ref="tagInputRef"
+        borderless={this.borderless}
         readonly={readonly}
         inputClass={this.inputProps?.inputClass} // 展开无效 需直接透传
         value={this.tInputValue}

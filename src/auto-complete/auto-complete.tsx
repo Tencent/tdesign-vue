@@ -154,6 +154,7 @@ export default defineComponent({
         clearable={this.clearable}
         props={this.innerInputProps}
         scopedSlots={this.$scopedSlots}
+        borderless={this.borderless}
       />
     );
     // 联想词列表
