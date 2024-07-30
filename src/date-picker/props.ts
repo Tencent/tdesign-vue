@@ -10,6 +10,8 @@ import { PropType } from 'vue';
 export default {
   /** 是否允许输入日期 */
   allowInput: Boolean,
+  /** 无边框模式 */
+  borderless: Boolean,
   /** 是否显示清除按钮 */
   clearable: Boolean,
   /** 时间选择器默认值，当 value/defaultValue 未设置值时有效 */

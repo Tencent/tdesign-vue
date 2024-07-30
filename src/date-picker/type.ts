@@ -18,6 +18,11 @@ export interface TdDatePickerProps {
    */
   allowInput?: boolean;
   /**
+   * 无边框模式
+   * @default false
+   */
+  borderless?: boolean;
+  /**
    * 是否显示清除按钮
    * @default false
    */
@@ -53,7 +58,7 @@ export interface TdDatePickerProps {
    */
   inputProps?: InputProps;
   /**
-   * 左侧内容
+   * 左侧文本
    */
   label?: string | TNode;
   /**
@@ -151,6 +156,11 @@ export interface TdDateRangePickerProps {
    * @default false
    */
   allowInput?: boolean;
+  /**
+   * 无边框模式
+   * @default false
+   */
+  borderless?: boolean;
   /**
    * 是否显示清除按钮
    * @default false
