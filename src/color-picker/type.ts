@@ -11,6 +11,11 @@ import { TNode, SizeEnum } from '../common';
 
 export interface TdColorPickerProps {
   /**
+   * 无边框模式
+   * @default false
+   */
+  borderless?: boolean;
+  /**
    * 是否可清空
    * @default false
    */
@@ -22,7 +27,7 @@ export interface TdColorPickerProps {
   closeBtn?: string | boolean | TNode;
   /**
    * 颜色模式选择。同时支持单色和渐变两种模式，可仅使用单色或者渐变其中一种模式，也可以同时使用。`monochrome` 表示单色，`linear-gradient` 表示渐变色
-   * @default ()=> ['monochrome', 'linear-gradient']
+   * @default ["monochrome", "linear-gradient"]
    */
   colorModes?: Array<'monochrome' | 'linear-gradient'>;
   /**
@@ -61,12 +66,12 @@ export interface TdColorPickerProps {
    * 最近使用的颜色。值为 [] 表示以组件内部的“最近使用颜色”为准，值长度大于 0 则以该值为准显示“最近使用颜色”。值为 null 则完全不显示“最近使用颜色”
    * @default []
    */
-  recentColors?: boolean | Array<string>;
+  recentColors?: boolean | Array<string> | null;
   /**
    * 最近使用的颜色。值为 [] 表示以组件内部的“最近使用颜色”为准，值长度大于 0 则以该值为准显示“最近使用颜色”。值为 null 则完全不显示“最近使用颜色”，非受控属性
    * @default []
    */
-  defaultRecentColors?: boolean | Array<string>;
+  defaultRecentColors?: boolean | Array<string> | null;
   /**
    * 透传 SelectInputProps 筛选器输入框组件全部属性
    */
@@ -84,7 +89,7 @@ export interface TdColorPickerProps {
   /**
    * 系统预设的颜色样例，值为 `null` 或 `[]` 则不显示系统色，值为 `undefined` 会显示组件内置的系统默认色
    */
-  swatchColors?: Array<string>;
+  swatchColors?: Array<string> | null;
   /**
    * 色值
    * @default ''

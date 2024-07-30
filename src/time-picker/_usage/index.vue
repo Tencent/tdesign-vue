@@ -2,7 +2,10 @@
 <template>
   <base-usage :code="usageCode" :config-list="configList" :panel-list="panelList" @PanelChange="onPanelChange">
     <template #timePicker="{ configProps }">
-      <t-timePicker v-bind="configProps" />
+      <t-time-picker v-bind="configProps" />
+    </template>
+    <template #timeRangePicker="{ configProps }">
+      <t-time-range-picker v-bind="configProps" />
     </template>
   </base-usage>
 </template>
@@ -10,15 +13,24 @@
 <script setup lang="jsx">
 /* eslint-disable */
 import { ref, onMounted } from 'vue';
-import configJson from './props.json';
+import timePickerConfigJson from './time-picker-props.json';
 
-const configList = ref(configJson);
-const panelList = [{ label: 'timePicker', value: 'timePicker' }];
+import timeRangePickerConfigJson from './time-range-picker-props.json';
 
-const usageCodeMap = { timePicker: '<t-timePicker v-bind="configProps" />' };
+const configList = ref(timePickerConfigJson);
+const panelList = [
+  { label: 'timePicker', value: 'timePicker', config: timePickerConfigJson },
+  { label: 'timeRangePicker', value: 'timeRangePicker', config: timeRangePickerConfigJson },
+];
+
+const usageCodeMap = {
+  timePicker: '<t-time-picker v-bind="configProps" />',
+  timeRangePicker: '<t-time-range-picker v-bind="configProps" />',
+};
 const usageCode = ref(`<template>${usageCodeMap[panelList[0].value].trim()}</template>`);
 
 function onPanelChange(panel) {
+  configList.value = panelList.find((item) => item.value === panel).config;
   usageCode.value = `<template>${usageCodeMap[panel].trim()}</template>`;
 }
 </script>

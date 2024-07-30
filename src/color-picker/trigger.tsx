@@ -17,6 +17,10 @@ export default defineComponent({
   },
   inheritAttrs: false,
   props: {
+    borderless: {
+      type: Boolean,
+      default: false,
+    },
     color: {
       type: String,
       default: '',
@@ -98,6 +102,7 @@ export default defineComponent({
         <TInput
           scopedSlots={inputSlots}
           v-model={this.value}
+          borderless={this.borderless}
           clearable={this.clearable}
           disabled={this.disabled}
           onBlur={this.handleChange}

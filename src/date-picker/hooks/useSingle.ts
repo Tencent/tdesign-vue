@@ -38,6 +38,7 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
   const inputProps = computed(() => ({
     ...props.inputProps,
     ref: inputRef,
+    borderless: props.borderless,
     size: props.size,
     prefixIcon: props.prefixIcon,
     placeholder: props.placeholder || global.value.placeholder[props.mode],
