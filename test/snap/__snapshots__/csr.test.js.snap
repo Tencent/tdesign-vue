@@ -131503,12 +131503,9 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/collapsed.vue 1
             class="t-input__prefix"
           >
             <div
-              class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
-              <span
-                class="t-tag--text"
-                style="max-width: 300px;"
-              >
+              <span>
                 广州市
               </span>
               <svg
@@ -131857,12 +131854,9 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/multiple.vue 1`
         class="t-input__prefix"
       >
         <div
-          class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
+          class="t-tag t-tag--default t-tag--dark t-tag--close"
         >
-          <span
-            class="t-tag--text"
-            style="max-width: 300px;"
-          >
+          <span>
             tdesign-vue
           </span>
           <svg
@@ -131879,12 +131873,9 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/multiple.vue 1`
           </svg>
         </div>
         <div
-          class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
+          class="t-tag t-tag--default t-tag--dark t-tag--close"
         >
-          <span
-            class="t-tag--text"
-            style="max-width: 300px;"
-          >
+          <span>
             tdesign-react
           </span>
           <svg
@@ -131901,12 +131892,9 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/multiple.vue 1`
           </svg>
         </div>
         <div
-          class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
+          class="t-tag t-tag--default t-tag--dark t-tag--close"
         >
-          <span
-            class="t-tag--text"
-            style="max-width: 300px;"
-          >
+          <span>
             tdesign-miniprogram
           </span>
           <svg
@@ -132272,12 +132260,9 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/valuetype.vue 1
             class="t-input__prefix"
           >
             <div
-              class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
-              <span
-                class="t-tag--text"
-                style="max-width: 300px;"
-              >
+              <span>
                 广州市
               </span>
               <svg
@@ -132294,12 +132279,9 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/valuetype.vue 1
               </svg>
             </div>
             <div
-              class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
+              class="t-tag t-tag--default t-tag--dark t-tag--close"
             >
-              <span
-                class="t-tag--text"
-                style="max-width: 300px;"
-              >
+              <span>
                 深圳市
               </span>
               <svg
