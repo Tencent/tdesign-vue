@@ -5,6 +5,38 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.9.8 `2024-07-11` 
+### 🚀 Features
+- `Icon`: 新增有序列表图标 `list-numbered`，优化`lock-off`图标的绘制路径 @DOUBLE-DENG ([icon#9f4acfd](https://github.com/Tencent/tdesign-icons/commit/9f4acfdda58f84f9bca71a22f033e27127dd26db))
+### 🐞 Bug Fixes
+- `Icon`: 修复图标`chart-column`的命名错误问题，如果使用旧错误命名请注意 @uyarn ([#3229](https://github.com/Tencent/tdesign-vue/pull/3229))
+- `Tree`: 修复树形组件错误过滤 `value` 为 `0` 的节点的问题 @uyarn ([#3233](https://github.com/Tencent/tdesign-vue/pull/3233))
+- `Input`: 修复禁用状态下仍可以切换明文密文的问题 @jby0107 ([#3230](https://github.com/Tencent/tdesign-vue/pull/3230))
+- `Input`: 修复禁用状态下超出问题文字长度异常的问题 @uyarn ([common#1831](https://github.com/Tencent/tdesign-common/pull/1831))
+- `Menu`: 修复样式文件多余的空格导致部分场景打包异常的问题 @liweijie0812 ([common#1828](https://github.com/Tencent/tdesign-common/pull/1828))
+
+## 🌈 1.9.7 `2024-06-28` 
+### 🐞 Bug Fixes
+- `Dialog`: 修复 `Dialog` 组件在 `SSR` 环境下的使用问题 @qqw78901 ([#3219](https://github.com/Tencent/tdesign-vue/pull/3219))
+
+## 🌈 1.9.6 `2024-06-26` 
+### 🐞 Bug Fixes
+- `Tree`: 修复 `1.9.5` 版本使用拖拽功能的报错问题 @uyarn ([#3212](https://github.com/Tencent/tdesign-vue/pull/3212))
+
+## 🌈 1.9.5 `2024-06-20` 
+### 🚀 Features
+- `Transfer`: 修复通过 `Function` 方法使用 `Tree` 属性的能力 @sinbadmaster ([#3185](https://github.com/Tencent/tdesign-vue/pull/3185))
+- `Tabs`
+   - 支持通过滚轮或者触摸板进行滚动的操作 @oljc ([#3187](https://github.com/Tencent/tdesign-vue/pull/3187))
+   - 新增 `scrollPosition` API, 支持自定义选中滑块滚动最终停留的位置 @oljc ([#3196](https://github.com/Tencent/tdesign-vue/pull/3196))
+- `DatePicker`: 优化日期区间选择器头部区间的变化逻辑，选择后左侧区间大于右侧区间，则默认调整为左侧区间始终比右侧区间小 1 @uyarn ([#3207](https://github.com/Tencent/tdesign-vue/pull/3207))
+### 🐞 Bug Fixes
+- `Tree`: 新增 `allowDrop` API，支持拖放限制的能力，具体参考相关示例 @TabSpace ([#3206](https://github.com/Tencent/tdesign-vue/pull/3206))
+- `Cascader`: 修复无children选项点击时仍然显示之前列表的问题 @1379255913 ([#3201](https://github.com/Tencent/tdesign-vue/pull/3201))
+- `InputNumber`: 修复 `allowInputOverLimit=false` 大小值判断时，`value` 为 `undefined` 时，会出现显示 Infinity 的问题 @HaixingOoO
+- `SelectInput`: 修复多选情况下设置 `allowInput` 为 true 无法输入的问题 @hy212 ([#3195](https://github.com/Tencent/tdesign-vue/pull/3195))
+
+
 ## 🌈 1.9.4 `2024-05-16`
 ### 🚀 Features
 - `Input`: 新增 `borderless` 无边框模式输入框 @uyarn ([#3162](https://github.com/Tencent/tdesign-vue/pull/3162))

@@ -1,5 +1,5 @@
 import { computed, defineComponent, SetupContext } from '@vue/composition-api';
-import { UploadIcon } from 'tdesign-icons-vue';
+import { UploadIcon as TdUploadIcon } from 'tdesign-icons-vue';
 import useFormDisabled from '../hooks/useFormDisabled';
 import props from './props';
 import NormalFile from './themes/normal-file';
@@ -12,6 +12,8 @@ import { CommonDisplayFileProps, UploadProps } from './interface';
 import { UploadDragEvents } from './hooks/useDrag';
 import CustomFile from './themes/custom-file';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
+
+import useGlobalIcon from '../hooks/useGlobalIcon';
 
 export default defineComponent({
   name: 'TUpload',
@@ -40,6 +42,9 @@ export default defineComponent({
     } = uploadData;
 
     const tDisabled = computed<boolean>(() => formDisabled.value || innerDisabled.value);
+    const icons = useGlobalIcon({
+      UploadIcon: TdUploadIcon,
+    });
 
     const commonDisplayFileProps = computed<CommonDisplayFileProps>(() => ({
       accept: props.accept,
@@ -97,11 +102,13 @@ export default defineComponent({
       uploadClasses,
       sizeOverLimitMessage,
       tDisabled,
+      icons,
     };
   },
 
   methods: {
     renderTrigger() {
+      const { UploadIcon } = this.icons;
       const getDefaultTrigger = () => {
         if (this.theme === 'file-input') {
           return (
