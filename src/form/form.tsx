@@ -13,7 +13,7 @@ import {
 import props from './props';
 import { FORM_CONTROL_COMPONENTS } from './const';
 import { emitEvent } from '../utils/event';
-import FormItem, { FormItemValidateResult } from './form-item';
+import FormItem, { FormItemValidateResult, getFormItemClassName } from './form-item';
 import { FormResetEvent, FormSubmitEvent, ClassName } from '../common';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
@@ -75,7 +75,7 @@ export default mixins(classPrefixMixins).extend({
       if (r === true) return;
       const [firstKey] = Object.keys(r);
       if (this.scrollToFirstError) {
-        this.scrollTo(`.${this.componentName}-item__${firstKey?.replace(/\[|\]|\.|\'|\"/g, '')}`);
+        this.scrollTo(`.${getFormItemClassName(this.componentName, firstKey)}`);
       }
       return r[firstKey][0].message;
     },

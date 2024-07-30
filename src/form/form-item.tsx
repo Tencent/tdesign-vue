@@ -48,6 +48,11 @@ export interface FormItemConstructor extends Vue {
   form: FormInstance;
 }
 
+export function getFormItemClassName(componentName: string, name?: string) {
+  if (!name) return '';
+  return `${componentName}-item__${name}`.replace(/(\[|\]\.|'|")/g, '_');
+}
+
 export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('form'), getGlobalIconMixins()).extend({
   name: 'TFormItem',
 
@@ -89,7 +94,7 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
     classes(): ClassName {
       return [
         `${this.componentName}__item`,
-        `${this.componentName}-item__${this.name?.replace(/\[|\]|\.|\'|\"/g, '') || ''}`,
+        getFormItemClassName(this.componentName, this.name),
         {
           [`${this.componentName}__item-with-help`]: this.help,
           [`${this.componentName}__item-with-extra`]: this.extraNode,
@@ -299,7 +304,6 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
       };
       // 过滤不需要校验的规则
       result.rules = trigger === 'all' ? this.innerRules : this.innerRules.filter((item) => (item.trigger || 'change') === trigger);
-      console.log(JSON.stringify(result.rules))
       if (this.innerRules.length && !result.rules.length) {
         return result;
       }
