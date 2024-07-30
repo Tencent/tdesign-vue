@@ -75,7 +75,7 @@ export default mixins(classPrefixMixins).extend({
       if (r === true) return;
       const [firstKey] = Object.keys(r);
       if (this.scrollToFirstError) {
-        this.scrollTo(`.${this.componentName}-item__${firstKey}`);
+        this.scrollTo(`.${this.componentName}-item__${firstKey?.replace(/\[|\]|\.|\'|\"/g, '')}`);
       }
       return r[firstKey][0].message;
     },

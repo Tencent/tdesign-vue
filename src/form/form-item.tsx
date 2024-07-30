@@ -89,7 +89,7 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
     classes(): ClassName {
       return [
         `${this.componentName}__item`,
-        `${this.componentName}-item__${this.name || ''}`,
+        `${this.componentName}-item__${this.name?.replace(/\[|\]|\.|\'|\"/g, '') || ''}`,
         {
           [`${this.componentName}__item-with-help`]: this.help,
           [`${this.componentName}__item-with-extra`]: this.extraNode,
@@ -299,6 +299,7 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
       };
       // 过滤不需要校验的规则
       result.rules = trigger === 'all' ? this.innerRules : this.innerRules.filter((item) => (item.trigger || 'change') === trigger);
+      console.log(JSON.stringify(result.rules))
       if (this.innerRules.length && !result.rules.length) {
         return result;
       }
