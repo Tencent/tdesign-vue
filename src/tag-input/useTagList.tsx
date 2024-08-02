@@ -149,7 +149,7 @@ export default function useTagList(props: TdTagInputProps, context: SetupContext
       });
       list.push(
         more ?? (
-          <Tag key="more" size={size.value}>
+          <Tag key="more" size={size.value}  props={tagProps.value}>
             +{len}
           </Tag>
         ),
