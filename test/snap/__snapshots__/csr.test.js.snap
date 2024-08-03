@@ -16518,7 +16518,7 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/value.vue 1`] = `
       class="t-form t-form-inline"
     >
       <div
-        class="t-form__item t-form-item__"
+        class="t-form__item"
       >
         <div
           class="t-form__label t-form__label--right"
@@ -16556,7 +16556,7 @@ exports[`csr snapshot test > csr test ./src/calendar/_example/value.vue 1`] = `
         </div>
       </div>
       <div
-        class="t-form__item t-form-item__"
+        class="t-form__item"
       >
         <div
           class="t-form__label t-form__label--right"
@@ -51116,7 +51116,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/base.vue 1`] = `
     </div>
   </div>
   <div
-    class="t-form__item t-form-item__"
+    class="t-form__item"
     data-v-2450e2c3=""
     style="margin-left: 100px;"
   >
@@ -51704,7 +51704,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/clear-validate.vue 1`]
     </div>
   </div>
   <div
-    class="t-form__item t-form-item__"
+    class="t-form__item"
     data-v-6f67d4f0=""
     style="margin-left: 100px;"
   >
@@ -51947,7 +51947,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/custom-validator.vue 1
     </div>
   </div>
   <div
-    class="t-form__item t-form-item__"
+    class="t-form__item"
     style="margin-left: 100px;"
   >
     <div
@@ -52769,7 +52769,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
         </div>
       </div>
       <div
-        class="t-form__item t-form-item__"
+        class="t-form__item"
         style="margin-left: 100px;"
       >
         <div
@@ -53411,7 +53411,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/error-message.vue 1`] 
         </div>
       </div>
       <div
-        class="t-form__item t-form-item__"
+        class="t-form__item"
         data-v-e6f62b80=""
         style="margin-left: 100px;"
       >
@@ -53754,7 +53754,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/login.vue 1`] = `
         </div>
       </div>
       <div
-        class="t-form__item t-form-item__"
+        class="t-form__item"
       >
         <div
           class="t-form__controls"
@@ -54008,7 +54008,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/reset.vue 1`] = `
         </div>
       </div>
       <div
-        class="t-form__item t-form-item__"
+        class="t-form__item"
         style="margin-left: 100px;"
       >
         <div
@@ -54399,7 +54399,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/size.vue 1`] = `
         </div>
       </div>
       <div
-        class="t-form__item t-form-item__"
+        class="t-form__item"
         style="margin-left: 100px;"
       >
         <div
@@ -54614,7 +54614,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
             class="t-space-item"
           >
             <div
-              class="t-form__item t-form-item__students[0].name"
+              class="t-form__item t-form-item__students_0_name"
             >
               <div
                 class="t-form__label t-form__label--required t-form__label--right"
@@ -54656,7 +54656,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
             class="t-space-item"
           >
             <div
-              class="t-form__item t-form-item__students[0].courseType"
+              class="t-form__item t-form-item__students_0_courseType"
             >
               <div
                 class="t-form__label t-form__label--required t-form__label--right"
@@ -54727,7 +54727,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
             class="t-space-item"
           >
             <div
-              class="t-form__item t-form-item__students[0].course"
+              class="t-form__item t-form-item__students_0_course"
             >
               <div
                 class="t-form__label t-form__label--required t-form__label--right"
@@ -54893,7 +54893,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
             class="t-space-item"
           >
             <div
-              class="t-form__item t-form-item__"
+              class="t-form__item"
               style="margin-left: 100px;"
             >
               <div
@@ -54953,7 +54953,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
             class="t-space-item"
           >
             <div
-              class="t-form__item t-form-item__students[1].name"
+              class="t-form__item t-form-item__students_1_name"
             >
               <div
                 class="t-form__label t-form__label--required t-form__label--right"
@@ -54995,7 +54995,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
             class="t-space-item"
           >
             <div
-              class="t-form__item t-form-item__students[1].courseType"
+              class="t-form__item t-form-item__students_1_courseType"
             >
               <div
                 class="t-form__label t-form__label--required t-form__label--right"
@@ -55066,7 +55066,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
             class="t-space-item"
           >
             <div
-              class="t-form__item t-form-item__students[1].course"
+              class="t-form__item t-form-item__students_1_course"
             >
               <div
                 class="t-form__label t-form__label--required t-form__label--right"
@@ -55232,7 +55232,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
             class="t-space-item"
           >
             <div
-              class="t-form__item t-form-item__"
+              class="t-form__item"
               style="margin-left: 100px;"
             >
               <div
@@ -55430,7 +55430,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-message.vue 1
     </div>
   </div>
   <div
-    class="t-form__item t-form-item__"
+    class="t-form__item"
     style="margin-left: 100px;"
   >
     <div
@@ -56244,7 +56244,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
     </div>
   </div>
   <div
-    class="t-form__item t-form-item__"
+    class="t-form__item"
     data-v-064ce350=""
     style="margin-left: 100px;"
   >
@@ -56782,7 +56782,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator-status.vue 1
         </div>
       </div>
       <div
-        class="t-form__item t-form-item__"
+        class="t-form__item"
         style="margin-left: 80px;"
       >
         <div
@@ -65317,7 +65317,7 @@ exports[`csr snapshot test > csr test ./src/input-number/_example/status.vue 1`]
     <!---->
     <!---->
     <div
-      class="t-form__item t-form-item__"
+      class="t-form__item"
       data-v-77658c68=""
     >
       <div
@@ -65403,7 +65403,7 @@ exports[`csr snapshot test > csr test ./src/input-number/_example/status.vue 1`]
       data-v-77658c68=""
     />
     <div
-      class="t-form__item t-form-item__"
+      class="t-form__item"
       data-v-77658c68=""
     >
       <div
@@ -65489,7 +65489,7 @@ exports[`csr snapshot test > csr test ./src/input-number/_example/status.vue 1`]
       data-v-77658c68=""
     />
     <div
-      class="t-form__item t-form-item__"
+      class="t-form__item"
       data-v-77658c68=""
     >
       <div
@@ -65575,7 +65575,7 @@ exports[`csr snapshot test > csr test ./src/input-number/_example/status.vue 1`]
       data-v-77658c68=""
     />
     <div
-      class="t-form__item t-form-item__"
+      class="t-form__item"
       data-v-77658c68=""
     >
       <div
@@ -109619,7 +109619,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/loading.vue 1`] = 
             class="t-form"
           >
             <div
-              class="t-form__item t-form-item__"
+              class="t-form__item"
               style="margin-bottom: 5px;"
             >
               <div
