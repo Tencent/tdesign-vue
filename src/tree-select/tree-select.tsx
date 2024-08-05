@@ -161,7 +161,6 @@ export default defineComponent({
               size: this.size,
             },
             tagProps: {
-              maxWidth: 300,
               ...(this.tagProps as TdTreeSelectProps['tagProps']),
             },
             label: this.renderLabel,
