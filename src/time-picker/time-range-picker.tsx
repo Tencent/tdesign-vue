@@ -181,6 +181,7 @@ export default defineComponent({
               tips: this.tips,
               rangeInputProps: {
                 size: this.size,
+                borderless: this.borderless,
                 clearable: this.clearable,
                 class: this.inputClasses,
                 // value: this.isShowPanel ? this.currentValue : this.innerValue ?? undefined,

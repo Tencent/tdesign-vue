@@ -104,6 +104,7 @@ export default defineComponent({
             this,
             'default',
             <default-trigger
+              borderless={this.borderless}
               color={this.innerValue}
               disabled={disabled}
               clearable={this.clearable}

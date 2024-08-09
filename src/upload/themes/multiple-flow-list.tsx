@@ -7,12 +7,12 @@ import {
   CheckCircleFilledIcon as TdCheckCircleFilledIcon,
   ErrorCircleFilledIcon as TdErrorCircleFilledIcon,
   TimeFilledIcon as TdTimeFilledIcon,
-  FileExcelIcon,
-  FilePdfIcon,
-  FileWordIcon,
-  FilePowerpointIcon,
-  FileIcon,
-  VideoIcon,
+  FileExcelIcon as TdFileExcelIcon,
+  FilePdfIcon as TdFilePdfIcon,
+  FileWordIcon as TdFileWordIcon,
+  FilePowerpointIcon as TdFilePowerpointIcon,
+  FileIcon as TdFileIcon,
+  VideoIcon as TdVideoIcon,
 } from 'tdesign-icons-vue';
 import isFunction from 'lodash/isFunction';
 import isObject from 'lodash/isObject';
@@ -81,6 +81,12 @@ export default defineComponent({
       CheckCircleFilledIcon: TdCheckCircleFilledIcon,
       ErrorCircleFilledIcon: TdErrorCircleFilledIcon,
       TimeFilledIcon: TdTimeFilledIcon,
+      FileExcelIcon: TdFileExcelIcon,
+      FilePdfIcon: TdFilePdfIcon,
+      FileWordIcon: TdFileWordIcon,
+      FilePowerpointIcon: TdFilePowerpointIcon,
+      FileIcon: TdFileIcon,
+      VideoIcon: TdVideoIcon,
     });
 
     const drag = useDrag(props.dragEvents, accept);
@@ -371,6 +377,10 @@ export default defineComponent({
     },
 
     getFileThumbnailIcon(fileType: string) {
+      const {
+        FilePdfIcon, FileExcelIcon, FileWordIcon, FilePowerpointIcon, VideoIcon, FileIcon,
+      } = this.icons;
+
       if (FILE_PDF_REGEXP.test(fileType)) {
         return <FilePdfIcon />;
       }

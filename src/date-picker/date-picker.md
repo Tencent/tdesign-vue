@@ -1,11 +1,13 @@
 :: BASE_DOC ::
 
 ## API
+
 ### DatePicker Props
 
-名称 | 类型 | 默认值 | 说明 | 必传
+名称 | 类型 | 默认值 | 描述 | 必传
 -- | -- | -- | -- | --
 allowInput | Boolean | false | 是否允许输入日期 | N
+borderless | Boolean | false | 无边框模式 | N
 clearable | Boolean | false | 是否显示清除按钮 | N
 defaultTime | String | '00:00:00' | 时间选择器默认值，当 value/defaultValue 未设置值时有效 | N
 disableDate | Object / Array / Function | - | 禁用日期，示例：['A', 'B'] 表示日期 A 和日期 B 会被禁用。`{ from: 'A', to: 'B' }` 表示在 A 到 B 之间的日期会被禁用。`{ before: 'A', after: 'B' }` 表示在 A 之前和在 B 之后的日期都会被禁用。其中 A = '2021-01-01'，B = '2021-02-01'。值类型为 Function 则表示返回值为 true 的日期会被禁用。TS 类型：`DisableDate` `type DisableDate = Array<DateValue> \| DisableDateObj \| ((date: DateValue) => boolean)` `interface DisableDateObj { from?: string; to?: string; before?: string; after?: string }`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
@@ -47,11 +49,13 @@ focus | `(context: { value: DateValue; e: FocusEvent })` | 输入框获得焦点
 pick | `(value: DateValue)` | 面板选中值后触发
 preset-click | `(context: { preset: PresetDate, e: MouseEvent })` | 点击预设按钮后触发
 
+
 ### DateRangePicker Props
 
-名称 | 类型 | 默认值 | 说明 | 必传
+名称 | 类型 | 默认值 | 描述 | 必传
 -- | -- | -- | -- | --
 allowInput | Boolean | false | 是否允许输入日期 | N
+borderless | Boolean | false | 无边框模式 | N
 clearable | Boolean | false | 是否显示清除按钮 | N
 defaultTime | Array | ["00:00:00", "23:59:59"] | 时间选择器默认值，当 value/defaultValue 未设置值时有效。TS 类型：`string[]` | N
 disableDate | Object / Array / Function | - | 禁用日期，示例：['A', 'B'] 表示日期 A 和日期 B 会被禁用。{ from: 'A', to: 'B' } 表示在 A 到 B 之间的日期会被禁用。{ before: 'A', after: 'B' } 表示在 A 之前和在 B 之后的日期都会被禁用。其中 A = '2021-01-01'，B = '2021-02-01'。值类型为 Function 则表示返回值为 true 的日期会被禁用。TS 类型：`DisableRangeDate` `type DisableRangeDate = Array<DateValue> \| DisableDateObj \| ((context: { date: DateRangeValue; partial: DateRangePickerPartial }) => boolean)` `interface DisableDateObj { from?: string; to?: string; before?: string; after?: string }` `type DateRangePickerPartial = 'start' \| 'end'`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
@@ -97,9 +101,10 @@ input | `(context: { input: string; value: DateRangeValue; partial: DateRangePic
 pick | `(value: DateValue, context: PickContext)` | 选中日期时触发，可能是开始日期，也可能是结束日期，第二个参数可以区分是开始日期或是结束日期。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts)。<br/>`interface PickContext { e: MouseEvent; partial: DateRangePickerPartial }`<br/>
 preset-click | `(context: { preset: PresetDate, e: MouseEvent })` | 点击预设按钮后触发
 
+
 ### DatePickerPanel Props
 
-名称 | 类型 | 默认值 | 说明 | 必传
+名称 | 类型 | 默认值 | 描述 | 必传
 -- | -- | -- | -- | --
 defaultTime | String | '00:00:00' | 时间选择器默认值，当 value/defaultValue 未设置值时有效 | N
 `Pick<DatePickerProps, 'value' \| 'defaultValue' \| 'disableDate' \| 'enableTimePicker' \| 'firstDayOfWeek' \| 'format' \| 'mode' \| 'presets' \| 'presetsPlacement' \| 'timePickerProps'>` | \- | - | 继承 `Pick<DatePickerProps, 'value' \| 'defaultValue' \| 'disableDate' \| 'enableTimePicker' \| 'firstDayOfWeek' \| 'format' \| 'mode' \| 'presets' \| 'presetsPlacement' \| 'timePickerProps'>` 中的全部属性 | N
@@ -125,9 +130,10 @@ preset-click | `(context: { preset: PresetDate, e: MouseEvent })` | 点击预设
 time-change | `(context: { time: string, date: Date, trigger: DatePickerTimeChangeTrigger, e?: MouseEvent })` | 时间切换发生变化时触发。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts)。<br/>`type DatePickerTimeChangeTrigger = 'time-hour' \| 'time-minute' \| 'time-second'`<br/>
 year-change | `(context: { year: number, date: Date, trigger: DatePickerYearChangeTrigger, e?: MouseEvent })` | 年份切换发生变化时触发。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts)。<br/>`type DatePickerYearChangeTrigger = 'year-select' \| 'year-arrow-next' \| 'year-arrow-previous' \| 'today'`<br/>
 
+
 ### DateRangePickerPanel Props
 
-名称 | 类型 | 默认值 | 说明 | 必传
+名称 | 类型 | 默认值 | 描述 | 必传
 -- | -- | -- | -- | --
 defaultTime | Array | ["00:00:00", "23:59:59"] | 时间选择器默认值，当 value/defaultValue 未设置值时有效。TS 类型：`string[]` | N
 `Pick<DateRangePickerProps, 'value'\| 'defaultValue' \| 'disableDate' \| 'enableTimePicker' \| 'firstDayOfWeek' \| 'format' \| 'mode' \| 'presets' \| 'presetsPlacement' \| 'panelPreselection' \| 'timePickerProps'>` | \- | - | 继承 `Pick<DateRangePickerProps, 'value'\| 'defaultValue' \| 'disableDate' \| 'enableTimePicker' \| 'firstDayOfWeek' \| 'format' \| 'mode' \| 'presets' \| 'presetsPlacement' \| 'panelPreselection' \| 'timePickerProps'>` 中的全部属性 | N

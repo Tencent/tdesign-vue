@@ -10,6 +10,8 @@ import { PropType } from 'vue';
 export default {
   /** 是否允许直接输入时间 */
   allowInput: Boolean,
+  /** 无边框模式 */
+  borderless: Boolean,
   /** 是否允许清除选中值 */
   clearable: Boolean,
   /** 禁用时间项的配置函数 */
@@ -17,7 +19,10 @@ export default {
     type: Function as PropType<TdTimePickerProps['disableTime']>,
   },
   /** 是否禁用组件 */
-  disabled: Boolean,
+  disabled: {
+    type: Boolean,
+    default: undefined,
+  },
   /** 用于格式化时间，[详细文档](https://day.js.org/docs/en/display/format) */
   format: {
     type: String,
@@ -75,7 +80,7 @@ export default {
   /** 选中值 */
   value: {
     type: String as PropType<TdTimePickerProps['value']>,
-    default: '',
+    default: undefined,
   },
   /** 选中值，非受控属性 */
   defaultValue: {
