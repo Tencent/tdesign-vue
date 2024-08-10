@@ -59,12 +59,9 @@ exports[`TreeSelect > :props > :defaultValue 1`] = `
         class="t-input__prefix"
       >
         <div
-          class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
+          class="t-tag t-tag--default t-tag--dark t-tag--close"
         >
-          <span
-            class="t-tag--text"
-            style="max-width: 300px;"
-          >
+          <span>
             深圳市
           </span>
           <svg
@@ -81,12 +78,9 @@ exports[`TreeSelect > :props > :defaultValue 1`] = `
           </svg>
         </div>
         <div
-          class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
+          class="t-tag t-tag--default t-tag--dark t-tag--close"
         >
-          <span
-            class="t-tag--text"
-            style="max-width: 300px;"
-          >
+          <span>
             广州市
           </span>
           <svg
@@ -477,12 +471,9 @@ exports[`TreeSelect > :props > :multiple 1`] = `
         class="t-input__prefix"
       >
         <div
-          class="t-tag t-tag--default t-tag--dark t-tag--ellipsis t-tag--close"
+          class="t-tag t-tag--default t-tag--dark t-tag--close"
         >
-          <span
-            class="t-tag--text"
-            style="max-width: 300px;"
-          />
+          <span />
           <svg
             class="t-icon t-icon-close t-tag__icon-close"
             fill="none"
