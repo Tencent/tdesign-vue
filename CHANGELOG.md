@@ -5,6 +5,24 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.9.9 `2024-08-15`
+
+### 🚀 Features
+
+- `Table`: 新增支持 API `thClassName`，用于需要在列表头自定义类名的场景 @theBestVayne ([#3238](https://github.com/Tencent/tdesign-vue/pull/3238))
+- `Borderless`: AutoComplete、ColorPicker、DatePicker、TagInput、TimePicker 、RangeInput、DateRangePicker 、TimeRangePicker 等组件新增 borderless API，支持无边框模式 @liweijie0812 ([#3249](https://github.com/Tencent/tdesign-vue/pull/3249))
+- `Description`: layout 类型定义调整为字符串多类型 @liweijie0812 ([#3252](https://github.com/Tencent/tdesign-vue/pull/3252))
+
+### 🐞 Bug Fixes
+
+- `Cascader`: 修复多选下点击清空按钮的功能异常及多次触发 `onChange` 事件的问题 @uyarn ([#3273](https://github.com/Tencent/tdesign-vue/pull/3273))
+- `Form`: 修复某种情况下 scrollToFirstError 失效的问题 @morningbao ([#3251](https://github.com/Tencent/tdesign-vue/pull/3251))
+- `InputNumber`: 修复小数点精度计算，以 0 开头的计算边界逻辑缺失导致计算错误的问题 @uyarn ([#3273](https://github.com/Tencent/tdesign-vue/pull/3273))
+- `Table`: 修复拖拽排序时，祖先节点内的顺序错误的问题 @uyarn ([#3273](https://github.com/Tencent/tdesign-vue/pull/3273))
+- `TagInput`: 修复`tagProps` 没有作用到折叠的标签上的缺陷 @uyarn ([#3260](https://github.com/Tencent/tdesign-vue/pull/3260))
+- `Upload`: 修复部分图标不支持全局替换的问题 @uyarn ([#3244](https://github.com/Tencent/tdesign-vue/pull/3244))
+
+
 ## 🌈 1.9.8 `2024-07-11` 
 ### 🚀 Features
 - `Icon`: 新增有序列表图标 `list-numbered`，优化`lock-off`图标的绘制路径 @DOUBLE-DENG ([icon#9f4acfd](https://github.com/Tencent/tdesign-icons/commit/9f4acfdda58f84f9bca71a22f033e27127dd26db))
