@@ -10,6 +10,8 @@ import { PropType } from 'vue';
 export default {
   /** 自动获取焦点 */
   autofocus: Boolean,
+  /** 无边框模式 */
+  borderless: Boolean,
   /** 是否允许清空 */
   clearable: Boolean,
   /** 触发显示联想词下拉框的元素，同 `triggerElement` */
@@ -17,7 +19,10 @@ export default {
     type: [String, Function] as PropType<TdAutoCompleteProps['default']>,
   },
   /** 是否禁用 */
-  disabled: Boolean,
+  disabled: {
+    type: Boolean,
+    default: undefined,
+  },
   /** 自定义过滤规则，用于对现有数据进行搜索过滤，判断是否过滤某一项数据。参数 `filterWords` 表示搜索词，`option`表示单个选项内容，返回值为 `true` 保留该选项，返回值为 `false` 则隐藏该选项。使用该方法时无需设置 `filterable` */
   filter: {
     type: Function as PropType<TdAutoCompleteProps['filter']>,

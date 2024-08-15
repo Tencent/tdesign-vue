@@ -140,24 +140,27 @@ export function handleRemoveTagEffect(
   } = cascaderContext;
 
   if (disabled) return;
-  const newValue = cloneDeep(value) as [];
-  const res = newValue.splice(index, 1);
-  const node = treeStore.getNodes(res[0])[0];
 
-  setValue(newValue, 'uncheck', node.getModel());
+  // index equal to undefined means to click clear button
+  if (index !== undefined) {
+    const newValue = cloneDeep(value) as [];
+    const res = newValue.splice(index, 1);
+    const node = treeStore.getNodes(res[0])[0];
 
-  const checked = node.setChecked(!node.isChecked());
-  // 处理不同数据类型
-  const resValue = valueType === 'single'
-    ? checked
-    : checked.map((val) => treeStore
-      .getNode(val)
-      .getPath()
-      .map((item) => item.value));
-
-  setValue(resValue, 'uncheck', node.getModel());
-  if (isFunction(onRemove)) {
-    onRemove({ value: checked, node: node as any });
+    const checked = node.setChecked(!node.isChecked());
+    // 处理不同数据类型
+    const resValue = valueType === 'single'
+      ? checked
+      : checked.map((val) => treeStore
+        .getNode(val)
+        .getPath()
+        .map((item) => item.value));
+    setValue(resValue, 'uncheck', node.getModel());
+    if (isFunction(onRemove)) {
+      onRemove({ value: checked, node: node as any });
+    }
+  } else if (isFunction(onRemove)) {
+    onRemove({ value, node: undefined });
   }
 }
 

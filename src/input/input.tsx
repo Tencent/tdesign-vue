@@ -98,6 +98,7 @@ export default mixins(
         name: this.name || undefined,
         type: this.renderType,
         unselectable: this.readonly ? 'on' : 'off',
+        spellCheck: this.spellCheck,
       });
     },
     inputClasses(): ClassName {

@@ -28,7 +28,7 @@ export default defineComponent({
   render() {
     const props = this.$props;
 
-    const label = (node: TdDescriptionItem, layout: LayoutEnum = LayoutEnum.HORIZONTAL) => {
+    const label = (node: TdDescriptionItem, layout: LayoutEnum = 'horizontal') => {
       const labelClass = [`${this.COMPONENT_NAME}__label`];
 
       let label = null;
@@ -41,7 +41,7 @@ export default defineComponent({
         const propsData: Record<string, any> = node.componentOptions.propsData || {};
         span = propsData.span;
       }
-      const labelSpan = layout === LayoutEnum.HORIZONTAL ? 1 : span;
+      const labelSpan = layout === 'horizontal' ? 1 : span;
 
       return (
         <td colspan={labelSpan} class={labelClass} {...{ style: this.descriptionsProps.labelStyle }}>
@@ -51,7 +51,7 @@ export default defineComponent({
       );
     };
 
-    const content = (node: TdDescriptionItem, layout: LayoutEnum = LayoutEnum.HORIZONTAL) => {
+    const content = (node: TdDescriptionItem, layout: LayoutEnum = 'horizontal') => {
       const contentClass = [`${this.COMPONENT_NAME}__content`];
 
       let content = null;
@@ -64,7 +64,7 @@ export default defineComponent({
         const propsData: Record<string, any> = node.componentOptions.propsData || {};
         span = propsData.span;
       }
-      const contentSpan = span > 1 && layout === LayoutEnum.HORIZONTAL ? span * 2 - 1 : span;
+      const contentSpan = span > 1 && layout === 'horizontal' ? span * 2 - 1 : span;
 
       return (
         <td colspan={contentSpan} class={contentClass} {...{ style: this.descriptionsProps.contentStyle }}>
@@ -80,8 +80,8 @@ export default defineComponent({
     const hh = (row: TdDescriptionItem[]) => <tr>{row.map((node) => [label(node), content(node)])}</tr>;
 
     const hv = (row: TdDescriptionItem[]) => [
-      <tr>{row.map((node) => label(node, LayoutEnum.VERTICAL))}</tr>,
-      <tr>{row.map((node) => content(node, LayoutEnum.VERTICAL))}</tr>,
+      <tr>{row.map((node) => label(node, 'vertical'))}</tr>,
+      <tr>{row.map((node) => content(node, 'vertical'))}</tr>,
     ];
 
     const vh = (row: TdDescriptionItem[]) => row.map((node) => (
@@ -94,13 +94,13 @@ export default defineComponent({
     const vv = (row: TdDescriptionItem[]) => row.map((node) => [<tr>{label(node)}</tr>, <tr>{content(node)}</tr>]);
 
     const renderRow = (row: TdDescriptionItem[]) => {
-      if (this.descriptionsProps.layout === LayoutEnum.HORIZONTAL) {
-        if (this.descriptionsProps.itemLayout === LayoutEnum.HORIZONTAL) {
+      if (this.descriptionsProps.layout === 'horizontal') {
+        if (this.descriptionsProps.itemLayout === 'horizontal') {
           return hh(row);
         }
         return hv(row);
       }
-      if (this.descriptionsProps.itemLayout === LayoutEnum.HORIZONTAL) {
+      if (this.descriptionsProps.itemLayout === 'horizontal') {
         return vh(row);
       }
       return vv(row);
