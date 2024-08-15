@@ -36401,8 +36401,10 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/input.vue 1
         width="1em"
       >
         <path
-          d="M5.5 7.5a6.5 6.5 0 0113 0V9h2v13h-17V9h2V7.5zm2 1.5h9V7.5a4.5 4.5 0 10-9 0V9zm-2 2v9h13v-9h-13zM9 14.5h6v2H9v-2z"
+          clip-rule="evenodd"
+          d="M12 3a4 4 0 00-4 4v3h8V7a4 4 0 00-4-4zm6 7V7A6 6 0 006 7v3H3.5v12h17V10H18zM5.5 12v8h13v-8h-13zM9 15h6v2H9v-2z"
           fill="currentColor"
+          fill-rule="evenodd"
         />
       </svg>
     </span>
@@ -39118,8 +39120,10 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/custom-icon.vue
                 width="1em"
               >
                 <path
-                  d="M5.5 7.5a6.5 6.5 0 0113 0V9h2v13h-17V9h2V7.5zm2 1.5h9V7.5a4.5 4.5 0 10-9 0V9zm-2 2v9h13v-9h-13zM9 14.5h6v2H9v-2z"
+                  clip-rule="evenodd"
+                  d="M12 3a4 4 0 00-4 4v3h8V7a4 4 0 00-4-4zm6 7V7A6 6 0 006 7v3H3.5v12h17V10H18zM5.5 12v8h13v-8h-13zM9 15h6v2H9v-2z"
                   fill="currentColor"
+                  fill-rule="evenodd"
                 />
               </svg>
             </span>
@@ -53714,8 +53718,10 @@ exports[`csr snapshot test > csr test ./src/form/_example/login.vue 1`] = `
                     width="1em"
                   >
                     <path
-                      d="M5.5 7.5a6.5 6.5 0 0113 0V9h2v13h-17V9h2V7.5zm2 1.5h9V7.5a4.5 4.5 0 10-9 0V9zm-2 2v9h13v-9h-13zM9 14.5h6v2H9v-2z"
+                      clip-rule="evenodd"
+                      d="M12 3a4 4 0 00-4 4v3h8V7a4 4 0 00-4-4zm6 7V7A6 6 0 006 7v3H3.5v12h17V10H18zM5.5 12v8h13v-8h-13zM9 15h6v2H9v-2z"
                       fill="currentColor"
+                      fill-rule="evenodd"
                     />
                   </svg>
                 </span>
@@ -62930,8 +62936,10 @@ exports[`csr snapshot test > csr test ./src/input/_example/password.vue 1`] = `
             width="1em"
           >
             <path
-              d="M5.5 7.5a6.5 6.5 0 0113 0V9h2v13h-17V9h2V7.5zm2 1.5h9V7.5a4.5 4.5 0 10-9 0V9zm-2 2v9h13v-9h-13zM9 14.5h6v2H9v-2z"
+              clip-rule="evenodd"
+              d="M12 3a4 4 0 00-4 4v3h8V7a4 4 0 00-4-4zm6 7V7A6 6 0 006 7v3H3.5v12h17V10H18zM5.5 12v8h13v-8h-13zM9 15h6v2H9v-2z"
               fill="currentColor"
+              fill-rule="evenodd"
             />
           </svg>
         </span>
@@ -62981,8 +62989,10 @@ exports[`csr snapshot test > csr test ./src/input/_example/password.vue 1`] = `
             width="1em"
           >
             <path
-              d="M5.5 7.5a6.5 6.5 0 0113 0V9h2v13h-17V9h2V7.5zm2 1.5h9V7.5a4.5 4.5 0 10-9 0V9zm-2 2v9h13v-9h-13zM9 14.5h6v2H9v-2z"
+              clip-rule="evenodd"
+              d="M12 3a4 4 0 00-4 4v3h8V7a4 4 0 00-4-4zm6 7V7A6 6 0 006 7v3H3.5v12h17V10H18zM5.5 12v8h13v-8h-13zM9 15h6v2H9v-2z"
               fill="currentColor"
+              fill-rule="evenodd"
             />
           </svg>
         </span>
