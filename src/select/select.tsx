@@ -451,9 +451,9 @@ export default defineComponent({
         nextTick(() => {
           const hoverDom = selectPanelRef.value?.$el.querySelector(
             `li.${classPrefix.value}-select-option.${classPrefix.value}-select-option__hover`,
-          );
+          ) as HTMLElement | null;
           if (hoverDom) {
-            const container = selectPanelRef.value.$el.parentNode;
+            const container = selectPanelRef.value.$el.parentNode as HTMLElement;
             const containerRect = container.getBoundingClientRect();
             const hoverDomRect = hoverDom.getBoundingClientRect();
             const offsetTop = hoverDomRect.top - containerRect.top + container.scrollTop;
