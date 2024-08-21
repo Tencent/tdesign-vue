@@ -415,6 +415,7 @@ export default defineComponent({
           count += 1;
           if (count >= displayOptionsLength) break;
         }
+        setHoverIntoView();
       };
       const arrowUpOption = () => {
         let count = 0;
@@ -430,6 +431,25 @@ export default defineComponent({
           count += 1;
           if (count >= displayOptionsLength) break;
         }
+        setHoverIntoView();
+      };
+      /** 让hover元素滚动到下拉面板视口 */
+      const setHoverIntoView = () => {
+        nextTick(() => {
+          const hoverDom = selectPanelRef.value?.$el.querySelector(
+            `li.${classPrefix.value}-select-option.${classPrefix.value}-select-option__hover`,
+          ) as HTMLElement | null;
+          if (hoverDom) {
+            const container = selectPanelRef.value.$el.parentNode as HTMLElement;
+            const containerRect = container.getBoundingClientRect();
+            const hoverDomRect = hoverDom.getBoundingClientRect();
+            const offsetTop = hoverDomRect.top - containerRect.top + container.scrollTop;
+            container.scrollTo({
+              top: offsetTop - (container.offsetHeight - hoverDom.offsetHeight * 2),
+              behavior: 'smooth',
+            });
+          }
+        });
       };
       if (displayOptionsLength === 0) return;
       const preventKeys = ['ArrowDown', 'ArrowUp', 'Enter', 'Escape', 'Tab'];
