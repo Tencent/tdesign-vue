@@ -76,6 +76,14 @@ describe('TimePicker', () => {
       const panelNode = document.querySelector('.t-time-picker__panel');
       // format为HH:mm 只展示两列 即时分
       expect(panelNode.querySelectorAll('.t-time-picker__panel-body-scroll').length).toBe(2);
+
+      await wrapper.setProps({
+        popupProps: {
+          visible: true,
+        },
+        format: 'HH时mm分',
+      });
+      expect(panelNode.querySelectorAll('.t-time-picker__panel-body-scroll').length).toBe(2);
       panelNode.parentNode.removeChild(panelNode);
     });
 
