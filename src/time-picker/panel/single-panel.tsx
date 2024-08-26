@@ -9,12 +9,7 @@ import customParseFormat from 'dayjs/plugin/customParseFormat';
 
 import { panelColProps } from './props';
 import {
-  EPickerCols,
-  TWELVE_HOUR_FORMAT,
-  TIME_FORMAT,
-  AM,
-  PM,
-  MERIDIEM_LIST,
+  EPickerCols, TWELVE_HOUR_FORMAT, AM, PM, MERIDIEM_LIST,
 } from '../../_common/js/time-picker/const';
 import { closestLookup } from '../../_common/js/time-picker/utils';
 import { useConfig } from '../../hooks/useConfig';
@@ -27,6 +22,8 @@ const panelOffset = {
   top: 15,
   bottom: 21,
 };
+
+export const REGEX_FORMAT = /\[([^\]]+)]|Y{1,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS/g;
 
 export default defineComponent({
   name: 'TTimePickerPanelCol',
@@ -82,22 +79,40 @@ export default defineComponent({
     );
 
     onMounted(() => {
-      const match = format.value.match(TIME_FORMAT);
-
-      const [, startCol, hourCol, minuteCol, secondCol, milliSecondCol, endCol] = match;
+      const match = format.value.match(REGEX_FORMAT);
       const {
         meridiem, hour, minute, second, milliSecond,
       } = EPickerCols;
 
-      const renderCol = [
-        startCol && meridiem,
-        hourCol && hour,
-        minuteCol && minute,
-        secondCol && second,
-        milliSecondCol && milliSecond,
-        endCol && meridiem,
-      ].filter((v) => !!v);
+      const renderCol: EPickerCols[] = [];
 
+      match.forEach((m) => {
+        switch (m) {
+          case 'H':
+          case 'HH':
+          case 'h':
+          case 'hh':
+            renderCol.push(hour);
+            break;
+          case 'a':
+          case 'A':
+            renderCol.push(meridiem);
+            break;
+          case 'm':
+          case 'mm':
+            renderCol.push(minute);
+            break;
+          case 's':
+          case 'ss':
+            renderCol.push(second);
+            break;
+          case 'SSS':
+            renderCol.push(milliSecond);
+            break;
+          default:
+            break;
+        }
+      });
       cols.value = renderCol;
     });
 
