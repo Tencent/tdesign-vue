@@ -20,6 +20,7 @@ export const panelProps = () => ({
     type: String,
     default: 'HH:mm:ss',
   },
+  position: String,
   steps: {
     type: Array as PropType<Array<string | number>>,
     default: () => [1, 1, 1],
