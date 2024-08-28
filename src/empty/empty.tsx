@@ -1,8 +1,8 @@
-import { defineComponent, toRefs } from '@vue/composition-api';
+import { defineComponent, h, toRefs } from '@vue/composition-api';
 import isObject from 'lodash/isObject';
 import isString from 'lodash/isString';
+import type { TNode } from '@src/common';
 import { useConfig, usePrefixClass } from '../config-provider/useConfig';
-import { renderTNodeJSX } from '../utils/render-tnode';
 import props from './props';
 import type { TdEmptyProps } from './type';
 import Image from '../image';
@@ -27,23 +27,23 @@ export default defineComponent({
       [key in TdEmptyProps['type']]?: Pick<TdEmptyProps, 'image' | 'title'>;
     } = {
       maintenance: {
-        image: globalConfig.value.image.maintenance || MaintenanceSvg,
+        image: globalConfig.value.image.maintenance || (MaintenanceSvg as unknown as TNode),
         title: globalConfig.value.titleText.maintenance || t(globalConfig.value.titleText.maintenance),
       },
       success: {
-        image: globalConfig.value.image.success || SuccessSvg,
+        image: globalConfig.value.image.success || (SuccessSvg as unknown as TNode),
         title: globalConfig.value.titleText.success || t(globalConfig.value.titleText.success),
       },
       fail: {
-        image: globalConfig.value.image.fail || FailSvg,
+        image: globalConfig.value.image.fail || (FailSvg as unknown as TNode),
         title: globalConfig.value.titleText.fail || t(globalConfig.value.titleText.fail),
       },
       'network-error': {
-        image: globalConfig.value.image.networkError || NetworkErrorSvg,
+        image: globalConfig.value.image.networkError || (NetworkErrorSvg as unknown as TNode),
         title: globalConfig.value.titleText.networkError || t(globalConfig.value.titleText.networkError),
       },
       empty: {
-        image: globalConfig.value.image.empty || EmptySvg,
+        image: globalConfig.value.image.empty || (EmptySvg as unknown as TNode),
         title: globalConfig.value.titleText.empty || t(globalConfig.value.titleText.empty),
       },
     };
@@ -97,13 +97,14 @@ export default defineComponent({
     },
     getImageIns(data: TdEmptyProps['image']) {
       let result = null;
-      if (data) {
-        result = data;
+      if (data && Reflect.has(data as TNode, 'render')) {
+        result = h(data as unknown);
       } else if (isObject(data)) {
         result = <t-image {...(data as any)} />;
       } else if (isString(data)) {
         result = <t-image src={data} />;
       }
+
       return data ? result : null;
     },
   },
