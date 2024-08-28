@@ -26,7 +26,7 @@ export default defineComponent({
     return (
       <li class={componentName} onClick={handleClick}>
         <div class={`${componentName}-main`}>
-          <div class={`${componentName}__content`}> {content}</div>
+          <div class={`${componentName}__content`}>{content}</div>
           {propsActionContent && <li class={`${componentName}__action`}>{propsActionContent}</li>}
         </div>
       </li>
