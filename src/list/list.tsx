@@ -14,7 +14,7 @@ import type { TdListProps } from './type';
 export default defineComponent({
   name: 'TList',
   props,
-  setup(props: TdListProps) {
+  setup(props: TdListProps, { emit }) {
     const listRef = ref();
 
     const { globalConfig } = useConfig('list');
@@ -46,15 +46,19 @@ export default defineComponent({
       const listElement = e.target as HTMLElement;
       const { scrollTop, scrollHeight, clientHeight } = listElement;
       if (isVirtualScroll.value) onInnerVirtualScroll(e);
-      props.onScroll?.({
+      const scrollParams = {
         e,
         scrollTop,
         scrollBottom: scrollHeight - clientHeight - scrollTop,
-      });
+      };
+      emit('scroll', scrollParams);
+
+      props.onScroll?.(scrollParams);
     };
 
     const handleLoadMore = (e: MouseEvent) => {
       if (isString(props.asyncLoading) && props.asyncLoading !== LOAD_MORE) return;
+      emit('load-more', { e });
       props.onLoadMore?.({ e });
     };
 

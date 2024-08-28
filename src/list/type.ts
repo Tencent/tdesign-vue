@@ -4,7 +4,7 @@
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
  * */
 
-import { TNode, TScroll, InfinityScroll } from '../common';
+import { TNode, TScroll } from '../common';
 
 export interface TdListProps {
   /**
@@ -24,10 +24,6 @@ export interface TdListProps {
    * @default horizontal
    */
   layout?: 'horizontal' | 'vertical';
-  /**
-   * 懒加载和虚拟滚动。为保证组件收益最大化，当数据量小于阈值 `scroll.threshold` 时，无论虚拟滚动的配置是否存在，组件内部都不会开启虚拟滚动，`scroll.threshold` 默认为 `100`
-   */
-  scroll?: InfinityScroll;
   /**
    * 懒加载和虚拟滚动。为保证组件收益最大化，当数据量小于阈值 `scroll.threshold` 时，无论虚拟滚动的配置是否存在，组件内部都不会开启虚拟滚动，`scroll.threshold` 默认为 `100`
    */
@@ -70,9 +66,18 @@ export interface TdListItemProps {
    * 内容，同 content
    */
   default?: string | TNode;
+  /**
+   * 点击时触发
+   */
+  onClick?: (context: { e: MouseEvent }) => void;
 }
 
 export interface TdListItemMetaProps {
+  /**
+   * 列表项图片
+   * @deprecated
+   */
+  avatar?: string | TNode;
   /**
    * 列表项内容
    */

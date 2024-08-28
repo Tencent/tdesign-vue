@@ -10,7 +10,6 @@ asyncLoading | String / Slot / Function | - | Typescript：`string \| TNode`。[
 footer | String / Slot / Function | - | Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 header | String / Slot / Function | - | Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 layout | String | horizontal | options: horizontal/vertical | N
-scroll | Object | - | lazy load and virtual scroll。Typescript：`InfinityScroll`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 scroll | Object | - | lazy load and virtual scroll。Typescript：`TScroll`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 size | String | medium | options: small/medium/large | N
 split | Boolean | false | \- | N

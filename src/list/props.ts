@@ -33,10 +33,6 @@ export default {
   scroll: {
     type: Object as PropType<TdListProps['scroll']>,
   },
-  /** 懒加载和虚拟滚动。为保证组件收益最大化，当数据量小于阈值 `scroll.threshold` 时，无论虚拟滚动的配置是否存在，组件内部都不会开启虚拟滚动，`scroll.threshold` 默认为 `100` */
-  scroll: {
-    type: Object as PropType<TdListProps['scroll']>,
-  },
   /** 尺寸 */
   size: {
     type: String as PropType<TdListProps['size']>,
