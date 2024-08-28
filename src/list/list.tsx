@@ -1,102 +1,126 @@
-import { VNode } from 'vue';
-import { ScopedSlotReturnValue } from 'vue/types/vnode';
-import Loading from '../loading';
+import { defineComponent, computed, ref } from '@vue/composition-api';
+import isString from 'lodash/isString';
+import omit from 'lodash/omit';
+import TLoading from '../loading';
+import TListItem from './list-item';
 import props from './props';
-import { renderTNodeJSX } from '../utils/render-tnode';
 import { LOAD_MORE, LOADING } from './const';
-import { ClassName } from '../common';
-import { getClassPrefixMixins } from '../config-provider/config-receiver';
-import mixins from '../utils/mixins';
+import { useConfig, usePrefixClass, useCommonClassName } from '../hooks/useConfig';
+import useListVirtualScroll from './hooks/useListVirtualScroll';
+import { renderTNodeJSX } from '../utils/render-tnode';
+import useListItems from './hooks/useListItem';
+import type { TdListProps } from './type';
 
-const classPrefixMixins = getClassPrefixMixins('list');
-
-export default mixins(classPrefixMixins).extend({
+export default defineComponent({
   name: 'TList',
-  props: {
-    ...props,
-  },
-  computed: {
-    listClass(): ClassName {
-      return [
-        `${this.componentName}`,
-        this.commonSizeClassName[this.size],
-        {
-          [`${this.componentName}--split`]: this.split,
-          [`${this.componentName}--stripe`]: this.stripe,
-          [`${this.componentName}--vertical-action`]: this.layout === 'vertical',
-        },
-      ];
-    },
-    loadingClass(): ClassName {
-      if (this.asyncLoading === 'loading') return this.commonStatusClassName.loading;
-      if (this.asyncLoading === 'load-more') return this.commonStatusClassName.loadMore;
-      return '';
-    },
-  },
-  components: {
-    Loading,
-  },
-  methods: {
-    renderLoading() {
-      if (this.asyncLoading && typeof this.asyncLoading === 'string') {
-        const text = {
-          [LOADING]: '正在加载中，请稍后',
-          [LOAD_MORE]: '点击加载更多',
-        }[this.asyncLoading];
-        const loading = this.asyncLoading === LOADING;
-        return <Loading class={this.loadingClass} loading={loading} text={text} />;
-      }
-      return renderTNodeJSX(this, 'asyncLoading');
-    },
-    handleScroll(e: WheelEvent | Event) {
-      const listElement = this.$el as HTMLElement;
+  props,
+  setup(props: TdListProps) {
+    const listRef = ref();
+
+    const { globalConfig } = useConfig('list');
+    const componentName = usePrefixClass('list');
+    const { SIZE } = useCommonClassName();
+    const { listItems } = useListItems();
+    const listClass = computed(() => [
+      `${componentName.value}`,
+      SIZE.value[props.size],
+      {
+        [`${componentName.value}--split`]: props.split,
+        [`${componentName.value}--stripe`]: props.stripe,
+        [`${componentName.value}--vertical-action`]: props.layout === 'vertical',
+      },
+    ]);
+
+    const loadingClass = computed(() => isString(props.asyncLoading) && ['loading', 'load-more'].includes(props.asyncLoading)
+      ? `${componentName.value}__load ${componentName.value}__load--${props.asyncLoading}`
+      : `${componentName.value}__load`);
+
+    const {
+      virtualConfig, cursorStyle, listStyle, isVirtualScroll, onInnerVirtualScroll,
+    } = useListVirtualScroll(
+      props.scroll,
+      listRef,
+      listItems,
+    );
+    const handleScroll = (e: WheelEvent) => {
+      const listElement = e.target as HTMLElement;
       const { scrollTop, scrollHeight, clientHeight } = listElement;
-      this.$emit('scroll', {
-        $event: e,
+      if (isVirtualScroll.value) onInnerVirtualScroll(e);
+      props.onScroll?.({
+        e,
         scrollTop,
         scrollBottom: scrollHeight - clientHeight - scrollTop,
       });
-      if (this.onScroll) {
-        this.onScroll({
-          e,
-          scrollTop,
-          scrollBottom: scrollHeight - clientHeight - scrollTop,
-        });
-      }
-    },
-    handleLoadMore(e: MouseEvent) {
-      if (typeof this.asyncLoading === 'string' && this.asyncLoading !== LOAD_MORE) return;
-      this.$emit('load-more', { e });
-      if (this.onLoadMore) {
-        this.onLoadMore({
-          e,
-        });
-      }
-    },
-    renderContent() {
-      const propsHeaderContent = renderTNodeJSX(this, 'header');
-      const propsFooterContent = renderTNodeJSX(this, 'footer');
+    };
 
-      return [
-        propsHeaderContent && <div class={`${this.componentName}__header`}>{propsHeaderContent}</div>,
-        <ul class={`${this.componentName}__inner`}>{renderTNodeJSX(this, 'default')}</ul>,
-        propsFooterContent && <div class={`${this.componentName}__footer`}>{propsFooterContent}</div>,
-      ];
-    },
+    const handleLoadMore = (e: MouseEvent) => {
+      if (isString(props.asyncLoading) && props.asyncLoading !== LOAD_MORE) return;
+      props.onLoadMore?.({ e });
+    };
+
+    return {
+      componentName,
+      listClass,
+      loadingClass,
+      handleScroll,
+      handleLoadMore,
+      listRef,
+      globalConfig,
+      virtualConfig,
+      cursorStyle,
+      listStyle,
+      isVirtualScroll,
+    };
   },
-  render(): VNode {
-    let listContent: ScopedSlotReturnValue = this.renderContent();
 
-    listContent = [
-      listContent,
-      <div class={`${this.componentName}__load`} onClick={this.handleLoadMore}>
-        {this.renderLoading()}
-      </div>,
-    ];
+  render() {
+    const {
+      isVirtualScroll, cursorStyle, listStyle, componentName, globalConfig, virtualConfig,
+    } = this;
+
+    const propsHeaderContent = renderTNodeJSX(this, 'header');
+    const propsFooterContent = renderTNodeJSX(this, 'footer');
+    const renderLoading = () => {
+      if (this.asyncLoading && isString(this.asyncLoading)) {
+        if (this.asyncLoading === LOADING) {
+          return (
+            <div>
+              <TLoading />
+              <span>{globalConfig.loadingText}</span>
+            </div>
+          );
+        }
+        if (this.asyncLoading === LOAD_MORE) {
+          return <span>{globalConfig.loadingMoreText}</span>;
+        }
+      }
+      return renderTNodeJSX(this, 'asyncLoading');
+    };
 
     return (
-      <div class={this.listClass} onScroll={this.handleScroll}>
-        {listContent}
+      <div
+        class={this.listClass}
+        onScroll={this.handleScroll}
+        ref="listRef"
+        style={isVirtualScroll ? 'position:relative' : undefined}
+      >
+        {propsHeaderContent ? <div class={`${componentName}__header`}>{propsHeaderContent}</div> : null}
+        {isVirtualScroll ? (
+          <div>
+            <div style={cursorStyle}></div>
+            <ul class={`${componentName}__inner`} style={listStyle}>
+              {virtualConfig.visibleData.value.map((item) => (
+                <TListItem {...omit(item, 'slots')} scopedSlots={{ default: item.slots }}></TListItem>
+              ))}
+            </ul>
+          </div>
+        ) : (
+          <ul class={`${componentName}__inner`}>{renderTNodeJSX(this, 'default')}</ul>
+        )}
+        {propsFooterContent ? <div class={`${componentName}__footer`}>{propsFooterContent}</div> : null}
+        <div class={this.loadingClass} onClick={this.handleLoadMore}>
+          {renderLoading()}
+        </div>
       </div>
     );
   },

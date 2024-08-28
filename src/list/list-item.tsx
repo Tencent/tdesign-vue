@@ -1,29 +1,30 @@
-import { VNode } from 'vue';
-import props from './list-item-props';
-import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
-import { getClassPrefixMixins } from '../config-provider/config-receiver';
-import mixins from '../utils/mixins';
+import { defineComponent } from '@vue/composition-api';
+import props from './props';
+import { usePrefixClass } from '../hooks/useConfig';
+import { renderTNodeJSX } from '../utils/render-tnode';
 
-const classPrefixMixins = getClassPrefixMixins('list-item');
-
-export default mixins(classPrefixMixins).extend({
+export default defineComponent({
   name: 'TListItem',
   props,
-  methods: {
-    handleClick(e: MouseEvent): void {
-      this.$emit('click', { e });
-      this.onClick?.({ e });
-    },
+  setup() {
+    const componentName = usePrefixClass('list-item');
+
+    return {
+      componentName,
+    };
   },
-  render(): VNode {
-    const content = renderContent(this, 'default', 'content');
+  render() {
+    const { componentName } = this;
+    // console.log(this, 'this');
+    const propsDefaultContent = renderTNodeJSX(this, 'default');
+    const propsContent = renderTNodeJSX(this, 'content');
     const propsActionContent = renderTNodeJSX(this, 'action');
 
     return (
-      <li class={this.componentName} onClick={this.handleClick}>
-        <div class={`${this.componentName}-main`}>
-          <div class={`${this.componentName}__content`}>{content}</div>
-          {propsActionContent && <li class={`${this.componentName}__action`}>{propsActionContent}</li>}
+      <li class={componentName}>
+        <div class={`${componentName}-main`}>
+          {propsDefaultContent || propsContent}
+          {propsActionContent && <li class={`${componentName}__action`}>{propsActionContent}</li>}
         </div>
       </li>
     );

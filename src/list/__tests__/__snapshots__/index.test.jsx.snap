@@ -27,36 +27,36 @@ exports[`List > :props > :asyncLoading is a string 1`] = `
     text
   </ul>
   <div
-    class="t-list__load"
+    class="t-list__load t-list__load--loading"
   >
-    <div
-      class="t-loading--center t-size-m t-loading t-is-loading"
-    >
-      <svg
-        class="t-loading__gradient t-icon-loading"
-        height="1em"
-        size="medium"
-        version="1.1"
-        viewBox="0 0 12 12"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <foreignobject
-          height="12"
-          width="12"
-          x="0"
-          y="0"
-        >
-          <div
-            class="t-loading__gradient-conic"
-          />
-        </foreignobject>
-      </svg>
+    <div>
       <div
-        class="t-loading__text"
+        class="t-loading--center t-size-m t-loading"
       >
-        正在加载中，请稍后
+        <svg
+          class="t-loading__gradient t-icon-loading"
+          height="1em"
+          size="medium"
+          version="1.1"
+          viewBox="0 0 12 12"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <foreignobject
+            height="12"
+            width="12"
+            x="0"
+            y="0"
+          >
+            <div
+              class="t-loading__gradient-conic"
+            />
+          </foreignobject>
+        </svg>
       </div>
+      <span>
+        正在加载中，请稍等
+      </span>
     </div>
   </div>
 </div>
@@ -72,9 +72,11 @@ exports[`List > :props > :asyncLoading is load-more 1`] = `
     text
   </ul>
   <div
-    class="t-list__load"
+    class="t-list__load t-list__load--load-more"
   >
-    <!---->
+    <span>
+      点击加载更多
+    </span>
   </div>
 </div>
 `;
@@ -221,42 +223,13 @@ exports[`List > :props > :stripe 1`] = `
 
 exports[`ListItem > :props > :action 1`] = `
 <li
+  action="action"
   class="t-list-item"
 >
   <div
     class="t-list-item-main"
   >
-    <div
-      class="t-list-item__content"
-    >
-      text
-    </div>
-    <li
-      class="t-list-item__action"
-    >
-      action
-    </li>
-  </div>
-</li>
-`;
-
-exports[`ListItem > :props > :action is a function, () => VNode. 1`] = `
-<li
-  class="t-list-item"
->
-  <div
-    class="t-list-item-main"
-  >
-    <div
-      class="t-list-item__content"
-    />
-    <li
-      class="t-list-item__action"
-    >
-      <p>
-        This is a action
-      </p>
-    </li>
+    text
   </div>
 </li>
 `;
@@ -264,15 +237,12 @@ exports[`ListItem > :props > :action is a function, () => VNode. 1`] = `
 exports[`ListItem > :props > :content 1`] = `
 <li
   class="t-list-item"
+  content="content"
 >
   <div
     class="t-list-item-main"
   >
-    <div
-      class="t-list-item__content"
-    >
-      text
-    </div>
+    text
   </div>
 </li>
 `;
@@ -280,33 +250,23 @@ exports[`ListItem > :props > :content 1`] = `
 exports[`ListItem > :props > :content is a function, () => VNode. 1`] = `
 <li
   class="t-list-item"
+  content="() => h(\\"p\\", [\\"This is a content\\"])"
 >
   <div
     class="t-list-item-main"
-  >
-    <div
-      class="t-list-item__content"
-    >
-      <p>
-        This is a content
-      </p>
-    </div>
-  </div>
+  />
 </li>
 `;
 
 exports[`ListItem > :props > :default 1`] = `
 <li
   class="t-list-item"
+  default="default"
 >
   <div
     class="t-list-item-main"
   >
-    <div
-      class="t-list-item__content"
-    >
-      default
-    </div>
+    text
   </div>
 </li>
 `;
@@ -314,18 +274,11 @@ exports[`ListItem > :props > :default 1`] = `
 exports[`ListItem > :props > :default is a function, () => VNode. 1`] = `
 <li
   class="t-list-item"
+  default="default"
 >
   <div
     class="t-list-item-main"
-  >
-    <div
-      class="t-list-item__content"
-    >
-      <p>
-        default
-      </p>
-    </div>
-  </div>
+  />
 </li>
 `;
 
