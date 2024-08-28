@@ -13,8 +13,8 @@ const useListItems = () => {
           class: child.data.staticClass,
           style: child.data.staticStyle,
           ...child.componentOptions.propsData,
-          slots: () => child.componentOptions.children,
-        });
+          slots: child.componentOptions.children,
+        } as unknown as VNode);
       }
     });
     return computedListItems;
