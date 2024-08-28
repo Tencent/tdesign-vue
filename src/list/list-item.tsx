@@ -1,7 +1,7 @@
 import { defineComponent } from '@vue/composition-api';
 import props from './list-item-props';
 import { usePrefixClass } from '../hooks/useConfig';
-import { renderTNodeJSX } from '../utils/render-tnode';
+import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 
 export default defineComponent({
   name: 'TListItem',
@@ -20,14 +20,13 @@ export default defineComponent({
   },
   render() {
     const { componentName, handleClick } = this;
-    const propsDefaultContent = renderTNodeJSX(this, 'default');
-    const propsContent = renderTNodeJSX(this, 'content');
+    const content = renderContent(this, 'default', 'content');
     const propsActionContent = renderTNodeJSX(this, 'action');
 
     return (
       <li class={componentName} onClick={handleClick}>
         <div class={`${componentName}-main`}>
-          {propsDefaultContent || propsContent}
+          <div class={`${componentName}__content`}> {content}</div>
           {propsActionContent && <li class={`${componentName}__action`}>{propsActionContent}</li>}
         </div>
       </li>

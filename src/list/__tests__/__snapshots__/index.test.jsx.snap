@@ -228,7 +228,11 @@ exports[`ListItem > :props > :action 1`] = `
   <div
     class="t-list-item-main"
   >
-    text
+    <div
+      class="t-list-item__content"
+    >
+       text
+    </div>
     <li
       class="t-list-item__action"
     >
@@ -245,6 +249,11 @@ exports[`ListItem > :props > :action is a function, () => VNode. 1`] = `
   <div
     class="t-list-item-main"
   >
+    <div
+      class="t-list-item__content"
+    >
+       
+    </div>
     <li
       class="t-list-item__action"
     >
@@ -263,7 +272,11 @@ exports[`ListItem > :props > :content 1`] = `
   <div
     class="t-list-item-main"
   >
-    text
+    <div
+      class="t-list-item__content"
+    >
+       text
+    </div>
   </div>
 </li>
 `;
@@ -275,9 +288,14 @@ exports[`ListItem > :props > :content is a function, () => VNode. 1`] = `
   <div
     class="t-list-item-main"
   >
-    <p>
-      This is a content
-    </p>
+    <div
+      class="t-list-item__content"
+    >
+       
+      <p>
+        This is a content
+      </p>
+    </div>
   </div>
 </li>
 `;
@@ -289,7 +307,11 @@ exports[`ListItem > :props > :default 1`] = `
   <div
     class="t-list-item-main"
   >
-    default
+    <div
+      class="t-list-item__content"
+    >
+       default
+    </div>
   </div>
 </li>
 `;
@@ -301,9 +323,14 @@ exports[`ListItem > :props > :default is a function, () => VNode. 1`] = `
   <div
     class="t-list-item-main"
   >
-    <p>
-      default
-    </p>
+    <div
+      class="t-list-item__content"
+    >
+       
+      <p>
+        default
+      </p>
+    </div>
   </div>
 </li>
 `;
