@@ -1,4 +1,6 @@
-import { defineComponent, h, toRefs } from '@vue/composition-api';
+import {
+  computed, defineComponent, h, toRefs,
+} from '@vue/composition-api';
 import isObject from 'lodash/isObject';
 import isString from 'lodash/isString';
 import type { TNode } from '@src/common';
@@ -6,6 +8,7 @@ import { useConfig, usePrefixClass } from '../config-provider/useConfig';
 import props from './props';
 import type { TdEmptyProps } from './type';
 import Image from '../image';
+import { renderTNodeJSX } from '../utils/render-tnode';
 import MaintenanceSvg from './assets/MaintenanceSvg';
 import NetworkErrorSvg from './assets/NetworkErrorSvg';
 import EmptySvg from './assets/EmptySvg';
@@ -18,9 +21,9 @@ export default defineComponent({
   props,
   setup(props: TdEmptyProps, { slots }) {
     const {
-      size, image: propsImage, description: propsDescription, title: propsTitle, type, action,
+      size, image: propsImage, description: propsDescription, title: propsTitle, type,
     } = toRefs(props);
-    const { t, globalConfig } = useConfig('empty');
+    const { globalConfig, classPrefix: tClassPrefix } = useConfig('empty');
     const classPrefix = usePrefixClass('empty');
 
     const defaultMaps: {
@@ -28,47 +31,42 @@ export default defineComponent({
     } = {
       maintenance: {
         image: globalConfig.value.image.maintenance || (MaintenanceSvg as unknown as TNode),
-        title: globalConfig.value.titleText.maintenance || t(globalConfig.value.titleText.maintenance),
+        title: globalConfig.value.titleText.maintenance,
       },
       success: {
         image: globalConfig.value.image.success || (SuccessSvg as unknown as TNode),
-        title: globalConfig.value.titleText.success || t(globalConfig.value.titleText.success),
+        title: globalConfig.value.titleText.success,
       },
       fail: {
         image: globalConfig.value.image.fail || (FailSvg as unknown as TNode),
-        title: globalConfig.value.titleText.fail || t(globalConfig.value.titleText.fail),
+        title: globalConfig.value.titleText.fail,
       },
       'network-error': {
         image: globalConfig.value.image.networkError || (NetworkErrorSvg as unknown as TNode),
-        title: globalConfig.value.titleText.networkError || t(globalConfig.value.titleText.networkError),
+        title: globalConfig.value.titleText.networkError,
       },
       empty: {
         image: globalConfig.value.image.empty || (EmptySvg as unknown as TNode),
-        title: globalConfig.value.titleText.empty || t(globalConfig.value.titleText.empty),
+        title: globalConfig.value.titleText.empty,
       },
     };
 
     const defaultSize = {
-      small: `${classPrefix.value}-size-s`,
-      medium: `${classPrefix.value}-size`,
-      large: `${classPrefix.value}-size-l`,
+      small: `${tClassPrefix.value}-size-s`,
+      medium: `${tClassPrefix.value}-size`,
+      large: `${tClassPrefix.value}-size-l`,
     };
 
-    const emptyClasses = [classPrefix.value, defaultSize[size.value]];
+    const emptyClasses = computed(() => [classPrefix.value, defaultSize[size.value]]);
     const titleClasses = [`${classPrefix.value}__title`];
     const imageClasses = [`${classPrefix.value}__image`];
     const descriptionClasses = [`${classPrefix.value}__description`];
     const actionClass = [`${classPrefix.value}__action`];
 
-    const typeImageProps = defaultMaps[type.value] ?? null;
-
-    const { image, description, title } = {
-      image: propsImage.value || typeImageProps?.image || slots.image,
-      title: propsTitle.value || typeImageProps?.title || slots.title,
-      description: propsDescription.value || slots.description,
-    };
-
-    const showActions = action.value || slots.action;
+    const typeImageProps = computed(() => defaultMaps[type.value] ?? null);
+    const showImage = computed(() => propsImage.value || typeImageProps.value?.image || slots.image);
+    const showTitle = computed(() => propsTitle.value || typeImageProps.value?.title || slots.title);
+    const showDescription = computed(() => propsDescription.value || slots.description);
 
     return {
       emptyClasses,
@@ -76,10 +74,9 @@ export default defineComponent({
       titleClasses,
       descriptionClasses,
       actionClass,
-      showActions,
-      showImage: image,
-      showTitle: title,
-      showDescription: description,
+      showImage,
+      showTitle,
+      showDescription,
     };
   },
   methods: {
@@ -95,7 +92,8 @@ export default defineComponent({
       }
       return <div class={this.descriptionClasses}>{this.showDescription}</div>;
     },
-    getImageIns(data: TdEmptyProps['image']) {
+    getImageIns() {
+      const data = this.showImage;
       let result = null;
       if (data && Reflect.has(data as TNode, 'render')) {
         result = h(data as unknown);
@@ -113,12 +111,12 @@ export default defineComponent({
       <div class={this.emptyClasses}>
         {this.showImage ? (
           <div class={this.imageClasses} style={this.imageStyle}>
-            {this.getImageIns(this.showImage)}
+            {this.getImageIns()}
           </div>
         ) : null}
         {this.renderTitle()}
         {this.renderDescription()}
-        {this.showActions ? <div class={this.actionClass}>{this.showActions}</div> : null}
+        {this.$slots?.action ? <div class={this.actionClass}>{renderTNodeJSX(this, 'action')}</div> : null}
       </div>
     );
   },
