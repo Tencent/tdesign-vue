@@ -8,6 +8,10 @@ import { TdListItemMetaProps } from '../list/type';
 import { PropType } from 'vue';
 
 export default {
+  /** 已废弃。列表项图片 */
+  avatar: {
+    type: [String, Function] as PropType<TdListItemMetaProps['avatar']>,
+  },
   /** 列表项内容 */
   description: {
     type: [String, Function] as PropType<TdListItemMetaProps['description']>,

@@ -68,6 +68,7 @@ export interface TdListItemProps {
   default?: string | TNode;
   /**
    * 点击时触发
+   * @deprecated
    */
   onClick?: (context: { e: MouseEvent }) => void;
 }
