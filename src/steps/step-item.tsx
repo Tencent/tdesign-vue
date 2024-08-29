@@ -47,7 +47,11 @@ export default mixins(getConfigReceiverMixins<StepItemType, StepsConfig>('steps'
         const { CheckIcon, CloseIcon } = this.useGlobalIcon({ CheckIcon: TdCheckIcon, CloseIcon: TdCloseIcon });
         switch (this.status) {
           case 'finish':
-            icon = <CheckIcon />;
+            if (isFunction(this.global.checkIcon)) {
+              icon = this.global.checkIcon(this.$createElement);
+            } else {
+              icon = <CheckIcon />;
+            }
             break;
           case 'error':
             if (isFunction(this.global.errorIcon)) {

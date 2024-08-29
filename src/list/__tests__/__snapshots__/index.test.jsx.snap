@@ -27,36 +27,36 @@ exports[`List > :props > :asyncLoading is a string 1`] = `
     text
   </ul>
   <div
-    class="t-list__load"
+    class="t-list__load t-list__load--loading"
   >
-    <div
-      class="t-loading--center t-size-m t-loading t-is-loading"
-    >
-      <svg
-        class="t-loading__gradient t-icon-loading"
-        height="1em"
-        size="medium"
-        version="1.1"
-        viewBox="0 0 12 12"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <foreignobject
-          height="12"
-          width="12"
-          x="0"
-          y="0"
-        >
-          <div
-            class="t-loading__gradient-conic"
-          />
-        </foreignobject>
-      </svg>
+    <div>
       <div
-        class="t-loading__text"
+        class="t-loading--center t-size-m t-loading"
       >
-        正在加载中，请稍后
+        <svg
+          class="t-loading__gradient t-icon-loading"
+          height="1em"
+          size="medium"
+          version="1.1"
+          viewBox="0 0 12 12"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <foreignobject
+            height="12"
+            width="12"
+            x="0"
+            y="0"
+          >
+            <div
+              class="t-loading__gradient-conic"
+            />
+          </foreignobject>
+        </svg>
       </div>
+      <span>
+        正在加载中，请稍等
+      </span>
     </div>
   </div>
 </div>
@@ -72,9 +72,11 @@ exports[`List > :props > :asyncLoading is load-more 1`] = `
     text
   </ul>
   <div
-    class="t-list__load"
+    class="t-list__load t-list__load--load-more"
   >
-    <!---->
+    <span>
+      点击加载更多
+    </span>
   </div>
 </div>
 `;
