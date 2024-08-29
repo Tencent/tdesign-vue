@@ -10,7 +10,7 @@ export enum EAnimationType {
   fade = 'fade',
 }
 
-export const defaultGlobalConfig: GlobalConfigProvider = merge(defaultConfig, defaultZhCN);
+export const defaultGlobalConfig = merge(defaultConfig, defaultZhCN);
 
 export type Locale = typeof defaultZhCN;
 
