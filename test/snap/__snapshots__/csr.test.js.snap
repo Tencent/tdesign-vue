@@ -52043,7 +52043,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
         class="t-form__item t-form-item__name"
       >
         <div
-          class="t-form__label t-form__label--colon t-form__label--right"
+          class="t-form__label t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -52051,6 +52051,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
           >
             姓名
           </label>
+          ：
         </div>
         <div
           class="t-form__controls"
@@ -52081,7 +52082,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
         class="t-form__item t-form-item__college"
       >
         <div
-          class="t-form__label t-form__label--colon t-form__label--right"
+          class="t-form__label t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -52089,6 +52090,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
           >
             学院
           </label>
+          ：
         </div>
         <div
           class="t-form__controls"
@@ -52150,7 +52152,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
         class="t-form__item t-form-item__address1"
       >
         <div
-          class="t-form__label t-form__label--colon t-form__label--right"
+          class="t-form__label t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -52158,6 +52160,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
           >
             寄件地址
           </label>
+          ：
         </div>
         <div
           class="t-form__controls"
@@ -52216,7 +52219,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
         class="t-form__item t-form-item__address2"
       >
         <div
-          class="t-form__label t-form__label--colon t-form__label--right"
+          class="t-form__label t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -52224,6 +52227,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
           >
             收件地址
           </label>
+          ：
         </div>
         <div
           class="t-form__controls"
@@ -52284,7 +52288,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
         class="t-form__item t-form-item__date"
       >
         <div
-          class="t-form__label t-form__label--colon t-form__label--right"
+          class="t-form__label t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -52292,6 +52296,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
           >
             日期
           </label>
+          ：
         </div>
         <div
           class="t-form__controls"
@@ -52352,7 +52357,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
         class="t-form__item t-form-item__personalProfile"
       >
         <div
-          class="t-form__label t-form__label--colon t-form__label--right"
+          class="t-form__label t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -52360,6 +52365,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
           >
             个人简介
           </label>
+          ：
         </div>
         <div
           class="t-form__controls"
@@ -52386,7 +52392,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
         class="t-form__item t-form-item__message"
       >
         <div
-          class="t-form__label t-form__label--colon t-form__label--right"
+          class="t-form__label t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -52394,6 +52400,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
           >
             短信
           </label>
+          ：
         </div>
         <div
           class="t-form__controls"
@@ -52421,7 +52428,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
         class="t-form__item t-form-item__gender"
       >
         <div
-          class="t-form__label t-form__label--colon t-form__label--right"
+          class="t-form__label t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -52429,6 +52436,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
           >
             性别
           </label>
+          ：
         </div>
         <div
           class="t-form__controls"
@@ -52488,7 +52496,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
         class="t-form__item t-form-item__course"
       >
         <div
-          class="t-form__label t-form__label--colon t-form__label--right"
+          class="t-form__label t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -52496,6 +52504,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
           >
             课程
           </label>
+          ：
         </div>
         <div
           class="t-form__controls"
@@ -52574,7 +52583,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
         class="t-form__item t-form-item__gradePoint"
       >
         <div
-          class="t-form__label t-form__label--colon t-form__label--right"
+          class="t-form__label t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -52582,6 +52591,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
           >
             绩点
           </label>
+          ：
         </div>
         <div
           class="t-form__controls"
@@ -52654,7 +52664,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
         class="t-form__item t-form-item__avatar"
       >
         <div
-          class="t-form__label t-form__label--colon t-form__label--right"
+          class="t-form__label t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -52662,6 +52672,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
           >
             头像
           </label>
+          ：
         </div>
         <div
           class="t-form__controls"
@@ -53849,7 +53860,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/reset.vue 1`] = `
         class="t-form__item t-form-item__name"
       >
         <div
-          class="t-form__label t-form__label--colon t-form__label--right"
+          class="t-form__label t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -53857,6 +53868,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/reset.vue 1`] = `
           >
             姓名
           </label>
+          ：
         </div>
         <div
           class="t-form__controls"
@@ -53887,7 +53899,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/reset.vue 1`] = `
         class="t-form__item t-form-item__tel"
       >
         <div
-          class="t-form__label t-form__label--colon t-form__label--right"
+          class="t-form__label t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -53895,6 +53907,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/reset.vue 1`] = `
           >
             手机号码
           </label>
+          ：
         </div>
         <div
           class="t-form__controls"
@@ -53925,7 +53938,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/reset.vue 1`] = `
         class="t-form__item t-form-item__course"
       >
         <div
-          class="t-form__label t-form__label--colon t-form__label--right"
+          class="t-form__label t-form__label--right"
           style="width: 100px;"
         >
           <label
@@ -53933,6 +53946,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/reset.vue 1`] = `
           >
             课程
           </label>
+          ：
         </div>
         <div
           class="t-form__controls"

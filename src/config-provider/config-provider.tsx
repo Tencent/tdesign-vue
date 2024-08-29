@@ -25,7 +25,7 @@ const ConfigProvider = Vue.extend({
 
   computed: {
     mergedGlobalConfig() {
-      const mergedGlobalConfig = mergeWith(this.defaultData, this.globalConfig);
+      const mergedGlobalConfig = mergeWith(this.defaultData as unknown as GlobalConfigProvider, this.globalConfig);
       // 用于直接调用实例、plugin的方式使用
       Vue.prototype[globalConfigSymbol] = mergedGlobalConfig;
       return mergedGlobalConfig;

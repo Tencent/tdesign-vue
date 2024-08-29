@@ -23,9 +23,10 @@ export default defineComponent({
     const hoverValue = ref(undefined);
     const rootRef = ref<HTMLTableElement>();
     const { classPrefix } = useConfig('classPrefix');
+    const { global } = useConfig('rate');
 
     const displayValue = computed(() => Number(hoverValue.value || starValue.value));
-    const displayText = computed(() => props.texts.length === 0 ? ['极差', '失望', '一般', '满意', '惊喜'] : props.texts);
+    const displayText = computed(() => (props.texts.length === 0 ? global.value.rateText : props.texts));
 
     const getStarValue = (event: MouseEvent, index: number) => {
       if (props.allowHalf) {
