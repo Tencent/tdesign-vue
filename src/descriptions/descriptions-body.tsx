@@ -1,7 +1,7 @@
 import { defineComponent, inject, PropType } from '@vue/composition-api';
 
 import { LayoutEnum } from '../common';
-import { usePrefixClass, useCommonClassName } from '../hooks/useConfig';
+import { usePrefixClass, useCommonClassName, useConfig } from '../hooks/useConfig';
 
 import descriptionsKey from './const';
 import { ItemsType, TdDescriptionItem } from './interface';
@@ -18,11 +18,13 @@ export default defineComponent({
     const descriptionsProps = inject<TdDescriptionsProps>(descriptionsKey);
     const COMPONENT_NAME = usePrefixClass('descriptions');
     const { SIZE } = useCommonClassName();
+    const { global } = useConfig('descriptions');
 
     return {
       descriptionsProps,
       COMPONENT_NAME,
       SIZE,
+      global,
     };
   },
   render() {
@@ -46,7 +48,7 @@ export default defineComponent({
       return (
         <td colspan={labelSpan} class={labelClass} {...{ style: this.descriptionsProps.labelStyle }}>
           {label}
-          {this.descriptionsProps.colon && ':'}
+          {this.descriptionsProps.colon && this.global.colonText}
         </td>
       );
     };

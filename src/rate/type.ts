@@ -24,7 +24,6 @@ export interface TdRateProps {
   count?: number;
   /**
    * 是否禁用评分
-   * @default false
    */
   disabled?: boolean;
   /**
@@ -42,7 +41,7 @@ export interface TdRateProps {
    */
   showText?: boolean;
   /**
-   * 评分图标的大小，示例：`20px`
+   * 评分图标的大小
    * @default 24px
    */
   size?: string;

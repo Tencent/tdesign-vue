@@ -120,7 +120,6 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
         `${this.componentName}__label`,
         {
           [`${this.componentName}__label--required`]: this.needRequiredMark,
-          [`${this.componentName}__label--colon`]: this.hasColon,
           [`${this.componentName}__label--top`]: this.getLabelContent() && (labelAlign === 'top' || !labelWidth),
           [`${this.componentName}__label--left`]: labelAlign === 'left' && labelWidth,
           [`${this.componentName}__label--right`]: labelAlign === 'right' && labelWidth,
@@ -363,6 +362,7 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
       return (
         <div class={this.labelClasses} style={labelStyle}>
           <label for={this.for}>{labelContent}</label>
+          {this.hasColon && this.global.colonText}
         </div>
       );
     },

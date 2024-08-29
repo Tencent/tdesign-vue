@@ -1,6 +1,7 @@
 :: BASE_DOC ::
 
 ## API
+
 ### Rate Props
 
 name | type | default | description | required
@@ -8,7 +9,7 @@ name | type | default | description | required
 allowHalf | Boolean | false | \- | N
 color | String / Array | '#ED7B2F' | Typescript：`string \| Array<string>` | N
 count | Number | 5 | \- | N
-disabled | Boolean | - | \- | N
+disabled | Boolean | undefined | \- | N
 gap | Number | 4 | \- | N
 icon | Slot / Function | - | Typescript：`TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 showText | Boolean | false | \- | N
