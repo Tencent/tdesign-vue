@@ -1,7 +1,7 @@
 import {
   computed, defineComponent, h, toRefs,
 } from '@vue/composition-api';
-import isObject from 'lodash/isObject';
+import isPlainObject from 'lodash/isPlainObject';
 import isString from 'lodash/isString';
 import type { TNode } from '@src/common';
 import { useConfig, usePrefixClass } from '../config-provider/useConfig';
@@ -30,6 +30,7 @@ export default defineComponent({
     const componentName = usePrefixClass('empty');
     const showAction = computed(() => props.action || slots.action);
     const { SIZE } = useCommonClassName();
+
     const defaultMaps: {
       [key in TdEmptyProps['type']]?: Pick<TdEmptyProps, 'image' | 'title'>;
     } = {
@@ -62,8 +63,8 @@ export default defineComponent({
     const actionClass = [`${componentName.value}__action`];
 
     const typeImageProps = computed(() => defaultMaps[type.value] ?? null);
-    const showImage = computed(() => propsImage.value || typeImageProps.value?.image || slots.image);
-    const showTitle = computed(() => propsTitle.value || typeImageProps.value?.title || slots.title);
+    const showImage = computed(() => propsImage.value || slots.image || typeImageProps.value?.image);
+    const showTitle = computed(() => propsTitle.value || slots.title || typeImageProps.value?.title);
     const showDescription = computed(() => propsDescription.value || slots.description);
 
     return {
@@ -94,12 +95,12 @@ export default defineComponent({
     getImageIns() {
       const data = this.showImage;
       let result = null;
-      if (data && Reflect.has(data as TNode, 'render')) {
+      if (isString(data)) {
+        result = <Image src={data} />;
+      } else if (data && Reflect.has(data as TNode, 'render')) {
         result = h(data as unknown);
-      } else if (isObject(data)) {
-        result = <t-image {...data} />;
-      } else if (isString(data)) {
-        result = <t-image src={data} />;
+      } else if (isPlainObject(data)) {
+        result = <Image {...data} />;
       }
 
       return data ? result : null;
@@ -110,7 +111,7 @@ export default defineComponent({
       <div class={this.emptyClasses}>
         {this.showImage ? (
           <div class={this.imageClasses} style={this.imageStyle}>
-            {this.getImageIns()}
+            {this.$slots.image ? renderTNodeJSX(this, 'image') : this.getImageIns()}
           </div>
         ) : null}
         {this.renderTitle()}

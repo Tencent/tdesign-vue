@@ -3,7 +3,7 @@
     <t-col>
       <t-empty description="暂无数据">
         <template #image>
-          <ErrorCircleIcon :size="64" color="var(--td-text-color-placeholder)" />
+          <error-circle-icon :size="64" color="var(--td-text-color-placeholder)" />
         </template>
       </t-empty>
     </t-col>
@@ -24,10 +24,11 @@
   </t-row>
 </template>
 <script>
+import { ErrorCircleIcon } from 'tdesign-icons-vue';
+
 export default {
-  data() {
-    return {};
+  components: {
+    ErrorCircleIcon,
   },
-  methods: {},
 };
 </script>
