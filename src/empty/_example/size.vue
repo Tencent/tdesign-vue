@@ -5,7 +5,7 @@
       <t-radio-button value="medium">medium</t-radio-button>
       <t-radio-button value="large">large</t-radio-button>
     </t-radio-group>
-    <div style="margin-top: '20px'; height: '100px'">
+    <div style="margin-top: 20px; height: 100px">
       <t-row :gutter="40">
         <t-col>
           <t-empty type="empty" :size="size"></t-empty>

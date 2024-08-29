@@ -5,8 +5,9 @@ import isObject from 'lodash/isObject';
 import isString from 'lodash/isString';
 import type { TNode } from '@src/common';
 import { useConfig, usePrefixClass } from '../config-provider/useConfig';
+import { useCommonClassName } from '../hooks/useConfig';
+
 import props from './props';
-import type { TdEmptyProps } from './type';
 import Image from '../image';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import MaintenanceSvg from './assets/MaintenanceSvg';
@@ -14,6 +15,8 @@ import NetworkErrorSvg from './assets/NetworkErrorSvg';
 import EmptySvg from './assets/EmptySvg';
 import FailSvg from './assets/FailSvg';
 import SuccessSvg from './assets/SuccessSvg';
+
+import type { TdEmptyProps } from './type';
 
 export default defineComponent({
   name: 'TEmpty',
@@ -23,9 +26,10 @@ export default defineComponent({
     const {
       size, image: propsImage, description: propsDescription, title: propsTitle, type,
     } = toRefs(props);
-    const { globalConfig, classPrefix: tClassPrefix } = useConfig('empty');
-    const classPrefix = usePrefixClass('empty');
-
+    const { globalConfig } = useConfig('empty');
+    const componentName = usePrefixClass('empty');
+    const showAction = computed(() => props.action || slots.action);
+    const { SIZE } = useCommonClassName();
     const defaultMaps: {
       [key in TdEmptyProps['type']]?: Pick<TdEmptyProps, 'image' | 'title'>;
     } = {
@@ -51,17 +55,11 @@ export default defineComponent({
       },
     };
 
-    const defaultSize = {
-      small: `${tClassPrefix.value}-size-s`,
-      medium: `${tClassPrefix.value}-size`,
-      large: `${tClassPrefix.value}-size-l`,
-    };
-
-    const emptyClasses = computed(() => [classPrefix.value, defaultSize[size.value]]);
-    const titleClasses = [`${classPrefix.value}__title`];
-    const imageClasses = [`${classPrefix.value}__image`];
-    const descriptionClasses = [`${classPrefix.value}__description`];
-    const actionClass = [`${classPrefix.value}__action`];
+    const emptyClasses = computed(() => [componentName.value, SIZE.value[size.value]]);
+    const titleClasses = [`${componentName.value}__title`];
+    const imageClasses = [`${componentName.value}__image`];
+    const descriptionClasses = [`${componentName.value}__description`];
+    const actionClass = [`${componentName.value}__action`];
 
     const typeImageProps = computed(() => defaultMaps[type.value] ?? null);
     const showImage = computed(() => propsImage.value || typeImageProps.value?.image || slots.image);
@@ -77,6 +75,7 @@ export default defineComponent({
       showImage,
       showTitle,
       showDescription,
+      showAction,
     };
   },
   methods: {
@@ -98,7 +97,7 @@ export default defineComponent({
       if (data && Reflect.has(data as TNode, 'render')) {
         result = h(data as unknown);
       } else if (isObject(data)) {
-        result = <t-image {...(data as any)} />;
+        result = <t-image {...data} />;
       } else if (isString(data)) {
         result = <t-image src={data} />;
       }
@@ -116,7 +115,7 @@ export default defineComponent({
         ) : null}
         {this.renderTitle()}
         {this.renderDescription()}
-        {this.$slots?.action ? <div class={this.actionClass}>{renderTNodeJSX(this, 'action')}</div> : null}
+        {this.showAction ? <div class={this.actionClass}>{renderTNodeJSX(this, 'action')}</div> : null}
       </div>
     );
   },
