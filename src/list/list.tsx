@@ -1,4 +1,4 @@
-import { defineComponent, computed, ref } from '@vue/composition-api';
+import { defineComponent, computed, ref } from 'vue';
 import isString from 'lodash/isString';
 import omit from 'lodash/omit';
 import TLoading from '../loading';

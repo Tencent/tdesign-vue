@@ -1,5 +1,4 @@
-import { VNode } from 'vue';
-import { computed, getCurrentInstance } from '@vue/composition-api';
+import { VNode, computed, getCurrentInstance } from 'vue';
 
 const useListItems = () => {
   const instance = getCurrentInstance();

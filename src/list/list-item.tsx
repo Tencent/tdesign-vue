@@ -1,4 +1,4 @@
-import { defineComponent } from '@vue/composition-api';
+import { defineComponent } from 'vue';
 import props from './list-item-props';
 import { usePrefixClass } from '../hooks/useConfig';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';

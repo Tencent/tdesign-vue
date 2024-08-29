@@ -1,9 +1,9 @@
 import {
   computed, defineComponent, h, toRefs,
-} from '@vue/composition-api';
+} from 'vue';
 import isPlainObject from 'lodash/isPlainObject';
 import isString from 'lodash/isString';
-import type { TNode } from '@src/common';
+import type { TNode } from '../common';
 import { useConfig, usePrefixClass } from '../config-provider/useConfig';
 import { useCommonClassName } from '../hooks/useConfig';
 
