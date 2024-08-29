@@ -1,5 +1,5 @@
 import props from './props';
-import { renderTNodeJSX } from '../utils/render-tnode';
+import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
 
@@ -47,7 +47,7 @@ export default mixins(classPrefixMixins).extend({
 
     const content = this.getContent();
     const isHidden = this.isHidden();
-    const children = this.$slots.default;
+    const children = renderContent(this, 'default', 'content');
     const { xOffset, yOffset } = this.getOffset();
     const badgeClassNames = [
       {
