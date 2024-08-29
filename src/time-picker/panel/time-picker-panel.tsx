@@ -109,6 +109,7 @@ export default defineComponent({
                 steps: this.steps || DEFAULT_STEPS,
                 triggerScroll: this.triggerScroll,
                 disableTime: this.disableTime,
+                position: this.position,
                 resetTriggerScroll: this.resetTriggerScroll,
                 isShowPanel: this.isShowPanel,
                 hideDisabledTime: this.hideDisabledTime,
