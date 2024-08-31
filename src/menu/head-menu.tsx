@@ -131,17 +131,18 @@ export default defineComponent({
     };
   },
   methods: {
-    renderNormalSubmenu() {
-      if (this.submenu.length === 0) return null;
+    renderNormalSubmenu(node, depth) {
+      if (node.length === 0) return null;
+
       return (
         <ul class={[`${this.classPrefix}-head-menu__submenu`, `${this.classPrefix}-submenu`]}>
-          {
-            <t-tabs value={this.activeValue} onChange={this.handleTabChange}>
-              {this.submenu.map((item) => (
-                <t-tab-panel value={item.value} label={item.vnode[0].text} />
-              ))}
-            </t-tabs>
-          }
+          <t-tabs value={this.activeValues[depth]} onChange={this.handleTabChange}>
+            {node.map((item) => (
+              <t-tab-panel value={item.value} label={typeof item.vnode === 'string' ? item.vnode : item.vnode[0].text}>
+                {item.children && item.children.length > 0 ? this.renderNormalSubmenu(item.children, depth + 1) : null}
+              </t-tab-panel>
+            ))}
+          </t-tabs>
         </ul>
       );
     },
@@ -159,7 +160,7 @@ export default defineComponent({
           <ul class={`${this.classPrefix}-menu`}>{renderContent(this, 'default', 'content')}</ul>
           {operations && <div class={`${this.classPrefix}-menu__operations`}>{operations}</div>}
         </div>
-        {this.mode === 'normal' && this.renderNormalSubmenu()}
+        {this.mode === 'normal' && this.renderNormalSubmenu(this.submenu, 1)}
       </div>
     );
   },

@@ -204,7 +204,7 @@ export default defineComponent({
     });
 
     onMounted(() => {
-      menu?.vMenu?.add({ value: props.value, parent: submenu?.value });
+      menu?.vMenu?.add({ value: props.value, parent: submenu?.value, vnode: props.title });
       const instance = getCurrentInstance();
       let node = instance.parent;
 
