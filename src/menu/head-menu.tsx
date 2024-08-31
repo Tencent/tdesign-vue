@@ -6,7 +6,7 @@ import { MenuValue } from './type';
 import { TdMenuInterface, TdOpenType } from './const';
 import { Tabs, TabPanel } from '../tabs';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
-import VMenu from './v-menu';
+import VMenu, { VMenuData } from './v-menu';
 import { usePrefixClass } from '../hooks/useConfig';
 
 export default defineComponent({
@@ -131,7 +131,7 @@ export default defineComponent({
     };
   },
   methods: {
-    renderNormalSubmenu(node, depth) {
+    renderNormalSubmenu(node: VMenuData[], depth: number) {
       if (node.length === 0) return null;
 
       return (
