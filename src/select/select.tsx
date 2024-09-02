@@ -324,7 +324,7 @@ export default defineComponent({
             .slice(0, max.value || Infinity),
         { e, trigger: isAllOptionsChecked.value ? 'uncheck' : 'check' },
       );
-      setTInputValue('');
+      !reserveKeyword?.value && setTInputValue('');
     };
 
     const handleCreate = () => {
