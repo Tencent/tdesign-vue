@@ -453,7 +453,7 @@ export default defineComponent({
       };
       if (displayOptionsLength === 0) return;
       const preventKeys = ['ArrowDown', 'ArrowUp', 'Enter', 'Escape', 'Tab'];
-      if (preventKeys.includes(e.code)) {
+      if (preventKeys.includes(e.code) && selectInputRef.value.$el.contains(e.target)) {
         e.preventDefault();
       }
       switch (e.code) {
