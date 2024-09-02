@@ -5,6 +5,25 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.10.0 `2024-08-29`
+### 🚀 Features
+- `Empty`: 新增空状态组件 `Empty`，用于空状态时的占位提示 @HaixingOoO  ([#3287](https://github.com/Tencent/tdesign-vue/pull/3287))
+- `ConfigProvider`: 新增支持 `descriptions.colonText rate.rateText 和 setpes.checkIcon` 的全局配置 @liweijie0812 ([#3288](https://github.com/Tencent/tdesign-vue/pull/3288))
+- `Cascader`: 级联面板完善支持自定义下拉选项内容的能力 ([#3290](https://github.com/Tencent/tdesign-vue/pull/3290))
+- `List`: 新增`scroll` API，支持开启虚拟滚动适用于大数据量的场景，具体使用方式参考示例代码
+@uyarn ([#3286](https://github.com/Tencent/tdesign-vue/pull/3286))
+
+### 🐞 Bug Fixes
+- `Select`: @dhwebs ([#3278](https://github.com/Tencent/tdesign-vue/pull/3278))
+  - 修复分组状态下，通过上下键切换时下拉面板不会跟随滚动的问题
+  - 修复分组状态下，通过上下键切换时无法正确切换的问题
+- `ColorPicker`: 修复`ColorPicker`透传`SelectInputProps`无效问题 @taninsist ([#3279](https://github.com/Tencent/tdesign-vue/pull/3279))
+- `TimePicker`: @myronliu347 
+  - 修复 `disableTime` 中 `position` 一直是 `start` 的问题 ([#3281](https://github.com/Tencent/tdesign-vue/pull/3281))
+  - 修复 `format` 仅支持 `HH:mm:ss` 格式的问题 ([#3280](https://github.com/Tencent/tdesign-vue/pull/3280))
+- `Form`: 添加 `whitespace` 校验默认错误信息 @liweijie0812 ([#3284](https://github.com/Tencent/tdesign-vue/pull/3284))
+
+
 ## 🌈 1.9.9 `2024-08-15`
 
 ### 🚀 Features
