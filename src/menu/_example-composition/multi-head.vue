@@ -129,26 +129,16 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue';
 import {
   SearchIcon, MailIcon, UserIcon, EllipsisIcon,
 } from 'tdesign-icons-vue';
 
-export default {
-  components: {
-    SearchIcon,
-    MailIcon,
-    UserIcon,
-    EllipsisIcon,
-  },
-  data() {
-    return {
-      expanded: ['1'],
-      expanded2: ['1'],
-    };
-  },
-};
+const expanded = ref(['1']);
+const expanded2 = ref(['1']);
 </script>
+
 <style lang="less" scoped>
 .t-menu__operations {
   .t-button {

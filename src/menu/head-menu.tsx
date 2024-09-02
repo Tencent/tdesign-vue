@@ -6,7 +6,8 @@ import { MenuValue } from './type';
 import { TdMenuInterface, TdOpenType } from './const';
 import { Tabs, TabPanel } from '../tabs';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
-import VMenu, { VMenuData } from './v-menu';
+import VMenu from './v-menu';
+import type { VMenuData } from './v-menu';
 import { usePrefixClass } from '../hooks/useConfig';
 
 export default defineComponent({
