@@ -19,17 +19,38 @@ Vue.use(TDesign);
 </t-config-provider>
 ```
 
+#### vue-cli
 ```js
+// vue.config.js
 {
-    loaderOptions: {
-        less: {
-            lessOptions: {
+    css: {
+        loaderOptions: {
+            less: {
+                lessOptions: {
+                    modifyVars: {
+                     '@prefix': 'any',// 请注意需要与classPrefix保持一致
+                    },
+                    javascriptEnabled: true,
+                },
+            },
+        }
+    }
+}
+```
+
+#### vite
+```js
+// vite.config.js 
+{
+    css: {
+        preprocessorOptions: {
+            less: {
                 modifyVars: {
-                    '@prefix': 'any', // 请注意需要与classPrefix保持一致
+                    '@prefix': 'any',// 请注意需要与classPrefix保持一致
                 },
                 javascriptEnabled: true,
             },
-        },
+        }
     }
 }
 ```
