@@ -19,7 +19,7 @@ import useVModel from '../hooks/useVModel';
 import { useTNodeJSX } from '../hooks/tnode';
 import { useConfig, usePrefixClass } from '../config-provider/useConfig';
 import {
-  TdSelectProps, SelectValue, TdOptionProps, SelectValueChangeTrigger,
+  TdSelectProps, SelectValue, TdOptionProps, SelectValueChangeTrigger, SelectOption,
 } from './type';
 import props from './props';
 import TLoading from '../loading';
@@ -309,14 +309,22 @@ export default defineComponent({
 
     // 全选点击回调，t-option 的事件调用到这里处理
     const handleCheckAllClick = (e: MouseEvent | KeyboardEvent) => {
+      const filterMethods = (option: SelectOption) => {
+        if (isFunction(props.filter)) {
+          return props.filter(`${tInputValue.value}`, option);
+        }
+        return option.label?.toLowerCase?.().indexOf(`${tInputValue.value}`.toLowerCase()) > -1;
+      };
       setInnerValue(
         isAllOptionsChecked.value
           ? []
           : getAllSelectableOption(optionsList.value)
+            .filter(filterMethods)
             .map((option) => option.value)
             .slice(0, max.value || Infinity),
         { e, trigger: isAllOptionsChecked.value ? 'uncheck' : 'check' },
       );
+      !reserveKeyword?.value && setTInputValue('');
     };
 
     const handleCreate = () => {
