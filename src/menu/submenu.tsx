@@ -1,4 +1,5 @@
 import {
+  h,
   defineComponent,
   computed,
   inject,
@@ -204,7 +205,11 @@ export default defineComponent({
     });
 
     onMounted(() => {
-      menu?.vMenu?.add({ value: props.value, parent: submenu?.value });
+      menu?.vMenu?.add({
+        value: props.value,
+        parent: submenu?.value,
+        vnode: isFunction(props.title) ? [props.title(h)] : props.title,
+      });
       const instance = getCurrentInstance().proxy;
       let node = instance.$parent;
 
