@@ -28982,7 +28982,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/panel.vue 1`] 
           >
             <div
               class="t-color-picker__saturation"
-              style="background: rgb(0, 0, 0);"
+              style="background: rgb(0, 96, 255);"
             >
               <span
                 class="t-color-picker__thumb"
@@ -29784,7 +29784,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/panel.vue 1`] 
             </div>
             <div
               class="t-color-picker__saturation"
-              style="background: rgb(0, 0, 0);"
+              style="background: rgb(0, 136, 255);"
             >
               <span
                 class="t-color-picker__thumb"
@@ -32287,7 +32287,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/status-readonl
   >
     <div
       class="t-color-picker__saturation"
-      style="background: rgb(0, 0, 0);"
+      style="background: rgb(0, 96, 255);"
     >
       <span
         class="t-color-picker__thumb"
@@ -33098,7 +33098,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/swatch-color.v
           >
             <div
               class="t-color-picker__saturation"
-              style="background: rgb(0, 0, 0);"
+              style="background: rgb(0, 96, 255);"
             >
               <span
                 class="t-color-picker__thumb"
@@ -33477,7 +33477,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/swatch-color.v
           >
             <div
               class="t-color-picker__saturation"
-              style="background: rgb(0, 0, 0);"
+              style="background: rgb(0, 96, 255);"
             >
               <span
                 class="t-color-picker__thumb"
