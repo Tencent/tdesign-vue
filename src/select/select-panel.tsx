@@ -91,6 +91,7 @@ export default defineComponent({
         if (isFunction(props.filter)) {
           return props.filter(`${props.inputValue}`, option);
         }
+        if ((option as TdOptionProps)?.checkAll === true) return true;
         return option.label?.toLowerCase?.().indexOf(`${props.inputValue}`.toLowerCase()) > -1;
       };
 

@@ -19,17 +19,38 @@ Vue.use(TDesign);
 </t-config-provider>
 ```
 
+#### vue-cli
 ```js
+// vue.config.js
 {
-    loaderOptions: {
-        less: {
-            lessOptions: {
+    css: {
+        loaderOptions: {
+            less: {
+                lessOptions: {
+                    modifyVars: {
+                     '@prefix': 'any',// 请注意需要与classPrefix保持一致
+                    },
+                    javascriptEnabled: true,
+                },
+            },
+        }
+    }
+}
+```
+
+#### vite
+```js
+// vite.config.js 
+{
+    css: {
+        preprocessorOptions: {
+            less: {
                 modifyVars: {
-                    '@prefix': 'any', // 请注意需要与classPrefix保持一致
+                    '@prefix': 'any',// 请注意需要与classPrefix保持一致
                 },
                 javascriptEnabled: true,
             },
-        },
+        }
     }
 }
 ```
@@ -47,6 +68,7 @@ cascader | Object | - | 级联选择器全局配置。TS 类型：`CascaderConfi
 classPrefix | String | t | CSS 类名前缀 | N
 colorPicker | Object | - | 颜色选择器全局配置。TS 类型：`ColorPickerConfig` | N
 datePicker | Object | - | 日期选择器全局配置。TS 类型：`DatePickerConfig` | N
+descriptions | Object | - | 描述全局配置。TS 类型：`DescriptionsConfig` | N
 dialog | Object | - | 对话框全局配置。TS 类型：`DialogConfig` | N
 drawer | Object | - | 抽屉全局配置。TS 类型：`DrawerConfig` | N
 form | Object | - | 表单组件全局配置。TS 类型：`FormConfig` | N
@@ -59,6 +81,7 @@ list | Object | - | 列表组件全局配置。TS 类型：`ListConfig` | N
 message | Object | - | 消息组件全局配置。TS 类型：`MessageConfig` | N
 pagination | Object | - | 分页组件全局配置。TS 类型：`PaginationConfig` | N
 popconfirm | Object | - | 气泡确认框全局配置。TS 类型：`PopconfirmConfig` | N
+rate | Object | - | 评分全局配置。TS 类型：`RateConfig` | N
 select | Object | - | 选择器组件全局配置。TS 类型：`SelectConfig` | N
 steps | Object | - | 步骤条组件全局配置。TS 类型：`StepsConfig` | N
 table | Object | - | 表格组件全局配置。TS 类型：`TableConfig` | N
@@ -294,6 +317,7 @@ fileStatusText | String | - | 语言配置，“状态” 描述文本 | N
 
 名称 | 类型 | 默认值 | 描述 | 必传
 -- | -- | -- | -- | --
+colonText | String | - | 字段旁边的冒号，中文为“：” | N
 errorMessage | Object | - | 表单错误信息配置，示例：`{ idcard: '请输入正确的身份证号码', max: '字符长度不能超过 ${max}' }`。TS 类型：`FormErrorMessage`，[Form API Documents](./form?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
 requiredMark | Boolean | true | 是否显示必填符号（*），默认显示 | N
 
@@ -307,6 +331,7 @@ closeIcon | Function | - | 关闭图标，【注意】使用渲染函数输出�
 
 名称 | 类型 | 默认值 | 描述 | 必传
 -- | -- | -- | -- | --
+checkIcon | Slot / Function | - | 已完成步骤图标，【注意】使用渲染函数输出图标组件。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 errorIcon | Slot / Function | - | 错误步骤图标，【注意】使用渲染函数输出图标组件。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 
 ### AlertConfig
@@ -315,6 +340,12 @@ errorIcon | Slot / Function | - | 错误步骤图标，【注意】使用渲染�
 -- | -- | -- | -- | --
 collapseText | String | - | 语言配置，“收起”描述文本 | N
 expandText | String | - | 语言配置，“展开更多”描述文本 | N
+
+### DescriptionsConfig
+
+名称 | 类型 | 默认值 | 描述 | 必传
+-- | -- | -- | -- | --
+colonText | String | - | 字段旁边的冒号，中文为“：” | N
 
 ### AnchorConfig
 
@@ -354,3 +385,9 @@ finishButtonProps | Object | - | 最后一步中的完成按钮，示例：`{ co
 nextButtonProps | Object | - | 下一步按钮，示例：`{ content: '下一步', theme: 'primary' }`。TS 类型：`ButtonProps` | N
 prevButtonProps | Object | - | 上一步按钮，示例：`{ content: '上一步', theme: 'default' }`。TS 类型：`ButtonProps` | N
 skipButtonProps | Object | - | 跳过按钮，示例：`{ content: '跳过', theme: 'default' }`。TS 类型：`ButtonProps` | N
+
+### RateConfig
+
+名称 | 类型 | 默认值 | 描述 | 必传
+-- | -- | -- | -- | --
+rateText | Array | - | 评分描述，默认值：['极差', '失望', '一般', '满意', '惊喜']。TS 类型：`string[]` | N

@@ -465,6 +465,14 @@ const docs = [
         componentEn: () => import('tdesign-vue/descriptions/descriptions.en-US.md'),
       },
       {
+        title: 'Empty 空状态',
+        titleEn: 'Empty',
+        name: 'empty',
+        path: '/vue/components/empty',
+        component: () => import('tdesign-vue/empty/empty.md'),
+        componentEn: () => import('tdesign-vue/empty/empty.en-US.md'),
+      },
+      {
         title: 'Image 图片',
         titleEn: 'Image',
         name: 'image',

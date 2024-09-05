@@ -2,10 +2,9 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-19 10:44:26
  * */
 
-import { TNode } from '../common';
+import { TNode, TScroll } from '../common';
 
 export interface TdListProps {
   /**
@@ -25,6 +24,10 @@ export interface TdListProps {
    * @default horizontal
    */
   layout?: 'horizontal' | 'vertical';
+  /**
+   * 懒加载和虚拟滚动。为保证组件收益最大化，当数据量小于阈值 `scroll.threshold` 时，无论虚拟滚动的配置是否存在，组件内部都不会开启虚拟滚动，`scroll.threshold` 默认为 `100`
+   */
+  scroll?: TScroll;
   /**
    * 尺寸
    * @default medium
@@ -65,6 +68,7 @@ export interface TdListItemProps {
   default?: string | TNode;
   /**
    * 点击时触发
+   * @deprecated
    */
   onClick?: (context: { e: MouseEvent }) => void;
 }
