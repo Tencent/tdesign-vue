@@ -2,6 +2,7 @@ import Vue from 'vue';
 import { CloseIcon as TdCloseIcon } from 'tdesign-icons-vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import tinycolor from 'tinycolor2';
+import isString from 'lodash/isString';
 import props from './props';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { TagConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
@@ -98,6 +99,22 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalI
       }
       return style;
     },
+    renderTitle(tagContent: string) {
+      if (!this.maxWidth) {
+        return undefined;
+      }
+
+      const vProps = (this.$vnode.componentOptions.propsData as TdTagProps) || {};
+      if (Reflect.has(vProps, 'title')) {
+        return vProps.title || undefined;
+      }
+
+      if (tagContent) {
+        return tagContent;
+      }
+
+      return undefined;
+    },
   },
 
   render() {
@@ -106,18 +123,13 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalI
     // 标签内容
     const tagContent: TNodeReturnValue = renderContent(this, 'default', 'content');
 
-    const title = typeof tagContent === 'string' ? tagContent : '';
-    const titleAttribute = title && this.maxWidth ? { title } : undefined;
+    const title = this.renderTitle(isString(tagContent) ? tagContent : '');
     // 图标
     const icon = renderTNodeJSX(this, 'icon');
     return (
       <div class={this.tagClass} onClick={this.handleClick} style={this.tagStyle}>
         {icon}
-        <span
-          class={this.maxWidth ? `${this.componentName}--text` : undefined}
-          style={this.textStyle}
-          attrs={titleAttribute}
-        >
+        <span class={this.maxWidth ? `${this.componentName}--text` : undefined} style={this.textStyle} attrs={title}>
           {tagContent}
         </span>
         {!this.disabled ? closeIcon : undefined}
