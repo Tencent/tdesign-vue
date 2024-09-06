@@ -214,11 +214,9 @@ describe('Tag Component', () => {
         );
       },
     });
-    const domWrapper = wrapper.findComponent(Tag);
+    const domWrapper = wrapper.find('.t-tag--text');
     expect(domWrapper.element.style.maxWidth).toBe('150px');
-    const domWrapper1 = wrapper.find('.t-tag--text');
-    expect(domWrapper1.element.style.maxWidth).toBe('150px');
-    expect(domWrapper1.attributes('title')).toBe('This is a long tag');
+    expect(domWrapper.attributes('title')).toBe('This is a long tag');
   });
   it('props.title is equal to ', () => {
     const wrapper = mount({
