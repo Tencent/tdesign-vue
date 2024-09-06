@@ -26,6 +26,10 @@ export interface TdButtonProps {
    */
   disabled?: boolean;
   /**
+   * 原生的form属性，支持用于通过 form 属性触发对应 id 的 form 的表单事件
+   */
+  form?: string;
+  /**
    * 是否为幽灵按钮（镂空按钮）
    * @default false
    */
