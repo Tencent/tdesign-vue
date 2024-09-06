@@ -107195,11 +107195,11 @@ exports[`csr snapshot test > csr test ./src/tag/_example/long-text.vue 1`] = `
 <div>
   <div
     class="t-tag t-tag--default t-tag--dark t-tag--ellipsis"
-    title="默认超八个字超长文本标签超长省略文本标签"
   >
     <span
       class="t-tag--text"
       style="max-width: 150px;"
+      title="默认超八个字超长文本标签超长省略文本标签"
     >
       默认超八个字超长文本标签超长省略文本标签
     </span>
