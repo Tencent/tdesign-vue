@@ -160,6 +160,16 @@ describe('Tag Component', () => {
     expect(domWrapper.attributes('title')).toBe('This is a long long long long long tag');
     expect(domWrapper.element.style.maxWidth).toBe('150px');
   });
+  it('props.maxWidth is equal to 150', () => {
+    const wrapper = mount({
+      render() {
+        return <Tag maxWidth={'150'} content={'This is a long long long long long tag'}></Tag>;
+      },
+    });
+    const domWrapper = wrapper.find('.t-tag--text');
+    expect(domWrapper.attributes('title')).toBe('This is a long long long long long tag');
+    expect(domWrapper.element.style.maxWidth).toBe('150px');
+  });
 
   const shapeClassNameList = [{ 't-tag--square': false }, 't-tag--round', 't-tag--mark'];
   ['square', 'round', 'mark'].forEach((item, index) => {

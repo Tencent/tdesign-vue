@@ -129,7 +129,7 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalI
     return (
       <div class={this.tagClass} onClick={this.handleClick} style={this.tagStyle}>
         {icon}
-        <span class={this.maxWidth ? `${this.componentName}--text` : undefined} style={this.textStyle} attrs={title}>
+        <span class={this.maxWidth ? `${this.componentName}--text` : undefined} style={this.textStyle} title={title}>
           {tagContent}
         </span>
         {!this.disabled ? closeIcon : undefined}
