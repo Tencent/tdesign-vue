@@ -167,6 +167,7 @@ export default defineComponent({
             props: {
               onInputChange: this.handleInputChange,
               disabled: this.isDisabled,
+              readonly: this.readonly,
               popupVisible: this.isShowPanel,
               inputValue: this.isShowPanel ? this.currentValue : this.innerValue ?? TIME_PICKER_EMPTY,
               popupProps: {
@@ -191,7 +192,7 @@ export default defineComponent({
                 onClick: this.handleClick,
                 onFocus: this.handleFocus,
                 onBlur: this.handleInputBlur,
-                readonly: !this.allowInput,
+                readonly: this.readonly || !this.allowInput,
                 activeIndex: this.currentPanelIdx,
                 ...this.rangeInputProps,
               },
