@@ -1,9 +1,28 @@
 <template>
-  <div>
+  <t-config-provider :global-config="globalConfig">
     <router-view />
     <td-theme-generator />
-  </div>
+  </t-config-provider>
 </template>
+
+<script>
+import enConfig from 'tdesign-vue/es/locale/en_US';
+import zhConfig from 'tdesign-vue/es/locale/zh_CN';
+import { getLang } from 'tdesign-site-components';
+
+export default {
+  data() {
+    return {
+      lang: getLang(),
+    };
+  },
+  computed: {
+    globalConfig() {
+      return this.lang === 'en' ? enConfig : zhConfig;
+    },
+  },
+};
+</script>
 
 <style lang="less">
 div[slot='action'] {
