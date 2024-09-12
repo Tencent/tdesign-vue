@@ -11,14 +11,9 @@ import zhConfig from 'tdesign-vue/es/locale/zh_CN';
 import { getLang } from 'tdesign-site-components';
 
 export default {
-  data() {
-    return {
-      lang: getLang(),
-    };
-  },
   computed: {
     globalConfig() {
-      return this.lang === 'en' ? enConfig : zhConfig;
+      return getLang() === 'en' ? enConfig : zhConfig;
     },
   },
 };
