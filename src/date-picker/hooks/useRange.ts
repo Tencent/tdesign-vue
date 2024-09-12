@@ -40,7 +40,7 @@ export default function useRange(props: TdDateRangePickerProps, { emit }: any) {
     size: props.size,
     clearable: props.clearable,
     prefixIcon: props.prefixIcon,
-    readonly: !props.allowInput,
+    readonly: !props.allowInput || props.readonly,
     separator: props.separator || global.value.rangeSeparator,
     placeholder: props.placeholder || global.value.placeholder[props.mode],
     activeIndex: popupVisible.value ? activeIndex.value : undefined,

@@ -23,6 +23,11 @@ export default {
     type: [Boolean, Array] as PropType<TdTimeRangePickerProps['disabled']>,
     default: undefined,
   },
+  /** 只读状态，值为真会隐藏输入框，且无法打开下拉框 */
+  readonly: {
+    type: Boolean,
+    default: undefined,
+  },
   /** 用于格式化时间，[详细文档](https://day.js.org/docs/en/display/format) */
   format: {
     type: String,

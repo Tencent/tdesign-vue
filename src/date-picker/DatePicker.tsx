@@ -289,6 +289,7 @@ export default defineComponent({
       <div class={COMPONENT_NAME}>
         <TSelectInput
           disabled={isDisabled}
+          readonly={this.readonly}
           value={inputValue}
           inputValue={inputValue}
           label={this.label}
@@ -298,7 +299,7 @@ export default defineComponent({
           inputProps={{ suffixIcon: renderSuffixIcon(), ...datePickerInputProps }}
           popupVisible={popupVisible}
           clearable={this.clearable}
-          allowInput={this.allowInput}
+          allowInput={this.allowInput && !this.readonly}
           panel={() => <TSinglePanel {...{ props: panelProps }} />}
         />
       </div>

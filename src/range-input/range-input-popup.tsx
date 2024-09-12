@@ -45,7 +45,7 @@ export default defineComponent({
           visible={this.popupVisible || innerPopupVisible}
           {...{
             props: {
-              disabled: this.disabled,
+              disabled: this.disabled || this.readonly,
               overlayInnerStyle: tOverlayInnerStyle,
               onVisibleChange: onInnerPopupVisibleChange,
               ...(this.popupProps as Object),

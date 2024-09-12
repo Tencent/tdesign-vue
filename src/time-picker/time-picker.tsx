@@ -135,6 +135,7 @@ export default defineComponent({
               onInputChange: this.handleInputChange,
               borderless: this.borderless,
               disabled: this.isDisabled,
+              readonly: this.readonly,
               clearable: this.clearable,
               allowInput: this.allowInput,
               class: this.inputClasses,
