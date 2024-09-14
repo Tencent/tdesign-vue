@@ -1,4 +1,5 @@
-import { get as lodashGet, set as lodashSet } from 'lodash';
+import lodashGet from 'lodash/get';
+import lodashSet from 'lodash/set';
 import { TreeOptionData, TreeKeysType } from '../common';
 
 export function getNodeDataByValue(
