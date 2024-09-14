@@ -329,7 +329,7 @@ export default mixins(classPrefixMixins).extend({
     },
     emitChangeEnd() {
       const changeEndValue = this.range ? [this.firstValue, this.secondValue] : this.firstValue;
-      emitEvent<Parameters<TdSliderProps['onChangeEnd']>>(this, 'changeEnd', changeEndValue);
+      emitEvent<Parameters<TdSliderProps['onChangeEnd']>>(this, 'change-end', changeEndValue);
     },
     getStopStyle(position: number) {
       return this.vertical ? { top: `calc(${100 - position}% - 1px)` } : { left: `${position}%` };
