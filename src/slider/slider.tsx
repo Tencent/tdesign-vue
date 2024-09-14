@@ -228,8 +228,8 @@ export default mixins(classPrefixMixins).extend({
       const { min, max, value } = this;
       if (this.range) {
         if (Array.isArray(value)) {
-          this.firstValue = Math.max(min || 0, value[0]);
-          this.secondValue = Math.min(max || 100, value[1]);
+          this.firstValue = Math.max(min || 0, value[0] ?? 0);
+          this.secondValue = Math.min(max || 100, value[1] ?? 0);
         } else {
           this.firstValue = min || 0;
           this.secondValue = max || 100;
