@@ -2,6 +2,8 @@ import {
   SetupContext, ref, computed, toRefs, watch,
 } from 'vue';
 import isFunction from 'lodash/isFunction';
+import lodashGet from 'lodash/get';
+import lodashSet from 'lodash/set';
 import { RemoveOptions, TdTreeSelectProps, TreeSelectValue } from './type';
 import { TreeProps, TreeInstanceFunctions, TreeNodeValue } from '../tree';
 import { usePrefixClass, useConfig } from '../hooks/useConfig';
@@ -57,7 +59,7 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
   const tKeys = computed<TreeKeysType>(() => ({ ...DEFAULT_KEYS, ...props.treeProps?.keys, ...props.keys }));
 
   const inputPlaceholder = computed(() => {
-    let label = nodeInfo.value?.[tKeys.value.label];
+    let label = nodeInfo.value ? lodashGet(nodeInfo.value, tKeys.value.label) : undefined;
     if (typeof label === 'number') label = String(label);
     return (innerVisible.value && label) || props.placeholder || global.value.placeholder;
   });
@@ -89,17 +91,17 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
   // single tree-select use nodeInfo to compute singleActivated
   const singleActivated = computed(() => {
     if (props.multiple || !nodeInfo.value) return [];
-    if (nodeInfo.value instanceof Array) return [nodeInfo.value[0]?.[tKeys.value.value]];
-    return [nodeInfo.value[tKeys.value.value]];
+    if (nodeInfo.value instanceof Array) return [nodeInfo.value[0] ? lodashGet(nodeInfo.value[0], tKeys.value.value) : undefined];
+    return [lodashGet(nodeInfo.value, tKeys.value.value)];
   });
 
   // multiple tree-select: use nodeInfo to compute multipleChecked, because nodeInfo also decided by treeSelectValue
   const multipleChecked = computed((): Array<TreeNodeValue> => {
     if (!props.multiple || !nodeInfo.value) return [];
     if (nodeInfo.value instanceof Array) {
-      return nodeInfo.value.map((item: TreeOptionData) => item[tKeys.value.value]);
+      return nodeInfo.value.map((item: TreeOptionData) => lodashGet(item, tKeys.value.value));
     }
-    return [nodeInfo.value[tKeys.value.value]];
+    return [lodashGet(nodeInfo.value, tKeys.value.value)];
   });
 
   // multiple tree select node info list
@@ -109,15 +111,13 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
     if (treeRef.value) {
       return list.map((item) => {
         const finalValue = typeof item === 'object' ? item.value : item;
-        return (
-          treeRef.value.getItem(finalValue)?.data || {
-            [tKeys.value.label]: finalValue,
-            [tKeys.value.value]: finalValue,
-          }
-        );
+        const obj = {};
+        lodashSet(obj, tKeys.value.label, finalValue);
+        lodashSet(obj, tKeys.value.value, finalValue);
+        return treeRef.value.getItem(finalValue)?.data || obj;
       });
     }
-    const onlyValues = list.map((item) => (typeof item === 'object' ? item[tKeys.value.value] : item));
+    const onlyValues = list.map((item) => (typeof item === 'object' ? lodashGet(item, tKeys.value.value) : item));
     return getNodeDataByValue(onlyValues, props.data, tKeys.value);
   }
 
@@ -130,12 +130,10 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
     const oneValue = Array.isArray(value) ? value[0] : value;
     const finalValue = typeof oneValue === 'object' ? oneValue.value : oneValue;
     if (treeRef.value) {
-      return (
-        treeRef.value.getItem(finalValue)?.data || {
-          [tKeys.value.label]: finalValue,
-          [tKeys.value.value]: finalValue,
-        }
-      );
+      const obj = {};
+      lodashSet(obj, tKeys.value.label, finalValue);
+      lodashSet(obj, tKeys.value.value, finalValue);
+      return treeRef.value.getItem(finalValue)?.data || obj;
     }
     return getNodeDataByValue([finalValue], props.data, tKeys.value)[0];
   }
@@ -174,7 +172,7 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
   // only for single tree select
   const treeNodeActive: TreeProps['onActive'] = (value, ctx) => {
     if (props.multiple) return;
-    if (treeSelectValue.value === ctx.node.data[tKeys.value.value]) {
+    if (treeSelectValue.value === lodashGet(ctx.node.data, tKeys.value.value)) {
       return;
     }
     const onlyLeafNode = Boolean(
@@ -183,6 +181,7 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
         && Array.isArray(ctx.node?.data?.children)
         && ctx.node?.data?.children?.length,
     );
+
     let current: TreeSelectValue = value;
     const nodeValue = Array.isArray(value) ? value[0] : value;
     current = isObjectValue.value ? treeRef.value.getItem(nodeValue) : nodeValue;
@@ -196,9 +195,9 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
     innerInputValue.value && setInnerInputValue('', { trigger: 'change', e: ctx.e });
   };
 
-  // label could be used as TNode, then use text to filter
+  // label could be used as TdNode, then use text to filter
   const defaultFilterFunction: TreeProps['filter'] = (node) => {
-    const label = node.data[tKeys.value.label];
+    const label = lodashGet(node.data, tKeys.value.label);
     const searchLabel = isFunction(label) ? node.data.text : label || node.data.text;
     return searchLabel?.indexOf(innerInputValue.value) >= 0;
   };
@@ -238,7 +237,7 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
     if (!fitTrigger) return;
     // handle remove event
     const current = treeSelectValue.value[index];
-    const currentDeleteValue = typeof current === 'object' ? current[tKeys.value.value] : current;
+    const currentDeleteValue = typeof current === 'object' ? lodashGet(current, tKeys.value.value) : current;
     const currentNode = treeRef.value?.getItem(currentDeleteValue);
     const data = currentNode ? currentNode.data : getNodeDataByValue([currentDeleteValue], props.data, tKeys.value)[0];
     if (fitTrigger) {

@@ -2,6 +2,7 @@ import Vue, {
   SetupContext, computed, ref, toRefs,
 } from 'vue';
 import isObject from 'lodash/isObject';
+import lodashGet from 'lodash/get';
 import { TdSelectInputProps, SelectInputKeys } from './type';
 import { SelectInputCommonProperties } from './interface';
 import TagInput, { TagInputValue, TagInputProps } from '../tag-input';
@@ -36,9 +37,9 @@ export default function useMultiple(props: TdSelectInputProps, context: SetupCon
   const iKeys = computed<SelectInputKeys>(() => ({ ...DEFAULT_KEYS, ...props.keys }));
   const tags = computed<TagInputValue>(() => {
     if (!(props.value instanceof Array)) {
-      return isObject(props.value) ? [props.value[iKeys.value.label]] : [props.value];
+      return isObject(props.value) ? [lodashGet(props.value, iKeys.value.label)] : [props.value];
     }
-    return props.value.map((item) => (isObject(item) ? item[iKeys.value.label] : item));
+    return props.value.map((item) => (isObject(item) ? lodashGet(item, iKeys.value.label) : item));
   });
 
   const tPlaceholder = computed<string>(() => (!tags.value || !tags.value.length ? props.placeholder : ''));

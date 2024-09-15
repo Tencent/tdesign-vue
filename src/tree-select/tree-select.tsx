@@ -1,6 +1,7 @@
 import { defineComponent, computed } from 'vue';
 import isArray from 'lodash/isArray';
 import isFunction from 'lodash/isFunction';
+import lodashGet from 'lodash/get';
 import Tree, { TreeProps } from '../tree';
 import props from './props';
 import SelectInput, { SelectInputProps } from '../select-input';
@@ -182,7 +183,7 @@ export default defineComponent({
                 ? {
                   value: this.nodeInfo as TreeOptionData<string | number>[],
                   onClose: (index: number) => {
-                    const value = this.nodeInfo.map((node: TreeOptionData) => node.value);
+                    const value = this.nodeInfo.map((node: TreeOptionData) => lodashGet(node, this.tKeys.value));
                     this.tagChange(value, {
                       trigger: 'tag-remove',
                       index,
