@@ -228,8 +228,8 @@ export default mixins(classPrefixMixins).extend({
       const { min, max, value } = this;
       if (this.range) {
         if (Array.isArray(value)) {
-          this.firstValue = Math.max(min || 0, value[0]);
-          this.secondValue = Math.min(max || 100, value[1]);
+          this.firstValue = Math.max(min || 0, value[0] ?? 0);
+          this.secondValue = Math.min(max || 100, value[1] ?? 0);
         } else {
           this.firstValue = min || 0;
           this.secondValue = max || 100;
@@ -329,7 +329,7 @@ export default mixins(classPrefixMixins).extend({
     },
     emitChangeEnd() {
       const changeEndValue = this.range ? [this.firstValue, this.secondValue] : this.firstValue;
-      emitEvent<Parameters<TdSliderProps['onChangeEnd']>>(this, 'changeEnd', changeEndValue);
+      emitEvent<Parameters<TdSliderProps['onChangeEnd']>>(this, 'change-end', changeEndValue);
     },
     getStopStyle(position: number) {
       return this.vertical ? { top: `calc(${100 - position}% - 1px)` } : { left: `${position}%` };
