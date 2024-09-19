@@ -10,7 +10,7 @@ import { TreeOptionData, TreeKeysType } from '../common';
 import useVModel from '../hooks/useVModel';
 import useDefaultValue from '../hooks/useDefaultValue';
 import { SelectInputProps } from '../select-input';
-import { getNodeDataByValue } from './utils';
+import { getNodeDataByValue, normalizeArray } from './utils';
 
 const DEFAULT_KEYS = {
   label: 'label',
@@ -105,7 +105,7 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
   // multiple tree select node info list
   function getMultipleNodeInfo(): TreeOptionData[] {
     const { value } = treeSelectValue;
-    const list = Array.isArray(value) ? value : [value];
+    const list = normalizeArray(value);
     if (treeRef.value) {
       return list.map((item) => {
         const finalValue = typeof item === 'object' ? item.value : item;

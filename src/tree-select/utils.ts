@@ -1,3 +1,4 @@
+import isNil from 'lodash/isNil';
 import { TreeOptionData, TreeKeysType } from '../common';
 
 export function getNodeDataByValue(
@@ -40,6 +41,14 @@ export function getNodeDataByValue(
   }
 
   return values.map((value) => results.get(value));
+}
+
+export function normalizeArray(value: any) {
+  if (isNil(value)) {
+    return [];
+  }
+
+  return Array.isArray(value) ? value : [value];
 }
 
 export default {};
