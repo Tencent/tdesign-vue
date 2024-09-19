@@ -1,4 +1,6 @@
 import isNil from 'lodash/isNil';
+import lodashGet from 'lodash/get';
+import lodashSet from 'lodash/set';
 import { TreeOptionData, TreeKeysType } from '../common';
 
 export function getNodeDataByValue(
@@ -14,7 +16,7 @@ export function getNodeDataByValue(
   ) => {
     for (let i = 0, len = data.length; i < len; i++) {
       const item = data[i];
-      const index = values.findIndex((val) => item[keys.value] === val);
+      const index = values.findIndex((val) => lodashGet(item, keys.value) === val);
       if (index !== -1) {
         // results.push(item);
         results.set(values[index], item);
@@ -35,7 +37,10 @@ export function getNodeDataByValue(
   if (values.length && results.size < values.length) {
     values.forEach((value) => {
       if (!results.get(value)) {
-        results.set(value, { [keys.label]: value, [keys.value]: value });
+        const obj = {};
+        lodashSet(obj, keys.label, value);
+        lodashSet(obj, keys.value, value);
+        results.set(value, obj);
       }
     });
   }
