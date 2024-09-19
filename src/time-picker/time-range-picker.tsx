@@ -42,6 +42,7 @@ export default defineComponent({
     const currentPanelIdx = ref(undefined);
     const currentValue = ref<Array<string>>(TIME_PICKER_EMPTY);
     const isShowPanel = ref(false);
+    let openedPanels: number[] = [];
 
     const inputClasses = computed(() => [
       `${componentName.value}__group`,
@@ -72,6 +73,7 @@ export default defineComponent({
 
     const handleClick = ({ position }: { position: 'first' | 'second' }) => {
       currentPanelIdx.value = position === 'first' ? 0 : 1;
+      openedPanels.push(currentPanelIdx.value);
     };
 
     const handleTimeChange = (newValue: string) => {
@@ -79,6 +81,18 @@ export default defineComponent({
         currentValue.value = [newValue, currentValue.value[1] ?? newValue];
       } else {
         currentValue.value = [currentValue.value[0] ?? newValue, newValue];
+      }
+    };
+
+    const setCurrentValue2InnerValue = () => {
+      const [startTime, endTime] = currentValue.value;
+      const startDayjs = dayjs(startTime, props.format);
+      const endDayjs = dayjs(endTime, props.format);
+
+      if (startDayjs.isAfter(endDayjs, 'second')) {
+        setInnerValue([currentValue.value[1], currentValue.value[0]]);
+      } else {
+        setInnerValue([currentValue.value[0], currentValue.value[1]]);
       }
     };
 
@@ -90,6 +104,7 @@ export default defineComponent({
           currentPanelIdx.value === 0
             ? (currentValue.value = [formattedVal, currentValue.value[1] ?? formattedVal])
             : (currentValue.value = [currentValue.value[0] ?? formattedVal, formattedVal]);
+          setCurrentValue2InnerValue();
         }
       }
       props.onBlur?.({ value, e });
@@ -105,12 +120,29 @@ export default defineComponent({
     };
 
     const handleClickConfirm = () => {
-      const isValidTime = !currentValue.value.find((v) => !validateInputValue(v, format.value));
-      if (isValidTime) setInnerValue(currentValue.value);
+      if (openedPanels.length < 2) {
+        currentPanelIdx.value = currentPanelIdx.value === 1 ? 0 : 1;
+        openedPanels.push(currentPanelIdx.value);
+        return;
+      }
+
+      const noValidIndex = currentValue.value.findIndex((v) => !validateInputValue(v, format.value));
+      if (noValidIndex !== -1) {
+        currentPanelIdx.value = noValidIndex;
+        openedPanels.push(currentPanelIdx.value);
+        return;
+      }
+
+      setCurrentValue2InnerValue();
       isShowPanel.value = false;
     };
 
     const handleFocus = (value: TimeRangeValue, { e, position }: { e: FocusEvent; position: RangeInputPosition }) => {
+      const panelIndex = position === 'first' ? 0 : 1;
+      if (isShowPanel.value && currentPanelIdx.value !== panelIndex) {
+        currentPanelIdx.value = panelIndex;
+        openedPanels.push(currentPanelIdx.value);
+      }
       props.onFocus?.({ value, e, position: position === 'first' ? 'start' : 'end' });
       ctx.emit('focus', { value, e, position: position === 'first' ? 'start' : 'end' });
     };
@@ -133,7 +165,10 @@ export default defineComponent({
       () => isShowPanel.value,
       () => {
         currentValue.value = isShowPanel.value ? innerValue.value ?? TIME_PICKER_EMPTY : TIME_PICKER_EMPTY;
-        if (!isShowPanel.value) currentPanelIdx.value = undefined;
+        if (!isShowPanel.value) {
+          currentPanelIdx.value = undefined;
+          openedPanels = [];
+        }
       },
     );
     return {
