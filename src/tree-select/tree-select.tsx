@@ -104,7 +104,7 @@ export default defineComponent({
                 onLoad: this.treeNodeLoad,
                 onChange: this.treeNodeChange,
                 onActive: this.treeNodeActive,
-                expandOnClickNode: true,
+                expandOnClickNode: false,
                 empty: () => this.renderDefaultTNode('empty', {
                   defaultNode: <div class={`${this.classPrefix}-select__empty`}>{this.global.empty}</div>,
                 }),
