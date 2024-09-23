@@ -1,4 +1,5 @@
 import camelCase from 'lodash/camelCase';
+import type { VNode } from 'vue';
 
 export function omit(obj: object, fields: string[]): object {
   const shallowCopy = {
@@ -152,4 +153,12 @@ export function setTransform(value: string): object {
     '-moz-transform': value,
     '-webkit-transform': value,
   };
+}
+
+export function getVueComponentName(component: any) {
+  return component?.options?.name || component?.name;
+}
+
+export function getVNodeComponentName(vnode: VNode) {
+  return (vnode?.componentOptions?.Ctor as any)?.options?.name;
 }
