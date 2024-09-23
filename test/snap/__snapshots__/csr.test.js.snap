@@ -38821,7 +38821,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/table.vue 1
           class="t-table__body"
         >
           <tr
-            class=""
+            class="t-table__row--folded"
           >
             <td
               class="t-table__expandable-icon-cell"
@@ -38860,7 +38860,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/table.vue 1
             </td>
           </tr>
           <tr
-            class=""
+            class="t-table__row--folded"
           >
             <td
               class="t-table__expandable-icon-cell"
@@ -38899,7 +38899,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/table.vue 1
             </td>
           </tr>
           <tr
-            class=""
+            class="t-table__row--folded"
           >
             <td
               class="t-table__expandable-icon-cell"
