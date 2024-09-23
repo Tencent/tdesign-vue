@@ -86429,7 +86429,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
     class="t-space-item"
   >
     <h3>
-      allowClear: true
+      clearable: true
     </h3>
   </div>
   <div
@@ -86649,7 +86649,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
     class="t-space-item"
   >
     <h3>
-      allowClear: false
+      clearable: false
     </h3>
   </div>
   <div

@@ -56,7 +56,7 @@ export default defineComponent({
     const clickHandler = (event: MouseEvent, index: number) => {
       if (props.disabled) return;
       const value = getStarValue(event, index);
-      if (props.allowClear && value === starValue.value) {
+      if (props.clearable && value === starValue.value) {
         hoverValue.value = undefined;
         setStarValue(undefined);
       } else {

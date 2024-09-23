@@ -38,7 +38,7 @@ describe('Rate', () => {
           };
         },
         render() {
-          return <Rate direction="vertical" value={this.value} onChange={(v) => (this.value = v)} allowClear />;
+          return <Rate direction="vertical" value={this.value} onChange={(v) => (this.value = v)} clearable />;
         },
       });
 

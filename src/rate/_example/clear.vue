@@ -1,8 +1,8 @@
 <template>
   <t-space direction="vertical">
-    <h3>allowClear: true</h3>
-    <t-rate v-model="value1" allowClear />
-    <h3>allowClear: false</h3>
+    <h3>clearable: true</h3>
+    <t-rate v-model="value1" clearable />
+    <h3>clearable: false</h3>
     <t-rate v-model="value2" />
   </t-space>
 </template>
