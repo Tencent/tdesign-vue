@@ -30,6 +30,25 @@ describe('Rate', () => {
 
       expect(wrapper.find('.t-rate__item--half').exists()).toBeTruthy();
     });
+    it('clear', async () => {
+      const wrapper = mount({
+        data() {
+          return {
+            value: 4,
+          };
+        },
+        render() {
+          return <Rate direction="vertical" value={this.value} onChange={(v) => (this.value = v)} allowClear />;
+        },
+      });
+
+      const items = wrapper.findAll('.t-rate__item--full');
+      expect(items.length).toBe(4);
+
+      items.at(3).trigger('click');
+      await wrapper.vm.$nextTick();
+      expect(wrapper.vm.value).toBe(undefined);
+    });
     it('custom icon', () => {
       const wrapper = mount({
         render() {
