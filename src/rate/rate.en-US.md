@@ -7,6 +7,7 @@
 name | type | default | description | required
 -- | -- | -- | -- | --
 allowHalf | Boolean | false | \- | N
+clearable | Boolean | false | \- | N
 color | String / Array | '#ED7B2F' | Typescript：`string \| Array<string>` | N
 count | Number | 5 | \- | N
 disabled | Boolean | undefined | \- | N
