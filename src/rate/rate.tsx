@@ -58,7 +58,7 @@ export default defineComponent({
       const value = getStarValue(event, index);
       if (props.clearable && value === starValue.value) {
         hoverValue.value = undefined;
-        setStarValue(undefined);
+        setStarValue(0);
       } else {
         setStarValue(value);
       }
