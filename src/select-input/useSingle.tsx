@@ -4,6 +4,7 @@ import {
 
 import isObject from 'lodash/isObject';
 import pick from 'lodash/pick';
+import lodashGet from 'lodash/get';
 import { SelectInputCommonProperties } from './interface';
 import { TdSelectInputProps } from './type';
 import Input, { InputProps, StrInputProps } from '../input';
@@ -32,7 +33,7 @@ const DEFAULT_KEYS = {
 
 function getInputValue(value: TdSelectInputProps['value'], keys: TdSelectInputProps['keys']) {
   const iKeys = keys || DEFAULT_KEYS;
-  return isObject(value) ? value[iKeys.label] : value;
+  return isObject(value) ? lodashGet(value, iKeys.label) : value;
 }
 
 export default function useSingle(props: TdSelectInputProps, context: SetupContext) {
@@ -106,7 +107,7 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
       label: prefixContent.length ? () => prefixContent : undefined,
       autoWidth: props.autoWidth,
       autofocus: props.autofocus,
-      readonly: !props.allowInput,
+      readonly: !props.allowInput || props.readonly,
       placeholder: singleValueDisplay ? '' : props.placeholder,
       suffixIcon: !props.disabled && props.loading ? () => <Loading loading size="small" /> : props.suffixIcon,
       showClearIconOnEmpty: Boolean(!props.disabled && props.clearable && (inputValue.value || displayedValue)),

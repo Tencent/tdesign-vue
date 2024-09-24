@@ -25,6 +25,11 @@ export default {
   },
   /** 是否禁用组件 */
   disabled: Boolean,
+  /** 只读状态，值为真会隐藏输入框，且无法打开下拉框 */
+  readonly: {
+    type: Boolean,
+    default: undefined,
+  },
   /** 是否显示时间选择 */
   enableTimePicker: Boolean,
   /** 第一天从星期几开始 */

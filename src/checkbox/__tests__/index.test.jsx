@@ -157,14 +157,18 @@ describe('Checkbox CheckboxGroup', () => {
   describe('@event', () => {
     it('Event passthrough', async () => {
       const wrapper = mount({
+        components: {
+          ACheckboxGroup: CheckboxGroup,
+          ACheckbox: Checkbox,
+        },
         render() {
           return (
-            <CheckboxGroup>
-              <Checkbox value="gz">广州</Checkbox>
-              <Checkbox value="sz" disabled>
+            <a-checkbox-group>
+              <a-checkbox value="gz">广州</a-checkbox>
+              <a-checkbox value="sz" disabled>
                 深圳
-              </Checkbox>
-            </CheckboxGroup>
+              </a-checkbox>
+            </a-checkbox-group>
           );
         },
       });

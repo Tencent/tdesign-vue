@@ -11,7 +11,10 @@ export default {
   /** 标签是否可关闭 */
   closable: Boolean,
   /** 自定义标签颜色 */
-  color: String,
+  color: {
+    type: String,
+    default: '',
+  },
   /** 组件子元素 */
   content: {
     type: [String, Function] as PropType<TdTagProps['content']>,
@@ -57,6 +60,11 @@ export default {
       if (!val) return true;
       return ['default', 'primary', 'warning', 'danger', 'success'].includes(val);
     },
+  },
+  /** 标签标题，在标签hover时展示，默认为标签内容 */
+  title: {
+    type: String,
+    default: '',
   },
   /** 标签风格变体 */
   variant: {

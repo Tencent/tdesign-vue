@@ -1,5 +1,5 @@
 import Vue, { VNode, VueConstructor } from 'vue';
-import kebabCase from 'lodash/kebabCase';
+import { getVNodeComponentName, getVueComponentName } from '../utils/helper';
 import props from './props';
 import TTabPanel from './tab-panel';
 import TTabNav from './tab-nav';
@@ -68,9 +68,10 @@ export default mixins(Vue as VueConstructor<TabParentInjectVue>, classPrefixMixi
         return;
       }
       const newPanels = this.listPanels
+        .filter((child) => getVNodeComponentName(child) === getVueComponentName(TTabPanel))
         .map((panel: VNode) => panel.componentInstance as InstanceType<typeof TTabPanel>)
-        .filter(Boolean)
-        .filter((child) => kebabCase(child?.$vnode?.tag).endsWith('t-tab-panel')); // 不可用classPrefix替换 此处是判断组件tag
+        .filter(Boolean);
+
       const isUnchanged = () => newPanels.length === this.panels.length && this.panels.every((panel, index) => panel === newPanels[index]);
       if (isUnchanged() && !force) return;
       this.panels = newPanels;

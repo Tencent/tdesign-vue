@@ -1,8 +1,8 @@
 :: BASE_DOC ::
 
-### Install tdesign-icons-vue-next
+### Install tdesign-icons-vue
 
-Icons are published and managed as a separate npm package. If you want to use it directly in your project, please install `tdesign-icons-vue-next`. At the same time, `tdesign-vue-next` also includes icons and supports direct use through `t-icon`.
+Icons are published and managed as a separate npm package. If you want to use it directly in your project, please install `tdesign-icons-vue`. At the same time, `tdesign-vue` also includes icons and supports direct use through `t-icon`.
 
 ### Import on-demand
 
@@ -50,7 +50,7 @@ If you need to select icons in your project, please use `Select` to implement an
 
 #### How to get all the names of icons？
 
-You can get all the name of icon by import manifest from the bundle `import { manifest } from 'tdesign-icons-vue-next'`
+You can get all the name of icon by import manifest from the bundle `import { manifest } from 'tdesign-icons-vue'`
 
 #### the usage of full import needs network. What if my project is in a no-network scenario?
 

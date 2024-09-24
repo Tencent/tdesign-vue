@@ -109,11 +109,17 @@ export default defineComponent({
       toUploadFiles.value = files;
       uploadData.uploadFiles();
     };
+    const handlePasteFileChange = (e: ClipboardEvent) => {
+      if (props.uploadPastedFiles) {
+        onPasteFileChange(e);
+      }
+    };
 
     return {
       ...uploadData,
       onUploadPaste,
       onPasteFileChange,
+      handlePasteFileChange,
       commonDisplayFileProps,
       dragProps,
       uploadClasses,
@@ -148,7 +154,11 @@ export default defineComponent({
       };
       return (
         renderContent(this, 'default', 'trigger', {
-          params: { dragActive: false, files: this.uploadValue },
+          params: {
+            dragActive: false,
+            files: this.uploadValue,
+            disabled: this.tDisabled,
+          },
         }) || getDefaultTrigger()
       );
     },
@@ -264,7 +274,7 @@ export default defineComponent({
 
   render() {
     return (
-      <div class={this.uploadClasses} onPaste={this.uploadPastedFiles ? this.onPasteFileChange : undefined}>
+      <div class={this.uploadClasses} onPaste={this.handlePasteFileChange}>
         <input
           ref="inputRef"
           type="file"

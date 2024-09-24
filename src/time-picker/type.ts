@@ -40,6 +40,10 @@ export interface TdTimePickerProps {
    */
   disabled?: boolean;
   /**
+   * 只读状态，值为真会隐藏输入框，且无法打开下拉框
+   */
+  readonly?: boolean;
+  /**
    * 用于格式化时间，[详细文档](https://day.js.org/docs/en/display/format)
    * @default HH:mm:ss
    */
@@ -153,6 +157,10 @@ export interface TdTimeRangePickerProps {
    * 是否禁用组件，值为数组表示可分别控制开始日期和结束日期是否禁用
    */
   disabled?: boolean | Array<boolean>;
+  /**
+   * 只读状态，值为真会隐藏输入框，且无法打开下拉框
+   */
+  readonly?: boolean;
   /**
    * 用于格式化时间，[详细文档](https://day.js.org/docs/en/display/format)
    * @default HH:mm:ss

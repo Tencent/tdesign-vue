@@ -1,4 +1,5 @@
 import camelCase from 'lodash/camelCase';
+import type { VNode } from 'vue';
 import type { Styles } from '../common';
 
 export function omit(obj: object, fields: string[]): object {
@@ -153,4 +154,12 @@ export function setTransform(value: string): Styles {
     '-moz-transform': value,
     '-webkit-transform': value,
   };
+}
+
+export function getVueComponentName(component: any) {
+  return component?.options?.name || component?.name;
+}
+
+export function getVNodeComponentName(vnode: VNode) {
+  return (vnode?.componentOptions?.Ctor as any)?.options?.name;
 }

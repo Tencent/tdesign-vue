@@ -574,6 +574,7 @@ export default defineComponent({
     const tableContent = (
       <div
         ref="tableContentRef"
+        key="table-content"
         class={this.tableBaseClass.content}
         style={this.tableContentStyles}
         // @ts-ignore
@@ -615,6 +616,7 @@ export default defineComponent({
     const getCustomLoadingText = isFunction(this.loading) ? this.loading : this.$scopedSlots.loading;
     const loadingContent = this.loading !== undefined && (
       <Loading
+        key="loading"
         loading={!!this.loading}
         text={getCustomLoadingText}
         attach={this.tableRef ? () => this.tableRef : undefined}
@@ -657,6 +659,7 @@ export default defineComponent({
         {/* 右侧滚动条分隔线 */}
         {this.showRightDivider && (
           <div
+            key="right-divider"
             class={this.tableBaseClass.scrollbarDivider}
             style={{
               right: `${this.scrollbarWidth}px`,
