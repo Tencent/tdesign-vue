@@ -55,7 +55,7 @@ TDesign 支持通过使用 Iconfont 图标，使用时需要单独引入 Iconfon
 
 #### 如何获取全部图标的名称列表？
 
-可以通过`import { manifest } from 'tdesign-icons-vue-next'` 获取全部图标的名称列表。
+可以通过`import { manifest } from 'tdesign-icons-vue'` 获取全部图标的名称列表。
 
 ### t-icon、iconfont和icon使用时都会发起网络请求，我的项目是无网络场景，如何使用？
 

@@ -1,7 +1,7 @@
 {
   "name": "tdesign-vue",
   "purename": "tdesign",
-  "version": "1.10.0",
+  "version": "1.10.1",
   "description": "tdesign-vue",
   "title": "tdesign-vue",
   "keywords": [
@@ -63,6 +63,7 @@
     "lint": "npm run lint:tsc && eslint --ext .vue,.js,.ts,.tsx ./ --max-warnings 0",
     "lint:tsc": "tsc --emitDeclarationOnly",
     "generate:usage": "node script/generate-usage/index.js",
+    "generate:coverage-badge": "npm run test:coverage && node script/test/generate-coverage.js",
     "test": "npm run test:unit && npm run test:snap",
     "test:unit": "vitest run --config vitest.config.js",
     "test:update": "vitest run -u && npm run test:snap-update",
@@ -156,7 +157,7 @@
     "gray-matter": "^4.0.3",
     "husky": "^7.0.4",
     "hyphenate": "^0.2.4",
-    "jsdom": "^20.0.1",
+    "jsdom": "^25.0.0",
     "less": "^4.1.2",
     "lint-staged": "^13.2.2",
     "mockdate": "^3.0.2",

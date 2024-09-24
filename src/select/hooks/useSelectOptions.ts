@@ -8,6 +8,9 @@ import {
 } from '@vue/composition-api';
 import { VNode } from 'vue';
 import get from 'lodash/get';
+import { getVNodeComponentName, getVueComponentName } from '../../utils/helper';
+import Option from '../option';
+import OptionGroup from '../optionGroup';
 import {
   TdSelectProps, TdOptionProps, SelectOptionGroup, SelectValue,
 } from '../type';
@@ -62,7 +65,8 @@ export default function useSelectOptions(
       // 处理 slots 中 t-option 与 t-option-group
       const currentSlots = instance.proxy.$slots.default || [];
       currentSlots.forEach((child) => {
-        if (child.componentOptions?.tag === 't-option') {
+        const componentName = getVNodeComponentName(child);
+        if (componentName && componentName === getVueComponentName(Option)) {
           // 独立选项
           innerOptions.push({
             // 单独处理 style 和 class 参数的透传
@@ -74,7 +78,7 @@ export default function useSelectOptions(
             index: dynamicIndex,
           } as TdOptionProps);
           dynamicIndex += 1;
-        } else if (child.componentOptions?.tag === 't-option-group') {
+        } else if (componentName && componentName === getVueComponentName(OptionGroup)) {
           // 分组选项
           const groupOption = {
             group: (child.componentOptions.propsData as TdOptionProps)?.label,

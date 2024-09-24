@@ -13,6 +13,7 @@ import intersection from 'lodash/intersection';
 import isObject from 'lodash/isObject';
 import isUndefined from 'lodash/isUndefined';
 import { VNode } from 'vue';
+import { getVNodeComponentName, getVueComponentName } from '../utils/helper';
 import Checkbox from './checkbox';
 import props from './checkbox-group-props';
 import { CheckboxOptionObj, TdCheckboxProps, CheckboxGroupValue } from './type';
@@ -196,7 +197,8 @@ export default defineComponent({
       if (!nodes) return;
       for (let i = 0, len = nodes.length; i < len; i++) {
         const vNode = nodes[i];
-        if (vNode.componentOptions && /TCheckbox/.test(vNode.tag)) {
+        const componentName = getVNodeComponentName(vNode);
+        if (vNode.componentOptions && componentName && componentName === getVueComponentName(Checkbox)) {
           (vNode.componentOptions.propsData as any).storeKey = storeKey;
         }
         if (vNode.children?.length) {

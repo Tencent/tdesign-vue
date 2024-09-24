@@ -1,6 +1,7 @@
 import { defineComponent, computed } from '@vue/composition-api';
 import isArray from 'lodash/isArray';
 import isFunction from 'lodash/isFunction';
+import lodashGet from 'lodash/get';
 import Tree from '../tree';
 import props from './props';
 import SelectInput from '../select-input';
@@ -103,7 +104,7 @@ export default defineComponent({
                 onLoad: this.treeNodeLoad,
                 onChange: this.treeNodeChange,
                 onActive: this.treeNodeActive,
-                expandOnClickNode: true,
+                expandOnClickNode: false,
                 empty: () => this.renderDefaultTNode('empty', {
                   defaultNode: <div class={`${this.classPrefix}-select__empty`}>{this.global.empty}</div>,
                 }),
@@ -180,7 +181,7 @@ export default defineComponent({
                 ? {
                   value: this.nodeInfo as TreeOptionData<string | number>[],
                   onClose: (index: number) => {
-                    const value = this.nodeInfo.map((node: TreeOptionData) => node.value);
+                    const value = this.nodeInfo.map((node: TreeOptionData) => lodashGet(node, this.tKeys.value));
                     this.tagChange(value, {
                       trigger: 'tag-remove',
                       index,

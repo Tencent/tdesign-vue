@@ -1,5 +1,7 @@
 import { VNode } from 'vue';
 import { computed, getCurrentInstance } from '@vue/composition-api';
+import { getVNodeComponentName, getVueComponentName } from '../../utils/helper';
+import ListItem from '../list-item';
 
 const useListItems = () => {
   const instance = getCurrentInstance();
@@ -8,7 +10,8 @@ const useListItems = () => {
   const listItems = computed(() => {
     const computedListItems: VNode[] = [];
     currentSlots.forEach((child) => {
-      if (child.componentOptions?.tag === 't-list-item') {
+      const componentName = getVNodeComponentName(child);
+      if (componentName && componentName === getVueComponentName(ListItem)) {
         computedListItems.push({
           class: child.data.staticClass,
           style: child.data.staticStyle,

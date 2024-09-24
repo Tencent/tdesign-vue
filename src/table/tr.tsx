@@ -189,7 +189,12 @@ export default defineComponent({
     const classes = computed(() => {
       const customClasses = formatRowClassNames(
         props.rowClassName,
-        { row: props.row, rowIndex: props.rowIndex, type: 'body' },
+        {
+          row: props.row,
+          rowKey: props.rowKey,
+          rowIndex: props.rowIndex,
+          type: 'body',
+        },
         props.rowKey || 'id',
       );
       return [trStyles.value?.classes, customClasses];

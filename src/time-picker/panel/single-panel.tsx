@@ -104,8 +104,15 @@ export default defineComponent({
           dayjsValue.value.minute(),
           dayjsValue.value.second(),
         ];
-        params[colIdx] = Number(el);
-        return !props.disableTime?.(...params, { partial: position.value || 'start' })?.[col]?.includes(Number(el));
+
+        let n = Number(el);
+
+        if (col === EPickerCols.hour && TWELVE_HOUR_FORMAT.test(props.format) && dayjsValue.value.hour() >= 12) {
+          n += 12;
+        }
+
+        params[colIdx] = n;
+        return !props.disableTime?.(...params, { partial: position.value || 'start' })?.[col]?.includes(n);
       }
       return true;
     };
@@ -133,10 +140,14 @@ export default defineComponent({
               dayjsValue.value.second(),
               dayjsValue.value.millisecond(),
             ];
-            params[colIdx] = Number(t);
-            return !props
-              .disableTime?.(...params, { partial: position.value || 'start' })
-              ?.[col]?.includes(Number(t));
+            let n = Number(t);
+
+            if (col === EPickerCols.hour && TWELVE_HOUR_FORMAT.test(props.format) && dayjsValue.value.hour() >= 12) {
+              n += 12;
+            }
+
+            params[colIdx] = n;
+            return !props.disableTime?.(...params, { partial: position.value || 'start' })?.[col]?.includes(n);
           })
           : colList;
       }
@@ -242,11 +253,7 @@ export default defineComponent({
     const handleTimeItemClick = (col: EPickerCols, el: string | number, idx: number, e: MouseEvent) => {
       if (!timeItemCanUsed(col, el)) return;
       if (timeArr.includes(col)) {
-        if (
-          col === EPickerCols.hour
-          && dayjsValue.value.format('a') === PM
-          && cols.value.includes(EPickerCols.meridiem)
-        ) {
+        if (col === EPickerCols.hour && dayjsValue.value.hour() >= 12 && cols.value.includes(EPickerCols.meridiem)) {
           // eslint-disable-next-line no-param-reassign
           el = Number(el) + 12;
         }
@@ -272,7 +279,7 @@ export default defineComponent({
             // 如果没有设置大于1的steps或设置了大于1的step 正常处理滚动
             scrollToTime(
               col,
-              timeArr.includes(col) ? dayjsValue.value[col]?.() : dayjsValue.value.format('a'),
+              timeArr.includes(col) ? dayjsValue.value[col]?.() : dayjsValue.value.locale('en').format('a'),
               idx,
               behavior,
             );
@@ -289,7 +296,7 @@ export default defineComponent({
     const isCurrent = (col: EPickerCols, colItem: string | number) => {
       let colVal: number;
       if (col === EPickerCols.meridiem) {
-        const currentMeridiem = dayjsValue.value.format('a');
+        const currentMeridiem = dayjsValue.value.locale('en').format('a');
         return currentMeridiem === colItem;
       }
       colVal = dayjsValue.value[col]?.();
