@@ -383,6 +383,7 @@ export type SizeUnit = SizeUnitArray[number];
 
 export interface TriggerContext {
   dragActive?: boolean;
+  disabled?: boolean;
   files: UploadFile[];
 }
 
