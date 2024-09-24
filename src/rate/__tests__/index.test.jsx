@@ -47,7 +47,7 @@ describe('Rate', () => {
 
       items.at(3).trigger('click');
       await wrapper.vm.$nextTick();
-      expect(wrapper.vm.value).toBe(undefined);
+      expect(wrapper.vm.value).toBe(0);
     });
     it('custom icon', () => {
       const wrapper = mount({
