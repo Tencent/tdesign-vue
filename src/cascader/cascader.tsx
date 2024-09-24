@@ -1,4 +1,4 @@
-import { defineComponent, computed, nextTick } from '@vue/composition-api';
+import { defineComponent, computed } from '@vue/composition-api';
 import omit from 'lodash/omit';
 import Panel from './components/Panel';
 import SelectInput, {
