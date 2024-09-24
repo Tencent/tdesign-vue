@@ -29,6 +29,9 @@ export default function useOverlayInnerStyle(
   const matchWidthFunc = (triggerElement: HTMLElement, popupElement: HTMLElement) => {
     // 避免因滚动条出现文本省略，预留宽度 8
     const SCROLLBAR_WIDTH = popupElement.scrollHeight > popupElement.offsetHeight ? 8 : 0;
+    // 先重置掉设置才能获取到内部原始真实宽度
+    // eslint-disable-next-line no-param-reassign
+    popupElement.style.width = '';
     const width = popupElement.offsetWidth + SCROLLBAR_WIDTH >= triggerElement.offsetWidth
       ? popupElement.offsetWidth
       : triggerElement.offsetWidth;
