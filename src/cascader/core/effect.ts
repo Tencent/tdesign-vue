@@ -35,8 +35,8 @@ export function expendClickEffect(
   } = cascaderContext;
 
   const isDisabled = node.disabled || (multiple && (value as TreeNodeValue[]).length >= max && max !== 0);
-  // 过滤状态，渲染节点发生变化，不继续执行副作用
-  const isFiltering = filterable && inputVal;
+  // 多选过滤状态，渲染节点发生变化，不继续执行副作用
+  const isFiltering = filterable && inputVal && multiple;
 
   if (isDisabled || isFiltering) return;
   // 点击展开节点，设置展开状态
