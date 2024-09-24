@@ -211,7 +211,7 @@ export default mixins(classPrefixMixins).extend({
 
     // popup弹出第一次初始化暴露事件
     popupMounted() {
-      // 用于select定位事件
+      // 用于下拉组件定位事件
       const overlayEl = this.$refs?.overlay as HTMLElement;
       if (overlayEl) {
         this.updateScrollTop?.(overlayEl);
