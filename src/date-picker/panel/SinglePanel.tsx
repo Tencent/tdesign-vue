@@ -1,4 +1,5 @@
 import { defineComponent, PropType, computed } from '@vue/composition-api';
+import isFunction from 'lodash/isFunction';
 import { useConfig, usePrefixClass } from '../../hooks/useConfig';
 import TPanelContent from './PanelContent';
 import TExtraContent from './ExtraContent';
@@ -6,11 +7,14 @@ import { TdDatePickerProps } from '../type';
 import { getDefaultFormat, parseToDayjs } from '../../_common/js/date-picker/format';
 import useTableData from '../hooks/useTableData';
 import useDisableDate from '../hooks/useDisableDate';
+import { TdTimePickerProps } from '../../time-picker';
+import { parseToDateTime } from '../utils';
 
 export default defineComponent({
   name: 'TSinglePanel',
   props: {
     disableDate: [Object, Array, Function] as PropType<TdDatePickerProps['disableDate']>,
+    disableTime: Function as PropType<TdDatePickerProps['disableTime']>,
     mode: {
       type: String as PropType<TdDatePickerProps['mode']>,
       default: 'date',
@@ -56,6 +60,14 @@ export default defineComponent({
       disableDate: props.disableDate,
     }));
 
+    const disableTime: TdTimePickerProps['disableTime'] = (h: number, m: number, s: number, ms: number) => {
+      if (!isFunction(props.disableTime) || !props.value) {
+        return {};
+      }
+
+      return props.disableTime(parseToDateTime(props.value, format, [h, m, s, ms]));
+    };
+
     const tableData = computed(() => useTableData({
       year: props.year,
       month: props.month,
@@ -75,7 +87,10 @@ export default defineComponent({
       tableData: tableData.value,
       popupVisible: props.popupVisible,
       enableTimePicker: props.enableTimePicker,
-      timePickerProps: props.timePickerProps,
+      timePickerProps: {
+        disableTime,
+        ...(props.timePickerProps as TdTimePickerProps),
+      },
       time: props.time,
       onMonthChange: props.onMonthChange,
       onYearChange: props.onYearChange,
