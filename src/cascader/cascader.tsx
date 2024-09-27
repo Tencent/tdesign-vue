@@ -70,7 +70,8 @@ export default defineComponent({
     const updateScrollTop = (content: HTMLDivElement) => {
       const cascaderMenuList = content.querySelectorAll(`.${COMPONENT_NAME.value}__menu`);
       cascaderMenuList.forEach((menu: HTMLDivElement) => {
-        const firstSelectedNode: HTMLDivElement = menu?.querySelector(`.${classPrefix.value}-is-selected`);
+        const firstSelectedNode: HTMLDivElement = menu?.querySelector(`.${classPrefix.value}-is-selected`)
+          || menu?.querySelector(`.${classPrefix.value}-is-expanded`);
         if (!firstSelectedNode || !menu) return;
 
         const { paddingBottom } = getComputedStyle(firstSelectedNode);
