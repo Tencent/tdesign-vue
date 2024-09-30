@@ -5,6 +5,51 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.10.3 `2024-09-27` 
+### 🐞 Bug Fixes
+- `Cascader`: 修复初始化滚动节点时未兼容单选父节点滚动的缺陷 @uyarn ([#3342](https://github.com/Tencent/tdesign-vue/pull/3342))
+
+## 🌈 1.10.2 `2024-09-24` 
+### 🐞 Bug Fixes
+-  修复`1.10.1`版本中构建产物异常的问题
+
+## 🌈 1.10.1 `2024-09-24`
+
+### 🚀 Features
+
+- `Button`: 新增`form` API，原生的 form 属性，支持用于通过 form 属性触发对应 id 的 form 的表单事件 @uyarn ([#3310](https://github.com/Tencent/tdesign-vue/pull/3310))
+- `Cascader`: 支持在打开菜单时滚动到首个已选项所在节点的能力 @uyarn ([#3335](https://github.com/Tencent/tdesign-vue/pull/3335))
+- `DatePicker`: 支持`readonly`属性 @myronliu347 ([#3311](https://github.com/Tencent/tdesign-vue/pull/3311))
+- `Form`: 新增`id` API，表单原生的 id 属性，支持用于配合非表单内的按钮通过 form 属性来触发表单事件 @uyarn ([#3310](https://github.com/Tencent/tdesign-vue/pull/3310))
+- `Menu`: `expandType`为`normal`时，支持三级子菜单的展示 @setcy ([#3296](https://github.com/Tencent/tdesign-vue/pull/3296))
+- `Select`: 支持在过滤情况下使用`checkAll`配置全选的功能 @zhengchengshi ([#3295](https://github.com/Tencent/tdesign-vue/pull/3295))
+- `Table`: 可展开收起场景下新增 `t-table__row--expanded` 和 `t-table__row--folded` 用于区分展开和收起的行 @uyarn ([#3331](https://github.com/Tencent/tdesign-vue/pull/3331))
+- `Tag`: 新增 `title` API 控制鼠标悬停显示的文本 @liweijie0812 ([#3309](https://github.com/Tencent/tdesign-vue/pull/3309))
+- `TimePicker`: 支持`readonly`属性 @myronliu347 ([#3311](https://github.com/Tencent/tdesign-vue/pull/3311))
+- `TimeRangePicker`: 当结束时间大于开始时间时，自动调整时间范围的顺序 @myronliu347 ([#3327](https://github.com/Tencent/tdesign-vue/pull/3327))
+- `TreeSelect`: 修改多选状态下默认点击父节点选项的行为为选中父节点，如果需要点击展开的交互效果，请配置`treeProps.expandOnClickNode` @uyarn ([#3330](https://github.com/Tencent/tdesign-vue/pull/3330))
+- `Rate`: 新增支持`clearable` API，用于清空评分 @myronliu347 ([#3332](https://github.com/Tencent/tdesign-vue/pull/3332))
+
+### 🐞 Bug Fixes
+
+- `Cascader`: 修复过滤条件下选择父节点导致样式异常的问题 @uyarn ([#3333](https://github.com/Tencent/tdesign-vue/pull/3333))
+- `DatePicker`: 修复周选择器下，年份边界日期返回格式错误的问题 @uyarn ([#3336](https://github.com/Tencent/tdesign-vue/pull/3336))
+- `Select`: 修复下拉面板存在自定义节点且存在回车等操作时与组件自身键盘事件冲突的问题 @uyarn ([#3303](https://github.com/Tencent/tdesign-vue/pull/3303))
+- `SelectInput`: 修复动态变化输入框宽度的情况下，下拉菜单宽度没有动态跟随变化的问题 @myronliu347 ([#3325](https://github.com/Tencent/tdesign-vue/pull/3325))
+- `Slider`: 修复`change-end`事件回到没有正确`emit`的问题 @myronliu347 ([#3320](https://github.com/Tencent/tdesign-vue/pull/3320))
+- `Table`: 修复表格开启虚拟滚动和 `loading` 后，分页和表格内容顺序错乱的问题 @myronliu347 ([#3319](https://github.com/Tencent/tdesign-vue/pull/3319))
+- `TimePicker`: 修复 12 小时制切换在 `dayjs` 切换中文情况下失效的问题 @myronliu347 ([#3326](https://github.com/Tencent/tdesign-vue/pull/3326))
+- `TreeSelect`: 修复无法支持深层的 `keys` 设置的问题 @myronliu347 ([#3313](https://github.com/Tencent/tdesign-vue/pull/3313))
+- `Upload`: 修复 `uploadPastedFiles = false` 时第一次上传文件后报错导致响应式丢失的问题 @myronliu347 ([#3308](https://github.com/Tencent/tdesign-vue/pull/3308))
+
+### 🚧 Others
+
+- `DatePicker`: 优化周选择器配合`firstDayOfWeek`使用的问题，详情请查看示例代码 @uyarn ([#3336](https://github.com/Tencent/tdesign-vue/pull/3336))
+- `Dialog`: 优化非模态模式下的展示样式 @RSS1102 ([common#1945](https://github.com/Tencent/tdesign-common/pull/1945))
+- `Popup`: 修复文档内容错误 @novlan1 ([common#1941](https://github.com/Tencent/tdesign-common/pull/1941))
+- `i18n`: 新增俄语和意大利语的语言配置支持 @liweijie0812 ([#3334](https://github.com/Tencent/tdesign-vue/pull/3334))
+
+
 ## 🌈 1.10.0 `2024-08-29`
 ### 🚀 Features
 - `Empty`: 新增空状态组件 `Empty`，用于空状态时的占位提示 @HaixingOoO  ([#3287](https://github.com/Tencent/tdesign-vue/pull/3287))

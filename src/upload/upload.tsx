@@ -136,7 +136,11 @@ export default defineComponent({
       };
       return (
         renderContent(this, 'default', 'trigger', {
-          params: { dragActive: false, files: this.uploadValue },
+          params: {
+            dragActive: false,
+            files: this.uploadValue,
+            disabled: this.tDisabled,
+          },
         }) || getDefaultTrigger()
       );
     },

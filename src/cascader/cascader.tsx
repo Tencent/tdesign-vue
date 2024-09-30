@@ -10,9 +10,7 @@ import FakeArrow from '../common-components/fake-arrow';
 import props from './props';
 
 import { useCascaderContext } from './hooks';
-import {
-  CascaderValue, TdSelectInputProps, TdCascaderProps,
-} from './interface';
+import { CascaderValue, TdSelectInputProps, TdCascaderProps } from './interface';
 import { useConfig, usePrefixClass, useCommonClassName } from '../hooks/useConfig';
 import { PopupVisibleChangeContext } from '../popup';
 import { closeIconClickEffect, handleRemoveTagEffect } from './core/effect';
@@ -69,6 +67,26 @@ export default defineComponent({
       };
     });
 
+    const updateScrollTop = (content: HTMLDivElement) => {
+      const cascaderMenuList = content.querySelectorAll(`.${COMPONENT_NAME.value}__menu`);
+      cascaderMenuList.forEach((menu: HTMLDivElement) => {
+        const firstSelectedNode: HTMLDivElement = menu?.querySelector(`.${classPrefix.value}-is-selected`)
+          || menu?.querySelector(`.${classPrefix.value}-is-expanded`);
+        if (!firstSelectedNode || !menu) return;
+
+        const { paddingBottom } = getComputedStyle(firstSelectedNode);
+        const { marginBottom } = getComputedStyle(menu);
+        const elementBottomHeight = parseInt(paddingBottom, 10) + parseInt(marginBottom, 10);
+
+        const updateValue = firstSelectedNode.offsetTop
+          - menu.offsetTop
+          - (menu.clientHeight - firstSelectedNode.clientHeight)
+          + elementBottomHeight;
+        // eslint-disable-next-line no-param-reassign
+        menu.scrollTop = updateValue;
+      });
+    };
+
     return {
       COMPONENT_NAME,
       overlayClassName,
@@ -83,6 +101,7 @@ export default defineComponent({
       cascaderContext,
       emit,
       valueDisplayParams,
+      updateScrollTop,
     };
   },
   render() {
@@ -148,6 +167,7 @@ export default defineComponent({
             loading: this.loading,
             status: this.status,
             tips: this.tips,
+            updateScrollTop: this.updateScrollTop,
             suffixIcon: () => renderSuffixIcon(),
             popupProps: {
               ...(this.popupProps as TdCascaderProps['popupProps']),
