@@ -25,9 +25,7 @@ import {
   mainJsContent,
   styleContent,
   packageJSONContent,
-  viteConfigContent,
   packageJSONContentForComposition,
-  viteConfigContentForComposition,
 } from './content';
 
 export default {
@@ -44,10 +42,13 @@ export default {
     onRunOnline() {
       const tdDocDemoDom = document.querySelector(`td-doc-demo[demo-name='${this.demoName}']`);
       const code = tdDocDemoDom.currentRenderCode;
-
+      const codeSandboxTitle = `tdesign-vue-${this.componentName}-${this.demoName}-demo`;
       const currentLangIndex = tdDocDemoDom.currentLangIndex;
-      const pkgJson = currentLangIndex === 0 ? packageJSONContent : packageJSONContentForComposition;
-      const viteConfig = currentLangIndex === 0 ? viteConfigContent : viteConfigContentForComposition;
+      const pkgJson =
+        currentLangIndex === 0
+          ? packageJSONContent(codeSandboxTitle)
+          : packageJSONContentForComposition(codeSandboxTitle);
+
       this.loading = true;
 
       fetch('https://codesandbox.io/api/v1/sandboxes/define?json=1', {
@@ -60,9 +61,6 @@ export default {
           files: {
             'package.json': {
               content: pkgJson,
-            },
-            'vite.config.js': {
-              content: viteConfig,
             },
             'index.html': {
               content: htmlContent,
