@@ -169,6 +169,7 @@ export default defineComponent({
       } else {
         return;
       }
+      color.value.update(formatValue());
       emitColorChange(changeTrigger);
     };
 
@@ -178,6 +179,7 @@ export default defineComponent({
      */
     const handleHueChange = (hue: number) => {
       color.value.hue = hue;
+      color.value.update(formatValue());
       emitColorChange('palette-hue-bar');
       props.onPaletteBarChange?.({
         color: getColorObject(color.value),
@@ -190,6 +192,7 @@ export default defineComponent({
      */
     const handleAlphaChange = (alpha: number) => {
       color.value.alpha = alpha;
+      color.value.update(formatValue());
       emitColorChange('palette-alpha-bar');
     };
 
