@@ -1,9 +1,6 @@
 import orgPkg from '../../../../package.json';
 
-export const htmlContent = `
-  <div id="app"></div>
-  <script type="module" src="/src/main.js"></script>
-`;
+export const htmlContent = `<div id="app"></div>`;
 
 export const mainJsContent = `
   import Vue from 'vue';
@@ -45,86 +42,32 @@ export const styleContent = `
   }
 `;
 
-export const stackblitzRc = `
-  {
-    "installDependencies": false,
-    "startCommand": "turbo && turbo dev"
-  }
-`;
-
-export const viteConfigContent = `
-  import { defineConfig } from 'vite';
-  import { createVuePlugin } from 'vite-plugin-vue2';
-
-  export default defineConfig({
-    plugins: [
-      createVuePlugin({ jsx: true }),
-    ],
-  });
-`;
-
-export const viteConfigContentForComposition = `
-  import { defineConfig } from 'vite';
-  import vue from '@vitejs/plugin-vue2'
-  import vueJsx from '@vitejs/plugin-vue2-jsx';
-
-  export default defineConfig({
-    plugins: [
-      vue(),
-      vueJsx()
-    ],
-  });
-`;
-
-export const packageJSONContent = JSON.stringify(
-  {
-    name: 'tdesign-vue-demo',
-    version: '0.0.0',
-    private: true,
-    scripts: {
-      dev: 'vite',
-      build: 'vite build',
-      serve: 'vite preview',
-    },
+export const packageJSONContent = (name) => {
+  return {
+    name: name,
     dependencies: {
       'tdesign-vue': orgPkg.version,
       'tdesign-icons-vue': orgPkg.dependencies['tdesign-icons-vue'],
       vue: orgPkg.devDependencies.vue,
     },
     devDependencies: {
-      vite: orgPkg.devDependencies.vite,
       less: orgPkg.devDependencies.less,
-      'vite-plugin-vue2': orgPkg.devDependencies['vite-plugin-vue2'],
+      '@vue/cli-plugin-babel': '~4.5.0',
       'vue-template-compiler': orgPkg.devDependencies['vue-template-compiler'],
     },
-  },
-  null,
-  2,
-);
+  };
+};
 
-export const packageJSONContentForComposition = JSON.stringify(
-  {
-    name: 'tdesign-vue-demo',
-    version: '0.0.0',
-    private: true,
-    scripts: {
-      dev: 'vite',
-      build: 'vite build',
-      serve: 'vite preview',
-    },
+export const packageJSONContentForComposition = (name) => {
+  return {
+    name: name,
     dependencies: {
       'tdesign-vue': orgPkg.version + '-naruto',
       'tdesign-icons-vue': orgPkg.dependencies['tdesign-icons-vue'],
       vue: '2.7.14',
     },
     devDependencies: {
-      vite: '^2.9.6',
       less: orgPkg.devDependencies.less,
-      '@vitejs/plugin-vue2': '^1.1.2',
-      'vue-template-compiler': '2.7.14',
-      '@vitejs/plugin-vue2-jsx': '^1.1.0',
     },
-  },
-  null,
-  2,
-);
+  };
+};
