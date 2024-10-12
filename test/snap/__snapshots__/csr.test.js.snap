@@ -93253,7 +93253,6 @@ exports[`csr snapshot test > csr test ./src/select-input/_example/multiple.vue 1
   >
     <div
       class="t-select-input t-select-input--multiple"
-      input-value:sync=""
     >
       <div
         class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon"
