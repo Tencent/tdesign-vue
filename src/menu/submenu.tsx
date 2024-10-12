@@ -28,10 +28,9 @@ import { TdSubmenuProps } from './type';
 import useCollapseAnimation from '../hooks/useCollapseAnimation';
 
 const keepAnimationMixins = getKeepAnimationMixins();
-const submenuName = 'TSubmenu';
 
 export default defineComponent({
-  name: submenuName,
+  name: 'TSubmenu',
   components: {
     FakeArrow,
   },
@@ -226,6 +225,8 @@ export default defineComponent({
       const activeValue = menu?.activeValue.value;
       if (activeValue !== props.value && mode.value === 'popup') {
         const childNode = slots.default?.() || [];
+        const submenuName = 'TSubmenu';
+
         // 递归获取子菜单 处理折叠场景初始化时子菜单item未渲染，没有加入 vMenu，导致没有正常高亮父节点的展示问题
         for (let i = 0; i < childNode.length; i++) {
           const item = childNode[i];
