@@ -23,6 +23,10 @@ export default {
   disableDate: {
     type: [Object, Array, Function] as PropType<TdDateRangePickerProps['disableDate']>,
   },
+  /** 禁用时间项的配置函数 */
+  disableTime: {
+    type: Function as PropType<TdDateRangePickerProps['disableTime']>,
+  },
   /** 是否禁用组件 */
   disabled: Boolean,
   /** 只读状态，值为真会隐藏输入框，且无法打开下拉框 */
