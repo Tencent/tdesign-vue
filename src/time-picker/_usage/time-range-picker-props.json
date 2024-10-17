@@ -5,6 +5,12 @@
     "defaultValue": false,
     "options": []
   },
+   {
+    "name": "autoSwap",
+    "type": "Boolean",
+    "defaultValue": true,
+    "options": []
+  },
   {
     "name": "borderless",
     "type": "Boolean",

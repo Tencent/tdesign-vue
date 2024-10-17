@@ -50,6 +50,7 @@ pick | `(value: TimePickerValue, context: { e: MouseEvent })` | \-
 name | type | default | description | required
 -- | -- | -- | -- | --
 allowInput | Boolean | false | \- | N
+autoSwap | Boolean | true | \- | N
 borderless | Boolean | false | \- | N
 clearable | Boolean | false | \- | N
 disableTime | Function | - | Typescript：`(h: number, m: number, s: number, context: { partial: TimeRangePickerPartial }) =>Partial<{ hour: Array<number>, minute: Array<number>, second: Array<number> }>` `type TimeRangePickerPartial = 'start' \| 'end'`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/time-picker/type.ts) | N
