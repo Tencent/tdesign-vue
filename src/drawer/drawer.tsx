@@ -137,7 +137,8 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
   },
 
   mounted() {
-    const hasScrollBar = document.body.scrollHeight > document.body.clientHeight;
+    const hasScrollBar = window.innerWidth > document.documentElement.clientWidth;
+
     const scrollWidth = hasScrollBar ? getScrollbarWidth() : 0;
 
     this.styleEl = document.createElement('style');
