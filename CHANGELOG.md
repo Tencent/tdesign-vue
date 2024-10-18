@@ -5,6 +5,17 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.10.4 `2024-10-18` 
+### 🚀 Features
+- `TimePicker`: 新增 `autoSwap` API，支持`1.10.2` 版本之后仍支持保持选定的左右侧时间大小顺序 @uyarn ([#3363](https://github.com/Tencent/tdesign-vue/pull/3363))
+### 🐞 Bug Fixes
+- `Tree`: 修复叶子节点自定义的图标可被点击的问题 @RSS1102 ([#3354](https://github.com/Tencent/tdesign-vue/pull/3354))
+- `Drawer`: 修复打开 `drawer` 时页面抖动的问题 @RSS1102 @uyarn ([#3362](https://github.com/Tencent/tdesign-vue/pull/3362))
+- `Dialog`: 修复打开 `dialog` 时页面抖动的问题 @RSS1102 ([#3362](https://github.com/Tencent/tdesign-vue/pull/3362))
+- `Cascader`: 修复不能通过插槽自定义选项内容的问题
+### 🚧 Others
+- `DatePicker`: 移除文档中错误的`value` 类型描述
+
 ## 🌈 1.10.3 `2024-09-27` 
 ### 🐞 Bug Fixes
 - `Cascader`: 修复初始化滚动节点时未兼容单选父节点滚动的缺陷 @uyarn ([#3342](https://github.com/Tencent/tdesign-vue/pull/3342))
