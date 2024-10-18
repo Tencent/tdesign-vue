@@ -9,7 +9,9 @@ import TLoading from '../../loading';
 
 // type
 import { getKeepAnimationMixins } from '../../config-provider/config-receiver';
-import { CascaderContextType, TreeNodeValue, TreeNode } from '../interface';
+import {
+  CascaderContextType, TreeNodeValue, TreeNode, TdCascaderProps,
+} from '../interface';
 import { usePrefixClass, useCommonClassName } from '../../hooks/useConfig';
 import { useGlobalIcon } from '../../hooks/useGlobalIcon';
 import Ripple from '../../utils/ripple';
@@ -22,6 +24,9 @@ const props = {
     default() {
       return {};
     },
+  },
+  optionChild: {
+    type: [Object, Array] as PropType<TdCascaderProps['option']>,
   },
   cascaderContext: {
     type: Object as PropType<CascaderContextType>,
@@ -54,7 +59,7 @@ export default defineComponent({
   },
   render() {
     const {
-      iconClass, cascaderContext, itemClass, node, COMPONENT_NAME, onChange, ChevronRightIcon,
+      iconClass, cascaderContext, itemClass, node, COMPONENT_NAME, onChange, ChevronRightIcon, optionChild,
     } = this;
 
     function RenderLabelInner(node: TreeNode, cascaderContext: CascaderContextType) {
@@ -129,7 +134,10 @@ export default defineComponent({
           this.onMouseenter();
         }}
       >
-        {cascaderContext.multiple ? RenderCheckBox(node, cascaderContext) : RenderLabelContent(node, cascaderContext)}
+        {optionChild
+          || (cascaderContext.multiple
+            ? RenderCheckBox(node, cascaderContext)
+            : RenderLabelContent(node, cascaderContext))}
         {node.children
           && (node.loading ? <TLoading class={iconClass} size="small" /> : <ChevronRightIcon class={iconClass} />)}
       </li>
