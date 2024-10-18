@@ -12,6 +12,7 @@ docClass: timeline
 - `Tree`: 修复叶子节点自定义的图标可被点击的问题 @RSS1102 ([#3354](https://github.com/Tencent/tdesign-vue/pull/3354))
 - `Drawer`: 修复打开 `drawer` 时页面抖动的问题 @RSS1102 @uyarn ([#3362](https://github.com/Tencent/tdesign-vue/pull/3362))
 - `Dialog`: 修复打开 `dialog` 时页面抖动的问题 @RSS1102 ([#3362](https://github.com/Tencent/tdesign-vue/pull/3362))
+- `Cascader`: 修复不能通过插槽自定义选项内容的问题
 ### 🚧 Others
 - `DatePicker`: 移除文档中错误的`value` 类型描述
 
