@@ -87,6 +87,7 @@ export default defineComponent({
               {...{
                 key: this.partial,
                 props: {
+                  position: this.partial,
                   format: timeFormat,
                   value: this.time,
                   onChange: this.onTimePickerChange,

@@ -23,8 +23,7 @@
       placeholder="禁用日期精确到时间"
       enable-time-picker
       :disable-date="{ before: dayjs().subtract(1, 'day').format() }"
-      :time-picker-props="timePickerProps"
-      @pick="(date) => (pickDate = dayjs(date).format('YYYY-MM-DD'))"
+      :disable-time="disableTime"
     />
     <t-date-range-picker
       placeholder="禁用最近 5 天外的日期"
@@ -41,20 +40,16 @@ import dayjs from 'dayjs';
 
 export default {
   data() {
-    return { pickDate: '', dayjs };
+    return { dayjs };
   },
-  computed: {
-    timePickerProps() {
-      return {
-        disableTime: () => {
-          if (this.pickDate === dayjs().format('YYYY-MM-DD')) {
-            return {
-              hour: [0, 1, 2, 3, 4, 5, 6],
-            };
-          }
-          return {};
-        },
-      };
+  methods: {
+    disableTime: (time) => {
+      if (dayjs(time).format('YYYY-MM-DD') === dayjs().format('YYYY-MM-DD')) {
+        return {
+          hour: [0, 1, 2, 3, 4, 5, 6],
+        };
+      }
+      return {};
     },
   },
 };
