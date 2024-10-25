@@ -9,9 +9,7 @@ import useSingle from './hooks/useSingle';
 import {
   parseToDayjs, getDefaultFormat, formatTime, formatDate,
 } from '../_common/js/date-picker/format';
-import {
-  subtractMonth, addMonth, extractTimeObj, covertToDate,
-} from '../_common/js/date-picker/utils';
+import { extractTimeObj, covertToDate } from '../_common/js/date-picker/utils';
 import type { DateValue } from './type';
 import props from './props';
 
