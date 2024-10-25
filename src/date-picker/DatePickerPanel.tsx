@@ -15,6 +15,7 @@ import datePickerPanelProps from './date-picker-panel-props';
 import datePickerProps from './props';
 
 import TSinglePanel from './panel/SinglePanel';
+import { onDatePickerJumperClickSharedFn } from './utils';
 
 export default defineComponent({
   name: 'TDatePickerPanel',
@@ -64,33 +65,18 @@ export default defineComponent({
     }
 
     // 头部快速切换
-    function onJumperClick({ trigger }: { trigger: string }) {
+    function onJumperClick({ trigger }: { trigger: 'prev' | 'current' | 'next' }) {
+      const { nextYear, nextMonth } = onDatePickerJumperClickSharedFn({
+        trigger,
+        mode: props.mode,
+        month,
+        year,
+      });
+
       const triggerMap = {
         prev: 'arrow-previous',
         next: 'arrow-next',
       };
-      const monthCountMap = {
-        date: 1,
-        week: 1,
-        month: 12,
-        quarter: 12,
-        year: 120,
-      };
-      const monthCount = monthCountMap[props.mode] || 0;
-
-      const current = new Date(year.value, month.value);
-
-      let next = null;
-      if (trigger === 'prev') {
-        next = subtractMonth(current, monthCount);
-      } else if (trigger === 'current') {
-        next = new Date();
-      } else if (trigger === 'next') {
-        next = addMonth(current, monthCount);
-      }
-
-      const nextYear = next.getFullYear();
-      const nextMonth = next.getMonth();
 
       if (year.value !== nextYear) {
         props.onYearChange?.({

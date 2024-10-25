@@ -18,6 +18,7 @@ import props from './props';
 import TSelectInput from '../select-input';
 import TSinglePanel from './panel/SinglePanel';
 import useFormDisabled from '../hooks/useFormDisabled';
+import { onDatePickerJumperClickSharedFn } from './utils';
 
 export default defineComponent({
   name: 'TDatePicker',
@@ -122,28 +123,12 @@ export default defineComponent({
 
     // 头部快速切换
     function onJumperClick({ trigger }: { trigger: string }) {
-      const monthCountMap = {
-        date: 1,
-        week: 1,
-        month: 12,
-        quarter: 12,
-        year: 120,
-      };
-      const monthCount = monthCountMap[props.mode] || 0;
-
-      const current = new Date(year.value, month.value);
-
-      let next = null;
-      if (trigger === 'prev') {
-        next = subtractMonth(current, monthCount);
-      } else if (trigger === 'current') {
-        next = new Date();
-      } else if (trigger === 'next') {
-        next = addMonth(current, monthCount);
-      }
-
-      const nextYear = next.getFullYear();
-      const nextMonth = next.getMonth();
+      const { nextYear, nextMonth } = onDatePickerJumperClickSharedFn({
+        trigger,
+        mode: props.mode,
+        month,
+        year,
+      });
 
       year.value = nextYear;
       month.value = nextMonth;

@@ -20,9 +20,14 @@ import {
   getDefaultFormat,
   initYearMonthTime,
 } from '../_common/js/date-picker/format';
-import { subtractMonth, addMonth, extractTimeObj } from '../_common/js/date-picker/utils';
 import useFormDisabled from '../hooks/useFormDisabled';
-import { dateCorrection } from './utils';
+import {
+  onDateRangePickerJumperClickSharedFn,
+  onDateRangePickerMonthChangeSharedFn,
+  onDateRangePickerPresetClickSharedFn,
+  onDateRangePickerTimePickerChangeSharedFn,
+  onDateRangePickerYearChangeSharedFn,
+} from './utils';
 
 export default defineComponent({
   name: 'TDateRangePicker',
@@ -194,74 +199,48 @@ export default defineComponent({
     }
 
     // 头部快速切换
-    function onJumperClick({ trigger, partial }: { trigger: string; partial: DateRangePickerPartial }) {
-      const partialIndex = partial === 'start' ? 0 : 1;
-
-      const monthCountMap = {
-        date: 1,
-        week: 1,
-        month: 12,
-        quarter: 12,
-        year: 120,
-      };
-      const monthCount = monthCountMap[props.mode] || 0;
-      const current = new Date(year.value[partialIndex], month.value[partialIndex]);
-
-      let next = null;
-      if (trigger === 'prev') {
-        next = subtractMonth(current, monthCount);
-      } else if (trigger === 'current') {
-        next = new Date();
-      } else if (trigger === 'next') {
-        next = addMonth(current, monthCount);
-      }
-
-      let nextYear = [...year.value];
-      nextYear[partialIndex] = next.getFullYear();
-      let nextMonth = [...month.value];
-      nextMonth[partialIndex] = next.getMonth();
-      const onlyYearSelect = ['year', 'quarter', 'month'].includes(props.mode);
-
-      // 头部日期切换修正
-      const correctedDate = dateCorrection(partialIndex, nextYear, nextMonth, onlyYearSelect);
-      nextYear = correctedDate.nextYear;
-      nextMonth = correctedDate.nextMonth;
-
+    function onJumperClick({
+      trigger,
+      partial,
+    }: {
+      trigger: 'prev' | 'current' | 'next';
+      partial: DateRangePickerPartial;
+    }) {
+      const { nextYear, nextMonth } = onDateRangePickerJumperClickSharedFn({
+        trigger,
+        partial,
+        mode: props.mode,
+        month,
+        year,
+      });
       year.value = nextYear;
       month.value = nextMonth;
     }
 
     // time-picker 点击
     function onTimePickerChange(val: string) {
-      const {
-        hours, minutes, seconds, milliseconds, meridiem,
-      } = extractTimeObj(val);
+      const { nextTime, nextInputValue, isSelectedInstance } = onDateRangePickerTimePickerChangeSharedFn(
+        {
+          val,
+          activeIndex,
+          formatRef,
+          year,
+          month,
+          time,
+        },
+        inputValue,
+      );
 
-      const nextInputValue = [...(inputValue.value as DateValue[])];
-      const changedInputValue = inputValue.value[activeIndex.value];
-      const currentDate = !dayjs(changedInputValue, formatRef.value.format).isValid()
-        ? dayjs().year(year.value[activeIndex.value]).month(month.value[activeIndex.value])
-        : dayjs(changedInputValue, formatRef.value.format);
-      // am pm 12小时制转化 24小时制
-      let nextHours = hours;
-      if (/am/i.test(meridiem) && nextHours === 12) nextHours -= 12;
-      if (/pm/i.test(meridiem) && nextHours < 12) nextHours += 12;
-
-      const nextDate = currentDate.hour(nextHours).minute(minutes).second(seconds).millisecond(milliseconds)
-        .toDate();
-      nextInputValue[activeIndex.value] = nextDate;
-
-      const nextTime = [...time.value];
-      nextTime[activeIndex.value] = val;
-      time.value = nextTime;
-
-      isSelected.value = true;
       inputValue.value = formatDate(nextInputValue, {
         format: formatRef.value.format,
       });
+
       cacheValue.value = formatDate(nextInputValue, {
         format: formatRef.value.format,
       });
+
+      time.value = nextTime;
+      isSelected.value = isSelectedInstance;
     }
 
     // 确定
@@ -313,81 +292,42 @@ export default defineComponent({
 
     // 预设
     function onPresetClick(preset: any, context: any) {
-      let presetValue = preset;
-      if (typeof preset === 'function') {
-        presetValue = preset();
-      }
-      if (!Array.isArray(presetValue)) {
-        console.error(`preset: ${preset} 预设值必须是数组!`);
-      } else {
-        onChange?.(
-          formatDate(presetValue, {
-            format: formatRef.value.format,
-            targetFormat: formatRef.value.valueType,
-            autoSwap: true,
-          }) as DateValue[],
-          {
-            dayjsValue: presetValue.map((p) => parseToDayjs(p, formatRef.value.format)),
-            trigger: 'preset',
-          },
-        );
-        popupVisible.value = false;
-        props.onPresetClick?.(context);
-        emit('preset-click', context);
-      }
+      onDateRangePickerPresetClickSharedFn({
+        preset,
+        context,
+        onChange,
+        formatRef,
+        onPresetClick: props.onPresetClick,
+        emit,
+      });
+      popupVisible.value = false;
     }
 
     function onYearChange(nextVal: number, { partial }: { partial: DateRangePickerPartial }) {
-      let partialIndex = partial === 'start' ? 0 : 1;
-      if (props.enableTimePicker) partialIndex = activeIndex.value;
-
-      let nextYear = [...year.value];
-      let nextMonth = [...month.value];
-      nextYear[partialIndex] = nextVal;
-      const onlyYearSelect = ['year', 'quarter', 'month'].includes(props.mode);
-
-      // 头部日期切换修正
-      const correctedDate = dateCorrection(partialIndex, nextYear, nextMonth, onlyYearSelect);
-      nextYear = correctedDate.nextYear;
-      nextMonth = correctedDate.nextMonth;
+      const { nextYear, nextMonth, onlyYearSelect } = onDateRangePickerYearChangeSharedFn(nextVal, {
+        partial,
+        enableTimePicker: props.enableTimePicker,
+        activeIndex,
+        mode: props.mode,
+        month,
+        year,
+      });
 
       year.value = nextYear;
       if (!onlyYearSelect) month.value = nextMonth;
     }
 
     function onMonthChange(nextVal: number, { partial }: { partial: DateRangePickerPartial }) {
-      let partialIndex = partial === 'start' ? 0 : 1;
-      if (props.enableTimePicker) partialIndex = activeIndex.value;
+      const { nextYear, nextMonth } = onDateRangePickerMonthChangeSharedFn(nextVal, {
+        partial,
+        enableTimePicker: props.enableTimePicker,
+        activeIndex,
+        mode: props.mode,
+        month,
+        year,
+      });
 
-      const nextMonth = [...month.value];
-      nextMonth[partialIndex] = nextVal;
-      // 保证左侧时间不大于右侧
-      if (year.value[0] === year.value[1]) {
-        if (partialIndex === 0) {
-          // 操作了左侧区间, 处理右侧区间小于或等于左侧区间的场景，交互上始终报错右侧比左侧大 1
-          if (nextMonth[1] <= nextMonth[0]) {
-            nextMonth[1] = nextMonth[0] + 1;
-            if (nextMonth[1] === 12) {
-              // 处理跨年的边界场景
-              nextMonth[1] = 0;
-              year.value = [year.value?.[0], year.value?.[1] + 1];
-            }
-          }
-        }
-        if (partialIndex === 1) {
-          // 操作了右侧区间, 处理右侧区间小于或等于左侧区间的场景，交互上始终报错左侧比右侧小 1
-          nextMonth[0] = Math.min(nextMonth[0], nextMonth[1]);
-          if (nextMonth[0] >= nextMonth[1]) {
-            nextMonth[0] -= 1;
-            if (nextMonth[0] === -1) {
-              // 处理跨年的边界场景
-              nextMonth[0] = 11;
-              year.value = [year.value?.[0] - 1, year.value?.[1]];
-            }
-          }
-        }
-      }
-
+      year.value = nextYear;
       month.value = nextMonth;
     }
 
