@@ -1,12 +1,12 @@
 // 用于头部日期切换修正
-import { ComputedRef, Ref } from '@vue/composition-api';
+import { ComputedRef } from '@vue/composition-api';
+import type { Ref } from '@vue/composition-api';
 import dayjs from 'dayjs';
 import { formatDate, parseToDayjs } from '../_common/js/date-picker/format';
 import {
   subtractMonth, addMonth, DateValue, extractTimeObj,
 } from '../_common/js/date-picker/utils';
-import { DateRangePickerPanelProps, TdDateRangePickerProps } from '..';
-import { DateRangePickerPartial } from './type';
+import type { DateRangePickerPartial, TdDateRangePickerProps, TdDateRangePickerPanelProps } from './type';
 
 type FormatRef = ComputedRef<
   | {
@@ -73,7 +73,7 @@ export function dateCorrection(
 interface DateRangePickerJumperClickSharedFn {
   trigger: 'prev' | 'current' | 'next';
   partial: DateRangePickerPartial;
-  mode: DateRangePickerPanelProps['mode'];
+  mode: TdDateRangePickerPanelProps['mode'];
   month: Ref<number[]>;
   year: Ref<number[]>;
 }
@@ -222,7 +222,7 @@ interface DateRangePickerYearChangeSharedFn {
   activeIndex: Ref<number>;
   year: Ref<number[]>;
   month: Ref<number[]>;
-  mode: DateRangePickerPanelProps['mode'];
+  mode: TdDateRangePickerPanelProps['mode'];
 }
 /**
  * DateRangePicker/DateRangePickerPanel 的年份选择器改变公共函数
@@ -262,7 +262,7 @@ interface DateRangePickerMonthChangeChangeSharedFn {
   activeIndex: Ref<number>;
   year: Ref<number[]>;
   month: Ref<number[]>;
-  mode: DateRangePickerPanelProps['mode'];
+  mode: TdDateRangePickerPanelProps['mode'];
 }
 /**
  * DateRangePicker/DateRangePickerPanel 的月份选择器改变公共函数
@@ -315,7 +315,7 @@ export function onDateRangePickerMonthChangeSharedFn(
 
 interface DatePickerJumperClickSharedFn {
   trigger: string;
-  mode: DateRangePickerPanelProps['mode'];
+  mode: TdDateRangePickerPanelProps['mode'];
   month: Ref<number>;
   year: Ref<number>;
 }
