@@ -70,7 +70,7 @@ export default function useTagList(props: TdTagInputProps, context: SetupContext
   // 按下回退键，删除标签
   const onInputBackspaceKeyDown = (value: InputValue, p: { e: KeyboardEvent }) => {
     const { e } = p;
-    if (!tagValue.value || !tagValue.value.length) return;
+    if (!tagValue.value || !tagValue.value.length || readonly.value) return;
     // 回车键删除，输入框值为空时，才允许 Backspace 删除标签
     const isDelete = /(Backspace|NumpadDelete)/.test(e.code) || /(Backspace|NumpadDelete)/.test(e.key);
     if (!value && isDelete) {
