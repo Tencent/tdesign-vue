@@ -69,9 +69,9 @@ export default defineComponent({
      * 移除颜色
      */
     const handleRemoveColor = () => {
-      const colors = props.colors;
+      const { colors } = props;
       const selectedIndex = selectedColorIndex.value;
-      if (selectedIndex === -1) return
+      if (selectedIndex === -1) return;
       colors.splice(selectedIndex, 1);
       props.handleChange?.(colors);
       setVisiblePopConfirm(false);
