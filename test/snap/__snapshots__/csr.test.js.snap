@@ -100303,6 +100303,42 @@ exports[`csr snapshot test > csr test ./src/switch/_example/base.vue 1`] = `
 </div>
 `;
 
+exports[`csr snapshot test > csr test ./src/switch/_example/before-change.vue 1`] = `
+<div
+  class="t-space t-space-horizontal"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-switch t-size-m t-is-checked"
+    >
+      <span
+        class="t-switch__handle"
+      />
+      <div
+        class="t-switch__content t-size-m"
+      />
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-switch t-size-m t-is-checked"
+    >
+      <span
+        class="t-switch__handle"
+      />
+      <div
+        class="t-switch__content t-size-m"
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`csr snapshot test > csr test ./src/switch/_example/describe.vue 1`] = `
 <div
   class="t-space t-space-vertical"
