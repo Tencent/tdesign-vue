@@ -210,7 +210,7 @@ describe('TagInput Component', () => {
     expect(wrapper.attributes('placeholder')).toBe('This is TagInput placeholder');
   });
 
-  it('props.readonly works fine', () => {
+  it('props.readonly works fine', async () => {
     // readonly default value is false
     const wrapper1 = mount({
       render() {
@@ -225,6 +225,7 @@ describe('TagInput Component', () => {
       },
     }).find('.t-input');
     expect(wrapper2.classes('t-is-readonly')).toBeTruthy();
+
     // readonly = false
     const wrapper3 = mount({
       render() {
@@ -232,6 +233,18 @@ describe('TagInput Component', () => {
       },
     }).find('.t-input');
     expect(wrapper3.classes('t-is-readonly')).toBeFalsy();
+    // readonly = false and able backspace
+    const onRemoveFnOn = vi.fn();
+    const wrapper4 = getTagInputValueMount(TagInput, { readonly: false }, { remove: onRemoveFnOn });
+    wrapper4.find('input').trigger('keydown.backspace');
+    await wrapper4.vm.$nextTick();
+    expect(onRemoveFnOn).toHaveBeenCalled();
+    // readonly = true and prevent backspace
+    const onRemoveFnUn = vi.fn();
+    const wrapper5 = getTagInputValueMount(TagInput, { readonly: true }, { remove: onRemoveFnUn });
+    wrapper5.find('input').trigger('keydown.backspace');
+    await wrapper5.vm.$nextTick();
+    expect(onRemoveFnUn).not.toHaveBeenCalled();
   });
 
   it('props.readonly: readonly TagInput does not need clearIcon', async () => {
