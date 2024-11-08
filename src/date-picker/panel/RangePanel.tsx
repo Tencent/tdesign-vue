@@ -1,4 +1,5 @@
 import { defineComponent, PropType, computed } from 'vue';
+import isFunction from 'lodash/isFunction';
 import { useConfig, usePrefixClass } from '../../hooks/useConfig';
 import TPanelContent from './PanelContent';
 import TExtraContent from './ExtraContent';
@@ -6,6 +7,8 @@ import { TdDateRangePickerProps } from '../type';
 import { getDefaultFormat, parseToDayjs } from '../../_common/js/date-picker/format';
 import useTableData from '../hooks/useTableData';
 import useDisableDate from '../hooks/useDisableDate';
+import { TdTimePickerProps, TdTimeRangePickerProps } from '../../time-picker';
+import { parseToDateTime } from '../utils';
 
 export default defineComponent({
   name: 'TRangePanel',
@@ -14,6 +17,7 @@ export default defineComponent({
     activeIndex: Number,
     isFirstValueSelected: Boolean,
     disableDate: [Object, Array, Function] as PropType<TdDateRangePickerProps['disableDate']>,
+    disableTime: Function as PropType<TdDateRangePickerProps['disableTime']>,
     mode: {
       type: String as PropType<TdDateRangePickerProps['mode']>,
       default: 'date',
@@ -75,6 +79,26 @@ export default defineComponent({
             : undefined,
     }));
 
+    const disableTime: TdTimeRangePickerProps['disableTime'] = (h: number, m: number, s: number, context) => {
+      if (!isFunction(props.disableTime)) {
+        return {};
+      }
+
+      const [startTime, endTime] = props.value || [];
+
+      if (context.partial) {
+        return (props.disableTime as TdDateRangePickerProps['disableTime'])(
+          [parseToDateTime(startTime, format, [h, m, s]), parseToDateTime(endTime, format)],
+          context,
+        );
+      }
+
+      return (props.disableTime as TdDateRangePickerProps['disableTime'])(
+        [parseToDateTime(startTime, format), parseToDateTime(endTime, format, [h, m, s])],
+        context,
+      );
+    };
+
     const startTableData = computed(() => useTableData({
       isRange: true,
       start: props.value[0] ? parseToDayjs(props.value[0] as string, format).toDate() : undefined,
@@ -120,7 +144,10 @@ export default defineComponent({
 
       popupVisible: props.popupVisible,
       enableTimePicker: props.enableTimePicker,
-      timePickerProps: props.timePickerProps,
+      timePickerProps: {
+        disableTime,
+        ...(props.timePickerProps as TdTimePickerProps),
+      },
       onMonthChange: props.onMonthChange,
       onYearChange: props.onYearChange,
       onJumperClick: props.onJumperClick,
