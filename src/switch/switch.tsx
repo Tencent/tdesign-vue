@@ -113,7 +113,19 @@ export default mixins(classPrefixMixins).extend({
       if (this.tDisabled || this.loading) {
         return;
       }
-      this.handleToggle();
+      if (!this.beforeChange) {
+        this.handleToggle();
+        return;
+      }
+      Promise.resolve(this.beforeChange())
+        .then((v) => {
+          if (v) {
+            this.handleToggle();
+          }
+        })
+        .catch((e) => {
+          throw new Error(`Switch: some error occurred: ${e}`);
+        });
     },
   },
   render(): VNode {
