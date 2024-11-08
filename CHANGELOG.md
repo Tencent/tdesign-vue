@@ -5,6 +5,19 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.10.5 `2024-11-08` 
+### 🚀 Features
+- `Switch`: 新增 `before-change` API, 用于需要发起异步请求的场景 @centuryPark ([#3386](https://github.com/Tencent/tdesign-vue/pull/3386))
+- `DatePicker`: 新增 `disableTime` API，在日期时间选择器场景下使用 @myronliu347 ([#3324](https://github.com/Tencent/tdesign-vue/pull/3324))
+- `Cascader`: 单选模式下当`trigger`为`hover`时，选中选项后自动关闭面板 @uyarn ([#3389](https://github.com/Tencent/tdesign-vue/pull/3389))
+### 🐞 Bug Fixes
+- `DatePicker`: `DateRangePickerPanel`组件`mode`为`week`时无法通过左右箭头调整月份 @RSS1102 ([#3370](https://github.com/Tencent/tdesign-vue/pull/3370))
+- `Table`: 修复多级表头下的通过`colspan`合并表头的问题 @wangyang0210 ([#3372](https://github.com/Tencent/tdesign-vue/pull/3372))
+- `ColorPicker`: 修复最近使用颜色删除的缺陷，调整为选中才能删除 @superNos ([#3384](https://github.com/Tencent/tdesign-vue/pull/3384))
+- `TagInput`: 修复在`readonly` 模式下仍可以通过`Backspace` 删除已选项的缺陷 @RSS1102 ([#3376](https://github.com/Tencent/tdesign-vue/pull/3376))
+### 🚧 Others
+- `Drawer`: 修复 `live demo` 中头部配置展示异常的问题 @cszhjh  ([#3385](https://github.com/Tencent/tdesign-vue/pull/3385))
+
 ## 🌈 1.10.4 `2024-10-18` 
 ### 🚀 Features
 - `TimePicker`: 新增 `autoSwap` API，支持`1.10.2` 版本之后仍支持保持选定的左右侧时间大小顺序 @uyarn ([#3363](https://github.com/Tencent/tdesign-vue/pull/3363))
