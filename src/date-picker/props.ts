@@ -23,7 +23,7 @@ export default {
   disableDate: {
     type: [Object, Array, Function] as PropType<TdDatePickerProps['disableDate']>,
   },
-  /** 禁用时间项的配置函数 */
+  /** 禁用时间项的配置函数，仅在日期时间选择器中可用 */
   disableTime: {
     type: Function as PropType<TdDatePickerProps['disableTime']>,
   },
