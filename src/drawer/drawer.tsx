@@ -171,6 +171,8 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
       <transition
         onAppear={this.afterEnter}
         duration={{ enter: 10, leave: 300 }}
+        onBeforeEnter={this.beforeEnter}
+        onBeforeLeave={this.beforeLeave}
         onAfterEnter={this.afterEnter}
         onAfterLeave={this.afterLeave}
       >
@@ -220,9 +222,15 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
         this.styleEl.parentNode?.removeChild?.(this.styleEl);
       }, 150);
     },
+    beforeEnter() {
+      emitEvent<Parameters<TdDrawerProps['onBeforeOpen']>>(this, 'before-open');
+    },
     afterEnter() {
       this.animationStart = true;
       this.animationEnd = false;
+    },
+    beforeLeave() {
+      emitEvent<Parameters<TdDrawerProps['onBeforeClose']>>(this, 'before-close');
     },
     afterLeave() {
       this.animationStart = false;

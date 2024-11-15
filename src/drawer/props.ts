@@ -11,7 +11,6 @@ export default {
   /** 抽屉挂载的节点，默认挂在组件本身的位置。数据类型为 String 时，会被当作选择器处理，进行节点查询。示例：'body' 或 () => document.body */
   attach: {
     type: [String, Function] as PropType<TdDrawerProps['attach']>,
-    default: '',
   },
   /** 抽屉内容 */
   body: {
@@ -20,7 +19,6 @@ export default {
   /** 取消按钮，可自定义。值为 null 则不显示取消按钮。值类型为字符串，则表示自定义按钮文本，值类型为 Object 则表示透传 Button 组件属性。使用 TNode 自定义按钮时，需自行控制取消事件 */
   cancelBtn: {
     type: [String, Object, Function] as PropType<TdDrawerProps['cancelBtn']>,
-    default: '',
   },
   /** 关闭按钮，可以自定义。值为 true 显示默认关闭按钮，值为 false 不显示关闭按钮。值类型为 string 则直接显示值，如：“关闭”。值类型为 TNode，则表示呈现自定义按钮示例 */
   closeBtn: {
@@ -34,12 +32,11 @@ export default {
   /** 点击蒙层时是否触发抽屉关闭事件 */
   closeOnOverlayClick: {
     type: Boolean,
-    default: undefined,
+    default: true,
   },
   /** 确认按钮。值类型为字符串，则表示自定义按钮文本，值类型为 Object 则表示透传 Button 组件属性。使用 TNode 自定义按钮时，需自行控制确认事件 */
   confirmBtn: {
     type: [String, Object, Function] as PropType<TdDrawerProps['confirmBtn']>,
-    default: '',
   },
   /** 抽屉内容，同 body */
   default: {
@@ -92,14 +89,21 @@ export default {
     type: String,
     default: undefined,
   },
-  /** 抽屉大小可拖拽调整，横向抽屉调整宽度，纵向抽屉调整高度 */
-  sizeDraggable: Boolean,
+  /** 抽屉大小可拖拽调整，横向抽屉调整宽度，纵向抽屉调整高度。`sizeDraggable.max` 和 `sizeDraggable.min` 用于控制拖拽尺寸大小限制 */
+  sizeDraggable: {
+    type: [Boolean, Object] as PropType<TdDrawerProps['sizeDraggable']>,
+    default: false,
+  },
   /** 组件是否可见 */
   visible: Boolean,
   /** 抽屉层级，样式默认为 1500 */
   zIndex: {
     type: Number,
   },
+  /** 抽屉执行关闭动画效果前触发 */
+  onBeforeClose: Function as PropType<TdDrawerProps['onBeforeClose']>,
+  /** 抽屉执行打开动画效果前触发 */
+  onBeforeOpen: Function as PropType<TdDrawerProps['onBeforeOpen']>,
   /** 如果“取消”按钮存在，点击“取消”按钮时触发，同时触发关闭事件 */
   onCancel: Function as PropType<TdDrawerProps['onCancel']>,
   /** 关闭事件，取消按钮点击时、关闭按钮点击时、ESC 按下时、点击蒙层时均会触发 */
@@ -112,4 +116,6 @@ export default {
   onEscKeydown: Function as PropType<TdDrawerProps['onEscKeydown']>,
   /** 如果蒙层存在，点击蒙层时触发 */
   onOverlayClick: Function as PropType<TdDrawerProps['onOverlayClick']>,
+  /** 抽屉大小拖拽结束时触发，事件参数 `size` 在横向抽屉中表示宽度，在纵向抽屉中表示高度 */
+  onSizeDragEnd: Function as PropType<TdDrawerProps['onSizeDragEnd']>,
 };
