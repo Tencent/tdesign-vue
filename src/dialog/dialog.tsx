@@ -303,9 +303,17 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     confirmBtnAction(e: MouseEvent) {
       emitEvent<Parameters<TdDialogProps['onConfirm']>>(this, 'confirm', { e });
     },
+    // 打开弹窗动画开始时事件
+    beforeEnter() {
+      emitEvent<Parameters<TdDialogProps['onBeforeOpen']>>(this, 'before-open');
+    },
     // 打开弹窗动画结束时事件
     afterEnter() {
       emitEvent<Parameters<TdDialogProps['onOpened']>>(this, 'opened');
+    },
+    // 关闭弹窗动画开始时事件
+    beforeLeave() {
+      emitEvent<Parameters<TdDialogProps['onBeforeClose']>>(this, 'before-close');
     },
     // 关闭弹窗动画结束时事件
     afterLeave() {
@@ -505,7 +513,9 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       <transition
         duration={300}
         name={`${this.componentName}-zoom__vue`}
+        onBeforeEnter={this.beforeEnter}
         onAfterEnter={this.afterEnter}
+        onBeforeLeave={this.beforeLeave}
         onAfterLeave={this.afterLeave}
       >
         <div v-show={this.visible} class={this.ctxClass} style={ctxStyle} v-transfer-dom={this.attach}>

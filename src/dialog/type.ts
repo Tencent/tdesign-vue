@@ -31,6 +31,7 @@ export interface TdDialogProps {
   closeOnEscKeydown?: boolean;
   /**
    * 点击蒙层时是否触发关闭事件
+   * @default false
    */
   closeOnOverlayClick?: boolean;
   /**
@@ -55,6 +56,15 @@ export interface TdDialogProps {
    */
   destroyOnClose?: boolean;
   /**
+   * 弹框元素类名，示例：'t-class-dialog-first t-class-dialog-second'
+   * @default ''
+   */
+  dialogClassName?: string;
+  /**
+   * 作用于对话框本身的样式
+   */
+  dialogStyle?: Styles;
+  /**
    * 对话框是否可以拖拽（仅在非模态对话框时有效）
    * @default false
    */
@@ -70,7 +80,7 @@ export interface TdDialogProps {
    */
   header?: string | boolean | TNode;
   /**
-   * 对话框类型，有 3 种：模态对话框、非模态对话框、全屏对话框。弹出「模态对话框」时，只能操作对话框里面的内容，不能操作其他内容。弹出「非模态对话框」时，则可以操作页面内所有内容。「普通对话框」是指没有脱离文档流的对话框，可以在这个基础上开发更多的插件
+   * 对话框类型，有 4 种：模态对话框、非模态对话框、普通对话框、全屏对话框。弹出「模态对话框」时，只能操作对话框里面的内容，不能操作其他内容。弹出「非模态对话框」时，则可以操作页面内所有内容。「普通对话框」是指没有脱离文档流的对话框，可以在这个基础上开发更多的插件
    * @default modal
    */
   mode?: 'modal' | 'modeless' | 'normal' | 'full-screen';
@@ -115,6 +125,14 @@ export interface TdDialogProps {
    * 对话框层级，Web 侧样式默认为 2500，移动端和小程序样式默认为 1500
    */
   zIndex?: number;
+  /**
+   * 对话框执行消失动画效果前触发
+   */
+  onBeforeClose?: () => void;
+  /**
+   * 对话框执行弹出动画效果前触发
+   */
+  onBeforeOpen?: () => void;
   /**
    * 如果“取消”按钮存在，则点击“取消”按钮时触发，同时触发关闭事件
    */
