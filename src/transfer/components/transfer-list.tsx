@@ -89,9 +89,9 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
     return {
       filterValue: '', // 搜索框输入内容,
       // 用于兼容处理 Pagination 的非受控属性（非受控属性仅有 change 事件变化，无 props 变化，因此只需监听事件）
-      defaultCurrent: 1,
+      defaultCurrent: null,
       // 用于兼容处理 Pagination 的非受控属性
-      defaultPageSize: 0,
+      defaultPageSize: null,
       // 支持targetList 排序
       draggingIndex: null,
       dragoverIndex: null,
@@ -102,10 +102,10 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
     // this.defaultCurrent 属于分页组件抛出的事件参数，非受控的情况也会有该事件触发
     // this.pagination.defaultCurrent 为表格组件传入的非受控属性
     currentPage(): number {
-      return this.pagination?.current ?? this.defaultCurrent ?? this.pagination?.defaultCurrent;
+      return this.pagination?.current ?? this.defaultCurrent ?? this.pagination?.defaultCurrent ?? 1;
     },
     pageSize(): number {
-      return this.pagination?.pageSize ?? this.defaultPageSize ?? this.pagination?.defaultPageSize;
+      return this.pagination?.pageSize ?? this.defaultPageSize ?? this.pagination?.defaultPageSize ?? 10;
     },
     pageTotal(): number {
       return (this.filteredData && this.filteredData.length) || 0;
