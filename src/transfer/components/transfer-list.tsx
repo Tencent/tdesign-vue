@@ -130,8 +130,6 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
     },
     paginationProps(): TdPaginationProps {
       const defaultPaginationProps: TdPaginationProps = {
-        size: 'small',
-        theme: 'simple',
         totalContent: false,
         pageSizeOptions: [],
       };
@@ -139,6 +137,8 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
         ? {
           ...defaultPaginationProps,
           ...this.pagination,
+          size: 'small',
+          theme: 'simple',
           current: this.currentPage,
           total: this.pageTotal,
           pageSize: this.pageSize,
