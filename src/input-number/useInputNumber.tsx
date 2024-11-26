@@ -187,6 +187,11 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
    * 2. 处理未输入完成的数字；如：2e/2+/2.等
    * 3. 格式化数字/数字小数点
    */
+  const emitBlur = (value: InputNumberValue, ctx: { e: FocusEvent }) => {
+    props.onBlur?.(value, ctx);
+    context.emit('blur', value, ctx);
+  };
+
   const handleBlur = (value: string, ctx: { e: FocusEvent }) => {
     const {
       largeNumber, max, min, decimalPlaces,
@@ -200,10 +205,12 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
       });
       if (r === 'below-minimum') {
         setTValue(min, { type: 'blur', e: ctx.e });
+        emitBlur(min, ctx);
         return;
       }
       if (r === 'exceed-maximum') {
         setTValue(max, { type: 'blur', e: ctx.e });
+        emitBlur(max, ctx);
         return;
       }
     }
@@ -215,8 +222,7 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
     if (newValue !== tValue.value) {
       setTValue(newValue, { type: 'blur', e: ctx.e });
     }
-    props.onBlur?.(newValue, ctx);
-    context.emit('blur', newValue, ctx);
+    emitBlur(newValue, ctx);
   };
 
   const handleFocus = (value: string, ctx: { e: FocusEvent }) => {
@@ -231,7 +237,7 @@ export default function useInputNumber(props: TdInputNumberProps, context: Setup
       ArrowUp: handleAdd,
       ArrowDown: handleReduce,
     };
-    const code = e.code || e.key;
+    const code = (e.code || e.key) as keyof typeof keyEvent;
     if (keyEvent[code] !== undefined) {
       keyEvent[code](e);
     }
