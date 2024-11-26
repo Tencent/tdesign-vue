@@ -3,7 +3,6 @@
     <t-space>
       <t-radio-group name="city" v-model="value" :options="options" allowUncheck @change="onChange"></t-radio-group>
     </t-space>
-
     <t-space>
       <t-radio-group v-model="value2" @change="onChange2">
         <t-radio value="1" allow-uncheck>选项一</t-radio>
@@ -11,6 +10,15 @@
         <t-radio value="3">选项三</t-radio>
         <t-radio value="4" disabled>选项四</t-radio>
       </t-radio-group>
+    </t-space>
+    <t-space>
+      <t-radio-group
+        name="city"
+        v-model="value"
+        :options="options.map((op) => ({ ...op, button: true }))"
+        allowUncheck
+        @change="onChange"
+      ></t-radio-group>
     </t-space>
   </t-space>
 </template>
