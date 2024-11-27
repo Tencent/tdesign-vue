@@ -64,6 +64,9 @@ export default function useSelectOptions(
       // 处理 slots 中 t-option 与 t-option-group
       const currentSlots = instance.$slots.default || [];
       currentSlots.forEach((child: VNode) => {
+        if (!child.componentOptions) {
+          return;
+        }
         const componentName = getVNodeComponentName(child);
         if (componentName && componentName === getVueComponentName(Option)) {
           // 独立选项
