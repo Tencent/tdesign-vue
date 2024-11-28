@@ -33,6 +33,7 @@ export default defineComponent({
     month: Number,
     time: String,
     popupVisible: Boolean,
+    multiple: Boolean,
     onPanelClick: Function,
     onCellClick: Function,
     onCellMouseEnter: Function,
@@ -65,15 +66,20 @@ export default defineComponent({
         return {};
       }
 
-      return props.disableTime(parseToDateTime(props.value, format, [h, m, s, ms]));
+      const value = props.multiple ? Date.now() : (props.value as string | Date | number);
+      return props.disableTime(parseToDateTime(value, format, [h, m, s, ms]));
     };
 
     const tableData = computed(() => useTableData({
+      value: props.value,
       year: props.year,
       month: props.month,
       mode: props.mode,
-      start: props.value ? parseToDayjs(props.value, format).toDate() : undefined,
+      start: props.value
+        ? parseToDayjs(props.multiple ? (props.value as Array<any>)[0] : props.value, format).toDate()
+        : undefined,
       firstDayOfWeek: props.firstDayOfWeek || global.value.firstDayOfWeek,
+      multiple: props.multiple,
       ...disableDateOptions.value,
     }));
 
@@ -86,6 +92,7 @@ export default defineComponent({
       firstDayOfWeek: props.firstDayOfWeek || global.value.firstDayOfWeek,
       tableData: tableData.value,
       popupVisible: props.popupVisible,
+      multiple: props.multiple,
       enableTimePicker: props.enableTimePicker,
       timePickerProps: {
         disableTime,

@@ -1,16 +1,14 @@
 import { defineComponent, watch, computed } from '@vue/composition-api';
 import dayjs from 'dayjs';
-import { CalendarIcon as TdCalendarIcon } from 'tdesign-icons-vue';
 import isDate from 'lodash/isDate';
 
 import { usePrefixClass } from '../hooks/useConfig';
-import { useGlobalIcon } from '../hooks/useGlobalIcon';
 import useSingle from './hooks/useSingle';
 import {
   parseToDayjs, getDefaultFormat, formatTime, formatDate,
 } from '../_common/js/date-picker/format';
 import {
-  subtractMonth, addMonth, extractTimeObj, covertToDate,
+  subtractMonth, addMonth, extractTimeObj, covertToDate, isSame,
 } from '../_common/js/date-picker/utils';
 import type { DateValue } from './type';
 import props from './props';
@@ -18,19 +16,20 @@ import props from './props';
 import TSelectInput from '../select-input';
 import TSinglePanel from './panel/SinglePanel';
 import useFormDisabled from '../hooks/useFormDisabled';
+import type { TagInputRemoveContext } from '../tag-input';
 
 export default defineComponent({
   name: 'TDatePicker',
   props,
   setup(props, { emit }) {
     const COMPONENT_NAME = usePrefixClass('date-picker');
-    const { CalendarIcon } = useGlobalIcon({ CalendarIcon: TdCalendarIcon });
 
     const {
       inputValue,
       popupVisible,
       inputProps: datePickerInputProps,
       popupProps: datePickerPopupProps,
+      tagInputProps: datePickerTagInputProps,
       isHoverCell,
       cacheValue,
       value,
@@ -45,13 +44,14 @@ export default defineComponent({
       mode: props.mode,
       format: props.format,
       valueType: props.valueType,
-      enableTimePicker: props.enableTimePicker,
+      enableTimePicker: props.multiple ? false : props.enableTimePicker,
     }));
 
     const { formDisabled } = useFormDisabled();
     const isDisabled = computed(() => formDisabled.value || props.disabled);
 
     watch(popupVisible, (visible) => {
+      if (props.multiple) return;
       // Date valueType、week mode 、quarter mode nad empty string don't need to be parsed
       const dateValue = value.value && !isDate(value.value) && !['week', 'quarter'].includes(props.mode)
         ? covertToDate(value.value as string, formatRef.value?.valueType)
@@ -66,8 +66,8 @@ export default defineComponent({
 
       // 面板展开重置数据
       if (visible) {
-        year.value = parseToDayjs(value.value, formatRef.value.format).year();
-        month.value = parseToDayjs(value.value, formatRef.value.format).month();
+        year.value = parseToDayjs(value.value as string | number | Date, formatRef.value.format).year();
+        month.value = parseToDayjs(value.value as string | number | Date, formatRef.value.format).month();
         time.value = formatTime(value.value, formatRef.value.format, formatRef.value.timeFormat, props.defaultTime);
       } else {
         isHoverCell.value = false;
@@ -76,6 +76,7 @@ export default defineComponent({
 
     // 日期 hover
     function onCellMouseEnter(date: Date) {
+      if (props.multiple) return;
       isHoverCell.value = true;
       inputValue.value = formatDate(date, {
         format: formatRef.value.format,
@@ -84,6 +85,7 @@ export default defineComponent({
 
     // 日期 leave
     function onCellMouseLeave() {
+      if (props.multiple) return;
       isHoverCell.value = false;
       inputValue.value = formatDate(cacheValue.value, {
         format: formatRef.value.format,
@@ -103,6 +105,14 @@ export default defineComponent({
           format: formatRef.value.format,
         });
       } else {
+        if (props.multiple) {
+          const newDate = processDate(date);
+          onChange?.(newDate, {
+            dayjsValue: parseToDayjs(date, formatRef.value.format),
+            trigger: 'pick',
+          });
+          return;
+        }
         onChange?.(
           formatDate(date, {
             format: formatRef.value.format,
@@ -228,21 +238,58 @@ export default defineComponent({
       month.value = nextMonth;
     }
 
+    function processDate(date: Date) {
+      const val = value.value as (string | number | Date)[];
+      const isSameDate = val.some((val) => isSame(dayjs(val).toDate(), date));
+      let currentDate: (string | number | Date)[];
+
+      if (!isSameDate) {
+        currentDate = val.concat(
+          formatDate(date, { format: formatRef.value.format, targetFormat: formatRef.value.valueType }),
+        );
+      } else {
+        currentDate = val.filter(
+          (val) => formatDate(val, { format: formatRef.value.format, targetFormat: formatRef.value.valueType })
+            !== formatDate(date, { format: formatRef.value.format, targetFormat: formatRef.value.valueType }),
+        );
+      }
+
+      return currentDate.sort((a, b) => dayjs(a).valueOf() - dayjs(b).valueOf());
+    }
+
+    const onTagRemoveClick = (ctx: TagInputRemoveContext) => {
+      const removeDate = dayjs(ctx.item).toDate();
+      const newDate = processDate(removeDate);
+      onChange?.(newDate, {
+        dayjsValue: parseToDayjs(removeDate, formatRef.value.format),
+        trigger: 'pick',
+      });
+      // props?.tagInputProps?.onRemove?.(ctx);
+    };
+
+    const onTagClearClick = ({ e }: { e: MouseEvent }) => {
+      e.stopPropagation();
+      popupVisible.value = false;
+      onChange?.([], { dayjsValue: dayjs(), trigger: 'clear' });
+      // props?.tagInputProps?.onClear?.(e);
+    };
+
     const panelProps: any = computed(() => ({
-      value: cacheValue.value as string,
+      value: cacheValue.value,
       year: year.value,
       month: month.value,
       format: formatRef.value.format,
       mode: props.mode,
       presets: props.presets,
-      time: time.value as string,
+      time: props.multiple ? false : time.value,
       disableDate: props.disableDate,
       disableTime: props.disableTime,
       firstDayOfWeek: props.firstDayOfWeek,
       timePickerProps: props.timePickerProps,
-      enableTimePicker: props.enableTimePicker,
+      enableTimePicker: props.multiple ? false : props.enableTimePicker,
       presetsPlacement: props.presetsPlacement,
       popupVisible: popupVisible.value,
+      multiple: props.multiple,
       onCellClick,
       onCellMouseEnter,
       onCellMouseLeave,
@@ -260,10 +307,12 @@ export default defineComponent({
       inputValue,
       datePickerPopupProps,
       datePickerInputProps,
+      datePickerTagInputProps,
       popupVisible,
       panelProps,
       isDisabled,
-      CalendarIcon,
+      onTagRemoveClick,
+      onTagClearClick,
     };
   },
   render() {
@@ -272,19 +321,13 @@ export default defineComponent({
       inputValue,
       datePickerPopupProps,
       datePickerInputProps,
+      datePickerTagInputProps,
       popupVisible,
       panelProps,
       isDisabled,
-      CalendarIcon,
+      onTagRemoveClick,
+      onTagClearClick,
     } = this;
-
-    const renderSuffixIcon = () => {
-      if (this.suffixIcon) return this.suffixIcon;
-      if (this.$scopedSlots.suffixIcon) return this.$scopedSlots.suffixIcon;
-      if (this.$scopedSlots['suffix-icon']) return this.$scopedSlots['suffix-icon'];
-
-      return () => <CalendarIcon />;
-    };
 
     return (
       <div class={COMPONENT_NAME}>
@@ -297,11 +340,17 @@ export default defineComponent({
           status={this.status}
           tips={this.tips}
           popupProps={datePickerPopupProps}
-          inputProps={{ suffixIcon: renderSuffixIcon(), ...datePickerInputProps }}
+          inputProps={datePickerInputProps}
           popupVisible={popupVisible}
           clearable={this.clearable}
           allowInput={this.allowInput && !this.readonly}
           panel={() => <TSinglePanel {...{ props: panelProps }} />}
+          multiple={this.multiple}
+          tagInputProps={{
+            onRemove: onTagRemoveClick,
+            ...datePickerTagInputProps,
+          }}
+          onClear={onTagClearClick}
         />
       </div>
     );
