@@ -134,12 +134,12 @@ export interface TdDatePickerProps {
    * 选中值
    * @default ''
    */
-  value?: DateValue;
+  value?: DateValue | DateMultipleValue;
   /**
    * 选中值，非受控属性
    * @default ''
    */
-  defaultValue?: DateValue;
+  defaultValue?: DateValue | DateMultipleValue;
   /**
    * 自定义选中项呈现的内容
    */
@@ -152,11 +152,14 @@ export interface TdDatePickerProps {
   /**
    * 当输入框失去焦点时触发
    */
-  onBlur?: (context: { value: DateValue; e: FocusEvent }) => void;
+  onBlur?: (context: { value: DateValue | DateMultipleValue; e: FocusEvent }) => void;
   /**
    * 选中值发生变化时触发
    */
-  onChange?: (value: DateValue, context: { dayjsValue?: Dayjs; trigger?: DatePickerTriggerSource }) => void;
+  onChange?: (
+    value: DateValue | DateMultipleValue,
+    context: { dayjsValue?: Dayjs; trigger?: DatePickerTriggerSource },
+  ) => void;
   /**
    * 如果存在“确定”按钮，则点击“确定”按钮时触发
    */
@@ -164,7 +167,7 @@ export interface TdDatePickerProps {
   /**
    * 输入框获得焦点时触发
    */
-  onFocus?: (context: { value: DateValue; e: FocusEvent }) => void;
+  onFocus?: (context: { value: DateValue | DateMultipleValue; e: FocusEvent }) => void;
   /**
    * 面板选中值后触发
    */
@@ -510,7 +513,9 @@ export interface PresetDate {
   [name: string]: DateValue | (() => DateValue);
 }
 
-export type DateValue = string | number | Date | Array<string | number | Date>;
+export type DateValue = string | number | Date;
+
+export type DateMultipleValue = Array<DateValue>;
 
 export type DatePickerValueType =
   | 'time-stamp'

@@ -3,7 +3,7 @@ import isFunction from 'lodash/isFunction';
 import { useConfig, usePrefixClass } from '../../hooks/useConfig';
 import TPanelContent from './PanelContent';
 import TExtraContent from './ExtraContent';
-import { TdDatePickerProps } from '../type';
+import { DateMultipleValue, DateValue, TdDatePickerProps } from '../type';
 import { getDefaultFormat, parseToDayjs } from '../../_common/js/date-picker/format';
 import useTableData from '../hooks/useTableData';
 import useDisableDate from '../hooks/useDisableDate';
@@ -76,7 +76,10 @@ export default defineComponent({
       month: props.month,
       mode: props.mode,
       start: props.value
-        ? parseToDayjs(props.multiple ? (props.value as Array<any>)[0] : props.value, format).toDate()
+        ? parseToDayjs(
+          props.multiple ? (props.value as DateMultipleValue)[0] : (props.value as DateValue),
+          format,
+        ).toDate()
         : undefined,
       firstDayOfWeek: props.firstDayOfWeek || global.value.firstDayOfWeek,
       multiple: props.multiple,

@@ -31,7 +31,7 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
     mode: props.mode,
     format: props.format,
     valueType: props.valueType,
-    enableTimePicker: props.enableTimePicker,
+    enableTimePicker: props.multiple ? false : props.enableTimePicker,
   }));
 
   const popupVisible = ref(false);
@@ -137,7 +137,7 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
     if (props.multiple) {
       return {
         clearable: props.clearable,
-        suffixIcon: props.suffixIcon || CalendarIcon,
+        suffixIcon: props.suffixIcon || ((h) => h(CalendarIcon as Component)),
       };
     }
     return {};

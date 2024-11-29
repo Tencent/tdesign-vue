@@ -10,7 +10,7 @@ import {
 import {
   subtractMonth, addMonth, extractTimeObj, covertToDate, isSame,
 } from '../_common/js/date-picker/utils';
-import type { DateValue } from './type';
+import type { DateMultipleValue, DateValue } from './type';
 import props from './props';
 
 import TSelectInput from '../select-input';
@@ -66,8 +66,8 @@ export default defineComponent({
 
       // 面板展开重置数据
       if (visible) {
-        year.value = parseToDayjs(value.value as string | number | Date, formatRef.value.format).year();
-        month.value = parseToDayjs(value.value as string | number | Date, formatRef.value.format).month();
+        year.value = parseToDayjs(value.value as DateValue, formatRef.value.format).year();
+        month.value = parseToDayjs(value.value as DateValue, formatRef.value.format).month();
         time.value = formatTime(value.value, formatRef.value.format, formatRef.value.timeFormat, props.defaultTime);
       } else {
         isHoverCell.value = false;
@@ -239,9 +239,9 @@ export default defineComponent({
     }
 
     function processDate(date: Date) {
-      const val = value.value as (string | number | Date)[];
+      const val = value.value as DateMultipleValue;
       const isSameDate = val.some((val) => isSame(dayjs(val).toDate(), date));
-      let currentDate: (string | number | Date)[];
+      let currentDate: DateMultipleValue;
 
       if (!isSameDate) {
         currentDate = val.concat(
@@ -281,7 +281,7 @@ export default defineComponent({
       format: formatRef.value.format,
       mode: props.mode,
       presets: props.presets,
-      time: props.multiple ? false : time.value,
+      time: props.multiple ? '' : time.value,
       disableDate: props.disableDate,
       disableTime: props.disableTime,
       firstDayOfWeek: props.firstDayOfWeek,
@@ -335,7 +335,7 @@ export default defineComponent({
           disabled={isDisabled}
           readonly={this.readonly}
           value={inputValue}
-          inputValue={inputValue}
+          inputValue={this.multiple ? '' : inputValue}
           label={this.label}
           status={this.status}
           tips={this.tips}
