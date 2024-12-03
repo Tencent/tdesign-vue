@@ -251,11 +251,14 @@ export default defineComponent({
     });
 
     const valueDisplayParams = computed(() => {
-      const val = multiple.value
-        ? (innerValue.value as SelectValue[]).map((value) => ({
-          value,
-          label: optionsMap.value.get(value)?.label,
-        }))
+      const tValue = innerValue.value || [];
+      const values = Array.isArray(tValue) ? tValue : [tValue];
+
+      const val = props.multiple
+        ? values.map((item: any) => {
+          const tmpValue = typeof item === 'object' ? item[props.keys?.value || 'value'] : item;
+          return props.options?.find((t: TdOptionProps) => t.value === tmpValue);
+        })
         : innerValue.value;
       const params = {
         value: val,
