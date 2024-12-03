@@ -4,20 +4,18 @@ import {
   SelectOption, SelectOptionGroup, SelectValue, TdOptionProps, TdSelectProps,
 } from './type';
 
-export const getSingleContent = (value: TdSelectProps['value'], options: SelectOption[]): string => {
-  for (const option of options) {
-    if ((option as TdOptionProps).value === value) {
-      // 保底使用 value 作为显示
-      return option?.label || String((option as TdOptionProps).value);
-    }
-  }
-  return value !== undefined && value !== null ? String(value) : undefined;
+export const getSingleContent = (
+  value: TdSelectProps['value'],
+  optionsMap: Map<SelectValue<SelectOption>, TdOptionProps>,
+): string => {
+  const option = optionsMap.get(value);
+  return option?.label || value?.toString();
 };
 
-export const getMultipleContent = (value: SelectValue[], options: SelectOption[]) => {
+export const getMultipleContent = (value: SelectValue[], optionsMap: Map<SelectValue<SelectOption>, TdOptionProps>) => {
   const res: string[] = [];
   for (const iterator of value) {
-    const resLabel = getSingleContent(iterator, options);
+    const resLabel = getSingleContent(iterator, optionsMap);
     if (resLabel) {
       res.push(resLabel);
     }
