@@ -302,7 +302,16 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
         allowSetValue: false,
       };
       // 过滤不需要校验的规则
-      result.rules = trigger === 'all' ? this.innerRules : this.innerRules.filter((item) => (item.trigger || 'change') === trigger);
+      result.rules = trigger === 'all'
+        ? this.innerRules
+        : this.innerRules.filter((item) => {
+          const { trigger: validateTrigger = 'change' } = item;
+          if (Array.isArray(validateTrigger)) {
+            return validateTrigger.includes(trigger);
+          }
+
+          return trigger === validateTrigger;
+        });
       if (this.innerRules.length && !result.rules.length) {
         return result;
       }
