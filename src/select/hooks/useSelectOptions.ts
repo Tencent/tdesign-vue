@@ -28,6 +28,7 @@ export default function useSelectOptions(
 ) {
   // 内部 options 记录
   const options = ref<UniOption[]>([]);
+  const optionsCache = ref<UniOption[]>([]);
 
   // 指向当前 slots 数组，用来判断 slot 是否被更新
   let innerSlotRecord: VNode[] = null;
@@ -113,7 +114,7 @@ export default function useSelectOptions(
 
   const optionsMap = computed(() => {
     const res = new Map<SelectValue, TdOptionProps>();
-    optionsList.value.forEach((option: TdOptionProps) => {
+    optionsCache.value.concat(optionsList.value).forEach((option: TdOptionProps) => {
       res.set(option.value, option);
     });
     return res;
@@ -154,5 +155,6 @@ export default function useSelectOptions(
     options,
     optionsMap,
     optionsList,
+    optionsCache,
   };
 }
