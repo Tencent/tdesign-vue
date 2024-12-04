@@ -89262,6 +89262,13 @@ exports[`csr snapshot test > csr test ./src/select/_example/collapsed.vue 1`] = 
   <div
     class="t-space-item"
   >
+    <h3>
+      default:
+    </h3>
+  </div>
+  <div
+    class="t-space-item"
+  >
     <div
       class="t-select__wrap"
     >
@@ -89300,7 +89307,252 @@ exports[`csr snapshot test > csr test ./src/select/_example/collapsed.vue 1`] = 
                 class="t-tag t-tag--default t-tag--dark"
               >
                 <span>
-                  +2
+                  +1
+                </span>
+              </div>
+            </div>
+            <input
+              autocomplete=""
+              class="t-input__inner t-input--soft-hidden"
+              placeholder=""
+              readonly="readonly"
+              type="text"
+              unselectable="on"
+            />
+            <span
+              class="t-input__input-pre"
+            />
+            <span
+              class="t-input__suffix t-input__suffix-icon"
+            >
+              <svg
+                class="t-fake-arrow t-select__right-icon"
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                  stroke="black"
+                  stroke-opacity="0.9"
+                  stroke-width="1.3"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <h3>
+      use collapsedItems:
+    </h3>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-space t-space-horizontal"
+      style="gap: 16px;"
+    >
+      <div
+        class="t-space-item"
+      >
+        <div>
+          size control:
+        </div>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <div
+          class="t-radio-group t-size-m t-radio-group__outline"
+        >
+          <label
+            class="t-radio"
+            tabindex="0"
+          >
+            <input
+              class="t-radio__former"
+              data-value="'small'"
+              tabindex="-1"
+              type="radio"
+              value="small"
+            />
+            <span
+              class="t-radio__input"
+            />
+            <span
+              class="t-radio__label"
+            >
+              small
+            </span>
+          </label>
+          <label
+            class="t-radio t-is-checked"
+            tabindex="0"
+          >
+            <input
+              class="t-radio__former"
+              data-value="'medium'"
+              tabindex="-1"
+              type="radio"
+              value="medium"
+            />
+            <span
+              class="t-radio__input"
+            />
+            <span
+              class="t-radio__label"
+            >
+              medium
+            </span>
+          </label>
+          <label
+            class="t-radio"
+            tabindex="0"
+          >
+            <input
+              class="t-radio__former"
+              data-value="'large'"
+              tabindex="-1"
+              type="radio"
+              value="large"
+            />
+            <span
+              class="t-radio__input"
+            />
+            <span
+              class="t-radio__label"
+            >
+              large
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-space t-space-horizontal"
+      style="gap: 16px;"
+    >
+      <div
+        class="t-space-item"
+      >
+        <span>
+          disabled control:
+        </span>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <label
+          class="t-checkbox"
+          tabindex="0"
+        >
+          <input
+            class="t-checkbox__former"
+            tabindex="-1"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          />
+        </label>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-space t-space-horizontal"
+      style="gap: 16px;"
+    >
+      <div
+        class="t-space-item"
+      >
+        <span>
+          readonly control:
+        </span>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <label
+          class="t-checkbox"
+          tabindex="0"
+        >
+          <input
+            class="t-checkbox__former"
+            tabindex="-1"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          />
+        </label>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-select__wrap"
+    >
+      <div
+        class="t-select-input t-select-input--multiple t-select"
+      >
+        <div
+          class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon"
+        >
+          <div
+            class="t-input t-is-readonly t-input--prefix t-input--suffix"
+          >
+            <div
+              class="t-input__prefix"
+            >
+              <div
+                class="t-tag t-tag--default t-tag--dark t-tag--close"
+              >
+                <span>
+                  选项一
+                </span>
+                <svg
+                  class="t-icon t-icon-close t-tag__icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M7.05 5.64L12 10.59l4.95-4.95 1.41 1.41L13.41 12l4.95 4.95-1.41 1.41L12 13.41l-4.95 4.95-1.41-1.41L10.59 12 5.64 7.05l1.41-1.41z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+              <div
+                class="t-tag t-tag--default t-tag--dark"
+              >
+                <span>
+                  Function - More(1)
                 </span>
               </div>
             </div>
@@ -89376,89 +89628,14 @@ exports[`csr snapshot test > csr test ./src/select/_example/collapsed.vue 1`] = 
                   />
                 </svg>
               </div>
-              <span
-                style="color: rgb(237, 123, 47); margin-left: 8px;"
-              >
-                +2
-              </span>
-            </div>
-            <input
-              autocomplete=""
-              class="t-input__inner t-input--soft-hidden"
-              placeholder=""
-              readonly="readonly"
-              type="text"
-              unselectable="on"
-            />
-            <span
-              class="t-input__input-pre"
-            />
-            <span
-              class="t-input__suffix t-input__suffix-icon"
-            >
-              <svg
-                class="t-fake-arrow t-select__right-icon"
-                fill="none"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                  stroke="black"
-                  stroke-opacity="0.9"
-                  stroke-width="1.3"
-                />
-              </svg>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    class="t-space-item"
-  >
-    <div
-      class="t-select__wrap"
-    >
-      <div
-        class="t-select-input t-select-input--multiple t-select"
-      >
-        <div
-          class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon"
-        >
-          <div
-            class="t-input t-is-readonly t-input--prefix t-input--suffix"
-          >
-            <div
-              class="t-input__prefix"
-            >
               <div
-                class="t-tag t-tag--default t-tag--dark t-tag--close"
+                class="t-tag t-tag--default t-tag--dark"
+                style="margin-right: 4px;"
               >
                 <span>
-                  选项一
+                  Slot - More(1)
                 </span>
-                <svg
-                  class="t-icon t-icon-close t-tag__icon-close"
-                  fill="none"
-                  height="1em"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                >
-                  <path
-                    d="M7.05 5.64L12 10.59l4.95-4.95 1.41 1.41L13.41 12l4.95 4.95-1.41 1.41L12 13.41l-4.95 4.95-1.41-1.41L10.59 12 5.64 7.05l1.41-1.41z"
-                    fill="currentColor"
-                  />
-                </svg>
               </div>
-              <span
-                style="color: rgb(0, 168, 112); margin-left: 8px;"
-              >
-                +2
-              </span>
             </div>
             <input
               autocomplete=""
@@ -89793,23 +89970,11 @@ exports[`csr snapshot test > csr test ./src/select/_example/custom-selected.vue 
                 </svg>
               </div>
               <div
-                class="t-tag t-tag--default t-tag--dark t-tag--close"
+                class="t-tag t-tag--default t-tag--dark"
               >
                 <span>
-                  选项三(3)
+                  +1
                 </span>
-                <svg
-                  class="t-icon t-icon-close t-tag__icon-close"
-                  fill="none"
-                  height="1em"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                >
-                  <path
-                    d="M7.05 5.64L12 10.59l4.95-4.95 1.41 1.41L13.41 12l4.95 4.95-1.41 1.41L12 13.41l-4.95 4.95-1.41-1.41L10.59 12 5.64 7.05l1.41-1.41z"
-                    fill="currentColor"
-                  />
-                </svg>
               </div>
             </div>
             <input
@@ -89952,6 +90117,58 @@ exports[`csr snapshot test > csr test ./src/select/_example/custom-selected.vue 
             />
             <span
               class="t-input__input-pre"
+            />
+            <span
+              class="t-input__suffix t-input__suffix-icon"
+            >
+              <svg
+                class="t-fake-arrow t-select__right-icon"
+                fill="none"
+                height="16"
+                viewBox="0 0 16 16"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                  stroke="black"
+                  stroke-opacity="0.9"
+                  stroke-width="1.3"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-select__wrap"
+    >
+      <div
+        class="t-select-input t-select"
+      >
+        <div
+          class="t-input__wrap"
+        >
+          <div
+            class="t-input t-is-readonly t-input--prefix t-input--suffix"
+          >
+            <div
+              class="t-input__prefix"
+            >
+               单选自定义（1） 
+            </div>
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder=""
+              readonly="readonly"
+              type="text"
+              unselectable="on"
             />
             <span
               class="t-input__suffix t-input__suffix-icon"
