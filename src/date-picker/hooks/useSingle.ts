@@ -1,11 +1,8 @@
 import { ref, computed, watch } from '@vue/composition-api';
 import dayjs from 'dayjs';
-import { CalendarIcon as TdCalendarIcon } from 'tdesign-icons-vue';
 import omit from 'lodash/omit';
 
-import { Component } from 'vue';
-import { usePrefixClass, useConfig } from '../../hooks/useConfig';
-import { useGlobalIcon } from '../../hooks/useGlobalIcon';
+import { usePrefixClass } from '../../hooks/useConfig';
 import { TdDatePickerProps, DateValue } from '../type';
 import {
   isValidDate,
@@ -18,8 +15,6 @@ import useSingleValue from './useSingleValue';
 
 export default function useSingle(props: TdDatePickerProps, { emit }: any) {
   const COMPONENT_NAME = usePrefixClass('date-picker');
-  const { CalendarIcon } = useGlobalIcon({ CalendarIcon: TdCalendarIcon });
-  const { global } = useConfig('datePicker');
 
   const inputRef = ref();
 
@@ -47,9 +42,6 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
       borderless: props.borderless,
       size: props.size,
       prefixIcon: props.prefixIcon,
-      suffixIcon: props.suffixIcon || ((h) => h(CalendarIcon as Component)),
-      placeholder:
-        props.placeholder || (global.value.placeholder as { [key in typeof props.mode]: string })[props.mode],
       class: [
         {
           [`${COMPONENT_NAME.value}__input--placeholder`]: isHoverCell.value,
@@ -137,7 +129,6 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
     if (props.multiple) {
       return {
         clearable: props.clearable,
-        suffixIcon: props.suffixIcon || ((h) => h(CalendarIcon as Component)),
       };
     }
     return {};

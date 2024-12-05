@@ -1,8 +1,10 @@
 import { defineComponent, watch, computed } from '@vue/composition-api';
 import dayjs from 'dayjs';
+import { CalendarIcon as TdCalendarIcon } from 'tdesign-icons-vue';
 import isDate from 'lodash/isDate';
 
-import { usePrefixClass } from '../hooks/useConfig';
+import { usePrefixClass, useConfig } from '../hooks/useConfig';
+import { useGlobalIcon } from '../hooks/useGlobalIcon';
 import useSingle from './hooks/useSingle';
 import {
   parseToDayjs, getDefaultFormat, formatTime, formatDate,
@@ -23,6 +25,8 @@ export default defineComponent({
   props,
   setup(props, { emit }) {
     const COMPONENT_NAME = usePrefixClass('date-picker');
+    const { CalendarIcon } = useGlobalIcon({ CalendarIcon: TdCalendarIcon });
+    const { global } = useConfig('datePicker');
 
     const {
       inputValue,
@@ -264,14 +268,12 @@ export default defineComponent({
         dayjsValue: parseToDayjs(removeDate, formatRef.value.format),
         trigger: 'pick',
       });
-      // props?.tagInputProps?.onRemove?.(ctx);
     };
 
     const onTagClearClick = ({ e }: { e: MouseEvent }) => {
       e.stopPropagation();
       popupVisible.value = false;
       onChange?.([], { dayjsValue: dayjs(), trigger: 'clear' });
-      // props?.tagInputProps?.onClear?.(e);
     };
 
     const panelProps: any = computed(() => ({
@@ -313,6 +315,8 @@ export default defineComponent({
       isDisabled,
       onTagRemoveClick,
       onTagClearClick,
+      CalendarIcon,
+      global,
     };
   },
   render() {
@@ -327,7 +331,16 @@ export default defineComponent({
       isDisabled,
       onTagRemoveClick,
       onTagClearClick,
+      CalendarIcon,
     } = this;
+
+    const renderSuffixIcon = () => {
+      if (this.suffixIcon) return this.suffixIcon;
+      if (this.$scopedSlots.suffixIcon) return this.$scopedSlots.suffixIcon;
+      if (this.$scopedSlots['suffix-icon']) return this.$scopedSlots['suffix-icon'];
+
+      return () => <CalendarIcon />;
+    };
 
     return (
       <div class={COMPONENT_NAME}>
@@ -340,12 +353,15 @@ export default defineComponent({
           status={this.status}
           tips={this.tips}
           popupProps={datePickerPopupProps}
-          inputProps={datePickerInputProps}
+          inputProps={{ suffixIcon: renderSuffixIcon(), ...datePickerInputProps }}
           popupVisible={popupVisible}
           clearable={this.clearable}
           allowInput={this.allowInput && !this.readonly}
           panel={() => <TSinglePanel {...{ props: panelProps }} />}
           multiple={this.multiple}
+          placeholder={
+            this.placeholder ?? (this.global.placeholder as { [key in typeof this.mode]: string })[this.mode]
+          }
           tagInputProps={{
             onRemove: onTagRemoveClick,
             ...datePickerTagInputProps,
