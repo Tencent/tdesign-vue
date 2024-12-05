@@ -53,7 +53,7 @@ export default defineComponent({
 
     useDragHandle(state);
     const { setActived, setExpanded, setChecked } = useTreeAction(state);
-    const { onInnerVirtualScroll, virtualConfig } = useTreeScroll(state);
+    const { onInnerVirtualScroll, virtualConfig, scrollToElement } = useTreeScroll(state);
     const { renderTreeNodes, nodesEmpty } = useTreeNodes(state);
     const {
       treeClasses, treeContentStyles, scrollStyles, cursorStyles,
@@ -85,7 +85,9 @@ export default defineComponent({
       scrollStyles,
       cursorStyles,
       virtualConfig,
-      scrollToElement: virtualConfig.scrollToElement,
+      scrollTo: scrollToElement,
+      // deprecated
+      scrollToElement,
     };
   },
 
