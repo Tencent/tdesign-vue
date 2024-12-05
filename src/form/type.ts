@@ -246,7 +246,7 @@ export interface FormRule {
    * 校验触发方式
    * @default change
    */
-  trigger?: ValidateTriggerType;
+  trigger?: Exclude<ValidateTriggerType, 'all'> | Exclude<ValidateTriggerType, 'all'>[];
   /**
    * 校验未通过时呈现的错误信息类型，有 告警信息提示 和 错误信息提示 等两种
    * @default error
