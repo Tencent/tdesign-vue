@@ -91,7 +91,7 @@ export default function useTreeData(props: TdEnhancedTableProps, context: SetupC
   });
 
   watch(
-    () => [columns, props.tree?.treeNodeColumnIndex],
+    () => [columns.value, props.tree?.treeNodeColumnIndex],
     () => {
       treeNodeCol.value = getTreeNodeColumnCol();
     },
