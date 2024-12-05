@@ -202,6 +202,10 @@ export interface TdDateRangePickerProps {
    */
   disabled?: boolean;
   /**
+   * 是否只读
+   */
+  readonly?: Boolean;
+  /**
    * 是否显示时间选择
    * @default false
    */
