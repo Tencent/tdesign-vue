@@ -40198,7 +40198,7 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/multiple.vue 1`
         class="t-select-input t-select-input--multiple"
       >
         <div
-          class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
+          class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon"
         >
           <div
             class="t-input t-is-readonly t-input--prefix t-input--suffix"
