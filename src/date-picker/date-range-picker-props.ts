@@ -30,7 +30,9 @@ export default {
     type: Function as PropType<TdDateRangePickerProps['disableTime']>,
   },
   /** 是否禁用组件 */
-  disabled: {
+  disabled: Boolean,
+  /** 只读状态，值为真会隐藏输入框，且无法打开下拉框 */
+  readonly: {
     type: Boolean,
     default: undefined,
   },
@@ -61,11 +63,6 @@ export default {
       if (!val) return true;
       return ['year', 'quarter', 'month', 'week', 'date'].includes(val);
     },
-  },
-  /** 决定在日期时间区间选择器的场景下是否需要点击确认按钮才完成选择动作，默认为 `true` */
-  needConfirm: {
-    type: Boolean,
-    default: true,
   },
   /** 在开始日期选中之前，面板是否显示预选状态，即是否高亮预选日期 */
   panelPreselection: {
@@ -139,7 +136,7 @@ export default {
   /** 选中值 */
   value: {
     type: Array as PropType<TdDateRangePickerProps['value']>,
-    default: undefined,
+    default: (): TdDateRangePickerProps['value'] => [],
   },
   /** 选中值，非受控属性 */
   defaultValue: {

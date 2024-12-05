@@ -39111,14 +39111,14 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/custom-icon.vue
               class="t-input__suffix t-input__suffix-icon"
             >
               <svg
-                class="t-icon t-icon-lock-on"
+                class="t-icon t-icon-calendar"
                 fill="none"
                 height="1em"
                 viewBox="0 0 24 24"
                 width="1em"
               >
                 <path
-                  d="M12 3a4 4 0 014 4v3H8V7a4 4 0 014-4zm6 7V7A6 6 0 006 7v3H3.5v12h17V10H18zM5.5 12h13v8h-13v-8zM9 15h6v2H9v-2z"
+                  d="M6 4V1.5h2V4h8V1.5h2V4h4v18H2V4h4zM4 6v3h16V6H4zm16 5H4v9h16v-9z"
                   fill="currentColor"
                 />
               </svg>
@@ -40161,6 +40161,86 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/month.vue 1`] =
             </div>
             <span
               class="t-range-input__suffix t-range-input__suffix-icon"
+            >
+              <svg
+                class="t-icon t-icon-calendar"
+                fill="none"
+                height="1em"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  d="M6 4V1.5h2V4h8V1.5h2V4h4v18H2V4h4zM4 6v3h16V6H4zm16 5H4v9h16v-9z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/date-picker/_example/multiple.vue 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-date-picker"
+    >
+      <div
+        class="t-select-input t-select-input--multiple"
+      >
+        <div
+          class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon"
+        >
+          <div
+            class="t-input t-is-readonly t-input--prefix t-input--suffix"
+          >
+            <div
+              class="t-input__prefix"
+            >
+              <div
+                class="t-tag t-tag--default t-tag--dark t-tag--close"
+              >
+                <span>
+                  2024-01-04
+                </span>
+                <svg
+                  class="t-icon t-icon-close t-tag__icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M7.05 5.64L12 10.59l4.95-4.95 1.41 1.41L13.41 12l4.95 4.95-1.41 1.41L12 13.41l-4.95 4.95-1.41-1.41L10.59 12 5.64 7.05l1.41-1.41z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+            </div>
+            <input
+              autocomplete=""
+              class="t-input__inner t-input--soft-hidden"
+              placeholder="支持日期的多选"
+              readonly="readonly"
+              type="text"
+              unselectable="on"
+            />
+            <span
+              class="t-input__input-pre"
+            >
+              支持日期的多选
+            </span>
+            <span
+              class="t-input__suffix t-input__suffix-icon"
             >
               <svg
                 class="t-icon t-icon-calendar"

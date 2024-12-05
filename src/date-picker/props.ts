@@ -28,7 +28,9 @@ export default {
     type: Function as PropType<TdDatePickerProps['disableTime']>,
   },
   /** 是否禁用组件 */
-  disabled: {
+  disabled: Boolean,
+  /** 只读状态，值为真会隐藏输入框，且无法打开下拉框 */
+  readonly: {
     type: Boolean,
     default: undefined,
   },
@@ -66,11 +68,6 @@ export default {
   },
   /** 支持多选日期，但不支持在range-picker中，或与enableTimePicker、allowInput 一起使用 */
   multiple: Boolean,
-  /** 决定在日期时间选择器的场景下是否需要点击确认按钮才完成选择动作，默认为`true` */
-  needConfirm: {
-    type: Boolean,
-    default: true,
-  },
   /** 占位符 */
   placeholder: {
     type: [String, Array] as PropType<TdDatePickerProps['placeholder']>,
@@ -96,10 +93,6 @@ export default {
       if (!val) return true;
       return ['left', 'top', 'right', 'bottom'].includes(val);
     },
-  },
-  /** 透传 SelectInput 筛选器输入框组件的全部属性 */
-  selectInputProps: {
-    type: Object as PropType<TdDatePickerProps['selectInputProps']>,
   },
   /** 输入框尺寸 */
   size: {
@@ -134,16 +127,12 @@ export default {
   /** 选中值 */
   value: {
     type: [String, Number, Array, Date] as PropType<TdDatePickerProps['value']>,
-    default: undefined,
+    default: '',
   },
   /** 选中值，非受控属性 */
   defaultValue: {
     type: [String, Number, Array, Date] as PropType<TdDatePickerProps['defaultValue']>,
     default: '',
-  },
-  /** 自定义选中项呈现的内容 */
-  valueDisplay: {
-    type: [String, Function] as PropType<TdDatePickerProps['valueDisplay']>,
   },
   /** 用于格式化日期的值，仅支持部分格式，时间戳、日期等。⚠️ `YYYYMMDD` 这种格式不支持，请勿使用，如果希望支持可以给 `dayjs` 提个 PR。注意和 `format` 的区别，`format` 仅用于处理日期在页面中呈现的格式。`ValueTypeEnum` 即将废弃，请更为使用 `DatePickerValueType` */
   valueType: {
