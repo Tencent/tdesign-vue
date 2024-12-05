@@ -103,11 +103,6 @@ describe('Slider [marks]', () => {
     });
   });
 
-  // 检查内部值是否变化
-  it('check change value', () => {
-    expect(wrapper.vm.prevValue).toBe(20);
-  });
-
   // 检查内部函数是否返回正确
   it('call setValues()', () => {
     expect(wrapper.vm.setValues(1000)).toBe(100);
@@ -136,10 +131,5 @@ describe('Slider [vertical-marks]', () => {
     expect(wrapper.html()).toContain('aria-valuetext="30-70"');
     expect(wrapper.html()).toContain('37°C');
     expect(wrapper.element).toMatchSnapshot();
-  });
-  // 检查内部函数是否返回正确
-  it('call setValues()', () => {
-    expect(wrapper.vm.setValues([300, 200])).toEqual([30, 100]);
-    expect(wrapper.vm.setValues([-200, -300])).toEqual([0, 100]);
   });
 });

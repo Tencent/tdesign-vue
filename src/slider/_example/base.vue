@@ -1,6 +1,6 @@
 <template>
   <t-space direction="vertical" size="60px">
-    <t-slider @change-end="handleChangeEnd" />
+    <t-slider v-model="value1" @change-end="handleChangeEnd" />
     <t-slider :value="value2" range :tooltipProps="tooltipProps" :label="renderLabel" @change="handleChange" />
   </t-space>
 </template>
