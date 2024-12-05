@@ -66,6 +66,8 @@ export default {
       return ['year', 'quarter', 'month', 'week', 'date'].includes(val);
     },
   },
+  /** 支持多选日期，但不支持在range-picker中，或与enableTimePicker、allowInput 一起使用 */
+  multiple: Boolean,
   /** 占位符 */
   placeholder: {
     type: [String, Array] as PropType<TdDatePickerProps['placeholder']>,
