@@ -5,6 +5,35 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.10.6 `2024-12-05`
+
+### 🚀 Features
+
+- `Icon`: 图标库发布 `0.3.0`版本，新增 907 个新图标；命名优化`blockchain` 重命名改为`transform-1`,`gesture-pray-1`重命名为`gesture-open`,`gesture-ranslation-1`重命名为`wave-bye`, `gesture-up-1`重命名为`gesture-typing`,`gesture-up-2`重命名为`gesture-right-slip`,`logo-wechat`重命名为`logo-wechat-stroke-filled`，移除`tree-list`、`logo-adobe-photoshop-1` 等错误图标 @uyarn ([#3392](https://github.com/Tencent/tdesign-vue/pull/3392))
+- `DatePicker`: 新增 `multiple` API, 用于支持多选日期的场景 @hkaikai ([#3407](https://github.com/Tencent/tdesign-vue/pull/3407))
+- `Dialog`: 新增 `beforeOpen` 和 `beforeClose` API @Wesley-0808 ([#3393](https://github.com/Tencent/tdesign-vue/pull/3393))
+- `Drawer`: 新增 `beforeOpen` 和 `beforeClose` API @Wesley-0808 ([#3393](https://github.com/Tencent/tdesign-vue/pull/3393))
+- `Form`: 表单组件同时支持 `change` 和 `blur` 的校验触发方式 @myronliu347 ([#3323](https://github.com/Tencent/tdesign-vue/pull/3323))
+- `Tree`: 支持通过`scrollTo`方法滚动到指定节点，`scrollToElement`方法仍保留 @uyarn ([#3415](https://github.com/Tencent/tdesign-vue/pull/3415))
+- `Tree`: 支持`scrollTo`方法通过唯一`key`滚动到指定节点，减少业务计算`index`的需求，具体方法参考示例 @uyarn ([#3415](https://github.com/Tencent/tdesign-vue/pull/3415))
+- `DatePicker`: 新增`multiple` API, 用于支持多选日期的场景 @hkaikai ([#3407](https://github.com/Tencent/tdesign-vue/pull/3407))
+
+### 🐞 Bug Fixes
+
+- `Transfer`: 修复设置 pageSizeOptions 时切换 pageSize 无法生效得问题 @morningbao ([#3374](https://github.com/Tencent/tdesign-vue/pull/3374))
+- `InputNumber`: 限制输入超过范围外的数字未触发 `blur` 事件 @betavs ([#3399](https://github.com/Tencent/tdesign-vue/pull/3399))
+- `Select`: 修复搜索过滤选项列表时选中值显示错误问题 @morningbao ([#3410](https://github.com/Tencent/tdesign-vue/pull/3410))
+- `Transfer`: 修复树形组件选项禁用在全选下仍可选中的缺陷 @uyarn ([#3412](https://github.com/Tencent/tdesign-vue/pull/3412))
+- `Transer`: 修复拖拽排序向后移动的功能异常 @uyarn ([#3412](https://github.com/Tencent/tdesign-vue/pull/3412))
+- `Table`: 修复树形表格列改变时渲染出错的问题 @myronliu347 ([#3400](https://github.com/Tencent/tdesign-vue/pull/3400))
+- `Slider`: 修复`Slider`组件不支持受控用法的问题 @uyarn ([#3414](https://github.com/Tencent/tdesign-vue/pull/3414))
+
+### 📝 Documentation
+
+- `Icon`: 优化图标检索功能，支持中英文搜索图标 @uyarn ([#3392](https://github.com/Tencent/tdesign-vue/pull/3392))
+
+
+
 ## 🌈 1.10.5 `2024-11-08` 
 ### 🚀 Features
 - `Switch`: 新增 `before-change` API, 用于需要发起异步请求的场景 @centuryPark ([#3386](https://github.com/Tencent/tdesign-vue/pull/3386))
