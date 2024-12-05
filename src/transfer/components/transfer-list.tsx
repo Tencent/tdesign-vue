@@ -265,10 +265,6 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
 
       newData.splice(sourceIndex, 1);
 
-      if (draggingIndex < dragoverIndex) {
-        targetIndex -= 1;
-      }
-
       if (dragoverPos === 'bottom') {
         targetIndex += 1;
       }
