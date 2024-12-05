@@ -30,6 +30,9 @@
       <t-space>
         <t-button @click="append()">插入根节点</t-button>
       </t-space>
+      <t-space>
+        <t-button @click="scrollTo()">滚动到指定节点</t-button>
+      </t-space>
     </t-space>
     <t-tree
       ref="tree"
@@ -143,6 +146,16 @@ export default {
     },
     remove(node) {
       node.remove();
+    },
+    scrollTo() {
+      const { tree } = this.$refs;
+      tree.scrollTo({
+        // 指定key滚动，即当前节点对应的唯一值，推荐使用
+        key: 't30',
+        behavior: 'smooth',
+        // 指定index滚动，如果存在多级嵌套，需要自己计算index
+        // index: 100,
+      });
     },
   },
 };

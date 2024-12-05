@@ -131045,6 +131045,29 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
           </div>
         </div>
       </div>
+      <div
+        class="t-space-item"
+      >
+        <div
+          class="t-space t-space-horizontal"
+          style="gap: 16px;"
+        >
+          <div
+            class="t-space-item"
+          >
+            <button
+              class="t-button t-button--variant-base t-button--theme-primary"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                滚动到指定节点
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div
