@@ -16,7 +16,6 @@ docClass: timeline
 - `Form`: 表单组件同时支持 `change` 和 `blur` 的校验触发方式 @myronliu347 ([#3323](https://github.com/Tencent/tdesign-vue/pull/3323))
 - `Tree`: 支持通过`scrollTo`方法滚动到指定节点，`scrollToElement`方法仍保留 @uyarn ([#3415](https://github.com/Tencent/tdesign-vue/pull/3415))
 - `Tree`: 支持`scrollTo`方法通过唯一`key`滚动到指定节点，减少业务计算`index`的需求，具体方法参考示例 @uyarn ([#3415](https://github.com/Tencent/tdesign-vue/pull/3415))
-- `DatePicker`: 新增`multiple` API, 用于支持多选日期的场景 @hkaikai ([#3407](https://github.com/Tencent/tdesign-vue/pull/3407))
 
 ### 🐞 Bug Fixes
 
