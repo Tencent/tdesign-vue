@@ -102,7 +102,7 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
         }
       },
     };
-    return props.multiple ? omit(inputProps, ['ref', 'class', 'suffixIcon']) : inputProps;
+    return props.multiple ? omit(inputProps, ['ref', 'class']) : inputProps;
   });
 
   // popup 设置
@@ -123,16 +123,6 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
       popupVisible.value = visible;
     },
   }));
-
-  // tag-input 设置
-  const tagInputProps = computed(() => {
-    if (props.multiple) {
-      return {
-        clearable: props.clearable,
-      };
-    }
-    return {};
-  });
 
   watch(
     value,
@@ -158,7 +148,6 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
     inputValue,
     popupVisible,
     inputProps,
-    tagInputProps,
     popupProps,
     inputRef,
     cacheValue,

@@ -33,7 +33,6 @@ export default defineComponent({
       popupVisible,
       inputProps: datePickerInputProps,
       popupProps: datePickerPopupProps,
-      tagInputProps: datePickerTagInputProps,
       isHoverCell,
       cacheValue,
       value,
@@ -266,7 +265,7 @@ export default defineComponent({
       const newDate = processDate(removeDate);
       onChange?.(newDate, {
         dayjsValue: parseToDayjs(removeDate, formatRef.value.format),
-        trigger: 'pick',
+        trigger: 'tag-remove',
       });
     };
 
@@ -309,7 +308,6 @@ export default defineComponent({
       inputValue,
       datePickerPopupProps,
       datePickerInputProps,
-      datePickerTagInputProps,
       popupVisible,
       panelProps,
       isDisabled,
@@ -325,7 +323,6 @@ export default defineComponent({
       inputValue,
       datePickerPopupProps,
       datePickerInputProps,
-      datePickerTagInputProps,
       popupVisible,
       panelProps,
       isDisabled,
@@ -353,7 +350,7 @@ export default defineComponent({
           status={this.status}
           tips={this.tips}
           popupProps={datePickerPopupProps}
-          inputProps={{ suffixIcon: renderSuffixIcon(), ...datePickerInputProps }}
+          inputProps={{ ...datePickerInputProps }}
           popupVisible={popupVisible}
           clearable={this.clearable}
           allowInput={this.allowInput && !this.readonly}
@@ -362,9 +359,9 @@ export default defineComponent({
           placeholder={
             this.placeholder ?? (this.global.placeholder as { [key in typeof this.mode]: string })[this.mode]
           }
+          suffixIcon={renderSuffixIcon()}
           tagInputProps={{
             onRemove: onTagRemoveClick,
-            ...datePickerTagInputProps,
           }}
           onClear={onTagClearClick}
         />
