@@ -47,7 +47,6 @@ export default {
             {
               value: '1.1',
               label: '1.1',
-              disabled: true,
             },
             {
               value: '1.2',
