@@ -64,7 +64,7 @@ export default defineComponent({
     }
 
     // 头部快速切换
-    function onJumperClick({ trigger }: { trigger: string }) {
+    function onJumperClick({ trigger }: { trigger: 'prev' | 'next' | 'current' }) {
       const triggerMap = {
         prev: 'arrow-previous',
         next: 'arrow-next',
@@ -95,24 +95,24 @@ export default defineComponent({
       if (year.value !== nextYear) {
         props.onYearChange?.({
           year: nextYear,
-          date: dayjs(value.value).toDate(),
+          date: parseToDayjs(value.value as DateValue, formatRef.value.format).toDate(),
           trigger: trigger === 'current' ? 'today' : (`year-${triggerMap[trigger]}` as DatePickerYearChangeTrigger),
         });
         emit('year-change', {
           year: nextYear,
-          date: dayjs(value.value).toDate(),
+          date: parseToDayjs(value.value as DateValue, formatRef.value.format).toDate(),
           trigger: trigger === 'current' ? 'today' : (`year-${triggerMap[trigger]}` as DatePickerYearChangeTrigger),
         });
       }
       if (month.value !== nextMonth) {
         props.onMonthChange?.({
           month: nextMonth,
-          date: dayjs(value.value).toDate(),
+          date: parseToDayjs(value.value as DateValue, formatRef.value.format).toDate(),
           trigger: trigger === 'current' ? 'today' : (`month-${triggerMap[trigger]}` as DatePickerMonthChangeTrigger),
         });
         emit('month-change', {
           month: nextMonth,
-          date: dayjs(value.value).toDate(),
+          date: parseToDayjs(value.value as DateValue, formatRef.value.format).toDate(),
           trigger: trigger === 'current' ? 'today' : (`month-${triggerMap[trigger]}` as DatePickerMonthChangeTrigger),
         });
       }
@@ -142,12 +142,12 @@ export default defineComponent({
 
       props.onTimeChange?.({
         time: val,
-        date: parseToDayjs(value.value, formatRef.value.format).toDate(),
+        date: parseToDayjs(value.value as DateValue, formatRef.value.format).toDate(),
         trigger: 'time-hour',
       });
       emit('time-change', {
         time: val,
-        date: parseToDayjs(value.value, formatRef.value.format).toDate(),
+        date: parseToDayjs(value.value as DateValue, formatRef.value.format).toDate(),
         trigger: 'time-hour',
       });
     }
@@ -183,12 +183,12 @@ export default defineComponent({
 
       props.onYearChange?.({
         year: year.value,
-        date: parseToDayjs(value.value, formatRef.value.format).toDate(),
+        date: parseToDayjs(value.value as DateValue, formatRef.value.format).toDate(),
         trigger: 'year-select',
       });
       emit('year-change', {
         year: year.value,
-        date: parseToDayjs(value.value, formatRef.value.format).toDate(),
+        date: parseToDayjs(value.value as DateValue, formatRef.value.format).toDate(),
         trigger: 'year-select',
       });
     }
@@ -198,12 +198,12 @@ export default defineComponent({
 
       props.onMonthChange?.({
         month: month.value,
-        date: parseToDayjs(value.value, formatRef.value.format).toDate(),
+        date: parseToDayjs(value.value as DateValue, formatRef.value.format).toDate(),
         trigger: 'month-select',
       });
       emit('month-change', {
         month: month.value,
-        date: parseToDayjs(value.value, formatRef.value.format).toDate(),
+        date: parseToDayjs(value.value as DateValue, formatRef.value.format).toDate(),
         trigger: 'month-select',
       });
     }

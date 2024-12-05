@@ -17,6 +17,7 @@ import TRangePanel from './panel/RangePanel';
 import useRangeValue from './hooks/useRangeValue';
 import { formatDate, getDefaultFormat, parseToDayjs } from '../_common/js/date-picker/format';
 import { subtractMonth, addMonth, extractTimeObj } from '../_common/js/date-picker/utils';
+import type { TdDateRangePickerProps } from './type';
 import { dateCorrection } from './utils';
 
 export default defineComponent({
@@ -37,7 +38,7 @@ export default defineComponent({
     panelPreselection: dateRangePickerProps.panelPreselection,
     ...dateRangePickerPanelProps,
   },
-  setup(props: TdDateRangePickerPanelProps, { emit, attrs }) {
+  setup(props: TdDateRangePickerPanelProps & { disableTime: TdDateRangePickerProps['disableTime'] }, { emit, attrs }) {
     const {
       value, year, month, time, cacheValue, isFirstValueSelected, onChange,
     } = useRangeValue(props);

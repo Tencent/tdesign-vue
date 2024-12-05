@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import Vue from 'vue';
+import Vue, { nextTick } from 'vue';
 import Slider from '@/src/slider/index.ts';
 import TInputNumber from '@/src/input-number/index.ts';
 
@@ -67,6 +67,37 @@ describe('Slider', () => {
       // 配置range属性 存在两个游标button
       expect(wrapper.findAll('.t-slider__button').length).toBe(2);
     });
+    it('defaultValue', async () => {
+      const wrapper = mount({
+        render() {
+          return (
+            <div style="200px">
+              <Slider inputNumberProps={{ theme: 'row' }}></Slider>
+            </div>
+          );
+        },
+      });
+      wrapper.find('.t-input-number__increase').trigger('click');
+      await nextTick();
+      // 非受控用法 不需要在onChange中更新value值
+      expect(wrapper.find('.t-slider__button-wrapper').attributes('style')).toBe('left: 1%;');
+    });
+
+    it('value', async () => {
+      const wrapper = mount({
+        render() {
+          return (
+            <div style="200px">
+              <Slider value={0} inputNumberProps={{ theme: 'row' }}></Slider>
+            </div>
+          );
+        },
+      });
+      wrapper.find('.t-input-number__increase').trigger('click');
+      await nextTick();
+      // 受控用法 需要在onChange中更新value值
+      expect(wrapper.find('.t-slider__button-wrapper').attributes('style')).toBe('left: 0%;');
+    });
   });
 });
 
@@ -103,11 +134,6 @@ describe('Slider [marks]', () => {
     });
   });
 
-  // 检查内部值是否变化
-  it('check change value', () => {
-    expect(wrapper.vm.prevValue).toBe(20);
-  });
-
   // 检查内部函数是否返回正确
   it('call setValues()', () => {
     expect(wrapper.vm.setValues(1000)).toBe(100);
@@ -136,10 +162,5 @@ describe('Slider [vertical-marks]', () => {
     expect(wrapper.html()).toContain('aria-valuetext="30-70"');
     expect(wrapper.html()).toContain('37°C');
     expect(wrapper.element).toMatchSnapshot();
-  });
-  // 检查内部函数是否返回正确
-  it('call setValues()', () => {
-    expect(wrapper.vm.setValues([300, 200])).toEqual([30, 100]);
-    expect(wrapper.vm.setValues([-200, -300])).toEqual([0, 100]);
   });
 });

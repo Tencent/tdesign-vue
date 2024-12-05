@@ -94,7 +94,9 @@ export default defineComponent({
       value: props.keys?.value || 'value',
       disabled: props.keys?.disabled || 'disabled',
     }));
-    const { options: innerOptions, optionsMap, optionsList } = useSelectOptions(props, instance, keys);
+    const {
+      options: innerOptions, optionsMap, optionsList, optionsCache,
+    } = useSelectOptions(props, instance, keys);
 
     const [value, setValue] = useVModel(valueProps, props.defaultValue, props.onChange, 'change');
     const innerValue = computed(() => {
@@ -164,6 +166,23 @@ export default defineComponent({
           [labelOfKeys]: get(option, labelOfKeys),
         };
       };
+      const addCache = (val: SelectValue) => {
+        if (multiple.value) {
+          const newCache: TdOptionProps[] = [];
+          (val as SelectValue[]).forEach((item) => {
+            const option = optionsMap.value.get(item);
+            if (option) {
+              newCache.push(option);
+            }
+          });
+          optionsCache.value = Array.from(new Set([...newCache, ...optionsCache.value]));
+        } else {
+          const option = optionsMap.value.get(val);
+          if (option) {
+            optionsCache.value = Array.from(new Set([option, ...optionsCache.value]));
+          }
+        }
+      };
       const getSelectedOption = (newVal: SelectValue) => {
         let selectedOption: SelectValue = getOriginOptions(newVal);
         if (!selectedOption && optionValue) {
@@ -194,6 +213,9 @@ export default defineComponent({
         // eslint-disable-next-line dot-notation
         outputContext['option'] = outputContextOption;
       }
+      nextTick(() => {
+        addCache(newVal);
+      });
       setValue(newVal, outputContext);
     };
 
@@ -232,7 +254,7 @@ export default defineComponent({
       () => ((!multiple.value
           && innerPopupVisible.value
           && ((valueType.value === 'object' && (value.value?.[keys.value.label] || innerValue.value))
-            || getSingleContent(innerValue.value, optionsList.value)))
+            || getSingleContent(innerValue.value, optionsMap.value)))
           || placeholder.value)
         ?? t(global.value.placeholder),
     );
@@ -242,12 +264,12 @@ export default defineComponent({
         if (valueType.value === 'object') {
           return (value.value as SelectValue[]).map((v) => v[keys.value.label]);
         }
-        return getMultipleContent(innerValue.value as SelectValue[], optionsList.value);
+        return getMultipleContent(innerValue.value as SelectValue[], optionsMap.value);
       }
       if (valueType.value === 'object') {
         return value.value?.[keys.value.label] || innerValue.value;
       }
-      return getSingleContent(innerValue.value, optionsList.value);
+      return getSingleContent(innerValue.value, optionsMap.value);
     });
 
     const valueDisplayParams = computed(() => {
