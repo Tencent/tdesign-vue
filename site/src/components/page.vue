@@ -22,7 +22,7 @@ const docsMap = {
   en: enDocs,
 };
 
-const registryUrl = 'https://mirrors.tencent.com/npm/tdesign-vue';
+const registryUrl = 'https://service-edbzjd6y-1257786608.hk.apigw.tencentcs.com/release/npm/versions/tdesign-vue';
 
 export default {
   data() {

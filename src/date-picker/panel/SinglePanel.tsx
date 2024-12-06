@@ -3,7 +3,7 @@ import isFunction from 'lodash/isFunction';
 import { useConfig, usePrefixClass } from '../../hooks/useConfig';
 import TPanelContent from './PanelContent';
 import TExtraContent from './ExtraContent';
-import { TdDatePickerProps } from '../type';
+import { DateMultipleValue, DateValue, TdDatePickerProps } from '../type';
 import { getDefaultFormat, parseToDayjs } from '../../_common/js/date-picker/format';
 import useTableData from '../hooks/useTableData';
 import useDisableDate from '../hooks/useDisableDate';
@@ -33,6 +33,7 @@ export default defineComponent({
     month: Number,
     time: String,
     popupVisible: Boolean,
+    multiple: Boolean,
     onPanelClick: Function,
     onCellClick: Function,
     onCellMouseEnter: Function,
@@ -65,15 +66,23 @@ export default defineComponent({
         return {};
       }
 
-      return props.disableTime(parseToDateTime(props.value, format, [h, m, s, ms]));
+      const value = props.multiple ? Date.now() : (props.value as string | Date | number);
+      return props.disableTime(parseToDateTime(value, format, [h, m, s, ms]));
     };
 
     const tableData = computed(() => useTableData({
+      value: props.value,
       year: props.year,
       month: props.month,
       mode: props.mode,
-      start: props.value ? parseToDayjs(props.value, format).toDate() : undefined,
+      start: props.value
+        ? parseToDayjs(
+          props.multiple ? (props.value as DateMultipleValue)[0] : (props.value as DateValue),
+          format,
+        ).toDate()
+        : undefined,
       firstDayOfWeek: props.firstDayOfWeek || global.value.firstDayOfWeek,
+      multiple: props.multiple,
       ...disableDateOptions.value,
     }));
 
@@ -86,6 +95,7 @@ export default defineComponent({
       firstDayOfWeek: props.firstDayOfWeek || global.value.firstDayOfWeek,
       tableData: tableData.value,
       popupVisible: props.popupVisible,
+      multiple: props.multiple,
       enableTimePicker: props.enableTimePicker,
       timePickerProps: {
         disableTime,

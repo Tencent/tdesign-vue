@@ -27,6 +27,7 @@ export default function useSelectOptions(
 ) {
   // 内部 options 记录
   const options = ref<UniOption[]>([]);
+  const optionsCache = ref<UniOption[]>([]);
 
   // 指向当前 slots 数组，用来判断 slot 是否被更新
   let innerSlotRecord: VNode[] = null;
@@ -64,6 +65,9 @@ export default function useSelectOptions(
       // 处理 slots 中 t-option 与 t-option-group
       const currentSlots = instance.$slots.default || [];
       currentSlots.forEach((child: VNode) => {
+        if (!child.componentOptions) {
+          return;
+        }
         const componentName = getVNodeComponentName(child);
         if (componentName && componentName === getVueComponentName(Option)) {
           // 独立选项
@@ -108,7 +112,7 @@ export default function useSelectOptions(
 
   const optionsMap = computed(() => {
     const res = new Map<SelectValue, TdOptionProps>();
-    optionsList.value.forEach((option: TdOptionProps) => {
+    optionsCache.value.concat(optionsList.value).forEach((option: TdOptionProps) => {
       res.set(option.value, option);
     });
     return res;
@@ -149,5 +153,6 @@ export default function useSelectOptions(
     options,
     optionsMap,
     optionsList,
+    optionsCache,
   };
 }

@@ -9,7 +9,7 @@ import {
   parseToDayjs,
 } from '../../_common/js/date-picker/format';
 import useVModel from '../../hooks/useVModel';
-import { TdDatePickerProps } from '../type';
+import { DateMultipleValue, DateValue, TdDatePickerProps } from '../type';
 import { extractTimeFormat } from '../../_common/js/date-picker/utils';
 
 export default function useSingleValue(props: TdDatePickerProps) {
@@ -19,17 +19,38 @@ export default function useSingleValue(props: TdDatePickerProps) {
   const formatRef = computed(() => getDefaultFormat({
     mode: props.mode,
     format: props.format,
-    enableTimePicker: props.enableTimePicker,
+    enableTimePicker: props.multiple ? false : props.enableTimePicker,
   }));
 
   if (props.enableTimePicker) {
     if (!extractTimeFormat(formatRef.value.format)) console.error(`format: ${formatRef.value.format} 不规范，包含时间选择必须要有时间格式化 HH:mm:ss`);
   }
 
-  const time = ref(formatTime(value.value, formatRef.value.format, formatRef.value.timeFormat, props.defaultTime));
-  const month = ref<number>(parseToDayjs(value.value, formatRef.value.format).month());
-  const year = ref<number>(parseToDayjs(value.value, formatRef.value.format).year());
-  const cacheValue = ref(formatDate(value.value, { format: formatRef.value.format })); // 缓存选中值，panel 点击时更改
+  const time = ref(
+    formatTime(
+      props.multiple ? (value.value as DateMultipleValue)[0] : value.value,
+      formatRef.value.format,
+      formatRef.value.timeFormat,
+      props.defaultTime,
+    ),
+  );
+  const month = ref<number>(
+    parseToDayjs(
+      props.multiple ? (value.value as DateMultipleValue)[0] : (value.value as DateValue),
+      formatRef.value.format,
+    ).month(),
+  );
+  const year = ref<number>(
+    parseToDayjs(
+      props.multiple ? (value.value as DateMultipleValue)[0] : (value.value as DateValue),
+      formatRef.value.format,
+    ).year(),
+  );
+  const cacheValue = ref(
+    formatDate(props.multiple ? (value.value as DateMultipleValue)[0] : value.value, {
+      format: formatRef.value.format,
+    }),
+  ); // 缓存选中值，panel 点击时更改
 
   // 输入框响应 value 变化
   watchEffect(() => {

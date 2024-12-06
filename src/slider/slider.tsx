@@ -191,23 +191,6 @@ export default mixins(classPrefixMixins).extend({
         this.prevValue = newVal as number;
       }
     },
-    firstValue(val: number) {
-      if (this.range) {
-        this.emitChange([this.minValue, this.maxValue]);
-      } else {
-        this.emitChange(val);
-      }
-    },
-
-    secondValue() {
-      if (this.range) {
-        this.emitChange([this.minValue, this.maxValue]);
-      }
-    },
-
-    prevValue(val: number) {
-      this.emitChange(val);
-    },
     dragging(newVal: boolean) {
       if (newVal === false) {
         this.init();
@@ -267,13 +250,11 @@ export default mixins(classPrefixMixins).extend({
         if (firstValue < min) firstValue = min;
         if (secondValue < min) secondValue = this.secondValue;
         if (secondValue > max) secondValue = max;
-        [this.firstValue, this.secondValue] = [firstValue, secondValue];
         return [firstValue, secondValue];
       }
       let prevValue = value as number;
       if (prevValue < min) prevValue = min;
       if (prevValue > max) prevValue = max;
-      this.prevValue = prevValue;
       return prevValue;
     },
     // 相应button的位置
@@ -328,8 +309,7 @@ export default mixins(classPrefixMixins).extend({
       emitEvent<Parameters<TdSliderProps['onChange']>>(this, 'change', fixValue);
     },
     emitChangeEnd() {
-      const changeEndValue = this.range ? [this.firstValue, this.secondValue] : this.firstValue;
-      emitEvent<Parameters<TdSliderProps['onChangeEnd']>>(this, 'change-end', changeEndValue);
+      emitEvent<Parameters<TdSliderProps['onChangeEnd']>>(this, 'change-end', this.value);
     },
     getStopStyle(position: number) {
       return this.vertical ? { top: `calc(${100 - position}% - 1px)` } : { left: `${position}%` };
@@ -395,7 +375,7 @@ export default mixins(classPrefixMixins).extend({
               ref="input"
               step={this.step}
               onChange={(v: number) => {
-                this.range ? (this.firstValue = v) : (this.prevValue = v);
+                this.range ? this.emitChange([v, this.secondValue]) : this.emitChange(v);
               }}
               disabled={this.tDisabled}
               min={min}
@@ -407,10 +387,13 @@ export default mixins(classPrefixMixins).extend({
           {range && (
             <TInputNumber
               class={this.sliderNumberClass}
-              v-model={this.secondValue}
+              value={this.secondValue}
               ref="input"
               step={this.step}
               disabled={this.tDisabled}
+              onInput={(v: number) => {
+                this.emitChange([this.firstValue, v]);
+              }}
               min={min}
               max={max}
               props={this.calcInputNumberProps}
@@ -449,19 +432,22 @@ export default mixins(classPrefixMixins).extend({
               position="start"
               tooltip-props={this.tooltipProps}
               onInput={(v: number) => {
-                this.range ? (this.firstValue = v) : (this.prevValue = v);
+                range ? this.emitChange([v, this.secondValue]) : this.emitChange(v);
               }}
               onMouseup={this.emitChangeEnd}
             ></TSliderButton>
             {this.range && (
               <TSliderButton
                 vertical={vertical}
-                v-model={this.secondValue}
+                value={this.secondValue}
                 ref="button2"
                 disabled={this.tDisabled}
                 range={this.range}
                 position="end"
                 label={this.label}
+                onInput={(v: number) => {
+                  this.emitChange([this.firstValue, v]);
+                }}
                 tooltip-props={this.tooltipProps}
                 onMouseup={this.emitChangeEnd}
               ></TSliderButton>

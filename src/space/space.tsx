@@ -75,6 +75,10 @@ export default defineComponent({
     const childCount = children?.length;
 
     const renderChildren = () => children.map((child, index) => {
+      if (!child.tag && !child.text) {
+        return child;
+      }
+
       const separatorNode = renderTNodeJSX(this, 'separator');
       const showSeparator = index + 1 !== childCount && separatorNode;
 
