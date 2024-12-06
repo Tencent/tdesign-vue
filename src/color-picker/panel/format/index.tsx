@@ -5,7 +5,7 @@ import upperCase from 'lodash/upperCase';
 import { TdColorHandler } from '../../../color-picker/interfaces';
 import { TdColorPickerProps } from '../../type';
 import props from '../../props';
-import { FORMATS } from '../../const';
+import { FORMATS } from '../../../_common/js/color-picker/constants';
 import { Color } from '../../utils';
 import { Select as TSelect, Option as TOption } from '../../../select';
 import { Input as TInput } from '../../../input';
@@ -60,7 +60,6 @@ export default defineComponent({
     };
   },
   render(h) {
-    const formats: TdColorPickerProps['format'][] = [...FORMATS];
     const { baseClassName, handleModeChange } = this;
     const newProps = {
       ...this.$props,
@@ -84,7 +83,7 @@ export default defineComponent({
             onChange={handleModeChange}
             disabled={this.disabled}
           >
-            {formats.map((item) => (
+            {FORMATS.map((item) => (
               <t-option key={item} value={item} label={upperCase(item)} style={{ fontSize: '12px' }} />
             ))}
           </t-select>
