@@ -345,7 +345,7 @@ export default defineComponent({
           disabled={isDisabled}
           readonly={this.readonly}
           value={inputValue}
-          inputValue={this.multiple ? '' : inputValue}
+          inputValue={this.multiple ? '' : (inputValue as string)}
           label={this.label}
           status={this.status}
           tips={this.tips}
