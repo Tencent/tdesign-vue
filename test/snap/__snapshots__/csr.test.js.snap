@@ -40183,6 +40183,84 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/month.vue 1`] =
 </div>
 `;
 
+exports[`csr snapshot test > csr test ./src/date-picker/_example/multiple.vue 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-date-picker"
+    >
+      <div
+        class="t-select-input t-select-input--multiple"
+      >
+        <div
+          class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input__with-suffix-icon"
+        >
+          <div
+            class="t-input t-is-readonly t-input--prefix t-input--suffix"
+          >
+            <div
+              class="t-input__prefix"
+            >
+              <div
+                class="t-tag t-tag--default t-tag--dark t-tag--close"
+              >
+                <span>
+                  2024-01-04
+                </span>
+                <svg
+                  class="t-icon t-icon-close t-tag__icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M7.05 5.64L12 10.59l4.95-4.95 1.41 1.41L13.41 12l4.95 4.95-1.41 1.41L12 13.41l-4.95 4.95-1.41-1.41L10.59 12 5.64 7.05l1.41-1.41z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+            </div>
+            <input
+              autocomplete=""
+              class="t-input__inner t-input--soft-hidden"
+              placeholder=""
+              readonly="readonly"
+              type="text"
+              unselectable="on"
+            />
+            <span
+              class="t-input__input-pre"
+            />
+            <span
+              class="t-input__suffix t-input__suffix-icon"
+            >
+              <svg
+                class="t-icon t-icon-calendar"
+                fill="none"
+                height="1em"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  d="M6 4V1.5h2V4h8V1.5h2V4h4v18H2V4h4zM4 6v3h16V6H4zm16 5H4v9h16v-9z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`csr snapshot test > csr test ./src/date-picker/_example/panel.vue 1`] = `
 <div
   class="t-space t-space-vertical"
@@ -70964,6 +71042,7 @@ exports[`csr snapshot test > csr test ./src/loading/_example/delay.vue 1`] = `
           </svg>
         </div>
       </div>
+      <!---->
     </div>
   </div>
   <div
@@ -77528,6 +77607,7 @@ exports[`csr snapshot test > csr test ./src/notification/_example/base.vue 1`] =
       </div>
     </div>
   </div>
+  <!---->
 </div>
 `;
 
@@ -113447,6 +113527,7 @@ exports[`csr snapshot test > csr test ./src/tooltip/_example/duration.vue 1`] = 
       </span>
     </button>
   </div>
+  <!---->
 </div>
 `;
 
@@ -123824,6 +123905,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
               class="t-space t-space-horizontal"
               style="gap: 10px;"
             >
+              <!---->
               <div
                 class="t-space-item"
               >
@@ -123910,6 +123992,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
                   </span>
                 </button>
               </div>
+              <!---->
             </div>
           </span>
         </div>
@@ -123969,6 +124052,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
                   </span>
                 </button>
               </div>
+              <!---->
             </div>
           </span>
         </div>
@@ -124028,6 +124112,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
                   </span>
                 </button>
               </div>
+              <!---->
             </div>
           </span>
         </div>
@@ -124085,6 +124170,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
               class="t-space t-space-horizontal"
               style="gap: 10px;"
             >
+              <!---->
               <div
                 class="t-space-item"
               >
@@ -124143,6 +124229,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
               class="t-space t-space-horizontal"
               style="gap: 10px;"
             >
+              <!---->
               <div
                 class="t-space-item"
               >
@@ -124201,6 +124288,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
               class="t-space t-space-horizontal"
               style="gap: 10px;"
             >
+              <!---->
               <div
                 class="t-space-item"
               >
@@ -124272,6 +124360,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
               class="t-space t-space-horizontal"
               style="gap: 10px;"
             >
+              <!---->
               <div
                 class="t-space-item"
               >
@@ -124358,6 +124447,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
                   </span>
                 </button>
               </div>
+              <!---->
             </div>
           </span>
         </div>
@@ -124417,6 +124507,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
                   </span>
                 </button>
               </div>
+              <!---->
             </div>
           </span>
         </div>
@@ -124476,6 +124567,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
                   </span>
                 </button>
               </div>
+              <!---->
             </div>
           </span>
         </div>
@@ -124533,6 +124625,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
               class="t-space t-space-horizontal"
               style="gap: 10px;"
             >
+              <!---->
               <div
                 class="t-space-item"
               >
@@ -124591,6 +124684,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
               class="t-space t-space-horizontal"
               style="gap: 10px;"
             >
+              <!---->
               <div
                 class="t-space-item"
               >
@@ -124649,6 +124743,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
               class="t-space t-space-horizontal"
               style="gap: 10px;"
             >
+              <!---->
               <div
                 class="t-space-item"
               >
@@ -131028,6 +131123,29 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
           </div>
         </div>
       </div>
+      <div
+        class="t-space-item"
+      >
+        <div
+          class="t-space t-space-horizontal"
+          style="gap: 16px;"
+        >
+          <div
+            class="t-space-item"
+          >
+            <button
+              class="t-button t-button--variant-base t-button--theme-primary"
+              type="button"
+            >
+              <span
+                class="t-button__text"
+              >
+                滚动到指定节点
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div
@@ -135655,6 +135773,8 @@ exports[`csr snapshot test > csr test ./src/upload/_example/base.vue 1`] = `
           </span>
         </label>
       </div>
+      <!---->
+      <!---->
       <div
         class="t-space-item"
       >
@@ -135678,6 +135798,7 @@ exports[`csr snapshot test > csr test ./src/upload/_example/base.vue 1`] = `
           </span>
         </label>
       </div>
+      <!---->
     </div>
   </div>
   <div
@@ -136475,6 +136596,7 @@ exports[`csr snapshot test > csr test ./src/upload/_example/image.vue 1`] = `
           </span>
         </label>
       </div>
+      <!---->
     </div>
   </div>
   <div
