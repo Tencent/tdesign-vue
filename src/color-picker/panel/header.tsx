@@ -2,10 +2,11 @@ import {
   defineComponent, PropType, ref, watch,
 } from '@vue/composition-api';
 import props from '../props';
-import { COLOR_MODES } from '../const';
+import { COLOR_MODES } from '../../_common/js/color-picker/constants';
 import { RadioGroup as TRadioGroup, RadioButton as TRadioButton } from '../../radio';
 import { TdColorHandler, TdColorModes } from '../interfaces';
 import { useBaseClassName } from '../hooks';
+import { useConfig } from '../../hooks';
 
 export default defineComponent({
   name: 'PanelHeader',
@@ -28,6 +29,7 @@ export default defineComponent({
     },
   },
   setup(props) {
+    const { globalConfig } = useConfig('colorPicker');
     const baseClassName = useBaseClassName();
     const modeValue = ref(props.mode);
     watch(
@@ -37,6 +39,7 @@ export default defineComponent({
       },
     );
     return {
+      globalConfig,
       baseClassName,
       modeValue,
     };
@@ -49,23 +52,19 @@ export default defineComponent({
     return (
       <div class={`${baseClassName}__head`}>
         <div class={`${baseClassName}__mode`}>
-          {this.colorModes?.length === 1 ? (
-            COLOR_MODES[this.colorModes[0]]
-          ) : (
-            <t-radio-group
-              variant="default-filled"
-              size="small"
-              disabled={this.disabled}
-              v-model={this.modeValue}
-              onChange={this.handleModeChange}
-            >
-              {Object.keys(COLOR_MODES).map((key) => (
-                <t-radio-button key={key} value={key}>
-                  {COLOR_MODES[key]}
-                </t-radio-button>
-              ))}
-            </t-radio-group>
-          )}
+          <t-radio-group
+            variant="default-filled"
+            size="small"
+            disabled={this.disabled}
+            v-model={this.modeValue}
+            onChange={this.handleModeChange}
+          >
+            {this.colorModes.map((key) => (
+              <t-radio-button key={key} value={key}>
+                {Reflect.get(this.globalConfig, COLOR_MODES[key as keyof typeof COLOR_MODES])}
+              </t-radio-button>
+            ))}
+          </t-radio-group>
         </div>
       </div>
     );
