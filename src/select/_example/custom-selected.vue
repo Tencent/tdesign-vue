@@ -6,6 +6,7 @@
       :options="options"
       :valueDisplay="valueDisplay"
       placeholder="请选择"
+      :min-collapsed-num="2"
       multiple
       clearable
     />
@@ -28,6 +29,10 @@
         </t-tag>
       </template>
     </t-select>
+
+    <t-select v-model="value3" :options="options" placeholder="请选择" clearable>
+      <template #valueDisplay="{ value }"> {{ value ? `单选自定义（${value}）` : '' }} </template>
+    </t-select>
   </t-space>
 </template>
 
@@ -37,6 +42,7 @@ export default {
     return {
       value1: ['1', '2', '3'],
       value2: ['4', '5', '6', '7'],
+      value3: '1',
       options: [
         { label: '选项一', value: '1' },
         { label: '选项二', value: '2' },
@@ -51,14 +57,14 @@ export default {
     };
   },
   methods: {
-    valueDisplay(h, { value, onClose }) {
-      if (!(value instanceof Array)) return;
-      return value.map((item, index) => (
+    valueDisplay(_h, { onClose, displayValue }) {
+      if (!(displayValue instanceof Array)) return;
+      return displayValue.map((item, index) => (
         <t-tag
           key={index}
           closable={true}
-          onClose={(context) => {
-            context.e && context.e.stopPropagation();
+          onClose={({ e }) => {
+            e.stopPropagation();
             onClose(index);
           }}
         >
