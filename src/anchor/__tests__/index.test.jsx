@@ -117,7 +117,7 @@ describe('Anchor', () => {
       expect(onChange).toBeCalledTimes(2);
       expect(onChange).toBeCalledWith('#test-b', '#test-a');
     });
-    it('should trigger onChange props', async () => {
+    it('should trigger onChange props', () => {
       const onChange = vi.fn();
       const wrapper = mount({
         render(h) {
@@ -146,9 +146,8 @@ describe('Anchor', () => {
       const links = wrapper.findAllComponents(AnchorItem);
 
       links.at(0).find('a').trigger('click');
-      await wrapper.vm.$nextTick();
       expect(onChange).toBeCalledTimes(1);
-      expect(onChange).toBeCalledWith('#test-b', '');
+      expect(onChange).toBeCalledWith('#test-a', '');
       links.at(1).find('a').trigger('click');
       expect(onChange).toBeCalledTimes(2);
       expect(onChange).toBeCalledWith('#test-b', '#test-a');
