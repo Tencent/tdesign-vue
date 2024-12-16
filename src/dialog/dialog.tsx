@@ -141,7 +141,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       }
       return topStyle;
     },
-    dialogStyle(): Styles {
+    computedDialogStyle(): Styles {
       return !this.isFullScreen ? { width: getCSSValue(this.width) } : {}; // width全屏模式不生效;
     },
   },
@@ -477,7 +477,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
         // 非模态形态下draggable为true才允许拖拽
         <div class={this.wrapClass}>
           <div class={this.positionClass} style={this.positionStyle} onClick={this.overlayAction} ref="dialogPosition">
-            <div key="dialog" ref="dialog" class={this.dialogClass} style={this.dialogStyle}>
+            <div key="dialog" ref="dialog" class={this.dialogClass} style={this.computedDialogStyle}>
               <div class={headerClassName} onmousedown={this.onStopDown}>
                 <div class={`${this.componentName}__header-content`}>
                   {this.getIcon()}
