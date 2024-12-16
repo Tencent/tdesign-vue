@@ -1,7 +1,10 @@
 import {
   computed, defineComponent, nextTick, onBeforeUnmount, onMounted, reactive, ref,
 } from '@vue/composition-api';
-import { SATURATION_PANEL_DEFAULT_HEIGHT, SATURATION_PANEL_DEFAULT_WIDTH } from '../const';
+import {
+  SATURATION_PANEL_DEFAULT_HEIGHT,
+  SATURATION_PANEL_DEFAULT_WIDTH,
+} from '../../_common/js/color-picker/constants';
 import { Select as TSelect, Option as TOption } from '../../select';
 import { Draggable, Coordinate } from '../utils';
 import { useBaseClassName } from '../hooks';
