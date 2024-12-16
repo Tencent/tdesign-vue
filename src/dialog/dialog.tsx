@@ -142,7 +142,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       return topStyle;
     },
     computedDialogStyle(): Styles {
-      return !this.isFullScreen ? { width: getCSSValue(this.width) } : {}; // width全屏模式不生效;
+      return !this.isFullScreen ? { width: getCSSValue(this.width), ...this.dialogStyle } : { ...this.dialogStyle }; // width全屏模式不生效;
     },
   },
 
