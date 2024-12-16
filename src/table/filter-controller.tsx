@@ -13,7 +13,7 @@ import Input from '../input';
 import TButton from '../button';
 import { useTNodeDefault } from '../hooks/tnode';
 import { useGlobalIcon } from '../hooks/useGlobalIcon';
-import { PrimaryTableCol, FilterValue } from './type';
+import { PrimaryTableCol, FilterValue, TdPrimaryTableProps } from './type';
 import { useConfig } from '../config-provider/useConfig';
 import log from '../_common/js/log';
 import { AttachNode } from '../common';
@@ -45,6 +45,7 @@ export interface TableFilterControllerProps {
   primaryTableElement: HTMLDivElement;
   popupProps: PopupProps;
   attach?: AttachNode;
+  filterIcon?: TdPrimaryTableProps['filterIcon'];
 }
 
 export default defineComponent({
@@ -60,6 +61,7 @@ export default defineComponent({
     primaryTableElement: {},
     popupProps: Object as PropType<TableFilterControllerProps['popupProps']>,
     attach: [String, Function] as PropType<TableFilterControllerProps['attach']>,
+    filterIcon: [Function] as PropType<TableFilterControllerProps['filterIcon']>,
   },
 
   // eslint-disable-next-line
