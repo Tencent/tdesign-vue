@@ -65,12 +65,6 @@ export default defineComponent({
                 {Reflect.get(this.globalConfig, COLOR_MODES[key as keyof typeof COLOR_MODES])}
               </TRadioButton>
             ))}
-            {Object.keys(COLOR_MODES).map((key) => (
-              <TRadioButton key={key} value={key}>
-                {/* @ts-ignore */}
-                {COLOR_MODES[key]}
-              </TRadioButton>
-            ))}
           </TRadioGroup>
         </div>
       </div>
