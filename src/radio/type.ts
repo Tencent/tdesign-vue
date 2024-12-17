@@ -103,5 +103,6 @@ export type RadioOption = string | number | RadioOptionObj;
 export interface RadioOptionObj {
   label?: string | TNode;
   value?: string | number;
+  button?: boolean /* 按钮单选框 */;
   disabled?: boolean;
 }
