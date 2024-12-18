@@ -371,7 +371,7 @@ export default defineComponent({
 
     const handleTInputValueChange = (val: string, context: SelectInputValueChangeContext) => {
       if (context.trigger === 'blur' || !innerPopupVisible.value) return;
-      setTInputValue(val);
+      setTInputValue(val, context);
       debounceSearch({ e: context.e as KeyboardEvent });
     };
 
