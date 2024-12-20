@@ -6,6 +6,7 @@ import {
   TdRadioGroupProps, RadioOptionObj, RadioOption, RadioValue,
 } from './type';
 import Radio from './radio';
+import RadioButton from './radio-button';
 import { TNodeReturnValue } from '../common';
 import { emitEvent } from '../utils/event';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
@@ -52,8 +53,11 @@ export default mixins(classPrefixMixins).extend({
         if (isNumber(option) || isString(option)) {
           opt = { value: option, label: option.toString() };
         }
+
+        const RadioComponent = (option as RadioOptionObj).button ? RadioButton : Radio;
+
         return (
-          <Radio
+          <RadioComponent
             props={option}
             key={`radio-group-options-${opt.value}-${index}`}
             name={this.name}
@@ -62,7 +66,7 @@ export default mixins(classPrefixMixins).extend({
             value={opt.value}
           >
             {typeof opt.label === 'function' ? opt.label(h) : opt.label}
-          </Radio>
+          </RadioComponent>
         );
       });
     }
