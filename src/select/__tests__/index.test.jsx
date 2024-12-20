@@ -92,6 +92,19 @@ describe('Select', () => {
       });
       expect(wrapper.element).toMatchSnapshot();
     });
+    it(':filterable', async () => {
+      const wrapper = mount(
+        {
+          render() {
+            return <Select filterable={true}></Select>;
+          },
+        },
+        { attachTo: document.body },
+      );
+      const input = wrapper.find('input[placeholder="请选择"]');
+      input.trigger('focus');
+      expect(input.element).toBe(document.activeElement);
+    });
   });
 });
 
