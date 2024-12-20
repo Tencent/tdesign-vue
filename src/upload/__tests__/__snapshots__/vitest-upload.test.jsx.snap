@@ -904,7 +904,7 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
             >
               <img
                 alt=""
-                class="t-image t-image--fit-fill t-image--position-center"
+                class="t-image t-image--fit-contain t-image--position-center"
                 src=""
               />
               <div
@@ -984,7 +984,7 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
             >
               <img
                 alt=""
-                class="t-image t-image--fit-fill t-image--position-center"
+                class="t-image t-image--fit-contain t-image--position-center"
                 src="https://img1.txt"
               />
               <div
@@ -1087,7 +1087,7 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
             >
               <img
                 alt=""
-                class="t-image t-image--fit-fill t-image--position-center"
+                class="t-image t-image--fit-contain t-image--position-center"
                 src="https://img2.txt"
               />
               <div
