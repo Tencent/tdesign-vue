@@ -53537,7 +53537,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                       >
                         <img
                           alt=""
-                          class="t-image t-image--fit-fill t-image--position-center"
+                          class="t-image t-image--fit-contain t-image--position-center"
                           src="https://tdesign.gtimg.com/site/avatar.jpg"
                         />
                         <div
@@ -136726,7 +136726,7 @@ exports[`csr snapshot test > csr test ./src/upload/_example/image.vue 1`] = `
               >
                 <img
                   alt=""
-                  class="t-image t-image--fit-fill t-image--position-center"
+                  class="t-image t-image--fit-contain t-image--position-center"
                   src="https://tdesign.gtimg.com/demo/demo-image-1.png"
                 />
                 <div
@@ -137027,7 +137027,7 @@ exports[`csr snapshot test > csr test ./src/upload/_example/img-flow-list.vue 1`
                 >
                   <img
                     alt=""
-                    class="t-image t-image--fit-fill t-image--position-center"
+                    class="t-image t-image--fit-contain t-image--position-center"
                     src="https://tdesign.gtimg.com/demo/demo-image-1.png"
                   />
                   <div
@@ -137230,7 +137230,7 @@ exports[`csr snapshot test > csr test ./src/upload/_example/img-flow-list.vue 1`
                 >
                   <img
                     alt=""
-                    class="t-image t-image--fit-fill t-image--position-center"
+                    class="t-image t-image--fit-contain t-image--position-center"
                     src="https://tdesign.gtimg.com/demo/demo-image-1.png"
                   />
                   <div
@@ -137333,7 +137333,7 @@ exports[`csr snapshot test > csr test ./src/upload/_example/img-flow-list.vue 1`
                 >
                   <img
                     alt=""
-                    class="t-image t-image--fit-fill t-image--position-center"
+                    class="t-image t-image--fit-contain t-image--position-center"
                     src="https://tdesign.gtimg.com/demo/demo-image-1.png"
                   />
                   <div
