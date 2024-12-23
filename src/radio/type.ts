@@ -90,6 +90,11 @@ export interface TdRadioGroupProps<T = RadioValue> {
    * @default outline
    */
   variant?: 'outline' | 'primary-filled' | 'default-filled';
+
+  /**
+   * 组件风格
+   */
+  theme?: 'radio' | 'button';
   /**
    * 选中值发生变化时触发
    */
