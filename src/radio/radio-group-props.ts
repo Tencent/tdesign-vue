@@ -24,6 +24,14 @@ export default {
   options: {
     type: Array as PropType<TdRadioGroupProps['options']>,
   },
+  /** 组件风格 */
+  theme: {
+    type: String as PropType<TdRadioGroupProps['theme']>,
+    default: 'radio' as TdRadioGroupProps['theme'],
+    validator(val: TdRadioGroupProps['theme']): boolean {
+      return ['radio', 'button'].includes(val);
+    },
+  },
   /** 组件尺寸【讨论中】 */
   size: {
     type: String as PropType<TdRadioGroupProps['size']>,

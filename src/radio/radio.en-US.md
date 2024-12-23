@@ -31,6 +31,7 @@ allowUncheck | Boolean | false | \- | N
 disabled | Boolean | undefined | \- | N
 name | String | - | \- | N
 options | Array | - | Typescript：`Array<RadioOption>` `type RadioOption = string \| number \| RadioOptionObj` `interface RadioOptionObj { label?: string \| TNode; value?: string \| number; disabled?: boolean }`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/radio/type.ts) | N
+theme | String | radio | options：radio/button。 | N
 size | String | medium | options：small/medium/large。Typescript：`SizeEnum`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 value | String / Number / Boolean | - | `v-model` is supported。Typescript：`T` | N
 defaultValue | String / Number / Boolean | - | uncontrolled property。Typescript：`T` | N
