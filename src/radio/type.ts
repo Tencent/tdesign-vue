@@ -87,6 +87,7 @@ export interface TdRadioGroupProps<T = RadioValue> {
   size?: SizeEnum;
   /**
    * 组件风格
+   * @default radio
    */
   theme?: 'radio' | 'button';
   /**

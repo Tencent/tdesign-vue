@@ -41,6 +41,7 @@ export default {
   /** 组件风格 */
   theme: {
     type: String as PropType<TdRadioGroupProps['theme']>,
+    default: 'radio' as TdRadioGroupProps['theme'],
     validator(val: TdRadioGroupProps['theme']): boolean {
       if (!val) return true;
       return ['radio', 'button'].includes(val);
