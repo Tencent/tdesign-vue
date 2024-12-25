@@ -25,7 +25,6 @@ triggerElement | String / Slot / Function | - | Typescript：`string \| TNode`�
 visible | Boolean | - | `v-model` is supported。Typescript：`boolean` | N
 defaultVisible | Boolean | - | uncontrolled property。Typescript：`boolean` | N
 zIndex | Number | - | \- | N
-onOverlayClick | Function |  | Typescript：`(context: { e: MouseEvent }) => void`<br/>trigger on popup content click | N
 onScroll | Function |  | Typescript：`(context: { e: WheelEvent }) => void`<br/> | N
 onScrollToBottom | Function |  | Typescript：`(context: { e: WheelEvent }) => void`<br/> | N
 onVisibleChange | Function |  | Typescript：`(visible: boolean, context: PopupVisibleChangeContext) => void`<br/>[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/popup/type.ts)。<br/>`interface PopupVisibleChangeContext { e?: PopupTriggerEvent; trigger?: PopupTriggerSource }`<br/><br/>`type PopupTriggerEvent = MouseEvent \| FocusEvent \| KeyboardEvent`<br/><br/>`type PopupTriggerSource = 'document' \| 'trigger-element-click' \| 'trigger-element-hover' \| 'trigger-element-blur' \| 'trigger-element-focus' \| 'trigger-element-mousedown' \| 'trigger-element-close' \| 'context-menu' \| 'keydown-esc'`<br/> | N
@@ -34,7 +33,6 @@ onVisibleChange | Function |  | Typescript：`(visible: boolean, context: PopupV
 
 name | params | description
 -- | -- | --
-overlay-click | `(context: { e: MouseEvent })` | trigger on popup content click
 scroll | `(context: { e: WheelEvent })` | \-
 scroll-to-bottom | `(context: { e: WheelEvent })` | \-
 visible-change | `(visible: boolean, context: PopupVisibleChangeContext)` | [see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/popup/type.ts)。<br/>`interface PopupVisibleChangeContext { e?: PopupTriggerEvent; trigger?: PopupTriggerSource }`<br/><br/>`type PopupTriggerEvent = MouseEvent \| FocusEvent \| KeyboardEvent`<br/><br/>`type PopupTriggerSource = 'document' \| 'trigger-element-click' \| 'trigger-element-hover' \| 'trigger-element-blur' \| 'trigger-element-focus' \| 'trigger-element-mousedown' \| 'trigger-element-close' \| 'context-menu' \| 'keydown-esc'`<br/>
