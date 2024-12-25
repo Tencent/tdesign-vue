@@ -11,9 +11,11 @@ import Container from './container';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
 import { emitEvent } from '../utils/event';
+import useAttach from '../hooks/useAttach';
 import {
   getPopperPlacement, attachListeners, triggers, defaultVisibleDelay,
 } from './utils';
+import { AttachNode } from '../common';
 
 const classPrefixMixins = getClassPrefixMixins('popup');
 
@@ -88,6 +90,9 @@ export default mixins(classPrefixMixins).extend({
         open: delay[0],
         close: delay[1] ?? delay[0],
       };
+    },
+    computeAttach(): AttachNode {
+      return useAttach('popup', this.attach).value;
     },
   },
   watch: {
@@ -449,7 +454,7 @@ export default mixins(classPrefixMixins).extend({
         }}
         parent={this}
         visible={visible}
-        attach={() => ({ attach: this.attach, current: this.$el })}
+        attach={() => ({ attach: this.computeAttach, current: this.$el })}
       >
         <transition
           slot="content"

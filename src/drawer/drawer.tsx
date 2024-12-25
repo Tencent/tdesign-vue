@@ -9,9 +9,10 @@ import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { DrawerConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
 import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
-import { ClassName, Styles } from '../common';
+import { AttachNode, ClassName, Styles } from '../common';
 import ActionMixin from '../dialog/actions';
 import { getScrollbarWidth } from '../_common/js/utils/getScrollbarWidth';
+import useAttach from '../hooks/useAttach';
 
 type FooterButtonType = 'confirm' | 'cancel';
 
@@ -110,6 +111,9 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
         cursor: this.isHorizontal ? 'col-resize' : 'row-resize',
       };
     },
+    computeAttach(): AttachNode {
+      return useAttach('drawer', this.attach).value;
+    },
   },
 
   watch: {
@@ -180,7 +184,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
           class={this.drawerClasses}
           style={{ zIndex: this.zIndex }}
           onkeydown={this.onKeyDown}
-          v-transfer-dom={this.attach}
+          v-transfer-dom={this.computeAttach}
           ref="drawerContainer"
           tabindex={0}
           v-show={this.visible}

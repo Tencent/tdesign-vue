@@ -8,7 +8,7 @@ import { TdPopupProps } from './type';
 import { PropType } from 'vue';
 
 export default {
-  /** 制定挂载节点。数据类型为 String 时，会被当作选择器处理，进行节点查询。示例：'body' 或 () => document.body */
+  /** 指定挂载节点。数据类型为 String 时，会被当作选择器处理，进行节点查询。示例：'body' 或 () => document.body */
   attach: {
     type: [String, Function] as PropType<TdPopupProps['attach']>,
     default: 'body',
@@ -82,6 +82,8 @@ export default {
   zIndex: {
     type: Number,
   },
+  /** 内容面板点击时触发 */
+  onOverlayClick: Function as PropType<TdPopupProps['onOverlayClick']>,
   /** 下拉选项滚动事件 */
   onScroll: Function as PropType<TdPopupProps['onScroll']>,
   /** 下拉滚动触底事件，常用于滚动到底执行具体业务逻辑 */

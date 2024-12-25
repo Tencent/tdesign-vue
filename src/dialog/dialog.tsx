@@ -8,6 +8,7 @@ import {
   ErrorCircleFilledIcon as TdErrorCircleFilledIcon,
 } from 'tdesign-icons-vue';
 
+import useAttach from '../hooks/useAttach';
 import TButton from '../button';
 import ActionMixin from './actions';
 import { DialogCloseContext, TdDialogProps } from './type';
@@ -17,7 +18,7 @@ import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { DialogConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
 import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
-import { ClassName, Styles } from '../common';
+import { AttachNode, ClassName, Styles } from '../common';
 import { updateElement } from '../hooks/useDestroyOnClose';
 import stack from './stack';
 import { getScrollbarWidth } from '../_common/js/utils/getScrollbarWidth';
@@ -143,6 +144,9 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     },
     computedDialogStyle(): Styles {
       return !this.isFullScreen ? { width: getCSSValue(this.width), ...this.dialogStyle } : { ...this.dialogStyle }; // width全屏模式不生效;
+    },
+    computeAttach(): AttachNode {
+      return useAttach('dialog', this.attach).value;
     },
   },
 
@@ -518,7 +522,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
         onBeforeLeave={this.beforeLeave}
         onAfterLeave={this.afterLeave}
       >
-        <div v-show={this.visible} class={this.ctxClass} style={ctxStyle} v-transfer-dom={this.attach}>
+        <div v-show={this.visible} class={this.ctxClass} style={ctxStyle} v-transfer-dom={this.computeAttach}>
           {view}
         </div>
       </transition>
