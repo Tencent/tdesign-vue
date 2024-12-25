@@ -13,6 +13,7 @@ import {
   reactive,
 } from '@vue/composition-api';
 import isFunction from 'lodash/isFunction';
+import get from 'lodash/get';
 import props from './submenu-props';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import FakeArrow from '../common-components/fake-arrow';
@@ -38,7 +39,7 @@ export default defineComponent({
     ripple: Ripple,
   },
   props,
-  setup(props) {
+  setup(props, { slots }) {
     const menu = inject<TdMenuInterface>('TdMenu');
     const {
       theme, activeValues, expandValues, mode, isHead, open,
@@ -216,9 +217,53 @@ export default defineComponent({
       while (node && !/^t(head)?menu/i.test(node.vnode?.tag)) {
         if (/submenu/i.test(node.vnode?.tag)) {
           isNested.value = true;
+
           break;
         }
         node = node?.parent;
+      }
+      const activeValue = menu?.activeValue.value;
+      if (activeValue !== props.value && mode.value === 'popup') {
+        const childNode = slots.default?.() || [];
+        const submenuName = 'TSubmenu';
+
+        // 递归获取子菜单 处理折叠场景初始化时子菜单item未渲染，没有加入 vMenu，导致没有正常高亮父节点的展示问题
+        for (let i = 0; i < childNode.length; i++) {
+          const item = childNode[i];
+          // 菜单最多支持三级，所以可能有两层子菜单嵌套
+          if (get(item, 'componentOptions.Ctor.extendOptions.name') === submenuName) {
+            const submenu = item;
+            const subChildNode = submenu.componentOptions.children || [];
+            for (let j = 0; j < subChildNode.length; j++) {
+              const subMenuChildItem = subChildNode[j];
+              const subMenuValue = (submenu.componentOptions.propsData as TdSubmenuProps)?.value;
+              const menuItemValue = (subMenuChildItem.componentOptions.propsData as TdSubmenuProps)?.value;
+
+              if (menuItemValue === activeValue) {
+                // 需要将子菜单及其二级节点都接入 vMenu
+                menu?.vMenu?.add({
+                  value: subMenuValue,
+                  parent: props.value,
+                });
+                menu?.vMenu?.add({
+                  value: menuItemValue,
+                  parent: subMenuValue,
+                });
+                // 找到需要高亮的子菜单即退出循环
+                break;
+              }
+            }
+          }
+          const menuItemValue = (item.componentOptions.propsData as TdSubmenuProps)?.value;
+          if (menuItemValue === activeValue) {
+            menu?.vMenu?.add({
+              value: menuItemValue,
+              parent: props.value,
+            });
+            // 找到需要高亮的子菜单即退出循环
+            break;
+          }
+        }
       }
     });
 
