@@ -246,9 +246,18 @@ export default defineComponent({
     const isReachMaxLimit = computed(
       () => multiple.value && max.value !== 0 && max.value <= (innerValue.value as SelectValue[]).length,
     );
-    const isAllOptionsChecked = computed(
-      () => getAllSelectableOption(optionsList.value).length === (innerValue.value as SelectValue[]).length,
-    );
+
+    const getFilteredOptions = () => getAllSelectableOption(optionsList.value).filter((option) => {
+      if (isFunction(props.filter)) {
+        return props.filter(`${tInputValue.value}`, option);
+      }
+      return option.label?.toLowerCase()?.includes(`${tInputValue.value}`.toLowerCase());
+    });
+
+    const isAllOptionsChecked = computed(() => {
+      const filteredOptions = getFilteredOptions();
+      return filteredOptions.length === (innerValue.value as SelectValue[]).length;
+    });
 
     const placeholderText = computed(
       () => ((!multiple.value
@@ -331,19 +340,9 @@ export default defineComponent({
 
     // 全选点击回调，t-option 的事件调用到这里处理
     const handleCheckAllClick = (e: MouseEvent | KeyboardEvent) => {
-      const filterMethods = (option: SelectOption) => {
-        if (isFunction(props.filter)) {
-          return props.filter(`${tInputValue.value}`, option);
-        }
-        return option.label?.toLowerCase?.().indexOf(`${tInputValue.value}`.toLowerCase()) > -1;
-      };
+      const filteredOptions = getFilteredOptions();
       setInnerValue(
-        isAllOptionsChecked.value
-          ? []
-          : getAllSelectableOption(optionsList.value)
-            .filter(filterMethods)
-            .map((option) => option.value)
-            .slice(0, max.value || Infinity),
+        isAllOptionsChecked.value ? [] : filteredOptions.map((option) => option.value).slice(0, max.value || Infinity),
         { e, trigger: isAllOptionsChecked.value ? 'uncheck' : 'check' },
       );
       !reserveKeyword?.value && setTInputValue('');
