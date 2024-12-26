@@ -13,11 +13,10 @@ const defaultAttach = 'body';
  */
 
 export function useAttach(name: string, attach: AttachNode) {
-  const { globalConfig } = useConfig('attach');
+  const { globalConfig } = useConfig();
   const attachVal = computed<AttachNode>(
-    () => attach || globalConfig.value[name] || globalConfig.value || defaultAttach,
+    () => attach || globalConfig.value.attach[name] || globalConfig.value.attach || defaultAttach,
   );
-
   return attachVal;
 }
 
