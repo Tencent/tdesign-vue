@@ -80,13 +80,18 @@ export default mixins(Vue as VueConstructor<RadioParentInjectInstance>, classPre
       return Boolean((this.formDisabled || this.disabled) ?? this.radioGroup?.disabled);
     },
 
+    getReadonly() {
+      return Boolean(this.readonly ?? this.radioGroup?.readonly);
+    },
+
     onInputClick(e: MouseEvent) {
       e.stopPropagation();
     },
 
     handleRadioClick(e: MouseEvent) {
       const tDisabled = this.getDisabled();
-      if (tDisabled) return;
+      const tReadonly = this.getReadonly();
+      if (tDisabled || tReadonly) return;
       this.$emit('click', { e });
       this.checkRadio(e);
     },
@@ -99,7 +104,7 @@ export default mixins(Vue as VueConstructor<RadioParentInjectInstance>, classPre
 
       if (this.radioGroup) {
         const value = tChecked && allowUncheck ? undefined : this.value;
-        this.radioGroup.handleRadioChange(value, { e });
+        this.radioGroup.handleRadioChange(value, { e, name: this.radioGroup.name });
       } else {
         const value = allowUncheck ? !tChecked : true;
         emitEvent<Parameters<TdRadioProps['onChange']>>(this, 'change', value, { e });
