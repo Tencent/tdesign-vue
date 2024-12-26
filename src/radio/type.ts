@@ -27,7 +27,7 @@ export interface TdRadioProps<T = RadioValue> {
    */
   default?: string | TNode;
   /**
-   * 是否为禁用态
+   * 是否为禁用态。如果存在父组件 RadioGroup，默认值由 RadioGroup.disabled 控制。优先级：Radio.disabled > RadioGroup.disabled > Form.disabled
    */
   disabled?: boolean;
   /**
@@ -39,6 +39,10 @@ export interface TdRadioProps<T = RadioValue> {
    * @default ''
    */
   name?: string;
+  /**
+   * 只读状态
+   */
+  readonly?: boolean;
   /**
    * 单选按钮的值
    */
@@ -60,7 +64,7 @@ export interface TdRadioGroupProps<T = RadioValue> {
    */
   allowUncheck?: boolean;
   /**
-   * 是否禁用全部子单选框
+   * 是否禁用全部子单选框。优先级：Radio.disabled > RadioGroup.disabled > Form.disabled
    */
   disabled?: boolean;
   /**
@@ -73,10 +77,19 @@ export interface TdRadioGroupProps<T = RadioValue> {
    */
   options?: Array<RadioOption>;
   /**
+   * 只读状态
+   */
+  readonly?: boolean;
+  /**
    * 组件尺寸【讨论中】
    * @default medium
    */
   size?: SizeEnum;
+  /**
+   * 组件风格
+   * @default radio
+   */
+  theme?: 'radio' | 'button';
   /**
    * 选中的值
    */
@@ -90,23 +103,18 @@ export interface TdRadioGroupProps<T = RadioValue> {
    * @default outline
    */
   variant?: 'outline' | 'primary-filled' | 'default-filled';
-
   /**
-   * 组件风格
+   * 选中值发生变化时触发, `context.name` 指 RadioGroup 的 name 属性
    */
-  theme?: 'radio' | 'button';
-  /**
-   * 选中值发生变化时触发
-   */
-  onChange?: (value: T, context: { e: Event }) => void;
+  onChange?: (value: T, context: { e: Event; name?: string }) => void;
 }
-
-export type RadioValue = string | number | boolean;
 
 export type RadioOption = string | number | RadioOptionObj;
 
 export interface RadioOptionObj {
   label?: string | TNode;
-  value?: string | number;
+  value?: string | number | boolean;
   disabled?: boolean;
 }
+
+export type RadioValue = string | number | boolean;
