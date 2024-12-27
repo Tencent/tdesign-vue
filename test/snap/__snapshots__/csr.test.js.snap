@@ -53539,7 +53539,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                       >
                         <img
                           alt=""
-                          class="t-image t-image--fit-fill t-image--position-center"
+                          class="t-image t-image--fit-contain t-image--position-center"
                           src="https://tdesign.gtimg.com/site/avatar.jpg"
                         />
                         <div
@@ -84872,6 +84872,111 @@ exports[`csr snapshot test > csr test ./src/radio/_example/group.vue 1`] = `
             />
             <span
               class="t-radio__label"
+            >
+              选项四
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-space t-space-horizontal"
+      style="gap: 16px;"
+    >
+      <div
+        class="t-space-item"
+      >
+        <div
+          class="t-radio-group t-size-m t-radio-group__outline"
+        >
+          <label
+            class="t-radio-button"
+            tabindex="0"
+          >
+            <input
+              class="t-radio-button__former"
+              data-allow-uncheck="true"
+              data-value="1"
+              name="city"
+              tabindex="-1"
+              type="radio"
+              value="1"
+            />
+            <span
+              class="t-radio-button__input"
+            />
+            <span
+              class="t-radio-button__label"
+            >
+              选项一
+            </span>
+          </label>
+          <label
+            class="t-radio-button"
+            tabindex="0"
+          >
+            <input
+              class="t-radio-button__former"
+              data-allow-uncheck="true"
+              data-value="2"
+              name="city"
+              tabindex="-1"
+              type="radio"
+              value="2"
+            />
+            <span
+              class="t-radio-button__input"
+            />
+            <span
+              class="t-radio-button__label"
+            >
+              选项二
+            </span>
+          </label>
+          <label
+            class="t-radio-button"
+            tabindex="0"
+          >
+            <input
+              class="t-radio-button__former"
+              data-allow-uncheck="true"
+              data-value="'3'"
+              name="city"
+              tabindex="-1"
+              type="radio"
+              value="3"
+            />
+            <span
+              class="t-radio-button__input"
+            />
+            <span
+              class="t-radio-button__label"
+            >
+              选项三
+            </span>
+          </label>
+          <label
+            class="t-radio-button"
+            tabindex="0"
+          >
+            <input
+              class="t-radio-button__former"
+              data-allow-uncheck="true"
+              data-value="'4'"
+              name="city"
+              tabindex="-1"
+              type="radio"
+              value="4"
+            />
+            <span
+              class="t-radio-button__input"
+            />
+            <span
+              class="t-radio-button__label"
             >
               选项四
             </span>
@@ -136749,7 +136854,7 @@ exports[`csr snapshot test > csr test ./src/upload/_example/image.vue 1`] = `
               >
                 <img
                   alt=""
-                  class="t-image t-image--fit-fill t-image--position-center"
+                  class="t-image t-image--fit-contain t-image--position-center"
                   src="https://tdesign.gtimg.com/demo/demo-image-1.png"
                 />
                 <div
@@ -137050,7 +137155,7 @@ exports[`csr snapshot test > csr test ./src/upload/_example/img-flow-list.vue 1`
                 >
                   <img
                     alt=""
-                    class="t-image t-image--fit-fill t-image--position-center"
+                    class="t-image t-image--fit-contain t-image--position-center"
                     src="https://tdesign.gtimg.com/demo/demo-image-1.png"
                   />
                   <div
@@ -137253,7 +137358,7 @@ exports[`csr snapshot test > csr test ./src/upload/_example/img-flow-list.vue 1`
                 >
                   <img
                     alt=""
-                    class="t-image t-image--fit-fill t-image--position-center"
+                    class="t-image t-image--fit-contain t-image--position-center"
                     src="https://tdesign.gtimg.com/demo/demo-image-1.png"
                   />
                   <div
@@ -137356,7 +137461,7 @@ exports[`csr snapshot test > csr test ./src/upload/_example/img-flow-list.vue 1`
                 >
                   <img
                     alt=""
-                    class="t-image t-image--fit-fill t-image--position-center"
+                    class="t-image t-image--fit-contain t-image--position-center"
                     src="https://tdesign.gtimg.com/demo/demo-image-1.png"
                   />
                   <div
