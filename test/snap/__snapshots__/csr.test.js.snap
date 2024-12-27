@@ -38364,7 +38364,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/table.vue 1
   <div
     class="t-table t-table--bordered"
     data-v-7dcbc254=""
-    tabindex="0"
+    style="position: relative;"
   >
     <div
       class="t-table__content"
@@ -38601,7 +38601,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/table.vue 1
   <div
     class="t-table t-table--row-expandable"
     data-v-7dcbc254=""
-    tabindex="0"
+    style="position: relative;"
   >
     <div
       class="t-table__content"
@@ -101288,7 +101288,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
   >
     <div
       class="t-table t-table--bordered t-table--striped t-table--column-resizable"
-      tabindex="0"
+      style="position: relative;"
     >
       <div
         class="t-table__content"
@@ -102269,7 +102269,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/empty.vue 1`] = `
 >
   <div
     class="t-table"
-    tabindex="0"
+    style="position: relative;"
   >
     <div
       class="t-table__content"
@@ -102388,7 +102388,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/empty.vue 1`] = `
   </div>
   <div
     class="t-table"
-    tabindex="0"
+    style="position: relative;"
   >
     <div
       class="t-table__content"
@@ -102507,7 +102507,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/empty.vue 1`] = `
   </div>
   <div
     class="t-table"
-    tabindex="0"
+    style="position: relative;"
   >
     <div
       class="t-table__content"
@@ -103096,7 +103096,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-column.vue 1`] 
   <div
     class="t-table t-table--bordered t-table--column-fixed t-table--column-resizable"
     data-v-c5be352e=""
-    tabindex="0"
+    style="position: relative;"
   >
     <div
       class="t-table__content"
@@ -103818,7 +103818,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/highlight.vue 1`] = `
   >
     <div
       class="t-table t-table__row--active-single"
-      tabindex="0"
+      style="position: relative;"
     >
       <div
         class="t-table__content"
@@ -103950,7 +103950,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/loading.vue 1`] = `
 >
   <div
     class="t-table t-size-s t-table--loading"
-    tabindex="0"
+    style="position: relative;"
   >
     <div
       class="t-table__content"
@@ -104105,7 +104105,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/loading.vue 1`] = `
   </div>
   <div
     class="t-table t-size-s t-table--loading"
-    tabindex="0"
+    style="position: relative;"
   >
     <div
       class="t-table__content"
@@ -104249,7 +104249,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/loading.vue 1`] = `
   </div>
   <div
     class="t-table t-size-s t-table--loading"
-    tabindex="0"
+    style="position: relative;"
   >
     <div
       class="t-table__content"
@@ -104720,7 +104720,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/style.vue 1`] = `
 >
   <div
     class="t-table"
-    tabindex="0"
+    style="position: relative;"
   >
     <div
       class="t-table__content"
