@@ -81,6 +81,8 @@ export default defineComponent({
     renderExpandedRow: Function as PropType<TableBodyProps['renderExpandedRow']>,
     firstFullRow: [String, Function] as PropType<TableBodyProps['firstFullRow']>,
     lastFullRow: [String, Function] as PropType<TableBodyProps['lastFullRow']>,
+    activeRow: Array as PropType<Array<string | number>>,
+    hoverRow: [String, Number],
     ...pick(baseTableProps, extendTableProps),
   },
 
@@ -190,14 +192,19 @@ export default defineComponent({
     ];
 
     this.data?.forEach((row, rowIndex) => {
+      const rowKey = this.rowKey || 'id';
+      const rowValue = get(row, rowKey);
       const trProps: TrProps = {
         ...pick(this.$props, TABLE_PROPS),
+        rowKey,
         row,
         columns: this.columns,
         rowIndex: row?.__VIRTUAL_SCROLL_INDEX || rowIndex,
         dataLength,
         skipSpansMap: this.skipSpansMap,
         virtualConfig: this.virtualConfig,
+        active: (this.activeRow as Array<string | number>)?.includes(rowValue),
+        isHover: this.hoverRow === rowValue,
         ...pick(this.$props, properties),
       };
       if (this.onCellClick) {
