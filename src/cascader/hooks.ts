@@ -76,7 +76,7 @@ export const useContext = (
           statusContext.treeNodes = nodes;
         },
         setValue: (val: CascaderValue, source: CascaderChangeSource, node?: TreeNodeModel) => {
-          if (isEqual(val, statusContext.scopeVal)) return;
+          if (isEqual(val, value)) return;
           setInnerValue(val, { source, node });
         },
         setVisible: setPopupVisible,

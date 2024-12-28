@@ -11,14 +11,17 @@ export default {
   /** 是否允许取消选中 */
   allowUncheck: Boolean,
   /** 是否选中 */
-  checked: Boolean,
+  checked: {
+    type: Boolean,
+    default: undefined,
+  },
   /** 是否选中，非受控属性 */
   defaultChecked: Boolean,
   /** 单选按钮内容，同 label */
   default: {
     type: [String, Function] as PropType<TdRadioProps['default']>,
   },
-  /** 是否为禁用态 */
+  /** 是否为禁用态。如果存在父组件 RadioGroup，默认值由 RadioGroup.disabled 控制。优先级：Radio.disabled > RadioGroup.disabled > Form.disabled */
   disabled: {
     type: Boolean,
     default: undefined,
@@ -31,6 +34,11 @@ export default {
   name: {
     type: String,
     default: '',
+  },
+  /** 只读状态 */
+  readonly: {
+    type: Boolean,
+    default: undefined,
   },
   /** 单选按钮的值 */
   value: {

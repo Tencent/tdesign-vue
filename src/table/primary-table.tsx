@@ -24,6 +24,7 @@ import { EditableCellProps } from './editable-cell';
 import useStyle from './hooks/useStyle';
 import { ComponentScrollToElementParams } from '../common';
 import { useConfig } from '../config-provider/useConfig';
+import { BaseTableProps } from './interface';
 
 export { BASE_TABLE_ALL_EVENTS } from './base-table';
 
@@ -98,11 +99,14 @@ export default defineComponent({
     const { renderSortIcon } = useSorter(props, context);
     // 行选中功能
     const {
+      selectColumn,
+      showRowSelect,
       selectedRowClassNames,
       currentPaginateData,
       formatToRowSelectColumn,
       setTSelectedRowKeys,
       onInnerSelectRowClick,
+      handleRowSelectWithAreaSelection,
     } = useRowSelect(props, tableSelectedClasses);
     // 过滤功能
     const {
@@ -143,12 +147,19 @@ export default defineComponent({
       'update-edited-cell': onUpdateEditedCell,
     });
 
+    const innerKeyboardRowHover = computed(() => Boolean(showExpandedRow.value || showRowSelect.value));
+
+    const innerDisableSpaceInactiveRow = computed(() => Boolean(showExpandedRow.value || showRowSelect.value));
+
     const primaryTableClasses = computed(() => ({
       [tableDraggableClasses.colDraggable]: isColDraggable.value,
       [tableDraggableClasses.rowHandlerDraggable]: isRowHandlerDraggable.value,
       [tableDraggableClasses.rowDraggable]: isRowDraggable.value,
       [tableBaseClass.overflowVisible]: isTableOverflowHidden.value === false,
       [tableBaseClass.tableRowEdit]: props.editableRowKeys,
+      [`${classPrefix}-table--select-${selectColumn.value?.type}`]: selectColumn.value,
+      [`${classPrefix}-table--row-select`]: showRowSelect.value,
+      [`${classPrefix}-table--row-expandable`]: showExpandedRow.value,
     }));
 
     // 如果想给 TR 添加类名，请在这里补充，不要透传更多额外 Props 到 BaseTable
@@ -306,6 +317,11 @@ export default defineComponent({
       }
     };
 
+    const onInnerActiveRowAction: BaseTableProps['onActiveRowAction'] = (params) => {
+      props.onActiveRowAction?.(params);
+      handleRowSelectWithAreaSelection(params);
+    };
+
     const onSingleRowClick: TdPrimaryTableProps['onRowClick'] = (params) => {
       if (props.expandOnRowClick) {
         onInnerExpandRowClick(params);
@@ -370,6 +386,9 @@ export default defineComponent({
       renderAsyncLoading,
       onInnerPageChange,
       setDragSortColumns,
+      onInnerActiveRowAction,
+      innerKeyboardRowHover,
+      innerDisableSpaceInactiveRow,
     };
   },
 
@@ -428,12 +447,15 @@ export default defineComponent({
       rowClassName: this.tRowClassNames,
       rowAttributes: this.tRowAttributes,
       columns: this.tColumns,
+      keyboardRowHover: this.keyboardRowHover ?? this.innerKeyboardRowHover,
+      disableSpaceInactiveRow: this.disableSpaceInactiveRow ?? this.innerDisableSpaceInactiveRow,
       topContent,
       bottomContent,
       firstFullRow,
       lastFullRow,
       thDraggable: this.$props.dragSort === 'col',
       renderExpandedRow: this.showExpandedRow ? this.renderExpandedRow : undefined,
+      onActiveRowAction: this.onInnerActiveRowAction,
     };
 
     // 事件，Vue3 do not need this.getListener

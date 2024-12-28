@@ -19,7 +19,7 @@ import useVModel from '../hooks/useVModel';
 import { useTNodeJSX } from '../hooks/tnode';
 import { useConfig, usePrefixClass } from '../config-provider/useConfig';
 import {
-  TdSelectProps, SelectValue, TdOptionProps, SelectValueChangeTrigger, SelectOption,
+  TdSelectProps, SelectValue, TdOptionProps, SelectValueChangeTrigger,
 } from './type';
 import props from './props';
 import TLoading from '../loading';
@@ -246,9 +246,18 @@ export default defineComponent({
     const isReachMaxLimit = computed(
       () => multiple.value && max.value !== 0 && max.value <= (innerValue.value as SelectValue[]).length,
     );
-    const isAllOptionsChecked = computed(
-      () => getAllSelectableOption(optionsList.value).length === (innerValue.value as SelectValue[]).length,
-    );
+
+    const getFilteredOptions = () => getAllSelectableOption(optionsList.value).filter((option) => {
+      if (isFunction(props.filter)) {
+        return props.filter(`${tInputValue.value}`, option);
+      }
+      return option.label?.toLowerCase()?.includes(`${tInputValue.value}`.toLowerCase());
+    });
+
+    const isAllOptionsChecked = computed(() => {
+      const filteredOptions = getFilteredOptions();
+      return filteredOptions.length === (innerValue.value as SelectValue[]).length;
+    });
 
     const placeholderText = computed(
       () => ((!multiple.value
@@ -331,29 +340,19 @@ export default defineComponent({
 
     // 全选点击回调，t-option 的事件调用到这里处理
     const handleCheckAllClick = (e: MouseEvent | KeyboardEvent) => {
-      const filterMethods = (option: SelectOption) => {
-        if (isFunction(props.filter)) {
-          return props.filter(`${tInputValue.value}`, option);
-        }
-        return option.label?.toLowerCase?.().indexOf(`${tInputValue.value}`.toLowerCase()) > -1;
-      };
+      const filteredOptions = getFilteredOptions();
       setInnerValue(
-        isAllOptionsChecked.value
-          ? []
-          : getAllSelectableOption(optionsList.value)
-            .filter(filterMethods)
-            .map((option) => option.value)
-            .slice(0, max.value || Infinity),
+        isAllOptionsChecked.value ? [] : filteredOptions.map((option) => option.value).slice(0, max.value || Infinity),
         { e, trigger: isAllOptionsChecked.value ? 'uncheck' : 'check' },
       );
-      !reserveKeyword?.value && setTInputValue('');
+      !reserveKeyword?.value && setTInputValue('', { e, trigger: 'change' });
     };
 
-    const handleCreate = () => {
+    const handleCreate = (e: KeyboardEvent) => {
       if (!tInputValue.value) return;
       const createVal = tInputValue.value;
       // 只有多选情况下需要帮用户清除一次输入框内容，单选场景选中后 popup 消失，携带内容清除的作用
-      multiple.value && setTInputValue('');
+      multiple.value && setTInputValue('', { e, trigger: 'change' });
       instance.emit('create', createVal);
       props.onCreate?.(createVal);
     };
@@ -371,7 +370,7 @@ export default defineComponent({
 
     const handleTInputValueChange = (val: string, context: SelectInputValueChangeContext) => {
       if (context.trigger === 'blur' || !innerPopupVisible.value) return;
-      setTInputValue(val);
+      setTInputValue(val, context);
       debounceSearch({ e: context.e as KeyboardEvent });
     };
 
@@ -529,7 +528,7 @@ export default defineComponent({
         case 'Enter':
           // 当支持创建、且 hoverIndex 为 -1(未选中)/0(创建条目)、第一项为创建项的时候，才视为触发 create 回调，并继续键盘事件
           if (creatable.value && hoverIndex.value < 1 && displayOptions?.[0]?.isCreated) {
-            handleCreate();
+            handleCreate(e);
           } else if (hoverIndex.value === -1) {
             // 否则视为选择列表中筛选出的已有项目
             // 当 hoverIndex 为 -1，即未选中任意项的时候，不触发其他键盘事件
@@ -554,7 +553,7 @@ export default defineComponent({
         case 'Escape':
         case 'Tab':
           setInnerPopupVisible(false, { trigger: 'keydown-esc', e });
-          setTInputValue('');
+          setTInputValue('', { e, trigger: 'blur' });
           break;
       }
     };
@@ -576,7 +575,7 @@ export default defineComponent({
         // 显示 popup 的时候重置 hover 选项下标
         hoverIndex.value = -1;
       } else {
-        tInputValue.value && setTInputValue('');
+        tInputValue.value && setTInputValue('', { trigger: 'blur' });
       }
     });
     provide('tSelect', {

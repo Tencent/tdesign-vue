@@ -5,6 +5,15 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.10.7 `2024-12-16` 
+### 🐞 Bug Fixes
+- `ColorPicker`:  修复颜色选择器的国际化配置问题 @liweijie0812 ([#3403](https://github.com/Tencent/tdesign-vue/pull/3403))
+- `Dialog`: 修复`1.10.6`版本中`Dialog`组件 `props` 重复导致的异常问题 @uyarn ([#3423](https://github.com/Tencent/tdesign-vue/pull/3423))
+- `Table`: 修复 `filterIcon` 不生效的问题 @liweijie0812 ([#3422](https://github.com/Tencent/tdesign-vue/pull/3422))
+
+
+
+
 ## 🌈 1.10.6 `2024-12-05`
 
 ### 🚀 Features
