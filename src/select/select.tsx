@@ -349,7 +349,7 @@ export default defineComponent({
       !reserveKeyword?.value && setTInputValue('', { e, trigger: 'change' });
     };
 
-    const handleCreate = (e) => {
+    const handleCreate = (e: KeyboardEvent) => {
       if (!tInputValue.value) return;
       const createVal = tInputValue.value;
       // 只有多选情况下需要帮用户清除一次输入框内容，单选场景选中后 popup 消失，携带内容清除的作用
