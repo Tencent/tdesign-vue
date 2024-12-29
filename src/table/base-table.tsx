@@ -26,6 +26,9 @@ import { renderTNodeJSX, useElementLazyRender } from '../hooks';
 import useStyle, { formatCSSUnit } from './hooks/useStyle';
 import useClassName from './hooks/useClassName';
 import { useConfig } from '../config-provider/useConfig';
+import { useRowHighlight } from './hooks/useRowHighlight';
+import useHoverKeyboardEvent from './hooks/useHoverKeyboardEvent';
+
 import { Affix } from '../affix';
 import { ROW_LISTENERS } from './tr';
 import THead from './thead';
@@ -157,6 +160,7 @@ export default defineComponent({
         [tableColFixedClasses.leftShadow]: showColumnShadow.left,
         [tableColFixedClasses.rightShadow]: showColumnShadow.right,
         [tableBaseClass.columnResizableTable]: props.resizable,
+        [`${classPrefix}-table__row--active-${props.activeRowType}`]: props.activeRowType,
       },
     ]);
 
@@ -176,6 +180,19 @@ export default defineComponent({
     });
 
     const columnResizable = computed(() => props.allowResizeColumnWidth ?? props.resizable);
+
+    // 行高亮
+    const {
+      tActiveRow, onHighlightRow, addHighlightKeyboardListener, removeHighlightKeyboardListener,
+    } = useRowHighlight(props, tableRef);
+
+    const {
+      hoverRow,
+      needKeyboardRowHover,
+      clearHoverRow,
+      addRowHoverKeyboardListener,
+      removeRowHoverKeyboardListener,
+    } = useHoverKeyboardEvent(props, tableRef);
 
     watch(tableElmRef, () => {
       setUseFixedTableElmRef(tableElmRef.value);
@@ -276,6 +293,22 @@ export default defineComponent({
       addTableResizeObserver(tableRef.value);
     });
 
+    const onTableFocus = () => {
+      props.activeRowType && addHighlightKeyboardListener();
+      needKeyboardRowHover.value && addRowHoverKeyboardListener();
+    };
+
+    const onTableBlur = () => {
+      props.activeRowType && removeHighlightKeyboardListener();
+      needKeyboardRowHover.value && removeRowHoverKeyboardListener();
+    };
+
+    const onInnerRowClick: BaseTableProps['onRowClick'] = (ctx) => {
+      props.onRowClick?.(ctx);
+      props.activeRowType && onHighlightRow(ctx);
+      needKeyboardRowHover.value && clearHoverRow();
+    };
+
     const tableData = computed(() => (isPaginateData.value ? dataSource.value : props.data));
 
     const scrollToElement = (params: ComponentScrollToElementParams) => {
@@ -349,6 +382,8 @@ export default defineComponent({
       horizontalScrollbarRef,
       tableBodyRef,
       showAffixPagination,
+      tActiveRow,
+      hoverRow,
       showElement,
       getListener,
       renderPagination,
@@ -358,6 +393,9 @@ export default defineComponent({
       refreshTable,
       onInnerVirtualScroll,
       scrollColumnIntoView,
+      onTableFocus,
+      onTableBlur,
+      onInnerRowClick,
       paginationAffixRef,
       horizontalScrollAffixRef,
       headerTopAffixRef,
@@ -576,6 +614,9 @@ export default defineComponent({
       // 内部使用分页信息必须取 innerPagination
       pagination: this.innerPagination,
       attach: this.attach,
+      hoverRow: this.hoverRow,
+      activeRow: this.tActiveRow,
+      onRowClick: this.onInnerRowClick,
     };
     // Vue3 do not need getListener
     const tBodyListener = this.getListener();
@@ -650,7 +691,13 @@ export default defineComponent({
     );
 
     return (
-      <div ref="tableRef" class={this.dynamicBaseTableClasses} style="position: relative">
+      <div
+        ref="tableRef"
+        tabindex="0"
+        class={this.dynamicBaseTableClasses}
+        onFocus={this.onTableFocus}
+        onBlur={this.onTableBlur}
+      >
         {!!topContent && <div class={this.tableBaseClass.topContent}>{topContent}</div>}
 
         {this.renderAffixedHeader(columns)}
