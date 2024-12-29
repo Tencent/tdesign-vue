@@ -18,7 +18,7 @@
     "options": []
   },
   {
-    "name": "value",
+    "name": "readonly",
     "type": "Boolean",
     "defaultValue": false,
     "options": []

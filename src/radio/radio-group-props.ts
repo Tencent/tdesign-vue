@@ -10,7 +10,7 @@ import { PropType } from 'vue';
 export default {
   /** 是否允许取消选中 */
   allowUncheck: Boolean,
-  /** 是否禁用全部子单选框 */
+  /** 是否禁用全部子单选框。优先级：Radio.disabled > RadioGroup.disabled > Form.disabled */
   disabled: {
     type: Boolean,
     default: undefined,
@@ -24,13 +24,10 @@ export default {
   options: {
     type: Array as PropType<TdRadioGroupProps['options']>,
   },
-  /** 组件风格 */
-  theme: {
-    type: String as PropType<TdRadioGroupProps['theme']>,
-    default: 'radio' as TdRadioGroupProps['theme'],
-    validator(val: TdRadioGroupProps['theme']): boolean {
-      return ['radio', 'button'].includes(val);
-    },
+  /** 只读状态 */
+  readonly: {
+    type: Boolean,
+    default: undefined,
   },
   /** 组件尺寸【讨论中】 */
   size: {
@@ -41,9 +38,19 @@ export default {
       return ['small', 'medium', 'large'].includes(val);
     },
   },
+  /** 组件风格 */
+  theme: {
+    type: String as PropType<TdRadioGroupProps['theme']>,
+    default: 'radio' as TdRadioGroupProps['theme'],
+    validator(val: TdRadioGroupProps['theme']): boolean {
+      if (!val) return true;
+      return ['radio', 'button'].includes(val);
+    },
+  },
   /** 选中的值 */
   value: {
     type: [String, Number, Boolean] as PropType<TdRadioGroupProps['value']>,
+    default: undefined,
   },
   /** 选中的值，非受控属性 */
   defaultValue: {
@@ -58,6 +65,6 @@ export default {
       return ['outline', 'primary-filled', 'default-filled'].includes(val);
     },
   },
-  /** 选中值发生变化时触发 */
+  /** 选中值发生变化时触发, `context.name` 指 RadioGroup 的 name 属性 */
   onChange: Function as PropType<TdRadioGroupProps['onChange']>,
 };

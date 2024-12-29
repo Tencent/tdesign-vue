@@ -1,4 +1,4 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`csr snapshot test > csr test ./src/affix/_example/base.vue 1`] = `
 <div
@@ -37872,7 +37872,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/table.vue 1
   <div
     class="t-table t-table--bordered"
     data-v-7dcbc254=""
-    style="position: relative;"
+    tabindex="0"
   >
     <div
       class="t-table__content"
@@ -38107,9 +38107,9 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/table.vue 1
     data-v-7dcbc254=""
   />
   <div
-    class="t-table"
+    class="t-table t-table--row-expandable"
     data-v-7dcbc254=""
-    style="position: relative;"
+    tabindex="0"
   >
     <div
       class="t-table__content"
@@ -97344,7 +97344,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
   >
     <div
       class="t-table t-table--bordered t-table--striped t-table--column-resizable"
-      style="position: relative;"
+      tabindex="0"
     >
       <div
         class="t-table__content"
@@ -98325,7 +98325,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/empty.vue 1`] = `
 >
   <div
     class="t-table"
-    style="position: relative;"
+    tabindex="0"
   >
     <div
       class="t-table__content"
@@ -98444,7 +98444,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/empty.vue 1`] = `
   </div>
   <div
     class="t-table"
-    style="position: relative;"
+    tabindex="0"
   >
     <div
       class="t-table__content"
@@ -98563,7 +98563,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/empty.vue 1`] = `
   </div>
   <div
     class="t-table"
-    style="position: relative;"
+    tabindex="0"
   >
     <div
       class="t-table__content"
@@ -98832,7 +98832,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/expandable.vue 1`] = 
     </label>
   </div>
   <div
-    class=""
+    class="t-table--row-expandable"
     data-v-ce8962e4=""
   />
 </div>
@@ -99152,7 +99152,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-column.vue 1`] 
   <div
     class="t-table t-table--bordered t-table--column-fixed t-table--column-resizable"
     data-v-c5be352e=""
-    style="position: relative;"
+    tabindex="0"
   >
     <div
       class="t-table__content"
@@ -99760,6 +99760,219 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-header-col.vue 
 </div>
 `;
 
+exports[`csr snapshot test > csr test ./src/table/_example/highlight.vue 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-space t-space-align-center t-space-horizontal"
+      style="gap: 16px;"
+    >
+      <div
+        class="t-space-item"
+      >
+        <div
+          class="t-radio-group t-size-m t-radio-group--filled"
+        >
+          <label
+            class="t-radio-button"
+            tabindex="0"
+          >
+            <input
+              class="t-radio-button__former"
+              data-value="''"
+              tabindex="-1"
+              type="radio"
+              value=""
+            />
+            <span
+              class="t-radio-button__input"
+            />
+            <span
+              class="t-radio-button__label"
+            >
+              不高亮
+            </span>
+          </label>
+          <label
+            class="t-radio-button t-is-checked"
+            tabindex="0"
+          >
+            <input
+              class="t-radio-button__former"
+              data-value="'single'"
+              tabindex="-1"
+              type="radio"
+              value="single"
+            />
+            <span
+              class="t-radio-button__input"
+            />
+            <span
+              class="t-radio-button__label"
+            >
+              单行高亮
+            </span>
+          </label>
+          <label
+            class="t-radio-button"
+            tabindex="0"
+          >
+            <input
+              class="t-radio-button__former"
+              data-value="'multiple'"
+              tabindex="-1"
+              type="radio"
+              value="multiple"
+            />
+            <span
+              class="t-radio-button__input"
+            />
+            <span
+              class="t-radio-button__label"
+            >
+              多行高亮
+            </span>
+          </label>
+          <div
+            class="t-radio-group__bg-block"
+            style="width: 0px; left: 0px;"
+          />
+        </div>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <label
+          class="t-checkbox"
+          tabindex="0"
+        >
+          <input
+            class="t-checkbox__former"
+            tabindex="-1"
+            type="checkbox"
+            value=""
+          />
+          <span
+            class="t-checkbox__input"
+          />
+          <span
+            class="t-checkbox__label"
+          >
+             显示悬浮效果 
+          </span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-table t-table__row--active-single"
+      tabindex="0"
+    >
+      <div
+        class="t-table__content"
+      >
+        <table
+          class="t-table--layout-fixed"
+        >
+          <colgroup>
+            <col
+              style="width: 100px;"
+            />
+            <col
+              style="min-width: 80px;"
+            />
+            <col
+              style="min-width: 80px;"
+            />
+            <col
+              style="min-width: 80px;"
+            />
+          </colgroup>
+          <thead
+            class="t-table__header"
+          >
+            <tr>
+              <th
+                class="t-table__th-applicant"
+                data-colkey="applicant"
+              >
+                <div
+                  class="t-table__th-cell-inner"
+                >
+                  申请人
+                </div>
+              </th>
+              <th
+                class="t-table__th-channel"
+                data-colkey="channel"
+              >
+                <div
+                  class="t-table__th-cell-inner"
+                >
+                  签署方式
+                </div>
+              </th>
+              <th
+                class="t-table__th-detail.email"
+                data-colkey="detail.email"
+              >
+                <div
+                  class="t-table__th-cell-inner"
+                >
+                  <div
+                    class="t-table__ellipsis t-text-ellipsis"
+                  >
+                    邮箱地址
+                  </div>
+                </div>
+              </th>
+              <th
+                class="t-table__th-createTime"
+                data-colkey="createTime"
+              >
+                <div
+                  class="t-table__th-cell-inner"
+                >
+                  申请时间
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="t-table__body"
+          >
+            <tr
+              class="t-table__empty-row"
+            >
+              <td
+                colspan="4"
+              >
+                <div
+                  class="t-table__empty"
+                />
+              </td>
+            </tr>
+          </tbody>
+          <!---->
+        </table>
+      </div>
+      <div
+        class="t-table__resize-line"
+        style="display: none; height: 10px; left: 10px; bottom: 0px;"
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`csr snapshot test > csr test ./src/table/_example/lazy.vue 1`] = `
 <div
   class="demo-container"
@@ -99793,7 +100006,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/loading.vue 1`] = `
 >
   <div
     class="t-table t-size-s t-table--loading"
-    style="position: relative;"
+    tabindex="0"
   >
     <div
       class="t-table__content"
@@ -99948,7 +100161,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/loading.vue 1`] = `
   </div>
   <div
     class="t-table t-size-s t-table--loading"
-    style="position: relative;"
+    tabindex="0"
   >
     <div
       class="t-table__content"
@@ -100092,7 +100305,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/loading.vue 1`] = `
   </div>
   <div
     class="t-table t-size-s t-table--loading"
-    style="position: relative;"
+    tabindex="0"
   >
     <div
       class="t-table__content"
@@ -100483,7 +100696,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
     class="t-space-item"
   >
     <div
-      class=""
+      class="t-table--select-multiple t-table--row-select"
     />
   </div>
 </div>
@@ -100491,7 +100704,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/pagination.vue 1`] = 
 
 exports[`csr snapshot test > csr test ./src/table/_example/pagination-ajax.vue 1`] = `
 <div
-  class=""
+  class="t-table--select-multiple t-table--row-select"
 />
 `;
 
@@ -100500,7 +100713,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/select-multiple.vue 1
   data-v-1119a7d2=""
 >
   <div
-    class=""
+    class="t-table--select-multiple t-table--row-select"
     data-v-1119a7d2=""
   />
 </div>
@@ -100512,7 +100725,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/select-single.vue 1`]
   data-v-2dd73e0f=""
 >
   <div
-    class=""
+    class="t-table--select-single t-table--row-select"
     data-v-2dd73e0f=""
   />
 </div>
@@ -100563,7 +100776,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/style.vue 1`] = `
 >
   <div
     class="t-table"
-    style="position: relative;"
+    tabindex="0"
   >
     <div
       class="t-table__content"
@@ -101185,7 +101398,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/tree-select.vue 1`] =
     class="t-space-item"
   >
     <div
-      class=""
+      class="t-table--select-multiple t-table--row-select t-table--row-expandable"
     />
   </div>
 </div>
