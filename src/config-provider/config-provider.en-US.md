@@ -91,7 +91,6 @@ timePicker | Object | - | TimePicker global configs。Typescript：`TimePickerCo
 transfer | Object | - | Transfer global configs。Typescript：`TransferConfig` | N
 tree | Object | - | Tree global configs。Typescript：`TreeConfig` | N
 treeSelect | Object | - | TreeSelect global configs。Typescript：`TreeSelectConfig` | N
-typography | Object | - | Typography global configs。Typescript：`TypographyConfig` | N
 upload | Object | - | Upload global configs。Typescript：`UploadConfig` | N
 
 ### InputConfig
@@ -400,11 +399,3 @@ name | type | default | description | required
 -- | -- | -- | -- | --
 image | Object | - | Typescript：`{ maintenance: TNode; success: TNode; fail: TNode; empty: TNode; networkError: TNode; }`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 titleText | Object | - | Typescript：`{ maintenance: string; success: string; fail: string; empty: string; networkError: string; }` | N
-
-### TypographyConfig
-
-name | type | default | description | required
--- | -- | -- | -- | --
-collapseText | String | - | collapse text | N
-copiedText | String | - | copied text | N
-expandText | String | - | expand text | N
