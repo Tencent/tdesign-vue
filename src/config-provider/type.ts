@@ -143,10 +143,6 @@ export interface GlobalConfigProvider {
    */
   treeSelect?: TreeSelectConfig;
   /**
-   * 排版组件全局配置
-   */
-  typography?: TypographyConfig;
-  /**
    * 上传组件全局配置
    */
   upload?: UploadConfig;
