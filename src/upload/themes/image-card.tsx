@@ -71,7 +71,7 @@ export default defineComponent({
       const { BrowseIcon, DeleteIcon } = this.icons;
       return (
         <div class={`${this.classPrefix}-upload__card-content ${this.classPrefix}-upload__card-box`}>
-          <Image class={`${this.classPrefix}-upload__card-image`} src={file.url || file.raw} error="" />
+          <Image class={`${this.classPrefix}-upload__card-image`} src={file.url || file.raw} error="" fit="contain" />
           <div class={`${this.classPrefix}-upload__card-mask`}>
             <span class={`${this.classPrefix}-upload__card-mask-item`} onClick={(e: MouseEvent) => e.stopPropagation()}>
               <ImageViewer

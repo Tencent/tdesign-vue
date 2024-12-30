@@ -27,7 +27,7 @@ export function getSingleContent(cascaderContext: CascaderContextType): string {
   }
   const path = node && node[0].getPath();
   if (path && path.length) {
-    return showAllLevels ? path.map((node: TreeNode) => node.label).join(' / ') : path[path.length - 1].label;
+    return showAllLevels ? path.map((node: TreeNode) => node.label).join(' / ') : path.at(-1).label;
   }
   return value as string;
 }
@@ -120,10 +120,11 @@ export const getCascaderValue = (value: CascaderValue, valueType: TdCascaderProp
   if (valueType === 'single') {
     return value;
   }
+  const val = value as Array<CascaderValue>;
   if (multiple) {
-    return (value as Array<CascaderValue>).map((item: TreeNodeValue[]) => item[item.length - 1]);
+    return val.map((item: TreeNodeValue[]) => item.at(-1));
   }
-  return value[(value as Array<CascaderValue>).length - 1];
+  return val.at(-1);
 };
 
 /**
@@ -144,6 +145,9 @@ export function isEmptyValues(value: unknown): boolean {
  * @returns boolean
  */
 export function isValueInvalid(value: CascaderValue, cascaderContext: CascaderContextType) {
-  const { multiple, showAllLevels } = cascaderContext;
-  return (multiple && !Array.isArray(value)) || (!multiple && Array.isArray(value) && !showAllLevels);
+  const { multiple, showAllLevels, valueType } = cascaderContext;
+  return (
+    (multiple && !Array.isArray(value))
+    || (!multiple && Array.isArray(value) && valueType === 'single' && !showAllLevels)
+  );
 }
