@@ -1,4 +1,4 @@
-import { ref, Ref, toRefs } from '@vue/composition-api';
+import { ref, Ref, toRefs } from 'vue';
 import get from 'lodash/get';
 import useDefaultValue from '../../hooks/useDefaultValue';
 import { BaseTableProps } from '../interface';

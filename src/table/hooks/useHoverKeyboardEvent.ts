@@ -1,6 +1,6 @@
 import {
   toRefs, Ref, ref, computed,
-} from '@vue/composition-api';
+} from 'vue';
 import get from 'lodash/get';
 import { BaseTableProps } from '../interface';
 import { on, off } from '../../utils/dom';
