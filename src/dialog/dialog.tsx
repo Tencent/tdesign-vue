@@ -14,10 +14,14 @@ import { DialogCloseContext, TdDialogProps } from './type';
 import props from './props';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import mixins from '../utils/mixins';
-import getConfigReceiverMixins, { DialogConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
+import getConfigReceiverMixins, {
+  DialogConfig,
+  getGlobalIconMixins,
+  getAttachConfigMixins,
+} from '../config-provider/config-receiver';
 import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
-import { ClassName, Styles } from '../common';
+import { AttachNode, ClassName, Styles } from '../common';
 import { updateElement } from '../hooks/useDestroyOnClose';
 import stack from './stack';
 import { getScrollbarWidth } from '../_common/js/utils/getScrollbarWidth';
@@ -43,7 +47,12 @@ if (typeof window !== 'undefined' && window.document && window.document.document
 
 let key = 1;
 
-export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('dialog'), getGlobalIconMixins()).extend({
+export default mixins(
+  ActionMixin,
+  getConfigReceiverMixins<Vue, DialogConfig>('dialog'),
+  getGlobalIconMixins(),
+  getAttachConfigMixins('dialog'),
+).extend({
   name: 'TDialog',
 
   components: {
@@ -143,6 +152,9 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
     },
     computedDialogStyle(): Styles {
       return !this.isFullScreen ? { width: getCSSValue(this.width), ...this.dialogStyle } : { ...this.dialogStyle }; // width全屏模式不生效;
+    },
+    computedAttach(): AttachNode {
+      return this.showInAttachedElement ? undefined : this.attach || this.globalAttach();
     },
   },
 
@@ -518,7 +530,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
         onBeforeLeave={this.beforeLeave}
         onAfterLeave={this.afterLeave}
       >
-        <div v-show={this.visible} class={this.ctxClass} style={ctxStyle} v-transfer-dom={this.attach}>
+        <div v-show={this.visible} class={this.ctxClass} style={ctxStyle} v-transfer-dom={this.computedAttach}>
           {view}
         </div>
       </transition>

@@ -8,18 +8,19 @@ import setStyle from '../_common/js/utils/set-style';
 import props from './props';
 import { PopupVisibleChangeContext, TdPopupProps } from './type';
 import Container from './container';
-import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import { getClassPrefixMixins, getAttachConfigMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
 import { emitEvent } from '../utils/event';
 import {
   getPopperPlacement, attachListeners, triggers, defaultVisibleDelay,
 } from './utils';
+import { AttachNode } from '../common';
 
 const classPrefixMixins = getClassPrefixMixins('popup');
 
 const injectionKey = '__T_POPUP';
 
-export default mixins(classPrefixMixins).extend({
+export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend({
   name: 'TPopup',
 
   provide(this: any) {
@@ -88,6 +89,9 @@ export default mixins(classPrefixMixins).extend({
         open: delay[0],
         close: delay[1] ?? delay[0],
       };
+    },
+    computeAttach(): AttachNode {
+      return this.attach || this.globalAttach();
     },
   },
   watch: {
@@ -449,7 +453,7 @@ export default mixins(classPrefixMixins).extend({
         }}
         parent={this}
         visible={visible}
-        attach={() => ({ attach: this.attach, current: this.$el })}
+        attach={() => ({ attach: this.computeAttach, current: this.$el })}
       >
         <transition
           slot="content"

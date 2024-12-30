@@ -62,6 +62,7 @@ name | type | default | description | required
 alert | Object | - | Alert global configs。Typescript：`AlertConfig` | N
 anchor | Object | - | Anchor global configs。Typescript：`AnchorConfig` | N
 animation | Object | - | Typescript：`Partial<Record<'include'\|'exclude', Array<AnimationType>>>` `type AnimationType = 'ripple' \| 'expand' \| 'fade'`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
+attach | String / Object / Function | - | Typescript：`AttachNode \| { popup?: AttachNode; dialog?: AttachNode; drawer?: AttachNode; }`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 calendar | Object | - | Calendar global configs。Typescript：`CalendarConfig` | N
 cascader | Object | - | Cascader global configs。Typescript：`CascaderConfig` | N
 classPrefix | String | t | \- | N
@@ -70,6 +71,7 @@ datePicker | Object | - | DatePicker global configs。Typescript：`DatePickerCo
 descriptions | Object | - | Descriptions global configs。Typescript：`DescriptionsConfig` | N
 dialog | Object | - | Dialog global configs。Typescript：`DialogConfig` | N
 drawer | Object | - | Drawer global configs。Typescript：`DrawerConfig` | N
+empty | Object | - | Empty global configs。Typescript：`EmptyConfig` | N
 form | Object | - | Form global configs。Typescript：`FormConfig` | N
 guide | Object | - | Guide global configs。Typescript：`GuideConfig` | N
 icon | Object | - | icon config。Typescript：`IconConfig` `type IconConfig = GlobalIconConfig` `import { GlobalIconConfig } from '@icon'`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
@@ -390,3 +392,10 @@ skipButtonProps | Object | - | skip button. `{ content: 'Skip', theme: 'default'
 name | type | default | description | required
 -- | -- | -- | -- | --
 rateText | Array | - | Typescript：`string[]` | N
+
+### EmptyConfig
+
+name | type | default | description | required
+-- | -- | -- | -- | --
+image | Object | - | Typescript：`{ maintenance: TNode; success: TNode; fail: TNode; empty: TNode; networkError: TNode; }`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+titleText | Object | - | Typescript：`{ maintenance: string; success: string; fail: string; empty: string; networkError: string; }` | N
