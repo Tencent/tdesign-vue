@@ -44,7 +44,7 @@ export default defineComponent({
     const children: ScopedSlotReturnValue = renderTNode('default');
     return (
       <li class={this.classes}>
-        <div class={`${this.componentName}-option-group__header`}>{this.label}</div>
+        {(this.label ?? false) && <div class={`${this.componentName}-option-group__header`}>{this.label}</div>}
         {children}
       </li>
     );

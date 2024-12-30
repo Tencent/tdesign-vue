@@ -269,7 +269,7 @@ export default defineComponent({
                 } & OptionsType,
               index,
             ) => {
-              if (item.group) {
+              if (item.children) {
                 return (
                   <t-option-group label={item.group} divider={item.divider}>
                     {this.renderOptionsContent(item.children)}
