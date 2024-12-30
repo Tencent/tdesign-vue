@@ -5,6 +5,28 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.10.8 `2024-12-30` 
+### 🚀 Features
+- `ConfigProvider`: 新增`attach` 配置，支持全局设置`Popup`、`Dialog`、`Drawer`的挂载节点 @liweijie0812 ([#3437](https://github.com/Tencent/tdesign-vue/pull/3437))
+- `Radio`: 新增`theme`API，用于配置 `RadioGroup` 使用`options` 时渲染的子组件样式 @myronliu347 ([#3402](https://github.com/Tencent/tdesign-vue/pull/3402))
+- `Radio`: 新增 `readonly` API，用于支持只读属性配置 @liweijie0812 ([#3431](https://github.com/Tencent/tdesign-vue/pull/3431))
+- `Table`: 支持行高亮功能及相关操作，具体使用请参考示例代码 @uyarn ([#3442](https://github.com/Tencent/tdesign-vue/pull/3442))
+
+### 🐞 Bug Fixes
+- `Cascader`：@betavs
+    - 当 `valueType` 为 `full` 时会意外触发 `change` 事件  ([#3435](https://github.com/Tencent/tdesign-vue/pull/3435))
+   - 修复`valueType` 为 `full` 且`showAllLevels `为`false`无法正常展示的功能问题 ([#3438](https://github.com/Tencent/tdesign-vue/pull/3438))
+- `Dialog`: 修复默认挂载节点非`body`的异常 @liweijie0812 ([#3437](https://github.com/Tencent/tdesign-vue/pull/3437))
+- `Dialog`: 修复`1.10.6`版本`closeOnOverlayClick`的默认行为异常的问题 @uyarn ([#3433](https://github.com/Tencent/tdesign-vue/pull/3433))
+- `Select`: @RSS1102
+    - 修复`onInputChange` 事件丢失第二个回调参数的问题  ([#3427](https://github.com/Tencent/tdesign-vue/pull/3427))
+   - 优化`reserveKeyword`配合`filterable`在全选下的行为 ([#3440](https://github.com/Tencent/tdesign-vue/pull/3440))
+   - 修复分组情况下标题不存在的渲染报错的问题 ([#3445](https://github.com/Tencent/tdesign-vue/pull/3445))
+### 📝 Documentation
+- `ConfigProvider`: 补充`Empty`组件的全局配置相关文档 @liweijie0812 ([#3437](https://github.com/Tencent/tdesign-vue/pull/3437))
+- `Upload`: 优化上传组件图片展示样式 @huangchen1031 ([#3429](https://github.com/Tencent/tdesign-vue/pull/3429))
+
+
 ## 🌈 1.10.7 `2024-12-16` 
 ### 🐞 Bug Fixes
 - `ColorPicker`:  修复颜色选择器的国际化配置问题 @liweijie0812 ([#3403](https://github.com/Tencent/tdesign-vue/pull/3403))
