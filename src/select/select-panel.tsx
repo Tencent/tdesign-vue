@@ -270,7 +270,7 @@ export default defineComponent({
                 } & OptionsType,
               index,
             ) => {
-              if (item.group) {
+              if (item.children) {
                 return (
                   <TOptionGroup label={item.group} divider={item.divider}>
                     {this.renderOptionsContent(item.children)}

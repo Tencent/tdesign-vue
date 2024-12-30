@@ -49,7 +49,7 @@ export default function useSelectOptions(
         dynamicIndex += 1;
         return res;
       };
-      if ((option as SelectOptionGroup).group && (option as SelectOptionGroup).children) {
+      if ((option as SelectOptionGroup).children) {
         return {
           ...option,
           children: (option as SelectOptionGroup).children.map((child) => getFormatOption(child)),
@@ -122,7 +122,7 @@ export default function useSelectOptions(
     const res: TdOptionProps[] = [];
     const getOptionsList = (options: TdOptionProps[]) => {
       options.forEach((option) => {
-        if ((option as SelectOptionGroup).group) {
+        if ((option as SelectOptionGroup).children) {
           getOptionsList((option as SelectOptionGroup).children);
         } else {
           res.push(option);
