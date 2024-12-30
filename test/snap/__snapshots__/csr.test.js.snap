@@ -44271,7 +44271,97 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/attach.vue 1`] = `
     data-v-d38b880a=""
     duration="300"
     name="t-dialog-zoom__vue"
-  />
+  >
+    <div
+      class="t-dialog__ctx t-dialog__ctx--fixed t-dialog__ctx--absolute"
+      style="display: none;"
+    >
+      <div
+        class="t-dialog__mask"
+      />
+      <div
+        class="t-dialog__wrap"
+      >
+        <div
+          class="t-dialog__position t-dialog--center"
+        >
+          <div
+            class="t-dialog t-dialog__modal-default t-dialog--default"
+          >
+            <div
+              class="t-dialog__header"
+            >
+              <div
+                class="t-dialog__header-content"
+              >
+                对话框仅展示在挂载元素区域
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M7.05 5.64L12 10.59l4.95-4.95 1.41 1.41L13.41 12l4.95 4.95-1.41 1.41L12 13.41l-4.95 4.95-1.41-1.41L10.59 12 5.64 7.05l1.41-1.41z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              class="t-dialog__body"
+            >
+              <div
+                data-v-d38b880a=""
+              >
+                <div
+                  data-v-d38b880a=""
+                >
+                  父元素（挂载元素）需要有定位属性，如：position: relative
+                </div>
+                <div
+                  data-v-d38b880a=""
+                >
+                  showInAttachedElement API 仅针对模态对话框有效
+                </div>
+              </div>
+            </div>
+            <div
+              class="t-dialog__footer"
+            >
+              <div>
+                <button
+                  class="t-button t-button--variant-base t-button--theme-default t-dialog__cancel"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    取消
+                  </span>
+                </button>
+                <button
+                  class="t-button t-button--variant-base t-button--theme-primary t-dialog__confirm"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    确认
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
   <div
     class="t-dialog__ctx t-dialog__ctx--fixed"
     style="display: none;"
@@ -45183,7 +45273,70 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/attach-parent.vue 1`
     <transition-stub
       data-v-241b7623=""
       duration="[object Object]"
-    />
+    >
+      <div
+        class="t-drawer t-drawer--right t-drawer--attach"
+        style="display: none;"
+        tabindex="0"
+      >
+        <transition-stub
+          duration="300"
+          name="t-drawer-fade"
+        >
+          <div
+            class="t-drawer__mask"
+            style="display: none;"
+          />
+        </transition-stub>
+        <div
+          class="t-drawer__content-wrapper t-drawer__content-wrapper--right"
+          style="width: 300px;"
+        >
+          <div
+            class="t-drawer__header"
+          >
+            抽屉标题
+          </div>
+          <div
+            class="t-drawer__body"
+          >
+            <p
+              data-v-241b7623=""
+            >
+              抽屉的内容
+            </p>
+          </div>
+          <div
+            class="t-drawer__footer"
+          >
+            <div
+              style="display: flex; justify-content: flex-start;"
+            >
+              <button
+                class="t-button t-button--variant-base t-button--theme-primary t-drawer__confirm"
+                type="button"
+              >
+                <span
+                  class="t-button__text"
+                >
+                  确认
+                </span>
+              </button>
+              <button
+                class="t-button t-button--variant-base t-button--theme-default t-drawer__cancel"
+                type="button"
+              >
+                <span
+                  class="t-button__text"
+                >
+                  取消
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </transition-stub>
     <div
       class="tdesign-radio-button"
       data-v-241b7623=""

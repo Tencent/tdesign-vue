@@ -153,8 +153,8 @@ export default mixins(
     computedDialogStyle(): Styles {
       return !this.isFullScreen ? { width: getCSSValue(this.width), ...this.dialogStyle } : { ...this.dialogStyle }; // width全屏模式不生效;
     },
-    computeAttach(): AttachNode {
-      return this.attach || this.globalAttach();
+    computedAttach(): AttachNode {
+      return this.showInAttachedElement ? undefined : this.attach || this.globalAttach();
     },
   },
 
@@ -530,7 +530,7 @@ export default mixins(
         onBeforeLeave={this.beforeLeave}
         onAfterLeave={this.afterLeave}
       >
-        <div v-show={this.visible} class={this.ctxClass} style={ctxStyle} v-transfer-dom={this.computeAttach}>
+        <div v-show={this.visible} class={this.ctxClass} style={ctxStyle} v-transfer-dom={this.computedAttach}>
           {view}
         </div>
       </transition>

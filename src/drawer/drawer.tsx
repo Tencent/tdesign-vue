@@ -119,8 +119,8 @@ export default mixins(
         cursor: this.isHorizontal ? 'col-resize' : 'row-resize',
       };
     },
-    computeAttach(): AttachNode {
-      return this.attach || this.globalAttach();
+    computedAttach(): AttachNode {
+      return this.showInAttachedElement ? undefined : this.attach || this.globalAttach();
     },
   },
 
@@ -192,7 +192,7 @@ export default mixins(
           class={this.drawerClasses}
           style={{ zIndex: this.zIndex }}
           onkeydown={this.onKeyDown}
-          v-transfer-dom={this.computeAttach}
+          v-transfer-dom={this.computedAttach}
           ref="drawerContainer"
           tabindex={0}
           v-show={this.visible}
