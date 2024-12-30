@@ -103,22 +103,6 @@ export interface TdPopupProps {
   onVisibleChange?: (visible: boolean, context: PopupVisibleChangeContext) => void;
 }
 
-/** 组件实例方法 */
-export interface PopupInstanceFunctions {
-  /**
-   * 获取浮层元素
-   */
-  getOverlay?: () => HTMLElement;
-  /**
-   * 获取浮层悬浮状态
-   */
-  getOverlayState?: () => { hover: boolean };
-  /**
-   * 更新浮层内容
-   */
-  update?: () => void;
-}
-
 export type PopupPlacement =
   | 'top'
   | 'left'
@@ -147,6 +131,5 @@ export type PopupTriggerSource =
   | 'trigger-element-blur'
   | 'trigger-element-focus'
   | 'trigger-element-mousedown'
-  | 'trigger-element-close'
   | 'context-menu'
   | 'keydown-esc';
