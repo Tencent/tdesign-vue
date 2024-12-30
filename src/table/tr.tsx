@@ -158,7 +158,7 @@ export default defineComponent({
     tableContentElm: {},
   },
 
-  setup(props: TrProps, context: SetupContext) {
+  setup(props, context: SetupContext) {
     const { tableContentElm, active, isHover } = toRefs(props);
     const trRef = ref(null);
     const {
