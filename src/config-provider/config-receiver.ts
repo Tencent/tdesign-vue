@@ -4,6 +4,8 @@ import { GlobalIconConfig } from 'tdesign-icons-vue';
 import { defaultGlobalConfig } from './context';
 import { GlobalConfigProvider, AnimationType } from './type';
 
+import type { AttachNode } from '../common';
+
 export type ValueOf<T> = T[keyof T];
 
 export type ComponentConfigType = ValueOf<GlobalConfigProvider>;
@@ -198,6 +200,24 @@ export function getClassPrefixMixins(componentName: string) {
           expanded: `${this.classPrefix}-is-expanded`,
           indeterminate: `${this.classPrefix}-is-indeterminate`,
         };
+      },
+    },
+  });
+}
+
+// 用于非 composition api 的组件使用来自 config provider注入的 attach 使用
+export function getAttachConfigMixins(componentName: string) {
+  return (Vue as VueConstructor<ConfigComponent>).extend({
+    name: 'TAttachProvider',
+    inject: {
+      globalConfig: {
+        default: undefined,
+      },
+    },
+    methods: {
+      globalAttach(): AttachNode {
+        // @ts-ignore
+        return this.globalConfig?.attach?.[componentName] || this.globalConfig?.attach || 'body';
       },
     },
   });

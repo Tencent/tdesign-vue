@@ -8,10 +8,9 @@ import setStyle from '../_common/js/utils/set-style';
 import props from './props';
 import { PopupVisibleChangeContext, TdPopupProps } from './type';
 import Container from './container';
-import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import { getClassPrefixMixins, getAttachConfigMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
 import { emitEvent } from '../utils/event';
-import useAttach from '../hooks/useAttach';
 import {
   getPopperPlacement, attachListeners, triggers, defaultVisibleDelay,
 } from './utils';
@@ -21,7 +20,7 @@ const classPrefixMixins = getClassPrefixMixins('popup');
 
 const injectionKey = '__T_POPUP';
 
-export default mixins(classPrefixMixins).extend({
+export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend({
   name: 'TPopup',
 
   provide(this: any) {
@@ -92,7 +91,7 @@ export default mixins(classPrefixMixins).extend({
       };
     },
     computeAttach(): AttachNode {
-      return useAttach('popup', this.attach).value;
+      return this.attach || this.globalAttach();
     },
   },
   watch: {

@@ -8,14 +8,17 @@ import {
   ErrorCircleFilledIcon as TdErrorCircleFilledIcon,
 } from 'tdesign-icons-vue';
 
-import useAttach from '../hooks/useAttach';
 import TButton from '../button';
 import ActionMixin from './actions';
 import { DialogCloseContext, TdDialogProps } from './type';
 import props from './props';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import mixins from '../utils/mixins';
-import getConfigReceiverMixins, { DialogConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
+import getConfigReceiverMixins, {
+  DialogConfig,
+  getGlobalIconMixins,
+  getAttachConfigMixins,
+} from '../config-provider/config-receiver';
 import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
 import { AttachNode, ClassName, Styles } from '../common';
@@ -44,7 +47,12 @@ if (typeof window !== 'undefined' && window.document && window.document.document
 
 let key = 1;
 
-export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('dialog'), getGlobalIconMixins()).extend({
+export default mixins(
+  ActionMixin,
+  getConfigReceiverMixins<Vue, DialogConfig>('dialog'),
+  getGlobalIconMixins(),
+  getAttachConfigMixins('dialog'),
+).extend({
   name: 'TDialog',
 
   components: {
@@ -146,7 +154,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DialogConfig>('d
       return !this.isFullScreen ? { width: getCSSValue(this.width), ...this.dialogStyle } : { ...this.dialogStyle }; // width全屏模式不生效;
     },
     computeAttach(): AttachNode {
-      return useAttach('dialog', this.attach).value;
+      return this.attach || this.globalAttach();
     },
   },
 

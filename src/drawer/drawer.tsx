@@ -6,19 +6,27 @@ import props from './props';
 import { FooterButton, DrawerCloseContext, TdDrawerProps } from './type';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import mixins from '../utils/mixins';
-import getConfigReceiverMixins, { DrawerConfig, getGlobalIconMixins } from '../config-provider/config-receiver';
+import getConfigReceiverMixins, {
+  DrawerConfig,
+  getGlobalIconMixins,
+  getAttachConfigMixins,
+} from '../config-provider/config-receiver';
 import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
 import { AttachNode, ClassName, Styles } from '../common';
 import ActionMixin from '../dialog/actions';
 import { getScrollbarWidth } from '../_common/js/utils/getScrollbarWidth';
-import useAttach from '../hooks/useAttach';
 
 type FooterButtonType = 'confirm' | 'cancel';
 
 let key = 1;
 
-export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('drawer'), getGlobalIconMixins()).extend({
+export default mixins(
+  ActionMixin,
+  getConfigReceiverMixins<Vue, DrawerConfig>('drawer'),
+  getGlobalIconMixins(),
+  getAttachConfigMixins('drawer'),
+).extend({
   name: 'TDrawer',
 
   components: {
@@ -112,7 +120,7 @@ export default mixins(ActionMixin, getConfigReceiverMixins<Vue, DrawerConfig>('d
       };
     },
     computeAttach(): AttachNode {
-      return useAttach('drawer', this.attach).value;
+      return this.attach || this.globalAttach();
     },
   },
 
