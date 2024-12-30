@@ -144,6 +144,7 @@ describe('Anchor', () => {
         },
       }).findComponent(Anchor);
       const links = wrapper.findAllComponents(AnchorItem);
+
       links.at(0).find('a').trigger('click');
       expect(onChange).toBeCalledTimes(2);
       expect(onChange).toBeCalledWith('#test-b', '');

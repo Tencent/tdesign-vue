@@ -78,6 +78,8 @@ export interface TrProps extends TrCommonProps {
   cellEmptyContent?: TdBaseTableProps['cellEmptyContent'];
   virtualConfig: VirtualScrollConfig;
   attach?: AttachNode;
+  active?: boolean;
+  isHover?: boolean;
 }
 
 export const ROW_LISTENERS = ['click', 'dblclick', 'mouseover', 'mousedown', 'mouseenter', 'mouseleave', 'mouseup'];
@@ -147,6 +149,8 @@ export default defineComponent({
     // 合并单元格，是否跳过渲染
     skipSpansMap: Map as PropType<TrProps['skipSpansMap']>,
     virtualConfig: Object as PropType<TrProps['virtualConfig']>,
+    active: Boolean,
+    isHover: Boolean,
     ...pick(baseTableProps, TABLE_PROPS),
     // eslint-disabled-next-line
     tableElm: {},
@@ -155,7 +159,7 @@ export default defineComponent({
   },
 
   setup(props, context: SetupContext) {
-    const { tableContentElm } = toRefs(props);
+    const { tableContentElm, active, isHover } = toRefs(props);
     const trRef = ref(null);
     const {
       tdEllipsisClass,
@@ -188,7 +192,14 @@ export default defineComponent({
         },
         props.rowKey || 'id',
       );
-      return [trStyles.value?.classes, customClasses];
+      return [
+        trStyles.value?.classes,
+        customClasses,
+        {
+          [`${props.classPrefix}-table__row--active`]: active.value,
+          [`${props.classPrefix}-table__row--hover`]: isHover.value,
+        },
+      ].filter((v) => v);
     });
 
     const { hasLazyLoadHolder, tRowHeight } = useLazyLoad(tableContentElm as any, trRef, reactive({ ...props.scroll }));

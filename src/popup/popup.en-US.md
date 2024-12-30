@@ -1,6 +1,7 @@
 :: BASE_DOC ::
 
 ## API
+
 ### Popup Props
 
 name | type | default | description | required
@@ -19,7 +20,7 @@ overlayStyle | Boolean / Object / Function | - | Typescript：`Styles \| ((trigg
 placement | String | top | Typescript：`PopupPlacement` `type PopupPlacement = 'top'\|'left'\|'right'\|'bottom'\|'top-left'\|'top-right'\|'bottom-left'\|'bottom-right'\|'left-top'\|'left-bottom'\|'right-top'\|'right-bottom'`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/popup/type.ts) | N
 popperOptions | Object | - | popper initial options，details refer to https://popper.js.org/docs | N
 showArrow | Boolean | false | \- | N
-trigger | String | hover | options：hover/click/focus/mousedown/context-menu | N
+trigger | String | hover | options: hover/click/focus/mousedown/context-menu | N
 triggerElement | String / Slot / Function | - | Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 visible | Boolean | - | `v-model` is supported。Typescript：`boolean` | N
 defaultVisible | Boolean | - | uncontrolled property。Typescript：`boolean` | N
