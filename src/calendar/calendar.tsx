@@ -207,7 +207,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
       }
 
       for (let i = begin; i <= end; i++) {
-        const disabled = this.checkMonthAndYearSelecterDisabled(i, this.curSelectedMonth);
+        const disabled = this.checkMonthAndYearSelectorDisabled(i, this.curSelectedMonth);
         re.push({
           value: i,
           label: this.t(this.global.yearSelection, { year: i }),
@@ -220,7 +220,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
     monthSelectOptionList(): YearMonthOption[] {
       const re: YearMonthOption[] = [];
       for (let i = FIRST_MONTH_OF_YEAR; i <= LAST_MONTH_OF_YEAR; i++) {
-        const disabled = this.checkMonthAndYearSelecterDisabled(this.curSelectedYear, i);
+        const disabled = this.checkMonthAndYearSelectorDisabled(this.curSelectedYear, i);
         re.push({
           value: i,
           label: this.t(this.global.monthSelection, { month: i }),
@@ -533,7 +533,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
         this.curDateList = value ? [dayjs(value)] : [createDefaultCurDate()];
       }
     },
-    checkMonthAndYearSelecterDisabled(year: number, month: number): boolean {
+    checkMonthAndYearSelectorDisabled(year: number, month: number): boolean {
       let disabled = false;
       if (this.rangeFromTo && this.rangeFromTo.from && this.rangeFromTo.to) {
         const beginYear = dayjs(this.rangeFromTo.from).year();
