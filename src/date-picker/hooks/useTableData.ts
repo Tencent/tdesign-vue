@@ -17,6 +17,7 @@ export default function useTableData(props: any) {
     quarterLocal: global.value.quarters,
     showWeekOfYear: props.mode === 'week',
     dayjsLocale: global.value.dayjsLocale,
+    cancelRangeSelectLimit: props.cancelRangeSelectLimit,
   };
 
   let data: Array<any> = [];
