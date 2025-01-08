@@ -14,10 +14,6 @@ import { TNode, SizeEnum, AttachNode } from '../common';
 
 export interface GlobalConfigProvider {
   /**
-   * 自动填充全局配置
-   */
-  autoComplete?: AutoCompleteConfig;
-  /**
    * 警告全局配置
    */
   alert?: AlertConfig;
@@ -33,6 +29,10 @@ export interface GlobalConfigProvider {
    * null
    */
   attach?: AttachNode | { imageViewer?: AttachNode; popup?: AttachNode; dialog?: AttachNode; drawer?: AttachNode };
+  /**
+   * 自动填充组件全局配置
+   */
+  autoComplete?: AutoCompleteConfig;
   /**
    * 日历组件全局配置
    */
@@ -150,14 +150,6 @@ export interface GlobalConfigProvider {
    * 上传组件全局配置
    */
   upload?: UploadConfig;
-}
-
-export interface AutoCompleteConfig {
-  /**
-   * 语言配置，“暂无数据”描述文本
-   * @default ''
-   */
-  empty?: string;
 }
 
 export interface InputConfig {
@@ -948,6 +940,14 @@ export interface EmptyConfig {
    * 空状态组件各类型的标题文本配置
    */
   titleText?: { maintenance: string; success: string; fail: string; empty: string; networkError: string };
+}
+
+export interface AutoCompleteConfig {
+  /**
+   * 语言配置，“暂无数据”描述文本
+   * @default ''
+   */
+  empty?: string;
 }
 
 export type AnimationType = 'ripple' | 'expand' | 'fade';
