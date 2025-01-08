@@ -34532,7 +34532,7 @@ exports[`csr snapshot test > csr test ./src/comment/_example/reply.vue 1`] = `
                 width="1em"
               >
                 <path
-                  d="M16.5 12l-7-7v14l7-7z"
+                  d="M15 12L9.5 6.5v11L15 12z"
                   data-v-1a7615cf=""
                   fill="currentColor"
                 />
@@ -37356,7 +37356,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
             width="1em"
           >
             <path
-              d="M16.5 12l-7-7v14l7-7z"
+              d="M15 12L9.5 6.5v11L15 12z"
               fill="currentColor"
             />
           </svg>
@@ -37392,7 +37392,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
             width="1em"
           >
             <path
-              d="M16.5 12l-7-7v14l7-7z"
+              d="M15 12L9.5 6.5v11L15 12z"
               fill="currentColor"
             />
           </svg>
@@ -37929,7 +37929,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/table.vue 1
                             width="1em"
                           >
                             <path
-                              d="M12 16.5l7-7H5l7 7z"
+                              d="M12 15l5.5-5.5h-11L12 15z"
                               fill="currentColor"
                             />
                           </svg>
@@ -37946,7 +37946,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/table.vue 1
                             width="1em"
                           >
                             <path
-                              d="M12 16.5l7-7H5l7 7z"
+                              d="M12 15l5.5-5.5h-11L12 15z"
                               fill="currentColor"
                             />
                           </svg>
@@ -38031,7 +38031,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/table.vue 1
                             width="1em"
                           >
                             <path
-                              d="M12 16.5l7-7H5l7 7z"
+                              d="M12 15l5.5-5.5h-11L12 15z"
                               fill="currentColor"
                             />
                           </svg>
@@ -38048,7 +38048,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/table.vue 1
                             width="1em"
                           >
                             <path
-                              d="M12 16.5l7-7H5l7 7z"
+                              d="M12 15l5.5-5.5h-11L12 15z"
                               fill="currentColor"
                             />
                           </svg>
@@ -38177,7 +38177,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/table.vue 1
                             width="1em"
                           >
                             <path
-                              d="M12 16.5l7-7H5l7 7z"
+                              d="M12 15l5.5-5.5h-11L12 15z"
                               fill="currentColor"
                             />
                           </svg>
@@ -38194,7 +38194,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/table.vue 1
                             width="1em"
                           >
                             <path
-                              d="M12 16.5l7-7H5l7 7z"
+                              d="M12 15l5.5-5.5h-11L12 15z"
                               fill="currentColor"
                             />
                           </svg>
@@ -38279,7 +38279,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/table.vue 1
                             width="1em"
                           >
                             <path
-                              d="M12 16.5l7-7H5l7 7z"
+                              d="M12 15l5.5-5.5h-11L12 15z"
                               fill="currentColor"
                             />
                           </svg>
@@ -38296,7 +38296,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/table.vue 1
                             width="1em"
                           >
                             <path
-                              d="M12 16.5l7-7H5l7 7z"
+                              d="M12 15l5.5-5.5h-11L12 15z"
                               fill="currentColor"
                             />
                           </svg>
@@ -94543,7 +94543,7 @@ exports[`csr snapshot test > csr test ./src/steps/_example/icon.vue 1`] = `
           width="1em"
         >
           <path
-            d="M1 3h15a3 3 0 013 3v1h4v14H1V3zm2 6v10h18V9H3zm0-2h14V6a1 1 0 00-1-1H3v2zm13 6h3v2h-3v-2z"
+            d="M2 5a3 3 0 013-3h15v2H5a1 1 0 000 2h14a3 3 0 013 3v10a3 3 0 01-3 3H2V5zm2 2.83V20h15a1 1 0 001-1V9a1 1 0 00-1-1H5a3 3 0 01-1-.17zM15 13h3v2h-3v-2z"
             fill="currentColor"
           />
         </svg>
@@ -115801,7 +115801,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                       width="1em"
                     >
                       <path
-                        d="M16.5 12l-7-7v14l7-7z"
+                        d="M15 12L9.5 6.5v11L15 12z"
                         fill="currentColor"
                       />
                     </svg>
@@ -115882,7 +115882,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                       width="1em"
                     >
                       <path
-                        d="M16.5 12l-7-7v14l7-7z"
+                        d="M15 12L9.5 6.5v11L15 12z"
                         fill="currentColor"
                       />
                     </svg>
@@ -115929,7 +115929,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                       width="1em"
                     >
                       <path
-                        d="M16.5 12l-7-7v14l7-7z"
+                        d="M15 12L9.5 6.5v11L15 12z"
                         fill="currentColor"
                       />
                     </svg>
@@ -116044,7 +116044,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                       width="1em"
                     >
                       <path
-                        d="M16.5 12l-7-7v14l7-7z"
+                        d="M15 12L9.5 6.5v11L15 12z"
                         fill="currentColor"
                       />
                     </svg>
@@ -116382,7 +116382,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                       width="1em"
                     >
                       <path
-                        d="M16.5 12l-7-7v14l7-7z"
+                        d="M15 12L9.5 6.5v11L15 12z"
                         fill="currentColor"
                       />
                     </svg>
@@ -116463,7 +116463,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                       width="1em"
                     >
                       <path
-                        d="M16.5 12l-7-7v14l7-7z"
+                        d="M15 12L9.5 6.5v11L15 12z"
                         fill="currentColor"
                       />
                     </svg>
@@ -116510,7 +116510,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                       width="1em"
                     >
                       <path
-                        d="M16.5 12l-7-7v14l7-7z"
+                        d="M15 12L9.5 6.5v11L15 12z"
                         fill="currentColor"
                       />
                     </svg>
@@ -116625,7 +116625,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                       width="1em"
                     >
                       <path
-                        d="M16.5 12l-7-7v14l7-7z"
+                        d="M15 12L9.5 6.5v11L15 12z"
                         fill="currentColor"
                       />
                     </svg>
@@ -116978,7 +116978,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/activable.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -117060,7 +117060,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/activable.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -117163,7 +117163,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/base.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -117199,7 +117199,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/base.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -117235,7 +117235,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/base.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -117271,7 +117271,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/base.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -117495,7 +117495,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -117542,7 +117542,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -117589,7 +117589,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -117704,7 +117704,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -117819,7 +117819,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -117866,7 +117866,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -117981,7 +117981,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -118096,7 +118096,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -118517,7 +118517,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/controlled.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -118565,7 +118565,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/controlled.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -118680,7 +118680,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/controlled.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -118727,7 +118727,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/controlled.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -118941,7 +118941,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -118988,7 +118988,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -119103,7 +119103,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -119218,7 +119218,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -119455,7 +119455,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-filter.vue 1`] =
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -119491,7 +119491,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-filter.vue 1`] =
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -119702,7 +119702,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-performance.vue 
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -119778,7 +119778,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-performance.vue 
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -119854,7 +119854,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-performance.vue 
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -120474,7 +120474,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -120545,7 +120545,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -120735,7 +120735,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -120922,7 +120922,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -120993,7 +120993,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -121183,7 +121183,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -121391,7 +121391,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -121427,7 +121427,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -121463,7 +121463,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -121545,7 +121545,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -121627,7 +121627,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -121918,7 +121918,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -121954,7 +121954,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -122036,7 +122036,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -122118,7 +122118,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -122221,7 +122221,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -122257,7 +122257,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -122293,7 +122293,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -122329,7 +122329,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -122492,7 +122492,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-mutex.vue 1`] =
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -122528,7 +122528,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-mutex.vue 1`] =
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -122634,7 +122634,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/filter.vue 1`] = `
                   width="1em"
                 >
                   <path
-                    d="M16.5 12l-7-7v14l7-7z"
+                    d="M15 12L9.5 6.5v11L15 12z"
                     fill="currentColor"
                   />
                 </svg>
@@ -122670,7 +122670,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/filter.vue 1`] = `
                   width="1em"
                 >
                   <path
-                    d="M16.5 12l-7-7v14l7-7z"
+                    d="M15 12L9.5 6.5v11L15 12z"
                     fill="currentColor"
                   />
                 </svg>
@@ -122770,7 +122770,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/filter.vue 1`] = `
                   width="1em"
                 >
                   <path
-                    d="M16.5 12l-7-7v14l7-7z"
+                    d="M15 12L9.5 6.5v11L15 12z"
                     fill="currentColor"
                   />
                 </svg>
@@ -122806,7 +122806,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/filter.vue 1`] = `
                   width="1em"
                 >
                   <path
-                    d="M16.5 12l-7-7v14l7-7z"
+                    d="M15 12L9.5 6.5v11L15 12z"
                     fill="currentColor"
                   />
                 </svg>
@@ -123069,7 +123069,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                   width="1em"
                 >
                   <path
-                    d="M16.5 12l-7-7v14l7-7z"
+                    d="M15 12L9.5 6.5v11L15 12z"
                     fill="currentColor"
                   />
                 </svg>
@@ -123157,7 +123157,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                   width="1em"
                 >
                   <path
-                    d="M16.5 12l-7-7v14l7-7z"
+                    d="M15 12L9.5 6.5v11L15 12z"
                     fill="currentColor"
                   />
                 </svg>
@@ -123274,7 +123274,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                   width="1em"
                 >
                   <path
-                    d="M16.5 12l-7-7v14l7-7z"
+                    d="M15 12L9.5 6.5v11L15 12z"
                     fill="currentColor"
                   />
                 </svg>
@@ -123401,7 +123401,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                   width="1em"
                 >
                   <path
-                    d="M16.5 12l-7-7v14l7-7z"
+                    d="M15 12L9.5 6.5v11L15 12z"
                     fill="currentColor"
                   />
                 </svg>
@@ -123611,7 +123611,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/lazy.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -123658,7 +123658,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/lazy.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -123823,7 +123823,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                   width="1em"
                 >
                   <path
-                    d="M16.5 12l-7-7v14l7-7z"
+                    d="M15 12L9.5 6.5v11L15 12z"
                     fill="currentColor"
                   />
                 </svg>
@@ -123913,7 +123913,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                   width="1em"
                 >
                   <path
-                    d="M16.5 12l-7-7v14l7-7z"
+                    d="M15 12L9.5 6.5v11L15 12z"
                     fill="currentColor"
                   />
                 </svg>
@@ -123953,7 +123953,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                   width="1em"
                 >
                   <path
-                    d="M16.5 12l-7-7v14l7-7z"
+                    d="M15 12L9.5 6.5v11L15 12z"
                     fill="currentColor"
                   />
                 </svg>
@@ -123993,7 +123993,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                   width="1em"
                 >
                   <path
-                    d="M16.5 12l-7-7v14l7-7z"
+                    d="M15 12L9.5 6.5v11L15 12z"
                     fill="currentColor"
                   />
                 </svg>
@@ -124033,7 +124033,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                   width="1em"
                 >
                   <path
-                    d="M16.5 12l-7-7v14l7-7z"
+                    d="M15 12L9.5 6.5v11L15 12z"
                     fill="currentColor"
                   />
                 </svg>
@@ -124177,7 +124177,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                   width="1em"
                 >
                   <path
-                    d="M16.5 12l-7-7v14l7-7z"
+                    d="M15 12L9.5 6.5v11L15 12z"
                     fill="currentColor"
                   />
                 </svg>
@@ -124330,7 +124330,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                   width="1em"
                 >
                   <path
-                    d="M16.5 12l-7-7v14l7-7z"
+                    d="M15 12L9.5 6.5v11L15 12z"
                     fill="currentColor"
                   />
                 </svg>
@@ -124463,7 +124463,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                   width="1em"
                 >
                   <path
-                    d="M16.5 12l-7-7v14l7-7z"
+                    d="M15 12L9.5 6.5v11L15 12z"
                     fill="currentColor"
                   />
                 </svg>
@@ -124510,7 +124510,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                   width="1em"
                 >
                   <path
-                    d="M16.5 12l-7-7v14l7-7z"
+                    d="M15 12L9.5 6.5v11L15 12z"
                     fill="currentColor"
                   />
                 </svg>
@@ -124560,7 +124560,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                   width="1em"
                 >
                   <path
-                    d="M16.5 12l-7-7v14l7-7z"
+                    d="M15 12L9.5 6.5v11L15 12z"
                     fill="currentColor"
                   />
                 </svg>
@@ -124613,7 +124613,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                   width="1em"
                 >
                   <path
-                    d="M16.5 12l-7-7v14l7-7z"
+                    d="M15 12L9.5 6.5v11L15 12z"
                     fill="currentColor"
                   />
                 </svg>
@@ -124857,7 +124857,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                   width="1em"
                 >
                   <path
-                    d="M16.5 12l-7-7v14l7-7z"
+                    d="M15 12L9.5 6.5v11L15 12z"
                     fill="currentColor"
                   />
                 </svg>
@@ -125067,7 +125067,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                   width="1em"
                 >
                   <path
-                    d="M16.5 12l-7-7v14l7-7z"
+                    d="M15 12L9.5 6.5v11L15 12z"
                     fill="currentColor"
                   />
                 </svg>
@@ -125213,7 +125213,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                   width="1em"
                 >
                   <path
-                    d="M16.5 12l-7-7v14l7-7z"
+                    d="M15 12L9.5 6.5v11L15 12z"
                     fill="currentColor"
                   />
                 </svg>
@@ -125264,7 +125264,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                   width="1em"
                 >
                   <path
-                    d="M16.5 12l-7-7v14l7-7z"
+                    d="M15 12L9.5 6.5v11L15 12z"
                     fill="currentColor"
                   />
                 </svg>
@@ -125319,7 +125319,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                   width="1em"
                 >
                   <path
-                    d="M16.5 12l-7-7v14l7-7z"
+                    d="M15 12L9.5 6.5v11L15 12z"
                     fill="currentColor"
                   />
                 </svg>
@@ -125378,7 +125378,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                   width="1em"
                 >
                   <path
-                    d="M16.5 12l-7-7v14l7-7z"
+                    d="M15 12L9.5 6.5v11L15 12z"
                     fill="currentColor"
                   />
                 </svg>
@@ -125652,7 +125652,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                   width="1em"
                 >
                   <path
-                    d="M16.5 12l-7-7v14l7-7z"
+                    d="M15 12L9.5 6.5v11L15 12z"
                     fill="currentColor"
                   />
                 </svg>
@@ -126854,7 +126854,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -126902,7 +126902,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -126950,7 +126950,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -127065,7 +127065,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -127112,7 +127112,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -127159,7 +127159,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -127352,7 +127352,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/transition.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -127399,7 +127399,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/transition.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -127446,7 +127446,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/transition.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -127772,7 +127772,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -127852,7 +127852,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -128267,7 +128267,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -128682,7 +128682,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -129097,7 +129097,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>
@@ -129512,7 +129512,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
               width="1em"
             >
               <path
-                d="M16.5 12l-7-7v14l7-7z"
+                d="M15 12L9.5 6.5v11L15 12z"
                 fill="currentColor"
               />
             </svg>

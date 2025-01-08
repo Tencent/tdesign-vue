@@ -171,7 +171,7 @@ describe('AutoComplete Component', () => {
     wrapper.find('input').trigger('focus');
     await wrapper.vm.$nextTick();
     const emptyOptionsClassNameTAutocompletePanelDom = document.querySelectorAll(
-      '.empty-options-class-name .t-autocomplete__panel',
+      '.empty-options-class-name .t-auto-complete__panel',
     );
     expect(emptyOptionsClassNameTAutocompletePanelDom.length).toBe(0);
     // remove nodes from document to avoid influencing following test cases
