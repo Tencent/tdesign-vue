@@ -150,7 +150,7 @@ export default function useRowSelect(
       return;
     }
     setTSelectedRowKeys(selectedRowKeys, {
-      selectedRowData: selectedRowKeys.map((t) => selectedRowDataMap.value.get(t)),
+      selectedRowData: selectedRowKeys.map((t) => selectedRowDataMap.value.get(t)).filter((rowData) => !!rowData),
       currentRowKey: id,
       currentRowData: row,
       type: isExisted ? 'uncheck' : 'check',
