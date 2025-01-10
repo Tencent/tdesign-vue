@@ -284,25 +284,6 @@ export default mixins(
 
       if (typeof moveSize === 'undefined') return;
       this.draggedSizeValue = `${moveSize}px`;
-
-      // if (this.isSizeDragging && this.sizeDraggable) {
-      //   if (this.placement === 'right') {
-      //     const moveLeft = Math.min(Math.max(maxWidth - x + offsetWidth, offsetWidth), maxWidth);
-      //     this.draggedSizeValue = `${moveLeft}px`;
-      //   }
-      //   if (this.placement === 'left') {
-      //     const moveRight = Math.min(Math.max(x + offsetWidth, offsetWidth), maxWidth);
-      //     this.draggedSizeValue = `${moveRight}px`;
-      //   }
-      //   if (this.placement === 'top') {
-      //     const moveBottom = Math.min(Math.max(y + offsetHeight, offsetHeight), maxHeight);
-      //     this.draggedSizeValue = `${moveBottom}px`;
-      //   }
-      //   if (this.placement === 'bottom') {
-      //     const moveTop = Math.min(Math.max(maxHeight - y + offsetHeight, offsetHeight), maxHeight);
-      //     this.draggedSizeValue = `${moveTop}px`;
-      //   }
-      // }
     },
     handleScrollThrough(visible: boolean) {
       if (!document || !document.body || !this.preventScrollThrough) return;
