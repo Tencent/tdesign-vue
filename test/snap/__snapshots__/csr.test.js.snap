@@ -55662,6 +55662,7 @@ exports[`csr snapshot test > csr test ./src/icon/_example/base.vue 1`] = `
       >
         <svg
           class="t-icon t-icon-numbers-1"
+          style="color: var(--td-brand-color-5);"
         >
           <use
             href="#t-icon-numbers-1"
@@ -55673,6 +55674,7 @@ exports[`csr snapshot test > csr test ./src/icon/_example/base.vue 1`] = `
       >
         <svg
           class="t-icon t-icon-numbers-2"
+          style="color: var(--td-brand-color-6);"
         >
           <use
             href="#t-icon-numbers-2"
@@ -55684,6 +55686,7 @@ exports[`csr snapshot test > csr test ./src/icon/_example/base.vue 1`] = `
       >
         <svg
           class="t-icon t-icon-numbers-0"
+          style="color: var(--td-brand-color-7);"
         >
           <use
             href="#t-icon-numbers-0"
@@ -55695,6 +55698,7 @@ exports[`csr snapshot test > csr test ./src/icon/_example/base.vue 1`] = `
       >
         <svg
           class="t-icon t-icon-numbers-3"
+          style="color: var(--td-brand-color-8);"
         >
           <use
             href="#t-icon-numbers-3"
@@ -56029,6 +56033,7 @@ exports[`csr snapshot test > csr test ./src/icon/_example/iconfont.vue 1`] = `
       >
         <i
           class="t-icon t-icon-numbers-1"
+          style="color: var(--td-brand-color-5);"
         />
       </div>
       <div
@@ -56036,6 +56041,7 @@ exports[`csr snapshot test > csr test ./src/icon/_example/iconfont.vue 1`] = `
       >
         <i
           class="t-icon t-icon-numbers-2"
+          style="color: var(--td-brand-color-6);"
         />
       </div>
       <div
@@ -56043,6 +56049,7 @@ exports[`csr snapshot test > csr test ./src/icon/_example/iconfont.vue 1`] = `
       >
         <i
           class="t-icon t-icon-numbers-0"
+          style="color: var(--td-brand-color-7);"
         />
       </div>
       <div
@@ -56050,6 +56057,7 @@ exports[`csr snapshot test > csr test ./src/icon/_example/iconfont.vue 1`] = `
       >
         <i
           class="t-icon t-icon-numbers-3"
+          style="color: var(--td-brand-color-8);"
         />
       </div>
     </div>
@@ -56166,7 +56174,7 @@ exports[`csr snapshot test > csr test ./src/icon/_example/single.vue 1`] = `
   >
     <div
       class="t-space t-space-horizontal t-space--break-line"
-      style="gap: 16px;"
+      style="gap: 16px; color: var(--td-brand-color);"
     >
       <div
         class="t-space-item"
@@ -78417,6 +78425,7 @@ exports[`csr snapshot test > csr test ./src/popup/_example/plugin.vue 1`] = `
       <a
         class="trigger-element3"
         data-v-5909da2b=""
+        style="color: var(--td-text-color-brand);"
       >
         点击此链接，会打开浮层进行跳转操作
       </a>
@@ -82710,7 +82719,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/base.vue 1`] = `
         </div>
         <div
           class="t-rate__star-bottom"
-          style="font-size: 24px;"
+          style="font-size: 24px; color: var(--td-bg-color-component);"
         >
           <svg
             class="t-icon t-icon-star-filled"
@@ -82750,7 +82759,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/base.vue 1`] = `
         </div>
         <div
           class="t-rate__star-bottom"
-          style="font-size: 24px;"
+          style="font-size: 24px; color: var(--td-bg-color-component);"
         >
           <svg
             class="t-icon t-icon-star-filled"
@@ -82790,7 +82799,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/base.vue 1`] = `
         </div>
         <div
           class="t-rate__star-bottom"
-          style="font-size: 24px;"
+          style="font-size: 24px; color: var(--td-bg-color-component);"
         >
           <svg
             class="t-icon t-icon-star-filled"
@@ -82830,7 +82839,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/base.vue 1`] = `
         </div>
         <div
           class="t-rate__star-bottom"
-          style="font-size: 24px;"
+          style="font-size: 24px; color: var(--td-bg-color-component);"
         >
           <svg
             class="t-icon t-icon-star-filled"
@@ -82870,7 +82879,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/base.vue 1`] = `
         </div>
         <div
           class="t-rate__star-bottom"
-          style="font-size: 24px;"
+          style="font-size: 24px; color: var(--td-bg-color-component);"
         >
           <svg
             class="t-icon t-icon-star-filled"
@@ -82936,7 +82945,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -82976,7 +82985,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -83016,7 +83025,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -83056,7 +83065,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -83096,7 +83105,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -83156,7 +83165,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -83196,7 +83205,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -83236,7 +83245,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -83276,7 +83285,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -83316,7 +83325,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -83370,7 +83379,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/custom.vue 1`] = `
         </div>
         <div
           class="t-rate__star-bottom"
-          style="font-size: 24px;"
+          style="font-size: 24px; color: var(--td-bg-color-component);"
         >
           <svg
             class="t-icon t-icon-star-filled"
@@ -83410,7 +83419,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/custom.vue 1`] = `
         </div>
         <div
           class="t-rate__star-bottom"
-          style="font-size: 24px;"
+          style="font-size: 24px; color: var(--td-bg-color-component);"
         >
           <svg
             class="t-icon t-icon-star-filled"
@@ -83450,7 +83459,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/custom.vue 1`] = `
         </div>
         <div
           class="t-rate__star-bottom"
-          style="font-size: 24px;"
+          style="font-size: 24px; color: var(--td-bg-color-component);"
         >
           <svg
             class="t-icon t-icon-star-filled"
@@ -83490,7 +83499,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/custom.vue 1`] = `
         </div>
         <div
           class="t-rate__star-bottom"
-          style="font-size: 24px;"
+          style="font-size: 24px; color: var(--td-bg-color-component);"
         >
           <svg
             class="t-icon t-icon-star-filled"
@@ -83530,7 +83539,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/custom.vue 1`] = `
         </div>
         <div
           class="t-rate__star-bottom"
-          style="font-size: 24px;"
+          style="font-size: 24px; color: var(--td-bg-color-component);"
         >
           <svg
             class="t-icon t-icon-star-filled"
@@ -83570,7 +83579,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/custom.vue 1`] = `
         </div>
         <div
           class="t-rate__star-bottom"
-          style="font-size: 24px;"
+          style="font-size: 24px; color: var(--td-bg-color-component);"
         >
           <svg
             class="t-icon t-icon-star-filled"
@@ -83610,7 +83619,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/custom.vue 1`] = `
         </div>
         <div
           class="t-rate__star-bottom"
-          style="font-size: 24px;"
+          style="font-size: 24px; color: var(--td-bg-color-component);"
         >
           <svg
             class="t-icon t-icon-star-filled"
@@ -83669,7 +83678,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star"
@@ -83709,7 +83718,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star"
@@ -83749,7 +83758,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star"
@@ -83789,7 +83798,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star"
@@ -83829,7 +83838,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star"
@@ -83882,7 +83891,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-logo-github"
@@ -83922,7 +83931,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-logo-github"
@@ -83962,7 +83971,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-logo-github"
@@ -84002,7 +84011,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-logo-github"
@@ -84042,7 +84051,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-logo-github"
@@ -84078,7 +84087,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
           <div>
             <div
               class="t-rate__star-top"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-error-color-7);"
             >
               <svg
                 class="t-icon t-icon-heart-filled"
@@ -84095,7 +84104,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-heart-filled"
@@ -84118,7 +84127,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
           <div>
             <div
               class="t-rate__star-top"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-error-color-7);"
             >
               <svg
                 class="t-icon t-icon-heart-filled"
@@ -84135,7 +84144,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-heart-filled"
@@ -84158,7 +84167,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
           <div>
             <div
               class="t-rate__star-top"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-error-color-7);"
             >
               <svg
                 class="t-icon t-icon-heart-filled"
@@ -84175,7 +84184,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-heart-filled"
@@ -84198,7 +84207,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
           <div>
             <div
               class="t-rate__star-top"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-error-color-7);"
             >
               <svg
                 class="t-icon t-icon-heart-filled"
@@ -84215,7 +84224,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-heart-filled"
@@ -84238,7 +84247,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
           <div>
             <div
               class="t-rate__star-top"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-error-color-7);"
             >
               <svg
                 class="t-icon t-icon-heart-filled"
@@ -84255,7 +84264,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-heart-filled"
@@ -84323,7 +84332,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 16px;"
+              style="font-size: 16px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -84363,7 +84372,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 16px;"
+              style="font-size: 16px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -84403,7 +84412,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 16px;"
+              style="font-size: 16px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -84443,7 +84452,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 16px;"
+              style="font-size: 16px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -84483,7 +84492,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 16px;"
+              style="font-size: 16px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -84543,7 +84552,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -84583,7 +84592,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -84623,7 +84632,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -84663,7 +84672,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -84703,7 +84712,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -84771,7 +84780,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -84811,7 +84820,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -84851,7 +84860,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -84891,7 +84900,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -84931,7 +84940,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -84991,7 +85000,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -85031,7 +85040,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -85071,7 +85080,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -85111,7 +85120,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -85151,7 +85160,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -85211,7 +85220,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -85251,7 +85260,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -85291,7 +85300,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -85331,7 +85340,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -85371,7 +85380,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
             </div>
             <div
               class="t-rate__star-bottom"
-              style="font-size: 24px;"
+              style="font-size: 24px; color: var(--td-bg-color-component);"
             >
               <svg
                 class="t-icon t-icon-star-filled"
@@ -85425,7 +85434,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/texts.vue 1`] = `
         </div>
         <div
           class="t-rate__star-bottom"
-          style="font-size: 24px;"
+          style="font-size: 24px; color: var(--td-bg-color-component);"
         >
           <svg
             class="t-icon t-icon-star-filled"
@@ -85465,7 +85474,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/texts.vue 1`] = `
         </div>
         <div
           class="t-rate__star-bottom"
-          style="font-size: 24px;"
+          style="font-size: 24px; color: var(--td-bg-color-component);"
         >
           <svg
             class="t-icon t-icon-star-filled"
@@ -85505,7 +85514,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/texts.vue 1`] = `
         </div>
         <div
           class="t-rate__star-bottom"
-          style="font-size: 24px;"
+          style="font-size: 24px; color: var(--td-bg-color-component);"
         >
           <svg
             class="t-icon t-icon-star-filled"
@@ -85545,7 +85554,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/texts.vue 1`] = `
         </div>
         <div
           class="t-rate__star-bottom"
-          style="font-size: 24px;"
+          style="font-size: 24px; color: var(--td-bg-color-component);"
         >
           <svg
             class="t-icon t-icon-star-filled"
@@ -85585,7 +85594,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/texts.vue 1`] = `
         </div>
         <div
           class="t-rate__star-bottom"
-          style="font-size: 24px;"
+          style="font-size: 24px; color: var(--td-bg-color-component);"
         >
           <svg
             class="t-icon t-icon-star-filled"
@@ -93386,6 +93395,7 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/color.vue 1`] = `
       <div>
         <div
           class="t-statistic-content"
+          style="color: var(--td-text-color-primary);"
         >
           <span
             class="t-statistic-content-prefix"
@@ -93431,6 +93441,7 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/color.vue 1`] = `
       <div>
         <div
           class="t-statistic-content"
+          style="color: var(--td-brand-color);"
         >
           <span
             class="t-statistic-content-prefix"
@@ -93476,6 +93487,7 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/color.vue 1`] = `
       <div>
         <div
           class="t-statistic-content"
+          style="color: var(--td-error-color);"
         >
           <span
             class="t-statistic-content-prefix"
@@ -93521,6 +93533,7 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/color.vue 1`] = `
       <div>
         <div
           class="t-statistic-content"
+          style="color: var(--td-warning-color);"
         >
           <span
             class="t-statistic-content-prefix"
@@ -93566,6 +93579,7 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/color.vue 1`] = `
       <div>
         <div
           class="t-statistic-content"
+          style="color: var(--td-success-color);"
         >
           <span
             class="t-statistic-content-prefix"
@@ -93820,6 +93834,7 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/combination.vue 1
               <div>
                 <div
                   class="t-statistic-content"
+                  style="color: var(--td-error-color);"
                 >
                   <span
                     class="t-statistic-content-value"
@@ -93893,6 +93908,7 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/combination.vue 1
               <div>
                 <div
                   class="t-statistic-content"
+                  style="color: var(--td-success-color);"
                 >
                   <span
                     class="t-statistic-content-prefix"
@@ -101196,7 +101212,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/style.vue 1`] = `
             </td>
             <td
               class="custom-cell-class-name t-align-center"
-              style="font-weight: 600;"
+              style="font-weight: 600; background-color: var(--td-warning-color-light);"
             >
               10
             </td>
@@ -101365,7 +101381,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/style.vue 1`] = `
             </td>
             <td
               class="custom-cell-class-name t-align-center"
-              style="font-weight: 600;"
+              style="font-weight: 600; background-color: var(--td-warning-color-light);"
             >
               10
             </td>
@@ -109030,6 +109046,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
               class="t-icon t-icon-tips t-size-m t-timeline-item__dot-content"
               fill="none"
               height="1em"
+              style="color: var(--td-brand-color);"
               viewBox="0 0 24 24"
               width="1em"
             >
@@ -109067,6 +109084,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
               class="t-icon t-icon-user t-size-m t-timeline-item__dot-content"
               fill="none"
               height="1em"
+              style="color: var(--td-brand-color);"
               viewBox="0 0 24 24"
               width="1em"
             >
@@ -109104,6 +109122,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
               class="t-icon t-icon-heart t-size-m t-timeline-item__dot-content"
               fill="none"
               height="1em"
+              style="color: var(--td-brand-color);"
               viewBox="0 0 24 24"
               width="1em"
             >
@@ -109141,6 +109160,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
               class="t-icon t-icon-home t-size-m t-timeline-item__dot-content"
               fill="none"
               height="1em"
+              style="color: var(--td-brand-color);"
               viewBox="0 0 24 24"
               width="1em"
             >

@@ -184,6 +184,7 @@ export default defineComponent({
       clearHoverRow,
       addRowHoverKeyboardListener,
       removeRowHoverKeyboardListener,
+      tableRefTabIndex,
     } = useHoverKeyboardEvent(props, tableRef);
 
     watch(tableElmRef, () => {
@@ -393,6 +394,7 @@ export default defineComponent({
       headerTopAffixRef,
       footerBottomAffixRef,
       isIE,
+      tableRefTabIndex,
     };
   },
 
@@ -686,7 +688,7 @@ export default defineComponent({
     return (
       <div
         ref="tableRef"
-        tabindex="0"
+        tabindex={this.tableRefTabIndex}
         class={this.dynamicBaseTableClasses}
         onFocus={this.onTableFocus}
         onBlur={this.onTableBlur}
