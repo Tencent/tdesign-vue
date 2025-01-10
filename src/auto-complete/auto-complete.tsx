@@ -170,15 +170,17 @@ export default defineComponent({
         highlightKeyword={this.highlightKeyword}
         filterable={this.filterable}
         filter={this.filter}
+        empty={this.empty}
         scopedSlots={{
           option: this.$scopedSlots.option,
+          empty: this.$scopedSlots.empty,
         }}
       />
     );
     const topContent = renderTNodeJSX(this, 'panelTopContent');
     const bottomContent = renderTNodeJSX(this, 'panelBottomContent');
     const panelContent = topContent || this.options?.length || bottomContent ? (
-        <div class={`${this.classPrefix}-autocomplete__panel`}>
+        <div class={`${this.classPrefix}-auto-complete__panel`}>
           {topContent}
           {listContent}
           {bottomContent}
