@@ -32,6 +32,7 @@
       "bounds",
       "container",
       "cursor",
+      "get-current-anchor",
       "size",
       "target-offset",
       "change",
@@ -41,6 +42,7 @@
   },
   "t-anchor-item": {
     "attributes": [
+      "custom-scroll",
       "href",
       "target",
       "title"
@@ -63,6 +65,7 @@
   "t-auto-complete": {
     "attributes": [
       "autofocus",
+      "borderless",
       "clearable",
       "default",
       "disabled",
@@ -104,7 +107,10 @@
       "image-props",
       "shape",
       "size",
-      "error"
+      "click",
+      "contextmenu",
+      "error",
+      "hover"
     ],
     "description": "Avatar\n\n头像\n\n[docs](https://tdesign.tencent.com/vue/components/avatar)"
   },
@@ -114,7 +120,9 @@
       "collapse-avatar",
       "max",
       "popup-props",
-      "size"
+      "shape",
+      "size",
+      "collapsed-item-click"
     ],
     "description": "AvatarGroup\n\n头像组\n\n[docs](https://tdesign.tencent.com/vue/components/avatar-group)"
   },
@@ -151,6 +159,8 @@
   },
   "t-base-table": {
     "attributes": [
+      "active-row-keys",
+      "active-row-type",
       "allow-resize-column-width",
       "attach",
       "bordered",
@@ -159,6 +169,7 @@
       "columns",
       "data",
       "disable-data-page",
+      "disable-space-inactive-row",
       "empty",
       "first-full-row",
       "fixed-rows",
@@ -171,9 +182,12 @@
       "height",
       "horizontal-scroll-affixed-bottom",
       "hover",
+      "keyboard-row-hover",
       "last-full-row",
+      "lazy-load",
       "loading",
       "loading-props",
+      "locale",
       "max-height",
       "pagination",
       "pagination-affixed-bottom",
@@ -191,6 +205,8 @@
       "table-layout",
       "top-content",
       "vertical-align",
+      "active-change",
+      "active-row-action",
       "cell-click",
       "column-resize-change",
       "page-change",
@@ -229,6 +245,8 @@
       "indeterminate-selected-row-keys",
       "multiple-sort",
       "reserve-selected-row-on-paginate",
+      "row-selection-allow-uncheck",
+      "row-selection-type",
       "select-on-row-click",
       "selected-row-keys",
       "show-sort-column-bg-color",
@@ -273,7 +291,8 @@
       "replace",
       "router",
       "target",
-      "to"
+      "to",
+      "click"
     ],
     "description": "BreadcrumbItem\n\n面包屑项\n\n[docs](https://tdesign.tencent.com/vue/components/breadcrumb-item)"
   },
@@ -283,10 +302,12 @@
       "content",
       "default",
       "disabled",
+      "form",
       "ghost",
       "href",
       "icon",
       "loading",
+      "loading-props",
       "shape",
       "size",
       "suffix",
@@ -339,6 +360,7 @@
       "header-bordered",
       "hover-shadow",
       "loading",
+      "loading-props",
       "shadow",
       "size",
       "status",
@@ -351,6 +373,7 @@
   "t-cascader": {
     "attributes": [
       "autofocus",
+      "borderless",
       "check-props",
       "check-strictly",
       "clearable",
@@ -371,9 +394,12 @@
       "multiple",
       "option",
       "options",
+      "panel-bottom-content",
+      "panel-top-content",
       "placeholder",
       "popup-props",
       "popup-visible",
+      "prefix-icon",
       "readonly",
       "reserve-keyword",
       "select-input-props",
@@ -401,14 +427,28 @@
   "t-check-tag": {
     "attributes": [
       "checked",
+      "checked-props",
       "content",
       "default",
       "disabled",
       "size",
+      "unchecked-props",
+      "value",
       "change",
       "click"
     ],
     "description": "CheckTag\n\n可选标签\n\n[docs](https://tdesign.tencent.com/vue/components/check-tag)"
+  },
+  "t-check-tag-group": {
+    "attributes": [
+      "checked-props",
+      "multiple",
+      "options",
+      "unchecked-props",
+      "value",
+      "change"
+    ],
+    "description": "CheckTagGroup\n\n可选标签组\n\n[docs](https://tdesign.tencent.com/vue/components/check-tag-group)"
   },
   "t-checkbox": {
     "attributes": [
@@ -418,19 +458,23 @@
       "disabled",
       "indeterminate",
       "label",
+      "lazy-load",
       "name",
       "readonly",
+      "title",
       "value",
-      "change",
-      "click"
+      "change"
     ],
     "description": "Checkbox\n\n多选框\n\n[docs](https://tdesign.tencent.com/vue/components/checkbox)"
   },
   "t-checkbox-group": {
     "attributes": [
+      "disabled",
+      "lazy-load",
       "max",
       "name",
       "options",
+      "readonly",
       "value",
       "change"
     ],
@@ -483,6 +527,7 @@
   },
   "t-color-picker": {
     "attributes": [
+      "borderless",
       "clearable",
       "close-btn",
       "color-modes",
@@ -496,6 +541,7 @@
       "recent-colors",
       "select-input-props",
       "show-primary-color-preview",
+      "size",
       "swatch-colors",
       "value",
       "change",
@@ -519,26 +565,33 @@
   "t-date-picker": {
     "attributes": [
       "allow-input",
+      "borderless",
       "clearable",
       "default-time",
       "disable-date",
+      "disable-time",
       "disabled",
       "enable-time-picker",
       "first-day-of-week",
       "format",
       "input-props",
+      "label",
       "mode",
+      "multiple",
+      "need-confirm",
       "placeholder",
       "popup-props",
       "prefix-icon",
       "presets",
       "presets-placement",
+      "select-input-props",
       "size",
       "status",
       "suffix-icon",
       "time-picker-props",
       "tips",
       "value",
+      "value-display",
       "value-type",
       "blur",
       "change",
@@ -566,14 +619,19 @@
   "t-date-range-picker": {
     "attributes": [
       "allow-input",
+      "borderless",
+      "cancel-range-select-limit",
       "clearable",
       "default-time",
       "disable-date",
+      "disable-time",
       "disabled",
       "enable-time-picker",
       "first-day-of-week",
       "format",
+      "label",
       "mode",
+      "need-confirm",
       "panel-preselection",
       "placeholder",
       "popup-props",
@@ -613,22 +671,30 @@
     ],
     "description": "DateRangePickerPanel\n\n日期范围选择器面板\n\n[docs](https://tdesign.tencent.com/vue/components/date-range-picker-panel)"
   },
-  "t-descriptions-item": {
+  "t-description-item": {
     "attributes": [
+      "align",
+      "content",
+      "default",
       "label",
       "span"
     ],
-    "description": "DescriptionsItem\n\n描述项\n\n[docs](https://tdesign.tencent.com/vue/components/descriptions-item)"
+    "description": "DescriptionItem\n\n描述项\n\n[docs](https://tdesign.tencent.com/vue/components/description-item)"
   },
   "t-descriptions": {
     "attributes": [
+      "align",
       "bordered",
       "colon",
-      "columns",
-      "content-align",
-      "label-align",
+      "column",
+      "content-style",
+      "item-layout",
+      "items",
+      "label-style",
       "layout",
-      "size"
+      "size",
+      "table-layout",
+      "title"
     ],
     "description": "Descriptions\n\n描述列表\n\n[docs](https://tdesign.tencent.com/vue/components/descriptions)"
   },
@@ -641,9 +707,12 @@
       "close-on-esc-keydown",
       "close-on-overlay-click",
       "confirm-btn",
+      "confirm-loading",
       "confirm-on-enter",
       "default",
       "destroy-on-close",
+      "dialog-class-name",
+      "dialog-style",
       "draggable",
       "footer",
       "header",
@@ -657,6 +726,8 @@
       "visible",
       "width",
       "z-index",
+      "before-close",
+      "before-open",
       "cancel",
       "close",
       "close-btn-click",
@@ -705,12 +776,15 @@
       "size-draggable",
       "visible",
       "z-index",
+      "before-close",
+      "before-open",
       "cancel",
       "close",
       "close-btn-click",
       "confirm",
       "esc-keydown",
-      "overlay-click"
+      "overlay-click",
+      "size-drag-end"
     ],
     "description": "Drawer\n\n模态抽屉\n\n[docs](https://tdesign.tencent.com/vue/components/drawer)"
   },
@@ -723,6 +797,8 @@
       "max-height",
       "min-column-width",
       "options",
+      "panel-bottom-content",
+      "panel-top-content",
       "placement",
       "popup-props",
       "trigger",
@@ -743,12 +819,26 @@
     ],
     "description": "DropdownItem\n\n下拉菜单选项\n\n[docs](https://tdesign.tencent.com/vue/components/dropdown-item)"
   },
+  "t-empty": {
+    "attributes": [
+      "action",
+      "description",
+      "image",
+      "image-style",
+      "size",
+      "title",
+      "type"
+    ],
+    "description": "Empty\n\n空状态\n\n[docs](https://tdesign.tencent.com/vue/components/empty)"
+  },
   "t-enhanced-table": {
     "attributes": [
       "before-drag-sort",
+      "expanded-tree-nodes",
       "tree",
       "tree-expand-and-fold-icon",
       "abnormal-drag-sort",
+      "expanded-tree-nodes-change",
       "tree-expand-change"
     ],
     "description": "EnhancedTable\n\n增强表格\n\n[docs](https://tdesign.tencent.com/vue/components/enhanced-table)"
@@ -766,10 +856,12 @@
       "disabled",
       "error-message",
       "form-controlled-components",
+      "id",
       "label-align",
       "label-width",
       "layout",
       "prevent-submit-default",
+      "readonly",
       "required-mark",
       "reset-type",
       "rules",
@@ -871,6 +963,7 @@
     "attributes": [
       "alt",
       "error",
+      "fallback",
       "fit",
       "gallery",
       "lazy",
@@ -879,6 +972,7 @@
       "overlay-trigger",
       "placeholder",
       "position",
+      "referrerpolicy",
       "shape",
       "src",
       "srcset",
@@ -889,9 +983,12 @@
   },
   "t-image-viewer": {
     "attributes": [
+      "attach",
       "close-btn",
+      "close-on-esc-keydown",
       "close-on-overlay",
       "draggable",
+      "image-referrerpolicy",
       "image-scale",
       "images",
       "index",
@@ -915,6 +1012,7 @@
       "auto-width",
       "autocomplete",
       "autofocus",
+      "borderless",
       "clearable",
       "disabled",
       "format",
@@ -929,6 +1027,7 @@
       "show-clear-icon-on-empty",
       "show-limit-number",
       "size",
+      "spell-check",
       "status",
       "suffix",
       "suffix-icon",
@@ -1011,6 +1110,7 @@
       "content",
       "default",
       "disabled",
+      "download",
       "hover",
       "href",
       "prefix-icon",
@@ -1029,6 +1129,7 @@
       "footer",
       "header",
       "layout",
+      "scroll",
       "scroll",
       "size",
       "split",
@@ -1104,8 +1205,10 @@
       "icon",
       "replace",
       "router",
+      "router-link",
       "target",
       "to",
+      "tooltip-props",
       "value",
       "click"
     ],
@@ -1195,6 +1298,14 @@
     ],
     "description": "PaginationMini\n\n迷你分页\n\n[docs](https://tdesign.tencent.com/vue/components/pagination-mini)"
   },
+  "t-paragraph": {
+    "attributes": [
+      "content",
+      "default",
+      "ellipsis"
+    ],
+    "description": "Paragraph\n\n段落\n\n[docs](https://tdesign.tencent.com/vue/components/paragraph)"
+  },
   "t-popconfirm": {
     "attributes": [
       "cancel-btn",
@@ -1216,7 +1327,6 @@
   "t-popup": {
     "attributes": [
       "attach",
-      "close-btn",
       "content",
       "default",
       "delay",
@@ -1234,6 +1344,7 @@
       "trigger-element",
       "visible",
       "z-index",
+      "overlay-click",
       "scroll",
       "scroll-to-bottom",
       "visible-change"
@@ -1262,6 +1373,8 @@
       "indeterminate-selected-row-keys",
       "multiple-sort",
       "reserve-selected-row-on-paginate",
+      "row-selection-allow-uncheck",
+      "row-selection-type",
       "select-on-row-click",
       "selected-row-keys",
       "show-sort-column-bg-color",
@@ -1307,6 +1420,7 @@
       "disabled",
       "label",
       "name",
+      "readonly",
       "value",
       "change",
       "click"
@@ -1321,6 +1435,7 @@
       "disabled",
       "label",
       "name",
+      "readonly",
       "value",
       "change",
       "click"
@@ -1333,7 +1448,9 @@
       "disabled",
       "name",
       "options",
+      "readonly",
       "size",
+      "theme",
       "value",
       "variant",
       "change"
@@ -1343,6 +1460,7 @@
   "t-range-input": {
     "attributes": [
       "active-index",
+      "borderless",
       "clearable",
       "disabled",
       "format",
@@ -1375,6 +1493,7 @@
       "auto-width",
       "disabled",
       "input-value",
+      "label",
       "panel",
       "popup-props",
       "popup-visible",
@@ -1390,6 +1509,7 @@
   "t-rate": {
     "attributes": [
       "allow-half",
+      "clearable",
       "color",
       "count",
       "disabled",
@@ -1464,6 +1584,7 @@
       "min-collapsed-num",
       "multiple",
       "options",
+      "options-layout",
       "panel-bottom-content",
       "panel-top-content",
       "placeholder",
@@ -1518,8 +1639,10 @@
       "placeholder",
       "popup-props",
       "popup-visible",
+      "prefix-icon",
       "readonly",
       "reserve-keyword",
+      "size",
       "status",
       "suffix",
       "suffix-icon",
@@ -1568,7 +1691,8 @@
       "step",
       "tooltip-props",
       "value",
-      "change"
+      "change",
+      "change-end"
     ],
     "description": "Slider\n\n滑块\n\n[docs](https://tdesign.tencent.com/vue/components/slider)"
   },
@@ -1684,6 +1808,7 @@
   },
   "t-switch": {
     "attributes": [
+      "before-change",
       "custom-value",
       "disabled",
       "label",
@@ -1701,6 +1826,7 @@
       "disabled",
       "draggable",
       "label",
+      "lazy",
       "panel",
       "removable",
       "value",
@@ -1716,6 +1842,7 @@
       "drag-sort",
       "list",
       "placement",
+      "scroll-position",
       "size",
       "theme",
       "value",
@@ -1729,6 +1856,7 @@
   "t-tag": {
     "attributes": [
       "closable",
+      "color",
       "content",
       "default",
       "disabled",
@@ -1737,6 +1865,7 @@
       "shape",
       "size",
       "theme",
+      "title",
       "variant",
       "click",
       "close"
@@ -1746,6 +1875,7 @@
   "t-tag-input": {
     "attributes": [
       "auto-width",
+      "borderless",
       "clearable",
       "collapsed-items",
       "disabled",
@@ -1757,6 +1887,7 @@
       "max",
       "min-collapsed-num",
       "placeholder",
+      "prefix-icon",
       "readonly",
       "size",
       "status",
@@ -1782,13 +1913,30 @@
     ],
     "description": "TagInput\n\n标签输入框\n\n[docs](https://tdesign.tencent.com/vue/components/tag-input)"
   },
+  "t-text": {
+    "attributes": [
+      "code",
+      "content",
+      "copyable",
+      "default",
+      "delete",
+      "disabled",
+      "ellipsis",
+      "italic",
+      "keyboard",
+      "mark",
+      "strong",
+      "theme",
+      "underline"
+    ],
+    "description": "Text\n\n文本\n\n[docs](https://tdesign.tencent.com/vue/components/text)"
+  },
   "t-textarea": {
     "attributes": [
       "allow-input-over-max",
       "autofocus",
       "autosize",
       "disabled",
-      "label",
       "maxcharacter",
       "maxlength",
       "name",
@@ -1802,27 +1950,32 @@
       "focus",
       "keydown",
       "keypress",
-      "keyup"
+      "keyup",
+      "validate"
     ],
     "description": "Textarea\n\n文本输入框\n\n[docs](https://tdesign.tencent.com/vue/components/textarea)"
   },
   "t-time-picker": {
     "attributes": [
       "allow-input",
+      "borderless",
       "clearable",
       "disable-time",
       "disabled",
       "format",
       "hide-disabled-time",
       "input-props",
+      "label",
       "placeholder",
       "popup-props",
       "presets",
+      "select-input-props",
       "size",
       "status",
       "steps",
       "tips",
       "value",
+      "value-display",
       "blur",
       "change",
       "close",
@@ -1836,11 +1989,14 @@
   "t-time-range-picker": {
     "attributes": [
       "allow-input",
+      "auto-swap",
+      "borderless",
       "clearable",
       "disable-time",
       "disabled",
       "format",
       "hide-disabled-time",
+      "label",
       "placeholder",
       "popup-props",
       "presets",
@@ -1875,9 +2031,19 @@
       "dot-color",
       "label",
       "label-align",
-      "loading"
+      "loading",
+      "click"
     ],
     "description": "TimelineItem\n\n时间轴\n\n[docs](https://tdesign.tencent.com/vue/components/timeline-item)"
+  },
+  "t-title": {
+    "attributes": [
+      "content",
+      "default",
+      "ellipsis",
+      "level"
+    ],
+    "description": "Title\n\n标题\n\n[docs](https://tdesign.tencent.com/vue/components/title)"
   },
   "t-tooltip": {
     "attributes": [
@@ -1915,6 +2081,7 @@
       "pagination",
       "search",
       "show-check-all",
+      "target-draggable",
       "target-sort",
       "title",
       "transfer-item",
@@ -1933,6 +2100,7 @@
       "activable",
       "active-multiple",
       "actived",
+      "allow-drop",
       "allow-fold-node-on-filter",
       "check-props",
       "check-strictly",
@@ -2038,6 +2206,7 @@
       "auto-upload",
       "before-all-files-upload",
       "before-upload",
+      "cancel-upload-button",
       "data",
       "default",
       "disabled",
@@ -2049,6 +2218,7 @@
       "format-request",
       "format-response",
       "headers",
+      "image-viewer-props",
       "input-attributes",
       "is-batch-upload",
       "locale",
@@ -2059,6 +2229,8 @@
       "name",
       "placeholder",
       "request-method",
+      "show-image-file-name",
+      "show-thumbnail",
       "show-upload-progress",
       "size-limit",
       "status",
@@ -2067,6 +2239,7 @@
       "trigger",
       "trigger-button-props",
       "upload-all-files-in-one-request",
+      "upload-button",
       "upload-pasted-files",
       "use-mock-progress",
       "value",

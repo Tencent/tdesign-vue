@@ -7,8 +7,9 @@ import HighlightOption from './highlight-option';
 import { CommonClassNameType } from '../hooks/useCommonClassName';
 import { AutoCompleteOptionObj, TdAutoCompleteProps } from './type';
 import log from '../_common/js/log';
-import { usePrefixClass } from '../hooks/useConfig';
+import { useConfig, usePrefixClass } from '../hooks/useConfig';
 import { on, off } from '../utils/dom';
+import { renderTNodeJSX } from '../utils/render-tnode';
 
 export default defineComponent({
   name: 'AutoCompleteOptionList',
@@ -22,11 +23,14 @@ export default defineComponent({
     highlightKeyword: Boolean,
     filterable: Boolean,
     filter: Function as PropType<TdAutoCompleteProps['filter']>,
+    empty: [String, Function] as PropType<TdAutoCompleteProps['empty']>,
   },
 
   setup(props, { emit }) {
     const active = ref('');
     const classPrefix = usePrefixClass();
+
+    const { globalConfig } = useConfig('autoComplete');
 
     const classes = computed(() => `${classPrefix.value}-select__list`);
     const optionClasses = computed(() => [
@@ -129,6 +133,7 @@ export default defineComponent({
     });
 
     return {
+      globalConfig,
       classes,
       classPrefix,
       optionClasses,
@@ -141,7 +146,10 @@ export default defineComponent({
   },
 
   render() {
-    if (!this.tOptions.length) return null;
+    if (!this.tOptions.length) {
+      const empty = renderTNodeJSX(this, 'empty');
+      return <div class={`${this.classPrefix}-auto-complete__panel--empty`}>{empty || this.globalConfig.empty}</div>;
+    }
     return (
       <ul class={this.classes}>
         {this.tOptions.map((item) => {
