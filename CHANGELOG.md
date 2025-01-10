@@ -5,6 +5,17 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.10.9 `2025-01-10` 
+### 🚀 Features
+- `AutoComplete`: 新增`empty` API，用于配置空状态下的下拉内容展示 @liweijie0812 ([#3462](https://github.com/Tencent/tdesign-vue/pull/3462))
+- `DatePicker`: 新增 `cancelRangeSelectLimit` API ，用于日期范围选择器不限制日期区间的范围 @FliPPeDround ([#3460](https://github.com/Tencent/tdesign-vue/pull/3460))
+### 🐞 Bug Fixes
+- `AutoComplete`: 修复选项为空时显示效果异常的问题 @betavs ([#3461](https://github.com/Tencent/tdesign-vue/pull/3461))
+- `Table`:  @uyarn
+    - 优化`select-change`中回调参数的返回值，不返回不存在的rowData ([#3446](https://github.com/Tencent/tdesign-vue/pull/3446))
+    - 修复无法通过键盘操作表格左右滚动的问题 @uyarn ([#3463](https://github.com/Tencent/tdesign-vue/pull/3463))
+
+
 ## 🌈 1.10.8 `2024-12-30` 
 ### 🚀 Features
 - `ConfigProvider`: 新增`attach` 配置，支持全局设置`Popup`、`Dialog`、`Drawer`的挂载节点 @liweijie0812 ([#3437](https://github.com/Tencent/tdesign-vue/pull/3437))
