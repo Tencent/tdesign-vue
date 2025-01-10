@@ -170,8 +170,10 @@ export default defineComponent({
         highlightKeyword={this.highlightKeyword}
         filterable={this.filterable}
         filter={this.filter}
+        empty={this.empty}
         scopedSlots={{
           option: this.$scopedSlots.option,
+          empty: this.$scopedSlots.empty,
         }}
       />
     );
