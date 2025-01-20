@@ -158,7 +158,7 @@ export default defineComponent({
       />
     );
     // 联想词列表
-    const listContent = (
+    const listContent = Array.isArray(this.options) && (
       <AutoCompleteOptionList
         ref="optionListRef"
         value={this.tValue}
@@ -170,16 +170,15 @@ export default defineComponent({
         highlightKeyword={this.highlightKeyword}
         filterable={this.filterable}
         filter={this.filter}
-        empty={this.empty}
+        empty={renderTNodeJSX(this, 'empty')}
         scopedSlots={{
           option: this.$scopedSlots.option,
-          empty: this.$scopedSlots.empty,
         }}
       />
     );
     const topContent = renderTNodeJSX(this, 'panelTopContent');
     const bottomContent = renderTNodeJSX(this, 'panelBottomContent');
-    const panelContent = topContent || this.options?.length || bottomContent ? (
+    const panelContent = topContent || listContent || bottomContent ? (
         <div class={`${this.classPrefix}-auto-complete__panel`}>
           {topContent}
           {listContent}
