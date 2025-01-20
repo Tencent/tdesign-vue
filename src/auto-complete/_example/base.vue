@@ -2,17 +2,13 @@
   <t-space direction="vertical" class="t-demo-auto-complete__base">
     <t-auto-complete
       v-model="value"
-      :options="[]"
+      :options="options"
       highlightKeyword
       :filterable="false"
       placeholder="请输入关键词搜索"
       clearable
       @change="onChange"
-    >
-      <template #empty>
-        <div>sdfa</div>
-      </template>
-    </t-auto-complete>
+    />
 
     <!-- 复杂 UI 需求，可参考当前示例完成 -->
     <t-auto-complete
