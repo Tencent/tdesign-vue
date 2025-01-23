@@ -2340,7 +2340,7 @@ exports[`csr snapshot test > csr test ./src/avatar/_example/adjust.vue 1`] = `
       class="t-avatar t-avatar--circle"
     >
       <span>
-        王亿
+        王亿222
       </span>
     </div>
   </div>
