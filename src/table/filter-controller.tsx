@@ -131,7 +131,7 @@ export default defineComponent({
         filterComponentProps.value = this.innerFilterValue[column.colKey];
       }
       // 这个代码必须放在这里，否则会造成顺序错误
-      const on = {
+      const on: { [key: string]: (val?: any) => void } = {
         change: (val: any) => {
           this.$emit('inner-filter-change', val, column);
           if (column.filter?.confirmEvents?.includes('onChange')) {
