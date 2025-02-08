@@ -6,7 +6,7 @@ import { CreateElement } from 'vue';
 import {
   scrollToParentVisibleArea, getRelativePosition, getTargetElm, scrollToElm,
 } from './utils';
-import setStyle from '../_common/js/utils/set-style';
+import setStyle from '../_common/js/utils/setStyle';
 import TransferDom from '../utils/transfer-dom';
 import {
   addClass, removeClass, isFixed, getWindowScroll,
