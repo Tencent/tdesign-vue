@@ -7,7 +7,7 @@ import { renderTNodeJSX } from '../utils/render-tnode';
 import { ClassName } from '../common';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
-import setStyle from '../_common/js/utils/set-style';
+import setStyle from '../_common/js/utils/setStyle';
 
 import props from './props';
 import type { TextareaValue } from './type';
