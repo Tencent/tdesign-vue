@@ -7,7 +7,7 @@ import {
   ref, Ref, computed, onBeforeUpdate, ComponentInternalInstance, watch,
 } from '@vue/composition-api';
 import { VNode } from 'vue';
-import get from 'lodash/get';
+import { get } from 'lodash-es';
 import { getVNodeComponentName, getVueComponentName } from '../../utils/helper';
 import Option from '../option';
 import OptionGroup from '../optionGroup';

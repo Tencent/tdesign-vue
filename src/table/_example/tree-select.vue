@@ -45,7 +45,7 @@
 
 <script lang="jsx">
 import { EnhancedTable, MessagePlugin } from 'tdesign-vue';
-import cloneDeep from 'lodash/cloneDeep';
+import { cloneDeep } from 'lodash-es';
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
 
 const initialData = [];

@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import isFunction from 'lodash/isFunction';
+import { isFunction } from 'lodash-es';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import { CheckIcon as TdCheckIcon, CloseIcon as TdCloseIcon } from 'tdesign-icons-vue';
 

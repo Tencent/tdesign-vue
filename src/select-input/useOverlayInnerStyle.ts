@@ -1,8 +1,7 @@
 import {
   ref, toRefs, computed, getCurrentInstance,
 } from '@vue/composition-api';
-import isObject from 'lodash/isObject';
-import isFunction from 'lodash/isFunction';
+import { isFunction, isObject } from 'lodash-es';
 import { TdPopupProps, PopupVisibleChangeContext } from '../popup';
 import { TdSelectInputProps } from './type';
 import { Styles } from '../common';

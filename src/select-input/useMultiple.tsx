@@ -1,8 +1,7 @@
 import {
   SetupContext, computed, ref, toRefs,
 } from '@vue/composition-api';
-import isObject from 'lodash/isObject';
-import lodashGet from 'lodash/get';
+import { get as lodashGet, isObject } from 'lodash-es';
 import { TdSelectInputProps, SelectInputKeys } from './type';
 import { SelectInputCommonProperties } from './interface';
 import TagInput, { TagInputValue, TagInputProps } from '../tag-input';

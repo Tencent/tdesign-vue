@@ -1,7 +1,7 @@
 import {
   computed, defineComponent, PropType, reactive, watch,
 } from '@vue/composition-api';
-import throttle from 'lodash/throttle';
+import { throttle } from 'lodash-es';
 import { TdColorHandler } from '../../interfaces';
 import props from '../../props';
 import { Color } from '../../utils';

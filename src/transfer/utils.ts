@@ -1,6 +1,5 @@
 import Vue from 'vue';
-import cloneDeep from 'lodash/cloneDeep';
-import filter from 'lodash/filter';
+import { cloneDeep, filter } from 'lodash-es';
 
 import {
   TransferListOptionBase, TransferItemOption, TdTransferProps, TransferValue, DataOption,

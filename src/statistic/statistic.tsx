@@ -5,8 +5,7 @@ import {
   ArrowTriangleDownFilledIcon as TDArrowTriangleDownFilledIcon,
   ArrowTriangleUpFilledIcon as TDArrowTriangleUpFilledIcon,
 } from 'tdesign-icons-vue';
-import isNumber from 'lodash/isNumber';
-import isFunction from 'lodash/isFunction';
+import { isFunction, isNumber } from 'lodash-es';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { usePrefixClass } from '../hooks/useConfig';

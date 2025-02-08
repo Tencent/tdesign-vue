@@ -8,12 +8,9 @@ import {
   getCurrentInstance,
   provide,
 } from '@vue/composition-api';
-import isFunction from 'lodash/isFunction';
-import debounce from 'lodash/debounce';
-import get from 'lodash/get';
-import cloneDeep from 'lodash/cloneDeep';
-import isArray from 'lodash/isArray';
-import isObject from 'lodash/isObject';
+import {
+  cloneDeep, debounce, get, isArray, isFunction, isObject,
+} from 'lodash-es';
 import useDefaultValue from '../hooks/useDefaultValue';
 import useVModel from '../hooks/useVModel';
 import { useTNodeJSX } from '../hooks/tnode';

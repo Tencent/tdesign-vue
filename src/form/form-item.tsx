@@ -1,16 +1,14 @@
 import Vue, { VNode } from 'vue';
 import { NormalizedScopedSlot } from 'vue/types/vnode';
-import cloneDeep from 'lodash/cloneDeep';
-import lodashGet from 'lodash/get';
-import lodashSet from 'lodash/set';
-import isNil from 'lodash/isNil';
+import {
+  cloneDeep, get as lodashGet, set as lodashSet, isNil, template as lodashTemplate,
+} from 'lodash-es';
 import {
   CheckCircleFilledIcon as TdCheckCircleFilledIcon,
   CloseCircleFilledIcon as TdCloseCircleFilledIcon,
   ErrorCircleFilledIcon as TdErrorCircleFilledIcon,
   GlobalIconType,
 } from 'tdesign-icons-vue';
-import lodashTemplate from 'lodash/template';
 import { validate } from './form-model';
 import {
   Data,

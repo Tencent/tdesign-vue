@@ -1,5 +1,5 @@
 import Vue, { VueConstructor } from 'vue';
-import mergeWith from 'lodash/mergeWith';
+import { mergeWith } from 'lodash-es';
 import { GlobalIconConfig } from 'tdesign-icons-vue';
 import { defaultGlobalConfig } from './context';
 import { GlobalConfigProvider, AnimationType } from './type';

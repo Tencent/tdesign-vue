@@ -1,11 +1,9 @@
 import { defineComponent, PropType, ref } from '@vue/composition-api';
 import { CreateElement } from 'vue';
 import { SearchIcon, FilterIcon as TdFilterIcon } from 'tdesign-icons-vue';
-import isEmpty from 'lodash/isEmpty';
-import isObject from 'lodash/isObject';
-import isFunction from 'lodash/isFunction';
-import lowerFirst from 'lodash/lowerFirst';
-import escapeRegExp from 'lodash/escapeRegExp';
+import {
+  escapeRegExp, lowerFirst, isEmpty, isFunction, isObject,
+} from 'lodash-es';
 import Popup, { PopupProps } from '../popup';
 import { CheckboxGroup } from '../checkbox';
 import { RadioGroup } from '../radio';

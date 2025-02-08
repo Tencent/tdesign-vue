@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import raf from 'raf';
 import { PropType } from '@vue/composition-api';
-import isFunction from 'lodash/isFunction';
+import { isFunction } from 'lodash-es';
 import { getAttach, removeDom } from '../utils/dom';
 import { TdPopupProps } from './type';
 

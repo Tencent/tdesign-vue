@@ -1,9 +1,7 @@
 import {
   SetupContext, ref, computed, toRefs, watch,
 } from '@vue/composition-api';
-import isFunction from 'lodash/isFunction';
-import lodashGet from 'lodash/get';
-import lodashSet from 'lodash/set';
+import { get as lodashGet, set as lodashSet, isFunction } from 'lodash-es';
 import { RemoveOptions, TdTreeSelectProps, TreeSelectValue } from './type';
 import { TreeProps, TreeInstanceFunctions, TreeNodeValue } from '../tree';
 import { usePrefixClass, useConfig } from '../hooks/useConfig';

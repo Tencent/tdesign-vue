@@ -1,6 +1,6 @@
 import { ref, computed, watch } from '@vue/composition-api';
 import dayjs from 'dayjs';
-import omit from 'lodash/omit';
+import { omit } from 'lodash-es';
 
 import { usePrefixClass } from '../../hooks/useConfig';
 import { TdDatePickerProps, DateValue } from '../type';

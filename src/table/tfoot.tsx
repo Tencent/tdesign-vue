@@ -1,9 +1,7 @@
 import {
   SetupContext, h, defineComponent, PropType, toRefs,
 } from '@vue/composition-api';
-import isString from 'lodash/isString';
-import isFunction from 'lodash/isFunction';
-import get from 'lodash/get';
+import { get, isFunction, isString } from 'lodash-es';
 import {
   BaseTableCellParams, RowspanColspan, TableRowData, TdBaseTableProps,
 } from './type';

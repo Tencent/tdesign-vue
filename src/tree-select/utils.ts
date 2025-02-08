@@ -1,6 +1,4 @@
-import isNil from 'lodash/isNil';
-import lodashGet from 'lodash/get';
-import lodashSet from 'lodash/set';
+import { get as lodashGet, set as lodashSet, isNil } from 'lodash-es';
 import { TreeOptionData, TreeKeysType } from '../common';
 import type { TreeSelectValue } from './type';
 

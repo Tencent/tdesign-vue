@@ -1,5 +1,5 @@
 import { computed, defineComponent } from '@vue/composition-api';
-import escapeRegExp from 'lodash/escapeRegExp';
+import { escapeRegExp } from 'lodash-es';
 import { usePrefixClass } from '../hooks/useConfig';
 
 export default defineComponent({

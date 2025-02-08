@@ -9,11 +9,9 @@ import {
   toRefs,
   watch,
 } from '@vue/composition-api';
-import isFunction from 'lodash/isFunction';
-import upperFirst from 'lodash/upperFirst';
-import isString from 'lodash/isString';
-import pick from 'lodash/pick';
-import get from 'lodash/get';
+import {
+  get, pick, isFunction, isString, upperFirst,
+} from 'lodash-es';
 import { CreateElement } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import { formatClassNames, formatRowAttributes, formatRowClassNames } from './utils';

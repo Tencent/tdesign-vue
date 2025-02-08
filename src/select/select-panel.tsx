@@ -1,7 +1,7 @@
 import {
   computed, defineComponent, toRefs, inject, onMounted, onBeforeUnmount,
 } from '@vue/composition-api';
-import isFunction from 'lodash/isFunction';
+import { isFunction } from 'lodash-es';
 import { VNode } from 'vue';
 import { useTNodeJSX } from '../hooks/tnode';
 import { renderTNodeJSXDefault } from '../utils/render-tnode';
