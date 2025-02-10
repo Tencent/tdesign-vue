@@ -1,5 +1,4 @@
-import merge from 'lodash/merge';
-import _mergeWith from 'lodash/mergeWith';
+import { merge, mergeWith as _mergeWith } from 'lodash-es';
 import defaultConfig from '../_common/js/global-config/default-config';
 import defaultZhCN from '../_common/js/global-config/locale/zh_CN';
 import { GlobalConfigProvider } from './type';

@@ -1,5 +1,5 @@
 import { CreateElement } from 'vue';
-import isFunction from 'lodash/isFunction';
+import { isFunction } from 'lodash-es';
 import {
   InfoCircleFilledIcon as TdInfoCircleFilledIcon,
   CheckCircleFilledIcon as TdCheckCircleFilledIcon,

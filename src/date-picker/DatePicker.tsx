@@ -1,7 +1,7 @@
 import { defineComponent, watch, computed } from '@vue/composition-api';
 import dayjs from 'dayjs';
 import { CalendarIcon as TdCalendarIcon } from 'tdesign-icons-vue';
-import isDate from 'lodash/isDate';
+import { isDate } from 'lodash-es';
 
 import { usePrefixClass, useConfig } from '../hooks/useConfig';
 import { useGlobalIcon } from '../hooks/useGlobalIcon';

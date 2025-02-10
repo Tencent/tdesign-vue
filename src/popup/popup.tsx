@@ -1,10 +1,10 @@
 import { VNodeDirective } from 'vue';
 import { createPopper } from '@popperjs/core';
-import debounce from 'lodash/debounce';
+import { debounce } from 'lodash-es';
 import { on, off, once } from '../utils/dom';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import { getIEVersion } from '../utils/helper';
-import setStyle from '../_common/js/utils/set-style';
+import setStyle from '../_common/js/utils/setStyle';
 import props from './props';
 import { PopupVisibleChangeContext, TdPopupProps } from './type';
 import Container from './container';

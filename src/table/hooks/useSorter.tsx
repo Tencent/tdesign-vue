@@ -2,8 +2,7 @@ import {
   SetupContext, computed, toRefs, ref, watch,
 } from '@vue/composition-api';
 import { CreateElement } from 'vue';
-import isFunction from 'lodash/isFunction';
-import get from 'lodash/get';
+import { get, isFunction } from 'lodash-es';
 import {
   SortInfo, TdPrimaryTableProps, PrimaryTableCol, TableRowData,
 } from '../type';

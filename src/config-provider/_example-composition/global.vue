@@ -12,7 +12,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import merge from 'lodash/merge';
+import { merge } from 'lodash-es';
 import enConfig from 'tdesign-vue/es/locale/en_US';
 // 全局特性配置，引入英文语言配置包 enConfig
 const globalConfig = ref(

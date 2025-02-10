@@ -1,6 +1,5 @@
 import Vue from 'vue';
-import isString from 'lodash/isString';
-import isObject from 'lodash/isObject';
+import { isString, isObject } from 'lodash-es';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import TButton, { ButtonProps } from '../button';
 import { PopconfirmConfig, DialogConfig, DrawerConfig } from '../config-provider';

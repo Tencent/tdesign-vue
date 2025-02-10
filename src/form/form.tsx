@@ -1,6 +1,5 @@
 import Vue, { VNode } from 'vue';
-import isEmpty from 'lodash/isEmpty';
-import keys from 'lodash/keys';
+import { keys, isEmpty } from 'lodash-es';
 import {
   Data,
   FormValidateResult,

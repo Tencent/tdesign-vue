@@ -1,6 +1,5 @@
 import Vue, { VueConstructor } from 'vue';
-import isFunction from 'lodash/isFunction';
-import merge from 'lodash/merge';
+import { isFunction, merge } from 'lodash-es';
 import { getUnicodeLength, limitUnicodeMaxLength } from '../_common/js/utils/helper';
 import { getPropsApiByEvent, getCharacterLength } from '../utils/helper';
 import calcTextareaHeight from './calcTextareaHeight';
@@ -8,7 +7,7 @@ import { renderTNodeJSX } from '../utils/render-tnode';
 import { ClassName } from '../common';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
-import setStyle from '../_common/js/utils/set-style';
+import setStyle from '../_common/js/utils/setStyle';
 
 import props from './props';
 import type { TextareaValue } from './type';

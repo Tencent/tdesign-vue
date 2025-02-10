@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import isObject from 'lodash/isObject';
+import { isObject } from 'lodash-es';
 import type { TdDatePickerProps, TdDateRangePickerProps } from '../type';
 
 export interface disableDateProps {

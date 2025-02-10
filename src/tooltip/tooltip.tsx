@@ -1,4 +1,4 @@
-import isFunction from 'lodash/isFunction';
+import { isFunction } from 'lodash-es';
 import props from './props';
 import popupProps from '../popup/props';
 import Popup from '../popup/popup';

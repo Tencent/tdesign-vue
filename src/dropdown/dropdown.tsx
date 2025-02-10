@@ -1,5 +1,5 @@
 import { computed, defineComponent, ref } from '@vue/composition-api';
-import omit from 'lodash/omit';
+import { omit } from 'lodash-es';
 import Popup, { PopupVisibleChangeContext } from '../popup/index';
 import { defaultVisibleDelay } from '../popup/utils';
 import DropdownMenu from './dropdown-menu';

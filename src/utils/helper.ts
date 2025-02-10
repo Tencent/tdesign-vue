@@ -1,4 +1,4 @@
-import camelCase from 'lodash/camelCase';
+import { camelCase } from 'lodash-es';
 import type { VNode } from 'vue';
 
 export function omit(obj: object, fields: string[]): object {

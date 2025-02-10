@@ -58,7 +58,7 @@ import {
   // Textarea,
 } from 'tdesign-vue';
 import { ErrorCircleFilledIcon, CheckCircleFilledIcon, CloseCircleFilledIcon } from 'tdesign-icons-vue';
-import isNumber from 'lodash/isNumber';
+import { isNumber } from 'lodash-es';
 
 const initialData = new Array(5).fill(null).map((_, i) => ({
   key: String(i + 1),

@@ -1,5 +1,4 @@
-import upperFirst from 'lodash/upperFirst';
-import isFunction from 'lodash/isFunction';
+import { isFunction, upperFirst } from 'lodash-es';
 import {
   defineComponent,
   TreeNode,

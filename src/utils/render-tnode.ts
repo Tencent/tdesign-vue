@@ -4,8 +4,7 @@ import {
   PropType, CreateElement, VNode, VNodeChildren, RenderContext,
 } from 'vue/types/umd';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
-import camelCase from 'lodash/camelCase';
-import kebabCase from 'lodash/kebabCase';
+import { camelCase, kebabCase } from 'lodash-es';
 import { TNode } from '../common';
 
 // 组件render属性的ts类型

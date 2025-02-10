@@ -12,7 +12,7 @@ import {
   nextTick,
   reactive,
 } from '@vue/composition-api';
-import isFunction from 'lodash/isFunction';
+import { isFunction } from 'lodash-es';
 import props from './submenu-props';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import FakeArrow from '../common-components/fake-arrow';

@@ -2,9 +2,7 @@ import {
   defineComponent, computed, PropType, SetupContext, toRefs,
 } from '@vue/composition-api';
 import { CreateElement } from 'vue';
-import camelCase from 'lodash/camelCase';
-import get from 'lodash/get';
-import pick from 'lodash/pick';
+import { camelCase, get, pick } from 'lodash-es';
 import TrElement, { TrProps, ROW_LISTENERS, TABLE_PROPS } from './tr';
 import { useConfig } from '../config-provider/useConfig';
 import { useTNodeJSX } from '../hooks/tnode';
