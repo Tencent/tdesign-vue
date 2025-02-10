@@ -2,7 +2,7 @@ import {
   computed, SetupContext, toRefs, CreateElement,
 } from 'vue';
 import { ChevronRightCircleIcon as TdChevronRightCircleIcon } from 'tdesign-icons-vue';
-import get from 'lodash/get';
+import { get } from 'lodash-es';
 import {
   TdPrimaryTableProps,
   PrimaryTableCol,

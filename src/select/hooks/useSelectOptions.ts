@@ -6,7 +6,7 @@
 import {
   ref, Ref, computed, onBeforeUpdate, ComponentInternalInstance, watch, VNode,
 } from 'vue';
-import get from 'lodash/get';
+import { get } from 'lodash-es';
 import { getVNodeComponentName, getVueComponentName } from '../../utils/helper';
 import Option from '../option';
 import OptionGroup from '../optionGroup';

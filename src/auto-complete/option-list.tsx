@@ -1,8 +1,8 @@
 import {
   ref, computed, defineComponent, PropType, h, watch, onBeforeUnmount,
 } from 'vue';
-import isFunction from 'lodash/isFunction';
-import escapeRegExp from 'lodash/escapeRegExp';
+import { isFunction, escapeRegExp } from 'lodash-es';
+
 import HighlightOption from './highlight-option';
 import { CommonClassNameType } from '../hooks/useCommonClassName';
 import { AutoCompleteOptionObj, TdAutoCompleteProps } from './type';

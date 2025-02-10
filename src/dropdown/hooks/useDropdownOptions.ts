@@ -1,5 +1,5 @@
 import { VNode, computed, ComputedRef } from 'vue';
-import get from 'lodash/get';
+import { get } from 'lodash-es';
 import { DropdownOption, TdDropdownProps } from '../type';
 
 const DropdownMenuName = 'TDropdownMenu';

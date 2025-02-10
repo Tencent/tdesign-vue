@@ -1,9 +1,8 @@
 import {
   defineComponent, provide, computed, watchEffect, ref, toRefs, watch, nextTick, onMounted, VNode,
 } from 'vue';
-import intersection from 'lodash/intersection';
-import isObject from 'lodash/isObject';
-import isUndefined from 'lodash/isUndefined';
+import { intersection, isObject, isUndefined } from 'lodash-es';
+
 import { getVNodeComponentName, getVueComponentName } from '../utils/helper';
 import Checkbox from './checkbox';
 import props from './checkbox-group-props';

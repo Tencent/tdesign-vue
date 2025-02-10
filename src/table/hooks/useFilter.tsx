@@ -1,7 +1,7 @@
 import {
   SetupContext, toRefs, ref, watch, computed, CreateElement,
 } from 'vue';
-import isFunction from 'lodash/isFunction';
+import { isFunction } from 'lodash-es';
 import useClassName from './useClassName';
 import TButton from '../../button';
 import {

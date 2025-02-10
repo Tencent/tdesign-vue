@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import escapeRegExp from 'lodash/escapeRegExp';
+import { escapeRegExp } from 'lodash-es';
 
 const LIST = ['第一个 AutoComplete 默认联想词', '第二个 AutoComplete 默认联想词', '第三个 AutoComplete 默认联想词'];
 

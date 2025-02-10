@@ -1,8 +1,8 @@
 import {
   computed, defineComponent, toRefs, h, onMounted, ref, watch,
 } from 'vue';
-import get from 'lodash/get';
-import omit from 'lodash/omit';
+import { get, omit } from 'lodash-es';
+
 import baseTableProps from './base-table-props';
 import primaryTableProps from './primary-table-props';
 import BaseTable, { BASE_TABLE_ALL_EVENTS, TableListeners } from './base-table';

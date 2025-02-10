@@ -2,7 +2,7 @@ import Vue from 'vue';
 import { CloseIcon as TdCloseIcon } from 'tdesign-icons-vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import tinycolor from 'tinycolor2';
-import isString from 'lodash/isString';
+import { isString } from 'lodash-es';
 import props from './props';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, { TagConfig, getGlobalIconMixins } from '../config-provider/config-receiver';

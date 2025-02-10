@@ -1,6 +1,5 @@
 import Vue from 'vue';
-import isNumber from 'lodash/isNumber';
-import throttle from 'lodash/throttle';
+import { isNumber, throttle } from 'lodash-es';
 import {
   CloseIcon as TdCloseIcon,
   InfoCircleFilledIcon as TdInfoCircleFilledIcon,

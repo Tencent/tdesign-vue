@@ -1,5 +1,5 @@
 import { defineComponent, PropType, toRefs } from 'vue';
-import isFunction from 'lodash/isFunction';
+import { isFunction } from 'lodash-es';
 import useDrag, { UploadDragEvents } from '../hooks/useDrag';
 import { CommonDisplayFileProps } from '../interface';
 import { commonProps } from '../constants';

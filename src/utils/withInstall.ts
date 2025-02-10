@@ -1,5 +1,5 @@
 import Vue, { VueConstructor, PluginObject } from 'vue';
-import capitalize from 'lodash/capitalize';
+import { capitalize } from 'lodash-es';
 
 export function withInstall<T>(comp: T, dep?: PluginObject<any>, directive?: { name: string; comp: unknown }) {
   const c = comp as any;

@@ -1,6 +1,6 @@
 import Vue, { VNode, VNodeComponentOptions, VueConstructor } from 'vue';
 import { ChevronLeftIcon as TdChevronLeftIcon, ChevronRightIcon as TdChevronRightIcon } from 'tdesign-icons-vue';
-import kebabCase from 'lodash/kebabCase';
+import { kebabCase } from 'lodash-es';
 
 import props from './props';
 import { TdSwiperProps, SwiperNavigation, SwiperChangeSource } from './type';

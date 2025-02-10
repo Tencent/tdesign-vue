@@ -2,11 +2,9 @@ import {
   CreateElement, defineComponent, PropType, ref,
 } from 'vue';
 import { SearchIcon, FilterIcon as TdFilterIcon } from 'tdesign-icons-vue';
-import isEmpty from 'lodash/isEmpty';
-import isObject from 'lodash/isObject';
-import isFunction from 'lodash/isFunction';
-import lowerFirst from 'lodash/lowerFirst';
-import escapeRegExp from 'lodash/escapeRegExp';
+import {
+  escapeRegExp, lowerFirst, isEmpty, isFunction, isObject,
+} from 'lodash-es';
 import Popup, { PopupProps } from '../popup';
 import { CheckboxGroup } from '../checkbox';
 import { RadioGroup } from '../radio';
@@ -138,7 +136,7 @@ export default defineComponent({
         filterComponentProps.value = this.innerFilterValue[column.colKey];
       }
       // 这个代码必须放在这里，否则会造成顺序错误
-      const on = {
+      const on: { [key: string]: (val?: any) => void } = {
         change: (val: any) => {
           this.$emit('inner-filter-change', val, column);
           if (column.filter?.confirmEvents?.includes('onChange')) {

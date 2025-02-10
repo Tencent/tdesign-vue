@@ -6,7 +6,7 @@ import {
 } from 'vue';
 import { SettingIcon as TdSettingIcon } from 'tdesign-icons-vue';
 // import intersection from 'lodash/intersection';
-import isFunction from 'lodash/isFunction';
+import { isFunction } from 'lodash-es';
 import { CheckboxGroupValue, CheckboxOptionObj, CheckboxGroupChangeContext } from '../../checkbox';
 import { DialogPlugin } from '../../dialog/plugin';
 import { renderTitle } from './useTableHeader';

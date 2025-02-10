@@ -1,7 +1,7 @@
 import {
   defineComponent, computed, SetupContext, PropType, ref, CreateElement,
 } from 'vue';
-import isFunction from 'lodash/isFunction';
+import { isFunction } from 'lodash-es';
 import { getColumnFixedStyles } from './hooks/useFixed';
 import { RowAndColFixedPosition, BaseTableColumns, ThRowspanAndColspan } from './interface';
 import useClassName from './hooks/useClassName';

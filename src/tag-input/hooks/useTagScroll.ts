@@ -6,7 +6,7 @@
 import {
   onMounted, onUnmounted, ref, toRefs,
 } from 'vue';
-import isFunction from 'lodash/isFunction';
+import { isFunction } from 'lodash-es';
 
 import { TdTagInputProps } from '../type';
 

@@ -1,6 +1,4 @@
-import isFunction from 'lodash/isFunction';
-import get from 'lodash/get';
-import isObject from 'lodash/isObject';
+import { get, isFunction, isObject } from 'lodash-es';
 import {
   CellData, RowClassNameParams, TableColumnClassName, TableRowData, TdBaseTableProps,
 } from './type';

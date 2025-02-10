@@ -1,5 +1,5 @@
 import { defineComponent, computed } from 'vue';
-import omit from 'lodash/omit';
+import { omit } from 'lodash-es';
 import Panel from './components/Panel';
 import SelectInput, {
   SelectInputChangeContext,

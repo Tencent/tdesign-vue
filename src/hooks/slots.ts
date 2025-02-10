@@ -1,5 +1,5 @@
 import { getCurrentInstance } from 'vue';
-import isArray from 'lodash/isArray';
+import { isArray } from 'lodash-es';
 import { VNode } from 'vue/types/umd';
 import { ScopedSlot } from 'vue/types/vnode';
 

@@ -7,10 +7,10 @@ import {
   isValidDate,
   getDefaultFormat,
   parseToDayjs,
+  extractTimeFormat,
 } from '../../_common/js/date-picker/format';
 import useVModel from '../../hooks/useVModel';
 import { DateMultipleValue, DateValue, TdDatePickerProps } from '../type';
-import { extractTimeFormat } from '../../_common/js/date-picker/utils';
 
 export default function useSingleValue(props: TdDatePickerProps) {
   const { value: valueFromProps } = toRefs(props);
