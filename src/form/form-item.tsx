@@ -482,6 +482,8 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
 
   render(): VNode {
     const helpNode = renderTNodeJSX(this, 'help');
+    const tipsNode = renderTNodeJSX(this, 'tips');
+
     return (
       <div class={this.classes}>
         {this.getLabel()}
@@ -491,6 +493,9 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
             {this.getSuffixIcon()}
           </div>
           {helpNode && <div class={`${this.classPrefix}-input__help`}>{helpNode}</div>}
+          {tipsNode && (
+            <div class={[`${this.componentName}-tips`, `${this.classPrefix}-tips`, this.statusClass]}>{tipsNode}</div>
+          )}
           {this.extraNode}
         </div>
       </div>
