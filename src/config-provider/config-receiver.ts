@@ -215,9 +215,19 @@ export function getAttachConfigMixins(componentName: string) {
       },
     },
     methods: {
-      globalAttach(): AttachNode {
-        // @ts-ignore
-        return this.globalConfig?.attach?.[componentName] || this.globalConfig?.attach || 'body';
+      globalAttach(): AttachNode | null {
+        const globalConfigAttach = this.globalConfig?.attach;
+
+        if (typeof globalConfigAttach === 'string') {
+          return globalConfigAttach;
+        }
+
+        const validComponents = ['imageViewer', 'drawer', 'dialog', 'popup'];
+        if (globalConfigAttach && typeof globalConfigAttach === 'object' && validComponents.includes(componentName)) {
+          return globalConfigAttach[componentName as keyof typeof globalConfigAttach] as AttachNode;
+        }
+
+        return 'body';
       },
     },
   });
