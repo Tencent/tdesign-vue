@@ -218,7 +218,7 @@ export function getAttachConfigMixins(componentName: AttachNodeComponent) {
       globalAttach(): AttachNode {
         const globalConfigAttach = this.globalConfig?.attach;
 
-        if (typeof globalConfigAttach === 'string') {
+        if (typeof globalConfigAttach === 'string' || typeof globalConfigAttach === 'function') {
           return globalConfigAttach;
         }
 
