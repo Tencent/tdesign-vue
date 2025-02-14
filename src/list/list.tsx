@@ -1,6 +1,5 @@
 import { defineComponent, computed, ref } from '@vue/composition-api';
-import isString from 'lodash/isString';
-import omit from 'lodash/omit';
+import { isString, omit } from 'lodash-es';
 import TLoading from '../loading';
 import TListItem from './list-item';
 import props from './props';

@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-syntax */
-import cloneDeep from 'lodash/cloneDeep';
+import { cloneDeep } from 'lodash-es';
 import {
   SelectOption, SelectOptionGroup, SelectValue, TdOptionProps, TdSelectProps,
 } from './type';

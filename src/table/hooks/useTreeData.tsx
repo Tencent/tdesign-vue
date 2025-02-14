@@ -2,7 +2,7 @@ import {
   SetupContext, ref, watch, toRefs, onUnmounted, computed, shallowRef,
 } from '@vue/composition-api';
 import { AddRectangleIcon as TdAddRectangleIcon, MinusRectangleIcon as TdMinusRectangleIcon } from 'tdesign-icons-vue';
-import get from 'lodash/get';
+import { get } from 'lodash-es';
 import { CreateElement } from 'vue';
 import TableTreeStore, { SwapParams } from '../../_common/js/table/tree-store';
 import {

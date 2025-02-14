@@ -9,9 +9,7 @@ import {
   nextTick,
   onMounted,
 } from '@vue/composition-api';
-import intersection from 'lodash/intersection';
-import isObject from 'lodash/isObject';
-import isUndefined from 'lodash/isUndefined';
+import { intersection, isObject, isUndefined } from 'lodash-es';
 import { VNode } from 'vue';
 import { getVNodeComponentName, getVueComponentName } from '../utils/helper';
 import Checkbox from './checkbox';

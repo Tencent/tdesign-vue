@@ -3,8 +3,7 @@ import {
   SetupContext, computed, toRefs, ref, watch, h, ComputedRef,
 } from '@vue/composition-api';
 import Sortable, { SortableEvent, SortableOptions, MoveEvent } from 'sortablejs';
-import get from 'lodash/get';
-import isFunction from 'lodash/isFunction';
+import { get, isFunction } from 'lodash-es';
 import { hasClass } from '../../utils/dom';
 import {
   TableRowData, TdPrimaryTableProps, DragSortContext, PrimaryTableCol,

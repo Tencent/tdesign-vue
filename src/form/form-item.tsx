@@ -1,16 +1,14 @@
 import Vue, { VNode } from 'vue';
 import { NormalizedScopedSlot } from 'vue/types/vnode';
-import cloneDeep from 'lodash/cloneDeep';
-import lodashGet from 'lodash/get';
-import lodashSet from 'lodash/set';
-import isNil from 'lodash/isNil';
+import {
+  cloneDeep, get as lodashGet, set as lodashSet, isNil, template as lodashTemplate,
+} from 'lodash-es';
 import {
   CheckCircleFilledIcon as TdCheckCircleFilledIcon,
   CloseCircleFilledIcon as TdCloseCircleFilledIcon,
   ErrorCircleFilledIcon as TdErrorCircleFilledIcon,
   GlobalIconType,
 } from 'tdesign-icons-vue';
-import lodashTemplate from 'lodash/template';
 import { validate } from './form-model';
 import {
   Data,
@@ -133,6 +131,7 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
           ? [this.commonStatusClassName.success, `${this.componentName}--success-border`].join(' ')
           : this.commonStatusClassName.success;
       }
+      if (this.status) return this.statusClass;
       const list = this.errorList;
       if (!list.length) return;
       const type = list[0].type || 'error';
@@ -185,6 +184,11 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
     },
     errorMessages(): FormErrorMessage {
       return this.form.errorMessage ?? this.global.errorMessage;
+    },
+    statusClass(): string {
+      return `${this.classPrefix}-is-${this.$props.status || 'default'} ${
+        this.$props.status === 'success' ? `${this.componentName}--success-border` : ''
+      }`;
     },
   },
 
@@ -478,6 +482,8 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
 
   render(): VNode {
     const helpNode = renderTNodeJSX(this, 'help');
+    const tipsNode = renderTNodeJSX(this, 'tips');
+
     return (
       <div class={this.classes}>
         {this.getLabel()}
@@ -487,6 +493,9 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
             {this.getSuffixIcon()}
           </div>
           {helpNode && <div class={`${this.classPrefix}-input__help`}>{helpNode}</div>}
+          {tipsNode && (
+            <div class={[`${this.componentName}-tips`, `${this.classPrefix}-tips`, this.statusClass]}>{tipsNode}</div>
+          )}
           {this.extraNode}
         </div>
       </div>

@@ -1,7 +1,5 @@
 import { defineComponent, computed } from '@vue/composition-api';
-import isArray from 'lodash/isArray';
-import isFunction from 'lodash/isFunction';
-import lodashGet from 'lodash/get';
+import { get as lodashGet, isArray, isFunction } from 'lodash-es';
 import Tree from '../tree';
 import props from './props';
 import SelectInput from '../select-input';

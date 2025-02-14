@@ -1,5 +1,5 @@
 import { VNode } from 'vue';
-import get from 'lodash/get';
+import { get } from 'lodash-es';
 import { computed, ComputedRef } from '@vue/composition-api';
 import { DropdownOption, TdDropdownProps } from '../type';
 

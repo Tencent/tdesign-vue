@@ -1,6 +1,6 @@
 import { ref, computed, watch } from '@vue/composition-api';
 import dayjs from 'dayjs';
-import omit from 'lodash/omit';
+import { omit } from 'lodash-es';
 
 import { usePrefixClass } from '../../hooks/useConfig';
 import { TdDatePickerProps, DateValue } from '../type';
@@ -12,6 +12,7 @@ import {
   parseToDayjs,
 } from '../../_common/js/date-picker/format';
 import useSingleValue from './useSingleValue';
+import { TdInputProps } from '../../input/type';
 
 export default function useSingle(props: TdDatePickerProps, { emit }: any) {
   const COMPONENT_NAME = usePrefixClass('date-picker');
@@ -102,7 +103,7 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
         }
       },
     };
-    return props.multiple ? omit(inputProps, ['ref', 'class']) : inputProps;
+    return props.multiple ? ({ ...omit(inputProps, ['ref', 'class']) } as unknown as TdInputProps) : inputProps;
   });
 
   // popup 设置

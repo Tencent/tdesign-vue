@@ -1,8 +1,7 @@
 import {
   computed, defineComponent, ref, toRefs, watch,
 } from '@vue/composition-api';
-import omit from 'lodash/omit';
-import isFunction from 'lodash/isFunction';
+import { isFunction, omit } from 'lodash-es';
 import { ImageErrorIcon, ImageIcon } from 'tdesign-icons-vue';
 import observe from '../_common/js/utils/observe';
 import { useConfig } from '../config-provider/useConfig';

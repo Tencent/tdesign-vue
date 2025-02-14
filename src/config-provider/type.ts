@@ -12,6 +12,8 @@ import { MessageOptions } from '../message';
 import { ImageProps } from '../image';
 import { TNode, SizeEnum, AttachNode } from '../common';
 
+export type AttachNodeComponent = 'imageViewer' | 'drawer' | 'dialog' | 'popup';
+
 export interface GlobalConfigProvider {
   /**
    * 警告全局配置
@@ -26,9 +28,10 @@ export interface GlobalConfigProvider {
    */
   animation?: Partial<Record<'include' | 'exclude', Array<AnimationType>>>;
   /**
-   * null
+   * 组件挂载节点
+   * @default document.body
    */
-  attach?: AttachNode | { imageViewer?: AttachNode; popup?: AttachNode; dialog?: AttachNode; drawer?: AttachNode };
+  attach?: AttachNode | { [key in AttachNodeComponent]?: AttachNode };
   /**
    * 自动填充组件全局配置
    */

@@ -9,9 +9,7 @@ import {
   onMounted,
   toRefs,
 } from '@vue/composition-api';
-import pick from 'lodash/pick';
-import isFunction from 'lodash/isFunction';
-import get from 'lodash/get';
+import { get, isFunction, pick } from 'lodash-es';
 import props from './base-table-props';
 import useTableHeader from './hooks/useTableHeader';
 import useColumnResize from './hooks/useColumnResize';

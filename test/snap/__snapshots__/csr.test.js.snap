@@ -35868,7 +35868,80 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/dialog.vue 
     data-v-6be7f270=""
     duration="300"
     name="t-dialog-zoom__vue"
-  />
+  >
+    <div
+      class="t-dialog__ctx"
+    >
+      <div
+        class=""
+      >
+        <div
+          class=""
+        >
+          <div
+            class="t-dialog t-dialog__modal-default t-dialog--default"
+          >
+            <div
+              class="t-dialog__header"
+            >
+              <div
+                class="t-dialog__header-content"
+              >
+                Title
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M7.05 5.64L12 10.59l4.95-4.95 1.41 1.41L13.41 12l4.95 4.95-1.41 1.41L12 13.41l-4.95 4.95-1.41-1.41L10.59 12 5.64 7.05l1.41-1.41z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              class="t-dialog__body"
+            >
+              Would you like to be my friends？
+            </div>
+            <div
+              class="t-dialog__footer"
+            >
+              <div>
+                <button
+                  class="t-button t-button--variant-outline t-button--theme-default t-dialog__cancel"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    cancel
+                  </span>
+                </button>
+                <button
+                  class="t-button t-button--variant-base t-button--theme-primary t-dialog__confirm"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    confirm
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
   <br
     data-v-6be7f270=""
   />
@@ -35876,7 +35949,92 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/dialog.vue 
     data-v-6be7f270=""
     duration="300"
     name="t-dialog-zoom__vue"
-  />
+  >
+    <div
+      class="t-dialog__ctx"
+    >
+      <div
+        class=""
+      >
+        <div
+          class=""
+        >
+          <div
+            class="t-dialog t-dialog__modal-info t-dialog--default"
+          >
+            <div
+              class="t-dialog__header"
+            >
+              <div
+                class="t-dialog__header-content"
+              >
+                <svg
+                  class="t-icon t-icon-info-circle-filled t-is-info"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M12 23a11 11 0 100-22 11 11 0 000 22zM11 8.5v-2h2v2h-2zm2 1.5v7.5h-2V10h2z"
+                    fill="currentColor"
+                  />
+                </svg>
+                confirm
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M7.05 5.64L12 10.59l4.95-4.95 1.41 1.41L13.41 12l4.95 4.95-1.41 1.41L12 13.41l-4.95 4.95-1.41-1.41L10.59 12 5.64 7.05l1.41-1.41z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              class="t-dialog__body t-dialog__body__icon"
+            >
+              Would you like to be my friends？
+            </div>
+            <div
+              class="t-dialog__footer"
+            >
+              <div>
+                <button
+                  class="t-button t-button--variant-outline t-button--theme-default t-dialog__cancel"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    cancel
+                  </span>
+                </button>
+                <button
+                  class="t-button t-button--variant-base t-button--theme-primary t-dialog__confirm"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    confirm
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
   <br
     data-v-6be7f270=""
   />
@@ -35884,7 +36042,92 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/dialog.vue 
     data-v-6be7f270=""
     duration="300"
     name="t-dialog-zoom__vue"
-  />
+  >
+    <div
+      class="t-dialog__ctx"
+    >
+      <div
+        class=""
+      >
+        <div
+          class=""
+        >
+          <div
+            class="t-dialog t-dialog__modal-warning t-dialog--default"
+          >
+            <div
+              class="t-dialog__header"
+            >
+              <div
+                class="t-dialog__header-content"
+              >
+                <svg
+                  class="t-icon t-icon-error-circle-filled t-is-warning"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M12 1a11 11 0 110 22 11 11 0 010-22zm-1 13h2V6.5h-2V14zm2 1.5h-2v2h2v-2z"
+                    fill="currentColor"
+                  />
+                </svg>
+                confirm
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M7.05 5.64L12 10.59l4.95-4.95 1.41 1.41L13.41 12l4.95 4.95-1.41 1.41L12 13.41l-4.95 4.95-1.41-1.41L10.59 12 5.64 7.05l1.41-1.41z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              class="t-dialog__body t-dialog__body__icon"
+            >
+              Would you like to be my friends？
+            </div>
+            <div
+              class="t-dialog__footer"
+            >
+              <div>
+                <button
+                  class="t-button t-button--variant-outline t-button--theme-default t-dialog__cancel"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    cancel
+                  </span>
+                </button>
+                <button
+                  class="t-button t-button--variant-base t-button--theme-warning t-dialog__confirm"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    confirm
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
   <br
     data-v-6be7f270=""
   />
@@ -35892,7 +36135,92 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/dialog.vue 
     data-v-6be7f270=""
     duration="300"
     name="t-dialog-zoom__vue"
-  />
+  >
+    <div
+      class="t-dialog__ctx"
+    >
+      <div
+        class=""
+      >
+        <div
+          class=""
+        >
+          <div
+            class="t-dialog t-dialog__modal-danger t-dialog--default"
+          >
+            <div
+              class="t-dialog__header"
+            >
+              <div
+                class="t-dialog__header-content"
+              >
+                <svg
+                  class="t-icon t-icon-error-circle-filled t-is-error"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M12 1a11 11 0 110 22 11 11 0 010-22zm-1 13h2V6.5h-2V14zm2 1.5h-2v2h2v-2z"
+                    fill="currentColor"
+                  />
+                </svg>
+                confirm
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M7.05 5.64L12 10.59l4.95-4.95 1.41 1.41L13.41 12l4.95 4.95-1.41 1.41L12 13.41l-4.95 4.95-1.41-1.41L10.59 12 5.64 7.05l1.41-1.41z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              class="t-dialog__body t-dialog__body__icon"
+            >
+              Would you like to be my friends？
+            </div>
+            <div
+              class="t-dialog__footer"
+            >
+              <div>
+                <button
+                  class="t-button t-button--variant-outline t-button--theme-default t-dialog__cancel"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    cancel
+                  </span>
+                </button>
+                <button
+                  class="t-button t-button--variant-base t-button--theme-danger t-dialog__confirm"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    confirm
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
   <br
     data-v-6be7f270=""
   />
@@ -35900,7 +36228,92 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/dialog.vue 
     data-v-6be7f270=""
     duration="300"
     name="t-dialog-zoom__vue"
-  />
+  >
+    <div
+      class="t-dialog__ctx"
+    >
+      <div
+        class=""
+      >
+        <div
+          class=""
+        >
+          <div
+            class="t-dialog t-dialog__modal-success t-dialog--default"
+          >
+            <div
+              class="t-dialog__header"
+            >
+              <div
+                class="t-dialog__header-content"
+              >
+                <svg
+                  class="t-icon t-icon-check-circle-filled t-is-success"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M12 23a11 11 0 100-22 11 11 0 000 22zM7.5 10.59l3 3 6-6L17.91 9l-7.41 7.41L6.09 12l1.41-1.41z"
+                    fill="currentColor"
+                  />
+                </svg>
+                confirm
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M7.05 5.64L12 10.59l4.95-4.95 1.41 1.41L13.41 12l4.95 4.95-1.41 1.41L12 13.41l-4.95 4.95-1.41-1.41L10.59 12 5.64 7.05l1.41-1.41z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              class="t-dialog__body t-dialog__body__icon"
+            >
+              Would you like to be my friends？
+            </div>
+            <div
+              class="t-dialog__footer"
+            >
+              <div>
+                <button
+                  class="t-button t-button--variant-outline t-button--theme-default t-dialog__cancel"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    cancel
+                  </span>
+                </button>
+                <button
+                  class="t-button t-button--variant-base t-button--theme-success t-dialog__confirm"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    confirm
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
 </div>
 `;
 
@@ -44786,22 +45199,363 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/icon.vue 1`] = `
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
-  />
+  >
+    <div
+      class="t-dialog__ctx"
+      style="display: none;"
+    >
+      <div
+        class=""
+      >
+        <div
+          class=""
+        >
+          <div
+            class="t-dialog t-dialog__modal-info t-dialog--default"
+          >
+            <div
+              class="t-dialog__header"
+            >
+              <div
+                class="t-dialog__header-content"
+              >
+                <svg
+                  class="t-icon t-icon-info-circle-filled t-is-info"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M12 23a11 11 0 100-22 11 11 0 000 22zM11 8.5v-2h2v2h-2zm2 1.5v7.5h-2V10h2z"
+                    fill="currentColor"
+                  />
+                </svg>
+                下单确认
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M7.05 5.64L12 10.59l4.95-4.95 1.41 1.41L13.41 12l4.95 4.95-1.41 1.41L12 13.41l-4.95 4.95-1.41-1.41L10.59 12 5.64 7.05l1.41-1.41z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              class="t-dialog__body t-dialog__body__icon"
+            >
+              信息已全部保存，是否确认下单？
+            </div>
+            <div
+              class="t-dialog__footer"
+            >
+              <div>
+                <button
+                  class="t-button t-button--variant-base t-button--theme-default t-dialog__cancel"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    取消
+                  </span>
+                </button>
+                <button
+                  class="t-button t-button--variant-base t-button--theme-primary t-dialog__confirm"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    确认
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
   <br />
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
-  />
+  >
+    <div
+      class="t-dialog__ctx"
+    >
+      <div
+        class=""
+      >
+        <div
+          class=""
+        >
+          <div
+            class="t-dialog t-dialog__modal-warning t-dialog--default"
+          >
+            <div
+              class="t-dialog__header"
+            >
+              <div
+                class="t-dialog__header-content"
+              >
+                <svg
+                  class="t-icon t-icon-error-circle-filled t-is-warning"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M12 1a11 11 0 110 22 11 11 0 010-22zm-1 13h2V6.5h-2V14zm2 1.5h-2v2h2v-2z"
+                    fill="currentColor"
+                  />
+                </svg>
+                温馨提示
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M7.05 5.64L12 10.59l4.95-4.95 1.41 1.41L13.41 12l4.95 4.95-1.41 1.41L12 13.41l-4.95 4.95-1.41-1.41L10.59 12 5.64 7.05l1.41-1.41z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              class="t-dialog__body t-dialog__body__icon"
+            >
+              系统重启后会短暂影响页面访问，确认重启吗？
+            </div>
+            <div
+              class="t-dialog__footer"
+            >
+              <div>
+                <button
+                  class="t-button t-button--variant-base t-button--theme-default t-dialog__cancel"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    取消
+                  </span>
+                </button>
+                <button
+                  class="t-button t-button--variant-base t-button--theme-primary t-dialog__confirm"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    确认
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
   <br />
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
-  />
+  >
+    <div
+      class="t-dialog__ctx"
+    >
+      <div
+        class=""
+      >
+        <div
+          class=""
+        >
+          <div
+            class="t-dialog t-dialog__modal-danger t-dialog--default"
+          >
+            <div
+              class="t-dialog__header"
+            >
+              <div
+                class="t-dialog__header-content"
+              >
+                <svg
+                  class="t-icon t-icon-error-circle-filled t-is-error"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M12 1a11 11 0 110 22 11 11 0 010-22zm-1 13h2V6.5h-2V14zm2 1.5h-2v2h2v-2z"
+                    fill="currentColor"
+                  />
+                </svg>
+                推送失败
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M7.05 5.64L12 10.59l4.95-4.95 1.41 1.41L13.41 12l4.95 4.95-1.41 1.41L12 13.41l-4.95 4.95-1.41-1.41L10.59 12 5.64 7.05l1.41-1.41z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              class="t-dialog__body t-dialog__body__icon"
+            >
+              请检查推送数据是否符合要求
+            </div>
+            <div
+              class="t-dialog__footer"
+            >
+              <div>
+                <button
+                  class="t-button t-button--variant-base t-button--theme-default t-dialog__cancel"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    取消
+                  </span>
+                </button>
+                <button
+                  class="t-button t-button--variant-base t-button--theme-primary t-dialog__confirm"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    确认
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
   <br />
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
-  />
+  >
+    <div
+      class="t-dialog__ctx"
+    >
+      <div
+        class=""
+      >
+        <div
+          class=""
+        >
+          <div
+            class="t-dialog t-dialog__modal-success t-dialog--default"
+          >
+            <div
+              class="t-dialog__header"
+            >
+              <div
+                class="t-dialog__header-content"
+              >
+                <svg
+                  class="t-icon t-icon-check-circle-filled t-is-success"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M12 23a11 11 0 100-22 11 11 0 000 22zM7.5 10.59l3 3 6-6L17.91 9l-7.41 7.41L6.09 12l1.41-1.41z"
+                    fill="currentColor"
+                  />
+                </svg>
+                操作成功
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M7.05 5.64L12 10.59l4.95-4.95 1.41 1.41L13.41 12l4.95 4.95-1.41 1.41L12 13.41l-4.95 4.95-1.41-1.41L10.59 12 5.64 7.05l1.41-1.41z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              class="t-dialog__body t-dialog__body__icon"
+            >
+              是否前往查看订单列表
+            </div>
+            <div
+              class="t-dialog__footer"
+            >
+              <div>
+                <button
+                  class="t-button t-button--variant-base t-button--theme-default t-dialog__cancel"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    取消
+                  </span>
+                </button>
+                <button
+                  class="t-button t-button--variant-base t-button--theme-primary t-dialog__confirm"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    确认
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
   <br />
   <button
     class="t-button t-button--variant-base t-button--theme-primary"
@@ -44897,7 +45651,85 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/modal.vue 1`] = `
   <transition-stub
     duration="300"
     name="t-dialog-zoom__vue"
-  />
+  >
+    <div
+      class="t-dialog__ctx"
+      style="display: none;"
+    >
+      <div
+        class=""
+      >
+        <div
+          class=""
+        >
+          <div
+            class="t-dialog t-dialog__modal-default t-dialog--default"
+          >
+            <div
+              class="t-dialog__header"
+            >
+              <div
+                class="t-dialog__header-content"
+              >
+                普通对话框-不可拖拽
+              </div>
+              <span
+                class="t-dialog__close"
+              >
+                <svg
+                  class="t-icon t-icon-close"
+                  fill="none"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M7.05 5.64L12 10.59l4.95-4.95 1.41 1.41L13.41 12l4.95 4.95-1.41 1.41L12 13.41l-4.95 4.95-1.41-1.41L10.59 12 5.64 7.05l1.41-1.41z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </div>
+            <div
+              class="t-dialog__body"
+            >
+              <div>
+                <div>
+                  对话框内容
+                </div>
+              </div>
+            </div>
+            <div
+              class="t-dialog__footer"
+            >
+              <div>
+                <button
+                  class="t-button t-button--variant-base t-button--theme-default t-dialog__cancel"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    取消
+                  </span>
+                </button>
+                <button
+                  class="t-button t-button--variant-base t-button--theme-primary t-dialog__confirm"
+                  type="button"
+                >
+                  <span
+                    class="t-button__text"
+                  >
+                    确认
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
 </div>
 `;
 

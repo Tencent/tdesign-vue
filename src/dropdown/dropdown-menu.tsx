@@ -4,7 +4,7 @@ import {
   defineComponent, h, ref, onMounted, reactive, set,
 } from '@vue/composition-api';
 import { ChevronRightIcon as TdChevronRightIcon } from 'tdesign-icons-vue';
-import isFunction from 'lodash/isFunction';
+import { isFunction } from 'lodash-es';
 
 import DropdownItem from './dropdown-item';
 

@@ -116,6 +116,7 @@ export const packageJSONContentForComposition = JSON.stringify(
       'tdesign-vue': orgPkg.version + '-naruto',
       'tdesign-icons-vue': orgPkg.dependencies['tdesign-icons-vue'],
       vue: '2.7.14',
+      'lodash-es': orgPkg.dependencies['lodash-es'],
     },
     devDependencies: {
       vite: '^2.9.6',
@@ -123,6 +124,7 @@ export const packageJSONContentForComposition = JSON.stringify(
       '@vitejs/plugin-vue2': '^1.1.2',
       'vue-template-compiler': '2.7.14',
       '@vitejs/plugin-vue2-jsx': '^1.1.0',
+      '@types/lodash-es': orgPkg.devDependencies['@types/lodash-es'],
     },
   },
   null,

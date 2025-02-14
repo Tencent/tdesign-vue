@@ -8,7 +8,7 @@
 import {
   ref, Ref, reactive, onMounted,
 } from '@vue/composition-api';
-import isNumber from 'lodash/isNumber';
+import { isNumber } from 'lodash-es';
 import { BaseTableCol, TableRowData, TdBaseTableProps } from '../type';
 import { on, off } from '../../utils/dom';
 

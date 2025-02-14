@@ -1,4 +1,4 @@
-import isUndefined from 'lodash/isUndefined';
+import { isUndefined } from 'lodash-es';
 import {
   ref, watch, TypeCreateElement, privateKey, TypeVNode,
 } from '../adapt';

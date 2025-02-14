@@ -1,5 +1,4 @@
-import isNil from 'lodash/isNil';
-import isArray from 'lodash/isArray';
+import { isArray, isNil } from 'lodash-es';
 import { defineComponent, provide, ref } from '@vue/composition-api';
 
 import { useTNodeJSX } from '../hooks/tnode';

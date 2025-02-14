@@ -1,7 +1,7 @@
 import {
   ref, computed, toRefs, SetupContext,
 } from '@vue/composition-api';
-import merge from 'lodash/merge';
+import { merge } from 'lodash-es';
 import {
   SizeLimitObj,
   TdUploadProps,

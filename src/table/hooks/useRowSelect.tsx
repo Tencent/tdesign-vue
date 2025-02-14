@@ -2,10 +2,8 @@
 import {
   computed, toRefs, h, ref, watch,
 } from '@vue/composition-api';
-import intersection from 'lodash/intersection';
-import get from 'lodash/get';
 import { CreateElement } from 'vue';
-import isFunction from 'lodash/isFunction';
+import { get, intersection, isFunction } from 'lodash-es';
 import useDefaultValue from '../../hooks/useDefaultValue';
 import {
   ActiveRowActionContext,

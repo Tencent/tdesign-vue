@@ -1,10 +1,9 @@
 import {
   computed, defineComponent, onMounted, PropType, ref, SetupContext, toRefs, watch,
 } from '@vue/composition-api';
-import get from 'lodash/get';
-import set from 'lodash/set';
-import isFunction from 'lodash/isFunction';
-import cloneDeep from 'lodash/cloneDeep';
+import {
+  cloneDeep, get, set, isFunction,
+} from 'lodash-es';
 import { Edit1Icon as TdEdit1Icon } from 'tdesign-icons-vue';
 import {
   TableRowData,

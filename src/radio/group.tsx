@@ -1,6 +1,5 @@
 import { VNode, CreateElement } from 'vue';
-import isString from 'lodash/isString';
-import isNumber from 'lodash/isNumber';
+import { isNumber, isString } from 'lodash-es';
 import props from './radio-group-props';
 import {
   TdRadioGroupProps, RadioOptionObj, RadioOption, RadioValue,

@@ -4,7 +4,7 @@
 /* eslint-disable no-param-reassign */
 import Vue from 'vue';
 import raf from 'raf';
-import isString from 'lodash/isString';
+import { isString } from 'lodash-es';
 import { easeInOutCubic, EasingFunction } from './easing';
 import { ScrollContainer, ScrollContainerElement } from '../common';
 
