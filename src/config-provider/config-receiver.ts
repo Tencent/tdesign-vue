@@ -222,12 +222,7 @@ export function getAttachConfigMixins(componentName: AttachNodeComponent) {
           return globalConfigAttach;
         }
 
-        const validComponents: AttachNodeComponent[] = ['imageViewer', 'drawer', 'dialog', 'popup'];
-        if (globalConfigAttach && typeof globalConfigAttach === 'object' && validComponents.includes(componentName)) {
-          return globalConfigAttach[componentName];
-        }
-
-        return 'body';
+        return globalConfigAttach?.[componentName] || 'body';
       },
     },
   });
