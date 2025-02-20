@@ -57,13 +57,11 @@ export default defineComponent({
     };
 
     const formatValue = computed(() => {
-      const _value: number | undefined | string = innerValue.value;
-
       if (isFunction(props.format)) {
-        return props.format(_value);
+        return props.format(innerValue.value);
       }
       // replace的替换的方案仅能应对大部分地区
-      return getFormatValue(_value, decimalPlaces.value, separator.value);
+      return getFormatValue(innerValue.value, decimalPlaces.value, separator.value);
     });
 
     onMounted(() => props.animation && props.animationStart && start());
