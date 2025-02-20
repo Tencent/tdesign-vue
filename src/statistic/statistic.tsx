@@ -60,7 +60,7 @@ export default defineComponent({
       if (isFunction(props.format)) {
         return props.format(innerValue.value);
       }
-      // replace的替换的方案仅能应对大部分地区
+
       return getFormatValue(innerValue.value, decimalPlaces.value, separator.value);
     });
 
