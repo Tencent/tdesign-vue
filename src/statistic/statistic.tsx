@@ -13,7 +13,7 @@ import { useGlobalIcon } from '../hooks/useGlobalIcon';
 
 import Skeleton from '../skeleton';
 import Tween from '../_common/js/statistic/tween';
-import { COLOR_MAP } from '../_common/js/statistic/utils';
+import { COLOR_MAP, getFormatValue } from '../_common/js/statistic/utils';
 
 export default defineComponent({
   name: 'Statistic',
@@ -57,20 +57,11 @@ export default defineComponent({
     };
 
     const formatValue = computed(() => {
-      let _value: number | undefined | string = innerValue.value;
-
       if (isFunction(props.format)) {
-        return props.format(_value);
+        return props.format(innerValue.value);
       }
-      const options = {
-        minimumFractionDigits: decimalPlaces.value || 0,
-        maximumFractionDigits: decimalPlaces.value || 20,
-        useGrouping: !!separator,
-      };
-      // replace的替换的方案仅能应对大部分地区
-      _value = _value.toLocaleString(undefined, options).replace(/,|，/g, separator.value);
 
-      return _value;
+      return getFormatValue(innerValue.value, decimalPlaces.value, separator.value);
     });
 
     onMounted(() => props.animation && props.animationStart && start());
