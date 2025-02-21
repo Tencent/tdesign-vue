@@ -5,6 +5,24 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.11.0 `2025-02-21` 
+### 🚀 Features
+- `Drawer`: sizeDraggable支持SizeDragLimit类型 @huangchen1031 ([#3465](https://github.com/Tencent/tdesign-vue/pull/3465))
+- `Form`: `FormItem` 新增 `status` 和 `tips` API @RSS1102 ([#3490](https://github.com/Tencent/tdesign-vue/pull/3490))
+- `Icon`: 新增`logo-alipay`、`logo-behance-filled`等图标，修改`logo-wecom`图标，移除不合理的`logo-wecom-filled`图标 @uyarn([#3468](https://github.com/Tencent/tdesign-vue/pull/3468))
+
+### 🐞 Bug Fixes
+- `AutoComplete`: 修复 `options` 为空数组，empty 节点没显示的问题 @liweijie0812 ([#3474](https://github.com/Tencent/tdesign-vue/pull/3474))
+- `Dialog`: 修复 `1.10.8` 版本后当 mode 为 "normal" 时渲染不符合预期的问题 @RSS1102 ([#3493](https://github.com/Tencent/tdesign-vue/pull/3493))
+- `ImageViewer`: 修复开启`closeOnOverlay`时，点击蒙层关闭存在闪烁情况的问题 @huangchen1031([#3472](https://github.com/Tencent/tdesign-vue/pull/3472))
+- `Menu`: 修复`MenuGroup`的 title 不支持使用函数渲染的问题 @uyarn ([#3497](https://github.com/Tencent/tdesign-vue/pull/3497))
+- `Statistic`: 修复 `decimalPlaces=0` 时数值动画期间精度错误的问题 @liweijie0812 ([#3496](https://github.com/Tencent/tdesign-vue/pull/3496))
+- `Tabs`: 修复可滑动`Tabs`配合`action`使用的样式问题 @Wesley-0808([#3477](https://github.com/Tencent/tdesign-vue/pull/3477))
+- `Transfer`: 确保 `filterTransferData` 仅返回有效值 @RSS1102 ([#3487](https://github.com/Tencent/tdesign-vue/pull/3487))
+
+### 🚧 Others
+- 调整组件依赖 `lodash`  为`lodash-es` @liweijie0812 ([#3486](https://github.com/Tencent/tdesign-vue/pull/3486))
+
 ## 🌈 1.10.9 `2025-01-10` 
 ### 🚀 Features
 - `AutoComplete`: 新增`empty` API，用于配置空状态下的下拉内容展示 @liweijie0812 ([#3462](https://github.com/Tencent/tdesign-vue/pull/3462))
