@@ -57,18 +57,6 @@ export default mixins(
       });
     },
 
-    cancelBtnAction(e: MouseEvent) {
-      emitEvent<Parameters<TdDialogProps['onCancel']>>(this, 'cancel', { e });
-      this.emitCloseEvent({
-        trigger: 'cancel',
-        e,
-      });
-    },
-
-    confirmBtnAction(e: MouseEvent) {
-      emitEvent<Parameters<TdDialogProps['onConfirm']>>(this, 'confirm', { e });
-    },
-
     emitCloseEvent(context: DialogCloseContext) {
       emitEvent<Parameters<TdDialogProps['onClose']>>(this, 'close', context);
       this.$emit('update:visible', false);
