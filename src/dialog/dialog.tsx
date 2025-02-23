@@ -151,7 +151,9 @@ export default mixins(
       return !this.isFullScreen ? { width: getCSSValue(this.width), ...this.dialogStyle } : { ...this.dialogStyle }; // width全屏模式不生效;
     },
     computedAttach(): AttachNode {
-      return this.showInAttachedElement ? undefined : this.attach || this.globalAttach();
+      return this.showInAttachedElement || !this.isModal || !this.isModeLess || !this.isFullScreen
+        ? undefined
+        : this.attach || this.globalAttach();
     },
   },
 
