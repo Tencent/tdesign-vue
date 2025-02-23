@@ -76,7 +76,6 @@ export default mixins(
       const { CloseIcon } = this.useGlobalIcon({
         CloseIcon: TdCloseIcon,
       });
-      const defaultHeader = <h5 class="title"></h5>;
       const defaultCloseBtn = <CloseIcon />;
       const getIcon = () => {
         const { InfoCircleFilledIcon, CheckCircleFilledIcon, ErrorCircleFilledIcon } = this.useGlobalIcon({
