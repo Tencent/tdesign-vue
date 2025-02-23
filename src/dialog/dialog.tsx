@@ -24,6 +24,7 @@ import { AttachNode, ClassName, Styles } from '../common';
 import { updateElement } from '../hooks/useDestroyOnClose';
 import stack from './stack';
 import { getScrollbarWidth } from '../_common/js/utils/getScrollbarWidth';
+import TDialogCard from './dialog-card';
 
 function getCSSValue(v: string | number) {
   return isNaN(Number(v)) ? v : `${Number(v)}px`;
@@ -87,10 +88,6 @@ export default mixins(
     isModeLess(): boolean {
       return this.mode === 'modeless';
     },
-    // 是否普通对话框，没有脱离文档流的对话框
-    isNormal(): boolean {
-      return this.mode === 'normal';
-    },
     isFullScreen(): boolean {
       return this.mode === 'full-screen';
     },
@@ -111,17 +108,18 @@ export default mixins(
       return dialogClass;
     },
     positionClass(): ClassName {
-      if (this.isNormal) return [];
       if (this.isFullScreen) return [`${this.componentName}__position_fullscreen`];
-      const dialogClass = [
-        `${this.componentName}__position`,
-        !!this.top && `${this.componentName}--top`,
-        `${this.placement && !this.top ? `${this.componentName}--${this.placement}` : ''}`,
-      ];
-      return dialogClass;
+      if (this.isModal || this.isModeLess) {
+        return [
+          `${this.componentName}__position`,
+          !!this.top && `${this.componentName}--top`,
+          `${this.placement && !this.top ? `${this.componentName}--${this.placement}` : ''}`,
+        ];
+      }
+      return [];
     },
     wrapClass(): ClassName {
-      return [!this.isNormal && `${this.componentName}__wrap`];
+      return [(this.isModal || this.isModeLess || this.isFullScreen) && `${this.componentName}__wrap`];
     },
     ctxClass(): ClassName {
       // dialog__ctx--fixed 绝对定位
@@ -153,7 +151,7 @@ export default mixins(
       return !this.isFullScreen ? { width: getCSSValue(this.width), ...this.dialogStyle } : { ...this.dialogStyle }; // width全屏模式不生效;
     },
     computedAttach(): AttachNode {
-      return this.showInAttachedElement || this.isNormal ? undefined : this.attach || this.globalAttach();
+      return this.showInAttachedElement ? undefined : this.attach || this.globalAttach();
     },
   },
 
@@ -431,13 +429,10 @@ export default mixins(
       if (this.isModeLess && this.draggable) e.stopPropagation();
     },
     renderDialog() {
-      const { CloseIcon } = this.useGlobalIcon({
-        CloseIcon: TdCloseIcon,
-      });
       // header 值为 true 显示空白头部
       const defaultHeader = <h5 class="title"></h5>;
-      const defaultCloseBtn = <CloseIcon />;
-      const body = renderContent(this, 'default', 'body');
+      const headerContent = renderTNodeJSX(this, 'header', defaultHeader);
+      const bodyContent = renderContent(this, 'default', 'body');
       // this.getConfirmBtn is a function of ActionMixin
       // this.getCancelBtn is a function of ActionMixin
       const defaultFooter = (
@@ -457,54 +452,29 @@ export default mixins(
           })}
         </div>
       );
-      const headerClassName = this.isFullScreen
-        ? [`${this.componentName}__header`, `${this.componentName}__header--fullscreen`]
-        : `${this.componentName}__header`;
-      const closeClassName = this.isFullScreen
-        ? [`${this.componentName}__close`, `${this.componentName}__close--fullscreen`]
-        : `${this.componentName}__close`;
-      const bodyClassName = this.theme === 'default'
-        ? [`${this.componentName}__body`]
-        : [`${this.componentName}__body`, `${this.componentName}__body__icon`];
-
       const footerContent = renderTNodeJSX(this, 'footer', defaultFooter);
-
-      if (this.isFullScreen && footerContent) {
-        bodyClassName.push(`${this.componentName}__body--fullscreen`);
-      } else if (this.isFullScreen) {
-        bodyClassName.push(`${this.componentName}__body--fullscreen--without-footer`);
-      }
-      const footerClassName = this.isFullScreen
-        ? [`${this.componentName}__footer`, `${this.componentName}__footer--fullscreen`]
-        : `${this.componentName}__footer`;
-
-      const footer = this.footer ? (
-        <div class={footerClassName} onmousedown={this.onStopDown}>
-          {footerContent}
-        </div>
-      ) : null;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const {
+        body, header, footer, dialogClassName, theme, onConfirm, onCancel, onCloseBtnClick, ...otherProps
+      } = this;
       // 此处获取定位方式 top 优先级较高 存在时 默认使用top定位
       return (
         // 非模态形态下draggable为true才允许拖拽
         <div class={this.wrapClass}>
           <div class={this.positionClass} style={this.positionStyle} onClick={this.overlayAction} ref="dialogPosition">
             <div key="dialog" ref="dialog" class={this.dialogClass} style={this.computedDialogStyle}>
-              <div class={headerClassName} onmousedown={this.onStopDown}>
-                <div class={`${this.componentName}__header-content`}>
-                  {this.getIcon()}
-                  {renderTNodeJSX(this, 'header', defaultHeader)}
-                </div>
-                {this.closeBtn ? (
-                  <span class={closeClassName} onClick={this.closeBtnAction}>
-                    {renderTNodeJSX(this, 'closeBtn', defaultCloseBtn)}
-                  </span>
-                ) : null}
-              </div>
-
-              <div class={bodyClassName} onmousedown={this.onStopDown}>
-                {body}
-              </div>
-              {footer}
+              <TDialogCard
+                ref="dialogCardRef"
+                theme={theme}
+                {...otherProps}
+                header={headerContent}
+                body={bodyContent}
+                footer={footerContent}
+                class={dialogClassName}
+                onConfirm={this.confirmBtnAction}
+                onCancel={this.cancelBtnAction}
+                onCloseBtnClick={this.closeBtnAction}
+              />
             </div>
           </div>
         </div>
