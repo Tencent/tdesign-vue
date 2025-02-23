@@ -1,5 +1,31 @@
 :: BASE_DOC ::
 
+### Plugin or function invocations
+
+#### Plugin invocations
+
+- `this.$drawer(options)`
+
+#### Function invocations
+
+- `DrawerPlugin(options)`
+
+#### Component instance methods
+
+A component instance refers to `DrawerInstance = this.$drawer(options)` or `DrawerInstance = DrawerPlugin(options)`.
+
+- Destroying a drawer: `DrawerInstance.destroy()`
+
+- Hiding a drawer: `DrawerInstance.hide()`
+
+- Showing a drawer: `DrawerInstance.show()`
+
+- Updating a drawer: `DrawerInstance.update()`
+
+Note that in the following demo, there are multiple instances where DOM elements are not being destroyed. In real-world applications, it is important to consider destroying DOM elements. Otherwise, when users repeatedly click and create instances from plugin or function invocations, a large number of DOM elements can accumulate, leading to potential memory leaks.
+
+{{ plugin }}
+
 ## API
 ### Drawer Props
 
@@ -14,6 +40,7 @@ closeOnOverlayClick | Boolean | true | \- | N
 confirmBtn | String / Object / Slot / Function | - | Typescript: `FooterButton` `type FooterButton = string \| ButtonProps \| TNode`，[Button API Documents](./button?tab=api). [see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts). [see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/drawer/type.ts) | N
 default | String / Slot / Function | - | Typescript: `string \| TNode`. [see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 destroyOnClose | Boolean | false | \- | N
+drawerClassName | String | - | \- | N
 footer | Boolean / Slot / Function | true | Typescript: `boolean \| TNode`. [see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 header | String / Boolean / Slot / Function | true | Typescript: `string \| boolean \| TNode`. [see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 mode | String | overlay | options: overlay/push | N

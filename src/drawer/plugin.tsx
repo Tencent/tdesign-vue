@@ -18,15 +18,11 @@ const createDrawer: DrawerMethod = (props: DrawerOptions) => {
         || (() => {
           drawer.visible = false;
         }),
+      drawerClassName: options.className,
       instanceGlobal: globalOptions?.drawer,
     },
   }).$mount();
   drawer.visible = true;
-  if (options.className) {
-    options.className.split(' ').forEach((name) => {
-      drawer.$el.classList.add(name.trim());
-    });
-  }
   if (options.style) {
     (drawer.$el as HTMLElement).style.cssText += options.style;
   }
