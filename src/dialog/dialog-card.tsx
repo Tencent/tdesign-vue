@@ -163,7 +163,7 @@ export default mixins(
       <div>
         {this.renderHeader()}
         {this.renderBody()}
-        {this.renderFooter()}
+        {!!this.footer && this.renderFooter()}
       </div>
     );
   },
