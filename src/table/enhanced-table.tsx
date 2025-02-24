@@ -1,7 +1,7 @@
 import {
   defineComponent, SetupContext, computed, ref,
 } from 'vue';
-import get from 'lodash/get';
+import { get } from 'lodash-es';
 import baseTableProps from './base-table-props';
 import primaryTableProps from './primary-table-props';
 import enhancedTableProps from './enhanced-table-props';

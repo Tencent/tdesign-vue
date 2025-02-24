@@ -6,7 +6,7 @@
  */
 
 import { DirectiveBinding } from 'vue/types/options';
-import setStyle from '../_common/js/utils/set-style';
+import setStyle from '../_common/js/utils/setStyle';
 import { prefix } from '../config';
 
 const Ripple = {

@@ -1,5 +1,5 @@
 import { VNode, inject } from 'vue';
-import isObject from 'lodash/isObject';
+import { isObject } from 'lodash-es';
 import { calcSize } from '../utils/responsive';
 import props from './col-props';
 import { ClassName } from '../common';

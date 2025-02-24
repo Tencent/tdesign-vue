@@ -1,6 +1,5 @@
 import { VNode, CreateElement } from 'vue';
-import isString from 'lodash/isString';
-import isNumber from 'lodash/isNumber';
+import { isNumber, isString } from 'lodash-es';
 import { JsxNode } from '../common';
 import props from './props';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';

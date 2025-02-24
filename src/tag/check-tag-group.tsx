@@ -1,7 +1,7 @@
 import {
   computed, defineComponent, toRefs, h, SetupContext,
 } from 'vue';
-import isFunction from 'lodash/isFunction';
+import { isFunction } from 'lodash-es';
 import { usePrefixClass } from '../hooks/useConfig';
 import props from './check-tag-group-props';
 import CheckTag from './check-tag';

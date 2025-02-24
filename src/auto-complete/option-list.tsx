@@ -1,15 +1,14 @@
 import {
   ref, computed, defineComponent, PropType, h, watch, onBeforeUnmount,
 } from 'vue';
-import isFunction from 'lodash/isFunction';
-import escapeRegExp from 'lodash/escapeRegExp';
+import { isFunction, escapeRegExp } from 'lodash-es';
+
 import HighlightOption from './highlight-option';
 import { CommonClassNameType } from '../hooks/useCommonClassName';
 import { AutoCompleteOptionObj, TdAutoCompleteProps } from './type';
 import log from '../_common/js/log';
 import { useConfig, usePrefixClass } from '../hooks/useConfig';
 import { on, off } from '../utils/dom';
-import { renderTNodeJSX } from '../utils/render-tnode';
 
 export default defineComponent({
   name: 'AutoCompleteOptionList',
@@ -147,8 +146,9 @@ export default defineComponent({
 
   render() {
     if (!this.tOptions.length) {
-      const empty = renderTNodeJSX(this, 'empty');
-      return <div class={`${this.classPrefix}-auto-complete__panel--empty`}>{empty || this.globalConfig.empty}</div>;
+      return (
+        <div class={`${this.classPrefix}-auto-complete__panel--empty`}>{this.empty || this.globalConfig.empty}</div>
+      );
     }
     return (
       <ul class={this.classes}>

@@ -1,6 +1,6 @@
 import Vue, { VueConstructor } from 'vue';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
-import isFunction from 'lodash/isFunction';
+import { isFunction } from 'lodash-es';
 import { ANCHOR_SHARP_REGEXP, ANCHOR_CONTAINER, getOffsetTop } from './utils';
 import {
   on, off, getScroll, scrollTo, getScrollContainer,

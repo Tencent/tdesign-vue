@@ -1,5 +1,6 @@
-import isString from 'lodash/isString';
 import { computed, SetupContext, CreateElement } from 'vue';
+import { isString } from 'lodash-es';
+
 import { useTNodeJSX } from '../../hooks/tnode';
 import { TdPrimaryTableProps } from '../type';
 import Loading from '../../loading';

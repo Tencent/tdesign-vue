@@ -1,6 +1,5 @@
 import Vue from 'vue';
-import cloneDeep from 'lodash/cloneDeep';
-import filter from 'lodash/filter';
+import { cloneDeep, filter } from 'lodash-es';
 
 import {
   TransferListOptionBase, TransferItemOption, TdTransferProps, TransferValue, DataOption,
@@ -174,7 +173,8 @@ function filterTransferData(
   if (!isTreeMode) {
     if (needMatch) {
       // 正向过滤。要保持filterValues顺序
-      return filterValues.map((value) => data.find((item) => item.value === value));
+      const dataMap = new Map(data.map((item) => [item.value, item]));
+      return filterValues.map((value) => dataMap.get(value)).filter(Boolean);
     }
     // 反向过滤
     return data.filter((item) => {

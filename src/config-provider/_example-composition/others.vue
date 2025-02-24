@@ -87,7 +87,7 @@ import { ref, reactive } from 'vue';
 import {
   ErrorIcon, ChevronRightIcon, CloseIcon, CloseCircleIcon,
 } from 'tdesign-icons-vue';
-import merge from 'lodash/merge';
+import { merge } from 'lodash-es';
 import enConfig from 'tdesign-vue/es/locale/en_US';
 
 const initialTransferList = [];

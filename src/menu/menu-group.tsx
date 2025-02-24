@@ -1,6 +1,7 @@
 import { defineComponent } from 'vue';
 import props from './menu-group-props';
 import { usePrefixClass } from '../hooks/useConfig';
+import { renderTNodeJSX } from '../utils/render-tnode';
 
 export default defineComponent({
   name: 'TMenuGroup',
@@ -14,7 +15,7 @@ export default defineComponent({
   render() {
     return (
       <div class={`${this.classPrefix}-menu-group`}>
-        <div class={`${this.classPrefix}-menu-group__title`}>{this.title}</div>
+        <div class={`${this.classPrefix}-menu-group__title`}>{renderTNodeJSX(this, 'title')}</div>
         {this.$slots.default}
       </div>
     );

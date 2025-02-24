@@ -1,8 +1,7 @@
 import {
   computed, toRefs, ref, Ref, watch,
 } from 'vue';
-import get from 'lodash/get';
-import intersection from 'lodash/intersection';
+import { get, intersection } from 'lodash-es';
 import {
   TdEnhancedTableProps, TdPrimaryTableProps, TableRowData, PrimaryTableCol,
 } from '../type';

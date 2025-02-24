@@ -1,11 +1,9 @@
 import {
   defineComponent, PropType, SetupContext, h, ref, reactive, computed, toRefs, watch, CreateElement,
 } from 'vue';
-import isFunction from 'lodash/isFunction';
-import upperFirst from 'lodash/upperFirst';
-import isString from 'lodash/isString';
-import pick from 'lodash/pick';
-import get from 'lodash/get';
+import {
+  get, pick, isFunction, isString, upperFirst,
+} from 'lodash-es';
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import { formatClassNames, formatRowAttributes, formatRowClassNames } from './utils';
 import { getRowFixedStyles, getColumnFixedStyles } from './hooks/useFixed';

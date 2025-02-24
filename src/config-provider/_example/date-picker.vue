@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import merge from 'lodash/merge';
+import { merge } from 'lodash-es';
 import enConfig from 'tdesign-vue/es/locale/en_US';
 // import dayjs from 'dayjs';
 

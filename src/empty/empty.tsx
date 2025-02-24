@@ -1,8 +1,8 @@
 import {
   computed, defineComponent, h, toRefs,
 } from 'vue';
-import isPlainObject from 'lodash/isPlainObject';
-import isString from 'lodash/isString';
+import { isPlainObject, isString } from 'lodash-es';
+
 import type { TNode } from '../common';
 import { useConfig, usePrefixClass } from '../config-provider/useConfig';
 import { useCommonClassName } from '../hooks/useConfig';

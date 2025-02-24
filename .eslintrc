@@ -108,7 +108,13 @@
       {
         "checkLoops": false
       }
-    ]
+    ],
+    "no-restricted-imports": ["error", {
+      "paths": [{
+        "name": "lodash",
+        "message": "Please use lodash-es instead."
+      }]
+    }]
   },
   "overrides": [
     {

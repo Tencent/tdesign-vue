@@ -1,8 +1,7 @@
 import {
   Ref, reactive, computed, toRefs, watch, nextTick,
 } from 'vue';
-import isEqual from 'lodash/isEqual';
-import isFunction from 'lodash/isFunction';
+import { isEqual, isFunction } from 'lodash-es';
 
 import TreeStore from '../_common/js/tree/tree-store';
 import useVModel from '../hooks/useVModel';

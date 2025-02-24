@@ -4,8 +4,7 @@ import {
   BrowseOffIcon as TdBrowseOffIcon,
   CloseCircleFilledIcon as TdCloseCircleFilledIcon,
 } from 'tdesign-icons-vue';
-import camelCase from 'lodash/camelCase';
-import kebabCase from 'lodash/kebabCase';
+import { camelCase, kebabCase } from 'lodash-es';
 import { getUnicodeLength, limitUnicodeMaxLength, getIEVersion } from '../_common/js/utils/helper';
 import { InputValue, TdInputProps } from './type';
 import { getCharacterLength, omit } from '../utils/helper';

@@ -1,7 +1,7 @@
 import Vue from 'vue';
 // 通用库
 import dayjs from 'dayjs';
-import remove from 'lodash/remove';
+import { remove } from 'lodash-es';
 import calendar from 'dayjs/plugin/calendar';
 import props from './props';
 import mixins from '../utils/mixins';

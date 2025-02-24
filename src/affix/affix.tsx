@@ -1,5 +1,5 @@
 import Vue, { VueConstructor } from 'vue';
-import isFunction from 'lodash/isFunction';
+import { isFunction } from 'lodash-es';
 import { on, off, getScrollContainer } from '../utils/dom';
 import affixProps from './props';
 import { ScrollContainerElement } from '../common';

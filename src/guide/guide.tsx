@@ -1,11 +1,11 @@
 import {
   CreateElement, defineComponent, computed, nextTick, onMounted, ref, toRefs, watch,
 } from 'vue';
-import isFunction from 'lodash/isFunction';
+import { isFunction } from 'lodash-es';
 import {
   scrollToParentVisibleArea, getRelativePosition, getTargetElm, scrollToElm,
 } from './utils';
-import setStyle from '../_common/js/utils/set-style';
+import setStyle from '../_common/js/utils/setStyle';
 import TransferDom from '../utils/transfer-dom';
 import {
   addClass, removeClass, isFixed, getWindowScroll,

@@ -14,8 +14,7 @@ import {
   FileIcon as TdFileIcon,
   VideoIcon as TdVideoIcon,
 } from 'tdesign-icons-vue';
-import isFunction from 'lodash/isFunction';
-import isObject from 'lodash/isObject';
+import { isFunction, isObject } from 'lodash-es';
 import { useGlobalIcon } from '../../hooks/useGlobalIcon';
 import ImageViewer from '../../image-viewer';
 import { CommonDisplayFileProps } from '../interface';

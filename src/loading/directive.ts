@@ -1,7 +1,5 @@
 import type { DirectiveBinding, DirectiveOptions } from 'vue/types/options';
-import isObject from 'lodash/isObject';
-import mapKeys from 'lodash/mapKeys';
-import isEqual from 'lodash/isEqual';
+import { mapKeys, isEqual, isObject } from 'lodash-es';
 import { TdLoadingProps } from './type';
 import produceLoading from './plugin';
 

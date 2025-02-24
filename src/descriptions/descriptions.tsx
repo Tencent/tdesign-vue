@@ -1,6 +1,5 @@
-import isNil from 'lodash/isNil';
-import isArray from 'lodash/isArray';
 import { defineComponent, provide, ref } from 'vue';
+import { isArray, isNil } from 'lodash-es';
 
 import { useTNodeJSX } from '../hooks/tnode';
 import { useChildComponentSlots } from '../hooks';

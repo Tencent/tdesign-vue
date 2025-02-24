@@ -1,8 +1,8 @@
 import Vue, { VueConstructor } from 'vue';
-import mergeWith from 'lodash/mergeWith';
+import { mergeWith } from 'lodash-es';
 import { GlobalIconConfig } from 'tdesign-icons-vue';
 import { defaultGlobalConfig } from './context';
-import { GlobalConfigProvider, AnimationType } from './type';
+import { GlobalConfigProvider, AnimationType, AttachNodeComponent } from './type';
 
 import type { AttachNode } from '../common';
 
@@ -206,7 +206,7 @@ export function getClassPrefixMixins(componentName: string) {
 }
 
 // 用于非 composition api 的组件使用来自 config provider注入的 attach 使用
-export function getAttachConfigMixins(componentName: string) {
+export function getAttachConfigMixins(componentName: AttachNodeComponent) {
   return (Vue as VueConstructor<ConfigComponent>).extend({
     name: 'TAttachProvider',
     inject: {
@@ -216,8 +216,13 @@ export function getAttachConfigMixins(componentName: string) {
     },
     methods: {
       globalAttach(): AttachNode {
-        // @ts-ignore
-        return this.globalConfig?.attach?.[componentName] || this.globalConfig?.attach || 'body';
+        const globalConfigAttach = this.globalConfig?.attach;
+
+        if (typeof globalConfigAttach === 'string' || typeof globalConfigAttach === 'function') {
+          return globalConfigAttach;
+        }
+
+        return globalConfigAttach?.[componentName] || 'body';
       },
     },
   });

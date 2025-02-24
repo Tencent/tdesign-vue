@@ -10,10 +10,9 @@ import {
   onBeforeUnmount,
   Ref,
 } from 'vue';
-import get from 'lodash/get';
-import xorWith from 'lodash/xorWith';
-import debounce from 'lodash/debounce';
-import pick from 'lodash/pick';
+import {
+  get, xorWith, debounce, pick,
+} from 'lodash-es';
 import log from '../../_common/js/log';
 import { ClassName, Styles } from '../../common';
 import { BaseTableCol, TableRowData, TdBaseTableProps } from '../type';

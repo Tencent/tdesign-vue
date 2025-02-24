@@ -1,4 +1,4 @@
-import pick from 'lodash/pick';
+import { pick } from 'lodash-es';
 import TransferList from './components/transfer-list';
 import TransferOperations from './components/transfer-operations';
 import {

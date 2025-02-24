@@ -2,9 +2,7 @@ import {
   SetupContext, ref, computed, toRefs, getCurrentInstance,
 } from 'vue';
 
-import isObject from 'lodash/isObject';
-import pick from 'lodash/pick';
-import lodashGet from 'lodash/get';
+import { get as lodashGet, isObject, pick } from 'lodash-es';
 import { SelectInputCommonProperties } from './interface';
 import { TdSelectInputProps } from './type';
 import Input, { InputProps, StrInputProps } from '../input';

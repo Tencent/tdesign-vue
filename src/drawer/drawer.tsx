@@ -16,6 +16,7 @@ import { emitEvent } from '../utils/event';
 import { AttachNode, ClassName, Styles } from '../common';
 import ActionMixin from '../dialog/actions';
 import { getScrollbarWidth } from '../_common/js/utils/getScrollbarWidth';
+import { getSizeDraggable, calcMoveSize } from '../_common/js/drawer/utils';
 
 type FooterButtonType = 'confirm' | 'cancel';
 
@@ -264,25 +265,25 @@ export default mixins(
       const maxWidth = document.documentElement.clientWidth;
       const offsetHeight = 8;
       const offsetWidth = 8;
+      // x 轴方向使用最大宽度，y轴方向使用最大高度
+      const max = this.placement === 'left' || this.placement === 'right' ? maxWidth : maxHeight;
+      // x 轴方向使用默认最小宽度，y轴方向使用默认最小高度
+      const min = this.placement === 'left' || this.placement === 'right' ? offsetWidth : offsetHeight;
+      const { allowSizeDraggable, max: limitMax, min: limitMin } = getSizeDraggable(this.sizeDraggable, { max, min });
 
-      if (this.isSizeDragging && this.sizeDraggable) {
-        if (this.placement === 'right') {
-          const moveLeft = Math.min(Math.max(maxWidth - x + offsetWidth, offsetWidth), maxWidth);
-          this.draggedSizeValue = `${moveLeft}px`;
-        }
-        if (this.placement === 'left') {
-          const moveRight = Math.min(Math.max(x + offsetWidth, offsetWidth), maxWidth);
-          this.draggedSizeValue = `${moveRight}px`;
-        }
-        if (this.placement === 'top') {
-          const moveBottom = Math.min(Math.max(y + offsetHeight, offsetHeight), maxHeight);
-          this.draggedSizeValue = `${moveBottom}px`;
-        }
-        if (this.placement === 'bottom') {
-          const moveTop = Math.min(Math.max(maxHeight - y + offsetHeight, offsetHeight), maxHeight);
-          this.draggedSizeValue = `${moveTop}px`;
-        }
-      }
+      if (!this.isSizeDragging || !allowSizeDraggable) return;
+
+      const moveSize = calcMoveSize(this.placement, {
+        x,
+        y,
+        maxWidth,
+        maxHeight,
+        max: limitMax,
+        min: limitMin,
+      });
+
+      if (typeof moveSize === 'undefined') return;
+      this.draggedSizeValue = `${moveSize}px`;
     },
     handleScrollThrough(visible: boolean) {
       if (!document || !document.body || !this.preventScrollThrough) return;
