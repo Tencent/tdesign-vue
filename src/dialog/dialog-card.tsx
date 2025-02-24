@@ -5,7 +5,7 @@ import {
   CheckCircleFilledIcon as TdCheckCircleFilledIcon,
   ErrorCircleFilledIcon as TdErrorCircleFilledIcon,
 } from 'tdesign-icons-vue';
-
+import ActionMixin from './actions';
 import TButton from '../button';
 import { DialogCloseContext, TdDialogProps } from './type';
 import dialogProps from './props';
@@ -20,6 +20,7 @@ import getConfigReceiverMixins, {
 import { emitEvent } from '../utils/event';
 
 export default mixins(
+  ActionMixin,
   getConfigReceiverMixins<Vue, DialogConfig>('dialog'),
   getGlobalIconMixins(),
   getAttachConfigMixins('dialog'),
@@ -129,10 +130,29 @@ export default mixins(
       const footerClassName = this.isFullScreen
         ? [`${this.componentName}__footer`, `${this.componentName}__footer--fullscreen`]
         : `${this.componentName}__footer`;
-
+      // this.getConfirmBtn is a function of ActionMixin
+      // this.getCancelBtn is a function of ActionMixin
+      const defaultFooter = (
+        <div>
+          {this.getCancelBtn({
+            cancelBtn: this.cancelBtn,
+            globalCancel: this.instanceGlobal?.cancel || this.global.cancel,
+            className: `${this.componentName}__cancel`,
+          })}
+          {this.getConfirmBtn({
+            theme: this.theme,
+            confirmBtn: this.confirmBtn,
+            confirmLoading: this.confirmLoading,
+            globalConfirm: this.instanceGlobal?.confirm || this.global.confirm,
+            globalConfirmBtnTheme: this.instanceGlobal?.confirmBtnTheme || this.global.confirmBtnTheme,
+            className: `${this.componentName}__confirm`,
+          })}
+        </div>
+      );
+      const footerContent = renderTNodeJSX(this, 'footer', defaultFooter);
       return (
         <div class={footerClassName} onMousedown={this.onStopDown}>
-          {this.footer}
+          {footerContent}
         </div>
       );
     },
@@ -143,7 +163,7 @@ export default mixins(
       <div>
         {this.renderHeader()}
         {this.renderBody()}
-        {!!this.footer && this.renderFooter()}
+        {this.renderFooter()}
       </div>
     );
   },

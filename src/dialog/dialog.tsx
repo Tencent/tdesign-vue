@@ -1,13 +1,6 @@
 import Vue from 'vue';
 import { isNumber, throttle } from 'lodash-es';
-import {
-  InfoCircleFilledIcon as TdInfoCircleFilledIcon,
-  CheckCircleFilledIcon as TdCheckCircleFilledIcon,
-  ErrorCircleFilledIcon as TdErrorCircleFilledIcon,
-} from 'tdesign-icons-vue';
-
 import TButton from '../button';
-import ActionMixin from './actions';
 import { DialogCloseContext, TdDialogProps } from './type';
 import props from './props';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
@@ -47,7 +40,6 @@ if (typeof window !== 'undefined' && window.document && window.document.document
 let key = 1;
 
 export default mixins(
-  ActionMixin,
   getConfigReceiverMixins<Vue, DialogConfig>('dialog'),
   getGlobalIconMixins(),
   getAttachConfigMixins('dialog'),
@@ -355,20 +347,6 @@ export default mixins(
       return !!eventFuncs?.length;
     },
 
-    getIcon() {
-      const { InfoCircleFilledIcon, CheckCircleFilledIcon, ErrorCircleFilledIcon } = this.useGlobalIcon({
-        InfoCircleFilledIcon: TdInfoCircleFilledIcon,
-        CheckCircleFilledIcon: TdCheckCircleFilledIcon,
-        ErrorCircleFilledIcon: TdErrorCircleFilledIcon,
-      });
-      const icon = {
-        info: <InfoCircleFilledIcon class={`${this.classPrefix}-is-info`} />,
-        warning: <ErrorCircleFilledIcon class={`${this.classPrefix}-is-warning`} />,
-        danger: <ErrorCircleFilledIcon class={`${this.classPrefix}-is-error`} />,
-        success: <CheckCircleFilledIcon class={`${this.classPrefix}-is-success`} />,
-      };
-      return icon[this.theme];
-    },
     mousedownHandler(targetEvent: MouseEvent) {
       const target = this.$refs.dialog as HTMLElement;
       // 算出鼠标相对元素的位置
@@ -434,29 +412,20 @@ export default mixins(
       const defaultHeader = <h5 class="title"></h5>;
       const headerContent = renderTNodeJSX(this, 'header', defaultHeader);
       const bodyContent = renderContent(this, 'default', 'body');
-      // this.getConfirmBtn is a function of ActionMixin
-      // this.getCancelBtn is a function of ActionMixin
-      const defaultFooter = (
-        <div>
-          {this.getCancelBtn({
-            cancelBtn: this.cancelBtn,
-            globalCancel: this.instanceGlobal?.cancel || this.global.cancel,
-            className: `${this.componentName}__cancel`,
-          })}
-          {this.getConfirmBtn({
-            theme: this.theme,
-            confirmBtn: this.confirmBtn,
-            confirmLoading: this.confirmLoading,
-            globalConfirm: this.instanceGlobal?.confirm || this.global.confirm,
-            globalConfirmBtnTheme: this.instanceGlobal?.confirmBtnTheme || this.global.confirmBtnTheme,
-            className: `${this.componentName}__confirm`,
-          })}
-        </div>
-      );
-      const footerContent = renderTNodeJSX(this, 'footer', defaultFooter);
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const {
-        body, header, footer, dialogClassName, theme, onConfirm, onCancel, onCloseBtnClick, ...otherProps
+        body,
+        header,
+        footer,
+        confirmBtn,
+        cancelBtn,
+        confirmLoading,
+        dialogClassName,
+        theme,
+        onConfirm,
+        onCancel,
+        onCloseBtnClick,
+        ...otherProps
       } = this;
       // 此处获取定位方式 top 优先级较高 存在时 默认使用top定位
       return (
@@ -470,8 +439,12 @@ export default mixins(
                 {...otherProps}
                 header={headerContent}
                 body={bodyContent}
-                footer={footerContent}
+                footer={footer}
                 class={dialogClassName}
+                confirmBtn={confirmBtn}
+                cancelBtn={cancelBtn}
+                confirmLoading={confirmLoading}
+                instanceGlobal={this.instanceGlobal}
                 onConfirm={this.confirmBtnAction}
                 onCancel={this.cancelBtnAction}
                 onCloseBtnClick={this.closeBtnAction}
