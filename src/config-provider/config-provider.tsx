@@ -1,4 +1,4 @@
-import Vue, { PropType, VNode } from 'vue';
+import Vue, { VNode } from 'vue';
 import { cloneDeep } from 'lodash-es';
 import { GlobalConfigProvider } from './type';
 import { defaultGlobalConfig, mergeWith } from './context';
