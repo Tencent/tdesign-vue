@@ -2,15 +2,14 @@ import Vue, { PropType, VNode } from 'vue';
 import { cloneDeep } from 'lodash-es';
 import { GlobalConfigProvider } from './type';
 import { defaultGlobalConfig, mergeWith } from './context';
+import props from './props';
 
 export const globalConfigSymbol = '__TDESIGN__INSTANCE__GLOBAL__CONFIG__';
 
 const ConfigProvider = Vue.extend({
   name: 'TConfigProvider',
 
-  props: {
-    globalConfig: Object as PropType<GlobalConfigProvider>,
-  },
+  props,
 
   data() {
     return {

@@ -55,6 +55,13 @@ Vue.use(TDesign);
 ```
 
 ## API
+
+### ConfigProvider Props
+
+name | type | default | description | required
+-- | -- | -- | -- | --
+globalConfig | Object | - | global config。Typescript：`GlobalConfigProvider` | N
+
 ### GlobalConfigProvider
 
 name | type | default | description | required
@@ -62,7 +69,7 @@ name | type | default | description | required
 alert | Object | - | Alert global configs。Typescript：`AlertConfig` | N
 anchor | Object | - | Anchor global configs。Typescript：`AnchorConfig` | N
 animation | Object | - | Typescript：`Partial<Record<'include'\|'exclude', Array<AnimationType>>>` `type AnimationType = 'ripple' \| 'expand' \| 'fade'`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
-attach | String / Object / Function | - | Typescript：`AttachNode \| { popup?: AttachNode; dialog?: AttachNode; drawer?: AttachNode; }`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+attach | String / Object / Function | - | Typescript：`AttachNode \| { imageViewer?: AttachNode; popup?: AttachNode; dialog?: AttachNode; drawer?: AttachNode; }`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 autoComplete | Object | - | AutoComplete global configs。Typescript：`AutoCompleteConfig` | N
 calendar | Object | - | Calendar global configs。Typescript：`CalendarConfig` | N
 cascader | Object | - | Cascader global configs。Typescript：`CascaderConfig` | N
@@ -92,6 +99,7 @@ timePicker | Object | - | TimePicker global configs。Typescript：`TimePickerCo
 transfer | Object | - | Transfer global configs。Typescript：`TransferConfig` | N
 tree | Object | - | Tree global configs。Typescript：`TreeConfig` | N
 treeSelect | Object | - | TreeSelect global configs。Typescript：`TreeSelectConfig` | N
+typography | Object | - | Typography global configs。Typescript：`TypographyConfig` | N
 upload | Object | - | Upload global configs。Typescript：`UploadConfig` | N
 
 ### InputConfig
@@ -400,6 +408,14 @@ name | type | default | description | required
 -- | -- | -- | -- | --
 image | Object | - | Typescript：`{ maintenance: TNode; success: TNode; fail: TNode; empty: TNode; networkError: TNode; }`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 titleText | Object | - | Typescript：`{ maintenance: string; success: string; fail: string; empty: string; networkError: string; }` | N
+
+### TypographyConfig
+
+name | type | default | description | required
+-- | -- | -- | -- | --
+collapseText | String | - | collapse text | N
+copiedText | String | - | copied text | N
+expandText | String | - | expand text | N
 
 ### AutoCompleteConfig
 
