@@ -6,7 +6,7 @@
 
 import { InputProps } from '../input';
 import { PopupProps } from '../popup';
-import { TagInputProps, TagInputValue, TagInputChangeContext } from '../tag-input';
+import { TagInputProps, TagInputValue, TagInputChangeContext, TagInputRemoveTrigger } from '../tag-input';
 import { TagProps } from '../tag';
 import { PopupVisibleChangeContext } from '../popup';
 import { TNode } from '../common';
@@ -226,3 +226,5 @@ export interface SelectInputValueChangeContext {
 }
 
 export type SelectInputChangeContext = TagInputChangeContext;
+
+export type SelectInputRemoveTrigger = TagInputRemoveTrigger;
