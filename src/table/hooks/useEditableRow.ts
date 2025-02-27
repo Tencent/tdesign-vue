@@ -222,6 +222,7 @@ export default function useRowEdit(props: PrimaryTableProps, context: SetupConte
     editableKeysMap,
     validateTableData,
     validateRowData,
+    validateTableCellData,
     onRuleChange,
     clearValidateData,
     getEditRowData,
