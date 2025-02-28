@@ -71,6 +71,8 @@ const MessageFunction = (props: MessageOptions): Promise<MessageInstance> => {
   }
   const p = instanceMap.get(attachDom)[placement];
 
+  let messageKey: number | null = null;
+
   // attachDom被清空(如attachDom.innerHtml='')，p也会存在，需要判断下dom包含关系
   if (!p || !attachDom.contains(p.$el)) {
     const instance = new MessageList({
@@ -79,18 +81,18 @@ const MessageFunction = (props: MessageOptions): Promise<MessageInstance> => {
         placement: options.placement,
       },
     }).$mount();
-    instance.add(options);
+    messageKey = instance.add(options);
     instanceMap.get(attachDom)[placement] = instance;
     attachDom.appendChild(instance.$el);
   } else {
-    p.add(options);
+    messageKey = p.add(options);
   }
   // 返回最新消息的 Element
   return new Promise((resolve) => {
     const ins = instanceMap.get(attachDom)[placement];
     ins.$nextTick(() => {
       const msg: Array<MessageInstance> = ins.$children;
-      resolve(msg[msg.length - 1]);
+      resolve(messageKey ? ins.getMessageInstance(messageKey) : msg[msg.length - 1]);
     });
   });
 };
