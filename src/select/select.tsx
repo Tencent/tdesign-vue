@@ -16,11 +16,13 @@ import TLoading from '../loading';
 import Popup, { PopupProps, PopupVisibleChangeContext } from '../popup';
 import TInput, { InputProps } from '../input/index';
 import Tag from '../tag/index';
-import SelectInput, {
+import SelectInput from '../select-input';
+import type {
   SelectInputValue,
   SelectInputChangeContext,
   SelectInputValueChangeContext,
   SelectInputProps,
+  SelectInputRemoveTrigger,
 } from '../select-input';
 import FakeArrow from '../common-components/fake-arrow';
 import { off, on } from '../utils/dom';
@@ -37,7 +39,7 @@ import useSelectOptions from './hooks/useSelectOptions';
 import { SelectPanelInstance } from './instance';
 import log from '../_common/js/log';
 import useFormDisabled from '../hooks/useFormDisabled';
-import type { OptionData } from '../common';
+import type { OptionData, PlainObject } from '../common';
 
 export type OptionInstance = InstanceType<typeof Option>;
 
@@ -118,14 +120,14 @@ export default defineComponent({
               }
               return isObj;
             })
-            .map((option) => option[keys.value.value]);
+            .map((option: PlainObject) => option[keys.value.value]);
         }
         const isObj = isObject(_value);
         if (!isObj) {
           log.warn('Select', `Invalid value for "value" props: expected an Object, but got ${typeof _value}`);
           return '';
         }
-        return _value[keys.value.value];
+        return (_value as PlainObject)[keys.value.value];
       }
       // value 类型的 value 变量，直接返回
       return _value;
@@ -143,7 +145,7 @@ export default defineComponent({
       const oldValueMap = new Map<SelectValue, TdOptionProps>();
       if (multiple.value) {
         const mapValue = value.value || [];
-        (mapValue as TdOptionProps[]).forEach?.((option) => {
+        (mapValue as TdOptionProps[]).forEach?.((option: PlainObject) => {
           oldValueMap.set(option[valueOfKeys], option);
         });
       }
@@ -246,7 +248,7 @@ export default defineComponent({
     const placeholderText = computed(
       () => ((!multiple.value
           && innerPopupVisible.value
-          && ((valueType.value === 'object' && (value.value?.[keys.value.label] || innerValue.value))
+          && ((valueType.value === 'object' && ((value.value as PlainObject)?.[keys.value.label] || innerValue.value))
             || getSingleContent(innerValue.value, optionsMap.value)))
           || placeholder.value)
         ?? t(global.value.placeholder),
@@ -255,12 +257,12 @@ export default defineComponent({
     const displayText = computed(() => {
       if (multiple.value) {
         if (valueType.value === 'object') {
-          return (value.value as SelectValue[]).map((v) => v[keys.value.label]);
+          return (value.value as SelectValue[]).map((v: PlainObject) => v[keys.value.label]);
         }
         return getMultipleContent(innerValue.value as SelectValue[], optionsMap.value);
       }
       if (valueType.value === 'object') {
-        return value.value?.[keys.value.label] || innerValue.value;
+        return (value.value as PlainObject)?.[keys.value.label] || innerValue.value;
       }
       return getSingleContent(innerValue.value, optionsMap.value);
     });
@@ -303,8 +305,8 @@ export default defineComponent({
         : {};
     });
 
-    const removeTag = (index: number, context?: { e?: MouseEvent | KeyboardEvent }) => {
-      const { e } = context || {};
+    const removeTag = (index: number, context?: SelectInputChangeContext) => {
+      const { e, trigger = 'tag-remove' } = (context as SelectInputChangeContext & { trigger: SelectInputRemoveTrigger }) || {};
       e?.stopPropagation();
       if (isDisabled.value) {
         return;
@@ -312,7 +314,7 @@ export default defineComponent({
       const selectValue = cloneDeep(innerValue.value) as SelectValue[];
       const value = selectValue[index];
       selectValue.splice(index, 1);
-      setInnerValue(selectValue, { e, trigger: 'tag-remove' });
+      setInnerValue(selectValue, { e, trigger });
       const evtObj = {
         value: value as string | number,
         data: optionsMap.value.get(value),
@@ -362,7 +364,7 @@ export default defineComponent({
       const { trigger, index } = context;
 
       if (['tag-remove', 'backspace'].includes(trigger)) {
-        removeTag(index);
+        removeTag(index, context);
       }
     };
 
