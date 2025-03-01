@@ -6,6 +6,7 @@ import { useConfig } from '../../hooks/useConfig';
 import { useDrag } from '../hooks';
 import { setTransform } from '../../utils/helper';
 import { useImagePreviewUrl } from '../../hooks';
+import { TdImageViewerProps } from '../type';
 
 export default defineComponent({
   name: 'TImageItem',
@@ -15,6 +16,7 @@ export default defineComponent({
     mirror: Number,
     src: [String, Object] as PropType<string | File>,
     placementSrc: [String, Object] as PropType<string | File>,
+    imageReferrerpolicy: String as PropType<TdImageViewerProps['imageReferrerpolicy']>,
   },
 
   setup(props) {
@@ -87,6 +89,7 @@ export default defineComponent({
               style={this.placementImgStyle}
               alt="image"
               draggable="false"
+              referrerpolicy={this.imageReferrerpolicy}
             />
           )}
 
@@ -103,6 +106,7 @@ export default defineComponent({
               style={this.imgStyle}
               alt="image"
               draggable="false"
+              referrerpolicy={this.imageReferrerpolicy}
             />
           )}
         </div>

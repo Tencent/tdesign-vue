@@ -32,7 +32,7 @@ export default defineComponent({
     const isExpand = ref(true);
     const showOverlayValue = computed(() => getOverlay(props));
 
-    const { index, visible } = toRefs(props);
+    const { index, visible, imageReferrerpolicy } = toRefs(props);
     const [indexValue, setIndexValue] = useDefaultValue(
       index,
       props.defaultIndex ?? 0,
@@ -217,6 +217,7 @@ export default defineComponent({
       containerRef,
       keydownHandler,
       divRef,
+      imageReferrerpolicy,
     };
   },
   methods: {
@@ -291,6 +292,7 @@ export default defineComponent({
           draggable={this.draggable}
           showOverlay={this.showOverlayValue}
           closeBtn={this.closeBtn}
+          imageReferrerpolicy={this.imageReferrerpolicy}
         />
       );
     },
@@ -346,6 +348,7 @@ export default defineComponent({
             mirror={this.mirror}
             src={this.currentImage.mainImage}
             placementSrc={this.currentImage.thumbnail}
+            imageReferrerpolicy={this.imageReferrerpolicy}
           />
         </div>
       );

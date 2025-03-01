@@ -40,6 +40,7 @@ const defaultProps = {
   },
   showOverlay: Boolean,
   closeBtn: props.closeBtn,
+  imageReferrerpolicy: props.imageReferrerpolicy,
 };
 
 export default defineComponent({
@@ -97,6 +98,7 @@ export default defineComponent({
             mirror={this.mirror}
             src={this.currentImage.mainImage}
             placementSrc={this.currentImage.thumbnail}
+            imageReferrerpolicy={props.imageReferrerpolicy}
           />
         </div>
       </TDialog>
