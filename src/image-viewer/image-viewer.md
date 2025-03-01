@@ -5,7 +5,6 @@
 
 名称 | 类型 | 默认值 | 描述 | 必传
 -- | -- | -- | -- | --
-attach | String / Function | 'body' | 指定挂载节点。数据类型为 String 时，会被当作选择器处理，进行节点查询。示例：'body' 或 () => document.body。TS 类型：`AttachNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 closeBtn | Boolean / Slot / Function | true | 是否展示关闭按钮，值为 `true` 显示默认关闭按钮；值为 `false` 则不显示关闭按钮；也可以完全自定义关闭按钮。TS 类型：`boolean \| TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 closeOnEscKeydown | Boolean | true | 按下 ESC 时是否触发图片预览器关闭事件 | N
 closeOnOverlay | Boolean | - | 是否在点击遮罩层时，触发预览关闭 | N
