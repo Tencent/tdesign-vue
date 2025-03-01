@@ -15,7 +15,7 @@ import { renderTNodeJSX } from '../utils/render-tnode';
 import { setTransform } from '../utils/helper';
 import { TdImageViewerProps } from './type';
 import { useMirror, useRotate, useScale } from './hooks';
-import { formatImages, getOverlay } from './utils';
+import { downloadFile, formatImages, getOverlay } from './utils';
 import { EVENT_CODE, DEFAULT_IMAGE_SCALE } from './const';
 import Image from '../image';
 
@@ -90,6 +90,10 @@ export default defineComponent({
 
     const onImgClick = (i: number) => {
       setIndexValue(i, { trigger: 'current' });
+    };
+
+    const onDownloadClick = (url: string) => {
+      props.onDownload ? props.onDownload(url) : downloadFile(url);
     };
 
     const openHandler = () => {
@@ -198,6 +202,7 @@ export default defineComponent({
       onZoomOut,
       onMirror,
       onRest,
+      onDownloadClick,
       openHandler,
       onCloseHandle,
       onWheel,
@@ -280,6 +285,7 @@ export default defineComponent({
           zoomInHandler={this.onZoomIn}
           zoomOutHandler={this.onZoomOut}
           mirrorHandler={this.onMirror}
+          downloadHandler={this.onDownloadClick}
           resetHandler={this.onRest}
           closeHandler={this.onCloseHandle}
           draggable={this.draggable}
@@ -328,6 +334,7 @@ export default defineComponent({
             zoomInHandler={this.onZoomIn}
             zoomOutHandler={this.onZoomOut}
             mirrorHandler={this.onMirror}
+            downloadHandler={this.onDownloadClick}
             resetHandler={this.onRest}
             rotateHandler={this.onRotate}
             scale={this.scale}

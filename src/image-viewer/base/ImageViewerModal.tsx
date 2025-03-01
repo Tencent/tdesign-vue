@@ -25,6 +25,7 @@ const defaultProps = {
   zoomInHandler: Function as PropType<() => void>,
   zoomOutHandler: Function as PropType<() => void>,
   mirrorHandler: Function as PropType<() => void>,
+  downloadHandler: Function as PropType<(url: string) => void>,
   resetHandler: Function as PropType<() => void>,
   closeHandler: props.onClose,
   draggable: {
@@ -84,6 +85,7 @@ export default defineComponent({
               rotateHandler={this.rotateHandler}
               mirrorHandler={this.mirrorHandler}
               resetHandler={this.resetHandler}
+              downloadHandler={this.downloadHandler}
             />
           </div>
         )}
