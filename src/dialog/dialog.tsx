@@ -3,7 +3,6 @@ import { isNumber, throttle } from 'lodash-es';
 import TButton from '../button';
 import { DialogCloseContext, TdDialogProps } from './type';
 import props from './props';
-import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, {
   DialogConfig,
@@ -17,10 +16,6 @@ import { updateElement } from '../hooks/useDestroyOnClose';
 import stack from './stack';
 import { getScrollbarWidth } from '../_common/js/utils/getScrollbarWidth';
 import TDialogCard from './dialog-card';
-
-function getCSSValue(v: string | number) {
-  return isNaN(Number(v)) ? v : `${Number(v)}px`;
-}
 
 let mousePosition: { x: number; y: number } | null;
 const getClickPosition = (e: MouseEvent) => {
@@ -85,19 +80,6 @@ export default mixins(
     maskClass(): ClassName {
       return [`${this.componentName}__mask`, !this.showOverlay && `${this.classPrefix}-is-hidden`];
     },
-    dialogClass(): ClassName {
-      const dialogClass = [
-        `${this.componentName}`,
-        `${this.componentName}__modal-${this.theme}`,
-        this.isModeLess && this.draggable && `${this.componentName}--draggable`,
-      ];
-      if (this.isFullScreen) {
-        dialogClass.push(`${this.componentName}__fullscreen`);
-      } else {
-        dialogClass.push(`${this.componentName}--default`);
-      }
-      return dialogClass;
-    },
     positionClass(): ClassName {
       if (this.isFullScreen) return [`${this.componentName}__position_fullscreen`];
       if (this.isModal || this.isModeLess) {
@@ -138,9 +120,6 @@ export default mixins(
       }
       return topStyle;
     },
-    computedDialogStyle(): Styles {
-      return !this.isFullScreen ? { width: getCSSValue(this.width), ...this.dialogStyle } : { ...this.dialogStyle }; // width全屏模式不生效;
-    },
     computedAttach(): AttachNode {
       return this.showInAttachedElement || !this.isModal || !this.isModeLess || !this.isFullScreen
         ? undefined
@@ -162,7 +141,7 @@ export default mixins(
             }
 
             this.$nextTick(() => {
-              const target = this.$refs.dialog as HTMLElement;
+              const target = (this.$refs.dialog as Vue).$el as HTMLElement;
               if (mousePosition && target) {
                 target.style.transformOrigin = `${mousePosition.x - target.offsetLeft}px ${
                   mousePosition.y - target.offsetTop
@@ -320,7 +299,7 @@ export default mixins(
     // 关闭弹窗动画结束时事件
     afterLeave() {
       if (this.isModeLess && this.draggable) {
-        const target = this.$refs.dialog as HTMLElement;
+        const target = (this.$refs.dialog as Vue).$el as HTMLElement;
         if (!target) return;
         // 关闭弹窗 清空拖拽设置的相关css
         target.style.position = 'relative';
@@ -337,18 +316,18 @@ export default mixins(
       this.$emit('update:visible', false);
     },
 
-    // Vue在引入阶段对事件的处理还做了哪些初始化操作。Vue在实例上用一个_events属性存贮管理事件的派发和更新，
-    // 暴露出$on, $once, $off, $emit方法给外部管理事件和派发执行事件
-    // 所以通过判断_events某个事件下监听函数数组是否超过一个，可以判断出组件是否监听了当前事件
-    hasEventOn(name: string) {
-      // _events 因没有被暴露在vue实例接口中，只能把这个规则注释掉
-      /* eslint-disable dot-notation */
-      const eventFuncs = this['_events']?.[name];
-      return !!eventFuncs?.length;
-    },
+    // // Vue在引入阶段对事件的处理还做了哪些初始化操作。Vue在实例上用一个_events属性存贮管理事件的派发和更新，
+    // // 暴露出$on, $once, $off, $emit方法给外部管理事件和派发执行事件
+    // // 所以通过判断_events某个事件下监听函数数组是否超过一个，可以判断出组件是否监听了当前事件
+    // hasEventOn(name: string) {
+    //   // _events 因没有被暴露在vue实例接口中，只能把这个规则注释掉
+    //   /* eslint-disable dot-notation */
+    //   const eventFuncs = this['_events']?.[name];
+    //   return !!eventFuncs?.length;
+    // },
 
     mousedownHandler(targetEvent: MouseEvent) {
-      const target = this.$refs.dialog as HTMLElement;
+      const target = (this.$refs.dialog as Vue).$el as HTMLElement;
       // 算出鼠标相对元素的位置
       this.disX = targetEvent.clientX - target.offsetLeft;
       this.disY = targetEvent.clientY - target.offsetTop;
@@ -366,7 +345,7 @@ export default mixins(
       document.addEventListener('dragend', this.mouseUpHandler);
     },
     mouseMoverHandler(documentEvent: MouseEvent) {
-      const target = this.$refs.dialog as HTMLElement;
+      const target = (this.$refs.dialog as Vue).$el as HTMLElement;
       // 用鼠标的位置减去鼠标相对元素的位置，得到元素的位置
       let left = documentEvent.clientX - this.disX;
       let top = documentEvent.clientY - this.disY;
@@ -387,7 +366,7 @@ export default mixins(
       document.removeEventListener('dragend', this.mouseUpHandler);
     },
     initDragEvent(status: boolean) {
-      const target = this.$refs.dialog as HTMLElement;
+      const target = (this.$refs.dialog as Vue).$el as HTMLElement;
       if (status) {
         target.addEventListener('mousedown', this.mousedownHandler);
       } else {
@@ -399,7 +378,7 @@ export default mixins(
      */
     resizeAdjustPosition() {
       if (this.visible) {
-        const target = this.$refs.dialog as HTMLElement;
+        const target = (this.$refs.dialog as Vue).$el as HTMLElement;
         target.style.left = `${this.dLeft * (window.innerWidth / this.windowInnerWidth)}px`;
         target.style.top = `${this.dTop * (window.innerHeight / this.windowInnerHeight)}px`;
       }
@@ -408,10 +387,6 @@ export default mixins(
       if (this.isModeLess && this.draggable) e.stopPropagation();
     },
     renderDialog() {
-      // header 值为 true 显示空白头部
-      const defaultHeader = <h5 class="title"></h5>;
-      const headerContent = renderTNodeJSX(this, 'header', defaultHeader);
-      const bodyContent = renderContent(this, 'default', 'body');
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const {
         body,
@@ -426,30 +401,32 @@ export default mixins(
         onCancel,
         onCloseBtnClick,
         ...otherProps
-      } = this;
+      } = this.$props;
       // 此处获取定位方式 top 优先级较高 存在时 默认使用top定位
       return (
         // 非模态形态下draggable为true才允许拖拽
         <div class={this.wrapClass}>
           <div class={this.positionClass} style={this.positionStyle} onClick={this.overlayAction} ref="dialogPosition">
-            <div key="dialog" ref="dialog" class={this.dialogClass} style={this.computedDialogStyle}>
-              <TDialogCard
-                ref="dialogCardRef"
-                theme={theme}
-                {...otherProps}
-                header={headerContent}
-                body={bodyContent}
-                footer={footer}
-                class={dialogClassName}
-                confirmBtn={confirmBtn}
-                cancelBtn={cancelBtn}
-                confirmLoading={confirmLoading}
-                instanceGlobal={this.instanceGlobal}
-                onConfirm={this.confirmBtnAction}
-                onCancel={this.cancelBtnAction}
-                onCloseBtnClick={this.closeBtnAction}
-              />
-            </div>
+            <TDialogCard
+              ref="dialog"
+              theme={theme}
+              body={body}
+              header={header}
+              footer={footer}
+              class={dialogClassName}
+              confirmBtn={confirmBtn}
+              cancelBtn={cancelBtn}
+              confirmLoading={confirmLoading}
+              instanceGlobal={this.instanceGlobal}
+              onConfirm={this.confirmBtnAction}
+              onCancel={this.cancelBtnAction}
+              onCloseBtnClick={this.closeBtnAction}
+              onClose={this.emitCloseEvent}
+              {...otherProps}
+            >
+              {this.$slots.header}
+              {this.$slots.default ? this.$slots.default : this.$slots.body}
+            </TDialogCard>
           </div>
         </div>
       );

@@ -10,7 +10,7 @@ import TButton from '../button';
 import { DialogCloseContext, TdDialogProps } from './type';
 import dialogProps from './props';
 import dialogCardProps from './dialog-card-props';
-import { renderTNodeJSX } from '../utils/render-tnode';
+import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import mixins from '../utils/mixins';
 import getConfigReceiverMixins, {
   DialogConfig,
@@ -18,6 +18,11 @@ import getConfigReceiverMixins, {
   getAttachConfigMixins,
 } from '../config-provider/config-receiver';
 import { emitEvent } from '../utils/event';
+import { ClassName, Styles } from '../common';
+
+function getCSSValue(v: string | number) {
+  return isNaN(Number(v)) ? v : `${Number(v)}px`;
+}
 
 export default mixins(
   ActionMixin,
@@ -47,6 +52,22 @@ export default mixins(
     isFullScreen(): boolean {
       return this.mode === 'full-screen';
     },
+    dialogClass(): ClassName {
+      const dialogClass = [
+        `${this.componentName}`,
+        `${this.componentName}__modal-${this.theme}`,
+        this.isModeLess && this.draggable && `${this.componentName}--draggable`,
+      ];
+      if (this.isFullScreen) {
+        dialogClass.push(`${this.componentName}__fullscreen`);
+      } else {
+        dialogClass.push(`${this.componentName}--default`);
+      }
+      return dialogClass;
+    },
+    computedDialogStyle(): Styles {
+      return !this.isFullScreen ? { width: getCSSValue(this.width), ...this.dialogStyle } : { ...this.dialogStyle }; // width全屏模式不生效;
+    },
   },
 
   methods: {
@@ -60,7 +81,20 @@ export default mixins(
 
     emitCloseEvent(context: DialogCloseContext) {
       emitEvent<Parameters<TdDialogProps['onClose']>>(this, 'close', context);
-      this.$emit('update:visible', false);
+    },
+
+    // used in mixins of ActionMixin
+    cancelBtnAction(e: MouseEvent) {
+      emitEvent<Parameters<TdDialogProps['onCancel']>>(this, 'cancel', { e });
+      this.emitCloseEvent({
+        trigger: 'cancel',
+        e,
+      });
+    },
+
+    // used in mixins of ActionMixin
+    confirmBtnAction(e: MouseEvent) {
+      emitEvent<Parameters<TdDialogProps['onConfirm']>>(this, 'confirm', { e });
     },
 
     onStopDown(e: MouseEvent) {
@@ -68,6 +102,9 @@ export default mixins(
     },
 
     renderHeader() {
+      // header 值为 true 显示空白头部
+      const defaultHeader = <h5 class="title"></h5>;
+      const header = renderTNodeJSX(this, 'header', defaultHeader);
       const headerClassName = this.isFullScreen
         ? [`${this.componentName}__header`, `${this.componentName}__header--fullscreen`]
         : `${this.componentName}__header`;
@@ -85,6 +122,7 @@ export default mixins(
           ErrorCircleFilledIcon: TdErrorCircleFilledIcon,
         });
         const icon = {
+          default: null as null,
           info: <InfoCircleFilledIcon class={`${this.classPrefix}-is-info`} />,
           warning: <ErrorCircleFilledIcon class={`${this.classPrefix}-is-warning`} />,
           danger: <ErrorCircleFilledIcon class={`${this.classPrefix}-is-error`} />,
@@ -93,11 +131,11 @@ export default mixins(
         return icon[this.theme];
       };
       return (
-        (this.header || this?.closeBtn) && (
+        (header || this?.closeBtn) && (
           <div class={headerClassName} onMousedown={this.onStopDown}>
             <div class={`${this.componentName}__header-content`}>
               {getIcon()}
-              {this.header}
+              {header}
             </div>
             {this.closeBtn ? (
               <span class={closeClassName} onClick={this.closeBtnAction}>
@@ -110,6 +148,7 @@ export default mixins(
     },
 
     renderBody() {
+      const body = renderContent(this, 'default', 'body');
       const bodyClassName = this.theme === 'default'
         ? [`${this.componentName}__body`]
         : [`${this.componentName}__body`, `${this.componentName}__body__icon`];
@@ -121,7 +160,7 @@ export default mixins(
       }
       return (
         <div class={bodyClassName} onMousedown={this.onStopDown}>
-          {this.body}
+          {body}
         </div>
       );
     },
@@ -160,7 +199,7 @@ export default mixins(
 
   render() {
     return (
-      <div>
+      <div key="dialog" ref="dialogCard" class={this.dialogClass} style={this.computedDialogStyle}>
         {this.renderHeader()}
         {this.renderBody()}
         {!!this.footer && this.renderFooter()}
