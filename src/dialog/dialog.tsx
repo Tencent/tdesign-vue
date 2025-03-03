@@ -388,20 +388,7 @@ export default mixins(
     },
     renderDialog() {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const {
-        body,
-        header,
-        footer,
-        confirmBtn,
-        cancelBtn,
-        confirmLoading,
-        dialogClassName,
-        theme,
-        onConfirm,
-        onCancel,
-        onCloseBtnClick,
-        ...otherProps
-      } = this.$props;
+      const { body, header, footer, confirmBtn, cancelBtn, confirmLoading, dialogClassName, theme, onConfirm, onCancel, onCloseBtnClick, ...otherProps } = this.$props;
       // 此处获取定位方式 top 优先级较高 存在时 默认使用top定位
       return (
         // 非模态形态下draggable为true才允许拖拽
