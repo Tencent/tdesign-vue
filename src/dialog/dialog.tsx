@@ -387,8 +387,22 @@ export default mixins(
       if (this.isModeLess && this.draggable) e.stopPropagation();
     },
     renderDialog() {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const { body, header, footer, confirmBtn, cancelBtn, confirmLoading, dialogClassName, theme, onConfirm, onCancel, onCloseBtnClick, ...otherProps } = this.$props;
+      /* eslint-disable @typescript-eslint/no-unused-vars */
+      const {
+        body,
+        header,
+        footer,
+        confirmBtn,
+        cancelBtn,
+        confirmLoading,
+        dialogClassName,
+        theme,
+        onConfirm,
+        onCancel,
+        onCloseBtnClick,
+        ...otherProps
+       } = this.$props;
+      /* eslint-enable @typescript-eslint/no-unused-vars */
       // 此处获取定位方式 top 优先级较高 存在时 默认使用top定位
       return (
         // 非模态形态下draggable为true才允许拖拽
