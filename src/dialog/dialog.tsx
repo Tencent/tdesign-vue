@@ -401,7 +401,7 @@ export default mixins(
         onCancel,
         onCloseBtnClick,
         ...otherProps
-       } = this.$props;
+      } = this.$props;
       /* eslint-enable @typescript-eslint/no-unused-vars */
       // 此处获取定位方式 top 优先级较高 存在时 默认使用top定位
       return (
