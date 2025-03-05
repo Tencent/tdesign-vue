@@ -19,7 +19,7 @@ import ignoreImport from 'rollup-plugin-ignore-import';
 import pkg from '../package.json';
 
 const name = 'tdesign';
-const externalDeps = Object.keys(pkg.dependencies || {}).concat([/lodash/, /@babel\/runtime/]);
+const externalDeps = Object.keys(pkg.dependencies || {}).concat([/@babel\/runtime/]);
 const externalPeerDeps = Object.keys(pkg.peerDependencies || {});
 const banner = `/**
  * ${name} v${pkg.version}
