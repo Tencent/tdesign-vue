@@ -25,6 +25,7 @@ const defaultProps = {
   zoomInHandler: Function as PropType<() => void>,
   zoomOutHandler: Function as PropType<() => void>,
   mirrorHandler: Function as PropType<() => void>,
+  downloadHandler: Function as PropType<(url: string) => void>,
   resetHandler: Function as PropType<() => void>,
   closeHandler: props.onClose,
   draggable: {
@@ -39,6 +40,7 @@ const defaultProps = {
   },
   showOverlay: Boolean,
   closeBtn: props.closeBtn,
+  imageReferrerpolicy: props.imageReferrerpolicy,
 };
 
 export default defineComponent({
@@ -84,6 +86,7 @@ export default defineComponent({
               rotateHandler={this.rotateHandler}
               mirrorHandler={this.mirrorHandler}
               resetHandler={this.resetHandler}
+              downloadHandler={this.downloadHandler}
             />
           </div>
         )}
@@ -95,6 +98,7 @@ export default defineComponent({
             mirror={this.mirror}
             src={this.currentImage.mainImage}
             placementSrc={this.currentImage.thumbnail}
+            imageReferrerpolicy={props.imageReferrerpolicy}
           />
         </div>
       </TDialog>
