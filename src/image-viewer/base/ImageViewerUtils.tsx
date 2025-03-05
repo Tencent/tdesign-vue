@@ -25,6 +25,7 @@ export default defineComponent({
     zoomOutHandler: Function as PropType<() => void>,
     mirrorHandler: Function as PropType<() => void>,
     resetHandler: Function as PropType<() => void>,
+    downloadHandler: Function as PropType<(url: string) => void>,
     currentImage,
   },
   setup(props) {
