@@ -26,13 +26,13 @@ export default defineComponent({
     prop: 'visible',
     event: 'change',
   },
-  setup(props, { emit }) {
+  setup(props, { emit, listeners }) {
     const classPrefix = usePrefixClass();
     const COMPONENT_NAME = usePrefixClass('image-viewer');
     const isExpand = ref(true);
     const showOverlayValue = computed(() => getOverlay(props));
 
-    const { index, visible, imageReferrerpolicy } = toRefs(props);
+    const { index, visible } = toRefs(props);
     const [indexValue, setIndexValue] = useDefaultValue(
       index,
       props.defaultIndex ?? 0,
@@ -93,7 +93,12 @@ export default defineComponent({
     };
 
     const onDownloadClick = (url: string) => {
-      props.onDownload ? props.onDownload(url) : downloadFile(url);
+      if (props.onDownload || listeners.download) {
+        props.onDownload?.(url);
+        emit('download', url);
+        return;
+      }
+      downloadFile(url);
     };
 
     const openHandler = () => {
@@ -217,7 +222,6 @@ export default defineComponent({
       containerRef,
       keydownHandler,
       divRef,
-      imageReferrerpolicy,
     };
   },
   methods: {

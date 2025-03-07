@@ -5,6 +5,20 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.11.1 `2025-03-07` 
+### 🚀 Features
+- `ImageViewer`  @Wesley-0808 
+    - 新增`imageReferrerpolicy`API，适用于需要配置`Referrerpolicy`的场景([#3516](https://github.com/Tencent/tdesign-vue/pull/3516))
+    - 新增`onDownload`API，用于需要自定义下载回调的场景 ([#3516](https://github.com/Tencent/tdesign-vue/pull/3516))
+ - `DatePicker`: 调整组件禁用日期`before`和`after`参数的逻辑，调整为禁用`before`定义之前和`after`定义之后的日期选择，更符合使用习惯。此前有使用相关 API 请注意此改动 @RSS1102 ([#3511](https://github.com/Tencent/tdesign-vue/pull/3511))
+- `Upload`: 支持表单禁用功能作用到上传组件 @RSS1102 ([#3525](https://github.com/Tencent/tdesign-vue/pull/3525))
+
+### 🐞 Bug Fixes
+- `Select`: 修复多选情况下移除标签时，`trigger` 参数值错误的问题 @betavs ([#3509](https://github.com/Tencent/tdesign-vue/pull/3509))
+- `Message`: 修复连续调用messagePlugin时，返回的实例不正确的问题 @maoyiluo ([#3514](https://github.com/Tencent/tdesign-vue/pull/3514))
+- `Dialog`:  自定义 `cancelBtn` 文本时保留 `t-dialog__cancel` 样式 @RSS1102 ([#3528](https://github.com/Tencent/tdesign-vue/pull/3528))
+- `Bundle`: 修复`1.11.0`的产物中的`cjs` 在 node 20 以下的使用异常的问题 @uyarn ([#3512](https://github.com/Tencent/tdesign-vue/pull/3512))
+
 ## 🌈 1.11.0 `2025-02-21` 
 ### 🚀 Features
 - `Drawer`: sizeDraggable支持SizeDragLimit类型 @huangchen1031 ([#3465](https://github.com/Tencent/tdesign-vue/pull/3465))
