@@ -19,8 +19,8 @@ export default function renderDemo(md, container) {
         const tpl = `
           <td-doc-demo demo-name="${demoName}" languages="OptionsAPI,CompositionAPI" :data-OptionsAPI="${demoCodeDefName}" :data-CompositionAPI="${demoCompositionCodeDefName}" language="markup">
             <div slot="action">
-              <Stackblitz demo-name="${demoName}" component-name="${componentName}" />
-              <Codesandbox demo-name="${demoName}" component-name="${componentName}" />
+              <Stackblitz demo-name="${demoName}" component-name="${componentName.trim()}" />
+              <Codesandbox demo-name="${demoName}" component-name="${componentName.trim()}" />
             </div>
             <div class="tdesign-demo-item__body">
               <${demoDefName} />
