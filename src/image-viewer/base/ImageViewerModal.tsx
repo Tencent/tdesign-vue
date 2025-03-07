@@ -99,7 +99,7 @@ export default defineComponent({
             mirror={this.mirror}
             src={this.currentImage.mainImage}
             placementSrc={this.currentImage.thumbnail}
-            imageReferrerpolicy={props.imageReferrerpolicy}
+            imageReferrerpolicy={this.imageReferrerpolicy}
           />
         </div>
       </TDialog>
