@@ -5,7 +5,6 @@ import {
 import TImageViewerIcon from './ImageModalIcon';
 import TToolTip from '../../tooltip';
 import { useConfig } from '../../hooks/useConfig';
-import { downloadFile } from '../utils';
 import { useImagePreviewUrl } from '../../hooks';
 import { ImageInfo } from '../type';
 
@@ -25,6 +24,7 @@ export default defineComponent({
     zoomOutHandler: Function as PropType<() => void>,
     mirrorHandler: Function as PropType<() => void>,
     resetHandler: Function as PropType<() => void>,
+    downloadHandler: Function as PropType<(url: string) => void>,
     currentImage,
   },
   setup(props) {
@@ -87,7 +87,7 @@ export default defineComponent({
             <TImageViewerIcon
               icon={() => <DownloadIcon size="medium" />}
               clickHandler={() => {
-                downloadFile(this.previewUrl);
+                this.downloadHandler(this.previewUrl);
               }}
             />
           )}

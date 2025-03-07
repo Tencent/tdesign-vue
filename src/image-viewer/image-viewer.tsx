@@ -15,7 +15,7 @@ import { renderTNodeJSX } from '../utils/render-tnode';
 import { setTransform } from '../utils/helper';
 import { TdImageViewerProps } from './type';
 import { useMirror, useRotate, useScale } from './hooks';
-import { formatImages, getOverlay } from './utils';
+import { downloadFile, formatImages, getOverlay } from './utils';
 import { EVENT_CODE, DEFAULT_IMAGE_SCALE } from './const';
 import Image from '../image';
 
@@ -26,7 +26,7 @@ export default defineComponent({
     prop: 'visible',
     event: 'change',
   },
-  setup(props, { emit }) {
+  setup(props, { emit, listeners }) {
     const classPrefix = usePrefixClass();
     const COMPONENT_NAME = usePrefixClass('image-viewer');
     const isExpand = ref(true);
@@ -90,6 +90,15 @@ export default defineComponent({
 
     const onImgClick = (i: number) => {
       setIndexValue(i, { trigger: 'current' });
+    };
+
+    const onDownloadClick = (url: string) => {
+      if (props.onDownload || listeners.download) {
+        props.onDownload?.(url);
+        emit('download', url);
+        return;
+      }
+      downloadFile(url);
     };
 
     const openHandler = () => {
@@ -198,6 +207,7 @@ export default defineComponent({
       onZoomOut,
       onMirror,
       onRest,
+      onDownloadClick,
       openHandler,
       onCloseHandle,
       onWheel,
@@ -280,11 +290,13 @@ export default defineComponent({
           zoomInHandler={this.onZoomIn}
           zoomOutHandler={this.onZoomOut}
           mirrorHandler={this.onMirror}
+          downloadHandler={this.onDownloadClick}
           resetHandler={this.onRest}
           closeHandler={this.onCloseHandle}
           draggable={this.draggable}
           showOverlay={this.showOverlayValue}
           closeBtn={this.closeBtn}
+          imageReferrerpolicy={this.imageReferrerpolicy}
         />
       );
     },
@@ -328,6 +340,7 @@ export default defineComponent({
             zoomInHandler={this.onZoomIn}
             zoomOutHandler={this.onZoomOut}
             mirrorHandler={this.onMirror}
+            downloadHandler={this.onDownloadClick}
             resetHandler={this.onRest}
             rotateHandler={this.onRotate}
             scale={this.scale}
@@ -339,6 +352,7 @@ export default defineComponent({
             mirror={this.mirror}
             src={this.currentImage.mainImage}
             placementSrc={this.currentImage.thumbnail}
+            imageReferrerpolicy={this.imageReferrerpolicy}
           />
         </div>
       );

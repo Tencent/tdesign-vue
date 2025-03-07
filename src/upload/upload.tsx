@@ -2,7 +2,6 @@ import {
   computed, defineComponent, Ref, SetupContext, toRef,
 } from 'vue';
 import { UploadIcon as TdUploadIcon } from 'tdesign-icons-vue';
-import useFormDisabled from '../hooks/useFormDisabled';
 import props from './props';
 import NormalFile from './themes/normal-file';
 import DraggerFile from './themes/dragger-file';
@@ -27,7 +26,6 @@ export default defineComponent({
 
   setup(props: UploadProps, context: SetupContext) {
     const uploadData = useUpload(props, context);
-    const { formDisabled } = useFormDisabled();
 
     const {
       localeConfig,
@@ -46,7 +44,8 @@ export default defineComponent({
       onPasteFileChange,
     } = uploadData;
 
-    const tDisabled = computed<boolean>(() => formDisabled.value || innerDisabled.value);
+    const tDisabled = computed<boolean>(() => innerDisabled.value);
+
     const icons = useGlobalIcon({
       UploadIcon: TdUploadIcon,
     });
