@@ -5,7 +5,6 @@ import {
 import TImageViewerIcon from './ImageModalIcon';
 import TToolTip from '../../tooltip';
 import { useConfig } from '../../hooks/useConfig';
-import { downloadFile } from '../utils';
 import { useImagePreviewUrl } from '../../hooks';
 import { ImageInfo } from '../type';
 
@@ -88,7 +87,7 @@ export default defineComponent({
             <TImageViewerIcon
               icon={() => <DownloadIcon size="medium" />}
               clickHandler={() => {
-                downloadFile(this.previewUrl);
+                this.downloadHandler(this.previewUrl);
               }}
             />
           )}
