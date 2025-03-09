@@ -11,8 +11,13 @@ import { FormErrorMessage } from '../form';
 import { MessageOptions } from '../message';
 import { ImageProps } from '../image';
 import { TNode, SizeEnum, AttachNode } from '../common';
-
 export type AttachNodeComponent = 'imageViewer' | 'drawer' | 'dialog' | 'popup';
+export interface TdConfigProviderProps {
+  /**
+   * 全局配置
+   */
+  globalConfig?: GlobalConfigProvider;
+}
 
 export interface GlobalConfigProvider {
   /**
