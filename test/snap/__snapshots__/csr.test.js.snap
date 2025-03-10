@@ -13,7 +13,7 @@ exports[`csr snapshot test > csr test ./src/affix/_example/base.vue 1`] = `
         <span
           class="t-button__text"
         >
-          固钉
+          固钉1
         </span>
       </button>
     </div>
