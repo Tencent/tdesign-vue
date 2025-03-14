@@ -40,13 +40,14 @@ export const MessageList = mixins(classPrefixMixins).extend({
   },
   methods: {
     add(msg: MessageOptions): number {
+      const key = getUniqueId();
       const mg = {
         ...msg,
-        key: getUniqueId(),
+        key,
         placement: this.placement,
       };
       this.list.push(mg);
-      return this.list.length - 1;
+      return key;
     },
     remove(index: number) {
       this.list.splice(index, 1);
@@ -73,6 +74,11 @@ export const MessageList = mixins(classPrefixMixins).extend({
         'close-btn-click': () => this.remove(index),
         'duration-end': () => this.remove(index),
       };
+    },
+    getMessageInstance(key: string) {
+      const index = this.list.findIndex((msgOption) => msgOption.key === key);
+      if (index === -1) return null;
+      return this.$children[index];
     },
   },
   render(): VNode {

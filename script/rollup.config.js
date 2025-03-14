@@ -19,7 +19,7 @@ import ignoreImport from 'rollup-plugin-ignore-import';
 import pkg from '../package.json';
 
 const name = 'tdesign';
-const externalDeps = Object.keys(pkg.dependencies || {}).concat([/lodash/, /@babel\/runtime/]);
+const externalDeps = Object.keys(pkg.dependencies || {}).concat([/@babel\/runtime/]);
 const externalPeerDeps = Object.keys(pkg.peerDependencies || {});
 const banner = `/**
  * ${name} v${pkg.version}
@@ -179,10 +179,12 @@ const libConfig = {
   },
 };
 
+const cjsExternalException = ['lodash-es'];
+const cjsExternal = externalDeps.concat(externalPeerDeps).filter((value) => !cjsExternalException.includes(value));
 /** @type {import('rollup').RollupOptions} */
 const cjsConfig = {
   input: inputList,
-  external: externalDeps.concat(externalPeerDeps),
+  external: cjsExternal,
   plugins: [multiInput()].concat(getPlugins({ env: 'production' })),
   output: {
     banner,
