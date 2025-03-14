@@ -19,10 +19,7 @@ import getConfigReceiverMixins, {
 } from '../config-provider/config-receiver';
 import { emitEvent } from '../utils/event';
 import { ClassName, Styles } from '../common';
-
-function getCSSValue(v: string | number) {
-  return isNaN(Number(v)) ? v : `${Number(v)}px`;
-}
+import { getCSSValue } from './utils';
 
 export default mixins(
   ActionMixin,

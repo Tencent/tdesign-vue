@@ -4,11 +4,7 @@ import TButton from '../button';
 import { DialogCloseContext, TdDialogProps } from './type';
 import props from './props';
 import mixins from '../utils/mixins';
-import getConfigReceiverMixins, {
-  DialogConfig,
-  getGlobalIconMixins,
-  getAttachConfigMixins,
-} from '../config-provider/config-receiver';
+import getConfigReceiverMixins, { DialogConfig, getAttachConfigMixins } from '../config-provider/config-receiver';
 import TransferDom from '../utils/transfer-dom';
 import { emitEvent } from '../utils/event';
 import { AttachNode, ClassName, Styles } from '../common';
@@ -34,11 +30,7 @@ if (typeof window !== 'undefined' && window.document && window.document.document
 
 let key = 1;
 
-export default mixins(
-  getConfigReceiverMixins<Vue, DialogConfig>('dialog'),
-  getGlobalIconMixins(),
-  getAttachConfigMixins('dialog'),
-).extend({
+export default mixins(getConfigReceiverMixins<Vue, DialogConfig>('dialog'), getAttachConfigMixins('dialog')).extend({
   name: 'TDialog',
 
   components: {
@@ -389,18 +381,7 @@ export default mixins(
     renderDialog() {
       /* eslint-disable @typescript-eslint/no-unused-vars */
       const {
-        body,
-        header,
-        footer,
-        confirmBtn,
-        cancelBtn,
-        confirmLoading,
-        dialogClassName,
-        theme,
-        onConfirm,
-        onCancel,
-        onCloseBtnClick,
-        ...otherProps
+        dialogClassName, onConfirm, onCancel, onClose, ...otherProps
       } = this.$props;
       /* eslint-enable @typescript-eslint/no-unused-vars */
       // 此处获取定位方式 top 优先级较高 存在时 默认使用top定位
@@ -410,24 +391,19 @@ export default mixins(
           <div class={this.positionClass} style={this.positionStyle} onClick={this.overlayAction} ref="dialogPosition">
             <TDialogCard
               ref="dialog"
-              theme={theme}
-              body={body}
-              header={header}
-              footer={footer}
               class={dialogClassName}
-              confirmBtn={confirmBtn}
-              cancelBtn={cancelBtn}
-              confirmLoading={confirmLoading}
               instanceGlobal={this.instanceGlobal}
               onConfirm={this.confirmBtnAction}
               onCancel={this.cancelBtnAction}
               onCloseBtnClick={this.closeBtnAction}
               onClose={this.emitCloseEvent}
-              {...otherProps}
-            >
-              {this.$slots.header}
-              {this.$slots.default ? this.$slots.default : this.$slots.body}
-            </TDialogCard>
+              {...{
+                props: {
+                  ...otherProps,
+                },
+              }}
+              scopedSlots={this.$scopedSlots}
+            ></TDialogCard>
           </div>
         </div>
       );
