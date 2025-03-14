@@ -1,16 +1,35 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { mount } from '@vue/test-utils';
+import { nextTick } from 'vue';
 import Dialog from '@/src/dialog/index.ts';
 
 // every component needs four parts: props/events/slots/functions.
 describe('Dialog', () => {
   // test props api
   describe(':props', () => {
-    it('modeless', () => {
+    it('mode:modeless', () => {
       const wrapper = mount(Dialog, {
         propsData: { mode: 'modeless' },
       });
       expect(wrapper.find('.t-dialog__mask').exists()).toBe(false);
+    });
+
+    it('mode:normal', async () => {
+      const wrapper = mount(Dialog, {
+        propsData: { mode: 'normal' },
+      });
+      const ctx = wrapper.find('.t-dialog__ctx');
+      await nextTick();
+      expect(ctx.find('.t-dialog__position').exists()).toBeFalsy();
+    });
+
+    it('mode:full-screen', async () => {
+      const wrapper = mount(Dialog, {
+        propsData: { mode: 'full-screen' },
+      });
+      const ctx = wrapper.find('.t-dialog__ctx');
+      await nextTick();
+      expect(ctx.find('.t-dialog__position_fullscreen').exists()).toBeTruthy();
     });
 
     it('placement', () => {
@@ -98,10 +117,160 @@ describe('Dialog', () => {
       await wrapper.setProps({ visible: false });
       expect(wrapper.exists()).toBe(true);
     });
+
+    it('showOverlay', async () => {
+      const wrapper = mount(Dialog);
+      const ctx = wrapper.find('.t-dialog__ctx');
+      await nextTick();
+      expect(ctx.find('.t-dialog__mask').exists()).toBeTruthy();
+    });
+
+    it('theme', async () => {
+      const themeList = ['default', 'success', 'info', 'warning', 'danger'];
+      themeList.forEach(async (theme) => {
+        const wrapper = mount(Dialog, {
+          propsData: {
+            theme,
+          },
+        });
+        const dialog = wrapper.find('.t-dialog');
+        await nextTick();
+        expect(dialog.classes()).toContain(`t-dialog__modal-${theme}`);
+      });
+    });
+
+    it('width', async () => {
+      const wrapper = mount(Dialog, {
+        propsData: {
+          width: '80%',
+        },
+      });
+      const dialog = wrapper.find('.t-dialog');
+      await nextTick();
+      expect(getComputedStyle(dialog.element, null).width).toBe('80%');
+    });
+
+    it('draggable', async () => {
+      const wrapper = mount(Dialog, {
+        propsData: {
+          mode: 'modeless',
+          draggable: true,
+        },
+      });
+      const dialog = wrapper.find('.t-dialog');
+      await nextTick();
+      expect(dialog.classes()).toContain('t-dialog--draggable');
+    });
+
+    it('dialogClassName', async () => {
+      const wrapper = mount(Dialog, {
+        propsData: {
+          dialogClassName: 'custom-class',
+          mode: 'modeless',
+        },
+      });
+      const dialog = wrapper.find('.t-dialog');
+      await nextTick();
+      expect(dialog.classes()).toContain('custom-class');
+    });
+
+    it('dialogStyle', async () => {
+      const wrapper = mount(Dialog, {
+        propsData: {
+          dialogStyle: { padding: '99px' },
+          mode: 'modeless',
+        },
+      });
+      const dialog = wrapper.find('.t-dialog');
+      await nextTick();
+      expect(getComputedStyle(dialog.element, null).padding).toBe('99px');
+    });
+
+    it('update dialog confirmBtnLoading', async () => {
+      const wrapper = mount({
+        data() {
+          return {
+            loading: false,
+          };
+        },
+        render() {
+          return (
+            <Dialog
+              mode="modal"
+              confirmBtn={{
+                content: 'Saving',
+                theme: 'primary',
+                loading: this.loading,
+              }}
+              body="this is content"
+            ></Dialog>
+          );
+        },
+      });
+      const dialog = wrapper.find('.t-dialog');
+      await nextTick();
+      expect(dialog.find('.t-button--theme-primary.t-is-loading.t-dialog__confirm').exists()).toBeFalsy();
+      await wrapper.setData({ loading: true });
+      await nextTick();
+      const updateDialog = wrapper.find('.t-dialog');
+      expect(updateDialog.find('.t-button--theme-primary.t-is-loading.t-dialog__confirm').exists()).toBeTruthy();
+    });
   });
 
   // test events
-  // describe('@event', () => {});
+  describe(':events', () => {
+    it(':onCancel', async () => {
+      const fn = vi.fn();
+      const wrapper = mount(Dialog, {
+        propsData: {
+          onCancel: fn,
+        },
+      });
+      const btn = wrapper.find('.t-dialog__footer .t-dialog__cancel');
+      await nextTick();
+      await btn.trigger('click');
+      expect(fn).toBeCalled();
+    });
+
+    it(':onConfirm', async () => {
+      const fn = vi.fn();
+      const wrapper = mount(Dialog, {
+        propsData: {
+          onConfirm: fn,
+        },
+      });
+      const btn = wrapper.find('.t-dialog__footer .t-dialog__confirm');
+      await nextTick();
+      await btn.trigger('click');
+      expect(fn).toBeCalled();
+    });
+
+    it(':onClose', async () => {
+      const fn = vi.fn();
+      const wrapper = mount(Dialog, {
+        propsData: {
+          onClose: fn,
+        },
+      });
+      const btn = wrapper.find('.t-dialog__close');
+      await nextTick();
+      await btn.trigger('click');
+      expect(fn).toBeCalled();
+    });
+
+    it(':onCloseBtnClick', async () => {
+      const fn = vi.fn();
+      const wrapper = mount(Dialog, {
+        propsData: {
+          onCloseBtnClick: fn,
+        },
+      });
+      const btn = wrapper.find('.t-dialog__close');
+      await nextTick();
+      await btn.trigger('click');
+      expect(fn).toBeCalled();
+    });
+  });
 
   // // test slots
   // describe('<slot>', () => {
