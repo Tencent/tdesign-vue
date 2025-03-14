@@ -214,7 +214,7 @@ export default mixins(getConfigReceiverMixins<Vue, DialogConfig>('dialog'), getA
     destroySelf() {
       this.$el.parentNode?.removeChild?.(this.$el);
     },
-    // 多个dialog情况，若有些给了默认值true，出现ESC关闭不了弹窗问题解决
+    // 解决多个dialog场景，若有些给了默认值true，出现ESC关闭不了弹窗的问题
     storeUid(flag: boolean) {
       if (flag) {
         stack.push(this.uid);

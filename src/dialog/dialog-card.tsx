@@ -63,7 +63,8 @@ export default mixins(
       return dialogClass;
     },
     computedDialogStyle(): Styles {
-      return !this.isFullScreen ? { width: getCSSValue(this.width), ...this.dialogStyle } : { ...this.dialogStyle }; // width全屏模式不生效;
+      // width全屏模式不生效
+      return !this.isFullScreen ? { width: getCSSValue(this.width), ...this.dialogStyle } : { ...this.dialogStyle };
     },
   },
 
