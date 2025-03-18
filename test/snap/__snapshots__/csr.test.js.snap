@@ -28099,6 +28099,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/color-mode.vue
                   >
                     <span
                       class="color-inner"
+                      style="background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);"
                     />
                   </div>
                 </div>
@@ -28226,12 +28227,14 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/enable-alpha.v
         >
           <div
             class="t-color-picker__slider-padding"
+            style="background: linear-gradient(90deg, rgba(0,0,0,.0) 0%, rgba(0,0,0,.0) 93%, rgb(255, 0, 0) 93%, rgb(255, 0, 0) 100%);"
           />
           <div
             class="t-color-picker__slider"
           >
             <div
               class="t-color-picker__rail"
+              style="background: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(255, 0, 0));"
             />
             <span
               class="t-color-picker__thumb"
@@ -29728,6 +29731,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/panel.vue 1`] 
                 >
                   <ul
                     class="gradient-thumbs"
+                    style="background: linear-gradient(90deg,rgb(79, 172, 254) 0%,rgb(0, 242, 254) 100%);"
                   >
                     <li
                       class="t-color-picker__thumb gradient-thumbs__item t-is-active"
@@ -29779,6 +29783,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/panel.vue 1`] 
               >
                 <span
                   class="preview-inner"
+                  style="background: linear-gradient(45deg,rgb(79, 172, 254) 0%,rgb(0, 242, 254) 100%);"
                 />
               </div>
             </div>
@@ -29821,12 +29826,14 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/panel.vue 1`] 
                 >
                   <div
                     class="t-color-picker__slider-padding"
+                    style="background: linear-gradient(90deg, rgba(0,0,0,.0) 0%, rgba(0,0,0,.0) 93%, rgb(79, 172, 254) 93%, rgb(79, 172, 254) 100%);"
                   />
                   <div
                     class="t-color-picker__slider"
                   >
                     <div
                       class="t-color-picker__rail"
+                      style="background: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(79, 172, 254));"
                     />
                     <span
                       class="t-color-picker__thumb"
@@ -29842,6 +29849,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/panel.vue 1`] 
               >
                 <span
                   class="t-color-picker__sliders-preview-inner"
+                  style="background: linear-gradient(45deg,rgb(79, 172, 254) 0%,rgb(0, 242, 254) 100%);"
                 />
               </div>
             </div>
@@ -30882,6 +30890,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/recent-color.v
                     >
                       <span
                         class="t-color-picker__swatches--inner"
+                        style="background: linear-gradient(to right, #fa709a 0%, #fee140 100%);"
                       />
                     </div>
                   </li>
@@ -30893,6 +30902,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/recent-color.v
                     >
                       <span
                         class="t-color-picker__swatches--inner"
+                        style="background: linear-gradient(45deg, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);"
                       />
                     </div>
                   </li>
@@ -30904,6 +30914,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/recent-color.v
                     >
                       <span
                         class="t-color-picker__swatches--inner"
+                        style="background: linear-gradient(120deg, #fcc5e4 0%, #fda34b 15%, #ff7882 35%, #c8699e 52%, #7046aa 71%, #0c1db8 87%, #020f75 100%);"
                       />
                     </div>
                   </li>
@@ -52509,7 +52520,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validate-complicated-d
   </div>
   <div
     class="t-tabs"
-    style="margin-left: 30px;"
+    style="margin-left: 30px; border: 1px solid var(--td-component-stroke);"
   >
     <div
       class="t-tabs__header t-is-top"
@@ -64138,6 +64149,7 @@ exports[`csr snapshot test > csr test ./src/layout/_example/combine.vue 1`] = `
     >
       <aside
         class="t-layout__sider"
+        style="border-top: 1px solid var(--component-border);"
       >
         <div
           class="t-default-menu t-menu--light"
@@ -80298,7 +80310,7 @@ exports[`csr snapshot test > csr test ./src/progress/_example/custom.vue 1`] = `
           >
             <div
               class="t-progress__inner"
-              style="width: 30%;"
+              style="width: 30%; background: linear-gradient( 90deg,#FFC86E,#E66A72 );"
             />
           </div>
           <div
@@ -80368,7 +80380,7 @@ exports[`csr snapshot test > csr test ./src/progress/_example/custom.vue 1`] = `
         >
           <div
             class="t-progress__inner"
-            style="width: 30%;"
+            style="width: 30%; background: linear-gradient(to right, #7B7BE0 0%,#6392F7 100%);"
           >
             <div
               class="t-progress__info"
@@ -80714,7 +80726,7 @@ exports[`csr snapshot test > csr test ./src/progress/_example/line.vue 1`] = `
           >
             <div
               class="t-progress__inner"
-              style="width: 60%;"
+              style="width: 60%; background: linear-gradient(to right, #0052D9, #00A870);"
             />
           </div>
           <div
@@ -80966,7 +80978,7 @@ exports[`csr snapshot test > csr test ./src/progress/_example/plump.vue 1`] = `
       >
         <div
           class="t-progress__inner"
-          style="width: 30%;"
+          style="width: 30%; background: linear-gradient(to right, #0052D9, #00A870);"
         >
           <div
             class="t-progress__info"

@@ -2766,7 +2766,7 @@ exports[`Guide Component > GuideStep.body works fine 1`] = `
         data-popper-escaped=""
         data-popper-placement="bottom-end"
         data-popper-reference-hidden=""
-        style="z-index: 999999; position: absolute; left: 0px; top: 0px; margin: 0px; right: 0px; transform: translate(0px, 0px);"
+        style="z-index: 999999; position: absolute; left: auto; top: 0px; margin: 0px; right: 0px; bottom: auto; transform: translate(0px, 0px);"
       >
         <div
           class="t-popup__content t-popup__content--arrow"
@@ -5792,7 +5792,7 @@ exports[`Guide Component > GuideStep.content works fine 1`] = `
         data-popper-escaped=""
         data-popper-placement="bottom-end"
         data-popper-reference-hidden=""
-        style="z-index: 999999; position: absolute; left: 0px; top: 0px; margin: 0px; right: 0px; transform: translate(0px, 0px);"
+        style="z-index: 999999; position: absolute; left: auto; top: 0px; margin: 0px; right: 0px; bottom: auto; transform: translate(0px, 0px);"
       >
         <div
           class="t-popup__content t-guide__popup--content"
@@ -8989,7 +8989,7 @@ exports[`Guide Component > GuideStep.highlightContent works fine 1`] = `
         data-popper-escaped=""
         data-popper-placement="bottom-end"
         data-popper-reference-hidden=""
-        style="z-index: 999999; position: absolute; left: 0px; top: 0px; margin: 0px; right: 0px; transform: translate(0px, 0px);"
+        style="z-index: 999999; position: absolute; left: auto; top: 0px; margin: 0px; right: 0px; bottom: auto; transform: translate(0px, 0px);"
       >
         <div
           class="t-popup__content t-popup__content--arrow"
@@ -13123,7 +13123,7 @@ exports[`Guide Component > GuideStep.placement is equal to bottom-left 1`] = `
         data-popper-escaped=""
         data-popper-placement="bottom-start"
         data-popper-reference-hidden=""
-        style="z-index: 999999; position: absolute; left: 0px; top: 0px; margin: 0px; transform: translate(0px, 0px);"
+        style="z-index: 999999; position: absolute; left: 0px; top: 0px; margin: 0px; right: auto; bottom: auto; transform: translate(0px, 0px);"
       >
         <div
           class="t-popup__content t-popup__content--arrow"
@@ -17673,7 +17673,7 @@ exports[`Guide Component > GuideStep.stepOverlayClass is equal to t-test-guide-s
         data-popper-escaped=""
         data-popper-placement="bottom-end"
         data-popper-reference-hidden=""
-        style="z-index: 999999; position: absolute; left: 0px; top: 0px; margin: 0px; right: 0px; transform: translate(0px, 0px);"
+        style="z-index: 999999; position: absolute; left: auto; top: 0px; margin: 0px; right: 0px; bottom: auto; transform: translate(0px, 0px);"
       >
         <div
           class="t-popup__content t-popup__content--arrow"
@@ -22325,7 +22325,7 @@ exports[`Guide Component > GuideStep.title works fine 1`] = `
         data-popper-escaped=""
         data-popper-placement="bottom-end"
         data-popper-reference-hidden=""
-        style="z-index: 999999; position: absolute; left: 0px; top: 0px; margin: 0px; right: 0px; transform: translate(0px, 0px);"
+        style="z-index: 999999; position: absolute; left: auto; top: 0px; margin: 0px; right: 0px; bottom: auto; transform: translate(0px, 0px);"
       >
         <div
           class="t-popup__content t-popup__content--arrow"
@@ -25249,7 +25249,7 @@ exports[`Guide Component > slots.body works fine 1`] = `
         data-popper-escaped=""
         data-popper-placement="bottom-end"
         data-popper-reference-hidden=""
-        style="z-index: 999999; position: absolute; left: 0px; top: 0px; margin: 0px; right: 0px; transform: translate(0px, 0px);"
+        style="z-index: 999999; position: absolute; left: auto; top: 0px; margin: 0px; right: 0px; bottom: auto; transform: translate(0px, 0px);"
       >
         <div
           class="t-popup__content t-popup__content--arrow"
@@ -28377,7 +28377,7 @@ exports[`Guide Component > slots.content works fine 1`] = `
         data-popper-escaped=""
         data-popper-placement="bottom-end"
         data-popper-reference-hidden=""
-        style="z-index: 999999; position: absolute; left: 0px; top: 0px; margin: 0px; right: 0px; transform: translate(0px, 0px);"
+        style="z-index: 999999; position: absolute; left: auto; top: 0px; margin: 0px; right: 0px; bottom: auto; transform: translate(0px, 0px);"
       >
         <div
           class="t-popup__content t-popup__content--arrow"
@@ -31781,7 +31781,7 @@ exports[`Guide Component > slots.highlight-content works fine 1`] = `
         data-popper-escaped=""
         data-popper-placement="bottom-end"
         data-popper-reference-hidden=""
-        style="z-index: 999999; position: absolute; left: 0px; top: 0px; margin: 0px; right: 0px; transform: translate(0px, 0px);"
+        style="z-index: 999999; position: absolute; left: auto; top: 0px; margin: 0px; right: 0px; bottom: auto; transform: translate(0px, 0px);"
       >
         <div
           class="t-popup__content t-popup__content--arrow"
@@ -35115,7 +35115,7 @@ exports[`Guide Component > slots.highlightContent works fine 1`] = `
         data-popper-escaped=""
         data-popper-placement="bottom-end"
         data-popper-reference-hidden=""
-        style="z-index: 999999; position: absolute; left: 0px; top: 0px; margin: 0px; right: 0px; transform: translate(0px, 0px);"
+        style="z-index: 999999; position: absolute; left: auto; top: 0px; margin: 0px; right: 0px; bottom: auto; transform: translate(0px, 0px);"
       >
         <div
           class="t-popup__content t-popup__content--arrow"
@@ -39869,7 +39869,7 @@ exports[`Guide Component > slots.title works fine 1`] = `
         data-popper-escaped=""
         data-popper-placement="bottom-end"
         data-popper-reference-hidden=""
-        style="z-index: 999999; position: absolute; left: 0px; top: 0px; margin: 0px; right: 0px; transform: translate(0px, 0px);"
+        style="z-index: 999999; position: absolute; left: auto; top: 0px; margin: 0px; right: 0px; bottom: auto; transform: translate(0px, 0px);"
       >
         <div
           class="t-popup__content t-popup__content--arrow"
