@@ -7,8 +7,13 @@ import TDesign from '@/src/index';
 const { getComputedStyle } = window;
 window.getComputedStyle = (elt) => getComputedStyle(elt);
 
-Vue.config.productionTip = true;
-Vue.config.devtools = false;
-
 Vue.use(VueCompositionAPI);
 Vue.use(TDesign);
+
+vi.mock('vue', async () => {
+  const vue = await vi.importActual('vue');
+
+  vue.default.config.productionTip = false;
+  vue.default.config.devtools = false;
+  return vue;
+});
