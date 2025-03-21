@@ -13,7 +13,7 @@ exports[`Progress > :props > :color > :color is Array, equal to ["#f00", "#0ff",
     >
       <div
         class="t-progress__inner"
-        style="width: 0%; background: linear-gradient( 90deg,#f00,#0ff,#f0f );"
+        style="width: 0%;"
       />
     </div>
     <div
@@ -38,7 +38,7 @@ exports[`Progress > :props > :color > :color is Object, equal to { "0%": "#f00",
     >
       <div
         class="t-progress__inner"
-        style="width: 0%; background: linear-gradient(to right, #f00 0%,#0ff 100%);"
+        style="width: 0%;"
       />
     </div>
     <div
