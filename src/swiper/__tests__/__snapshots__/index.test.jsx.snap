@@ -272,7 +272,7 @@ exports[`Swiper > additional function > navigation: VNode 1`] = `
           width="1em"
         >
           <path
-            d="M15.91 17.5l-5.5-5.5 5.5-5.5-1.41-1.41L7.59 12l6.91 6.91 1.41-1.41z"
+            d="M15.9144 17.5L10.4144 12L15.9144 6.50003L14.5002 5.08582L7.58594 12L14.5002 18.9142L15.9144 17.5Z"
             fill="currentColor"
           />
         </svg>
@@ -288,7 +288,7 @@ exports[`Swiper > additional function > navigation: VNode 1`] = `
           width="1em"
         >
           <path
-            d="M8.09 17.5l5.5-5.5-5.5-5.5L9.5 5.09 16.41 12 9.5 18.91 8.09 17.5z"
+            d="M8.08594 17.5L13.5859 12L8.08594 6.50003L9.50015 5.08582L16.4144 12L9.50015 18.9142L8.08594 17.5Z"
             fill="currentColor"
           />
         </svg>
@@ -330,7 +330,7 @@ exports[`Swiper > additional function > no valid panel 1`] = `
           width="1em"
         >
           <path
-            d="M15.91 17.5l-5.5-5.5 5.5-5.5-1.41-1.41L7.59 12l6.91 6.91 1.41-1.41z"
+            d="M15.9144 17.5L10.4144 12L15.9144 6.50003L14.5002 5.08582L7.58594 12L14.5002 18.9142L15.9144 17.5Z"
             fill="currentColor"
           />
         </svg>
@@ -346,7 +346,7 @@ exports[`Swiper > additional function > no valid panel 1`] = `
           width="1em"
         >
           <path
-            d="M8.09 17.5l5.5-5.5-5.5-5.5L9.5 5.09 16.41 12 9.5 18.91 8.09 17.5z"
+            d="M8.08594 17.5L13.5859 12L8.08594 6.50003L9.50015 5.08582L16.4144 12L9.50015 18.9142L8.08594 17.5Z"
             fill="currentColor"
           />
         </svg>

@@ -55,7 +55,7 @@ export interface TypeEventState extends TypeTreeEventState {
   dropPosition?: number;
 }
 
-export interface TypDragEventState extends TypeEventState {
+export interface TypeDragEventState extends TypeEventState {
   dragEvent?: DragEvent;
   dropPosition?: number;
 }
@@ -91,11 +91,11 @@ export interface TypeScopedSlots {
 }
 
 export interface TypeDragHandle {
-  handleDragStart: (state: TypDragEventState) => void;
-  handleDragEnd: (state: TypDragEventState) => void;
-  handleDragOver: (state: TypDragEventState) => void;
-  handleDragLeave: (state: TypDragEventState) => void;
-  handleDrop: (state: TypDragEventState) => void;
+  handleDragStart: (state: TypeDragEventState) => void;
+  handleDragEnd: (state: TypeDragEventState) => void;
+  handleDragOver: (state: TypeDragEventState) => void;
+  handleDragLeave: (state: TypeDragEventState) => void;
+  handleDrop: (state: TypeDragEventState) => void;
 }
 
 export interface TypeTreeScope {

@@ -8,6 +8,11 @@ import { TdImageViewerProps } from './type';
 import { PropType } from 'vue';
 
 export default {
+  /** 指定挂载节点。数据类型为 String 时，会被当作选择器处理，进行节点查询。示例：'body' 或 () => document.body */
+  attach: {
+    type: [String, Function] as PropType<TdImageViewerProps['attach']>,
+    default: 'body',
+  },
   /** 是否展示关闭按钮，值为 `true` 显示默认关闭按钮；值为 `false` 则不显示关闭按钮；也可以完全自定义关闭按钮 */
   closeBtn: {
     type: [Boolean, Function] as PropType<TdImageViewerProps['closeBtn']>,
@@ -25,7 +30,24 @@ export default {
     type: Boolean,
     default: undefined,
   },
-  /**  图片缩放相关配置。`imageScale.max` 缩放的最大比例；`imageScale.min` 缩放的最小比例；`imageScale.step` 缩放的步长速度 */
+  /** 图片预览中的 `<img>` 标签的原生属性，[MDN 定义](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy) */
+  imageReferrerpolicy: {
+    type: String as PropType<TdImageViewerProps['imageReferrerpolicy']>,
+    validator(val: TdImageViewerProps['imageReferrerpolicy']): boolean {
+      if (!val) return true;
+      return [
+        'no-referrer',
+        'no-referrer-when-downgrade',
+        'origin',
+        'origin-when-cross-origin',
+        'same-origin',
+        'strict-origin',
+        'strict-origin-when-cross-origin',
+        'unsafe-url',
+      ].includes(val);
+    },
+  },
+  /**  图片缩放相关配置。`imageScale.max` 缩放的最大比例；`imageScale.min` 缩放的最小比例；`imageScale.step` 缩放的步长速度; `imageScale.defaultScale` 默认的缩放比例 */
   imageScale: {
     type: Object as PropType<TdImageViewerProps['imageScale']>,
   },
@@ -37,7 +59,7 @@ export default {
   /** 当前预览图片所在的下标 */
   index: {
     type: Number,
-    default: undefined,
+    default: 0,
   },
   /** 当前预览图片所在的下标，非受控属性 */
   defaultIndex: {
@@ -76,10 +98,7 @@ export default {
     type: Object as PropType<TdImageViewerProps['viewerScale']>,
   },
   /** 隐藏/显示预览 */
-  visible: {
-    type: Boolean,
-    default: undefined,
-  },
+  visible: Boolean,
   /** 隐藏/显示预览，非受控属性 */
   defaultVisible: Boolean,
   /** 层级，默认为 2000 */
@@ -88,6 +107,8 @@ export default {
   },
   /** 关闭时触发，事件参数包含触发关闭的来源：关闭按钮、遮罩层、ESC 键 */
   onClose: Function as PropType<TdImageViewerProps['onClose']>,
+  /** 自定义预览图片下载操作，url为图片链接 */
+  onDownload: Function as PropType<TdImageViewerProps['onDownload']>,
   /** 预览图片切换时触发，`context.prev` 切换到上一张图片，`context.next` 切换到下一张图片 */
   onIndexChange: Function as PropType<TdImageViewerProps['onIndexChange']>,
 };

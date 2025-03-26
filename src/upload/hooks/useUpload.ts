@@ -2,6 +2,7 @@ import {
   ref, computed, toRefs, SetupContext,
 } from '@vue/composition-api';
 import { merge } from 'lodash-es';
+import useFormDisabled from '../../hooks/useFormDisabled';
 import {
   SizeLimitObj,
   TdUploadProps,
@@ -57,10 +58,11 @@ export default function useUpload(props: TdUploadProps, context: SetupContext) {
   const xhrReq = ref<{ files: UploadFile[]; xhrReq: XMLHttpRequest }[]>([]);
   const toUploadFiles = ref<UploadFile[]>([]);
   const sizeOverLimitMessage = ref('');
+  const { formDisabled } = useFormDisabled();
 
   const localeConfig = computed(() => merge({}, global.value, props.locale));
-  // TODO: Form 表单控制上传组件是否禁用
-  const innerDisabled = computed(() => props.disabled);
+
+  const innerDisabled = computed(() => formDisabled.value || props.disabled);
 
   const tipsClasses = `${classPrefix.value}-upload__tips ${classPrefix.value}-size-s`;
   const errorClasses = [tipsClasses].concat(`${classPrefix.value}-upload__tips-error`);
