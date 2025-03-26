@@ -268,7 +268,67 @@
       "row-validate",
       "select-change",
       "sort-change",
-      "validate"
+      "validate",
+      "active-row-keys",
+      "active-row-type",
+      "allow-resize-column-width",
+      "attach",
+      "bordered",
+      "bottom-content",
+      "cell-empty-content",
+      "data",
+      "disable-data-page",
+      "disable-space-inactive-row",
+      "empty",
+      "first-full-row",
+      "fixed-rows",
+      "foot-data",
+      "footer-affix-props",
+      "footer-affixed-bottom",
+      "footer-summary",
+      "header-affix-props",
+      "header-affixed-top",
+      "height",
+      "horizontal-scroll-affixed-bottom",
+      "hover",
+      "keyboard-row-hover",
+      "last-full-row",
+      "lazy-load",
+      "loading",
+      "loading-props",
+      "locale",
+      "max-height",
+      "pagination",
+      "pagination-affixed-bottom",
+      "resizable",
+      "row-attributes",
+      "row-class-name",
+      "row-key",
+      "rowspan-and-colspan",
+      "rowspan-and-colspan-in-footer",
+      "scroll",
+      "show-header",
+      "size",
+      "stripe",
+      "table-content-width",
+      "table-layout",
+      "top-content",
+      "vertical-align",
+      "active-change",
+      "active-row-action",
+      "cell-click",
+      "column-resize-change",
+      "page-change",
+      "row-click",
+      "row-dblclick",
+      "row-mousedown",
+      "row-mouseenter",
+      "row-mouseleave",
+      "row-mouseover",
+      "row-mouseup",
+      "scroll",
+      "scroll-x",
+      "scroll-y"
     ],
     "description": "PrimaryTable\n\n主表格\n\n[docs](https://tdesign.tencent.com/vue/components/table)"
   },
@@ -546,6 +606,7 @@
       "swatch-colors",
       "value",
       "change",
+      "clear",
       "palette-bar-change",
       "recent-colors-change"
     ],
@@ -626,7 +687,18 @@
       "panel-click",
       "preset-click",
       "time-change",
-      "year-change"
+      "year-change",
+      "disable-date",
+      "disable-time",
+      "enable-time-picker",
+      "first-day-of-week",
+      "format",
+      "mode",
+      "need-confirm",
+      "presets",
+      "presets-placement",
+      "time-picker-props",
+      "value"
     ],
     "description": "DatePickerPanel\n\n日期选择器面板\n\n[docs](https://tdesign.tencent.com/vue/components/date-picker)"
   },
@@ -681,23 +753,22 @@
       "panel-click",
       "preset-click",
       "time-change",
-      "year-change"
+      "year-change",
+      "disable-date",
+      "enable-time-picker",
+      "first-day-of-week",
+      "format",
+      "mode",
+      "panel-preselection",
+      "presets",
+      "presets-placement",
+      "time-picker-props",
+      "value"
     ],
     "description": "DateRangePickerPanel\n\n日期范围选择器面板\n\n[docs](https://tdesign.tencent.com/vue/components/date-picker)"
   },
-  "t-description-item": {
-    "attributes": [
-      "align",
-      "content",
-      "default",
-      "label",
-      "span"
-    ],
-    "description": "DescriptionItem\n\n描述项\n\n[docs](https://tdesign.tencent.com/vue/components/descriptions)"
-  },
   "t-descriptions": {
     "attributes": [
-      "align",
       "bordered",
       "colon",
       "column",
@@ -711,6 +782,15 @@
       "title"
     ],
     "description": "Descriptions\n\n描述列表\n\n[docs](https://tdesign.tencent.com/vue/components/descriptions)"
+  },
+  "t-descriptions-item": {
+    "attributes": [
+      "content",
+      "default",
+      "label",
+      "span"
+    ],
+    "description": "DescriptionsItem\n\n描述项\n\n[docs](https://tdesign.tencent.com/vue/components/descriptions)"
   },
   "t-dialog": {
     "attributes": [
@@ -765,7 +845,15 @@
       "theme",
       "cancel",
       "close-btn-click",
-      "confirm"
+      "confirm",
+      "body",
+      "cancel-btn",
+      "close-btn",
+      "confirm-btn",
+      "confirm-loading",
+      "footer",
+      "header",
+      "theme"
     ],
     "description": "DialogCard\n\n对话框卡片\n\n[docs](https://tdesign.tencent.com/vue/components/dialog)"
   },
@@ -890,6 +978,7 @@
       "prevent-submit-default",
       "readonly",
       "required-mark",
+      "required-mark-position",
       "reset-type",
       "rules",
       "scroll-to-first-error",
@@ -1337,7 +1426,7 @@
     ],
     "description": "PaginationMini\n\n迷你分页\n\n[docs](https://tdesign.tencent.com/vue/components/pagination)"
   },
-  "t-paragraph": {
+  "t-typography-paragraph": {
     "attributes": [
       "content",
       "default",
@@ -1434,7 +1523,67 @@
       "row-validate",
       "select-change",
       "sort-change",
-      "validate"
+      "validate",
+      "active-row-keys",
+      "active-row-type",
+      "allow-resize-column-width",
+      "attach",
+      "bordered",
+      "bottom-content",
+      "cell-empty-content",
+      "data",
+      "disable-data-page",
+      "disable-space-inactive-row",
+      "empty",
+      "first-full-row",
+      "fixed-rows",
+      "foot-data",
+      "footer-affix-props",
+      "footer-affixed-bottom",
+      "footer-summary",
+      "header-affix-props",
+      "header-affixed-top",
+      "height",
+      "horizontal-scroll-affixed-bottom",
+      "hover",
+      "keyboard-row-hover",
+      "last-full-row",
+      "lazy-load",
+      "loading",
+      "loading-props",
+      "locale",
+      "max-height",
+      "pagination",
+      "pagination-affixed-bottom",
+      "resizable",
+      "row-attributes",
+      "row-class-name",
+      "row-key",
+      "rowspan-and-colspan",
+      "rowspan-and-colspan-in-footer",
+      "scroll",
+      "show-header",
+      "size",
+      "stripe",
+      "table-content-width",
+      "table-layout",
+      "top-content",
+      "vertical-align",
+      "active-change",
+      "active-row-action",
+      "cell-click",
+      "column-resize-change",
+      "page-change",
+      "row-click",
+      "row-dblclick",
+      "row-mousedown",
+      "row-mouseenter",
+      "row-mouseleave",
+      "row-mouseover",
+      "row-mouseup",
+      "scroll",
+      "scroll-x",
+      "scroll-y"
     ],
     "description": "PrimaryTable\n\n主表格\n\n[docs](https://tdesign.tencent.com/vue/components/table)"
   },
@@ -1952,7 +2101,7 @@
     ],
     "description": "TagInput\n\n标签输入框\n\n[docs](https://tdesign.tencent.com/vue/components/tag-input)"
   },
-  "t-text": {
+  "t-typography-text": {
     "attributes": [
       "code",
       "content",
@@ -2075,7 +2224,7 @@
     ],
     "description": "TimelineItem\n\n时间轴\n\n[docs](https://tdesign.tencent.com/vue/components/timeline)"
   },
-  "t-title": {
+  "t-typography-title": {
     "attributes": [
       "content",
       "default",
@@ -2091,7 +2240,28 @@
       "duration",
       "placement",
       "show-arrow",
-      "theme"
+      "theme",
+      "attach",
+      "content",
+      "default",
+      "delay",
+      "destroy-on-close",
+      "disabled",
+      "hide-empty-popup",
+      "overlay-class-name",
+      "overlay-inner-class-name",
+      "overlay-inner-style",
+      "overlay-style",
+      "popper-options",
+      "show-arrow",
+      "trigger",
+      "trigger-element",
+      "visible",
+      "z-index",
+      "overlay-click",
+      "scroll",
+      "scroll-to-bottom",
+      "visible-change"
     ],
     "description": "Tooltip\n\n文字提示\n\n[docs](https://tdesign.tencent.com/vue/components/tooltip)"
   },
@@ -2322,5 +2492,9 @@
       "z-index"
     ],
     "description": "Watermark\n\n水印\n\n[docs](https://tdesign.tencent.com/vue/components/watermark)"
+  },
+  "t-typography": {
+    "attributes": [],
+    "description": "Typography\n\n排版\n\n[docs](https://tdesign.tencent.com/vue/components/typography)"
   }
 }
