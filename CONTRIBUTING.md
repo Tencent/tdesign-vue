@@ -1,6 +1,6 @@
 # CONTRIBUTING
 
-`tdesign-vue` 包含 `vue` 代码和一个子仓库，子仓库指向 `tdesign-common` 仓库
+`tdesign-vue` 包含 `vue` 代码和一个子仓库，子仓库指向 [`tdesign-common`](https://github.com/Tencent/tdesign-common) 仓库
 
 ## 开发
 
@@ -24,7 +24,7 @@ npm i
 npm run start
 ```
 
-完成以上 3 个步骤，浏览器访问 <http://127.0.0.1:16000> 即可调该框架的任何内容
+完成以上 3 个步骤，浏览器访问 <http://127.0.0.1:16000> 即可使用该框架的任何内容
 
 ## 目录结构
 
@@ -99,11 +99,11 @@ TDesign 的项目都会以子仓库的形式引入 `tdesign-common` 公共仓库
 ### 初始化子仓库
 
 - 如开发部分提到的，初次克隆代码后需要初始化子仓库： `git submodule init && git submodule update`
-- git submodule update 之后子仓库不指向任何分支，只是一个指向某一个提交的游离状态
+- 执行`git submodule update` 之后子仓库不指向任何分支，只是一个指向某一个提交的游离状态
 
 ### 子仓库开发
 
-子仓库组件分支从 `develop checkout` 示例：`feature/button`，提交代码时先进入子仓库完成提交，然在回到主仓库完成提交
+子仓库组件分支从 `develop checkout` 示例：`feature/button`，提交代码时先进入子仓库完成提交，然后回到主仓库完成提交
 
 - 先进入 `src/\_common` 文件夹，正常将样式修改添加提交
 - 回到主仓库，此时应该会看到 `src/\_common` 文件夹是修改状态，按照正常步骤添加提交即可
@@ -135,7 +135,7 @@ import './button.less';
 
 ### 分支
 
-遵循使用 `git flow` 规范，新组件分支从 `develop checkout`：[https://nvie.com/posts/a-successful-git-branching-model/](https://nvie.com/posts/a-successful-git-branching-model/)
+遵循 `git flow` 规范，新组件分支从 `develop checkout`：[https://nvie.com/posts/a-successful-git-branching-model/](https://nvie.com/posts/a-successful-git-branching-model/)
 
 如果是贡献组件，则从 `develop checkout` 分支如：`feature/button`，记得如果同时要在子仓库开发 UI，子仓库也要 `checkout` 同名分支
 
