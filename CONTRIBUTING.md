@@ -1,6 +1,6 @@
 # CONTRIBUTING
 
-`tdesign-vue` 包含 `vue` 代码和一个子仓库，子仓库指向 [`tdesign-common`](https://github.com/Tencent/tdesign-common) 仓库
+`tdesign-vue` 包含 `vue` 代码和一个子仓库，子仓库指向 [tdesign-common](https://github.com/Tencent/tdesign-common) 仓库
 
 ## 开发
 
