@@ -4,7 +4,6 @@ import { createVuePlugin } from 'vite-plugin-vue2';
 import { VitePWA } from 'vite-plugin-pwa';
 import vueJsx from '@vitejs/plugin-vue2-jsx';
 import tdocPlugin from './plugin-tdoc';
-import pwaConfig from './pwaConfig';
 
 const publicPathMap = {
   preview: '/',
