@@ -6,6 +6,8 @@ import TImageViewerIcon from './ImageModalIcon';
 import TToolTip from '../../tooltip';
 import { useConfig } from '../../hooks/useConfig';
 import { useImagePreviewUrl } from '../../hooks';
+import { largeNumberToFixed } from '../../_common/js/input-number/large-number';
+
 import { ImageInfo } from '../type';
 
 const currentImage = {
@@ -68,7 +70,7 @@ export default defineComponent({
           <TImageViewerIcon
             class={`${this.classPrefix}-image-viewer__utils-scale`}
             size="medium"
-            label={`${this.scale * 100}%`}
+            label={`${largeNumberToFixed(String(this.scale * 100))}%`}
           />
           <TImageViewerIcon icon={() => <ZoomInIcon size="medium" />} clickHandler={this.zoomInHandler} />
           <TToolTip
