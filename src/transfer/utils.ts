@@ -107,7 +107,7 @@ function getTransferData(
       disabled: transferDataItem[disabledKey] ?? false,
       data: transferDataItem,
     };
-    if (isTreeMode && transferDataItem.children) {
+    if (isTreeMode && transferDataItem.children && transferDataItem.children.length > 0) {
       result.children = getTransferData(transferDataItem.children, keys, true);
     }
     return result;

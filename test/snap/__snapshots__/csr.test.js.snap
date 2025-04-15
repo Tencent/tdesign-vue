@@ -46683,6 +46683,56 @@ exports[`csr snapshot test > csr test ./src/drawer/_example/placement.vue 1`] = 
 </div>
 `;
 
+exports[`csr snapshot test > csr test ./src/drawer/_example/plugin.vue 1`] = `
+<div
+  class="t-space t-space-horizontal t-space--break-line"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <button
+      class="t-button t-button--variant-base t-button--theme-primary"
+      type="button"
+    >
+      <span
+        class="t-button__text"
+      >
+        $Drawer
+      </span>
+    </button>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <button
+      class="t-button t-button--variant-base t-button--theme-primary"
+      type="button"
+    >
+      <span
+        class="t-button__text"
+      >
+        handleDrawerNode
+      </span>
+    </button>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <button
+      class="t-button t-button--variant-base t-button--theme-primary"
+      type="button"
+    >
+      <span
+        class="t-button__text"
+      >
+        DrawerPlugin
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
 exports[`csr snapshot test > csr test ./src/drawer/_example/popup.vue 1`] = `
 <div>
   <transition-stub
@@ -88650,61 +88700,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/remote-search.vue 1`
               type="text"
               unselectable="off"
             />
-            <span
-              class="t-input__suffix t-input__suffix-icon"
-            >
-              <svg
-                class="t-fake-arrow t-select__right-icon"
-                fill="none"
-                height="16"
-                viewBox="0 0 16 16"
-                width="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
-                  stroke="black"
-                  stroke-opacity="0.9"
-                  stroke-width="1.3"
-                />
-              </svg>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    class="t-space-item"
-  >
-    <div
-      class="t-select__wrap"
-      style="width: 400px; display: inline-block;"
-    >
-      <div
-        class="t-select-input t-select-input--multiple t-select-input--empty t-select"
-      >
-        <div
-          class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty t-tag-input__with-suffix-icon"
-        >
-          <div
-            class="t-input t-input--prefix t-input--suffix"
-          >
-            <div
-              class="t-input__prefix"
-            />
-            <input
-              autocomplete=""
-              class="t-input__inner"
-              placeholder="请输入搜索"
-              type="text"
-              unselectable="off"
-            />
-            <span
-              class="t-input__input-pre"
-            >
-              请输入搜索
-            </span>
             <span
               class="t-input__suffix t-input__suffix-icon"
             >
