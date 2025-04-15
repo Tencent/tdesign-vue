@@ -1,7 +1,6 @@
 import path from 'path';
 import { defineConfig } from 'vite';
 import { createVuePlugin } from 'vite-plugin-vue2';
-import { VitePWA } from 'vite-plugin-pwa';
 import vueJsx from '@vitejs/plugin-vue2-jsx';
 import tdocPlugin from './plugin-tdoc';
 
@@ -58,6 +57,5 @@ export default ({ mode }) =>
       }),
       vueJsx({}),
       tdocPlugin(),
-      VitePWA(pwaConfig),
     ],
   });
