@@ -69,7 +69,7 @@ describe('Tag Component', () => {
       },
     });
     const domWrapper = wrapper.findComponent(Tag);
-    expect(domWrapper.element.style.borderColor).toBe('#ff0000');
+    expect(domWrapper.element.style.borderColor).toBe('rgb(255, 0, 0)');
     expect(domWrapper.element.style.color).toBe('rgb(255, 0, 0)');
   });
   it('props.color expect variant=light-outline', () => {
@@ -79,7 +79,7 @@ describe('Tag Component', () => {
       },
     });
     const domWrapper = wrapper.findComponent(Tag);
-    expect(domWrapper.element.style.borderColor).toBe('#ff0000');
+    expect(domWrapper.element.style.borderColor).toBe('rgb(255, 0, 0)');
     expect(domWrapper.element.style.color).toBe('rgb(255, 0, 0)');
   });
 

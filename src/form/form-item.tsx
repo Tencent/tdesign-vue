@@ -118,6 +118,8 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
         `${this.componentName}__label`,
         {
           [`${this.componentName}__label--required`]: this.needRequiredMark,
+          [`${this.componentName}__label--required-right`]:
+            this.needRequiredMark && this.requiredMarkPosition === 'right',
           [`${this.componentName}__label--top`]: this.getLabelContent() && (labelAlign === 'top' || !labelWidth),
           [`${this.componentName}__label--left`]: labelAlign === 'left' && labelWidth,
           [`${this.componentName}__label--right`]: labelAlign === 'right' && labelWidth,
@@ -173,6 +175,9 @@ export default mixins(getConfigReceiverMixins<FormItemConstructor, FormConfig>('
       const requiredMark = this.$props.requiredMark ?? this.form.requiredMark ?? this.global.requiredMark;
       const isRequired = this.innerRules.filter((rule) => rule.required).length > 0;
       return requiredMark || (requiredMark ?? isRequired);
+    },
+    requiredMarkPosition(): string {
+      return this.form.requiredMarkPosition ?? 'left';
     },
     innerRules(): FormRule[] {
       const parent = this.form;

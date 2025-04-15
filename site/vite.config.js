@@ -1,16 +1,26 @@
 import path from 'path';
 import { defineConfig } from 'vite';
 import { createVuePlugin } from 'vite-plugin-vue2';
-import { VitePWA } from 'vite-plugin-pwa';
 import vueJsx from '@vitejs/plugin-vue2-jsx';
 import tdocPlugin from './plugin-tdoc';
-import pwaConfig from './pwaConfig';
 
 const publicPathMap = {
   preview: '/',
   intranet: '/vue/',
   production: 'https://static.tdesign.tencent.com/vue/',
 };
+
+// Rollup 4+ 的 tree-shaking 策略调整, 这里是为了让样式在站点构建正常
+const disableTreeShakingPlugin = (paths) => ({
+  name: 'disable-treeshake',
+  transform(code, id) {
+    for (const path of paths) {
+      if (id.includes(path)) {
+        return { code, map: null, moduleSideEffects: 'no-treeshake' };
+      }
+    }
+  },
+});
 
 // https://vitejs.dev/config/
 export default ({ mode }) =>
@@ -47,6 +57,5 @@ export default ({ mode }) =>
       }),
       vueJsx({}),
       tdocPlugin(),
-      VitePWA(pwaConfig),
     ],
   });
