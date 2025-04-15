@@ -1426,14 +1426,6 @@
     ],
     "description": "PaginationMini\n\n迷你分页\n\n[docs](https://tdesign.tencent.com/vue/components/pagination)"
   },
-  "t-typography-paragraph": {
-    "attributes": [
-      "content",
-      "default",
-      "ellipsis"
-    ],
-    "description": "Paragraph\n\n段落\n\n[docs](https://tdesign.tencent.com/vue/components/typography)"
-  },
   "t-popconfirm": {
     "attributes": [
       "cancel-btn",
@@ -2101,24 +2093,6 @@
     ],
     "description": "TagInput\n\n标签输入框\n\n[docs](https://tdesign.tencent.com/vue/components/tag-input)"
   },
-  "t-typography-text": {
-    "attributes": [
-      "code",
-      "content",
-      "copyable",
-      "default",
-      "delete",
-      "disabled",
-      "ellipsis",
-      "italic",
-      "keyboard",
-      "mark",
-      "strong",
-      "theme",
-      "underline"
-    ],
-    "description": "Text\n\n文本\n\n[docs](https://tdesign.tencent.com/vue/components/typography)"
-  },
   "t-textarea": {
     "attributes": [
       "allow-input-over-max",
@@ -2223,15 +2197,6 @@
       "click"
     ],
     "description": "TimelineItem\n\n时间轴\n\n[docs](https://tdesign.tencent.com/vue/components/timeline)"
-  },
-  "t-typography-title": {
-    "attributes": [
-      "content",
-      "default",
-      "ellipsis",
-      "level"
-    ],
-    "description": "Title\n\n标题\n\n[docs](https://tdesign.tencent.com/vue/components/typography)"
   },
   "t-tooltip": {
     "attributes": [
@@ -2492,9 +2457,5 @@
       "z-index"
     ],
     "description": "Watermark\n\n水印\n\n[docs](https://tdesign.tencent.com/vue/components/watermark)"
-  },
-  "t-typography": {
-    "attributes": [],
-    "description": "Typography\n\n排版\n\n[docs](https://tdesign.tencent.com/vue/components/typography)"
   }
 }

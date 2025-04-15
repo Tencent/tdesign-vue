@@ -55,7 +55,7 @@ declare module '@vue/runtime-dom' {
     THeader: typeof import('tdesign-vue')['Header'];
     THeadMenu: typeof import('tdesign-vue')['HeadMenu'];
     TIcon: typeof import('tdesign-vue')['Icon'];
-    Iconfont: typeof import('tdesign-icons-vue')['Iconfont'];
+    IconFont: typeof import('tdesign-icons-vue')['IconFont'];
     Icon: typeof import('tdesign-icons-vue')['Icon'];
     TImage: typeof import('tdesign-vue')['Image'];
     TImageViewer: typeof import('tdesign-vue')['ImageViewer'];
@@ -109,19 +109,16 @@ declare module '@vue/runtime-dom' {
     TTabs: typeof import('tdesign-vue')['Tabs'];
     TTag: typeof import('tdesign-vue')['Tag'];
     TTagInput: typeof import('tdesign-vue')['TagInput'];
-    TTypographyText: typeof import('tdesign-vue')['Text'];
     TTextarea: typeof import('tdesign-vue')['Textarea'];
     TTimeline: typeof import('tdesign-vue')['Timeline'];
     TTimelineItem: typeof import('tdesign-vue')['TimelineItem'];
     TTimePicker: typeof import('tdesign-vue')['TimePicker'];
     TTimeRangePicker: typeof import('tdesign-vue')['TimeRangePicker'];
-    TTypographyTitle: typeof import('tdesign-vue')['Title'];
     TTooltip: typeof import('tdesign-vue')['Tooltip'];
     TTooltipLite: typeof import('tdesign-vue')['TooltipLite'];
     TTransfer: typeof import('tdesign-vue')['Transfer'];
     TTree: typeof import('tdesign-vue')['Tree'];
     TTreeSelect: typeof import('tdesign-vue')['TreeSelect'];
-    TTypography: typeof import('tdesign-vue')['Typography'];
     TUpload: typeof import('tdesign-vue')['Upload'];
     TWatermark: typeof import('tdesign-vue')['Watermark'];
   }
