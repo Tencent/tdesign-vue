@@ -11,6 +11,18 @@ const publicPathMap = {
   production: 'https://static.tdesign.tencent.com/vue/',
 };
 
+// Rollup 4+ 的 tree-shaking 策略调整, 这里是为了让样式在站点构建正常
+const disableTreeShakingPlugin = (paths) => ({
+  name: 'disable-treeshake',
+  transform(code, id) {
+    for (const path of paths) {
+      if (id.includes(path)) {
+        return { code, map: null, moduleSideEffects: 'no-treeshake' };
+      }
+    }
+  },
+});
+
 // https://vitejs.dev/config/
 export default ({ mode }) =>
   defineConfig({
