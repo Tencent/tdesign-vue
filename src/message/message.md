@@ -77,7 +77,7 @@ zIndex | Number | 5000 | 消息层级 | N
 
 ### MessagePlugin
 
-同时也支持 `this.$message`。
+同时也支持 `this.$message`。请注意以下字段是形参名，非实际参数名，即 `MessagePlugin(theme, message, duration)`
 
 参数名称 | 参数类型 | 参数默认值 | 参数说明
 -- | -- | -- | --
@@ -87,7 +87,7 @@ duration | Number | 3000 | 消息显示时长，单位：毫秒。值为 0 表�
 
 ### MessagePlugin.info
 
-同时也支持 `this.$message.info`。
+同时也支持 `this.$message.info`。请注意以下字段是形参名，非实际参数名，即 `MessagePlugin.info(message, duration)`
 
 参数名称 | 参数类型 | 参数默认值 | 参数说明
 -- | -- | -- | --
@@ -96,7 +96,7 @@ duration | Number | 3000 | 消息显示时长，单位：毫秒。值为 0 表�
 
 ### MessagePlugin.error
 
-同时也支持 `this.$message.error`。
+同时也支持 `this.$message.error`。请注意以下字段是形参名，非实际参数名，即 `MessagePlugin.error(message, duration)`
 
 参数名称 | 参数类型 | 参数默认值 | 参数说明
 -- | -- | -- | --
@@ -105,7 +105,7 @@ duration | Number | 3000 | 消息显示时长，单位：毫秒。值为 0 表�
 
 ### MessagePlugin.warning
 
-同时也支持 `this.$message.warning`。
+同时也支持 `this.$message.warning`。请注意以下字段是形参名，非实际参数名，即 `MessagePlugin.warning(message, duration)`
 
 参数名称 | 参数类型 | 参数默认值 | 参数说明
 -- | -- | -- | --
@@ -114,7 +114,7 @@ duration | Number | 3000 | 消息显示时长，单位：毫秒。值为 0 表�
 
 ### MessagePlugin.success
 
-同时也支持 `this.$message.success`。
+同时也支持 `this.$message.success`。请注意以下字段是形参名，非实际参数名，即 `MessagePlugin.success(message, duration)`
 
 参数名称 | 参数类型 | 参数默认值 | 参数说明
 -- | -- | -- | --
@@ -123,7 +123,7 @@ duration | Number | 3000 | 消息显示时长，单位：毫秒。值为 0 表�
 
 ### MessagePlugin.loading
 
-同时也支持 `this.$message.loading`。
+同时也支持 `this.$message.loading`。请注意以下字段是形参名，非实际参数名，即 `MessagePlugin.loading(message, duration)`
 
 参数名称 | 参数类型 | 参数默认值 | 参数说明
 -- | -- | -- | --
@@ -132,7 +132,7 @@ duration | Number | 3000 | 消息显示时长，单位：毫秒。值为 0 表�
 
 ### MessagePlugin.question
 
-同时也支持 `this.$message.question`。
+同时也支持 `this.$message.question`。请注意以下字段是形参名，非实际参数名，即 `MessagePlugin.question(message, duration)`
 
 参数名称 | 参数类型 | 参数默认值 | 参数说明
 -- | -- | -- | --
