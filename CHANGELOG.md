@@ -5,6 +5,23 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.11.2 `2025-04-15` 
+### 🚀 Features
+
+- `Drawer`: 新增 `DrawerPlugin`，支持`插件函数式`调用，具体使用请参考示例 @Wesley-0808 ([#3501](https://github.com/Tencent/tdesign-vue/pull/3501))
+- `Drawer`: 新增 `drawerClassName`API，用于定义抽屉本身的相关`class` @Wesley-0808 ([#3501](https://github.com/Tencent/tdesign-vue/pull/3501))
+- `Form`: 新增`requiredMarkPosition`，用于自定义必填符号的位置 @Wesley-0808 ([#3562](https://github.com/Tencent/tdesign-vue/pull/3562))
+- `Layout`: 子组件 `Content` 新增  `content` API  @liweijie0812 ([#3506](https://github.com/Tencent/tdesign-vue/pull/3506))
+### 🐞 Bug Fixes
+- `ImageViewer`: 修复设置`step` 存在精度展示异常的问题 @uyarn ([#3563](https://github.com/Tencent/tdesign-vue/pull/3563))
+- `Select`: 修复 `keys` 属性配置 `content` 作为 `value` 时展示异常的问题 @hello-ishine ([#3540](https://github.com/Tencent/tdesign-vue/pull/3540))
+- `Transfer`: 修复 children 为空数组的节点未能正确渲染的问题 @RSS1102 ([#3535](https://github.com/Tencent/tdesign-vue/pull/3535))
+
+### 📝 Documentation
+- `ConfigProvider`: 增加 `globalConfig` API 文档，规范 API 文档顺序 @liweijie0812 ([#3506](https://github.com/Tencent/tdesign-vue/pull/3506))
+### 🚧 Others
+- `Plugin`: 新增`ConfigProvider`等组件的编辑器提示功能 @liweijie0812 ([#3506](https://github.com/Tencent/tdesign-vue/pull/3506))
+
 ## 🌈 1.11.1 `2025-03-07` 
 ### 🚀 Features
 - `ImageViewer`  @Wesley-0808 
