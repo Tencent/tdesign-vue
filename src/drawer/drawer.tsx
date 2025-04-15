@@ -59,6 +59,7 @@ export default mixins(
           [`${this.componentName}--attach`]: this.showInAttachedElement,
           [`${this.componentName}--without-mask`]: !this.showOverlay,
         },
+        this.drawerClassName,
       ];
     },
     sizeValue(): string {

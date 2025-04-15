@@ -55,6 +55,13 @@ Vue.use(TDesign);
 ```
 
 ## API
+
+### ConfigProvider Props
+
+name | type | default | description | required
+-- | -- | -- | -- | --
+globalConfig | Object | - | global config。Typescript：`GlobalConfigProvider` | N
+
 ### GlobalConfigProvider
 
 name | type | default | description | required
