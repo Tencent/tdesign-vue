@@ -7661,39 +7661,6 @@
     "type": "event",
     "description": "当浮层隐藏或显示时触发，`trigger=document` 表示点击非浮层元素触发；`trigger=context-menu` 表示右击触发\n\n[docs](https://tdesign.tencent.com/vue/components/tooltip?tab=api#tooltip-events)"
   },
-  "t-tooltip-lite/content": {
-    "type": "String|TNode",
-    "description": "tip content\n\n文字提示内容\n\n[docs](https://tdesign.tencent.com/vue/components/tooltip?tab=api#tooltiplite-props)"
-  },
-  "t-tooltip-lite/placement": {
-    "type": "String",
-    "options": [
-      "top",
-      "bottom",
-      "mouse"
-    ],
-    "description": "提示浮层出现的位置\n\ndefault: top\n\n[docs](https://tdesign.tencent.com/vue/components/tooltip?tab=api#tooltiplite-props)"
-  },
-  "t-tooltip-lite/show-arrow": {
-    "type": "Boolean",
-    "description": "是否显示箭头\n\ndefault: true\n\n[docs](https://tdesign.tencent.com/vue/components/tooltip?tab=api#tooltiplite-props)"
-  },
-  "t-tooltip-lite/show-shadow": {
-    "type": "Boolean",
-    "description": "文字提示浮层是否需要阴影\n\ndefault: true\n\n[docs](https://tdesign.tencent.com/vue/components/tooltip?tab=api#tooltiplite-props)"
-  },
-  "t-tooltip-lite/theme": {
-    "type": "String",
-    "options": [
-      "light",
-      "default"
-    ],
-    "description": "组件风格，有亮色模式和暗色模式两种\n\ndefault: default\n\n[docs](https://tdesign.tencent.com/vue/components/tooltip?tab=api#tooltiplite-props)"
-  },
-  "t-tooltip-lite/trigger-element": {
-    "type": "String|TNode",
-    "description": "触发元素\n\n[docs](https://tdesign.tencent.com/vue/components/tooltip?tab=api#tooltiplite-props)"
-  },
   "t-transfer/checkbox-props": {
     "type": "Object",
     "description": "用于控制复选框属性\n\n[docs](https://tdesign.tencent.com/vue/components/transfer?tab=api#transfer-props)"

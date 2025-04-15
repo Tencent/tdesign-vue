@@ -2230,17 +2230,6 @@
     ],
     "description": "Tooltip\n\n文字提示\n\n[docs](https://tdesign.tencent.com/vue/components/tooltip)"
   },
-  "t-tooltip-lite": {
-    "attributes": [
-      "content",
-      "placement",
-      "show-arrow",
-      "show-shadow",
-      "theme",
-      "trigger-element"
-    ],
-    "description": "TooltipLite\n\n文字提示简版\n\n[docs](https://tdesign.tencent.com/vue/components/tooltip)"
-  },
   "t-transfer": {
     "attributes": [
       "checkbox-props",

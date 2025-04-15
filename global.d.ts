@@ -115,7 +115,6 @@ declare module '@vue/runtime-dom' {
     TTimePicker: typeof import('tdesign-vue')['TimePicker'];
     TTimeRangePicker: typeof import('tdesign-vue')['TimeRangePicker'];
     TTooltip: typeof import('tdesign-vue')['Tooltip'];
-    TTooltipLite: typeof import('tdesign-vue')['TooltipLite'];
     TTransfer: typeof import('tdesign-vue')['Transfer'];
     TTree: typeof import('tdesign-vue')['Tree'];
     TTreeSelect: typeof import('tdesign-vue')['TreeSelect'];
