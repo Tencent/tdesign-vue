@@ -3,7 +3,6 @@ import {
 } from '@vue/composition-api';
 import { Input as TInput } from '../input';
 import { InputNumber as TInputNumber } from '../input-number';
-import { Color } from './utils';
 import { TdColorPickerProps } from './type';
 import { useBaseClassName } from './hooks';
 import { TdColorHandler } from './interfaces';
@@ -52,21 +51,16 @@ export default defineComponent({
     const baseClassName = useBaseClassName();
     const value = ref(props.color);
     const { sizeClassNames } = useCommonClassName();
+
     watch(
       () => [props.color],
       () => (value.value = props.color),
     );
 
     const handleChange = (input: string) => {
-      if (input === props.color) {
-        return;
+      if (input !== props.color) {
+        props.handleTriggerChange(value.value);
       }
-      if (!Color.isValid(input) && input) {
-        value.value = props.color;
-      } else {
-        value.value = input;
-      }
-      props.handleTriggerChange(value.value);
     };
 
     return {
@@ -104,7 +98,7 @@ export default defineComponent({
           borderless={this.borderless}
           clearable={this.clearable}
           disabled={this.disabled}
-          onBlur={this.handleChange}
+          onChange={this.handleChange}
           {...{
             props: {
               ...this.inputProps,
