@@ -246,28 +246,25 @@ export default defineComponent({
                 background: thumbBackground,
               }}
             >
-              {colors.map((t) => {
-                const left = `${Math.round(t.left * 100) / 100}%`;
-                return (
-                  <li
-                    class={[
-                      `${baseClassName}__thumb`,
-                      'gradient-thumbs__item',
-                      selectedId === t.id ? statusClassNames.active : '',
-                    ]}
-                    key={t.id}
-                    title={`${t.color} ${left}`}
-                    style={{
-                      color: t.color,
-                      left,
-                    }}
-                    onClick={(e: MouseEvent) => e.stopPropagation()}
-                    onMousedown={() => this.handleStart(t.id)}
-                  >
-                    <span class={['gradient-thumbs__item-inner', `${baseClassName}--bg-alpha`]}></span>
-                  </li>
-                );
-              })}
+              {colors.map((t) => (
+                <li
+                  class={[
+                    `${baseClassName}__thumb`,
+                    'gradient-thumbs__item',
+                    selectedId === t.id ? statusClassNames.active : '',
+                  ]}
+                  key={t.id}
+                  title={`${t.color} ${t.left}`}
+                  style={{
+                    color: t.color,
+                    left: t.left,
+                  }}
+                  onClick={(e: MouseEvent) => e.stopPropagation()}
+                  onMousedown={() => this.handleStart(t.id)}
+                >
+                  <span class={['gradient-thumbs__item-inner', `${baseClassName}--bg-alpha`]}></span>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
