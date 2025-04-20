@@ -72,12 +72,20 @@ export default defineComponent({
     );
 
     const formatValue = () => {
-      // 渐变模式下直接输出css样式
-      if (mode.value === 'linear-gradient') {
+      // 渐变模式下直接输出 CSS 格式
+      if (color.value.isGradient) {
         return color.value.linearGradient;
       }
-      const formatsMap = color.value.getFormatsColorMap();
-      return formatsMap[props.format as keyof typeof formatsMap] || color.value.css;
+
+      // 处理开启透明通道时的格式
+      let finalFormat = props.format as keyof ReturnType<Color['getFormatsColorMap']>;
+      if (props.enableAlpha) {
+        if (props.format === 'HEX') finalFormat = 'HEX8';
+        if (props.format === 'RGB' || props.format === 'RGBA') finalFormat = 'RGBA';
+        if (props.format === 'HSL') finalFormat = 'HSLA';
+        if (props.format === 'HSV') finalFormat = 'HSLA';
+      }
+      return color.value.getFormatsColorMap()[finalFormat];
     };
 
     /**
@@ -125,7 +133,9 @@ export default defineComponent({
       () => innerValue.value,
       (newColor: string) => {
         if (newColor !== formatValue()) {
-          mode.value = getModeByColor(newColor);
+          const newMode = getModeByColor(newColor);
+          mode.value = newMode;
+          color.value.isGradient = newMode === 'linear-gradient';
           color.value.update(newColor);
         }
       },
@@ -133,12 +143,16 @@ export default defineComponent({
 
     /**
      * mode change
-     * @param value
+     * @param newMode
      * @returns
      */
-    const handleModeChange = (value: TdColorModes) => {
-      mode.value = value;
-      if (value === 'linear-gradient') {
+    const handleModeChange = (newMode: TdColorModes) => {
+      mode.value = newMode;
+
+      const isGradientMode = newMode === 'linear-gradient';
+      color.value.isGradient = isGradientMode;
+
+      if (isGradientMode) {
         color.value.update(
           color.value.gradientColors.length > 0 ? color.value.linearGradient : DEFAULT_LINEAR_GRADIENT,
         );
@@ -157,7 +171,6 @@ export default defineComponent({
 
     /**
      * 饱和度亮度变化
-     * @param param0
      */
     const handleSatAndValueChange = ({ saturation, value }: { saturation: number; value: number }) => {
       const { saturation: sat, value: val } = color.value;
@@ -242,8 +255,10 @@ export default defineComponent({
      * @param value
      */
     const handleSetColor = (value: string, trigger: ColorPickerChangeTrigger) => {
-      mode.value = getModeByColor(value);
-      color.value = new Color(value);
+      const newMode = getModeByColor(value);
+      mode.value = newMode;
+      color.value.isGradient = newMode === 'linear-gradient';
+      color.value.update(value);
       emitColorChange(trigger);
     };
 
@@ -370,7 +385,8 @@ export default defineComponent({
               },
             }}
             color={this.color}
-            handleFormatModeChange={this.handleInputChange}
+            handleFormatModeChange={this.handleFormatModeChange}
+            handleFormatInputChange={this.handleInputChange}
           />
           {renderSwatches()}
         </div>
