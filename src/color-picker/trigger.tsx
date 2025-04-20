@@ -6,6 +6,7 @@ import { InputNumber as TInputNumber } from '../input-number';
 import { TdColorPickerProps } from './type';
 import { useBaseClassName } from './hooks';
 import { TdColorHandler } from './interfaces';
+import { Color, getColorObject } from './utils';
 import useCommonClassName from '../hooks/useCommonClassName';
 
 export default defineComponent({
@@ -59,7 +60,10 @@ export default defineComponent({
 
     const handleChange = (input: string) => {
       if (input !== props.color) {
-        props.handleTriggerChange(value.value);
+        props.handleTriggerChange(value.value, {
+          color: getColorObject(new Color(input)),
+          trigger: 'input',
+        });
       }
     };
 
