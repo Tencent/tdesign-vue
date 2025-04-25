@@ -73,7 +73,7 @@ export default mixins(
       styleEl: null,
       timer: null,
       animationEnd: false,
-      isFirstRender: false,
+      isFirstAlreadyRender: false,
     };
   },
 
@@ -158,7 +158,7 @@ export default mixins(
     },
     shouldRender(): boolean {
       const shouldDestroy = this.destroyOnClose && !this.visible && this.animationEnd;
-      const avoidRender = !this.lazy || this.isFirstRender;
+      const avoidRender = !this.lazy || this.isFirstAlreadyRender;
       return shouldDestroy || avoidRender;
     },
   },
@@ -168,7 +168,7 @@ export default mixins(
         if (typeof window === 'undefined') return;
         if (value) {
           this.animationEnd = false;
-          this.isFirstRender = true;
+          this.isFirstAlreadyRender = true;
 
           if ((this.isModal && !this.showInAttachedElement) || this.isFullScreen) {
             if (this.preventScrollThrough) {
