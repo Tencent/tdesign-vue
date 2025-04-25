@@ -158,7 +158,7 @@ export default mixins(
     },
     shouldRender(): boolean {
       const shouldDestroy = this.destroyOnClose && !this.visible && this.animationEnd;
-      const avoidRender = this.lazy && this.isFirstRender;
+      const avoidRender = !this.lazy || this.isFirstRender;
       return shouldDestroy || avoidRender;
     },
   },
@@ -418,7 +418,7 @@ export default mixins(
     },
     initDragEvent(status: boolean) {
       const target = this.$refs.dialog as HTMLElement;
-      if (status) {
+      if (status && target) {
         target.addEventListener('mousedown', this.mousedownHandler);
       } else {
         target.removeEventListener('mousedown', this.mousedownHandler);
