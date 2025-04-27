@@ -161,8 +161,8 @@ export default defineComponent({
         const option = optionsMap.value.get(val) || oldValueMap.get(val);
         if (option) delete (option as any).index;
         return {
-          [valueOfKeys]: get(option, valueOfKeys),
-          [labelOfKeys]: get(option, labelOfKeys),
+          [valueOfKeys]: get(option, 'value'),
+          [labelOfKeys]: get(option, 'label'),
         };
       };
       const addCache = (val: SelectValue) => {
