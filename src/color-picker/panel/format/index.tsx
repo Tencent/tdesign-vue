@@ -1,12 +1,10 @@
 import {
   defineComponent, PropType, ref, watch,
 } from '@vue/composition-api';
-import { upperCase } from 'lodash-es';
 import { TdColorHandler } from '../../../color-picker/interfaces';
 import { TdColorPickerProps } from '../../type';
 import props from '../../props';
-import { FORMATS } from '../../../_common/js/color-picker/constants';
-import { Color } from '../../utils';
+import { Color, type ColorFormat, getColorFormatOptions } from '../../utils';
 import { Select as TSelect, Option as TOption } from '../../../select';
 import { Input as TInput } from '../../../input';
 import FormatInputs from './inputs';
@@ -48,7 +46,7 @@ export default defineComponent({
      * 格式化类型改变触发
      * @param v
      */
-    const handleModeChange = (v: TdColorPickerProps['format']) => {
+    const handleModeChange = (v: ColorFormat) => {
       formatModel.value = v;
       props.handleFormatModeChange(v);
     };
@@ -83,8 +81,8 @@ export default defineComponent({
             onChange={handleModeChange}
             disabled={this.disabled}
           >
-            {FORMATS.map((item) => (
-              <t-option key={item} value={item} label={upperCase(item)} style={{ fontSize: '12px' }} />
+            {getColorFormatOptions(this.enableAlpha).map((item) => (
+              <t-option key={item} value={item} label={item} style={{ fontSize: '12px' }} />
             ))}
           </t-select>
         </div>

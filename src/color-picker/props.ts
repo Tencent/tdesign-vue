@@ -34,13 +34,13 @@ export default {
     type: Boolean,
     default: true,
   },
-  /** 格式化色值。`enableAlpha` 为真时，`RGBA/HSLA/HSVA` 等值有效 */
+  /** 格式化色值。`enableAlpha` 为真时，`HEX8/RGBA/HSLA/HSVA` 有效 */
   format: {
     type: String as PropType<TdColorPickerProps['format']>,
     default: 'RGB' as TdColorPickerProps['format'],
     validator(val: TdColorPickerProps['format']): boolean {
       if (!val) return true;
-      return ['RGB', 'RGBA', 'HSL', 'HSLA', 'HSB', 'HSV', 'HSVA', 'HEX', 'CMYK', 'CSS'].includes(val);
+      return ['HEX', 'HEX8', 'RGB', 'RGBA', 'HSL', 'HSLA', 'HSV', 'HSVA', 'CMYK', 'CSS'].includes(val);
     },
   },
   /** 透传 Input 输入框组件全部属性 */
@@ -97,6 +97,8 @@ export default {
   },
   /** 选中的色值发生变化时触发，第一个参数 `value` 表示新色值，`context.color` 表示当前调色板控制器的色值，`context.trigger` 表示触发颜色变化的来源 */
   onChange: Function as PropType<TdColorPickerProps['onChange']>,
+  /** 清空按钮点击时触发 */
+  onClear: Function as PropType<TdColorPickerProps['onClear']>,
   /** 调色板控制器的值变化时触发，`context.color` 指调色板控制器的值 */
   onPaletteBarChange: Function as PropType<TdColorPickerProps['onPaletteBarChange']>,
   /** 最近使用颜色发生变化时触发 */

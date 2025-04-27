@@ -4,12 +4,6 @@ import {
 import { useConfig } from '../../hooks/useConfig';
 import useCommonClassName from '../../hooks/useCommonClassName';
 import props from '../props';
-import {
-  DEFAULT_COLOR,
-  DEFAULT_LINEAR_GRADIENT,
-  TD_COLOR_USED_COLORS_MAX_SIZE,
-  DEFAULT_SYSTEM_SWATCH_COLORS,
-} from '../../_common/js/color-picker/constants';
 import PanelHeader from './header';
 import LinearGradient from './linear-gradient';
 import SaturationPanel from './saturation';
@@ -17,8 +11,18 @@ import HueSlider from './hue';
 import AlphaSlider from './alpha';
 import FormatPanel from './format';
 import SwatchesPanel from './swatches';
-import { Color, getColorObject, GradientColorPoint } from '../utils';
-import { TdColorPickerProps, ColorPickerChangeTrigger } from '../type';
+import {
+  Color,
+  DEFAULT_COLOR,
+  DEFAULT_LINEAR_GRADIENT,
+  DEFAULT_SYSTEM_SWATCH_COLORS,
+  TD_COLOR_USED_COLORS_MAX_SIZE,
+  getColorObject,
+  GradientColorPoint,
+  initColorFormat,
+  type ColorFormat,
+} from '../utils';
+import type { TdColorPickerProps, ColorPickerChangeTrigger } from '../type';
 import { TdColorModes } from '../interfaces';
 import { useBaseClassName } from '../hooks';
 import useVModel from '../../hooks/useVModel';
@@ -61,7 +65,7 @@ export default defineComponent({
 
     const color = ref<Color>(new Color(innerValue.value || defaultEmptyColor.value));
 
-    const formatModel = ref<TdColorPickerProps['format']>(color.value.isGradient ? 'CSS' : 'RGB');
+    const formatModel = ref<ColorFormat>(initColorFormat(props.format, props.enableAlpha));
 
     const [recentlyUsedColors, setRecentlyUsedColors] = useDefaultValue(
       recentColors,
@@ -70,23 +74,6 @@ export default defineComponent({
       'recentColors',
       'recentColorsChange',
     );
-
-    const formatValue = () => {
-      // 渐变模式下直接输出 CSS 格式
-      if (color.value.isGradient) {
-        return color.value.linearGradient;
-      }
-
-      // 处理开启透明通道时的格式
-      let finalFormat = props.format as keyof ReturnType<Color['getFormatsColorMap']>;
-      if (props.enableAlpha) {
-        if (props.format === 'HEX') finalFormat = 'HEX8';
-        if (props.format === 'RGB') finalFormat = 'RGBA';
-        if (props.format === 'HSL') finalFormat = 'HSLA';
-        if (props.format === 'HSV') finalFormat = 'HSVA';
-      }
-      return color.value.getFormatsColorMap()[finalFormat];
-    };
 
     /**
      * 添加最近使用颜色
@@ -123,7 +110,8 @@ export default defineComponent({
      * @param trigger
      */
     const emitColorChange = (trigger?: ColorPickerChangeTrigger) => {
-      setInnerValue(formatValue(), {
+      const value = color.value.getFormattedColor(props.format, props.enableAlpha);
+      setInnerValue(value, {
         color: getColorObject(color.value),
         trigger: trigger || 'palette-saturation-brightness',
       });

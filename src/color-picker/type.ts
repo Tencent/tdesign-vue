@@ -45,10 +45,10 @@ export interface TdColorPickerProps {
    */
   enableMultipleGradient?: boolean;
   /**
-   * 格式化色值。`enableAlpha` 为真时，`RGBA/HSLA/HSVA` 等值有效
+   * 格式化色值。`enableAlpha` 为真时，`HEX8/RGBA/HSLA/HSVA` 有效
    * @default RGB
    */
-  format?: 'RGB' | 'RGBA' | 'HSL' | 'HSLA' | 'HSB' | 'HSV' | 'HSVA' | 'HEX' | 'CMYK' | 'CSS';
+  format?: 'HEX' | 'HEX8' | 'RGB' | 'RGBA' | 'HSL' | 'HSLA' | 'HSV' | 'HSVA' | 'CMYK' | 'CSS';
   /**
    * 透传 Input 输入框组件全部属性
    */
@@ -104,6 +104,10 @@ export interface TdColorPickerProps {
    * 选中的色值发生变化时触发，第一个参数 `value` 表示新色值，`context.color` 表示当前调色板控制器的色值，`context.trigger` 表示触发颜色变化的来源
    */
   onChange?: (value: string, context: { color: ColorObject; trigger: ColorPickerChangeTrigger }) => void;
+  /**
+   * 清空按钮点击时触发
+   */
+  onClear?: (context: { e: MouseEvent }) => void;
   /**
    * 调色板控制器的值变化时触发，`context.color` 指调色板控制器的值
    */
