@@ -48,7 +48,6 @@ export default defineComponent({
     });
     const lastModelValue = reactive<any>({});
 
-    // 更新 modelValues
     const updateModelValue = () => {
       const { format, color } = props;
       const values = getColorFormatMap(color, 'encode')[format];
@@ -76,11 +75,17 @@ export default defineComponent({
       if (v === lastModelValue[key]) return;
 
       if (key === 'a') {
+        // 透明通道
         // eslint-disable-next-line vue/no-mutating-props, no-param-reassign
         props.color.alpha = (v as number) / 100;
-      } else {
+      } else if (key === 'hex' || key === 'css') {
+        // 纯字符串类型的格式
         props.color.update(v as string);
+      } else {
+        // 需要进一步转换的格式
+        props.color.update(Color.object2color(modelValues, props.format));
       }
+
       const value = getColorFormatMap(props.color, 'decode')[props.format];
       props.handleFormatInputChange(value, props.color.alpha, key, v);
     };
