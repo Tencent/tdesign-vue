@@ -25,10 +25,6 @@ export default defineComponent({
     color: {
       type: Object as PropType<Color>,
     },
-    handleFormatModeChange: {
-      type: Function as PropType<TdColorHandler>,
-      default: () => () => {},
-    },
     handleFormatInputChange: {
       type: Function as PropType<TdColorHandler>,
       default: () => () => {},
@@ -48,7 +44,6 @@ export default defineComponent({
      */
     const handleModeChange = (v: ColorFormat) => {
       formatModel.value = v;
-      props.handleFormatModeChange(v);
     };
 
     return {

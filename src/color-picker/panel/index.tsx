@@ -22,7 +22,7 @@ import {
   initColorFormat,
   type ColorFormat,
 } from '../utils';
-import type { TdColorPickerProps, ColorPickerChangeTrigger } from '../type';
+import type { ColorPickerChangeTrigger } from '../type';
 import { TdColorModes } from '../interfaces';
 import { useBaseClassName } from '../hooks';
 import useVModel from '../../hooks/useVModel';
@@ -149,13 +149,6 @@ export default defineComponent({
     };
 
     /**
-     * 格式变化
-     * @param format
-     * @returns
-     */
-    const handleFormatModeChange = (format: TdColorPickerProps['format']) => (formatModel.value = format);
-
-    /**
      * 饱和度亮度变化
      */
     const handleSatAndValueChange = ({ saturation, value }: { saturation: number; value: number }) => {
@@ -269,7 +262,6 @@ export default defineComponent({
       handleAlphaChange,
       handleGradientChange,
       handleSetColor,
-      handleFormatModeChange,
       handleInputChange,
       handleRecentlyUsedColorsChange,
     };
@@ -371,7 +363,6 @@ export default defineComponent({
               },
             }}
             color={this.color}
-            handleFormatModeChange={this.handleFormatModeChange}
             handleFormatInputChange={this.handleInputChange}
           />
           {renderSwatches()}
