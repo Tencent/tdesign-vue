@@ -218,13 +218,13 @@ export default defineComponent({
 
       // 触发 remove 事件
       if (props.multiple && context.trigger === 'uncheck' && optionValue) {
-        const context = {
+        const removeContext = {
           value: optionValue as string | number,
           data: optionsMap.value.get(optionValue),
           e: context.e,
         };
-        instance.emit('remove', context);
-        props.onRemove?.(context);
+        instance.emit('remove', removeContext);
+        props.onRemove?.(removeContext);
       }
     };
 
