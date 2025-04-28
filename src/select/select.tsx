@@ -215,6 +215,17 @@ export default defineComponent({
         addCache(newVal);
       });
       setValue(newVal, outputContext);
+
+      // 触发 remove 事件
+      if (props.multiple && context.trigger === 'uncheck' && optionValue) {
+        const evtObj = {
+          value: optionValue as string | number,
+          data: optionsMap.value.get(optionValue),
+          e: context.e,
+        };
+        instance.emit('remove', evtObj);
+        props.onRemove?.(evtObj);
+      }
     };
 
     const [tInputValue, setTInputValue] = useDefaultValue(
