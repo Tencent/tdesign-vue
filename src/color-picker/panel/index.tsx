@@ -271,18 +271,25 @@ export default defineComponent({
       baseClassName, statusClassNames, t, global, swatchColors, previewColorStyle, isGradient, colorModes,
     } = this;
 
-    const showUsedColors = this.recentlyUsedColors !== null && this.recentlyUsedColors !== false;
+    // 只支持渐变模式
+    const onlySupportGradient = colorModes.length === 1 && colorModes.includes('linear-gradient');
 
+    // 最近使用颜色
+    let recentColors = this.recentlyUsedColors;
+    if (onlySupportGradient && Array.isArray(recentColors)) {
+      recentColors = recentColors.filter((color) => Color.isGradientColor(color));
+    }
+    const showUsedColors = Array.isArray(this.recentlyUsedColors) || this.recentlyUsedColors === true;
+
+    // 系统预设颜色
     let systemColors = swatchColors;
     if (systemColors === undefined) {
       systemColors = [...DEFAULT_SYSTEM_SWATCH_COLORS];
     }
-    // 如果只支持渐变模式，则过滤掉非渐变色值
-    const onlySupportGradient = colorModes.length === 1 && colorModes.includes('linear-gradient');
     if (onlySupportGradient) {
       systemColors = systemColors.filter((color) => Color.isGradientColor(color));
     }
-    const showSystemColors = systemColors?.length > 0;
+    const showSystemColors = Array.isArray(systemColors) && systemColors.length > 0;
 
     const renderSwatches = () => {
       if (!showSystemColors && !showUsedColors) {
