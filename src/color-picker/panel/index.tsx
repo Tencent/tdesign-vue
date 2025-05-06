@@ -4,12 +4,6 @@ import {
 import { useConfig } from '../../hooks/useConfig';
 import useCommonClassName from '../../hooks/useCommonClassName';
 import props from '../props';
-import {
-  DEFAULT_COLOR,
-  DEFAULT_LINEAR_GRADIENT,
-  TD_COLOR_USED_COLORS_MAX_SIZE,
-  DEFAULT_SYSTEM_SWATCH_COLORS,
-} from '../../_common/js/color-picker/constants';
 import PanelHeader from './header';
 import LinearGradient from './linear-gradient';
 import SaturationPanel from './saturation';
@@ -17,8 +11,18 @@ import HueSlider from './hue';
 import AlphaSlider from './alpha';
 import FormatPanel from './format';
 import SwatchesPanel from './swatches';
-import { Color, getColorObject, GradientColorPoint } from '../utils';
-import { TdColorPickerProps, ColorPickerChangeTrigger } from '../type';
+import {
+  Color,
+  DEFAULT_COLOR,
+  DEFAULT_LINEAR_GRADIENT,
+  DEFAULT_SYSTEM_SWATCH_COLORS,
+  TD_COLOR_USED_COLORS_MAX_SIZE,
+  getColorObject,
+  GradientColorPoint,
+  initColorFormat,
+  type ColorFormat,
+} from '../utils';
+import type { ColorPickerChangeTrigger } from '../type';
 import { TdColorModes } from '../interfaces';
 import { useBaseClassName } from '../hooks';
 import useVModel from '../../hooks/useVModel';
@@ -47,15 +51,22 @@ export default defineComponent({
     const { t, global } = useConfig('colorPicker');
     const { value: inputValue, recentColors } = toRefs(props);
     const [innerValue, setInnerValue] = useVModel(inputValue, props.defaultValue, props.onChange, 'change');
+
+    const getModeByColor = (input: string) => {
+      if (props.colorModes.length === 1) return props.colorModes[0];
+      return props.colorModes.includes('linear-gradient') && Color.isGradientColor(input)
+        ? 'linear-gradient'
+        : 'monochrome';
+    };
+    const mode = ref<TdColorModes>(getModeByColor(innerValue.value));
+
+    const isGradient = computed(() => mode.value === 'linear-gradient');
     const defaultEmptyColor = computed(() => (isGradient.value ? DEFAULT_LINEAR_GRADIENT : DEFAULT_COLOR));
 
-    const mode = ref<TdColorModes>(props.colorModes?.length === 1 ? props.colorModes[0] : 'monochrome');
-    const isGradient = computed(() => mode.value === 'linear-gradient');
-
     const color = ref<Color>(new Color(innerValue.value || defaultEmptyColor.value));
-    const updateColor = () => color.value.update(innerValue.value || defaultEmptyColor.value);
 
-    const formatModel = ref<TdColorPickerProps['format']>(color.value.isGradient ? 'CSS' : 'RGB');
+    const formatModel = ref<ColorFormat>(initColorFormat(props.format, props.enableAlpha));
+
     const [recentlyUsedColors, setRecentlyUsedColors] = useDefaultValue(
       recentColors,
       props.defaultRecentColors,
@@ -63,14 +74,6 @@ export default defineComponent({
       'recentColors',
       'recentColorsChange',
     );
-
-    const formatValue = () => {
-      // 渐变模式下直接输出css样式
-      if (mode.value === 'linear-gradient') {
-        return color.value.linearGradient;
-      }
-      return color.value.getFormatsColorMap()[props.format] || color.value.css;
-    };
 
     /**
      * 添加最近使用颜色
@@ -107,32 +110,35 @@ export default defineComponent({
      * @param trigger
      */
     const emitColorChange = (trigger?: ColorPickerChangeTrigger) => {
-      setInnerValue(formatValue(), {
+      const value = color.value.getFormattedColor(props.format, props.enableAlpha);
+      setInnerValue(value, {
         color: getColorObject(color.value),
         trigger: trigger || 'palette-saturation-brightness',
       });
     };
 
-    watch(() => [props.defaultValue, props.enableAlpha], updateColor);
-
     watch(
       () => innerValue.value,
       (newColor: string) => {
-        if (newColor !== formatValue()) {
-          updateColor();
-          mode.value = color.value.isGradient ? 'linear-gradient' : 'monochrome';
-        }
+        const newMode = getModeByColor(newColor);
+        mode.value = newMode;
+        color.value.isGradient = newMode === 'linear-gradient';
+        color.value.update(newColor);
       },
     );
 
     /**
      * mode change
-     * @param value
+     * @param newMode
      * @returns
      */
-    const handleModeChange = (value: TdColorModes) => {
-      mode.value = value;
-      if (value === 'linear-gradient') {
+    const handleModeChange = (newMode: TdColorModes) => {
+      mode.value = newMode;
+
+      const isGradientMode = newMode === 'linear-gradient';
+      color.value.isGradient = isGradientMode;
+
+      if (isGradientMode) {
         color.value.update(
           color.value.gradientColors.length > 0 ? color.value.linearGradient : DEFAULT_LINEAR_GRADIENT,
         );
@@ -143,15 +149,7 @@ export default defineComponent({
     };
 
     /**
-     * 格式变化
-     * @param format
-     * @returns
-     */
-    const handleFormatModeChange = (format: TdColorPickerProps['format']) => (formatModel.value = format);
-
-    /**
      * 饱和度亮度变化
-     * @param param0
      */
     const handleSatAndValueChange = ({ saturation, value }: { saturation: number; value: number }) => {
       const { saturation: sat, value: val } = color.value;
@@ -198,9 +196,8 @@ export default defineComponent({
      * @param input
      * @param alpha
      */
-    const handleInputChange = (input: string, alpha?: number) => {
+    const handleInputChange = (input: string) => {
       color.value.update(input);
-      color.value.alpha = alpha;
       emitColorChange('input');
     };
 
@@ -236,23 +233,12 @@ export default defineComponent({
      * @param type
      * @param value
      */
-    const handleSetColor = (type: 'system' | 'used', value: string) => {
-      const isGradientValue = Color.isGradientColor(value);
-      if (isGradientValue) {
-        if (props.colorModes.includes('linear-gradient')) {
-          mode.value = 'linear-gradient';
-          color.value.update(value);
-          color.value.updateCurrentGradientColor();
-        } else {
-          console.warn('该模式不支持渐变色');
-        }
-      } else if (mode.value === 'linear-gradient') {
-        color.value.updateStates(value);
-        color.value.updateCurrentGradientColor();
-      } else {
-        color.value.update(value);
-      }
-      emitColorChange();
+    const handleSetColor = (value: string, trigger: ColorPickerChangeTrigger) => {
+      const newMode = getModeByColor(value);
+      mode.value = newMode;
+      color.value.isGradient = newMode === 'linear-gradient';
+      color.value.update(value);
+      emitColorChange(trigger);
     };
 
     // 预览颜色
@@ -276,23 +262,34 @@ export default defineComponent({
       handleAlphaChange,
       handleGradientChange,
       handleSetColor,
-      handleFormatModeChange,
       handleInputChange,
       handleRecentlyUsedColorsChange,
     };
   },
   render() {
     const {
-      baseClassName, statusClassNames, t, global, swatchColors, previewColorStyle, isGradient,
+      baseClassName, statusClassNames, t, global, swatchColors, previewColorStyle, isGradient, colorModes,
     } = this;
 
-    const showUsedColors = this.recentlyUsedColors !== null && this.recentlyUsedColors !== false;
+    // 只支持渐变模式
+    const onlySupportGradient = colorModes.length === 1 && colorModes.includes('linear-gradient');
 
+    // 最近使用颜色
+    let recentColors = this.recentlyUsedColors;
+    if (onlySupportGradient && Array.isArray(recentColors)) {
+      recentColors = recentColors.filter((color) => Color.isGradientColor(color));
+    }
+    const showUsedColors = Array.isArray(this.recentlyUsedColors) || this.recentlyUsedColors === true;
+
+    // 系统预设颜色
     let systemColors = swatchColors;
     if (systemColors === undefined) {
       systemColors = [...DEFAULT_SYSTEM_SWATCH_COLORS];
     }
-    const showSystemColors = systemColors?.length > 0;
+    if (onlySupportGradient) {
+      systemColors = systemColors.filter((color) => Color.isGradientColor(color));
+    }
+    const showSystemColors = Array.isArray(systemColors) && systemColors.length > 0;
 
     const renderSwatches = () => {
       if (!showSystemColors && !showUsedColors) {
@@ -308,9 +305,7 @@ export default defineComponent({
               editable
               colors={this.recentlyUsedColors as string[]}
               handleAddColor={this.addRecentlyUsedColor}
-              handleSetColor={(color: string) => {
-                this.handleSetColor('used', color);
-              }}
+              handleSetColor={(color: string) => this.handleSetColor(color, 'recent')}
               handleChange={this.handleRecentlyUsedColorsChange}
             />
           ) : null}
@@ -320,7 +315,7 @@ export default defineComponent({
               disabled={this.disabled}
               title={t(global.swatchColorTitle)}
               colors={systemColors}
-              handleSetColor={(color: string) => this.handleSetColor('system', color)}
+              handleSetColor={(color: string) => this.handleSetColor(color, 'preset')}
             />
           ) : null}
         </div>
@@ -375,7 +370,6 @@ export default defineComponent({
               },
             }}
             color={this.color}
-            handleFormatModeChange={this.handleFormatModeChange}
             handleFormatInputChange={this.handleInputChange}
           />
           {renderSwatches()}
