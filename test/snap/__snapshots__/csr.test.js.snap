@@ -106122,7 +106122,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/draggable.vue 1`]
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input--drag-sort"
     >
       <div
         class="t-input t-input--prefix"
@@ -106220,7 +106220,7 @@ exports[`csr snapshot test > csr test ./src/tag-input/_example/draggable.vue 1`]
     class="t-space-item"
   >
     <div
-      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag"
+      class="t-input__wrap t-tag-input t-tag-input--break-line t-tag-input--with-tag t-tag-input--drag-sort"
     >
       <div
         class="t-input t-input--prefix"
