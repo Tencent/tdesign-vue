@@ -100,10 +100,6 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalI
       return style;
     },
     renderTitle(tagContent: string) {
-      if (!this.maxWidth) {
-        return undefined;
-      }
-
       const vProps = (this.$vnode.componentOptions.propsData as TdTagProps) || {};
       if (Reflect.has(vProps, 'title')) {
         return vProps.title || undefined;
