@@ -161,8 +161,8 @@ export default defineComponent({
         const option = optionsMap.value.get(val) || oldValueMap.get(val);
         if (option) delete (option as any).index;
         return {
-          [valueOfKeys]: get(option, valueOfKeys),
-          [labelOfKeys]: get(option, labelOfKeys),
+          [valueOfKeys]: get(option, 'value'),
+          [labelOfKeys]: get(option, 'label'),
         };
       };
       const addCache = (val: SelectValue) => {
@@ -215,6 +215,17 @@ export default defineComponent({
         addCache(newVal);
       });
       setValue(newVal, outputContext);
+
+      // 触发 remove 事件
+      if (props.multiple && context.trigger === 'uncheck' && optionValue) {
+        const removeContext = {
+          value: optionValue as string | number,
+          data: optionsMap.value.get(optionValue),
+          e: context.e,
+        };
+        instance.emit('remove', removeContext);
+        props.onRemove?.(removeContext);
+      }
     };
 
     const [tInputValue, setTInputValue] = useDefaultValue(
