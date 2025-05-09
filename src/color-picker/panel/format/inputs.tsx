@@ -1,14 +1,13 @@
 import {
-  computed, defineComponent, PropType, reactive, watch,
+  defineComponent, PropType, reactive, watch,
 } from '@vue/composition-api';
 import { throttle } from 'lodash-es';
 import { TdColorHandler } from '../../interfaces';
 import props from '../../props';
-import { Color } from '../../utils';
+import { Color, getColorFormatInputs, getColorFormatMap } from '../../utils';
 import { Select as TSelect, Option as TOption } from '../../../select';
 import TInput from '../../../input';
 import TInputNumber from '../../../input-number';
-import { FORMAT_INPUT_CONFIG } from './config';
 
 export default defineComponent({
   name: 'FormatInputs',
@@ -30,21 +29,6 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const inputConfigs = computed(() => {
-      const configs = [...FORMAT_INPUT_CONFIG[props.format]];
-      if (props.enableAlpha) {
-        configs.push({
-          type: 'inputNumber',
-          key: 'a',
-          min: 0,
-          max: 100,
-          format: (value: number) => `${value}%`,
-          flex: 1.15,
-        });
-      }
-      return configs;
-    });
-
     // 这些值需要初始化一下
     const modelValues = reactive<any>({
       r: 0,
@@ -64,51 +48,20 @@ export default defineComponent({
     });
     const lastModelValue = reactive<any>({});
 
-    /**
-     * 获取不同格式的输入输出值
-     * @param type 'encode' | 'decode'
-     * @returns
-     */
-    const getFormatColorMap = (type: 'encode' | 'decode') => {
-      const { color } = props;
-      if (type === 'encode') {
-        return {
-          HSV: color.getHsva(),
-          HSL: color.getHsla(),
-          RGB: color.getRgba(),
-          CMYK: color.getCmyk(),
-          CSS: {
-            css: color.css,
-          },
-          HEX: {
-            hex: color.hex,
-          },
-        };
-      }
-      // decode
-      return {
-        HSV: Color.object2color(modelValues, 'HSV'),
-        HSL: Color.object2color(modelValues, 'HSL'),
-        RGB: Color.object2color(modelValues, 'RGB'),
-        CMYK: Color.object2color(modelValues, 'CMYK'),
-        CSS: modelValues.css,
-        HEX: modelValues.hex,
-      };
-    };
-
-    // 更新modelValues
     const updateModelValue = () => {
       const { format, color } = props;
-      const values: any = getFormatColorMap('encode')[format];
+      const values = getColorFormatMap(color, 'encode')[format];
+      // @ts-ignore
       values.a = Math.round(color.alpha * 100);
       Object.keys(values).forEach((key) => {
+        // @ts-ignore
         modelValues[key] = values[key];
+        // @ts-ignore
         lastModelValue[key] = values[key];
       });
     };
 
     updateModelValue();
-
     const throttleUpdate = throttle(updateModelValue, 100);
 
     watch(() => {
@@ -119,16 +72,26 @@ export default defineComponent({
     }, throttleUpdate);
 
     const handleChange = (key: string, v: number | string) => {
-      if (v === lastModelValue[key]) {
-        return;
+      if (v === lastModelValue[key]) return;
+
+      if (key === 'a') {
+        // 透明通道
+        // eslint-disable-next-line vue/no-mutating-props, no-param-reassign
+        props.color.alpha = (v as number) / 100;
+      } else if (key === 'hex' || key === 'css') {
+        // 纯字符串类型的格式
+        props.color.update(v as string);
+      } else {
+        // 需要进一步转换的格式
+        props.color.update(Color.object2color(modelValues, props.format));
       }
-      const value = getFormatColorMap('decode')[props.format];
-      props.handleFormatInputChange(value, modelValues.a / 100, key, v);
+
+      const value = getColorFormatMap(props.color, 'decode')[props.format];
+      props.handleFormatInputChange(value, props.color.alpha, key, v);
     };
 
     return {
       modelValues,
-      inputConfigs,
       handleChange,
     };
   },
@@ -138,7 +101,7 @@ export default defineComponent({
     };
     return (
       <div class="input-group">
-        {this.inputConfigs.map((config) => (
+        {getColorFormatInputs(this.format, this.enableAlpha).map((config) => (
           <div
             class="input-group__item"
             key={config.key}
