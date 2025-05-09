@@ -68881,9 +68881,13 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
             class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom t-is-opened"
           >
             <span
-              data-v-3a8c765e=""
+              class="t-menu__content"
             >
-              菜单1
+              <span
+                data-v-3a8c765e=""
+              >
+                菜单1
+              </span>
             </span>
           </div>
           <ul
@@ -68929,9 +68933,13 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
             class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
           >
             <span
-              data-v-3a8c765e=""
+              class="t-menu__content"
             >
-              菜单2
+              <span
+                data-v-3a8c765e=""
+              >
+                菜单2
+              </span>
             </span>
           </div>
           <ul
@@ -69086,9 +69094,13 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
             class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom t-is-opened"
           >
             <span
-              data-v-3a8c765e=""
+              class="t-menu__content"
             >
-              菜单1
+              <span
+                data-v-3a8c765e=""
+              >
+                菜单1
+              </span>
             </span>
           </div>
           <ul
@@ -69134,9 +69146,13 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
             class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
           >
             <span
-              data-v-3a8c765e=""
+              class="t-menu__content"
             >
-              菜单2
+              <span
+                data-v-3a8c765e=""
+              >
+                菜单2
+              </span>
             </span>
           </div>
           <ul
@@ -69876,7 +69892,11 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
           >
             <div
               class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
-            />
+            >
+              <span
+                class="t-menu__content"
+              />
+            </div>
             <ul
               style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
             >
@@ -69928,7 +69948,11 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
           >
             <div
               class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
-            />
+            >
+              <span
+                class="t-menu__content"
+              />
+            </div>
             <ul
               style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
             >
@@ -69980,7 +70004,11 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
           >
             <div
               class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
-            />
+            >
+              <span
+                class="t-menu__content"
+              />
+            </div>
             <ul
               style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
             >
@@ -70151,9 +70179,13 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
             class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom t-is-opened"
           >
             <span
-              data-v-29e136fe=""
+              class="t-menu__content"
             >
-              菜单1
+              <span
+                data-v-29e136fe=""
+              >
+                菜单1
+              </span>
             </span>
           </div>
           <ul
@@ -70166,7 +70198,11 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               <div
                 class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
               >
-                子菜单1-1
+                <span
+                  class="t-menu__content"
+                >
+                  子菜单1-1
+                </span>
               </div>
               <ul
                 style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
@@ -70210,7 +70246,11 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               <div
                 class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
               >
-                子菜单1-2
+                <span
+                  class="t-menu__content"
+                >
+                  子菜单1-2
+                </span>
               </div>
               <ul
                 style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
@@ -70254,7 +70294,11 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               <div
                 class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
               >
-                子菜单1-3
+                <span
+                  class="t-menu__content"
+                >
+                  子菜单1-3
+                </span>
               </div>
               <ul
                 style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
@@ -70301,9 +70345,13 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
             class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
           >
             <span
-              data-v-29e136fe=""
+              class="t-menu__content"
             >
-              菜单2
+              <span
+                data-v-29e136fe=""
+              >
+                菜单2
+              </span>
             </span>
           </div>
           <ul
@@ -70316,7 +70364,11 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               <div
                 class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
               >
-                子菜单2-1
+                <span
+                  class="t-menu__content"
+                >
+                  子菜单2-1
+                </span>
               </div>
               <ul
                 style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
@@ -70360,7 +70412,11 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               <div
                 class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
               >
-                子菜单2-2
+                <span
+                  class="t-menu__content"
+                >
+                  子菜单2-2
+                </span>
               </div>
               <ul
                 style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
@@ -70404,7 +70460,11 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               <div
                 class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
               >
-                子菜单2-3
+                <span
+                  class="t-menu__content"
+                >
+                  子菜单2-3
+                </span>
               </div>
               <ul
                 style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
@@ -70560,9 +70620,13 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
             class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom t-is-opened"
           >
             <span
-              data-v-29e136fe=""
+              class="t-menu__content"
             >
-              菜单1
+              <span
+                data-v-29e136fe=""
+              >
+                菜单1
+              </span>
             </span>
           </div>
           <ul
@@ -70575,7 +70639,11 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               <div
                 class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
               >
-                子菜单1-1
+                <span
+                  class="t-menu__content"
+                >
+                  子菜单1-1
+                </span>
               </div>
               <ul
                 style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
@@ -70619,7 +70687,11 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               <div
                 class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
               >
-                子菜单1-2
+                <span
+                  class="t-menu__content"
+                >
+                  子菜单1-2
+                </span>
               </div>
               <ul
                 style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
@@ -70663,7 +70735,11 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               <div
                 class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
               >
-                子菜单1-3
+                <span
+                  class="t-menu__content"
+                >
+                  子菜单1-3
+                </span>
               </div>
               <ul
                 style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
@@ -70710,9 +70786,13 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
             class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
           >
             <span
-              data-v-29e136fe=""
+              class="t-menu__content"
             >
-              菜单2
+              <span
+                data-v-29e136fe=""
+              >
+                菜单2
+              </span>
             </span>
           </div>
           <ul
@@ -70725,7 +70805,11 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               <div
                 class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
               >
-                子菜单2-1
+                <span
+                  class="t-menu__content"
+                >
+                  子菜单2-1
+                </span>
               </div>
               <ul
                 style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
@@ -70769,7 +70853,11 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               <div
                 class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
               >
-                子菜单2-2
+                <span
+                  class="t-menu__content"
+                >
+                  子菜单2-2
+                </span>
               </div>
               <ul
                 style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
@@ -70813,7 +70901,11 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               <div
                 class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
               >
-                子菜单2-3
+                <span
+                  class="t-menu__content"
+                >
+                  子菜单2-3
+                </span>
               </div>
               <ul
                 style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
