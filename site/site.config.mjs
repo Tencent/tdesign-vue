@@ -60,7 +60,7 @@ const docs = [
         componentEn: () => import('@common/theme.en-US.md'),
       },
       {
-        title: '暗黑模式',
+        title: '深色模式',
         titleEn: 'Dark Mode',
         name: 'dark-mode',
         path: '/vue/dark-mode',
