@@ -47,6 +47,7 @@ export default mixins(
       animationEnd: true,
       styleTimer: null,
       styleEl: null,
+      isMounted: false,
     };
   },
   computed: {
@@ -136,6 +137,7 @@ export default mixins(
     visible: {
       handler(val) {
         if (val) {
+          this.isMounted = true;
           this.$nextTick(() => {
             (this.$refs.drawerContainer as HTMLDivElement)?.focus?.();
           });
@@ -172,7 +174,7 @@ export default mixins(
   },
 
   render() {
-    if (this.destroyOnClose && !this.visible && this.animationEnd) return null;
+    if ((this.destroyOnClose && !this.visible && this.animationEnd) || (!this.isMounted && this.lazy)) return null;
 
     const { CloseIcon } = this.useGlobalIcon({
       CloseIcon: TdCloseIcon,
