@@ -216,6 +216,16 @@ describe('Tag Component', () => {
     });
   });
 
+  it('props.title without max-width', () => {
+    const title = 'This is a title';
+    const wrapper = mount({
+      render() {
+        return <Tag title={title} content={'This is a content'}></Tag>;
+      },
+    });
+    const span = wrapper.find('.t-tag > span');
+    expect(span.attributes('title')).toBe(title);
+  });
   it('props.title is equal to This is a long tag', () => {
     const wrapper = mount({
       render() {

@@ -1,5 +1,7 @@
 import { VNode, CreateElement } from 'vue';
-import { isNumber, isString } from 'lodash-es';
+import { isNumber, isString, throttle } from 'lodash-es';
+import { ref } from '@vue/composition-api';
+import useResizeObserver from '../hooks/useResizeObserver';
 import props from './radio-group-props';
 import {
   TdRadioGroupProps, RadioOptionObj, RadioOption, RadioValue,
@@ -33,8 +35,8 @@ export default mixins(classPrefixMixins).extend({
 
   data() {
     return {
+      radioGroupEl: ref(null),
       barStyle: { width: '0px', left: '0px' },
-      observer: null,
     };
   },
 
@@ -96,19 +98,18 @@ export default mixins(classPrefixMixins).extend({
 
   mounted() {
     this.calcBarStyle();
-    const observer = new MutationObserver(this.calcBarStyle);
-    observer.observe(this.$el, {
-      childList: true,
-      attributes: true,
-      subtree: true,
-      characterData: true,
-    });
-    this.observer = observer;
+    this.radioGroupEl.value = this.$el;
+    useResizeObserver(
+      this.radioGroupEl,
+      throttle(async () => {
+        this.$nextTick(() => this.calcBarStyle());
+      }, 300),
+    );
+
     this.addKeyboardListeners();
   },
 
   beforeDestroy() {
-    this.observer.disconnect();
     this.removeKeyboardListeners();
   },
 
