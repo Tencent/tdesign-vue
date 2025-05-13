@@ -630,6 +630,7 @@ const docs = [
         name: 'guide',
         path: '/vue/components/guide',
         component: () => import('tdesign-vue/guide/guide.md'),
+        componentEn: () => import('tdesign-vue/guide/guide.en-US.md'),
       },
       {
         title: 'Message 全局提示',
