@@ -79,6 +79,7 @@ export default defineComponent({
           [`${COMPONENT_NAME.value}--break-line`]: excessTagsDisplayType.value === 'break-line',
           [`${classPrefix.value}-is-empty`]: isEmpty,
           [`${classPrefix.value}-tag-input--with-tag`]: !isEmpty,
+          [`${classPrefix.value}-tag-input--drag-sort`]: props.dragSort && !disabled.value && !readonly.value,
         },
       ];
     });
