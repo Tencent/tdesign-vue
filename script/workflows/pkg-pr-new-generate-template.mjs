@@ -76,7 +76,7 @@ function buildExample(projectName, vueVersion, compilerVersion, baseProjectPath,
 
   const execPath = baseProjectPath || process.cwd();
 
-  execSync(`npm create vite ${actualProjectName} --template vanilla`, { stdio: 'inherit', cwd: execPath });
+  execSync(`pnpm create vite ${actualProjectName} --template vanilla`, { stdio: 'inherit', cwd: execPath });
 
   const projectPath = join(execPath, actualProjectName);
 
