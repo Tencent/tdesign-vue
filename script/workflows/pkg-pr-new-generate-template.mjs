@@ -102,7 +102,7 @@ function buildExample(projectName, vueVersion, compilerVersion, baseProjectPath,
 
   pkg.devDependencies = {
     ...pkg.devDependencies,
-    'vite-plugin-vue2': '^2.2.0',
+    'vite-plugin-vue2': '^2.0.3',
     vite: '^4.4.5',
   };
 
