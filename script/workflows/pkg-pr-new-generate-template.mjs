@@ -126,7 +126,7 @@ try {
   mkdirSync(PROJECT_NAME, { recursive: true });
   const projectPath = join(process.cwd(), PROJECT_NAME);
   buildExample(PROJECT_NAME, '~2.6.10', '~2.6.10', projectPath);
-  buildExample(PROJECT_NAME, '~2.7.14', '~2.7.14', projectPath);
+  //buildExample(PROJECT_NAME, '~2.7.14', '~2.7.14', projectPath);
 } catch (error) {
   console.error('构建过程中发生错误:', error);
   process.exit(1);
