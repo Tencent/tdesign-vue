@@ -78,7 +78,7 @@ TDesign 欢迎任何愿意参与贡献的参与者。如果需要本地运行代
 
 <a href="https://openomy.app/github/tencent/tdesign-vue" target="_blank" style="display: block; width: 100%;" align="center">
   <img src="https://openomy.app/svg?repo=tencent/tdesign-vue&chart=bubble&latestMonth=12" target="_blank" alt="Contribution Leaderboard" style="display: block; width: 100%;" />
- </a>
+</a>
 
 
 # 反馈
