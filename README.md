@@ -80,7 +80,7 @@ Contributing is welcome. Read [guidelines for contributing](https://github.com/T
 
 <a href="https://openomy.app/github/tencent/tdesign-vue" target="_blank" style="display: block; width: 100%;" align="center">
   <img src="https://openomy.app/svg?repo=tencent/tdesign-vue&chart=bubble&latestMonth=12" target="_blank" alt="Contribution Leaderboard" style="display: block; width: 100%;" />
- </a>
+</a>
 
 # Feedback
 
