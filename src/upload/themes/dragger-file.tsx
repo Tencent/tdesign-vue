@@ -72,6 +72,13 @@ export default defineComponent({
     };
   },
 
+  computed: {
+    canTriggerUpload() {
+      const file = this.displayFiles[0];
+      return !file || !(['progress', 'success', 'fail', 'waiting'].includes(file.status) || !file.status);
+    },
+  },
+
   methods: {
     renderImage() {
       if (!this.displayFiles.length) return;
@@ -206,15 +213,19 @@ export default defineComponent({
     },
 
     getContent() {
-      const file = this.displayFiles[0];
-      if (file && (['progress', 'success', 'fail', 'waiting'].includes(file.status) || !file.status)) {
+      if (this.canTriggerUpload) {
         return this.renderMainPreview();
       }
       return (
-        <div class={`${this.uploadPrefix}__trigger`} onClick={this.triggerUpload}>
+        <div class={`${this.uploadPrefix}__trigger`}>
           {this.$scopedSlots.default?.(null) || this.renderDefaultDragElement()}
         </div>
       );
+    },
+    handleDraggerClick(e: MouseEvent) {
+      if (this.canTriggerUpload) {
+        this.triggerUpload?.(e);
+      }
     },
   },
 
@@ -227,6 +238,7 @@ export default defineComponent({
         onDragenter={this.drag.handleDragenter}
         onDragover={this.drag.handleDragover}
         onDragleave={this.drag.handleDragleave}
+        onClick={this.handleDraggerClick}
       >
         {this.trigger?.(h, { files: this.displayFiles, dragActive: this.dragActive }) || this.getContent()}
       </div>
