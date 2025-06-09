@@ -75,7 +75,7 @@ export default defineComponent({
   computed: {
     canTriggerUpload() {
       const file = this.displayFiles[0];
-      return !file || !(['progress', 'success', 'fail', 'waiting'].includes(file.status) || !file.status);
+      return file && (['progress', 'success', 'fail', 'waiting'].includes(file.status) || !file.status);
     },
   },
 
