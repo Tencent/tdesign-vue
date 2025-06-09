@@ -33,7 +33,7 @@ exports[`Swiper > :props > :autoplay 1`] = `
     >
       <div
         class="t-swiper__container"
-        style="transform: translate3d(-0%, 0px, 0px);"
+        style="-webkit-transform: translate3d(-0%, 0px, 0px); transform: translate3d(-0%, 0px, 0px);"
       />
     </div>
     <ul
@@ -55,7 +55,7 @@ exports[`Swiper > :props > :defaultCurrent 1`] = `
     >
       <div
         class="t-swiper__container"
-        style="transform: translate3d(-0%, 0px, 0px);"
+        style="-webkit-transform: translate3d(-0%, 0px, 0px); transform: translate3d(-0%, 0px, 0px);"
       />
     </div>
     <ul
@@ -99,7 +99,7 @@ exports[`Swiper > :props > :duration 1`] = `
     >
       <div
         class="t-swiper__container"
-        style="transform: translate3d(-0%, 0px, 0px);"
+        style="-webkit-transform: translate3d(-0%, 0px, 0px); transform: translate3d(-0%, 0px, 0px);"
       />
     </div>
     <ul
@@ -121,7 +121,7 @@ exports[`Swiper > :props > :height 1`] = `
     >
       <div
         class="t-swiper__container"
-        style="transform: translate3d(-0%, 0px, 0px);"
+        style="-webkit-transform: translate3d(-0%, 0px, 0px); transform: translate3d(-0%, 0px, 0px);"
       />
     </div>
     <ul
@@ -143,7 +143,7 @@ exports[`Swiper > :props > :interval 1`] = `
     >
       <div
         class="t-swiper__container"
-        style="transform: translate3d(-0%, 0px, 0px);"
+        style="-webkit-transform: translate3d(-0%, 0px, 0px); transform: translate3d(-0%, 0px, 0px);"
       />
     </div>
     <ul
@@ -165,7 +165,7 @@ exports[`Swiper > :props > :loop 1`] = `
     >
       <div
         class="t-swiper__container"
-        style="transform: translate3d(-0%, 0px, 0px);"
+        style="-webkit-transform: translate3d(-0%, 0px, 0px); transform: translate3d(-0%, 0px, 0px);"
       />
     </div>
     <ul
@@ -187,7 +187,7 @@ exports[`Swiper > :props > :navigation 1`] = `
     >
       <div
         class="t-swiper__container"
-        style="transform: translate3d(-0%, 0px, 0px);"
+        style="-webkit-transform: translate3d(-0%, 0px, 0px); transform: translate3d(-0%, 0px, 0px);"
       />
     </div>
     <ul
@@ -209,7 +209,7 @@ exports[`Swiper > :props > :theme 1`] = `
     >
       <div
         class="t-swiper__container"
-        style="transform: translate3d(-0%, 0px, 0px);"
+        style="-webkit-transform: translate3d(-0%, 0px, 0px); transform: translate3d(-0%, 0px, 0px);"
       />
     </div>
     <ul
@@ -252,7 +252,7 @@ exports[`Swiper > additional function > navigation: VNode 1`] = `
     >
       <div
         class="t-swiper__container"
-        style="transform: translate3d(-0%, 0px, 0px);"
+        style="-webkit-transform: translate3d(-0%, 0px, 0px); transform: translate3d(-0%, 0px, 0px);"
       />
     </div>
     <div>
@@ -310,7 +310,7 @@ exports[`Swiper > additional function > no valid panel 1`] = `
     >
       <div
         class="t-swiper__container"
-        style="transform: translate3d(-0%, 0px, 0px);"
+        style="-webkit-transform: translate3d(-0%, 0px, 0px); transform: translate3d(-0%, 0px, 0px);"
       />
     </div>
     <ul

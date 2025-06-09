@@ -236,7 +236,6 @@ exports[`Progress > :props > :percentage > :percentage is less than 0, equal to 
     >
       <div
         class="t-progress__inner"
-        style="width: -10%;"
       />
     </div>
     <div

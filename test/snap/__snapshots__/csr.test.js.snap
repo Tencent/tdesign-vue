@@ -805,7 +805,7 @@ exports[`csr snapshot test > csr test ./src/anchor/_example/base.vue 1`] = `
   style="display: flex;"
 >
   <div
-    style="flex: 1;"
+    style="flex: 1 1 0%;"
   />
   <div>
     <div>
@@ -3472,7 +3472,7 @@ exports[`csr snapshot test > csr test ./src/back-top/_example/custom.vue 1`] = `
       >
         <button
           class="t-back-top t-back-top--theme-light t-back-top--square t-size-m"
-          style="inset-inline-end: 0; inset-block-end: 0; position: relative; inset-inline-end: 0; inset-block-end: 0;"
+          style="inset-inline-end: 0; inset-block-end: 0; position: relative;"
           type="button"
         >
           <svg
@@ -3489,7 +3489,7 @@ exports[`csr snapshot test > csr test ./src/back-top/_example/custom.vue 1`] = `
       >
         <button
           class="t-back-top t-back-top--theme-light t-back-top--square t-size-m"
-          style="inset-inline-end: 0; inset-block-end: 0; position: relative; inset-inline-end: 0; inset-block-end: 0;"
+          style="inset-inline-end: 0; inset-block-end: 0; position: relative;"
           type="button"
         >
           <span>
@@ -3502,7 +3502,7 @@ exports[`csr snapshot test > csr test ./src/back-top/_example/custom.vue 1`] = `
       >
         <button
           class="t-back-top t-back-top--theme-light t-back-top--square t-size-m"
-          style="inset-inline-end: 0; inset-block-end: 0; position: relative; inset-inline-end: 0; inset-block-end: 0;"
+          style="inset-inline-end: 0; inset-block-end: 0; position: relative;"
           type="button"
         >
           回到顶部
@@ -3530,7 +3530,7 @@ exports[`csr snapshot test > csr test ./src/back-top/_example/shape.vue 1`] = `
       >
         <button
           class="t-back-top t-back-top--theme-light t-back-top--square t-size-m"
-          style="inset-inline-end: 0; inset-block-end: 0; position: relative; inset-inline-end: 0; inset-block-end: 0;"
+          style="inset-inline-end: 0; inset-block-end: 0; position: relative;"
           type="button"
         >
           <div>
@@ -3559,7 +3559,7 @@ exports[`csr snapshot test > csr test ./src/back-top/_example/shape.vue 1`] = `
       >
         <button
           class="t-back-top t-back-top--theme-primary t-back-top--square t-size-m"
-          style="inset-inline-end: 0; inset-block-end: 0; position: relative; inset-inline-end: 0; inset-block-end: 0;"
+          style="inset-inline-end: 0; inset-block-end: 0; position: relative;"
           type="button"
         >
           <div>
@@ -3588,7 +3588,7 @@ exports[`csr snapshot test > csr test ./src/back-top/_example/shape.vue 1`] = `
       >
         <button
           class="t-back-top t-back-top--theme-dark t-back-top--square t-size-m"
-          style="inset-inline-end: 0; inset-block-end: 0; position: relative; inset-inline-end: 0; inset-block-end: 0;"
+          style="inset-inline-end: 0; inset-block-end: 0; position: relative;"
           type="button"
         >
           <div>
@@ -3626,7 +3626,7 @@ exports[`csr snapshot test > csr test ./src/back-top/_example/shape.vue 1`] = `
       >
         <button
           class="t-back-top t-back-top--theme-light t-back-top--circle t-size-m"
-          style="inset-inline-end: 0; inset-block-end: 0; position: relative; inset-inline-end: 0; inset-block-end: 0;"
+          style="inset-inline-end: 0; inset-block-end: 0; position: relative;"
           type="button"
         >
           <div>
@@ -3655,7 +3655,7 @@ exports[`csr snapshot test > csr test ./src/back-top/_example/shape.vue 1`] = `
       >
         <button
           class="t-back-top t-back-top--theme-primary t-back-top--circle t-size-m"
-          style="inset-inline-end: 0; inset-block-end: 0; position: relative; inset-inline-end: 0; inset-block-end: 0;"
+          style="inset-inline-end: 0; inset-block-end: 0; position: relative;"
           type="button"
         >
           <div>
@@ -3684,7 +3684,7 @@ exports[`csr snapshot test > csr test ./src/back-top/_example/shape.vue 1`] = `
       >
         <button
           class="t-back-top t-back-top--theme-dark t-back-top--circle t-size-m"
-          style="inset-inline-end: 0; inset-block-end: 0; position: relative; inset-inline-end: 0; inset-block-end: 0;"
+          style="inset-inline-end: 0; inset-block-end: 0; position: relative;"
           type="button"
         >
           <div>
@@ -3730,7 +3730,7 @@ exports[`csr snapshot test > csr test ./src/back-top/_example/size.vue 1`] = `
       >
         <button
           class="t-back-top t-back-top--theme-light t-back-top--square t-size-m"
-          style="inset-inline-end: 0; inset-block-end: 0; position: relative; inset-inline-end: 0; inset-block-end: 0;"
+          style="inset-inline-end: 0; inset-block-end: 0; position: relative;"
           type="button"
         >
           <div>
@@ -3759,7 +3759,7 @@ exports[`csr snapshot test > csr test ./src/back-top/_example/size.vue 1`] = `
       >
         <button
           class="t-back-top t-back-top--theme-primary t-back-top--square t-size-m"
-          style="inset-inline-end: 0; inset-block-end: 0; position: relative; inset-inline-end: 0; inset-block-end: 0;"
+          style="inset-inline-end: 0; inset-block-end: 0; position: relative;"
           type="button"
         >
           <div>
@@ -3788,7 +3788,7 @@ exports[`csr snapshot test > csr test ./src/back-top/_example/size.vue 1`] = `
       >
         <button
           class="t-back-top t-back-top--theme-dark t-back-top--square t-size-m"
-          style="inset-inline-end: 0; inset-block-end: 0; position: relative; inset-inline-end: 0; inset-block-end: 0;"
+          style="inset-inline-end: 0; inset-block-end: 0; position: relative;"
           type="button"
         >
           <div>
@@ -3826,7 +3826,7 @@ exports[`csr snapshot test > csr test ./src/back-top/_example/size.vue 1`] = `
       >
         <button
           class="t-back-top t-back-top--theme-light t-back-top--square t-size-s"
-          style="inset-inline-end: 0; inset-block-end: 0; position: relative; inset-inline-end: 0; inset-block-end: 0;"
+          style="inset-inline-end: 0; inset-block-end: 0; position: relative;"
           type="button"
         >
           <div>
@@ -3855,7 +3855,7 @@ exports[`csr snapshot test > csr test ./src/back-top/_example/size.vue 1`] = `
       >
         <button
           class="t-back-top t-back-top--theme-primary t-back-top--square t-size-s"
-          style="inset-inline-end: 0; inset-block-end: 0; position: relative; inset-inline-end: 0; inset-block-end: 0;"
+          style="inset-inline-end: 0; inset-block-end: 0; position: relative;"
           type="button"
         >
           <div>
@@ -3884,7 +3884,7 @@ exports[`csr snapshot test > csr test ./src/back-top/_example/size.vue 1`] = `
       >
         <button
           class="t-back-top t-back-top--theme-dark t-back-top--square t-size-s"
-          style="inset-inline-end: 0; inset-block-end: 0; position: relative; inset-inline-end: 0; inset-block-end: 0;"
+          style="inset-inline-end: 0; inset-block-end: 0; position: relative;"
           type="button"
         >
           <div>
@@ -3930,7 +3930,7 @@ exports[`csr snapshot test > csr test ./src/back-top/_example/theme.vue 1`] = `
       >
         <button
           class="t-back-top t-back-top--theme-light t-back-top--square t-size-m"
-          style="inset-inline-end: 0; inset-block-end: 0; position: relative; inset-inline-end: 0; inset-block-end: 0;"
+          style="inset-inline-end: 0; inset-block-end: 0; position: relative;"
           type="button"
         >
           <div>
@@ -3968,7 +3968,7 @@ exports[`csr snapshot test > csr test ./src/back-top/_example/theme.vue 1`] = `
       >
         <button
           class="t-back-top t-back-top--theme-primary t-back-top--square t-size-m"
-          style="inset-inline-end: 0; inset-block-end: 0; position: relative; inset-inline-end: 0; inset-block-end: 0;"
+          style="inset-inline-end: 0; inset-block-end: 0; position: relative;"
           type="button"
         >
           <div>
@@ -4006,7 +4006,7 @@ exports[`csr snapshot test > csr test ./src/back-top/_example/theme.vue 1`] = `
       >
         <button
           class="t-back-top t-back-top--theme-dark t-back-top--square t-size-m"
-          style="inset-inline-end: 0; inset-block-end: 0; position: relative; inset-inline-end: 0; inset-block-end: 0;"
+          style="inset-inline-end: 0; inset-block-end: 0; position: relative;"
           type="button"
         >
           <div>
@@ -21335,7 +21335,7 @@ exports[`csr snapshot test > csr test ./src/card/_example/footer.vue 1`] = `
       >
         <div
           class="t-col"
-          style="flex-basis: auto; padding-left: 0px; padding-right: 0px; display: inline-flex; justify-content: center;"
+          style="padding-left: 0px; padding-right: 0px; display: inline-flex; justify-content: center; flex: 1 1 auto;"
         >
           <button
             class="t-button t-button--variant-text t-button--theme-default t-button--shape-square"
@@ -21361,7 +21361,7 @@ exports[`csr snapshot test > csr test ./src/card/_example/footer.vue 1`] = `
         </div>
         <div
           class="t-col"
-          style="flex-basis: auto; padding-left: 0px; padding-right: 0px; display: inline-flex; justify-content: center;"
+          style="padding-left: 0px; padding-right: 0px; display: inline-flex; justify-content: center; flex: 1 1 auto;"
         >
           <button
             class="t-button t-button--variant-text t-button--theme-default t-button--shape-square"
@@ -21387,7 +21387,7 @@ exports[`csr snapshot test > csr test ./src/card/_example/footer.vue 1`] = `
         </div>
         <div
           class="t-col"
-          style="flex-basis: auto; padding-left: 0px; padding-right: 0px; display: inline-flex; justify-content: center;"
+          style="padding-left: 0px; padding-right: 0px; display: inline-flex; justify-content: center; flex: 1 1 auto;"
         >
           <button
             class="t-button t-button--variant-text t-button--theme-default t-button--shape-square"
@@ -21448,7 +21448,7 @@ exports[`csr snapshot test > csr test ./src/card/_example/footer-actions.vue 1`]
           >
             <div
               class="t-col"
-              style="flex-basis: auto; padding-left: 0px; padding-right: 0px; display: inline-flex; justify-content: center;"
+              style="padding-left: 0px; padding-right: 0px; display: inline-flex; justify-content: center; flex: 1 1 auto;"
             >
               <button
                 class="t-button t-button--variant-text t-button--theme-default t-button--shape-square"
@@ -21474,7 +21474,7 @@ exports[`csr snapshot test > csr test ./src/card/_example/footer-actions.vue 1`]
             </div>
             <div
               class="t-col"
-              style="flex-basis: auto; padding-left: 0px; padding-right: 0px; display: inline-flex; justify-content: center;"
+              style="padding-left: 0px; padding-right: 0px; display: inline-flex; justify-content: center; flex: 1 1 auto;"
             >
               <button
                 class="t-button t-button--variant-text t-button--theme-default t-button--shape-square"
@@ -21500,7 +21500,7 @@ exports[`csr snapshot test > csr test ./src/card/_example/footer-actions.vue 1`]
             </div>
             <div
               class="t-col"
-              style="flex-basis: auto; padding-left: 0px; padding-right: 0px; display: inline-flex; justify-content: center;"
+              style="padding-left: 0px; padding-right: 0px; display: inline-flex; justify-content: center; flex: 1 1 auto;"
             >
               <button
                 class="t-button t-button--variant-text t-button--theme-default t-button--shape-square"
@@ -22321,7 +22321,7 @@ exports[`csr snapshot test > csr test ./src/card/_example/header-subtitle-footer
       >
         <div
           class="t-col"
-          style="flex-basis: auto; padding-left: 0px; padding-right: 0px; display: inline-flex; justify-content: center;"
+          style="padding-left: 0px; padding-right: 0px; display: inline-flex; justify-content: center; flex: 1 1 auto;"
         >
           <button
             class="t-button t-button--variant-text t-button--theme-default t-button--shape-square"
@@ -22347,7 +22347,7 @@ exports[`csr snapshot test > csr test ./src/card/_example/header-subtitle-footer
         </div>
         <div
           class="t-col"
-          style="flex-basis: auto; padding-left: 0px; padding-right: 0px; display: inline-flex; justify-content: center;"
+          style="padding-left: 0px; padding-right: 0px; display: inline-flex; justify-content: center; flex: 1 1 auto;"
         >
           <button
             class="t-button t-button--variant-text t-button--theme-default t-button--shape-square"
@@ -22373,7 +22373,7 @@ exports[`csr snapshot test > csr test ./src/card/_example/header-subtitle-footer
         </div>
         <div
           class="t-col"
-          style="flex-basis: auto; padding-left: 0px; padding-right: 0px; display: inline-flex; justify-content: center;"
+          style="padding-left: 0px; padding-right: 0px; display: inline-flex; justify-content: center; flex: 1 1 auto;"
         >
           <button
             class="t-button t-button--variant-text t-button--theme-default t-button--shape-square"
@@ -28315,7 +28315,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/enable-alpha.v
         >
           <div
             class="input-group__item"
-            style="flex: 1;"
+            style="flex: 1 1 0%;"
           >
             <div
               class="t-input-number t-size-s t-input-number--normal"
@@ -28340,7 +28340,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/enable-alpha.v
           </div>
           <div
             class="input-group__item"
-            style="flex: 1;"
+            style="flex: 1 1 0%;"
           >
             <div
               class="t-input-number t-size-s t-input-number--normal"
@@ -28365,7 +28365,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/enable-alpha.v
           </div>
           <div
             class="input-group__item"
-            style="flex: 1;"
+            style="flex: 1 1 0%;"
           >
             <div
               class="t-input-number t-size-s t-input-number--normal"
@@ -28390,7 +28390,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/enable-alpha.v
           </div>
           <div
             class="input-group__item"
-            style="flex: 1.15;"
+            style="flex: 1.15 1 0%;"
           >
             <div
               class="t-input-number t-size-s t-input-number--normal"
@@ -29080,7 +29080,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/panel.vue 1`] 
                 >
                   <div
                     class="input-group__item"
-                    style="flex: 1;"
+                    style="flex: 1 1 0%;"
                   >
                     <div
                       class="t-input-number t-size-s t-input-number--normal"
@@ -29105,7 +29105,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/panel.vue 1`] 
                   </div>
                   <div
                     class="input-group__item"
-                    style="flex: 1;"
+                    style="flex: 1 1 0%;"
                   >
                     <div
                       class="t-input-number t-size-s t-input-number--normal"
@@ -29130,7 +29130,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/panel.vue 1`] 
                   </div>
                   <div
                     class="input-group__item"
-                    style="flex: 1;"
+                    style="flex: 1 1 0%;"
                   >
                     <div
                       class="t-input-number t-size-s t-input-number--normal"
@@ -29914,7 +29914,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/panel.vue 1`] 
                 >
                   <div
                     class="input-group__item"
-                    style="flex: 1;"
+                    style="flex: 1 1 0%;"
                   >
                     <div
                       class="t-input-number t-size-s t-input-number--normal"
@@ -29939,7 +29939,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/panel.vue 1`] 
                   </div>
                   <div
                     class="input-group__item"
-                    style="flex: 1;"
+                    style="flex: 1 1 0%;"
                   >
                     <div
                       class="t-input-number t-size-s t-input-number--normal"
@@ -29964,7 +29964,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/panel.vue 1`] 
                   </div>
                   <div
                     class="input-group__item"
-                    style="flex: 1;"
+                    style="flex: 1 1 0%;"
                   >
                     <div
                       class="t-input-number t-size-s t-input-number--normal"
@@ -29989,7 +29989,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/panel.vue 1`] 
                   </div>
                   <div
                     class="input-group__item"
-                    style="flex: 1.15;"
+                    style="flex: 1.15 1 0%;"
                   >
                     <div
                       class="t-input-number t-size-s t-input-number--normal"
@@ -30251,7 +30251,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/recent-color.v
                 >
                   <div
                     class="input-group__item"
-                    style="flex: 1;"
+                    style="flex: 1 1 0%;"
                   >
                     <div
                       class="t-input-number t-size-s t-input-number--normal"
@@ -30276,7 +30276,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/recent-color.v
                   </div>
                   <div
                     class="input-group__item"
-                    style="flex: 1;"
+                    style="flex: 1 1 0%;"
                   >
                     <div
                       class="t-input-number t-size-s t-input-number--normal"
@@ -30301,7 +30301,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/recent-color.v
                   </div>
                   <div
                     class="input-group__item"
-                    style="flex: 1;"
+                    style="flex: 1 1 0%;"
                   >
                     <div
                       class="t-input-number t-size-s t-input-number--normal"
@@ -31164,7 +31164,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/recent-color.v
                 >
                   <div
                     class="input-group__item"
-                    style="flex: 1;"
+                    style="flex: 1 1 0%;"
                   >
                     <div
                       class="t-input-number t-size-s t-input-number--normal"
@@ -31189,7 +31189,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/recent-color.v
                   </div>
                   <div
                     class="input-group__item"
-                    style="flex: 1;"
+                    style="flex: 1 1 0%;"
                   >
                     <div
                       class="t-input-number t-size-s t-input-number--normal"
@@ -31214,7 +31214,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/recent-color.v
                   </div>
                   <div
                     class="input-group__item"
-                    style="flex: 1;"
+                    style="flex: 1 1 0%;"
                   >
                     <div
                       class="t-input-number t-size-s t-input-number--normal"
@@ -31962,7 +31962,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/status-readonl
         >
           <div
             class="input-group__item"
-            style="flex: 1;"
+            style="flex: 1 1 0%;"
           >
             <div
               class="t-input-number t-size-s t-is-disabled t-input-number--normal"
@@ -31989,7 +31989,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/status-readonl
           </div>
           <div
             class="input-group__item"
-            style="flex: 1;"
+            style="flex: 1 1 0%;"
           >
             <div
               class="t-input-number t-size-s t-is-disabled t-input-number--normal"
@@ -32016,7 +32016,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/status-readonl
           </div>
           <div
             class="input-group__item"
-            style="flex: 1;"
+            style="flex: 1 1 0%;"
           >
             <div
               class="t-input-number t-size-s t-is-disabled t-input-number--normal"
@@ -32771,7 +32771,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/swatch-color.v
                 >
                   <div
                     class="input-group__item"
-                    style="flex: 1;"
+                    style="flex: 1 1 0%;"
                   >
                     <div
                       class="t-input-number t-size-s t-input-number--normal"
@@ -32796,7 +32796,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/swatch-color.v
                   </div>
                   <div
                     class="input-group__item"
-                    style="flex: 1;"
+                    style="flex: 1 1 0%;"
                   >
                     <div
                       class="t-input-number t-size-s t-input-number--normal"
@@ -32821,7 +32821,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/swatch-color.v
                   </div>
                   <div
                     class="input-group__item"
-                    style="flex: 1;"
+                    style="flex: 1 1 0%;"
                   >
                     <div
                       class="t-input-number t-size-s t-input-number--normal"
@@ -33150,7 +33150,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/swatch-color.v
                 >
                   <div
                     class="input-group__item"
-                    style="flex: 1;"
+                    style="flex: 1 1 0%;"
                   >
                     <div
                       class="t-input-number t-size-s t-input-number--normal"
@@ -33175,7 +33175,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/swatch-color.v
                   </div>
                   <div
                     class="input-group__item"
-                    style="flex: 1;"
+                    style="flex: 1 1 0%;"
                   >
                     <div
                       class="t-input-number t-size-s t-input-number--normal"
@@ -33200,7 +33200,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/swatch-color.v
                   </div>
                   <div
                     class="input-group__item"
-                    style="flex: 1;"
+                    style="flex: 1 1 0%;"
                   >
                     <div
                       class="t-input-number t-size-s t-input-number--normal"
@@ -37317,7 +37317,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
   >
     <div
       class="t-tree__list"
-      style="transform: translateY(0px);"
+      style="transform: translateY(0px); -webkit-transform: translateY(0px);"
     >
       <div
         class="t-tree__item t-tree__item--visible"
@@ -47172,7 +47172,6 @@ exports[`csr snapshot test > csr test ./src/empty/_example/operation.vue 1`] = `
 exports[`csr snapshot test > csr test ./src/empty/_example/self-defined.vue 1`] = `
 <div
   class="t-row t-row--start t-row--align-top"
-  style="margin-left: -20px; margin-right: -20px;"
 >
   <div
     class="t-col"
@@ -47324,7 +47323,6 @@ exports[`csr snapshot test > csr test ./src/empty/_example/size.vue 1`] = `
     >
       <div
         class="t-row t-row--start t-row--align-top"
-        style="margin-left: -20px; margin-right: -20px;"
       >
         <div
           class="t-col"
@@ -47543,7 +47541,6 @@ exports[`csr snapshot test > csr test ./src/empty/_example/size.vue 1`] = `
 exports[`csr snapshot test > csr test ./src/empty/_example/status.vue 1`] = `
 <div
   class="t-row t-row--start t-row--align-top"
-  style="margin-left: -20px; margin-right: -20px;"
 >
   <div
     class="t-col"
@@ -54728,7 +54725,7 @@ exports[`csr snapshot test > csr test ./src/grid/_example/flex.vue 1`] = `
       </div>
       <div
         class="t-col"
-        style="flex-basis: auto; padding-left: 0px; padding-right: 0px;"
+        style="flex: 1 1 auto; padding-left: 0px; padding-right: 0px;"
       >
         <div>
           auto
@@ -54780,7 +54777,7 @@ exports[`csr snapshot test > csr test ./src/grid/_example/flex.vue 1`] = `
       </div>
       <div
         class="t-col"
-        style="flex-basis: auto; padding-left: 0px; padding-right: 0px;"
+        style="flex: 1 1 auto; padding-left: 0px; padding-right: 0px;"
       >
         <div>
           auto with no-wrap
@@ -54808,7 +54805,6 @@ exports[`csr snapshot test > csr test ./src/grid/_example/gutter.vue 1`] = `
   >
     <div
       class="t-row t-row--start t-row--align-top"
-      style="margin-left: -8px; margin-right: -8px;"
     >
       <div
         class="t-col t-col-3"
@@ -54856,7 +54852,6 @@ exports[`csr snapshot test > csr test ./src/grid/_example/gutter.vue 1`] = `
   >
     <div
       class="t-row t-row--start t-row--align-top"
-      style="margin-left: -12px; margin-right: -12px;"
     >
       <div
         class="t-col t-col-3"
@@ -54904,7 +54899,7 @@ exports[`csr snapshot test > csr test ./src/grid/_example/gutter.vue 1`] = `
   >
     <div
       class="t-row t-row--start t-row--align-top"
-      style="margin-left: -8px; margin-right: -8px; row-gap: 24px;"
+      style="row-gap: 24px;"
     >
       <div
         class="t-col t-col-3"
@@ -54984,7 +54979,7 @@ exports[`csr snapshot test > csr test ./src/grid/_example/gutter.vue 1`] = `
   >
     <div
       class="t-row t-row--start t-row--align-top"
-      style="row-gap: 24px; margin-left: -12px; margin-right: -12px;"
+      style="row-gap: 24px;"
     >
       <div
         class="t-col t-col-3"
@@ -55064,7 +55059,7 @@ exports[`csr snapshot test > csr test ./src/grid/_example/gutter.vue 1`] = `
   >
     <div
       class="t-row t-row--start t-row--align-top"
-      style="margin-left: -12px; margin-right: -12px; row-gap: 24px;"
+      style="row-gap: 24px;"
     >
       <div
         class="t-col t-col-3"
@@ -66527,11 +66522,11 @@ exports[`csr snapshot test > csr test ./src/list/_example/virtual-scroll.vue 1`]
 >
   <div>
     <div
-      style="position: absolute; width: 1px; height: 1px; transition: transform 0.2s; transform: translate(0, 0px);"
+      style="position: absolute; width: 1px; height: 1px; transition: transform 0.2s; transform: translate(0, 0px); -webkit-transform: translate(0, 0px);"
     />
     <ul
       class="t-list__inner"
-      style="transform: translate(0, 150000px);"
+      style="transform: translate(0, 150000px); -webkit-transform: translate(0, 150000px);"
     >
       <li
         class="t-list-item"
@@ -92422,7 +92417,7 @@ exports[`csr snapshot test > csr test ./src/slider/_example/min-and-max.vue 1`] 
         >
           <div
             class="t-slider__track"
-            style="width: -50%; left: 0%;"
+            style="left: 0%;"
           />
           <div
             class="t-slider__button-wrapper"
@@ -96874,7 +96869,7 @@ exports[`csr snapshot test > csr test ./src/swiper/_example/base.vue 1`] = `
       >
         <div
           class="t-swiper__container"
-          style="transform: translate3d(-0%, 0px, 0px);"
+          style="-webkit-transform: translate3d(-0%, 0px, 0px); transform: translate3d(-0%, 0px, 0px);"
         />
       </div>
       <ul
@@ -96926,7 +96921,7 @@ exports[`csr snapshot test > csr test ./src/swiper/_example/current.vue 1`] = `
       >
         <div
           class="t-swiper__container"
-          style="transform: translate3d(-0%, 0px, 0px);"
+          style="-webkit-transform: translate3d(-0%, 0px, 0px); transform: translate3d(-0%, 0px, 0px);"
         />
       </div>
       <ul
@@ -96992,7 +96987,7 @@ exports[`csr snapshot test > csr test ./src/swiper/_example/fraction.vue 1`] = `
       >
         <div
           class="t-swiper__container"
-          style="transform: translate3d(-0%, 0px, 0px);"
+          style="-webkit-transform: translate3d(-0%, 0px, 0px); transform: translate3d(-0%, 0px, 0px);"
         />
       </div>
       <div
@@ -97060,7 +97055,7 @@ exports[`csr snapshot test > csr test ./src/swiper/_example/placement.vue 1`] = 
       >
         <div
           class="t-swiper__container"
-          style="transform: translate3d(-0%, 0px, 0px);"
+          style="-webkit-transform: translate3d(-0%, 0px, 0px); transform: translate3d(-0%, 0px, 0px);"
         />
       </div>
       <ul
@@ -97091,7 +97086,7 @@ exports[`csr snapshot test > csr test ./src/swiper/_example/size.vue 1`] = `
         >
           <div
             class="t-swiper__container"
-            style="transform: translate3d(-0%, 0px, 0px);"
+            style="-webkit-transform: translate3d(-0%, 0px, 0px); transform: translate3d(-0%, 0px, 0px);"
           />
         </div>
         <ul
@@ -97118,7 +97113,7 @@ exports[`csr snapshot test > csr test ./src/swiper/_example/size.vue 1`] = `
         >
           <div
             class="t-swiper__container"
-            style="transform: translate3d(-0%, 0px, 0px);"
+            style="-webkit-transform: translate3d(-0%, 0px, 0px); transform: translate3d(-0%, 0px, 0px);"
           />
         </div>
         <ul
@@ -101614,7 +101609,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/style.vue 1`] = `
             </td>
             <td
               class="custom-cell-class-name t-align-center"
-              style="font-weight: 600; background-color: var(--td-warning-color-light);"
+              style="font-weight: 600; backgound-color: var(--td-warning-color-light);"
             >
               10
             </td>
@@ -101783,7 +101778,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/style.vue 1`] = `
             </td>
             <td
               class="custom-cell-class-name t-align-center"
-              style="font-weight: 600; background-color: var(--td-warning-color-light);"
+              style="font-weight: 600; backgound-color: var(--td-warning-color-light);"
             >
               10
             </td>
@@ -116202,7 +116197,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
             >
               <div
                 class="t-tree__list"
-                style="transform: translateY(0px);"
+                style="transform: translateY(0px); -webkit-transform: translateY(0px);"
               >
                 <div
                   class="t-tree__item t-tree__item--open t-tree__item--visible"
@@ -116783,7 +116778,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
             >
               <div
                 class="t-tree__list"
-                style="transform: translateY(0px);"
+                style="transform: translateY(0px); -webkit-transform: translateY(0px);"
               >
                 <div
                   class="t-tree__item t-tree__item--open t-tree__item--visible"
@@ -117379,7 +117374,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/activable.vue 1`] = `
     >
       <div
         class="t-tree__list"
-        style="transform: translateY(0px);"
+        style="transform: translateY(0px); -webkit-transform: translateY(0px);"
       >
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
@@ -117564,7 +117559,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/base.vue 1`] = `
     >
       <div
         class="t-tree__list"
-        style="transform: translateY(0px);"
+        style="transform: translateY(0px); -webkit-transform: translateY(0px);"
       >
         <div
           class="t-tree__item t-tree__item--visible"
@@ -117896,7 +117891,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
     >
       <div
         class="t-tree__list"
-        style="transform: translateY(0px);"
+        style="transform: translateY(0px); -webkit-transform: translateY(0px);"
       >
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
@@ -118918,7 +118913,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/controlled.vue 1`] = `
     >
       <div
         class="t-tree__list"
-        style="transform: translateY(0px);"
+        style="transform: translateY(0px); -webkit-transform: translateY(0px);"
       >
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
@@ -119342,7 +119337,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
     >
       <div
         class="t-tree__list"
-        style="transform: translateY(0px);"
+        style="transform: translateY(0px); -webkit-transform: translateY(0px);"
       >
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
@@ -119856,7 +119851,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-filter.vue 1`] =
     >
       <div
         class="t-tree__list"
-        style="transform: translateY(0px);"
+        style="transform: translateY(0px); -webkit-transform: translateY(0px);"
       >
         <div
           class="t-tree__item t-tree__item--visible"
@@ -120103,7 +120098,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-performance.vue 
     >
       <div
         class="t-tree__list"
-        style="transform: translateY(0px);"
+        style="transform: translateY(0px); -webkit-transform: translateY(0px);"
       >
         <div
           class="t-tree__item t-tree__item--visible"
@@ -120875,7 +120870,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
     >
       <div
         class="t-tree__list"
-        style="transform: translateY(0px);"
+        style="transform: translateY(0px); -webkit-transform: translateY(0px);"
       >
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
@@ -121806,7 +121801,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
     >
       <div
         class="t-tree__list"
-        style="transform: translateY(0px);"
+        style="transform: translateY(0px); -webkit-transform: translateY(0px);"
       >
         <div
           class="t-tree__item t-tree__item--open t-tree__item--draggable t-tree__item--visible"
@@ -122333,7 +122328,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
     >
       <div
         class="t-tree__list"
-        style="transform: translateY(0px);"
+        style="transform: translateY(0px); -webkit-transform: translateY(0px);"
       >
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
@@ -122636,7 +122631,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
     >
       <div
         class="t-tree__list"
-        style="transform: translateY(0px);"
+        style="transform: translateY(0px); -webkit-transform: translateY(0px);"
       >
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
@@ -122907,7 +122902,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-mutex.vue 1`] =
     >
       <div
         class="t-tree__list"
-        style="transform: translateY(0px);"
+        style="transform: translateY(0px); -webkit-transform: translateY(0px);"
       >
         <div
           class="t-tree__item t-tree__item--visible"
@@ -123049,7 +123044,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/filter.vue 1`] = `
         >
           <div
             class="t-tree__list"
-            style="transform: translateY(0px);"
+            style="transform: translateY(0px); -webkit-transform: translateY(0px);"
           >
             <div
               class="t-tree__item t-tree__item--visible"
@@ -123185,7 +123180,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/filter.vue 1`] = `
         >
           <div
             class="t-tree__list"
-            style="transform: translateY(0px);"
+            style="transform: translateY(0px); -webkit-transform: translateY(0px);"
           >
             <div
               class="t-tree__item t-tree__item--visible"
@@ -123294,7 +123289,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/icon.vue 1`] = `
         >
           <div
             class="t-tree__list"
-            style="transform: translateY(0px);"
+            style="transform: translateY(0px); -webkit-transform: translateY(0px);"
           >
             <div
               class="t-tree__item t-tree__item--visible"
@@ -123385,7 +123380,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/icon.vue 1`] = `
         >
           <div
             class="t-tree__list"
-            style="transform: translateY(0px);"
+            style="transform: translateY(0px); -webkit-transform: translateY(0px);"
           >
             <div
               class="t-tree__item t-tree__item--visible"
@@ -123484,7 +123479,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
         >
           <div
             class="t-tree__list"
-            style="transform: translateY(0px);"
+            style="transform: translateY(0px); -webkit-transform: translateY(0px);"
           >
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
@@ -123689,7 +123684,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
         >
           <div
             class="t-tree__list"
-            style="transform: translateY(0px);"
+            style="transform: translateY(0px); -webkit-transform: translateY(0px);"
           >
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
@@ -124026,7 +124021,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/lazy.vue 1`] = `
     >
       <div
         class="t-tree__list"
-        style="transform: translateY(0px);"
+        style="transform: translateY(0px); -webkit-transform: translateY(0px);"
       >
         <div
           class="t-tree__item t-tree__item--visible"
@@ -124238,7 +124233,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
         >
           <div
             class="t-tree__list"
-            style="transform: translateY(0px);"
+            style="transform: translateY(0px); -webkit-transform: translateY(0px);"
           >
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
@@ -124738,7 +124733,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
         >
           <div
             class="t-tree__list"
-            style="transform: translateY(0px);"
+            style="transform: translateY(0px); -webkit-transform: translateY(0px);"
           >
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
@@ -125472,7 +125467,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
         >
           <div
             class="t-tree__list"
-            style="transform: translateY(0px);"
+            style="transform: translateY(0px); -webkit-transform: translateY(0px);"
           >
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
@@ -126446,7 +126441,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
     >
       <div
         class="t-tree__list"
-        style="transform: translateY(0px);"
+        style="transform: translateY(0px); -webkit-transform: translateY(0px);"
       >
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
@@ -126923,7 +126918,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/state.vue 1`] = `
     >
       <div
         class="t-tree__list"
-        style="transform: translateY(0px);"
+        style="transform: translateY(0px); -webkit-transform: translateY(0px);"
       >
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
@@ -127269,7 +127264,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
     >
       <div
         class="t-tree__list"
-        style="transform: translateY(0px);"
+        style="transform: translateY(0px); -webkit-transform: translateY(0px);"
       >
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
@@ -127767,7 +127762,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/transition.vue 1`] = `
     >
       <div
         class="t-tree__list"
-        style="transform: translateY(0px);"
+        style="transform: translateY(0px); -webkit-transform: translateY(0px);"
       >
         <div
           class="t-tree__item t-tree__item--visible"
@@ -128183,11 +128178,11 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
     >
       <div
         class="t-tree__vscroll-cursor"
-        style="transform: translate(0, 5270px);"
+        style="transform: translate(0, 5270px); -webkit-transform: translate(0, 5270px);"
       />
       <div
         class="t-tree__list"
-        style="transform: translateY(5270px);"
+        style="transform: translateY(5270px); -webkit-transform: translateY(5270px);"
       >
         <div
           class="t-tree__item t-tree__item--open t-tree__item--visible"
@@ -130317,7 +130312,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
         >
           <div
             class="t-tree__list"
-            style="transform: translateY(0px);"
+            style="transform: translateY(0px); -webkit-transform: translateY(0px);"
           >
             <div
               class="t-tree__item t-tree__item--open t-tree__item--visible"
