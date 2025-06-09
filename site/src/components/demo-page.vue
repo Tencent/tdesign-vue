@@ -1,7 +1,7 @@
 <template>
-  <component v-if="demo" :is="demo"></component>
+  <component v-if="demoComponent" :is="demoComponent"></component>
   <ul class="empty-demo" v-else>
-    <li v-for="demoName in demoList[componentName]" :key="demoName">
+    <li v-for="demoName in demoList[componentName] || []" :key="demoName">
       <router-link :to="{ path: `/vue/demos/${componentName}/${demoName}` }">
         <t-button theme="default" variant="text">{{ demoName }}</t-button>
       </router-link>
@@ -16,22 +16,19 @@ const demoObject = {};
 const demoList = {};
 Object.keys(demoReq).forEach((key) => {
   const match = key.match(/([\w-]+)._example.([\w-]+).vue/);
-  const [, componentName, demoName] = match;
+  if (!match) return;
 
+  const [, componentName, demoName] = match;
   demoObject[`${componentName}-${demoName}`] = demoReq[key].default;
-  demoList[componentName] = [demoName].concat(demoList[componentName]);
+  demoList[componentName] = (demoList[componentName] ?? []).concat(demoName);
 });
 
 export default {
   name: 'demos',
 
-  components: {
-    ...demoObject,
-  },
-
   data() {
     return {
-      demo: null,
+      demoComponent: null,
       demoList,
     };
   },
@@ -40,31 +37,24 @@ export default {
     componentName() {
       return this.$route.params.componentName;
     },
-    currentDemos() {
-      return this.demoList[this.componentName].join('<br />');
+    demoKey() {
+      const { componentName, demoName } = this.$route.params;
+      return componentName && demoName ? `${componentName}-${demoName}` : null;
     },
   },
 
   watch: {
-    $route(v) {
-      if (v.name !== 'demos') return;
-      this.renderDemo();
+    '$route.params': {
+      handler() {
+        this.renderDemo();
+      },
+      immediate: true,
     },
-  },
-
-  mounted() {
-    this.renderDemo();
   },
 
   methods: {
     renderDemo() {
-      const { componentName, demoName } = this.$route.params;
-      console.log('%c 所有 demo 路径参考: \n', 'color: #0052d9;', demoObject);
-      if (componentName && demoName) {
-        this.demo = `${componentName}-${demoName}`;
-      } else {
-        this.demo = '';
-      }
+      this.demoComponent = this.demoKey ? demoObject[this.demoKey] : null;
     },
   },
 };
