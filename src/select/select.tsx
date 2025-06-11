@@ -211,7 +211,7 @@ export default defineComponent({
           data: optionsMap.value.get(optionValue),
           e: context.e,
         };
-        instance.emit('remove', removeContext);
+        instance.$emit('remove', removeContext);
         props.onRemove?.(removeContext);
       }
     };
