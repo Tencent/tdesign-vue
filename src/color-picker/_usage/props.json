@@ -1,11 +1,5 @@
 [
   {
-    "name": "closeBtn",
-    "type": "Boolean",
-    "defaultValue": true,
-    "options": []
-  },
-  {
     "name": "disabled",
     "type": "Boolean",
     "defaultValue": false,

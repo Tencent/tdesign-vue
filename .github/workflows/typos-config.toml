@@ -4,4 +4,4 @@ ba = "ba"
 thead = "thead"
 
 [files]
-extend-exclude = ["CHANGELOG.md"]
+extend-exclude = ["CHANGELOG*.md"]

@@ -196,13 +196,19 @@ export default defineComponent({
               { [`${this.classPrefix}-is-bordered`]: file.status !== 'waiting' },
             ]}
           >
-            {['fail', 'progress'].includes(file.status) && (
-              <div class={`${this.uploadPrefix}__card-status-wrap ${this.uploadPrefix}__${this.theme}-${file.status}`}>
-                {iconMap[file.status as 'fail' | 'progress']}
+            {file.status === 'progress' && (
+              <div class={`${this.uploadPrefix}__card-status-wrap ${this.uploadPrefix}__${this.theme}-progress`}>
+                {iconMap[file.status as 'progress']}
                 <p>
-                  {textMap[file.status as 'fail' | 'progress']}
-                  {file.status === 'progress' ? ` ${file.percent}%` : ''}
+                  {textMap[file.status as 'progress']}
+                  {this.showUploadProgress && ` ${file.percent}%`}
                 </p>
+              </div>
+            )}
+            {file.status === 'fail' && (
+              <div class={`${this.uploadPrefix}__card-status-wrap ${this.uploadPrefix}__${this.theme}-fail`}>
+                {iconMap[file.status as 'fail']}
+                <p>{file.response?.error || textMap[file.status as 'fail']}</p>
               </div>
             )}
             {(['waiting', 'success'].includes(file.status) || (!file.status && file.url)) && (
