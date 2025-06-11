@@ -5,8 +5,29 @@ toc: false
 docClass: timeline
 ---
 
-## 🌈 1.11.2 `2025-04-15`
+## 🌈 1.12.0 `2025-06-11` 
+### 🚀 Features
+- `ColorPicker`: 自动根据「触发器 / 最近颜色 / 预设颜色」的色值进行切换单色和渐变模式；只开启渐变模式时，过滤「预设颜色 / 当前颜色」中的非渐变色值；新增 format `HEX8`，移除 `HSB`；使用渐变模式的业务请注意此变更 ⚠️  @RylanBot ([#3572](https://github.com/Tencent/tdesign-vue/pull/3572))
+- `Icon`: 新增 `logo-miniprogram`、`logo-cnb`、`seal`、`quote` 图标，优化多个文件相关图标的绘制效果，修复 `gesture-right-slip` 的绘制问题 @taowensheng1997 @uyarn ([#3577](https://github.com/Tencent/tdesign-vue/pull/3577))
+- `InputNumber`: `decimalPlaces` 支持 `enableRound` 参数，用于控制是否启用四舍五入 @RylanBot ([#3601](https://github.com/Tencent/tdesign-vue/pull/3601))
+- `Select`: add option removal handling for multiple selection @richardji202 ([#3584](https://github.com/Tencent/tdesign-vue/pull/3584))
+- `TagInput`: 优化可拖拽时，鼠标光标显示为移动光标 @liweijie0812 ([#3594](https://github.com/Tencent/tdesign-vue/pull/3594))
+- `Tree`: `expandAll` API 支持响应式 @uyarn ([#3619](https://github.com/Tencent/tdesign-vue/pull/3619))
+- `Upload`: 支持 `image-flow` 模式支持自定义错误文本 @ngyyuusora ([#3574](https://github.com/Tencent/tdesign-vue/pull/3574))
+### 🐞 Bug Fixes
+- `Cascader`: 修复选项存在超长文字在大小尺寸下展示异常的问题 @Shabi-x([#3593](https://github.com/Tencent/tdesign-vue/pull/3593))
+- `ColorPicker`: 修复开启透明通道时的返回值格式化异常 @RylanBot ([#3572](https://github.com/Tencent/tdesign-vue/pull/3572))
+- `DatePicker`: 修复通过 `popupProps.visible` 直接打开选择面板时无法更新时间的问题 @RSS1102 ([#3600](https://github.com/Tencent/tdesign-vue/pull/3600))
+- `Drawer`:  修复 `cancel-btn` 和 `confirm-btn` 的类型缺失`null` 声明的问题 @RSS1102 ([#3612](https://github.com/Tencent/tdesign-vue/pull/3612))
+- `Select`: 修复`valueType`为`object`与 `keys` 同时设置时的绑定值错误 @morningbao ([#3583](https://github.com/Tencent/tdesign-vue/pull/3583))
+- `Table`: 优化关闭列配置弹窗时，选择列数据与所展示列数据不一致的问题 @RSS1102 ([#3616](https://github.com/Tencent/tdesign-vue/pull/3616))
+- `Tabs`:  修复选项卡 label 过长时, 滑动按钮失效的问题 @wonkzhang([#3571](https://github.com/Tencent/tdesign-vue/pull/3571))
+- `Tag`: 修复未设置 `max-width` 导致无法渲染 `title` 属性的问题 @betavs ([#3592](https://github.com/Tencent/tdesign-vue/pull/3592))
 
+
+
+
+## 🌈 1.11.2 `2025-04-15` 
 ### 🚀 Features
 
 - `Drawer`: 新增 `DrawerPlugin`，支持`插件函数式`调用，具体使用请参考示例 @Wesley-0808 ([#3501](https://github.com/Tencent/tdesign-vue/pull/3501))
@@ -1503,5 +1524,4 @@ docClass: timeline
 - `Drawer`: 修复 visible 默认为 `true` 时内容不展示问题 @honkinglin ([#1940](https://github.com/Tencent/tdesign-vue/pull/1940))
 
 ## 🌈 0.x `2020-12-21 - 2022-12-14`
-
 前往 [GitHub](https://github.com/Tencent/tdesign-vue/blob/develop/CHANGELOG-0.x.md) 查看 `0.x` 更新日志
