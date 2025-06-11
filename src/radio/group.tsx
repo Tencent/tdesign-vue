@@ -1,6 +1,5 @@
-import { VNode, CreateElement } from 'vue';
+import { VNode, CreateElement, ref } from 'vue';
 import { isNumber, isString, throttle } from 'lodash-es';
-import { ref } from '@vue/composition-api';
 import useResizeObserver from '../hooks/useResizeObserver';
 import props from './radio-group-props';
 import {
@@ -98,7 +97,7 @@ export default mixins(classPrefixMixins).extend({
 
   mounted() {
     this.calcBarStyle();
-    this.radioGroupEl.value = this.$el;
+    this.radioGroupEl = this.$el;
     useResizeObserver(
       this.radioGroupEl,
       throttle(async () => {
