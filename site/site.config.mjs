@@ -60,7 +60,7 @@ const docs = [
         componentEn: () => import('@common/theme.en-US.md'),
       },
       {
-        title: '暗黑模式',
+        title: '深色模式',
         titleEn: 'Dark Mode',
         name: 'dark-mode',
         path: '/vue/dark-mode',
@@ -630,6 +630,7 @@ const docs = [
         name: 'guide',
         path: '/vue/components/guide',
         component: () => import('tdesign-vue/guide/guide.md'),
+        componentEn: () => import('tdesign-vue/guide/guide.en-US.md'),
       },
       {
         title: 'Message 全局提示',

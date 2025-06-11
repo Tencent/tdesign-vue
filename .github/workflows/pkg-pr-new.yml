@@ -23,4 +23,7 @@ jobs:
 
       - run: npm run build
 
-      - run: npx pkg-pr-new publish --compact
+      - run: node ./script/workflows/pkg-pr-new-generate-template.mjs
+
+      - run: npx pkg-pr-new publish --compact  --template 'tdesign-vue2-demo/**'
+      
