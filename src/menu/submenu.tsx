@@ -288,7 +288,8 @@ export default defineComponent({
       const rippleVal = (this.keepAnimation as Record<AnimationType, boolean>).ripple ? this.rippleColor : false;
       const normalSubmenu = [
         <div v-ripple={rippleVal} class={this.submenuClass} onClick={this.handleSubmenuItemClick}>
-          {renderTNodeJSX(this, 'title')}
+          {icon}
+          <span class={[`${this.classPrefix}-menu__content`]}>{renderTNodeJSX(this, 'title')}</span>
         </div>,
         <ul style="opacity: 0; width: 0; height: 0; overflow: hidden">{renderContent(this, 'default', 'content')}</ul>,
       ];
