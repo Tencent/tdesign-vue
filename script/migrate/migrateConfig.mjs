@@ -7,6 +7,7 @@ export function migratePackageJson() {
 
   delete pkg.dependencies['@vue/composition-api'];
   delete pkg.devDependencies['vite-plugin-vue2'];
+  delete pkg.devDependencies['unplugin-vue2-script-setup'];
 
   pkg.peerDependencies = {
     ...pkg.peerDependencies,
@@ -15,7 +16,7 @@ export function migratePackageJson() {
 
   pkg.devDependencies = {
     ...pkg.devDependencies,
-    '@vitejs/plugin-vue2': '^2.2.0',
+    '@vitejs/plugin-vue2': '^2.3.3',
     '@vitejs/plugin-vue2-jsx': '^1.1.0',
     '@vue/babel-preset-jsx': '^1.3.0',
     'vue-server-renderer': '^2.7.14',
@@ -23,6 +24,7 @@ export function migratePackageJson() {
     'vue-demi': '^0.13.1',
     'vue-loader': '^15.10.0',
     vue: '~2.7.14',
+    'eslint-plugin-vue': '^9.3.0',
   };
   writeFileSync('package.json', `${JSON.stringify(pkg, null, 2)}`, 'utf8');
 }
@@ -37,6 +39,8 @@ export function migrateViteConfig() {
 import vueJsx from '@vitejs/plugin-vue2-jsx';`,
     )
     .replace('createVuePlugin', 'vue')
+    .replace("import ScriptSetup from 'unplugin-vue2-script-setup/vite';", '')
+    .replace('ScriptSetup({}),', '')
     .replace('jsx: true,', '')
     .replace(
       'tdocPlugin(),',
@@ -57,6 +61,8 @@ import vueJsx from '@vitejs/plugin-vue2-jsx';`,
     )
     .replace('createVuePlugin', 'vue')
     .replace('jsx: true,', '')
+    .replace("import ScriptSetup from 'unplugin-vue2-script-setup/vite';", '')
+    .replace('ScriptSetup({}),', '')
     .replace(
       'tdocPlugin(),',
       `vueJsx({}),
