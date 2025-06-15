@@ -3,10 +3,16 @@ import { readFileSync, writeFileSync } from 'node:fs';
 
 export default function migrateImport() {
   glob.sync('src/**/*.{tsx,vue,ts}', { ignore: ['src/_common'] }).forEach((file) => {
-    const content = readFileSync(file, 'utf8');
+    let content = readFileSync(file, 'utf8');
     if (content.includes('@vue/composition-api')) {
-      const newContent = content.replaceAll('@vue/composition-api', 'vue');
-      writeFileSync(file, newContent, 'utf8');
+      content = content.replaceAll('@vue/composition-api', 'vue');
+      writeFileSync(file, content, 'utf8');
+    }
+    if(content.includes("import VueCompositionAPI from 'vue';")){
+      content = content.replaceAll("import VueCompositionAPI from 'vue';", '')
+      .replaceAll(", VueCompositionAPI", '');
+
+      writeFileSync(file, content, 'utf8');
     }
     console.log(`Processing file: ${file}`);
   });
