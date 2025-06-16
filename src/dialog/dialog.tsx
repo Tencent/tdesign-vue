@@ -479,7 +479,7 @@ export default mixins(
         : `${this.componentName}__footer`;
 
       const footer = this.footer ? (
-        <div class={footerClassName} onmousedown={this.onStopDown}>
+        <div class={footerClassName} onMousedown={this.onStopDown}>
           {footerContent}
         </div>
       ) : null;
@@ -489,7 +489,7 @@ export default mixins(
         <div class={this.wrapClass}>
           <div class={this.positionClass} style={this.positionStyle} onClick={this.overlayAction} ref="dialogPosition">
             <div key="dialog" ref="dialog" class={this.dialogClass} style={this.computedDialogStyle}>
-              <div class={headerClassName} onmousedown={this.onStopDown}>
+              <div class={headerClassName} onMousedown={this.onStopDown}>
                 <div class={`${this.componentName}__header-content`}>
                   {this.getIcon()}
                   {renderTNodeJSX(this, 'header', defaultHeader)}
@@ -501,7 +501,7 @@ export default mixins(
                 ) : null}
               </div>
 
-              <div class={bodyClassName} onmousedown={this.onStopDown}>
+              <div class={bodyClassName} onMousedown={this.onStopDown}>
                 {body}
               </div>
               {footer}
