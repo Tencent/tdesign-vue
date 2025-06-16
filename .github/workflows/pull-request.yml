@@ -57,9 +57,9 @@ jobs:
         with:
           node-version: 18
 
+      - run: node script/migrate/migrateConfig.mjs
       - run: pnpm install
-      - run: node script/migrate/index.mjs
-      - run: pnpm install --no-frozen-lockfile
+      - run: node script/migrate/migrateComponent.mjs
 
       - run: npm run lint
       - run: npm run test
@@ -78,9 +78,9 @@ jobs:
         with:
           node-version: 18
 
+      - run: node script/migrate/migrateConfig.mjs
       - run: pnpm install
-      - run: node script/migrate/index.mjs
-      - run: pnpm install --no-frozen-lockfile
+      - run: node script/migrate/migrateComponent.mjs
 
       - name: Build site
         run: npm run site:preview
@@ -120,8 +120,8 @@ jobs:
         with:
           node-version: 18
 
+      - run: node script/migrate/migrateConfig.mjs
       - run: pnpm install
-      - run: node script/migrate/index.mjs
-      - run: pnpm install --no-frozen-lockfile
+      - run: node script/migrate/migrateComponent.mjs
       - name: Build 
         run: npm run build

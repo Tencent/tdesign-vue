@@ -8,9 +8,9 @@ export default function migrateImport() {
       content = content.replaceAll('@vue/composition-api', 'vue');
       writeFileSync(file, content, 'utf8');
     }
-    if(content.includes("import VueCompositionAPI from 'vue';")){
+    if (content.includes("import VueCompositionAPI from 'vue';")) {
       content = content.replaceAll("import VueCompositionAPI from 'vue';", '')
-      .replaceAll(", VueCompositionAPI", '');
+        .replaceAll(', VueCompositionAPI', '');
 
       writeFileSync(file, content, 'utf8');
     }
