@@ -8,6 +8,7 @@ export function migratePackageJson() {
   delete pkg.dependencies['@vue/composition-api'];
   delete pkg.devDependencies['vite-plugin-vue2'];
   delete pkg.devDependencies['unplugin-vue2-script-setup'];
+  delete pkg.devDependencies['vue-template-compiler'];
 
   pkg.peerDependencies = {
     ...pkg.peerDependencies,
@@ -20,7 +21,6 @@ export function migratePackageJson() {
     '@vitejs/plugin-vue2-jsx': '^1.1.0',
     '@vue/babel-preset-jsx': '^1.3.0',
     'vue-server-renderer': '^2.7.14',
-    'vue-template-compiler': '^2.7.14',
     'vue-demi': '^0.13.1',
     'vue-loader': '^15.10.0',
     vue: '~2.7.14',
