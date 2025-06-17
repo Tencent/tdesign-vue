@@ -7,6 +7,7 @@ import migrateCard from './components/card.mjs';
 import migrateTree from './components/tree.mjs';
 import migrateHelper from './utils/helper.mjs';
 import migrateRenderTNode from './utils/render-tnode.mjs';
+import migrateHooks from './hooks/index.mjs';
 
 function run() {
   migrateSingleFile();
@@ -19,6 +20,8 @@ function run() {
 
   migrateHelper();
   migrateRenderTNode();
+
+  migrateHooks();
 }
 
 run();
