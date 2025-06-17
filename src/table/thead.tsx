@@ -203,7 +203,9 @@ export default defineComponent({
               data-colkey={col.colKey}
               class={thClasses}
               style={styles}
+              // vue27:ts-ignore
               attrs={{ ...attrs, ...rowspanAndColspan }}
+              // vue27:ts-ignore
               on={resizeColumnListener}
             >
               <div class={this.tableBaseClass.thCellInner}>

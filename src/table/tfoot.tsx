@@ -85,6 +85,7 @@ export default defineComponent({
         this.rowKey || 'id',
       );
       return (
+        // vue27:ts-ignore
         <tr key={rowIndex} attrs={trAttributes} class={customClasses}>
           {this.columns.map((col, colIndex) => {
             const cellSpans: RowspanColspan = {};
@@ -107,6 +108,7 @@ export default defineComponent({
               style.width = `${this.thWidthList[col.colKey]}px`;
             }
             return (
+              // vue27:ts-ignore
               <td attrs={{ key: col.colKey, ...cellSpans }} class={tdStyles.classes} style={style}>
                 {this.renderTFootCell({
                   row,
