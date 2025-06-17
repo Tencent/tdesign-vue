@@ -1,5 +1,6 @@
 import {
   migratePackageJson, migrateViteConfig, migrateVitestConfig, migrateTsconfig, migrateJsxDts, migrateBabelConfig,
+  migrateCssDTs,
 } from './config/migrateConfig.mjs';
 
 function run() {
@@ -10,7 +11,7 @@ function run() {
   migrateTsconfig();
 
   migrateJsxDts();
-
+  migrateCssDTs();
   migrateBabelConfig();
 }
 

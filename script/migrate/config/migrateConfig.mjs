@@ -118,3 +118,15 @@ export function migrateBabelConfig() {
   );
   writeFileSync('babel.config.js', content, 'utf8');
 }
+
+export function migrateCssDTs() {
+  const content = `import type * as CSS from 'csstype';
+
+declare module 'csstype' {
+  interface Properties {
+    // Add a missing property
+    '-moz-transform'?: Property.Transform | undefined;
+  }
+}`;
+  writeFileSync('css.d.ts', content, 'utf8');
+}
