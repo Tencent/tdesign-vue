@@ -5,7 +5,6 @@ import { CommonDisplayFileProps } from '../interface';
 import { commonProps } from '../constants';
 import { renderContent } from '../../utils/render-tnode';
 import { TdUploadProps } from '../type';
-import { useConfig } from '../../config-provider/useConfig';
 
 export interface CustomFileProps extends CommonDisplayFileProps {
   dragEvents: UploadDragEvents;
