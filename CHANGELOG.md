@@ -480,9 +480,9 @@ docClass: timeline
 - `Select`: 
    - `collapsedItems` 属性或插槽新增参数 `onClose`，用于删除标签 @ubloglab ([#2863](https://github.com/Tencent/tdesign-vue/pull/2863))
 ### 🐞 Bug Fixes
-- `Tree`
-   - 解决 `watch` 回调时间过迟的问题 @TabSpace ([#2873](https://github.com/Tencent/tdesign-vue/pull/2873))
-   - 提供获取树结构数据的API getTreeData @TabSpace ([#2888](https://github.com/Tencent/tdesign-vue/pull/2888))
+- `Tree`: @TabSpace
+   - 解决 `watch` 回调时间过迟的问题 ([#2873](https://github.com/Tencent/tdesign-vue/pull/2873))
+   - 提供获取树结构数据的 API `getTreeData` ([#2888](https://github.com/Tencent/tdesign-vue/pull/2888))
 - `Upload`: 修复 `max=1 multiple=false` 情况下，无法替换上传文件问题 @chaishi ([#2891](https://github.com/Tencent/tdesign-vue/pull/2891))
 - `Cascader`: 选项`disabled`修改后，选项不是禁用状态的问题 #2859 @lxc-orange ([#2872](https://github.com/Tencent/tdesign-vue/pull/2872))
 -  修正部分组件使用 `lodash` 非按需引入导致全量引入的问题 @fennghuang ([#2893](https://github.com/Tencent/tdesign-vue/pull/2893))
