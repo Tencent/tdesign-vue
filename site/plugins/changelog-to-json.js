@@ -79,6 +79,12 @@ function parseMd2Json(logMd) {
     }
   }
 
+  // 处理最后一个版本
+  if (currentEntry) {
+    currentEntry.log.push(currentLogContent.trim());
+    result.push(currentEntry);
+  }
+
   let logJson = result.map((entry) => ({
     ...entry,
     log: entry.log.join('\n'),
@@ -227,17 +233,13 @@ function categorizeLogByComp(log) {
     const matches = logItem.match(/`([^`]+)`/g); // 提取反引号包裹的内容
     const components = matches
       ? Array.from(
-          new Set(
-            matches
-              .map((name) => convert2CamelCase(name.replace(/`/g, '').trim()))
-              .filter((name) => compList.includes(name)),
-          ),
+          new Set(matches.map((name) => name.replace(/`/g, '').trim()).filter((name) => compList.includes(name))),
         ) // 使用 Set 去重
       : [];
 
     const cleanLog = (logItem) =>
-      // 移除冒号前面的组件名字（容错处理中英文情况）
-      logItem.replace(/^[^:：]+[:：]\s*/, '');
+      // 移除冒号前面的组件名字
+      logItem.replace(/^[^:]+[:]\s*/, '');
 
     if (components.length > 0) {
       // 如果一条日志提到了多个组件，则每个组件都插入一条对应的日志

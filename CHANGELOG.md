@@ -406,7 +406,7 @@ docClass: timeline
 ## 🌈 1.8.3 `2023-12-15` 
 ### 🚀 Features
 - `Upload`: 新增支持 `uploadPastedFiles`，用于控制是否允许用户粘贴文件上传，默认允许 @chaishi ([#2966](https://github.com/Tencent/tdesign-vue/pull/2966))
-- Dropdown: 移除对left的item样式特殊处理 @uyarn [common#1677](https://github.com/Tencent/tdesign-common/pull/1677)
+- `Dropdown`: 移除对 left 的 item 样式特殊处理 @uyarn [common#1677](https://github.com/Tencent/tdesign-common/pull/1677)
 ### 🐞 Bug Fixes
 - `DatePicker`: 修复选择同一个月内的日期后，打开面板左右月份一样的问题 @Lyan-u ([#2972](https://github.com/Tencent/tdesign-vue/pull/2972))
 - `Drawer`: 处理点击esc无法关闭的问题 @betavs ([#2967](https://github.com/Tencent/tdesign-vue/pull/2967))
@@ -983,7 +983,7 @@ docClass: timeline
 - `Table`: 修复 IE 上 affix 表头和表尾出现滚动条的问题 @huangpiqiao ([#2216](https://github.com/Tencent/tdesign-vue/pull/2216))
 - `Pagination`: 修复某些情况下 mouseover 触发导致按钮闪烁的问题 @KMethod ([#2214](https://github.com/Tencent/tdesign-vue/pull/2214))
 ### 🚧 Others
-- `tree`: 完善激活态单元测试 @TabSpace ([#2209](https://github.com/Tencent/tdesign-vue/pull/2209))
+- `Tree`: 完善激活态单元测试 @TabSpace ([#2209](https://github.com/Tencent/tdesign-vue/pull/2209))
 
 ## 🌈 1.2.0 `2023-03-02` 
 ### 🚀 Features
@@ -1026,7 +1026,7 @@ docClass: timeline
   - 修复基于 SelectInput 的输入类组件单选可输入模式下回删无法完全清空，及其导致的一系列问题
   - 修复onBlur事件触发时机的问题 @uyarn ([#2176](https://github.com/Tencent/tdesign-vue/pull/2176))
 - `Tabs`: 修复在 tabs 内容区域使用图标大小异常的问题 @uyarn ([#2176](https://github.com/Tencent/tdesign-vue/pull/2176))
-- `Drawer/Dialog`: 修复滚动条检测问题 @honkinglin ([#2173](https://github.com/Tencent/tdesign-vue/pull/2173))
+- `Drawer` / `Dialog`: 修复滚动条检测问题 @honkinglin ([#2173](https://github.com/Tencent/tdesign-vue/pull/2173))
 - `Button`: 修复按钮 block 样式优先级问题 @honkinglin ([common #1152](https://github.com/Tencent/tdesign-common/pull/1152))
 
 ## 🌈 1.1.2 `2023-02-15` 
@@ -1169,7 +1169,7 @@ docClass: timeline
 ### 🐞 Bug Fixes
 - `AutoComplete`: 修复初次聚焦，键盘事件无法上下选中问题 @chaishi ([#2041](https://github.com/Tencent/tdesign-vue/pull/2041))
 - `Image`: @chaishi ([#2043](https://github.com/Tencent/tdesign-vue/pull/2043))
-  - 修复无法使用 loading 自定义加载状态节点问题
+  - 修复无法使用 `loading` 自定义加载状态节点问题
   - 修复无法使用 `error` 自定义错误状态节点问题
   - 修复无法使用 `overlayContent` 自定义浮层问题
   - 修复无法使用 `placeholder` 自定义图片占位问题
@@ -1187,7 +1187,7 @@ docClass: timeline
   - 支持键盘事件：tab 键切换选项，enter 键选中
   - RadioGroup 支持 `allowUncheck`
 - `Table`: @chaishi ([#2016](https://github.com/Tencent/tdesign-vue/pull/2016))
-  - 可编辑单元格，支持使用  `col.edit.on` 透传组件事件
+  - 可编辑单元格，支持使用 `col.edit.on` 透传组件事件
   - 可编辑单元格，支持使用 `validateTableData` 校验处于编辑态的单元格
   - 可编辑单元格，单元格的值 cellValue 不再进行解构处理
   - 新增 `attach`，用于统一设置超出省略浮层、筛选过滤下拉框等元素的挂载元素。如：`attach={() => document.body}`
@@ -1234,7 +1234,7 @@ docClass: timeline
 - `Menu`: 优化弹出型子菜单最大展示高度，兼容大部分情况下正常展示菜单，且不出现全局滚动条 @xiaosansiji ([common #1111](https://github.com/Tencent/tdesign-common/pull/1111))
 ### 🚧 Others
 - `Button`: 移除没有使用到的类名 `t-size-m` @chaishi ([#1977](https://github.com/Tencent/tdesign-vue/pull/1977))
-- `Link/Input`: 去掉非必要的类名 `t-size-m` @chaishi ([#1983](https://github.com/Tencent/tdesign-vue/pull/1983))
+- `Link` / `Input`: 去掉非必要的类名 `t-size-m` @chaishi ([#1983](https://github.com/Tencent/tdesign-vue/pull/1983))
 
 ## 🌈 1.0.2 `2022-12-28` 
 ### 🚀 Features
