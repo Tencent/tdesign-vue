@@ -37,6 +37,7 @@ import TLoading from '../../loading';
 import Link from '../../link';
 import { renderTNodeJSX } from '../../utils/render-tnode';
 import Image from '../../image';
+import { UploadConfig } from '../../config-provider';
 
 export interface ImageFlowListProps extends CommonDisplayFileProps {
   uploadFiles?: (toFiles?: UploadFile[]) => void;
@@ -69,9 +70,8 @@ export default defineComponent({
 
   setup(props: ImageFlowListProps, context) {
     // locale 已经在 useUpload 中统一处理优先级
-    const {
-      locale, uploading, classPrefix, accept,
-    } = toRefs(props);
+    const { uploading, classPrefix, accept } = toRefs(props);
+    const locale = computed(() => props.locale as UploadConfig);
     const uploadPrefix = `${classPrefix.value}-upload`;
 
     const icons = useGlobalIcon({
@@ -150,6 +150,7 @@ export default defineComponent({
       browseIconClick,
       closePreview,
       previewIndexChange,
+      locale,
     };
   },
 
