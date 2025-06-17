@@ -287,7 +287,7 @@ export default defineComponent({
     renderBatchActionCol(index: number) {
       // 第一行数据才需要合并单元格
       return index === 0 ? (
-        <td rowSpan={this.displayFiles.length} class={`${this.uploadPrefix}__flow-table__batch-row`}>
+        <td rowspan={this.displayFiles.length} class={`${this.uploadPrefix}__flow-table__batch-row`}>
           <TButton
             theme="primary"
             variant="text"
@@ -327,7 +327,7 @@ export default defineComponent({
           <tbody>
             {!this.displayFiles.length && (
               <tr>
-                <td colSpan={4}>{this.renderEmpty()}</td>
+                <td colspan={4}>{this.renderEmpty()}</td>
               </tr>
             )}
             {this.displayFiles.map((file, index) => {
