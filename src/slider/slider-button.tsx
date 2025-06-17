@@ -324,9 +324,9 @@ export default mixins(classPrefixMixins, Vue as VueConstructor<SliderInstanceTyp
         style={this.wrapperStyle}
         tabindex="0"
         show-tooltip={this.showTooltip}
-        onmouseenter={this.handleMouseEnter}
-        onmouseleave={this.handleMouseLeave}
-        onmousedown={this.onButtonDown}
+        onMouseenter={this.handleMouseEnter}
+        onMouseleave={this.handleMouseLeave}
+        onMousedown={this.onButtonDown}
         ontouchstart={this.onButtonDown}
         onfocus={this.handleMouseEnter}
         onblur={this.handleMouseLeave}
