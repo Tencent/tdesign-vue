@@ -26,6 +26,7 @@ export function migratePackageJson() {
     vue: '~2.7.14',
     'eslint-plugin-vue': '^9.3.0',
     '@types/estree': '1.0.0',
+    csstype: '^3.1.2',
   };
   writeFileSync('package.json', `${JSON.stringify(pkg, null, 2)}`, 'utf8');
 }
