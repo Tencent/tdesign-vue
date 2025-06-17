@@ -10,6 +10,7 @@ import migrateHelper from './utils/helper.mjs';
 import migrateRenderTNode from './utils/render-tnode.mjs';
 import migrateHooks from './hooks/index.mjs';
 import migrateUpload from './components/upload.mjs';
+import migrateTable from './components/table.mjs';
 
 function run() {
   migrateSingleFile();
@@ -20,6 +21,7 @@ function run() {
   migrateDropdown();
   migrateCard();
   migrateUpload();
+  migrateTable();
   migrateTree();
 
   migrateHelper();
