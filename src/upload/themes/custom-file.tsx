@@ -33,7 +33,6 @@ export default defineComponent({
 
   setup(props) {
     const { accept } = toRefs(props);
-    const { global } = useConfig('upload');
     const drag = useDrag(props.dragEvents, accept);
     const { dragActive } = drag;
 
