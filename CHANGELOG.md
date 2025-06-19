@@ -989,9 +989,8 @@ docClass: timeline
 ### 🚀 Features
 - `Textarea`: 为解决 Textarea 字符限制文案会遮挡文本内容的问题，内容长度限制提示位置由组件内右下角移动到组件之外的右下角，与 tips 在同一行 @duanbaosheng ([#2194](https://github.com/Tencent/tdesign-vue/pull/2194))
 - `Upload`: 自定义上传方法，支持一个请求上传返回多个文件的数据回显 @chaishi ([common #1165](https://github.com/Tencent/tdesign-common/pull/1165))
-- `Image`: @chaishi ([#2182](https://github.com/Tencent/tdesign-vue/pull/2182))
-  - 图片组件支持特殊格式的地址 `.avif` 和 `.webp`
-  - 新增图片全局配置 `globalConfig.image.replaceImageSrc`，用于统一替换图片地址
+- `Image`: 图片组件支持特殊格式的地址 `.avif` 和 `.webp` @chaishi ([#2182](https://github.com/Tencent/tdesign-vue/pull/2182))
+- `ConfigProvider`: 新增 `Image` 全局配置 `globalConfig.image.replaceImageSrc`，用于统一替换图片地址 @chaishi ([#2182](https://github.com/Tencent/tdesign-vue/pull/2182))
 - `Tree`: 支持虚拟滚动 @TabSpace ([#2181](https://github.com/Tencent/tdesign-vue/pull/2181))
 - `Dialog`: 支持插件调用形式接收来自 `ConfigProvider` 的配置 @uyarn ([#2191](https://github.com/Tencent/tdesign-vue/pull/2191))
 - `全局类型`: 新增公共 types 文件的导出  @uyarn ([#2201](https://github.com/Tencent/tdesign-vue/pull/2201))
