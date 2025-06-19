@@ -1,9 +1,9 @@
 import { promises, readdirSync, statSync } from 'fs';
 import path from 'path';
 
-const outputPath = path.resolve(__dirname, '../../_site/changelog.json');
-const changelogPath = path.resolve(__dirname, '../../CHANGELOG.md');
-const componentsDir = path.resolve(__dirname, '../../src');
+const outputPath = path.resolve(__dirname, '../../../_site/changelog.json');
+const changelogPath = path.resolve(__dirname, '../../../CHANGELOG.md');
+const componentsDir = path.resolve(__dirname, '../../../src');
 
 const EXCLUDED_DIR = ['_common', 'hooks', 'locale', 'style', 'util'];
 const COMP_LIST = getComponentList();
