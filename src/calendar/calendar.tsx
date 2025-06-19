@@ -440,7 +440,7 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
       const d = dayjs(cellData.date);
       if (this.multiple) {
         if (this.curDateList.find((item) => item.isSame(d))) {
-          this.curDateList = remove(this.curDateList, (item) => !item.isSame(d));
+          this.curDateList = this.curDateList.filter((item) => item.isSame(d));
         } else {
           this.curDateList.push(d);
         }
