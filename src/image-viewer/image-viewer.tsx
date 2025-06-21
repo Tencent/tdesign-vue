@@ -150,12 +150,12 @@ export default defineComponent({
 
     const containerRef = ref();
     const mountContent = () => {
-      if (containerRef) {
+      if (containerRef.value) {
         containerRef.value.mountContent();
       }
     };
     const unmountContent = () => {
-      if (containerRef) {
+      if (containerRef.value) {
         containerRef.value.unmountContent();
       }
     };

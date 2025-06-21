@@ -193,7 +193,7 @@ export default mixins(
         <div
           class={this.drawerClasses}
           style={{ zIndex: this.zIndex }}
-          onkeydown={this.onKeyDown}
+          onKeydown={this.onKeyDown}
           v-transfer-dom={this.computedAttach}
           ref="drawerContainer"
           tabindex={0}
