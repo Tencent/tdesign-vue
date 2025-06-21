@@ -2,7 +2,8 @@ import path from 'path';
 import { defineConfig } from 'vite';
 import { createVuePlugin } from 'vite-plugin-vue2';
 import ScriptSetup from 'unplugin-vue2-script-setup/vite';
-import tdocPlugin from './plugin-tdoc';
+import changelog2Json from './plugins/changelog-to-json';
+import tdocPlugin from './plugins/plugin-tdoc';
 
 const publicPathMap = {
   preview: '/',
@@ -56,6 +57,7 @@ export default ({ mode }) =>
         jsx: true,
       }),
       tdocPlugin(),
+      changelog2Json(),
       ScriptSetup({}),
       disableTreeShakingPlugin(['style/']),
     ],
