@@ -33,10 +33,19 @@ function migrateTr() {
   }
 }
 function migrateFilterController() {
-  const filePath = 'src/table/filter-controller';
+  const filePath = 'src/table/filter-controller.tsx';
   let content = readFileSync(filePath, 'utf8');
   if (content.includes('setup(props: TableFilterControllerProps')) {
     content = content.replace('setup(props: TableFilterControllerProps', 'setup(props');
+    writeFileSync(filePath, content, 'utf8');
+  }
+}
+function migrateEditableCell() {
+  const filePath = 'src/table/editable-cell.tsx';
+  let content = readFileSync(filePath, 'utf8');
+  if (content.includes('this.col.edit')) {
+    content = content.replace('render() {', 'render() {\nconst col = this.col as PrimaryTableCol<TableRowData>;');
+    content = content.replaceAll('this.col.edit', 'col.edit');
     writeFileSync(filePath, content, 'utf8');
   }
 }
@@ -47,4 +56,5 @@ export default function migrateTable() {
   migrateTfoot();
   migrateTr();
   migrateFilterController();
+  migrateEditableCell();
 }
