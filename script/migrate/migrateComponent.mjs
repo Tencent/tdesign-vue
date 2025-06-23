@@ -13,6 +13,7 @@ import migrateUpload from './components/upload.mjs';
 import migrateTable from './components/table.mjs';
 import migrateSelect from './components/select.mjs';
 import migrateRangeInput from './components/range-input.mjs';
+import migrateSelectInput from './components/select-input.mjs';
 
 function run() {
   migrateSingleFile();
@@ -24,6 +25,7 @@ function run() {
   migrateCard();
   migrateUpload();
   migrateSelect();
+  migrateSelectInput();
   migrateTable();
   migrateTree();
   migrateRangeInput();
