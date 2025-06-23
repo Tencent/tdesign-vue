@@ -32,9 +32,19 @@ function migrateTr() {
     writeFileSync(filePath, content, 'utf8');
   }
 }
+function migrateFilterController() {
+  const filePath = 'src/table/filter-controller';
+  let content = readFileSync(filePath, 'utf8');
+  if (content.includes('setup(props: TableFilterControllerProps')) {
+    content = content.replace('setup(props: TableFilterControllerProps', 'setup(props');
+    writeFileSync(filePath, content, 'utf8');
+  }
+}
+
 export default function migrateTable() {
   migrateThead();
   migrateTbody();
   migrateTfoot();
   migrateTr();
+  migrateFilterController();
 }
