@@ -279,7 +279,12 @@ docClass: timeline
 ### 🚀 Features
 
 - `Table`: 新增支持 API `thClassName`，用于需要在列表头自定义类名的场景 @theBestVayne ([#3238](https://github.com/Tencent/tdesign-vue/pull/3238))
-- `Borderless`: `Input`、`AutoComplete`、`ColorPicker`、`DatePicker`、`TagInput`、`TimePicker` 新增 `borderless` API，支持无边框模式 @liweijie0812 ([#3249](https://github.com/Tencent/tdesign-vue/pull/3249))
+- `Input`: 新增 `borderless` API，支持无边框模式 @liweijie0812 ([#3249](https://github.com/Tencent/tdesign-vue/pull/3249))
+- `AutoComplete`: 新增 `borderless` API，支持无边框模式 @liweijie0812 ([#3249](https://github.com/Tencent/tdesign-vue/pull/3249))
+- `ColorPicker`: 新增 `borderless` API，支持无边框模式 @liweijie0812 ([#3249](https://github.com/Tencent/tdesign-vue/pull/3249))
+- `DatePicker`: 新增 `borderless` API，支持无边框模式 @liweijie0812 ([#3249](https://github.com/Tencent/tdesign-vue/pull/3249))
+- `TagInput`: 新增 `borderless` API，支持无边框模式 @liweijie0812 ([#3249](https://github.com/Tencent/tdesign-vue/pull/3249))
+- `TimePicker`: 新增 `borderless` API，支持无边框模式 @liweijie0812 ([#3249](https://github.com/Tencent/tdesign-vue/pull/3249))
 - `Description`: layout 类型定义调整为字符串多类型 @liweijie0812 ([#3252](https://github.com/Tencent/tdesign-vue/pull/3252))
 
 ### 🐞 Bug Fixes
@@ -420,7 +425,6 @@ docClass: timeline
 - # Tabs: 调整激活 Tab 下划线与 TabHeader 边框的层级关系 @uyarn
 - `Table`: 可筛选表格，单选/多选筛选条件,支持搜索选项 @chaishi ([#3098](https://github.com/Tencent/tdesign-vue/pull/3098))
 - Tabs: 调整激活 Tab 下划线与 TabHeader 边框的层级关系 @uyarn
-  > > > > > > > 1dc422327 (feat(site): add a changelog for each component page (#3627))
 
 ### 🐞 Bug Fixes
 
@@ -586,22 +590,6 @@ docClass: timeline
 
 - `ImageViewer`: 新增支持 `closeOnEscKeydown` ，用于控制是否允许 ESC 键关闭预览 @chaishi ([#2890](https://github.com/Tencent/tdesign-vue/pull/2890))
 - `Upload`: @chaishi
-  <<<<<<< HEAD
-  - 批量文件上传支持在列表中显示上传失败的原因，[tdesign-vue-next#2518](https://github.com/Tencent/tdesign-vue-next/issues/2518) ([#2891](https://github.com/Tencent/tdesign-vue/pull/2891))
-  - 支持使用 `fileListDisplay=null` 隐藏文件或文件列表显示 ([#2889](https://github.com/Tencent/tdesign-vue/pull/2889))
-  - 图片预览功能，新增支持透传图片预览全部属性 `imageViewerProps`，[tdesign-vue-next#2928](https://github.com/Tencent/tdesign-vue-next/issues/2928) ([#2891](https://github.com/Tencent/tdesign-vue/pull/2891))
-  - ⚠️ 新增图片上传大小超出限制提醒，有额外单独实现此功能的业务需注意是否存在重复显示大小限制提醒问题，[tdesign-vue-next#2736](https://github.com/Tencent/tdesign-vue-next/issues/2736) ([#2891](https://github.com/Tencent/tdesign-vue/pull/2891))
-  - 多文件/图片上传场景下，`autoUpload=false` 时，支持使用 Props 属性/函数/插槽等方法自定义上传按钮和取消上传按钮，[tdesign-vue-next#2469](https://github.com/Tencent/tdesign-vue-next/issues/2469) ([#2891](https://github.com/Tencent/tdesign-vue/pull/2891))
-  - 多文件/图片上传场景下，`autoUpload=false` 时，区分已上传状态和待上传状态 [tdesign-vue-next#2518](https://github.com/Tencent/tdesign-vue-next/issues/2518) ([#2891](https://github.com/Tencent/tdesign-vue/pull/2891))
-- `Select`:
-  - `collapsedItems` 属性或插槽新增参数 `onClose`，用于删除标签 @ubloglab ([#2863](https://github.com/Tencent/tdesign-vue/pull/2863))
-
-### 🐞 Bug Fixes
-
-- `Tree`
-  - 解决 `watch` 回调时间过迟的问题 @TabSpace ([#2873](https://github.com/Tencent/tdesign-vue/pull/2873))
-  - 提供获取树结构数据的 API getTreeData @TabSpace ([#2888](https://github.com/Tencent/tdesign-vue/pull/2888))
-- # `Upload`: 修复 `max=1 multiple=false` 情况下，无法替换上传文件问题，[tdesign-vue-next#2909](https://github.com/Tencent/tdesign-vue-next/issues/2909) @chaishi ([#2891](https://github.com/Tencent/tdesign-vue/pull/2891))
   - 批量文件上传支持在列表中显示上传失败的原因 ([#2891](https://github.com/Tencent/tdesign-vue/pull/2891))
   - 支持使用 `fileListDisplay=null` 隐藏文件或文件列表显示 ([#2889](https://github.com/Tencent/tdesign-vue/pull/2889))
   - 图片预览功能，新增支持透传图片预览全部属性 `imageViewerProps` ([#2891](https://github.com/Tencent/tdesign-vue/pull/2891))
@@ -623,6 +611,7 @@ docClass: timeline
 - `Slider`: 修复 step 小于 1 无法正常使用的问题 @uyarn ([#2894](https://github.com/Tencent/tdesign-vue/pull/2894))
 - `Link`: 修复样式居中的缺陷 @uyarn ([#2894](https://github.com/Tencent/tdesign-vue/pull/2894))
 - `Checkbox`: 修复 value.splice 无法设置选中项变化问题 @chaishi
+- `lodash`: 修复非按需引入导致全量引入的问题 @fennghuang ([#2893](https://github.com/Tencent/tdesign-vue/pull/2893))
 
 ## 🌈 1.7.1 `2023-10-20`
 
@@ -1384,7 +1373,8 @@ docClass: timeline
   - 修复基于 SelectInput 的输入类组件单选可输入模式下回删无法完全清空，及其导致的一系列问题
   - 修复 onBlur 事件触发时机的问题 @uyarn ([#2176](https://github.com/Tencent/tdesign-vue/pull/2176))
 - `Tabs`: 修复在 tabs 内容区域使用图标大小异常的问题 @uyarn ([#2176](https://github.com/Tencent/tdesign-vue/pull/2176))
-- `Drawer` / `Dialog`: 修复滚动条检测问题 @honkinglin ([#2173](https://github.com/Tencent/tdesign-vue/pull/2173))
+- `Drawer`: 修复滚动条检测问题 @honkinglin ([#2173](https://github.com/Tencent/tdesign-vue/pull/2173))
+- `Dialog`: 修复滚动条检测问题 @honkinglin ([#2173](https://github.com/Tencent/tdesign-vue/pull/2173))
 - `Button`: 修复按钮 block 样式优先级问题 @honkinglin ([common #1152](https://github.com/Tencent/tdesign-common/pull/1152))
 
 ## 🌈 1.1.2 `2023-02-15`
