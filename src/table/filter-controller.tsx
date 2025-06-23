@@ -171,6 +171,7 @@ export default defineComponent({
             });
           });
         }
+        // vue27:ts-ignore
         const filter = this.column.filter || {};
         return (
           <component
