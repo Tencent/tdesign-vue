@@ -12,6 +12,7 @@ import migrateHooks from './hooks/index.mjs';
 import migrateUpload from './components/upload.mjs';
 import migrateTable from './components/table.mjs';
 import migrateSelect from './components/select.mjs';
+import migrateRangeInput from './components/range-input.mjs';
 
 function run() {
   migrateSingleFile();
@@ -25,6 +26,7 @@ function run() {
   migrateSelect();
   migrateTable();
   migrateTree();
+  migrateRangeInput();
 
   migrateHelper();
   migrateRenderTNode();
