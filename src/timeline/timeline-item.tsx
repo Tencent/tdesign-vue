@@ -130,6 +130,7 @@ export default defineComponent({
     }
 
     return (
+      // vue27:ts-ignore
       <li class={getItemClassName} style={style}>
         {mode === 'alternate' && labelNode && <div class={labelClassName}>{labelNode}</div>}
         <div class={`${classPrefix}-timeline-item__wrapper`}>

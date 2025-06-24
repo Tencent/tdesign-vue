@@ -67,6 +67,7 @@ export default defineComponent({
     }
     const { timelineClassName, style } = this;
     return (
+      // vue27:ts-ignore
       <ul class={timelineClassName} style={style}>
         {defaultSlot}
       </ul>
