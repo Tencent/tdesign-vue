@@ -181,6 +181,7 @@ export default defineComponent({
           onLoad={this.handleLoad}
           class={this.imageClasses}
           alt={this.alt}
+          // vue27:ts-ignore
           referrerpolicy={this.referrerpolicy}
         />
       );
@@ -200,6 +201,7 @@ export default defineComponent({
         onMouseenter={this.handleToggleOverlay}
         onMouseleave={this.handleToggleOverlay}
         {...this.rest}
+        // vue27:ts-ignore
         on={this.$listeners}
       >
         {this.renderPlaceholder()}
