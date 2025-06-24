@@ -130,7 +130,7 @@ export default mixins(classPrefixMixins).extend({
   },
   render(): VNode {
     const {
-      loading, disabled, content, nodeClasses, classes, toggle, contentClasses,
+      loading, content, nodeClasses, classes, toggle, contentClasses,
     } = this;
 
     let switchContent: TNodeReturnValue;
