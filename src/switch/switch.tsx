@@ -143,7 +143,7 @@ export default mixins(classPrefixMixins).extend({
     }
 
     return (
-      <div class={classes} disabled={disabled} onClick={toggle}>
+      <div class={classes} onClick={toggle}>
         <span class={nodeClasses}>{loadingContent}</span>
         <div class={contentClasses}>{switchContent}</div>
       </div>
