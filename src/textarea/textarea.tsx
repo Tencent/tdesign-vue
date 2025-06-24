@@ -248,6 +248,7 @@ export default mixins(Vue as VueConstructor<Textarea>, classPrefixMixins).extend
         [this.commonStatusClassName.focused]: this.focused,
         [`${this.classPrefix}-resize-none`]: typeof this.autosize === 'object',
       },
+      'narrow-scrollbar',
     ];
     const tips = renderTNodeJSX(this, 'tips');
 
