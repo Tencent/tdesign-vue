@@ -2308,7 +2308,7 @@ exports[`csr snapshot test > csr test ./src/auto-complete/_example/trigger-eleme
       class="t-textarea"
     >
       <textarea
-        class="t-textarea__inner"
+        class="t-textarea__inner narrow-scrollbar"
         placeholder="自定义联想词触发元素"
         unselectable="off"
       />
@@ -34233,7 +34233,7 @@ exports[`csr snapshot test > csr test ./src/comment/_example/reply-form.vue 1`] 
             data-v-02d347b2=""
           >
             <textarea
-              class="t-textarea__inner"
+              class="t-textarea__inner narrow-scrollbar"
               placeholder="请输入内容"
               unselectable="off"
             />
@@ -48608,7 +48608,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/base.vue 1`] = `
           data-v-2450e2c3=""
         >
           <textarea
-            class="t-textarea__inner"
+            class="t-textarea__inner narrow-scrollbar"
             placeholder="请用一句话介绍自己"
             unselectable="off"
           />
@@ -49953,7 +49953,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
               clearable=""
             >
               <textarea
-                class="t-textarea__inner"
+                class="t-textarea__inner narrow-scrollbar"
                 clearable=""
                 placeholder="请用一句话介绍自己"
                 unselectable="off"
@@ -53752,7 +53752,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
           data-v-064ce350=""
         >
           <textarea
-            class="t-textarea__inner"
+            class="t-textarea__inner narrow-scrollbar"
             placeholder="请用一句话介绍自己"
             unselectable="off"
           />
@@ -60949,7 +60949,7 @@ exports[`csr snapshot test > csr test ./src/input/_example/textarea.vue 1`] = `
       class="t-textarea"
     >
       <textarea
-        class="t-textarea__inner"
+        class="t-textarea__inner narrow-scrollbar"
         placeholder="请输入内容"
         unselectable="off"
       />
@@ -107632,7 +107632,7 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/base.vue 1`] = `
       class="t-textarea"
     >
       <textarea
-        class="t-textarea__inner"
+        class="t-textarea__inner narrow-scrollbar"
         name="description"
         placeholder="请输入描述文案"
         unselectable="off"
@@ -107646,7 +107646,7 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/base.vue 1`] = `
       class="t-textarea"
     >
       <textarea
-        class="t-textarea__inner"
+        class="t-textarea__inner narrow-scrollbar"
         name="description"
         placeholder="请输入文案，高度可自适应；autosize=true"
         unselectable="off"
@@ -107660,7 +107660,7 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/base.vue 1`] = `
       class="t-textarea"
     >
       <textarea
-        class="t-textarea__inner t-resize-none"
+        class="t-textarea__inner t-resize-none narrow-scrollbar"
         name="description"
         placeholder="请输入文案，高度可自适应，最小3行，最大5行；autosize={minRows: 3, maxRows: 5}"
         unselectable="off"
@@ -107675,7 +107675,7 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/events.vue 1`] = `
   class="t-textarea"
 >
   <textarea
-    class="t-textarea__inner"
+    class="t-textarea__inner narrow-scrollbar"
     placeholder="请输入"
     unselectable="off"
   />
@@ -107694,7 +107694,7 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/maxlength.vue 1`] 
       class="t-textarea"
     >
       <textarea
-        class="t-textarea__inner"
+        class="t-textarea__inner narrow-scrollbar"
         placeholder="请输入描述文案，文本长度最多20，maxlength=20"
         unselectable="off"
       />
@@ -107721,7 +107721,7 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/maxlength.vue 1`] 
       class="t-textarea"
     >
       <textarea
-        class="t-textarea__inner"
+        class="t-textarea__inner narrow-scrollbar"
         placeholder="请输入描述文案，最多20字符（一个汉字占两个字符长度），maxcharacter=20"
         unselectable="off"
       />
@@ -107751,7 +107751,7 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/type.vue 1`] = `
       class="t-textarea t-is-disabled"
     >
       <textarea
-        class="t-textarea__inner t-is-disabled"
+        class="t-textarea__inner t-is-disabled narrow-scrollbar"
         disabled="disabled"
         unselectable="off"
       />
@@ -107764,7 +107764,7 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/type.vue 1`] = `
       class="t-textarea t-is-readonly"
     >
       <textarea
-        class="t-textarea__inner"
+        class="t-textarea__inner narrow-scrollbar"
         readonly="readonly"
         unselectable="on"
       />
@@ -107777,7 +107777,7 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/type.vue 1`] = `
       class="t-textarea"
     >
       <textarea
-        class="t-textarea__inner"
+        class="t-textarea__inner narrow-scrollbar"
         unselectable="off"
       />
       <div
@@ -107798,7 +107798,7 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/type.vue 1`] = `
       class="t-textarea"
     >
       <textarea
-        class="t-textarea__inner t-is-success"
+        class="t-textarea__inner t-is-success narrow-scrollbar"
         unselectable="off"
       />
       <div
@@ -107819,7 +107819,7 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/type.vue 1`] = `
       class="t-textarea"
     >
       <textarea
-        class="t-textarea__inner t-is-warning"
+        class="t-textarea__inner t-is-warning narrow-scrollbar"
         unselectable="off"
       />
       <div
@@ -107840,7 +107840,7 @@ exports[`csr snapshot test > csr test ./src/textarea/_example/type.vue 1`] = `
       class="t-textarea"
     >
       <textarea
-        class="t-textarea__inner t-is-error"
+        class="t-textarea__inner t-is-error narrow-scrollbar"
         unselectable="off"
       />
       <div
