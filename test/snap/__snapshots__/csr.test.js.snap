@@ -37695,7 +37695,6 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/pagination.
   </div>
   <div
     class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
-    disabled="disabled"
   >
     <svg
       class="t-icon t-icon-chevron-left"
@@ -76383,7 +76382,6 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/customizable.vue
     </div>
     <div
       class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
-      disabled="disabled"
     >
       <svg
         class="t-icon t-icon-chevron-left"
@@ -76575,7 +76573,6 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/disabled.vue 1`]
     </div>
     <div
       class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
-      disabled="disabled"
     >
       <svg
         class="t-icon t-icon-chevron-left"
@@ -76642,7 +76639,6 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/disabled.vue 1`]
     </ul>
     <div
       class="t-pagination__btn t-pagination__btn-next t-is-disabled"
-      disabled="disabled"
     >
       <svg
         class="t-icon t-icon-chevron-right"
@@ -76887,7 +76883,6 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/jump.vue 1`] = `
     </div>
     <div
       class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
-      disabled="disabled"
     >
       <svg
         class="t-icon t-icon-chevron-left"
@@ -77056,7 +77051,6 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/mini.vue 1`] = `
     </div>
     <div
       class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
-      disabled="disabled"
     >
       <svg
         class="t-icon t-icon-chevron-left"
@@ -77521,7 +77515,6 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/page-num.vue 1`]
     </div>
     <div
       class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
-      disabled="disabled"
     >
       <svg
         class="t-icon t-icon-chevron-left"
@@ -77895,7 +77888,6 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/simple.vue 1`] =
     </div>
     <div
       class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
-      disabled="disabled"
     >
       <svg
         class="t-icon t-icon-chevron-left"
@@ -78029,7 +78021,6 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/simple-mini.vue 
   </div>
   <div
     class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
-    disabled="disabled"
   >
     <svg
       class="t-icon t-icon-chevron-left"
@@ -97517,7 +97508,6 @@ exports[`csr snapshot test > csr test ./src/switch/_example/status.vue 1`] = `
   >
     <div
       class="t-switch t-size-l t-is-disabled"
-      disabled="disabled"
     >
       <span
         class="t-switch__handle t-is-disabled"
@@ -98407,7 +98397,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
             </div>
             <div
               class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
-              disabled="disabled"
             >
               <svg
                 class="t-icon t-icon-chevron-left"
@@ -114187,7 +114176,6 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/pagination.vue 1`]
       >
         <div
           class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
-          disabled="disabled"
         >
           <svg
             class="t-icon t-icon-chevron-left"
