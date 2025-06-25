@@ -264,6 +264,7 @@ export default defineComponent({
           multiple={this.multiple}
           accept={this.accept}
           hidden
+          // vue27:ts-ignore
           attrs={this.inputAttributes}
         />
         {['file', 'file-input'].includes(this.theme) && !this.draggable && this.getNormalFileNode()}

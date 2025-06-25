@@ -65,6 +65,7 @@ export default defineComponent({
     if (reverse) {
       defaultSlot.reverse();
     }
+    // vue27:ts-ignore
     const { timelineClassName, style } = this;
     return (
       <ul class={timelineClassName} style={style}>
