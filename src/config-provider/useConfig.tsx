@@ -2,27 +2,18 @@ import {
   inject, h, ref, computed,
 } from '@vue/composition-api';
 import { GlobalConfigProvider, defaultGlobalConfig } from './context';
+import { t as commonT } from '../_common/js/global-config/t';
 
 // 处理正则表达式
 const t = function <T> (pattern: T, ...args: any[]) {
-  const [data] = args;
-  if (typeof pattern === 'string') {
-    if (!data) return pattern;
-    const regular = /\{\s*([\w-]+)\s*\}/g;
-    const translated = pattern.replace(regular, (match, key) => {
-      if (data) {
-        return String(data[key]);
-      }
-      return '';
-    });
-    return translated;
-  }
   if (typeof pattern === 'function') {
     // 重要：组件的渲染必须存在参数 h，不能移除
     if (!args.length) return pattern(h);
     return pattern(...args);
   }
-  return '';
+  // 使用公共翻译函数，以支持复数处理
+  // @ts-expect-error be passed to rest parameter
+  return commonT(pattern, ...args);
 };
 
 /**
