@@ -6,7 +6,6 @@ import { isFunction, omit } from 'lodash-es';
 import { ImageErrorIcon, ImageIcon } from 'tdesign-icons-vue';
 import observe from '../_common/js/utils/observe';
 import { useConfig } from '../config-provider/useConfig';
-import { TdImageProps } from './type';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import Space from '../space';
@@ -16,7 +15,7 @@ export default defineComponent({
   name: 'TImage',
   components: { Space },
   props,
-  setup(props: TdImageProps, { emit }) {
+  setup(props, { emit }) {
     const { onLoad, onError } = props;
 
     const {
@@ -108,7 +107,7 @@ export default defineComponent({
     const io = ref(null);
 
     onMounted(() => {
-      if (!lazy || !imageRef.value) return;
+      if (!lazy.value || !imageRef.value) return;
       io.value = observe(imageRef.value as HTMLElement, null, handleLoadImage as Function, 0);
     });
 

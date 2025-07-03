@@ -2,7 +2,7 @@ import path from 'path';
 import { defineConfig } from 'vite';
 import { createVuePlugin } from 'vite-plugin-vue2';
 import vueJsx from '@vitejs/plugin-vue2-jsx';
-import tdocPlugin from './plugin-tdoc';
+import tdocPlugin from './plugins/plugin-tdoc';
 
 const publicPathMap = {
   preview: '/',

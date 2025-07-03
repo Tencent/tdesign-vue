@@ -40,8 +40,8 @@ const defaultProps = {
   },
   showOverlay: Boolean,
   closeBtn: props.closeBtn,
-  title: String,
   imageReferrerpolicy: props.imageReferrerpolicy,
+  title: String as PropType<TdImageViewerProps['title']>,
 };
 
 export default defineComponent({

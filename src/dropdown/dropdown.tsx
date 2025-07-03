@@ -1,6 +1,6 @@
 import { defineComponent, ref, computed } from 'vue';
 import { omit } from 'lodash-es';
-import Popup, { PopupProps, PopupVisibleChangeContext } from '../popup/index';
+import Popup, { PopupVisibleChangeContext } from '../popup/index';
 import { defaultVisibleDelay } from '../popup/utils';
 import DropdownMenu from './dropdown-menu';
 import { DropdownOption, TdDropdownProps } from './type';
@@ -59,7 +59,7 @@ export default defineComponent({
       disabled: this.disabled,
       placement: this.placement,
       trigger: this.trigger,
-      ...omit(this.popupProps as PopupProps, ['onVisibleChange', 'on-visible-change']),
+      ...omit(this.popupProps as TdDropdownProps['popupProps'], ['onVisibleChange', 'on-visible-change']),
       overlayInnerClassName: [
         this.dropdownClass,
         (this.popupProps as TdDropdownProps['popupProps'])?.overlayInnerClassName,

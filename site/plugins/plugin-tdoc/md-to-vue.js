@@ -3,9 +3,9 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import camelCase from 'camelcase';
-import { compileUsage, getGitTimestamp } from '../../src/_common/docs/compile';
+import { compileUsage, getGitTimestamp } from '../../../src/_common/docs/compile';
 
-import testCoverage from '../test-coverage';
+import testCoverage from '../../test-coverage';
 
 const DEFAULT_TABS = [
   { tab: 'demo', name: '示例' },

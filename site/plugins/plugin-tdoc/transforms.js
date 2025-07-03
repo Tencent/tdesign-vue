@@ -19,8 +19,8 @@ export default {
 
     // 统一换成 common 公共文档内容
     if (fileName && source.includes(':: BASE_DOC ::')) {
-      const localeDocPath = path.resolve(__dirname, `../../src/_common/docs/web/api/${fileName}`);
-      const defaultDocPath = path.resolve(__dirname, `../../src/_common/docs/web/api/${componentName}.md`);
+      const localeDocPath = path.resolve(__dirname, `../../../src/_common/docs/web/api/${fileName}`);
+      const defaultDocPath = path.resolve(__dirname, `../../../src/_common/docs/web/api/${componentName}.md`);
 
       let baseDoc = '';
       if (fs.existsSync(localeDocPath)) {
