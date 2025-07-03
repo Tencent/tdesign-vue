@@ -5,6 +5,15 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.12.1 `2025-07-03` 
+### 🚀 Features
+- `locale`: 支持内置多语言的英文版本的单复数场景正常展示 @YunYouJun ([#3641](https://github.com/Tencent/tdesign-vue/pull/3641))
+### 🐞 Bug Fixes
+- `ImageViewer`: 修复图片预览操作栏多语言失效的问题 @uyarn ([#3636](https://github.com/Tencent/tdesign-vue/pull/3636))
+- `Textarea`: 优化 `scrollbar` 样式 @RSS1102([#3639](https://github.com/Tencent/tdesign-vue/pull/3639))
+
+
+
 ## 🌈 1.12.0 `2025-06-11` 
 ### 🚀 Features
 - `ColorPicker`: 自动根据「触发器 / 最近颜色 / 预设颜色」的色值进行切换单色和渐变模式；只开启渐变模式时，过滤「预设颜色 / 当前颜色」中的非渐变色值；新增 format `HEX8`，移除 `HSB`；使用渐变模式的业务请注意此变更 ⚠️  @RylanBot ([#3572](https://github.com/Tencent/tdesign-vue/pull/3572))
