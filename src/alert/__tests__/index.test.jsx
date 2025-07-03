@@ -23,10 +23,10 @@ describe('Alert', () => {
       expect(wrapper.find('.t-alert__description').text()).toBe('text');
     });
 
-    it(':close', () => {
+    it(':closeBtn', () => {
       const wrapper = mount({
         render() {
-          return <Alert close>text</Alert>;
+          return <Alert closeBtn>text</Alert>;
         },
       });
       const close = wrapper.find('.t-alert__close');
@@ -178,7 +178,7 @@ describe('Alert', () => {
       const wrapper = mount({
         render() {
           return (
-            <Alert close onClose={fn}>
+            <Alert closeBtn onClose={fn}>
               text
             </Alert>
           );
