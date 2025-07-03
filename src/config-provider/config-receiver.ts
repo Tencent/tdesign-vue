@@ -3,6 +3,7 @@ import { mergeWith } from 'lodash-es';
 import { GlobalIconConfig } from 'tdesign-icons-vue';
 import { defaultGlobalConfig } from './context';
 import { GlobalConfigProvider, AnimationType, AttachNodeComponent } from './type';
+import { t as commonT } from '../_common/js/global-config/t';
 
 import type { AttachNode } from '../common';
 
@@ -78,22 +79,11 @@ export default function getConfigReceiverMixins<BasicComponent extends Vue, C ex
     },
 
     methods: {
-      t<T>(pattern: T, placement?: Placement): string {
-        if (typeof pattern === 'string') {
-          if (!placement) return pattern;
-          const regexp = /\{\s*([\w-]+)\s*\}/g;
-          const translated = pattern.replace(regexp, (match, key) => {
-            if (placement) {
-              return String(placement[key]);
-            }
-            return '';
-          });
-          return translated;
-        }
+      t<T>(pattern: T, placement?: Placement | number): string {
         if (typeof pattern === 'function') {
           return pattern(placement);
         }
-        return '';
+        return commonT(pattern as string, placement as any);
       },
     },
   });

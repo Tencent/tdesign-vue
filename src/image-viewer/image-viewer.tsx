@@ -10,11 +10,12 @@ import TImageItem from './base/ImageItem';
 import TImageViewerModal from './base/ImageViewerModal';
 import useVModel from '../hooks/useVModel';
 import useDefaultValue from '../hooks/useDefaultValue';
-import { usePrefixClass } from '../hooks/useConfig';
+import { usePrefixClass, useConfig } from '../hooks/useConfig';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import { setTransform } from '../utils/helper';
 import { TdImageViewerProps } from './type';
 import { useMirror, useRotate, useScale } from './hooks';
+
 import { downloadFile, formatImages, getOverlay } from './utils';
 import { EVENT_CODE, DEFAULT_IMAGE_SCALE } from './const';
 import Image from '../image';
@@ -29,6 +30,8 @@ export default defineComponent({
   setup(props, { emit, listeners }) {
     const classPrefix = usePrefixClass();
     const COMPONENT_NAME = usePrefixClass('image-viewer');
+    const { globalConfig } = useConfig('imageViewer');
+
     const isExpand = ref(true);
     const showOverlayValue = computed(() => getOverlay(props));
 
@@ -222,6 +225,7 @@ export default defineComponent({
       containerRef,
       keydownHandler,
       divRef,
+      globalConfig,
     };
   },
   methods: {
@@ -345,6 +349,7 @@ export default defineComponent({
             rotateHandler={this.onRotate}
             scale={this.scale}
             currentImage={this.currentImage}
+            globalConfig={this.globalConfig}
           />
           <TImageItem
             scale={this.scale}
