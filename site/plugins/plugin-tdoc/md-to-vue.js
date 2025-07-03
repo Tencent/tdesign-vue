@@ -175,17 +175,17 @@ async function customRender({ source, file, md }) {
   };
 
   // 渲染 live demo
-  // if (pageData.usage && pageData.isComponent) {
-  //   const usageObj = compileUsage({
-  //     componentName,
-  //     usage: pageData.usage,
-  //     demoPath: path.posix.resolve(__dirname, `../../src/${componentName}/_usage/index.vue`),
-  //   });
-  //   if (usageObj) {
-  //     mdSegment.usage = usageObj;
-  //     demoMd = `${usageObj.markdownStr} ${demoMd}`;
-  //   }
-  // }
+  if (pageData.usage && pageData.isComponent) {
+    const usageObj = compileUsage({
+      componentName,
+      usage: pageData.usage,
+      demoPath: path.posix.resolve(__dirname, `../../../src/${componentName}/_usage/index.vue`),
+    });
+    if (usageObj) {
+      mdSegment.usage = usageObj;
+      demoMd = `${usageObj.markdownStr} ${demoMd}`;
+    }
+  }
 
   if (pageData.isComponent) {
     mdSegment.demoMd = md.render.call(
@@ -205,7 +205,7 @@ async function customRender({ source, file, md }) {
 
   // 设计指南内容 不展示 design Tab 则不解析
   if (pageData.isComponent && pageData.tdDocTabs.some((item) => item.tab === 'design')) {
-    const designDocPath = path.resolve(__dirname, `../../src/_common/docs/web/design/${componentName}.md`);
+    const designDocPath = path.resolve(__dirname, `../../../src/_common/docs/web/design/${componentName}.md`);
 
     if (fs.existsSync(designDocPath)) {
       const designDocLastUpdated =
