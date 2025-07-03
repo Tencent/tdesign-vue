@@ -79,11 +79,12 @@ export default function getConfigReceiverMixins<BasicComponent extends Vue, C ex
     },
 
     methods: {
-      t<T>(pattern: T, placement?: Placement | number): string {
+      t<T>(pattern: T, ...args: any[]) {
         if (typeof pattern === 'function') {
-          return pattern(placement);
+          return pattern(...args);
         }
-        return commonT(pattern as string, placement as any);
+        // @ts-expect-error
+        return commonT(pattern, ...args);
       },
     },
   });
