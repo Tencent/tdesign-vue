@@ -158,6 +158,7 @@ export default defineComponent({
             label: this.label,
             valueDisplay: renderValueDisplay,
             suffix: this.suffix,
+            // vue27:ts-ignore
             tag: this.tag,
             readonly: this.readonly,
             disabled: isDisabled,
