@@ -38,7 +38,7 @@ const routes = [
     component: () => import('./components/demo-page.vue'),
   },
   {
-    name: 'demos',
+    name: 'demo',
     path: '/vue/demos/:componentName/:demoName',
     component: () => import('./components/demo-page.vue'),
   },
