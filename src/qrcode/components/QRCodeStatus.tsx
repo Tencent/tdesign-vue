@@ -7,9 +7,7 @@ import { QRCodeStatusProps } from './props';
 
 export default defineComponent({
   name: 'QRCodeStatus',
-  props: {
-    ...QRCodeStatusProps,
-  },
+  props: QRCodeStatusProps,
   setup() {
     const classPrefix = usePrefixClass();
 
