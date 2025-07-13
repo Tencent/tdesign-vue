@@ -1,6 +1,4 @@
-import {
-  computed, defineComponent, ref, watchEffect, onMounted,
-} from '@vue/composition-api';
+import { computed, defineComponent, ref } from '@vue/composition-api';
 import { QRCodeSubComponentProps } from './props';
 import {
   DEFAULT_NEED_MARGIN,

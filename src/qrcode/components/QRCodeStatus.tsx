@@ -1,8 +1,8 @@
-import { computed, defineComponent } from '@vue/composition-api';
+import { defineComponent } from '@vue/composition-api';
 import { CheckCircleFilledIcon, RefreshIcon } from 'tdesign-icons-vue';
 import Loading from '../../loading';
 import { usePrefixClass } from '../../hooks';
-import type { StatusRenderInfo, TdQRCodeProps } from '../type';
+import type { StatusRenderInfo } from '../type';
 import { QRCodeStatusProps } from './props';
 
 export default defineComponent({
