@@ -232,7 +232,7 @@ export const useCascaderContext = (props: TdCascaderProps) => {
         setValue(multiple ? [] : '', 'invalid-value');
       }
 
-      if (!isEmptyValues(innerValue)) {
+      if (!isEmptyValues(innerValue.value)) {
         statusContext.scopeVal = getCascaderValue(innerValue.value, valueType, multiple);
       } else {
         statusContext.scopeVal = multiple ? [] : '';
