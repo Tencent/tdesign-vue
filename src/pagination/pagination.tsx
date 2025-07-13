@@ -331,7 +331,7 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
         {renderTNodeJSX(
           this,
           'totalContent',
-          <div class={this.totalClass}>{this.t(this.global.total, { total: this.total })}</div>,
+          <div class={this.totalClass}>{this.t(this.global.total, this.total)}</div>,
         )}
         {/* 分页器 */}
         {this.showPageSize && this.pageSizeOptions.length ? (

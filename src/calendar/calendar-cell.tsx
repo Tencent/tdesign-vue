@@ -103,7 +103,7 @@ export default mixins(classPrefixMixins).extend({
 
     return (
       item && (
-        <div class={cellCls} onClick={clickCell} ondblclick={clickCell} onContextmenu={clickCell}>
+        <div class={cellCls} onClick={clickCell} onDblclick={clickCell} onContextmenu={clickCell}>
           {typeof this.cell === 'function'
             ? this.cell(this.$createElement, item)
             : renderTNodeJSXDefault(this, 'cell', {

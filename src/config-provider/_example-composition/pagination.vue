@@ -17,7 +17,7 @@ const globalConfig = ref(
       itemsPerPage: '{size} / page',
       jumpTo: 'jump to',
       page: '',
-      total: 'Total {total} items',
+      total: 'Total {count} items',
     },
   }),
 );
