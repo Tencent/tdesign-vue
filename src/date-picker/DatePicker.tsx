@@ -53,6 +53,14 @@ export default defineComponent({
     const { formDisabled } = useFormDisabled();
     const isDisabled = computed(() => formDisabled.value || props.disabled);
 
+    watch(
+      () => datePickerPopupProps.value,
+      ({ visible = false }: { visible?: boolean }) => {
+        popupVisible.value = visible;
+      },
+      { immediate: true },
+    );
+
     watch(popupVisible, (visible) => {
       if (props.multiple) return;
       // Date valueType、week mode 、quarter mode nad empty string don't need to be parsed
@@ -76,7 +84,6 @@ export default defineComponent({
         isHoverCell.value = false;
       }
     });
-
     // 日期 hover
     function onCellMouseEnter(date: Date) {
       if (props.multiple) return;
@@ -345,7 +352,7 @@ export default defineComponent({
           disabled={isDisabled}
           readonly={this.readonly}
           value={inputValue}
-          inputValue={this.multiple ? '' : inputValue}
+          inputValue={this.multiple ? '' : (inputValue as string)}
           label={this.label}
           status={this.status}
           tips={this.tips}

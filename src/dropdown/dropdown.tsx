@@ -59,7 +59,7 @@ export default defineComponent({
       disabled: this.disabled,
       placement: this.placement,
       trigger: this.trigger,
-      ...omit(this.popupProps, ['onVisibleChange', 'on-visible-change']),
+      ...omit(this.popupProps as TdDropdownProps['popupProps'], ['onVisibleChange', 'on-visible-change']),
       overlayInnerClassName: [
         this.dropdownClass,
         (this.popupProps as TdDropdownProps['popupProps'])?.overlayInnerClassName,

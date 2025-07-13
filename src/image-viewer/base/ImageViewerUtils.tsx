@@ -27,18 +27,18 @@ export default defineComponent({
     mirrorHandler: Function as PropType<() => void>,
     resetHandler: Function as PropType<() => void>,
     downloadHandler: Function as PropType<(url: string) => void>,
+    globalConfig: Object,
     currentImage,
   },
   setup(props) {
-    const { classPrefix, global: globalConfig } = useConfig('imageViewer');
-
+    const { classPrefix } = useConfig('imageViewer');
     const imageUrl = computed(() => props.currentImage.mainImage);
 
     const { previewUrl } = useImagePreviewUrl(imageUrl);
 
     return {
       classPrefix,
-      globalConfig,
+
       previewUrl,
     };
   },

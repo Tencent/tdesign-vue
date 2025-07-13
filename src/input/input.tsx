@@ -574,7 +574,7 @@ export default mixins(
         onClick={this.onRootClick}
         onMouseenter={this.onInputMouseenter}
         onMouseleave={this.onInputMouseleave}
-        onwheel={this.onHandleMousewheel}
+        onWheel={this.onHandleMousewheel}
       >
         {prefixIcon ? (
           <span class={[`${this.componentName}__prefix`, `${this.componentName}__prefix-icon`]}>{prefixIcon}</span>

@@ -33,11 +33,11 @@ name | type | default | description | required
 -- | -- | -- | -- | --
 attach | String / Function | - | Typescript: `AttachNode`. [see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 body | String / Slot / Function | - | Typescript: `string \| TNode`. [see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-cancelBtn | String / Object / Slot / Function | - | Typescript: `FooterButton` | N
+cancelBtn | String / Object / Slot / Function | - | Typescript: `FooterButton` `type FooterButton = string \| ButtonProps \| TNode \| null`，[Button API Documents](./button?tab=api). [see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts). [see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/drawer/type.ts) | N
 closeBtn | String / Boolean / Slot / Function | - | Typescript: `string \| boolean \| TNode`. [see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 closeOnEscKeydown | Boolean | true | trigger drawer close event on `ESC` keydown | N
 closeOnOverlayClick | Boolean | true | \- | N
-confirmBtn | String / Object / Slot / Function | - | Typescript: `FooterButton` `type FooterButton = string \| ButtonProps \| TNode`，[Button API Documents](./button?tab=api). [see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts). [see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/drawer/type.ts) | N
+confirmBtn | String / Object / Slot / Function | - | Typescript: `FooterButton` `type FooterButton = string \| ButtonProps \| TNode \| null`，[Button API Documents](./button?tab=api). [see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts). [see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/drawer/type.ts) | N
 default | String / Slot / Function | - | Typescript: `string \| TNode`. [see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 destroyOnClose | Boolean | false | \- | N
 drawerClassName | String | - | \- | N
