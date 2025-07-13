@@ -46,10 +46,14 @@ export default defineComponent({
     },
   },
   render() {
-    const p = {
-      status: this.status,
-      onRefresh: this.refresh,
-    };
-    return <div>{this?.statusRender?.(p) || this.renderStatus(p)}</div>;
+    return (
+      <div>
+        {this?.statusRender?.()
+          || this.renderStatus({
+            status: this.status,
+            onRefresh: this.refresh,
+          })}
+      </div>
+    );
   },
 });

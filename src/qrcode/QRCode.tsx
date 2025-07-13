@@ -76,7 +76,13 @@ export default defineComponent({
             <QRcodeStatus
               locale={this.globalConfig}
               status={this.status}
-              statusRender={() => renderTNodeJSX(this, 'statusRender')}
+              statusRender={() => renderTNodeJSX(this, 'statusRender', {
+                params: {
+                  status: this.status,
+                  onRefresh: this.onRefresh,
+                },
+              })
+              }
               refresh={this.onRefresh}
             />
           </div>

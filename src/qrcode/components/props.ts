@@ -108,7 +108,7 @@ export const QRCodeStatusProps = {
     type: Function as PropType<QRCodeStatus['onRefresh']>,
   },
   statusRender: {
-    type: Function as PropType<QRCodeStatus['statusRender']>,
+    type: Function,
   },
   status: {
     type: String as PropType<QRCodeStatus['status']>,
