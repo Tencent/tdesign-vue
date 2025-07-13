@@ -11,6 +11,7 @@ import { FormErrorMessage } from '../form';
 import { ImageProps } from '../image';
 import { MessageOptions } from '../message';
 import { TNode, SizeEnum, AttachNode } from '../common';
+export type AttachNodeComponent = 'imageViewer' | 'drawer' | 'dialog' | 'popup';
 
 export interface TdConfigProviderProps {
   /**
