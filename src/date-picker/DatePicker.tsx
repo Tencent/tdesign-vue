@@ -268,6 +268,13 @@ export default defineComponent({
     }
 
     const onTagRemoveClick = (ctx: TagInputRemoveContext) => {
+      if (['week', 'quarter'].includes(props.mode)) {
+        onChange?.(ctx.value, {
+          trigger: 'tag-remove',
+        });
+        return;
+      }
+
       const removeDate = dayjs(ctx.item).toDate();
       const newDate = processDate(removeDate);
       onChange?.(newDate, {
