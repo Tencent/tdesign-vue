@@ -36,7 +36,8 @@ defaultValue | String / Number / Array / Date | '' | 选中值。非受控属性
 valueType | String | - | 用于格式化日期的值，仅支持部分格式，时间戳、日期等。⚠️ `YYYYMMDD` 这种格式不支持，请勿使用，如果希望支持可以给 `dayjs` 提个 PR。注意和 `format` 的区别，`format` 仅用于处理日期在页面中呈现的格式。`ValueTypeEnum` 即将废弃，请更为使用 `DatePickerValueType`。TS 类型：`DatePickerValueType` `type DatePickerValueType = 'time-stamp' \| 'Date' \| 'YYYY' \| 'YYYY-MM' \| 'YYYY-MM-DD' \| 'YYYY-MM-DD HH' \| 'YYYY-MM-DD HH:mm' \| 'YYYY-MM-DD HH:mm:ss' \| 'YYYY-MM-DD HH:mm:ss:SSS'` `type ValueTypeEnum = DatePickerValueType`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts) | N
 cancelRangeSelectLimit | Boolean | false | 说明：默认的日期选择交互是根据点击前后日期的顺序来决定并且会加以限制。比如：用户先点击开始时间输入框，选择了一个日期例如2020-05-15，紧接着交互会自动将焦点跳到结束日期输入框，等待用户选择结束时间。此时用户只能选择大于2020-05-15的日期（之前的日期会被灰态禁止点击，限制用户的点击）。当该值传递`true`时，则取消该限制。 | N
 onBlur | Function |  | TS 类型：`(context: { value: DateValue \| DateMultipleValue; e: FocusEvent }) => void`<br/>当输入框失去焦点时触发 | N
-onChange | Function |  | TS 类型：`(value: DateValue\| DateMultipleValue, context: { dayjsValue?: Dayjs, trigger?: DatePickerTriggerSource }) => void`<br/>选中值发生变化时触发。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts)。<br/>`import { Dayjs } from 'dayjs'`<br/><br/>`type DatePickerTriggerSource = 'confirm' \| 'pick' \| 'enter' \| 'preset' \| 'clear'`<br/> | N
+onChange | Function |  | TS 类型：`(value: DateValue\| DateMultipleValue, context: { dayjsValue?: Dayjs, trigger?: DatePickerTriggerSource }) => void`<br/>选中值发生变化时触发。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts)。<br/>`import { Dayjs } from 'dayjs'`<br/><br/>`type DatePickerTriggerSource = 'confirm' \| 'pick' \| 'enter' \| 'preset' \| 'clear' \| 'tag-remove'`<br/> | N
+onClear | Function |  | TS 类型：`(context: { e: MouseEvent }) => void`<br/>清空按钮点击时触发 | N
 onConfirm | Function |  | TS 类型：`(context: { date: Date, e: MouseEvent }) => void`<br/>如果存在“确定”按钮，则点击“确定”按钮时触发 | N
 onFocus | Function |  | TS 类型：`(context: { value: DateValue \| DateMultipleValue; e: FocusEvent }) => void`<br/>输入框获得焦点时触发 | N
 onPick | Function |  | TS 类型：`(value: DateValue) => void`<br/>面板选中值后触发 | N
@@ -47,7 +48,8 @@ onPresetClick | Function |  | TS 类型：`(context: { preset: PresetDate, e: Mo
 名称 | 参数 | 描述
 -- | -- | --
 blur | `(context: { value: DateValue \| DateMultipleValue; e: FocusEvent })` | 当输入框失去焦点时触发
-change | `(value: DateValue\| DateMultipleValue, context: { dayjsValue?: Dayjs, trigger?: DatePickerTriggerSource })` | 选中值发生变化时触发。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts)。<br/>`import { Dayjs } from 'dayjs'`<br/><br/>`type DatePickerTriggerSource = 'confirm' \| 'pick' \| 'enter' \| 'preset' \| 'clear'`<br/>
+change | `(value: DateValue\| DateMultipleValue, context: { dayjsValue?: Dayjs, trigger?: DatePickerTriggerSource })` | 选中值发生变化时触发。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/date-picker/type.ts)。<br/>`import { Dayjs } from 'dayjs'`<br/><br/>`type DatePickerTriggerSource = 'confirm' \| 'pick' \| 'enter' \| 'preset' \| 'clear' \| 'tag-remove'`<br/>
+clear | `(context: { e: MouseEvent })` | 清空按钮点击时触发
 confirm | `(context: { date: Date, e: MouseEvent })` | 如果存在“确定”按钮，则点击“确定”按钮时触发
 focus | `(context: { value: DateValue \| DateMultipleValue; e: FocusEvent })` | 输入框获得焦点时触发
 pick | `(value: DateValue)` | 面板选中值后触发
