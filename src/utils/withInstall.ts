@@ -1,7 +1,12 @@
 import Vue, { VueConstructor, PluginObject } from 'vue';
 import { capitalize } from 'lodash-es';
 
-export function withInstall<T>(comp: T, dep?: PluginObject<any>, directive?: { name: string; comp: unknown }) {
+export function withInstall<T>(
+  comp: T,
+  dep?: PluginObject<any>,
+  directive?: { name: string; comp: unknown },
+  alias?: string,
+) {
   const c = comp as any;
 
   const name = c?.options?.name || c.name;
@@ -11,8 +16,9 @@ export function withInstall<T>(comp: T, dep?: PluginObject<any>, directive?: { n
     const installConfig = { ...defaults, ...config };
     /// 为保证组件名称简洁，前缀保持为一个单词，首字母大写
     const defaultPrefix = capitalize(defaults.prefix);
+    const compName = alias || name;
     // mapprops component is original component
-    let componentName = name.replace(defaultPrefix, '').replace('-mapprops', '');
+    let componentName = compName.replace(defaultPrefix, '').replace('-mapprops', '');
     componentName = capitalize(installConfig.prefix) + componentName;
 
     Vue.component(componentName, comp);
