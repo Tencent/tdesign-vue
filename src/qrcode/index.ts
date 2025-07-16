@@ -8,6 +8,6 @@ import './style';
 export type QRCodeProps = TdQRCodeProps;
 export * from './type';
 
-export const Qrcode = withInstall(_QRCode, VueCompositionAPI, null, 'TQrcode');
+export const QRCode = withInstall(_QRCode, VueCompositionAPI, null, 'TQrcode');
 
-export default Qrcode;
+export default QRCode;

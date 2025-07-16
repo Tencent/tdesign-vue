@@ -68,7 +68,7 @@ export default defineComponent({
   },
   render() {
     return (
-      <div value={this.value} class={this.classes} style={this.mergedStyle} {...{ level: this.level }}>
+      <div value={this.value} class={this.classes} style={this.mergedStyle} level={this.level}>
         {this.status !== 'active' && (
           <div
             class={[`${this.classPrefix}-mask`, { [`${this.classPrefix}-${this.status}`]: this.status !== 'loading' }]}
