@@ -359,14 +359,3 @@ export function getWindowSize(): { width: number; height: number } {
   const doc = document.documentElement;
   return { width: doc.clientWidth, height: doc.clientHeight };
 }
-
-/**
- * 获取颜色token的色值
- * @example getColorTokenColor('--td-brand-color')
- * @returns string
- */
-export const getColorTokenColor = (token: string): string => {
-  const targetElement = document?.documentElement;
-  const styles = getComputedStyle(targetElement);
-  return styles.getPropertyValue(token).trim() ?? '';
-};

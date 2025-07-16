@@ -1,7 +1,7 @@
 import { ref } from '@vue/composition-api';
 import type { Ref } from '@vue/composition-api';
 import { isString } from 'lodash-es';
-import { getColorTokenColor } from '../utils/dom';
+import { getColorTokenColor } from '../_common/js/utils/getColorTokenColor';
 import { THEME_MODE } from '../_common/js/common';
 import useMutationObservable from './useMutationObservable';
 

@@ -1,7 +1,4 @@
 import { mount } from '@vue/test-utils';
-import {
-  describe, it, vi, expect,
-} from 'vitest';
 import { QRCode, TdQRCodeProps } from '../index';
 
 describe('QRCode', () => {
