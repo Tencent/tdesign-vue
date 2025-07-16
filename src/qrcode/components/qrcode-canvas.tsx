@@ -124,9 +124,15 @@ export default defineComponent({
     },
   },
   render() {
+    const styles = {
+      display: 'flex',
+      alignSelf: 'stretch',
+      flex: 'auto',
+      minWidth: '0',
+    };
     return (
-      <div style="display: flex">
-        <canvas ref="canvasRef" role="img" />
+      <div style={styles}>
+        <canvas ref="canvasRef" style={styles} role="img" />
         {this.imgSrc != null ? (
           <img ref="imageRef" onLoad={this.renderQRCode} style={{ display: 'none' }} src={this.imgSrc} />
         ) : null}

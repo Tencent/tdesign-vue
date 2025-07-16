@@ -5,14 +5,14 @@ import { renderTNodeJSX } from '../utils/render-tnode';
 import { DEFAULT_FRONT_COLOR } from '../_common/js/qrcode/utils';
 import props from './props';
 
-import QRCodeCanvas from './components/QRCodeCanvas';
-import QRCodeSVG from './components/QRCodeSVG';
-import QRcodeStatus from './components/QRCodeStatus';
+import QRCodeCanvas from './components/qrcode-canvas';
+import QRCodeSVG from './components/qrcode-svg';
+import QRcodeStatus from './components/qrcode-status';
 
 import type { ImageSettings } from '../_common/js/qrcode/types';
 
 export default defineComponent({
-  name: 'TQrcode',
+  name: 'TQRCode',
   props,
   setup(props) {
     const classPrefix = usePrefixClass();

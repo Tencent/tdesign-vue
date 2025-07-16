@@ -7,11 +7,11 @@
       <template #status-render="{ status }">
         <div v-if="status === 'expired'" class="tdesign-demo-qrcode__status-render">
           <p class="tdesign-demo-qrcode__status-render-title">
-            <close-circle-filled-icon size="16" />
+            <CloseCircleFilledIcon size="16" />
             <span>二维码过期</span>
           </p>
           <p class="tdesign-demo-qrcode__status-render-action" @click="handleRefresh">
-            <refresh-icon size="16" />
+            <RefreshIcon size="16" />
             <span>点击刷新</span>
           </p>
         </div>
@@ -22,37 +22,21 @@
   </t-space>
 </template>
 
-<script lang="jsx">
-import { CloseCircleFilledIcon, RefreshIcon } from 'tdesign-icons-vue';
+<script lang="tsx" setup>
+import { CloseCircleFilledIcon, RefreshIcon } from 'tdesign-icons-vue-next';
+import { QRCodeProps } from 'tdesign-vue-next';
 
-export default {
-  components: {
-    CloseCircleFilledIcon,
-    RefreshIcon,
-  },
-  data() {
-    return {
-      minSize: 40,
-      maxSize: 300,
-      size: 'https://tdesign.tencent.com/',
-    };
-  },
-  methods: {
-    renderStatus(_h, { status }) {
-      return (
-        status === 'loading' && (
-          <t-space direction="vertical" size="4px">
-            <t-loading size="32px" />
-            <p>加载中...</p>
-          </t-space>
-        )
-      );
-    },
+const renderStatus: QRCodeProps['statusRender'] = (_h, { status }) => (
+  status === 'loading' && (
+      <t-space direction="vertical" size="4px">
+        <t-loading size="32px" />
+        <p>加载中...</p>
+      </t-space>
+  )
+);
 
-    handleRefresh() {
-      console.log('Click Refresh');
-    },
-  },
+const handleRefresh: QRCodeProps['onRefresh'] = () => {
+  console.log('Click Refresh');
 };
 </script>
 
