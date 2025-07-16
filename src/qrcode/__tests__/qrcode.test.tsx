@@ -1,9 +1,7 @@
 import { mount } from '@vue/test-utils';
-import type { Wrapper } from '@vue/test-utils';
 import {
-  describe, it, vi, expect, beforeEach,
+  describe, it, vi, expect,
 } from 'vitest';
-import { ref } from '@vue/composition-api';
 import { QRCode, TdQRCodeProps } from '../index';
 
 describe('QRCode', () => {
@@ -13,8 +11,6 @@ describe('QRCode', () => {
     // bgColor：自定义颜色 > 主题色适配 > 透明[transparent]
     // color[fgColor]：自定义颜色 > 主题色适配 > 默认颜色[#000000]
     const defaultBgColor = 'transparent'; // 实际使用时为 rgb(255, 255, 255)
-    const defaultFgColor = '#000000'; // 实际使用时为 rgba(0, 0, 0, .9)
-    const defaultSize = 160;
 
     it(':bgColor[string]', async () => {
       const bgColor = 'rgb(7, 193, 96)';
