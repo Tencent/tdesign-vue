@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import { QRCode, TdQRCodeProps } from '../index';
+import { QRCode } from '../index';
 
 describe('QRCode', () => {
   describe('props', () => {
@@ -64,7 +64,7 @@ describe('QRCode', () => {
 
     it(':iconSize[number|object]-svg', async () => {});
 
-    const level: TdQRCodeProps['level'][] = ['L', 'M', 'Q', 'H'];
+    const level = ['L', 'M', 'Q', 'H'];
     level.forEach((item) => {
       it(`:level[string]-[${item}]`, async () => {
         const wrapper = mount({
@@ -88,7 +88,7 @@ describe('QRCode', () => {
       );
     });
 
-    const status: TdQRCodeProps['status'][] = ['expired', 'loading', 'scanned'];
+    const status = ['expired', 'loading', 'scanned'];
     status.forEach((item) => {
       it(`:status[string]-[${item}]`, async () => {
         const wrapper = mount({
