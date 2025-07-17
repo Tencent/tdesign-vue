@@ -582,6 +582,7 @@ export default mixins(
         {labelContent}
         {/* input element must exist, or other select components can not focus by keyboard operation */}
         <input
+          // vue27:ts-ignore
           attrs={this.inputAttrs}
           on={inputEvents}
           ref="inputRef"
