@@ -7,6 +7,7 @@ import {
   CloseIcon as TdCloseIcon,
 } from 'tdesign-icons-vue';
 
+import log from '../_common/js/log/log';
 import { on, off, addClass } from '../utils/dom';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
@@ -74,14 +75,23 @@ export default mixins(getConfigReceiverMixins<Vue, AlertConfig>('alert'), getGlo
     renderClose(): VNode {
       const { CloseIcon } = this.useGlobalIcon({ CloseIcon: TdCloseIcon });
       let closeContent: ScopedSlotReturnValue = null;
-      if (this.close === true || this.close === '') {
+      // close属性变更为closeBtn过渡期使用，close废弃后可删除。（需兼容标签上直接写close和closeBtn的场景）
+      const isUsingClose = Object.prototype.hasOwnProperty.call(this.$vnode.componentOptions.propsData || {}, 'close')
+        || this.$scopedSlots.close;
+      const closeNode = isUsingClose ? this.close : this.closeBtn;
+      if (isUsingClose) {
+        log.warnOnce('TAlert', 'prop `close` is going to be deprecated, please use `closeBtn` instead.');
+      }
+      if (closeNode === true || closeNode === '') {
         closeContent = <CloseIcon />;
-      } else if (typeof this.close === 'string') {
-        closeContent = this.close;
-      } else if (typeof this.close === 'function') {
-        closeContent = this.close(this.$createElement);
+      } else if (typeof closeNode === 'string') {
+        closeContent = closeNode;
+      } else if (typeof closeNode === 'function') {
+        closeContent = closeNode(this.$createElement);
       } else {
-        closeContent = this.$scopedSlots.close && this.$scopedSlots.close(null)[0];
+        closeContent = isUsingClose ? this.$scopedSlots.close(null)[0] : renderTNodeJSX(this, 'close-btn');
+        // todo 等待renderTNodeJSX修复prop为false时使用slot
+        // closeContent = renderTNodeJSX(this, 'closeBtn');
       }
 
       return closeContent ? (
