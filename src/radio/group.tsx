@@ -34,8 +34,9 @@ export default mixins(classPrefixMixins).extend({
   },
 
   data() {
+    const radioGroupEl = ref(null);
     return {
-      radioGroupEl: ref(null),
+      radioGroupEl,
       barStyle: { width: '0px', left: '0px' },
     };
   },
@@ -98,10 +99,10 @@ export default mixins(classPrefixMixins).extend({
 
   mounted() {
     this.calcBarStyle();
-    this.radioGroupEl.value = this.$el;
+    this.radioGroupEl = this.$el;
     useResizeObserver(
       this.radioGroupEl,
-      throttle(async () => {
+      throttle(() => {
         this.$nextTick(() => this.calcBarStyle());
       }, 300),
     );
