@@ -1,18 +1,18 @@
-import { VNode, CreateElement, ref } from 'vue';
+import { CreateElement, VNode, ref } from 'vue';
 import { isNumber, isString, throttle } from 'lodash-es';
+import { CHECKED_CODE_REG } from '../_common/js/common';
+import { TNodeReturnValue } from '../common';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
 import useResizeObserver from '../hooks/useResizeObserver';
-import props from './radio-group-props';
-import {
-  TdRadioGroupProps, RadioOptionObj, RadioOption, RadioValue,
-} from './type';
+import { off, on } from '../utils/dom';
+import { emitEvent } from '../utils/event';
+import mixins from '../utils/mixins';
 import Radio from './radio';
 import RadioButton from './radio-button';
-import { TNodeReturnValue } from '../common';
-import { emitEvent } from '../utils/event';
-import { getClassPrefixMixins } from '../config-provider/config-receiver';
-import mixins from '../utils/mixins';
-import { off, on } from '../utils/dom';
-import { CHECKED_CODE_REG } from '../_common/js/common';
+import props from './radio-group-props';
+import type {
+  RadioOption, RadioOptionObj, RadioValue, TdRadioGroupProps,
+} from './type';
 
 const classPrefixMixins = getClassPrefixMixins('radio-group');
 
@@ -34,7 +34,6 @@ export default mixins(classPrefixMixins).extend({
 
   data() {
     return {
-      radioGroupEl: ref(null),
       barStyle: { width: '0px', left: '0px' },
     };
   },
@@ -86,7 +85,11 @@ export default mixins(classPrefixMixins).extend({
       children && children.push(<div style={this.barStyle} class={`${this.componentName}__bg-block`}></div>);
     }
 
-    return <div class={groupClass}>{children}</div>;
+    return (
+      <div ref="radioGroupRef" class={groupClass}>
+        {children}
+      </div>
+    );
   },
 
   watch: {
@@ -97,15 +100,15 @@ export default mixins(classPrefixMixins).extend({
 
   mounted() {
     this.calcBarStyle();
-    this.radioGroupEl = this.$el;
+    this.addKeyboardListeners();
+
+    const radioGroupRef = ref(this.$refs.radioGroupRef as HTMLElement);
     useResizeObserver(
-      this.radioGroupEl,
-      throttle(async () => {
+      radioGroupRef,
+      throttle(() => {
         this.$nextTick(() => this.calcBarStyle());
       }, 300),
     );
-
-    this.addKeyboardListeners();
   },
 
   beforeDestroy() {
@@ -115,11 +118,15 @@ export default mixins(classPrefixMixins).extend({
   methods: {
     // 无障碍规划-键盘事件（在 group 中统一处理，不在 radio.tsx 中单独处理）
     addKeyboardListeners() {
-      on(this.$el, 'keydown', this.checkRadioInGroup);
+      if (this.$refs.radioGroupRef) {
+        on(this.$refs.radioGroupRef, 'keydown', this.checkRadioInGroup);
+      }
     },
 
     removeKeyboardListeners() {
-      off(this.$el, 'keydown', this.checkRadioInGroup);
+      if (this.$refs.radioGroupRef) {
+        off(this.$refs.radioGroupRef, 'keydown', this.checkRadioInGroup);
+      }
     },
 
     // 注意：此处会还原区分 数字 和 数字字符串
@@ -148,7 +155,7 @@ export default mixins(classPrefixMixins).extend({
     },
 
     calcDefaultBarStyle() {
-      const defaultNode = this.$el.cloneNode(true);
+      const defaultNode = (this.$refs.radioGroupRef as HTMLElement).cloneNode(true);
       const div = document.createElement('div');
       div.setAttribute('style', 'position: absolute; visibility: hidden;');
       div.appendChild(defaultNode);
@@ -162,7 +169,10 @@ export default mixins(classPrefixMixins).extend({
     calcBarStyle(): void {
       if (this.variant === 'outline') return;
 
-      const checkedRadio: HTMLElement = this.$el.querySelector(this.checkedClassName);
+      const radioGroupEl = this.$refs.radioGroupRef as HTMLElement;
+      if (!radioGroupEl) return;
+
+      const checkedRadio: HTMLElement = radioGroupEl.querySelector(this.checkedClassName);
       if (!checkedRadio) return;
 
       let { offsetWidth, offsetLeft } = checkedRadio;
