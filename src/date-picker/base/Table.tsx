@@ -1,7 +1,8 @@
 import { defineComponent, PropType, computed } from 'vue';
+import { isArray } from 'lodash-es';
 import TDatePickerCell from './Cell';
 import { useConfig, usePrefixClass } from '../../hooks/useConfig';
-import type { TdDatePickerProps } from '../type';
+import type { TdDatePickerProps, DateMultipleValue } from '../type';
 import { parseToDayjs } from '../../_common/js/date-picker/format';
 
 export default defineComponent({
@@ -12,6 +13,7 @@ export default defineComponent({
       default: 'date',
     },
     firstDayOfWeek: Number,
+    multiple: Boolean,
     data: Array,
     time: String,
     value: [String, Number, Array, Date],
@@ -42,18 +44,18 @@ export default defineComponent({
     const showThead = computed(() => props.mode === 'date' || props.mode === 'week');
 
     // 高亮周区间
-    const weekRowClass = (value: any, format: string, targetValue: Date) => {
+    const weekRowClass = (value: any, targetValue: Date) => {
       if (props.mode !== 'week' || !value) return {};
 
-      if (Array.isArray(value)) {
+      if (isArray(value)) {
         if (!value.length) return {};
-        const [startObj, endObj] = value.map((v) => v && parseToDayjs(v, format));
+        const [startObj, endObj] = value.map((v) => v && parseToDayjs(v, props.format));
         const startYear = startObj && startObj.year();
         const startWeek = startObj?.locale?.(dayjsLocale)?.week?.();
         const endYear = endObj && endObj.year();
         const endWeek = endObj?.locale?.(dayjsLocale)?.week?.();
 
-        const targetObj = parseToDayjs(targetValue, format);
+        const targetObj = parseToDayjs(targetValue, props.format);
         const targetYear = targetObj.year();
         const targetWeek = targetObj.week();
         const isActive = (targetYear === startYear && targetWeek === startWeek) || (targetYear === endYear && targetWeek === endWeek);
@@ -67,21 +69,34 @@ export default defineComponent({
 
       return {
         [`${COMPONENT_NAME.value}-${props.mode}-row--active`]:
-          parseToDayjs(value, format).locale(dayjsLocale).week()
-          === parseToDayjs(targetValue, format).locale(dayjsLocale).week(),
+          parseToDayjs(value, props.format).locale(dayjsLocale).week()
+          === parseToDayjs(targetValue, props.format).locale(dayjsLocale).week(),
       };
     };
+
+    const multipleWeekRowClass = (value: DateMultipleValue, targetValue: Date) => {
+      const targetDayjs = parseToDayjs(targetValue, props.format);
+      if (props.mode !== 'week' || (Array.isArray(value) && !value.length)) return {};
+      const isSomeYearWeek = value
+        .map?.((v) => parseToDayjs(v, props.format))
+        .some((item) => item.week() === targetDayjs.week() && item.year() === targetDayjs.year());
+      return {
+        [`${COMPONENT_NAME.value}-${props.mode}-row--active`]: isSomeYearWeek,
+      };
+    };
+
+    const activeRowCss = props.multiple ? multipleWeekRowClass : weekRowClass;
 
     return {
       COMPONENT_NAME,
       weekArr,
       showThead,
-      weekRowClass,
+      activeRowCss,
     };
   },
   render() {
     const {
-      COMPONENT_NAME, weekArr, showThead, weekRowClass,
+      COMPONENT_NAME, weekArr, showThead, activeRowCss,
     } = this;
 
     return (
@@ -102,7 +117,7 @@ export default defineComponent({
                 key={i}
                 class={{
                   [`${COMPONENT_NAME}-${this.mode}-row`]: true,
-                  ...weekRowClass(this.value, this.format, row[0].value),
+                  ...activeRowCss(this.value as any | DateMultipleValue[], row[0].value),
                 }}
               >
                 {row.map((col: any, j: number) => (
