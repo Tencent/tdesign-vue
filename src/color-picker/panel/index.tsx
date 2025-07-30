@@ -123,7 +123,7 @@ export default defineComponent({
         const newMode = getModeByColor(newColor);
         mode.value = newMode;
         color.value.isGradient = newMode === 'linear-gradient';
-        const currentColor = color.value.getFormattedColor(this.formatModel, this.enableAlpha);
+        const currentColor = color.value.getFormattedColor(formatModel.value, props.enableAlpha);
         if (currentColor !== newColor) {
           color.value.update(newColor);
         }
