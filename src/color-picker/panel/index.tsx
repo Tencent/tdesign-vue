@@ -290,7 +290,7 @@ export default defineComponent({
       systemColors = [...DEFAULT_SYSTEM_SWATCH_COLORS];
     }
     if (onlySupportGradient) {
-      systemColors = systemColors.filter((color) => Color.isGradientColor(color));
+      systemColors = systemColors?.filter((color) => Color.isGradientColor(color));
     }
     const showSystemColors = Array.isArray(systemColors) && systemColors.length > 0;
 
