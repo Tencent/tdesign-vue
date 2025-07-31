@@ -28970,7 +28970,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/panel.vue 1`] 
         class="t-space-item"
       >
         <label>
-          单色
+          只开启单色
         </label>
       </div>
       <div
@@ -29706,7 +29706,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/panel.vue 1`] 
         class="t-space-item"
       >
         <label>
-          渐变
+          只开启渐变（会过滤掉所有预设颜色的非渐变值）
         </label>
       </div>
       <div
