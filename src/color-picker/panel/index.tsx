@@ -1,32 +1,32 @@
 import {
   computed, defineComponent, ref, toRefs, watch,
 } from '@vue/composition-api';
-import { useConfig } from '../../hooks/useConfig';
 import useCommonClassName from '../../hooks/useCommonClassName';
+import { useConfig } from '../../hooks/useConfig';
+import useDefaultValue from '../../hooks/useDefaultValue';
+import useVModel from '../../hooks/useVModel';
+import { useBaseClassName } from '../hooks';
+import type { TdColorModes } from '../interfaces';
 import props from '../props';
-import PanelHeader from './header';
-import LinearGradient from './linear-gradient';
-import SaturationPanel from './saturation';
-import HueSlider from './hue';
-import AlphaSlider from './alpha';
-import FormatPanel from './format';
-import SwatchesPanel from './swatches';
+import type { ColorPickerChangeTrigger } from '../type';
 import {
   Color,
   DEFAULT_COLOR,
   DEFAULT_LINEAR_GRADIENT,
   DEFAULT_SYSTEM_SWATCH_COLORS,
-  TD_COLOR_USED_COLORS_MAX_SIZE,
   getColorObject,
   GradientColorPoint,
   initColorFormat,
+  TD_COLOR_USED_COLORS_MAX_SIZE,
   type ColorFormat,
 } from '../utils';
-import type { ColorPickerChangeTrigger } from '../type';
-import { TdColorModes } from '../interfaces';
-import { useBaseClassName } from '../hooks';
-import useVModel from '../../hooks/useVModel';
-import useDefaultValue from '../../hooks/useDefaultValue';
+import AlphaSlider from './alpha';
+import FormatPanel from './format';
+import PanelHeader from './header';
+import HueSlider from './hue';
+import LinearGradient from './linear-gradient';
+import SaturationPanel from './saturation';
+import SwatchesPanel from './swatches';
 
 export default defineComponent({
   name: 'ColorPanel',
@@ -41,9 +41,6 @@ export default defineComponent({
   },
   props: {
     ...props,
-    togglePopup: {
-      type: Function,
-    },
   },
   setup(props) {
     const baseClassName = useBaseClassName();
