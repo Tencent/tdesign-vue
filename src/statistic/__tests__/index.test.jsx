@@ -110,5 +110,33 @@ describe('Statistic', () => {
       expect(trendIconElement.exists()).toBe(true);
       expect(trendIconElement.is('svg')).toBe(true);
     });
+
+    it('trend="increase"', () => {
+      const wrapper = mount(Statistic, {
+        propsData: {
+          title: 'Total Sales',
+          value: 1000,
+          trend: 'increase',
+        },
+      });
+
+      const trendIconElement = wrapper.find('.t-icon.t-icon-arrow-triangle-up-filled');
+      expect(trendIconElement.exists()).toBe(true);
+      expect(trendIconElement.is('svg')).toBe(true);
+    });
+
+    it('trend="decrease"', () => {
+      const wrapper = mount(Statistic, {
+        propsData: {
+          title: 'Total Sales',
+          value: 1000,
+          trend: 'decrease',
+        },
+      });
+
+      const trendIconElement = wrapper.find('.t-icon.t-icon-arrow-triangle-down-filled');
+      expect(trendIconElement.exists()).toBe(true);
+      expect(trendIconElement.is('svg')).toBe(true);
+    });
   });
 });
