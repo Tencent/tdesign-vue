@@ -13,7 +13,7 @@ import { useGlobalIcon } from '../hooks/useGlobalIcon';
 
 import Skeleton from '../skeleton';
 import Tween from '../_common/js/statistic/tween';
-import { COLOR_MAP, getFormatValue } from '../_common/js/statistic/utils';
+import { getFormatValue } from '../_common/js/statistic/utils';
 
 export default defineComponent({
   name: 'Statistic',
@@ -30,7 +30,7 @@ export default defineComponent({
     const tween = ref(null);
 
     const numberValue = computed(() => (isNumber(props.value) ? props.value : 0));
-    const valueStyle = computed(() => ({ color: COLOR_MAP[color.value] || color.value }));
+    const valueStyle = computed(() => ({ color: color.value }));
     const innerDecimalPlaces = computed(
       () => decimalPlaces.value ?? numberValue.value.toString().split('.')[1]?.length ?? 0,
     );
