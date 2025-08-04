@@ -93901,7 +93901,7 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/color.vue 1`] = `
       <div>
         <div
           class="t-statistic-content"
-          style="color: var(--td-text-color-primary);"
+          style="color: black;"
         >
           <span
             class="t-statistic-content-prefix"
@@ -93947,7 +93947,7 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/color.vue 1`] = `
       <div>
         <div
           class="t-statistic-content"
-          style="color: var(--td-brand-color);"
+          style="color: blue;"
         >
           <span
             class="t-statistic-content-prefix"
@@ -93993,7 +93993,7 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/color.vue 1`] = `
       <div>
         <div
           class="t-statistic-content"
-          style="color: var(--td-error-color);"
+          style="color: red;"
         >
           <span
             class="t-statistic-content-prefix"
@@ -94039,7 +94039,7 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/color.vue 1`] = `
       <div>
         <div
           class="t-statistic-content"
-          style="color: var(--td-warning-color);"
+          style="color: orange;"
         >
           <span
             class="t-statistic-content-prefix"
@@ -94085,7 +94085,7 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/color.vue 1`] = `
       <div>
         <div
           class="t-statistic-content"
-          style="color: var(--td-success-color);"
+          style="color: green;"
         >
           <span
             class="t-statistic-content-prefix"
@@ -94340,7 +94340,7 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/combination.vue 1
               <div>
                 <div
                   class="t-statistic-content"
-                  style="color: var(--td-error-color);"
+                  style="color: red;"
                 >
                   <span
                     class="t-statistic-content-value"
@@ -94414,7 +94414,7 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/combination.vue 1
               <div>
                 <div
                   class="t-statistic-content"
-                  style="color: var(--td-success-color);"
+                  style="color: green;"
                 >
                   <span
                     class="t-statistic-content-prefix"
