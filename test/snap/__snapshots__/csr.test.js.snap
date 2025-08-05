@@ -28970,7 +28970,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/panel.vue 1`] 
         class="t-space-item"
       >
         <label>
-          单色
+          只开启单色
         </label>
       </div>
       <div
@@ -29012,7 +29012,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/panel.vue 1`] 
                     <span
                       class="t-color-picker__thumb"
                       role="slider"
-                      style="left: 60%; color: rgb(0, 82, 217);"
+                      style="left: 60%; color: rgb(0, 96, 255);"
                       tabindex="0"
                     />
                   </div>
@@ -29706,7 +29706,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/panel.vue 1`] 
         class="t-space-item"
       >
         <label>
-          渐变
+          只开启渐变（会过滤掉所有预设颜色的非渐变值）
         </label>
       </div>
       <div
@@ -29816,7 +29816,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/panel.vue 1`] 
                     <span
                       class="t-color-picker__thumb"
                       role="slider"
-                      style="left: 58%; color: rgb(79, 172, 254);"
+                      style="left: 58%; color: rgb(0, 136, 255);"
                       tabindex="0"
                     />
                   </div>
@@ -31884,7 +31884,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/status-readonl
             <span
               class="t-color-picker__thumb"
               role="slider"
-              style="left: 60%; color: rgb(0, 82, 217);"
+              style="left: 60%; color: rgb(0, 96, 255);"
               tabindex="0"
             />
           </div>
@@ -32695,7 +32695,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/swatch-color.v
                     <span
                       class="t-color-picker__thumb"
                       role="slider"
-                      style="left: 60%; color: rgb(0, 82, 217);"
+                      style="left: 60%; color: rgb(0, 96, 255);"
                       tabindex="0"
                     />
                   </div>
@@ -33074,7 +33074,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/swatch-color.v
                     <span
                       class="t-color-picker__thumb"
                       role="slider"
-                      style="left: 60%; color: rgb(0, 82, 217);"
+                      style="left: 60%; color: rgb(0, 96, 255);"
                       tabindex="0"
                     />
                   </div>
