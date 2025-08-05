@@ -15,6 +15,7 @@ import migrateTimeline from './components/timeline.mjs';
 import migrateSelect from './components/select.mjs';
 import migrateRangeInput from './components/range-input.mjs';
 import migrateSelectInput from './components/select-input.mjs';
+import migrateWatermark from './components/watermark.mjs';
 
 function run() {
   migrateSingleFile();
@@ -31,6 +32,7 @@ function run() {
   migrateTimeline();
   migrateTree();
   migrateRangeInput();
+  migrateWatermark();
 
   migrateHelper();
   migrateRenderTNode();
