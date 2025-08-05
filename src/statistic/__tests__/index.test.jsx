@@ -1,5 +1,6 @@
 import { mount } from '@vue/test-utils';
 import Statistic from '@/src/statistic/index.ts';
+import { COLOR_MAP } from '../_common/js/statistic/utils';
 
 describe('Statistic', () => {
   describe(':props', () => {
@@ -111,32 +112,61 @@ describe('Statistic', () => {
       expect(trendIconElement.is('svg')).toBe(true);
     });
 
-    it('trend="increase"', () => {
+    it('color:#ff0000', () => {
       const wrapper = mount(Statistic, {
         propsData: {
           title: 'Total Sales',
           value: 1000,
-          trend: 'increase',
+          color: '#ff0000',
         },
       });
 
-      const trendIconElement = wrapper.find('.t-icon.t-icon-arrow-triangle-up-filled');
-      expect(trendIconElement.exists()).toBe(true);
-      expect(trendIconElement.is('svg')).toBe(true);
+      const contentElement = wrapper.find('.t-statistic-content');
+      expect(contentElement.exists()).toBe(true);
+      expect(contentElement.attributes('style')).toContain('color: rgb(255, 0, 0)');
     });
 
-    it('trend="decrease"', () => {
+    it('color:yellow', () => {
       const wrapper = mount(Statistic, {
         propsData: {
           title: 'Total Sales',
           value: 1000,
-          trend: 'decrease',
+          color: 'yellow',
         },
       });
 
-      const trendIconElement = wrapper.find('.t-icon.t-icon-arrow-triangle-down-filled');
-      expect(trendIconElement.exists()).toBe(true);
-      expect(trendIconElement.is('svg')).toBe(true);
+      const contentElement = wrapper.find('.t-statistic-content');
+      expect(contentElement.exists()).toBe(true);
+      expect(contentElement.attributes('style')).toContain('color: yellow');
+    });
+
+    it('colors: colorKeys', async () => {
+      expect(COLOR_MAP).toBeDefined();
+      expect(COLOR_MAP.black).toBe('var(--td-text-color-primary)');
+
+      const wrapper = mount(Statistic, {
+        propsData: {
+          value: 1000,
+          color: 'black',
+        },
+      });
+
+      const { contentStyle } = wrapper.vm;
+      expect(contentStyle).toBeDefined();
+      expect(contentStyle.color).toBe('var(--td-text-color-primary)');
+
+      Object.keys(COLOR_MAP).forEach((color) => {
+        const wrapper = mount(Statistic, {
+          propsData: {
+            value: 1000,
+            color,
+          },
+        });
+
+        const { contentStyle } = wrapper.vm;
+        expect(contentStyle).toBeDefined();
+        expect(contentStyle.color).toBe(COLOR_MAP[color]);
+      });
     });
   });
 });
