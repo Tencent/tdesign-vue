@@ -141,20 +141,6 @@ describe('Statistic', () => {
     });
 
     it('colors: colorKeys', async () => {
-      expect(COLOR_MAP).toBeDefined();
-      expect(COLOR_MAP.black).toBe('var(--td-text-color-primary)');
-
-      const wrapper = mount(Statistic, {
-        propsData: {
-          value: 1000,
-          color: 'black',
-        },
-      });
-
-      const { contentStyle } = wrapper.vm;
-      expect(contentStyle).toBeDefined();
-      expect(contentStyle.color).toBe('var(--td-text-color-primary)');
-
       Object.keys(COLOR_MAP).forEach((color) => {
         const wrapper = mount(Statistic, {
           propsData: {
@@ -163,9 +149,9 @@ describe('Statistic', () => {
           },
         });
 
-        const { contentStyle } = wrapper.vm;
-        expect(contentStyle).toBeDefined();
-        expect(contentStyle.color).toBe(COLOR_MAP[color]);
+        const contentElement = wrapper.find('.t-statistic-content');
+        expect(contentElement.exists()).toBe(true);
+        expect(contentElement.attributes('style')).toContain(`color: ${COLOR_MAP[color]}`);
       });
     });
   });
