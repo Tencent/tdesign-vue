@@ -69,7 +69,7 @@ name | type | default | description | required
 alert | Object | - | Alert global configs。Typescript：`AlertConfig` | N
 anchor | Object | - | Anchor global configs。Typescript：`AnchorConfig` | N
 animation | Object | - | Typescript：`Partial<Record<'include'\|'exclude', Array<AnimationType>>>` `type AnimationType = 'ripple' \| 'expand' \| 'fade'`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
-attach | String / Object / Function | - | Typescript：`AttachNode \| { popup?: AttachNode; dialog?: AttachNode; drawer?: AttachNode; }`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+attach | String / Object / Function | - | Typescript：`AttachNode \| { imageViewer?: AttachNode; popup?: AttachNode; dialog?: AttachNode; drawer?: AttachNode; }`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 autoComplete | Object | - | AutoComplete global configs。Typescript：`AutoCompleteConfig` | N
 calendar | Object | - | Calendar global configs。Typescript：`CalendarConfig` | N
 cascader | Object | - | Cascader global configs。Typescript：`CascaderConfig` | N
@@ -90,6 +90,7 @@ list | Object | - | List global configs。Typescript：`ListConfig` | N
 message | Object | - | Message Component global configs。Typescript：`MessageConfig` | N
 pagination | Object | - | Pagination global configs。Typescript：`PaginationConfig` | N
 popconfirm | Object | - | Popconfirm global configs。Typescript：`PopconfirmConfig` | N
+qrcode | Object | - | QRCode global configs。Typescript：`QRCodeConfig` | N
 rate | Object | - | Rate global configs。Typescript：`RateConfig` | N
 select | Object | - | Select global configs。Typescript：`SelectConfig` | N
 steps | Object | - | Steps global configs。Typescript：`StepsConfig` | N
@@ -99,23 +100,28 @@ timePicker | Object | - | TimePicker global configs。Typescript：`TimePickerCo
 transfer | Object | - | Transfer global configs。Typescript：`TransferConfig` | N
 tree | Object | - | Tree global configs。Typescript：`TreeConfig` | N
 treeSelect | Object | - | TreeSelect global configs。Typescript：`TreeSelectConfig` | N
+typography | Object | - | Typography global configs。Typescript：`TypographyConfig` | N
 upload | Object | - | Upload global configs。Typescript：`UploadConfig` | N
 
-### InputConfig
+### AlertConfig
 
 name | type | default | description | required
 -- | -- | -- | -- | --
-autocomplete | String | - | \- | N
-placeholder | String | - | \- | N
+collapseText | String | - | \- | N
+expandText | String | - | \- | N
 
-### PaginationConfig
+### AnchorConfig
 
 name | type | default | description | required
 -- | -- | -- | -- | --
-itemsPerPage | String | - | \- | N
-jumpTo | String | - | \- | N
-page | String | - | \- | N
-total | String | - | \- | N
+copySuccessText | String | - | \- | N
+copyText | String | - | \- | N
+
+### AutoCompleteConfig
+
+name | type | default | description | required
+-- | -- | -- | -- | --
+empty | String | - | \- | N
 
 ### CalendarConfig
 
@@ -127,7 +133,7 @@ fillWithZero | Boolean | true | \- | N
 firstDayOfWeek | Number | 1 | options: 1/2/3/4/5/6/7 | N
 hideWeekend | String | - | \- | N
 monthRadio | String | - | \- | N
-monthSelection | String | - | \- | N
+monthSelection | String / Function | - | Typescript：`string \| (( data: { month: number })=>string)` | N
 showWeekend | String | - | \- | N
 thisMonth | String | - | \- | N
 today | String | - | \- | N
@@ -150,24 +156,6 @@ name | type | default | description | required
 clearConfirmText | String | - | \- | N
 recentColorTitle | String | - | \- | N
 swatchColorTitle | String | - | \- | N
-
-### TransferConfig
-
-name | type | default | description | required
--- | -- | -- | -- | --
-empty | String | - | \- | N
-placeholder | String | - | \- | N
-title | String | - | \- | N
-
-### TimePickerConfig
-
-name | type | default | description | required
--- | -- | -- | -- | --
-anteMeridiem | String | - | \- | N
-confirm | String | - | \- | N
-now | String | - | \- | N
-placeholder | String | - | placeholder text | N
-postMeridiem | String | - | \- | N
 
 ### DatePickerConfig
 
@@ -195,8 +183,14 @@ rangeSeparator | String | - | range separator text | N
 selectDate | String | - | select date text | N
 selectTime | String | - | select time text | N
 weekAbbreviation | String | - | week text | N
-weekdays | Object | - | Typescript：`string[]` | N
+weekdays | Array | - | Typescript：`string[]` | N
 yearAriaLabel | String | - | year text | N
+
+### DescriptionsConfig
+
+name | type | default | description | required
+-- | -- | -- | -- | --
+colonText | String | - | colon on the right of label, ":" | N
 
 ### DialogConfig
 
@@ -218,6 +212,82 @@ closeOnOverlayClick | Boolean | true | \- | N
 confirm | String | - | Typescript：`string \| ButtonProps` | N
 size | String | 'small' | \- | N
 
+### EmptyConfig
+
+name | type | default | description | required
+-- | -- | -- | -- | --
+image | Object | - | Typescript：`{ maintenance: TNode; success: TNode; fail: TNode; empty: TNode; networkError: TNode; }`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+titleText | Object | - | Typescript：`{ maintenance: string; success: string; fail: string; empty: string; networkError: string; }` | N
+
+### FormConfig
+
+name | type | default | description | required
+-- | -- | -- | -- | --
+colonText | String | - | colon on the right of label ":" | N
+errorMessage | Object | - | Typescript：`FormErrorMessage`，[Form API Documents](./form?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
+requiredMark | Boolean | true | \- | N
+requiredMarkPosition | String | left | Display position of required symbols。options: left/right | N
+
+### GuideConfig
+
+name | type | default | description | required
+-- | -- | -- | -- | --
+finishButtonProps | Object | - | finish button in last step. `{ content: 'Finish', theme: 'primary' }`。Typescript：`ButtonProps` | N
+nextButtonProps | Object | - | next step button. `{ content: 'Next Button', theme: 'primary' }`。Typescript：`ButtonProps` | N
+prevButtonProps | Object | - | previous step button. `{ content: 'Previous Step', theme: 'default' }`。Typescript：`ButtonProps` | N
+skipButtonProps | Object | - | skip button. `{ content: 'Skip', theme: 'default' }`。Typescript：`ButtonProps` | N
+
+### ImageConfig
+
+name | type | default | description | required
+-- | -- | -- | -- | --
+errorText | String | - | loading text, default value is "Error" | N
+loadingText | String | - | loading text, default value is "loading" | N
+replaceImageSrc | Function | - | replace all `src` attribute of images。Typescript：`(params: ImageProps) => string`，[Image API Documents](./image?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
+
+### ImageViewerConfig
+
+name | type | default | description | required
+-- | -- | -- | -- | --
+errorText | String | - | \- | N
+mirrorTipText | String | - | mirror operation text | N
+originalSizeTipText | String | - | original size tips | N
+rotateTipText | String | - | rotate operation text | N
+
+### InputConfig
+
+name | type | default | description | required
+-- | -- | -- | -- | --
+autocomplete | String | - | \- | N
+placeholder | String | - | \- | N
+
+### ListConfig
+
+name | type | default | description | required
+-- | -- | -- | -- | --
+loadingMoreText | String | - | \- | N
+loadingText | String | - | \- | N
+
+### MessageConfig
+
+name | type | default | description | required
+-- | -- | -- | -- | --
+`MessageOptions` | \- | - | extends `MessageOptions` | N
+
+### PaginationConfig
+
+name | type | default | description | required
+-- | -- | -- | -- | --
+itemsPerPage | String | - | \- | N
+jumpTo | String | - | \- | N
+page | String | - | \- | N
+total | String | - | \- | N
+### PaginationConfig
+
+name | params | return | description
+-- | -- | -- | --
+jumper | `(jumperProps: JumperProps)` | `TNode<JumperProps>` | [see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts)。<br/>`interface JumperProps { current: number; pageCount: number; onChange: (current: number) => void; }`<br/>
+
 ### PopconfirmConfig
 
 name | type | default | description | required
@@ -225,6 +295,37 @@ name | type | default | description | required
 cancel | String / Object | - | Typescript：`string \| ButtonProps`，[Button API Documents](./button?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
 confirm | String / Object | - | Typescript：`string \| ButtonProps` | N
 confirmBtnTheme | Object | - | Typescript：`{ default: string; warning: string; danger: string; }` | N
+
+### QRCodeConfig
+
+name | type | default | description | required
+-- | -- | -- | -- | --
+expiredText | String | - | Language configuration, "QR code expired" description text | N
+refreshText | String | - | Language configuration, "QR code refresh" description text | N
+scannedText | String | - | Language configuration, "QR code scanned" description text | N
+
+### RateConfig
+
+name | type | default | description | required
+-- | -- | -- | -- | --
+rateText | Array | - | Typescript：`string[]` | N
+
+### SelectConfig
+
+name | type | default | description | required
+-- | -- | -- | -- | --
+clearIcon | Function | - | Typescript：`TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+empty | String | - | \- | N
+filterable | Boolean | false | \- | N
+loadingText | String | - | \- | N
+placeholder | String | - | placeholder text | N
+
+### StepsConfig
+
+name | type | default | description | required
+-- | -- | -- | -- | --
+checkIcon | Slot / Function | - | Typescript：`TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+errorIcon | Slot / Function | - | Typescript：`TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 
 ### TableConfig
 
@@ -252,15 +353,29 @@ sortDescendingOperationText | String | - | \- | N
 sortIcon | Slot / Function | undefined | Typescript：`TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 treeExpandAndFoldIcon | Function | undefined | Typescript：`TNode<{ type: 'expand' \| 'fold' }>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 
-### SelectConfig
+### TagConfig
 
 name | type | default | description | required
 -- | -- | -- | -- | --
-clearIcon | Function | - | Typescript：`TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-empty | String | - | \- | N
-filterable | Boolean | false | \- | N
-loadingText | String | - | \- | N
+closeIcon | Function | - | Typescript：`TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+
+### TimePickerConfig
+
+name | type | default | description | required
+-- | -- | -- | -- | --
+anteMeridiem | String | - | \- | N
+confirm | String | - | \- | N
+now | String | - | \- | N
 placeholder | String | - | placeholder text | N
+postMeridiem | String | - | \- | N
+
+### TransferConfig
+
+name | type | default | description | required
+-- | -- | -- | -- | --
+empty | String | - | \- | N
+placeholder | String | - | \- | N
+title | String | - | \- | N
 
 ### TreeConfig
 
@@ -277,12 +392,13 @@ empty | String | - | \- | N
 loadingText | String | - | \- | N
 placeholder | String | - | placeholder text | N
 
-### ListConfig
+### TypographyConfig
 
 name | type | default | description | required
 -- | -- | -- | -- | --
-loadingMoreText | String | - | \- | N
-loadingText | String | - | \- | N
+collapseText | String | - | collapse text | N
+copiedText | String | - | copied text | N
+expandText | String | - | expand text | N
 
 ### UploadConfig
 
@@ -294,15 +410,6 @@ file | Object | - | Typescript：`UploadConfigFileList` | N
 progress | Object | - | Typescript：`UploadConfigProgress` | N
 sizeLimitMessage | String | - | \- | N
 triggerUploadText | Object | - | Typescript：`UploadTriggerUploadText` `interface UploadTriggerUploadText { image?: string, normal?: string,  fileInput?: string,  reupload?: string, continueUpload?: string, delete?: string }`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
-
-### UploadConfigProgress
-
-name | type | default | description | required
--- | -- | -- | -- | --
-failText | String | - | \- | N
-successText | String | - | \- | N
-uploadingText | String | - | \- | N
-waitingText | String | - | \- | N
 
 ### UploadConfigDragger
 
@@ -322,94 +429,11 @@ fileOperationText | String | - | \- | N
 fileSizeText | String | - | \- | N
 fileStatusText | String | - | \- | N
 
-### FormConfig
+### UploadConfigProgress
 
 name | type | default | description | required
 -- | -- | -- | -- | --
-colonText | String | - | colon on the right of label ":" | N
-errorMessage | Object | - | Typescript：`FormErrorMessage`，[Form API Documents](./form?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
-requiredMark | Boolean | true | \- | N
-
-### TagConfig
-
-name | type | default | description | required
--- | -- | -- | -- | --
-closeIcon | Function | - | Typescript：`TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-
-### StepsConfig
-
-name | type | default | description | required
--- | -- | -- | -- | --
-checkIcon | Slot / Function | - | Typescript：`TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-errorIcon | Slot / Function | - | Typescript：`TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-
-### AlertConfig
-
-name | type | default | description | required
--- | -- | -- | -- | --
-collapseText | String | - | \- | N
-expandText | String | - | \- | N
-
-### DescriptionsConfig
-
-name | type | default | description | required
--- | -- | -- | -- | --
-colonText | String | - | colon on the right of label, ":" | N
-
-### AnchorConfig
-
-name | type | default | description | required
--- | -- | -- | -- | --
-copySuccessText | String | - | \- | N
-copyText | String | - | \- | N
-
-### MessageConfig
-
-name | type | default | description | required
--- | -- | -- | -- | --
-`MessageOptions` | \- | - | extends `MessageOptions` | N
-
-### ImageConfig
-
-name | type | default | description | required
--- | -- | -- | -- | --
-errorText | String | - | loading text, default value is "Error" | N
-loadingText | String | - | loading text, default value is "loading" | N
-replaceImageSrc | Function | - | replace all `src` attribute of images。Typescript：`(params: ImageProps) => string`，[Image API Documents](./image?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/config-provider/type.ts) | N
-
-### ImageViewerConfig
-
-name | type | default | description | required
--- | -- | -- | -- | --
-errorText | String | - | \- | N
-mirrorTipText | String | - | mirror operation text | N
-originalSizeTipText | String | - | original size tips | N
-rotateTipText | String | - | rotate operation text | N
-
-### GuideConfig
-
-name | type | default | description | required
--- | -- | -- | -- | --
-finishButtonProps | Object | - | finish button in last step. `{ content: 'Finish', theme: 'primary' }`。Typescript：`ButtonProps` | N
-nextButtonProps | Object | - | next step button. `{ content: 'Next Button', theme: 'primary' }`。Typescript：`ButtonProps` | N
-prevButtonProps | Object | - | previous step button. `{ content: 'Previous Step', theme: 'default' }`。Typescript：`ButtonProps` | N
-skipButtonProps | Object | - | skip button. `{ content: 'Skip', theme: 'default' }`。Typescript：`ButtonProps` | N
-
-### RateConfig
-
-name | type | default | description | required
--- | -- | -- | -- | --
-rateText | Array | - | Typescript：`string[]` | N
-
-### EmptyConfig
-
-name | type | default | description | required
--- | -- | -- | -- | --
-image | Object | - | Typescript：`{ maintenance: TNode; success: TNode; fail: TNode; empty: TNode; networkError: TNode; }`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-titleText | Object | - | Typescript：`{ maintenance: string; success: string; fail: string; empty: string; networkError: string; }` | N
-
-### AutoCompleteConfig
-
-name | type | default | description | required
--- | -- | -- | -- | --
-empty | String | - | \- | N
+failText | String | - | \- | N
+successText | String | - | \- | N
+uploadingText | String | - | \- | N
+waitingText | String | - | \- | N

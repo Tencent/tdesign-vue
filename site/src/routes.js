@@ -33,7 +33,7 @@ const routes = [
     redirect: '/vue/overview',
   },
   {
-    name: 'demos',
+    name: 'demosComponent',
     path: '/vue/demos/:componentName/',
     component: () => import('./components/demo-page.vue'),
   },

@@ -3,14 +3,22 @@
 exports[`Submenu > props > :disabled 1`] = `
 <li
   class="t-submenu t-is-disabled"
-/>
+>
+  <div
+    style="display: none;"
+  />
+</li>
 `;
 
 exports[`Submenu > props > :name 1`] = `
 <li
   class="t-submenu"
   name="1"
-/>
+>
+  <div
+    style="display: none;"
+  />
+</li>
 `;
 
 exports[`Submenu > slot > <default> 1`] = `
@@ -50,6 +58,11 @@ exports[`Submenu > slot > <default> 1`] = `
       <div />
     </ul>
   </transition-stub>
+  <div
+    style="display: none;"
+  >
+    <div />
+  </div>
 </li>
 `;
 
@@ -73,6 +86,9 @@ exports[`Submenu > slot > <icon> 1`] = `
       style="--padding-left: 44px; display: none;"
     />
   </transition-stub>
+  <div
+    style="display: none;"
+  />
 </li>
 `;
 
@@ -97,5 +113,8 @@ exports[`Submenu > slot > <title> 1`] = `
       style="--padding-left: 44px; display: none;"
     />
   </transition-stub>
+  <div
+    style="display: none;"
+  />
 </li>
 `;

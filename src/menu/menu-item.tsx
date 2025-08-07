@@ -73,7 +73,10 @@ export default defineComponent({
         vnode: ctx.slots.default && ctx.slots.default(),
       });
     });
-
+    const activeValues = menu.activeValues.value;
+    if (activeValues.includes(props.value) && !activeValues.includes(submenu?.value)) {
+      activeValues.push(submenu?.value);
+    }
     return {
       menu,
       active,

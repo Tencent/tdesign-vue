@@ -51,6 +51,7 @@ export default defineComponent({
     const isActive = computed(() => activeValues.value.indexOf(props.value) > -1);
     const popupVisible = ref(false);
     const isCursorInPopup = ref(false);
+
     const rippleColor = computed(() => (theme.value === 'light' ? '#E7E7E7' : '#383838'));
     const isOpen = computed(() => {
       if (mode.value === 'popup') {
@@ -244,6 +245,7 @@ export default defineComponent({
       handleMouseLeavePopup,
       handleSubmenuItemClick,
       classPrefix,
+      activeValues,
     };
   },
   methods: {
@@ -367,6 +369,9 @@ export default defineComponent({
   render() {
     let child = null;
     let events = {};
+    let virtualChild;
+    // popup模式下且存在多层的特殊封装场景中，需要将子节点挂载进行计算高亮
+    if (this.activeValues.length < 2) virtualChild = <div style="display:none">{renderContent(this, 'default', 'content')}</div>;
 
     if (this.mode === 'popup') {
       events = {
@@ -380,6 +385,7 @@ export default defineComponent({
     return (
       <li class={this.classes} {...{ on: events }}>
         {child}
+        {virtualChild}
       </li>
     );
   },

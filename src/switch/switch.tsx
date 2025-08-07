@@ -130,7 +130,7 @@ export default mixins(classPrefixMixins).extend({
   },
   render(): VNode {
     const {
-      loading, disabled, content, nodeClasses, classes, toggle, contentClasses,
+      loading, content, nodeClasses, classes, toggle, contentClasses,
     } = this;
 
     let switchContent: TNodeReturnValue;
@@ -143,8 +143,7 @@ export default mixins(classPrefixMixins).extend({
     }
 
     return (
-      // @ts-ignore
-      <div class={classes} disabled={disabled} onClick={toggle}>
+      <div class={classes} onClick={toggle}>
         <span class={nodeClasses}>{loadingContent}</span>
         <div class={contentClasses}>{switchContent}</div>
       </div>

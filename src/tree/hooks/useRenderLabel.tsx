@@ -74,6 +74,7 @@ export default function useRenderLabel(state: TypeTreeItemState) {
           stopLabelTrigger={shouldStopLabelTrigger.value}
           ignore={treeProps.expandOnClickNode ? 'active' : 'expand,active'}
           props={itemCheckProps}
+          title={node.label}
         >
           {labelNode}
         </TCheckBox>
