@@ -4,7 +4,7 @@
       <template #trigger="{ open }">
         <div class="tdesign-demo-image-viewer__ui-image tdesign-demo-image-viewer__base">
           <img alt="test" :src="img" class="tdesign-demo-image-viewer__ui-image--img" />
-          <div class="tdesign-demo-image-viewer__ui-image--hover" @click="open">
+          <div class="tdesign-demo-image-viewer__ui-image--hover" @click="open(index)">
             <span><browse-icon size="1.4em" /> 预览</span>
           </div>
         </div>

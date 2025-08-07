@@ -81,7 +81,7 @@ import 'tdesign-vue/es/style/index.css';
 Vue.use(VueCompositionAPI); // must be the first one
 ```
 
-install `unplugin-vue-components` and `unplugin-auto-import`
+install `@tdesign-vue-next/auto-import-resolver`,`unplugin-vue-components` and `unplugin-auto-import`
 
 ```bash
 npm install -D unplugin-vue-components unplugin-auto-import
@@ -94,7 +94,7 @@ Then, add the above plugins to the corresponding configuration files of Webpack 
 ```js
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
-import { TDesignResolver } from 'unplugin-vue-components/resolvers';
+import { TDesignResolver } from '@tdesign-vue-next/auto-import-resolver';
 
 export default {
   plugins: [
@@ -114,7 +114,7 @@ export default {
 ```js
 const AutoImport = require('unplugin-auto-import/webpack');
 const Components = require('unplugin-vue-components/webpack');
-const { TDesignResolver } = require('unplugin-vue-components/resolvers');
+const { TDesignResolver } = require('@tdesign-vue-next/auto-import-resolver');
 
 module.exports = {
   // ...
@@ -129,7 +129,7 @@ module.exports = {
 };
 ```
 
-> You can click on this [link](https://github.com/antfu/unplugin-vue-components/blob/main/src/core/resolvers/tdesign.ts#L4) for the configuration supported by `TDesignResolver`.
+> You can click on this [link](https://github.com/Tencent/tdesign-vue-next/blob/develop/packages/auto-import-resolver/README.md#%E9%80%89%E9%A1%B9) for the configuration supported by `TDesignResolver`.
 
 ## Starter Kit
 

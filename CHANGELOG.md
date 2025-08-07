@@ -5,6 +5,39 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.13.0 `2025-08-07` 
+### 🚀 Features
+- `QRCode`: 新增 `QRCode` 二维码组件 @Wesley-0808 ([#3652](https://github.com/Tencent/tdesign-vue/pull/3652))
+-  `Alert`: 新增 `closeBtn` API，与其他组件保持一致，`close` 将在未来版本废弃，请尽快调整为 `closeBtn` 使用 @ngyyuusora ([#3631](https://github.com/Tencent/tdesign-vue/pull/3631))
+- `Tree`: 多选场景下每个节点新增 hover 提示，与单选场景保持一致 @RSS1102 ([#3633](https://github.com/Tencent/tdesign-vue/pull/3633))
+- `Upload`: 扩大单文件/图片风格的点击事件触发热区至整个卡片区域 @RSS1102 ([#3614](https://github.com/Tencent/tdesign-vue/pull/3614))
+### 🐞 Bug Fixes
+- `Cascader`: 修复 `value-type="full"` ，value 为 undefined时组件内部报错 @liweijie0812 ([#3622](https://github.com/Tencent/tdesign-vue/pull/3622))
+- `ColorPicker`: 减少颜色跨色彩空间的多次转换，降低误差 @RylanBot ([#3661](https://github.com/Tencent/tdesign-vue/pull/3661))
+- `DatePicker`: 
+     - 修复多选情况下周和季度模式的标签删除异常和可以重复选择的问题 @betavs ([#3653](https://github.com/Tencent/tdesign-vue/pull/3653))
+    -  修复多选情况下周模式可以重复选择的问题 @betavs ([#3658](https://github.com/Tencent/tdesign-vue/pull/3658))
+- `Descriptions`: 修复无边框模式下左右内边距的异常问题 @liweijie0812 ([common#2219](https://github.com/Tencent/tdesign-common/pull/2219))
+- `Image`: 修复 `1.12.1` 版本后控制台报错的问题 @betavs ([#3670](https://github.com/Tencent/tdesign-vue/pull/3670))
+- `ImageViewer`: 修复在多图预览中点击对应图片与预览图片不一致的问题 @betavs ([#3670](https://github.com/Tencent/tdesign-vue/pull/3670))
+- `Loading`: 修复在 iPad 微信上图标位置错误的问题 @Nero978([#3650](https://github.com/Tencent/tdesign-vue/pull/3650))
+- `Menu`: 修复多级菜单在子组件存在多层封装后无法正常高亮的问题 @uyarn ([#3675](https://github.com/Tencent/tdesign-vue/pull/3675))
+- `Popconfirm`: 当初始 `visible` 为 true 时，点击外部时弹出窗口不关闭的问题 @RSS1102 ([#3659](https://github.com/Tencent/tdesign-vue/pull/3659))
+- `Popup`: 当初始 `visible` 为 true 时，点击外部时弹出窗口不关闭的问题 @RSS1102 ([#3659](https://github.com/Tencent/tdesign-vue/pull/3659))
+- `Select`: 修复虚拟滚动搜索后出现空白区域的问题 @betavs ([#3669](https://github.com/Tencent/tdesign-vue/pull/3669))
+- `Statistic`: 修改 color 属性类型为字符串，以支持任何 [CSS color](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value) 支持的颜色值 @RSS1102 ([#3671](https://github.com/Tencent/tdesign-vue/pull/3671))
+- `Table`: 修复 `resizable` 开启时，列边框线引起的列名内容移动的问题 @QuentinHsu ([common#2224](https://github.com/Tencent/tdesign-common/pull/2224))
+
+
+## 🌈 1.12.1 `2025-07-03` 
+### 🚀 Features
+- `locale`: 支持内置多语言的英文版本的单复数场景正常展示 @YunYouJun ([#3641](https://github.com/Tencent/tdesign-vue/pull/3641))
+### 🐞 Bug Fixes
+- `ImageViewer`: 修复图片预览操作栏多语言失效的问题 @uyarn ([#3636](https://github.com/Tencent/tdesign-vue/pull/3636))
+- `Textarea`: 优化 `scrollbar` 样式 @RSS1102([#3639](https://github.com/Tencent/tdesign-vue/pull/3639))
+
+
+
 ## 🌈 1.12.0 `2025-06-11` 
 ### 🚀 Features
 - `ColorPicker`: 自动根据「触发器 / 最近颜色 / 预设颜色」的色值进行切换单色和渐变模式；只开启渐变模式时，过滤「预设颜色 / 当前颜色」中的非渐变色值；新增 format `HEX8`，移除 `HSB`；使用渐变模式的业务请注意此变更 ⚠️  @RylanBot ([#3572](https://github.com/Tencent/tdesign-vue/pull/3572))
