@@ -18,7 +18,7 @@ export default {
           itemsPerPage: '{size} / page',
           jumpTo: 'jump to',
           page: '',
-          total: 'Total {total} items',
+          total: 'Total {count} items',
         },
       }),
     };

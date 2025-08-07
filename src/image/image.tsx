@@ -1,11 +1,10 @@
 import {
-  computed, defineComponent, ref, toRefs, watch,
+  computed, defineComponent, ref, toRefs, watch, onMounted, onUnmounted,
 } from '@vue/composition-api';
 import { isFunction, omit } from 'lodash-es';
 import { ImageErrorIcon, ImageIcon } from 'tdesign-icons-vue';
 import observe from '../_common/js/utils/observe';
 import { useConfig } from '../config-provider/useConfig';
-import { TdImageProps } from './type';
 import props from './props';
 import { renderTNodeJSX } from '../utils/render-tnode';
 import Space from '../space';
@@ -15,7 +14,7 @@ export default defineComponent({
   name: 'TImage',
   components: { Space },
   props,
-  setup(props: TdImageProps, { emit }) {
+  setup(props, { emit }) {
     const { onLoad, onError } = props;
 
     const {
@@ -104,6 +103,17 @@ export default defineComponent({
       `${classPrefix.value}-image--position-${props.position}`,
     ]);
 
+    const io = ref(null);
+
+    onMounted(() => {
+      if (!lazy.value || !imageRef.value) return;
+      io.value = observe(imageRef.value as HTMLElement, null, handleLoadImage as Function, 0);
+    });
+
+    onUnmounted(() => {
+      imageRef.value && io.value && (io.value as IntersectionObserver).unobserve(imageRef.value as Element);
+    });
+
     return {
       imageRef,
       imageClasses,
@@ -120,18 +130,11 @@ export default defineComponent({
       handleError,
       handleLoad,
       isLoaded,
+      io,
       rest,
     };
   },
-  mounted(this) {
-    if (!this.lazy || !this.imageRef) return;
 
-    const io = observe(this.imageRef as HTMLElement, null, this.handleLoadImage as Function, 0);
-    this.io = io;
-  },
-  destroyed(this) {
-    this.imageRef && this.io && (this.io as IntersectionObserver).unobserve(this.imageRef as Element);
-  },
   methods: {
     renderPlaceholder() {
       const placeholder = renderTNodeJSX(this, 'placeholder');
@@ -193,7 +196,6 @@ export default defineComponent({
           `${this.classPrefix}-image__wrapper--shape-${this.shape}`,
           this.gallery && `${this.classPrefix}-image__wrapper--gallery`,
           this.hasMouseEvent && `${this.classPrefix}-image__wrapper--need-hover`,
-          this.className,
         ]}
         onMouseenter={this.handleToggleOverlay}
         onMouseleave={this.handleToggleOverlay}
