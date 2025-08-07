@@ -73,7 +73,7 @@ export default defineComponent({
   },
 
   computed: {
-    canTriggerUpload() {
+    hasActiveFile() {
       const file = this.displayFiles[0];
       return file && (['progress', 'success', 'fail', 'waiting'].includes(file.status) || !file.status);
     },
@@ -213,7 +213,7 @@ export default defineComponent({
     },
 
     getContent() {
-      if (this.canTriggerUpload) {
+      if (this.hasActiveFile) {
         return this.renderMainPreview();
       }
       return (
@@ -223,7 +223,7 @@ export default defineComponent({
       );
     },
     handleDraggerClick(e: MouseEvent) {
-      if (this.canTriggerUpload) {
+      if (!this.hasActiveFile) {
         this.triggerUpload?.(e);
       }
     },
