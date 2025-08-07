@@ -10,9 +10,8 @@
   </t-space>
 </template>
 
-<script lang="ts" setup>
+<script setup>
 import { ref } from 'vue';
-import { QRCodeProps } from 'tdesign-vue-next';
 
-const level = ref<QRCodeProps['level']>('M');
+const level = ref('M');
 </script>
