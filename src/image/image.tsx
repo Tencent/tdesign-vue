@@ -112,7 +112,7 @@ export default defineComponent({
     });
 
     onUnmounted(() => {
-      imageRef.value && io && (io as IntersectionObserver).unobserve(imageRef.value as Element);
+      imageRef.value && io.value && (io.value as IntersectionObserver).unobserve(imageRef.value as Element);
     });
 
     return {

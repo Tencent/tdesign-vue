@@ -6,6 +6,7 @@
 
 name | type | default | description | required
 -- | -- | -- | -- | --
+attach | String / Function | 'body' | Typescript：`AttachNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 closeBtn | Boolean / Slot / Function | true | Typescript：`boolean \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 closeOnEscKeydown | Boolean | true | trigger image viewer close event on `ESC` keydown | N
 closeOnOverlay | Boolean | - | \- | N
@@ -19,13 +20,13 @@ mode | String | modal | options: modal/modeless | N
 navigationArrow | Boolean / Slot / Function | true | Typescript：`boolean \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 showOverlay | Boolean | undefined | \- | N
 title | String / Slot / Function | - | preview title。Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
-trigger | String / Slot / Function | - | trigger element。Typescript：`TNode \| TNode<{ open: () => void }>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+trigger | String / Slot / Function | - | trigger element。Typescript：`TNode \| TNode<{ open: (index?: number) => void }>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 viewerScale | Object | - | Typescript：`ImageViewerScale` `interface ImageViewerScale { minWidth: number; minHeight: number }`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/image-viewer/type.ts) | N
 visible | Boolean | false | hide or show image viewer。`v-model` is supported | N
 defaultVisible | Boolean | false | hide or show image viewer。uncontrolled property | N
 zIndex | Number | - | \- | N
 onClose | Function |  | Typescript：`(context: { trigger: 'close-btn' \| 'overlay' \| 'esc'; e: MouseEvent \| KeyboardEvent }) => void`<br/> | N
-onDownload | Function |  | Typescript：`(url: string) => void`<br/> | N
+onDownload | Function |  | Typescript：`(url: string \| File) => void`<br/> | N
 onIndexChange | Function |  | Typescript：`(index: number, context: { trigger: 'prev' \| 'next' \| 'current' }) => void`<br/> | N
 
 ### ImageViewer Events

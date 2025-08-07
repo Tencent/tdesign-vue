@@ -2,6 +2,7 @@ import {
   computed, defineComponent, ref, toRefs, watch,
 } from 'vue';
 import { ChevronLeftIcon, ChevronDownIcon, CloseIcon } from 'tdesign-icons-vue';
+import { isNumber } from 'lodash-es';
 import props from './props';
 import Container from './base/Container';
 import TImageViewerIcon from './base/ImageModalIcon';
@@ -104,7 +105,10 @@ export default defineComponent({
       downloadFile(url);
     };
 
-    const openHandler = () => {
+    const openHandler = (index: number) => {
+      if (isNumber(index)) {
+        onImgClick(index);
+      }
       setVisibleValue(true);
     };
 
