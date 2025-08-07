@@ -394,7 +394,13 @@ exports[`csr snapshot test > csr test ./src/alert/_example/close.vue 1`] = `
       <div
         class="t-alert__close"
       >
-         Slot Close 
+        <div
+          class="t-tag t-tag--danger t-tag--outline"
+        >
+          <span>
+            关闭
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -51236,7 +51242,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/layout.vue 1`] = `
       >
         <div
           class="t-form__label t-form__label--right"
-          style="width: calc(2em + 24px);"
+          style="width: calc((2em + 24px));"
         >
           <label
             for=""
@@ -51246,7 +51252,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/layout.vue 1`] = `
         </div>
         <div
           class="t-form__controls"
-          style="margin-left: calc(2em + 24px);"
+          style="margin-left: calc((2em + 24px));"
         >
           <div
             class="t-form__controls-content"
@@ -51274,7 +51280,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/layout.vue 1`] = `
       >
         <div
           class="t-form__label t-form__label--right"
-          style="width: calc(2em + 24px);"
+          style="width: calc((2em + 24px));"
         >
           <label
             for=""
@@ -51284,7 +51290,7 @@ exports[`csr snapshot test > csr test ./src/form/_example/layout.vue 1`] = `
         </div>
         <div
           class="t-form__controls"
-          style="margin-left: calc(2em + 24px);"
+          style="margin-left: calc((2em + 24px));"
         >
           <div
             class="t-form__controls-content"
