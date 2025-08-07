@@ -9,41 +9,23 @@ import useMutationObservable from './useMutationObservable';
  * useVariables
  * @param variable CSS 变量名
  * @example
- *  单个变量：const textColor = useVariables('--td-color-primary');
- *
- *  多个变量（一）：
- *   const variables = useVariables('--td-color-primary','--td-brand-color');
- *   const textColor = variables['--td-color-primary'];
- *   const brandColor = variables['--td-brand-color'];
- *
- *  多个变量（二）：
  *   const { textColor, brandColor } = useVariables({
  *      textColor: '--td-color-primary',
  *      brandColor: '--td-brand-color',
  *   });
  */
-export function useVariables(variable: string): Ref<string>;
-export function useVariables(variables: string[]): Record<string, Ref<string>>;
-export function useVariables(variables: Record<string, string>): Record<string, Ref<string>>;
-export function useVariables(
-  variables: string | string[] | Record<string, string>,
-): Ref<string> | Record<string, Ref<string>> {
-  const values: Record<string, Ref<string>> = {};
+// eslint-disable-next-line import/prefer-default-export
+export function useVariables<T extends Record<string, string>>(variables: T): Record<keyof T, Ref<string>> {
+  const values = {} as Record<keyof T, Ref<string>>;
   let varsArray: string[] = [];
 
-  if (isString(variables)) {
-    varsArray = [variables];
-  } else if (Array.isArray(variables)) {
-    varsArray = variables;
-  } else {
-    varsArray = Object.values(variables);
-    Object.entries(variables).forEach(([key, varName]) => {
-      values[key] = ref(getColorTokenColor(varName));
-    });
-  }
+  varsArray = Object.values(variables);
+  Object.entries(variables).forEach(([key, varName]) => {
+    values[key as keyof T] = ref(getColorTokenColor(varName));
+  });
 
   varsArray.forEach((varName) => {
-    values[varName] = ref(getColorTokenColor(varName));
+    values[varName as keyof T] = ref(getColorTokenColor(varName));
   });
 
   const targetElement = document?.documentElement;
@@ -65,11 +47,5 @@ export function useVariables(
     });
   });
 
-  if (isString(variables)) {
-    return values[variables];
-  }
-  if (Array.isArray(variables)) {
-    return values;
-  }
   return values;
 }
