@@ -351,15 +351,13 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
         ) : null}
         {/* 首页按钮 */}
         {this.showFirstAndLastPageBtn ? (
-          // @ts-ignore
-          <div class={this.preBtnClass} onClick={() => this.toPage(1)} disabled={this.disabled || this.current === min}>
+          <div class={this.preBtnClass} onClick={() => this.toPage(1)}>
             <PageFirstIcon />
           </div>
         ) : null}
         {/* 向前按钮 */}
         {this.showPreviousAndNextBtn ? (
-          // @ts-ignore
-          <div class={this.preBtnClass} onClick={this.prevPage} disabled={this.disabled || this.current === min}>
+          <div class={this.preBtnClass} onClick={this.prevPage}>
             <ChevronLeftIcon />
           </div>
         ) : null}
@@ -407,23 +405,13 @@ export default mixins(getConfigReceiverMixins<Vue, PaginationConfig>('pagination
         {this.theme === 'simple' && Jumper}
         {/* 向后按钮 */}
         {this.showPreviousAndNextBtn ? (
-          <div
-            class={this.nextBtnClass}
-            onClick={this.nextPage}
-            // @ts-ignore
-            disabled={this.disabled || this.current === this.pageCount}
-          >
+          <div class={this.nextBtnClass} onClick={this.nextPage}>
             <ChevronRightIcon />
           </div>
         ) : null}
         {/* 尾页按钮 */}
         {this.showFirstAndLastPageBtn ? (
-          <div
-            class={this.nextBtnClass}
-            onClick={() => this.toPage(this.pageCount)}
-            // @ts-ignore
-            disabled={this.disabled || this.current === this.pageCount}
-          >
+          <div class={this.nextBtnClass} onClick={() => this.toPage(this.pageCount)}>
             <PageLastIcon />
           </div>
         ) : null}
