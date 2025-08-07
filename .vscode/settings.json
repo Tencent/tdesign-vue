@@ -27,6 +27,7 @@
     "popconfirm",
     "swiper",
     "tdesign",
-    "vnode"
+    "vnode",
+    "qrcode"
   ]
 }
