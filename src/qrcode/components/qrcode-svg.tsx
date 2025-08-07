@@ -1,6 +1,5 @@
 import { computed, defineComponent } from 'vue';
 import { QRCodeSubComponentProps } from './props';
-import type { Styles } from '../../common';
 import {
   DEFAULT_NEED_MARGIN, DEFAULT_MINVERSION, excavateModules, generatePath,
 } from '../../_common/js/qrcode/utils';
