@@ -119613,6 +119613,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="1"
                   >
                     <input
                       class="t-checkbox__former"
@@ -119647,6 +119648,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="1.1"
                   >
                     <input
                       class="t-checkbox__former"
@@ -119694,6 +119696,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="1.2"
                   >
                     <input
                       class="t-checkbox__former"
@@ -119741,6 +119744,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="1.2.1"
                   >
                     <input
                       class="t-checkbox__former"
@@ -119775,6 +119779,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="1.2.1.1"
                   >
                     <input
                       class="t-checkbox__former"
@@ -119809,6 +119814,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="1.2.1.2"
                   >
                     <input
                       class="t-checkbox__former"
@@ -119856,6 +119862,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="2"
                   >
                     <input
                       class="t-checkbox__former"
@@ -119890,6 +119897,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="2.1"
                   >
                     <input
                       class="t-checkbox__former"
@@ -119924,6 +119932,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="2.2"
                   >
                     <input
                       class="t-checkbox__former"
@@ -120194,6 +120203,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="1"
                   >
                     <input
                       class="t-checkbox__former"
@@ -120228,6 +120238,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="1.1"
                   >
                     <input
                       class="t-checkbox__former"
@@ -120275,6 +120286,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="1.2"
                   >
                     <input
                       class="t-checkbox__former"
@@ -120322,6 +120334,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="1.2.1"
                   >
                     <input
                       class="t-checkbox__former"
@@ -120356,6 +120369,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="1.2.1.1"
                   >
                     <input
                       class="t-checkbox__former"
@@ -120390,6 +120404,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="1.2.1.2"
                   >
                     <input
                       class="t-checkbox__former"
@@ -120437,6 +120452,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="2"
                   >
                     <input
                       class="t-checkbox__former"
@@ -120471,6 +120487,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="2.1"
                   >
                     <input
                       class="t-checkbox__former"
@@ -120505,6 +120522,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="2.2"
                   >
                     <input
                       class="t-checkbox__former"
@@ -121307,6 +121325,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1"
           >
             <input
               class="t-checkbox__former"
@@ -121354,6 +121373,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1"
           >
             <input
               class="t-checkbox__former"
@@ -121401,6 +121421,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1.1"
           >
             <input
               class="t-checkbox__former"
@@ -121435,6 +121456,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1.1.1"
           >
             <input
               class="t-checkbox__former"
@@ -121469,6 +121491,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1.1.2"
           >
             <input
               class="t-checkbox__former"
@@ -121516,6 +121539,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1.2"
           >
             <input
               class="t-checkbox__former"
@@ -121550,6 +121574,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1.2.1"
           >
             <input
               class="t-checkbox__former"
@@ -121584,6 +121609,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1.2.2"
           >
             <input
               class="t-checkbox__former"
@@ -121631,6 +121657,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.2"
           >
             <input
               class="t-checkbox__former"
@@ -121678,6 +121705,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.2.1"
           >
             <input
               class="t-checkbox__former"
@@ -121712,6 +121740,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.2.1.1"
           >
             <input
               class="t-checkbox__former"
@@ -121746,6 +121775,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.2.1.2"
           >
             <input
               class="t-checkbox__former"
@@ -121793,6 +121823,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.2.2"
           >
             <input
               class="t-checkbox__former"
@@ -121827,6 +121858,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.2.2.1"
           >
             <input
               class="t-checkbox__former"
@@ -121861,6 +121893,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.2.2.2"
           >
             <input
               class="t-checkbox__former"
@@ -121908,6 +121941,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="2"
           >
             <input
               class="t-checkbox__former"
@@ -121942,6 +121976,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="2.1"
           >
             <input
               class="t-checkbox__former"
@@ -121976,6 +122011,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="2.2"
           >
             <input
               class="t-checkbox__former"
@@ -122329,6 +122365,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/controlled.vue 1`] = `
             class="t-checkbox t-is-indeterminate t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1"
           >
             <input
               class="t-checkbox__former"
@@ -122377,6 +122414,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/controlled.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1"
           >
             <input
               class="t-checkbox__former"
@@ -122411,6 +122449,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/controlled.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1.1"
           >
             <input
               class="t-checkbox__former"
@@ -122445,6 +122484,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/controlled.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1.2"
           >
             <input
               class="t-checkbox__former"
@@ -122492,6 +122532,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/controlled.vue 1`] = `
             class="t-checkbox t-is-checked t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.2"
           >
             <input
               class="t-checkbox__former"
@@ -122753,6 +122794,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -122800,6 +122842,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -122834,6 +122877,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -122868,6 +122912,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -122915,6 +122960,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -122949,6 +122995,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -122983,6 +123030,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -123030,6 +123078,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -123064,6 +123113,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -123098,6 +123148,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -123514,6 +123565,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-performance.vue 
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -123590,6 +123642,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-performance.vue 
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -123666,6 +123719,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-performance.vue 
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -124286,6 +124340,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -124357,6 +124412,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             class="t-checkbox t-is-disabled t-tree__label"
             disabled="disabled"
             ignore="expand,active"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -124416,6 +124472,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             class="t-checkbox t-is-disabled t-tree__label"
             disabled="disabled"
             ignore="expand,active"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -124475,6 +124532,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             class="t-checkbox t-is-disabled t-tree__label"
             disabled="disabled"
             ignore="expand,active"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -124547,6 +124605,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -124605,6 +124664,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -124663,6 +124723,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -124734,6 +124795,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -124805,6 +124867,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             class="t-checkbox t-is-disabled t-tree__label"
             disabled="disabled"
             ignore="expand,active"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -124864,6 +124927,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             class="t-checkbox t-is-disabled t-tree__label"
             disabled="disabled"
             ignore="expand,active"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -124923,6 +124987,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             class="t-checkbox t-is-disabled t-tree__label"
             disabled="disabled"
             ignore="expand,active"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -124995,6 +125060,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -125053,6 +125119,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -125111,6 +125178,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -127086,6 +127154,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                 class="t-checkbox t-tree__label"
                 ignore="expand,active"
                 tabindex="0"
+                title="1"
               >
                 <input
                   class="t-checkbox__former"
@@ -127124,6 +127193,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                 class="t-checkbox t-tree__label"
                 ignore="expand,active"
                 tabindex="0"
+                title="1.1"
               >
                 <input
                   class="t-checkbox__former"
@@ -127162,6 +127232,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                 class="t-checkbox t-tree__label"
                 ignore="expand,active"
                 tabindex="0"
+                title="1.2"
               >
                 <input
                   class="t-checkbox__former"
@@ -127213,6 +127284,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                 class="t-checkbox t-tree__label"
                 ignore="expand,active"
                 tabindex="0"
+                title="2"
               >
                 <input
                   class="t-checkbox__former"
@@ -127251,6 +127323,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                 class="t-checkbox t-tree__label"
                 ignore="expand,active"
                 tabindex="0"
+                title="2.1"
               >
                 <input
                   class="t-checkbox__former"
@@ -127289,6 +127362,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                 class="t-checkbox t-tree__label"
                 ignore="expand,active"
                 tabindex="0"
+                title="2.2"
               >
                 <input
                   class="t-checkbox__former"
@@ -127423,6 +127497,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/lazy.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1"
           >
             <input
               class="t-checkbox__former"
@@ -127470,6 +127545,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/lazy.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="2"
           >
             <input
               class="t-checkbox__former"
@@ -129830,6 +129906,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -129944,6 +130021,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -130315,6 +130393,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/state.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -130416,6 +130495,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/state.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -130666,6 +130746,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
             class="t-checkbox t-is-indeterminate t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1"
           >
             <input
               class="t-checkbox__former"
@@ -130714,6 +130795,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
             class="t-checkbox t-is-indeterminate t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1"
           >
             <input
               class="t-checkbox__former"
@@ -130762,6 +130844,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
             class="t-checkbox t-is-checked t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1.1"
           >
             <input
               class="t-checkbox__former"
@@ -130796,6 +130879,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
             class="t-checkbox t-is-checked t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1.1.1"
           >
             <input
               class="t-checkbox__former"
@@ -130830,6 +130914,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
             class="t-checkbox t-is-checked t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1.1.2"
           >
             <input
               class="t-checkbox__former"
@@ -130877,6 +130962,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1.2"
           >
             <input
               class="t-checkbox__former"
@@ -130924,6 +131010,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.2"
           >
             <input
               class="t-checkbox__former"
@@ -131164,6 +131251,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/transition.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -131211,6 +131299,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/transition.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -131258,6 +131347,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/transition.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -131584,6 +131674,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -131664,6 +131755,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -131731,6 +131823,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -131798,6 +131891,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -131865,6 +131959,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -131932,6 +132027,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -131999,6 +132095,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -132079,6 +132176,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -132146,6 +132244,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -132213,6 +132312,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -132280,6 +132380,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -132347,6 +132448,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -132414,6 +132516,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -132494,6 +132597,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -132561,6 +132665,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -132628,6 +132733,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -132695,6 +132801,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -132762,6 +132869,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -132829,6 +132937,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -132909,6 +133018,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -132976,6 +133086,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -133043,6 +133154,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -133110,6 +133222,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -133177,6 +133290,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -133244,6 +133358,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -133324,6 +133439,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -133391,6 +133507,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -133458,6 +133575,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -133525,6 +133643,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -133592,6 +133711,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
