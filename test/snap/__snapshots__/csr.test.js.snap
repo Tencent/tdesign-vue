@@ -394,7 +394,13 @@ exports[`csr snapshot test > csr test ./src/alert/_example/close.vue 1`] = `
       <div
         class="t-alert__close"
       >
-         Slot Close 
+        <div
+          class="t-tag t-tag--danger t-tag--outline"
+        >
+          <span>
+            关闭
+          </span>
+        </div>
       </div>
     </div>
   </div>
