@@ -30,7 +30,7 @@ export default defineComponent({
     const tween = ref(null);
 
     const numberValue = computed(() => (isNumber(props.value) ? props.value : 0));
-    const valueStyle = computed(() => ({ color: COLOR_MAP[color.value] || color.value }));
+    const valueStyle = computed(() => ({ color: COLOR_MAP[color.value as keyof typeof COLOR_MAP] || color.value }));
     const innerDecimalPlaces = computed(
       () => decimalPlaces.value ?? numberValue.value.toString().split('.')[1]?.length ?? 0,
     );
