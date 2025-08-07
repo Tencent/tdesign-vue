@@ -22,5 +22,5 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-  "cSpell.words": ["tdesign", "popconfirm", "swiper", "cascader"]
+  "cSpell.words": ["tdesign", "popconfirm", "swiper", "cascader","qrcode"]
 }
