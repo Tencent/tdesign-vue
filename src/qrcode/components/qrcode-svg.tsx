@@ -1,5 +1,6 @@
 import { computed, defineComponent } from 'vue';
 import { QRCodeSubComponentProps } from './props';
+import type { Styles } from '../../common';
 import {
   DEFAULT_NEED_MARGIN, DEFAULT_MINVERSION, excavateModules, generatePath,
 } from '../../_common/js/qrcode/utils';
@@ -48,19 +49,13 @@ export default defineComponent({
           width={this.calculatedImageSettings.w}
           x={this.calculatedImageSettings.x + this.margin}
           y={this.calculatedImageSettings.y + this.margin}
-          crossOrigin={this.calculatedImageSettings.crossOrigin}
+          cross-origin={this.calculatedImageSettings.crossOrigin}
         />
       );
     };
 
     return (
-      <svg
-        height={this.size}
-        width={this.size}
-        viewBox={`0 0 ${this.numCells} ${this.numCells}`}
-        role="img"
-        style={this.style}
-      >
+      <svg height={this.size} width={this.size} viewBox={`0 0 ${this.numCells} ${this.numCells}`} role="img">
         {!!this.title && <title>{this.title}</title>}
         <path fill={this.bgColor} d={`M0,0 h${this.numCells}v${this.numCells}H0z`} shape-rendering="crispEdges" />
         <path fill={this.fgColor} d={fgPath} shape-rendering="crispEdges" />

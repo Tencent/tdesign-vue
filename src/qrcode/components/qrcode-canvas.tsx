@@ -87,7 +87,7 @@ export default defineComponent({
         });
       }
 
-      if (this.calculatedImageSettings) {
+      if (calculatedImageSettings.value) {
         ctx.globalAlpha = calculatedImageSettings.value.opacity;
       }
 
