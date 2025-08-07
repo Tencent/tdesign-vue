@@ -83,6 +83,7 @@ declare module '@vue/runtime-dom' {
     TPopup: typeof import('tdesign-vue')['Popup'];
     TPrimaryTable: typeof import('tdesign-vue')['PrimaryTable'];
     TProgress: typeof import('tdesign-vue')['Progress'];
+    TQrcode: typeof import('tdesign-vue')['QRCode'];
     TRadio: typeof import('tdesign-vue')['Radio'];
     TRadioButton: typeof import('tdesign-vue')['RadioButton'];
     TRadioGroup: typeof import('tdesign-vue')['RadioGroup'];
