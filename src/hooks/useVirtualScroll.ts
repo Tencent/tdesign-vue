@@ -1,11 +1,13 @@
-/* eslint-disable */
+/* eslint-disable no-param-reassign */
 /**
  * 当前虚拟滚动存在的问题
  * 1. 反复拖动滚动条，底部会出现奇怪的高度
  * 2. 表格高度发生变化时，底部也会出现奇怪的高度
  * 3. 无法直接定位滚动到某个元素，进而无法实现 Select 组件直接滚动到选中项
  */
-import { ref, toRefs, reactive, onMounted, computed, watch, nextTick } from 'vue';
+import {
+  ref, toRefs, reactive, onMounted, computed, watch, nextTick,
+} from 'vue';
 
 // 虚拟滚动Hooks的完整实现，只所以封装成hooks，主要是为了方便跟其他组件搭配使用，比如说表格或者下拉框
 const useVirtualScroll = ({
@@ -75,7 +77,7 @@ const useVirtualScroll = ({
     const firstRow = visibleData[0];
     if (firstRow) {
       // 修复只有一个元素时存在偏移的问题
-      return visibleData.length === 1 ? 0 : state.cachedScrollY[firstRow.$index];
+      return visibleData.length === 1 ? 0 : state.cachedScrollY[firstRow.$index] ?? 0;
     }
     return 0;
   });
@@ -194,7 +196,7 @@ const useVirtualScroll = ({
           state.cachedHeight[lastIndex] = lineHeight;
         }
         distance -= state.cachedHeight[lastIndex];
-        lastIndex++;
+        lastIndex += 1;
       }
       if (lastIndex >= data.value.length) {
         index = data.value.length - 1;
@@ -219,7 +221,7 @@ const useVirtualScroll = ({
     } else {
       // 向上滚动
       while (distance < 0) {
-        lastIndex--;
+        lastIndex -= 1;
         if (!state.cachedHeight[lastIndex]) {
           state.cachedHeight[lastIndex] = lineHeight;
         }
@@ -244,7 +246,7 @@ const useVirtualScroll = ({
   !fixedHeight && watch(updateId, calculateScrollY, { flush: 'post' });
   const handleRowMounted = () => {
     if (!isVirtual.value) return;
-    updateId.value++;
+    updateId.value += 1;
   };
   watch(data, () => {
     reset();
