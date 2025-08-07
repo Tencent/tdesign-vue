@@ -170,6 +170,14 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
     };
     updateTrigger();
     this.$watch('trigger', updateTrigger);
+
+    // 当初始 visible 为 true 时，添加 document 事件监听
+    if (this.visible) {
+      if (!this.hasDocumentEvent) {
+        on(document, 'mousedown', this.handleDocumentClick, true);
+        this.hasDocumentEvent = true;
+      }
+    }
   },
   updated() {
     (this.$refs.container as any)?.updateContent();
@@ -310,6 +318,8 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
         // ignore document event if popper panel clicked
         const popperEl = this.$refs.popper as HTMLDivElement;
         if (popperEl?.contains(ev.target as Node)) return;
+
+        // 确保点击外部区域能正确关闭
         this.visibleState = 0;
         this.emitPopVisible(false, { trigger: 'document', e: ev });
       });

@@ -67,6 +67,7 @@ export * from './watermark';
 export * from './collapse';
 export * from './rate';
 export * from './timeline';
+export * from './qrcode';
 
 // 消息提醒
 

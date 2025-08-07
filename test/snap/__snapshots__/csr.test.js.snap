@@ -394,7 +394,13 @@ exports[`csr snapshot test > csr test ./src/alert/_example/close.vue 1`] = `
       <div
         class="t-alert__close"
       >
-         Slot Close 
+        <div
+          class="t-tag t-tag--danger t-tag--outline"
+        >
+          <span>
+            关闭
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -28970,7 +28976,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/panel.vue 1`] 
         class="t-space-item"
       >
         <label>
-          单色
+          只开启单色
         </label>
       </div>
       <div
@@ -29012,7 +29018,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/panel.vue 1`] 
                     <span
                       class="t-color-picker__thumb"
                       role="slider"
-                      style="left: 60%; color: rgb(0, 82, 217);"
+                      style="left: 60%; color: rgb(0, 96, 255);"
                       tabindex="0"
                     />
                   </div>
@@ -29706,7 +29712,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/panel.vue 1`] 
         class="t-space-item"
       >
         <label>
-          渐变
+          只开启渐变（会过滤掉所有预设颜色的非渐变值）
         </label>
       </div>
       <div
@@ -29816,7 +29822,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/panel.vue 1`] 
                     <span
                       class="t-color-picker__thumb"
                       role="slider"
-                      style="left: 58%; color: rgb(79, 172, 254);"
+                      style="left: 58%; color: rgb(0, 136, 255);"
                       tabindex="0"
                     />
                   </div>
@@ -31884,7 +31890,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/status-readonl
             <span
               class="t-color-picker__thumb"
               role="slider"
-              style="left: 60%; color: rgb(0, 82, 217);"
+              style="left: 60%; color: rgb(0, 96, 255);"
               tabindex="0"
             />
           </div>
@@ -32695,7 +32701,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/swatch-color.v
                     <span
                       class="t-color-picker__thumb"
                       role="slider"
-                      style="left: 60%; color: rgb(0, 82, 217);"
+                      style="left: 60%; color: rgb(0, 96, 255);"
                       tabindex="0"
                     />
                   </div>
@@ -33074,7 +33080,7 @@ exports[`csr snapshot test > csr test ./src/color-picker/_example/swatch-color.v
                     <span
                       class="t-color-picker__thumb"
                       role="slider"
-                      style="left: 60%; color: rgb(0, 82, 217);"
+                      style="left: 60%; color: rgb(0, 96, 255);"
                       tabindex="0"
                     />
                   </div>
@@ -37695,7 +37701,6 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/pagination.
   </div>
   <div
     class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
-    disabled="disabled"
   >
     <svg
       class="t-icon t-icon-chevron-left"
@@ -39809,6 +39814,110 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/multiple.vue 1`
             <span
               class="t-input__input-pre"
             />
+            <span
+              class="t-input__suffix t-input__suffix-icon"
+            >
+              <svg
+                class="t-icon t-icon-calendar"
+                fill="none"
+                height="1em"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  d="M6 4V1.5H8V4H16V1.5H18V4H22V22H2V4H6ZM4 6V9H20V6H4ZM20 11H4V20H20V11Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-date-picker"
+    >
+      <div
+        class="t-select-input t-select-input--multiple t-select-input--empty"
+      >
+        <div
+          class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty t-tag-input__with-suffix-icon"
+        >
+          <div
+            class="t-input t-is-readonly t-input--prefix t-input--suffix"
+          >
+            <div
+              class="t-input__prefix"
+            />
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="支持周的多选"
+              readonly="readonly"
+              type="text"
+              unselectable="on"
+            />
+            <span
+              class="t-input__input-pre"
+            >
+              支持周的多选
+            </span>
+            <span
+              class="t-input__suffix t-input__suffix-icon"
+            >
+              <svg
+                class="t-icon t-icon-calendar"
+                fill="none"
+                height="1em"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  d="M6 4V1.5H8V4H16V1.5H18V4H22V22H2V4H6ZM4 6V9H20V6H4ZM20 11H4V20H20V11Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-date-picker"
+    >
+      <div
+        class="t-select-input t-select-input--multiple t-select-input--empty"
+      >
+        <div
+          class="t-input__wrap t-tag-input t-tag-input--break-line t-is-empty t-tag-input__with-suffix-icon"
+        >
+          <div
+            class="t-input t-is-readonly t-input--prefix t-input--suffix"
+          >
+            <div
+              class="t-input__prefix"
+            />
+            <input
+              autocomplete=""
+              class="t-input__inner"
+              placeholder="支持季度的多选"
+              readonly="readonly"
+              type="text"
+              unselectable="on"
+            />
+            <span
+              class="t-input__input-pre"
+            >
+              支持季度的多选
+            </span>
             <span
               class="t-input__suffix t-input__suffix-icon"
             >
@@ -68588,6 +68697,37 @@ exports[`csr snapshot test > csr test ./src/menu/_example/closable-side.vue 1`] 
             />
           </svg>
         </div>
+        <div
+          style="display: none;"
+        >
+          <li
+            class="t-menu__item t-is-active t-menu__item--plain t-submenu__item"
+          >
+            <span
+              class="t-menu__content"
+            >
+              菜单内容一
+            </span>
+          </li>
+          <li
+            class="t-menu__item t-menu__item--plain t-submenu__item"
+          >
+            <span
+              class="t-menu__content"
+            >
+              菜单内容二
+            </span>
+          </li>
+          <li
+            class="t-menu__item t-menu__item--plain t-submenu__item"
+          >
+            <span
+              class="t-menu__content"
+            >
+              菜单内容三
+            </span>
+          </li>
+        </div>
       </li>
       <li
         class="t-menu__item"
@@ -68920,6 +69060,40 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
               </span>
             </li>
           </ul>
+          <div
+            style="display: none;"
+          >
+            <li
+              class="t-menu__item t-is-active t-menu__item--plain"
+              data-v-3a8c765e=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                子菜单1-1
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain"
+              data-v-3a8c765e=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                子菜单1-2
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain"
+              data-v-3a8c765e=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                子菜单1-3
+              </span>
+            </li>
+          </div>
         </li>
         <li
           class="t-submenu"
@@ -68968,6 +69142,40 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
               </span>
             </li>
           </ul>
+          <div
+            style="display: none;"
+          >
+            <li
+              class="t-menu__item t-menu__item--plain"
+              data-v-3a8c765e=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                子菜单2-1
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain"
+              data-v-3a8c765e=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                子菜单2-2
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain"
+              data-v-3a8c765e=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                子菜单2-3
+              </span>
+            </li>
+          </div>
         </li>
       </ul>
       <div
@@ -69125,6 +69333,40 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
               </span>
             </li>
           </ul>
+          <div
+            style="display: none;"
+          >
+            <li
+              class="t-menu__item t-is-active t-menu__item--plain"
+              data-v-3a8c765e=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                子菜单1-1
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain"
+              data-v-3a8c765e=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                子菜单1-2
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain"
+              data-v-3a8c765e=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                子菜单1-3
+              </span>
+            </li>
+          </div>
         </li>
         <li
           class="t-submenu"
@@ -69173,6 +69415,40 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
               </span>
             </li>
           </ul>
+          <div
+            style="display: none;"
+          >
+            <li
+              class="t-menu__item t-menu__item--plain"
+              data-v-3a8c765e=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                子菜单2-1
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain"
+              data-v-3a8c765e=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                子菜单2-2
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain"
+              data-v-3a8c765e=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                子菜单2-3
+              </span>
+            </li>
+          </div>
         </li>
       </ul>
       <div
@@ -69402,6 +69678,46 @@ exports[`csr snapshot test > csr test ./src/menu/_example/group-side.vue 1`] = `
               </li>
             </ul>
           </transition-stub>
+          <div
+            style="display: none;"
+          >
+            <li
+              class="t-menu__item t-menu__item--plain t-submenu__item"
+            >
+              <span
+                class="t-menu__content"
+              >
+                基础列表项
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain t-submenu__item"
+            >
+              <span
+                class="t-menu__content"
+              >
+                卡片列表项
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain t-submenu__item"
+            >
+              <span
+                class="t-menu__content"
+              >
+                筛选列表项
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain t-submenu__item"
+            >
+              <span
+                class="t-menu__content"
+              >
+                树状筛选列表项
+              </span>
+            </li>
+          </div>
         </li>
         <li
           class="t-menu__item"
@@ -69911,6 +70227,40 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
                 </span>
               </li>
             </ul>
+            <div
+              style="display: none;"
+            >
+              <li
+                class="t-menu__item t-menu__item--plain"
+                data-v-46745d88=""
+              >
+                <span
+                  class="t-menu__content"
+                >
+                   子菜单1-1 
+                </span>
+              </li>
+              <li
+                class="t-menu__item t-menu__item--plain"
+                data-v-46745d88=""
+              >
+                <span
+                  class="t-menu__content"
+                >
+                   子菜单1-2 
+                </span>
+              </li>
+              <li
+                class="t-menu__item t-menu__item--plain"
+                data-v-46745d88=""
+              >
+                <span
+                  class="t-menu__content"
+                >
+                   子菜单1-3 
+                </span>
+              </li>
+            </div>
           </li>
         </span>
       </li>
@@ -69963,6 +70313,40 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
                 </span>
               </li>
             </ul>
+            <div
+              style="display: none;"
+            >
+              <li
+                class="t-menu__item t-is-active t-menu__item--plain"
+                data-v-46745d88=""
+              >
+                <span
+                  class="t-menu__content"
+                >
+                   子菜单2-1 
+                </span>
+              </li>
+              <li
+                class="t-menu__item t-menu__item--plain"
+                data-v-46745d88=""
+              >
+                <span
+                  class="t-menu__content"
+                >
+                   子菜单2-2 
+                </span>
+              </li>
+              <li
+                class="t-menu__item t-menu__item--plain"
+                data-v-46745d88=""
+              >
+                <span
+                  class="t-menu__content"
+                >
+                   子菜单2-3 
+                </span>
+              </li>
+            </div>
           </li>
         </span>
       </li>
@@ -70015,6 +70399,40 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
                 </span>
               </li>
             </ul>
+            <div
+              style="display: none;"
+            >
+              <li
+                class="t-menu__item t-menu__item--plain"
+                data-v-46745d88=""
+              >
+                <span
+                  class="t-menu__content"
+                >
+                   子菜单3-1 
+                </span>
+              </li>
+              <li
+                class="t-menu__item t-menu__item--plain"
+                data-v-46745d88=""
+              >
+                <span
+                  class="t-menu__content"
+                >
+                   子菜单3-2 
+                </span>
+              </li>
+              <li
+                class="t-menu__item t-menu__item--plain"
+                data-v-46745d88=""
+              >
+                <span
+                  class="t-menu__content"
+                >
+                   子菜单3-3 
+                </span>
+              </li>
+            </div>
           </li>
         </span>
       </li>
@@ -70202,6 +70620,40 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
                   </span>
                 </li>
               </ul>
+              <div
+                style="display: none;"
+              >
+                <li
+                  class="t-menu__item t-is-active t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-1-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-1-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-1-3
+                  </span>
+                </li>
+              </div>
             </li>
             <li
               class="t-submenu"
@@ -70246,6 +70698,40 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
                   </span>
                 </li>
               </ul>
+              <div
+                style="display: none;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-2-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-2-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-2-3
+                  </span>
+                </li>
+              </div>
             </li>
             <li
               class="t-submenu"
@@ -70290,8 +70776,280 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
                   </span>
                 </li>
               </ul>
+              <div
+                style="display: none;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-3-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-3-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-3-3
+                  </span>
+                </li>
+              </div>
             </li>
           </ul>
+          <div
+            style="display: none;"
+          >
+            <li
+              class="t-submenu"
+              data-v-29e136fe=""
+            >
+              <div
+                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+              >
+                子菜单1-1
+              </div>
+              <ul
+                style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
+              >
+                <li
+                  class="t-menu__item t-is-active t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-1-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-1-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-1-3
+                  </span>
+                </li>
+              </ul>
+              <div
+                style="display: none;"
+              >
+                <li
+                  class="t-menu__item t-is-active t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-1-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-1-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-1-3
+                  </span>
+                </li>
+              </div>
+            </li>
+            <li
+              class="t-submenu"
+              data-v-29e136fe=""
+            >
+              <div
+                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+              >
+                子菜单1-2
+              </div>
+              <ul
+                style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-2-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-2-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-2-3
+                  </span>
+                </li>
+              </ul>
+              <div
+                style="display: none;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-2-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-2-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-2-3
+                  </span>
+                </li>
+              </div>
+            </li>
+            <li
+              class="t-submenu"
+              data-v-29e136fe=""
+            >
+              <div
+                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+              >
+                子菜单1-3
+              </div>
+              <ul
+                style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-3-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-3-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-3-3
+                  </span>
+                </li>
+              </ul>
+              <div
+                style="display: none;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-3-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-3-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-3-3
+                  </span>
+                </li>
+              </div>
+            </li>
+          </div>
         </li>
         <li
           class="t-submenu"
@@ -70352,6 +71110,40 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
                   </span>
                 </li>
               </ul>
+              <div
+                style="display: none;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-1-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-1-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-1-3
+                  </span>
+                </li>
+              </div>
             </li>
             <li
               class="t-submenu"
@@ -70396,6 +71188,40 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
                   </span>
                 </li>
               </ul>
+              <div
+                style="display: none;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-2-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-2-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-2-3
+                  </span>
+                </li>
+              </div>
             </li>
             <li
               class="t-submenu"
@@ -70440,8 +71266,280 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
                   </span>
                 </li>
               </ul>
+              <div
+                style="display: none;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-3-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-3-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-3-3
+                  </span>
+                </li>
+              </div>
             </li>
           </ul>
+          <div
+            style="display: none;"
+          >
+            <li
+              class="t-submenu"
+              data-v-29e136fe=""
+            >
+              <div
+                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+              >
+                子菜单2-1
+              </div>
+              <ul
+                style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-1-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-1-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-1-3
+                  </span>
+                </li>
+              </ul>
+              <div
+                style="display: none;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-1-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-1-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-1-3
+                  </span>
+                </li>
+              </div>
+            </li>
+            <li
+              class="t-submenu"
+              data-v-29e136fe=""
+            >
+              <div
+                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+              >
+                子菜单2-2
+              </div>
+              <ul
+                style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-2-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-2-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-2-3
+                  </span>
+                </li>
+              </ul>
+              <div
+                style="display: none;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-2-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-2-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-2-3
+                  </span>
+                </li>
+              </div>
+            </li>
+            <li
+              class="t-submenu"
+              data-v-29e136fe=""
+            >
+              <div
+                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+              >
+                子菜单2-3
+              </div>
+              <ul
+                style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-3-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-3-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-3-3
+                  </span>
+                </li>
+              </ul>
+              <div
+                style="display: none;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-3-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-3-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-3-3
+                  </span>
+                </li>
+              </div>
+            </li>
+          </div>
         </li>
       </ul>
       <div
@@ -70611,6 +71709,40 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
                   </span>
                 </li>
               </ul>
+              <div
+                style="display: none;"
+              >
+                <li
+                  class="t-menu__item t-is-active t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-1-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-1-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-1-3
+                  </span>
+                </li>
+              </div>
             </li>
             <li
               class="t-submenu"
@@ -70655,6 +71787,40 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
                   </span>
                 </li>
               </ul>
+              <div
+                style="display: none;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-2-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-2-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-2-3
+                  </span>
+                </li>
+              </div>
             </li>
             <li
               class="t-submenu"
@@ -70699,8 +71865,280 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
                   </span>
                 </li>
               </ul>
+              <div
+                style="display: none;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-3-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-3-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-3-3
+                  </span>
+                </li>
+              </div>
             </li>
           </ul>
+          <div
+            style="display: none;"
+          >
+            <li
+              class="t-submenu"
+              data-v-29e136fe=""
+            >
+              <div
+                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+              >
+                子菜单1-1
+              </div>
+              <ul
+                style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
+              >
+                <li
+                  class="t-menu__item t-is-active t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-1-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-1-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-1-3
+                  </span>
+                </li>
+              </ul>
+              <div
+                style="display: none;"
+              >
+                <li
+                  class="t-menu__item t-is-active t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-1-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-1-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-1-3
+                  </span>
+                </li>
+              </div>
+            </li>
+            <li
+              class="t-submenu"
+              data-v-29e136fe=""
+            >
+              <div
+                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+              >
+                子菜单1-2
+              </div>
+              <ul
+                style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-2-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-2-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-2-3
+                  </span>
+                </li>
+              </ul>
+              <div
+                style="display: none;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-2-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-2-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-2-3
+                  </span>
+                </li>
+              </div>
+            </li>
+            <li
+              class="t-submenu"
+              data-v-29e136fe=""
+            >
+              <div
+                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+              >
+                子菜单1-3
+              </div>
+              <ul
+                style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-3-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-3-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-3-3
+                  </span>
+                </li>
+              </ul>
+              <div
+                style="display: none;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-3-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-3-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-3-3
+                  </span>
+                </li>
+              </div>
+            </li>
+          </div>
         </li>
         <li
           class="t-submenu"
@@ -70761,6 +72199,40 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
                   </span>
                 </li>
               </ul>
+              <div
+                style="display: none;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-1-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-1-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-1-3
+                  </span>
+                </li>
+              </div>
             </li>
             <li
               class="t-submenu"
@@ -70805,6 +72277,40 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
                   </span>
                 </li>
               </ul>
+              <div
+                style="display: none;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-2-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-2-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-2-3
+                  </span>
+                </li>
+              </div>
             </li>
             <li
               class="t-submenu"
@@ -70849,8 +72355,280 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
                   </span>
                 </li>
               </ul>
+              <div
+                style="display: none;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-3-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-3-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-3-3
+                  </span>
+                </li>
+              </div>
             </li>
           </ul>
+          <div
+            style="display: none;"
+          >
+            <li
+              class="t-submenu"
+              data-v-29e136fe=""
+            >
+              <div
+                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+              >
+                子菜单2-1
+              </div>
+              <ul
+                style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-1-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-1-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-1-3
+                  </span>
+                </li>
+              </ul>
+              <div
+                style="display: none;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-1-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-1-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-1-3
+                  </span>
+                </li>
+              </div>
+            </li>
+            <li
+              class="t-submenu"
+              data-v-29e136fe=""
+            >
+              <div
+                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+              >
+                子菜单2-2
+              </div>
+              <ul
+                style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-2-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-2-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-2-3
+                  </span>
+                </li>
+              </ul>
+              <div
+                style="display: none;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-2-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-2-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-2-3
+                  </span>
+                </li>
+              </div>
+            </li>
+            <li
+              class="t-submenu"
+              data-v-29e136fe=""
+            >
+              <div
+                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+              >
+                子菜单2-3
+              </div>
+              <ul
+                style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-3-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-3-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-3-3
+                  </span>
+                </li>
+              </ul>
+              <div
+                style="display: none;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-3-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-3-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-29e136fe=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单2-3-3
+                  </span>
+                </li>
+              </div>
+            </li>
+          </div>
         </li>
       </ul>
       <div
@@ -71075,6 +72853,40 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
                     </li>
                   </ul>
                 </transition-stub>
+                <div
+                  style="display: none;"
+                >
+                  <li
+                    class="t-menu__item t-menu__item--plain t-submenu__item"
+                    data-v-3a81e078=""
+                  >
+                    <span
+                      class="t-menu__content"
+                    >
+                      三级菜单内容
+                    </span>
+                  </li>
+                  <li
+                    class="t-menu__item t-menu__item--plain t-submenu__item"
+                    data-v-3a81e078=""
+                  >
+                    <span
+                      class="t-menu__content"
+                    >
+                      三级菜单内容
+                    </span>
+                  </li>
+                  <li
+                    class="t-menu__item t-menu__item--plain t-submenu__item"
+                    data-v-3a81e078=""
+                  >
+                    <span
+                      class="t-menu__content"
+                    >
+                      三级菜单内容
+                    </span>
+                  </li>
+                </div>
               </li>
               <li
                 class="t-submenu"
@@ -71144,6 +72956,40 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
                     </li>
                   </ul>
                 </transition-stub>
+                <div
+                  style="display: none;"
+                >
+                  <li
+                    class="t-menu__item t-menu__item--plain t-submenu__item"
+                    data-v-3a81e078=""
+                  >
+                    <span
+                      class="t-menu__content"
+                    >
+                      三级菜单内容
+                    </span>
+                  </li>
+                  <li
+                    class="t-menu__item t-menu__item--plain t-submenu__item"
+                    data-v-3a81e078=""
+                  >
+                    <span
+                      class="t-menu__content"
+                    >
+                      三级菜单内容
+                    </span>
+                  </li>
+                  <li
+                    class="t-menu__item t-menu__item--plain t-submenu__item"
+                    data-v-3a81e078=""
+                  >
+                    <span
+                      class="t-menu__content"
+                    >
+                      三级菜单内容
+                    </span>
+                  </li>
+                </div>
               </li>
               <li
                 class="t-menu__item t-is-active t-menu__item--plain t-submenu__item"
@@ -71177,6 +73023,246 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
               </li>
             </ul>
           </transition-stub>
+          <div
+            style="display: none;"
+          >
+            <li
+              class="t-submenu"
+              data-v-3a81e078=""
+            >
+              <div
+                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--right"
+              >
+                <span
+                  class="t-menu__content"
+                >
+                  二级菜单
+                </span>
+                <svg
+                  class="t-fake-arrow"
+                  fill="none"
+                  height="16"
+                  style="transform: rotate(0deg);"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
+                  />
+                </svg>
+              </div>
+              <transition-stub
+                name="t-slide-down"
+              >
+                <ul
+                  class="t-menu__sub"
+                  style="--padding-left: 60px; display: none;"
+                >
+                  <li
+                    class="t-menu__item t-menu__item--plain t-submenu__item"
+                    data-v-3a81e078=""
+                  >
+                    <span
+                      class="t-menu__content"
+                    >
+                      三级菜单内容
+                    </span>
+                  </li>
+                  <li
+                    class="t-menu__item t-menu__item--plain t-submenu__item"
+                    data-v-3a81e078=""
+                  >
+                    <span
+                      class="t-menu__content"
+                    >
+                      三级菜单内容
+                    </span>
+                  </li>
+                  <li
+                    class="t-menu__item t-menu__item--plain t-submenu__item"
+                    data-v-3a81e078=""
+                  >
+                    <span
+                      class="t-menu__content"
+                    >
+                      三级菜单内容
+                    </span>
+                  </li>
+                </ul>
+              </transition-stub>
+              <div
+                style="display: none;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain t-submenu__item"
+                  data-v-3a81e078=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    三级菜单内容
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain t-submenu__item"
+                  data-v-3a81e078=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    三级菜单内容
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain t-submenu__item"
+                  data-v-3a81e078=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    三级菜单内容
+                  </span>
+                </li>
+              </div>
+            </li>
+            <li
+              class="t-submenu"
+              data-v-3a81e078=""
+            >
+              <div
+                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--right"
+              >
+                <span
+                  class="t-menu__content"
+                >
+                  二级菜单
+                </span>
+                <svg
+                  class="t-fake-arrow"
+                  fill="none"
+                  height="16"
+                  style="transform: rotate(0deg);"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
+                  />
+                </svg>
+              </div>
+              <transition-stub
+                name="t-slide-down"
+              >
+                <ul
+                  class="t-menu__sub"
+                  style="--padding-left: 60px; display: none;"
+                >
+                  <li
+                    class="t-menu__item t-menu__item--plain t-submenu__item"
+                    data-v-3a81e078=""
+                  >
+                    <span
+                      class="t-menu__content"
+                    >
+                      三级菜单内容
+                    </span>
+                  </li>
+                  <li
+                    class="t-menu__item t-menu__item--plain t-submenu__item"
+                    data-v-3a81e078=""
+                  >
+                    <span
+                      class="t-menu__content"
+                    >
+                      三级菜单内容
+                    </span>
+                  </li>
+                  <li
+                    class="t-menu__item t-menu__item--plain t-submenu__item"
+                    data-v-3a81e078=""
+                  >
+                    <span
+                      class="t-menu__content"
+                    >
+                      三级菜单内容
+                    </span>
+                  </li>
+                </ul>
+              </transition-stub>
+              <div
+                style="display: none;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain t-submenu__item"
+                  data-v-3a81e078=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    三级菜单内容
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain t-submenu__item"
+                  data-v-3a81e078=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    三级菜单内容
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain t-submenu__item"
+                  data-v-3a81e078=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    三级菜单内容
+                  </span>
+                </li>
+              </div>
+            </li>
+            <li
+              class="t-menu__item t-is-active t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                二级菜单内容
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                二级菜单内容
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                二级菜单内容
+              </span>
+            </li>
+          </div>
         </li>
         <li
           class="t-menu__item"
@@ -71272,6 +73358,40 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
               </li>
             </ul>
           </transition-stub>
+          <div
+            style="display: none;"
+          >
+            <li
+              class="t-menu__item t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                二级菜单内容
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                二级菜单内容
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                二级菜单内容
+              </span>
+            </li>
+          </div>
         </li>
         <li
           class="t-menu__item"
@@ -71469,6 +73589,40 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
               </li>
             </ul>
           </transition-stub>
+          <div
+            style="display: none;"
+          >
+            <li
+              class="t-menu__item t-is-active t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                二级菜单内容
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                二级菜单内容
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                二级菜单内容
+              </span>
+            </li>
+          </div>
         </li>
         <li
           class="t-menu__item"
@@ -71564,6 +73718,40 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
               </li>
             </ul>
           </transition-stub>
+          <div
+            style="display: none;"
+          >
+            <li
+              class="t-menu__item t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                二级菜单内容
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                二级菜单内容
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                二级菜单内容
+              </span>
+            </li>
+          </div>
         </li>
         <li
           class="t-menu__item"
@@ -71659,6 +73847,40 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-side.vue 1`] = `
               </li>
             </ul>
           </transition-stub>
+          <div
+            style="display: none;"
+          >
+            <li
+              class="t-menu__item t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                二级菜单内容
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                二级菜单内容
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain t-submenu__item"
+              data-v-3a81e078=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                二级菜单内容
+              </span>
+            </li>
+          </div>
         </li>
         <li
           class="t-menu__item"
@@ -71766,6 +73988,168 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
               />
             </svg>
           </div>
+          <div
+            style="display: none;"
+          >
+            <li
+              class="t-submenu"
+              data-v-4dc7c046=""
+            >
+              <div
+                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+              >
+                <span
+                  class="t-menu__content"
+                >
+                  子菜单1-1
+                </span>
+                <svg
+                  class="t-fake-arrow"
+                  fill="none"
+                  height="16"
+                  style="transform: rotate(0deg);"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
+                  />
+                </svg>
+              </div>
+              <div
+                style="display: none;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-4dc7c046=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-1-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-4dc7c046=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-1-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-4dc7c046=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-1-3
+                  </span>
+                </li>
+              </div>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain"
+              data-v-4dc7c046=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                子菜单1-2
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain"
+              data-v-4dc7c046=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                子菜单1-3
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain"
+              data-v-4dc7c046=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                子菜单1-4
+              </span>
+            </li>
+            <li
+              class="t-submenu"
+              data-v-4dc7c046=""
+            >
+              <div
+                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+              >
+                <span
+                  class="t-menu__content"
+                >
+                  子菜单1-5
+                </span>
+                <svg
+                  class="t-fake-arrow"
+                  fill="none"
+                  height="16"
+                  style="transform: rotate(0deg);"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                    stroke="black"
+                    stroke-opacity="0.9"
+                    stroke-width="1.3"
+                  />
+                </svg>
+              </div>
+              <div
+                style="display: none;"
+              >
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-4dc7c046=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-5-1
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-4dc7c046=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-5-2
+                  </span>
+                </li>
+                <li
+                  class="t-menu__item t-menu__item--plain"
+                  data-v-4dc7c046=""
+                >
+                  <span
+                    class="t-menu__content"
+                  >
+                    子菜单1-5-3
+                  </span>
+                </li>
+              </div>
+            </li>
+          </div>
         </li>
         <li
           class="t-submenu"
@@ -71795,6 +74179,40 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
                 stroke-width="1.3"
               />
             </svg>
+          </div>
+          <div
+            style="display: none;"
+          >
+            <li
+              class="t-menu__item t-is-active t-menu__item--plain"
+              data-v-4dc7c046=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                子菜单2-1
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain"
+              data-v-4dc7c046=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                子菜单2-2
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain"
+              data-v-4dc7c046=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                子菜单2-3
+              </span>
+            </li>
           </div>
         </li>
       </ul>
@@ -71939,6 +74357,40 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
               />
             </svg>
           </div>
+          <div
+            style="display: none;"
+          >
+            <li
+              class="t-menu__item t-menu__item--plain"
+              data-v-4dc7c046=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                子菜单1-1
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain"
+              data-v-4dc7c046=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                子菜单1-2
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain"
+              data-v-4dc7c046=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                子菜单1-3
+              </span>
+            </li>
+          </div>
         </li>
         <li
           class="t-submenu"
@@ -71972,6 +74424,40 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
                 stroke-width="1.3"
               />
             </svg>
+          </div>
+          <div
+            style="display: none;"
+          >
+            <li
+              class="t-menu__item t-is-active t-menu__item--plain"
+              data-v-4dc7c046=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                子菜单2-1
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain"
+              data-v-4dc7c046=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                子菜单2-2
+              </span>
+            </li>
+            <li
+              class="t-menu__item t-menu__item--plain"
+              data-v-4dc7c046=""
+            >
+              <span
+                class="t-menu__content"
+              >
+                子菜单2-3
+              </span>
+            </li>
           </div>
         </li>
       </ul>
@@ -72178,6 +74664,37 @@ exports[`csr snapshot test > csr test ./src/menu/_example/popup-side.vue 1`] = `
             </li>
           </ul>
         </transition-stub>
+        <div
+          style="display: none;"
+        >
+          <li
+            class="t-menu__item t-is-active t-menu__item--plain t-submenu__item"
+          >
+            <span
+              class="t-menu__content"
+            >
+              子菜单内容一
+            </span>
+          </li>
+          <li
+            class="t-menu__item t-menu__item--plain t-submenu__item"
+          >
+            <span
+              class="t-menu__content"
+            >
+              子菜单内容二
+            </span>
+          </li>
+          <li
+            class="t-menu__item t-menu__item--plain t-submenu__item"
+          >
+            <span
+              class="t-menu__content"
+            >
+              子菜单内容三
+            </span>
+          </li>
+        </div>
       </li>
       <li
         class="t-submenu"
@@ -72252,6 +74769,37 @@ exports[`csr snapshot test > csr test ./src/menu/_example/popup-side.vue 1`] = `
             </li>
           </ul>
         </transition-stub>
+        <div
+          style="display: none;"
+        >
+          <li
+            class="t-menu__item t-menu__item--plain t-submenu__item"
+          >
+            <span
+              class="t-menu__content"
+            >
+              子菜单内容一
+            </span>
+          </li>
+          <li
+            class="t-menu__item t-menu__item--plain t-submenu__item"
+          >
+            <span
+              class="t-menu__content"
+            >
+              子菜单内容二
+            </span>
+          </li>
+          <li
+            class="t-menu__item t-menu__item--plain t-submenu__item"
+          >
+            <span
+              class="t-menu__content"
+            >
+              子菜单内容三
+            </span>
+          </li>
+        </div>
       </li>
       <li
         class="t-menu__item t-is-disabled"
@@ -76383,7 +78931,6 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/customizable.vue
     </div>
     <div
       class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
-      disabled="disabled"
     >
       <svg
         class="t-icon t-icon-chevron-left"
@@ -76575,7 +79122,6 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/disabled.vue 1`]
     </div>
     <div
       class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
-      disabled="disabled"
     >
       <svg
         class="t-icon t-icon-chevron-left"
@@ -76642,7 +79188,6 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/disabled.vue 1`]
     </ul>
     <div
       class="t-pagination__btn t-pagination__btn-next t-is-disabled"
-      disabled="disabled"
     >
       <svg
         class="t-icon t-icon-chevron-right"
@@ -76887,7 +79432,6 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/jump.vue 1`] = `
     </div>
     <div
       class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
-      disabled="disabled"
     >
       <svg
         class="t-icon t-icon-chevron-left"
@@ -77056,7 +79600,6 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/mini.vue 1`] = `
     </div>
     <div
       class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
-      disabled="disabled"
     >
       <svg
         class="t-icon t-icon-chevron-left"
@@ -77521,7 +80064,6 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/page-num.vue 1`]
     </div>
     <div
       class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
-      disabled="disabled"
     >
       <svg
         class="t-icon t-icon-chevron-left"
@@ -77895,7 +80437,6 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/simple.vue 1`] =
     </div>
     <div
       class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
-      disabled="disabled"
     >
       <svg
         class="t-icon t-icon-chevron-left"
@@ -78029,7 +80570,6 @@ exports[`csr snapshot test > csr test ./src/pagination/_example/simple-mini.vue 
   </div>
   <div
     class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
-    disabled="disabled"
   >
     <svg
       class="t-icon t-icon-chevron-left"
@@ -81319,6 +83859,860 @@ exports[`csr snapshot test > csr test ./src/progress/_example/status.vue 1`] = `
           />
         </svg>
       </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/qrcode/_example/base.vue 1`] = `
+<div
+  style="width: 100%;"
+>
+  <div
+    class="t-space t-space-align-center t-space-vertical"
+    style="gap: 16px;"
+  >
+    <div
+      class="t-space-item"
+    >
+      <div
+        class="t-qrcode"
+        level="M"
+        style="background-color: transparent; width: 160px; height: 160px;"
+        value="https://tdesign.tencent.com/"
+      >
+        <div
+          style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
+        >
+          <canvas
+            role="img"
+            style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="t-space-item"
+    >
+      <div
+        class="t-input__wrap"
+      >
+        <div
+          class="t-input"
+        >
+          <input
+            autocomplete=""
+            class="t-input__inner"
+            placeholder="-"
+            type="text"
+            unselectable="off"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/qrcode/_example/customColor.vue 1`] = `
+<div
+  class="t-space t-space-horizontal"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-qrcode"
+      level="M"
+      style="background-color: rgb(255, 255, 255); width: 160px; height: 160px;"
+      value="https://tdesign.tencent.com/"
+    >
+      <div
+        style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
+      >
+        <canvas
+          role="img"
+          style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-qrcode"
+      level="M"
+      style="background-color: rgb(217, 225, 255); width: 160px; height: 160px;"
+      value="https://tdesign.tencent.com/"
+    >
+      <div
+        style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
+      >
+        <canvas
+          role="img"
+          style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/qrcode/_example/customSize.vue 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-space t-space-horizontal"
+      style="gap: 16px;"
+    >
+      <div
+        class="t-space-item"
+      >
+        <button
+          class="t-button t-button--variant-base t-button--theme-primary"
+          type="button"
+        >
+          <svg
+            class="t-icon t-icon-minus"
+            fill="none"
+            height="1em"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              d="M6.50195 11L17.502 11V13L6.50195 13L6.50195 11Z"
+              fill="currentColor"
+            />
+          </svg>
+          <span
+            class="t-button__text"
+          >
+             Smaller 
+          </span>
+        </button>
+      </div>
+      <div
+        class="t-space-item"
+      >
+        <button
+          class="t-button t-button--variant-base t-button--theme-primary"
+          type="button"
+        >
+          <svg
+            class="t-icon t-icon-add"
+            fill="none"
+            height="1em"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              d="M13 4V11L20 11V13L13 13V20H11L11 13H4L4 11L11 11L11 4L13 4Z"
+              fill="currentColor"
+            />
+          </svg>
+          <span
+            class="t-button__text"
+          >
+             Larger 
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-qrcode"
+      level="H"
+      style="background-color: transparent; width: 160px; height: 160px;"
+      value="https://tdesign.tencent.com/"
+    >
+      <div
+        style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
+      >
+        <canvas
+          role="img"
+          style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
+        />
+        <img
+          src="https://tdesign.gtimg.com/site/tdesign-logo.png"
+          style="display: none;"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/qrcode/_example/customStatusRender.vue 1`] = `
+<div
+  class="t-space t-space-horizontal"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-qrcode"
+      level="M"
+      style="background-color: transparent; width: 160px; height: 160px;"
+      value="https://tdesign.tencent.com/"
+    >
+      <div
+        class="t-mask"
+      >
+        <div>
+          <div
+            class="t-space t-space-vertical"
+            style="gap: 4px;"
+          >
+            <div
+              class="t-space-item"
+            >
+              <div
+                class="t-loading--center t-loading"
+                style="font-size: 32px;"
+              >
+                <svg
+                  class="t-loading__gradient t-icon-loading"
+                  height="1em"
+                  size="32px"
+                  version="1.1"
+                  viewBox="0 0 12 12"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <foreignobject
+                    height="12"
+                    width="12"
+                    x="0"
+                    y="0"
+                  >
+                    <div
+                      class="t-loading__gradient-conic"
+                    />
+                  </foreignobject>
+                </svg>
+              </div>
+            </div>
+            <div
+              class="t-space-item"
+            >
+              <p>
+                加载中...
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
+      >
+        <canvas
+          role="img"
+          style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-qrcode"
+      level="M"
+      style="background-color: transparent; width: 160px; height: 160px;"
+      value="https://tdesign.tencent.com/"
+    >
+      <div
+        class="t-mask t-expired"
+      >
+        <div>
+          <div
+            class="tdesign-demo-qrcode__status-render"
+          >
+            <p
+              class="tdesign-demo-qrcode__status-render-title"
+            >
+              <svg
+                class="t-icon t-icon-close-circle-filled"
+                fill="none"
+                height="1em"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM8.81753 7.40346L11.9999 10.5858L15.1815 7.40414L16.5957 8.81835L13.4141 12L16.5957 15.1816L15.1815 16.5958L11.9999 13.4142L8.81753 16.5965L7.40332 15.1823L10.5856 12L7.40332 8.81767L8.81753 7.40346Z"
+                  fill="currentColor"
+                />
+              </svg>
+              <span>
+                二维码过期
+              </span>
+            </p>
+            <p
+              class="tdesign-demo-qrcode__status-render-action"
+            >
+              <svg
+                class="t-icon t-icon-refresh"
+                fill="none"
+                height="1em"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  d="M20.4997 5.83468C18.5918 3.20865 15.4961 1.5 11.9997 1.5C6.57341 1.5 2.10958 5.61542 1.55717 10.896L1.45312 11.8905L3.44227 12.0986L3.54632 11.104C3.9933 6.83125 7.60814 3.5 11.9997 3.5C15.0404 3.5 17.7099 5.09688 19.2125 7.5H15.4997V9.5H22.4997V2.5H20.4997V5.83468ZM20.5572 11.9014L20.4532 12.896C20.0062 17.1687 16.3913 20.5 11.9997 20.5C8.95904 20.5 6.28956 18.9031 4.78702 16.5H8.49974V14.5H1.49974V21.5H3.49974V18.1653C5.40769 20.7914 8.50342 22.5 11.9997 22.5C17.4261 22.5 21.8899 18.3846 22.4423 13.104L22.5464 12.1095L20.5572 11.9014Z"
+                  fill="currentColor"
+                />
+              </svg>
+              <span>
+                点击刷新
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
+      >
+        <canvas
+          role="img"
+          style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-qrcode"
+      level="M"
+      style="background-color: transparent; width: 160px; height: 160px;"
+      value="https://tdesign.tencent.com/"
+    >
+      <div
+        class="t-mask t-scanned"
+      >
+        <div>
+          <p
+            class="t-scanned"
+          >
+            <svg
+              class="t-icon t-icon-check-circle-filled t-scanned__icon"
+              fill="none"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM7.49985 10.5858L10.4999 13.5858L16.4999 7.58578L17.9141 8.99999L10.4999 16.4142L6.08564 12L7.49985 10.5858Z"
+                fill="currentColor"
+              />
+            </svg>
+            已扫描
+          </p>
+        </div>
+      </div>
+      <div
+        style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
+      >
+        <canvas
+          role="img"
+          style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/qrcode/_example/download.vue 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-radio-group t-size-m t-radio-group--filled"
+    >
+      <label
+        class="t-radio-button t-is-checked"
+        tabindex="0"
+      >
+        <input
+          class="t-radio-button__former"
+          data-value="'canvas'"
+          tabindex="-1"
+          type="radio"
+          value="canvas"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          canvas
+        </span>
+      </label>
+      <label
+        class="t-radio-button"
+        tabindex="0"
+      >
+        <input
+          class="t-radio-button__former"
+          data-value="'svg'"
+          tabindex="-1"
+          type="radio"
+          value="svg"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          svg
+        </span>
+      </label>
+      <div
+        class="t-radio-group__bg-block"
+        style="width: 0px; left: 0px;"
+      />
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-qrcode"
+      id="QRCode"
+      level="M"
+      style="background-color: transparent; width: 160px; height: 160px;"
+      value="https://tdesign.tencent.com/"
+    >
+      <div
+        style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
+      >
+        <canvas
+          role="img"
+          style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
+        />
+        <img
+          src="https://tdesign.gtimg.com/site/tdesign-logo.png"
+          style="display: none;"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <button
+      class="t-button t-button--variant-base t-button--theme-primary"
+      type="button"
+    >
+      <span
+        class="t-button__text"
+      >
+        Download
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/qrcode/_example/icon.vue 1`] = `
+<div
+  style="width: 100%;"
+>
+  <div
+    class="t-qrcode t-qrcode-svg"
+    level="M"
+    style="background-color: transparent; width: 160px; height: 160px;"
+    value="https://tdesign.tencent.com/"
+  >
+    <svg
+      height="160"
+      role="img"
+      viewBox="0 0 29 29"
+      width="160"
+    >
+      <path
+        d="M0,0 h29v29H0z"
+        fill="transparent"
+        shape-rendering="crispEdges"
+      />
+      <path
+        d="M0 0h7v1H0zM8 0h1v1H8zM11 0h1v1H11zM13 0h1v1H13zM15 0h2v1H15zM18 0h2v1H18zM22,0 h7v1H22zM0 1h1v1H0zM6 1h1v1H6zM9 1h1v1H9zM11 1h1v1H11zM15 1h1v1H15zM20 1h1v1H20zM22 1h1v1H22zM28,1 h1v1H28zM0 2h1v1H0zM2 2h3v1H2zM6 2h1v1H6zM11 2h1v1H11zM13 2h1v1H13zM16 2h1v1H16zM20 2h1v1H20zM22 2h1v1H22zM24 2h3v1H24zM28,2 h1v1H28zM0 3h1v1H0zM2 3h3v1H2zM6 3h1v1H6zM9 3h2v1H9zM12 3h1v1H12zM14 3h2v1H14zM17 3h1v1H17zM19 3h1v1H19zM22 3h1v1H22zM24 3h3v1H24zM28,3 h1v1H28zM0 4h1v1H0zM2 4h3v1H2zM6 4h1v1H6zM8 4h2v1H8zM11 4h1v1H11zM13 4h5v1H13zM19 4h2v1H19zM22 4h1v1H22zM24 4h3v1H24zM28,4 h1v1H28zM0 5h1v1H0zM6 5h1v1H6zM8 5h3v1H8zM13 5h1v1H13zM16 5h2v1H16zM22 5h1v1H22zM28,5 h1v1H28zM0 6h7v1H0zM8 6h1v1H8zM10 6h1v1H10zM12 6h1v1H12zM14 6h1v1H14zM16 6h1v1H16zM18 6h1v1H18zM20 6h1v1H20zM22,6 h7v1H22zM9 7h1v1H9zM11 7h2v1H11zM14 7h1v1H14zM16 7h1v1H16zM20 7h1v1H20zM1 8h7v1H1zM9 8h1v1H9zM14 8h1v1H14zM18 8h1v1H18zM23 8h2v1H23zM28,8 h1v1H28zM1 9h2v1H1zM4 9h2v1H4zM7 9h2v1H7zM12 9h2v1H12zM15 9h1v1H15zM18 9h3v1H18zM22 9h4v1H22zM28,9 h1v1H28zM0 10h2v1H0zM3 10h5v1H3zM9 10h1v1H9zM20 10h3v1H20zM25 10h1v1H25zM1 11h1v1H1zM3 11h2v1H3zM8 11h1v1H8zM19 11h5v1H19zM25 11h1v1H25zM27 11h1v1H27zM0 12h1v1H0zM3 12h2v1H3zM6 12h1v1H6zM8 12h2v1H8zM19 12h1v1H19zM21 12h1v1H21zM23 12h1v1H23zM26,12 h3v1H26zM3 13h2v1H3zM7 13h1v1H7zM19 13h4v1H19zM24 13h2v1H24zM27,13 h2v1H27zM0 14h4v1H0zM6 14h2v1H6zM23 14h1v1H23zM5 15h1v1H5zM9 15h1v1H9zM20 15h2v1H20zM24 15h2v1H24zM27 15h1v1H27zM1 16h1v1H1zM3 16h1v1H3zM6 16h1v1H6zM9 16h1v1H9zM21 16h1v1H21zM25 16h2v1H25zM0 17h1v1H0zM2 17h4v1H2zM7 17h2v1H7zM19,17 h10v1H19zM0 18h1v1H0zM2 18h2v1H2zM5 18h2v1H5zM20 18h1v1H20zM22 18h3v1H22zM26 18h1v1H26zM0 19h1v1H0zM2 19h4v1H2zM7 19h1v1H7zM9 19h7v1H9zM19 19h1v1H19zM22 19h4v1H22zM27 19h1v1H27zM0 20h1v1H0zM3 20h1v1H3zM6 20h1v1H6zM8 20h2v1H8zM12 20h4v1H12zM17 20h1v1H17zM20 20h5v1H20zM26 20h1v1H26zM28,20 h1v1H28zM8 21h1v1H8zM11 21h3v1H11zM18 21h3v1H18zM24 21h2v1H24zM28,21 h1v1H28zM0 22h7v1H0zM8 22h3v1H8zM14 22h2v1H14zM18 22h3v1H18zM22 22h1v1H22zM24 22h1v1H24zM0 23h1v1H0zM6 23h1v1H6zM8 23h2v1H8zM11 23h1v1H11zM14 23h1v1H14zM16 23h1v1H16zM19 23h2v1H19zM24 23h2v1H24zM27,23 h2v1H27zM0 24h1v1H0zM2 24h3v1H2zM6 24h1v1H6zM8 24h2v1H8zM11 24h1v1H11zM14 24h1v1H14zM18 24h1v1H18zM20 24h7v1H20zM28,24 h1v1H28zM0 25h1v1H0zM2 25h3v1H2zM6 25h1v1H6zM8 25h1v1H8zM11 25h1v1H11zM13 25h4v1H13zM19 25h3v1H19zM23 25h1v1H23zM0 26h1v1H0zM2 26h3v1H2zM6 26h1v1H6zM8 26h1v1H8zM10 26h1v1H10zM13 26h2v1H13zM17 26h1v1H17zM19 26h9v1H19zM0 27h1v1H0zM6 27h1v1H6zM8 27h1v1H8zM12 27h2v1H12zM16 27h1v1H16zM20 27h1v1H20zM22 27h1v1H22zM24 27h2v1H24zM27 27h1v1H27zM0 28h7v1H0zM9 28h4v1H9zM17 28h1v1H17zM19 28h1v1H19zM21 28h2v1H21zM24 28h1v1H24zM26 28h1v1H26z"
+        fill="#000000"
+        shape-rendering="crispEdges"
+      />
+      <image
+        crossOrigin="anonymous"
+        height="7.25"
+        href="https://tdesign.gtimg.com/site/tdesign-logo.png"
+        width="7.25"
+        x="10.875"
+        y="10.875"
+      />
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/qrcode/_example/level.vue 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-radio-group t-size-m t-radio-group--filled"
+    >
+      <label
+        class="t-radio-button"
+        tabindex="0"
+      >
+        <input
+          class="t-radio-button__former"
+          data-value="'L'"
+          tabindex="-1"
+          type="radio"
+          value="L"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          L
+        </span>
+      </label>
+      <label
+        class="t-radio-button t-is-checked"
+        tabindex="0"
+      >
+        <input
+          class="t-radio-button__former"
+          data-value="'M'"
+          tabindex="-1"
+          type="radio"
+          value="M"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          M
+        </span>
+      </label>
+      <label
+        class="t-radio-button"
+        tabindex="0"
+      >
+        <input
+          class="t-radio-button__former"
+          data-value="'Q'"
+          tabindex="-1"
+          type="radio"
+          value="Q"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          Q
+        </span>
+      </label>
+      <label
+        class="t-radio-button"
+        tabindex="0"
+      >
+        <input
+          class="t-radio-button__former"
+          data-value="'H'"
+          tabindex="-1"
+          type="radio"
+          value="H"
+        />
+        <span
+          class="t-radio-button__input"
+        />
+        <span
+          class="t-radio-button__label"
+        >
+          H
+        </span>
+      </label>
+      <div
+        class="t-radio-group__bg-block"
+        style="width: 0px; left: 0px;"
+      />
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-qrcode"
+      level="M"
+      style="background-color: transparent; width: 160px; height: 160px;"
+      value="https://tdesign.gtimg.com/site/tdesign-logo.png"
+    >
+      <div
+        style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
+      >
+        <canvas
+          role="img"
+          style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/qrcode/_example/popover.vue 1`] = `
+<div
+  style="width: 100%;"
+>
+  <button
+    class="t-button t-button--variant-base t-button--theme-primary"
+    type="button"
+  >
+    <span
+      class="t-button__text"
+    >
+      Hover me
+    </span>
+  </button>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/qrcode/_example/status.vue 1`] = `
+<div
+  class="t-space t-space-horizontal"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-qrcode"
+      level="M"
+      style="background-color: transparent; width: 160px; height: 160px;"
+      value="https://tdesign.tencent.com/"
+    >
+      <div
+        class="t-mask"
+      >
+        <div>
+          <div
+            class="t-loading--center t-loading"
+            style="font-size: 32px;"
+          >
+            <svg
+              class="t-loading__gradient t-icon-loading"
+              height="1em"
+              size="32px"
+              version="1.1"
+              viewBox="0 0 12 12"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <foreignobject
+                height="12"
+                width="12"
+                x="0"
+                y="0"
+              >
+                <div
+                  class="t-loading__gradient-conic"
+                />
+              </foreignobject>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
+      >
+        <canvas
+          role="img"
+          style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-qrcode"
+      level="M"
+      style="background-color: transparent; width: 160px; height: 160px;"
+      value="https://tdesign.tencent.com/"
+    >
+      <div
+        class="t-mask t-expired"
+      >
+        <div>
+          <div>
+            <p
+              class="t-expired__text"
+            >
+              二维码过期
+            </p>
+            <p
+              class="t-expired__button"
+            >
+              <svg
+                class="t-icon t-icon-refresh"
+                fill="none"
+                height="1em"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  d="M20.4997 5.83468C18.5918 3.20865 15.4961 1.5 11.9997 1.5C6.57341 1.5 2.10958 5.61542 1.55717 10.896L1.45312 11.8905L3.44227 12.0986L3.54632 11.104C3.9933 6.83125 7.60814 3.5 11.9997 3.5C15.0404 3.5 17.7099 5.09688 19.2125 7.5H15.4997V9.5H22.4997V2.5H20.4997V5.83468ZM20.5572 11.9014L20.4532 12.896C20.0062 17.1687 16.3913 20.5 11.9997 20.5C8.95904 20.5 6.28956 18.9031 4.78702 16.5H8.49974V14.5H1.49974V21.5H3.49974V18.1653C5.40769 20.7914 8.50342 22.5 11.9997 22.5C17.4261 22.5 21.8899 18.3846 22.4423 13.104L22.5464 12.1095L20.5572 11.9014Z"
+                  fill="currentColor"
+                />
+              </svg>
+              点击刷新
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
+      >
+        <canvas
+          role="img"
+          style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-qrcode"
+      level="M"
+      style="background-color: transparent; width: 160px; height: 160px;"
+      value="https://tdesign.tencent.com/"
+    >
+      <div
+        class="t-mask t-scanned"
+      >
+        <div>
+          <p
+            class="t-scanned"
+          >
+            <svg
+              class="t-icon t-icon-check-circle-filled t-scanned__icon"
+              fill="none"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM7.49985 10.5858L10.4999 13.5858L16.4999 7.58578L17.9141 8.99999L10.4999 16.4142L6.08564 12L7.49985 10.5858Z"
+                fill="currentColor"
+              />
+            </svg>
+            已扫描
+          </p>
+        </div>
+      </div>
+      <div
+        style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
+      >
+        <canvas
+          role="img"
+          style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/qrcode/_example/type.vue 1`] = `
+<div
+  class="t-space t-space-horizontal"
+  style="gap: 16px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-qrcode"
+      level="M"
+      style="background-color: transparent; width: 160px; height: 160px;"
+      value="https://tdesign.tencent.com/"
+    >
+      <div
+        style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
+      >
+        <canvas
+          role="img"
+          style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-qrcode t-qrcode-svg"
+      level="M"
+      style="background-color: transparent; width: 160px; height: 160px;"
+      value="https://tdesign.tencent.com/"
+    >
+      <svg
+        height="160"
+        role="img"
+        viewBox="0 0 29 29"
+        width="160"
+      >
+        <path
+          d="M0,0 h29v29H0z"
+          fill="transparent"
+          shape-rendering="crispEdges"
+        />
+        <path
+          d="M0 0h7v1H0zM8 0h1v1H8zM11 0h1v1H11zM13 0h1v1H13zM15 0h2v1H15zM18 0h2v1H18zM22,0 h7v1H22zM0 1h1v1H0zM6 1h1v1H6zM9 1h1v1H9zM11 1h1v1H11zM15 1h1v1H15zM20 1h1v1H20zM22 1h1v1H22zM28,1 h1v1H28zM0 2h1v1H0zM2 2h3v1H2zM6 2h1v1H6zM11 2h1v1H11zM13 2h1v1H13zM16 2h1v1H16zM20 2h1v1H20zM22 2h1v1H22zM24 2h3v1H24zM28,2 h1v1H28zM0 3h1v1H0zM2 3h3v1H2zM6 3h1v1H6zM9 3h2v1H9zM12 3h1v1H12zM14 3h2v1H14zM17 3h1v1H17zM19 3h1v1H19zM22 3h1v1H22zM24 3h3v1H24zM28,3 h1v1H28zM0 4h1v1H0zM2 4h3v1H2zM6 4h1v1H6zM8 4h2v1H8zM11 4h1v1H11zM13 4h5v1H13zM19 4h2v1H19zM22 4h1v1H22zM24 4h3v1H24zM28,4 h1v1H28zM0 5h1v1H0zM6 5h1v1H6zM8 5h3v1H8zM13 5h1v1H13zM16 5h2v1H16zM22 5h1v1H22zM28,5 h1v1H28zM0 6h7v1H0zM8 6h1v1H8zM10 6h1v1H10zM12 6h1v1H12zM14 6h1v1H14zM16 6h1v1H16zM18 6h1v1H18zM20 6h1v1H20zM22,6 h7v1H22zM9 7h1v1H9zM11 7h2v1H11zM14 7h1v1H14zM16 7h1v1H16zM20 7h1v1H20zM1 8h7v1H1zM9 8h1v1H9zM14 8h1v1H14zM18 8h1v1H18zM23 8h2v1H23zM28,8 h1v1H28zM1 9h2v1H1zM4 9h2v1H4zM7 9h2v1H7zM12 9h2v1H12zM15 9h1v1H15zM18 9h3v1H18zM22 9h4v1H22zM28,9 h1v1H28zM0 10h2v1H0zM3 10h5v1H3zM9 10h1v1H9zM13 10h3v1H13zM17 10h2v1H17zM20 10h3v1H20zM25 10h1v1H25zM1 11h1v1H1zM3 11h2v1H3zM8 11h1v1H8zM11 11h1v1H11zM14 11h3v1H14zM19 11h5v1H19zM25 11h1v1H25zM27 11h1v1H27zM0 12h1v1H0zM3 12h2v1H3zM6 12h1v1H6zM8 12h8v1H8zM17 12h1v1H17zM19 12h1v1H19zM21 12h1v1H21zM23 12h1v1H23zM26,12 h3v1H26zM3 13h2v1H3zM7 13h1v1H7zM11 13h4v1H11zM17 13h6v1H17zM24 13h2v1H24zM27,13 h2v1H27zM0 14h4v1H0zM6 14h2v1H6zM11 14h2v1H11zM16 14h2v1H16zM23 14h1v1H23zM5 15h1v1H5zM9 15h1v1H9zM11 15h1v1H11zM13 15h2v1H13zM17 15h2v1H17zM20 15h2v1H20zM24 15h2v1H24zM27 15h1v1H27zM1 16h1v1H1zM3 16h1v1H3zM6 16h1v1H6zM9 16h3v1H9zM14 16h3v1H14zM21 16h1v1H21zM25 16h2v1H25zM0 17h1v1H0zM2 17h4v1H2zM7 17h2v1H7zM10 17h2v1H10zM15 17h1v1H15zM17,17 h12v1H17zM0 18h1v1H0zM2 18h2v1H2zM5 18h2v1H5zM11 18h6v1H11zM18 18h1v1H18zM20 18h1v1H20zM22 18h3v1H22zM26 18h1v1H26zM0 19h1v1H0zM2 19h4v1H2zM7 19h1v1H7zM9 19h7v1H9zM19 19h1v1H19zM22 19h4v1H22zM27 19h1v1H27zM0 20h1v1H0zM3 20h1v1H3zM6 20h1v1H6zM8 20h2v1H8zM12 20h4v1H12zM17 20h1v1H17zM20 20h5v1H20zM26 20h1v1H26zM28,20 h1v1H28zM8 21h1v1H8zM11 21h3v1H11zM18 21h3v1H18zM24 21h2v1H24zM28,21 h1v1H28zM0 22h7v1H0zM8 22h3v1H8zM14 22h2v1H14zM18 22h3v1H18zM22 22h1v1H22zM24 22h1v1H24zM0 23h1v1H0zM6 23h1v1H6zM8 23h2v1H8zM11 23h1v1H11zM14 23h1v1H14zM16 23h1v1H16zM19 23h2v1H19zM24 23h2v1H24zM27,23 h2v1H27zM0 24h1v1H0zM2 24h3v1H2zM6 24h1v1H6zM8 24h2v1H8zM11 24h1v1H11zM14 24h1v1H14zM18 24h1v1H18zM20 24h7v1H20zM28,24 h1v1H28zM0 25h1v1H0zM2 25h3v1H2zM6 25h1v1H6zM8 25h1v1H8zM11 25h1v1H11zM13 25h4v1H13zM19 25h3v1H19zM23 25h1v1H23zM0 26h1v1H0zM2 26h3v1H2zM6 26h1v1H6zM8 26h1v1H8zM10 26h1v1H10zM13 26h2v1H13zM17 26h1v1H17zM19 26h9v1H19zM0 27h1v1H0zM6 27h1v1H6zM8 27h1v1H8zM12 27h2v1H12zM16 27h1v1H16zM20 27h1v1H20zM22 27h1v1H22zM24 27h2v1H24zM27 27h1v1H27zM0 28h7v1H0zM9 28h4v1H9zM17 28h1v1H17zM19 28h1v1H19zM21 28h2v1H21zM24 28h1v1H24zM26 28h1v1H26z"
+          fill="#000000"
+          shape-rendering="crispEdges"
+        />
+        <image
+          height="2.9"
+          width="2.9"
+          x="13.05"
+          y="13.05"
+        />
+      </svg>
     </div>
   </div>
 </div>
@@ -97517,7 +100911,6 @@ exports[`csr snapshot test > csr test ./src/switch/_example/status.vue 1`] = `
   >
     <div
       class="t-switch t-size-l t-is-disabled"
-      disabled="disabled"
     >
       <span
         class="t-switch__handle t-is-disabled"
@@ -98407,7 +101800,6 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
             </div>
             <div
               class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
-              disabled="disabled"
             >
               <svg
                 class="t-icon t-icon-chevron-left"
@@ -114187,7 +117579,6 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/pagination.vue 1`]
       >
         <div
           class="t-pagination__btn t-pagination__btn-prev t-is-disabled"
-          disabled="disabled"
         >
           <svg
             class="t-icon t-icon-chevron-left"
@@ -116233,6 +119624,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="1"
                   >
                     <input
                       class="t-checkbox__former"
@@ -116267,6 +119659,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="1.1"
                   >
                     <input
                       class="t-checkbox__former"
@@ -116314,6 +119707,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="1.2"
                   >
                     <input
                       class="t-checkbox__former"
@@ -116361,6 +119755,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="1.2.1"
                   >
                     <input
                       class="t-checkbox__former"
@@ -116395,6 +119790,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="1.2.1.1"
                   >
                     <input
                       class="t-checkbox__former"
@@ -116429,6 +119825,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="1.2.1.2"
                   >
                     <input
                       class="t-checkbox__former"
@@ -116476,6 +119873,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="2"
                   >
                     <input
                       class="t-checkbox__former"
@@ -116510,6 +119908,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="2.1"
                   >
                     <input
                       class="t-checkbox__former"
@@ -116544,6 +119943,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="2.2"
                   >
                     <input
                       class="t-checkbox__former"
@@ -116814,6 +120214,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="1"
                   >
                     <input
                       class="t-checkbox__former"
@@ -116848,6 +120249,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="1.1"
                   >
                     <input
                       class="t-checkbox__former"
@@ -116895,6 +120297,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="1.2"
                   >
                     <input
                       class="t-checkbox__former"
@@ -116942,6 +120345,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="1.2.1"
                   >
                     <input
                       class="t-checkbox__former"
@@ -116976,6 +120380,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="1.2.1.1"
                   >
                     <input
                       class="t-checkbox__former"
@@ -117010,6 +120415,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="1.2.1.2"
                   >
                     <input
                       class="t-checkbox__former"
@@ -117057,6 +120463,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="2"
                   >
                     <input
                       class="t-checkbox__former"
@@ -117091,6 +120498,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="2.1"
                   >
                     <input
                       class="t-checkbox__former"
@@ -117125,6 +120533,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     class="t-checkbox t-tree__label"
                     ignore="expand,active"
                     tabindex="0"
+                    title="2.2"
                   >
                     <input
                       class="t-checkbox__former"
@@ -117927,6 +121336,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1"
           >
             <input
               class="t-checkbox__former"
@@ -117974,6 +121384,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1"
           >
             <input
               class="t-checkbox__former"
@@ -118021,6 +121432,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1.1"
           >
             <input
               class="t-checkbox__former"
@@ -118055,6 +121467,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1.1.1"
           >
             <input
               class="t-checkbox__former"
@@ -118089,6 +121502,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1.1.2"
           >
             <input
               class="t-checkbox__former"
@@ -118136,6 +121550,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1.2"
           >
             <input
               class="t-checkbox__former"
@@ -118170,6 +121585,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1.2.1"
           >
             <input
               class="t-checkbox__former"
@@ -118204,6 +121620,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1.2.2"
           >
             <input
               class="t-checkbox__former"
@@ -118251,6 +121668,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.2"
           >
             <input
               class="t-checkbox__former"
@@ -118298,6 +121716,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.2.1"
           >
             <input
               class="t-checkbox__former"
@@ -118332,6 +121751,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.2.1.1"
           >
             <input
               class="t-checkbox__former"
@@ -118366,6 +121786,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.2.1.2"
           >
             <input
               class="t-checkbox__former"
@@ -118413,6 +121834,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.2.2"
           >
             <input
               class="t-checkbox__former"
@@ -118447,6 +121869,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.2.2.1"
           >
             <input
               class="t-checkbox__former"
@@ -118481,6 +121904,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.2.2.2"
           >
             <input
               class="t-checkbox__former"
@@ -118528,6 +121952,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="2"
           >
             <input
               class="t-checkbox__former"
@@ -118562,6 +121987,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="2.1"
           >
             <input
               class="t-checkbox__former"
@@ -118596,6 +122022,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="2.2"
           >
             <input
               class="t-checkbox__former"
@@ -118949,6 +122376,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/controlled.vue 1`] = `
             class="t-checkbox t-is-indeterminate t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1"
           >
             <input
               class="t-checkbox__former"
@@ -118997,6 +122425,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/controlled.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1"
           >
             <input
               class="t-checkbox__former"
@@ -119031,6 +122460,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/controlled.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1.1"
           >
             <input
               class="t-checkbox__former"
@@ -119065,6 +122495,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/controlled.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1.2"
           >
             <input
               class="t-checkbox__former"
@@ -119112,6 +122543,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/controlled.vue 1`] = `
             class="t-checkbox t-is-checked t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.2"
           >
             <input
               class="t-checkbox__former"
@@ -119373,6 +122805,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -119420,6 +122853,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -119454,6 +122888,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -119488,6 +122923,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -119535,6 +122971,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -119569,6 +123006,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -119603,6 +123041,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -119650,6 +123089,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -119684,6 +123124,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -119718,6 +123159,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -120134,6 +123576,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-performance.vue 
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -120210,6 +123653,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-performance.vue 
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -120286,6 +123730,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-performance.vue 
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -120906,6 +124351,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -120978,6 +124424,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             class="t-checkbox t-is-disabled t-tree__label"
             disabled="disabled"
             ignore="expand,active"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -121038,6 +124485,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             class="t-checkbox t-is-disabled t-tree__label"
             disabled="disabled"
             ignore="expand,active"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -121098,6 +124546,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             class="t-checkbox t-is-disabled t-tree__label"
             disabled="disabled"
             ignore="expand,active"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -121171,6 +124620,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -121230,6 +124680,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -121289,6 +124740,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -121361,6 +124813,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -121433,6 +124886,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             class="t-checkbox t-is-disabled t-tree__label"
             disabled="disabled"
             ignore="expand,active"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -121493,6 +124947,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             class="t-checkbox t-is-disabled t-tree__label"
             disabled="disabled"
             ignore="expand,active"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -121553,6 +125008,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             class="t-checkbox t-is-disabled t-tree__label"
             disabled="disabled"
             ignore="expand,active"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -121626,6 +125082,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -121685,6 +125142,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -121744,6 +125202,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -123720,6 +127179,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                 class="t-checkbox t-tree__label"
                 ignore="expand,active"
                 tabindex="0"
+                title="1"
               >
                 <input
                   class="t-checkbox__former"
@@ -123758,6 +127218,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                 class="t-checkbox t-tree__label"
                 ignore="expand,active"
                 tabindex="0"
+                title="1.1"
               >
                 <input
                   class="t-checkbox__former"
@@ -123796,6 +127257,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                 class="t-checkbox t-tree__label"
                 ignore="expand,active"
                 tabindex="0"
+                title="1.2"
               >
                 <input
                   class="t-checkbox__former"
@@ -123847,6 +127309,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                 class="t-checkbox t-tree__label"
                 ignore="expand,active"
                 tabindex="0"
+                title="2"
               >
                 <input
                   class="t-checkbox__former"
@@ -123885,6 +127348,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                 class="t-checkbox t-tree__label"
                 ignore="expand,active"
                 tabindex="0"
+                title="2.1"
               >
                 <input
                   class="t-checkbox__former"
@@ -123923,6 +127387,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                 class="t-checkbox t-tree__label"
                 ignore="expand,active"
                 tabindex="0"
+                title="2.2"
               >
                 <input
                   class="t-checkbox__former"
@@ -124057,6 +127522,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/lazy.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1"
           >
             <input
               class="t-checkbox__former"
@@ -124104,6 +127570,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/lazy.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="2"
           >
             <input
               class="t-checkbox__former"
@@ -126464,6 +129931,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -126578,6 +130046,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -126949,6 +130418,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/state.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -127050,6 +130520,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/state.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -127300,6 +130771,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
             class="t-checkbox t-is-indeterminate t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1"
           >
             <input
               class="t-checkbox__former"
@@ -127348,6 +130820,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
             class="t-checkbox t-is-indeterminate t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1"
           >
             <input
               class="t-checkbox__former"
@@ -127396,6 +130869,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
             class="t-checkbox t-is-checked t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1.1"
           >
             <input
               class="t-checkbox__former"
@@ -127430,6 +130904,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
             class="t-checkbox t-is-checked t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1.1.1"
           >
             <input
               class="t-checkbox__former"
@@ -127464,6 +130939,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
             class="t-checkbox t-is-checked t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1.1.2"
           >
             <input
               class="t-checkbox__former"
@@ -127511,6 +130987,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.1.2"
           >
             <input
               class="t-checkbox__former"
@@ -127558,6 +131035,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title="1.2"
           >
             <input
               class="t-checkbox__former"
@@ -127798,6 +131276,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/transition.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -127845,6 +131324,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/transition.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -127892,6 +131372,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/transition.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -128218,6 +131699,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -128298,6 +131780,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -128365,6 +131848,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -128432,6 +131916,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -128499,6 +131984,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -128566,6 +132052,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -128633,6 +132120,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -128713,6 +132201,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -128780,6 +132269,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -128847,6 +132337,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -128914,6 +132405,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -128981,6 +132473,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -129048,6 +132541,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -129128,6 +132622,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -129195,6 +132690,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -129262,6 +132758,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -129329,6 +132826,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -129396,6 +132894,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -129463,6 +132962,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -129543,6 +133043,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -129610,6 +133111,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -129677,6 +133179,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -129744,6 +133247,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -129811,6 +133315,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -129878,6 +133383,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -129958,6 +133464,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -130025,6 +133532,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -130092,6 +133600,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -130159,6 +133668,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"
@@ -130226,6 +133736,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             class="t-checkbox t-tree__label"
             ignore="expand,active"
             tabindex="0"
+            title=""
           >
             <input
               class="t-checkbox__former"

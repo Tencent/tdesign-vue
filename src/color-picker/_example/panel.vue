@@ -1,7 +1,7 @@
 <template>
   <t-space>
     <t-space direction="vertical">
-      <label>单色</label>
+      <label>只开启单色</label>
       <t-color-picker-panel
         v-model="color"
         :show-primary-color-preview="false"
@@ -12,7 +12,7 @@
       />
     </t-space>
     <t-space direction="vertical">
-      <label>渐变</label>
+      <label>只开启渐变（会过滤掉所有预设颜色的非渐变值）</label>
       <t-color-picker-panel
         v-model="color2"
         enable-alpha
