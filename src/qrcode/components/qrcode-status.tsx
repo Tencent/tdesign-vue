@@ -1,4 +1,4 @@
-import { defineComponent } from '@vue/composition-api';
+import { defineComponent } from 'vue';
 import { CheckCircleFilledIcon, RefreshIcon } from 'tdesign-icons-vue';
 import Loading from '../../loading';
 import { usePrefixClass } from '../../hooks';

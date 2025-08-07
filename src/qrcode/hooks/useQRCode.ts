@@ -1,4 +1,4 @@
-import { computed, ComputedRef } from '@vue/composition-api';
+import { computed, ComputedRef } from 'vue';
 import type {
   CrossOrigin, ErrorCorrectionLevel, Excavation, ImageSettings,
 } from '../../_common/js/qrcode/types';

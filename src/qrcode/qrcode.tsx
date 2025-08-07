@@ -1,4 +1,4 @@
-import { computed, defineComponent } from '@vue/composition-api';
+import { computed, defineComponent } from 'vue';
 import { isNumber } from 'lodash-es';
 import { usePrefixClass, useConfig, useVariables } from '../hooks';
 import { renderTNodeJSX } from '../utils/render-tnode';

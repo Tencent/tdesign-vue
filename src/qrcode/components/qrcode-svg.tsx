@@ -1,4 +1,4 @@
-import { computed, defineComponent } from '@vue/composition-api';
+import { computed, defineComponent } from 'vue';
 import { QRCodeSubComponentProps } from './props';
 import {
   DEFAULT_NEED_MARGIN, DEFAULT_MINVERSION, excavateModules, generatePath,

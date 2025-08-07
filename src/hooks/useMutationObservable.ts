@@ -1,6 +1,6 @@
 import {
   onBeforeUnmount, onMounted, ref, watch,
-} from '@vue/composition-api';
+} from 'vue';
 import { debounce, isEqual } from 'lodash-es';
 
 export interface MutationCallback {
