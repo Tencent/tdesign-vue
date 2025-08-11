@@ -9,9 +9,7 @@ export default defineComponent({
   name: 'QRCodeSVG',
   props: QRCodeSubComponentProps,
   setup(props) {
-    const {
-      margin, cells, numCells, calculatedImageSettings,
-    } = useQRCode({
+    const qrCodeData = computed(() => useQRCode({
       value: props.value,
       level: props.level,
       minVersion: DEFAULT_MINVERSION,
@@ -19,9 +17,10 @@ export default defineComponent({
       marginSize: props.marginSize,
       imageSettings: props.imageSettings,
       size: props.size,
-    });
+    }));
 
     const cellsToDraw = computed(() => {
+      const { cells, calculatedImageSettings } = qrCodeData.value;
       if (props.imageSettings && calculatedImageSettings.value?.excavation != null) {
         return excavateModules(cells.value, calculatedImageSettings.value.excavation);
       }
@@ -30,9 +29,9 @@ export default defineComponent({
 
     return {
       cellsToDraw,
-      calculatedImageSettings,
-      margin,
-      numCells,
+      calculatedImageSettings: computed(() => qrCodeData.value.calculatedImageSettings.value),
+      margin: computed(() => qrCodeData.value.margin.value),
+      numCells: computed(() => qrCodeData.value.numCells.value),
     };
   },
   render() {
