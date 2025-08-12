@@ -94094,19 +94094,26 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/advance.vue 1`] = 
             class="t-skeleton__row"
           >
             <div
-              class="t-skeleton__col t-skeleton--type-rect"
+              class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
+            />
+          </div>
+          <div
+            class="t-skeleton__row"
+          >
+            <div
+              class="t-skeleton__col t-skeleton--type-rect t-skeleton--animation-none"
               style="width: 33%; height: 180px;"
             >
               image
             </div>
             <div
-              class="t-skeleton__col t-skeleton--type-rect"
+              class="t-skeleton__col t-skeleton--type-rect t-skeleton--animation-none"
               style="width: 33%; height: 180px;"
             >
               image
             </div>
             <div
-              class="t-skeleton__col t-skeleton--type-rect"
+              class="t-skeleton__col t-skeleton--type-rect t-skeleton--animation-none"
               style="width: 33%; height: 180px;"
             >
               image
@@ -94116,15 +94123,15 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/advance.vue 1`] = 
             class="t-skeleton__row"
           >
             <div
-              class="t-skeleton__col t-skeleton--type-circle"
+              class="t-skeleton__col t-skeleton--type-circle t-skeleton--animation-none"
               style="width: 50px; height: 50px;"
             />
             <div
-              class="t-skeleton__col t-skeleton--type-rect"
+              class="t-skeleton__col t-skeleton--type-rect t-skeleton--animation-none"
               style="width: 80%; height: 30px; margin: 20px 0px;"
             />
             <div
-              class="t-skeleton__col t-skeleton--type-rect"
+              class="t-skeleton__col t-skeleton--type-rect t-skeleton--animation-none"
               style="width: 80px; height: 30px; margin-left: 20px;"
             >
               确定
@@ -94134,21 +94141,21 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/advance.vue 1`] = 
             class="t-skeleton__row"
           >
             <div
-              class="t-skeleton__col t-skeleton--type-text"
+              class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
             />
           </div>
           <div
             class="t-skeleton__row"
           >
             <div
-              class="t-skeleton__col t-skeleton--type-text"
+              class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
             />
           </div>
           <div
             class="t-skeleton__row"
           >
             <div
-              class="t-skeleton__col t-skeleton--type-text"
+              class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
               style="width: 70%; margin: 0px 0px 16px 0px;"
             />
           </div>
@@ -94156,7 +94163,7 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/advance.vue 1`] = 
             class="t-skeleton__row"
           >
             <div
-              class="t-skeleton__col t-skeleton--type-rect"
+              class="t-skeleton__col t-skeleton--type-rect t-skeleton--animation-none"
               style="width: 100%; height: 300px;"
             >
               <div
@@ -94214,7 +94221,7 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/advance.vue 1`] = 
                 class="t-skeleton__row"
               >
                 <div
-                  class="t-skeleton__col t-skeleton--type-circle"
+                  class="t-skeleton__col t-skeleton--type-circle t-skeleton--animation-none"
                   style="width: 56px; height: 56px;"
                 />
               </div>
@@ -94227,21 +94234,21 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/advance.vue 1`] = 
                 class="t-skeleton__row"
               >
                 <div
-                  class="t-skeleton__col t-skeleton--type-text"
+                  class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
                 />
               </div>
               <div
                 class="t-skeleton__row"
               >
                 <div
-                  class="t-skeleton__col t-skeleton--type-text"
+                  class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
                 />
               </div>
               <div
                 class="t-skeleton__row"
               >
                 <div
-                  class="t-skeleton__col t-skeleton--type-text"
+                  class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
                   style="width: 70%;"
                 />
               </div>
@@ -94258,7 +94265,7 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/advance.vue 1`] = 
                 class="t-skeleton__row"
               >
                 <div
-                  class="t-skeleton__col t-skeleton--type-circle"
+                  class="t-skeleton__col t-skeleton--type-circle t-skeleton--animation-none"
                   style="width: 56px; height: 56px;"
                 />
               </div>
@@ -94271,21 +94278,21 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/advance.vue 1`] = 
                 class="t-skeleton__row"
               >
                 <div
-                  class="t-skeleton__col t-skeleton--type-text"
+                  class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
                 />
               </div>
               <div
                 class="t-skeleton__row"
               >
                 <div
-                  class="t-skeleton__col t-skeleton--type-text"
+                  class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
                 />
               </div>
               <div
                 class="t-skeleton__row"
               >
                 <div
-                  class="t-skeleton__col t-skeleton--type-text"
+                  class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
                   style="width: 70%;"
                 />
               </div>
@@ -94302,7 +94309,7 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/advance.vue 1`] = 
                 class="t-skeleton__row"
               >
                 <div
-                  class="t-skeleton__col t-skeleton--type-circle"
+                  class="t-skeleton__col t-skeleton--type-circle t-skeleton--animation-none"
                   style="width: 56px; height: 56px;"
                 />
               </div>
@@ -94315,21 +94322,21 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/advance.vue 1`] = 
                 class="t-skeleton__row"
               >
                 <div
-                  class="t-skeleton__col t-skeleton--type-text"
+                  class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
                 />
               </div>
               <div
                 class="t-skeleton__row"
               >
                 <div
-                  class="t-skeleton__col t-skeleton--type-text"
+                  class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
                 />
               </div>
               <div
                 class="t-skeleton__row"
               >
                 <div
-                  class="t-skeleton__col t-skeleton--type-text"
+                  class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
                   style="width: 70%;"
                 />
               </div>
@@ -94372,28 +94379,6 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/animation.vue 1`] 
               class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-gradient"
             />
           </div>
-          <div
-            class="t-skeleton__row"
-          >
-            <div
-              class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-gradient"
-            />
-          </div>
-          <div
-            class="t-skeleton__row"
-          >
-            <div
-              class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-gradient"
-            />
-          </div>
-          <div
-            class="t-skeleton__row"
-          >
-            <div
-              class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-gradient"
-              style="width: 70%;"
-            />
-          </div>
         </div>
       </div>
     </section>
@@ -94421,28 +94406,6 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/animation.vue 1`] 
           >
             <div
               class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-flashed"
-            />
-          </div>
-          <div
-            class="t-skeleton__row"
-          >
-            <div
-              class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-flashed"
-            />
-          </div>
-          <div
-            class="t-skeleton__row"
-          >
-            <div
-              class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-flashed"
-            />
-          </div>
-          <div
-            class="t-skeleton__row"
-          >
-            <div
-              class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-flashed"
-              style="width: 70%;"
             />
           </div>
         </div>
@@ -94484,29 +94447,7 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/base.vue 1`] = `
         class="t-skeleton__row"
       >
         <div
-          class="t-skeleton__col t-skeleton--type-text"
-        />
-      </div>
-      <div
-        class="t-skeleton__row"
-      >
-        <div
-          class="t-skeleton__col t-skeleton--type-text"
-        />
-      </div>
-      <div
-        class="t-skeleton__row"
-      >
-        <div
-          class="t-skeleton__col t-skeleton--type-text"
-        />
-      </div>
-      <div
-        class="t-skeleton__row"
-      >
-        <div
-          class="t-skeleton__col t-skeleton--type-text"
-          style="width: 70%;"
+          class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
         />
       </div>
     </div>
@@ -94599,7 +94540,7 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/theme.vue 1`] = `
             class="t-skeleton__row"
           >
             <div
-              class="t-skeleton__col t-skeleton--type-text"
+              class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
             />
           </div>
         </div>
@@ -94628,7 +94569,7 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/theme.vue 1`] = `
             class="t-skeleton__row"
           >
             <div
-              class="t-skeleton__col t-skeleton--type-circle"
+              class="t-skeleton__col t-skeleton--type-circle t-skeleton--animation-none"
               style="width: 56px; height: 56px;"
             />
           </div>
@@ -94658,21 +94599,21 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/theme.vue 1`] = `
             class="t-skeleton__row"
           >
             <div
-              class="t-skeleton__col t-skeleton--type-text"
+              class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
             />
           </div>
           <div
             class="t-skeleton__row"
           >
             <div
-              class="t-skeleton__col t-skeleton--type-text"
+              class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
             />
           </div>
           <div
             class="t-skeleton__row"
           >
             <div
-              class="t-skeleton__col t-skeleton--type-text"
+              class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
               style="width: 70%;"
             />
           </div>
@@ -94702,10 +94643,10 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/theme.vue 1`] = `
             class="t-skeleton__row"
           >
             <div
-              class="t-skeleton__col t-skeleton--type-circle"
+              class="t-skeleton__col t-skeleton--type-circle t-skeleton--animation-none"
             />
             <div
-              class="t-skeleton__col t-skeleton--type-text"
+              class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
               style="height: 32px;"
             />
           </div>
@@ -94735,7 +94676,7 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/theme.vue 1`] = `
             class="t-skeleton__row"
           >
             <div
-              class="t-skeleton__col t-skeleton--type-text"
+              class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
               style="height: 30px;"
             />
           </div>
@@ -94743,7 +94684,7 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/theme.vue 1`] = `
             class="t-skeleton__row"
           >
             <div
-              class="t-skeleton__col t-skeleton--type-text"
+              class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
               style="height: 200px;"
             />
           </div>
@@ -94773,7 +94714,7 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/theme.vue 1`] = `
             class="t-skeleton__row"
           >
             <div
-              class="t-skeleton__col t-skeleton--type-rect"
+              class="t-skeleton__col t-skeleton--type-rect t-skeleton--animation-none"
               style="width: 100%; height: 30px;"
             />
           </div>
@@ -94781,7 +94722,7 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/theme.vue 1`] = `
             class="t-skeleton__row"
           >
             <div
-              class="t-skeleton__col t-skeleton--type-rect"
+              class="t-skeleton__col t-skeleton--type-rect t-skeleton--animation-none"
               style="width: 100%; height: 200px;"
             />
           </div>
@@ -94789,27 +94730,15 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/theme.vue 1`] = `
             class="t-skeleton__row"
           >
             <div
-              class="t-skeleton__col t-skeleton--type-text"
+              class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
               style="height: 30px;"
             />
             <div
-              class="t-skeleton__col t-skeleton--type-text"
+              class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
               style="height: 30px;"
             />
             <div
-              class="t-skeleton__col t-skeleton--type-text"
-              style="height: 30px;"
-            />
-          </div>
-          <div
-            class="t-skeleton__row"
-          >
-            <div
-              class="t-skeleton__col t-skeleton--type-text"
-              style="height: 30px;"
-            />
-            <div
-              class="t-skeleton__col t-skeleton--type-text"
+              class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
               style="height: 30px;"
             />
           </div>
@@ -94817,11 +94746,11 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/theme.vue 1`] = `
             class="t-skeleton__row"
           >
             <div
-              class="t-skeleton__col t-skeleton--type-text"
+              class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
               style="height: 30px;"
             />
             <div
-              class="t-skeleton__col t-skeleton--type-text"
+              class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
               style="height: 30px;"
             />
           </div>
@@ -94829,11 +94758,23 @@ exports[`csr snapshot test > csr test ./src/skeleton/_example/theme.vue 1`] = `
             class="t-skeleton__row"
           >
             <div
-              class="t-skeleton__col t-skeleton--type-text"
+              class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
               style="height: 30px;"
             />
             <div
-              class="t-skeleton__col t-skeleton--type-text"
+              class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
+              style="height: 30px;"
+            />
+          </div>
+          <div
+            class="t-skeleton__row"
+          >
+            <div
+              class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
+              style="height: 30px;"
+            />
+            <div
+              class="t-skeleton__col t-skeleton--type-text t-skeleton--animation-none"
               style="height: 30px;"
             />
           </div>
