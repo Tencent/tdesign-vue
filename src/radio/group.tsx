@@ -1,7 +1,5 @@
 import { VNode, CreateElement } from 'vue';
 import { isNumber, isString, throttle } from 'lodash-es';
-import { ref } from '@vue/composition-api';
-import useResizeObserver from '../hooks/useResizeObserver';
 import props from './radio-group-props';
 import {
   TdRadioGroupProps, RadioOptionObj, RadioOption, RadioValue,
@@ -35,7 +33,7 @@ export default mixins(classPrefixMixins).extend({
 
   data() {
     return {
-      radioGroupEl: ref(null),
+      groupResizeObserver: null,
       barStyle: { width: '0px', left: '0px' },
     };
   },
@@ -98,9 +96,8 @@ export default mixins(classPrefixMixins).extend({
 
   mounted() {
     this.calcBarStyle();
-    this.radioGroupEl.value = this.$el;
-    useResizeObserver(
-      this.radioGroupEl,
+    this.groupResizeObserver = this.addResizeObserver(
+      this.$el,
       throttle(async () => {
         this.$nextTick(() => this.calcBarStyle());
       }, 300),
@@ -111,6 +108,7 @@ export default mixins(classPrefixMixins).extend({
 
   beforeDestroy() {
     this.removeKeyboardListeners();
+    this.cleanupResizeObserver(this.groupResizeObserver, this.$el);
   },
 
   methods: {
@@ -121,6 +119,21 @@ export default mixins(classPrefixMixins).extend({
 
     removeKeyboardListeners() {
       off(this.$el, 'keydown', this.checkRadioInGroup);
+    },
+
+    addResizeObserver(el: Element, callback: (data: ResizeObserverEntry[]) => void): ResizeObserver {
+      const isSupport = typeof window !== 'undefined' && window.ResizeObserver;
+      if (!isSupport) return;
+
+      const containerObserver = new ResizeObserver(callback);
+      containerObserver.observe(el);
+
+      return containerObserver;
+    },
+    cleanupResizeObserver(observer: ResizeObserver, container: Element) {
+      if (!observer || !container) return;
+      observer.unobserve(container);
+      observer.disconnect();
     },
 
     // 注意：此处会还原区分 数字 和 数字字符串
