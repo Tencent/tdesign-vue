@@ -27,11 +27,14 @@ export default defineComponent({
       return cells.value;
     });
 
+    const calculatedImageSettings = computed(() => qrCodeData.value.calculatedImageSettings.value);
+    const margin = computed(() => qrCodeData.value.margin.value);
+    const numCells = computed(() => qrCodeData.value.numCells.value);
     return {
       cellsToDraw,
-      calculatedImageSettings: computed(() => qrCodeData.value.calculatedImageSettings.value),
-      margin: computed(() => qrCodeData.value.margin.value),
-      numCells: computed(() => qrCodeData.value.numCells.value),
+      calculatedImageSettings,
+      margin,
+      numCells,
     };
   },
   render() {
