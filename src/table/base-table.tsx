@@ -126,22 +126,12 @@ export default defineComponent({
 
     const { showElement } = useElementLazyRender(tableRef, lazyLoad);
 
-    const resetScrollbar = () => {
-      if (tableContentRef.value && tableContentRef.value.scrollTo) {
-        tableContentRef.value.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-      } else if (tableContentRef.value) {
-        // 兼容测试环境或旧浏览器
-        tableContentRef.value.scrollTop = 0;
-        tableContentRef.value.scrollLeft = 0;
-      }
-    };
-
     const {
       dataSource, innerPagination, isPaginateData, renderPagination,
     } = usePagination(
       props,
       context,
-      resetScrollbar,
+      tableContentRef,
     );
 
     const onInnerResizeChange: BaseTableProps['onColumnResizeChange'] = (p) => {
