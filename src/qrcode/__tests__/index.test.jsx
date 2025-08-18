@@ -64,18 +64,6 @@ describe('QRCode', () => {
 
     // it(':iconSize[number|object]-svg', async () => {});
 
-    // const level = ['L', 'M', 'Q', 'H'];
-    // level.forEach((item) => {
-    //   it(`:level[string]-[${item}]`, async () => {
-    //     const wrapper = mount({
-    //       render() {
-    //         return <QRCode level={item} value="https://tdesign.tencent.com/"></QRCode>;
-    //       },
-    //     });
-    //     expect(wrapper.find('.t-qrcode').attributes('level')).eq(item);
-    //   });
-    // });
-
     it(':size[number]', async () => {
       const size = 380;
       const wrapper = mount({
@@ -110,6 +98,35 @@ describe('QRCode', () => {
       });
       await wrapper.setProps({ status: 'expired', statusRender });
       expect(statusRender).toBeCalled();
+    });
+
+    it(':value[string] changes - canvas mode', async () => {
+      const wrapper = mount({
+        render() {
+          return <QRCode type="canvas" value="https://tdesign.tencent.com/"></QRCode>;
+        },
+      });
+
+      expect(wrapper.find('.t-qrcode').find('canvas').exists()).eq(true);
+      await wrapper.setProps({ value: 'https://github.com/Tencent/tdesign-vue-next' });
+      expect(wrapper.find('.t-qrcode').find('canvas').exists()).eq(true);
+    });
+
+    it(':value[string] changes - svg mode', async () => {
+      const wrapper = mount({
+        render() {
+          return <QRCode type="svg" value="https://tdesign.tencent.com/"></QRCode>;
+        },
+      });
+
+      expect(wrapper.find('.t-qrcode').find('svg').exists()).eq(true);
+      const initialPaths = wrapper.find('.t-qrcode').findAll('path');
+      expect(initialPaths.length).eq(2); // 背景path + 前景path
+
+      await wrapper.setProps({ value: 'https://github.com/Tencent/tdesign-vue-next' });
+      const updatedPaths = wrapper.find('.t-qrcode').findAll('path');
+      expect(updatedPaths.length).eq(2);
+      expect(wrapper.find('.t-qrcode').find('svg').exists()).eq(true);
     });
   });
 });
