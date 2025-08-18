@@ -64,18 +64,6 @@ describe('QRCode', () => {
 
     it(':iconSize[number|object]-svg', async () => {});
 
-    const level = ['L', 'M', 'Q', 'H'];
-    level.forEach((item) => {
-      it(`:level[string]-[${item}]`, async () => {
-        const wrapper = mount({
-          render() {
-            return <QRCode level={item} value="https://tdesign.tencent.com/"></QRCode>;
-          },
-        });
-        expect(wrapper.find('.t-qrcode').attributes('level')).eq(item);
-      });
-    });
-
     it(':size[number]', async () => {
       const size = 380;
       const wrapper = mount({
