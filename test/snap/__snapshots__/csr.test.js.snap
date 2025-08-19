@@ -83877,9 +83877,7 @@ exports[`csr snapshot test > csr test ./src/qrcode/_example/base.vue 1`] = `
     >
       <div
         class="t-qrcode"
-        level="M"
         style="background-color: transparent; width: 160px; height: 160px;"
-        value="https://tdesign.tencent.com/"
       >
         <div
           style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
@@ -83924,9 +83922,7 @@ exports[`csr snapshot test > csr test ./src/qrcode/_example/customColor.vue 1`] 
   >
     <div
       class="t-qrcode"
-      level="M"
       style="background-color: rgb(255, 255, 255); width: 160px; height: 160px;"
-      value="https://tdesign.tencent.com/"
     >
       <div
         style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
@@ -83943,9 +83939,7 @@ exports[`csr snapshot test > csr test ./src/qrcode/_example/customColor.vue 1`] 
   >
     <div
       class="t-qrcode"
-      level="M"
       style="background-color: rgb(217, 225, 255); width: 160px; height: 160px;"
-      value="https://tdesign.tencent.com/"
     >
       <div
         style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
@@ -84031,9 +84025,7 @@ exports[`csr snapshot test > csr test ./src/qrcode/_example/customSize.vue 1`] =
   >
     <div
       class="t-qrcode"
-      level="H"
       style="background-color: transparent; width: 160px; height: 160px;"
-      value="https://tdesign.tencent.com/"
     >
       <div
         style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
@@ -84062,9 +84054,7 @@ exports[`csr snapshot test > csr test ./src/qrcode/_example/customStatusRender.v
   >
     <div
       class="t-qrcode"
-      level="M"
       style="background-color: transparent; width: 160px; height: 160px;"
-      value="https://tdesign.tencent.com/"
     >
       <div
         class="t-mask"
@@ -84128,9 +84118,7 @@ exports[`csr snapshot test > csr test ./src/qrcode/_example/customStatusRender.v
   >
     <div
       class="t-qrcode"
-      level="M"
       style="background-color: transparent; width: 160px; height: 160px;"
-      value="https://tdesign.tencent.com/"
     >
       <div
         class="t-mask t-expired"
@@ -84195,9 +84183,7 @@ exports[`csr snapshot test > csr test ./src/qrcode/_example/customStatusRender.v
   >
     <div
       class="t-qrcode"
-      level="M"
       style="background-color: transparent; width: 160px; height: 160px;"
-      value="https://tdesign.tencent.com/"
     >
       <div
         class="t-mask t-scanned"
@@ -84298,9 +84284,7 @@ exports[`csr snapshot test > csr test ./src/qrcode/_example/download.vue 1`] = `
     <div
       class="t-qrcode"
       id="QRCode"
-      level="M"
       style="background-color: transparent; width: 160px; height: 160px;"
-      value="https://tdesign.tencent.com/"
     >
       <div
         style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
@@ -84339,9 +84323,7 @@ exports[`csr snapshot test > csr test ./src/qrcode/_example/icon.vue 1`] = `
 >
   <div
     class="t-qrcode t-qrcode-svg"
-    level="M"
     style="background-color: transparent; width: 160px; height: 160px;"
-    value="https://tdesign.tencent.com/"
   >
     <svg
       height="160"
@@ -84474,9 +84456,7 @@ exports[`csr snapshot test > csr test ./src/qrcode/_example/level.vue 1`] = `
   >
     <div
       class="t-qrcode"
-      level="M"
       style="background-color: transparent; width: 160px; height: 160px;"
-      value="https://tdesign.gtimg.com/site/tdesign-logo.png"
     >
       <div
         style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
@@ -84518,9 +84498,7 @@ exports[`csr snapshot test > csr test ./src/qrcode/_example/status.vue 1`] = `
   >
     <div
       class="t-qrcode"
-      level="M"
       style="background-color: transparent; width: 160px; height: 160px;"
-      value="https://tdesign.tencent.com/"
     >
       <div
         class="t-mask"
@@ -84568,9 +84546,7 @@ exports[`csr snapshot test > csr test ./src/qrcode/_example/status.vue 1`] = `
   >
     <div
       class="t-qrcode"
-      level="M"
       style="background-color: transparent; width: 160px; height: 160px;"
-      value="https://tdesign.tencent.com/"
     >
       <div
         class="t-mask t-expired"
@@ -84617,9 +84593,7 @@ exports[`csr snapshot test > csr test ./src/qrcode/_example/status.vue 1`] = `
   >
     <div
       class="t-qrcode"
-      level="M"
       style="background-color: transparent; width: 160px; height: 160px;"
-      value="https://tdesign.tencent.com/"
     >
       <div
         class="t-mask t-scanned"
@@ -84667,9 +84641,7 @@ exports[`csr snapshot test > csr test ./src/qrcode/_example/type.vue 1`] = `
   >
     <div
       class="t-qrcode"
-      level="M"
       style="background-color: transparent; width: 160px; height: 160px;"
-      value="https://tdesign.tencent.com/"
     >
       <div
         style="display: flex; align-self: stretch; flex-basis: auto; min-width: 0;"
@@ -84686,9 +84658,7 @@ exports[`csr snapshot test > csr test ./src/qrcode/_example/type.vue 1`] = `
   >
     <div
       class="t-qrcode t-qrcode-svg"
-      level="M"
       style="background-color: transparent; width: 160px; height: 160px;"
-      value="https://tdesign.tencent.com/"
     >
       <svg
         height="160"
