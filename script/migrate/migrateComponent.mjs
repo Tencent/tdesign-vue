@@ -6,6 +6,7 @@ import migrateCalendar from './components/calendar.mjs';
 import migrateCard from './components/card.mjs';
 import migrateDropdown from './components/dropdown.mjs';
 import migrateTree from './components/tree.mjs';
+import migrateTreeSelect from './components/tree-select.mjs';
 import migrateHelper from './utils/helper.mjs';
 import migrateRenderTNode from './utils/render-tnode.mjs';
 import migrateHooks from './hooks/index.mjs';
@@ -31,6 +32,7 @@ function run() {
   migrateTable();
   migrateTimeline();
   migrateTree();
+  migrateTreeSelect();
   migrateRangeInput();
   migrateWatermark();
 
