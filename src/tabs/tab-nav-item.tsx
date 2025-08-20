@@ -61,7 +61,7 @@ export default mixins(keepAnimationMixins, classPrefixMixins, getGlobalIconMixin
 
       return this.removable && !this.disabled ? (
         <span onClick={(e: MouseEvent) => this.removeBtnClick(e)} class="remove-btn">
-          <CloseIcon class="remove-btn" />
+          <CloseIcon />
         </span>
       ) : null;
     },
