@@ -128,7 +128,11 @@ export default defineComponent({
 
     const {
       dataSource, innerPagination, isPaginateData, renderPagination,
-    } = usePagination(props, context);
+    } = usePagination(
+      props,
+      context,
+      tableContentRef,
+    );
 
     const onInnerResizeChange: BaseTableProps['onColumnResizeChange'] = (p) => {
       props.onColumnResizeChange?.(p);
