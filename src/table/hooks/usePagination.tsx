@@ -57,7 +57,11 @@ export function usePaginationValue(
   return [innerPagination, setInnerPagination];
 }
 
-export default function usePagination(props: TdBaseTableProps, context: SetupContext) {
+export default function usePagination(
+  props: TdBaseTableProps,
+  context: SetupContext,
+  tableContentRef: Ref<HTMLElement>,
+) {
   const { pagination, disableDataPage, data } = toRefs(props);
   const { classPrefix } = useConfig();
   const dataSource = ref<TableRowData[]>([]);
@@ -66,6 +70,15 @@ export default function usePagination(props: TdBaseTableProps, context: SetupCon
     // Vue3 ignore this line
     context.emit('page-change', pageInfo, newData);
     props.onPageChange?.(pageInfo, newData);
+
+    const ref = tableContentRef.value;
+    if (ref.scrollTo) {
+      ref.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    } else {
+      // 兼容测试环境或旧浏览器
+      ref.scrollTop = 0;
+      ref.scrollLeft = 0;
+    }
   };
 
   const [innerPagination, setInnerPagination] = usePaginationValue(pagination, onPageChange);
