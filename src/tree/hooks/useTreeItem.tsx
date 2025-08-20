@@ -65,7 +65,7 @@ export default function useTreeItem(state: TypeTreeItemState) {
       [`${classPrefix}-is-disabled`]: node.isDisabled(),
     });
     list.push({
-      [`${componentName}__item--draggable`]: node.isDraggable(),
+      [`${componentName}__item--draggable`]: !node.isDisabled() && node.isDraggable(),
     });
     if (node.visible) {
       list.push(`${componentName}__item--visible`);
