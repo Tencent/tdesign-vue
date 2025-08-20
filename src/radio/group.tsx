@@ -1,9 +1,8 @@
-import { CreateElement, VNode, ref } from 'vue';
+import { CreateElement, VNode } from 'vue';
 import { isNumber, isString, throttle } from 'lodash-es';
 import { CHECKED_CODE_REG } from '../_common/js/common';
 import { TNodeReturnValue } from '../common';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
-import useResizeObserver from '../hooks/useResizeObserver';
 import { off, on } from '../utils/dom';
 import { emitEvent } from '../utils/event';
 import mixins from '../utils/mixins';
@@ -34,6 +33,7 @@ export default mixins(classPrefixMixins).extend({
 
   data() {
     return {
+      groupResizeObserver: null,
       barStyle: { width: '0px', left: '0px' },
     };
   },
@@ -100,12 +100,9 @@ export default mixins(classPrefixMixins).extend({
 
   mounted() {
     this.calcBarStyle();
-    this.addKeyboardListeners();
-
-    const radioGroupRef = ref(this.$refs.radioGroupRef as HTMLElement);
-    useResizeObserver(
-      radioGroupRef,
-      throttle(() => {
+    this.groupResizeObserver = this.addResizeObserver(
+      this.$el,
+      throttle(async () => {
         this.$nextTick(() => this.calcBarStyle());
       }, 300),
     );
@@ -113,6 +110,7 @@ export default mixins(classPrefixMixins).extend({
 
   beforeDestroy() {
     this.removeKeyboardListeners();
+    this.cleanupResizeObserver(this.groupResizeObserver, this.$el);
   },
 
   methods: {
@@ -127,6 +125,21 @@ export default mixins(classPrefixMixins).extend({
       if (this.$refs.radioGroupRef) {
         off(this.$refs.radioGroupRef, 'keydown', this.checkRadioInGroup);
       }
+    },
+
+    addResizeObserver(el: Element, callback: (data: ResizeObserverEntry[]) => void): ResizeObserver {
+      const isSupport = typeof window !== 'undefined' && window.ResizeObserver;
+      if (!isSupport) return;
+
+      const containerObserver = new ResizeObserver(callback);
+      containerObserver.observe(el);
+
+      return containerObserver;
+    },
+    cleanupResizeObserver(observer: ResizeObserver, container: Element) {
+      if (!observer || !container) return;
+      observer.unobserve(container);
+      observer.disconnect();
     },
 
     // 注意：此处会还原区分 数字 和 数字字符串
