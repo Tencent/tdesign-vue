@@ -1,10 +1,9 @@
 import Vue, { VNode, VueConstructor } from 'vue';
-import { TdTabPanelProps } from 'cjs';
 import { getVNodeComponentName, getVueComponentName } from '../utils/helper';
 import props from './props';
 import TTabPanel from './tab-panel';
 import TTabNav from './tab-nav';
-import { TabValue, TdTabsProps } from './type';
+import { TabValue, TdTabPanelProps, TdTabsProps } from './type';
 import { emitEvent } from '../utils/event';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
