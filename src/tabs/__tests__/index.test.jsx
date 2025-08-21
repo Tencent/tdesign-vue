@@ -174,6 +174,7 @@ describe('Tabs', () => {
       tabs.vm.$el.getElementsByClassName('t-tabs__nav-item')[0].click();
       expect(tabs.emitted().change).toBeTruthy();
     });
+
     it('@remove', async () => {
       const onTabRemoveFn = vi.fn();
       const onTabPanelRemoveFn = vi.fn();
