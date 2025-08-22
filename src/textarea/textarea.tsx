@@ -184,7 +184,9 @@ export default mixins(Vue as VueConstructor<Textarea>, classPrefixMixins).extend
         }
         if (this.maxcharacter && this.maxcharacter >= 0) {
           const stringInfo = getCharacterLength(val, this.maxcharacter);
-          val = typeof stringInfo === 'object' && stringInfo.characters;
+          if (!this.allowInputOverMax) {
+            val = typeof stringInfo === 'object' && stringInfo.characters;
+          }
         }
       }
 
