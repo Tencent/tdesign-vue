@@ -8,7 +8,7 @@
 <script>
 import enConfig from 'tdesign-vue/es/locale/en_US';
 import zhConfig from 'tdesign-vue/es/locale/zh_CN';
-import { getLang } from 'tdesign-site-components';
+import { getLang } from '@tdesign/site-components';
 
 export default {
   computed: {
