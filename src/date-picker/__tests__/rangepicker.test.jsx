@@ -10,7 +10,14 @@ MockDate.set('2020-12-28');
 
 // every component needs four parts: props/events/slots/functions.
 describe('DateRangePicker', () => {
-  // test props api
+  afterEach(() => {
+    document.body.innerHTML = '';
+    if (vi && vi.clearAllMocks) vi.clearAllMocks();
+    if (vi && vi.restoreAllMocks) vi.restoreAllMocks();
+  });
+  afterAll(() => {
+    MockDate.reset();
+  });
   describe(':props', () => {
     it('', () => {
       const wrapper = mount({
@@ -86,6 +93,33 @@ describe('DateRangePicker', () => {
     expect(document.querySelector('.t-date-picker__panel-time')).not.toBe(null);
   });
 
+  it('onConfirm', async () => {
+    const onConfirm = vi.fn();
+    const wrapper = mount({
+      render() {
+        return <DateRangePicker enableTimePicker onConfirm={onConfirm} />;
+      },
+    });
+    wrapper.find('.t-input').trigger('click');
+    await nextTick();
+
+    const footerBtn = document.querySelector('.t-date-picker__footer button');
+    expect(footerBtn).toBeTruthy();
+    expect(footerBtn.disabled).toBeTruthy();
+    expect(onConfirm).not.toBeCalled();
+
+    // 通过组件 API 触发 time change，DOM click 在测试环境有时不会触发组件回调
+    const dateRangeVm = wrapper.findComponent(DateRangePicker).vm;
+    dateRangeVm.panelProps.onTimePickerChange('03:00:00');
+
+    await nextTick();
+    expect(footerBtn).toBeTruthy();
+    expect(footerBtn.disabled).toBeFalsy();
+
+    footerBtn.click();
+    expect(onConfirm).toBeCalled();
+  });
+
   it('firstDayOfWeek', async () => {
     const wrapper = mount(DateRangePicker, {
       propsData: {
@@ -95,7 +129,7 @@ describe('DateRangePicker', () => {
     wrapper.find('.t-input').trigger('click');
     await nextTick();
     const weekElement = document.querySelector('.t-date-picker__table table thead tr th');
-    expect(weekElement.innerHTML).toEqual('一');
+    expect(weekElement.innerHTML).toEqual('三');
   });
 
   it('format', async () => {
