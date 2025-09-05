@@ -273,7 +273,7 @@ export default defineComponent({
       const confirmValue = {
         date: nextValue.map((v) => dayjs(v).toDate()),
         e,
-        partial: activeIndex.value ? 'end' : ('start' as DateRangePickerPartial),
+        partial: (activeIndex.value ? 'end' : 'start') as DateRangePickerPartial,
       };
 
       // 当两端都有有效值时更改 value
