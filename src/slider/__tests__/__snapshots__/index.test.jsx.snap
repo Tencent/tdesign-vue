@@ -128,10 +128,17 @@ exports[`Slider [marks] > render right 1`] = `
           viewBox="0 0 24 24"
           width="1em"
         >
-          <path
-            d="M17.5001 8.08582L12.0002 13.5858L6.50015 8.08582L5.08594 9.50003L12.0002 16.4142L18.9144 9.50003L17.5001 8.08582Z"
-            fill="currentColor"
-          />
+          <g
+            id="chevron-down"
+          >
+            <path
+              d="M17.5 9.5L12 15L6.5 9.5"
+              id="stroke1"
+              stroke="currentColor"
+              stroke-linecap="square"
+              stroke-width="2"
+            />
+          </g>
         </svg>
       </button>
       <div
@@ -160,10 +167,17 @@ exports[`Slider [marks] > render right 1`] = `
           viewBox="0 0 24 24"
           width="1em"
         >
-          <path
-            d="M17.5001 15.9142L12.0002 10.4142L6.50015 15.9142L5.08594 14.5L12.0002 7.58582L18.9144 14.5L17.5001 15.9142Z"
-            fill="currentColor"
-          />
+          <g
+            id="chevron-up"
+          >
+            <path
+              d="M17.5 14.5L12 9L6.5 14.5"
+              id="stroke1"
+              stroke="currentColor"
+              stroke-linecap="square"
+              stroke-width="2"
+            />
+          </g>
         </svg>
       </button>
     </div>

@@ -15,10 +15,17 @@ exports[`InputNumber > :props > :defaultValue, default value 6 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M4 11L20 11V13L4 13L4 11Z"
-        fill="currentColor"
-      />
+      <g
+        id="remove"
+      >
+        <path
+          d="M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
   <div
@@ -47,10 +54,17 @@ exports[`InputNumber > :props > :defaultValue, default value 6 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M13 4V11L20 11V13L13 13V20H11L11 13H4L4 11L11 11L11 4L13 4Z"
-        fill="currentColor"
-      />
+      <g
+        id="add"
+      >
+        <path
+          d="M12 5L12 19M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
 </div>
@@ -72,10 +86,17 @@ exports[`InputNumber > :props > :disabled, function can not be call 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M4 11L20 11V13L4 13L4 11Z"
-        fill="currentColor"
-      />
+      <g
+        id="remove"
+      >
+        <path
+          d="M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
   <div
@@ -107,10 +128,17 @@ exports[`InputNumber > :props > :disabled, function can not be call 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M13 4V11L20 11V13L13 13V20H11L11 13H4L4 11L11 11L11 4L13 4Z"
-        fill="currentColor"
-      />
+      <g
+        id="add"
+      >
+        <path
+          d="M12 5L12 19M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
 </div>
@@ -131,10 +159,17 @@ exports[`InputNumber > :props > :format, with 6% 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M4 11L20 11V13L4 13L4 11Z"
-        fill="currentColor"
-      />
+      <g
+        id="remove"
+      >
+        <path
+          d="M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
   <div
@@ -163,10 +198,17 @@ exports[`InputNumber > :props > :format, with 6% 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M13 4V11L20 11V13L13 13V20H11L11 13H4L4 11L11 11L11 4L13 4Z"
-        fill="currentColor"
-      />
+      <g
+        id="add"
+      >
+        <path
+          d="M12 5L12 19M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
 </div>
@@ -187,10 +229,17 @@ exports[`InputNumber > :props > :max, value 6 < max 10 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M4 11L20 11V13L4 13L4 11Z"
-        fill="currentColor"
-      />
+      <g
+        id="remove"
+      >
+        <path
+          d="M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
   <div
@@ -219,10 +268,17 @@ exports[`InputNumber > :props > :max, value 6 < max 10 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M13 4V11L20 11V13L13 13V20H11L11 13H4L4 11L11 11L11 4L13 4Z"
-        fill="currentColor"
-      />
+      <g
+        id="add"
+      >
+        <path
+          d="M12 5L12 19M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
 </div>
@@ -243,10 +299,17 @@ exports[`InputNumber > :props > :max, value 16 > max 10 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M4 11L20 11V13L4 13L4 11Z"
-        fill="currentColor"
-      />
+      <g
+        id="remove"
+      >
+        <path
+          d="M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
   <div
@@ -275,10 +338,17 @@ exports[`InputNumber > :props > :max, value 16 > max 10 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M13 4V11L20 11V13L13 13V20H11L11 13H4L4 11L11 11L11 4L13 4Z"
-        fill="currentColor"
-      />
+      <g
+        id="add"
+      >
+        <path
+          d="M12 5L12 19M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
 </div>
@@ -299,10 +369,17 @@ exports[`InputNumber > :props > :min, value -1 < min 1 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M4 11L20 11V13L4 13L4 11Z"
-        fill="currentColor"
-      />
+      <g
+        id="remove"
+      >
+        <path
+          d="M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
   <div
@@ -331,10 +408,17 @@ exports[`InputNumber > :props > :min, value -1 < min 1 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M13 4V11L20 11V13L13 13V20H11L11 13H4L4 11L11 11L11 4L13 4Z"
-        fill="currentColor"
-      />
+      <g
+        id="add"
+      >
+        <path
+          d="M12 5L12 19M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
 </div>
@@ -355,10 +439,17 @@ exports[`InputNumber > :props > :min, value 6 > min 1 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M4 11L20 11V13L4 13L4 11Z"
-        fill="currentColor"
-      />
+      <g
+        id="remove"
+      >
+        <path
+          d="M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
   <div
@@ -387,10 +478,17 @@ exports[`InputNumber > :props > :min, value 6 > min 1 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M13 4V11L20 11V13L13 13V20H11L11 13H4L4 11L11 11L11 4L13 4Z"
-        fill="currentColor"
-      />
+      <g
+        id="add"
+      >
+        <path
+          d="M12 5L12 19M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
 </div>
@@ -411,10 +509,17 @@ exports[`InputNumber > :props > :mode, without class t-is-controls-right 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M4 11L20 11V13L4 13L4 11Z"
-        fill="currentColor"
-      />
+      <g
+        id="remove"
+      >
+        <path
+          d="M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
   <div
@@ -443,10 +548,17 @@ exports[`InputNumber > :props > :mode, without class t-is-controls-right 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M13 4V11L20 11V13L13 13V20H11L11 13H4L4 11L11 11L11 4L13 4Z"
-        fill="currentColor"
-      />
+      <g
+        id="add"
+      >
+        <path
+          d="M12 5L12 19M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
 </div>
@@ -467,10 +579,17 @@ exports[`InputNumber > :props > :mode:column, with class t-is-controls-right 1`]
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M17.5001 8.08582L12.0002 13.5858L6.50015 8.08582L5.08594 9.50003L12.0002 16.4142L18.9144 9.50003L17.5001 8.08582Z"
-        fill="currentColor"
-      />
+      <g
+        id="chevron-down"
+      >
+        <path
+          d="M17.5 9.5L12 15L6.5 9.5"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
   <div
@@ -499,10 +618,17 @@ exports[`InputNumber > :props > :mode:column, with class t-is-controls-right 1`]
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M17.5001 15.9142L12.0002 10.4142L6.50015 15.9142L5.08594 14.5L12.0002 7.58582L18.9144 14.5L17.5001 15.9142Z"
-        fill="currentColor"
-      />
+      <g
+        id="chevron-up"
+      >
+        <path
+          d="M17.5 14.5L12 9L6.5 14.5"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
 </div>
@@ -523,10 +649,17 @@ exports[`InputNumber > :props > :mode:row, without class t-is-controls-right 1`]
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M4 11L20 11V13L4 13L4 11Z"
-        fill="currentColor"
-      />
+      <g
+        id="remove"
+      >
+        <path
+          d="M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
   <div
@@ -555,10 +688,17 @@ exports[`InputNumber > :props > :mode:row, without class t-is-controls-right 1`]
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M13 4V11L20 11V13L13 13V20H11L11 13H4L4 11L11 11L11 4L13 4Z"
-        fill="currentColor"
-      />
+      <g
+        id="add"
+      >
+        <path
+          d="M12 5L12 19M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
 </div>
@@ -579,10 +719,17 @@ exports[`InputNumber > :props > :size:large, with class t-size-l 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M4 11L20 11V13L4 13L4 11Z"
-        fill="currentColor"
-      />
+      <g
+        id="remove"
+      >
+        <path
+          d="M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
   <div
@@ -611,10 +758,17 @@ exports[`InputNumber > :props > :size:large, with class t-size-l 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M13 4V11L20 11V13L13 13V20H11L11 13H4L4 11L11 11L11 4L13 4Z"
-        fill="currentColor"
-      />
+      <g
+        id="add"
+      >
+        <path
+          d="M12 5L12 19M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
 </div>
@@ -635,10 +789,17 @@ exports[`InputNumber > :props > :size:medium, with class t-size-m 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M4 11L20 11V13L4 13L4 11Z"
-        fill="currentColor"
-      />
+      <g
+        id="remove"
+      >
+        <path
+          d="M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
   <div
@@ -667,10 +828,17 @@ exports[`InputNumber > :props > :size:medium, with class t-size-m 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M13 4V11L20 11V13L13 13V20H11L11 13H4L4 11L11 11L11 4L13 4Z"
-        fill="currentColor"
-      />
+      <g
+        id="add"
+      >
+        <path
+          d="M12 5L12 19M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
 </div>
@@ -691,10 +859,17 @@ exports[`InputNumber > :props > :size:small, with class t-size-s 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M4 11L20 11V13L4 13L4 11Z"
-        fill="currentColor"
-      />
+      <g
+        id="remove"
+      >
+        <path
+          d="M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
   <div
@@ -723,10 +898,17 @@ exports[`InputNumber > :props > :size:small, with class t-size-s 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M13 4V11L20 11V13L13 13V20H11L11 13H4L4 11L11 11L11 4L13 4Z"
-        fill="currentColor"
-      />
+      <g
+        id="add"
+      >
+        <path
+          d="M12 5L12 19M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
 </div>
@@ -747,10 +929,17 @@ exports[`InputNumber > :props > :step, 2 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M4 11L20 11V13L4 13L4 11Z"
-        fill="currentColor"
-      />
+      <g
+        id="remove"
+      >
+        <path
+          d="M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
   <div
@@ -779,10 +968,17 @@ exports[`InputNumber > :props > :step, 2 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M13 4V11L20 11V13L13 13V20H11L11 13H4L4 11L11 11L11 4L13 4Z"
-        fill="currentColor"
-      />
+      <g
+        id="add"
+      >
+        <path
+          d="M12 5L12 19M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
 </div>
@@ -803,10 +999,17 @@ exports[`InputNumber > :props > :value, 6 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M4 11L20 11V13L4 13L4 11Z"
-        fill="currentColor"
-      />
+      <g
+        id="remove"
+      >
+        <path
+          d="M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
   <div
@@ -835,10 +1038,17 @@ exports[`InputNumber > :props > :value, 6 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M13 4V11L20 11V13L13 13V20H11L11 13H4L4 11L11 11L11 4L13 4Z"
-        fill="currentColor"
-      />
+      <g
+        id="add"
+      >
+        <path
+          d="M12 5L12 19M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
 </div>
@@ -859,10 +1069,17 @@ exports[`InputNumber > :props > :value, 6.55 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M4 11L20 11V13L4 13L4 11Z"
-        fill="currentColor"
-      />
+      <g
+        id="remove"
+      >
+        <path
+          d="M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
   <div
@@ -891,10 +1108,17 @@ exports[`InputNumber > :props > :value, 6.55 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M13 4V11L20 11V13L13 13V20H11L11 13H4L4 11L11 11L11 4L13 4Z"
-        fill="currentColor"
-      />
+      <g
+        id="add"
+      >
+        <path
+          d="M12 5L12 19M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
 </div>
@@ -915,10 +1139,17 @@ exports[`InputNumber > :props > class, with class t-input-number 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M4 11L20 11V13L4 13L4 11Z"
-        fill="currentColor"
-      />
+      <g
+        id="remove"
+      >
+        <path
+          d="M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
   <div
@@ -947,10 +1178,17 @@ exports[`InputNumber > :props > class, with class t-input-number 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M13 4V11L20 11V13L13 13V20H11L11 13H4L4 11L11 11L11 4L13 4Z"
-        fill="currentColor"
-      />
+      <g
+        id="add"
+      >
+        <path
+          d="M12 5L12 19M19 12L5 12"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </button>
 </div>
