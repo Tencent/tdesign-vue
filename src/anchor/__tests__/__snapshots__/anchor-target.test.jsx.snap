@@ -1,7 +1,0 @@
-// Vitest Snapshot v1
-
-exports[`AnchorTarget > <slot> > should render default slot 1`] = `
-"<h1 id=\\"test-target\\" class=\\"t-anchor__target\\">this is default slots<svg fill=\\"none\\" viewBox=\\"0 0 24 24\\" width=\\"1em\\" height=\\"1em\\" class=\\"t-icon t-icon-file-copy t-anchor__copy\\">
-    <path fill=\\"currentColor\\" d=\\"M6 1H15.4142L21 6.58579V19H6V1ZM8 3V17H19V9H13V3H8ZM15 3.41421V7H18.5858L15 3.41421ZM4 5V21H15V23H2V5H4Z\\"></path>
-  </svg></h1>"
-`;
