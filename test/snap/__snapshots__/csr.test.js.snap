@@ -79,7 +79,7 @@ exports[`csr snapshot test > csr test ./src/alert/_example/base.vue 1`] = `
         >
           <path
             d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-            fill="transparent"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -118,7 +118,7 @@ exports[`csr snapshot test > csr test ./src/alert/_example/base.vue 1`] = `
         >
           <path
             d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM7.49985 10.5858L10.4999 13.5858L16.4999 7.58578L17.9141 8.99999L10.4999 16.4142L6.08564 12L7.49985 10.5858Z"
-            fill="transparent"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -155,7 +155,7 @@ exports[`csr snapshot test > csr test ./src/alert/_example/base.vue 1`] = `
         >
           <path
             d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM11.0001 14H13.0001V6.49998H11.0001V14ZM13.004 15.5H11.0001V17.5039H13.004V15.5Z"
-            fill="transparent"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -192,7 +192,7 @@ exports[`csr snapshot test > csr test ./src/alert/_example/base.vue 1`] = `
         >
           <path
             d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM11.0001 14H13.0001V6.49998H11.0001V14ZM13.004 15.5H11.0001V17.5039H13.004V15.5Z"
-            fill="transparent"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -237,7 +237,7 @@ exports[`csr snapshot test > csr test ./src/alert/_example/close.vue 1`] = `
         >
           <path
             d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM7.49985 10.5858L10.4999 13.5858L16.4999 7.58578L17.9141 8.99999L10.4999 16.4142L6.08564 12L7.49985 10.5858Z"
-            fill="transparent"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -297,7 +297,7 @@ exports[`csr snapshot test > csr test ./src/alert/_example/close.vue 1`] = `
         >
           <path
             d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-            fill="transparent"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -339,7 +339,7 @@ exports[`csr snapshot test > csr test ./src/alert/_example/close.vue 1`] = `
         >
           <path
             d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM11.0001 14H13.0001V6.49998H11.0001V14ZM13.004 15.5H11.0001V17.5039H13.004V15.5Z"
-            fill="transparent"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -381,7 +381,7 @@ exports[`csr snapshot test > csr test ./src/alert/_example/close.vue 1`] = `
         >
           <path
             d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM11.0001 14H13.0001V6.49998H11.0001V14ZM13.004 15.5H11.0001V17.5039H13.004V15.5Z"
-            fill="transparent"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -437,7 +437,7 @@ exports[`csr snapshot test > csr test ./src/alert/_example/collapse.vue 1`] = `
         >
           <path
             d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-            fill="transparent"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -519,7 +519,7 @@ exports[`csr snapshot test > csr test ./src/alert/_example/icon.vue 1`] = `
         >
           <path
             d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-            fill="transparent"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -556,7 +556,7 @@ exports[`csr snapshot test > csr test ./src/alert/_example/icon.vue 1`] = `
         >
           <path
             d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM11.0001 14H13.0001V6.49998H11.0001V14ZM13.004 15.5H11.0001V17.5039H13.004V15.5Z"
-            fill="transparent"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -593,7 +593,7 @@ exports[`csr snapshot test > csr test ./src/alert/_example/icon.vue 1`] = `
         >
           <path
             d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM11.0001 14H13.0001V6.49998H11.0001V14ZM13.004 15.5H11.0001V17.5039H13.004V15.5Z"
-            fill="transparent"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -702,7 +702,7 @@ exports[`csr snapshot test > csr test ./src/alert/_example/operation.vue 1`] = `
         >
           <path
             d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-            fill="transparent"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -777,7 +777,7 @@ exports[`csr snapshot test > csr test ./src/alert/_example/title.vue 1`] = `
         >
           <path
             d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-            fill="transparent"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -35639,7 +35639,8 @@ exports[`csr snapshot test > csr test ./src/comment/_example/reply.vue 1`] = `
                 <path
                   d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
                   data-v-1a7615cf=""
-                  fill="transparent"
+                  fill="currentColor"
+                  id="caret-right-small"
                 />
               </svg>
               <span
@@ -37213,7 +37214,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/dialog.vue 
                 >
                   <path
                     d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-                    fill="transparent"
+                    fill="currentColor"
                   />
                 </svg>
                 confirm
@@ -37313,7 +37314,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/dialog.vue 
                 >
                   <path
                     d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM11.0001 14H13.0001V6.49998H11.0001V14ZM13.004 15.5H11.0001V17.5039H13.004V15.5Z"
-                    fill="transparent"
+                    fill="currentColor"
                   />
                 </svg>
                 confirm
@@ -37413,7 +37414,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/dialog.vue 
                 >
                   <path
                     d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM11.0001 14H13.0001V6.49998H11.0001V14ZM13.004 15.5H11.0001V17.5039H13.004V15.5Z"
-                    fill="transparent"
+                    fill="currentColor"
                   />
                 </svg>
                 confirm
@@ -37513,7 +37514,7 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/dialog.vue 
                 >
                   <path
                     d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM7.49985 10.5858L10.4999 13.5858L16.4999 7.58578L17.9141 8.99999L10.4999 16.4142L6.08564 12L7.49985 10.5858Z"
-                    fill="transparent"
+                    fill="currentColor"
                   />
                 </svg>
                 confirm
@@ -39223,7 +39224,8 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
           >
             <path
               d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-              fill="transparent"
+              fill="currentColor"
+              id="caret-right-small"
             />
           </svg>
         </span>
@@ -39259,7 +39261,8 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
           >
             <path
               d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-              fill="transparent"
+              fill="currentColor"
+              id="caret-right-small"
             />
           </svg>
         </span>
@@ -39856,7 +39859,8 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/table.vue 1
                           >
                             <path
                               d="M12.0001 15L17.5 9.5H6.5L12.0001 15Z"
-                              fill="transparent"
+                              fill="currentColor"
+                              id="caret-down-small"
                             />
                           </svg>
                         </span>
@@ -39873,7 +39877,8 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/table.vue 1
                           >
                             <path
                               d="M12.0001 15L17.5 9.5H6.5L12.0001 15Z"
-                              fill="transparent"
+                              fill="currentColor"
+                              id="caret-down-small"
                             />
                           </svg>
                         </span>
@@ -39974,7 +39979,8 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/table.vue 1
                           >
                             <path
                               d="M12.0001 15L17.5 9.5H6.5L12.0001 15Z"
-                              fill="transparent"
+                              fill="currentColor"
+                              id="caret-down-small"
                             />
                           </svg>
                         </span>
@@ -39991,7 +39997,8 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/table.vue 1
                           >
                             <path
                               d="M12.0001 15L17.5 9.5H6.5L12.0001 15Z"
-                              fill="transparent"
+                              fill="currentColor"
+                              id="caret-down-small"
                             />
                           </svg>
                         </span>
@@ -40136,7 +40143,8 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/table.vue 1
                           >
                             <path
                               d="M12.0001 15L17.5 9.5H6.5L12.0001 15Z"
-                              fill="transparent"
+                              fill="currentColor"
+                              id="caret-down-small"
                             />
                           </svg>
                         </span>
@@ -40153,7 +40161,8 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/table.vue 1
                           >
                             <path
                               d="M12.0001 15L17.5 9.5H6.5L12.0001 15Z"
-                              fill="transparent"
+                              fill="currentColor"
+                              id="caret-down-small"
                             />
                           </svg>
                         </span>
@@ -40254,7 +40263,8 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/table.vue 1
                           >
                             <path
                               d="M12.0001 15L17.5 9.5H6.5L12.0001 15Z"
-                              fill="transparent"
+                              fill="currentColor"
+                              id="caret-down-small"
                             />
                           </svg>
                         </span>
@@ -40271,7 +40281,8 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/table.vue 1
                           >
                             <path
                               d="M12.0001 15L17.5 9.5H6.5L12.0001 15Z"
-                              fill="transparent"
+                              fill="currentColor"
+                              id="caret-down-small"
                             />
                           </svg>
                         </span>
@@ -47589,7 +47600,7 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/icon.vue 1`] = `
                 >
                   <path
                     d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-                    fill="transparent"
+                    fill="currentColor"
                   />
                 </svg>
                 下单确认
@@ -47686,7 +47697,7 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/icon.vue 1`] = `
                 >
                   <path
                     d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM11.0001 14H13.0001V6.49998H11.0001V14ZM13.004 15.5H11.0001V17.5039H13.004V15.5Z"
-                    fill="transparent"
+                    fill="currentColor"
                   />
                 </svg>
                 温馨提示
@@ -47783,7 +47794,7 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/icon.vue 1`] = `
                 >
                   <path
                     d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM11.0001 14H13.0001V6.49998H11.0001V14ZM13.004 15.5H11.0001V17.5039H13.004V15.5Z"
-                    fill="transparent"
+                    fill="currentColor"
                   />
                 </svg>
                 推送失败
@@ -47880,7 +47891,7 @@ exports[`csr snapshot test > csr test ./src/dialog/_example/icon.vue 1`] = `
                 >
                   <path
                     d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM7.49985 10.5858L10.4999 13.5858L16.4999 7.58578L17.9141 8.99999L10.4999 16.4142L6.08564 12L7.49985 10.5858Z"
-                    fill="transparent"
+                    fill="currentColor"
                   />
                 </svg>
                 操作成功
@@ -82148,7 +82159,7 @@ exports[`csr snapshot test > csr test ./src/message/_example/base.vue 1`] = `
       >
         <path
           d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-          fill="transparent"
+          fill="currentColor"
         />
       </svg>
       用于表示普通操作信息提示
@@ -82172,7 +82183,7 @@ exports[`csr snapshot test > csr test ./src/message/_example/base.vue 1`] = `
       >
         <path
           d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM7.49985 10.5858L10.4999 13.5858L16.4999 7.58578L17.9141 8.99999L10.4999 16.4142L6.08564 12L7.49985 10.5858Z"
-          fill="transparent"
+          fill="currentColor"
         />
       </svg>
       用于表示操作顺利达成
@@ -82196,7 +82207,7 @@ exports[`csr snapshot test > csr test ./src/message/_example/base.vue 1`] = `
       >
         <path
           d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM11.0001 14H13.0001V6.49998H11.0001V14ZM13.004 15.5H11.0001V17.5039H13.004V15.5Z"
-          fill="transparent"
+          fill="currentColor"
         />
       </svg>
       用于表示操作引起一定后果
@@ -82220,7 +82231,7 @@ exports[`csr snapshot test > csr test ./src/message/_example/base.vue 1`] = `
       >
         <path
           d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM11.0001 14H13.0001V6.49998H11.0001V14ZM13.004 15.5H11.0001V17.5039H13.004V15.5Z"
-          fill="transparent"
+          fill="currentColor"
         />
       </svg>
       用于表示操作引起严重的后果
@@ -82244,7 +82255,7 @@ exports[`csr snapshot test > csr test ./src/message/_example/base.vue 1`] = `
       >
         <path
           d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM11.8265 11.8902C12.2582 11.3593 12.8004 10.9159 13.2365 10.5723C13.7034 10.2045 14.0002 9.63718 14.0002 9C14.0002 7.89543 13.1048 7 12.0002 7C11.131 7 10.3888 7.5551 10.1138 8.33325L9.78055 9.27609L7.89487 8.6096L8.22811 7.66676C8.77675 6.11451 10.2571 5 12.0002 5C14.2094 5 16.0002 6.79086 16.0002 9C16.0002 10.2759 15.4018 11.4125 14.4742 12.1433C14.0426 12.4834 13.6573 12.8088 13.3783 13.1519C13.1038 13.4896 13.0002 13.762 13.0002 14V15.25H11.0002V14C11.0002 13.1334 11.3905 12.4265 11.8265 11.8902ZM11.0001 18.2539V16.25H13.004V18.2539H11.0001Z"
-          fill="transparent"
+          fill="currentColor"
         />
       </svg>
       用于帮助用户操作的信息提示
@@ -82278,7 +82289,7 @@ exports[`csr snapshot test > csr test ./src/message/_example/close.vue 1`] = `
       >
         <path
           d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-          fill="transparent"
+          fill="currentColor"
         />
       </svg>
       点击关闭按钮触发事件 close-btn-click 
@@ -82323,7 +82334,7 @@ exports[`csr snapshot test > csr test ./src/message/_example/close.vue 1`] = `
       >
         <path
           d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-          fill="transparent"
+          fill="currentColor"
         />
       </svg>
       自定义关闭按钮（文字）
@@ -82350,7 +82361,7 @@ exports[`csr snapshot test > csr test ./src/message/_example/close.vue 1`] = `
       >
         <path
           d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-          fill="transparent"
+          fill="currentColor"
         />
       </svg>
       自定义关闭按钮（函数）
@@ -82386,7 +82397,7 @@ exports[`csr snapshot test > csr test ./src/message/_example/close.vue 1`] = `
       >
         <path
           d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-          fill="transparent"
+          fill="currentColor"
         />
       </svg>
        自定义关闭按钮（插槽） 
@@ -83066,7 +83077,7 @@ exports[`csr snapshot test > csr test ./src/message/_example/type.vue 1`] = `
     >
       <path
         d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-        fill="transparent"
+        fill="currentColor"
       />
     </svg>
     用户表示普通操作信息提示
@@ -83087,7 +83098,7 @@ exports[`csr snapshot test > csr test ./src/message/_example/type.vue 1`] = `
     >
       <path
         d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM7.49985 10.5858L10.4999 13.5858L16.4999 7.58578L17.9141 8.99999L10.4999 16.4142L6.08564 12L7.49985 10.5858Z"
-        fill="transparent"
+        fill="currentColor"
       />
     </svg>
     用户表示操作顺利达成
@@ -83108,7 +83119,7 @@ exports[`csr snapshot test > csr test ./src/message/_example/type.vue 1`] = `
     >
       <path
         d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM11.0001 14H13.0001V6.49998H11.0001V14ZM13.004 15.5H11.0001V17.5039H13.004V15.5Z"
-        fill="transparent"
+        fill="currentColor"
       />
     </svg>
     用户表示操作引起一定后果
@@ -83129,7 +83140,7 @@ exports[`csr snapshot test > csr test ./src/message/_example/type.vue 1`] = `
     >
       <path
         d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM11.0001 14H13.0001V6.49998H11.0001V14ZM13.004 15.5H11.0001V17.5039H13.004V15.5Z"
-        fill="transparent"
+        fill="currentColor"
       />
     </svg>
     用户表示操作引起严重的后果
@@ -83150,7 +83161,7 @@ exports[`csr snapshot test > csr test ./src/message/_example/type.vue 1`] = `
     >
       <path
         d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM11.8265 11.8902C12.2582 11.3593 12.8004 10.9159 13.2365 10.5723C13.7034 10.2045 14.0002 9.63718 14.0002 9C14.0002 7.89543 13.1048 7 12.0002 7C11.131 7 10.3888 7.5551 10.1138 8.33325L9.78055 9.27609L7.89487 8.6096L8.22811 7.66676C8.77675 6.11451 10.2571 5 12.0002 5C14.2094 5 16.0002 6.79086 16.0002 9C16.0002 10.2759 15.4018 11.4125 14.4742 12.1433C14.0426 12.4834 13.6573 12.8088 13.3783 13.1519C13.1038 13.4896 13.0002 13.762 13.0002 14V15.25H11.0002V14C11.0002 13.1334 11.3905 12.4265 11.8265 11.8902ZM11.0001 18.2539V16.25H13.004V18.2539H11.0001Z"
-        fill="transparent"
+        fill="currentColor"
       />
     </svg>
     用于帮助用户操作的信息提示
@@ -83217,7 +83228,7 @@ exports[`csr snapshot test > csr test ./src/notification/_example/base.vue 1`] =
         >
           <path
             d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-            fill="transparent"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -83262,7 +83273,7 @@ exports[`csr snapshot test > csr test ./src/notification/_example/base.vue 1`] =
         >
           <path
             d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-            fill="transparent"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -83313,7 +83324,7 @@ exports[`csr snapshot test > csr test ./src/notification/_example/close.vue 1`] 
       >
         <path
           d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-          fill="transparent"
+          fill="currentColor"
         />
       </svg>
     </div>
@@ -83355,7 +83366,7 @@ exports[`csr snapshot test > csr test ./src/notification/_example/close.vue 1`] 
       >
         <path
           d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-          fill="transparent"
+          fill="currentColor"
         />
       </svg>
     </div>
@@ -83399,7 +83410,7 @@ exports[`csr snapshot test > csr test ./src/notification/_example/close.vue 1`] 
       >
         <path
           d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-          fill="transparent"
+          fill="currentColor"
         />
       </svg>
     </div>
@@ -83447,7 +83458,7 @@ exports[`csr snapshot test > csr test ./src/notification/_example/close.vue 1`] 
       >
         <path
           d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-          fill="transparent"
+          fill="currentColor"
         />
       </svg>
     </div>
@@ -83562,7 +83573,7 @@ exports[`csr snapshot test > csr test ./src/notification/_example/content.vue 1`
         >
           <path
             d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-            fill="transparent"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -83607,7 +83618,7 @@ exports[`csr snapshot test > csr test ./src/notification/_example/content.vue 1`
         >
           <path
             d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-            fill="transparent"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -83654,7 +83665,7 @@ exports[`csr snapshot test > csr test ./src/notification/_example/content.vue 1`
         >
           <path
             d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-            fill="transparent"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -83706,7 +83717,7 @@ exports[`csr snapshot test > csr test ./src/notification/_example/footer.vue 1`]
       >
         <path
           d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-          fill="transparent"
+          fill="currentColor"
         />
       </svg>
     </div>
@@ -83759,7 +83770,7 @@ exports[`csr snapshot test > csr test ./src/notification/_example/footer.vue 1`]
       >
         <path
           d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-          fill="transparent"
+          fill="currentColor"
         />
       </svg>
     </div>
@@ -83828,7 +83839,7 @@ exports[`csr snapshot test > csr test ./src/notification/_example/icon.vue 1`] =
         >
           <path
             d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-            fill="transparent"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -83873,7 +83884,7 @@ exports[`csr snapshot test > csr test ./src/notification/_example/icon.vue 1`] =
         >
           <path
             d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-            fill="transparent"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -83918,7 +83929,7 @@ exports[`csr snapshot test > csr test ./src/notification/_example/icon.vue 1`] =
         >
           <path
             d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-            fill="transparent"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -83963,7 +83974,7 @@ exports[`csr snapshot test > csr test ./src/notification/_example/icon.vue 1`] =
         >
           <path
             d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM7.49985 10.5858L10.4999 13.5858L16.4999 7.58578L17.9141 8.99999L10.4999 16.4142L6.08564 12L7.49985 10.5858Z"
-            fill="transparent"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -84052,7 +84063,7 @@ exports[`csr snapshot test > csr test ./src/notification/_example/operation.vue 
         >
           <path
             d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-            fill="transparent"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -84111,7 +84122,7 @@ exports[`csr snapshot test > csr test ./src/notification/_example/operation.vue 
         >
           <path
             d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-            fill="transparent"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -84176,7 +84187,7 @@ exports[`csr snapshot test > csr test ./src/notification/_example/operation.vue 
         >
           <path
             d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-            fill="transparent"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -84235,7 +84246,7 @@ exports[`csr snapshot test > csr test ./src/notification/_example/operation.vue 
         >
           <path
             d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-            fill="transparent"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -84625,7 +84636,7 @@ exports[`csr snapshot test > csr test ./src/notification/_example/size.vue 1`] =
         >
           <path
             d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-            fill="transparent"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -84670,7 +84681,7 @@ exports[`csr snapshot test > csr test ./src/notification/_example/size.vue 1`] =
         >
           <path
             d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-            fill="transparent"
+            fill="currentColor"
           />
         </svg>
       </div>
@@ -84747,7 +84758,7 @@ exports[`csr snapshot test > csr test ./src/notification/_example/type.vue 1`] =
       >
         <path
           d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-          fill="transparent"
+          fill="currentColor"
         />
       </svg>
     </div>
@@ -84789,7 +84800,7 @@ exports[`csr snapshot test > csr test ./src/notification/_example/type.vue 1`] =
       >
         <path
           d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM7.49985 10.5858L10.4999 13.5858L16.4999 7.58578L17.9141 8.99999L10.4999 16.4142L6.08564 12L7.49985 10.5858Z"
-          fill="transparent"
+          fill="currentColor"
         />
       </svg>
     </div>
@@ -84831,7 +84842,7 @@ exports[`csr snapshot test > csr test ./src/notification/_example/type.vue 1`] =
       >
         <path
           d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-          fill="transparent"
+          fill="currentColor"
         />
       </svg>
     </div>
@@ -84873,7 +84884,7 @@ exports[`csr snapshot test > csr test ./src/notification/_example/type.vue 1`] =
       >
         <path
           d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM10.996 8.50002V6.49611H12.9999V8.50002H10.996ZM12.9999 10L12.9999 17.5H10.9999V10L12.9999 10Z"
-          fill="transparent"
+          fill="currentColor"
         />
       </svg>
     </div>
@@ -89565,7 +89576,7 @@ exports[`csr snapshot test > csr test ./src/progress/_example/line.vue 1`] = `
             >
               <path
                 d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM7.49985 10.5858L10.4999 13.5858L16.4999 7.58578L17.9141 8.99999L10.4999 16.4142L6.08564 12L7.49985 10.5858Z"
-                fill="transparent"
+                fill="currentColor"
               />
             </svg>
           </div>
@@ -89605,7 +89616,7 @@ exports[`csr snapshot test > csr test ./src/progress/_example/line.vue 1`] = `
             >
               <path
                 d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM8.81753 7.40346L11.9999 10.5858L15.1815 7.40414L16.5957 8.81835L13.4141 12L16.5957 15.1816L15.1815 16.5958L11.9999 13.4142L8.81753 16.5965L7.40332 15.1823L10.5856 12L7.40332 8.81767L8.81753 7.40346Z"
-                fill="transparent"
+                fill="currentColor"
               />
             </svg>
           </div>
@@ -89645,7 +89656,7 @@ exports[`csr snapshot test > csr test ./src/progress/_example/line.vue 1`] = `
             >
               <path
                 d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM11.0001 14H13.0001V6.49998H11.0001V14ZM13.004 15.5H11.0001V17.5039H13.004V15.5Z"
-                fill="transparent"
+                fill="currentColor"
               />
             </svg>
           </div>
@@ -90333,7 +90344,7 @@ exports[`csr snapshot test > csr test ./src/progress/_example/status.vue 1`] = `
           >
             <path
               d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM7.49985 10.5858L10.4999 13.5858L16.4999 7.58578L17.9141 8.99999L10.4999 16.4142L6.08564 12L7.49985 10.5858Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -90454,7 +90465,7 @@ exports[`csr snapshot test > csr test ./src/progress/_example/status.vue 1`] = `
           >
             <path
               d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM8.81753 7.40346L11.9999 10.5858L15.1815 7.40414L16.5957 8.81835L13.4141 12L16.5957 15.1816L15.1815 16.5958L11.9999 13.4142L8.81753 16.5965L7.40332 15.1823L10.5856 12L7.40332 8.81767L8.81753 7.40346Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -90575,7 +90586,7 @@ exports[`csr snapshot test > csr test ./src/progress/_example/status.vue 1`] = `
           >
             <path
               d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM11.0001 14H13.0001V6.49998H11.0001V14ZM13.004 15.5H11.0001V17.5039H13.004V15.5Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -90628,7 +90639,7 @@ exports[`csr snapshot test > csr test ./src/progress/_example/status.vue 1`] = `
           >
             <path
               d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM11.0001 14H13.0001V6.49998H11.0001V14ZM13.004 15.5H11.0001V17.5039H13.004V15.5Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -90986,7 +90997,7 @@ exports[`csr snapshot test > csr test ./src/qrcode/_example/customStatusRender.v
               >
                 <path
                   d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM8.81753 7.40346L11.9999 10.5858L15.1815 7.40414L16.5957 8.81835L13.4141 12L16.5957 15.1816L15.1815 16.5958L11.9999 13.4142L8.81753 16.5965L7.40332 15.1823L10.5856 12L7.40332 8.81767L8.81753 7.40346Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
               <span>
@@ -91055,7 +91066,7 @@ exports[`csr snapshot test > csr test ./src/qrcode/_example/customStatusRender.v
             >
               <path
                 d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM7.49985 10.5858L10.4999 13.5858L16.4999 7.58578L17.9141 8.99999L10.4999 16.4142L6.08564 12L7.49985 10.5858Z"
-                fill="transparent"
+                fill="currentColor"
               />
             </svg>
             已扫描
@@ -91472,7 +91483,7 @@ exports[`csr snapshot test > csr test ./src/qrcode/_example/status.vue 1`] = `
             >
               <path
                 d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM7.49985 10.5858L10.4999 13.5858L16.4999 7.58578L17.9141 8.99999L10.4999 16.4142L6.08564 12L7.49985 10.5858Z"
-                fill="transparent"
+                fill="currentColor"
               />
             </svg>
             已扫描
@@ -93395,7 +93406,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/base.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -93412,7 +93423,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/base.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -93435,7 +93446,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/base.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -93452,7 +93463,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/base.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -93475,7 +93486,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/base.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -93492,7 +93503,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/base.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -93515,7 +93526,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/base.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -93532,7 +93543,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/base.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -93555,7 +93566,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/base.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -93572,7 +93583,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/base.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -93621,7 +93632,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -93638,7 +93649,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -93661,7 +93672,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -93678,7 +93689,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -93701,7 +93712,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -93718,7 +93729,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -93741,7 +93752,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -93758,7 +93769,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -93781,7 +93792,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -93798,7 +93809,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -93841,7 +93852,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -93858,7 +93869,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -93881,7 +93892,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -93898,7 +93909,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -93921,7 +93932,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -93938,7 +93949,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -93961,7 +93972,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -93978,7 +93989,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -94001,7 +94012,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -94018,7 +94029,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/clear.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -94055,7 +94066,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/custom.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -94072,7 +94083,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/custom.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -94095,7 +94106,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/custom.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -94112,7 +94123,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/custom.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -94135,7 +94146,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/custom.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -94152,7 +94163,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/custom.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -94175,7 +94186,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/custom.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -94192,7 +94203,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/custom.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -94215,7 +94226,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/custom.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -94232,7 +94243,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/custom.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -94255,7 +94266,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/custom.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -94272,7 +94283,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/custom.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -94295,7 +94306,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/custom.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -94312,7 +94323,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/custom.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -94970,7 +94981,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
               >
                 <path
                   d="M12.0022 4.81816C14.4485 2.66879 18.1771 2.7618 20.5125 5.09718C22.9448 7.52943 22.9448 11.4729 20.5125 13.9051L15.2875 19.1302L15.2867 19.1295L12.0009 22.4153L4.72154 15.136L3.49007 13.9036C1.05808 11.4714 1.05791 7.52784 3.49008 5.09567C5.82601 2.75974 9.55583 2.66724 12.0022 4.81816Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -94987,7 +94998,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
               >
                 <path
                   d="M12.0022 4.81816C14.4485 2.66879 18.1771 2.7618 20.5125 5.09718C22.9448 7.52943 22.9448 11.4729 20.5125 13.9051L15.2875 19.1302L15.2867 19.1295L12.0009 22.4153L4.72154 15.136L3.49007 13.9036C1.05808 11.4714 1.05791 7.52784 3.49008 5.09567C5.82601 2.75974 9.55583 2.66724 12.0022 4.81816Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95010,7 +95021,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
               >
                 <path
                   d="M12.0022 4.81816C14.4485 2.66879 18.1771 2.7618 20.5125 5.09718C22.9448 7.52943 22.9448 11.4729 20.5125 13.9051L15.2875 19.1302L15.2867 19.1295L12.0009 22.4153L4.72154 15.136L3.49007 13.9036C1.05808 11.4714 1.05791 7.52784 3.49008 5.09567C5.82601 2.75974 9.55583 2.66724 12.0022 4.81816Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95027,7 +95038,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
               >
                 <path
                   d="M12.0022 4.81816C14.4485 2.66879 18.1771 2.7618 20.5125 5.09718C22.9448 7.52943 22.9448 11.4729 20.5125 13.9051L15.2875 19.1302L15.2867 19.1295L12.0009 22.4153L4.72154 15.136L3.49007 13.9036C1.05808 11.4714 1.05791 7.52784 3.49008 5.09567C5.82601 2.75974 9.55583 2.66724 12.0022 4.81816Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95050,7 +95061,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
               >
                 <path
                   d="M12.0022 4.81816C14.4485 2.66879 18.1771 2.7618 20.5125 5.09718C22.9448 7.52943 22.9448 11.4729 20.5125 13.9051L15.2875 19.1302L15.2867 19.1295L12.0009 22.4153L4.72154 15.136L3.49007 13.9036C1.05808 11.4714 1.05791 7.52784 3.49008 5.09567C5.82601 2.75974 9.55583 2.66724 12.0022 4.81816Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95067,7 +95078,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
               >
                 <path
                   d="M12.0022 4.81816C14.4485 2.66879 18.1771 2.7618 20.5125 5.09718C22.9448 7.52943 22.9448 11.4729 20.5125 13.9051L15.2875 19.1302L15.2867 19.1295L12.0009 22.4153L4.72154 15.136L3.49007 13.9036C1.05808 11.4714 1.05791 7.52784 3.49008 5.09567C5.82601 2.75974 9.55583 2.66724 12.0022 4.81816Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95090,7 +95101,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
               >
                 <path
                   d="M12.0022 4.81816C14.4485 2.66879 18.1771 2.7618 20.5125 5.09718C22.9448 7.52943 22.9448 11.4729 20.5125 13.9051L15.2875 19.1302L15.2867 19.1295L12.0009 22.4153L4.72154 15.136L3.49007 13.9036C1.05808 11.4714 1.05791 7.52784 3.49008 5.09567C5.82601 2.75974 9.55583 2.66724 12.0022 4.81816Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95107,7 +95118,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
               >
                 <path
                   d="M12.0022 4.81816C14.4485 2.66879 18.1771 2.7618 20.5125 5.09718C22.9448 7.52943 22.9448 11.4729 20.5125 13.9051L15.2875 19.1302L15.2867 19.1295L12.0009 22.4153L4.72154 15.136L3.49007 13.9036C1.05808 11.4714 1.05791 7.52784 3.49008 5.09567C5.82601 2.75974 9.55583 2.66724 12.0022 4.81816Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95130,7 +95141,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
               >
                 <path
                   d="M12.0022 4.81816C14.4485 2.66879 18.1771 2.7618 20.5125 5.09718C22.9448 7.52943 22.9448 11.4729 20.5125 13.9051L15.2875 19.1302L15.2867 19.1295L12.0009 22.4153L4.72154 15.136L3.49007 13.9036C1.05808 11.4714 1.05791 7.52784 3.49008 5.09567C5.82601 2.75974 9.55583 2.66724 12.0022 4.81816Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95147,7 +95158,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/icon.vue 1`] = `
               >
                 <path
                   d="M12.0022 4.81816C14.4485 2.66879 18.1771 2.7618 20.5125 5.09718C22.9448 7.52943 22.9448 11.4729 20.5125 13.9051L15.2875 19.1302L15.2867 19.1295L12.0009 22.4153L4.72154 15.136L3.49007 13.9036C1.05808 11.4714 1.05791 7.52784 3.49008 5.09567C5.82601 2.75974 9.55583 2.66724 12.0022 4.81816Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95198,7 +95209,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95215,7 +95226,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95238,7 +95249,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95255,7 +95266,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95278,7 +95289,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95295,7 +95306,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95318,7 +95329,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95335,7 +95346,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95358,7 +95369,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95375,7 +95386,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95418,7 +95429,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95435,7 +95446,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95458,7 +95469,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95475,7 +95486,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95498,7 +95509,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95515,7 +95526,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95538,7 +95549,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95555,7 +95566,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95578,7 +95589,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95595,7 +95606,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/size.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95646,7 +95657,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95663,7 +95674,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95686,7 +95697,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95703,7 +95714,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95726,7 +95737,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95743,7 +95754,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95766,7 +95777,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95783,7 +95794,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95806,7 +95817,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95823,7 +95834,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95866,7 +95877,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95883,7 +95894,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95906,7 +95917,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95923,7 +95934,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95946,7 +95957,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95963,7 +95974,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -95986,7 +95997,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -96003,7 +96014,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -96026,7 +96037,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -96043,7 +96054,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -96086,7 +96097,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -96103,7 +96114,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -96126,7 +96137,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -96143,7 +96154,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -96166,7 +96177,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -96183,7 +96194,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -96206,7 +96217,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -96223,7 +96234,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -96246,7 +96257,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -96263,7 +96274,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/status.vue 1`] = `
               >
                 <path
                   d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-                  fill="transparent"
+                  fill="currentColor"
                 />
               </svg>
             </div>
@@ -96300,7 +96311,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/texts.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -96317,7 +96328,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/texts.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -96340,7 +96351,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/texts.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -96357,7 +96368,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/texts.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -96380,7 +96391,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/texts.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -96397,7 +96408,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/texts.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -96420,7 +96431,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/texts.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -96437,7 +96448,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/texts.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -96460,7 +96471,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/texts.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -96477,7 +96488,7 @@ exports[`csr snapshot test > csr test ./src/rate/_example/texts.vue 1`] = `
           >
             <path
               d="M12.0012 0.63031L14.9039 8.98087L23.7427 9.16099L16.6978 14.502L19.2579 22.9639L12.0012 17.9143L4.74461 22.9639L7.30465 14.502L0.259766 9.16099L9.09859 8.98087L12.0012 0.63031Z"
-              fill="transparent"
+              fill="currentColor"
             />
           </svg>
         </div>
@@ -104717,7 +104728,7 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/base.vue 1`] = `
             >
               <path
                 d="M15 12H19.5L12 2L4.5 12H9V22H15V12Z"
-                fill="transparent"
+                fill="currentColor"
               />
             </svg>
           </span>
@@ -104762,7 +104773,7 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/base.vue 1`] = `
             >
               <path
                 d="M15 12H19.5L12 2L4.5 12H9V22H15V12Z"
-                fill="transparent"
+                fill="currentColor"
               />
             </svg>
           </span>
@@ -104816,7 +104827,7 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/color.vue 1`] = `
             >
               <path
                 d="M15 12H19.5L12 2L4.5 12H9V22H15V12Z"
-                fill="transparent"
+                fill="currentColor"
               />
             </svg>
           </span>
@@ -104862,7 +104873,7 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/color.vue 1`] = `
             >
               <path
                 d="M15 12H19.5L12 2L4.5 12H9V22H15V12Z"
-                fill="transparent"
+                fill="currentColor"
               />
             </svg>
           </span>
@@ -104908,7 +104919,7 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/color.vue 1`] = `
             >
               <path
                 d="M15 12H19.5L12 2L4.5 12H9V22H15V12Z"
-                fill="transparent"
+                fill="currentColor"
               />
             </svg>
           </span>
@@ -104954,7 +104965,7 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/color.vue 1`] = `
             >
               <path
                 d="M15 12H19.5L12 2L4.5 12H9V22H15V12Z"
-                fill="transparent"
+                fill="currentColor"
               />
             </svg>
           </span>
@@ -105000,7 +105011,7 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/color.vue 1`] = `
             >
               <path
                 d="M15 12H19.5L12 2L4.5 12H9V22H15V12Z"
-                fill="transparent"
+                fill="currentColor"
               />
             </svg>
           </span>
@@ -105081,7 +105092,7 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/combination.vue 1
                 >
                   <path
                     d="M15 12H19.5L12 2L4.5 12H9V22H15V12Z"
-                    fill="transparent"
+                    fill="currentColor"
                   />
                 </svg>
               </span>
@@ -105125,7 +105136,7 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/combination.vue 1
                 >
                   <path
                     d="M15 12H19.5L12 22L4.5 12H9V2H15V12Z"
-                    fill="transparent"
+                    fill="currentColor"
                   />
                 </svg>
               </span>
@@ -105329,7 +105340,7 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/combination.vue 1
                     >
                       <path
                         d="M15 12H19.5L12 22L4.5 12H9V2H15V12Z"
-                        fill="transparent"
+                        fill="currentColor"
                       />
                     </svg>
                   </span>
@@ -105528,7 +105539,7 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/slot.vue 1`] = `
             >
               <path
                 d="M15 12H19.5L12 22L4.5 12H9V2H15V12Z"
-                fill="transparent"
+                fill="currentColor"
               />
             </svg>
           </span>
@@ -105571,7 +105582,7 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/trend.vue 1`] = `
             >
               <path
                 d="M15 12H19.5L12 2L4.5 12H9V22H15V12Z"
-                fill="transparent"
+                fill="currentColor"
               />
             </svg>
           </span>
@@ -105616,7 +105627,7 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/trend.vue 1`] = `
             >
               <path
                 d="M15 12H19.5L12 22L4.5 12H9V2H15V12Z"
-                fill="transparent"
+                fill="currentColor"
               />
             </svg>
           </span>
@@ -105671,7 +105682,7 @@ exports[`csr snapshot test > csr test ./src/statistic/_example/trend.vue 1`] = `
             >
               <path
                 d="M15 12H19.5L12 22L4.5 12H9V2H15V12Z"
-                fill="transparent"
+                fill="currentColor"
               />
             </svg>
           </span>
@@ -109709,7 +109720,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
                     >
                       <path
                         d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM7.49985 10.5858L10.4999 13.5858L16.4999 7.58578L17.9141 8.99999L10.4999 16.4142L6.08564 12L7.49985 10.5858Z"
-                        fill="transparent"
+                        fill="currentColor"
                       />
                     </svg>
                     审批通过
@@ -109760,7 +109771,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
                     >
                       <path
                         d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM8.81753 7.40346L11.9999 10.5858L15.1815 7.40414L16.5957 8.81835L13.4141 12L16.5957 15.1816L15.1815 16.5958L11.9999 13.4142L8.81753 16.5965L7.40332 15.1823L10.5856 12L7.40332 8.81767L8.81753 7.40346Z"
-                        fill="transparent"
+                        fill="currentColor"
                       />
                     </svg>
                     审批失败
@@ -109811,7 +109822,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
                     >
                       <path
                         d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM11.0001 14H13.0001V6.49998H11.0001V14ZM13.004 15.5H11.0001V17.5039H13.004V15.5Z"
-                        fill="transparent"
+                        fill="currentColor"
                       />
                     </svg>
                     审批过期
@@ -109862,7 +109873,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
                     >
                       <path
                         d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM7.49985 10.5858L10.4999 13.5858L16.4999 7.58578L17.9141 8.99999L10.4999 16.4142L6.08564 12L7.49985 10.5858Z"
-                        fill="transparent"
+                        fill="currentColor"
                       />
                     </svg>
                     审批通过
@@ -109913,7 +109924,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/base.vue 1`] = `
                     >
                       <path
                         d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM8.81753 7.40346L11.9999 10.5858L15.1815 7.40414L16.5957 8.81835L13.4141 12L16.5957 15.1816L15.1815 16.5958L11.9999 13.4142L8.81753 16.5965L7.40332 15.1823L10.5856 12L7.40332 8.81767L8.81753 7.40346Z"
-                        fill="transparent"
+                        fill="currentColor"
                       />
                     </svg>
                     审批失败
@@ -111539,7 +111550,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-column.vue 1`] 
                   >
                     <path
                       d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM7.49985 10.5858L10.4999 13.5858L16.4999 7.58578L17.9141 8.99999L10.4999 16.4142L6.08564 12L7.49985 10.5858Z"
-                      fill="transparent"
+                      fill="currentColor"
                     />
                   </svg>
                   审批通过
@@ -111597,7 +111608,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-column.vue 1`] 
                   >
                     <path
                       d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM8.81753 7.40346L11.9999 10.5858L15.1815 7.40414L16.5957 8.81835L13.4141 12L16.5957 15.1816L15.1815 16.5958L11.9999 13.4142L8.81753 16.5965L7.40332 15.1823L10.5856 12L7.40332 8.81767L8.81753 7.40346Z"
-                      fill="transparent"
+                      fill="currentColor"
                     />
                   </svg>
                   审批失败
@@ -111655,7 +111666,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-column.vue 1`] 
                   >
                     <path
                       d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM11.0001 14H13.0001V6.49998H11.0001V14ZM13.004 15.5H11.0001V17.5039H13.004V15.5Z"
-                      fill="transparent"
+                      fill="currentColor"
                     />
                   </svg>
                   审批过期
@@ -111713,7 +111724,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-column.vue 1`] 
                   >
                     <path
                       d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM7.49985 10.5858L10.4999 13.5858L16.4999 7.58578L17.9141 8.99999L10.4999 16.4142L6.08564 12L7.49985 10.5858Z"
-                      fill="transparent"
+                      fill="currentColor"
                     />
                   </svg>
                   审批通过
@@ -111771,7 +111782,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/fixed-column.vue 1`] 
                   >
                     <path
                       d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM8.81753 7.40346L11.9999 10.5858L15.1815 7.40414L16.5957 8.81835L13.4141 12L16.5957 15.1816L15.1815 16.5958L11.9999 13.4142L8.81753 16.5965L7.40332 15.1823L10.5856 12L7.40332 8.81767L8.81753 7.40346Z"
-                      fill="transparent"
+                      fill="currentColor"
                     />
                   </svg>
                   审批失败
@@ -113167,7 +113178,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/style.vue 1`] = `
                   >
                     <path
                       d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM7.49985 10.5858L10.4999 13.5858L16.4999 7.58578L17.9141 8.99999L10.4999 16.4142L6.08564 12L7.49985 10.5858Z"
-                      fill="transparent"
+                      fill="currentColor"
                     />
                   </svg>
                   审批通过
@@ -113223,7 +113234,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/style.vue 1`] = `
                   >
                     <path
                       d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM8.81753 7.40346L11.9999 10.5858L15.1815 7.40414L16.5957 8.81835L13.4141 12L16.5957 15.1816L15.1815 16.5958L11.9999 13.4142L8.81753 16.5965L7.40332 15.1823L10.5856 12L7.40332 8.81767L8.81753 7.40346Z"
-                      fill="transparent"
+                      fill="currentColor"
                     />
                   </svg>
                   审批失败
@@ -113280,7 +113291,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/style.vue 1`] = `
                   >
                     <path
                       d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM11.0001 14H13.0001V6.49998H11.0001V14ZM13.004 15.5H11.0001V17.5039H13.004V15.5Z"
-                      fill="transparent"
+                      fill="currentColor"
                     />
                   </svg>
                   审批过期
@@ -113336,7 +113347,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/style.vue 1`] = `
                   >
                     <path
                       d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM7.49985 10.5858L10.4999 13.5858L16.4999 7.58578L17.9141 8.99999L10.4999 16.4142L6.08564 12L7.49985 10.5858Z"
-                      fill="transparent"
+                      fill="currentColor"
                     />
                   </svg>
                   审批通过
@@ -113392,7 +113403,7 @@ exports[`csr snapshot test > csr test ./src/table/_example/style.vue 1`] = `
                   >
                     <path
                       d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM8.81753 7.40346L11.9999 10.5858L15.1815 7.40414L16.5957 8.81835L13.4141 12L16.5957 15.1816L15.1815 16.5958L11.9999 13.4142L8.81753 16.5965L7.40332 15.1823L10.5856 12L7.40332 8.81767L8.81753 7.40346Z"
-                      fill="transparent"
+                      fill="currentColor"
                     />
                   </svg>
                   审批失败
@@ -129132,7 +129143,8 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     >
                       <path
                         d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                        fill="transparent"
+                        fill="currentColor"
+                        id="caret-right-small"
                       />
                     </svg>
                   </span>
@@ -129215,7 +129227,8 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     >
                       <path
                         d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                        fill="transparent"
+                        fill="currentColor"
+                        id="caret-right-small"
                       />
                     </svg>
                   </span>
@@ -129263,7 +129276,8 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     >
                       <path
                         d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                        fill="transparent"
+                        fill="currentColor"
+                        id="caret-right-small"
                       />
                     </svg>
                   </span>
@@ -129381,7 +129395,8 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     >
                       <path
                         d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                        fill="transparent"
+                        fill="currentColor"
+                        id="caret-right-small"
                       />
                     </svg>
                   </span>
@@ -129774,7 +129789,8 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     >
                       <path
                         d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                        fill="transparent"
+                        fill="currentColor"
+                        id="caret-right-small"
                       />
                     </svg>
                   </span>
@@ -129857,7 +129873,8 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     >
                       <path
                         d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                        fill="transparent"
+                        fill="currentColor"
+                        id="caret-right-small"
                       />
                     </svg>
                   </span>
@@ -129905,7 +129922,8 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     >
                       <path
                         d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                        fill="transparent"
+                        fill="currentColor"
+                        id="caret-right-small"
                       />
                     </svg>
                   </span>
@@ -130023,7 +130041,8 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                     >
                       <path
                         d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                        fill="transparent"
+                        fill="currentColor"
+                        id="caret-right-small"
                       />
                     </svg>
                   </span>
@@ -130412,7 +130431,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/activable.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -130494,7 +130514,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/activable.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -130597,7 +130618,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/base.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -130633,7 +130655,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/base.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -130669,7 +130692,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/base.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -130705,7 +130729,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/base.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -130929,7 +130954,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -130977,7 +131003,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -131025,7 +131052,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -131143,7 +131171,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -131261,7 +131290,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -131309,7 +131339,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -131427,7 +131458,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -131545,7 +131577,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -131969,7 +132002,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/controlled.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -132018,7 +132052,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/controlled.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -132136,7 +132171,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/controlled.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -132184,7 +132220,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/controlled.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -132398,7 +132435,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -132446,7 +132484,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -132564,7 +132603,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -132682,7 +132722,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -132922,7 +132963,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-filter.vue 1`] =
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -132958,7 +133000,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-filter.vue 1`] =
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -133169,7 +133212,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-performance.vue 
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -133246,7 +133290,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-performance.vue 
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -133323,7 +133368,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-performance.vue 
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -133944,7 +133990,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -134017,7 +134064,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -134213,7 +134261,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -134406,7 +134455,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -134479,7 +134529,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -134675,7 +134726,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -134889,7 +134941,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -134925,7 +134978,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -134961,7 +135015,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -135043,7 +135098,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -135125,7 +135181,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -135416,7 +135473,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -135452,7 +135510,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -135534,7 +135593,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -135616,7 +135676,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -135719,7 +135780,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -135755,7 +135817,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -135791,7 +135854,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -135827,7 +135891,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-level.vue 1`] =
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -135990,7 +136055,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-mutex.vue 1`] =
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -136026,7 +136092,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-mutex.vue 1`] =
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -136132,7 +136199,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/filter.vue 1`] = `
                 >
                   <path
                     d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                    fill="transparent"
+                    fill="currentColor"
+                    id="caret-right-small"
                   />
                 </svg>
               </span>
@@ -136168,7 +136236,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/filter.vue 1`] = `
                 >
                   <path
                     d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                    fill="transparent"
+                    fill="currentColor"
+                    id="caret-right-small"
                   />
                 </svg>
               </span>
@@ -136268,7 +136337,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/filter.vue 1`] = `
                 >
                   <path
                     d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                    fill="transparent"
+                    fill="currentColor"
+                    id="caret-right-small"
                   />
                 </svg>
               </span>
@@ -136304,7 +136374,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/filter.vue 1`] = `
                 >
                   <path
                     d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                    fill="transparent"
+                    fill="currentColor"
+                    id="caret-right-small"
                   />
                 </svg>
               </span>
@@ -136567,7 +136638,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                 >
                   <path
                     d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                    fill="transparent"
+                    fill="currentColor"
+                    id="caret-right-small"
                   />
                 </svg>
               </span>
@@ -136655,7 +136727,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                 >
                   <path
                     d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                    fill="transparent"
+                    fill="currentColor"
+                    id="caret-right-small"
                   />
                 </svg>
               </span>
@@ -136772,7 +136845,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                 >
                   <path
                     d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                    fill="transparent"
+                    fill="currentColor"
+                    id="caret-right-small"
                   />
                 </svg>
               </span>
@@ -136902,7 +136976,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
                 >
                   <path
                     d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                    fill="transparent"
+                    fill="currentColor"
+                    id="caret-right-small"
                   />
                 </svg>
               </span>
@@ -137115,7 +137190,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/lazy.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -137163,7 +137239,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/lazy.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -137329,7 +137406,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                 >
                   <path
                     d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                    fill="transparent"
+                    fill="currentColor"
+                    id="caret-right-small"
                   />
                 </svg>
               </span>
@@ -137419,7 +137497,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                 >
                   <path
                     d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                    fill="transparent"
+                    fill="currentColor"
+                    id="caret-right-small"
                   />
                 </svg>
               </span>
@@ -137459,7 +137538,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                 >
                   <path
                     d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                    fill="transparent"
+                    fill="currentColor"
+                    id="caret-right-small"
                   />
                 </svg>
               </span>
@@ -137499,7 +137579,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                 >
                   <path
                     d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                    fill="transparent"
+                    fill="currentColor"
+                    id="caret-right-small"
                   />
                 </svg>
               </span>
@@ -137539,7 +137620,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                 >
                   <path
                     d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                    fill="transparent"
+                    fill="currentColor"
+                    id="caret-right-small"
                   />
                 </svg>
               </span>
@@ -137683,7 +137765,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                 >
                   <path
                     d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                    fill="transparent"
+                    fill="currentColor"
+                    id="caret-right-small"
                   />
                 </svg>
               </span>
@@ -137836,7 +137919,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                 >
                   <path
                     d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                    fill="transparent"
+                    fill="currentColor"
+                    id="caret-right-small"
                   />
                 </svg>
               </span>
@@ -137969,7 +138053,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                 >
                   <path
                     d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                    fill="transparent"
+                    fill="currentColor"
+                    id="caret-right-small"
                   />
                 </svg>
               </span>
@@ -138016,7 +138101,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                 >
                   <path
                     d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                    fill="transparent"
+                    fill="currentColor"
+                    id="caret-right-small"
                   />
                 </svg>
               </span>
@@ -138066,7 +138152,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                 >
                   <path
                     d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                    fill="transparent"
+                    fill="currentColor"
+                    id="caret-right-small"
                   />
                 </svg>
               </span>
@@ -138119,7 +138206,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                 >
                   <path
                     d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                    fill="transparent"
+                    fill="currentColor"
+                    id="caret-right-small"
                   />
                 </svg>
               </span>
@@ -138363,7 +138451,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                 >
                   <path
                     d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                    fill="transparent"
+                    fill="currentColor"
+                    id="caret-right-small"
                   />
                 </svg>
               </span>
@@ -138573,7 +138662,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                 >
                   <path
                     d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                    fill="transparent"
+                    fill="currentColor"
+                    id="caret-right-small"
                   />
                 </svg>
               </span>
@@ -138719,7 +138809,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                 >
                   <path
                     d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                    fill="transparent"
+                    fill="currentColor"
+                    id="caret-right-small"
                   />
                 </svg>
               </span>
@@ -138770,7 +138861,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                 >
                   <path
                     d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                    fill="transparent"
+                    fill="currentColor"
+                    id="caret-right-small"
                   />
                 </svg>
               </span>
@@ -138825,7 +138917,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                 >
                   <path
                     d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                    fill="transparent"
+                    fill="currentColor"
+                    id="caret-right-small"
                   />
                 </svg>
               </span>
@@ -138884,7 +138977,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                 >
                   <path
                     d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                    fill="transparent"
+                    fill="currentColor"
+                    id="caret-right-small"
                   />
                 </svg>
               </span>
@@ -139158,7 +139252,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
                 >
                   <path
                     d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                    fill="transparent"
+                    fill="currentColor"
+                    id="caret-right-small"
                   />
                 </svg>
               </span>
@@ -140364,7 +140459,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -140413,7 +140509,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -140462,7 +140559,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -140580,7 +140678,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -140628,7 +140727,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -140676,7 +140776,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/sync.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -140869,7 +140970,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/transition.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -140917,7 +141019,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/transition.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -140965,7 +141068,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/transition.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -141292,7 +141396,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -141373,7 +141478,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -141794,7 +141900,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -142215,7 +142322,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -142636,7 +142744,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -143057,7 +143166,8 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
             >
               <path
                 d="M14.9999 12L9.49988 6.5L9.49988 17.5L14.9999 12Z"
-                fill="transparent"
+                fill="currentColor"
+                id="caret-right-small"
               />
             </svg>
           </span>
@@ -146444,7 +146554,7 @@ exports[`csr snapshot test > csr test ./src/upload/_example/draggable.vue 1`] = 
                 >
                   <path
                     d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM7.49985 10.5858L10.4999 13.5858L16.4999 7.58578L17.9141 8.99999L10.4999 16.4142L6.08564 12L7.49985 10.5858Z"
-                    fill="transparent"
+                    fill="currentColor"
                   />
                 </svg>
               </div>
@@ -147574,7 +147684,7 @@ exports[`csr snapshot test > csr test ./src/upload/_example/img-flow-list.vue 1`
                 >
                   <path
                     d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM7.49985 10.5858L10.4999 13.5858L16.4999 7.58578L17.9141 8.99999L10.4999 16.4142L6.08564 12L7.49985 10.5858Z"
-                    fill="transparent"
+                    fill="currentColor"
                   />
                 </svg>
                 loading.svg
@@ -147857,7 +147967,7 @@ exports[`csr snapshot test > csr test ./src/upload/_example/img-flow-list.vue 1`
                 >
                   <path
                     d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM7.49985 10.5858L10.4999 13.5858L16.4999 7.58578L17.9141 8.99999L10.4999 16.4142L6.08564 12L7.49985 10.5858Z"
-                    fill="transparent"
+                    fill="currentColor"
                   />
                 </svg>
                 loading.svg
@@ -148026,7 +148136,7 @@ exports[`csr snapshot test > csr test ./src/upload/_example/img-flow-list.vue 1`
                 >
                   <path
                     d="M12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23ZM12.9999 5.49999H10.9999L10.9998 12.4142L14.9999 16.4142L16.4141 15L12.9999 11.5858V5.49999Z"
-                    fill="transparent"
+                    fill="currentColor"
                   />
                 </svg>
                 loading.svg
@@ -148133,7 +148243,7 @@ exports[`csr snapshot test > csr test ./src/upload/_example/img-flow-list.vue 1`
                   >
                     <path
                       d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM11.0001 14H13.0001V6.49998H11.0001V14ZM13.004 15.5H11.0001V17.5039H13.004V15.5Z"
-                      fill="transparent"
+                      fill="currentColor"
                     />
                   </svg>
                   <p>
