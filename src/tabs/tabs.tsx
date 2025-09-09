@@ -103,6 +103,7 @@ export default mixins(Vue as VueConstructor<TabParentInjectVue>, classPrefixMixi
         addable: this.addable,
         panels: this.panels,
         scrollPosition: this.scrollPosition,
+        dragSort: this.dragSort,
       };
       return (
         <div
@@ -113,6 +114,7 @@ export default mixins(Vue as VueConstructor<TabParentInjectVue>, classPrefixMixi
         >
           <TTabNav
             props={tabNavProps}
+            onDragSort={props.onDragSort}
             onChange={this.onChangeTab}
             onAdd={this.onAddTab}
             onRemove={this.onRemoveTab}
