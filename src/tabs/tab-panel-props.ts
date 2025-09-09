@@ -2,7 +2,6 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-19 10:44:26
  * */
 
 import { TdTabPanelProps } from '../tabs/type';
@@ -20,6 +19,11 @@ export default {
   },
   /** 是否禁用当前选项卡 */
   disabled: Boolean,
+  /** 选项卡组件开启允许拖动排序时，当前选项卡是否允许拖动 */
+  draggable: {
+    type: Boolean,
+    default: true,
+  },
   /** 选项卡名称，可自定义选项卡导航内容 */
   label: {
     type: [String, Function] as PropType<TdTabPanelProps['label']>,
