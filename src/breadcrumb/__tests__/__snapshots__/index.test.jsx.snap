@@ -29,6 +29,7 @@ exports[`Breadcrumb > <slot> > <separator> 1`] = `
         class="t-icon t-icon-chevron-right"
         fill="none"
         height="1em"
+        style="fill: none;"
         viewBox="0 0 24 24"
         width="1em"
       >
@@ -70,6 +71,7 @@ exports[`Breadcrumb > <slot> > <separator> 1`] = `
         class="t-icon t-icon-chevron-right"
         fill="none"
         height="1em"
+        style="fill: none;"
         viewBox="0 0 24 24"
         width="1em"
       >

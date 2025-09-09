@@ -125,6 +125,7 @@ exports[`Slider [marks] > render right 1`] = `
           class="t-icon t-icon-chevron-down t-size-m"
           fill="none"
           height="1em"
+          style="fill: none;"
           viewBox="0 0 24 24"
           width="1em"
         >
@@ -164,6 +165,7 @@ exports[`Slider [marks] > render right 1`] = `
           class="t-icon t-icon-chevron-up t-size-m"
           fill="none"
           height="1em"
+          style="fill: none;"
           viewBox="0 0 24 24"
           width="1em"
         >

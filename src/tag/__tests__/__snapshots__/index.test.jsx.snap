@@ -18,6 +18,7 @@ exports[`Tag or CheckTag > :Tag:props > :closable 1`] = `
     class="t-icon t-icon-close t-tag__icon-close"
     fill="none"
     height="1em"
+    style="fill: none;"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -268,6 +269,7 @@ exports[`Tag or CheckTag > @event: Tag > Event passthrough: close 1`] = `
     class="t-icon t-icon-close t-tag__icon-close"
     fill="none"
     height="1em"
+    style="fill: none;"
     viewBox="0 0 24 24"
     width="1em"
   >

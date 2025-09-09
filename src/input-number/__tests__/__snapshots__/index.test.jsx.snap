@@ -12,6 +12,7 @@ exports[`InputNumber > :props > :defaultValue, default value 6 1`] = `
       class="t-icon t-icon-remove t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -51,6 +52,7 @@ exports[`InputNumber > :props > :defaultValue, default value 6 1`] = `
       class="t-icon t-icon-add t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -83,6 +85,7 @@ exports[`InputNumber > :props > :disabled, function can not be call 1`] = `
       class="t-icon t-icon-remove t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -125,6 +128,7 @@ exports[`InputNumber > :props > :disabled, function can not be call 1`] = `
       class="t-icon t-icon-add t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -156,6 +160,7 @@ exports[`InputNumber > :props > :format, with 6% 1`] = `
       class="t-icon t-icon-remove t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -195,6 +200,7 @@ exports[`InputNumber > :props > :format, with 6% 1`] = `
       class="t-icon t-icon-add t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -226,6 +232,7 @@ exports[`InputNumber > :props > :max, value 6 < max 10 1`] = `
       class="t-icon t-icon-remove t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -265,6 +272,7 @@ exports[`InputNumber > :props > :max, value 6 < max 10 1`] = `
       class="t-icon t-icon-add t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -296,6 +304,7 @@ exports[`InputNumber > :props > :max, value 16 > max 10 1`] = `
       class="t-icon t-icon-remove t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -335,6 +344,7 @@ exports[`InputNumber > :props > :max, value 16 > max 10 1`] = `
       class="t-icon t-icon-add t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -366,6 +376,7 @@ exports[`InputNumber > :props > :min, value -1 < min 1 1`] = `
       class="t-icon t-icon-remove t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -405,6 +416,7 @@ exports[`InputNumber > :props > :min, value -1 < min 1 1`] = `
       class="t-icon t-icon-add t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -436,6 +448,7 @@ exports[`InputNumber > :props > :min, value 6 > min 1 1`] = `
       class="t-icon t-icon-remove t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -475,6 +488,7 @@ exports[`InputNumber > :props > :min, value 6 > min 1 1`] = `
       class="t-icon t-icon-add t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -506,6 +520,7 @@ exports[`InputNumber > :props > :mode, without class t-is-controls-right 1`] = `
       class="t-icon t-icon-remove t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -545,6 +560,7 @@ exports[`InputNumber > :props > :mode, without class t-is-controls-right 1`] = `
       class="t-icon t-icon-add t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -576,6 +592,7 @@ exports[`InputNumber > :props > :mode:column, with class t-is-controls-right 1`]
       class="t-icon t-icon-chevron-down t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -615,6 +632,7 @@ exports[`InputNumber > :props > :mode:column, with class t-is-controls-right 1`]
       class="t-icon t-icon-chevron-up t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -646,6 +664,7 @@ exports[`InputNumber > :props > :mode:row, without class t-is-controls-right 1`]
       class="t-icon t-icon-remove t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -685,6 +704,7 @@ exports[`InputNumber > :props > :mode:row, without class t-is-controls-right 1`]
       class="t-icon t-icon-add t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -716,6 +736,7 @@ exports[`InputNumber > :props > :size:large, with class t-size-l 1`] = `
       class="t-icon t-icon-remove t-size-l"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -755,6 +776,7 @@ exports[`InputNumber > :props > :size:large, with class t-size-l 1`] = `
       class="t-icon t-icon-add t-size-l"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -786,6 +808,7 @@ exports[`InputNumber > :props > :size:medium, with class t-size-m 1`] = `
       class="t-icon t-icon-remove t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -825,6 +848,7 @@ exports[`InputNumber > :props > :size:medium, with class t-size-m 1`] = `
       class="t-icon t-icon-add t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -856,6 +880,7 @@ exports[`InputNumber > :props > :size:small, with class t-size-s 1`] = `
       class="t-icon t-icon-remove t-size-s"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -895,6 +920,7 @@ exports[`InputNumber > :props > :size:small, with class t-size-s 1`] = `
       class="t-icon t-icon-add t-size-s"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -926,6 +952,7 @@ exports[`InputNumber > :props > :step, 2 1`] = `
       class="t-icon t-icon-remove t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -965,6 +992,7 @@ exports[`InputNumber > :props > :step, 2 1`] = `
       class="t-icon t-icon-add t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -996,6 +1024,7 @@ exports[`InputNumber > :props > :value, 6 1`] = `
       class="t-icon t-icon-remove t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -1035,6 +1064,7 @@ exports[`InputNumber > :props > :value, 6 1`] = `
       class="t-icon t-icon-add t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -1066,6 +1096,7 @@ exports[`InputNumber > :props > :value, 6.55 1`] = `
       class="t-icon t-icon-remove t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -1105,6 +1136,7 @@ exports[`InputNumber > :props > :value, 6.55 1`] = `
       class="t-icon t-icon-add t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -1136,6 +1168,7 @@ exports[`InputNumber > :props > class, with class t-input-number 1`] = `
       class="t-icon t-icon-remove t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -1175,6 +1208,7 @@ exports[`InputNumber > :props > class, with class t-input-number 1`] = `
       class="t-icon t-icon-add t-size-m"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >

@@ -8,6 +8,7 @@ exports[`Message > :props > :closeBtn is a function, () => VNode. 1`] = `
     class="t-icon t-icon-info-circle-filled"
     fill="none"
     height="1em"
+    style="fill: none;"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -36,6 +37,7 @@ exports[`Message > :props > :closeBtn is a string, equal "关闭". 1`] = `
     class="t-icon t-icon-info-circle-filled"
     fill="none"
     height="1em"
+    style="fill: none;"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -60,6 +62,7 @@ exports[`Message > :props > :closeBtn is true, render default close button. 1`] 
     class="t-icon t-icon-info-circle-filled"
     fill="none"
     height="1em"
+    style="fill: none;"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -75,6 +78,7 @@ exports[`Message > :props > :closeBtn is true, render default close button. 1`] 
       class="t-icon t-icon-close"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
@@ -102,6 +106,7 @@ exports[`Message > :props > :default is a function, () => <b>这是重要信息<
     class="t-icon t-icon-info-circle-filled"
     fill="none"
     height="1em"
+    style="fill: none;"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -127,6 +132,7 @@ exports[`Message > :props > :default is a string, 这是普通信息 1`] = `
     class="t-icon t-icon-info-circle-filled"
     fill="none"
     height="1em"
+    style="fill: none;"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -150,6 +156,7 @@ exports[`Message > :props > :icon is a function, () => MoreIcon 1`] = `
     class="t-icon t-icon-more"
     fill="none"
     height="1em"
+    style="fill: none;"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -204,6 +211,7 @@ exports[`Message > :props > :theme info,success,warning,error,question,loading 1
     class="t-icon t-icon-info-circle-filled"
     fill="none"
     height="1em"
+    style="fill: none;"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -226,6 +234,7 @@ exports[`Message > :props > :theme info,success,warning,error,question,loading 2
     class="t-icon t-icon-check-circle-filled"
     fill="none"
     height="1em"
+    style="fill: none;"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -248,6 +257,7 @@ exports[`Message > :props > :theme info,success,warning,error,question,loading 3
     class="t-icon t-icon-error-circle-filled"
     fill="none"
     height="1em"
+    style="fill: none;"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -270,6 +280,7 @@ exports[`Message > :props > :theme info,success,warning,error,question,loading 4
     class="t-icon t-icon-error-circle-filled"
     fill="none"
     height="1em"
+    style="fill: none;"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -292,6 +303,7 @@ exports[`Message > :props > :theme info,success,warning,error,question,loading 5
     class="t-icon t-icon-help-circle-filled"
     fill="none"
     height="1em"
+    style="fill: none;"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -348,6 +360,7 @@ exports[`Message > :props > pure message contains two classes 1`] = `
     class="t-icon t-icon-info-circle-filled"
     fill="none"
     height="1em"
+    style="fill: none;"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -370,6 +383,7 @@ exports[`Message > <slot> > <icon> 1`] = `
     class="t-icon t-icon-more"
     fill="none"
     height="1em"
+    style="fill: none;"
     viewBox="0 0 24 24"
     width="1em"
   >

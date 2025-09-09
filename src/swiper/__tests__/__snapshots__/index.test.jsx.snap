@@ -268,6 +268,7 @@ exports[`Swiper > additional function > navigation: VNode 1`] = `
           class="t-icon t-icon-chevron-left"
           fill="none"
           height="1em"
+          style="fill: none;"
           viewBox="0 0 24 24"
           width="1em"
         >
@@ -291,6 +292,7 @@ exports[`Swiper > additional function > navigation: VNode 1`] = `
           class="t-icon t-icon-chevron-right"
           fill="none"
           height="1em"
+          style="fill: none;"
           viewBox="0 0 24 24"
           width="1em"
         >
@@ -340,6 +342,7 @@ exports[`Swiper > additional function > no valid panel 1`] = `
           class="t-icon t-icon-chevron-left"
           fill="none"
           height="1em"
+          style="fill: none;"
           viewBox="0 0 24 24"
           width="1em"
         >
@@ -363,6 +366,7 @@ exports[`Swiper > additional function > no valid panel 1`] = `
           class="t-icon t-icon-chevron-right"
           fill="none"
           height="1em"
+          style="fill: none;"
           viewBox="0 0 24 24"
           width="1em"
         >
