@@ -10,8 +10,6 @@ interface DragSortProps {
   onDragSort?: (context: { currentIndex: number; current: TabValue; targetIndex: number; target: TabValue }) => void;
 }
 
-type EmitFunction = (event: string, ...args: any[]) => void;
-
 const traversalTabNavs = (tabNavs: HTMLCollection, fn: (tabNav: HTMLDivElement) => void) => {
   Array.from(tabNavs)
     .filter((node): node is HTMLDivElement => node instanceof HTMLDivElement && !!node.getAttribute('draggable'))
@@ -41,6 +39,16 @@ const useDragSort = (props: DragSortProps) => {
     dragged = target;
     const newStyle = { opacity: '0.5' };
     Object.assign(target.style, newStyle);
+    // 指定允许的拖拽操作为 move，且兼容 Firefox（需要 setData）
+    const dt = event.dataTransfer;
+    if (dt) {
+      dt.effectAllowed = 'copy';
+      try {
+        dt.setData('text/plain', '');
+      } catch (e) {
+        // 某些环境下可能抛错，忽略
+      }
+    }
   };
 
   const dragend = (event: DragEvent) => {
@@ -51,7 +59,16 @@ const useDragSort = (props: DragSortProps) => {
   };
 
   const dragover = (event: DragEvent) => {
-    event.preventDefault();
+    if (!navsWrap) return;
+    const target = handleTarget(event.target, navsWrap.children);
+    const dt = event.dataTransfer;
+    if (dt) {
+      // 不可放置目标显示禁止状态
+      dt.dropEffect = target && target.draggable ? 'copy' : 'none';
+    }
+    if (target && target.draggable) {
+      event.preventDefault();
+    }
   };
 
   const dragenter = (event: DragEvent) => {
@@ -95,22 +112,16 @@ const useDragSort = (props: DragSortProps) => {
       }
     });
 
-    if (!navsWrap || !dragged || !props.panels) {
-      return;
-    }
+    if (!navsWrap || !dragged || !props.panels) return;
 
     let dropTarget = handleTarget(event.target, navsWrap.children);
 
-    if (!dropTarget || dropTarget === dragged || !dropTarget.draggable) {
-      return;
-    }
+    if (!dropTarget || dropTarget === dragged || !dropTarget.draggable) return;
 
     const draggedDOMIndex = Array.from(navsWrap.children).indexOf(dragged);
     const targetDOMIndex = Array.from(navsWrap.children).indexOf(dropTarget);
 
-    if (draggedDOMIndex === -1 || targetDOMIndex === -1) {
-      return;
-    }
+    if (draggedDOMIndex === -1 || targetDOMIndex === -1) return;
 
     if (targetDOMIndex > draggedDOMIndex) {
       const nextElement = navsWrap.children[targetDOMIndex + 1] as HTMLDivElement;
@@ -131,9 +142,7 @@ const useDragSort = (props: DragSortProps) => {
       || targetDataIndex < 0
       || currentDataIndex >= props.panels.length
       || targetDataIndex >= props.panels.length
-    ) {
-      return;
-    }
+    ) return;
 
     const dragSortData = {
       currentIndex: currentDataIndex,
