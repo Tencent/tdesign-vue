@@ -64,9 +64,9 @@ const useDragSort = (props: DragSortProps) => {
     const dt = event.dataTransfer;
     if (dt) {
       // 不可放置目标显示禁止状态
-      dt.dropEffect = target && target.draggable ? 'copy' : 'none';
+      dt.dropEffect = target?.draggable ? 'copy' : 'none';
     }
-    if (target && target.draggable) {
+    if (target?.draggable) {
       event.preventDefault();
     }
   };
