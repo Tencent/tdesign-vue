@@ -1,12 +1,10 @@
 import { TabValue } from '../type';
 
-interface TabPanel {
-  value: TabValue;
-}
+import TTabPanel from '../tab-panel';
 
 interface DragSortProps {
   theme?: string;
-  panels?: TabPanel[];
+  panels?: Array<InstanceType<typeof TTabPanel>>;
   onDragSort?: (context: { currentIndex: number; current: TabValue; targetIndex: number; target: TabValue }) => void;
 }
 
