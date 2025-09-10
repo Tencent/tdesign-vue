@@ -50,11 +50,10 @@ export default {
   },
   methods: {
     onDragend({ currentIndex, targetIndex }) {
-      console.log('拖拽排序完成', currentIndex, targetIndex);
-      [this.panelData[currentIndex], this.panelData[targetIndex]] = [
-        this.panelData[targetIndex],
-        this.panelData[currentIndex],
-      ];
+      const currentPanel = this.panelData[currentIndex];
+      const targetPanel = this.panelData[targetIndex];
+      this.$set(this.panelData, currentIndex, targetPanel);
+      this.$set(this.panelData, targetIndex, currentPanel);
     },
     onTabChange(newValue) {
       this.value = newValue;

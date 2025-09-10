@@ -40,6 +40,7 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
     disabled: tabProps.disabled,
     addable: tabProps.addable,
     dragSort: tabProps.dragSort,
+    onDragSort: tabProps.onDragSort,
   },
   data() {
     return {
@@ -363,7 +364,7 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
   },
   mounted() {
     this.$nextTick(() => {
-      const { setNavsWrap } = useDragSort(this.$props);
+      const { setNavsWrap } = useDragSort(this.$props, this.$emit);
       setNavsWrap(this.$refs.navsWrap as HTMLDivElement);
 
       this.watchDomChange();
@@ -375,7 +376,7 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
     });
   },
   destroyed() {
-    const { dragSortDestroy } = useDragSort(this.$props);
+    const { dragSortDestroy } = useDragSort(this.$props, this.$emit);
     dragSortDestroy();
   },
   render() {

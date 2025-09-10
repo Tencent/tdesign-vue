@@ -10,6 +10,8 @@ interface DragSortProps {
   onDragSort?: (context: { currentIndex: number; current: TabValue; targetIndex: number; target: TabValue }) => void;
 }
 
+type EmitFunction = (event: string, ...args: any[]) => void;
+
 const traversalTabNavs = (tabNavs: HTMLCollection, fn: (tabNav: HTMLDivElement) => void) => {
   Array.from(tabNavs)
     .filter((node): node is HTMLDivElement => node instanceof HTMLDivElement && !!node.getAttribute('draggable'))
@@ -28,7 +30,7 @@ const handleTarget = (target: EventTarget, tabNavs: HTMLCollection): HTMLDivElem
   return resultTarget;
 };
 
-const useDragSort = (props: DragSortProps) => {
+const useDragSort = (props: DragSortProps, emit: EmitFunction) => {
   let navsWrap: HTMLDivElement | null = null;
   let dragged: HTMLDivElement | null = null;
   const enterTargets: HTMLDivElement[] = [];
@@ -85,35 +87,64 @@ const useDragSort = (props: DragSortProps) => {
 
   const drop = (event: DragEvent) => {
     event.preventDefault();
-    if (!navsWrap || !dragged || !props.panels) return;
 
     traversalTabNavs(navsWrap.children, (tabNav) => {
-      const { firstChild } = tabNav;
-      if (firstChild instanceof HTMLElement) {
-        const newStyle = { outline: 'none' };
-        Object.assign(firstChild.style, newStyle);
+      const firstChild = tabNav.firstChild as HTMLElement;
+      if (firstChild) {
+        firstChild.style.outline = 'none';
       }
     });
 
-    const target = handleTarget(event.target, navsWrap.children);
-    if (!target || target.parentNode === dragged || !target.draggable) return;
-
-    const children = Array.from(navsWrap.children);
-    const dragIndex = children.indexOf(dragged);
-    const targetIndex = children.indexOf(target);
-
-    const currentIndex = props.theme === 'card' ? dragIndex : dragIndex - 1;
-    const endIndex = props.theme === 'card' ? targetIndex : targetIndex - 1;
-
-    if (currentIndex >= 0 && endIndex >= 0 && props.onDragSort) {
-      props.onDragSort({
-        currentIndex,
-        current: props.panels[currentIndex].value,
-        targetIndex: endIndex,
-        target: props.panels[endIndex].value,
-      });
+    if (!navsWrap || !dragged || !props.panels) {
+      return;
     }
+
+    let dropTarget = handleTarget(event.target, navsWrap.children);
+
+    if (!dropTarget || dropTarget === dragged || !dropTarget.draggable) {
+      return;
+    }
+
+    const draggedDOMIndex = Array.from(navsWrap.children).indexOf(dragged);
+    const targetDOMIndex = Array.from(navsWrap.children).indexOf(dropTarget);
+
+    if (draggedDOMIndex === -1 || targetDOMIndex === -1) {
+      return;
+    }
+
+    if (targetDOMIndex > draggedDOMIndex) {
+      const nextElement = navsWrap.children[targetDOMIndex + 1] as HTMLDivElement;
+      if (nextElement) {
+        dropTarget = nextElement;
+      }
+    }
+
+    // 计算实际的数据索引（考虑主题样式的偏移）
+    const isCardTheme = props.theme === 'card';
+    const getDataIndex = (domIndex: number) => (isCardTheme ? domIndex : domIndex - 1);
+
+    const currentDataIndex = getDataIndex(draggedDOMIndex);
+    const targetDataIndex = getDataIndex(targetDOMIndex);
+
+    if (
+      currentDataIndex < 0
+      || targetDataIndex < 0
+      || currentDataIndex >= props.panels.length
+      || targetDataIndex >= props.panels.length
+    ) {
+      return;
+    }
+
+    const dragSortData = {
+      currentIndex: currentDataIndex,
+      current: props.panels[currentDataIndex].value,
+      targetIndex: targetDataIndex,
+      target: props.panels[targetDataIndex].value,
+    };
+
+    props.onDragSort?.(dragSortData);
   };
+
   function setNavsWrap(val: HTMLDivElement) {
     navsWrap = val;
     navsWrap.addEventListener('dragstart', dragstart, false);
