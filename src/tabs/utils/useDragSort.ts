@@ -1,4 +1,4 @@
-import { TabValue } from '../tabs/type';
+import { TabValue } from '../type';
 
 interface TabPanel {
   value: TabValue;

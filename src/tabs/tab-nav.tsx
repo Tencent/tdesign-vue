@@ -5,7 +5,7 @@ import {
   AddIcon as TdAddIcon,
 } from 'tdesign-icons-vue';
 import type { ComponentPublicInstance } from '@vue/composition-api';
-import useDragSort from '../hooks/useDragSort';
+import useDragSort from './utils/useDragSort';
 import TTabPanel from './tab-panel';
 import TTabNavItem from './tab-nav-item';
 import { emitEvent } from '../utils/event';
