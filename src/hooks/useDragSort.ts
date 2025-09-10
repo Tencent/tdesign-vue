@@ -30,7 +30,7 @@ const handleTarget = (target: EventTarget, tabNavs: HTMLCollection): HTMLDivElem
   return resultTarget;
 };
 
-const useDragSort = (props: DragSortProps, emit: EmitFunction) => {
+const useDragSort = (props: DragSortProps) => {
   let navsWrap: HTMLDivElement | null = null;
   let dragged: HTMLDivElement | null = null;
   const enterTargets: HTMLDivElement[] = [];

@@ -364,7 +364,7 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
   },
   mounted() {
     this.$nextTick(() => {
-      const { setNavsWrap } = useDragSort(this.$props, this.$emit);
+      const { setNavsWrap } = useDragSort(this.$props);
       setNavsWrap(this.$refs.navsWrap as HTMLDivElement);
 
       this.watchDomChange();
@@ -376,7 +376,7 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
     });
   },
   destroyed() {
-    const { dragSortDestroy } = useDragSort(this.$props, this.$emit);
+    const { dragSortDestroy } = useDragSort(this.$props);
     dragSortDestroy();
   },
   render() {
