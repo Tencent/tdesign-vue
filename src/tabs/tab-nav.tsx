@@ -40,6 +40,7 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
     disabled: tabProps.disabled,
     addable: tabProps.addable,
     dragSort: tabProps.dragSort,
+    // 在 useDragSort 中会被用到
     onDragSort: tabProps.onDragSort,
   },
   data() {
