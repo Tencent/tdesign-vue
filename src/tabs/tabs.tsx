@@ -82,6 +82,7 @@ export default mixins(Vue as VueConstructor<TabParentInjectVue>, classPrefixMixi
     onChangeTab(value: TabValue) {
       emitEvent<Parameters<TdTabsProps['onChange']>>(this, 'change', value);
     },
+
     onRemoveTab({ e, value, index }: Parameters<TdTabsProps['onRemove']>[0]) {
       const panel = this.panels[index];
       const eventData = {
@@ -94,6 +95,10 @@ export default mixins(Vue as VueConstructor<TabParentInjectVue>, classPrefixMixi
       emitEvent<Parameters<TdTabsProps['onRemove']>>(panel, 'remove', eventData);
     },
     renderHeader() {
+      const onDragSort = (context: Parameters<TdTabsProps['onDragSort']>[0]) => {
+        emitEvent<Parameters<TdTabsProps['onDragSort']>>(this, 'drag-sort', context);
+      };
+
       const tabNavProps = {
         theme: this.theme,
         value: this.value,
@@ -103,6 +108,8 @@ export default mixins(Vue as VueConstructor<TabParentInjectVue>, classPrefixMixi
         addable: this.addable,
         panels: this.panels,
         scrollPosition: this.scrollPosition,
+        dragSort: this.dragSort,
+        onDragSort,
       };
       return (
         <div

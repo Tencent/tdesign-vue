@@ -5,6 +5,14 @@ toc: false
 docClass: timeline
 ---
 
+## 🌈 1.13.1 `2025-08-20` 
+### 🚀 Features
+- `Table`: 新增切换分页后重置滚动条回到顶部的特性 @RSS1102 ([#3684](https://github.com/Tencent/tdesign-vue/pull/3684))
+### 🐞 Bug Fixes
+- `QRCode`: 修复 `type='svg'` 时 `value` 值变化而二维码未刷新的问题 @RSS1102 ([#3681](https://github.com/Tencent/tdesign-vue/pull/3681))
+- `Radio`: 修复 `RadioGroup` 组件的告警问题 @uyarn ([#3685](https://github.com/Tencent/tdesign-vue/pull/3685))
+
+
 ## 🌈 1.13.0 `2025-08-07` 
 ### 🚀 Features
 - `QRCode`: 新增 `QRCode` 二维码组件 @Wesley-0808 ([#3652](https://github.com/Tencent/tdesign-vue/pull/3652))
