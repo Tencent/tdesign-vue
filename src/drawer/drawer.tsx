@@ -122,7 +122,7 @@ export default mixins(
       };
     },
     computedAttach(): AttachNode {
-      return this.showInAttachedElement ? undefined : this.attach || this.globalAttach();
+      return this.attach || this.globalAttach();
     },
   },
 
