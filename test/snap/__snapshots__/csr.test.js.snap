@@ -130087,7 +130087,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                   </label>
                 </div>
                 <div
-                  class="t-tree__item t-tree__item--open t-tree__item--visible"
+                  class="t-tree__item t-tree__item--visible"
                   data-level="1"
                   data-value="1.1"
                   draggable="false"
@@ -130222,7 +130222,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                   </label>
                 </div>
                 <div
-                  class="t-tree__item t-tree__item--open t-tree__item--visible"
+                  class="t-tree__item t-tree__item--visible"
                   data-level="3"
                   data-value="1.2.1.1"
                   draggable="false"
@@ -130257,7 +130257,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                   </label>
                 </div>
                 <div
-                  class="t-tree__item t-tree__item--open t-tree__item--visible"
+                  class="t-tree__item t-tree__item--visible"
                   data-level="3"
                   data-value="1.2.1.2"
                   draggable="false"
@@ -130342,7 +130342,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                   </label>
                 </div>
                 <div
-                  class="t-tree__item t-tree__item--open t-tree__item--visible"
+                  class="t-tree__item t-tree__item--visible"
                   data-level="1"
                   data-value="2.1"
                   draggable="false"
@@ -130377,7 +130377,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                   </label>
                 </div>
                 <div
-                  class="t-tree__item t-tree__item--open t-tree__item--visible"
+                  class="t-tree__item t-tree__item--visible"
                   data-level="1"
                   data-value="2.2"
                   draggable="false"
@@ -130741,7 +130741,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                   </label>
                 </div>
                 <div
-                  class="t-tree__item t-tree__item--open t-tree__item--visible"
+                  class="t-tree__item t-tree__item--visible"
                   data-level="1"
                   data-value="1.1"
                   draggable="false"
@@ -130876,7 +130876,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                   </label>
                 </div>
                 <div
-                  class="t-tree__item t-tree__item--open t-tree__item--visible"
+                  class="t-tree__item t-tree__item--visible"
                   data-level="3"
                   data-value="1.2.1.1"
                   draggable="false"
@@ -130911,7 +130911,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                   </label>
                 </div>
                 <div
-                  class="t-tree__item t-tree__item--open t-tree__item--visible"
+                  class="t-tree__item t-tree__item--visible"
                   data-level="3"
                   data-value="1.2.1.2"
                   draggable="false"
@@ -130996,7 +130996,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                   </label>
                 </div>
                 <div
-                  class="t-tree__item t-tree__item--open t-tree__item--visible"
+                  class="t-tree__item t-tree__item--visible"
                   data-level="1"
                   data-value="2.1"
                   draggable="false"
@@ -131031,7 +131031,7 @@ exports[`csr snapshot test > csr test ./src/transfer/_example/tree.vue 1`] = `
                   </label>
                 </div>
                 <div
-                  class="t-tree__item t-tree__item--open t-tree__item--visible"
+                  class="t-tree__item t-tree__item--visible"
                   data-level="1"
                   data-value="2.2"
                   draggable="false"
@@ -131378,7 +131378,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/activable.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="1"
           data-value="t1.1"
           draggable="false"
@@ -131401,7 +131401,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/activable.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="1"
           data-value="t1.2"
           draggable="false"
@@ -131462,7 +131462,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/activable.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="1"
           data-value="t2.1"
           draggable="false"
@@ -131485,7 +131485,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/activable.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="1"
           data-value="t2.2"
           draggable="false"
@@ -132019,7 +132019,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
           </label>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="3"
           data-value="1.1.1.1"
           draggable="false"
@@ -132054,7 +132054,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
           </label>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="3"
           data-value="1.1.1.2"
           draggable="false"
@@ -132139,7 +132139,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
           </label>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="3"
           data-value="1.1.2.1"
           draggable="false"
@@ -132174,7 +132174,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
           </label>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="3"
           data-value="1.1.2.2"
           draggable="false"
@@ -132309,7 +132309,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
           </label>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="3"
           data-value="1.2.1.1"
           draggable="false"
@@ -132344,7 +132344,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
           </label>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="3"
           data-value="1.2.1.2"
           draggable="false"
@@ -132429,7 +132429,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
           </label>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="3"
           data-value="1.2.2.1"
           draggable="false"
@@ -132464,7 +132464,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
           </label>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="3"
           data-value="1.2.2.2"
           draggable="false"
@@ -132549,7 +132549,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
           </label>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="1"
           data-value="2.1"
           draggable="false"
@@ -132584,7 +132584,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/checkable.vue 1`] = `
           </label>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="1"
           data-value="2.2"
           draggable="false"
@@ -133462,7 +133462,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
           </label>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="t1.1.1"
           draggable="false"
@@ -133497,7 +133497,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
           </label>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="t1.1.2"
           draggable="false"
@@ -133582,7 +133582,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
           </label>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="1.2.1"
           draggable="false"
@@ -133617,7 +133617,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
           </label>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="1.2.2"
           draggable="false"
@@ -133702,7 +133702,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
           </label>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="1"
           data-value="t2.1"
           draggable="false"
@@ -133737,7 +133737,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/debug-data.vue 1`] = `
           </label>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="1"
           data-value="t2.2"
           draggable="false"
@@ -135077,7 +135077,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
+          class="t-tree__item t-is-disabled t-tree__item--visible"
           data-level="2"
           data-value="1.1.1"
           draggable="false"
@@ -135138,7 +135138,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
+          class="t-tree__item t-is-disabled t-tree__item--visible"
           data-level="2"
           data-value="1.1.2"
           draggable="false"
@@ -135274,7 +135274,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="1.2.1"
           draggable="false"
@@ -135334,7 +135334,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="1.2.2"
           draggable="false"
@@ -135545,7 +135545,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
+          class="t-tree__item t-is-disabled t-tree__item--visible"
           data-level="2"
           data-value="2.1.1"
           draggable="false"
@@ -135606,7 +135606,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
+          class="t-tree__item t-is-disabled t-tree__item--visible"
           data-level="2"
           data-value="2.1.2"
           draggable="false"
@@ -135742,7 +135742,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="2.2.1"
           draggable="false"
@@ -135802,7 +135802,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/disabled.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="2.2.2"
           draggable="false"
@@ -135997,7 +135997,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--draggable t-tree__item--visible"
+          class="t-tree__item t-tree__item--draggable t-tree__item--visible"
           data-level="3"
           data-value="1.1.1.1"
           draggable="true"
@@ -136020,7 +136020,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--draggable t-tree__item--visible"
+          class="t-tree__item t-tree__item--draggable t-tree__item--visible"
           data-level="3"
           data-value="1.1.1.2"
           draggable="true"
@@ -136081,7 +136081,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-is-disabled t-tree__item--visible"
+          class="t-tree__item t-is-disabled t-tree__item--visible"
           data-level="3"
           data-value="1.1.2.1"
           draggable="false"
@@ -136104,7 +136104,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--draggable t-tree__item--visible"
+          class="t-tree__item t-tree__item--draggable t-tree__item--visible"
           data-level="3"
           data-value="1.1.2.2"
           draggable="true"
@@ -136165,7 +136165,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--draggable t-tree__item--visible"
+          class="t-tree__item t-tree__item--draggable t-tree__item--visible"
           data-level="1"
           data-value="2.1"
           draggable="true"
@@ -136188,7 +136188,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/draggable.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--draggable t-tree__item--visible"
+          class="t-tree__item t-tree__item--draggable t-tree__item--visible"
           data-level="1"
           data-value="2.2"
           draggable="true"
@@ -136496,7 +136496,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="t1.1.1"
           draggable="false"
@@ -136519,7 +136519,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="t1.1.2"
           draggable="false"
@@ -136580,7 +136580,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="1.2.1"
           draggable="false"
@@ -136603,7 +136603,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="1.2.2"
           draggable="false"
@@ -136664,7 +136664,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="1"
           data-value="t2.1"
           draggable="false"
@@ -136687,7 +136687,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/expand-all.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="1"
           data-value="t2.2"
           draggable="false"
@@ -137639,7 +137639,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="1"
               data-value="t528"
               draggable="false"
@@ -137664,7 +137664,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="1"
               data-value="t529"
               draggable="false"
@@ -137729,7 +137729,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="1"
               data-value="t531"
               draggable="false"
@@ -137754,7 +137754,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="1"
               data-value="t532"
               draggable="false"
@@ -137862,7 +137862,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
               </label>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="1"
               data-value="t534"
               draggable="false"
@@ -137901,7 +137901,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
               </label>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="1"
               data-value="t535"
               draggable="false"
@@ -137994,7 +137994,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
               </label>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="1"
               data-value="t537"
               draggable="false"
@@ -138033,7 +138033,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/label.vue 1`] = `
               </label>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="1"
               data-value="t538"
               draggable="false"
@@ -138411,7 +138411,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="1"
               data-value="1.1"
               draggable="false"
@@ -138438,7 +138438,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="1"
               data-value="1.2"
               draggable="false"
@@ -138629,7 +138629,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="4"
               data-value="2.1.1.1.1"
               draggable="false"
@@ -138656,7 +138656,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="4"
               data-value="2.1.1.1.2"
               draggable="false"
@@ -138683,7 +138683,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="2.1.2"
               draggable="false"
@@ -138710,7 +138710,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="1"
               data-value="2.2"
               draggable="false"
@@ -138775,7 +138775,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="1"
               data-value="3.1"
               draggable="false"
@@ -138802,7 +138802,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="1"
               data-value="3.2"
               draggable="false"
@@ -138829,7 +138829,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="0"
               data-value="4"
               draggable="false"
@@ -138930,7 +138930,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="1"
               data-value="1.1"
               draggable="false"
@@ -138975,7 +138975,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="1"
               data-value="1.2"
               draggable="false"
@@ -139221,7 +139221,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="4"
               data-value="2.1.1.1.1"
               draggable="false"
@@ -139275,7 +139275,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="4"
               data-value="2.1.1.1.2"
               draggable="false"
@@ -139329,7 +139329,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="2.1.2"
               draggable="false"
@@ -139377,7 +139377,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="1"
               data-value="2.2"
               draggable="false"
@@ -139467,7 +139467,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="1"
               data-value="3.1"
               draggable="false"
@@ -139512,7 +139512,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="1"
               data-value="3.2"
               draggable="false"
@@ -139557,7 +139557,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="0"
               data-value="4"
               draggable="false"
@@ -139679,7 +139679,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="1"
               data-value="1.1"
               draggable="false"
@@ -139729,7 +139729,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="1"
               data-value="1.2"
               draggable="false"
@@ -139998,7 +139998,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="4"
               data-value="2.1.1.1.1"
               draggable="false"
@@ -140060,7 +140060,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="4"
               data-value="2.1.1.1.2"
               draggable="false"
@@ -140122,7 +140122,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="2.1.2"
               draggable="false"
@@ -140176,7 +140176,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="1"
               data-value="2.2"
               draggable="false"
@@ -140274,7 +140274,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="1"
               data-value="3.1"
               draggable="false"
@@ -140324,7 +140324,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="1"
               data-value="3.2"
               draggable="false"
@@ -140374,7 +140374,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/line.vue 1`] = `
               </span>
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="0"
               data-value="4"
               draggable="false"
@@ -140617,7 +140617,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
         style="transform: translateY(0px);"
       >
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="0"
           data-value="node1"
           draggable="false"
@@ -140732,7 +140732,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/operations.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="0"
           data-value="node2"
           draggable="false"
@@ -141096,7 +141096,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/state.vue 1`] = `
         style="transform: translateY(0px);"
       >
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="0"
           data-value="node1"
           draggable="false"
@@ -141198,7 +141198,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/state.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="0"
           data-value="node2"
           draggable="false"
@@ -142552,7 +142552,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="t3"
           draggable="false"
@@ -142620,7 +142620,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="t4"
           draggable="false"
@@ -142688,7 +142688,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="t5"
           draggable="false"
@@ -142756,7 +142756,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="t6"
           draggable="false"
@@ -142824,7 +142824,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="t7"
           draggable="false"
@@ -142975,7 +142975,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="t9"
           draggable="false"
@@ -143043,7 +143043,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="t10"
           draggable="false"
@@ -143111,7 +143111,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="t11"
           draggable="false"
@@ -143179,7 +143179,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="t12"
           draggable="false"
@@ -143247,7 +143247,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="t13"
           draggable="false"
@@ -143398,7 +143398,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="t15"
           draggable="false"
@@ -143466,7 +143466,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="t16"
           draggable="false"
@@ -143534,7 +143534,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="t17"
           draggable="false"
@@ -143602,7 +143602,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="t18"
           draggable="false"
@@ -143670,7 +143670,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="t19"
           draggable="false"
@@ -143821,7 +143821,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="t21"
           draggable="false"
@@ -143889,7 +143889,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="t22"
           draggable="false"
@@ -143957,7 +143957,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="t23"
           draggable="false"
@@ -144025,7 +144025,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="t24"
           draggable="false"
@@ -144093,7 +144093,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="t25"
           draggable="false"
@@ -144244,7 +144244,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="t27"
           draggable="false"
@@ -144312,7 +144312,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="t28"
           draggable="false"
@@ -144380,7 +144380,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="t29"
           draggable="false"
@@ -144448,7 +144448,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
           </span>
         </div>
         <div
-          class="t-tree__item t-tree__item--open t-tree__item--visible"
+          class="t-tree__item t-tree__item--visible"
           data-level="2"
           data-value="t30"
           draggable="false"
@@ -144580,7 +144580,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t3"
               draggable="false"
@@ -144589,7 +144589,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t4"
               draggable="false"
@@ -144598,7 +144598,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t5"
               draggable="false"
@@ -144607,7 +144607,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t6"
               draggable="false"
@@ -144616,7 +144616,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t7"
               draggable="false"
@@ -144634,7 +144634,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t9"
               draggable="false"
@@ -144643,7 +144643,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t10"
               draggable="false"
@@ -144652,7 +144652,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t11"
               draggable="false"
@@ -144661,7 +144661,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t12"
               draggable="false"
@@ -144670,7 +144670,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t13"
               draggable="false"
@@ -144688,7 +144688,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t15"
               draggable="false"
@@ -144697,7 +144697,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t16"
               draggable="false"
@@ -144706,7 +144706,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t17"
               draggable="false"
@@ -144715,7 +144715,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t18"
               draggable="false"
@@ -144724,7 +144724,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t19"
               draggable="false"
@@ -144742,7 +144742,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t21"
               draggable="false"
@@ -144751,7 +144751,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t22"
               draggable="false"
@@ -144760,7 +144760,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t23"
               draggable="false"
@@ -144769,7 +144769,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t24"
               draggable="false"
@@ -144778,7 +144778,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t25"
               draggable="false"
@@ -144796,7 +144796,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t27"
               draggable="false"
@@ -144805,7 +144805,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t28"
               draggable="false"
@@ -144814,7 +144814,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t29"
               draggable="false"
@@ -144823,7 +144823,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t30"
               draggable="false"
@@ -144832,7 +144832,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t31"
               draggable="false"
@@ -144859,7 +144859,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t34"
               draggable="false"
@@ -144868,7 +144868,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t35"
               draggable="false"
@@ -144877,7 +144877,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t36"
               draggable="false"
@@ -144886,7 +144886,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t37"
               draggable="false"
@@ -144895,7 +144895,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t38"
               draggable="false"
@@ -144913,7 +144913,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t40"
               draggable="false"
@@ -144922,7 +144922,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t41"
               draggable="false"
@@ -144931,7 +144931,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t42"
               draggable="false"
@@ -144940,7 +144940,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t43"
               draggable="false"
@@ -144949,7 +144949,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t44"
               draggable="false"
@@ -144967,7 +144967,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t46"
               draggable="false"
@@ -144976,7 +144976,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t47"
               draggable="false"
@@ -144985,7 +144985,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t48"
               draggable="false"
@@ -144994,7 +144994,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t49"
               draggable="false"
@@ -145003,7 +145003,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t50"
               draggable="false"
@@ -145021,7 +145021,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t52"
               draggable="false"
@@ -145030,7 +145030,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t53"
               draggable="false"
@@ -145039,7 +145039,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t54"
               draggable="false"
@@ -145048,7 +145048,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t55"
               draggable="false"
@@ -145057,7 +145057,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t56"
               draggable="false"
@@ -145075,7 +145075,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t58"
               draggable="false"
@@ -145084,7 +145084,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t59"
               draggable="false"
@@ -145093,7 +145093,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t60"
               draggable="false"
@@ -145102,7 +145102,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t61"
               draggable="false"
@@ -145111,7 +145111,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t62"
               draggable="false"
@@ -145138,7 +145138,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t65"
               draggable="false"
@@ -145147,7 +145147,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t66"
               draggable="false"
@@ -145156,7 +145156,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t67"
               draggable="false"
@@ -145165,7 +145165,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t68"
               draggable="false"
@@ -145174,7 +145174,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t69"
               draggable="false"
@@ -145192,7 +145192,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t71"
               draggable="false"
@@ -145201,7 +145201,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t72"
               draggable="false"
@@ -145210,7 +145210,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t73"
               draggable="false"
@@ -145219,7 +145219,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t74"
               draggable="false"
@@ -145228,7 +145228,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t75"
               draggable="false"
@@ -145246,7 +145246,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t77"
               draggable="false"
@@ -145255,7 +145255,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t78"
               draggable="false"
@@ -145264,7 +145264,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t79"
               draggable="false"
@@ -145273,7 +145273,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t80"
               draggable="false"
@@ -145282,7 +145282,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t81"
               draggable="false"
@@ -145300,7 +145300,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t83"
               draggable="false"
@@ -145309,7 +145309,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t84"
               draggable="false"
@@ -145318,7 +145318,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t85"
               draggable="false"
@@ -145327,7 +145327,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t86"
               draggable="false"
@@ -145336,7 +145336,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t87"
               draggable="false"
@@ -145354,7 +145354,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t89"
               draggable="false"
@@ -145363,7 +145363,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t90"
               draggable="false"
@@ -145372,7 +145372,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t91"
               draggable="false"
@@ -145381,7 +145381,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t92"
               draggable="false"
@@ -145390,7 +145390,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t93"
               draggable="false"
@@ -145417,7 +145417,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t96"
               draggable="false"
@@ -145426,7 +145426,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t97"
               draggable="false"
@@ -145435,7 +145435,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t98"
               draggable="false"
@@ -145444,7 +145444,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t99"
               draggable="false"
@@ -145453,7 +145453,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t100"
               draggable="false"
@@ -145471,7 +145471,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t102"
               draggable="false"
@@ -145480,7 +145480,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t103"
               draggable="false"
@@ -145489,7 +145489,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t104"
               draggable="false"
@@ -145498,7 +145498,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t105"
               draggable="false"
@@ -145507,7 +145507,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t106"
               draggable="false"
@@ -145525,7 +145525,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t108"
               draggable="false"
@@ -145534,7 +145534,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t109"
               draggable="false"
@@ -145543,7 +145543,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t110"
               draggable="false"
@@ -145552,7 +145552,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t111"
               draggable="false"
@@ -145561,7 +145561,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t112"
               draggable="false"
@@ -145579,7 +145579,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t114"
               draggable="false"
@@ -145588,7 +145588,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t115"
               draggable="false"
@@ -145597,7 +145597,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t116"
               draggable="false"
@@ -145606,7 +145606,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t117"
               draggable="false"
@@ -145615,7 +145615,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t118"
               draggable="false"
@@ -145633,7 +145633,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t120"
               draggable="false"
@@ -145642,7 +145642,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t121"
               draggable="false"
@@ -145651,7 +145651,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t122"
               draggable="false"
@@ -145660,7 +145660,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t123"
               draggable="false"
@@ -145669,7 +145669,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t124"
               draggable="false"
@@ -145696,7 +145696,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t127"
               draggable="false"
@@ -145705,7 +145705,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t128"
               draggable="false"
@@ -145714,7 +145714,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t129"
               draggable="false"
@@ -145723,7 +145723,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t130"
               draggable="false"
@@ -145732,7 +145732,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t131"
               draggable="false"
@@ -145750,7 +145750,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t133"
               draggable="false"
@@ -145759,7 +145759,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t134"
               draggable="false"
@@ -145768,7 +145768,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t135"
               draggable="false"
@@ -145777,7 +145777,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t136"
               draggable="false"
@@ -145786,7 +145786,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t137"
               draggable="false"
@@ -145804,7 +145804,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t139"
               draggable="false"
@@ -145813,7 +145813,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t140"
               draggable="false"
@@ -145822,7 +145822,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t141"
               draggable="false"
@@ -145831,7 +145831,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t142"
               draggable="false"
@@ -145840,7 +145840,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t143"
               draggable="false"
@@ -145858,7 +145858,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t145"
               draggable="false"
@@ -145867,7 +145867,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t146"
               draggable="false"
@@ -145876,7 +145876,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t147"
               draggable="false"
@@ -145885,7 +145885,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t148"
               draggable="false"
@@ -145894,7 +145894,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t149"
               draggable="false"
@@ -145912,7 +145912,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t151"
               draggable="false"
@@ -145921,7 +145921,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t152"
               draggable="false"
@@ -145930,7 +145930,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t153"
               draggable="false"
@@ -145939,7 +145939,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t154"
               draggable="false"
@@ -145948,7 +145948,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll-lazy.vue 1`] =
               <div />
             </div>
             <div
-              class="t-tree__item t-tree__item--open t-tree__item--visible"
+              class="t-tree__item t-tree__item--visible"
               data-level="2"
               data-value="t155"
               draggable="false"
