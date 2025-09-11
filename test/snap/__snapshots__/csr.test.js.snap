@@ -115133,6 +115133,140 @@ exports[`csr snapshot test > csr test ./src/tabs/_example/custom.vue 1`] = `
 </div>
 `;
 
+exports[`csr snapshot test > csr test ./src/tabs/_example/drag-sort.vue 1`] = `
+<div
+  class="t-space t-space-vertical"
+  style="gap: 24px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-space t-space-horizontal"
+      style="gap: 16px;"
+    >
+      <div
+        class="t-space-item"
+      >
+        <div
+          class="t-radio-group t-size-m t-radio-group--filled"
+        >
+          <label
+            class="t-radio-button t-is-checked"
+            tabindex="0"
+          >
+            <input
+              class="t-radio-button__former"
+              data-value="'normal'"
+              tabindex="-1"
+              type="radio"
+              value="normal"
+            />
+            <span
+              class="t-radio-button__input"
+            />
+            <span
+              class="t-radio-button__label"
+            >
+              常规型
+            </span>
+          </label>
+          <label
+            class="t-radio-button"
+            tabindex="0"
+          >
+            <input
+              class="t-radio-button__former"
+              data-value="'card'"
+              tabindex="-1"
+              type="radio"
+              value="card"
+            />
+            <span
+              class="t-radio-button__input"
+            />
+            <span
+              class="t-radio-button__label"
+            >
+              卡片型
+            </span>
+          </label>
+          <div
+            class="t-radio-group__bg-block"
+            style="width: 0px; left: 0px;"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <div
+      class="t-tabs"
+    >
+      <div
+        class="t-tabs__header t-is-top"
+      >
+        <div
+          class="t-tabs__nav"
+        >
+          <div
+            class="t-tabs__operations t-tabs__operations--left"
+          >
+            <transition-stub
+              appear="true"
+              mode="out-in"
+              name="fade"
+            />
+          </div>
+          <div
+            class="t-tabs__operations t-tabs__operations--right"
+          >
+            <transition-stub
+              appear="true"
+              mode="out-in"
+              name="fade"
+            />
+          </div>
+          <div
+            class="t-tabs__nav-container t-is-top"
+          >
+            <div
+              class="t-tabs__nav-scroll"
+            >
+              <div
+                class="t-tabs__nav-wrap t-is-smooth"
+                style="transform: translate(0px, 0);"
+              >
+                <div
+                  class="t-tabs__bar t-is-top"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="t-tabs__content"
+      >
+        <div
+          class="t-tab-panel"
+        >
+          <p
+            style="padding: 25px;"
+          >
+             选项卡1内容 
+          </p>
+        </div>
+        <!---->
+        <!---->
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`csr snapshot test > csr test ./src/tabs/_example/icon.vue 1`] = `
 <div
   class="t-space t-space-vertical"

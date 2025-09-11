@@ -481,6 +481,7 @@ exports[`Tabs > additional function > panel default slot:function | panel slot:f
             />
             <div
               class="t-tabs__nav-item t-size-m"
+              draggable="false"
             >
               <div
                 class="t-tabs__nav-item-wrapper"
@@ -494,6 +495,7 @@ exports[`Tabs > additional function > panel default slot:function | panel slot:f
             </div>
             <div
               class="t-tabs__nav-item t-is-active t-size-m"
+              draggable="false"
             >
               <div
                 class="t-tabs__nav-item-wrapper t-is-active"
@@ -568,6 +570,7 @@ exports[`Tabs > additional function > panel:default && panel:panel 1`] = `
             />
             <div
               class="t-tabs__nav-item t-size-m"
+              draggable="false"
             >
               <div
                 class="t-tabs__nav-item-wrapper"
@@ -581,6 +584,7 @@ exports[`Tabs > additional function > panel:default && panel:panel 1`] = `
             </div>
             <div
               class="t-tabs__nav-item t-is-active t-size-m"
+              draggable="false"
             >
               <div
                 class="t-tabs__nav-item-wrapper t-is-active"

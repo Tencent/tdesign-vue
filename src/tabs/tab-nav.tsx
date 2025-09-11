@@ -5,6 +5,7 @@ import {
   AddIcon as TdAddIcon,
 } from 'tdesign-icons-vue';
 import type { ComponentPublicInstance } from 'vue';
+import handleDragSort from './utils/handleDragSort';
 import TTabPanel from './tab-panel';
 import TTabNavItem from './tab-nav-item';
 import { emitEvent } from '../utils/event';
@@ -39,6 +40,9 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
     size: tabProps.size,
     disabled: tabProps.disabled,
     addable: tabProps.addable,
+    dragSort: tabProps.dragSort,
+    // 在 useDragSort 中会被用到
+    onDragSort: tabProps.onDragSort,
   },
   data() {
     return {
@@ -49,18 +53,26 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
   },
   computed: {
     navs(): Array<Record<string, any>> {
-      return this.panels.map((panel, index) => ({
-        ref: `tabItem${index}`,
-        key: panel.value,
-        theme: this.theme,
-        size: this.size,
-        placement: this.placement,
-        active: panel.value === this.value,
-        disabled: this.disabled || panel.disabled,
-        removable: panel.removable,
-        value: panel.value,
-        panel,
-      }));
+      return this.panels.map((panel, index) => {
+        let draggable = this.dragSort;
+        if (draggable && panel.draggable === false) {
+          draggable = panel.draggable;
+        }
+
+        return {
+          ref: `tabItem${index}`,
+          key: panel.value,
+          theme: this.theme,
+          size: this.size,
+          placement: this.placement,
+          active: panel.value === this.value,
+          disabled: this.disabled || panel.disabled,
+          removable: panel.removable,
+          value: panel.value,
+          panel,
+          draggable,
+        };
+      });
     },
     wrapTransformStyle(): { [key: string]: string } {
       if (['left', 'right'].includes(this.placement.toLowerCase())) return {};
@@ -294,6 +306,7 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
           label={renderTNodeJSX(panel.panel, 'label', `选项卡${index + 1}`)}
           onClick={(e: MouseEvent) => this.tabClick(e, panel.panel)}
           onRemove={this.removeBtnClick}
+          draggable={panel.draggable}
         ></TTabNavItem>
       ));
     },
@@ -354,6 +367,9 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
   },
   mounted() {
     this.$nextTick(() => {
+      const { setNavsWrap } = handleDragSort(this.$props);
+      setNavsWrap(this.$refs.navsWrap as HTMLDivElement);
+
       this.watchDomChange();
       this.calculateNavBarStyle();
       this.getMaxScrollLeft();
@@ -361,6 +377,10 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
     setTimeout(() => {
       this.moveActiveTabIntoView();
     });
+  },
+  destroyed() {
+    const { dragSortDestroy } = handleDragSort(this.$props);
+    dragSortDestroy();
   },
   render() {
     return (
