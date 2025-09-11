@@ -26,7 +26,7 @@ const handleTarget = (target: EventTarget, tabNavs: HTMLCollection): HTMLDivElem
   return resultTarget;
 };
 
-const useDragSort = (props: DragSortProps) => {
+const handleDragSort = (props: DragSortProps) => {
   let navsWrap: HTMLDivElement | null = null;
   let dragged: HTMLDivElement | null = null;
   const enterTargets: HTMLDivElement[] = [];
@@ -181,4 +181,4 @@ const useDragSort = (props: DragSortProps) => {
   };
 };
 
-export default useDragSort;
+export default handleDragSort;

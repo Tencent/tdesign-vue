@@ -5,7 +5,7 @@ import {
   AddIcon as TdAddIcon,
 } from 'tdesign-icons-vue';
 import type { ComponentPublicInstance } from '@vue/composition-api';
-import useDragSort from './utils/useDragSort';
+import handleDragSort from './utils/handleDragSort';
 import TTabPanel from './tab-panel';
 import TTabNavItem from './tab-nav-item';
 import { emitEvent } from '../utils/event';
@@ -365,7 +365,7 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
   },
   mounted() {
     this.$nextTick(() => {
-      const { setNavsWrap } = useDragSort(this.$props);
+      const { setNavsWrap } = handleDragSort(this.$props);
       setNavsWrap(this.$refs.navsWrap as HTMLDivElement);
 
       this.watchDomChange();
@@ -377,7 +377,7 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
     });
   },
   destroyed() {
-    const { dragSortDestroy } = useDragSort(this.$props);
+    const { dragSortDestroy } = handleDragSort(this.$props);
     dragSortDestroy();
   },
   render() {
