@@ -51,7 +51,7 @@ export default ({ mode }) => {
       ScriptSetup({}),
       disableTreeShakingPlugin(['style/']),
       {
-        name: 'my-late-plugin',
+        name: 'generate-multiple-entries',
         enforce: 'post',
         closeBundle() {
           const templatePath = path.resolve(outDir, './index.html');
