@@ -32,7 +32,6 @@ export default defineComponent({
 
   setup(props) {
     const { accept } = toRefs(props);
-
     const drag = useDrag(props.dragEvents, accept);
     const { dragActive } = drag;
 
