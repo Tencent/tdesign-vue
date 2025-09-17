@@ -74,7 +74,7 @@ export default function usePagination(
 
     const ref = tableContentRef.value;
     if (ref.scrollTo) {
-      ref.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      ref.scrollTo({ top: 0, left: 0 });
     } else {
       // 兼容测试环境或旧浏览器
       ref.scrollTop = 0;
