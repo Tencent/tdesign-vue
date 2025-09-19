@@ -51,6 +51,7 @@ export default mixins(getConfigReceiverMixins<Vue, TagConfig>('tag'), getGlobalI
   methods: {
     handleClose(e: MouseEvent): void {
       if (this.disabled) return;
+      if (e) e.stopPropagation();
       emitEvent<Parameters<TdTagProps['onClose']>>(this, 'close', { e });
     },
     handleClick(e: MouseEvent): void {

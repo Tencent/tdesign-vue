@@ -268,13 +268,21 @@ exports[`Swiper > additional function > navigation: VNode 1`] = `
           class="t-icon t-icon-chevron-left"
           fill="none"
           height="1em"
+          style="fill: none;"
           viewBox="0 0 24 24"
           width="1em"
         >
-          <path
-            d="M15.9144 17.5L10.4144 12L15.9144 6.50003L14.5002 5.08582L7.58594 12L14.5002 18.9142L15.9144 17.5Z"
-            fill="currentColor"
-          />
+          <g
+            id="chevron-left"
+          >
+            <path
+              d="M14.5 17.5L9 12L14.5 6.5"
+              id="stroke1"
+              stroke="currentColor"
+              stroke-linecap="square"
+              stroke-width="2"
+            />
+          </g>
         </svg>
       </div>
       <div
@@ -284,13 +292,21 @@ exports[`Swiper > additional function > navigation: VNode 1`] = `
           class="t-icon t-icon-chevron-right"
           fill="none"
           height="1em"
+          style="fill: none;"
           viewBox="0 0 24 24"
           width="1em"
         >
-          <path
-            d="M8.08594 17.5L13.5859 12L8.08594 6.50003L9.50015 5.08582L16.4144 12L9.50015 18.9142L8.08594 17.5Z"
-            fill="currentColor"
-          />
+          <g
+            id="chevron-right"
+          >
+            <path
+              d="M9.5 17.5L15 12L9.5 6.5"
+              id="stroke1"
+              stroke="currentColor"
+              stroke-linecap="square"
+              stroke-width="2"
+            />
+          </g>
         </svg>
       </div>
     </div>
@@ -326,13 +342,21 @@ exports[`Swiper > additional function > no valid panel 1`] = `
           class="t-icon t-icon-chevron-left"
           fill="none"
           height="1em"
+          style="fill: none;"
           viewBox="0 0 24 24"
           width="1em"
         >
-          <path
-            d="M15.9144 17.5L10.4144 12L15.9144 6.50003L14.5002 5.08582L7.58594 12L14.5002 18.9142L15.9144 17.5Z"
-            fill="currentColor"
-          />
+          <g
+            id="chevron-left"
+          >
+            <path
+              d="M14.5 17.5L9 12L14.5 6.5"
+              id="stroke1"
+              stroke="currentColor"
+              stroke-linecap="square"
+              stroke-width="2"
+            />
+          </g>
         </svg>
       </div>
       <div
@@ -342,13 +366,21 @@ exports[`Swiper > additional function > no valid panel 1`] = `
           class="t-icon t-icon-chevron-right"
           fill="none"
           height="1em"
+          style="fill: none;"
           viewBox="0 0 24 24"
           width="1em"
         >
-          <path
-            d="M8.08594 17.5L13.5859 12L8.08594 6.50003L9.50015 5.08582L16.4144 12L9.50015 18.9142L8.08594 17.5Z"
-            fill="currentColor"
-          />
+          <g
+            id="chevron-right"
+          >
+            <path
+              d="M9.5 17.5L15 12L9.5 6.5"
+              id="stroke1"
+              stroke="currentColor"
+              stroke-linecap="square"
+              stroke-width="2"
+            />
+          </g>
         </svg>
       </div>
     </div>
