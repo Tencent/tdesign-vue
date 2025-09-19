@@ -6,7 +6,7 @@
 import {
   ref, Ref, computed, onBeforeUpdate, ComponentInternalInstance, watch, VNode,
 } from 'vue';
-import { get, omit } from 'lodash-es';
+import { get } from 'lodash-es';
 import { getVNodeComponentName, getVueComponentName } from '../../utils/helper';
 import Option from '../option';
 import OptionGroup from '../optionGroup';
@@ -39,9 +39,8 @@ export default function useSelectOptions(
     const innerOptions: UniOption[] = props.options?.map((option) => {
       const getFormatOption = (option: TdOptionProps) => {
         const { value, label, disabled } = keys.value;
-        const restOption = omit(option, [value, label, disabled]) as Partial<TdOptionProps>;
         const res = {
-          ...restOption,
+          ...option,
           index: dynamicIndex,
           label: get(option, label),
           value: get(option, value),
