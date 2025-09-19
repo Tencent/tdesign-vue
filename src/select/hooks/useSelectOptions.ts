@@ -40,9 +40,8 @@ export default function useSelectOptions(
     const innerOptions: UniOption[] = props.options?.map((option) => {
       const getFormatOption = (option: TdOptionProps) => {
         const { value, label, disabled } = keys.value;
-        const restOption = omit(option, [value, label, disabled]) as Partial<TdOptionProps>;
         const res = {
-          ...restOption,
+          ...option,
           index: dynamicIndex,
           label: get(option, label),
           value: get(option, value),
