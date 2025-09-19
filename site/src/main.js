@@ -14,18 +14,15 @@ import 'tdesign-vue/style/index.js';
 import '@common/style/web/docs.less';
 
 // import site webcomponents
-import 'tdesign-site-components';
-import 'tdesign-site-components/lib/styles/style.css';
-import 'tdesign-site-components/lib/styles/prism-theme.less';
-import 'tdesign-site-components/lib/styles/prism-theme-dark.less';
-
-// import icons webcomponents
-import 'tdesign-icons-view';
+import '@tdesign/site-components';
+import '@tdesign/site-components/lib/styles/style.css';
+import '@tdesign/site-components/lib/styles/prism-theme.less';
+import '@tdesign/site-components/lib/styles/prism-theme-dark.less';
 
 // 主题生成器挂件
 import 'tdesign-theme-generator';
 
-import { registerLocaleChange } from 'tdesign-site-components';
+import { registerLocaleChange } from '@tdesign/site-components';
 
 registerLocaleChange();
 

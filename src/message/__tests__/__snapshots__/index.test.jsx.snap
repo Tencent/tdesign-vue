@@ -8,6 +8,7 @@ exports[`Message > :props > :closeBtn is a function, () => VNode. 1`] = `
     class="t-icon t-icon-info-circle-filled"
     fill="none"
     height="1em"
+    style="fill: none;"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -36,6 +37,7 @@ exports[`Message > :props > :closeBtn is a string, equal "关闭". 1`] = `
     class="t-icon t-icon-info-circle-filled"
     fill="none"
     height="1em"
+    style="fill: none;"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -60,6 +62,7 @@ exports[`Message > :props > :closeBtn is true, render default close button. 1`] 
     class="t-icon t-icon-info-circle-filled"
     fill="none"
     height="1em"
+    style="fill: none;"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -75,13 +78,21 @@ exports[`Message > :props > :closeBtn is true, render default close button. 1`] 
       class="t-icon t-icon-close"
       fill="none"
       height="1em"
+      style="fill: none;"
       viewBox="0 0 24 24"
       width="1em"
     >
-      <path
-        d="M7.04996 5.63599L11.9997 10.5857L16.9494 5.63599L18.3637 7.0502L13.4139 11.9999L18.3637 16.9497L16.9494 18.3639L11.9997 13.4142L7.04996 18.3639L5.63574 16.9497L10.5855 11.9999L5.63574 7.0502L7.04996 5.63599Z"
-        fill="currentColor"
-      />
+      <g
+        id="close"
+      >
+        <path
+          d="M16.9503 7.05029L12.0005 12M12.0005 12L7.05078 16.9498M12.0005 12L16.9503 16.9498M12.0005 12L7.05078 7.05029"
+          id="stroke1"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
     </svg>
   </span>
 </div>
@@ -95,6 +106,7 @@ exports[`Message > :props > :default is a function, () => <b>这是重要信息<
     class="t-icon t-icon-info-circle-filled"
     fill="none"
     height="1em"
+    style="fill: none;"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -120,6 +132,7 @@ exports[`Message > :props > :default is a string, 这是普通信息 1`] = `
     class="t-icon t-icon-info-circle-filled"
     fill="none"
     height="1em"
+    style="fill: none;"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -143,13 +156,36 @@ exports[`Message > :props > :icon is a function, () => MoreIcon 1`] = `
     class="t-icon t-icon-more"
     fill="none"
     height="1em"
+    style="fill: none;"
     viewBox="0 0 24 24"
     width="1em"
   >
-    <path
-      d="M10.5 3H13.5V6H10.5V3ZM10.5 10.5H13.5V13.5H10.5V10.5ZM10.5 18H13.5V21H10.5V18Z"
-      fill="currentColor"
-    />
+    <g
+      id="more"
+    >
+      <g
+        id="stroke1"
+      >
+        <path
+          d="M11.5 4H12.5V5H11.5V4Z"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+        <path
+          d="M11.5 11.5H12.5V12.5H11.5V11.5Z"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+        <path
+          d="M11.5 19H12.5V20H11.5V19Z"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
+    </g>
   </svg>
   <span
     class="t-message__close"
@@ -175,6 +211,7 @@ exports[`Message > :props > :theme info,success,warning,error,question,loading 1
     class="t-icon t-icon-info-circle-filled"
     fill="none"
     height="1em"
+    style="fill: none;"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -197,6 +234,7 @@ exports[`Message > :props > :theme info,success,warning,error,question,loading 2
     class="t-icon t-icon-check-circle-filled"
     fill="none"
     height="1em"
+    style="fill: none;"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -219,6 +257,7 @@ exports[`Message > :props > :theme info,success,warning,error,question,loading 3
     class="t-icon t-icon-error-circle-filled"
     fill="none"
     height="1em"
+    style="fill: none;"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -241,6 +280,7 @@ exports[`Message > :props > :theme info,success,warning,error,question,loading 4
     class="t-icon t-icon-error-circle-filled"
     fill="none"
     height="1em"
+    style="fill: none;"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -263,6 +303,7 @@ exports[`Message > :props > :theme info,success,warning,error,question,loading 5
     class="t-icon t-icon-help-circle-filled"
     fill="none"
     height="1em"
+    style="fill: none;"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -319,6 +360,7 @@ exports[`Message > :props > pure message contains two classes 1`] = `
     class="t-icon t-icon-info-circle-filled"
     fill="none"
     height="1em"
+    style="fill: none;"
     viewBox="0 0 24 24"
     width="1em"
   >
@@ -341,13 +383,36 @@ exports[`Message > <slot> > <icon> 1`] = `
     class="t-icon t-icon-more"
     fill="none"
     height="1em"
+    style="fill: none;"
     viewBox="0 0 24 24"
     width="1em"
   >
-    <path
-      d="M10.5 3H13.5V6H10.5V3ZM10.5 10.5H13.5V13.5H10.5V10.5ZM10.5 18H13.5V21H10.5V18Z"
-      fill="currentColor"
-    />
+    <g
+      id="more"
+    >
+      <g
+        id="stroke1"
+      >
+        <path
+          d="M11.5 4H12.5V5H11.5V4Z"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+        <path
+          d="M11.5 11.5H12.5V12.5H11.5V11.5Z"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+        <path
+          d="M11.5 19H12.5V20H11.5V19Z"
+          stroke="currentColor"
+          stroke-linecap="square"
+          stroke-width="2"
+        />
+      </g>
+    </g>
   </svg>
   <span
     class="t-message__close"

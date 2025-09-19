@@ -722,6 +722,7 @@ export default defineComponent({
                   loadingText={this.loadingText}
                   panelTopContent={this.panelTopContent}
                   panelBottomContent={this.panelBottomContent}
+                  keys={this.keys}
                 />
               ),
             },

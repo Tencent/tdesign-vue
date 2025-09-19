@@ -182,7 +182,7 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
 
     let current: TreeSelectValue = value;
     const nodeValue = Array.isArray(value) ? value[0] : value;
-    current = isObjectValue.value ? treeRef.value.getItem(nodeValue) : nodeValue;
+    current = isObjectValue.value ? treeRef.value?.getItem(nodeValue) : nodeValue;
     if (!onlyLeafNode) {
       setTreeSelectValue(current, { ...ctx, data: ctx.node.data, trigger: 'check' });
       setInnerVisible(false, {

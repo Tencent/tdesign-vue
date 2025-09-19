@@ -56,7 +56,7 @@ export default {
   multiple: Boolean,
   /** 下拉框内容，可完全自定义 */
   panel: {
-    type: [String, Function] as PropType<TdSelectInputProps['panel']>,
+    type: [String, Function, Object] as PropType<TdSelectInputProps['panel']>,
   },
   /** 占位符 */
   placeholder: {
