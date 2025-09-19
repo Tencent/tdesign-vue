@@ -14,7 +14,7 @@ export default {
   },
   /** 浮层里面的内容 */
   content: {
-    type: [String, Function] as PropType<TdPopupProps['content']>,
+    type: [String, Function, Object] as PropType<TdPopupProps['content']>,
   },
   /** 触发元素，同 triggerElement */
   default: {

@@ -195,7 +195,7 @@ export default defineComponent({
             }),
 
             // tree panel
-            panel: this.getTreePanel,
+            panel: this.getTreePanel(),
 
             // support all select-input component props
             ...(this.selectInputProps as SelectInputProps),

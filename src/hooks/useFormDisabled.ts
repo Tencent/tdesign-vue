@@ -2,7 +2,7 @@ import { computed, getCurrentInstance } from 'vue';
 
 export function useFormDisabled() {
   const formDisabled = computed(() => {
-    const currentInstance = getCurrentInstance().proxy;
+    const currentInstance = getCurrentInstance()?.proxy;
     if (!currentInstance) return null;
     let { $parent } = currentInstance;
     while ($parent) {
