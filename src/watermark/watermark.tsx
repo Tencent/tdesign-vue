@@ -84,7 +84,7 @@ export default defineComponent({
         injectStyle(keyframesStyle);
       }
     };
-    watch(() => [props, fontColor.value], injectWaterMark, { deep: true, flush: 'post' });
+    watch(() => [props, fontColor.value], injectWaterMark, { deep: true });
     onMounted(() => {
       injectWaterMark();
 
@@ -140,24 +140,6 @@ export default defineComponent({
         ref="watermarkRef"
       >
         {renderContent('default', 'content')}
-        <div
-          ref="watermarkContentRef"
-          style={{
-            zIndex: this.zIndex,
-            position: 'absolute',
-            left: 0,
-            right: 0,
-            top: 0,
-            bottom: 0,
-            width: '100%',
-            height: '100%',
-            backgroundSize: `${this.gapX + this.width}px`,
-            pointerEvents: 'none',
-            backgroundRepeat: this.backgroundRepeat,
-            backgroundImage: `url('${this.backgroundImage}')`,
-            animation: this.movable ? `watermark infinite ${(this.moveInterval * 4) / 60}s` : 'none',
-          }}
-        />
       </div>
     );
   },
