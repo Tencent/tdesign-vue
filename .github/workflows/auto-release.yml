@@ -57,6 +57,8 @@ jobs:
         env:
           BODY: ${{ github.event.comment.body }}
         run: |
+          git fetch origin develop
+          git checkout origin/develop -- CHANGELOG.md
           txt=$(cat CHANGELOG.md)
           echo "${txt%%##*}$BODY${txt##*---}" > CHANGELOG.md
           git add .
