@@ -5,25 +5,11 @@ toc: false
 docClass: timeline
 ---
 
-## 🌈 1.14.0 `2025-09-19` 
-### 🚀 Features
-- `Icon`： @uyarn 
-    - `tdesign-icons-vue` 发布 0.4.x 版本，新增 align-bottom、no-result、no-result-filled、 tree-list、wifi-no、 wifi-no-filled、logo-stackblitz-filled、logo-stackblitz、logo-wecom-filled 图标，移除 video-camera-3、video-camera-3-filled、list 图标，此前有依赖以上三个图标升级请注意 ⚠️  ([#3709](https://github.com/Tencent/tdesign-vue/pull/3709))
-    - 按需加载方式使用的图标资源支持可变粗细功能，通过`strokeWidth`属性进行配置，详情请参考示例和文档 ([#3709](https://github.com/Tencent/tdesign-vue/pull/3709))
-   - 按需加载方式使用的图标资源支持多色填充功能，通过`strokeColor` 和 `fillColor` 属性进行配置，详情请参考示例和文档 ([#3709](https://github.com/Tencent/tdesign-vue/pull/3709))
-- `Textarea`: 新增 `allowInputOverMax` API，允许输入超过 `maxlength` @RSS1102 ([#3691](https://github.com/Tencent/tdesign-vue/pull/3691))
-- `Tabs`: @RSS1102 
-    - 新增 `dragSort` 和 `onDragSort` 方法，用于进行选项卡调换顺序的需求  ([#3711](https://github.com/Tencent/tdesign-vue/pull/3711))
-    - 将 remove 事件从删除图标移至外层容器, 保证替换图标功能正常使用，有覆盖删除图标样式请注意此变更 ⚠️ ([#3686](https://github.com/Tencent/tdesign-vue/pull/3686))
-- `Skeleton`: 修复 `theme` 默认值不符合文档描述的问题，需要 `paragraph` 效果升级后手动设置 `theme` @liweijie0812 ([#3682](https://github.com/Tencent/tdesign-vue/pull/3682))
 
+## 🌈 1.14.1 `2025-09-22` 
 ### 🐞 Bug Fixes
-- `Tree`: 修复 `draggable` 在 `disabled` 状态下依旧生效的异常 @RylanBot ([#3690](https://github.com/Tencent/tdesign-vue/pull/3690))
-- `Watermark`: 修复深色模式下，文字水印内容显示不明显的问题 @liweijie0812 ([#3697](https://github.com/Tencent/tdesign-vue/pull/3697))
-- `Dialog`: 修复`1.10.8`版本后，`showInAttachedElement` 不能配合 `attach` 一起使用的问题 @uyarn ([#3692](https://github.com/Tencent/tdesign-vue/pull/3692))
-- `Tree`: 修复自定义 icon 场景下，全被设为 open 状态，导致图标颜色错误的问题 @RylanBot([#3713](https://github.com/Tencent/tdesign-vue/pull/3713))
-- `Tag`: 修复点击关闭按钮会同时触发点击事件的问题 @uyarn ([#3715](https://github.com/Tencent/tdesign-vue/pull/3715))
-- `Select`: 修复设置 `keys` 后， onChange 回调参数中 selectedOptions 参数缺失的问题 @uyarn ([#3716](https://github.com/Tencent/tdesign-vue/pull/3716))
+- `Watermark`: 修复 `1.14.0` 版本中多次引入水印组件出现节点渲染颜色过深的问题 @uyarn ([#3721](https://github.com/Tencent/tdesign-vue/pull/3721))
+
 
 ## 🌈 1.14.0 `2025-09-19` 
 ### 🚀 Features
@@ -36,7 +22,7 @@ docClass: timeline
     - 新增 `dragSort` 和 `onDragSort` 方法，用于进行选项卡调换顺序的需求  ([#3711](https://github.com/Tencent/tdesign-vue/pull/3711))
     - 将 remove 事件从删除图标移至外层容器, 保证替换图标功能正常使用，有覆盖删除图标样式请注意此变更 ⚠️ ([#3686](https://github.com/Tencent/tdesign-vue/pull/3686))
 - `Skeleton`: 修复 `theme` 默认值不符合文档描述的问题，需要 `paragraph` 效果升级后手动设置 `theme` @liweijie0812 ([#3682](https://github.com/Tencent/tdesign-vue/pull/3682))
-- `tabs`: 
+
 ### 🐞 Bug Fixes
 - `Tree`: 修复 `draggable` 在 `disabled` 状态下依旧生效的异常 @RylanBot ([#3690](https://github.com/Tencent/tdesign-vue/pull/3690))
 - `Watermark`: 修复深色模式下，文字水印内容显示不明显的问题 @liweijie0812 ([#3697](https://github.com/Tencent/tdesign-vue/pull/3697))
@@ -1361,3 +1347,4 @@ docClass: timeline
 
 ## 🌈 0.x `2020-12-21 - 2022-12-14`
 前往 [GitHub](https://github.com/Tencent/tdesign-vue/blob/develop/CHANGELOG-0.x.md) 查看 `0.x` 更新日志
+
