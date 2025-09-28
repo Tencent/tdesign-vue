@@ -30,6 +30,15 @@ export default {
     type: Boolean,
     default: true,
   },
+  /** 水印的布局方式，rectangular：矩形，即横平竖直的水印；hexagonal：六边形，即错位的水印 */
+  layout: {
+    type: String as PropType<TdWatermarkProps['layout']>,
+    default: 'rectangular' as TdWatermarkProps['layout'],
+    validator(val: TdWatermarkProps['layout']): boolean {
+      if (!val) return true;
+      return ['rectangular', 'hexagonal'].includes(val);
+    },
+  },
   /** 行间距，只作用在多行（`content` 配置为数组）情况下 */
   lineSpace: {
     type: Number,
@@ -46,7 +55,7 @@ export default {
   offset: {
     type: Array as PropType<TdWatermarkProps['offset']>,
   },
-  /** 水印是否可被删除，默认会开启水印节点防删 */
+  /** 水印是否可被删除 */
   removable: {
     type: Boolean,
     default: true,

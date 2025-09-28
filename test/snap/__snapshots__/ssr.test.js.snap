@@ -1367,6 +1367,8 @@ exports[`ssr snapshot test > renders ./src/watermark/_example/graylevel.vue corr
 
 exports[`ssr snapshot test > renders ./src/watermark/_example/image.vue correctly 1`] = `"<div data-server-rendered="true" class="t-watermark" style="position:relative;overflow:hidden;width:100%;"><div style="height:300px;"></div></div>"`;
 
+exports[`ssr snapshot test > renders ./src/watermark/_example/layout.vue correctly 1`] = `"<div data-server-rendered="true"><h3>横平竖直的水印</h3><div class="t-watermark" style="position:relative;overflow:hidden;width:100%;"><div style="height:300px;"></div></div><h3>错位的水印</h3><div class="t-watermark" style="position:relative;overflow:hidden;width:100%;"><div style="height:300px;"></div></div></div>"`;
+
 exports[`ssr snapshot test > renders ./src/watermark/_example/movingImage.vue correctly 1`] = `"<div data-server-rendered="true" class="t-watermark" style="position:relative;overflow:hidden;width:100%;"><div style="height:300px;"></div></div>"`;
 
 exports[`ssr snapshot test > renders ./src/watermark/_example/movingText.vue correctly 1`] = `"<div data-server-rendered="true" class="t-watermark" style="position:relative;overflow:hidden;width:100%;"><div style="height:300px;"></div></div>"`;

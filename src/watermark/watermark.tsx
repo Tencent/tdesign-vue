@@ -48,6 +48,7 @@ export default defineComponent({
       offsetLeft: offsetLeft.value,
       offsetTop: offsetTop.value,
       fontColor: fontColor.value,
+      layout: props.layout,
     }));
     const removeWaterMark = () => {
       if (!watermarkContentRef.value) return;
@@ -56,7 +57,7 @@ export default defineComponent({
     };
 
     const injectWaterMark = () => {
-      generateBase64Url(bgImageOptions.value, (base64Url) => {
+      generateBase64Url(bgImageOptions.value, (base64Url, backgroundSize) => {
         removeWaterMark();
 
         backgroundImage.value = base64Url;
@@ -70,7 +71,7 @@ export default defineComponent({
           bottom: 0,
           width: '100%',
           height: '100%',
-          backgroundSize: `${gapX.value + props.width}px`,
+          backgroundSize: `${backgroundSize?.width || gapX.value + props.width}px`,
           pointerEvents: 'none',
           backgroundRepeat: backgroundRepeat.value,
           backgroundImage: `url('${backgroundImage.value}')`,
