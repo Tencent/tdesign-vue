@@ -6,7 +6,7 @@ import tdocPlugin from './plugins/plugin-tdoc';
 
 const publicPathMap = {
   preview: '/',
-  production: '/vue/',
+  production: 'https://static.tdesign.tencent.com/vue/',
 };
 
 // Rollup 4+ 的 tree-shaking 策略调整, 这里是为了让样式在站点构建正常
