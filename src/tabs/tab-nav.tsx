@@ -367,9 +367,10 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
   },
   mounted() {
     this.$nextTick(() => {
-      const { setNavsWrap } = handleDragSort(this.$props);
-      setNavsWrap(this.$refs.navsWrap as HTMLDivElement);
-
+      if (this.dragSort) {
+        const { setNavsWrap } = handleDragSort(this.$props);
+        setNavsWrap(this.$refs.navsWrap as HTMLDivElement);
+      }
       this.watchDomChange();
       this.calculateNavBarStyle();
       this.getMaxScrollLeft();
