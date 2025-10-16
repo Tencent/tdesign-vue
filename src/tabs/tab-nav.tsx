@@ -135,9 +135,9 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
       return this.addable ? { 'min-height': '48px' } : null;
     },
     activeElement(): HTMLElement {
-      const activeIndx = this.navs.findIndex((nav) => nav.active);
-      if (activeIndx > -1) {
-        return (this.$refs[`tabItem${activeIndx}`] as unknown as ComponentPublicInstance)?.$el;
+      const activeIndex = this.navs.findIndex((nav) => nav.active);
+      if (activeIndex > -1) {
+        return (this.$refs[`tabItem${activeIndex}`] as unknown as ComponentPublicInstance)?.$el;
       }
       return null;
     },
@@ -365,9 +365,10 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
   },
   mounted() {
     this.$nextTick(() => {
-      const { setNavsWrap } = handleDragSort(this.$props);
-      setNavsWrap(this.$refs.navsWrap as HTMLDivElement);
-
+      if (this.dragSort) {
+        const { setNavsWrap } = handleDragSort(this.$props);
+        setNavsWrap(this.$refs.navsWrap as HTMLDivElement);
+      }
       this.watchDomChange();
       this.calculateNavBarStyle();
       this.getMaxScrollLeft();
