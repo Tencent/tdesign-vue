@@ -14,6 +14,7 @@ import { emitEvent } from '../utils/event';
 import {
   getPopperPlacement, attachListeners, triggers, defaultVisibleDelay,
 } from './utils';
+import log from '../_common/js/log';
 import { AttachNode } from '../common';
 
 const classPrefixMixins = getClassPrefixMixins('popup');
@@ -50,6 +51,7 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
     return {
       /** popperjs instance */
       popper: null as ReturnType<typeof createPopper>,
+      _popperUpdateScheduled: false,
       /** timeout id */
       timeout: null,
       hasDocumentEvent: false,
@@ -194,33 +196,91 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
     updatePopper() {
       const { $el: triggerEl } = this;
       const popperEl = this.$refs.popper as HTMLElement;
+      const overlayEl = this.$refs.overlay as HTMLElement;
 
       if (!popperEl || !this.visible) return;
       if (this.popper) {
-        this.popper.update();
+        if (!this._popperUpdateScheduled) this.popper.update();
+        const actual = overlayEl || popperEl;
+        if (actual && actual !== popperEl) {
+          popperEl.style.transform = actual.style.transform || '';
+          const placementAttr = actual.getAttribute('data-popper-placement');
+          if (placementAttr) popperEl.setAttribute('data-popper-placement', placementAttr);
+        }
         return;
       }
-      this.popper = createPopper(triggerEl, popperEl, {
-        modifiers:
-          getIEVersion() > 9
-            ? []
-            : [
-              {
-                name: 'computeStyles',
-                options: {
-                  // 默认为 true，即使用 transform 定位，开启 gpu 加速
-                  // ie9 不支持 transform，需要添加 -ms- 前缀，@popperjs/core 没有添加这个样式，
-                  // 在 ie9 下则去掉 gpu 优化加速，使用 top, right, bottom, left 定位
-                  gpuAcceleration: false,
-                },
-              },
-            ],
-        placement: getPopperPlacement(this.placement as TdPopupProps['placement']),
+
+      const placement = getPopperPlacement(this.placement as TdPopupProps['placement']);
+
+      const buildFallbackPlacements = (pl: string) => {
+        const parts = String(pl).split('-');
+        const base = parts[0];
+        const variation = parts[1];
+        const fallbacks: string[] = [];
+        if (variation === 'start') fallbacks.push(`${base}-end`);
+        else if (variation === 'end') fallbacks.push(`${base}-start`);
+        switch (base) {
+          case 'top':
+            fallbacks.push('bottom-start', 'bottom-end');
+            break;
+          case 'bottom':
+            fallbacks.push('top-start', 'top-end');
+            break;
+          case 'left':
+            fallbacks.push('right-start', 'right-end');
+            break;
+          case 'right':
+            fallbacks.push('left-start', 'left-end');
+            break;
+          default:
+            break;
+        }
+        return fallbacks;
+      };
+
+      const baseModifiers: any[] = [];
+      if (getIEVersion() <= 9) {
+        baseModifiers.push({
+          name: 'computeStyles',
+          options: {
+            // 默认为 true，即使用 transform 定位，开启 gpu 加速
+            // ie9 不支持 transform，需要添加 -ms- 前缀，@popperjs/core 没有添加这个样式，
+            // 在 ie9 下则去掉 gpu 优化加速，使用 top, right, bottom, left 定位
+            gpuAcceleration: false,
+          },
+        });
+      }
+
+      const userOptions = (this.popperOptions || {}) as any;
+      const userModifiers = Array.isArray(userOptions.modifiers) ? userOptions.modifiers.slice() : [];
+
+      const hasFlip = userModifiers.some((m: any) => m && m.name === 'flip');
+      if (!hasFlip) {
+        const flipModifier = {
+          name: 'flip',
+          options: {
+            fallbackPlacements: buildFallbackPlacements(placement),
+          },
+        };
+        userModifiers.unshift(flipModifier);
+      }
+
+      const mergedModifiers = [...baseModifiers, ...userModifiers];
+
+      const popperTargetEl = overlayEl || popperEl;
+      this.popper = createPopper(triggerEl, popperTargetEl, {
+        modifiers: mergedModifiers,
+        placement,
         onFirstUpdate: () => {
           this.$nextTick(this.updatePopper);
         },
-        ...this.popperOptions,
+        ...userOptions,
       });
+      if (overlayEl && overlayEl !== popperEl) {
+        const placementAttr = overlayEl.getAttribute('data-popper-placement');
+        if (placementAttr) popperEl.setAttribute('data-popper-placement', placementAttr);
+        popperEl.style.transform = overlayEl.style.transform || '';
+      }
     },
 
     // popup弹出第一次初始化暴露事件
@@ -364,7 +424,32 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
     },
     onAfterEnter() {
       if (this.visible) {
+        if (this._popperUpdateScheduled) {
+          this.updatePopper();
+          return;
+        }
+        this._popperUpdateScheduled = true;
         this.updatePopper();
+        this.$nextTick(() => {
+          if (!this.popper?.update) {
+            this._popperUpdateScheduled = false;
+            return;
+          }
+          const runUpdate = () => {
+            try {
+              this.popper.update();
+            } catch (e) {
+              log.error('Popup', `update popper failed ${e}`);
+            } finally {
+              this._popperUpdateScheduled = false;
+            }
+          };
+          if (typeof requestAnimationFrame !== 'undefined') {
+            requestAnimationFrame(runUpdate);
+          } else {
+            runUpdate();
+          }
+        });
       }
     },
     onLeave() {
