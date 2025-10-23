@@ -43,6 +43,7 @@ export default defineComponent({
     const currentIndex = computed(() => {
       let index = 0;
       uidArr.value.forEach((item: number | undefined, itemIndex: number) => {
+        // vue27:ts-ignore
         if (item === instance.uid) {
           index = itemIndex;
         }
@@ -111,6 +112,7 @@ export default defineComponent({
     const {
       dotColor,
       dotClassName,
+      // vue27:ts-ignore
       style = {},
       labelClassName,
       mode,

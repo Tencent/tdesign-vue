@@ -98,7 +98,9 @@ export default defineComponent({
                 filter: this.filterByText,
                 icon: !this.filterByText,
                 activeMultiple: this.multiple,
+                // vue27:ts-ignore
                 onExpand: this.treeNodeExpand,
+                // vue27:ts-ignore
                 onLoad: this.treeNodeLoad,
                 onChange: this.treeNodeChange,
                 onActive: this.treeNodeActive,

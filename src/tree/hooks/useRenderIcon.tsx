@@ -58,7 +58,9 @@ export default function useRenderIcon(state: TypeTreeItemState) {
           `${classPrefix}-folder-icon`,
           isDefaultIcon ? `${componentName}__icon--default` : '',
         ]}
+        // vue27:ts-ignore
         trigger="expand"
+        // vue27:ts-ignore
         ignore="active"
         onmousedown={handleMousedown}
       >

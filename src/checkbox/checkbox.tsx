@@ -252,6 +252,7 @@ export default defineComponent({
                 name={this.tName || this.name || undefined}
                 value={this.value ? this.value : undefined}
                 checked={this.tChecked}
+                // vue27:ts-ignore
                 on={{ change: this.handleChange }}
                 key="input"
                 tabindex="-1"
