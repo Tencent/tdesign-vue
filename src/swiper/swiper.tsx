@@ -53,7 +53,7 @@ export default mixins(Vue as VueConstructor<SwiperVue>, classPrefixMixins, getGl
     navigationConfig(): SwiperNavigation {
       return {
         ...defaultNavigation,
-        ...(isVNode(this.navigation as VNode) ? {} : this.navigation),
+        ...(typeof this.navigation === 'object' && !isVNode(this.navigation as VNode) ? this.navigation : {}),
       };
     },
     isEnd(): boolean {
@@ -265,6 +265,7 @@ export default mixins(Vue as VueConstructor<SwiperVue>, classPrefixMixins, getGl
       );
     },
     renderNavigation() {
+      if (this.navigation === false) return null;
       const navigationSlot = renderTNodeJSX(this, 'navigation');
       if (isVNode(this.navigation as VNode)) return this.navigation;
       if (navigationSlot && isVNode(navigationSlot?.[0])) return navigationSlot;
