@@ -60,12 +60,12 @@ const useVirtualScroll = (container: Ref<HTMLElement>, params: UseVirtualScrollP
     return tScroll.value.type === 'virtual' && tScroll.value.threshold < data.length;
   });
 
-  const getTrScrollTopHeightList = (trHeightList: number[], containerHeight: number) => {
+  const getTrScrollTopHeightList = (trHeightList: number[]) => {
     const list: number[] = [];
     const { data } = params.value;
-    // 当前行滚动高度 = 上一行滚动高度 + 当前行高度 + 容器高度
+    // 当前行滚动高度 = 上一行滚动高度 + 上一行高度
     for (let i = 0, len = data.length; i < len; i++) {
-      list[i] = (list[i - 1] || containerHeight) + (trHeightList[i] || tScroll.value.rowHeight);
+      list[i] = (list[i - 1] || 0) + (trHeightList[i - 1] || tScroll.value.rowHeight);
     }
     return list;
   };
@@ -81,13 +81,24 @@ const useVirtualScroll = (container: Ref<HTMLElement>, params: UseVirtualScrollP
         break;
       }
     }
-    if (currentIndex < 0) return;
-    const startIndex = Math.min(currentIndex, trScrollTopHeightList.length - tripleBufferSize.value);
-    const endIndex = startIndex + tripleBufferSize.value;
-    if (startAndEndIndex.value.join() !== [startIndex, endIndex].join() && startIndex >= 0) {
+    if (currentIndex < 0) {
+      // 处理滚动到底部的情况
+      const lastIndex = trScrollTopHeightList.length - 1;
+      if (scrollTop > trScrollTopHeightList[lastIndex]) {
+        currentIndex = lastIndex;
+      } else {
+        return;
+      }
+    }
+
+    const { bufferSize } = tScroll.value;
+    const startIndex = Math.max(0, currentIndex - bufferSize);
+    const endIndex = Math.min(trScrollTopHeightList.length, currentIndex + bufferSize * 2);
+
+    if (startAndEndIndex.value.join() !== [startIndex, endIndex].join()) {
       visibleData.value = params.value.data.slice(startIndex, endIndex);
       const lastScrollTop = trScrollTopHeightList[startIndex - 1];
-      const top = lastScrollTop > 0 ? lastScrollTop - containerHeight.value : 0;
+      const top = lastScrollTop > 0 ? lastScrollTop : 0;
       translateY.value = top;
       startAndEndIndex.value = [startIndex, endIndex];
     }
@@ -101,7 +112,7 @@ const useVirtualScroll = (container: Ref<HTMLElement>, params: UseVirtualScrollP
     const newTrHeightList = trHeightList.value;
     if (newTrHeightList[rowIndex] !== trHeight) {
       newTrHeightList[rowIndex] = trHeight;
-      const scrollTopHeightList = getTrScrollTopHeightList(newTrHeightList, containerHeight.value);
+      const scrollTopHeightList = getTrScrollTopHeightList(newTrHeightList);
       trScrollTopHeightList.value = scrollTopHeightList;
 
       const lastIndex = scrollTopHeightList.length - 1;
