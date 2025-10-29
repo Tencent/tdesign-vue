@@ -156,6 +156,5 @@ export type PopupTriggerSource =
   | 'trigger-element-blur'
   | 'trigger-element-focus'
   | 'trigger-element-mousedown'
-  | 'trigger-element-close'
   | 'context-menu'
   | 'keydown-esc';
