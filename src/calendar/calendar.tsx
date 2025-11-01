@@ -539,8 +539,8 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
         const beginYear = dayjs(this.rangeFromTo.from).year();
         const endYear = dayjs(this.rangeFromTo.to).year();
         // 读取起止月份
-        const beginMon = parseInt(dayjs(rangeFromTo.value.from).format('M'), 10);
-        const endMon = parseInt(dayjs(rangeFromTo.value.to).format('M'), 10);
+        const beginMon = parseInt(dayjs(this.rangeFromTo.from).format('M'), 10);
+        const endMon = parseInt(dayjs(this.rangeFromTo.to).format('M'), 10);
 
         if (beginYear === endYear) {
           // 同一年内，禁用开始月份至结束月份之外的月份选项
