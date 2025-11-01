@@ -206,11 +206,10 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
       }
 
       for (let i = begin; i <= end; i++) {
-        const disabled = this.checkMonthAndYearSelectorDisabled(i, this.curSelectedMonth);
         re.push({
           value: i,
           label: this.t(this.global.yearSelection, { year: i }),
-          disabled,
+          disabled: false,
         });
       }
       return re;
