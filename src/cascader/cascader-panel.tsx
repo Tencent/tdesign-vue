@@ -29,6 +29,7 @@ export default defineComponent({
         empty={this.empty}
         trigger={this.trigger}
         cascaderContext={this.cascaderContext}
+        scroll={this.scroll}
         scopedSlots={{ empty: this.slots.empty, option: this.slots.option, loadingText: this.slots.loadingText }}
         onClick={this.onClick}
       />

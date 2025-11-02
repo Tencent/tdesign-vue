@@ -99,6 +99,12 @@ export default {
   readonly: Boolean,
   /** 多选且可搜索时，是否在选中一个选项后保留当前的搜索关键词 */
   reserveKeyword: Boolean,
+  /**
+   * 懒加载和虚拟滚动。为保证组件收益最大化，当数据量小于阈值 `scroll.threshold` 时，无论虚拟滚动的配置是否存在，组件内部都不会开启虚拟滚动，`scroll.threshold` 默认为 `100`
+   */
+  scroll: {
+    type: Object as PropType<TdCascaderProps['scroll']>,
+  },
   /** 透传 SelectInput 筛选器输入框组件的全部属性 */
   selectInputProps: {
     type: Object as PropType<TdCascaderProps['selectInputProps']>,

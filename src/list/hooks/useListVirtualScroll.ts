@@ -1,7 +1,8 @@
 import { Ref, computed } from '@vue/composition-api';
+import log from '../../_common/js/log';
 import useVirtualScroll from '../../hooks/useVirtualScrollNew';
 import { TdListProps } from '../type';
-import { Styles } from '../../common';
+import { ComponentScrollToElementParams, Styles } from '../../common';
 
 const useListVirtualScroll = (scroll: TdListProps['scroll'], listRef: Ref<HTMLElement>, listItems: Ref<any[]>) => {
   const virtualScrollParams = computed(() => ({
@@ -45,12 +46,28 @@ const useListVirtualScroll = (scroll: TdListProps['scroll'], listRef: Ref<HTMLEl
     } as Styles),
   );
 
+  const handleScrollTo = (params: ComponentScrollToElementParams) => {
+    const { index, key } = params;
+    const targetIndex = index === 0 ? index : index ?? Number(key);
+    if (!targetIndex && targetIndex !== 0) {
+      log.error('List', 'scrollTo: `index` or `key` must exist.');
+      return;
+    }
+    if (targetIndex < 0 || targetIndex >= listItems.value.length) {
+      log.error('List', `${targetIndex} does not exist in data, check \`index\` or \`key\` please.`);
+      return;
+    }
+    virtualConfig.scrollToElement({ ...params, index: targetIndex - 1 });
+  };
+
   return {
     virtualConfig,
     cursorStyle,
     listStyle,
     isVirtualScroll,
     onInnerVirtualScroll,
+    scrollToElement: handleScrollTo,
+    handleRowMounted: virtualConfig.handleRowMounted,
   };
 };
 

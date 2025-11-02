@@ -1,4 +1,6 @@
-import { defineComponent, PropType, computed } from '@vue/composition-api';
+import {
+  defineComponent, PropType, computed, onMounted, ref, nextTick,
+} from '@vue/composition-api';
 import { ChevronRightIcon as TdChevronRightIcon } from 'tdesign-icons-vue';
 import { getFullPathLabel } from '../core/helper';
 import { getCascaderItemClass, getCascaderItemIconClass } from '../core/className';
@@ -33,6 +35,11 @@ const props = {
   onChange: Function as PropType<() => void>,
   onClick: Function as PropType<() => void>,
   onMouseenter: Function as PropType<() => void>,
+  handleRowMounted: Function as PropType<(rowData: any) => void>,
+  isVirtual: {
+    type: Boolean,
+    default: false,
+  },
 };
 
 export default defineComponent({
@@ -44,12 +51,25 @@ export default defineComponent({
     const classPrefix = usePrefixClass();
     const { STATUS, SIZE } = useCommonClassName();
     const { ChevronRightIcon } = useGlobalIcon({ ChevronRightIcon: TdChevronRightIcon });
+    const itemRef = ref<HTMLLIElement>(null);
 
     const itemClass = computed(() => getCascaderItemClass(classPrefix.value, props.node, SIZE.value, STATUS.value, props.cascaderContext));
 
     const iconClass = computed(() => getCascaderItemIconClass(classPrefix.value, props.node, STATUS.value, props.cascaderContext));
 
+    onMounted(() => {
+      if (props.isVirtual) {
+        nextTick(() => {
+          props?.handleRowMounted({
+            ref: itemRef,
+            data: props.node,
+          });
+        });
+      }
+    });
+
     return {
+      itemRef,
       COMPONENT_NAME,
       ChevronRightIcon,
       iconClass,
@@ -123,6 +143,7 @@ export default defineComponent({
 
     return (
       <li
+        ref="itemRef"
         class={itemClass}
         onClick={(e: Event) => {
           e.stopPropagation();

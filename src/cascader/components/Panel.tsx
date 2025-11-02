@@ -1,13 +1,12 @@
 import { PropType } from 'vue';
 import { defineComponent, computed } from '@vue/composition-api';
-import Item from './Item';
 import { TreeNode, CascaderContextType, CascaderValue } from '../interface';
 import CascaderProps from '../props';
 import { usePrefixClass, useConfig } from '../../hooks/useConfig';
 import { useTNodeDefault } from '../../hooks/tnode';
-import { getDefaultNode } from '../../hooks/render-tnode';
 import { getPanels } from '../core/helper';
-import { expendClickEffect, valueChangeEffect } from '../core/effect';
+import { expendClickEffect } from '../core/effect';
+import List from './List';
 
 export default defineComponent({
   name: 'TCascaderSubPanel',
@@ -21,6 +20,7 @@ export default defineComponent({
     cascaderContext: {
       type: Object as PropType<CascaderContextType>,
     },
+    scroll: CascaderProps.scroll,
   },
   setup(props, { emit }) {
     const renderTNodeJSXDefault = useTNodeDefault();
@@ -39,14 +39,13 @@ export default defineComponent({
 
     // 异步加载回显时默认触发第一个值
     if (treeStore?.config?.load && valueType === 'full' && (cascaderValue as Array<CascaderValue>).length > 0) {
-      const firstValue = multiple ? cascaderValue[0][0] : cascaderValue[0];
+      const firstValue = multiple ? (cascaderValue as any)[0][0] : (cascaderValue as any)[0];
       const firstExpandNode = treeStore.nodes.find((node: TreeNode) => node.value === firstValue);
       handleExpand(firstExpandNode, 'click');
     }
     return {
       global,
       panels,
-      handleExpand,
       renderTNodeJSXDefault,
       COMPONENT_NAME,
       emit,
@@ -54,56 +53,8 @@ export default defineComponent({
   },
   render() {
     const {
-      global, COMPONENT_NAME, handleExpand, renderTNodeJSXDefault, cascaderContext, panels, emit,
+      global, COMPONENT_NAME, renderTNodeJSXDefault, option, cascaderContext, panels, scroll, trigger,
     } = this;
-
-    const renderItem = (node: TreeNode, index: number) => {
-      const optionChild = node.data.content
-        ? getDefaultNode(node.data.content(this.$createElement))
-        : renderTNodeJSXDefault('option', {
-          params: { item: node.data, index },
-        });
-      return (
-        <Item
-          key={node.value}
-          node={node}
-          cascaderContext={cascaderContext}
-          {...{
-            props: {
-              node,
-              optionChild,
-              cascaderContext,
-              onClick: () => {
-                emit('click', node.value, node);
-                handleExpand(node, 'click');
-              },
-              onMouseenter: () => {
-                handleExpand(node, 'hover');
-              },
-              onChange: () => {
-                valueChangeEffect(node, cascaderContext);
-              },
-            },
-          }}
-        />
-      );
-    };
-
-    const renderList = (treeNodes: TreeNode[], isFilter = false, segment = true, index = 1) => (
-      <ul
-        class={[
-          `${COMPONENT_NAME}__menu`,
-          'narrow-scrollbar',
-          {
-            [`${COMPONENT_NAME}__menu--segment`]: segment,
-            [`${COMPONENT_NAME}__menu--filter`]: isFilter,
-          },
-        ]}
-        key={`${COMPONENT_NAME}__menu${index}`}
-      >
-        {treeNodes.map((node: TreeNode) => renderItem(node, index))}
-      </ul>
-    );
 
     const renderEmpty = () => {
       if (this.empty && typeof this.empty === 'string') {
@@ -114,9 +65,31 @@ export default defineComponent({
 
     const renderPanels = () => {
       const { inputVal, treeNodes } = cascaderContext;
-      return inputVal
-        ? renderList(treeNodes, true)
-        : panels.map((treeNodes, index: number) => renderList(treeNodes, false, index !== panels.length - 1, index));
+      return inputVal ? (
+        <List
+          treeNodes={treeNodes}
+          isFilter
+          option={option}
+          cascaderContext={cascaderContext}
+          scroll={scroll}
+          trigger={trigger}
+        />
+      ) : (
+        panels.map((treeNodes, index: number) => (
+          <List
+            treeNodes={treeNodes}
+            isFilter={false}
+            segment={index !== panels.length - 1}
+            key={`${COMPONENT_NAME}__menu${index}`}
+            listKey={`${COMPONENT_NAME}__menu${index}`}
+            level={index}
+            option={option}
+            cascaderContext={cascaderContext}
+            scroll={scroll}
+            trigger={trigger}
+          />
+        ))
+      );
     };
 
     let content;
