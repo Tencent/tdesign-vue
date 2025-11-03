@@ -82,7 +82,8 @@ describe('Cascader', () => {
           },
         }).findComponent(CascaderPanel);
         const firstItem = wrapper.find('.t-cascader__item');
-        firstItem.trigger('click');
+
+        await firstItem.trigger('click');
         await wrapper.vm.$nextTick();
 
         expect(fn).toBeCalled();

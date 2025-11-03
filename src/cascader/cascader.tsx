@@ -231,6 +231,7 @@ export default defineComponent({
               loading={this.loading}
               loadingText={this.loadingText}
               cascaderContext={cascaderContext}
+              scroll={this.scroll}
               scopedSlots={{ option: slots.option, empty: slots.empty, loadingText: slots.loadingText }}
             />
           ),
