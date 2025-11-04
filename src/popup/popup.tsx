@@ -363,8 +363,9 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
       }
     },
     onAfterEnter() {
-      if (this.visible) {
-        this.updatePopper();
+      if (this.visible && this.popper) {
+        // 动画完成后，元素已有正确尺寸，使用 forceUpdate 强制重新运行所有 modifiers
+        this.popper.forceUpdate();
       }
     },
     onLeave() {
