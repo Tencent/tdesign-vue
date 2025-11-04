@@ -205,7 +205,7 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
       if (typeof this.popperContentElement === 'string') {
         popperEl = this.$refs[this.popperContentElement] as HTMLElement;
       } else {
-        popperEl = this.popperContentElement || (this.$refs.popper as HTMLElement);
+        popperEl = this.popperContentElement || this.$refs.popper;
       }
 
       if (!popperEl || !this.visible) return;
