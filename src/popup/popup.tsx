@@ -38,6 +38,13 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
 
   props: {
     ...props,
+    /** @private
+     * @description popper 内容元素，用于自定义 popper 元素时传入
+     * 可以是 HTMLElement 或者 ref 名称字符串 (如 'overlay')
+     */
+    popperContentElement: {
+      type: [String, Object],
+    },
     expandAnimation: {
       type: Boolean,
     },
@@ -193,7 +200,13 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
   methods: {
     updatePopper() {
       const { $el: triggerEl } = this;
-      const popperEl = this.$refs.popper as HTMLElement;
+      // 支持传入字符串 ref 名称或 HTMLElement
+      let popperEl: HTMLElement;
+      if (typeof this.popperContentElement === 'string') {
+        popperEl = this.$refs[this.popperContentElement] as HTMLElement;
+      } else {
+        popperEl = this.popperContentElement || (this.$refs.popper as HTMLElement);
+      }
 
       if (!popperEl || !this.visible) return;
       if (this.popper) {
