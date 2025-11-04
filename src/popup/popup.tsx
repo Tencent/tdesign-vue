@@ -1,4 +1,4 @@
-import { VNodeDirective } from 'vue';
+import { PropType, VNodeDirective } from 'vue';
 import { createPopper } from '@popperjs/core';
 import { debounce } from 'lodash-es';
 import { on, off, once } from '../utils/dom';
@@ -39,11 +39,11 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
   props: {
     ...props,
     /** @private
-     * @description popper 内容元素，用于自定义 popper 元素时传入
+     * @description popper 内容元素,用于自定义 popper 元素时传入
      * 可以是 HTMLElement 或者 ref 名称字符串 (如 'overlay')
      */
     popperContentElement: {
-      type: [String, Object],
+      type: [String, Object] as PropType<string | HTMLElement>,
     },
     expandAnimation: {
       type: Boolean,
