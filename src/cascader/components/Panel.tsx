@@ -61,7 +61,14 @@ export default defineComponent({
       const optionChild = node.data.content
         ? getDefaultNode(node.data.content(this.$createElement))
         : renderTNodeJSXDefault('option', {
-          params: { item: node.data, index },
+          params: {
+            item: node.data,
+            index,
+            onExpand: () => handleExpand(node, 'click'),
+            onChange: () => {
+              valueChangeEffect(node, cascaderContext);
+            },
+          },
         });
       return (
         <Item
