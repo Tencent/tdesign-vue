@@ -3,6 +3,7 @@
     <t-cascader v-model="value" :options="options" filterable clearable />
     <t-cascader v-model="value2" :options="options" filterable clearable multiple :min-collapsed-num="2" />
     <t-cascader v-model="value3" :filter="filterMethod" :options="options" clearable :min-collapsed-num="2" />
+    <t-cascader v-model="value4" filterable :options="options" clearable multiple check-strictly />
   </t-space>
 </template>
 <script>
@@ -46,6 +47,7 @@ export default {
       value: '',
       value2: ['1.1'],
       value3: '',
+      value4: [],
     };
   },
   methods: {
