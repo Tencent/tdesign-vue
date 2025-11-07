@@ -100,7 +100,7 @@ export default defineComponent({
 
     function RenderCheckBox(node: TreeNode, cascaderContext: CascaderContextType) {
       const {
-        checkProps, value, max, inputVal,
+        checkProps, value, max, inputVal, isParentFilterable,
       } = cascaderContext;
       const label = RenderLabelInner(node, cascaderContext);
       return (
@@ -110,7 +110,7 @@ export default defineComponent({
           disabled={node.isDisabled() || ((value as TreeNodeValue[]).length >= max && max !== 0)}
           name={String(node.value)}
           title={inputVal ? getFullPathLabel(node) : node.label}
-          stopLabelTrigger={!!node.children}
+          stopLabelTrigger={!!node.children && !isParentFilterable}
           onChange={(vale: boolean, { e }: { e: MouseEvent }) => {
             e.stopPropagation();
             onChange();
@@ -139,6 +139,7 @@ export default defineComponent({
             ? RenderCheckBox(node, cascaderContext)
             : RenderLabelContent(node, cascaderContext))}
         {node.children
+          && !this.cascaderContext.isParentFilterable
           && (node.loading ? <TLoading class={iconClass} size="small" /> : <ChevronRightIcon class={iconClass} />)}
       </li>
     );
