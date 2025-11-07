@@ -26,7 +26,7 @@ loadingText | String / Slot / Function | - | 远程加载时显示的文字，�
 max | Number | 0 | 用于控制多选数量，值为 0 则不限制 | N
 minCollapsedNum | Number | 0 | 最小折叠数量，用于多选情况下折叠选中项，超出该数值的选中项折叠。值为 0 则表示不折叠 | N
 multiple | Boolean | false | 是否允许多选 | N
-option | Slot / Function | - | 自定义单个级联选项, item 是选项本身的值，index 是下标，onChange 用于触发当前节点选中，onExpand 用于触发当前节点展开。TS 类型：`TNode<{ item: CascaderOption; index: number; onChange: ()=> void; onExpand: ()=> void }>`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/packages/components/common.ts) | N
+option | Slot / Function | - | 自定义单个级联选项, item 是选项本身的值，index 是下标，onChange 用于触发当前节点选中，onExpand 用于触发当前节点展开。TS 类型：`TNode<{ item: CascaderOption; index: number; onChange: ()=> void; onExpand: ()=> void }>`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 options | Array | [] | 可选项数据源。TS 类型：`Array<CascaderOption>` | N
 placeholder | String | undefined | 占位符 | N
 popupProps | Object | - | 参考 popup 组件 API。TS 类型：`PopupProps`，[Popup API Documents](./popup?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/cascader/type.ts) | N
