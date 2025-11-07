@@ -1,5 +1,5 @@
 <template>
-  <t-space>
+  <t-space direction="vertical">
     <!-- 方式一：使用 options 自定义下拉选项内容 -->
     <t-cascader
       v-model="value1"
@@ -33,6 +33,22 @@
       style="width: 300px"
     >
     </t-cascader>
+    <t-cascader
+      v-model="value4"
+      :popup-props="{ overlayClassName: 'tdesign-demo-select__overlay-option' }"
+      :options="options"
+      multiple
+    >
+      <template #option="{ item, onChange }">
+        <div class="tdesign-demo__user-option" @click="(e) => handleClick(item, onChange)">
+          <img src="https://tdesign.gtimg.com/site/avatar.jpg" />
+          <div class="tdesign-demo__user-option-info">
+            <div>{{ item.label }}</div>
+            <div>{{ item.value }}</div>
+          </div>
+        </div>
+      </template>
+    </t-cascader>
   </t-space>
 </template>
 
@@ -42,6 +58,7 @@ import { ref, computed } from 'vue';
 const value1 = ref('');
 const value2 = ref('');
 const value3 = ref('');
+const value4 = ref([]);
 const options = ref([
   {
     label: '选项一',
@@ -96,6 +113,12 @@ const getDeepOptions = (options) => {
       item,
     }),
   }));
+};
+
+const handleClick = (item, changeCallback) => {
+  if (!Array.isArray(item.children)) {
+    changeCallback();
+  }
 };
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <t-space>
+  <t-space direction="vertical">
     <!-- 方式一：使用 options 自定义下拉选项内容 -->
     <t-cascader
       v-model="value1"
@@ -9,10 +9,10 @@
     />
     <!-- 方式二：使用插槽自定义下拉选项内容 -->
     <t-cascader
-      v-model="value2"
       :popupProps="{ overlayClassName: 'tdesign-demo-select__overlay-option' }"
       :options="options"
       style="width: 300px"
+      multiple
     >
       <template v-slot:option="{ item }">
         <div class="tdesign-demo__user-option">
@@ -33,6 +33,22 @@
       style="width: 300px"
     >
     </t-cascader>
+    <t-cascader
+      v-model="value4"
+      :popup-props="{ overlayClassName: 'tdesign-demo-select__overlay-option' }"
+      :options="options"
+      multiple
+    >
+      <template #option="{ item, onChange }">
+        <div class="tdesign-demo__user-option" @click="(e) => handleClick(item, onChange)">
+          <img src="https://tdesign.gtimg.com/site/avatar.jpg" />
+          <div class="tdesign-demo__user-option-info">
+            <div>{{ item.label }}</div>
+            <div>{{ item.value }}</div>
+          </div>
+        </div>
+      </template>
+    </t-cascader>
   </t-space>
 </template>
 
@@ -43,6 +59,7 @@ export default {
       value1: '',
       value2: '',
       value3: '',
+      value4: [],
       options: [
         {
           label: '选项一',
@@ -104,6 +121,11 @@ export default {
           </div>
         </div>
       );
+    },
+    handleClick(item, changeCallback) {
+      if (!Array.isArray(item.children)) {
+        changeCallback();
+      }
     },
   },
 };
