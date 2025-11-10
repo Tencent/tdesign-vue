@@ -1,7 +1,7 @@
 {
   "name": "tdesign-vue",
   "purename": "tdesign",
-  "version": "1.14.1-naruto",
+  "version": "1.14.2-naruto",
   "description": "tdesign-vue",
   "title": "tdesign-vue",
   "keywords": [
@@ -50,7 +50,6 @@
     "site": "cd site && npm run build",
     "site:prerender": "node script/prerender.mjs",
     "site:preview": "cd site && npm run build:preview",
-    "site:intranet": "cd site && npm run build:intranet",
     "postsite:preview": "cp _site/index.html _site/404.html",
     "prebuild": "rimraf es/* esm/* lib/* cjs/* dist/* --glob",
     "build": "cross-env NODE_ENV=production rollup -c script/rollup.config.js && npm run build:tsc",

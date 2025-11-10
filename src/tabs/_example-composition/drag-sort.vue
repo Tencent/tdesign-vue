@@ -44,7 +44,7 @@ const panelData = ref([
   {
     value: 'third',
     label: '可拖拽的选项卡3',
-    content: '选项卡2内容',
+    content: '选项卡3内容',
   },
 ]);
 

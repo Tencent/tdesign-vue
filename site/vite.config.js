@@ -6,7 +6,6 @@ import tdocPlugin from './plugins/plugin-tdoc';
 
 const publicPathMap = {
   preview: '/',
-  intranet: '/vue/',
   production: 'https://static.tdesign.tencent.com/vue/',
 };
 
