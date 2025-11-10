@@ -136,10 +136,10 @@ export default mixins(classPrefixMixins, getGlobalIconMixins()).extend({
       return this.addable ? { 'min-height': '48px' } : null;
     },
     activeElement(): HTMLElement {
-      const activeIndx = this.navs.findIndex((nav) => nav.active);
-      if (activeIndx > -1) {
+      const activeIndex = this.navs.findIndex((nav) => nav.active);
+      if (activeIndex > -1) {
         // @ts-ignore
-        return (this.$refs[`tabItem${activeIndx}`] as unknown as ComponentPublicInstance)?.$el;
+        return (this.$refs[`tabItem${activeIndex}`] as unknown as ComponentPublicInstance)?.$el;
       }
       return null;
     },
