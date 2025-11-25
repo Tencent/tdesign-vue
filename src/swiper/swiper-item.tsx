@@ -1,9 +1,12 @@
 import { VNode } from 'vue';
-import props from './props';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
+import props from './props';
 
 const classPrefixMixins = getClassPrefixMixins('swiper');
+
+const CARD_SCALE = 210 / 332; // 缩放比例
+const ITEM_WIDTH = 0.415; // 依据设计稿使用t-swiper__card控制每个swiper的宽度为41.5%
 
 const swiperItemProps = {
   index: {
@@ -11,6 +14,10 @@ const swiperItemProps = {
   },
   currentIndex: {
     type: Number,
+  },
+  cardScale: {
+    type: Number,
+    default: CARD_SCALE,
   },
   isSwitching: {
     type: Boolean,
@@ -24,8 +31,6 @@ const swiperItemProps = {
     default: 0,
   },
 };
-const CARD_SCALE = 210 / 332; // 缩放比例
-const itemWidth = 0.415; // 依据设计稿使用t-swiper__card控制每个swiper的宽度为41.5%
 
 export default mixins(classPrefixMixins).extend({
   name: 'TSwiperItem',
@@ -62,12 +67,14 @@ export default mixins(classPrefixMixins).extend({
       const translateIndex = !this.active && this.swiperItemLength > 2 ? this.disposeIndex : this.index;
       const inStage = Math.abs(translateIndex - this.currentIndex) <= 1;
       if (inStage) {
-        return (wrapWidth * ((translateIndex - this.currentIndex) * (1 - itemWidth * CARD_SCALE) - itemWidth + 1)) / 2;
+        return (
+          (wrapWidth * ((translateIndex - this.currentIndex) * (1 - ITEM_WIDTH * this.cardScale) - ITEM_WIDTH + 1)) / 2
+        );
       }
       if (translateIndex < this.currentIndex) {
-        return (-itemWidth * (1 + CARD_SCALE) * wrapWidth) / 2;
+        return (-ITEM_WIDTH * (1 + this.cardScale) * wrapWidth) / 2;
       }
-      return ((2 + itemWidth * (CARD_SCALE - 1)) * wrapWidth) / 2;
+      return ((2 + ITEM_WIDTH * (this.cardScale - 1)) * wrapWidth) / 2;
     },
     zIndex(): number {
       if (this.type !== 'card') return 0;
@@ -94,7 +101,7 @@ export default mixins(classPrefixMixins).extend({
         const translateIndex = !this.active && this.swiperItemLength > 2 ? this.disposeIndex : this.index;
         const isActivity = translateIndex === this.currentIndex;
         return {
-          transform: `translateX(${this.translateX}px) scale(${isActivity ? 1 : CARD_SCALE})`,
+          transform: `translateX(${this.translateX}px) scale(${isActivity ? 1 : this.cardScale})`,
           transition: `transform ${this.duration / 1000}s ease`,
           zIndex: this.zIndex,
         };

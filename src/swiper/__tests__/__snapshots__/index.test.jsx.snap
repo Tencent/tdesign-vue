@@ -200,6 +200,7 @@ exports[`Swiper > :props > :navigation 1`] = `
 exports[`Swiper > :props > :theme 1`] = `
 <div
   class="t-swiper"
+  theme="dark"
 >
   <div
     class="t-swiper__wrap t-swiper--inside"

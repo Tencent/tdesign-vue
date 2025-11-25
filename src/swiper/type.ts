@@ -18,6 +18,11 @@ export interface TdSwiperProps {
    */
   autoplay?: boolean;
   /**
+   * 卡片模式下非当前展示轮播图的缩放比例
+   * @default 210/332
+   */
+  cardScale?: number;
+  /**
    * 当前轮播在哪一项（下标）
    * @default 0
    */
@@ -60,11 +65,6 @@ export interface TdSwiperProps {
    * @default true
    */
   stopOnHover?: boolean;
-  /**
-   * 深色模式和浅色模式
-   * @default light
-   */
-  theme?: 'light' | 'dark';
   /**
    * 触发切换的方式：悬浮、点击等
    * @default hover

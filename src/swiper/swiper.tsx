@@ -2,14 +2,15 @@ import Vue, { VNode, VNodeComponentOptions, VueConstructor } from 'vue';
 import { ChevronLeftIcon as TdChevronLeftIcon, ChevronRightIcon as TdChevronRightIcon } from 'tdesign-icons-vue';
 import { kebabCase } from 'lodash-es';
 
-import props from './props';
-import { TdSwiperProps, SwiperNavigation, SwiperChangeSource } from './type';
-import TSwiperItem from './swiper-item';
-import { isVNode } from '../hooks/render-tnode';
-import { renderTNodeJSX } from '../utils/render-tnode';
-import { emitEvent } from '../utils/event';
 import { getClassPrefixMixins, getGlobalIconMixins } from '../config-provider/config-receiver';
+import { isVNode } from '../hooks/render-tnode';
+import { emitEvent } from '../utils/event';
 import mixins from '../utils/mixins';
+import { renderTNodeJSX } from '../utils/render-tnode';
+import props from './props';
+import TSwiperItem from './swiper-item';
+
+import type { SwiperChangeSource, SwiperNavigation, TdSwiperProps } from './type';
 
 const classPrefixMixins = getClassPrefixMixins('swiper');
 
@@ -105,6 +106,7 @@ export default mixins(Vue as VueConstructor<SwiperVue>, classPrefixMixins, getGl
           index={index}
           currentIndex={this.currentIndex}
           isSwitching={this.isSwitching}
+          cardScale={this.cardScale}
           getWrapAttribute={this.getWrapAttribute}
           swiperItemLength={this.swiperItemLength}
           props={{ ...this.$props, ...swiperItem.propsData }}
@@ -225,7 +227,8 @@ export default mixins(Vue as VueConstructor<SwiperVue>, classPrefixMixins, getGl
       return this.swiperTo(this.currentIndex - 1, context);
     },
     getWrapAttribute(attr: string) {
-      return (this.$refs.swiperWrap as Element)?.parentNode?.[attr];
+      const parent = (this.$refs.swiperWrap as Element)?.parentNode as HTMLElement;
+      return parent?.[attr as keyof HTMLElement];
     },
     renderPagination() {
       const fractionIndex = this.currentIndex + 1 > this.swiperItemLength ? 1 : this.currentIndex + 1;
