@@ -4,6 +4,7 @@ import { kebabCase } from 'lodash-es';
 
 import { getClassPrefixMixins, getGlobalIconMixins } from '../config-provider/config-receiver';
 import { isVNode } from '../hooks/render-tnode';
+
 import { emitEvent } from '../utils/event';
 import mixins from '../utils/mixins';
 import { renderTNodeJSX } from '../utils/render-tnode';
@@ -43,6 +44,7 @@ export default mixins(Vue as VueConstructor<SwiperVue>, classPrefixMixins, getGl
       isHovering: false,
       isSwitching: false,
       swiperItemList: [] as Array<VNodeComponentOptions>,
+      swiperOffset: { width: 0, height: 0 },
       showArrow: false,
     };
   },
@@ -77,7 +79,7 @@ export default mixins(Vue as VueConstructor<SwiperVue>, classPrefixMixins, getGl
       };
     },
     containerStyle(): any {
-      const offsetHeight = this.height ? `${this.height}px` : `${this.getWrapAttribute('offsetHeight')}px`;
+      const offsetHeight = this.height ? `${this.height}px` : `${this.swiperOffset.height}px`;
       if (this.type === 'card' || this.animation === 'fade') {
         return {
           height: offsetHeight,
@@ -107,8 +109,8 @@ export default mixins(Vue as VueConstructor<SwiperVue>, classPrefixMixins, getGl
           currentIndex={this.currentIndex}
           isSwitching={this.isSwitching}
           cardScale={this.cardScale}
-          getWrapAttribute={this.getWrapAttribute}
           swiperItemLength={this.swiperItemLength}
+          swiperWidth={this.swiperOffset.width}
           props={{ ...this.$props, ...swiperItem.propsData }}
         >
           {swiperItem.children}
@@ -142,6 +144,17 @@ export default mixins(Vue as VueConstructor<SwiperVue>, classPrefixMixins, getGl
     this.updateSwiperItems();
     this.setTimer();
     this.showArrow = this.navigationConfig.showSlideBtn === 'always';
+
+    const resizeObserver = new ResizeObserver(([entry]) => {
+      const parent = entry.target.parentNode as HTMLElement;
+      if (parent) {
+        this.swiperOffset = {
+          width: parent.offsetWidth,
+          height: parent.offsetHeight,
+        };
+      }
+    });
+    resizeObserver.observe(this.$refs.swiperWrap as HTMLElement);
   },
 
   updated() {
@@ -225,10 +238,6 @@ export default mixins(Vue as VueConstructor<SwiperVue>, classPrefixMixins, getGl
         return this.swiperTo(this.swiperItemLength - 1, context);
       }
       return this.swiperTo(this.currentIndex - 1, context);
-    },
-    getWrapAttribute(attr: string) {
-      const parent = (this.$refs.swiperWrap as Element)?.parentNode as HTMLElement;
-      return parent?.[attr as keyof HTMLElement];
     },
     renderPagination() {
       const fractionIndex = this.currentIndex + 1 > this.swiperItemLength ? 1 : this.currentIndex + 1;

@@ -23,8 +23,9 @@ const swiperItemProps = {
     type: Boolean,
     default: false,
   },
-  getWrapAttribute: {
-    type: Function,
+  swiperWidth: {
+    type: Number,
+    default: 0,
   },
   swiperItemLength: {
     type: Number,
@@ -63,18 +64,19 @@ export default mixins(classPrefixMixins).extend({
     },
     translateX(): number {
       if (this.type !== 'card') return 0;
-      const wrapWidth = this.getWrapAttribute('offsetWidth');
+      const { swiperWidth } = this;
       const translateIndex = !this.active && this.swiperItemLength > 2 ? this.disposeIndex : this.index;
       const inStage = Math.abs(translateIndex - this.currentIndex) <= 1;
       if (inStage) {
         return (
-          (wrapWidth * ((translateIndex - this.currentIndex) * (1 - ITEM_WIDTH * this.cardScale) - ITEM_WIDTH + 1)) / 2
+          (swiperWidth * ((translateIndex - this.currentIndex) * (1 - ITEM_WIDTH * this.cardScale) - ITEM_WIDTH + 1))
+          / 2
         );
       }
       if (translateIndex < this.currentIndex) {
-        return (-ITEM_WIDTH * (1 + this.cardScale) * wrapWidth) / 2;
+        return (-ITEM_WIDTH * (1 + this.cardScale) * swiperWidth) / 2;
       }
-      return ((2 + ITEM_WIDTH * (this.cardScale - 1)) * wrapWidth) / 2;
+      return ((2 + ITEM_WIDTH * (this.cardScale - 1)) * swiperWidth) / 2;
     },
     zIndex(): number {
       if (this.type !== 'card') return 0;
