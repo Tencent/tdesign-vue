@@ -197,29 +197,6 @@ exports[`Swiper > :props > :navigation 1`] = `
 </div>
 `;
 
-exports[`Swiper > :props > :theme 1`] = `
-<div
-  class="t-swiper"
-  theme="dark"
->
-  <div
-    class="t-swiper__wrap t-swiper--inside"
-  >
-    <div
-      class="t-swiper__content"
-    >
-      <div
-        class="t-swiper__container"
-        style="transform: translate3d(-0%, 0px, 0px);"
-      />
-    </div>
-    <ul
-      class="t-swiper__navigation t-swiper__navigation-bars"
-    />
-  </div>
-</div>
-`;
-
 exports[`Swiper > :props > :type 1`] = `
 <div
   class="t-swiper"
