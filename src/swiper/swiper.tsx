@@ -2,14 +2,16 @@ import Vue, { VNode, VNodeComponentOptions, VueConstructor } from 'vue';
 import { ChevronLeftIcon as TdChevronLeftIcon, ChevronRightIcon as TdChevronRightIcon } from 'tdesign-icons-vue';
 import { kebabCase } from 'lodash-es';
 
-import props from './props';
-import { TdSwiperProps, SwiperNavigation, SwiperChangeSource } from './type';
-import TSwiperItem from './swiper-item';
-import { isVNode } from '../hooks/render-tnode';
-import { renderTNodeJSX } from '../utils/render-tnode';
-import { emitEvent } from '../utils/event';
 import { getClassPrefixMixins, getGlobalIconMixins } from '../config-provider/config-receiver';
+import { isVNode } from '../hooks/render-tnode';
+
+import { emitEvent } from '../utils/event';
 import mixins from '../utils/mixins';
+import { renderTNodeJSX } from '../utils/render-tnode';
+import props from './props';
+import TSwiperItem from './swiper-item';
+
+import type { SwiperChangeSource, SwiperNavigation, TdSwiperProps } from './type';
 
 const classPrefixMixins = getClassPrefixMixins('swiper');
 
@@ -42,6 +44,7 @@ export default mixins(Vue as VueConstructor<SwiperVue>, classPrefixMixins, getGl
       isHovering: false,
       isSwitching: false,
       swiperItemList: [] as Array<VNodeComponentOptions>,
+      swiperOffset: { width: 0, height: 0 },
       showArrow: false,
     };
   },
@@ -76,7 +79,7 @@ export default mixins(Vue as VueConstructor<SwiperVue>, classPrefixMixins, getGl
       };
     },
     containerStyle(): any {
-      const offsetHeight = this.height ? `${this.height}px` : `${this.getWrapAttribute('offsetHeight')}px`;
+      const offsetHeight = this.height ? `${this.height}px` : `${this.swiperOffset.height}px`;
       if (this.type === 'card' || this.animation === 'fade') {
         return {
           height: offsetHeight,
@@ -105,8 +108,9 @@ export default mixins(Vue as VueConstructor<SwiperVue>, classPrefixMixins, getGl
           index={index}
           currentIndex={this.currentIndex}
           isSwitching={this.isSwitching}
-          getWrapAttribute={this.getWrapAttribute}
+          cardScale={this.cardScale}
           swiperItemLength={this.swiperItemLength}
+          swiperWidth={this.swiperOffset.width}
           props={{ ...this.$props, ...swiperItem.propsData }}
         >
           {swiperItem.children}
@@ -140,6 +144,17 @@ export default mixins(Vue as VueConstructor<SwiperVue>, classPrefixMixins, getGl
     this.updateSwiperItems();
     this.setTimer();
     this.showArrow = this.navigationConfig.showSlideBtn === 'always';
+
+    const resizeObserver = new ResizeObserver(([entry]) => {
+      const parent = entry.target.parentNode as HTMLElement;
+      if (parent) {
+        this.swiperOffset = {
+          width: parent.offsetWidth,
+          height: parent.offsetHeight,
+        };
+      }
+    });
+    resizeObserver.observe(this.$refs.swiperWrap as HTMLElement);
   },
 
   updated() {
@@ -223,9 +238,6 @@ export default mixins(Vue as VueConstructor<SwiperVue>, classPrefixMixins, getGl
         return this.swiperTo(this.swiperItemLength - 1, context);
       }
       return this.swiperTo(this.currentIndex - 1, context);
-    },
-    getWrapAttribute(attr: string) {
-      return (this.$refs.swiperWrap as Element)?.parentNode?.[attr];
     },
     renderPagination() {
       const fractionIndex = this.currentIndex + 1 > this.swiperItemLength ? 1 : this.currentIndex + 1;

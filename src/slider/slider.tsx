@@ -1,13 +1,16 @@
 import Vue, { VNode } from 'vue';
-import { emitEvent } from '../utils/event';
-import { TNode, ClassName } from '../common';
-import props from './props';
-import InputNumber from '../input-number/index';
-import TSliderMark from './slider-mark';
-import { SliderValue, TdSliderProps } from './type';
-import TSliderButton from './slider-button';
+
+import { formatPrecision } from '../_common/js/slider/utils';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
+import InputNumber from '../input-number/index';
+import { emitEvent } from '../utils/event';
 import mixins from '../utils/mixins';
+import props from './props';
+import TSliderButton from './slider-button';
+import TSliderMark from './slider-mark';
+
+import type { ClassName, TNode } from '../common';
+import type { SliderValue, TdSliderProps } from './type';
 
 const classPrefixMixins = getClassPrefixMixins('slider');
 
@@ -186,9 +189,10 @@ export default mixins(classPrefixMixins).extend({
     value(newVal: SliderValue) {
       if (this.dragging === true) return;
       if (Array.isArray(newVal) && this.range) {
-        [this.firstValue, this.secondValue] = newVal;
+        this.firstValue = formatPrecision(newVal[0], this.precision);
+        this.secondValue = formatPrecision(newVal[1], this.precision);
       } else {
-        this.prevValue = newVal as number;
+        this.prevValue = formatPrecision(newVal as number, this.precision);
       }
     },
     dragging(newVal: boolean) {
@@ -211,18 +215,18 @@ export default mixins(classPrefixMixins).extend({
       const { min, max, value } = this;
       if (this.range) {
         if (Array.isArray(value)) {
-          this.firstValue = Math.max(min || 0, value[0] ?? 0);
-          this.secondValue = Math.min(max || 100, value[1] ?? 0);
+          this.firstValue = formatPrecision(Math.max(min || 0, value[0] ?? 0), this.precision);
+          this.secondValue = formatPrecision(Math.min(max || 100, value[1] ?? 0), this.precision);
         } else {
-          this.firstValue = min || 0;
-          this.secondValue = max || 100;
+          this.firstValue = formatPrecision(min || 0, this.precision);
+          this.secondValue = formatPrecision(max || 100, this.precision);
         }
         valuetext = `${this.firstValue}-${this.secondValue}`;
       } else {
         if (typeof this.value !== 'number') {
-          this.prevValue = min;
+          this.prevValue = formatPrecision(min, this.precision);
         } else {
-          this.prevValue = Math.min(max, Math.max(min, value as number));
+          this.prevValue = formatPrecision(Math.min(max, Math.max(min, value as number)), this.precision);
         }
         valuetext = String(this.prevValue);
       }
@@ -250,12 +254,12 @@ export default mixins(classPrefixMixins).extend({
         if (firstValue < min) firstValue = min;
         if (secondValue < min) secondValue = this.secondValue;
         if (secondValue > max) secondValue = max;
-        return [firstValue, secondValue];
+        return [formatPrecision(firstValue, this.precision), formatPrecision(secondValue, this.precision)];
       }
       let prevValue = value as number;
       if (prevValue < min) prevValue = min;
       if (prevValue > max) prevValue = max;
-      return prevValue;
+      return formatPrecision(prevValue, this.precision);
     },
     // 相应button的位置
     setPosition(percent: number): void {

@@ -109236,22 +109236,106 @@ exports[`csr snapshot test > csr test ./src/swiper/_example/card.vue 1`] = `
   class="tdesign-demo-block--swiper"
 >
   <div
-    class="t-swiper"
+    class="t-space t-space-vertical"
+    style="gap: 50px; width: 100%;"
   >
     <div
-      class="t-swiper__wrap t-swiper--inside"
+      class="t-space-item"
     >
       <div
-        class="t-swiper__content t-swiper-card"
+        class="t-space t-space-vertical"
+        style="gap: 16px; width: 100%;"
       >
         <div
-          class="t-swiper__container"
-          style="height: 280px;"
-        />
+          class="t-space-item"
+        >
+          <div
+            class="t-tag t-tag--primary t-tag--outline"
+          >
+            <span>
+              卡片缩放比例
+            </span>
+          </div>
+        </div>
+        <div
+          class="t-space-item"
+        >
+          <div
+            aria-valuetext="0.6325301204819277"
+            class="t-slider__container"
+          >
+            <div
+              aria-orientation="horizontal"
+              aria-valuemax="1"
+              aria-valuemin="0"
+              class="t-slider"
+              role="slider"
+            >
+              <div
+                class="t-slider__rail"
+              >
+                <div
+                  class="t-slider__track"
+                  style="width: 0%; left: 0%;"
+                />
+                <div
+                  class="t-slider__button-wrapper"
+                  show-tooltip="true"
+                  style="left: 0%;"
+                  tabindex="0"
+                >
+                  <div
+                    class="t-slider__button"
+                  />
+                </div>
+                <div>
+                  <div
+                    class="t-slider__stops"
+                  >
+                    <div
+                      class="t-slider__stop t-slider__mark-stop"
+                      style="left: 63.25301204819277%;"
+                    />
+                  </div>
+                  <div
+                    class="t-slider__mark"
+                  >
+                    <div
+                      class="t-slider__mark-text"
+                      style="left: 63.25301204819277%;"
+                    >
+                      Default
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <ul
-        class="t-swiper__navigation t-swiper__navigation-bars"
-      />
+    </div>
+    <div
+      class="t-space-item"
+    >
+      <div
+        class="t-swiper"
+      >
+        <div
+          class="t-swiper__wrap t-swiper--inside"
+        >
+          <div
+            class="t-swiper__content t-swiper-card"
+          >
+            <div
+              class="t-swiper__container"
+              style="height: 280px;"
+            />
+          </div>
+          <ul
+            class="t-swiper__navigation t-swiper__navigation-bars"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </div>
