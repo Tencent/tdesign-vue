@@ -80,12 +80,16 @@ export default function useRowSelect(
     return () => (
       <Checkbox
         checked={
-          intersectionKeys.value.length !== 0
-          && canSelectedRows.value.length !== 0
+          canSelectedRows.value.length !== 0
           && intersectionKeys.value.length === canSelectedRows.value.length
+          // 确保所有已选中的行都是可见的（没有被折叠而隐藏的选中项）
+          && intersectionKeys.value.length === tSelectedRowKeys.value.length
         }
         indeterminate={
-          intersectionKeys.value.length > 0 && intersectionKeys.value.length < canSelectedRows.value.length
+          // 一些可见的行已被选中，但不是全部
+          (intersectionKeys.value.length > 0 && intersectionKeys.value.length < canSelectedRows.value.length)
+          // 某些被选中的行不可见（例如折叠的树子节点）
+          || intersectionKeys.value.length < tSelectedRowKeys.value.length
         }
         disabled={!canSelectedRows.value.length}
         {...{ on: { change: handleSelectAll } }}
