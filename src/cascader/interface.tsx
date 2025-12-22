@@ -22,6 +22,8 @@ export interface CascaderContextType
     | 'value'
     | 'minCollapsedNum'
     | 'valueType'
+    | 'valueMode'
+    | 'reserveKeyword'
   > {
   treeStore: TreeStore;
   setValue: (val: CascaderValue, source: CascaderChangeSource, node?: TreeNodeModel) => void;
@@ -33,6 +35,7 @@ export interface CascaderContextType
   setInputVal: (val: TdSelectInputProps['inputValue']) => void;
   setExpend: (val: TreeNodeValue[]) => void;
   cascaderValue: CascaderValue;
+  isParentFilterable: boolean;
 }
 
 export { TreeNode } from '../_common/js/tree/tree-node';

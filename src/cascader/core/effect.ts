@@ -30,6 +30,7 @@ export function expendClickEffect(
     valueType,
     filterable,
     inputVal,
+    isParentFilterable,
   } = cascaderContext;
 
   const isDisabled = node.disabled || (multiple && (value as TreeNodeValue[]).length >= max && max !== 0);
@@ -46,7 +47,7 @@ export function expendClickEffect(
     setTreeNodes(nodes);
 
     // 多选条件下手动维护expend
-    if (multiple) {
+    if (multiple && !isParentFilterable) {
       setExpend(expanded);
     }
   }
@@ -74,7 +75,17 @@ export function expendClickEffect(
  */
 export function valueChangeEffect(node: TreeNode, cascaderContext: CascaderContextType) {
   const {
-    disabled, max, inputVal, multiple, setVisible, setValue, treeNodes, treeStore, valueType,
+    disabled,
+    max,
+    inputVal,
+    multiple,
+    setVisible,
+    setValue,
+    treeNodes,
+    treeStore,
+    valueType,
+    setInputVal,
+    reserveKeyword,
   } = cascaderContext;
 
   if (!node || disabled || node.disabled) {
@@ -117,6 +128,7 @@ export function valueChangeEffect(node: TreeNode, cascaderContext: CascaderConte
       .map((item) => item.value));
 
   setValue(resValue, node.checked ? 'uncheck' : 'check', node.getModel());
+  if (!reserveKeyword) setInputVal('');
 }
 
 /**
@@ -188,12 +200,13 @@ export const treeNodesEffect = (
   treeStore: CascaderContextType['treeStore'],
   setTreeNodes: CascaderContextType['setTreeNodes'],
   filter: CascaderContextType['filter'],
+  isParentFilterable: boolean,
 ) => {
   if (!treeStore) return;
   let nodes = [];
   if (inputVal) {
     const filterMethods = (node: TreeNode) => {
-      if (!node.isLeaf()) return;
+      if (!node.isLeaf() && !isParentFilterable) return;
       if (isFunction(filter)) {
         return filter(`${inputVal}`, node as TreeNodeModel & TreeNode);
       }
