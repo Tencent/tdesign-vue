@@ -437,6 +437,9 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
             mousedown: () => {
               this.contentClicked = true;
             },
+            click: (e: MouseEvent) => {
+              emitEvent(this, 'overlay-click', { e });
+            },
             ...(hasTrigger.hover && {
               mouseenter: this.onMouseEnter,
               mouseleave: this.onMouseLeave,
