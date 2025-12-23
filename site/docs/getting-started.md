@@ -5,13 +5,13 @@ spline: explain
 ---
 
 <div style="background: var(--td-warning-color-disabled); padding: 14px 24px; border-radius: 3px; color: var(--text-primary); line-height: 22px">
-   <p>⚠️ 由于 <a href='https://v2.vuejs.org/eol' _blank>Vue 2 已经宣布 EOL </a>，且大量业务已经迁移 TDesign Vue 3 使用，我们将减少 TDesign Vue 2 版本的维护频率，并重点持续维护 Vue 3 版本。建议尽量升级<a href='https://tdesign.tencent.com/vue-next/' _blank> TDesign Vue 3 版本 </a> 使用，具有 Vue2 相同的 API 的同时提供更完善的功能和维护</p>
+   <p>⚠️ 由于 <a href='https://v2.vuejs.org/eol' _blank>Vue 2 已经宣布 EOL </a>，且大量业务已经迁移 TDesign Vue 3 使用，我们将减少 TDesign Vue 2 版本的维护频率，并重点持续维护 Vue 3 版本。建议尽量升级<a href='https://tdesign.tencent.com/vue-next/' _blank> TDesign Vue 3 版本 </a> 使用，具有 TDesign Vue 2 相同的 API 的同时，提供更完善的功能和维护</p>
 </div>
 
 <br />
 <div style="background: var(--td-warning-color-disabled); padding: 14px 24px; border-radius: 3px; color: var(--text-primary); line-height: 22px">
   <p>tdesign-vue 在 1.4.0 版本之后开始同步支持在 Vue 2.7 中使用</p>
-  <p>如果您需要在 Vue2.7 中使用 tdesign-vue 请安装 tdesign-vue@naruto 或在具体指定版本后加-naruto的标识</p>
+  <p>如果您需要在 Vue 2.7 中使用 tdesign-vue 请安装 tdesign-vue@naruto 或在具体指定版本后加-naruto的标识</p>
 </div>
 
 ## 安装
