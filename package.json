@@ -1,7 +1,7 @@
 {
   "name": "tdesign-vue",
   "purename": "tdesign",
-  "version": "1.14.2",
+  "version": "1.14.3",
   "description": "tdesign-vue",
   "title": "tdesign-vue",
   "keywords": [
@@ -160,7 +160,7 @@
     "husky": "^7.0.4",
     "hyphenate": "^0.2.4",
     "jsdom": "^26.0.0",
-    "less": "^4.1.2",
+    "less": "4.4.2",
     "lint-staged": "^13.2.2",
     "mockdate": "^3.0.2",
     "msw": "^1.0.0",
