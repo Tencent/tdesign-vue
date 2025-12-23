@@ -6,6 +6,21 @@ docClass: timeline
 ---
 
 
+## 🌈 1.14.3 `2025-12-23` 
+### 🚀 Features
+- `ImageViewer`: 
+    - 优化下载跨域图片时的格式处理和压缩比例  @RylanBot ([common#2311](https://github.com/Tencent/tdesign-common/pull/2311)) 
+    - 支持直接下载同域图片，避免二次转换导致体积增大和动图失效等问题 @RylanBot ([common#2311](https://github.com/Tencent/tdesign-common/pull/2311)) 
+- Upload: 请求参数支持数组形式 @GATING ([common#2078](https://github.com/Tencent/tdesign-common/pull/2078))
+- Popup: 新增 `onOverlayClick` 事件，支持内容面板点击时触发 @RSS1102  ([#3752](https://github.com/Tencent/tdesign-vue/pull/3752))
+### 🐞 Bug Fixes
+- `Avatar`: 修复样式与设计稿不一致的问题 @liweijie0812 ([common#2364](https://github.com/Tencent/tdesign-common/pull/2364)) @uyarn ([#3783](https://github.com/Tencent/tdesign-vue/pull/3783))
+- `Menu`: 修复菜单选项默认边距和图标大小的问题 @liweijie0812 ([common#2369](https://github.com/Tencent/tdesign-common/pull/2369)) @uyarn ([#3783](https://github.com/Tencent/tdesign-vue/pull/3783))
+- `Upload`: 修复 `theme` 为 `image-flow` 的告警问题 @uyarn ([#3782](https://github.com/Tencent/tdesign-vue/pull/3782))
+- `Table`: 修复行选中收缩后,表格头全选状态异常的问题 @liweijie0812 ([#3771](https://github.com/Tencent/tdesign-vue/pull/3771))
+
+
+
 ## 🌈 1.14.2 `2025-11-07` 
 ### 🚀 Features
 - `Watermark`: 新增 `layout` API，支持生成不同布局的水印 @Wesley-0808 ([#3726](https://github.com/Tencent/tdesign-vue/pull/3726))
