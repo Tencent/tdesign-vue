@@ -73,6 +73,7 @@ export default mixins(
       styleEl: null,
       timer: null,
       animationEnd: false,
+      isMounted: false,
     };
   },
 
@@ -155,14 +156,20 @@ export default mixins(
     computedAttach(): AttachNode {
       return this.isNormal ? undefined : this.attach || this.globalAttach();
     },
+    shouldRender(): boolean {
+      const shouldDestroy = this.destroyOnClose && !this.visible && this.animationEnd;
+      const avoidRender = !this.lazy || this.isMounted;
+      return shouldDestroy || avoidRender;
+    },
   },
-
   watch: {
     visible: {
       handler(value) {
         if (typeof window === 'undefined') return;
         if (value) {
           this.animationEnd = false;
+          this.isMounted = true;
+
           if ((this.isModal && !this.showInAttachedElement) || this.isFullScreen) {
             if (this.preventScrollThrough) {
               this.$nextTick(() => {
@@ -411,7 +418,7 @@ export default mixins(
     },
     initDragEvent(status: boolean) {
       const target = this.$refs.dialog as HTMLElement;
-      if (status) {
+      if (status && target) {
         target.addEventListener('mousedown', this.mousedownHandler);
       } else {
         target.removeEventListener('mousedown', this.mousedownHandler);
@@ -518,7 +525,7 @@ export default mixins(
     const view = [maskView, dialogView];
     const ctxStyle = { zIndex: this.zIndex };
 
-    if (this.destroyOnClose && !this.visible && this.animationEnd) return null;
+    if (!this.shouldRender) return null;
 
     return (
       <transition
