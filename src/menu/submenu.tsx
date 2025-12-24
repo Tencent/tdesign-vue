@@ -11,6 +11,7 @@ import {
   toRefs,
   nextTick,
   reactive,
+  onBeforeUnmount,
 } from '@vue/composition-api';
 import { isFunction } from 'lodash-es';
 import props from './submenu-props';
@@ -44,13 +45,28 @@ export default defineComponent({
       theme, activeValues, expandValues, mode, isHead, open,
     } = menu;
     const submenu = inject<TdSubMenuInterface>('TdSubmenu', {});
-    const { setSubPopup, closeParentPopup } = submenu;
+    const {
+      setSubPopup, closeParentPopup, registerChildControl, unregisterChildControl,
+    } = submenu;
 
     const classPrefix = usePrefixClass();
 
     const isActive = computed(() => activeValues.value.indexOf(props.value) > -1);
     const popupVisible = ref(false);
     const isCursorInPopup = ref(false);
+    const timer = ref(null);
+
+    const popupDelay = computed(() => {
+      const { delay } = (props.popupProps || {}) as TdSubmenuProps['popupProps'];
+      if (Array.isArray(delay)) {
+        return delay;
+      }
+      if (typeof delay === 'number') {
+        return [delay, delay];
+      }
+      // 默认
+      return [0, 0];
+    });
 
     const rippleColor = computed(() => (theme.value === 'light' ? '#E7E7E7' : '#383838'));
     const isOpen = computed(() => {
@@ -61,6 +77,7 @@ export default defineComponent({
     });
     const menuItems = ref([]);
     const isNested = ref(false); // 是否嵌套
+    const childSubmenuControls = ref([]); // 存储子级 submenu 的控制方法
 
     const popupWrapperRef = ref<HTMLElement>();
     const subPopupRef = ref<HTMLElement>();
@@ -115,19 +132,54 @@ export default defineComponent({
       }
     };
 
-    // methods
-    const handleMouseEnter = () => {
-      if (props.disabled) return;
-      setTimeout(() => {
-        if (!popupVisible.value) {
-          open(props.value);
-          // popupVisible设置为TRUE之后打开popup，因此需要在nextTick中确保可以拿到ref值
-          nextTick(() => {
-            passSubPopupRefToParent(popupWrapperRef.value);
-          });
+    const handlePopupVisibleChange = (visible: boolean) => {
+      if (timer.value) {
+        clearTimeout(timer.value);
+        timer.value = null;
+      }
+      const delay = visible ? popupDelay.value[0] : popupDelay.value[1];
+      timer.value = setTimeout(
+        () => {
+          if (visible && !popupVisible.value) {
+            open(props.value);
+            // popupVisible设置为TRUE之后打开popup，因此需要在nextTick中确保可以拿到ref值
+            nextTick(() => {
+              passSubPopupRefToParent(popupWrapperRef.value);
+            });
+          }
+          // 当父级 popup 被隐藏时，也隐藏所有子级的 popup
+          if (!visible && popupVisible.value) {
+            hideAllChildPopups();
+          }
+          popupVisible.value = visible;
+        },
+        visible && props.disabled ? 0 : delay,
+      );
+    };
+
+    const hideAllChildPopups = () => {
+      childSubmenuControls.value.forEach((control) => {
+        if (control.hidePopup) {
+          control.hidePopup();
         }
-        popupVisible.value = true;
-      }, 0);
+      });
+    };
+
+    // 隐藏当前 popup 的方法
+    const hideCurrentPopup = () => {
+      if (popupVisible.value) {
+        popupVisible.value = false;
+        hideAllChildPopups();
+      }
+    };
+
+    // 当前 submenu 的控制对象
+    const currentSubmenuControl = {
+      hidePopup: hideCurrentPopup,
+    };
+
+    const handleMouseEnter = () => {
+      handlePopupVisibleChange(true);
     };
 
     const targetInPopup = (el: HTMLElement) => el?.classList.contains(`${classPrefix.value}-menu__popup`);
@@ -137,12 +189,9 @@ export default defineComponent({
     };
 
     const handleMouseLeave = (e: MouseEvent) => {
-      setTimeout(() => {
-        const inPopup = targetInPopup(e.relatedTarget as HTMLElement);
-
-        if (isCursorInPopup.value || inPopup) return;
-        popupVisible.value = false;
-      }, 0);
+      const inPopup = targetInPopup(e.relatedTarget as HTMLElement);
+      if (isCursorInPopup.value || inPopup) return;
+      handlePopupVisibleChange(false);
     };
 
     const handleMouseLeavePopup = (e: any) => {
@@ -159,13 +208,14 @@ export default defineComponent({
       isCursorInPopup.value = false;
 
       if (!isSubmenu(target)) {
-        popupVisible.value = false;
+        handlePopupVisibleChange(false);
       }
 
       closeParentPopup?.(e);
     };
     const handleEnterPopup = () => {
       isCursorInPopup.value = true;
+      handlePopupVisibleChange(true);
     };
 
     const handleSubmenuItemClick = () => {
@@ -197,6 +247,17 @@ export default defineComponent({
           if (loopInPopup(related)) return;
           handleMouseLeavePopup(e);
         },
+        // 新增：注册子级控制方法
+        registerChildControl: (control: { hidePopup: () => void }) => {
+          childSubmenuControls.value.push(control);
+        },
+        // 新增：取消注册子级控制方法
+        unregisterChildControl: (control: { hidePopup: () => void }) => {
+          const index = childSubmenuControls.value.indexOf(control);
+          if (index > -1) {
+            childSubmenuControls.value.splice(index, 1);
+          }
+        },
       }),
     );
 
@@ -220,6 +281,18 @@ export default defineComponent({
           break;
         }
         node = node?.parent;
+      }
+
+      // 向父级注册当前 submenu 的控制方法
+      if (registerChildControl) {
+        registerChildControl(currentSubmenuControl);
+      }
+    });
+
+    onBeforeUnmount(() => {
+      // 在组件销毁前，从父级注销当前 submenu 的控制方法
+      if (unregisterChildControl) {
+        unregisterChildControl(currentSubmenuControl);
       }
     });
 

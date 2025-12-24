@@ -28,4 +28,6 @@ export interface TdSubMenuInterface {
   addMenuItem?: (item: TdMenuItem) => void;
   setSubPopup?: (popupRef: HTMLElement) => void;
   closeParentPopup?: (e: MouseEvent) => void;
+  registerChildControl?: (control: { hidePopup: () => void }) => void;
+  unregisterChildControl?: (control: { hidePopup: () => void }) => void;
 }
