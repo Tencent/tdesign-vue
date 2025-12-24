@@ -127,7 +127,9 @@ export default defineComponent({
         options: ['single', 'multiple'].includes(column.filter.type) ? this.getFilterDisplayList(column) : undefined,
         ...(column.filter?.props || {}),
       };
+      // vue27:ts-ignore
       if (column.colKey && this.innerFilterValue && column.colKey in this.innerFilterValue) {
+        // vue27:ts-ignore
         filterComponentProps.value = this.innerFilterValue[column.colKey];
       }
       // 这个代码必须放在这里，否则会造成顺序错误
@@ -169,6 +171,7 @@ export default defineComponent({
             });
           });
         }
+        // vue27:ts-ignore
         const filter = this.column.filter || {};
         return (
           <component
@@ -184,6 +187,7 @@ export default defineComponent({
       const inputObj = isObject(column.filter.listFilterConfig) ? column.filter.listFilterConfig : {};
 
       return (
+        // vue27:ts-ignore
         <div class={this.tableFilterClasses.contentInner} on={wrapperListeners}>
           {column.filter.listFilterConfig && (
             <Input
@@ -230,8 +234,10 @@ export default defineComponent({
     };
 
     const { column, FilterIcon, popupProps } = this;
+    // vue27:ts-ignore
     if (!column.filter || (column.filter && !Object.keys(column.filter).length)) return null;
     const defaultFilterIcon = this.t(this.global.filterIcon) || <FilterIcon />;
+    // vue27:ts-ignore
     const filterValue = this.tFilterValue?.[column.colKey];
     const isObjectTrue = typeof filterValue === 'object' && !isEmpty(filterValue);
     // false is a valid filter value

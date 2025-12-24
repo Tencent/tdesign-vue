@@ -314,6 +314,7 @@ export default defineComponent({
       if (list) return list;
 
       return (
+        // vue27:ts-ignore
         <table class={`${this.uploadPrefix}__flow-table`} on={this.innerDragEvents}>
           <thead>
             <tr>
@@ -457,6 +458,7 @@ export default defineComponent({
         </div>
 
         {this.theme === 'image-flow' && (
+          // vue27:ts-ignore
           <div class={cardClassName} on={this.innerDragEvents}>
             {this.displayFiles.length ? this.renderImageList() : this.renderEmpty()}
           </div>
@@ -466,6 +468,7 @@ export default defineComponent({
           && (this.displayFiles.length ? (
             this.renderFileList()
           ) : (
+            // vue27:ts-ignore
             <div class={cardClassName} on={this.innerDragEvents}>
               {this.renderEmpty()}
             </div>

@@ -630,6 +630,7 @@ export default defineComponent({
         key="table-content"
         class={this.tableBaseClass.content}
         style={this.tableContentStyles}
+        // vue27:ts-ignore
         on={{ scroll: this.onInnerVirtualScroll }}
       >
         {this.virtualConfig.isVirtualScroll.value && (

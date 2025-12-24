@@ -428,6 +428,7 @@ export default defineComponent({
 
   render() {
     const isColumnController = !!(this.columnController && Object.keys(this.columnController).length);
+    // vue27:ts-ignore
     const placement = isColumnController ? this.columnController.placement || 'top-right' : '';
     const isBottomController = isColumnController && placement?.indexOf('bottom') !== -1;
     const topContent = this.formatNode(

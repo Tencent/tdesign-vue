@@ -122,6 +122,7 @@ const Overlay = mixins(classPrefixMixins).extend({
         style: [
           hidePopup && { visibility: 'hidden', pointerEvents: 'none' },
           { zIndex: this.zIndex },
+          // vue27:ts-ignore
           this.overlayStyle,
         ],
         on: {
@@ -140,6 +141,7 @@ const Overlay = mixins(classPrefixMixins).extend({
           {
             ref: 'overlay',
             class: this.overlayClasses,
+            // vue27:ts-ignore
             style: this.overlayInnerStyle,
           },
           [content, this.showArrow && h('div', { class: `${this.componentName}__arrow` })],

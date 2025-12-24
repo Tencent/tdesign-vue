@@ -277,6 +277,7 @@ export default defineComponent({
       return (
         <TEllipsis
           placement={'top'}
+          // vue27:ts-ignore
           attach={this.attach || (this.tableElm ? () => this.tableElm : undefined)}
           tooltipContent={content && (() => content)}
           tooltipProps={tooltipProps}
@@ -321,6 +322,7 @@ export default defineComponent({
       const normalAttrs = isFunction(col.attrs) ? col.attrs({ ...params, type: 'td' }) : col.attrs;
       const attrs: { [key: string]: any } = { ...normalAttrs, ...cellSpans };
       return (
+        // vue27:ts-ignore
         <td class={classes} attrs={attrs} style={{ ...tdStyles.style, ...attrs.style }} onClick={onClick}>
           {col.ellipsis ? this.renderEllipsisCell(h, params, { cellNode }) : cellNode}
         </td>
@@ -360,6 +362,7 @@ export default defineComponent({
     return (
       <tr
         ref="trRef"
+        // vue27:ts-ignore
         attrs={attrs}
         style={this.trStyles?.style}
         class={this.classes}

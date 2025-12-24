@@ -164,7 +164,9 @@ export default defineComponent({
         <tr class={classes}>
           <td colspan={columnLength}>
             <div
+              // vue27:ts-ignore
               class={{ [this.tableFullRowClasses.innerFullRow]: this.isFixedToLeft }}
+              // vue27:ts-ignore
               style={this.isFixedToLeft ? { width: `${tableWidth}px` } : {}}
             >
               <div class={this.tableFullRowClasses.innerFullElement}>{fullRowNode}</div>

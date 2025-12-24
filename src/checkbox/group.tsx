@@ -220,6 +220,7 @@ export default defineComponent({
     if (this.options?.length) {
       children = this.optionList?.map((option, index) => (
         <Checkbox
+          // vue27:ts-ignore
           key={option.value ?? index}
           lazyLoad={this.lazyLoad}
           props={option}
