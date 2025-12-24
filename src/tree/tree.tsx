@@ -311,7 +311,10 @@ export default defineComponent({
       );
     }
 
-    const topValue = (allNodes.value?.filter((node) => node.visible).length ?? 0) * (refProps.scroll.value?.rowHeight ?? 34);
+    const visibleNodeCount = allNodes.value?.filter((node) => node.visible).length ?? 0;
+    const topValue = isVirtual
+      ? virtualConfig.scrollHeight.value + (refProps.scroll.value?.rowHeight ?? 34) * 2
+      : visibleNodeCount * (refProps.scroll.value?.rowHeight ?? 34);
     const placeholderStyles: TypeStyles = {
       width: '1px',
       height: '1px',

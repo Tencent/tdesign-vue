@@ -144660,7 +144660,7 @@ exports[`csr snapshot test > csr test ./src/tree/_example/vscroll.vue 1`] = `
         </div>
       </div>
       <div
-        style="width: 1px; height: 1px; opacity: 0; pointer-events: none; position: absolute; left: 0px; top: 5270px;"
+        style="width: 1px; height: 1px; opacity: 0; pointer-events: none; position: absolute; left: 0px; top: 68px;"
       />
     </div>
   </div>
