@@ -18,6 +18,7 @@ import useGlobalIcon from '../../hooks/useGlobalIcon';
 import ImageViewer from '../../image-viewer';
 import { renderTNodeJSX } from '../../utils/render-tnode';
 import Image from '../../image';
+import { UploadConfig } from '../../config-provider';
 
 export interface DraggerProps extends CommonDisplayFileProps {
   trigger?: TdUploadProps['trigger'];
@@ -41,7 +42,7 @@ export default defineComponent({
 
   setup(props: DraggerProps) {
     const { displayFiles, accept } = toRefs(props);
-
+    const locale = computed(() => props.locale as UploadConfig);
     const { sizeClassNames } = useCommonClassName();
     const uploadPrefix = `${props.classPrefix}-upload`;
 
@@ -69,6 +70,7 @@ export default defineComponent({
       sizeClassNames,
       uploadPrefix,
       icons,
+      locale,
     };
   },
 
