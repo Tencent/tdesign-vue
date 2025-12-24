@@ -53,8 +53,17 @@ visible-change | `(visible: boolean, context: PopupVisibleChangeContext)` | 当�
 
 同时也支持 `this.$popup`。
 
-参数名称 | 参数类型 | 参数默认值 | 参数说明
+名称 | 参数 | 返回值 | 描述
 -- | -- | -- | --
 content | String / Slot / Function | - | 必需。气泡框的内容。TS 类型：`string \| TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)
 popupProps | Object | - | 透传气泡框/浮层的属性
 triggerElement | String | - | 必需。触发气泡框/浮层的元素，传入选择器即可
+
+### PopupInstanceFunctions 组件实例方法
+
+名称 | 参数 | 返回值 | 描述
+-- | -- | -- | --
+getOverlay | \- | `HTMLElement \| null` | 获取浮层元素
+getOverlayState | \- | `{ hover: boolean }` | 获取浮层悬浮状态
+getPopper | \- | `Instance \| null` | 获取当前组件 popper 实例。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/popup/type.ts)。<br/>`import { Instance } from '@popperjs/core'`<br/>
+update | \- | \- | 更新浮层内容

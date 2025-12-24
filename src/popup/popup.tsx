@@ -1,5 +1,5 @@
-import { PropType, VNodeDirective } from 'vue';
-import { createPopper } from '@popperjs/core';
+import { VNodeDirective } from 'vue';
+import { createPopper, Instance as PopperInstance } from '@popperjs/core';
 import { debounce } from 'lodash-es';
 import { on, off, once } from '../utils/dom';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
@@ -56,7 +56,7 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
   data() {
     return {
       /** popperjs instance */
-      popper: null as ReturnType<typeof createPopper>,
+      popper: null as PopperInstance,
       /** timeout id */
       timeout: null,
       hasDocumentEvent: false,
@@ -67,6 +67,8 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
       contentClicked: false,
       /** is popup leaving */
       isLeaving: false,
+      /** is overlay hover */
+      isOverlayHover: false,
     };
   },
   computed: {
@@ -244,6 +246,27 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
         this.updateScrollTop?.(overlayEl);
       }
     },
+    // PopupInstanceFunctions: 获取浮层元素
+    getOverlay(): HTMLElement | null {
+      const overlayEl = this.$refs?.overlay as HTMLElement;
+      return overlayEl;
+    },
+
+    // PopupInstanceFunctions: 获取浮层悬浮状态
+    getOverlayState(): { hover: boolean } {
+      return { hover: this.isOverlayHover };
+    },
+
+    // PopupInstanceFunctions: 获取 Popper 实例
+    getPopper(): PopperInstance | null {
+      return this.popper;
+    },
+
+    // PopupInstanceFunctions: 更新浮层内容
+    update() {
+      this.updatePopper();
+    },
+
     getOverlayStyle() {
       const { overlayStyle } = this;
       const triggerEl = this.$el as HTMLElement;
@@ -347,6 +370,7 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
       }
     },
     onMouseEnter() {
+      this.isOverlayHover = true;
       if (this.destroyOnClose && this.isLeaving) {
         // 如果 popup 在关闭的时候会被销毁，那在它消失的过程中，不响应鼠标进入事件，因为否则不会触发 mouseleave
         return;
@@ -355,6 +379,7 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
       this.handleOpen({});
     },
     onMouseLeave(ev: MouseEvent) {
+      this.isOverlayHover = false;
       // 子元素存在打开的 popup 时，ui 可能重叠，而 dom 节点多是并列关系
       // 需要做碰撞检测去阻止父级 popup 关闭
       if (this.visibleState > 1) {
