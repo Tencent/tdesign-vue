@@ -6,6 +6,12 @@ docClass: timeline
 ---
 
 
+## 🌈 1.14.4 `2025-12-26` 
+### 🐞 Bug Fixes
+- `Drawer`: 修复 `DOM` 元素未正确移除的问题 @RSS1102 ([#3788](https://github.com/Tencent/tdesign-vue/pull/3788))
+- `Guide`: 修复 `DOM` 元素未正确移除的问题 @RSS1102 ([#3788](https://github.com/Tencent/tdesign-vue/pull/3788))
+
+
 ## 🌈 1.14.3 `2025-12-23` 
 ### 🚀 Features
 - `ImageViewer`: 
