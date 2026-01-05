@@ -145,15 +145,32 @@ export default function useSingle(
     return props.placeholder;
   };
 
+  const renderInputDisplay = (singleValueDisplay: any, displayedValue: any, popupVisible: boolean) => {
+    // 使用 valueDisplay 插槽时，如用户传入 useInputDisplay 使用自带输入回显实现，未传则认为用户自行实现。
+    if (singleValueDisplay) {
+      if (popupVisible && props.allowInput) {
+        return displayedValue;
+      }
+      if (
+        !props.valueDisplayOptions?.useInputDisplay
+        || (props.valueDisplayOptions?.useInputDisplay && !popupVisible)
+      ) {
+        return undefined;
+      }
+    }
+
+    return displayedValue;
+  };
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const renderSelectSingle = (h: Vue.CreateElement, popupVisible: boolean) => {
     const singleValueDisplay = renderTNode('valueDisplay');
-    const pureValue = getInputValue(value.value, keys.value);
-    const displayedValue = popupVisible && props.allowInput ? inputValue.value : pureValue;
+    const displayedValue = popupVisible && props.allowInput ? inputValue.value : getInputValue(value.value, keys.value);
     const prefixContent = renderPrefixContent(singleValueDisplay, popupVisible);
+
     const inputProps = {
       ...commonInputProps.value,
-      value: singleValueDisplay && props.value ? undefined : displayedValue,
+      value: renderInputDisplay(singleValueDisplay, displayedValue, popupVisible),
       label: prefixContent.length ? () => prefixContent : undefined,
       autoWidth: props.autoWidth,
       autofocus: props.autofocus,
