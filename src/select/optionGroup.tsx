@@ -42,8 +42,7 @@ export default defineComponent({
     };
   },
   render() {
-    const renderTNode = useTNodeJSX();
-    const children: ScopedSlotReturnValue = renderTNode('default');
+    const children: ScopedSlotReturnValue = this.renderTNode('default');
     const optionGroupLabel = this.renderTNode('label');
     return (
       <li class={this.classes}>
