@@ -40,6 +40,11 @@ function getInputValue(value: TdSelectInputProps['value'], keys: TdSelectInputPr
   return isObject(value) ? lodashGet(value, iKeys.label) : value;
 }
 
+// 严格判断是否为空，避免数字0被判断为空
+function isEmptyValue(val: any): boolean {
+  return val === undefined || val === null;
+}
+
 export default function useSingle(
   props: TdSelectInputProps & { valueDisplayOptions?: SelectInputValueDisplayOptions },
   context: SetupContext,
@@ -114,7 +119,7 @@ export default function useSingle(
 
     if (singleValueDisplay) {
       if (
-        !value.value
+        isEmptyValue(value.value)
         || (props.valueDisplayOptions?.useInputDisplay && popupVisible)
         || (popupVisible && props.allowInput)
       ) {
@@ -129,8 +134,11 @@ export default function useSingle(
     // 如果当前存在 value（对应直接使用组件和 select 组件调用时），不显示占位符。
 
     if (singleValueDisplay) {
-      if (!value.value || (props.allowInput && popupVisible)) return props.placeholder;
-      if (!props.valueDisplayOptions?.usePlaceholder || (props.valueDisplayOptions?.usePlaceholder && value.value)) {
+      if (isEmptyValue(value.value) || (props.allowInput && popupVisible)) return props.placeholder;
+      if (
+        !props.valueDisplayOptions?.usePlaceholder
+        || (props.valueDisplayOptions?.usePlaceholder && !isEmptyValue(value.value))
+      ) {
         return '';
       }
     }
