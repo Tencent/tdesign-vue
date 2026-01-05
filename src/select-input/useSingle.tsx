@@ -29,12 +29,21 @@ const DEFAULT_KEYS = {
   value: 'value',
 };
 
+// 内部参数
+export interface SelectInputValueDisplayOptions {
+  useInputDisplay: boolean;
+  usePlaceholder: boolean;
+}
+
 function getInputValue(value: TdSelectInputProps['value'], keys: TdSelectInputProps['keys']) {
   const iKeys = keys || DEFAULT_KEYS;
   return isObject(value) ? lodashGet(value, iKeys.label) : value;
 }
 
-export default function useSingle(props: TdSelectInputProps, context: SetupContext) {
+export default function useSingle(
+  props: TdSelectInputProps & { valueDisplayOptions?: SelectInputValueDisplayOptions },
+  context: SetupContext,
+) {
   const instance = getCurrentInstance();
   const { value, keys, inputValue: propsInputValue } = toRefs(props);
   const classPrefix = usePrefixClass();
@@ -92,20 +101,56 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
     instance.emit('mouseenter', context);
   };
 
+  const renderPrefixContent = (singleValueDisplay: any, popupVisible: boolean) => {
+    // 需要隐藏 valueDisplay 的两个情况
+    // 1 用户传入 usePlaceholder 希望使用自带占位符实现，则应在未选择值时隐藏valueDisplay，只展示占位符
+    // 2 用户传入 useInputDisplay 希望使用自带输入回显实现，激活选择器浮层时只展示input值（待讨论是否修改为激活后真的输入字符再隐藏 valueDisplay，此处实现效果与不使用 valueDisplay 只使用filterable时不同）
+
+    const label = renderTNode('label');
+
+    if (!label && !singleValueDisplay) {
+      return [];
+    }
+
+    if (singleValueDisplay) {
+      if (
+        !value.value
+        || (props.valueDisplayOptions?.useInputDisplay && popupVisible)
+        || (popupVisible && props.allowInput)
+      ) {
+        return label ? [label] : [];
+      }
+    }
+    return [label, singleValueDisplay].filter(Boolean);
+  };
+
+  const renderPlaceholder = (singleValueDisplay: any, popupVisible: boolean) => {
+    // 使用 valueDisplay 插槽时，如用户传入 usePlaceholder 使用自带占位符实现，未传则认为用户自行实现。
+    // 如果当前存在 value（对应直接使用组件和 select 组件调用时），不显示占位符。
+
+    if (singleValueDisplay) {
+      if (!value.value || (props.allowInput && popupVisible)) return props.placeholder;
+      if (!props.valueDisplayOptions?.usePlaceholder || (props.valueDisplayOptions?.usePlaceholder && value.value)) {
+        return '';
+      }
+    }
+    return props.placeholder;
+  };
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const renderSelectSingle = (h: Vue.CreateElement, popupVisible: boolean) => {
     const singleValueDisplay = renderTNode('valueDisplay');
     const pureValue = getInputValue(value.value, keys.value);
     const displayedValue = popupVisible && props.allowInput ? inputValue.value : pureValue;
-    const prefixContent = [renderTNode('label'), singleValueDisplay];
+    const prefixContent = renderPrefixContent(singleValueDisplay, popupVisible);
     const inputProps = {
       ...commonInputProps.value,
       value: singleValueDisplay && props.value ? undefined : displayedValue,
-      label: () => prefixContent,
+      label: prefixContent.length ? () => prefixContent : undefined,
       autoWidth: props.autoWidth,
       autofocus: props.autofocus,
       readonly: !props.allowInput || props.readonly,
-      placeholder: singleValueDisplay ? '' : props.placeholder,
+      placeholder: renderPlaceholder(singleValueDisplay, popupVisible),
       suffixIcon: !props.disabled && props.loading ? () => <Loading loading size="small" /> : props.suffixIcon,
       showClearIconOnEmpty: Boolean(!props.disabled && props.clearable && (inputValue.value || displayedValue)),
       inputClass: {
