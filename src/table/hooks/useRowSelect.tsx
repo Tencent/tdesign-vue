@@ -77,22 +77,16 @@ export default function useRowSelect(
   // eslint-disable-next-line
   function getSelectedHeader(h: CreateElement) {
     // 采用 Vue3 版本的简洁逻辑，只基于当前可见的 canSelectedRows 计算状态
-    // 远程分页：canSelectedRows 基于当前页数据计算
-    // 树形表格：canSelectedRows 基于展开后的扁平化数据计算（EnhancedTable 传入的 dataSource）
-    return () => {
-      const isIndeterminate = intersectionKeys.value.length > 0 && intersectionKeys.value.length < canSelectedRows.value.length;
-      const isChecked = intersectionKeys.value.length !== 0
-        && canSelectedRows.value.length !== 0
-        && intersectionKeys.value.length === canSelectedRows.value.length;
-      return (
-        <Checkbox
-          checked={isChecked}
-          indeterminate={isIndeterminate}
-          disabled={!canSelectedRows.value.length}
-          {...{ on: { change: handleSelectAll } }}
-        />
-      );
-    };
+    return () => (
+      <Checkbox
+        checked={canSelectedRows.value.length !== 0 && intersectionKeys.value.length === canSelectedRows.value.length}
+        indeterminate={
+          intersectionKeys.value.length > 0 && intersectionKeys.value.length < canSelectedRows.value.length
+        }
+        disabled={!canSelectedRows.value.length}
+        {...{ on: { change: handleSelectAll } }}
+      />
+    );
   }
 
   function getRowSelectDisabledData(p: PrimaryTableCellParams<TableRowData>) {
@@ -160,27 +154,13 @@ export default function useRowSelect(
   function handleSelectAll(checked: boolean) {
     const reRowKey = props.rowKey || 'id';
     const canSelectedRowKeys = canSelectedRows.value.map((record) => get(record, reRowKey));
-
-    if (reserveSelectedRowOnPaginate.value) {
-      // 远程分页场景：保留其他页面的选中状态，只操作当前页
-      const otherPageSelectedKeys = tSelectedRowKeys.value.filter((id) => !canSelectedRowKeys.includes(id));
-      const allIds = checked ? [...otherPageSelectedKeys, ...canSelectedRowKeys] : otherPageSelectedKeys;
-
-      setTSelectedRowKeys(allIds, {
-        selectedRowData: checked ? allIds.map((t) => selectedRowDataMap.value.get(t)).filter(Boolean) : [],
-        type: checked ? 'check' : 'uncheck',
-        currentRowKey: 'CHECK_ALL_BOX',
-      });
-    } else {
-      // 树形表格或本地分页场景：原有逻辑
-      const disabledSelectedRowKeys = selectedRowKeys.value?.filter((id) => !canSelectedRowKeys.includes(id)) || [];
-      const allIds = checked ? [...disabledSelectedRowKeys, ...canSelectedRowKeys] : [...disabledSelectedRowKeys];
-      setTSelectedRowKeys(allIds, {
-        selectedRowData: checked ? allIds.map((t) => selectedRowDataMap.value.get(t)).filter(Boolean) : [],
-        type: checked ? 'check' : 'uncheck',
-        currentRowKey: 'CHECK_ALL_BOX',
-      });
-    }
+    const disabledSelectedRowKeys = selectedRowKeys.value?.filter((id) => !canSelectedRowKeys.includes(id)) || [];
+    const allIds = checked ? [...disabledSelectedRowKeys, ...canSelectedRowKeys] : [...disabledSelectedRowKeys];
+    setTSelectedRowKeys(allIds, {
+      selectedRowData: checked ? allIds.map((t) => selectedRowDataMap.value.get(t)) : [],
+      type: checked ? 'check' : 'uncheck',
+      currentRowKey: 'CHECK_ALL_BOX',
+    });
   }
 
   function formatToRowSelectColumn(col: PrimaryTableCol) {
