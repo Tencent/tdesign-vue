@@ -48,10 +48,6 @@ export default function useRowSelect(
     canSelectedRows.value.map((t) => get(t, props.rowKey || 'id')),
   ));
 
-  // 是否为远程分页场景（保留跨页选中状态）
-  // 注意：树形表格的选中逻辑由 useTreeSelect 单独处理，不走此处逻辑
-  const isRemotePagination = computed(() => reserveSelectedRowOnPaginate.value);
-
   const allowUncheck = computed(() => {
     const singleSelectCol = columns.value.find((col) => col.type === 'single');
     if (!singleSelectCol || !singleSelectCol.checkProps || !('allowUncheck' in singleSelectCol.checkProps)) return false;
@@ -80,32 +76,19 @@ export default function useRowSelect(
 
   // eslint-disable-next-line
   function getSelectedHeader(h: CreateElement) {
-    // 判断条件直接写在jsx中，防止变量被computed捕获，选中行重新计算了columns
+    // 采用 Vue3 版本的简洁逻辑，只基于当前可见的 canSelectedRows 计算状态
+    // 远程分页：canSelectedRows 基于当前页数据计算
+    // 树形表格：canSelectedRows 基于展开后的扁平化数据计算（EnhancedTable 传入的 dataSource）
     return () => {
-      const hasCanSelectedRows = canSelectedRows.value.length !== 0;
-      const currentPageAllSelected = intersectionKeys.value.length === canSelectedRows.value.length;
-      const hasPartialSelection = intersectionKeys.value.length > 0 && intersectionKeys.value.length < canSelectedRows.value.length;
-
-      let checked = false;
-      let indeterminate = false;
-
-      if (hasCanSelectedRows) {
-        if (isRemotePagination.value) {
-          // 远程分页场景：只考虑当前页的选中状态
-          checked = currentPageAllSelected;
-          indeterminate = hasPartialSelection;
-        } else {
-          // 树形表格或本地分页场景：需要确保没有隐藏的选中项
-          checked = currentPageAllSelected && intersectionKeys.value.length === tSelectedRowKeys.value.length;
-          indeterminate = hasPartialSelection || intersectionKeys.value.length < tSelectedRowKeys.value.length;
-        }
-      }
-
+      const isIndeterminate = intersectionKeys.value.length > 0 && intersectionKeys.value.length < canSelectedRows.value.length;
+      const isChecked = intersectionKeys.value.length !== 0
+        && canSelectedRows.value.length !== 0
+        && intersectionKeys.value.length === canSelectedRows.value.length;
       return (
         <Checkbox
-          checked={checked}
-          indeterminate={indeterminate}
-          disabled={!hasCanSelectedRows}
+          checked={isChecked}
+          indeterminate={isIndeterminate}
+          disabled={!canSelectedRows.value.length}
           {...{ on: { change: handleSelectAll } }}
         />
       );
@@ -178,7 +161,7 @@ export default function useRowSelect(
     const reRowKey = props.rowKey || 'id';
     const canSelectedRowKeys = canSelectedRows.value.map((record) => get(record, reRowKey));
 
-    if (isRemotePagination.value) {
+    if (reserveSelectedRowOnPaginate.value) {
       // 远程分页场景：保留其他页面的选中状态，只操作当前页
       const otherPageSelectedKeys = tSelectedRowKeys.value.filter((id) => !canSelectedRowKeys.includes(id));
       const allIds = checked ? [...otherPageSelectedKeys, ...canSelectedRowKeys] : otherPageSelectedKeys;
