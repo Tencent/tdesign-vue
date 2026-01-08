@@ -48,6 +48,10 @@ export default function useRowSelect(
     canSelectedRows.value.map((t) => get(t, props.rowKey || 'id')),
   ));
 
+  // 是否为远程分页场景（保留跨页选中状态）
+  // 注意：树形表格的选中逻辑由 useTreeSelect 单独处理，不走此处逻辑
+  const isRemotePagination = computed(() => reserveSelectedRowOnPaginate.value);
+
   const allowUncheck = computed(() => {
     const singleSelectCol = columns.value.find((col) => col.type === 'single');
     if (!singleSelectCol || !singleSelectCol.checkProps || !('allowUncheck' in singleSelectCol.checkProps)) return false;
@@ -77,24 +81,35 @@ export default function useRowSelect(
   // eslint-disable-next-line
   function getSelectedHeader(h: CreateElement) {
     // 判断条件直接写在jsx中，防止变量被computed捕获，选中行重新计算了columns
-    return () => (
-      <Checkbox
-        checked={
-          canSelectedRows.value.length !== 0
-          && intersectionKeys.value.length === canSelectedRows.value.length
-          // 确保所有已选中的行都是可见的（没有被折叠而隐藏的选中项）
-          && intersectionKeys.value.length === tSelectedRowKeys.value.length
+    return () => {
+      const hasCanSelectedRows = canSelectedRows.value.length !== 0;
+      const currentPageAllSelected = intersectionKeys.value.length === canSelectedRows.value.length;
+      const hasPartialSelection = intersectionKeys.value.length > 0 && intersectionKeys.value.length < canSelectedRows.value.length;
+
+      let checked = false;
+      let indeterminate = false;
+
+      if (hasCanSelectedRows) {
+        if (isRemotePagination.value) {
+          // 远程分页场景：只考虑当前页的选中状态
+          checked = currentPageAllSelected;
+          indeterminate = hasPartialSelection;
+        } else {
+          // 树形表格或本地分页场景：需要确保没有隐藏的选中项
+          checked = currentPageAllSelected && intersectionKeys.value.length === tSelectedRowKeys.value.length;
+          indeterminate = hasPartialSelection || intersectionKeys.value.length < tSelectedRowKeys.value.length;
         }
-        indeterminate={
-          // 一些可见的行已被选中，但不是全部
-          (intersectionKeys.value.length > 0 && intersectionKeys.value.length < canSelectedRows.value.length)
-          // 某些被选中的行不可见（例如折叠的树子节点）
-          || intersectionKeys.value.length < tSelectedRowKeys.value.length
-        }
-        disabled={!canSelectedRows.value.length}
-        {...{ on: { change: handleSelectAll } }}
-      />
-    );
+      }
+
+      return (
+        <Checkbox
+          checked={checked}
+          indeterminate={indeterminate}
+          disabled={!hasCanSelectedRows}
+          {...{ on: { change: handleSelectAll } }}
+        />
+      );
+    };
   }
 
   function getRowSelectDisabledData(p: PrimaryTableCellParams<TableRowData>) {
@@ -162,13 +177,27 @@ export default function useRowSelect(
   function handleSelectAll(checked: boolean) {
     const reRowKey = props.rowKey || 'id';
     const canSelectedRowKeys = canSelectedRows.value.map((record) => get(record, reRowKey));
-    const disabledSelectedRowKeys = selectedRowKeys.value?.filter((id) => !canSelectedRowKeys.includes(id)) || [];
-    const allIds = checked ? [...disabledSelectedRowKeys, ...canSelectedRowKeys] : [...disabledSelectedRowKeys];
-    setTSelectedRowKeys(allIds, {
-      selectedRowData: checked ? allIds.map((t) => selectedRowDataMap.value.get(t)) : [],
-      type: checked ? 'check' : 'uncheck',
-      currentRowKey: 'CHECK_ALL_BOX',
-    });
+
+    if (isRemotePagination.value) {
+      // 远程分页场景：保留其他页面的选中状态，只操作当前页
+      const otherPageSelectedKeys = tSelectedRowKeys.value.filter((id) => !canSelectedRowKeys.includes(id));
+      const allIds = checked ? [...otherPageSelectedKeys, ...canSelectedRowKeys] : otherPageSelectedKeys;
+
+      setTSelectedRowKeys(allIds, {
+        selectedRowData: checked ? allIds.map((t) => selectedRowDataMap.value.get(t)).filter(Boolean) : [],
+        type: checked ? 'check' : 'uncheck',
+        currentRowKey: 'CHECK_ALL_BOX',
+      });
+    } else {
+      // 树形表格或本地分页场景：原有逻辑
+      const disabledSelectedRowKeys = selectedRowKeys.value?.filter((id) => !canSelectedRowKeys.includes(id)) || [];
+      const allIds = checked ? [...disabledSelectedRowKeys, ...canSelectedRowKeys] : [...disabledSelectedRowKeys];
+      setTSelectedRowKeys(allIds, {
+        selectedRowData: checked ? allIds.map((t) => selectedRowDataMap.value.get(t)).filter(Boolean) : [],
+        type: checked ? 'check' : 'uncheck',
+        currentRowKey: 'CHECK_ALL_BOX',
+      });
+    }
   }
 
   function formatToRowSelectColumn(col: PrimaryTableCol) {
