@@ -76,7 +76,7 @@ export default function useRowSelect(
 
   // eslint-disable-next-line
   function getSelectedHeader(h: CreateElement) {
-    // 采用 Vue3 版本的简洁逻辑，只基于当前可见的 canSelectedRows 计算状态
+    // 判断条件直接写在jsx中，防止变量被computed捕获，选中行重新计算了columns
     return () => (
       <Checkbox
         checked={canSelectedRows.value.length !== 0 && intersectionKeys.value.length === canSelectedRows.value.length}
