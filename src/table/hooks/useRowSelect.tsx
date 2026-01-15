@@ -29,6 +29,12 @@ export default function useRowSelect(
   } = toRefs(props);
   const currentPaginateData = ref<TableRowData[]>(data.value);
   const selectedRowClassNames = ref();
+
+  // 远程分页场景下，data 变化时需要同步更新 currentPaginateData
+  watch(data, (newData) => {
+    currentPaginateData.value = newData;
+  });
+
   const [tSelectedRowKeys, setTSelectedRowKeys] = useDefaultValue(
     selectedRowKeys,
     props.defaultSelectedRowKeys || [],
