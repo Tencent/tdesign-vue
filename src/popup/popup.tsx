@@ -1,7 +1,5 @@
 import { PropType, VNodeDirective } from 'vue';
-import {
-  createPopper, Modifier, ModifierArguments, Options as popperOptions,
-} from '@popperjs/core';
+import { createPopper, ModifierArguments, Options as popperOptions } from '@popperjs/core';
 import { debounce } from 'lodash-es';
 import { on, off, once } from '../utils/dom';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
@@ -216,6 +214,9 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
         return;
       }
 
+      // 获取内层 overlay 元素的尺寸，用于 flip 计算
+      const overlayEl = this.$refs.overlay as HTMLElement;
+
       const modifiers: popperOptions['modifiers'] = getIEVersion() > 9
         ? []
         : [
@@ -230,25 +231,49 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
           },
         ];
 
-      // 当使用 popperContentElement 时，添加custom modifier来维护样式
-      if (this.popperContentElement) {
+      // 如果没有使用 popperContentElement，则需要修正尺寸和偏移量
+      // 因为外层 popper 元素的尺寸为 0，需要使用内层 overlay 的尺寸
+      if (!this.popperContentElement && overlayEl) {
+        // 在 read 阶段修改 rects.popper 的尺寸
         modifiers.push({
-          name: 'applyStyles',
-          phase: 'write',
+          name: 'popperSize',
+          enabled: true,
+          phase: 'read',
           fn: ({ state }: { state: ModifierArguments<popperOptions>['state'] }) => {
-            // 确保样式被应用到指定的元素
-            const styles = state.styles.popper;
-            if (styles && popperEl) {
-              Object.assign(popperEl.style, styles);
-            }
-            const attributes = state.attributes.popper;
-            if (attributes && popperEl) {
-              Object.keys(attributes).forEach((key) => {
-                popperEl.setAttribute(key, String(attributes[key]));
-              });
+            const overlayRect = overlayEl.getBoundingClientRect();
+            // eslint-disable-next-line no-param-reassign
+            state.rects.popper.width = overlayRect.width;
+            // eslint-disable-next-line no-param-reassign
+            state.rects.popper.height = overlayRect.height;
+          },
+        } as any);
+
+        // 在 popperOffsets 之后修正偏移量（因为 popperOffsets 用的是错误的尺寸）
+        modifiers.push({
+          name: 'fixPopperOffsets',
+          enabled: true,
+          phase: 'main',
+          requires: ['popperOffsets'],
+          fn: ({ state }: { state: ModifierArguments<popperOptions>['state'] }) => {
+            const overlayRect = overlayEl.getBoundingClientRect();
+            const { placement, modifiersData } = state;
+
+            if (modifiersData.popperOffsets) {
+              // 根据 placement 修正坐标
+              if (placement.startsWith('top')) {
+                // top 位置需要减去内容高度
+                // eslint-disable-next-line no-param-reassign
+                modifiersData.popperOffsets.y -= overlayRect.height;
+              }
+              if (placement.startsWith('left')) {
+                // left 位置需要减去内容宽度
+                // eslint-disable-next-line no-param-reassign
+                modifiersData.popperOffsets.x -= overlayRect.width;
+              }
+              // bottom/right 位置不需要修正
             }
           },
-        } as unknown as any);
+        } as any);
       }
 
       this.popper = createPopper(triggerEl, popperEl, {
