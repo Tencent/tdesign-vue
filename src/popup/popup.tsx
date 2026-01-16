@@ -1,5 +1,7 @@
 import { PropType, VNodeDirective } from 'vue';
-import { createPopper } from '@popperjs/core';
+import {
+  createPopper, Modifier, ModifierArguments, Options as popperOptions,
+} from '@popperjs/core';
 import { debounce } from 'lodash-es';
 import { on, off, once } from '../utils/dom';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
@@ -58,7 +60,7 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
       /** popperjs instance */
       popper: null as ReturnType<typeof createPopper>,
       /** timeout id */
-      timeout: null,
+      timeout: null as NodeJS.Timeout | null,
       hasDocumentEvent: false,
       /** if a trusted action (opening or closing) is prevented, increase this flag */
       visibleState: 0,
@@ -87,7 +89,7 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
           ...map,
           [trigger]: this.trigger.includes(trigger),
         }),
-        {} as any,
+        {} as Record<(typeof triggers)[number], boolean>,
       );
     },
     normalizedDelay(): { open: number; close: number } {
@@ -213,21 +215,44 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
         this.popper.update();
         return;
       }
+
+      const modifiers: popperOptions['modifiers'] = getIEVersion() > 9
+        ? []
+        : [
+          {
+            name: 'computeStyles',
+            options: {
+              // 默认为 true，即使用 transform 定位，开启 gpu 加速
+              // ie9 不支持 transform，需要添加 -ms- 前缀，@popperjs/core 没有添加这个样式，
+              // 在 ie9 下则去掉 gpu 优化加速，使用 top, right, bottom, left 定位
+              gpuAcceleration: false,
+            },
+          },
+        ];
+
+      // 当使用 popperContentElement 时，添加custom modifier来维护样式
+      if (this.popperContentElement) {
+        modifiers.push({
+          name: 'applyStyles',
+          phase: 'write',
+          fn: ({ state }: { state: ModifierArguments<popperOptions>['state'] }) => {
+            // 确保样式被应用到指定的元素
+            const styles = state.styles.popper;
+            if (styles && popperEl) {
+              Object.assign(popperEl.style, styles);
+            }
+            const attributes = state.attributes.popper;
+            if (attributes && popperEl) {
+              Object.keys(attributes).forEach((key) => {
+                popperEl.setAttribute(key, String(attributes[key]));
+              });
+            }
+          },
+        } as unknown as any);
+      }
+
       this.popper = createPopper(triggerEl, popperEl, {
-        modifiers:
-          getIEVersion() > 9
-            ? []
-            : [
-              {
-                name: 'computeStyles',
-                options: {
-                  // 默认为 true，即使用 transform 定位，开启 gpu 加速
-                  // ie9 不支持 transform，需要添加 -ms- 前缀，@popperjs/core 没有添加这个样式，
-                  // 在 ie9 下则去掉 gpu 优化加速，使用 top, right, bottom, left 定位
-                  gpuAcceleration: false,
-                },
-              },
-            ],
+        modifiers: [...modifiers, ...((this.popperOptions as popperOptions)?.modifiers || [])],
         placement: getPopperPlacement(this.placement as TdPopupProps['placement']),
         onFirstUpdate: () => {
           this.$nextTick(this.updatePopper);
