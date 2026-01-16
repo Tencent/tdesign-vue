@@ -241,10 +241,10 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
           phase: 'read',
           fn: ({ state }: { state: ModifierArguments<popperOptions>['state'] }) => {
             const overlayRect = overlayEl.getBoundingClientRect();
-            // eslint-disable-next-line no-param-reassign
-            state.rects.popper.width = overlayRect.width;
-            // eslint-disable-next-line no-param-reassign
-            state.rects.popper.height = overlayRect.height;
+            Object.assign(state.rects.popper, {
+              width: overlayRect.width,
+              height: overlayRect.height,
+            });
           },
         } as any);
 
@@ -260,17 +260,14 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
 
             if (modifiersData.popperOffsets) {
               // 根据 placement 修正坐标
+              const offsetFix: { x?: number; y?: number } = {};
               if (placement.startsWith('top')) {
-                // top 位置需要减去内容高度
-                // eslint-disable-next-line no-param-reassign
-                modifiersData.popperOffsets.y -= overlayRect.height;
+                offsetFix.y = modifiersData.popperOffsets.y - overlayRect.height;
               }
               if (placement.startsWith('left')) {
-                // left 位置需要减去内容宽度
-                // eslint-disable-next-line no-param-reassign
-                modifiersData.popperOffsets.x -= overlayRect.width;
+                offsetFix.x = modifiersData.popperOffsets.x - overlayRect.width;
               }
-              // bottom/right 位置不需要修正
+              Object.assign(modifiersData.popperOffsets, offsetFix);
             }
           },
         } as any);
