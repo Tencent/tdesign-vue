@@ -13,6 +13,7 @@ import {
   reactive,
 } from '@vue/composition-api';
 import { isFunction } from 'lodash-es';
+import { State } from '@popperjs/core';
 import props from './submenu-props';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import FakeArrow from '../common-components/fake-arrow';
@@ -255,6 +256,19 @@ export default defineComponent({
         placement = 'bottom-left';
       }
 
+      // 上下位置变化时,添加 bottom 和 top 类,用于添加 bottom 和 top 伪元素
+      const placementChange = (state: State) => {
+        const spacerEl = this.$refs.popupWrapperRef as HTMLElement;
+        if (!spacerEl) return;
+
+        const prefix = `${this.classPrefix}-menu__spacer--placement`;
+        const isBottom = state.placement.startsWith('bottom');
+        const isTop = state.placement.startsWith('top');
+
+        spacerEl.classList.toggle(`${prefix}-bottom`, isBottom);
+        spacerEl.classList.toggle(`${prefix}-top`, isTop);
+      };
+
       const popupWrapper = (
         <div
           ref="popupWrapperRef"
@@ -276,6 +290,7 @@ export default defineComponent({
           visible={this.popupVisible}
           placement={(this.popupProps as TdSubmenuProps['popupProps'])?.placement ?? (placement as PopupPlacement)}
           content={() => popupWrapper}
+          on={{ 'placement-change': placementChange }}
         >
           <div ref="submenuRef" class={this.submenuClass}>
             {triggerElement}

@@ -51,7 +51,7 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
       /** popperjs instance */
       popper: null as ReturnType<typeof createPopper>,
       /** timeout id */
-      timeout: null,
+      timeout: null as ReturnType<typeof setTimeout> | null,
       hasDocumentEvent: false,
       /** if a trusted action (opening or closing) is prevented, increase this flag */
       visibleState: 0,
@@ -201,8 +201,8 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
         return;
       }
       this.popper = createPopper(triggerEl, popperEl, {
-        modifiers:
-          getIEVersion() > 9
+        modifiers: [
+          ...(getIEVersion() > 9
             ? []
             : [
               {
@@ -214,7 +214,16 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
                   gpuAcceleration: false,
                 },
               },
-            ],
+            ]),
+          {
+            name: 'onPlacementChange',
+            enabled: true,
+            phase: 'main',
+            fn: ({ state }) => {
+              this.$emit('placement-change', state);
+            },
+          },
+        ],
         placement: getPopperPlacement(this.placement as TdPopupProps['placement']),
         onFirstUpdate: () => {
           this.$nextTick(this.updatePopper);
