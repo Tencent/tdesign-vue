@@ -91,8 +91,8 @@ export default defineComponent({
     const submenuClass = computed(() => [
       `${classPrefix.value}-menu__item`,
       `${classPrefix.value}-menu__item-spacer`,
-      (!isHead || isNested.value) && `${classPrefix.value}-menu__item-spacer--right`,
       {
+        [`${classPrefix.value}-menu__item-spacer--right`]: !isHead || isNested.value,
         [`${classPrefix.value}-is-disabled`]: props.disabled,
         [`${classPrefix.value}-is-opened`]: isOpen.value,
         [`${classPrefix.value}-is-active`]: isActive.value,
@@ -274,7 +274,9 @@ export default defineComponent({
           ref="popupWrapperRef"
           class={[
             `${this.classPrefix}-menu__spacer`,
-            (this.isNested || !this.isHead) && `${this.classPrefix}-menu__spacer--left`,
+            {
+              [`${this.classPrefix}-menu__spacer--left`]: this.isNested || !this.isHead
+            }
           ]}
           onMouseenter={this.handleEnterPopup}
           onMouseleave={this.handleMouseLeavePopup}
