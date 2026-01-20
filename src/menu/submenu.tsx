@@ -275,8 +275,8 @@ export default defineComponent({
           class={[
             `${this.classPrefix}-menu__spacer`,
             {
-              [`${this.classPrefix}-menu__spacer--left`]: this.isNested || !this.isHead
-            }
+              [`${this.classPrefix}-menu__spacer--left`]: this.isNested || !this.isHead,
+            },
           ]}
           onMouseenter={this.handleEnterPopup}
           onMouseleave={this.handleMouseLeavePopup}
