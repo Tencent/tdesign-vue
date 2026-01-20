@@ -91,7 +91,7 @@ export default defineComponent({
     const submenuClass = computed(() => [
       `${classPrefix.value}-menu__item`,
       `${classPrefix.value}-menu__item-spacer`,
-      `${classPrefix.value}-menu__item-spacer--${isHead && !isNested.value ? 'bottom' : 'right'}`,
+      (!isHead || isNested.value) && `${classPrefix.value}-menu__item-spacer--right`,
       {
         [`${classPrefix.value}-is-disabled`]: props.disabled,
         [`${classPrefix.value}-is-opened`]: isOpen.value,
@@ -261,12 +261,12 @@ export default defineComponent({
         const spacerEl = this.$refs.popupWrapperRef as HTMLElement;
         if (!spacerEl) return;
 
-        const prefix = `${this.classPrefix}-menu__spacer--placement`;
+        const prefixClassName = `${this.classPrefix}-menu__spacer`;
         const isBottom = state.placement.startsWith('bottom');
         const isTop = state.placement.startsWith('top');
 
-        spacerEl.classList.toggle(`${prefix}-bottom`, isBottom);
-        spacerEl.classList.toggle(`${prefix}-top`, isTop);
+        spacerEl.classList.toggle(`${prefixClassName}--bottom`, isBottom);
+        spacerEl.classList.toggle(`${prefixClassName}--top`, isTop);
       };
 
       const popupWrapper = (
@@ -274,7 +274,7 @@ export default defineComponent({
           ref="popupWrapperRef"
           class={[
             `${this.classPrefix}-menu__spacer`,
-            `${this.classPrefix}-menu__spacer--${!this.isNested && this.isHead ? 'top' : 'left'}`,
+            (this.isNested || !this.isHead) && `${this.classPrefix}-menu__spacer--left`,
           ]}
           onMouseenter={this.handleEnterPopup}
           onMouseleave={this.handleMouseLeavePopup}
