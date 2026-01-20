@@ -134,7 +134,6 @@ export default defineComponent({
   methods: {
     renderNormalSubmenu(node: VMenuData[], depth: number) {
       if (node.length === 0) return null;
-
       return (
         <ul class={[`${this.classPrefix}-head-menu__submenu`, `${this.classPrefix}-submenu`]}>
           {
