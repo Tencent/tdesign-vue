@@ -134,12 +134,12 @@ export default defineComponent({
   methods: {
     renderNormalSubmenu(node: VMenuData[], depth: number) {
       if (node.length === 0) return null;
-
       return (
         <ul class={[`${this.classPrefix}-head-menu__submenu`, `${this.classPrefix}-submenu`]}>
           {
             <Tabs value={this.activeValue} onChange={this.handleTabChange}>
-              {this.submenu.map((item) => (
+              {/* 由于virtual child机制，这里通过vMenu getChild 会有两个相同的节点，故做此处理 */}
+              {this.submenu.slice(0, this.submenu.length / 2).map((item) => (
                 <TabPanel value={item.value} label={item.vnode[0].text}>
                   {item.children && item.children.length > 0
                     ? this.renderNormalSubmenu(item.children, depth + 1)

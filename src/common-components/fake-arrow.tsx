@@ -1,5 +1,6 @@
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
+import { isSafari } from '../_common/js/utils/helper';
 
 const classPrefixMixins = getClassPrefixMixins('fake-arrow');
 
@@ -24,6 +25,7 @@ export default mixins(classPrefixMixins).extend({
       return [
         this.componentName,
         {
+          [`${this.componentName}--transform`]: isSafari(),
           [`${this.componentName}--active`]: this.isActive,
         },
         this.overlayClassName,

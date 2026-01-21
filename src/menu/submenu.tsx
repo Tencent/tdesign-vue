@@ -13,6 +13,7 @@ import {
   reactive,
 } from 'vue';
 import { isFunction } from 'lodash-es';
+import { State } from '@popperjs/core';
 import props from './submenu-props';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import FakeArrow from '../common-components/fake-arrow';
@@ -90,8 +91,8 @@ export default defineComponent({
     const submenuClass = computed(() => [
       `${classPrefix.value}-menu__item`,
       `${classPrefix.value}-menu__item-spacer`,
-      `${classPrefix.value}-menu__item-spacer--${isHead && !isNested.value ? 'bottom' : 'right'}`,
       {
+        [`${classPrefix.value}-menu__item-spacer--right`]: !isHead || isNested.value,
         [`${classPrefix.value}-is-disabled`]: props.disabled,
         [`${classPrefix.value}-is-opened`]: isOpen.value,
         [`${classPrefix.value}-is-active`]: isActive.value,
@@ -255,12 +256,27 @@ export default defineComponent({
         placement = 'bottom-left';
       }
 
+      // 上下位置变化时,添加 bottom 和 top 类,用于添加 bottom 和 top 伪元素
+      const placementChange = (state: State) => {
+        const spacerEl = this.$refs.popupWrapperRef as HTMLElement;
+        if (!spacerEl) return;
+
+        const prefixClassName = `${this.classPrefix}-menu__spacer`;
+        const isBottom = state.placement.startsWith('bottom');
+        const isTop = state.placement.startsWith('top');
+
+        spacerEl.classList.toggle(`${prefixClassName}--bottom`, isBottom);
+        spacerEl.classList.toggle(`${prefixClassName}--top`, isTop);
+      };
+
       const popupWrapper = (
         <div
           ref="popupWrapperRef"
           class={[
             `${this.classPrefix}-menu__spacer`,
-            `${this.classPrefix}-menu__spacer--${!this.isNested && this.isHead ? 'top' : 'left'}`,
+            {
+              [`${this.classPrefix}-menu__spacer--left`]: this.isNested || !this.isHead,
+            },
           ]}
           onMouseenter={this.handleEnterPopup}
           onMouseleave={this.handleMouseLeavePopup}
@@ -270,13 +286,13 @@ export default defineComponent({
       );
       const realPopup = (
         <Popup
-          popperContentElement="overlay"
           {...((this.popupProps ?? {}) as TdSubmenuProps['popupProps'])}
           overlayInnerClassName={[...this.overlayInnerClassName]}
           overlayClassName={[...this.overlayClassName]}
           visible={this.popupVisible}
           placement={(this.popupProps as TdSubmenuProps['popupProps'])?.placement ?? (placement as PopupPlacement)}
           content={() => popupWrapper}
+          on={{ 'placement-change': placementChange }}
         >
           <div ref="submenuRef" class={this.submenuClass}>
             {triggerElement}
