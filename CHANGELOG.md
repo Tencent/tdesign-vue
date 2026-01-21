@@ -6,6 +6,19 @@ docClass: timeline
 ---
 
 
+## 🌈 1.14.5 `2026-01-21` 
+### 🐞 Bug Fixes
+- `Table`: 修复远程分页场景下，全选逻辑错误引起展示异常的问题 @RSS1102 ([#3801](https://github.com/Tencent/tdesign-vue/pull/3801))
+- `Menu`: 修复在 Safari 浏览器中点击展开图标没有变换方向的问题 @liweijie0812 ([#3797](https://github.com/Tencent/tdesign-vue/pull/3797))
+- `Menu`: 修复 `1.14.2` 后 menu-item 绝对定位样式丢失导致层级设置不生效的问题 @RSS1102 ([#3804](https://github.com/Tencent/tdesign-vue/pull/3804))
+- `Select`: 修复在 Safari 浏览器中点击展开图标没有变换方向的问题 @liweijie0812 ([#3797](https://github.com/Tencent/tdesign-vue/pull/3797))
+- `TreeSelect`: 修复在 Safari 浏览器中点击展开图标没有变换方向的问题 @liweijie0812 ([#3797](https://github.com/Tencent/tdesign-vue/pull/3797))
+- `Cascader`: 修复在 Safari 浏览器中点击展开图标没有变换方向的问题 @liweijie0812 ([#3797](https://github.com/Tencent/tdesign-vue/pull/3797))
+- `Table`: 优化存在固定表头或表尾场景滚动后表格位置异常的问题 @uyarn ([#3805](https://github.com/Tencent/tdesign-vue/pull/3805))
+
+
+
+
 ## 🌈 1.14.4 `2025-12-26` 
 ### 🐞 Bug Fixes
 - `Drawer`: 修复 `DOM` 元素未正确移除的问题 @RSS1102 ([#3788](https://github.com/Tencent/tdesign-vue/pull/3788))
