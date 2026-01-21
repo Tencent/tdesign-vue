@@ -29,6 +29,12 @@ export default function useRowSelect(
   } = toRefs(props);
   const currentPaginateData = ref<TableRowData[]>(data.value);
   const selectedRowClassNames = ref();
+
+  // 远程分页场景下，data 变化时需要同步更新 currentPaginateData
+  watch(data, (newData) => {
+    currentPaginateData.value = newData;
+  });
+
   const [tSelectedRowKeys, setTSelectedRowKeys] = useDefaultValue(
     selectedRowKeys,
     props.defaultSelectedRowKeys || [],
@@ -79,17 +85,9 @@ export default function useRowSelect(
     // 判断条件直接写在jsx中，防止变量被computed捕获，选中行重新计算了columns
     return () => (
       <Checkbox
-        checked={
-          canSelectedRows.value.length !== 0
-          && intersectionKeys.value.length === canSelectedRows.value.length
-          // 确保所有已选中的行都是可见的（没有被折叠而隐藏的选中项）
-          && intersectionKeys.value.length === tSelectedRowKeys.value.length
-        }
+        checked={canSelectedRows.value.length !== 0 && intersectionKeys.value.length === canSelectedRows.value.length}
         indeterminate={
-          // 一些可见的行已被选中，但不是全部
-          (intersectionKeys.value.length > 0 && intersectionKeys.value.length < canSelectedRows.value.length)
-          // 某些被选中的行不可见（例如折叠的树子节点）
-          || intersectionKeys.value.length < tSelectedRowKeys.value.length
+          intersectionKeys.value.length > 0 && intersectionKeys.value.length < canSelectedRows.value.length
         }
         disabled={!canSelectedRows.value.length}
         {...{ on: { change: handleSelectAll } }}
