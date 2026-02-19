@@ -117,6 +117,7 @@ export default defineComponent({
     const mainContent = (
       <Popup
         ref="selectInputPopupRef"
+        // vue27:ts-ignore
         trigger={this.popupProps?.trigger || 'click'}
         placement="bottom-left"
         visible={this.popupVisible ?? this.innerPopupVisible}
@@ -128,6 +129,7 @@ export default defineComponent({
         on={{
           'visible-change': this.onInnerPopupVisibleChange,
         }}
+        // vue27:ts-ignore
         props={{ ...this.popupProps, overlayInnerStyle: this.tOverlayInnerStyle }}
         updateScrollTop={this.updateScrollTop}
       >

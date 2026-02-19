@@ -99,6 +99,7 @@ export default defineComponent({
             mirror={this.mirror}
             src={this.currentImage.mainImage}
             placementSrc={this.currentImage.thumbnail}
+            // vue27:ts-ignore
             imageReferrerpolicy={props.imageReferrerpolicy}
           />
         </div>

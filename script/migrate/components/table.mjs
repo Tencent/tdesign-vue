@@ -1,0 +1,60 @@
+import { readFileSync, writeFileSync } from 'node:fs';
+
+function migrateThead() {
+  const filePath = 'src/table/thead.tsx';
+  let content = readFileSync(filePath, 'utf8');
+  if (content.includes('setup(props: TheadProps')) {
+    content = content.replace('setup(props: TheadProps', 'setup(props');
+    writeFileSync(filePath, content, 'utf8');
+  }
+}
+function migrateTbody() {
+  const filePath = 'src/table/tbody.tsx';
+  let content = readFileSync(filePath, 'utf8');
+  if (content.includes('setup(props: TableBodyProps')) {
+    content = content.replace('setup(props: TableBodyProps', 'setup(props');
+    writeFileSync(filePath, content, 'utf8');
+  }
+}
+function migrateTfoot() {
+  const filePath = 'src/table/tfoot.tsx';
+  let content = readFileSync(filePath, 'utf8');
+  if (content.includes('setup(props: TFootProps')) {
+    content = content.replace('setup(props: TFootProps', 'setup(props');
+    writeFileSync(filePath, content, 'utf8');
+  }
+}
+function migrateTr() {
+  const filePath = 'src/table/tr.tsx';
+  let content = readFileSync(filePath, 'utf8');
+  if (content.includes('setup(props: TrProps')) {
+    content = content.replace('setup(props: TrProps', 'setup(props');
+    writeFileSync(filePath, content, 'utf8');
+  }
+}
+function migrateFilterController() {
+  const filePath = 'src/table/filter-controller.tsx';
+  let content = readFileSync(filePath, 'utf8');
+  if (content.includes('setup(props: TableFilterControllerProps')) {
+    content = content.replace('setup(props: TableFilterControllerProps', 'setup(props');
+    writeFileSync(filePath, content, 'utf8');
+  }
+}
+function migrateEditableCell() {
+  const filePath = 'src/table/editable-cell.tsx';
+  let content = readFileSync(filePath, 'utf8');
+  if (content.includes('this.col.edit')) {
+    content = content.replace('render() {', 'render() {\nconst col = this.col as PrimaryTableCol<TableRowData>;');
+    content = content.replaceAll('this.col.edit', 'col.edit');
+    writeFileSync(filePath, content, 'utf8');
+  }
+}
+
+export default function migrateTable() {
+  migrateThead();
+  migrateTbody();
+  migrateTfoot();
+  migrateTr();
+  migrateFilterController();
+  migrateEditableCell();
+}

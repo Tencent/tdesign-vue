@@ -25,6 +25,7 @@ export default function useRenderOperations(state: TypeTreeItemState) {
     }
     if (opNode) {
       opNode = (
+        // vue27:ts-ignore
         <span class={`${componentName}__operations`} ignore="active,expand">
           {opNode}
         </span>

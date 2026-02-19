@@ -89,6 +89,7 @@ export default defineComponent({
               style={this.placementImgStyle}
               alt="image"
               draggable="false"
+              // vue27:ts-ignore
               referrerpolicy={this.imageReferrerpolicy}
             />
           )}
@@ -106,6 +107,7 @@ export default defineComponent({
               style={this.imgStyle}
               alt="image"
               draggable="false"
+              // vue27:ts-ignore
               referrerpolicy={this.imageReferrerpolicy}
             />
           )}
