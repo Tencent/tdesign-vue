@@ -119,7 +119,7 @@ export function useTreeDataExpand(
     if (!store.value.treeDataMap.size || !data.value.length) return;
     if (changedExpandTreeNode.value.type === 'user-reaction-change') {
       const { row, rowIndex } = changedExpandTreeNode.value || {};
-      dataSource.value = store.value.toggleExpandData({ row, rowIndex }, dataSource.value, rowDataKeys.value);
+      dataSource.value = [...store.value.toggleExpandData({ row, rowIndex }, dataSource.value, rowDataKeys.value)];
     } else if (changedExpandTreeNode.value.type === 'props-change') {
       updateExpandState(dataSource.value, tExpandedTreeNode, oldExpandedTreeNode);
     }
