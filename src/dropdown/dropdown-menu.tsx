@@ -1,6 +1,6 @@
 import { ScopedSlotReturnValue } from 'vue/types/vnode';
 import {
-  CreateElement, defineComponent, h, ref, onMounted, reactive, set,
+  CreateElement, defineComponent, h, ref, onMounted, reactive, set, computed,
 } from 'vue';
 import { ChevronRightIcon as TdChevronRightIcon } from 'tdesign-icons-vue';
 import { isFunction } from 'lodash-es';
@@ -12,16 +12,21 @@ import DropdownProps from './props';
 import TDivider from '../divider';
 import { usePrefixClass } from '../hooks/useConfig';
 import { useGlobalIcon } from '../hooks/useGlobalIcon';
+import { useTNodeJSX } from '../hooks/tnode';
 
 export default defineComponent({
   name: 'TDropdownMenu',
   props: { ...DropdownProps },
-  setup(props, { emit }) {
+  setup(props, { emit, slots }) {
     const dropdownClass = usePrefixClass('dropdown');
     const dropdownMenuClass = usePrefixClass('dropdown__menu');
+    const renderTNodeJSX = useTNodeJSX();
     const menuRef = ref<HTMLElement>();
     const isOverMaxHeight = ref(false);
     const scrollTopMap = reactive({});
+    const panelTopContentHeight = ref(0);
+    const validPanelTopContent = computed(() => !!slots['panel-top-content']);
+
     const handleItemClick = (
       optionItem: { disabled: boolean; children: unknown },
       options: { data: DropdownOption; context: { e: MouseEvent } },
@@ -41,6 +46,12 @@ export default defineComponent({
     onMounted(() => {
       if (menuRef.value) {
         const menuHeight = parseInt(window?.getComputedStyle(menuRef.value).height, 10);
+        requestAnimationFrame(() => {
+          if (validPanelTopContent.value) {
+            const panelTopHeight = parseInt(getComputedStyle(menuRef.value.childNodes?.[0] as HTMLElement)?.height, 10) || 0;
+            panelTopContentHeight.value = panelTopHeight;
+          }
+        });
         if (menuHeight >= props.maxHeight) isOverMaxHeight.value = true;
       }
     });
@@ -53,6 +64,9 @@ export default defineComponent({
       isOverMaxHeight,
       handleScroll,
       scrollTopMap,
+      renderTNodeJSX,
+      validPanelTopContent,
+      panelTopContentHeight,
     };
   },
   methods: {
@@ -73,6 +87,8 @@ export default defineComponent({
         const optionItem = { ...(menu as DropdownOption) };
         const onViewIdx = idx - Math.ceil(this.scrollTopMap[deep] / 30);
         const renderIdx = onViewIdx >= 0 ? onViewIdx : idx;
+        // 只有第一层子节点需要加上 panelTopContent 的高度
+        const shouldCalcPanelTopContent = this.validPanelTopContent && deep > 0;
 
         if (optionItem.children) {
           optionItem.children = this.renderOptions(optionItem.children, deep + 1);
@@ -106,7 +122,9 @@ export default defineComponent({
                   ]}
                   style={{
                     position: 'absolute',
-                    top: `${renderIdx * 30}px`,
+                    top: `${
+                      renderIdx * 30 + (shouldCalcPanelTopContent ? 0 : (this.panelTopContentHeight as number))
+                    }px`,
                   }}
                 >
                   <div
@@ -162,6 +180,9 @@ export default defineComponent({
     },
   },
   render() {
+    const panelTopContent = this.renderTNodeJSX('panelTopContent')?.[0];
+    const panelBottomContent = this.renderTNodeJSX('panelBottomContent')?.[0];
+
     return (
       <div
         class={[
@@ -177,7 +198,11 @@ export default defineComponent({
         ref="menuRef"
         onScroll={(e: MouseEvent) => this.handleScroll(e, 0)}
       >
+        {panelTopContent ? <div className={`${this.dropdownClass}__top-content`}>{panelTopContent}</div> : null}
         {this.renderOptions(this.options, 0)}
+        {panelBottomContent ? (
+          <div className={`${this.dropdownClass}__bottom-content`}>{panelBottomContent}</div>
+        ) : null}
       </div>
     );
   },
