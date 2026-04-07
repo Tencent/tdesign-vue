@@ -45,14 +45,15 @@ export default defineComponent({
       set(scrollTopMap, deep, scrollTop);
     };
     onMounted(() => {
-      if (menuRef.value) {
-        const menuHeight = parseInt(window?.getComputedStyle(menuRef.value).height, 10);
+      const menuEl = menuRef.value;
+      if (menuEl) {
         requestAnimationFrame(() => {
           if (validPanelTopContent.value) {
-            const panelTopHeight = parseInt(getComputedStyle(menuRef.value.childNodes?.[0] as HTMLElement)?.height, 10) || 0;
+            const panelTopHeight = parseInt(getComputedStyle(menuEl.firstElementChild)?.height, 10) || 0;
             panelTopContentHeight.value = panelTopHeight;
           }
         });
+        const menuHeight = parseInt(window?.getComputedStyle(menuEl).height, 10);
         if (menuHeight >= props.maxHeight) isOverMaxHeight.value = true;
       }
     });
@@ -181,8 +182,8 @@ export default defineComponent({
     },
   },
   render() {
-    const panelTopContent = this.renderTNodeJSX('panelTopContent')?.[0];
-    const panelBottomContent = this.renderTNodeJSX('panelBottomContent')?.[0];
+    const panelTopContent = this.renderTNodeJSX('panelTopContent');
+    const panelBottomContent = this.renderTNodeJSX('panelBottomContent');
 
     return (
       <div
@@ -199,11 +200,9 @@ export default defineComponent({
         ref="menuRef"
         onScroll={(e: MouseEvent) => this.handleScroll(e, 0)}
       >
-        {panelTopContent ? <div className={`${this.dropdownClass}__top-content`}>{panelTopContent}</div> : null}
+        {panelTopContent ? <div class={`${this.dropdownClass}__top-content`}>{panelTopContent}</div> : null}
         {this.renderOptions(this.options, 0)}
-        {panelBottomContent ? (
-          <div className={`${this.dropdownClass}__bottom-content`}>{panelBottomContent}</div>
-        ) : null}
+        {panelBottomContent ? <div class={`${this.dropdownClass}__bottom-content`}>{panelBottomContent}</div> : null}
       </div>
     );
   },
