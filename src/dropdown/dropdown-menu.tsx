@@ -50,8 +50,9 @@ export default defineComponent({
         const menuChildren = menuElement.children;
         requestAnimationFrame(() => {
           if (validPanelTopContent.value) {
-            const panelTopHeight = parseInt(getComputedStyle(menuChildren[0])?.height, 10) || 0;
-            panelTopContentHeight.value = panelTopHeight;
+            const firstEl = menuChildren[0];
+            const panelTopHeight = firstEl ? parseInt(getComputedStyle(firstEl)?.height, 10) : 0;
+            panelTopContentHeight.value = panelTopHeight || 0;
           }
         });
         const menuHeight = menuChildren?.length * 30;
