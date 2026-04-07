@@ -45,15 +45,16 @@ export default defineComponent({
       set(scrollTopMap, deep, scrollTop);
     };
     onMounted(() => {
-      const menuEl = menuRef.value;
-      if (menuEl) {
+      const menuElement = menuRef.value;
+      if (menuElement) {
+        const menuChildren = menuElement.children;
         requestAnimationFrame(() => {
           if (validPanelTopContent.value) {
-            const panelTopHeight = parseInt(getComputedStyle(menuEl.firstElementChild)?.height, 10) || 0;
+            const panelTopHeight = parseInt(getComputedStyle(menuChildren[0])?.height, 10) || 0;
             panelTopContentHeight.value = panelTopHeight;
           }
         });
-        const menuHeight = parseInt(window?.getComputedStyle(menuEl).height, 10);
+        const menuHeight = menuChildren?.length * 30;
         if (menuHeight >= props.maxHeight) isOverMaxHeight.value = true;
       }
     });
