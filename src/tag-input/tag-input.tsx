@@ -1,5 +1,5 @@
 import {
-  defineComponent, computed, toRefs, ref, nextTick, watch,
+  defineComponent, computed, toRefs, ref, nextTick, watch, Ref,
 } from '@vue/composition-api';
 
 import { CloseCircleFilledIcon as TdCloseCircleFilledIcon } from 'tdesign-icons-vue';
@@ -36,8 +36,10 @@ export default defineComponent({
     );
 
     const {
-      excessTagsDisplayType, readonly, disabled, clearable, placeholder,
+      excessTagsDisplayType, readonly, disabled, clearable, placeholder, suffix,
     } = toRefs(props);
+    const suffixWidthRef = ref<number>(0);
+    const suffixIconWidthRef = ref<number>(0);
     const { isHover, addHover, cancelHover } = useHover(
       {
         readonly,
@@ -139,6 +141,53 @@ export default defineComponent({
       },
     );
 
+    const updateSuffixWidth = (selector: string, cssVar: string, widthRef: Ref<number>) => {
+      const wrapperEl = tagInputRef.value?.$el as HTMLElement;
+      if (!wrapperEl) return;
+
+      const inputEl = wrapperEl.querySelector(`.${classPrefix.value}-input`) as HTMLElement;
+      if (!inputEl) return;
+
+      const targetEl = wrapperEl.querySelector(selector);
+      const width = targetEl ? targetEl.getBoundingClientRect().width : 0;
+      if (width !== widthRef.value) {
+        // eslint-disable-next-line no-param-reassign
+        widthRef.value = width;
+        if (width) {
+          inputEl.style.setProperty(cssVar, `${Math.ceil(width + 8)}px`);
+        } else {
+          inputEl.style.removeProperty(cssVar);
+        }
+      }
+    };
+
+    const handleSuffixWidthUpdate = () => {
+      nextTick(() => {
+        if (excessTagsDisplayType.value !== 'break-line') return;
+
+        if (suffix.value) {
+          updateSuffixWidth(
+            `.${classPrefix.value}-input__suffix:not(.${classPrefix.value}-input__suffix-icon)`,
+            `--${classPrefix.value}-tag-input-suffix-width`,
+            suffixWidthRef,
+          );
+        }
+
+        updateSuffixWidth(
+          `.${classPrefix.value}-input__suffix-icon`,
+          `--${classPrefix.value}-tag-input-suffix-icon-width`,
+          suffixIconWidthRef,
+        );
+      });
+    };
+
+    watch(
+      () => [excessTagsDisplayType.value, suffix.value, classPrefix.value],
+      () => {
+        handleSuffixWidthUpdate();
+      },
+    );
+
     return {
       tagValue,
       tInputValue,
@@ -166,6 +215,7 @@ export default defineComponent({
       onInputCompositionstart,
       onInputCompositionend,
       CloseCircleFilledIcon,
+      handleSuffixWidthUpdate,
     };
   },
 
@@ -191,6 +241,12 @@ export default defineComponent({
     // 左侧文本
     const label = renderTNodeJSX(this, 'label', { silent: true });
     const readonly = this.readonly || this.inputProps?.readonly;
+
+    // 更新 suffix 宽度
+    this.$nextTick(() => {
+      this.handleSuffixWidthUpdate();
+    });
+
     return (
       <TInput
         ref="tagInputRef"
