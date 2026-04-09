@@ -38,6 +38,7 @@ export default defineComponent({
     const {
       excessTagsDisplayType, readonly, disabled, clearable, placeholder, suffix,
     } = toRefs(props);
+
     const suffixWidthRef = ref<number>(0);
     const suffixIconWidthRef = ref<number>(0);
     const { isHover, addHover, cancelHover } = useHover(
@@ -73,12 +74,14 @@ export default defineComponent({
 
     const { CloseCircleFilledIcon } = useGlobalIcon({ CloseCircleFilledIcon: TdCloseCircleFilledIcon });
 
+    const isBreakLine = computed(() => excessTagsDisplayType.value === 'break-line');
+
     const classes = computed(() => {
       const isEmpty = !(Array.isArray(tagValue.value) && tagValue.value.length);
       return [
         COMPONENT_NAME.value,
         {
-          [`${COMPONENT_NAME.value}--break-line`]: excessTagsDisplayType.value === 'break-line',
+          [`${COMPONENT_NAME.value}--break-line`]: isBreakLine.value,
           [`${classPrefix.value}-is-empty`]: isEmpty,
           [`${classPrefix.value}-tag-input--with-tag`]: !isEmpty,
           [`${classPrefix.value}-tag-input--drag-sort`]: props.dragSort && !disabled.value && !readonly.value,
@@ -163,7 +166,7 @@ export default defineComponent({
 
     const handleSuffixWidthUpdate = () => {
       nextTick(() => {
-        if (excessTagsDisplayType.value !== 'break-line') return;
+        if (!isBreakLine.value) return;
 
         if (suffix.value) {
           updateSuffixWidth(
@@ -182,7 +185,7 @@ export default defineComponent({
     };
 
     watch(
-      () => [excessTagsDisplayType.value, suffix.value, classPrefix.value],
+      () => [isBreakLine.value, suffix.value, classPrefix.value],
       () => {
         handleSuffixWidthUpdate();
       },
@@ -192,6 +195,7 @@ export default defineComponent({
       tagValue,
       tInputValue,
       isHover,
+      isBreakLine,
       tagInputPlaceholder,
       showClearIcon,
       tagInputRef,
