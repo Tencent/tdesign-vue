@@ -17,6 +17,7 @@ export default defineComponent({
     };
   },
   render() {
+    // @ts-ignore
     const { level: Tag } = this;
     const content = this.renderContent('default', 'content');
     if (this.ellipsis) {

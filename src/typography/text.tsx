@@ -32,6 +32,7 @@ export default defineComponent({
 
       function wrap(needed: boolean, Tag: string, styles: object = {}) {
         if (!needed) return;
+        // @ts-ignore
         currentContent = h(Tag, { style: styles }, [currentContent]);
       }
 

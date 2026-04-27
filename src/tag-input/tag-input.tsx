@@ -1,5 +1,5 @@
 import {
-  defineComponent, computed, toRefs, ref, nextTick, watch,
+  defineComponent, computed, toRefs, ref, nextTick, watch, Ref,
 } from 'vue';
 
 import { CloseCircleFilledIcon as TdCloseCircleFilledIcon } from 'tdesign-icons-vue';

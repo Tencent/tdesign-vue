@@ -18,6 +18,7 @@ export default defineComponent({
   },
   render() {
     const content = this.renderContent('default', 'content');
+    // @ts-ignore
     return this.ellipsis ? (
       <Ellipsis props={this.$props} class={this.COMPONENT_NAME}>
         {content}

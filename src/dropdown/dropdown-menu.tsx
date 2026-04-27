@@ -198,11 +198,9 @@ export default defineComponent({
         ref="menuRef"
         onScroll={(e: MouseEvent) => this.handleScroll(e, 0)}
       >
-        {panelTopContent ? <div className={`${this.dropdownClass}__top-content`}>{panelTopContent}</div> : null}
+        {panelTopContent ? <div class={`${this.dropdownClass}__top-content`}>{panelTopContent}</div> : null}
         {this.renderOptions(this.options, 0)}
-        {panelBottomContent ? (
-          <div className={`${this.dropdownClass}__bottom-content`}>{panelBottomContent}</div>
-        ) : null}
+        {panelBottomContent ? <div class={`${this.dropdownClass}__bottom-content`}>{panelBottomContent}</div> : null}
       </div>
     );
   },
