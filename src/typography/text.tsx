@@ -1,6 +1,6 @@
 import {
   computed, defineComponent, ref, h,
-} from '@vue/composition-api';
+} from 'vue';
 import { CopyIcon, CheckIcon } from 'tdesign-icons-vue';
 import { usePrefixClass, useConfig } from '../config-provider/useConfig';
 import { useContent } from '../hooks/tnode';

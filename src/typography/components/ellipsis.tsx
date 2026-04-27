@@ -1,4 +1,4 @@
-import { defineComponent, computed, ref } from '@vue/composition-api';
+import { defineComponent, computed, ref } from 'vue';
 import { usePrefixClass, useConfig } from '../../config-provider/useConfig';
 import { useContent } from '../../hooks/tnode';
 

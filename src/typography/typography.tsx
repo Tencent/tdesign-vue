@@ -1,4 +1,4 @@
-import { defineComponent } from '@vue/composition-api';
+import { defineComponent } from 'vue';
 import { useTNodeJSX } from '../hooks/tnode';
 import Text from './text';
 

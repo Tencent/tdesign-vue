@@ -1,4 +1,4 @@
-import { defineComponent } from '@vue/composition-api';
+import { defineComponent } from 'vue';
 import { usePrefixClass } from '../config-provider/useConfig';
 import { useContent } from '../hooks/tnode';
 import props from './paragraph-props';
