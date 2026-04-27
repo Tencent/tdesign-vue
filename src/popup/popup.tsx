@@ -1,4 +1,4 @@
-import { VNodeDirective } from 'vue';
+import { VNodeDirective, PropType } from 'vue';
 import { createPopper, Instance as PopperInstance } from '@popperjs/core';
 import { debounce } from 'lodash-es';
 import { on, off, once } from '../utils/dom';
