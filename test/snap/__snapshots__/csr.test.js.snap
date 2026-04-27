@@ -147508,7 +147508,28 @@ exports[`csr snapshot test > csr test ./src/typography/_example/ellipsis.vue 1`]
     <span
       class="t-typography-ellipsis-symbol"
       style="text-decoration: none; white-space: nowrap; flex: 1; margin-right: 0px;"
-    />
+    >
+      <svg
+        class="t-icon t-icon-chevron-down"
+        fill="none"
+        height="1em"
+        style="fill: none;"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <g
+          id="chevron-down"
+        >
+          <path
+            d="M17.5 9.5L12 15L6.5 9.5"
+            id="stroke1"
+            stroke="currentColor"
+            stroke-linecap="square"
+            stroke-width="2"
+          />
+        </g>
+      </svg>
+    </span>
   </div>
 </div>
 `;
