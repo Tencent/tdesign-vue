@@ -48,3 +48,12 @@ name | params | default | description
 content | String / Slot / Function | - | required。Typescript：`string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)
 popupProps | Object | - | \-
 triggerElement | String | - | required
+
+### PopupInstanceFunctions 组件实例方法
+
+name | params | return | description
+-- | -- | -- | --
+getOverlay | \- | `HTMLElement \| null` | used to get overly html element
+getOverlayState | \- | `{ hover: boolean }` | get mouseover state of overlay
+getPopper | \- | `Instance \| null` | get the popup component popper instance。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/popup/type.ts)。<br/>`import { Instance } from '@popperjs/core'`<br/>
+update | \- | \- | used to update overlay content
