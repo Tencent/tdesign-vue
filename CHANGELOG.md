@@ -6,6 +6,17 @@ docClass: timeline
 ---
 
 
+## 🌈 1.15.0 `2026-04-27` 
+### 🚀 Features
+- `Icon`: 新增 217 个与人工智能、文档、徽标和文件相关的图标 @uyarn([#3808](https://github.com/Tencent/tdesign-vue/pull/3808))
+- `Dropdown`: `Dropdown` 支持 `panelTopContent` 和 `panelBottomContent` api @HaixingOoO ([#3826](https://github.com/Tencent/tdesign-vue/pull/3826))
+- `popup`: 新增多个组件实例方法 `getOverlay` 用于获取浮层元素、`getOverlayState` 用于获取浮层悬浮状态 、`getPopper` 用于获取当前组件 popper 实例、`update` 用于更新浮层内容 @RSS1102 ([#3751](https://github.com/Tencent/tdesign-vue/pull/3751))
+- `Typography`: 新增 `Typography` 排版组件 @uyarn ([#3831](https://github.com/Tencent/tdesign-vue/pull/3831))
+### 🐞 Bug Fixes
+- `Table`: 修复树形结构展开收起按钮没有更新展示状态的问题 @mark980828 ([#3816](https://github.com/Tencent/tdesign-vue/pull/3816))
+- `TagInput`: 修复 `excessTagsDisplayType="break-line"` 时，`suffix` 没有固定在右侧的问题 @RylanBot ([#3829](https://github.com/Tencent/tdesign-vue/pull/3829))
+
+
 ## 🌈 1.14.5 `2026-01-21` 
 ### 🐞 Bug Fixes
 - `Table`: 修复远程分页场景下，全选逻辑错误引起展示异常的问题 @RSS1102 ([#3801](https://github.com/Tencent/tdesign-vue/pull/3801))
