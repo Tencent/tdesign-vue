@@ -10,7 +10,7 @@ import Ellipsis from './components/ellipsis';
 import TTooltip from '../tooltip';
 import TButton from '../button';
 
-import type { TdTextProps } from './type';
+import type { TdTextProps, TypographyCopyable } from './type';
 import type { TdTooltipProps } from '../tooltip/type';
 
 export default defineComponent({
@@ -60,7 +60,7 @@ export default defineComponent({
     const tooltipText = computed(() => {
       const { copyable } = props;
       if (isCopied.value) return globalConfig.value.copiedText;
-      if (typeof copyable === 'object') return copyable.tooltipProps?.content;
+      if (typeof copyable === 'object') return (copyable as TypographyCopyable).tooltipProps?.content;
       return null;
     });
 
@@ -68,8 +68,8 @@ export default defineComponent({
 
     const getChildrenText = () => {
       const { copyable } = props;
-      if (typeof copyable === 'object' && copyable?.text) {
-        return copyable.text;
+      if (typeof copyable === 'object' && (copyable as TypographyCopyable).text) {
+        return (copyable as TypographyCopyable).text;
       }
       const node = contentNode.value;
       if (typeof node === 'string') {
@@ -122,14 +122,15 @@ export default defineComponent({
 
       let onCopy = () => {};
       if (typeof copyable === 'object') {
-        if (copyable.suffix && !this.isCopied) {
-          icon = copyable.suffix;
+        const copyableConfig = copyable as TypographyCopyable;
+        if (copyableConfig.suffix && !this.isCopied) {
+          icon = copyableConfig.suffix;
         }
-        if (copyable.tooltipProps) {
-          tooltipConf = copyable.tooltipProps;
+        if (copyableConfig.tooltipProps) {
+          tooltipConf = copyableConfig.tooltipProps;
         }
-        if (typeof copyable.onCopy === 'function') {
-          onCopy = copyable.onCopy;
+        if (typeof copyableConfig.onCopy === 'function') {
+          onCopy = copyableConfig.onCopy;
         }
       }
       return (

@@ -24,7 +24,7 @@ export default defineComponent({
       return {
         row: 1,
         expandable: false,
-        ...(typeof ellipsis === 'object' ? ellipsis : null),
+        ...(typeof ellipsis === 'object' ? (ellipsis as TypographyEllipsis) : {}),
       };
     });
 
@@ -51,12 +51,12 @@ export default defineComponent({
 
     const onExpand = () => {
       isExpand.value = true;
-      if (typeof props.ellipsis === 'object') props.ellipsis?.onExpand?.(true);
+      if (typeof props.ellipsis === 'object') (props.ellipsis as TypographyEllipsis).onExpand?.(true);
     };
 
     const onCollapse = () => {
       isExpand.value = false;
-      if (typeof props.ellipsis === 'object') props.ellipsis?.onExpand?.(false);
+      if (typeof props.ellipsis === 'object') (props.ellipsis as TypographyEllipsis).onExpand?.(false);
     };
 
     return {
