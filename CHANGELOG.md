@@ -6,6 +6,39 @@ docClass: timeline
 ---
 
 
+## 🌈 1.14.5 `2026-01-21` 
+### 🐞 Bug Fixes
+- `Table`: 修复远程分页场景下，全选逻辑错误引起展示异常的问题 @RSS1102 ([#3801](https://github.com/Tencent/tdesign-vue/pull/3801))
+- `Menu`: 修复在 Safari 浏览器中点击展开图标没有变换方向的问题 @liweijie0812 ([#3797](https://github.com/Tencent/tdesign-vue/pull/3797))
+- `Menu`: 修复 `1.14.2` 后 menu-item 绝对定位样式丢失导致层级设置不生效的问题 @RSS1102 ([#3804](https://github.com/Tencent/tdesign-vue/pull/3804))
+- `Select`: 修复在 Safari 浏览器中点击展开图标没有变换方向的问题 @liweijie0812 ([#3797](https://github.com/Tencent/tdesign-vue/pull/3797))
+- `TreeSelect`: 修复在 Safari 浏览器中点击展开图标没有变换方向的问题 @liweijie0812 ([#3797](https://github.com/Tencent/tdesign-vue/pull/3797))
+- `Cascader`: 修复在 Safari 浏览器中点击展开图标没有变换方向的问题 @liweijie0812 ([#3797](https://github.com/Tencent/tdesign-vue/pull/3797))
+- `Table`: 优化存在固定表头或表尾场景滚动后表格位置异常的问题 @uyarn ([#3805](https://github.com/Tencent/tdesign-vue/pull/3805))
+
+
+
+
+## 🌈 1.14.4 `2025-12-26` 
+### 🐞 Bug Fixes
+- `Drawer`: 修复 `DOM` 元素未正确移除的问题 @RSS1102 ([#3788](https://github.com/Tencent/tdesign-vue/pull/3788))
+- `Guide`: 修复 `DOM` 元素未正确移除的问题 @RSS1102 ([#3788](https://github.com/Tencent/tdesign-vue/pull/3788))
+
+
+## 🌈 1.14.3 `2025-12-23` 
+### 🚀 Features
+- `ImageViewer`: 
+    - 优化下载跨域图片时的格式处理和压缩比例  @RylanBot ([common#2311](https://github.com/Tencent/tdesign-common/pull/2311)) 
+    - 支持直接下载同域图片，避免二次转换导致体积增大和动图失效等问题 @RylanBot ([common#2311](https://github.com/Tencent/tdesign-common/pull/2311)) 
+- `Popup`: 新增 `onOverlayClick` 事件，支持内容面板点击时触发 @RSS1102  ([#3752](https://github.com/Tencent/tdesign-vue/pull/3752))
+### 🐞 Bug Fixes
+- `Avatar`: 修复样式与设计稿不一致的问题 @liweijie0812 ([common#2364](https://github.com/Tencent/tdesign-common/pull/2364))
+- `Menu`: 修复菜单选项默认边距和图标大小的问题 @liweijie0812 ([common#2369](https://github.com/Tencent/tdesign-common/pull/2369))
+- `Table`: 修复行选中收缩后,表格头全选状态异常的问题 @liweijie0812 ([#3771](https://github.com/Tencent/tdesign-vue/pull/3771))
+- `Upload`: 修复不支持文件数组上传的问题 @GATING ([common#2078](https://github.com/Tencent/tdesign-common/pull/2078))
+- `Upload`: 修复 `theme` 为 `image-flow` 的告警问题 @uyarn ([#3782](https://github.com/Tencent/tdesign-vue/pull/3782))
+
+
 ## 🌈 1.14.2 `2025-11-07` 
 ### 🚀 Features
 - `Watermark`: 新增 `layout` API，支持生成不同布局的水印 @Wesley-0808 ([#3726](https://github.com/Tencent/tdesign-vue/pull/3726))

@@ -1,4 +1,4 @@
-import { VNodeDirective, PropType } from 'vue';
+import { VNodeDirective } from 'vue';
 import { createPopper, Instance as PopperInstance } from '@popperjs/core';
 import { debounce } from 'lodash-es';
 import { on, off, once } from '../utils/dom';
@@ -38,13 +38,6 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
 
   props: {
     ...props,
-    /** @private
-     * @description popper 内容元素,用于自定义 popper 元素时传入
-     * 可以是 HTMLElement 或者 ref 名称字符串 (如 'overlay')
-     */
-    popperContentElement: {
-      type: [String, Object] as PropType<string | HTMLElement>,
-    },
     expandAnimation: {
       type: Boolean,
     },
@@ -58,7 +51,7 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
       /** popperjs instance */
       popper: null as PopperInstance,
       /** timeout id */
-      timeout: null,
+      timeout: null as ReturnType<typeof setTimeout> | null,
       hasDocumentEvent: false,
       /** if a trusted action (opening or closing) is prevented, increase this flag */
       visibleState: 0,
@@ -202,13 +195,7 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
   methods: {
     updatePopper() {
       const { $el: triggerEl } = this;
-      // 支持传入字符串 ref 名称或 HTMLElement
-      let popperEl: HTMLElement;
-      if (typeof this.popperContentElement === 'string') {
-        popperEl = this.$refs[this.popperContentElement] as HTMLElement;
-      } else {
-        popperEl = this.popperContentElement || (this.$refs.popper as HTMLElement);
-      }
+      const popperEl = this.$refs.popper as HTMLElement;
 
       if (!popperEl || !this.visible) return;
       if (this.popper) {
@@ -216,8 +203,8 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
         return;
       }
       this.popper = createPopper(triggerEl, popperEl, {
-        modifiers:
-          getIEVersion() > 9
+        modifiers: [
+          ...(getIEVersion() > 9
             ? []
             : [
               {
@@ -229,7 +216,16 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
                   gpuAcceleration: false,
                 },
               },
-            ],
+            ]),
+          {
+            name: 'onPlacementChange',
+            enabled: true,
+            phase: 'main',
+            fn: ({ state }) => {
+              this.$emit('placement-change', state);
+            },
+          },
+        ],
         placement: getPopperPlacement(this.placement as TdPopupProps['placement']),
         onFirstUpdate: () => {
           this.$nextTick(this.updatePopper);
@@ -401,9 +397,8 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
       }
     },
     onAfterEnter() {
-      if (this.visible && this.popper) {
-        // 动画完成后，元素已有正确尺寸，使用 forceUpdate 强制重新运行所有 modifiers
-        this.popper.forceUpdate();
+      if (this.visible) {
+        this.updatePopper();
       }
     },
     onLeave() {

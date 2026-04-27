@@ -90,6 +90,7 @@ export default defineComponent({
               onClick: this.handleMenuClick,
             },
           }}
+          scopedSlots={this.$scopedSlots}
         />
         {trigger}
       </Popup>
