@@ -79,18 +79,23 @@ export default defineComponent({
         flex: 1,
         marginRight: this.renderCopy ? '8px' : 0,
       };
+      // suffix 支持函数（TNode）、VNode、字符串；函数需要调用并传入 expanded 状态
+      const renderSuffix = (expanded: boolean) => {
+        if (typeof suffix === 'function') return (suffix as Function)({ expanded });
+        return suffix;
+      };
 
       if (!this.isExpand && expandable) {
         return (
           <span class={`${this.COMPONENT_NAME}-ellipsis-symbol`} onClick={this.onExpand} style={symbolStyle}>
-            {suffix || this.globalConfig.expandText}
+            {renderSuffix(false) || this.globalConfig.expandText}
           </span>
         );
       }
       if (expandable && this.isExpand && collapsible) {
         return (
           <span class={`${this.COMPONENT_NAME}-ellipsis-symbol`} onClick={this.onCollapse} style={symbolStyle}>
-            {this.globalConfig.collapseText}
+            {renderSuffix(true) || this.globalConfig.collapseText}
           </span>
         );
       }
