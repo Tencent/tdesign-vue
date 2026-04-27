@@ -36,8 +36,11 @@ export default defineComponent({
     );
 
     const {
-      excessTagsDisplayType, readonly, disabled, clearable, placeholder,
+      excessTagsDisplayType, readonly, disabled, clearable, placeholder, suffix,
     } = toRefs(props);
+
+    const suffixWidthRef = ref<number>(0);
+    const suffixIconWidthRef = ref<number>(0);
     const { isHover, addHover, cancelHover } = useHover(
       {
         readonly,
@@ -71,12 +74,14 @@ export default defineComponent({
 
     const { CloseCircleFilledIcon } = useGlobalIcon({ CloseCircleFilledIcon: TdCloseCircleFilledIcon });
 
+    const isBreakLine = computed(() => excessTagsDisplayType.value === 'break-line');
+
     const classes = computed(() => {
       const isEmpty = !(Array.isArray(tagValue.value) && tagValue.value.length);
       return [
         COMPONENT_NAME.value,
         {
-          [`${COMPONENT_NAME.value}--break-line`]: excessTagsDisplayType.value === 'break-line',
+          [`${COMPONENT_NAME.value}--break-line`]: isBreakLine.value,
           [`${classPrefix.value}-is-empty`]: isEmpty,
           [`${classPrefix.value}-tag-input--with-tag`]: !isEmpty,
           [`${classPrefix.value}-tag-input--drag-sort`]: props.dragSort && !disabled.value && !readonly.value,
@@ -139,10 +144,58 @@ export default defineComponent({
       },
     );
 
+    const updateSuffixWidth = (selector: string, cssVar: string, widthRef: Ref<number>) => {
+      const wrapperEl = tagInputRef.value?.$el as HTMLElement;
+      if (!wrapperEl) return;
+
+      const inputEl = wrapperEl.querySelector(`.${classPrefix.value}-input`) as HTMLElement;
+      if (!inputEl) return;
+
+      const targetEl = wrapperEl.querySelector(selector);
+      const width = targetEl ? targetEl.getBoundingClientRect().width : 0;
+      if (width !== widthRef.value) {
+        // eslint-disable-next-line no-param-reassign
+        widthRef.value = width;
+        if (width) {
+          inputEl.style.setProperty(cssVar, `${Math.ceil(width + 8)}px`);
+        } else {
+          inputEl.style.removeProperty(cssVar);
+        }
+      }
+    };
+
+    const handleSuffixWidthUpdate = () => {
+      nextTick(() => {
+        if (!isBreakLine.value) return;
+
+        if (suffix.value) {
+          updateSuffixWidth(
+            `.${classPrefix.value}-input__suffix:not(.${classPrefix.value}-input__suffix-icon)`,
+            `--${classPrefix.value}-tag-input-suffix-width`,
+            suffixWidthRef,
+          );
+        }
+
+        updateSuffixWidth(
+          `.${classPrefix.value}-input__suffix-icon`,
+          `--${classPrefix.value}-tag-input-suffix-icon-width`,
+          suffixIconWidthRef,
+        );
+      });
+    };
+
+    watch(
+      () => [isBreakLine.value, suffix.value, classPrefix.value, showClearIcon.value],
+      () => {
+        handleSuffixWidthUpdate();
+      },
+    );
+
     return {
       tagValue,
       tInputValue,
       isHover,
+      isBreakLine,
       tagInputPlaceholder,
       showClearIcon,
       tagInputRef,
@@ -192,6 +245,7 @@ export default defineComponent({
     // 左侧文本
     const label = renderTNodeJSX(this, 'label', { silent: true });
     const readonly = this.readonly || this.inputProps?.readonly;
+
     return (
       <TInput
         ref="tagInputRef"
