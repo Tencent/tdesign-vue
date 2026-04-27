@@ -185,7 +185,7 @@ export default defineComponent({
     };
 
     watch(
-      () => [isBreakLine.value, suffix.value, classPrefix.value],
+      () => [isBreakLine.value, suffix.value, classPrefix.value, showClearIcon.value],
       () => {
         handleSuffixWidthUpdate();
       },
@@ -245,11 +245,6 @@ export default defineComponent({
     // 左侧文本
     const label = renderTNodeJSX(this, 'label', { silent: true });
     const readonly = this.readonly || this.inputProps?.readonly;
-
-    // 更新 suffix 宽度
-    this.$nextTick(() => {
-      this.handleSuffixWidthUpdate();
-    });
 
     return (
       <TInput
