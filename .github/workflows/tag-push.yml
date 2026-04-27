@@ -7,8 +7,13 @@ on: create
 
 jobs:
   call-publish:
-    uses: Tencent/tdesign/.github/workflows/publish.yml@main
+    if: github.event.ref_type == 'tag'
+    uses: TDesignOteam/workflows/.github/workflows/reusable-publish-npm.yml@main
     secrets:
       TDESIGN_SURGE_TOKEN: ${{ secrets.TDESIGN_SURGE_TOKEN }}
-      TDESIGN_NPM_TOKEN: ${{ secrets.TDESIGN_NPM_TOKEN }}
       PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+    with:
+      node-version-file: .node-version
+    permissions:
+      contents: read
+      id-token: write
