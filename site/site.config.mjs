@@ -137,6 +137,14 @@ const docs = [
         component: () => import('tdesign-vue/space/space.md'),
         componentEn: () => import('tdesign-vue/space/space.en-US.md'),
       },
+      {
+        title: 'Typography 排版',
+        titleEn: 'Typography',
+        name: 'typography',
+        path: '/vue/components/typography',
+        component: () => import('tdesign-vue/typography/typography.md'),
+        componentEn: () => import('tdesign-vue/typography/typography.en-US.md'),
+      },
     ],
   },
   {
