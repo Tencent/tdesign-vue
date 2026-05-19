@@ -11,7 +11,7 @@ jobs:
     uses: TDesignOteam/workflows/.github/workflows/reusable-publish-npm.yml@main
     secrets:
       TDESIGN_SURGE_TOKEN: ${{ secrets.TDESIGN_SURGE_TOKEN }}
-      PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+      TDESIGN_BOT_TOKEN: ${{ secrets.TDESIGN_BOT_TOKEN }}
     with:
       node-version-file: .node-version
     permissions:
