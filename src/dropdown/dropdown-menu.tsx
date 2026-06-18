@@ -44,14 +44,17 @@ export default defineComponent({
       set(scrollTopMap, deep, scrollTop);
     };
     onMounted(() => {
-      if (menuRef.value) {
-        const menuHeight = parseInt(window?.getComputedStyle(menuRef.value).height, 10);
+      const menuElement = menuRef.value;
+      if (menuElement) {
+        const menuChildren = menuElement.children;
         requestAnimationFrame(() => {
           if (validPanelTopContent.value) {
-            const panelTopHeight = parseInt(getComputedStyle(menuRef.value.childNodes?.[0] as HTMLElement)?.height, 10) || 0;
-            panelTopContentHeight.value = panelTopHeight;
+            const firstEl = menuChildren[0];
+            const panelTopHeight = firstEl ? parseInt(getComputedStyle(firstEl)?.height, 10) : 0;
+            panelTopContentHeight.value = panelTopHeight || 0;
           }
         });
+        const menuHeight = menuChildren?.length * 30;
         if (menuHeight >= props.maxHeight) isOverMaxHeight.value = true;
       }
     });
@@ -180,8 +183,8 @@ export default defineComponent({
     },
   },
   render() {
-    const panelTopContent = this.renderTNodeJSX('panelTopContent')?.[0];
-    const panelBottomContent = this.renderTNodeJSX('panelBottomContent')?.[0];
+    const panelTopContent = this.renderTNodeJSX('panelTopContent');
+    const panelBottomContent = this.renderTNodeJSX('panelBottomContent');
 
     return (
       <div
