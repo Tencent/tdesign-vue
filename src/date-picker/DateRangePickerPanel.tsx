@@ -332,10 +332,10 @@ export default defineComponent({
 
       const nextMonth = [...month.value];
       nextMonth[partialIndex] = nextVal;
-      // 保证左侧时间不大于右侧
-      if (year[0] === year[1]) {
+      // 保证左侧时间不大于右侧（仅在同一年内才需要联动月份）
+      if (year.value[0] === year.value[1]) {
         if (partialIndex === 0) {
-          // 操作了左侧区间, 处理右侧区间小于或等于左侧区间的场景，交互上始终报错右侧比左侧大 1
+          // 操作了左侧区间, 处理右侧区间小于或等于左侧区间的场景，交互上始终保持右侧比左侧大 1
           if (nextMonth[1] <= nextMonth[0]) {
             nextMonth[1] = nextMonth[0] + 1;
             if (nextMonth[1] === 12) {
@@ -346,7 +346,7 @@ export default defineComponent({
           }
         }
         if (partialIndex === 1) {
-          // 操作了右侧区间, 处理右侧区间小于或等于左侧区间的场景，交互上始终报错左侧比右侧小 1
+          // 操作了右侧区间, 处理右侧区间小于或等于左侧区间的场景，交互上始终保持左侧比右侧小 1
           nextMonth[0] = Math.min(nextMonth[0], nextMonth[1]);
           if (nextMonth[0] >= nextMonth[1]) {
             nextMonth[0] -= 1;
