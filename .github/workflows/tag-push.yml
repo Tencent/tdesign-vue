@@ -22,6 +22,11 @@ jobs:
 
       - run: npm install
       - run: npm run build
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
       - name: publish
         id: publish
         uses: JS-DevTools/npm-publish@v4
