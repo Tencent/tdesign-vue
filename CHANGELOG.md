@@ -11,6 +11,7 @@ docClass: timeline
 - `InputNumber`: 新增 `autofocus` 属性 @betavs ([#3845](https://github.com/Tencent/tdesign-vue/pull/3845))
 ### 🐞 Bug Fixes
 - `DateRangePickerPanel`: 修复跨年时月份联动的问题 @RSS1102 ([#3846](https://github.com/Tencent/tdesign-vue/pull/3846))
+- `Select`: 修复表单设置 `disable` 后仍可用清除按钮操作的问题
 
 
 ## 🌈 1.15.0 `2026-04-27` 
