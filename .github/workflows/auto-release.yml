@@ -5,7 +5,7 @@ on:
     branches: [develop, feature]
     types: [opened, synchronize, reopened, closed]
     paths:
-      - "package.json"
+      - 'package.json'
   issue_comment:
     types: [edited]
 
@@ -77,7 +77,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           ref: develop
-          token: ${{ secrets.PERSONAL_TOKEN }}
+          token: ${{ secrets.TDESIGN_BOT_TOKEN }}
       - name: tag and push if needed
         run: |
           data=$(cat package.json)

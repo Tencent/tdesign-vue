@@ -6,6 +6,13 @@ docClass: timeline
 ---
 
 
+## 🌈 1.15.1 `2026-06-18` 
+### 🚀 Features
+- `InputNumber`: 新增 `autofocus` 属性 @betavs ([#3845](https://github.com/Tencent/tdesign-vue/pull/3845))
+### 🐞 Bug Fixes
+- `DateRangePickerPanel`: 修复跨年时月份联动的问题 @RSS1102 ([#3846](https://github.com/Tencent/tdesign-vue/pull/3846))
+
+
 ## 🌈 1.15.0 `2026-04-27` 
 ### 🚀 Features
 - `Icon`: 新增 217 个与人工智能、文档、徽标和文件相关的图标 @uyarn([#3808](https://github.com/Tencent/tdesign-vue/pull/3808))
