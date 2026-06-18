@@ -10,7 +10,7 @@ docClass: timeline
 ### 🚀 Features
 - `InputNumber`: 新增 `autofocus` 属性 @betavs ([#3845](https://github.com/Tencent/tdesign-vue/pull/3845))
 ### 🐞 Bug Fixes
-- `date-range-picker-panel`: 修复跨年时月份联动的问题 @RSS1102 ([#3846](https://github.com/Tencent/tdesign-vue/pull/3846))
+- `DateRangePickerPanel`: 修复跨年时月份联动的问题 @RSS1102 ([#3846](https://github.com/Tencent/tdesign-vue/pull/3846))
 
 
 ## 🌈 1.15.0 `2026-04-27` 
