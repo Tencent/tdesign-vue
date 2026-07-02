@@ -100,11 +100,12 @@ export default defineComponent({
       const res: Array<SelectOption & { index?: number }> = [];
       // 动态赋予选项 index 的计数：默认从 0 开始累加，当含有用户创建条目的时候，创建条目 index 为 0，正常条目下标从 1 开始累加
       let groupIndex = isCreateOptionShown.value ? 1 : 0;
-      props.options.forEach((option) => {
-        if ((option as SelectOptionGroup).group && (option as SelectOptionGroup).children) {
+      options.value?.forEach((option) => {
+        // 判断是否为分组：有 children 且有 group 或 groupSlots
+        const isGroup = (option as SelectOptionGroup).children && ((option as SelectOptionGroup).group || (option as any).groupSlots);
+        if (isGroup) {
           res.push({
             ...option,
-            // 处理index使其在过滤后的分组中能正确触发上下移动键的hover效果
             children: (option as SelectOptionGroup).children.filter(filterMethods).reduce((pre, cur) => {
               pre.push({ ...cur, index: groupIndex });
               groupIndex += 1;
@@ -268,12 +269,15 @@ export default defineComponent({
                   slots: VNode;
                   class: string | undefined;
                   style: { [key: string]: string } | undefined;
+                  groupSlots?: VNode[];
                 } & OptionsType,
               index,
             ) => {
               if (item.children) {
+                // 处理 label 插槽（groupSlots 是函数形式）
+                const labelSlot = item.groupSlots ? { label: item.groupSlots } : undefined;
                 return (
-                  <t-option-group label={item.group} divider={item.divider}>
+                  <t-option-group label={item.group} divider={item.divider} scopedSlots={labelSlot}>
                     {this.renderOptionsContent(item.children)}
                   </t-option-group>
                 );
