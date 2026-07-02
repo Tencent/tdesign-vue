@@ -37,6 +37,7 @@ import TLoading from '../../loading';
 import Link from '../../link';
 import { renderTNodeJSX } from '../../utils/render-tnode';
 import Image from '../../image';
+import { UploadConfig } from '../../config-provider';
 
 export interface ImageFlowListProps extends CommonDisplayFileProps {
   uploadFiles?: (toFiles?: UploadFile[]) => void;
@@ -69,9 +70,8 @@ export default defineComponent({
 
   setup(props: ImageFlowListProps, context) {
     // locale 已经在 useUpload 中统一处理优先级
-    const {
-      locale, uploading, classPrefix, accept,
-    } = toRefs(props);
+    const { uploading, classPrefix, accept } = toRefs(props);
+    const locale = computed(() => props.locale as UploadConfig);
     const uploadPrefix = `${classPrefix.value}-upload`;
 
     const icons = useGlobalIcon({
@@ -150,6 +150,7 @@ export default defineComponent({
       browseIconClick,
       closePreview,
       previewIndexChange,
+      locale,
     };
   },
 
@@ -286,7 +287,7 @@ export default defineComponent({
     renderBatchActionCol(index: number) {
       // 第一行数据才需要合并单元格
       return index === 0 ? (
-        <td rowSpan={this.displayFiles.length} class={`${this.uploadPrefix}__flow-table__batch-row`}>
+        <td rowspan={this.displayFiles.length} class={`${this.uploadPrefix}__flow-table__batch-row`}>
           <TButton
             theme="primary"
             variant="text"
@@ -326,7 +327,7 @@ export default defineComponent({
           <tbody>
             {!this.displayFiles.length && (
               <tr>
-                <td colSpan={4}>{this.renderEmpty()}</td>
+                <td colspan={4}>{this.renderEmpty()}</td>
               </tr>
             )}
             {this.displayFiles.map((file, index) => {
