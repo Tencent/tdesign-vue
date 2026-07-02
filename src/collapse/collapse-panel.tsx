@@ -19,7 +19,7 @@ export default defineComponent({
     const transitionClass = usePrefixClass('slide-down');
     const collapseValue: Ref<CollapseValue> = inject('collapseValue');
     const updateCollapseValue: Function = inject('updateCollapseValue');
-    const getUniqId: Function = inject('getUniqId', () => undefined, false);
+    const getUniqId: Function = inject('getUniqId', () => {}, false);
     const {
       defaultExpandAll,
       disabled: disableAll,
@@ -85,6 +85,16 @@ export default defineComponent({
         </div>
       );
     },
+    handleHeaderRightContentClick(e: MouseEvent) {
+      e.stopPropagation();
+    },
+    renderHeaderRightContent() {
+      return (
+        <div class={`${this.componentName}__header-right-content`} onClick={this.handleHeaderRightContentClick}>
+          {this.renderTNodeJSX('headerRightContent')}
+        </div>
+      );
+    },
     renderHeader() {
       const {
         isDisabled, handleClick, renderIcon, renderBlank,
@@ -101,9 +111,7 @@ export default defineComponent({
           <div class={`${this.componentName}__header-content`}>{this.renderTNodeJSX('header')}</div>
           {renderBlank()}
           <div class={`${this.componentName}__header-right`}>
-            <div class={`${this.componentName}__header-right-content`} onClick={(e: MouseEvent) => e.stopPropagation()}>
-              {this.renderTNodeJSX('headerRightContent')}
-            </div>
+            {this.renderHeaderRightContent()}
             {this.expandIconPlacement === 'right' && renderIcon()}
           </div>
         </div>
