@@ -1,8 +1,8 @@
 <template>
   <t-space>
-    <t-switch v-model="checked" shape="circle"></t-switch>
-    <t-switch v-model="checked" shape="round"></t-switch>
-    <t-switch v-model="checked" shape="line"></t-switch>
+    <t-switch v-model="circleChecked" shape="circle"></t-switch>
+    <t-switch v-model="roundChecked" shape="round"></t-switch>
+    <t-switch v-model="lineChecked" shape="line"></t-switch>
   </t-space>
 </template>
 
@@ -10,7 +10,9 @@
 export default {
   data() {
     return {
-      checked: true,
+      circleChecked: true,
+      roundChecked: true,
+      lineChecked: true,
     };
   },
 };
