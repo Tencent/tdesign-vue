@@ -32,7 +32,10 @@ export default function useRange(props: TdDateRangePickerProps, { emit }: any) {
   const activeIndex = ref(0); // 确定当前选中的输入框序号
   const inputValue = ref(formatDate(value.value, { format: formatRef.value.format })); // 未真正选中前可能不断变更输入框的内容
 
-  const { popupVisible, notifyPopupVisibleChange, closePopup } = usePopupVisibleChange(props);
+  const { popupVisible, notifyPopupVisibleChange, closePopup } = usePopupVisibleChange({
+    readonly: props.readonly,
+    popupProps: props.popupProps,
+  });
 
   // input 设置
   const rangeInputProps = computed(() => ({

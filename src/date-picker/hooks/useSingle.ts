@@ -32,7 +32,10 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
   }));
 
   const isHoverCell = ref(false);
-  const { popupVisible, notifyPopupVisibleChange, closePopup } = usePopupVisibleChange(props);
+  // DatePicker 无 readonly 概念，省略 readonly（undefined 即非只读）
+  const { popupVisible, notifyPopupVisibleChange, closePopup } = usePopupVisibleChange({
+    popupProps: props.popupProps,
+  });
   // 未真正选中前可能不断变更输入框的内容
   const inputValue = ref(formatDate(value.value, { format: formatRef.value.format }));
 
@@ -51,7 +54,7 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
       ],
       onClear: (context: { e: InputEvent }) => {
         context?.e?.stopPropagation();
-        closePopup();
+        closePopup({ e: context.e });
         onChange?.('', { dayjsValue: dayjs(), trigger: 'clear' });
         emit('clear', '', { dayjsValue: dayjs(), trigger: 'clear' });
       },
