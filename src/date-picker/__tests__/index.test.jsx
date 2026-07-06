@@ -238,4 +238,36 @@ describe('DatePicker', () => {
       expect(blurFn).toBeCalledTimes(1);
     });
   });
+
+  // test popupProps.onVisibleChange
+  describe('popupProps.onVisibleChange', () => {
+    it('点击清除按钮关闭面板时触发 onVisibleChange，visible=false 且 trigger=trigger-element-close', async () => {
+      const onVisibleChange = vi.fn();
+      const wrapper = mount(
+        {
+          render() {
+            return <DatePicker defaultValue={'2022-09-14'} clearable popupProps={{ onVisibleChange }} />;
+          },
+        },
+        { attachTo: document.body },
+      );
+      // 打开面板
+      wrapper.find('.t-input').trigger('click');
+      await nextTick();
+      // hover 输入框以显示清除按钮
+      wrapper.find('.t-input').trigger('mouseenter');
+      await nextTick();
+      // 触发清除
+      wrapper.find('.t-input__suffix-clear').trigger('click');
+      await nextTick();
+      // 验证 onVisibleChange 被调用过：visible=false, trigger=trigger-element-close, 且带事件对象
+      expect(onVisibleChange).toHaveBeenCalledWith(
+        false,
+        expect.objectContaining({
+          trigger: 'trigger-element-close',
+          e: expect.anything(),
+        }),
+      );
+    });
+  });
 });
