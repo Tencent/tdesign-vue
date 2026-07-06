@@ -1,12 +1,12 @@
 <template>
   <t-space direction="vertical">
+    <t-date-picker v-model="date2" @change="handleChange" :firstDayOfWeek="3" :inputProps="inputProps" readonly />
     <t-date-picker
       v-model="date"
       placeholder="可清除、可输入的日期选择器"
       clearable
       allow-input
       @change="handleChange"
-      :popupProps="popupProps"
     />
   </t-space>
 </template>
@@ -18,11 +18,6 @@ export default {
       date: '',
       date2: '',
       inputProps: { inputClass: 'test-inputClass' },
-      popupProps: {
-        onVisibleChange: (visible) => {
-          console.log('visible', visible);
-        },
-      },
     };
   },
   methods: {
