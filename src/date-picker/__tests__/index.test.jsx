@@ -241,6 +241,15 @@ describe('DatePicker', () => {
 
   // test popupProps.onVisibleChange
   describe('popupProps.onVisibleChange', () => {
+    afterEach(() => {
+      document.querySelectorAll('.t-popup').forEach((node) => node?.remove());
+    });
+
+    const getLatestPanel = () => {
+      const panels = document.querySelectorAll('.t-date-picker__panel-container');
+      return panels[panels.length - 1];
+    };
+
     it('点击清除按钮关闭面板时触发 onVisibleChange，visible=false 且 trigger=trigger-element-close', async () => {
       const onVisibleChange = vi.fn();
       const wrapper = mount(
@@ -285,22 +294,23 @@ describe('DatePicker', () => {
       await nextTick();
       await nextTick();
       await nextTick(); // 等待面板完全打开
+      onVisibleChange.mockClear();
       // 点击日期
-      const cell = document.querySelector('.t-date-picker__panel-date .t-date-picker__cell');
+      const cell = getLatestPanel()?.querySelector(
+        '.t-date-picker__panel-date .t-date-picker__cell:not(.t-is-disabled)',
+      );
       if (cell) {
         cell.click();
       }
       await nextTick();
       await nextTick(); // 等待面板关闭动画完成
-      // 验证最后一次调用 onVisibleChange：visible=false, trigger=trigger-element-close
-      const lastCall = onVisibleChange.mock.calls[onVisibleChange.mock.calls.length - 1];
-      expect(lastCall).toEqual(
-        expect.arrayContaining([
-          false,
-          expect.objectContaining({
-            trigger: 'trigger-element-close',
-          }),
-        ]),
+      // 验证 onVisibleChange 被调用过：visible=false, trigger=trigger-element-close
+      expect(onVisibleChange).toHaveBeenCalledWith(
+        false,
+        expect.objectContaining({
+          trigger: 'trigger-element-close',
+          e: expect.anything(),
+        }),
       );
     });
 
@@ -320,8 +330,10 @@ describe('DatePicker', () => {
       // 打开面板
       wrapper.find('.t-input').trigger('click');
       await nextTick();
+      await nextTick();
+      onVisibleChange.mockClear();
       // 点击预设按钮
-      const presetButton = document.querySelector('.t-date-picker__presets .t-button');
+      const presetButton = getLatestPanel()?.querySelector('.t-date-picker__presets .t-button');
       if (presetButton) {
         presetButton.click();
       }
