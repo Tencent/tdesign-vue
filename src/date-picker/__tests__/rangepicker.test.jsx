@@ -309,5 +309,81 @@ describe('DateRangePicker', () => {
         }),
       );
     });
+
+    it('选完日期范围后关闭面板时触发 onVisibleChange，visible=false 且 trigger=trigger-element-close', async () => {
+      const onVisibleChange = vi.fn();
+      const wrapper = mount(
+        {
+          render() {
+            return <DateRangePicker popupProps={{ onVisibleChange }} />;
+          },
+        },
+        { attachTo: document.body },
+      );
+      // 打开面板
+      wrapper.find('.t-input').trigger('click');
+      await nextTick();
+      await nextTick();
+      await nextTick(); // 等待面板完全打开
+      // 点击第一个日期
+      const cells = document.querySelectorAll('.t-date-picker__panel-date .t-date-picker__cell');
+      if (cells.length >= 2) {
+        cells[5].click(); // 选择第一个日期
+        await nextTick();
+        await nextTick(); // 等待第一个日期选择完成
+        cells[12].click(); // 选择第二个日期
+        await nextTick();
+        await nextTick(); // 等待面板关闭动画完成
+      }
+      // 验证最后一次调用 onVisibleChange：visible=false, trigger=trigger-element-close
+      const lastCall = onVisibleChange.mock.calls[onVisibleChange.mock.calls.length - 1];
+      expect(lastCall).toEqual(
+        expect.arrayContaining([
+          false,
+          expect.objectContaining({
+            trigger: 'trigger-element-close',
+            e: expect.anything(),
+          }),
+        ]),
+      );
+    });
+
+    it('点击预设按钮关闭面板时触发 onVisibleChange，visible=false 且 trigger=trigger-element-close', async () => {
+      const onVisibleChange = vi.fn();
+      const presets = {
+        昨天: [dayjs().subtract(7, 'day').format('YYYY-MM-DD'), dayjs().subtract(1, 'day').format('YYYY-MM-DD')],
+      };
+      const wrapper = mount(
+        {
+          render() {
+            return <DateRangePicker presets={presets} popupProps={{ onVisibleChange }} />;
+          },
+        },
+        { attachTo: document.body },
+      );
+      // 打开面板
+      wrapper.find('.t-input').trigger('click');
+      await nextTick();
+      await nextTick();
+      await nextTick(); // 等待面板完全打开
+      // 点击预设按钮
+      const presetButton = document.querySelector('.t-date-picker__presets .t-button');
+      if (presetButton) {
+        presetButton.click();
+        await nextTick();
+        await nextTick(); // 等待面板关闭动画完成
+      }
+      // 验证最后一次调用 onVisibleChange：visible=false, trigger=trigger-element-close
+      const lastCall = onVisibleChange.mock.calls[onVisibleChange.mock.calls.length - 1];
+      expect(lastCall).toEqual(
+        expect.arrayContaining([
+          false,
+          expect.objectContaining({
+            trigger: 'trigger-element-close',
+            e: expect.anything(),
+          }),
+        ]),
+      );
+    });
   });
 });
