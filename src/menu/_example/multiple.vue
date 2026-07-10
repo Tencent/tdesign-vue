@@ -27,6 +27,26 @@
         <t-menu-item value="2-2">子菜单2-2</t-menu-item>
         <t-menu-item value="2-3">子菜单2-3</t-menu-item>
       </t-submenu>
+      <t-submenu class="demo-multiple-submenu" value="3" title="多层菜单">
+        <t-submenu value="3-1" title="子菜单3-1">
+          <t-submenu value="3-1-1" title="子菜单3-1-1">
+            <t-menu-item value="3-1-1-1">子菜单3-1-1-1</t-menu-item>
+            <t-menu-item value="3-1-1-2">子菜单3-1-1-2</t-menu-item>
+          </t-submenu>
+          <t-submenu value="3-1-2" title="子菜单3-1-2">
+            <t-menu-item value="3-1-2-1">子菜单3-1-2-1</t-menu-item>
+            <t-menu-item value="3-1-2-2">子菜单3-1-2-2</t-menu-item>
+          </t-submenu>
+        </t-submenu>
+        <t-submenu value="3-2" title="子菜单3-2">
+          <t-submenu value="3-2-1" title="子菜单3-2-1">
+            <t-submenu value="3-2-1-1" title="子菜单3-2-1-1">
+              <t-menu-item value="3-2-1-1-1">子菜单3-2-1-1-1</t-menu-item>
+              <t-menu-item value="3-2-1-1-2">子菜单3-2-1-1-2</t-menu-item>
+            </t-submenu>
+          </t-submenu>
+        </t-submenu>
+      </t-submenu>
       <template #operations>
         <t-button variant="text" shape="square">
           <search-icon slot="icon" shape="square" />
@@ -68,6 +88,26 @@
         <t-menu-item value="2-2">子菜单2-2</t-menu-item>
         <t-menu-item value="2-3">子菜单2-3</t-menu-item>
       </t-submenu>
+      <t-submenu class="demo-multiple-submenu" value="3" title="多层菜单">
+        <t-submenu value="3-1" title="子菜单3-1">
+          <t-submenu value="3-1-1" title="子菜单3-1-1">
+            <t-menu-item value="3-1-1-1">子菜单3-1-1-1</t-menu-item>
+            <t-menu-item value="3-1-1-2">子菜单3-1-1-2</t-menu-item>
+          </t-submenu>
+          <t-submenu value="3-1-2" title="子菜单3-1-2">
+            <t-menu-item value="3-1-2-1">子菜单3-1-2-1</t-menu-item>
+            <t-menu-item value="3-1-2-2">子菜单3-1-2-2</t-menu-item>
+          </t-submenu>
+        </t-submenu>
+        <t-submenu value="3-2" title="子菜单3-2">
+          <t-submenu value="3-2-1" title="子菜单3-2-1">
+            <t-submenu value="3-2-1-1" title="子菜单3-2-1-1">
+              <t-menu-item value="3-2-1-1-1">子菜单3-2-1-1-1</t-menu-item>
+              <t-menu-item value="3-2-1-1-2">子菜单3-2-1-1-2</t-menu-item>
+            </t-submenu>
+          </t-submenu>
+        </t-submenu>
+      </t-submenu>
       <template #operations>
         <div class="t-demo-menu--dark">
           <t-button variant="text" shape="square">
@@ -108,6 +148,10 @@ export default {
   .t-button {
     margin-left: 8px;
   }
+}
+
+.t-head-menu .demo-multiple-submenu {
+  margin-left: auto;
 }
 
 .t-demo-menu--dark {

@@ -6,6 +6,7 @@ import {
   ref,
   provide,
   onMounted,
+  onBeforeUnmount,
   getCurrentInstance,
   watch,
   toRefs,
@@ -45,7 +46,7 @@ export default defineComponent({
       theme, activeValues, expandValues, mode, isHead, open,
     } = menu;
     const submenu = inject<TdSubMenuInterface>('TdSubmenu', {});
-    const { setSubPopup, closeParentPopup } = submenu;
+    const { setSubPopup, closeParentPopup, cancelHideTimer } = submenu;
 
     const classPrefix = usePrefixClass();
 
@@ -67,6 +68,19 @@ export default defineComponent({
     const subPopupRef = ref<HTMLElement>();
     const submenuRef = ref<HTMLElement>();
     const transitionClass = usePrefixClass('slide-down');
+    const showTimer = ref<ReturnType<typeof setTimeout> | null>(null);
+    const hideTimer = ref<ReturnType<typeof setTimeout> | null>(null);
+
+    const clearTimers = () => {
+      if (showTimer.value !== null) {
+        clearTimeout(showTimer.value);
+        showTimer.value = null;
+      }
+      if (hideTimer.value !== null) {
+        clearTimeout(hideTimer.value);
+        hideTimer.value = null;
+      }
+    };
 
     const classes = computed(() => [
       `${classPrefix.value}-submenu`,
@@ -119,7 +133,11 @@ export default defineComponent({
     // methods
     const handleMouseEnter = () => {
       if (props.disabled) return;
-      setTimeout(() => {
+
+      clearTimers();
+      cancelHideTimer?.();
+
+      showTimer.value = setTimeout(() => {
         if (!popupVisible.value) {
           open(props.value);
           // popupVisible设置为TRUE之后打开popup，因此需要在nextTick中确保可以拿到ref值
@@ -128,22 +146,25 @@ export default defineComponent({
           });
         }
         popupVisible.value = true;
+        showTimer.value = null;
       }, 0);
     };
 
     const targetInPopup = (el: HTMLElement) => el?.classList.contains(`${classPrefix.value}-menu__popup`);
-    const loopInPopup = (el: HTMLElement): boolean => {
-      if (!el) return false;
-      return targetInPopup(el) || loopInPopup(el.parentElement);
-    };
 
     const handleMouseLeave = (e: MouseEvent) => {
-      setTimeout(() => {
+      clearTimers();
+
+      hideTimer.value = setTimeout(() => {
         const inPopup = targetInPopup(e.relatedTarget as HTMLElement);
 
-        if (isCursorInPopup.value || inPopup) return;
+        if (isCursorInPopup.value || inPopup) {
+          hideTimer.value = null;
+          return;
+        }
         popupVisible.value = false;
-      }, 0);
+        hideTimer.value = null;
+      }, 100);
     };
 
     const handleMouseLeavePopup = (e: any) => {
@@ -160,13 +181,23 @@ export default defineComponent({
       isCursorInPopup.value = false;
 
       if (!isSubmenu(target)) {
-        popupVisible.value = false;
-      }
+        clearTimers();
+        hideTimer.value = setTimeout(() => {
+          popupVisible.value = false;
+          hideTimer.value = null;
+        }, 100);
 
-      closeParentPopup?.(e);
+        closeParentPopup?.(e);
+      }
     };
     const handleEnterPopup = () => {
       isCursorInPopup.value = true;
+
+      if (hideTimer.value !== null) {
+        clearTimeout(hideTimer.value);
+        hideTimer.value = null;
+      }
+      cancelHideTimer?.();
     };
 
     const handleSubmenuItemClick = () => {
@@ -194,9 +225,19 @@ export default defineComponent({
           subPopupRef.value = ref;
         },
         closeParentPopup: (e: MouseEvent) => {
-          const related = e.relatedTarget as HTMLElement;
-          if (loopInPopup(related)) return;
-          handleMouseLeavePopup(e);
+          clearTimers();
+          hideTimer.value = setTimeout(() => {
+            popupVisible.value = false;
+            hideTimer.value = null;
+          }, 100);
+          closeParentPopup?.(e);
+        },
+        cancelHideTimer: () => {
+          if (hideTimer.value !== null) {
+            clearTimeout(hideTimer.value);
+            hideTimer.value = null;
+          }
+          cancelHideTimer?.();
         },
       }),
     );
@@ -222,6 +263,10 @@ export default defineComponent({
         }
         node = node?.parent;
       }
+    });
+
+    onBeforeUnmount(() => {
+      clearTimers();
     });
 
     return {
