@@ -76,6 +76,47 @@ describe('Submenu', () => {
 
       wrapper.destroy();
     });
+
+    it('closes sibling popups immediately when another submenu opens', async () => {
+      vi.useFakeTimers();
+      const popupMenu = {
+        ...Menu,
+        mode: ref('popup'),
+        isHead: true,
+        open: vi.fn(),
+        popupSubmenus: new Set(),
+        vMenu: {
+          select: (value) => [value],
+          add: vi.fn(),
+        },
+      };
+      const first = mount(Submenu, {
+        propsData: { value: '1' },
+        provide: { TdMenu: popupMenu },
+      });
+      const second = mount(Submenu, {
+        propsData: { value: '2' },
+        provide: { TdMenu: popupMenu },
+      });
+
+      first.vm.handleMouseEnter();
+      vi.advanceTimersByTime(0);
+      await first.vm.$nextTick();
+      expect(first.classes()).toContain('t-is-opened');
+
+      first.vm.handleMouseLeave({ relatedTarget: document.body });
+      vi.advanceTimersByTime(50);
+      second.vm.handleMouseEnter();
+      vi.advanceTimersByTime(0);
+      await first.vm.$nextTick();
+      await second.vm.$nextTick();
+
+      expect(first.classes()).not.toContain('t-is-opened');
+      expect(second.classes()).toContain('t-is-opened');
+
+      first.destroy();
+      second.destroy();
+    });
   });
 
   // test props api

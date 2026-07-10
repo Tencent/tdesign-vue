@@ -9,6 +9,11 @@ export interface TdMenuItem {
 }
 
 export type TdOpenType = 'add' | 'remove';
+export interface TdPopupSubMenuInterface {
+  value: MenuValue;
+  closePopup: () => void;
+}
+
 export interface TdMenuInterface {
   activeValue: Ref<MenuValue>;
   activeValues: Ref<MenuValue[]>;
@@ -17,6 +22,7 @@ export interface TdMenuInterface {
   theme?: Ref<string>;
   isHead: boolean;
   vMenu?: VMenu;
+  popupSubmenus?: Set<TdPopupSubMenuInterface>;
   collapsed?: Ref<boolean>;
   select: (val: MenuValue) => void;
   open?: (val: MenuValue, type?: TdOpenType) => boolean | void;
