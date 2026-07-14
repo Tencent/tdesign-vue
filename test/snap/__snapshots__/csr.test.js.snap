@@ -22320,12 +22320,12 @@ exports[`csr snapshot test > csr test ./src/card/_example/footer.vue 1`] = `
                   id="chat"
                 >
                   <path
-                    d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
+                    d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
                     fill="transparent"
                     id="fill1"
                   />
                   <path
-                    d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
+                    d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
                     id="stroke1"
                     stroke="currentColor"
                     stroke-linecap="square"
@@ -22487,12 +22487,12 @@ exports[`csr snapshot test > csr test ./src/card/_example/footer-actions.vue 1`]
                       id="chat"
                     >
                       <path
-                        d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
+                        d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
                         fill="transparent"
                         id="fill1"
                       />
                       <path
-                        d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
+                        d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
                         id="stroke1"
                         stroke="currentColor"
                         stroke-linecap="square"
@@ -22641,12 +22641,12 @@ exports[`csr snapshot test > csr test ./src/card/_example/footer-actions.vue 1`]
                   id="chat"
                 >
                   <path
-                    d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
+                    d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
                     fill="transparent"
                     id="fill1"
                   />
                   <path
-                    d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
+                    d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
                     id="stroke1"
                     stroke="currentColor"
                     stroke-linecap="square"
@@ -23389,13 +23389,13 @@ exports[`csr snapshot test > csr test ./src/card/_example/header-footer-actions.
               id="chat"
             >
               <path
-                d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
+                d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
                 data-v-bed46286=""
                 fill="transparent"
                 id="fill1"
               />
               <path
-                d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
+                d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
                 data-v-bed46286=""
                 id="stroke1"
                 stroke="currentColor"
@@ -23663,12 +23663,12 @@ exports[`csr snapshot test > csr test ./src/card/_example/header-subtitle-footer
                   id="chat"
                 >
                   <path
-                    d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
+                    d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
                     fill="transparent"
                     id="fill1"
                   />
                   <path
-                    d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
+                    d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
                     id="stroke1"
                     stroke="currentColor"
                     stroke-linecap="square"
@@ -35547,13 +35547,13 @@ exports[`csr snapshot test > csr test ./src/comment/_example/operation.vue 1`] =
                   id="chat"
                 >
                   <path
-                    d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
+                    d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
                     data-v-70d43968=""
                     fill="transparent"
                     id="fill1"
                   />
                   <path
-                    d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
+                    d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
                     data-v-70d43968=""
                     id="stroke1"
                     stroke="currentColor"
@@ -35722,13 +35722,13 @@ exports[`csr snapshot test > csr test ./src/comment/_example/quote.vue 1`] = `
                   id="chat"
                 >
                   <path
-                    d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
+                    d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
                     data-v-4829af3e=""
                     fill="transparent"
                     id="fill1"
                   />
                   <path
-                    d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
+                    d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
                     data-v-4829af3e=""
                     id="stroke1"
                     stroke="currentColor"
@@ -35984,13 +35984,13 @@ exports[`csr snapshot test > csr test ./src/comment/_example/reply.vue 1`] = `
                       id="chat"
                     >
                       <path
-                        d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
+                        d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
                         data-v-1a7615cf=""
                         fill="transparent"
                         id="fill1"
                       />
                       <path
-                        d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
+                        d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
                         data-v-1a7615cf=""
                         id="stroke1"
                         stroke="currentColor"
@@ -108509,12 +108509,12 @@ exports[`csr snapshot test > csr test ./src/sticky-tool/_example/base.vue 1`] = 
             id="chat"
           >
             <path
-              d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
+              d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
               fill="transparent"
               id="fill1"
             />
             <path
-              d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
+              d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
               id="stroke1"
               stroke="currentColor"
               stroke-linecap="square"
@@ -108695,12 +108695,12 @@ exports[`csr snapshot test > csr test ./src/sticky-tool/_example/compact.vue 1`]
             id="chat"
           >
             <path
-              d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
+              d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
               fill="transparent"
               id="fill1"
             />
             <path
-              d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
+              d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
               id="stroke1"
               stroke="currentColor"
               stroke-linecap="square"
@@ -108866,12 +108866,12 @@ exports[`csr snapshot test > csr test ./src/sticky-tool/_example/shape.vue 1`] =
             id="chat"
           >
             <path
-              d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
+              d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
               fill="transparent"
               id="fill1"
             />
             <path
-              d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
+              d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
               id="stroke1"
               stroke="currentColor"
               stroke-linecap="square"
@@ -109044,12 +109044,12 @@ exports[`csr snapshot test > csr test ./src/sticky-tool/_example/shape.vue 1`] =
             id="chat"
           >
             <path
-              d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
+              d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
               fill="transparent"
               id="fill1"
             />
             <path
-              d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
+              d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
               id="stroke1"
               stroke="currentColor"
               stroke-linecap="square"
