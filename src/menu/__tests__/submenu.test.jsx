@@ -11,6 +11,73 @@ const Menu = {
 
 // every component needs four parts: props/events/slots/functions.
 describe('Submenu', () => {
+  describe('popup hover timing', () => {
+    const getPopupWrapper = (submenuProvide = {}) => {
+      const popupMenu = {
+        ...Menu,
+        mode: ref('popup'),
+        isHead: true,
+        open: vi.fn(),
+      };
+
+      return mount(Submenu, {
+        propsData: {
+          value: '1',
+        },
+        provide: {
+          TdMenu: popupMenu,
+          TdSubmenu: submenuProvide,
+        },
+      });
+    };
+
+    afterEach(() => {
+      vi.useRealTimers();
+    });
+
+    it('delays hiding the popup after mouse leave', async () => {
+      vi.useFakeTimers();
+      const wrapper = getPopupWrapper();
+
+      wrapper.vm.handleMouseEnter();
+      vi.advanceTimersByTime(0);
+      await wrapper.vm.$nextTick();
+      expect(wrapper.classes()).toContain('t-is-opened');
+
+      wrapper.vm.handleMouseLeave({ relatedTarget: document.body });
+      vi.advanceTimersByTime(99);
+      await wrapper.vm.$nextTick();
+      expect(wrapper.classes()).toContain('t-is-opened');
+
+      vi.advanceTimersByTime(1);
+      await wrapper.vm.$nextTick();
+      expect(wrapper.classes()).not.toContain('t-is-opened');
+
+      wrapper.destroy();
+    });
+
+    it('keeps the popup open when cursor enters before hide delay', async () => {
+      vi.useFakeTimers();
+      const cancelHideTimer = vi.fn();
+      const wrapper = getPopupWrapper({ cancelHideTimer });
+
+      wrapper.vm.handleMouseEnter();
+      vi.advanceTimersByTime(0);
+      await wrapper.vm.$nextTick();
+
+      wrapper.vm.handleMouseLeave({ relatedTarget: document.body });
+      vi.advanceTimersByTime(50);
+      wrapper.vm.handleEnterPopup();
+      vi.advanceTimersByTime(50);
+      await wrapper.vm.$nextTick();
+
+      expect(wrapper.classes()).toContain('t-is-opened');
+      expect(cancelHideTimer).toHaveBeenCalled();
+
+      wrapper.destroy();
+    });
+  });
+
   // test props api
   describe('props', () => {
     it(':name', () => {
