@@ -6,6 +6,17 @@ docClass: timeline
 ---
 
 
+## 🌈 1.15.2 `2026-07-14` 
+### 🚀 Features
+- `Icon`: 新增 `star`、`star-1` 图标，优化`chat`、`thumb-up` 图标绘制效果 @uyarn  ([#3859](https://github.com/Tencent/tdesign-vue/pull/3859))
+### 🐞 Bug Fixes
+- `Button`: 优化 outline 和 dashed button 在 hover 下的背景色 @RADWIMPS426 ([common#2569](https://github.com/Tencent/tdesign-common/pull/2569))
+- `Menu`: 修复子菜单悬停显隐时序导致子菜单无法选中的问题 @RSS1102 ([#3857](https://github.com/Tencent/tdesign-vue/pull/3857))
+- `TagInput`: 修复带 label 且已有 tag 时输入内容垂直对齐偏差的问题 @DaZuiZui  ([common#2564](https://github.com/Tencent/tdesign-common/pull/2564))
+- `Tree`: 修复可拖拽节点拖至禁用节点上下方时提示线未正确显示的问题 @RylanBot ([common#2532](https://github.com/Tencent/tdesign-common/pull/2532))
+
+
+
 ## 🌈 1.15.1 `2026-06-18` 
 ### 🚀 Features
 - `InputNumber`: 新增 `autofocus` 属性 @betavs ([#3845](https://github.com/Tencent/tdesign-vue/pull/3845))
