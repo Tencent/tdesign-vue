@@ -1,7 +1,7 @@
 {
   "name": "tdesign-vue",
   "purename": "tdesign",
-  "version": "1.15.1-naruto",
+  "version": "1.15.2-naruto",
   "description": "tdesign-vue",
   "title": "tdesign-vue",
   "keywords": [
@@ -95,7 +95,7 @@
     "mitt": "^3.0.0",
     "raf": "^3.4.1",
     "sortablejs": "^1.15.0",
-    "tdesign-icons-vue": "^0.4.4",
+    "tdesign-icons-vue": "^0.4.6",
     "tinycolor2": "^1.4.2",
     "validator": "^13.5.1"
   },
