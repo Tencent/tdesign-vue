@@ -82,30 +82,6 @@ export default defineComponent({
       }
     };
 
-    const getPopupPathValues = () => {
-      const paths = menu.vMenu?.select(props.value) || [];
-      return new Set([...paths, props.value]);
-    };
-
-    const popupSubmenu = {
-      value: props.value,
-      closePopup: () => {
-        clearTimers();
-        popupVisible.value = false;
-        isCursorInPopup.value = false;
-      },
-    };
-
-    const closeOtherPopups = () => {
-      const paths = getPopupPathValues();
-
-      menu.popupSubmenus?.forEach((item) => {
-        if (!paths.has(item.value)) {
-          item.closePopup();
-        }
-      });
-    };
-
     const classes = computed(() => [
       `${classPrefix.value}-submenu`,
       {
@@ -160,7 +136,6 @@ export default defineComponent({
 
       clearTimers();
       cancelHideTimer?.();
-      closeOtherPopups();
 
       showTimer.value = setTimeout(() => {
         if (!popupVisible.value) {
@@ -273,7 +248,6 @@ export default defineComponent({
     });
 
     onMounted(() => {
-      menu.popupSubmenus?.add(popupSubmenu);
       menu?.vMenu?.add({
         value: props.value,
         parent: submenu?.value,
@@ -293,7 +267,6 @@ export default defineComponent({
 
     onBeforeUnmount(() => {
       clearTimers();
-      menu.popupSubmenus?.delete(popupSubmenu);
     });
 
     return {

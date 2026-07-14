@@ -69,7 +69,6 @@ export default defineComponent({
       theme,
       isHead: false,
       vMenu,
-      popupSubmenus: new Set(),
       collapsed,
       select: (value: MenuValue) => {
         emitChange(value);

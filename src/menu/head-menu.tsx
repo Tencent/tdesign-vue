@@ -50,7 +50,6 @@ export default defineComponent({
       mode,
       theme,
       vMenu,
-      popupSubmenus: new Set(),
       isHead: true,
       expandValues,
       activeValue,
