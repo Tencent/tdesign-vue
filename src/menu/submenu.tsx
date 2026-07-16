@@ -150,15 +150,30 @@ export default defineComponent({
       }, 0);
     };
 
-    const targetInPopup = (el: HTMLElement) => el?.classList.contains(`${classPrefix.value}-menu__popup`);
+    const targetInPopup = (el: EventTarget | null) => {
+      if (!(el instanceof Element)) return false;
+      return Boolean(
+        popupWrapperRef.value?.contains(el)
+          || el.closest(`.${classPrefix.value}-menu__popup`)
+          || el.closest(`.${classPrefix.value}-popup.${classPrefix.value}-is-head-menu`),
+      );
+    };
+
+    const getPopupElement = () => popupWrapperRef.value?.closest?.(`.${classPrefix.value}-popup`) as HTMLElement;
+
+    /*
+     * Popup 渲染在 submenu DOM 外部，mouseleave 可能在光标仍位于 Popup 内时触发 (Monica 插件)。
+     * 若 relatedTarget 或当前 hover 状态仍在 Popup 内，则保持展开。
+     */
+    const shouldKeepPopupOpen = (relatedTarget: EventTarget | null) => targetInPopup(relatedTarget)
+      || popupWrapperRef.value?.matches?.(':hover')
+      || getPopupElement()?.matches?.(':hover');
 
     const handleMouseLeave = (e: MouseEvent) => {
       clearTimers();
 
       hideTimer.value = setTimeout(() => {
-        const inPopup = targetInPopup(e.relatedTarget as HTMLElement);
-
-        if (isCursorInPopup.value || inPopup) {
+        if (isCursorInPopup.value || shouldKeepPopupOpen(e.relatedTarget)) {
           hideTimer.value = null;
           return;
         }
@@ -178,7 +193,11 @@ export default defineComponent({
         target = target.parentNode;
       }
 
-      isCursorInPopup.value = false;
+      isCursorInPopup.value = shouldKeepPopupOpen(toElement || relatedTarget);
+
+      if (isCursorInPopup.value) {
+        return;
+      }
 
       if (!isSubmenu(target)) {
         clearTimers();
