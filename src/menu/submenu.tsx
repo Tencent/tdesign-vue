@@ -152,17 +152,19 @@ export default defineComponent({
 
     const targetInPopup = (el: EventTarget | null) => {
       if (!(el instanceof Element)) return false;
+      const popupElement = getPopupElement();
+
       return Boolean(
         popupWrapperRef.value?.contains(el)
-          || el.closest(`.${classPrefix.value}-menu__popup`)
-          || el.closest(`.${classPrefix.value}-popup.${classPrefix.value}-is-head-menu`),
+          || el.closest(`.${classPrefix.value}-menu__popup`) === popupWrapperRef.value
+          || popupElement?.contains(el),
       );
     };
 
     const getPopupElement = () => popupWrapperRef.value?.closest?.(`.${classPrefix.value}-popup`) as HTMLElement;
 
     /*
-     * Popup 渲染在 submenu DOM 外部，mouseleave 可能在光标仍位于 Popup 内时触发 (Monica 插件)。
+     * Popup 渲染在 submenu DOM 外部，mouseleave 可能在光标仍位于 Popup 内时触发 (比如 Monica 插件)。
      * 若 relatedTarget 或当前 hover 状态仍在 Popup 内，则保持展开。
      */
     const shouldKeepPopupOpen = (relatedTarget: EventTarget | null) => targetInPopup(relatedTarget)
