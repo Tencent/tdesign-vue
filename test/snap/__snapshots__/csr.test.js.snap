@@ -109261,7 +109261,7 @@ exports[`csr snapshot test > csr test ./src/swiper/_example/card.vue 1`] = `
           class="t-space-item"
         >
           <div
-            aria-valuetext="0.6325301204819277"
+            aria-valuetext="0.63"
             class="t-slider__container"
           >
             <div

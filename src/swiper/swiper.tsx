@@ -145,6 +145,8 @@ export default mixins(Vue as VueConstructor<SwiperVue>, classPrefixMixins, getGl
     this.setTimer();
     this.showArrow = this.navigationConfig.showSlideBtn === 'always';
 
+    if (!(window as Window & { ResizeObserver?: any }).ResizeObserver) return;
+
     const resizeObserver = new ResizeObserver(([entry]) => {
       const parent = entry.target.parentNode as HTMLElement;
       if (parent) {
