@@ -29,8 +29,6 @@ const MORE_SUBMENU_VALUE = '__t_head_menu_more__';
 const cloneVNodeTree = (vnode: VNode): VNode => {
   const cloned = {
     ...vnode,
-    elm: undefined,
-    componentInstance: undefined,
     data: vnode.data ? { ...vnode.data } : vnode.data,
     children: vnode.children?.map((child) => cloneVNodeTree(child as VNode)),
     componentOptions: vnode.componentOptions
@@ -39,8 +37,10 @@ const cloneVNodeTree = (vnode: VNode): VNode => {
         children: vnode.componentOptions.children?.map((child) => cloneVNodeTree(child)),
       }
       : vnode.componentOptions,
-  };
-  return cloned as VNode;
+  } as VNode;
+  cloned.elm = undefined;
+  cloned.componentInstance = undefined;
+  return cloned;
 };
 
 export default defineComponent({
