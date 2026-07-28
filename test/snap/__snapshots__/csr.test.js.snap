@@ -76023,6 +76023,268 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-dark.vue 1`]
 </div>
 `;
 
+exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-ellipsis.vue 1`] = `
+<div
+  class="box"
+  data-v-28d6aadf=""
+  style="max-width: 500px;"
+>
+  <div
+    class="t-menu t-head-menu t-menu--dark"
+    data-v-28d6aadf=""
+    style="margin-top: 24px;"
+  >
+    <div
+      class="t-head-menu__inner"
+    >
+      <div
+        class="t-menu__logo"
+      >
+        <img
+          alt="logo"
+          data-v-28d6aadf=""
+          height="28"
+          src="https://tdesign.gtimg.com/site/baseLogo-dark.png"
+        />
+      </div>
+      <ul
+        class="t-menu"
+      >
+        <li
+          class="t-menu__item t-menu__item--plain"
+          data-v-28d6aadf=""
+        >
+          <span
+            class="t-menu__content"
+          >
+             菜单1 
+          </span>
+        </li>
+        <li
+          class="t-menu__item t-is-active t-menu__item--plain"
+          data-v-28d6aadf=""
+        >
+          <span
+            class="t-menu__content"
+          >
+             菜单2 
+          </span>
+        </li>
+        <li
+          class="t-menu__item t-menu__item--plain"
+          data-v-28d6aadf=""
+        >
+          <span
+            class="t-menu__content"
+          >
+             菜单3 
+          </span>
+        </li>
+        <li
+          class="t-menu__item t-menu__item--plain"
+          data-v-28d6aadf=""
+        >
+          <span
+            class="t-menu__content"
+          >
+             菜单4 
+          </span>
+        </li>
+        <li
+          class="t-menu__item t-menu__item--plain"
+          data-v-28d6aadf=""
+        >
+          <span
+            class="t-menu__content"
+          >
+             菜单5 
+          </span>
+        </li>
+        <li
+          class="t-menu__item t-menu__item--plain"
+          data-v-28d6aadf=""
+        >
+          <span
+            class="t-menu__content"
+          >
+             菜单6 
+          </span>
+        </li>
+        <li
+          class="t-menu__item t-menu__item--plain"
+          data-v-28d6aadf=""
+        >
+          <span
+            class="t-menu__content"
+          >
+             菜单7 
+          </span>
+        </li>
+        <li
+          class="t-menu__item t-menu__item--plain"
+          data-v-28d6aadf=""
+        >
+          <span
+            class="t-menu__content"
+          >
+             菜单8 
+          </span>
+        </li>
+        <li
+          class="t-menu__item t-menu__item--plain"
+          data-v-28d6aadf=""
+        >
+          <span
+            class="t-menu__content"
+          >
+             菜单9 
+          </span>
+        </li>
+        <li
+          class="t-menu__item t-menu__item--plain"
+          data-v-28d6aadf=""
+        >
+          <span
+            class="t-menu__content"
+          >
+             菜单10 
+          </span>
+        </li>
+        <li
+          class="t-submenu t-head-menu__submenu--more"
+          style="display: none;"
+        >
+          <div
+            class="t-menu__item t-menu__item-spacer"
+          >
+            <span
+              class="t-menu__content"
+            >
+              <svg
+                class="t-icon t-icon-ellipsis"
+                fill="none"
+                height="1em"
+                style="fill: none;"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <g
+                  id="ellipsis"
+                >
+                  <g
+                    id="stroke1"
+                  >
+                    <path
+                      d="M4 11.5H5V12.5H4V11.5Z"
+                      stroke="currentColor"
+                      stroke-linecap="square"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M11.5 11.5H12.5V12.5H11.5V11.5Z"
+                      stroke="currentColor"
+                      stroke-linecap="square"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M19 11.5H20V12.5H19V11.5Z"
+                      stroke="currentColor"
+                      stroke-linecap="square"
+                      stroke-width="2"
+                    />
+                  </g>
+                </g>
+              </svg>
+            </span>
+            <svg
+              class="t-fake-arrow"
+              fill="none"
+              height="16"
+              style="transform: rotate(0deg);"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                stroke="black"
+                stroke-opacity="0.9"
+                stroke-width="1.3"
+              />
+            </svg>
+          </div>
+        </li>
+      </ul>
+      <div
+        class="t-menu__operations"
+      >
+        <div
+          class="t-demo-menu--dark"
+          data-v-28d6aadf=""
+        >
+          <button
+            class="t-button t-button--variant-text t-button--theme-default t-button--shape-square"
+            data-v-28d6aadf=""
+            type="button"
+          >
+            <svg
+              class="t-icon t-icon-search"
+              data-v-28d6aadf=""
+            >
+              <use
+                href="#t-icon-search"
+              />
+            </svg>
+          </button>
+          <button
+            class="t-button t-button--variant-text t-button--theme-default t-button--shape-square"
+            data-v-28d6aadf=""
+            type="button"
+          >
+            <svg
+              class="t-icon t-icon-mail"
+              data-v-28d6aadf=""
+            >
+              <use
+                href="#t-icon-mail"
+              />
+            </svg>
+          </button>
+          <button
+            class="t-button t-button--variant-text t-button--theme-default t-button--shape-square"
+            data-v-28d6aadf=""
+            type="button"
+          >
+            <svg
+              class="t-icon t-icon-user"
+              data-v-28d6aadf=""
+            >
+              <use
+                href="#t-icon-user"
+              />
+            </svg>
+          </button>
+          <button
+            class="t-button t-button--variant-text t-button--theme-default t-button--shape-square"
+            data-v-28d6aadf=""
+            type="button"
+          >
+            <svg
+              class="t-icon t-icon-ellipsis"
+              data-v-28d6aadf=""
+            >
+              <use
+                href="#t-icon-ellipsis"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-empty.vue 1`] = `
 <div
   class="t-menu t-head-menu t-menu--light"
@@ -80694,6 +80956,70 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
             </li>
           </div>
         </li>
+        <li
+          class="t-submenu t-head-menu__submenu--more"
+          style="display: none;"
+        >
+          <div
+            class="t-menu__item t-menu__item-spacer"
+          >
+            <span
+              class="t-menu__content"
+            >
+              <svg
+                class="t-icon t-icon-ellipsis"
+                fill="none"
+                height="1em"
+                style="fill: none;"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <g
+                  id="ellipsis"
+                >
+                  <g
+                    id="stroke1"
+                  >
+                    <path
+                      d="M4 11.5H5V12.5H4V11.5Z"
+                      stroke="currentColor"
+                      stroke-linecap="square"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M11.5 11.5H12.5V12.5H11.5V11.5Z"
+                      stroke="currentColor"
+                      stroke-linecap="square"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M19 11.5H20V12.5H19V11.5Z"
+                      stroke="currentColor"
+                      stroke-linecap="square"
+                      stroke-width="2"
+                    />
+                  </g>
+                </g>
+              </svg>
+            </span>
+            <svg
+              class="t-fake-arrow"
+              fill="none"
+              height="16"
+              style="transform: rotate(0deg);"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                stroke="black"
+                stroke-opacity="0.9"
+                stroke-width="1.3"
+              />
+            </svg>
+          </div>
+        </li>
       </ul>
       <div
         class="t-menu__operations"
@@ -81043,6 +81369,70 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
                 子菜单2-3
               </span>
             </li>
+          </div>
+        </li>
+        <li
+          class="t-submenu t-head-menu__submenu--more"
+          style="display: none;"
+        >
+          <div
+            class="t-menu__item t-menu__item-spacer"
+          >
+            <span
+              class="t-menu__content"
+            >
+              <svg
+                class="t-icon t-icon-ellipsis"
+                fill="none"
+                height="1em"
+                style="fill: none;"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <g
+                  id="ellipsis"
+                >
+                  <g
+                    id="stroke1"
+                  >
+                    <path
+                      d="M4 11.5H5V12.5H4V11.5Z"
+                      stroke="currentColor"
+                      stroke-linecap="square"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M11.5 11.5H12.5V12.5H11.5V11.5Z"
+                      stroke="currentColor"
+                      stroke-linecap="square"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M19 11.5H20V12.5H19V11.5Z"
+                      stroke="currentColor"
+                      stroke-linecap="square"
+                      stroke-width="2"
+                    />
+                  </g>
+                </g>
+              </svg>
+            </span>
+            <svg
+              class="t-fake-arrow"
+              fill="none"
+              height="16"
+              style="transform: rotate(0deg);"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.75 5.7998L7.99274 10.0425L12.2361 5.79921"
+                stroke="black"
+                stroke-opacity="0.9"
+                stroke-width="1.3"
+              />
+            </svg>
           </div>
         </li>
       </ul>
@@ -109236,22 +109626,106 @@ exports[`csr snapshot test > csr test ./src/swiper/_example/card.vue 1`] = `
   class="tdesign-demo-block--swiper"
 >
   <div
-    class="t-swiper"
+    class="t-space t-space-vertical"
+    style="gap: 50px; width: 100%;"
   >
     <div
-      class="t-swiper__wrap t-swiper--inside"
+      class="t-space-item"
     >
       <div
-        class="t-swiper__content t-swiper-card"
+        class="t-space t-space-vertical"
+        style="gap: 16px; width: 100%;"
       >
         <div
-          class="t-swiper__container"
-          style="height: 280px;"
-        />
+          class="t-space-item"
+        >
+          <div
+            class="t-tag t-tag--primary t-tag--outline"
+          >
+            <span>
+              卡片缩放比例
+            </span>
+          </div>
+        </div>
+        <div
+          class="t-space-item"
+        >
+          <div
+            aria-valuetext="0.63"
+            class="t-slider__container"
+          >
+            <div
+              aria-orientation="horizontal"
+              aria-valuemax="1"
+              aria-valuemin="0"
+              class="t-slider"
+              role="slider"
+            >
+              <div
+                class="t-slider__rail"
+              >
+                <div
+                  class="t-slider__track"
+                  style="width: 0%; left: 0%;"
+                />
+                <div
+                  class="t-slider__button-wrapper"
+                  show-tooltip="true"
+                  style="left: 0%;"
+                  tabindex="0"
+                >
+                  <div
+                    class="t-slider__button"
+                  />
+                </div>
+                <div>
+                  <div
+                    class="t-slider__stops"
+                  >
+                    <div
+                      class="t-slider__stop t-slider__mark-stop"
+                      style="left: 63.25301204819277%;"
+                    />
+                  </div>
+                  <div
+                    class="t-slider__mark"
+                  >
+                    <div
+                      class="t-slider__mark-text"
+                      style="left: 63.25301204819277%;"
+                    >
+                      Default
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <ul
-        class="t-swiper__navigation t-swiper__navigation-bars"
-      />
+    </div>
+    <div
+      class="t-space-item"
+    >
+      <div
+        class="t-swiper"
+      >
+        <div
+          class="t-swiper__wrap t-swiper--inside"
+        >
+          <div
+            class="t-swiper__content t-swiper-card"
+          >
+            <div
+              class="t-swiper__container"
+              style="height: 280px;"
+            />
+          </div>
+          <ul
+            class="t-swiper__navigation t-swiper__navigation-bars"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </div>

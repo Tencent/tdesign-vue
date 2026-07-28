@@ -39,7 +39,11 @@ export default defineComponent({
   directives: {
     ripple: Ripple,
   },
-  props,
+  props: {
+    ...props,
+    // HeadMenu 的“更多”节点已自行维护高亮，无需重复挂载隐藏菜单树。
+    disableVirtualChild: Boolean,
+  },
   setup(props) {
     const menu = inject<TdMenuInterface>('TdMenu');
     const {
@@ -150,15 +154,32 @@ export default defineComponent({
       }, 0);
     };
 
-    const targetInPopup = (el: HTMLElement) => el?.classList.contains(`${classPrefix.value}-menu__popup`);
+    const targetInPopup = (el: EventTarget | null) => {
+      if (!(el instanceof Element)) return false;
+      const popupElement = getPopupElement();
+
+      return Boolean(
+        popupWrapperRef.value?.contains(el)
+          || el.closest(`.${classPrefix.value}-menu__popup`) === popupWrapperRef.value
+          || popupElement?.contains(el),
+      );
+    };
+
+    const getPopupElement = () => popupWrapperRef.value?.closest?.(`.${classPrefix.value}-popup`) as HTMLElement;
+
+    /*
+     * Popup 渲染在 submenu DOM 外部，mouseleave 可能在光标仍位于 Popup 内时触发 (比如 Monica 插件)。
+     * 若 relatedTarget 或当前 hover 状态仍在 Popup 内，则保持展开。
+     */
+    const shouldKeepPopupOpen = (relatedTarget: EventTarget | null) => targetInPopup(relatedTarget)
+      || popupWrapperRef.value?.matches?.(':hover')
+      || getPopupElement()?.matches?.(':hover');
 
     const handleMouseLeave = (e: MouseEvent) => {
       clearTimers();
 
       hideTimer.value = setTimeout(() => {
-        const inPopup = targetInPopup(e.relatedTarget as HTMLElement);
-
-        if (isCursorInPopup.value || inPopup) {
+        if (isCursorInPopup.value || shouldKeepPopupOpen(e.relatedTarget)) {
           hideTimer.value = null;
           return;
         }
@@ -178,7 +199,11 @@ export default defineComponent({
         target = target.parentNode;
       }
 
-      isCursorInPopup.value = false;
+      isCursorInPopup.value = shouldKeepPopupOpen(toElement || relatedTarget);
+
+      if (isCursorInPopup.value) {
+        return;
+      }
 
       if (!isSubmenu(target)) {
         clearTimers();
@@ -267,6 +292,7 @@ export default defineComponent({
 
     onBeforeUnmount(() => {
       clearTimers();
+      menu?.vMenu?.remove(props.value);
     });
 
     return {
@@ -432,7 +458,9 @@ export default defineComponent({
     let events = {};
     let virtualChild;
     // popup模式下且存在多层的特殊封装场景中，需要将子节点挂载进行计算高亮
-    if (this.activeValues.length < 2) virtualChild = <div style="display:none">{renderContent(this, 'default', 'content')}</div>;
+    if (!this.disableVirtualChild && this.activeValues.length < 2) {
+      virtualChild = <div style="display:none">{renderContent(this, 'default', 'content')}</div>;
+    }
 
     if (this.mode === 'popup') {
       events = {
