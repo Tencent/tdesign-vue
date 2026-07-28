@@ -6,6 +6,17 @@ docClass: timeline
 ---
 
 
+## 🌈 1.16.0 `2026-07-28` 
+### 🚀 Features
+- `Swiper`: 新增支持 `cardScale` API @RylanBot ([#3769](https://github.com/Tencent/tdesign-vue/pull/3769))
+- `HeadMenu`: 支持横向菜单过多时自动折叠隐藏并展示更多按钮的效果 @uyarn ([#3865](https://github.com/Tencent/tdesign-vue/pull/3865))
+### 🐞 Bug Fixes
+- `menu`: 修复存在浏览器插件意外触发 `mouseleave` 事件，导致 submenu 不能正确选中的问题 @RSS1102 ([#3862](https://github.com/Tencent/tdesign-vue/pull/3862))
+- `Slider`: 修复初始化时精度计算错误的问题 @RylanBot ([#3769](https://github.com/Tencent/tdesign-vue/pull/3769))
+- `Swiper`: 修复 type='card' 时，宽度计算不稳定的问题 @RylanBot ([#3769](https://github.com/Tencent/tdesign-vue/pull/3769))
+
+
+
 ## 🌈 1.15.2 `2026-07-14` 
 ### 🚀 Features
 - `Icon`: 新增 `star`、`star-1` 图标，优化`chat`、`thumb-up` 图标绘制效果 @uyarn  ([#3859](https://github.com/Tencent/tdesign-vue/pull/3859))
