@@ -386,8 +386,9 @@ export default defineComponent({
     const operations = renderContent(this, 'operations', 'options');
     const logo = renderTNodeJSX(this, 'logo');
     const content = renderContent(this, 'default', 'content');
-    const popupContent = renderContent(this, 'default', 'content');
     const isFolded = this.foldStartIndex >= 0;
+    // 重新调用 slot 函数生成 VNode，避免与主菜单共享组件实例。
+    const popupContent = isFolded ? renderContent(this, 'default', 'content') : [];
     return (
       <div class={this.menuClass}>
         <div ref="innerRef" class={`${this.classPrefix}-head-menu__inner`}>

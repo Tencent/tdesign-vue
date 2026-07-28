@@ -267,6 +267,7 @@ export default defineComponent({
 
     onBeforeUnmount(() => {
       clearTimers();
+      menu?.vMenu?.remove(props.value);
     });
 
     return {
