@@ -29,6 +29,12 @@ export default function useRowSelect(
   } = toRefs(props);
   const currentPaginateData = ref<TableRowData[]>(data.value);
   const selectedRowClassNames = ref();
+
+  // 远程分页场景下，data 变化时需要同步更新 currentPaginateData
+  watch(data, (newData) => {
+    currentPaginateData.value = newData;
+  });
+
   const [tSelectedRowKeys, setTSelectedRowKeys] = useDefaultValue(
     selectedRowKeys,
     props.defaultSelectedRowKeys || [],
@@ -79,11 +85,7 @@ export default function useRowSelect(
     // 判断条件直接写在jsx中，防止变量被computed捕获，选中行重新计算了columns
     return () => (
       <Checkbox
-        checked={
-          intersectionKeys.value.length !== 0
-          && canSelectedRows.value.length !== 0
-          && intersectionKeys.value.length === canSelectedRows.value.length
-        }
+        checked={canSelectedRows.value.length !== 0 && intersectionKeys.value.length === canSelectedRows.value.length}
         indeterminate={
           intersectionKeys.value.length > 0 && intersectionKeys.value.length < canSelectedRows.value.length
         }

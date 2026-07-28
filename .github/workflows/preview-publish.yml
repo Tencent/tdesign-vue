@@ -4,12 +4,12 @@ name: PREVIEW_PUBLISH
 
 on:
   workflow_run:
-    workflows: ["MAIN_PULL_REQUEST"]
+    workflows: ['MAIN_PULL_REQUEST']
     types:
       - completed
 
 jobs:
   call-preview:
-    uses: Tencent/tdesign/.github/workflows/preview.yml@main
+    uses: TDesignOteam/workflows/.github/workflows/reusable-pr-preview.yml@main
     secrets:
       TDESIGN_SURGE_TOKEN: ${{ secrets.TDESIGN_SURGE_TOKEN }}

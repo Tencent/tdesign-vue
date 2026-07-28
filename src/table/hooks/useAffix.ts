@@ -28,6 +28,8 @@ export default function useAffix(props: TdBaseTableProps) {
   const showAffixFooter = ref(true);
   // 当表格完全滚动消失在视野时，需要隐藏吸底分页器
   const showAffixPagination = ref(true);
+
+  const scrollLeftValue = ref(0);
   // 当鼠标按下拖动内容来滚动时，需要更新表头位置（Windows 按下鼠标横向滚动，滚动结束后，再松开鼠标）
   let isMousedown = false;
   let isMouseInScrollableArea = false;
@@ -53,6 +55,7 @@ export default function useAffix(props: TdBaseTableProps) {
     // 如果 lastScrollLeft 等于 left，说明不是横向滚动，不需要更新横向滚动距离
     if (lastScrollLeft === left) return;
     lastScrollLeft = left;
+    scrollLeftValue.value = left;
     // 表格内容、吸顶表头、吸底表尾、吸底横向滚动更新
     const toUpdateScrollElement = [
       tableContentRef.value,
@@ -65,6 +68,10 @@ export default function useAffix(props: TdBaseTableProps) {
         toUpdateScrollElement[i].scrollLeft = left;
       }
     }
+  };
+
+  const updateHorizontalScroll = () => {
+    tableContentRef.value.scrollLeft = lastScrollLeft;
   };
 
   // 吸底的元素（footer、分页器）是否显示
@@ -349,5 +356,6 @@ export default function useAffix(props: TdBaseTableProps) {
     onHorizontalScroll,
     setTableContentRef,
     updateAffixHeaderOrFooter,
+    updateHorizontalScroll,
   };
 }

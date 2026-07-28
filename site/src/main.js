@@ -20,7 +20,7 @@ import '@tdesign/site-components/lib/styles/prism-theme.less';
 import '@tdesign/site-components/lib/styles/prism-theme-dark.less';
 
 // 主题生成器挂件
-import 'tdesign-theme-generator';
+import '@tdesign/theme-generator';
 
 import { registerLocaleChange } from '@tdesign/site-components';
 

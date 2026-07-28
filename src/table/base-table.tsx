@@ -122,6 +122,7 @@ export default defineComponent({
       onHorizontalScroll,
       updateAffixHeaderOrFooter,
       setTableContentRef,
+      updateHorizontalScroll,
     } = useAffix(props);
 
     const { showElement } = useElementLazyRender(tableRef, lazyLoad);
@@ -133,6 +134,12 @@ export default defineComponent({
       context,
       tableContentRef,
     );
+
+    watch(innerPagination, () => {
+      if (showAffixHeader || showAffixFooter || showAffixPagination) {
+        updateHorizontalScroll();
+      }
+    });
 
     const onInnerResizeChange: BaseTableProps['onColumnResizeChange'] = (p) => {
       props.onColumnResizeChange?.(p);

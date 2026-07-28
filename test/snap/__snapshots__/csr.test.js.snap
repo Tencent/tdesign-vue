@@ -22320,12 +22320,12 @@ exports[`csr snapshot test > csr test ./src/card/_example/footer.vue 1`] = `
                   id="chat"
                 >
                   <path
-                    d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
+                    d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
                     fill="transparent"
                     id="fill1"
                   />
                   <path
-                    d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
+                    d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
                     id="stroke1"
                     stroke="currentColor"
                     stroke-linecap="square"
@@ -22487,12 +22487,12 @@ exports[`csr snapshot test > csr test ./src/card/_example/footer-actions.vue 1`]
                       id="chat"
                     >
                       <path
-                        d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
+                        d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
                         fill="transparent"
                         id="fill1"
                       />
                       <path
-                        d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
+                        d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
                         id="stroke1"
                         stroke="currentColor"
                         stroke-linecap="square"
@@ -22641,12 +22641,12 @@ exports[`csr snapshot test > csr test ./src/card/_example/footer-actions.vue 1`]
                   id="chat"
                 >
                   <path
-                    d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
+                    d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
                     fill="transparent"
                     id="fill1"
                   />
                   <path
-                    d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
+                    d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
                     id="stroke1"
                     stroke="currentColor"
                     stroke-linecap="square"
@@ -23389,13 +23389,13 @@ exports[`csr snapshot test > csr test ./src/card/_example/header-footer-actions.
               id="chat"
             >
               <path
-                d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
+                d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
                 data-v-bed46286=""
                 fill="transparent"
                 id="fill1"
               />
               <path
-                d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
+                d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
                 data-v-bed46286=""
                 id="stroke1"
                 stroke="currentColor"
@@ -23663,12 +23663,12 @@ exports[`csr snapshot test > csr test ./src/card/_example/header-subtitle-footer
                   id="chat"
                 >
                   <path
-                    d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
+                    d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
                     fill="transparent"
                     id="fill1"
                   />
                   <path
-                    d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
+                    d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
                     id="stroke1"
                     stroke="currentColor"
                     stroke-linecap="square"
@@ -35547,13 +35547,13 @@ exports[`csr snapshot test > csr test ./src/comment/_example/operation.vue 1`] =
                   id="chat"
                 >
                   <path
-                    d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
+                    d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
                     data-v-70d43968=""
                     fill="transparent"
                     id="fill1"
                   />
                   <path
-                    d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
+                    d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
                     data-v-70d43968=""
                     id="stroke1"
                     stroke="currentColor"
@@ -35722,13 +35722,13 @@ exports[`csr snapshot test > csr test ./src/comment/_example/quote.vue 1`] = `
                   id="chat"
                 >
                   <path
-                    d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
+                    d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
                     data-v-4829af3e=""
                     fill="transparent"
                     id="fill1"
                   />
                   <path
-                    d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
+                    d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
                     data-v-4829af3e=""
                     id="stroke1"
                     stroke="currentColor"
@@ -35984,13 +35984,13 @@ exports[`csr snapshot test > csr test ./src/comment/_example/reply.vue 1`] = `
                       id="chat"
                     >
                       <path
-                        d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
+                        d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
                         data-v-1a7615cf=""
                         fill="transparent"
                         id="fill1"
                       />
                       <path
-                        d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
+                        d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
                         data-v-1a7615cf=""
                         id="stroke1"
                         stroke="currentColor"
@@ -74769,7 +74769,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
           data-v-3a8c765e=""
         >
           <div
-            class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom t-is-opened"
+            class="t-menu__item t-menu__item-spacer t-is-opened"
           >
             <span
               data-v-3a8c765e=""
@@ -74851,7 +74851,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
           data-v-3a8c765e=""
         >
           <div
-            class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+            class="t-menu__item t-menu__item-spacer"
           >
             <span
               data-v-3a8c765e=""
@@ -75148,7 +75148,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
           data-v-3a8c765e=""
         >
           <div
-            class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom t-is-opened"
+            class="t-menu__item t-menu__item-spacer t-is-opened"
           >
             <span
               data-v-3a8c765e=""
@@ -75230,7 +75230,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/double.vue 1`] = `
           data-v-3a8c765e=""
         >
           <div
-            class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+            class="t-menu__item t-menu__item-spacer"
           >
             <span
               data-v-3a8c765e=""
@@ -76334,7 +76334,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
             data-v-46745d88=""
           >
             <div
-              class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+              class="t-menu__item t-menu__item-spacer"
             />
             <ul
               style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
@@ -76420,7 +76420,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
             data-v-46745d88=""
           >
             <div
-              class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+              class="t-menu__item t-menu__item-spacer"
             />
             <ul
               style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
@@ -76506,7 +76506,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-tile.vue 1`]
             data-v-46745d88=""
           >
             <div
-              class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+              class="t-menu__item t-menu__item-spacer"
             />
             <ul
               style="opacity: 0; width: 0px; height: 0px; overflow: hidden;"
@@ -76815,7 +76815,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
           data-v-29e136fe=""
         >
           <div
-            class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom t-is-opened"
+            class="t-menu__item t-menu__item-spacer t-is-opened"
           >
             <span
               data-v-29e136fe=""
@@ -76831,7 +76831,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               data-v-29e136fe=""
             >
               <div
-                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+                class="t-menu__item t-menu__item-spacer"
               >
                 子菜单1-1
               </div>
@@ -76909,7 +76909,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               data-v-29e136fe=""
             >
               <div
-                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+                class="t-menu__item t-menu__item-spacer"
               >
                 子菜单1-2
               </div>
@@ -76987,7 +76987,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               data-v-29e136fe=""
             >
               <div
-                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+                class="t-menu__item t-menu__item-spacer"
               >
                 子菜单1-3
               </div>
@@ -77069,7 +77069,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               data-v-29e136fe=""
             >
               <div
-                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+                class="t-menu__item t-menu__item-spacer"
               >
                 子菜单1-1
               </div>
@@ -77147,7 +77147,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               data-v-29e136fe=""
             >
               <div
-                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+                class="t-menu__item t-menu__item-spacer"
               >
                 子菜单1-2
               </div>
@@ -77225,7 +77225,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               data-v-29e136fe=""
             >
               <div
-                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+                class="t-menu__item t-menu__item-spacer"
               >
                 子菜单1-3
               </div>
@@ -77305,7 +77305,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
           data-v-29e136fe=""
         >
           <div
-            class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+            class="t-menu__item t-menu__item-spacer"
           >
             <span
               data-v-29e136fe=""
@@ -77321,7 +77321,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               data-v-29e136fe=""
             >
               <div
-                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+                class="t-menu__item t-menu__item-spacer"
               >
                 子菜单2-1
               </div>
@@ -77399,7 +77399,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               data-v-29e136fe=""
             >
               <div
-                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+                class="t-menu__item t-menu__item-spacer"
               >
                 子菜单2-2
               </div>
@@ -77477,7 +77477,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               data-v-29e136fe=""
             >
               <div
-                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+                class="t-menu__item t-menu__item-spacer"
               >
                 子菜单2-3
               </div>
@@ -77559,7 +77559,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               data-v-29e136fe=""
             >
               <div
-                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+                class="t-menu__item t-menu__item-spacer"
               >
                 子菜单2-1
               </div>
@@ -77637,7 +77637,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               data-v-29e136fe=""
             >
               <div
-                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+                class="t-menu__item t-menu__item-spacer"
               >
                 子菜单2-2
               </div>
@@ -77715,7 +77715,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               data-v-29e136fe=""
             >
               <div
-                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+                class="t-menu__item t-menu__item-spacer"
               >
                 子菜单2-3
               </div>
@@ -78010,7 +78010,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
           data-v-29e136fe=""
         >
           <div
-            class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom t-is-opened"
+            class="t-menu__item t-menu__item-spacer t-is-opened"
           >
             <span
               data-v-29e136fe=""
@@ -78026,7 +78026,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               data-v-29e136fe=""
             >
               <div
-                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+                class="t-menu__item t-menu__item-spacer"
               >
                 子菜单1-1
               </div>
@@ -78104,7 +78104,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               data-v-29e136fe=""
             >
               <div
-                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+                class="t-menu__item t-menu__item-spacer"
               >
                 子菜单1-2
               </div>
@@ -78182,7 +78182,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               data-v-29e136fe=""
             >
               <div
-                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+                class="t-menu__item t-menu__item-spacer"
               >
                 子菜单1-3
               </div>
@@ -78264,7 +78264,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               data-v-29e136fe=""
             >
               <div
-                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+                class="t-menu__item t-menu__item-spacer"
               >
                 子菜单1-1
               </div>
@@ -78342,7 +78342,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               data-v-29e136fe=""
             >
               <div
-                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+                class="t-menu__item t-menu__item-spacer"
               >
                 子菜单1-2
               </div>
@@ -78420,7 +78420,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               data-v-29e136fe=""
             >
               <div
-                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+                class="t-menu__item t-menu__item-spacer"
               >
                 子菜单1-3
               </div>
@@ -78500,7 +78500,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
           data-v-29e136fe=""
         >
           <div
-            class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+            class="t-menu__item t-menu__item-spacer"
           >
             <span
               data-v-29e136fe=""
@@ -78516,7 +78516,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               data-v-29e136fe=""
             >
               <div
-                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+                class="t-menu__item t-menu__item-spacer"
               >
                 子菜单2-1
               </div>
@@ -78594,7 +78594,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               data-v-29e136fe=""
             >
               <div
-                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+                class="t-menu__item t-menu__item-spacer"
               >
                 子菜单2-2
               </div>
@@ -78672,7 +78672,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               data-v-29e136fe=""
             >
               <div
-                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+                class="t-menu__item t-menu__item-spacer"
               >
                 子菜单2-3
               </div>
@@ -78754,7 +78754,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               data-v-29e136fe=""
             >
               <div
-                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+                class="t-menu__item t-menu__item-spacer"
               >
                 子菜单2-1
               </div>
@@ -78832,7 +78832,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               data-v-29e136fe=""
             >
               <div
-                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+                class="t-menu__item t-menu__item-spacer"
               >
                 子菜单2-2
               </div>
@@ -78910,7 +78910,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multi-head.vue 1`] = `
               data-v-29e136fe=""
             >
               <div
-                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+                class="t-menu__item t-menu__item-spacer"
               >
                 子菜单2-3
               </div>
@@ -80439,7 +80439,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
           data-v-4dc7c046=""
         >
           <div
-            class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+            class="t-menu__item t-menu__item-spacer"
           >
             <span
               class="t-menu__content"
@@ -80475,7 +80475,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
               data-v-4dc7c046=""
             >
               <div
-                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+                class="t-menu__item t-menu__item-spacer"
               >
                 <span
                   class="t-menu__content"
@@ -80569,7 +80569,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
               data-v-4dc7c046=""
             >
               <div
-                class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+                class="t-menu__item t-menu__item-spacer"
               >
                 <span
                   class="t-menu__content"
@@ -80635,7 +80635,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
           data-v-4dc7c046=""
         >
           <div
-            class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+            class="t-menu__item t-menu__item-spacer"
           >
             <span
               class="t-menu__content"
@@ -80914,7 +80914,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
           data-v-4dc7c046=""
         >
           <div
-            class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+            class="t-menu__item t-menu__item-spacer"
           >
             <span
               class="t-menu__content"
@@ -80982,7 +80982,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
           data-v-4dc7c046=""
         >
           <div
-            class="t-menu__item t-menu__item-spacer t-menu__item-spacer--bottom"
+            class="t-menu__item t-menu__item-spacer"
           >
             <span
               class="t-menu__content"
@@ -108511,12 +108511,12 @@ exports[`csr snapshot test > csr test ./src/sticky-tool/_example/base.vue 1`] = 
             id="chat"
           >
             <path
-              d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
+              d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
               fill="transparent"
               id="fill1"
             />
             <path
-              d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
+              d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
               id="stroke1"
               stroke="currentColor"
               stroke-linecap="square"
@@ -108697,12 +108697,12 @@ exports[`csr snapshot test > csr test ./src/sticky-tool/_example/compact.vue 1`]
             id="chat"
           >
             <path
-              d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
+              d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
               fill="transparent"
               id="fill1"
             />
             <path
-              d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
+              d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
               id="stroke1"
               stroke="currentColor"
               stroke-linecap="square"
@@ -108868,12 +108868,12 @@ exports[`csr snapshot test > csr test ./src/sticky-tool/_example/shape.vue 1`] =
             id="chat"
           >
             <path
-              d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
+              d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
               fill="transparent"
               id="fill1"
             />
             <path
-              d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
+              d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
               id="stroke1"
               stroke="currentColor"
               stroke-linecap="square"
@@ -109046,12 +109046,12 @@ exports[`csr snapshot test > csr test ./src/sticky-tool/_example/shape.vue 1`] =
             id="chat"
           >
             <path
-              d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
+              d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
               fill="transparent"
               id="fill1"
             />
             <path
-              d="M2.5 3H21.5V17H6.5L2.5 20.5V3Z"
+              d="M2.5 4H21.5V19H6.5L2.5 22V4Z"
               id="stroke1"
               stroke="currentColor"
               stroke-linecap="square"
@@ -147234,6 +147234,561 @@ exports[`csr snapshot test > csr test ./src/tree-select/_example/valuetype.vue 1
       </div>
     </div>
   </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/typography/_example/base.vue 1`] = `
+<div
+  data-v-408fa1ae=""
+>
+  <h1
+    class="t-typography"
+    data-v-408fa1ae=""
+  >
+    What is TDesign
+  </h1>
+  <span
+    class="t-typography"
+    data-v-408fa1ae=""
+  >
+    <mark>
+       TDesign is an enterprise-level design system accumulated by Tencent's various business teams. 
+    </mark>
+  </span>
+  <p
+    class="t-typography"
+    data-v-408fa1ae=""
+  >
+    <span
+      class="t-typography"
+      data-v-408fa1ae=""
+    >
+      <strong>
+         TDesign features a unified design values, consistent design language, and visual style, helping users form continuous and coherent perceptions of the experience. 
+      </strong>
+    </span>
+     Based on this, TDesign offers out-of-the-box UI component libraries, design guidelines, and design assets, elegantly and efficiently freeing design and development from repetitive tasks. Simultaneously, it facilitates easy extension on top of TDesign, enabling a better alignment with business requirements. 
+  </p>
+  <h1
+    class="t-typography"
+    data-v-408fa1ae=""
+  >
+    Comprehensive
+  </h1>
+  <p
+    class="t-typography"
+    data-v-408fa1ae=""
+  >
+     TDesign Support 
+    <span
+      class="t-typography"
+      data-v-408fa1ae=""
+    >
+      <code>
+        Vue 2
+      </code>
+    </span>
+    , 
+    <span
+      class="t-typography"
+      data-v-408fa1ae=""
+    >
+      <code>
+        Vue 3
+      </code>
+    </span>
+    , 
+    <span
+      class="t-typography"
+      data-v-408fa1ae=""
+    >
+      <code>
+        React
+      </code>
+    </span>
+     components for Desktop Application and 
+    <span
+      class="t-typography"
+      data-v-408fa1ae=""
+    >
+      <code>
+        Vue 3
+      </code>
+    </span>
+    , 
+    <span
+      class="t-typography"
+      data-v-408fa1ae=""
+    >
+      <code>
+        Wechat MiniProgram
+      </code>
+    </span>
+     components for Mobile Application. 
+  </p>
+  <p
+    class="t-typography"
+    data-v-408fa1ae=""
+  >
+    <ul
+      data-v-408fa1ae=""
+    >
+      <li
+        data-v-408fa1ae=""
+      >
+        Features
+      </li>
+      <li
+        data-v-408fa1ae=""
+      >
+        Comprehensive
+      </li>
+      <ul
+        data-v-408fa1ae=""
+      >
+        <li
+          data-v-408fa1ae=""
+        >
+          Consistency
+        </li>
+        <li
+          data-v-408fa1ae=""
+        >
+          Usability
+        </li>
+      </ul>
+      <li
+        data-v-408fa1ae=""
+      >
+        Join TDesign
+      </li>
+    </ul>
+  </p>
+  <p
+    class="t-typography"
+    data-v-408fa1ae=""
+  >
+    <ol
+      data-v-408fa1ae=""
+    >
+      <li
+        data-v-408fa1ae=""
+      >
+        Features
+      </li>
+      <li
+        data-v-408fa1ae=""
+      >
+        Comprehensive
+      </li>
+      <ol
+        data-v-408fa1ae=""
+      >
+        <li
+          data-v-408fa1ae=""
+        >
+          Consistency
+        </li>
+        <li
+          data-v-408fa1ae=""
+        >
+          Usability
+        </li>
+      </ol>
+      <li
+        data-v-408fa1ae=""
+      >
+        Join TDesign
+      </li>
+    </ol>
+  </p>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/typography/_example/copyable.vue 1`] = `
+<div
+  style="width: 100%;"
+>
+  <span
+    class="t-typography"
+  >
+    This is a copyable text.
+    <button
+      class="t-button t-button--variant-text t-button--theme-primary t-button--shape-square"
+      type="button"
+    >
+      <svg
+        class="t-icon t-icon-copy"
+        fill="none"
+        height="1em"
+        style="fill: none;"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <g
+          id="copy"
+        >
+          <path
+            d="M10 10H21V21H10z"
+            fill="transparent"
+            id="fill1"
+          />
+          <path
+            d="M10 10H21V21H10V10Z"
+            id="stroke1"
+            stroke="currentColor"
+            stroke-linecap="square"
+            stroke-width="2"
+          />
+          <path
+            d="M14 6.5V3L3 3L3 14H6.5"
+            id="stroke2"
+            stroke="currentColor"
+            stroke-linecap="square"
+            stroke-width="2"
+          />
+        </g>
+      </svg>
+    </button>
+  </span>
+  <br />
+  <span
+    class="t-typography"
+  >
+    This is a copyable text.
+    <button
+      class="t-button t-button--variant-text t-button--theme-primary t-button--shape-square"
+      type="button"
+    >
+      <svg
+        class="t-icon t-icon-copy"
+        fill="none"
+        height="1em"
+        style="fill: none;"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <g
+          id="copy"
+        >
+          <path
+            d="M10 10H21V21H10z"
+            fill="transparent"
+            id="fill1"
+          />
+          <path
+            d="M10 10H21V21H10V10Z"
+            id="stroke1"
+            stroke="currentColor"
+            stroke-linecap="square"
+            stroke-width="2"
+          />
+          <path
+            d="M14 6.5V3L3 3L3 14H6.5"
+            id="stroke2"
+            stroke="currentColor"
+            stroke-linecap="square"
+            stroke-width="2"
+          />
+        </g>
+      </svg>
+    </button>
+  </span>
+  <br />
+  <span
+    class="t-typography"
+  >
+    This is a copyable text.
+    <button
+      class="t-button t-button--variant-text t-button--theme-primary t-button--shape-square"
+      type="button"
+    >
+      <svg
+        class="t-icon t-icon-smile"
+        fill="none"
+        height="1em"
+        style="fill: none;"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <g
+          id="smile"
+        >
+          <path
+            d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+            fill="transparent"
+            id="fill1"
+          />
+          <path
+            d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+            id="stroke1"
+            stroke="currentColor"
+            stroke-linecap="square"
+            stroke-width="2"
+          />
+          <path
+            d="M8 9V11M16 9V11M8.53516 15C9.22678 16.1956 10.5195 17 12 17C13.4806 17 14.7733 16.1956 15.4649 15"
+            id="stroke2"
+            stroke="currentColor"
+            stroke-linecap="square"
+            stroke-width="2"
+          />
+        </g>
+      </svg>
+    </button>
+  </span>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/typography/_example/ellipsis.vue 1`] = `
+<div
+  style="width: 100%;"
+>
+  <div
+    class="t-typography"
+    style="display: flex; align-items: flex-end;"
+  >
+    <p
+      style="overflow: hidden; text-overflow: ellipsis; white-space: normal; display: -webkit-box; -webkit-line-clamp: 1;"
+    >
+      TDesign was founded with the principles of open-source collaboration from the beginning. The collaboration scheme discussion, component design, and API design, including source code, are fully open within the company, garnering widespread attention from internal developers and designers. TDesign follows an equal, open, and strict policy, regardless of the participants' roles.
+    </p>
+  </div>
+  <div
+    class="t-typography"
+    style="display: flex; align-items: flex-end;"
+  >
+    <p
+      style="overflow: hidden; text-overflow: ellipsis; white-space: normal; display: -webkit-box; -webkit-line-clamp: 2;"
+    >
+      TDesign was founded with the principles of open-source collaboration from the beginning. The collaboration scheme discussion, component design, and API design, including source code, are fully open within the company, garnering widespread attention from internal developers and designers. TDesign follows an equal, open, and strict policy, regardless of the participants' roles.
+    </p>
+    <span
+      class="t-typography-ellipsis-symbol"
+      style="text-decoration: none; white-space: nowrap; flex: 1; margin-right: 0px;"
+    >
+      展开
+    </span>
+  </div>
+  <div
+    class="t-typography"
+    style="display: flex; align-items: flex-end; width: 200px;"
+  >
+    <p
+      style="overflow: hidden; text-overflow: ellipsis; white-space: normal; display: -webkit-box; -webkit-line-clamp: 1;"
+    >
+      TDesign was founded with the principles of open-source collaboration from the beginning. The collaboration scheme discussion, component design, and API design, including source code, are fully open within the company, garnering widespread attention from internal developers and designers. TDesign follows an equal, open, and strict policy, regardless of the participants' roles.
+    </p>
+  </div>
+  <div
+    class="t-typography"
+    style="display: flex; align-items: flex-end;"
+  >
+    <p
+      style="overflow: hidden; text-overflow: ellipsis; white-space: normal; display: -webkit-box; -webkit-line-clamp: 1;"
+    >
+      TDesign was founded with the principles of open-source collaboration from the beginning. The collaboration scheme discussion, component design, and API design, including source code, are fully open within the company, garnering widespread attention from internal developers and designers. TDesign follows an equal, open, and strict policy, regardless of the participants' roles.
+    </p>
+    <span
+      class="t-typography-ellipsis-symbol"
+      style="text-decoration: none; white-space: nowrap; flex: 1; margin-right: 0px;"
+    >
+      <svg
+        class="t-icon t-icon-chevron-down"
+        fill="none"
+        height="1em"
+        style="fill: none;"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <g
+          id="chevron-down"
+        >
+          <path
+            d="M17.5 9.5L12 15L6.5 9.5"
+            id="stroke1"
+            stroke="currentColor"
+            stroke-linecap="square"
+            stroke-width="2"
+          />
+        </g>
+      </svg>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/typography/_example/text.vue 1`] = `
+<div
+  class="vertical-demo t-space t-space-vertical"
+  style="gap: 12px;"
+>
+  <div
+    class="t-space-item"
+  >
+    <span
+      class="t-typography t-typography--primary"
+    >
+      TDesign (primary)
+    </span>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <span
+      class="t-typography t-typography--secondary"
+    >
+      TDesign (secondary)
+    </span>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <span
+      class="t-typography t-typography--disabled"
+    >
+      TDesign (disabled)
+    </span>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <span
+      class="t-typography t-typography--success"
+    >
+      TDesign (success)
+    </span>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <span
+      class="t-typography t-typography--warning"
+    >
+      TDesign (warning)
+    </span>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <span
+      class="t-typography t-typography--error"
+    >
+      TDesign (error)
+    </span>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <span
+      class="t-typography"
+    >
+      <mark>
+        TDesign (mark)
+      </mark>
+    </span>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <span
+      class="t-typography"
+    >
+      <code>
+        TDesign (code)
+      </code>
+    </span>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <span
+      class="t-typography"
+    >
+      <kbd>
+        TDesign (keyboard)
+      </kbd>
+    </span>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <span
+      class="t-typography"
+    >
+      <u>
+        TDesign (underline)
+      </u>
+    </span>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <span
+      class="t-typography"
+    >
+      <del>
+        TDesign (delete)
+      </del>
+    </span>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <span
+      class="t-typography"
+    >
+      <strong>
+        TDesign (strong)
+      </strong>
+    </span>
+  </div>
+  <div
+    class="t-space-item"
+  >
+    <span
+      class="t-typography"
+    >
+      <i>
+        TDesign (italic)
+      </i>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`csr snapshot test > csr test ./src/typography/_example/title.vue 1`] = `
+<div>
+  <h1
+    class="t-typography"
+  >
+    H1. TDesign
+  </h1>
+  <h2
+    class="t-typography"
+  >
+    H2. TDesign
+  </h2>
+  <h3
+    class="t-typography"
+  >
+    H3. TDesign
+  </h3>
+  <h4
+    class="t-typography"
+  >
+    H4. TDesign
+  </h4>
+  <h5
+    class="t-typography"
+  >
+    H5. TDesign
+  </h5>
+  <h6
+    class="t-typography"
+  >
+    H6. TDesign
+  </h6>
 </div>
 `;
 

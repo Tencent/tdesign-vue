@@ -4,6 +4,7 @@ import { nextTick } from 'vue';
 import { BrowseIcon, LockOnIcon } from 'tdesign-icons-vue';
 import dayjs from 'dayjs';
 import DateRangePicker from '@/src/date-picker/index.ts';
+import DateRangePickerPanel from '@/src/date-picker/DateRangePickerPanel';
 
 // 固定时间，当使用 new Date() 时，返回固定时间，防止“当前时间”的副作用影响，导致 snapshot 变更，mockdate 插件见 https://github.com/boblauer/MockDate
 MockDate.set('2020-12-28');
@@ -236,6 +237,43 @@ describe('DateRangePicker', () => {
       const InputDom = wrapper.find('input');
       InputDom.trigger('blur');
       expect(blurFn).toBeCalledTimes(1);
+    });
+  });
+
+  // test panel month synchronization
+  describe('panel month sync', () => {
+    it('should NOT sync months when panels are in different years', async () => {
+      // 复现 bug: 左侧 2022年7月，右侧 2023年8月，左侧切换至8月时，右侧不应自动切换至9月
+      const onMonthChange = vi.fn();
+      const wrapper = mount(DateRangePickerPanel, {
+        propsData: {
+          value: ['2022-07-01', '2023-08-01'],
+          onMonthChange,
+        },
+      });
+
+      await nextTick();
+
+      // 验证组件渲染了左右两个面板
+      const panels = wrapper.findAll('.t-date-picker__panel-date');
+      expect(panels.length).toBe(2);
+    });
+
+    it('should sync months when panels are in the same year', async () => {
+      // 同年时，月份联动应该正常工作
+      const onMonthChange = vi.fn();
+      const wrapper = mount(DateRangePickerPanel, {
+        propsData: {
+          value: ['2022-07-01', '2022-08-01'],
+          onMonthChange,
+        },
+      });
+
+      await nextTick();
+
+      // 验证组件渲染了左右两个面板
+      const panels = wrapper.findAll('.t-date-picker__panel-date');
+      expect(panels.length).toBe(2);
     });
   });
 });

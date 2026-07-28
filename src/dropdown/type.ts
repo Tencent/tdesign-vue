@@ -44,6 +44,14 @@ export interface TdDropdownProps {
    */
   options?: Array<DropdownOption>;
   /**
+   * 面板内的底部内容
+   */
+  panelBottomContent?: string | TNode;
+  /**
+   * 面板内的顶部内容
+   */
+  panelTopContent?: string | TNode;
+  /**
    * 弹窗定位方式，可选值同 Popup 组件
    * @default bottom-left
    */

@@ -6,6 +6,7 @@ import {
   ref,
   provide,
   onMounted,
+  onBeforeUnmount,
   getCurrentInstance,
   watch,
   toRefs,
@@ -13,6 +14,7 @@ import {
   reactive,
 } from '@vue/composition-api';
 import { isFunction } from 'lodash-es';
+import { State } from '@popperjs/core';
 import props from './submenu-props';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import FakeArrow from '../common-components/fake-arrow';
@@ -44,7 +46,7 @@ export default defineComponent({
       theme, activeValues, expandValues, mode, isHead, open,
     } = menu;
     const submenu = inject<TdSubMenuInterface>('TdSubmenu', {});
-    const { setSubPopup, closeParentPopup } = submenu;
+    const { setSubPopup, closeParentPopup, cancelHideTimer } = submenu;
 
     const classPrefix = usePrefixClass();
 
@@ -66,6 +68,19 @@ export default defineComponent({
     const subPopupRef = ref<HTMLElement>();
     const submenuRef = ref<HTMLElement>();
     const transitionClass = usePrefixClass('slide-down');
+    const showTimer = ref<ReturnType<typeof setTimeout> | null>(null);
+    const hideTimer = ref<ReturnType<typeof setTimeout> | null>(null);
+
+    const clearTimers = () => {
+      if (showTimer.value !== null) {
+        clearTimeout(showTimer.value);
+        showTimer.value = null;
+      }
+      if (hideTimer.value !== null) {
+        clearTimeout(hideTimer.value);
+        hideTimer.value = null;
+      }
+    };
 
     const classes = computed(() => [
       `${classPrefix.value}-submenu`,
@@ -90,8 +105,8 @@ export default defineComponent({
     const submenuClass = computed(() => [
       `${classPrefix.value}-menu__item`,
       `${classPrefix.value}-menu__item-spacer`,
-      `${classPrefix.value}-menu__item-spacer--${isHead && !isNested.value ? 'bottom' : 'right'}`,
       {
+        [`${classPrefix.value}-menu__item-spacer--right`]: !isHead || isNested.value,
         [`${classPrefix.value}-is-disabled`]: props.disabled,
         [`${classPrefix.value}-is-opened`]: isOpen.value,
         [`${classPrefix.value}-is-active`]: isActive.value,
@@ -118,7 +133,11 @@ export default defineComponent({
     // methods
     const handleMouseEnter = () => {
       if (props.disabled) return;
-      setTimeout(() => {
+
+      clearTimers();
+      cancelHideTimer?.();
+
+      showTimer.value = setTimeout(() => {
         if (!popupVisible.value) {
           open(props.value);
           // popupVisible设置为TRUE之后打开popup，因此需要在nextTick中确保可以拿到ref值
@@ -127,22 +146,42 @@ export default defineComponent({
           });
         }
         popupVisible.value = true;
+        showTimer.value = null;
       }, 0);
     };
 
-    const targetInPopup = (el: HTMLElement) => el?.classList.contains(`${classPrefix.value}-menu__popup`);
-    const loopInPopup = (el: HTMLElement): boolean => {
-      if (!el) return false;
-      return targetInPopup(el) || loopInPopup(el.parentElement);
+    const targetInPopup = (el: EventTarget | null) => {
+      if (!(el instanceof Element)) return false;
+      const popupElement = getPopupElement();
+
+      return Boolean(
+        popupWrapperRef.value?.contains(el)
+          || el.closest(`.${classPrefix.value}-menu__popup`) === popupWrapperRef.value
+          || popupElement?.contains(el),
+      );
     };
+
+    const getPopupElement = () => popupWrapperRef.value?.closest?.(`.${classPrefix.value}-popup`) as HTMLElement;
+
+    /*
+     * Popup 渲染在 submenu DOM 外部，mouseleave 可能在光标仍位于 Popup 内时触发 (比如 Monica 插件)。
+     * 若 relatedTarget 或当前 hover 状态仍在 Popup 内，则保持展开。
+     */
+    const shouldKeepPopupOpen = (relatedTarget: EventTarget | null) => targetInPopup(relatedTarget)
+      || popupWrapperRef.value?.matches?.(':hover')
+      || getPopupElement()?.matches?.(':hover');
 
     const handleMouseLeave = (e: MouseEvent) => {
-      setTimeout(() => {
-        const inPopup = targetInPopup(e.relatedTarget as HTMLElement);
+      clearTimers();
 
-        if (isCursorInPopup.value || inPopup) return;
+      hideTimer.value = setTimeout(() => {
+        if (isCursorInPopup.value || shouldKeepPopupOpen(e.relatedTarget)) {
+          hideTimer.value = null;
+          return;
+        }
         popupVisible.value = false;
-      }, 0);
+        hideTimer.value = null;
+      }, 100);
     };
 
     const handleMouseLeavePopup = (e: any) => {
@@ -156,16 +195,30 @@ export default defineComponent({
         target = target.parentNode;
       }
 
-      isCursorInPopup.value = false;
+      isCursorInPopup.value = shouldKeepPopupOpen(toElement || relatedTarget);
 
-      if (!isSubmenu(target)) {
-        popupVisible.value = false;
+      if (isCursorInPopup.value) {
+        return;
       }
 
-      closeParentPopup?.(e);
+      if (!isSubmenu(target)) {
+        clearTimers();
+        hideTimer.value = setTimeout(() => {
+          popupVisible.value = false;
+          hideTimer.value = null;
+        }, 100);
+
+        closeParentPopup?.(e);
+      }
     };
     const handleEnterPopup = () => {
       isCursorInPopup.value = true;
+
+      if (hideTimer.value !== null) {
+        clearTimeout(hideTimer.value);
+        hideTimer.value = null;
+      }
+      cancelHideTimer?.();
     };
 
     const handleSubmenuItemClick = () => {
@@ -193,9 +246,19 @@ export default defineComponent({
           subPopupRef.value = ref;
         },
         closeParentPopup: (e: MouseEvent) => {
-          const related = e.relatedTarget as HTMLElement;
-          if (loopInPopup(related)) return;
-          handleMouseLeavePopup(e);
+          clearTimers();
+          hideTimer.value = setTimeout(() => {
+            popupVisible.value = false;
+            hideTimer.value = null;
+          }, 100);
+          closeParentPopup?.(e);
+        },
+        cancelHideTimer: () => {
+          if (hideTimer.value !== null) {
+            clearTimeout(hideTimer.value);
+            hideTimer.value = null;
+          }
+          cancelHideTimer?.();
         },
       }),
     );
@@ -221,6 +284,10 @@ export default defineComponent({
         }
         node = node?.parent;
       }
+    });
+
+    onBeforeUnmount(() => {
+      clearTimers();
     });
 
     return {
@@ -255,12 +322,27 @@ export default defineComponent({
         placement = 'bottom-left';
       }
 
+      // 上下位置变化时,添加 bottom 和 top 类,用于添加 bottom 和 top 伪元素
+      const placementChange = (state: State) => {
+        const spacerEl = this.$refs.popupWrapperRef as HTMLElement;
+        if (!spacerEl) return;
+
+        const prefixClassName = `${this.classPrefix}-menu__spacer`;
+        const isBottom = state.placement.startsWith('bottom');
+        const isTop = state.placement.startsWith('top');
+
+        spacerEl.classList.toggle(`${prefixClassName}--bottom`, isBottom);
+        spacerEl.classList.toggle(`${prefixClassName}--top`, isTop);
+      };
+
       const popupWrapper = (
         <div
           ref="popupWrapperRef"
           class={[
             `${this.classPrefix}-menu__spacer`,
-            `${this.classPrefix}-menu__spacer--${!this.isNested && this.isHead ? 'top' : 'left'}`,
+            {
+              [`${this.classPrefix}-menu__spacer--left`]: this.isNested || !this.isHead,
+            },
           ]}
           onMouseenter={this.handleEnterPopup}
           onMouseleave={this.handleMouseLeavePopup}
@@ -270,13 +352,13 @@ export default defineComponent({
       );
       const realPopup = (
         <Popup
-          popperContentElement="overlay"
           {...((this.popupProps ?? {}) as TdSubmenuProps['popupProps'])}
           overlayInnerClassName={[...this.overlayInnerClassName]}
           overlayClassName={[...this.overlayClassName]}
           visible={this.popupVisible}
           placement={(this.popupProps as TdSubmenuProps['popupProps'])?.placement ?? (placement as PopupPlacement)}
           content={() => popupWrapper}
+          on={{ 'placement-change': placementChange }}
         >
           <div ref="submenuRef" class={this.submenuClass}>
             {triggerElement}

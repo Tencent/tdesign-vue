@@ -1,5 +1,5 @@
-import { PropType, VNodeDirective } from 'vue';
-import { createPopper } from '@popperjs/core';
+import { VNodeDirective } from 'vue';
+import { createPopper, Instance as PopperInstance } from '@popperjs/core';
 import { debounce } from 'lodash-es';
 import { on, off, once } from '../utils/dom';
 import { renderTNodeJSX, renderContent } from '../utils/render-tnode';
@@ -38,13 +38,6 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
 
   props: {
     ...props,
-    /** @private
-     * @description popper 内容元素,用于自定义 popper 元素时传入
-     * 可以是 HTMLElement 或者 ref 名称字符串 (如 'overlay')
-     */
-    popperContentElement: {
-      type: [String, Object] as PropType<string | HTMLElement>,
-    },
     expandAnimation: {
       type: Boolean,
     },
@@ -56,9 +49,9 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
   data() {
     return {
       /** popperjs instance */
-      popper: null as ReturnType<typeof createPopper>,
+      popper: null as PopperInstance,
       /** timeout id */
-      timeout: null,
+      timeout: null as ReturnType<typeof setTimeout> | null,
       hasDocumentEvent: false,
       /** if a trusted action (opening or closing) is prevented, increase this flag */
       visibleState: 0,
@@ -67,6 +60,8 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
       contentClicked: false,
       /** is popup leaving */
       isLeaving: false,
+      /** is overlay hover */
+      isOverlayHover: false,
     };
   },
   computed: {
@@ -200,13 +195,7 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
   methods: {
     updatePopper() {
       const { $el: triggerEl } = this;
-      // 支持传入字符串 ref 名称或 HTMLElement
-      let popperEl: HTMLElement;
-      if (typeof this.popperContentElement === 'string') {
-        popperEl = this.$refs[this.popperContentElement] as HTMLElement;
-      } else {
-        popperEl = this.popperContentElement || (this.$refs.popper as HTMLElement);
-      }
+      const popperEl = this.$refs.popper as HTMLElement;
 
       if (!popperEl || !this.visible) return;
       if (this.popper) {
@@ -214,8 +203,8 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
         return;
       }
       this.popper = createPopper(triggerEl, popperEl, {
-        modifiers:
-          getIEVersion() > 9
+        modifiers: [
+          ...(getIEVersion() > 9
             ? []
             : [
               {
@@ -227,7 +216,16 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
                   gpuAcceleration: false,
                 },
               },
-            ],
+            ]),
+          {
+            name: 'onPlacementChange',
+            enabled: true,
+            phase: 'main',
+            fn: ({ state }) => {
+              this.$emit('placement-change', state);
+            },
+          },
+        ],
         placement: getPopperPlacement(this.placement as TdPopupProps['placement']),
         onFirstUpdate: () => {
           this.$nextTick(this.updatePopper);
@@ -244,6 +242,27 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
         this.updateScrollTop?.(overlayEl);
       }
     },
+    // PopupInstanceFunctions: 获取浮层元素
+    getOverlay(): HTMLElement | null {
+      const overlayEl = this.$refs?.overlay as HTMLElement;
+      return overlayEl;
+    },
+
+    // PopupInstanceFunctions: 获取浮层悬浮状态
+    getOverlayState(): { hover: boolean } {
+      return { hover: this.isOverlayHover };
+    },
+
+    // PopupInstanceFunctions: 获取 Popper 实例
+    getPopper(): PopperInstance | null {
+      return this.popper;
+    },
+
+    // PopupInstanceFunctions: 更新浮层内容
+    update() {
+      this.updatePopper();
+    },
+
     getOverlayStyle() {
       const { overlayStyle } = this;
       const triggerEl = this.$el as HTMLElement;
@@ -347,6 +366,7 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
       }
     },
     onMouseEnter() {
+      this.isOverlayHover = true;
       if (this.destroyOnClose && this.isLeaving) {
         // 如果 popup 在关闭的时候会被销毁，那在它消失的过程中，不响应鼠标进入事件，因为否则不会触发 mouseleave
         return;
@@ -355,6 +375,7 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
       this.handleOpen({});
     },
     onMouseLeave(ev: MouseEvent) {
+      this.isOverlayHover = false;
       // 子元素存在打开的 popup 时，ui 可能重叠，而 dom 节点多是并列关系
       // 需要做碰撞检测去阻止父级 popup 关闭
       if (this.visibleState > 1) {
@@ -376,9 +397,8 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
       }
     },
     onAfterEnter() {
-      if (this.visible && this.popper) {
-        // 动画完成后，元素已有正确尺寸，使用 forceUpdate 强制重新运行所有 modifiers
-        this.popper.forceUpdate();
+      if (this.visible) {
+        this.updatePopper();
       }
     },
     onLeave() {
@@ -436,6 +456,9 @@ export default mixins(classPrefixMixins, getAttachConfigMixins('popup')).extend(
           on: {
             mousedown: () => {
               this.contentClicked = true;
+            },
+            click: (e: MouseEvent) => {
+              emitEvent(this, 'overlay-click', { e });
             },
             ...(hasTrigger.hover && {
               mouseenter: this.onMouseEnter,

@@ -12,6 +12,8 @@ maxColumnWidth | String / Number | 100 | \- | N
 maxHeight | Number | 300 | \- | N
 minColumnWidth | String / Number | 10 | \- | N
 options | Array | [] | Typescript：`Array<DropdownOption>` `type DropdownOption = { children?: Array<TdDropdownItemProps> } & TdDropdownItemProps & Record<string, any>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/dropdown/type.ts) | N
+panelBottomContent | String / Slot / Function | - | bottom content of the dropdown panel。Typescript: `string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
+panelTopContent | String / Slot / Function | - | top content of the dropdown panel。Typescript: `string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 placement | String | bottom-left | options：top/left/right/bottom/top-left/top-right/bottom-left/bottom-right/left-top/left-bottom/right-top/right-bottom | N
 popupProps | Object | - | Typescript：`PopupProps`，[Popup API Documents](./popup?tab=api)。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/dropdown/type.ts) | N
 trigger | String | hover | options：hover/click/focus/context-menu | N

@@ -6,6 +6,68 @@ docClass: timeline
 ---
 
 
+## 🌈 1.15.2 `2026-07-14` 
+### 🚀 Features
+- `Icon`: 新增 `star`、`star-1` 图标，优化`chat`、`thumb-up` 图标绘制效果 @uyarn  ([#3859](https://github.com/Tencent/tdesign-vue/pull/3859))
+### 🐞 Bug Fixes
+- `Button`: 优化 outline 和 dashed button 在 hover 下的背景色 @RADWIMPS426 ([common#2569](https://github.com/Tencent/tdesign-common/pull/2569))
+- `Menu`: 修复子菜单悬停显隐时序导致子菜单无法选中的问题 @RSS1102 ([#3857](https://github.com/Tencent/tdesign-vue/pull/3857))
+- `TagInput`: 修复带 label 且已有 tag 时输入内容垂直对齐偏差的问题 @DaZuiZui  ([common#2564](https://github.com/Tencent/tdesign-common/pull/2564))
+- `Tree`: 修复可拖拽节点拖至禁用节点上下方时提示线未正确显示的问题 @RylanBot ([common#2532](https://github.com/Tencent/tdesign-common/pull/2532))
+
+
+
+## 🌈 1.15.1 `2026-06-18` 
+### 🚀 Features
+- `InputNumber`: 新增 `autofocus` 属性 @betavs ([#3845](https://github.com/Tencent/tdesign-vue/pull/3845))
+### 🐞 Bug Fixes
+- `DateRangePickerPanel`: 修复跨年时月份联动的问题 @RSS1102 ([#3846](https://github.com/Tencent/tdesign-vue/pull/3846))
+
+
+## 🌈 1.15.0 `2026-04-27` 
+### 🚀 Features
+- `Icon`: 新增 217 个与人工智能、文档、徽标和文件相关的图标 @uyarn([#3808](https://github.com/Tencent/tdesign-vue/pull/3808))
+- `Dropdown`: `Dropdown` 支持 `panelTopContent` 和 `panelBottomContent` api @HaixingOoO ([#3826](https://github.com/Tencent/tdesign-vue/pull/3826))
+- `popup`: 新增多个组件实例方法 `getOverlay` 用于获取浮层元素、`getOverlayState` 用于获取浮层悬浮状态 、`getPopper` 用于获取当前组件 popper 实例、`update` 用于更新浮层内容 @RSS1102 ([#3751](https://github.com/Tencent/tdesign-vue/pull/3751))
+- `Typography`: 新增 `Typography` 排版组件 @uyarn ([#3831](https://github.com/Tencent/tdesign-vue/pull/3831))
+### 🐞 Bug Fixes
+- `Table`: 修复树形结构展开收起按钮没有更新展示状态的问题 @mark980828 ([#3816](https://github.com/Tencent/tdesign-vue/pull/3816))
+- `TagInput`: 修复 `excessTagsDisplayType="break-line"` 时，`suffix` 没有固定在右侧的问题 @RylanBot ([#3829](https://github.com/Tencent/tdesign-vue/pull/3829))
+
+
+## 🌈 1.14.5 `2026-01-21` 
+### 🐞 Bug Fixes
+- `Table`: 修复远程分页场景下，全选逻辑错误引起展示异常的问题 @RSS1102 ([#3801](https://github.com/Tencent/tdesign-vue/pull/3801))
+- `Menu`: 修复在 Safari 浏览器中点击展开图标没有变换方向的问题 @liweijie0812 ([#3797](https://github.com/Tencent/tdesign-vue/pull/3797))
+- `Menu`: 修复 `1.14.2` 后 menu-item 绝对定位样式丢失导致层级设置不生效的问题 @RSS1102 ([#3804](https://github.com/Tencent/tdesign-vue/pull/3804))
+- `Select`: 修复在 Safari 浏览器中点击展开图标没有变换方向的问题 @liweijie0812 ([#3797](https://github.com/Tencent/tdesign-vue/pull/3797))
+- `TreeSelect`: 修复在 Safari 浏览器中点击展开图标没有变换方向的问题 @liweijie0812 ([#3797](https://github.com/Tencent/tdesign-vue/pull/3797))
+- `Cascader`: 修复在 Safari 浏览器中点击展开图标没有变换方向的问题 @liweijie0812 ([#3797](https://github.com/Tencent/tdesign-vue/pull/3797))
+- `Table`: 优化存在固定表头或表尾场景滚动后表格位置异常的问题 @uyarn ([#3805](https://github.com/Tencent/tdesign-vue/pull/3805))
+
+
+
+
+## 🌈 1.14.4 `2025-12-26` 
+### 🐞 Bug Fixes
+- `Drawer`: 修复 `DOM` 元素未正确移除的问题 @RSS1102 ([#3788](https://github.com/Tencent/tdesign-vue/pull/3788))
+- `Guide`: 修复 `DOM` 元素未正确移除的问题 @RSS1102 ([#3788](https://github.com/Tencent/tdesign-vue/pull/3788))
+
+
+## 🌈 1.14.3 `2025-12-23` 
+### 🚀 Features
+- `ImageViewer`: 
+    - 优化下载跨域图片时的格式处理和压缩比例  @RylanBot ([common#2311](https://github.com/Tencent/tdesign-common/pull/2311)) 
+    - 支持直接下载同域图片，避免二次转换导致体积增大和动图失效等问题 @RylanBot ([common#2311](https://github.com/Tencent/tdesign-common/pull/2311)) 
+- `Popup`: 新增 `onOverlayClick` 事件，支持内容面板点击时触发 @RSS1102  ([#3752](https://github.com/Tencent/tdesign-vue/pull/3752))
+### 🐞 Bug Fixes
+- `Avatar`: 修复样式与设计稿不一致的问题 @liweijie0812 ([common#2364](https://github.com/Tencent/tdesign-common/pull/2364))
+- `Menu`: 修复菜单选项默认边距和图标大小的问题 @liweijie0812 ([common#2369](https://github.com/Tencent/tdesign-common/pull/2369))
+- `Table`: 修复行选中收缩后,表格头全选状态异常的问题 @liweijie0812 ([#3771](https://github.com/Tencent/tdesign-vue/pull/3771))
+- `Upload`: 修复不支持文件数组上传的问题 @GATING ([common#2078](https://github.com/Tencent/tdesign-common/pull/2078))
+- `Upload`: 修复 `theme` 为 `image-flow` 的告警问题 @uyarn ([#3782](https://github.com/Tencent/tdesign-vue/pull/3782))
+
+
 ## 🌈 1.14.2 `2025-11-07` 
 ### 🚀 Features
 - `Watermark`: 新增 `layout` API，支持生成不同布局的水印 @Wesley-0808 ([#3726](https://github.com/Tencent/tdesign-vue/pull/3726))
