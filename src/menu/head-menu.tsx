@@ -10,6 +10,7 @@ import {
   onBeforeUnmount,
   nextTick,
 } from '@vue/composition-api';
+import type { VNode } from 'vue';
 import { EllipsisIcon } from 'tdesign-icons-vue';
 import props from './head-menu-props';
 import { MenuValue } from './type';
@@ -24,6 +25,23 @@ import { usePrefixClass } from '../hooks/useConfig';
 import useResizeObserver from '../hooks/useResizeObserver';
 
 const MORE_SUBMENU_VALUE = '__t_head_menu_more__';
+
+const cloneVNodeTree = (vnode: VNode): VNode => {
+  const cloned = {
+    ...vnode,
+    elm: undefined,
+    componentInstance: undefined,
+    data: vnode.data ? { ...vnode.data } : vnode.data,
+    children: vnode.children?.map((child) => cloneVNodeTree(child as VNode)),
+    componentOptions: vnode.componentOptions
+      ? {
+        ...vnode.componentOptions,
+        children: vnode.componentOptions.children?.map((child) => cloneVNodeTree(child)),
+      }
+      : vnode.componentOptions,
+  };
+  return cloned as VNode;
+};
 
 export default defineComponent({
   name: 'THeadMenu',
@@ -387,8 +405,10 @@ export default defineComponent({
     const logo = renderTNodeJSX(this, 'logo');
     const content = renderContent(this, 'default', 'content');
     const isFolded = this.foldStartIndex >= 0;
-    // 重新调用 slot 函数生成 VNode，避免与主菜单共享组件实例。
-    const popupContent = isFolded ? renderContent(this, 'default', 'content') : [];
+    const freshContent = isFolded ? renderContent(this, 'default', 'content') : [];
+    const popupContent = (Array.isArray(freshContent) ? freshContent : [freshContent])
+      .filter(Boolean)
+      .map((vnode: VNode) => cloneVNodeTree(vnode));
     return (
       <div class={this.menuClass}>
         <div ref="innerRef" class={`${this.classPrefix}-head-menu__inner`}>
@@ -405,6 +425,7 @@ export default defineComponent({
                 value={MORE_SUBMENU_VALUE}
                 title={() => <EllipsisIcon />}
                 style={{ display: isFolded ? '' : 'none' }}
+                disableVirtualChild
               >
                 <PopupOverflowContent foldIndex={this.foldStartIndex}>{popupContent}</PopupOverflowContent>
               </Submenu>
