@@ -1,15 +1,17 @@
-import Vue, { VNode, PropType, VueConstructor } from 'vue';
-import { Styles } from '../common';
-import Slider from './slider';
+import Vue, { PropType, VNode, VueConstructor } from 'vue';
+
+import { formatLabel, formatPrecision } from '../_common/js/slider/utils';
+import { getIEVersion } from '../_common/js/utils/helper';
+import { getClassPrefixMixins } from '../config-provider/config-receiver';
 import Tooltip from '../tooltip/index';
 import ITooltip from '../tooltip/tooltip';
-import { getIEVersion } from '../_common/js/utils/helper';
-import { TdSliderProps } from './type';
-import { TdTooltipProps } from '../tooltip/type';
-import { renderTNodeJSX } from '../utils/render-tnode';
-import { getClassPrefixMixins } from '../config-provider/config-receiver';
-import { formatLabel } from '../_common/js/slider/utils';
 import mixins from '../utils/mixins';
+import { renderTNodeJSX } from '../utils/render-tnode';
+import Slider from './slider';
+
+import type { Styles } from '../common';
+import type { TdTooltipProps } from '../tooltip/type';
+import type { TdSliderProps } from './type';
 
 const classPrefixMixins = getClassPrefixMixins('slider__button');
 
@@ -301,7 +303,7 @@ export default mixins(classPrefixMixins, Vue as VueConstructor<SliderInstanceTyp
       const steps = Math.round(newPos / perStepLen);
       let value = steps * perStepLen * this.rangeDiff * 0.01;
       value += this.min;
-      value = Number(parseFloat(`${value}`).toFixed(this.precision));
+      value = formatPrecision(value, this.precision);
       this.$emit('input', value);
       this.$nextTick(() => {
         this.showTooltipComponent();
