@@ -14,19 +14,6 @@
       <t-menu-item value="8"> 菜单8 </t-menu-item>
       <t-menu-item value="9"> 菜单9 </t-menu-item>
       <t-menu-item value="10"> 菜单10 </t-menu-item>
-      <t-submenu
-        value="26"
-        :popup-props="{
-          overlayClassName: 'custom-popup-class',
-        }"
-      >
-        <template #title>
-          <span>菜单11</span>
-        </template>
-        <t-menu-item value="26"> 子菜单11-1 </t-menu-item>
-        <t-menu-item value="26-2"> 子菜单11-2 </t-menu-item>
-        <t-menu-item value="26-3"> 子菜单11-3 </t-menu-item>
-      </t-submenu>
       <template #operations>
         <div class="t-demo-menu--dark">
           <t-button variant="text" shape="square">
