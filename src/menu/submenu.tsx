@@ -39,7 +39,11 @@ export default defineComponent({
   directives: {
     ripple: Ripple,
   },
-  props,
+  props: {
+    ...props,
+    // HeadMenu 的“更多”节点已自行维护高亮，无需重复挂载隐藏菜单树。
+    disableVirtualChild: Boolean,
+  },
   setup(props) {
     const menu = inject<TdMenuInterface>('TdMenu');
     const {
@@ -288,6 +292,7 @@ export default defineComponent({
 
     onBeforeUnmount(() => {
       clearTimers();
+      menu?.vMenu?.remove(props.value);
     });
 
     return {
@@ -453,7 +458,9 @@ export default defineComponent({
     let events = {};
     let virtualChild;
     // popup模式下且存在多层的特殊封装场景中，需要将子节点挂载进行计算高亮
-    if (this.activeValues.length < 2) virtualChild = <div style="display:none">{renderContent(this, 'default', 'content')}</div>;
+    if (!this.disableVirtualChild && this.activeValues.length < 2) {
+      virtualChild = <div style="display:none">{renderContent(this, 'default', 'content')}</div>;
+    }
 
     if (this.mode === 'popup') {
       events = {
