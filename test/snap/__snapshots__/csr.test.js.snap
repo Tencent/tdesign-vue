@@ -76213,11 +76213,6 @@ exports[`csr snapshot test > csr test ./src/menu/_example/head-menu-ellipsis.vue
               />
             </svg>
           </div>
-          <div
-            style="display: none;"
-          >
-            <div />
-          </div>
         </li>
       </ul>
       <div
@@ -81024,11 +81019,6 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
               />
             </svg>
           </div>
-          <div
-            style="display: none;"
-          >
-            <div />
-          </div>
         </li>
       </ul>
       <div
@@ -81443,11 +81433,6 @@ exports[`csr snapshot test > csr test ./src/menu/_example/multiple.vue 1`] = `
                 stroke-width="1.3"
               />
             </svg>
-          </div>
-          <div
-            style="display: none;"
-          >
-            <div />
           </div>
         </li>
       </ul>
