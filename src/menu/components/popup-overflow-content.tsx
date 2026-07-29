@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import {
   defineComponent, inject, provide, ref, onMounted, onUpdated,
-} from '@vue/composition-api';
+} from 'vue';
 import { TdMenuInterface } from '../const';
 import { usePrefixClass } from '../../hooks/useConfig';
 

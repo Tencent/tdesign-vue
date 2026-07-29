@@ -9,7 +9,7 @@ import props from './props';
 import TSliderButton from './slider-button';
 import TSliderMark from './slider-mark';
 
-import type { ClassName, TNode } from '../common';
+import type { ClassName, TNode, Styles } from '../common';
 import type { SliderValue, TdSliderProps } from './type';
 
 const classPrefixMixins = getClassPrefixMixins('slider');
