@@ -160,6 +160,31 @@ export default defineComponent({
     const operationRef = ref<HTMLElement>();
     const foldStartIndex = ref(-1);
     const cachedItemWidths: number[] = [];
+    const foldedItems = new WeakSet<HTMLElement>();
+    const itemDisplayStates = new WeakMap<HTMLElement, { value: string; priority: string }>();
+
+    const hideFoldedItem = (element: HTMLElement) => {
+      if (!foldedItems.has(element)) {
+        itemDisplayStates.set(element, {
+          value: element.style.getPropertyValue('display'),
+          priority: element.style.getPropertyPriority('display'),
+        });
+        foldedItems.add(element);
+      }
+      element.style.setProperty('display', 'none', 'important');
+    };
+
+    const showFoldedItem = (element: HTMLElement) => {
+      if (!foldedItems.has(element)) return;
+      const display = itemDisplayStates.get(element);
+      if (display?.value) {
+        element.style.setProperty('display', display.value, display.priority);
+      } else {
+        element.style.removeProperty('display');
+      }
+      foldedItems.delete(element);
+      itemDisplayStates.delete(element);
+    };
 
     const getMenuItemElements = () => {
       if (!menuRef.value) return [];
@@ -270,7 +295,11 @@ export default defineComponent({
       flattenVisibleWrappers();
       const isFolded = foldStartIndex.value >= 0;
       getMenuItemElements().forEach((element, index) => {
-        element.hidden = isFolded && index >= foldStartIndex.value;
+        if (isFolded && index >= foldStartIndex.value) {
+          hideFoldedItem(element);
+        } else {
+          showFoldedItem(element);
+        }
       });
       const moreElement = menuRef.value.querySelector(`.${classPrefix.value}-head-menu__submenu--more`) as HTMLElement;
       if (moreElement) moreElement.style.display = isFolded ? '' : 'none';
@@ -289,10 +318,10 @@ export default defineComponent({
 
       const moreElement = menuRef.value.querySelector(`.${classPrefix.value}-head-menu__submenu--more`) as HTMLElement;
       if (moreElement) moreElement.style.display = 'none';
-      const savedHidden = itemNodes.map((element) => element.hidden);
+      const savedFoldStates = itemNodes.map((element) => foldedItems.has(element));
       const savedFlexShrinks = itemNodes.map((element) => element.style.flexShrink);
       itemNodes.forEach((element) => {
-        element.hidden = false;
+        showFoldedItem(element);
         element.style.flexShrink = '0';
       });
       cachedItemWidths.splice(
@@ -301,7 +330,7 @@ export default defineComponent({
         ...itemNodes.map((element) => (getComputedStyle(element).display === 'none' ? 0 : getElementWidth(element))),
       );
       itemNodes.forEach((element, index) => {
-        element.hidden = savedHidden[index];
+        if (savedFoldStates[index]) hideFoldedItem(element);
         element.style.flexShrink = savedFlexShrinks[index];
       });
 
