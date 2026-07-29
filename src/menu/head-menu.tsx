@@ -152,6 +152,31 @@ export default defineComponent({
     const operationRef = ref<HTMLElement>();
     const foldStartIndex = ref(-1);
     const cachedItemWidths: number[] = [];
+    const foldedItems = new WeakSet<HTMLElement>();
+    const itemDisplayStates = new WeakMap<HTMLElement, { value: string; priority: string }>();
+
+    const hideFoldedItem = (element: HTMLElement) => {
+      if (!foldedItems.has(element)) {
+        itemDisplayStates.set(element, {
+          value: element.style.getPropertyValue('display'),
+          priority: element.style.getPropertyPriority('display'),
+        });
+        foldedItems.add(element);
+      }
+      element.style.setProperty('display', 'none', 'important');
+    };
+
+    const showFoldedItem = (element: HTMLElement) => {
+      if (!foldedItems.has(element)) return;
+      const display = itemDisplayStates.get(element);
+      if (display?.value) {
+        element.style.setProperty('display', display.value, display.priority);
+      } else {
+        element.style.removeProperty('display');
+      }
+      foldedItems.delete(element);
+      itemDisplayStates.delete(element);
+    };
 
     const getMenuItemElements = () => {
       if (!menuRef.value) return [];
@@ -165,7 +190,7 @@ export default defineComponent({
           if (!(element instanceof HTMLElement) || element.classList.contains(moreClass)) return;
           if (element.classList.contains(menuItemClass) || element.classList.contains(submenuClass)) {
             items.push(element);
-          } else {
+          } else if (getComputedStyle(element).display !== 'none') {
             collect(element, depth + 1);
           }
         });
@@ -185,6 +210,14 @@ export default defineComponent({
           && !element.classList.contains(menuItemClass)
           && !element.classList.contains(submenuClass),
       );
+    };
+
+    const flattenVisibleWrappers = () => {
+      getWrapperElements().forEach((element) => {
+        if (getComputedStyle(element).display !== 'none' && element.style.display !== 'contents') {
+          element.style.display = 'contents';
+        }
+      });
     };
 
     const getElementWidth = (element: HTMLElement) => {
@@ -251,12 +284,14 @@ export default defineComponent({
 
     const applyFoldState = () => {
       if (!menuRef.value) return;
-      getWrapperElements().forEach((element) => {
-        element.style.display = 'contents';
-      });
+      flattenVisibleWrappers();
       const isFolded = foldStartIndex.value >= 0;
       getMenuItemElements().forEach((element, index) => {
-        element.style.display = isFolded && index >= foldStartIndex.value ? 'none' : '';
+        if (isFolded && index >= foldStartIndex.value) {
+          hideFoldedItem(element);
+        } else {
+          showFoldedItem(element);
+        }
       });
       const moreElement = menuRef.value.querySelector(`.${classPrefix.value}-head-menu__submenu--more`) as HTMLElement;
       if (moreElement) moreElement.style.display = isFolded ? '' : 'none';
@@ -265,9 +300,7 @@ export default defineComponent({
 
     const handleResize = () => {
       if (props.expandType !== 'popup' || !menuRef.value) return;
-      getWrapperElements().forEach((element) => {
-        element.style.display = 'contents';
-      });
+      flattenVisibleWrappers();
       const itemNodes = getMenuItemElements();
       if (!itemNodes.length) {
         foldStartIndex.value = -1;
@@ -277,15 +310,19 @@ export default defineComponent({
 
       const moreElement = menuRef.value.querySelector(`.${classPrefix.value}-head-menu__submenu--more`) as HTMLElement;
       if (moreElement) moreElement.style.display = 'none';
-      const savedDisplays = itemNodes.map((element) => element.style.display);
+      const savedFoldStates = itemNodes.map((element) => foldedItems.has(element));
       const savedFlexShrinks = itemNodes.map((element) => element.style.flexShrink);
       itemNodes.forEach((element) => {
-        element.style.display = '';
+        showFoldedItem(element);
         element.style.flexShrink = '0';
       });
-      cachedItemWidths.splice(0, cachedItemWidths.length, ...itemNodes.map(getElementWidth));
+      cachedItemWidths.splice(
+        0,
+        cachedItemWidths.length,
+        ...itemNodes.map((element) => (getComputedStyle(element).display === 'none' ? 0 : getElementWidth(element))),
+      );
       itemNodes.forEach((element, index) => {
-        element.style.display = savedDisplays[index];
+        if (savedFoldStates[index]) hideFoldedItem(element);
         element.style.flexShrink = savedFlexShrinks[index];
       });
 
@@ -347,8 +384,19 @@ export default defineComponent({
     watch(menuRef, (element) => {
       mutationObserver?.disconnect();
       if (!element || typeof MutationObserver === 'undefined') return;
-      mutationObserver = new MutationObserver(safeHandleResize);
-      mutationObserver.observe(element, { childList: true, subtree: true });
+      mutationObserver = new MutationObserver((records) => {
+        const wrappers = new Set(getWrapperElements());
+        const shouldResize = records.some(
+          (record) => record.type === 'childList' || wrappers.has(record.target as HTMLElement),
+        );
+        if (shouldResize) safeHandleResize();
+      });
+      mutationObserver.observe(element, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['class', 'style'],
+      });
       nextTick(handleResize);
     });
     onBeforeUnmount(() => {
