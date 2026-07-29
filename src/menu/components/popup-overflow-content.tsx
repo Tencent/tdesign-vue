@@ -36,7 +36,7 @@ export default defineComponent({
           if (!(element instanceof HTMLElement)) return;
           if (element.classList.contains(menuItemClass) || element.classList.contains(submenuClass)) {
             items.push(element);
-          } else {
+          } else if (getComputedStyle(element).display !== 'none') {
             collect(element, depth + 1);
           }
         });
@@ -44,7 +44,7 @@ export default defineComponent({
 
       collect(wrapperRef.value, 0);
       items.forEach((element, index) => {
-        element.style.display = index < props.foldIndex ? 'none' : '';
+        element.hidden = index < props.foldIndex;
       });
     };
 
