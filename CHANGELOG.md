@@ -6,6 +6,11 @@ docClass: timeline
 ---
 
 
+## 🌈 1.16.1 `2026-07-29` 
+### 🐞 Bug Fixes
+- `Menu`: 修复 `1.16.0` 版本新增折叠功能导致复合菜单场景下顶部菜单错误展示的问题 @uyarn ([#3869](https://github.com/Tencent/tdesign-vue/pull/3869))
+
+
 ## 🌈 1.16.0 `2026-07-28` 
 ### 🚀 Features
 - `Swiper`: 新增支持 `cardScale` API @RylanBot ([#3769](https://github.com/Tencent/tdesign-vue/pull/3769))
