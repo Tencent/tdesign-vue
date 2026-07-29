@@ -173,7 +173,7 @@ export default defineComponent({
           if (!(element instanceof HTMLElement) || element.classList.contains(moreClass)) return;
           if (element.classList.contains(menuItemClass) || element.classList.contains(submenuClass)) {
             items.push(element);
-          } else {
+          } else if (getComputedStyle(element).display !== 'none') {
             collect(element, depth + 1);
           }
         });
@@ -193,6 +193,14 @@ export default defineComponent({
           && !element.classList.contains(menuItemClass)
           && !element.classList.contains(submenuClass),
       );
+    };
+
+    const flattenVisibleWrappers = () => {
+      getWrapperElements().forEach((element) => {
+        if (getComputedStyle(element).display !== 'none' && element.style.display !== 'contents') {
+          element.style.display = 'contents';
+        }
+      });
     };
 
     const getElementWidth = (element: HTMLElement) => {
@@ -259,12 +267,10 @@ export default defineComponent({
 
     const applyFoldState = () => {
       if (!menuRef.value) return;
-      getWrapperElements().forEach((element) => {
-        element.style.display = 'contents';
-      });
+      flattenVisibleWrappers();
       const isFolded = foldStartIndex.value >= 0;
       getMenuItemElements().forEach((element, index) => {
-        element.style.display = isFolded && index >= foldStartIndex.value ? 'none' : '';
+        element.hidden = isFolded && index >= foldStartIndex.value;
       });
       const moreElement = menuRef.value.querySelector(`.${classPrefix.value}-head-menu__submenu--more`) as HTMLElement;
       if (moreElement) moreElement.style.display = isFolded ? '' : 'none';
@@ -273,9 +279,7 @@ export default defineComponent({
 
     const handleResize = () => {
       if (props.expandType !== 'popup' || !menuRef.value) return;
-      getWrapperElements().forEach((element) => {
-        element.style.display = 'contents';
-      });
+      flattenVisibleWrappers();
       const itemNodes = getMenuItemElements();
       if (!itemNodes.length) {
         foldStartIndex.value = -1;
@@ -285,15 +289,19 @@ export default defineComponent({
 
       const moreElement = menuRef.value.querySelector(`.${classPrefix.value}-head-menu__submenu--more`) as HTMLElement;
       if (moreElement) moreElement.style.display = 'none';
-      const savedDisplays = itemNodes.map((element) => element.style.display);
+      const savedHidden = itemNodes.map((element) => element.hidden);
       const savedFlexShrinks = itemNodes.map((element) => element.style.flexShrink);
       itemNodes.forEach((element) => {
-        element.style.display = '';
+        element.hidden = false;
         element.style.flexShrink = '0';
       });
-      cachedItemWidths.splice(0, cachedItemWidths.length, ...itemNodes.map(getElementWidth));
+      cachedItemWidths.splice(
+        0,
+        cachedItemWidths.length,
+        ...itemNodes.map((element) => (getComputedStyle(element).display === 'none' ? 0 : getElementWidth(element))),
+      );
       itemNodes.forEach((element, index) => {
-        element.style.display = savedDisplays[index];
+        element.hidden = savedHidden[index];
         element.style.flexShrink = savedFlexShrinks[index];
       });
 
@@ -355,8 +363,19 @@ export default defineComponent({
     watch(menuRef, (element) => {
       mutationObserver?.disconnect();
       if (!element || typeof MutationObserver === 'undefined') return;
-      mutationObserver = new MutationObserver(safeHandleResize);
-      mutationObserver.observe(element, { childList: true, subtree: true });
+      mutationObserver = new MutationObserver((records) => {
+        const wrappers = new Set(getWrapperElements());
+        const shouldResize = records.some(
+          (record) => record.type === 'childList' || wrappers.has(record.target as HTMLElement),
+        );
+        if (shouldResize) safeHandleResize();
+      });
+      mutationObserver.observe(element, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['class', 'style'],
+      });
       nextTick(handleResize);
     });
     onBeforeUnmount(() => {

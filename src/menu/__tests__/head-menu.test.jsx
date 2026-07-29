@@ -1,5 +1,6 @@
+/* eslint-disable class-methods-use-this, no-param-reassign */
 import { mount } from '@vue/test-utils';
-import { HeadMenu } from '@/src/menu';
+import { HeadMenu, Menu, MenuItem } from '@/src/menu';
 
 // every component needs four parts: props/events/slots/functions.
 describe('HeadMenu', () => {
@@ -30,6 +31,62 @@ describe('HeadMenu', () => {
         },
       });
       expect(wrapper.element).toMatchSnapshot();
+    });
+
+    it('keeps hidden head menu items hidden when a side menu exists', async () => {
+      const NativeResizeObserver = window.ResizeObserver;
+      let resize;
+      window.ResizeObserver = class {
+        constructor(callback) {
+          resize = callback;
+        }
+
+        observe() {}
+
+        unobserve() {}
+
+        disconnect() {}
+      };
+
+      const MenuContent = {
+        props: {
+          visible: Boolean,
+          value: String,
+        },
+        render() {
+          return (
+            <div class={`${this.value}-menu-content`} style={{ display: this.visible ? '' : 'none' }}>
+              <MenuItem value={this.value}>{this.value}</MenuItem>
+            </div>
+          );
+        },
+      };
+      const wrapper = mount({
+        render() {
+          return (
+            <div>
+              <Menu>
+                <MenuContent visible value="side" />
+              </Menu>
+              <HeadMenu expandType="popup">
+                <MenuContent value="header" />
+              </HeadMenu>
+            </div>
+          );
+        },
+      });
+      await wrapper.vm.$nextTick();
+
+      const inner = wrapper.find('.t-head-menu__inner').element;
+      Object.defineProperty(inner, 'clientWidth', { configurable: true, value: 300 });
+      resize([]);
+
+      expect(wrapper.find('.side-menu-content').element.style.display).toBe('');
+      expect(wrapper.find('.header-menu-content').element.style.display).toBe('none');
+      expect(wrapper.find('.t-head-menu__submenu--more').element.style.display).toBe('none');
+
+      wrapper.destroy();
+      window.ResizeObserver = NativeResizeObserver;
     });
   });
 
