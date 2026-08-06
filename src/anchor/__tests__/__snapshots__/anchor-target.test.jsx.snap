@@ -2,8 +2,15 @@
 
 exports[`AnchorTarget > <slot> > should render default slot 1`] = `
 "<h1 id="test-target" class="t-anchor__target">this is default slots<svg fill="none" viewBox="0 0 24 24" width="1em" height="1em" class="t-icon t-icon-file-copy t-anchor__copy" style="fill: none;">
+    <defs>
+      <mask id="t-icon-file-copy-instance-0-overlap-fill1" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" mask-type="luminance" x="0" y="0" width="24" height="24">
+        <rect x="0" y="0" width="24" height="24" fill="#fff"></rect>
+        <path stroke="#000" d="M14 2V8H20M14 2H15L20 7V8M14 2H7V18H20V8" fill="none" stroke-width="2"></path>
+        <path stroke="#000" d="M3 6L3 22H14" fill="none" stroke-linecap="square" stroke-width="2"></path>
+      </mask>
+    </defs>
     <g id="file-copy">
-      <path id="fill1" fill="transparent" d="M7 18V2H14V8H20V18H7Z"></path>
+      <path id="fill1" fill="transparent" d="M7 18V2H14V8H20V18H7Z" mask="url(#t-icon-file-copy-instance-0-overlap-fill1)"></path>
       <path id="stroke1" stroke="currentColor" d="M14 2V8H20M14 2H15L20 7V8M14 2H7V18H20V8" stroke-width="2"></path>
       <path id="stroke2" stroke="currentColor" d="M3 6L3 22H14" stroke-linecap="square" stroke-width="2"></path>
     </g>
