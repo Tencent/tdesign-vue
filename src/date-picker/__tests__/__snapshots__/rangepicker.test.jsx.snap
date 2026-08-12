@@ -38,7 +38,7 @@ exports[`DateRangePicker > :mode 1`] = `
             <defs>
               <mask
                 height="24"
-                id="t-icon-calendar-instance-1uhfvrn-overlap-fill1"
+                id="t-icon-calendar-instance-1uhfvrn-2-overlap-fill1"
                 mask-type="luminance"
                 maskContentUnits="userSpaceOnUse"
                 maskUnits="userSpaceOnUse"
@@ -62,7 +62,7 @@ exports[`DateRangePicker > :mode 1`] = `
               </mask>
               <mask
                 height="24"
-                id="t-icon-calendar-instance-1uhfvrn-overlap-fill2"
+                id="t-icon-calendar-instance-1uhfvrn-2-overlap-fill2"
                 mask-type="luminance"
                 maskContentUnits="userSpaceOnUse"
                 maskUnits="userSpaceOnUse"
@@ -92,13 +92,13 @@ exports[`DateRangePicker > :mode 1`] = `
                 d="M21 10H3V21H21V10Z"
                 fill="transparent"
                 id="fill1"
-                mask="url(#t-icon-calendar-instance-1uhfvrn-overlap-fill1)"
+                mask="url(#t-icon-calendar-instance-1uhfvrn-2-overlap-fill1)"
               />
               <path
                 d="M21 10H3V5H21V10Z"
                 fill="transparent"
                 id="fill2"
-                mask="url(#t-icon-calendar-instance-1uhfvrn-overlap-fill2)"
+                mask="url(#t-icon-calendar-instance-1uhfvrn-2-overlap-fill2)"
               />
               <path
                 d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
@@ -154,7 +154,7 @@ exports[`DateRangePicker > :range 1`] = `
             <defs>
               <mask
                 height="24"
-                id="t-icon-calendar-instance-1uhfvrn-overlap-fill1"
+                id="t-icon-calendar-instance-1uhfvrn-3-overlap-fill1"
                 mask-type="luminance"
                 maskContentUnits="userSpaceOnUse"
                 maskUnits="userSpaceOnUse"
@@ -178,7 +178,7 @@ exports[`DateRangePicker > :range 1`] = `
               </mask>
               <mask
                 height="24"
-                id="t-icon-calendar-instance-1uhfvrn-overlap-fill2"
+                id="t-icon-calendar-instance-1uhfvrn-3-overlap-fill2"
                 mask-type="luminance"
                 maskContentUnits="userSpaceOnUse"
                 maskUnits="userSpaceOnUse"
@@ -208,13 +208,13 @@ exports[`DateRangePicker > :range 1`] = `
                 d="M21 10H3V21H21V10Z"
                 fill="transparent"
                 id="fill1"
-                mask="url(#t-icon-calendar-instance-1uhfvrn-overlap-fill1)"
+                mask="url(#t-icon-calendar-instance-1uhfvrn-3-overlap-fill1)"
               />
               <path
                 d="M21 10H3V5H21V10Z"
                 fill="transparent"
                 id="fill2"
-                mask="url(#t-icon-calendar-instance-1uhfvrn-overlap-fill2)"
+                mask="url(#t-icon-calendar-instance-1uhfvrn-3-overlap-fill2)"
               />
               <path
                 d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
@@ -269,7 +269,7 @@ exports[`DateRangePicker > :value 1`] = `
             <defs>
               <mask
                 height="24"
-                id="t-icon-calendar-instance-1uhfvrn-overlap-fill1"
+                id="t-icon-calendar-instance-1uhfvrn-1-overlap-fill1"
                 mask-type="luminance"
                 maskContentUnits="userSpaceOnUse"
                 maskUnits="userSpaceOnUse"
@@ -293,7 +293,7 @@ exports[`DateRangePicker > :value 1`] = `
               </mask>
               <mask
                 height="24"
-                id="t-icon-calendar-instance-1uhfvrn-overlap-fill2"
+                id="t-icon-calendar-instance-1uhfvrn-1-overlap-fill2"
                 mask-type="luminance"
                 maskContentUnits="userSpaceOnUse"
                 maskUnits="userSpaceOnUse"
@@ -323,13 +323,13 @@ exports[`DateRangePicker > :value 1`] = `
                 d="M21 10H3V21H21V10Z"
                 fill="transparent"
                 id="fill1"
-                mask="url(#t-icon-calendar-instance-1uhfvrn-overlap-fill1)"
+                mask="url(#t-icon-calendar-instance-1uhfvrn-1-overlap-fill1)"
               />
               <path
                 d="M21 10H3V5H21V10Z"
                 fill="transparent"
                 id="fill2"
-                mask="url(#t-icon-calendar-instance-1uhfvrn-overlap-fill2)"
+                mask="url(#t-icon-calendar-instance-1uhfvrn-1-overlap-fill2)"
               />
               <path
                 d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
