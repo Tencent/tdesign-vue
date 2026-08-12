@@ -47,7 +47,7 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, fail 
                   <defs>
                     <mask
                       height="24"
-                      id="t-icon-image-instance-116-overlap-fill1"
+                      id="t-icon-image-instance-snapshot-overlap-fill1"
                       mask-type="luminance"
                       maskContentUnits="userSpaceOnUse"
                       maskUnits="userSpaceOnUse"
@@ -86,7 +86,7 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, fail 
                     </mask>
                     <mask
                       height="24"
-                      id="t-icon-image-instance-116-overlap-fill2"
+                      id="t-icon-image-instance-snapshot-overlap-fill2"
                       mask-type="luminance"
                       maskContentUnits="userSpaceOnUse"
                       maskUnits="userSpaceOnUse"
@@ -124,14 +124,14 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, fail 
                       d="M3 21H20L9 10L3 16V21Z"
                       fill="transparent"
                       id="fill1"
-                      mask="url(#t-icon-image-instance-116-overlap-fill1)"
+                      mask="url(#t-icon-image-instance-snapshot-overlap-fill1)"
                     />
                     <circle
                       cx="15.75"
                       cy="8.25"
                       fill="transparent"
                       id="fill2"
-                      mask="url(#t-icon-image-instance-116-overlap-fill2)"
+                      mask="url(#t-icon-image-instance-snapshot-overlap-fill2)"
                       r="2"
                     />
                     <path
@@ -270,7 +270,7 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, progr
                   <defs>
                     <mask
                       height="24"
-                      id="t-icon-image-instance-117-overlap-fill1"
+                      id="t-icon-image-instance-snapshot-overlap-fill1"
                       mask-type="luminance"
                       maskContentUnits="userSpaceOnUse"
                       maskUnits="userSpaceOnUse"
@@ -309,7 +309,7 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, progr
                     </mask>
                     <mask
                       height="24"
-                      id="t-icon-image-instance-117-overlap-fill2"
+                      id="t-icon-image-instance-snapshot-overlap-fill2"
                       mask-type="luminance"
                       maskContentUnits="userSpaceOnUse"
                       maskUnits="userSpaceOnUse"
@@ -347,14 +347,14 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, progr
                       d="M3 21H20L9 10L3 16V21Z"
                       fill="transparent"
                       id="fill1"
-                      mask="url(#t-icon-image-instance-117-overlap-fill1)"
+                      mask="url(#t-icon-image-instance-snapshot-overlap-fill1)"
                     />
                     <circle
                       cx="15.75"
                       cy="8.25"
                       fill="transparent"
                       id="fill2"
-                      mask="url(#t-icon-image-instance-117-overlap-fill2)"
+                      mask="url(#t-icon-image-instance-snapshot-overlap-fill2)"
                       r="2"
                     />
                     <path
@@ -500,7 +500,7 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, succe
                   <defs>
                     <mask
                       height="24"
-                      id="t-icon-image-instance-112-overlap-fill1"
+                      id="t-icon-image-instance-snapshot-overlap-fill1"
                       mask-type="luminance"
                       maskContentUnits="userSpaceOnUse"
                       maskUnits="userSpaceOnUse"
@@ -539,7 +539,7 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, succe
                     </mask>
                     <mask
                       height="24"
-                      id="t-icon-image-instance-112-overlap-fill2"
+                      id="t-icon-image-instance-snapshot-overlap-fill2"
                       mask-type="luminance"
                       maskContentUnits="userSpaceOnUse"
                       maskUnits="userSpaceOnUse"
@@ -577,14 +577,14 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, succe
                       d="M3 21H20L9 10L3 16V21Z"
                       fill="transparent"
                       id="fill1"
-                      mask="url(#t-icon-image-instance-112-overlap-fill1)"
+                      mask="url(#t-icon-image-instance-snapshot-overlap-fill1)"
                     />
                     <circle
                       cx="15.75"
                       cy="8.25"
                       fill="transparent"
                       id="fill2"
-                      mask="url(#t-icon-image-instance-112-overlap-fill2)"
+                      mask="url(#t-icon-image-instance-snapshot-overlap-fill2)"
                       r="2"
                     />
                     <path
@@ -723,7 +723,7 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, succe
                   <defs>
                     <mask
                       height="24"
-                      id="t-icon-image-instance-114-overlap-fill1"
+                      id="t-icon-image-instance-snapshot-overlap-fill1"
                       mask-type="luminance"
                       maskContentUnits="userSpaceOnUse"
                       maskUnits="userSpaceOnUse"
@@ -762,7 +762,7 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, succe
                     </mask>
                     <mask
                       height="24"
-                      id="t-icon-image-instance-114-overlap-fill2"
+                      id="t-icon-image-instance-snapshot-overlap-fill2"
                       mask-type="luminance"
                       maskContentUnits="userSpaceOnUse"
                       maskUnits="userSpaceOnUse"
@@ -800,14 +800,14 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, succe
                       d="M3 21H20L9 10L3 16V21Z"
                       fill="transparent"
                       id="fill1"
-                      mask="url(#t-icon-image-instance-114-overlap-fill1)"
+                      mask="url(#t-icon-image-instance-snapshot-overlap-fill1)"
                     />
                     <circle
                       cx="15.75"
                       cy="8.25"
                       fill="transparent"
                       id="fill2"
-                      mask="url(#t-icon-image-instance-114-overlap-fill2)"
+                      mask="url(#t-icon-image-instance-snapshot-overlap-fill2)"
                       r="2"
                     />
                     <path
@@ -946,7 +946,7 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, waiti
                   <defs>
                     <mask
                       height="24"
-                      id="t-icon-image-instance-118-overlap-fill1"
+                      id="t-icon-image-instance-snapshot-overlap-fill1"
                       mask-type="luminance"
                       maskContentUnits="userSpaceOnUse"
                       maskUnits="userSpaceOnUse"
@@ -985,7 +985,7 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, waiti
                     </mask>
                     <mask
                       height="24"
-                      id="t-icon-image-instance-118-overlap-fill2"
+                      id="t-icon-image-instance-snapshot-overlap-fill2"
                       mask-type="luminance"
                       maskContentUnits="userSpaceOnUse"
                       maskUnits="userSpaceOnUse"
@@ -1023,14 +1023,14 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, waiti
                       d="M3 21H20L9 10L3 16V21Z"
                       fill="transparent"
                       id="fill1"
-                      mask="url(#t-icon-image-instance-118-overlap-fill1)"
+                      mask="url(#t-icon-image-instance-snapshot-overlap-fill1)"
                     />
                     <circle
                       cx="15.75"
                       cy="8.25"
                       fill="transparent"
                       id="fill2"
-                      mask="url(#t-icon-image-instance-118-overlap-fill2)"
+                      mask="url(#t-icon-image-instance-snapshot-overlap-fill2)"
                       r="2"
                     />
                     <path
@@ -1469,7 +1469,7 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                       <defs>
                         <mask
                           height="24"
-                          id="t-icon-image-instance-340-overlap-fill1"
+                          id="t-icon-image-instance-snapshot-overlap-fill1"
                           mask-type="luminance"
                           maskContentUnits="userSpaceOnUse"
                           maskUnits="userSpaceOnUse"
@@ -1508,7 +1508,7 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                         </mask>
                         <mask
                           height="24"
-                          id="t-icon-image-instance-340-overlap-fill2"
+                          id="t-icon-image-instance-snapshot-overlap-fill2"
                           mask-type="luminance"
                           maskContentUnits="userSpaceOnUse"
                           maskUnits="userSpaceOnUse"
@@ -1546,14 +1546,14 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                           d="M3 21H20L9 10L3 16V21Z"
                           fill="transparent"
                           id="fill1"
-                          mask="url(#t-icon-image-instance-340-overlap-fill1)"
+                          mask="url(#t-icon-image-instance-snapshot-overlap-fill1)"
                         />
                         <circle
                           cx="15.75"
                           cy="8.25"
                           fill="transparent"
                           id="fill2"
-                          mask="url(#t-icon-image-instance-340-overlap-fill2)"
+                          mask="url(#t-icon-image-instance-snapshot-overlap-fill2)"
                           r="2"
                         />
                         <path
@@ -1593,7 +1593,7 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                   <defs>
                     <mask
                       height="24"
-                      id="t-icon-delete-instance-320-overlap-fill1"
+                      id="t-icon-delete-instance-snapshot-overlap-fill1"
                       mask-type="luminance"
                       maskContentUnits="userSpaceOnUse"
                       maskUnits="userSpaceOnUse"
@@ -1631,7 +1631,7 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                       d="M5 5H19L18.5 22H5.5L5 5Z"
                       fill="transparent"
                       id="fill1"
-                      mask="url(#t-icon-delete-instance-320-overlap-fill1)"
+                      mask="url(#t-icon-delete-instance-snapshot-overlap-fill1)"
                     />
                     <path
                       d="M21 5H3M5 5H19L18.5 22H5.5L5 5ZM8.5 2H15.5V5H8.5V2Z"
@@ -1706,7 +1706,7 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                       <defs>
                         <mask
                           height="24"
-                          id="t-icon-image-instance-341-overlap-fill1"
+                          id="t-icon-image-instance-snapshot-overlap-fill1"
                           mask-type="luminance"
                           maskContentUnits="userSpaceOnUse"
                           maskUnits="userSpaceOnUse"
@@ -1745,7 +1745,7 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                         </mask>
                         <mask
                           height="24"
-                          id="t-icon-image-instance-341-overlap-fill2"
+                          id="t-icon-image-instance-snapshot-overlap-fill2"
                           mask-type="luminance"
                           maskContentUnits="userSpaceOnUse"
                           maskUnits="userSpaceOnUse"
@@ -1783,14 +1783,14 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                           d="M3 21H20L9 10L3 16V21Z"
                           fill="transparent"
                           id="fill1"
-                          mask="url(#t-icon-image-instance-341-overlap-fill1)"
+                          mask="url(#t-icon-image-instance-snapshot-overlap-fill1)"
                         />
                         <circle
                           cx="15.75"
                           cy="8.25"
                           fill="transparent"
                           id="fill2"
-                          mask="url(#t-icon-image-instance-341-overlap-fill2)"
+                          mask="url(#t-icon-image-instance-snapshot-overlap-fill2)"
                           r="2"
                         />
                         <path
@@ -1830,7 +1830,7 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                   <defs>
                     <mask
                       height="24"
-                      id="t-icon-browse-instance-324-overlap-fill1"
+                      id="t-icon-browse-instance-snapshot-overlap-fill1"
                       mask-type="luminance"
                       maskContentUnits="userSpaceOnUse"
                       maskUnits="userSpaceOnUse"
@@ -1867,7 +1867,7 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                     </mask>
                     <mask
                       height="24"
-                      id="t-icon-browse-instance-324-overlap-fill2"
+                      id="t-icon-browse-instance-snapshot-overlap-fill2"
                       mask-type="luminance"
                       maskContentUnits="userSpaceOnUse"
                       maskUnits="userSpaceOnUse"
@@ -1906,13 +1906,13 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                       d="M11.9997 4C6.86881 4 2.52275 7.36017 1.04199 12C2.52275 16.6398 6.86881 20 11.9997 20C17.1306 20 21.4766 16.6398 22.9574 12C21.4766 7.36017 17.1306 4 11.9997 4Z"
                       fill="transparent"
                       id="fill1"
-                      mask="url(#t-icon-browse-instance-324-overlap-fill1)"
+                      mask="url(#t-icon-browse-instance-snapshot-overlap-fill1)"
                     />
                     <path
                       d="M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z"
                       fill="transparent"
                       id="fill2"
-                      mask="url(#t-icon-browse-instance-324-overlap-fill2)"
+                      mask="url(#t-icon-browse-instance-snapshot-overlap-fill2)"
                     />
                     <path
                       d="M11.9997 4C6.86881 4 2.52275 7.36017 1.04199 12C2.52275 16.6398 6.86881 20 11.9997 20C17.1306 20 21.4766 16.6398 22.9574 12C21.4766 7.36017 17.1306 4 11.9997 4Z"
@@ -1948,7 +1948,7 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                   <defs>
                     <mask
                       height="24"
-                      id="t-icon-delete-instance-325-overlap-fill1"
+                      id="t-icon-delete-instance-snapshot-overlap-fill1"
                       mask-type="luminance"
                       maskContentUnits="userSpaceOnUse"
                       maskUnits="userSpaceOnUse"
@@ -1986,7 +1986,7 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                       d="M5 5H19L18.5 22H5.5L5 5Z"
                       fill="transparent"
                       id="fill1"
-                      mask="url(#t-icon-delete-instance-325-overlap-fill1)"
+                      mask="url(#t-icon-delete-instance-snapshot-overlap-fill1)"
                     />
                     <path
                       d="M21 5H3M5 5H19L18.5 22H5.5L5 5ZM8.5 2H15.5V5H8.5V2Z"
@@ -2061,7 +2061,7 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                       <defs>
                         <mask
                           height="24"
-                          id="t-icon-image-instance-342-overlap-fill1"
+                          id="t-icon-image-instance-snapshot-overlap-fill1"
                           mask-type="luminance"
                           maskContentUnits="userSpaceOnUse"
                           maskUnits="userSpaceOnUse"
@@ -2100,7 +2100,7 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                         </mask>
                         <mask
                           height="24"
-                          id="t-icon-image-instance-342-overlap-fill2"
+                          id="t-icon-image-instance-snapshot-overlap-fill2"
                           mask-type="luminance"
                           maskContentUnits="userSpaceOnUse"
                           maskUnits="userSpaceOnUse"
@@ -2138,14 +2138,14 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                           d="M3 21H20L9 10L3 16V21Z"
                           fill="transparent"
                           id="fill1"
-                          mask="url(#t-icon-image-instance-342-overlap-fill1)"
+                          mask="url(#t-icon-image-instance-snapshot-overlap-fill1)"
                         />
                         <circle
                           cx="15.75"
                           cy="8.25"
                           fill="transparent"
                           id="fill2"
-                          mask="url(#t-icon-image-instance-342-overlap-fill2)"
+                          mask="url(#t-icon-image-instance-snapshot-overlap-fill2)"
                           r="2"
                         />
                         <path
@@ -2185,7 +2185,7 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                   <defs>
                     <mask
                       height="24"
-                      id="t-icon-browse-instance-329-overlap-fill1"
+                      id="t-icon-browse-instance-snapshot-overlap-fill1"
                       mask-type="luminance"
                       maskContentUnits="userSpaceOnUse"
                       maskUnits="userSpaceOnUse"
@@ -2222,7 +2222,7 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                     </mask>
                     <mask
                       height="24"
-                      id="t-icon-browse-instance-329-overlap-fill2"
+                      id="t-icon-browse-instance-snapshot-overlap-fill2"
                       mask-type="luminance"
                       maskContentUnits="userSpaceOnUse"
                       maskUnits="userSpaceOnUse"
@@ -2261,13 +2261,13 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                       d="M11.9997 4C6.86881 4 2.52275 7.36017 1.04199 12C2.52275 16.6398 6.86881 20 11.9997 20C17.1306 20 21.4766 16.6398 22.9574 12C21.4766 7.36017 17.1306 4 11.9997 4Z"
                       fill="transparent"
                       id="fill1"
-                      mask="url(#t-icon-browse-instance-329-overlap-fill1)"
+                      mask="url(#t-icon-browse-instance-snapshot-overlap-fill1)"
                     />
                     <path
                       d="M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z"
                       fill="transparent"
                       id="fill2"
-                      mask="url(#t-icon-browse-instance-329-overlap-fill2)"
+                      mask="url(#t-icon-browse-instance-snapshot-overlap-fill2)"
                     />
                     <path
                       d="M11.9997 4C6.86881 4 2.52275 7.36017 1.04199 12C2.52275 16.6398 6.86881 20 11.9997 20C17.1306 20 21.4766 16.6398 22.9574 12C21.4766 7.36017 17.1306 4 11.9997 4Z"
@@ -2303,7 +2303,7 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                   <defs>
                     <mask
                       height="24"
-                      id="t-icon-delete-instance-330-overlap-fill1"
+                      id="t-icon-delete-instance-snapshot-overlap-fill1"
                       mask-type="luminance"
                       maskContentUnits="userSpaceOnUse"
                       maskUnits="userSpaceOnUse"
@@ -2341,7 +2341,7 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                       d="M5 5H19L18.5 22H5.5L5 5Z"
                       fill="transparent"
                       id="fill1"
-                      mask="url(#t-icon-delete-instance-330-overlap-fill1)"
+                      mask="url(#t-icon-delete-instance-snapshot-overlap-fill1)"
                     />
                     <path
                       d="M21 5H3M5 5H19L18.5 22H5.5L5 5ZM8.5 2H15.5V5H8.5V2Z"
@@ -2424,7 +2424,7 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                   <defs>
                     <mask
                       height="24"
-                      id="t-icon-delete-instance-334-overlap-fill1"
+                      id="t-icon-delete-instance-snapshot-overlap-fill1"
                       mask-type="luminance"
                       maskContentUnits="userSpaceOnUse"
                       maskUnits="userSpaceOnUse"
@@ -2462,7 +2462,7 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                       d="M5 5H19L18.5 22H5.5L5 5Z"
                       fill="transparent"
                       id="fill1"
-                      mask="url(#t-icon-delete-instance-334-overlap-fill1)"
+                      mask="url(#t-icon-delete-instance-snapshot-overlap-fill1)"
                     />
                     <path
                       d="M21 5H3M5 5H19L18.5 22H5.5L5 5ZM8.5 2H15.5V5H8.5V2Z"
@@ -2543,7 +2543,7 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                   <defs>
                     <mask
                       height="24"
-                      id="t-icon-delete-instance-338-overlap-fill1"
+                      id="t-icon-delete-instance-snapshot-overlap-fill1"
                       mask-type="luminance"
                       maskContentUnits="userSpaceOnUse"
                       maskUnits="userSpaceOnUse"
@@ -2581,7 +2581,7 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                       d="M5 5H19L18.5 22H5.5L5 5Z"
                       fill="transparent"
                       id="fill1"
-                      mask="url(#t-icon-delete-instance-338-overlap-fill1)"
+                      mask="url(#t-icon-delete-instance-snapshot-overlap-fill1)"
                     />
                     <path
                       d="M21 5H3M5 5H19L18.5 22H5.5L5 5ZM8.5 2H15.5V5H8.5V2Z"

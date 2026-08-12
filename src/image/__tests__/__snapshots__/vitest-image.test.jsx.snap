@@ -91,7 +91,7 @@ exports[`Image Component > props.overlayContent works fine 1`] = `
           <defs>
             <mask
               height="24"
-              id="t-icon-image-instance-12-overlap-fill1"
+              id="t-icon-image-instance-snapshot-overlap-fill1"
               mask-type="luminance"
               maskContentUnits="userSpaceOnUse"
               maskUnits="userSpaceOnUse"
@@ -130,7 +130,7 @@ exports[`Image Component > props.overlayContent works fine 1`] = `
             </mask>
             <mask
               height="24"
-              id="t-icon-image-instance-12-overlap-fill2"
+              id="t-icon-image-instance-snapshot-overlap-fill2"
               mask-type="luminance"
               maskContentUnits="userSpaceOnUse"
               maskUnits="userSpaceOnUse"
@@ -168,14 +168,14 @@ exports[`Image Component > props.overlayContent works fine 1`] = `
               d="M3 21H20L9 10L3 16V21Z"
               fill="transparent"
               id="fill1"
-              mask="url(#t-icon-image-instance-12-overlap-fill1)"
+              mask="url(#t-icon-image-instance-snapshot-overlap-fill1)"
             />
             <circle
               cx="15.75"
               cy="8.25"
               fill="transparent"
               id="fill2"
-              mask="url(#t-icon-image-instance-12-overlap-fill2)"
+              mask="url(#t-icon-image-instance-snapshot-overlap-fill2)"
               r="2"
             />
             <path
@@ -253,7 +253,7 @@ exports[`Image Component > props.placeholder works fine 1`] = `
           <defs>
             <mask
               height="24"
-              id="t-icon-image-instance-18-overlap-fill1"
+              id="t-icon-image-instance-snapshot-overlap-fill1"
               mask-type="luminance"
               maskContentUnits="userSpaceOnUse"
               maskUnits="userSpaceOnUse"
@@ -292,7 +292,7 @@ exports[`Image Component > props.placeholder works fine 1`] = `
             </mask>
             <mask
               height="24"
-              id="t-icon-image-instance-18-overlap-fill2"
+              id="t-icon-image-instance-snapshot-overlap-fill2"
               mask-type="luminance"
               maskContentUnits="userSpaceOnUse"
               maskUnits="userSpaceOnUse"
@@ -330,14 +330,14 @@ exports[`Image Component > props.placeholder works fine 1`] = `
               d="M3 21H20L9 10L3 16V21Z"
               fill="transparent"
               id="fill1"
-              mask="url(#t-icon-image-instance-18-overlap-fill1)"
+              mask="url(#t-icon-image-instance-snapshot-overlap-fill1)"
             />
             <circle
               cx="15.75"
               cy="8.25"
               fill="transparent"
               id="fill2"
-              mask="url(#t-icon-image-instance-18-overlap-fill2)"
+              mask="url(#t-icon-image-instance-snapshot-overlap-fill2)"
               r="2"
             />
             <path
@@ -418,7 +418,7 @@ exports[`Image Component > slots.overlay-content works fine 1`] = `
           <defs>
             <mask
               height="24"
-              id="t-icon-image-instance-14-overlap-fill1"
+              id="t-icon-image-instance-snapshot-overlap-fill1"
               mask-type="luminance"
               maskContentUnits="userSpaceOnUse"
               maskUnits="userSpaceOnUse"
@@ -457,7 +457,7 @@ exports[`Image Component > slots.overlay-content works fine 1`] = `
             </mask>
             <mask
               height="24"
-              id="t-icon-image-instance-14-overlap-fill2"
+              id="t-icon-image-instance-snapshot-overlap-fill2"
               mask-type="luminance"
               maskContentUnits="userSpaceOnUse"
               maskUnits="userSpaceOnUse"
@@ -495,14 +495,14 @@ exports[`Image Component > slots.overlay-content works fine 1`] = `
               d="M3 21H20L9 10L3 16V21Z"
               fill="transparent"
               id="fill1"
-              mask="url(#t-icon-image-instance-14-overlap-fill1)"
+              mask="url(#t-icon-image-instance-snapshot-overlap-fill1)"
             />
             <circle
               cx="15.75"
               cy="8.25"
               fill="transparent"
               id="fill2"
-              mask="url(#t-icon-image-instance-14-overlap-fill2)"
+              mask="url(#t-icon-image-instance-snapshot-overlap-fill2)"
               r="2"
             />
             <path
@@ -571,7 +571,7 @@ exports[`Image Component > slots.overlayContent works fine 1`] = `
           <defs>
             <mask
               height="24"
-              id="t-icon-image-instance-13-overlap-fill1"
+              id="t-icon-image-instance-snapshot-overlap-fill1"
               mask-type="luminance"
               maskContentUnits="userSpaceOnUse"
               maskUnits="userSpaceOnUse"
@@ -610,7 +610,7 @@ exports[`Image Component > slots.overlayContent works fine 1`] = `
             </mask>
             <mask
               height="24"
-              id="t-icon-image-instance-13-overlap-fill2"
+              id="t-icon-image-instance-snapshot-overlap-fill2"
               mask-type="luminance"
               maskContentUnits="userSpaceOnUse"
               maskUnits="userSpaceOnUse"
@@ -648,14 +648,14 @@ exports[`Image Component > slots.overlayContent works fine 1`] = `
               d="M3 21H20L9 10L3 16V21Z"
               fill="transparent"
               id="fill1"
-              mask="url(#t-icon-image-instance-13-overlap-fill1)"
+              mask="url(#t-icon-image-instance-snapshot-overlap-fill1)"
             />
             <circle
               cx="15.75"
               cy="8.25"
               fill="transparent"
               id="fill2"
-              mask="url(#t-icon-image-instance-13-overlap-fill2)"
+              mask="url(#t-icon-image-instance-snapshot-overlap-fill2)"
               r="2"
             />
             <path
@@ -733,7 +733,7 @@ exports[`Image Component > slots.placeholder works fine 1`] = `
           <defs>
             <mask
               height="24"
-              id="t-icon-image-instance-19-overlap-fill1"
+              id="t-icon-image-instance-snapshot-overlap-fill1"
               mask-type="luminance"
               maskContentUnits="userSpaceOnUse"
               maskUnits="userSpaceOnUse"
@@ -772,7 +772,7 @@ exports[`Image Component > slots.placeholder works fine 1`] = `
             </mask>
             <mask
               height="24"
-              id="t-icon-image-instance-19-overlap-fill2"
+              id="t-icon-image-instance-snapshot-overlap-fill2"
               mask-type="luminance"
               maskContentUnits="userSpaceOnUse"
               maskUnits="userSpaceOnUse"
@@ -810,14 +810,14 @@ exports[`Image Component > slots.placeholder works fine 1`] = `
               d="M3 21H20L9 10L3 16V21Z"
               fill="transparent"
               id="fill1"
-              mask="url(#t-icon-image-instance-19-overlap-fill1)"
+              mask="url(#t-icon-image-instance-snapshot-overlap-fill1)"
             />
             <circle
               cx="15.75"
               cy="8.25"
               fill="transparent"
               id="fill2"
-              mask="url(#t-icon-image-instance-19-overlap-fill2)"
+              mask="url(#t-icon-image-instance-snapshot-overlap-fill2)"
               r="2"
             />
             <path
