@@ -1799,13 +1799,6 @@ exports[`csr snapshot test > csr test ./src/anchor/_example/target.vue 1`] = `
             stroke="#000"
             stroke-width="2"
           />
-          <path
-            d="M3 6L3 22H14"
-            fill="none"
-            stroke="#000"
-            stroke-linecap="square"
-            stroke-width="2"
-          />
         </mask>
       </defs>
       <g
@@ -1868,13 +1861,6 @@ exports[`csr snapshot test > csr test ./src/anchor/_example/target.vue 1`] = `
             d="M14 2V8H20M14 2H15L20 7V8M14 2H7V18H20V8"
             fill="none"
             stroke="#000"
-            stroke-width="2"
-          />
-          <path
-            d="M3 6L3 22H14"
-            fill="none"
-            stroke="#000"
-            stroke-linecap="square"
             stroke-width="2"
           />
         </mask>
@@ -1941,13 +1927,6 @@ exports[`csr snapshot test > csr test ./src/anchor/_example/target.vue 1`] = `
             stroke="#000"
             stroke-width="2"
           />
-          <path
-            d="M3 6L3 22H14"
-            fill="none"
-            stroke="#000"
-            stroke-linecap="square"
-            stroke-width="2"
-          />
         </mask>
       </defs>
       <g
@@ -2010,13 +1989,6 @@ exports[`csr snapshot test > csr test ./src/anchor/_example/target.vue 1`] = `
             d="M14 2V8H20M14 2H15L20 7V8M14 2H7V18H20V8"
             fill="none"
             stroke="#000"
-            stroke-width="2"
-          />
-          <path
-            d="M3 6L3 22H14"
-            fill="none"
-            stroke="#000"
-            stroke-linecap="square"
             stroke-width="2"
           />
         </mask>
@@ -2083,13 +2055,6 @@ exports[`csr snapshot test > csr test ./src/anchor/_example/target.vue 1`] = `
             stroke="#000"
             stroke-width="2"
           />
-          <path
-            d="M3 6L3 22H14"
-            fill="none"
-            stroke="#000"
-            stroke-linecap="square"
-            stroke-width="2"
-          />
         </mask>
       </defs>
       <g
@@ -2154,13 +2119,6 @@ exports[`csr snapshot test > csr test ./src/anchor/_example/target.vue 1`] = `
             stroke="#000"
             stroke-width="2"
           />
-          <path
-            d="M3 6L3 22H14"
-            fill="none"
-            stroke="#000"
-            stroke-linecap="square"
-            stroke-width="2"
-          />
         </mask>
       </defs>
       <g
@@ -2223,13 +2181,6 @@ exports[`csr snapshot test > csr test ./src/anchor/_example/target.vue 1`] = `
             d="M14 2V8H20M14 2H15L20 7V8M14 2H7V18H20V8"
             fill="none"
             stroke="#000"
-            stroke-width="2"
-          />
-          <path
-            d="M3 6L3 22H14"
-            fill="none"
-            stroke="#000"
-            stroke-linecap="square"
             stroke-width="2"
           />
         </mask>
@@ -7248,12 +7199,6 @@ exports[`csr snapshot test > csr test ./src/button/_example/icon.vue 1`] = `
               y="0"
             />
             <path
-              d="M11.878 22.0207L1.97852 12.1212L11.878 2.22168L21.0704 2.92879L21.7775 12.1212L11.878 22.0207Z"
-              fill="none"
-              stroke="#000"
-              stroke-width="2"
-            />
-            <path
               d="M13.9998 7.17075C14.7809 6.3897 16.0472 6.3897 16.8283 7.17075C17.6093 7.9518 17.6093 9.21813 16.8283 9.99917C16.0472 10.7802 14.7809 10.7802 13.9998 9.99917C13.2188 9.21813 13.2188 7.9518 13.9998 7.17075Z"
               fill="none"
               stroke="#000"
@@ -7498,11 +7443,6 @@ exports[`csr snapshot test > csr test ./src/button/_example/shape.vue 1`] = `
                   y="0"
                 />
                 <path
-                  d="M21 10H3V5H21V10Z"
-                  fill="#000"
-                  stroke="none"
-                />
-                <path
                   d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
                   fill="none"
                   stroke="#000"
@@ -7605,11 +7545,6 @@ exports[`csr snapshot test > csr test ./src/button/_example/shape.vue 1`] = `
                   width="24"
                   x="0"
                   y="0"
-                />
-                <path
-                  d="M21 10H3V5H21V10Z"
-                  fill="#000"
-                  stroke="none"
                 />
                 <path
                   d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
@@ -7725,11 +7660,6 @@ exports[`csr snapshot test > csr test ./src/button/_example/shape.vue 1`] = `
                   y="0"
                 />
                 <path
-                  d="M21 10H3V5H21V10Z"
-                  fill="#000"
-                  stroke="none"
-                />
-                <path
                   d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
                   fill="none"
                   stroke="#000"
@@ -7832,11 +7762,6 @@ exports[`csr snapshot test > csr test ./src/button/_example/shape.vue 1`] = `
                   width="24"
                   x="0"
                   y="0"
-                />
-                <path
-                  d="M21 10H3V5H21V10Z"
-                  fill="#000"
-                  stroke="none"
                 />
                 <path
                   d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
@@ -7952,11 +7877,6 @@ exports[`csr snapshot test > csr test ./src/button/_example/shape.vue 1`] = `
                   y="0"
                 />
                 <path
-                  d="M21 10H3V5H21V10Z"
-                  fill="#000"
-                  stroke="none"
-                />
-                <path
                   d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
                   fill="none"
                   stroke="#000"
@@ -8059,11 +7979,6 @@ exports[`csr snapshot test > csr test ./src/button/_example/shape.vue 1`] = `
                   width="24"
                   x="0"
                   y="0"
-                />
-                <path
-                  d="M21 10H3V5H21V10Z"
-                  fill="#000"
-                  stroke="none"
                 />
                 <path
                   d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
@@ -8179,11 +8094,6 @@ exports[`csr snapshot test > csr test ./src/button/_example/shape.vue 1`] = `
                   y="0"
                 />
                 <path
-                  d="M21 10H3V5H21V10Z"
-                  fill="#000"
-                  stroke="none"
-                />
-                <path
                   d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
                   fill="none"
                   stroke="#000"
@@ -8286,11 +8196,6 @@ exports[`csr snapshot test > csr test ./src/button/_example/shape.vue 1`] = `
                   width="24"
                   x="0"
                   y="0"
-                />
-                <path
-                  d="M21 10H3V5H21V10Z"
-                  fill="#000"
-                  stroke="none"
                 />
                 <path
                   d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
@@ -38705,11 +38610,6 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/date-picker
                     y="0"
                   />
                   <path
-                    d="M21 10H3V5H21V10Z"
-                    fill="#000"
-                    stroke="none"
-                  />
-                  <path
                     d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
                     fill="none"
                     stroke="#000"
@@ -38830,11 +38730,6 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/date-picker
                     y="0"
                   />
                   <path
-                    d="M21 10H3V5H21V10Z"
-                    fill="#000"
-                    stroke="none"
-                  />
-                  <path
                     d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
                     fill="none"
                     stroke="#000"
@@ -38952,11 +38847,6 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/date-picker
                     width="24"
                     x="0"
                     y="0"
-                  />
-                  <path
-                    d="M21 10H3V5H21V10Z"
-                    fill="#000"
-                    stroke="none"
                   />
                   <path
                     d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
@@ -39079,11 +38969,6 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/date-picker
                     y="0"
                   />
                   <path
-                    d="M21 10H3V5H21V10Z"
-                    fill="#000"
-                    stroke="none"
-                  />
-                  <path
                     d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
                     fill="none"
                     stroke="#000"
@@ -39201,11 +39086,6 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/date-picker
                     width="24"
                     x="0"
                     y="0"
-                  />
-                  <path
-                    d="M21 10H3V5H21V10Z"
-                    fill="#000"
-                    stroke="none"
                   />
                   <path
                     d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
@@ -39326,11 +39206,6 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/date-picker
                     width="24"
                     x="0"
                     y="0"
-                  />
-                  <path
-                    d="M21 10H3V5H21V10Z"
-                    fill="#000"
-                    stroke="none"
                   />
                   <path
                     d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
@@ -42232,24 +42107,9 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
                   x="0"
                   y="0"
                 />
-                <circle
-                  cx="15.75"
-                  cy="8.25"
-                  fill="#000"
-                  r="2"
-                  stroke="none"
-                />
                 <path
                   d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                   fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-                <circle
-                  cx="15.75"
-                  cy="8.25"
-                  fill="none"
-                  r="2"
                   stroke="#000"
                   stroke-width="2"
                 />
@@ -42270,12 +42130,6 @@ exports[`csr snapshot test > csr test ./src/config-provider/_example/others.vue 
                   width="24"
                   x="0"
                   y="0"
-                />
-                <path
-                  d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
                 />
                 <circle
                   cx="15.75"
@@ -43443,11 +43297,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/base.vue 1`] = 
                       y="0"
                     />
                     <path
-                      d="M21 10H3V5H21V10Z"
-                      fill="#000"
-                      stroke="none"
-                    />
-                    <path
                       d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
                       fill="none"
                       stroke="#000"
@@ -43561,11 +43410,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/base.vue 1`] = 
                       width="24"
                       x="0"
                       y="0"
-                    />
-                    <path
-                      d="M21 10H3V5H21V10Z"
-                      fill="#000"
-                      stroke="none"
                     />
                     <path
                       d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
@@ -43718,11 +43562,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/cancel-range-li
                       y="0"
                     />
                     <path
-                      d="M21 10H3V5H21V10Z"
-                      fill="#000"
-                      stroke="none"
-                    />
-                    <path
                       d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
                       fill="none"
                       stroke="#000"
@@ -43871,13 +43710,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/custom-icon.vue
                       width="24"
                       x="0"
                       y="0"
-                    />
-                    <path
-                      d="M11.9997 4C6.86881 4 2.52275 7.36017 1.04199 12C2.52275 16.6398 6.86881 20 11.9997 20C17.1306 20 21.4766 16.6398 22.9574 12C21.4766 7.36017 17.1306 4 11.9997 4Z"
-                      fill="none"
-                      stroke="#000"
-                      stroke-linecap="square"
-                      stroke-width="2"
                     />
                     <path
                       d="M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z"
@@ -44103,11 +43935,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/date-presets-al
                       y="0"
                     />
                     <path
-                      d="M21 10H3V5H21V10Z"
-                      fill="#000"
-                      stroke="none"
-                    />
-                    <path
                       d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
                       fill="none"
                       stroke="#000"
@@ -44248,11 +44075,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/date-presets-al
                       width="24"
                       x="0"
                       y="0"
-                    />
-                    <path
-                      d="M21 10H3V5H21V10Z"
-                      fill="#000"
-                      stroke="none"
                     />
                     <path
                       d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
@@ -44403,11 +44225,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/date-range.vue 
                       y="0"
                     />
                     <path
-                      d="M21 10H3V5H21V10Z"
-                      fill="#000"
-                      stroke="none"
-                    />
-                    <path
                       d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
                       fill="none"
                       stroke="#000"
@@ -44548,11 +44365,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/date-range.vue 
                       y="0"
                     />
                     <path
-                      d="M21 10H3V5H21V10Z"
-                      fill="#000"
-                      stroke="none"
-                    />
-                    <path
                       d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
                       fill="none"
                       stroke="#000"
@@ -44676,11 +44488,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/date-time.vue 1
                       y="0"
                     />
                     <path
-                      d="M21 10H3V5H21V10Z"
-                      fill="#000"
-                      stroke="none"
-                    />
-                    <path
                       d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
                       fill="none"
                       stroke="#000"
@@ -44794,11 +44601,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/date-time.vue 1
                       width="24"
                       x="0"
                       y="0"
-                    />
-                    <path
-                      d="M21 10H3V5H21V10Z"
-                      fill="#000"
-                      stroke="none"
                     />
                     <path
                       d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
@@ -44925,11 +44727,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/disable-date.vu
                       y="0"
                     />
                     <path
-                      d="M21 10H3V5H21V10Z"
-                      fill="#000"
-                      stroke="none"
-                    />
-                    <path
                       d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
                       fill="none"
                       stroke="#000"
@@ -45044,11 +44841,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/disable-date.vu
                       width="24"
                       x="0"
                       y="0"
-                    />
-                    <path
-                      d="M21 10H3V5H21V10Z"
-                      fill="#000"
-                      stroke="none"
                     />
                     <path
                       d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
@@ -45167,11 +44959,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/disable-date.vu
                       y="0"
                     />
                     <path
-                      d="M21 10H3V5H21V10Z"
-                      fill="#000"
-                      stroke="none"
-                    />
-                    <path
                       d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
                       fill="none"
                       stroke="#000"
@@ -45288,11 +45075,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/disable-date.vu
                       y="0"
                     />
                     <path
-                      d="M21 10H3V5H21V10Z"
-                      fill="#000"
-                      stroke="none"
-                    />
-                    <path
                       d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
                       fill="none"
                       stroke="#000"
@@ -45407,11 +45189,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/disable-date.vu
                       width="24"
                       x="0"
                       y="0"
-                    />
-                    <path
-                      d="M21 10H3V5H21V10Z"
-                      fill="#000"
-                      stroke="none"
                     />
                     <path
                       d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
@@ -45554,11 +45331,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/disable-date.vu
                       width="24"
                       x="0"
                       y="0"
-                    />
-                    <path
-                      d="M21 10H3V5H21V10Z"
-                      fill="#000"
-                      stroke="none"
                     />
                     <path
                       d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
@@ -45837,11 +45609,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/first-day-of-we
                       y="0"
                     />
                     <path
-                      d="M21 10H3V5H21V10Z"
-                      fill="#000"
-                      stroke="none"
-                    />
-                    <path
                       d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
                       fill="none"
                       stroke="#000"
@@ -45963,11 +45730,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/month.vue 1`] =
                       width="24"
                       x="0"
                       y="0"
-                    />
-                    <path
-                      d="M21 10H3V5H21V10Z"
-                      fill="#000"
-                      stroke="none"
                     />
                     <path
                       d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
@@ -46108,11 +45870,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/month.vue 1`] =
                       width="24"
                       x="0"
                       y="0"
-                    />
-                    <path
-                      d="M21 10H3V5H21V10Z"
-                      fill="#000"
-                      stroke="none"
                     />
                     <path
                       d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
@@ -46270,11 +46027,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/multiple.vue 1`
                       y="0"
                     />
                     <path
-                      d="M21 10H3V5H21V10Z"
-                      fill="#000"
-                      stroke="none"
-                    />
-                    <path
                       d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
                       fill="none"
                       stroke="#000"
@@ -46396,11 +46148,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/multiple.vue 1`
                       y="0"
                     />
                     <path
-                      d="M21 10H3V5H21V10Z"
-                      fill="#000"
-                      stroke="none"
-                    />
-                    <path
                       d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
                       fill="none"
                       stroke="#000"
@@ -46520,11 +46267,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/multiple.vue 1`
                       width="24"
                       x="0"
                       y="0"
-                    />
-                    <path
-                      d="M21 10H3V5H21V10Z"
-                      fill="#000"
-                      stroke="none"
                     />
                     <path
                       d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
@@ -50120,11 +49862,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/quarter.vue 1`]
                       y="0"
                     />
                     <path
-                      d="M21 10H3V5H21V10Z"
-                      fill="#000"
-                      stroke="none"
-                    />
-                    <path
                       d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
                       fill="none"
                       stroke="#000"
@@ -50263,11 +50000,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/quarter.vue 1`]
                       width="24"
                       x="0"
                       y="0"
-                    />
-                    <path
-                      d="M21 10H3V5H21V10Z"
-                      fill="#000"
-                      stroke="none"
                     />
                     <path
                       d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
@@ -50393,11 +50125,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/week.vue 1`] = 
                       y="0"
                     />
                     <path
-                      d="M21 10H3V5H21V10Z"
-                      fill="#000"
-                      stroke="none"
-                    />
-                    <path
                       d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
                       fill="none"
                       stroke="#000"
@@ -50536,11 +50263,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/week.vue 1`] = 
                       width="24"
                       x="0"
                       y="0"
-                    />
-                    <path
-                      d="M21 10H3V5H21V10Z"
-                      fill="#000"
-                      stroke="none"
                     />
                     <path
                       d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
@@ -50666,11 +50388,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/year.vue 1`] = 
                       y="0"
                     />
                     <path
-                      d="M21 10H3V5H21V10Z"
-                      fill="#000"
-                      stroke="none"
-                    />
-                    <path
                       d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
                       fill="none"
                       stroke="#000"
@@ -50809,11 +50526,6 @@ exports[`csr snapshot test > csr test ./src/date-picker/_example/year.vue 1`] = 
                       width="24"
                       x="0"
                       y="0"
-                    />
-                    <path
-                      d="M21 10H3V5H21V10Z"
-                      fill="#000"
-                      stroke="none"
                     />
                     <path
                       d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
@@ -56324,11 +56036,6 @@ exports[`csr snapshot test > csr test ./src/form/_example/base.vue 1`] = `
                           y="0"
                         />
                         <path
-                          d="M21 10H3V5H21V10Z"
-                          fill="#000"
-                          stroke="none"
-                        />
-                        <path
                           d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
                           fill="none"
                           stroke="#000"
@@ -57912,11 +57619,6 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                               y="0"
                             />
                             <path
-                              d="M21 10H3V5H21V10Z"
-                              fill="#000"
-                              stroke="none"
-                            />
-                            <path
                               d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
                               fill="none"
                               stroke="#000"
@@ -58388,24 +58090,9 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                                       x="0"
                                       y="0"
                                     />
-                                    <circle
-                                      cx="15.75"
-                                      cy="8.25"
-                                      fill="#000"
-                                      r="2"
-                                      stroke="none"
-                                    />
                                     <path
                                       d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                                       fill="none"
-                                      stroke="#000"
-                                      stroke-width="2"
-                                    />
-                                    <circle
-                                      cx="15.75"
-                                      cy="8.25"
-                                      fill="none"
-                                      r="2"
                                       stroke="#000"
                                       stroke-width="2"
                                     />
@@ -58426,12 +58113,6 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                                       width="24"
                                       x="0"
                                       y="0"
-                                    />
-                                    <path
-                                      d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                                      fill="none"
-                                      stroke="#000"
-                                      stroke-width="2"
                                     />
                                     <circle
                                       cx="15.75"
@@ -58553,13 +58234,6 @@ exports[`csr snapshot test > csr test ./src/form/_example/disabled.vue 1`] = `
                                   width="24"
                                   x="0"
                                   y="0"
-                                />
-                                <path
-                                  d="M11.9997 4C6.86881 4 2.52275 7.36017 1.04199 12C2.52275 16.6398 6.86881 20 11.9997 20C17.1306 20 21.4766 16.6398 22.9574 12C21.4766 7.36017 17.1306 4 11.9997 4Z"
-                                  fill="none"
-                                  stroke="#000"
-                                  stroke-linecap="square"
-                                  stroke-width="2"
                                 />
                                 <path
                                   d="M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z"
@@ -62297,11 +61971,6 @@ exports[`csr snapshot test > csr test ./src/form/_example/validator.vue 1`] = `
                           y="0"
                         />
                         <path
-                          d="M21 10H3V5H21V10Z"
-                          fill="#000"
-                          stroke="none"
-                        />
-                        <path
                           d="M3 10H21M3 10V5H21V10M3 10V21H21V10M7 5V1.5M17 5V1.5"
                           fill="none"
                           stroke="#000"
@@ -65637,13 +65306,6 @@ exports[`csr snapshot test > csr test ./src/icon/_example/single.vue 1`] = `
                 stroke-linecap="square"
                 stroke-width="2"
               />
-              <path
-                d="M16 7.5L20.5 12L16 16.5"
-                fill="none"
-                stroke="#000"
-                stroke-linecap="square"
-                stroke-width="2"
-              />
             </mask>
           </defs>
           <g
@@ -65820,13 +65482,6 @@ exports[`csr snapshot test > csr test ./src/icon/_example/single.vue 1`] = `
                 stroke-linecap="square"
                 stroke-width="2"
               />
-              <path
-                d="M7 17L17 17M17 13L7 13"
-                fill="none"
-                stroke="#000"
-                stroke-linecap="square"
-                stroke-width="2"
-              />
             </mask>
           </defs>
           <g
@@ -65920,13 +65575,6 @@ exports[`csr snapshot test > csr test ./src/icon/_example/single.vue 1`] = `
                 width="24"
                 x="0"
                 y="0"
-              />
-              <path
-                d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
-                fill="none"
-                stroke="#000"
-                stroke-linecap="square"
-                stroke-width="2"
               />
               <path
                 d="M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z"
@@ -66103,24 +65751,9 @@ exports[`csr snapshot test > csr test ./src/image/_example/avif.vue 1`] = `
                     x="0"
                     y="0"
                   />
-                  <circle
-                    cx="15.75"
-                    cy="8.25"
-                    fill="#000"
-                    r="2"
-                    stroke="none"
-                  />
                   <path
                     d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                     fill="none"
-                    stroke="#000"
-                    stroke-width="2"
-                  />
-                  <circle
-                    cx="15.75"
-                    cy="8.25"
-                    fill="none"
-                    r="2"
                     stroke="#000"
                     stroke-width="2"
                   />
@@ -66141,12 +65774,6 @@ exports[`csr snapshot test > csr test ./src/image/_example/avif.vue 1`] = `
                     width="24"
                     x="0"
                     y="0"
-                  />
-                  <path
-                    d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                    fill="none"
-                    stroke="#000"
-                    stroke-width="2"
                   />
                   <circle
                     cx="15.75"
@@ -66280,24 +65907,9 @@ exports[`csr snapshot test > csr test ./src/image/_example/extra-always.vue 1`] 
                         x="0"
                         y="0"
                       />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="#000"
-                        r="2"
-                        stroke="none"
-                      />
                       <path
                         d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                         fill="none"
-                        stroke="#000"
-                        stroke-width="2"
-                      />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="none"
-                        r="2"
                         stroke="#000"
                         stroke-width="2"
                       />
@@ -66318,12 +65930,6 @@ exports[`csr snapshot test > csr test ./src/image/_example/extra-always.vue 1`] 
                         width="24"
                         x="0"
                         y="0"
-                      />
-                      <path
-                        d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                        fill="none"
-                        stroke="#000"
-                        stroke-width="2"
                       />
                       <circle
                         cx="15.75"
@@ -66413,18 +66019,6 @@ exports[`csr snapshot test > csr test ./src/image/_example/extra-always.vue 1`] 
                           x="0"
                           y="0"
                         />
-                        <g>
-                          <path
-                            d="M19.0005 3V8L5.00049 8L5.00049 3L19.0005 3Z"
-                            fill="#000"
-                            stroke="none"
-                          />
-                          <path
-                            d="M18.0005 15V21L6.00049 21L6.00049 15H18.0005Z"
-                            fill="#000"
-                            stroke="none"
-                          />
-                        </g>
                         <g>
                           <path
                             d="M19.0005 3V8L5.00049 8L5.00049 3L19.0005 3Z M18.0005 15V21L6.00049 21V15H18.0005Z"
@@ -66626,24 +66220,9 @@ exports[`csr snapshot test > csr test ./src/image/_example/extra-always.vue 1`] 
                         x="0"
                         y="0"
                       />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="#000"
-                        r="2"
-                        stroke="none"
-                      />
                       <path
                         d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                         fill="none"
-                        stroke="#000"
-                        stroke-width="2"
-                      />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="none"
-                        r="2"
                         stroke="#000"
                         stroke-width="2"
                       />
@@ -66664,12 +66243,6 @@ exports[`csr snapshot test > csr test ./src/image/_example/extra-always.vue 1`] 
                         width="24"
                         x="0"
                         y="0"
-                      />
-                      <path
-                        d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                        fill="none"
-                        stroke="#000"
-                        stroke-width="2"
                       />
                       <circle
                         cx="15.75"
@@ -66756,18 +66329,6 @@ exports[`csr snapshot test > csr test ./src/image/_example/extra-always.vue 1`] 
                         x="0"
                         y="0"
                       />
-                      <g>
-                        <path
-                          d="M19.0005 3V8L5.00049 8L5.00049 3L19.0005 3Z"
-                          fill="#000"
-                          stroke="none"
-                        />
-                        <path
-                          d="M18.0005 15V21L6.00049 21L6.00049 15H18.0005Z"
-                          fill="#000"
-                          stroke="none"
-                        />
-                      </g>
                       <g>
                         <path
                           d="M19.0005 3V8L5.00049 8L5.00049 3L19.0005 3Z M18.0005 15V21L6.00049 21V15H18.0005Z"
@@ -66953,24 +66514,9 @@ exports[`csr snapshot test > csr test ./src/image/_example/extra-hover.vue 1`] =
                 x="0"
                 y="0"
               />
-              <circle
-                cx="15.75"
-                cy="8.25"
-                fill="#000"
-                r="2"
-                stroke="none"
-              />
               <path
                 d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                 fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-              <circle
-                cx="15.75"
-                cy="8.25"
-                fill="none"
-                r="2"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -66991,12 +66537,6 @@ exports[`csr snapshot test > csr test ./src/image/_example/extra-hover.vue 1`] =
                 width="24"
                 x="0"
                 y="0"
-              />
-              <path
-                d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
               />
               <circle
                 cx="15.75"
@@ -67121,24 +66661,9 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-mode.vue 1`] = `
                         x="0"
                         y="0"
                       />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="#000"
-                        r="2"
-                        stroke="none"
-                      />
                       <path
                         d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                         fill="none"
-                        stroke="#000"
-                        stroke-width="2"
-                      />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="none"
-                        r="2"
                         stroke="#000"
                         stroke-width="2"
                       />
@@ -67159,12 +66684,6 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-mode.vue 1`] = `
                         width="24"
                         x="0"
                         y="0"
-                      />
-                      <path
-                        d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                        fill="none"
-                        stroke="#000"
-                        stroke-width="2"
                       />
                       <circle
                         cx="15.75"
@@ -67283,24 +66802,9 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-mode.vue 1`] = `
                         x="0"
                         y="0"
                       />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="#000"
-                        r="2"
-                        stroke="none"
-                      />
                       <path
                         d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                         fill="none"
-                        stroke="#000"
-                        stroke-width="2"
-                      />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="none"
-                        r="2"
                         stroke="#000"
                         stroke-width="2"
                       />
@@ -67321,12 +66825,6 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-mode.vue 1`] = `
                         width="24"
                         x="0"
                         y="0"
-                      />
-                      <path
-                        d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                        fill="none"
-                        stroke="#000"
-                        stroke-width="2"
                       />
                       <circle
                         cx="15.75"
@@ -67445,24 +66943,9 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-mode.vue 1`] = `
                         x="0"
                         y="0"
                       />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="#000"
-                        r="2"
-                        stroke="none"
-                      />
                       <path
                         d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                         fill="none"
-                        stroke="#000"
-                        stroke-width="2"
-                      />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="none"
-                        r="2"
                         stroke="#000"
                         stroke-width="2"
                       />
@@ -67483,12 +66966,6 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-mode.vue 1`] = `
                         width="24"
                         x="0"
                         y="0"
-                      />
-                      <path
-                        d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                        fill="none"
-                        stroke="#000"
-                        stroke-width="2"
                       />
                       <circle
                         cx="15.75"
@@ -67607,24 +67084,9 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-mode.vue 1`] = `
                         x="0"
                         y="0"
                       />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="#000"
-                        r="2"
-                        stroke="none"
-                      />
                       <path
                         d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                         fill="none"
-                        stroke="#000"
-                        stroke-width="2"
-                      />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="none"
-                        r="2"
                         stroke="#000"
                         stroke-width="2"
                       />
@@ -67645,12 +67107,6 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-mode.vue 1`] = `
                         width="24"
                         x="0"
                         y="0"
-                      />
-                      <path
-                        d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                        fill="none"
-                        stroke="#000"
-                        stroke-width="2"
                       />
                       <circle
                         cx="15.75"
@@ -67769,24 +67225,9 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-mode.vue 1`] = `
                         x="0"
                         y="0"
                       />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="#000"
-                        r="2"
-                        stroke="none"
-                      />
                       <path
                         d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                         fill="none"
-                        stroke="#000"
-                        stroke-width="2"
-                      />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="none"
-                        r="2"
                         stroke="#000"
                         stroke-width="2"
                       />
@@ -67807,12 +67248,6 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-mode.vue 1`] = `
                         width="24"
                         x="0"
                         y="0"
-                      />
-                      <path
-                        d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                        fill="none"
-                        stroke="#000"
-                        stroke-width="2"
                       />
                       <circle
                         cx="15.75"
@@ -67946,24 +67381,9 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-position.vue 1`]
                             x="0"
                             y="0"
                           />
-                          <circle
-                            cx="15.75"
-                            cy="8.25"
-                            fill="#000"
-                            r="2"
-                            stroke="none"
-                          />
                           <path
                             d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                             fill="none"
-                            stroke="#000"
-                            stroke-width="2"
-                          />
-                          <circle
-                            cx="15.75"
-                            cy="8.25"
-                            fill="none"
-                            r="2"
                             stroke="#000"
                             stroke-width="2"
                           />
@@ -67984,12 +67404,6 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-position.vue 1`]
                             width="24"
                             x="0"
                             y="0"
-                          />
-                          <path
-                            d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                            fill="none"
-                            stroke="#000"
-                            stroke-width="2"
                           />
                           <circle
                             cx="15.75"
@@ -68108,24 +67522,9 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-position.vue 1`]
                             x="0"
                             y="0"
                           />
-                          <circle
-                            cx="15.75"
-                            cy="8.25"
-                            fill="#000"
-                            r="2"
-                            stroke="none"
-                          />
                           <path
                             d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                             fill="none"
-                            stroke="#000"
-                            stroke-width="2"
-                          />
-                          <circle
-                            cx="15.75"
-                            cy="8.25"
-                            fill="none"
-                            r="2"
                             stroke="#000"
                             stroke-width="2"
                           />
@@ -68146,12 +67545,6 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-position.vue 1`]
                             width="24"
                             x="0"
                             y="0"
-                          />
-                          <path
-                            d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                            fill="none"
-                            stroke="#000"
-                            stroke-width="2"
                           />
                           <circle
                             cx="15.75"
@@ -68270,24 +67663,9 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-position.vue 1`]
                             x="0"
                             y="0"
                           />
-                          <circle
-                            cx="15.75"
-                            cy="8.25"
-                            fill="#000"
-                            r="2"
-                            stroke="none"
-                          />
                           <path
                             d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                             fill="none"
-                            stroke="#000"
-                            stroke-width="2"
-                          />
-                          <circle
-                            cx="15.75"
-                            cy="8.25"
-                            fill="none"
-                            r="2"
                             stroke="#000"
                             stroke-width="2"
                           />
@@ -68308,12 +67686,6 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-position.vue 1`]
                             width="24"
                             x="0"
                             y="0"
-                          />
-                          <path
-                            d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                            fill="none"
-                            stroke="#000"
-                            stroke-width="2"
                           />
                           <circle
                             cx="15.75"
@@ -68441,24 +67813,9 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-position.vue 1`]
                             x="0"
                             y="0"
                           />
-                          <circle
-                            cx="15.75"
-                            cy="8.25"
-                            fill="#000"
-                            r="2"
-                            stroke="none"
-                          />
                           <path
                             d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                             fill="none"
-                            stroke="#000"
-                            stroke-width="2"
-                          />
-                          <circle
-                            cx="15.75"
-                            cy="8.25"
-                            fill="none"
-                            r="2"
                             stroke="#000"
                             stroke-width="2"
                           />
@@ -68479,12 +67836,6 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-position.vue 1`]
                             width="24"
                             x="0"
                             y="0"
-                          />
-                          <path
-                            d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                            fill="none"
-                            stroke="#000"
-                            stroke-width="2"
                           />
                           <circle
                             cx="15.75"
@@ -68603,24 +67954,9 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-position.vue 1`]
                             x="0"
                             y="0"
                           />
-                          <circle
-                            cx="15.75"
-                            cy="8.25"
-                            fill="#000"
-                            r="2"
-                            stroke="none"
-                          />
                           <path
                             d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                             fill="none"
-                            stroke="#000"
-                            stroke-width="2"
-                          />
-                          <circle
-                            cx="15.75"
-                            cy="8.25"
-                            fill="none"
-                            r="2"
                             stroke="#000"
                             stroke-width="2"
                           />
@@ -68641,12 +67977,6 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-position.vue 1`]
                             width="24"
                             x="0"
                             y="0"
-                          />
-                          <path
-                            d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                            fill="none"
-                            stroke="#000"
-                            stroke-width="2"
                           />
                           <circle
                             cx="15.75"
@@ -68774,24 +68104,9 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-position.vue 1`]
                             x="0"
                             y="0"
                           />
-                          <circle
-                            cx="15.75"
-                            cy="8.25"
-                            fill="#000"
-                            r="2"
-                            stroke="none"
-                          />
                           <path
                             d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                             fill="none"
-                            stroke="#000"
-                            stroke-width="2"
-                          />
-                          <circle
-                            cx="15.75"
-                            cy="8.25"
-                            fill="none"
-                            r="2"
                             stroke="#000"
                             stroke-width="2"
                           />
@@ -68812,12 +68127,6 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-position.vue 1`]
                             width="24"
                             x="0"
                             y="0"
-                          />
-                          <path
-                            d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                            fill="none"
-                            stroke="#000"
-                            stroke-width="2"
                           />
                           <circle
                             cx="15.75"
@@ -68936,24 +68245,9 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-position.vue 1`]
                             x="0"
                             y="0"
                           />
-                          <circle
-                            cx="15.75"
-                            cy="8.25"
-                            fill="#000"
-                            r="2"
-                            stroke="none"
-                          />
                           <path
                             d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                             fill="none"
-                            stroke="#000"
-                            stroke-width="2"
-                          />
-                          <circle
-                            cx="15.75"
-                            cy="8.25"
-                            fill="none"
-                            r="2"
                             stroke="#000"
                             stroke-width="2"
                           />
@@ -68974,12 +68268,6 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-position.vue 1`]
                             width="24"
                             x="0"
                             y="0"
-                          />
-                          <path
-                            d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                            fill="none"
-                            stroke="#000"
-                            stroke-width="2"
                           />
                           <circle
                             cx="15.75"
@@ -69098,24 +68386,9 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-position.vue 1`]
                             x="0"
                             y="0"
                           />
-                          <circle
-                            cx="15.75"
-                            cy="8.25"
-                            fill="#000"
-                            r="2"
-                            stroke="none"
-                          />
                           <path
                             d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                             fill="none"
-                            stroke="#000"
-                            stroke-width="2"
-                          />
-                          <circle
-                            cx="15.75"
-                            cy="8.25"
-                            fill="none"
-                            r="2"
                             stroke="#000"
                             stroke-width="2"
                           />
@@ -69136,12 +68409,6 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-position.vue 1`]
                             width="24"
                             x="0"
                             y="0"
-                          />
-                          <path
-                            d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                            fill="none"
-                            stroke="#000"
-                            stroke-width="2"
                           />
                           <circle
                             cx="15.75"
@@ -69267,24 +68534,9 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-position.vue 1`]
                                 x="0"
                                 y="0"
                               />
-                              <circle
-                                cx="15.75"
-                                cy="8.25"
-                                fill="#000"
-                                r="2"
-                                stroke="none"
-                              />
                               <path
                                 d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                                 fill="none"
-                                stroke="#000"
-                                stroke-width="2"
-                              />
-                              <circle
-                                cx="15.75"
-                                cy="8.25"
-                                fill="none"
-                                r="2"
                                 stroke="#000"
                                 stroke-width="2"
                               />
@@ -69305,12 +68557,6 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-position.vue 1`]
                                 width="24"
                                 x="0"
                                 y="0"
-                              />
-                              <path
-                                d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                                fill="none"
-                                stroke="#000"
-                                stroke-width="2"
                               />
                               <circle
                                 cx="15.75"
@@ -69429,24 +68675,9 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-position.vue 1`]
                                 x="0"
                                 y="0"
                               />
-                              <circle
-                                cx="15.75"
-                                cy="8.25"
-                                fill="#000"
-                                r="2"
-                                stroke="none"
-                              />
                               <path
                                 d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                                 fill="none"
-                                stroke="#000"
-                                stroke-width="2"
-                              />
-                              <circle
-                                cx="15.75"
-                                cy="8.25"
-                                fill="none"
-                                r="2"
                                 stroke="#000"
                                 stroke-width="2"
                               />
@@ -69467,12 +68698,6 @@ exports[`csr snapshot test > csr test ./src/image/_example/fill-position.vue 1`]
                                 width="24"
                                 x="0"
                                 y="0"
-                              />
-                              <path
-                                d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                                fill="none"
-                                stroke="#000"
-                                stroke-width="2"
                               />
                               <circle
                                 cx="15.75"
@@ -69592,24 +68817,9 @@ exports[`csr snapshot test > csr test ./src/image/_example/gallery-cover.vue 1`]
                 x="0"
                 y="0"
               />
-              <circle
-                cx="15.75"
-                cy="8.25"
-                fill="#000"
-                r="2"
-                stroke="none"
-              />
               <path
                 d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                 fill="none"
-                stroke="#000"
-                stroke-width="2"
-              />
-              <circle
-                cx="15.75"
-                cy="8.25"
-                fill="none"
-                r="2"
                 stroke="#000"
                 stroke-width="2"
               />
@@ -69630,12 +68840,6 @@ exports[`csr snapshot test > csr test ./src/image/_example/gallery-cover.vue 1`]
                 width="24"
                 x="0"
                 y="0"
-              />
-              <path
-                d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                fill="none"
-                stroke="#000"
-                stroke-width="2"
               />
               <circle
                 cx="15.75"
@@ -70186,24 +69390,9 @@ exports[`csr snapshot test > csr test ./src/image/_example/placeholder.vue 1`] =
                                 x="0"
                                 y="0"
                               />
-                              <circle
-                                cx="15.75"
-                                cy="8.25"
-                                fill="#000"
-                                r="2"
-                                stroke="none"
-                              />
                               <path
                                 d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                                 fill="none"
-                                stroke="#000"
-                                stroke-width="2"
-                              />
-                              <circle
-                                cx="15.75"
-                                cy="8.25"
-                                fill="none"
-                                r="2"
                                 stroke="#000"
                                 stroke-width="2"
                               />
@@ -70224,12 +69413,6 @@ exports[`csr snapshot test > csr test ./src/image/_example/placeholder.vue 1`] =
                                 width="24"
                                 x="0"
                                 y="0"
-                              />
-                              <path
-                                d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                                fill="none"
-                                stroke="#000"
-                                stroke-width="2"
                               />
                               <circle
                                 cx="15.75"
@@ -70383,14 +69566,6 @@ exports[`csr snapshot test > csr test ./src/image/_example/placeholder.vue 1`] =
                               stroke-width="2"
                             />
                           </g>
-                          <g>
-                            <path
-                              d="M13.9961 13.9961H14V14H13.9961V13.9961Z M16.9961 16.9961H17V17H16.9961V16.9961Z M18.9961 18.9961H19V19H18.9961V18.9961Z M20.9961 13.9961H21V14H20.9961V13.9961Z M20.9961 20.9961H21V21H20.9961V20.9961Z M13.9961 20.9961H14V21H13.9961V20.9961Z"
-                              fill="none"
-                              stroke="#000"
-                              stroke-width="2"
-                            />
-                          </g>
                         </mask>
                       </defs>
                       <g
@@ -70516,24 +69691,9 @@ exports[`csr snapshot test > csr test ./src/image/_example/placeholder.vue 1`] =
                                 x="0"
                                 y="0"
                               />
-                              <circle
-                                cx="15.75"
-                                cy="8.25"
-                                fill="#000"
-                                r="2"
-                                stroke="none"
-                              />
                               <path
                                 d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                                 fill="none"
-                                stroke="#000"
-                                stroke-width="2"
-                              />
-                              <circle
-                                cx="15.75"
-                                cy="8.25"
-                                fill="none"
-                                r="2"
                                 stroke="#000"
                                 stroke-width="2"
                               />
@@ -70554,12 +69714,6 @@ exports[`csr snapshot test > csr test ./src/image/_example/placeholder.vue 1`] =
                                 width="24"
                                 x="0"
                                 y="0"
-                              />
-                              <path
-                                d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                                fill="none"
-                                stroke="#000"
-                                stroke-width="2"
                               />
                               <circle
                                 cx="15.75"
@@ -70712,24 +69866,9 @@ exports[`csr snapshot test > csr test ./src/image/_example/placeholder.vue 1`] =
                                 x="0"
                                 y="0"
                               />
-                              <circle
-                                cx="15.75"
-                                cy="8.25"
-                                fill="#000"
-                                r="2"
-                                stroke="none"
-                              />
                               <path
                                 d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                                 fill="none"
-                                stroke="#000"
-                                stroke-width="2"
-                              />
-                              <circle
-                                cx="15.75"
-                                cy="8.25"
-                                fill="none"
-                                r="2"
                                 stroke="#000"
                                 stroke-width="2"
                               />
@@ -70750,12 +69889,6 @@ exports[`csr snapshot test > csr test ./src/image/_example/placeholder.vue 1`] =
                                 width="24"
                                 x="0"
                                 y="0"
-                              />
-                              <path
-                                d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                                fill="none"
-                                stroke="#000"
-                                stroke-width="2"
                               />
                               <circle
                                 cx="15.75"
@@ -70879,24 +70012,9 @@ exports[`csr snapshot test > csr test ./src/image/_example/shape.vue 1`] = `
                         x="0"
                         y="0"
                       />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="#000"
-                        r="2"
-                        stroke="none"
-                      />
                       <path
                         d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                         fill="none"
-                        stroke="#000"
-                        stroke-width="2"
-                      />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="none"
-                        r="2"
                         stroke="#000"
                         stroke-width="2"
                       />
@@ -70917,12 +70035,6 @@ exports[`csr snapshot test > csr test ./src/image/_example/shape.vue 1`] = `
                         width="24"
                         x="0"
                         y="0"
-                      />
-                      <path
-                        d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                        fill="none"
-                        stroke="#000"
-                        stroke-width="2"
                       />
                       <circle
                         cx="15.75"
@@ -71041,24 +70153,9 @@ exports[`csr snapshot test > csr test ./src/image/_example/shape.vue 1`] = `
                         x="0"
                         y="0"
                       />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="#000"
-                        r="2"
-                        stroke="none"
-                      />
                       <path
                         d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                         fill="none"
-                        stroke="#000"
-                        stroke-width="2"
-                      />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="none"
-                        r="2"
                         stroke="#000"
                         stroke-width="2"
                       />
@@ -71079,12 +70176,6 @@ exports[`csr snapshot test > csr test ./src/image/_example/shape.vue 1`] = `
                         width="24"
                         x="0"
                         y="0"
-                      />
-                      <path
-                        d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                        fill="none"
-                        stroke="#000"
-                        stroke-width="2"
                       />
                       <circle
                         cx="15.75"
@@ -71203,24 +70294,9 @@ exports[`csr snapshot test > csr test ./src/image/_example/shape.vue 1`] = `
                         x="0"
                         y="0"
                       />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="#000"
-                        r="2"
-                        stroke="none"
-                      />
                       <path
                         d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                         fill="none"
-                        stroke="#000"
-                        stroke-width="2"
-                      />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="none"
-                        r="2"
                         stroke="#000"
                         stroke-width="2"
                       />
@@ -71241,12 +70317,6 @@ exports[`csr snapshot test > csr test ./src/image/_example/shape.vue 1`] = `
                         width="24"
                         x="0"
                         y="0"
-                      />
-                      <path
-                        d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                        fill="none"
-                        stroke="#000"
-                        stroke-width="2"
                       />
                       <circle
                         cx="15.75"
@@ -71409,14 +70479,6 @@ exports[`csr snapshot test > csr test ./src/image-viewer/_example/album.vue 1`] 
                 y="0"
               />
               <path
-                d="M11.9997 4C6.86881 4 2.52275 7.36017 1.04199 12C2.52275 16.6398 6.86881 20 11.9997 20C17.1306 20 21.4766 16.6398 22.9574 12C21.4766 7.36017 17.1306 4 11.9997 4Z"
-                data-v-5b8719ed=""
-                fill="none"
-                stroke="#000"
-                stroke-linecap="square"
-                stroke-width="2"
-              />
-              <path
                 d="M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z"
                 data-v-5b8719ed=""
                 fill="none"
@@ -71577,14 +70639,6 @@ exports[`csr snapshot test > csr test ./src/image-viewer/_example/albumIcons.vue
                 y="0"
               />
               <path
-                d="M11.9997 4C6.86881 4 2.52275 7.36017 1.04199 12C2.52275 16.6398 6.86881 20 11.9997 20C17.1306 20 21.4766 16.6398 22.9574 12C21.4766 7.36017 17.1306 4 11.9997 4Z"
-                data-v-77602346=""
-                fill="none"
-                stroke="#000"
-                stroke-linecap="square"
-                stroke-width="2"
-              />
-              <path
                 d="M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z"
                 data-v-77602346=""
                 fill="none"
@@ -71720,14 +70774,6 @@ exports[`csr snapshot test > csr test ./src/image-viewer/_example/albumIcons.vue
                 width="24"
                 x="0"
                 y="0"
-              />
-              <path
-                d="M11.9997 4C6.86881 4 2.52275 7.36017 1.04199 12C2.52275 16.6398 6.86881 20 11.9997 20C17.1306 20 21.4766 16.6398 22.9574 12C21.4766 7.36017 17.1306 4 11.9997 4Z"
-                data-v-77602346=""
-                fill="none"
-                stroke="#000"
-                stroke-linecap="square"
-                stroke-width="2"
               />
               <path
                 d="M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z"
@@ -71908,14 +70954,6 @@ exports[`csr snapshot test > csr test ./src/image-viewer/_example/base.vue 1`] =
                   y="0"
                 />
                 <path
-                  d="M11.9997 4C6.86881 4 2.52275 7.36017 1.04199 12C2.52275 16.6398 6.86881 20 11.9997 20C17.1306 20 21.4766 16.6398 22.9574 12C21.4766 7.36017 17.1306 4 11.9997 4Z"
-                  data-v-1fed8bc3=""
-                  fill="none"
-                  stroke="#000"
-                  stroke-linecap="square"
-                  stroke-width="2"
-                />
-                <path
                   d="M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z"
                   data-v-1fed8bc3=""
                   fill="none"
@@ -72051,13 +71089,6 @@ exports[`csr snapshot test > csr test ./src/image-viewer/_example/block.vue 1`] 
                   y="0"
                 />
                 <path
-                  d="M11.9997 4C6.86881 4 2.52275 7.36017 1.04199 12C2.52275 16.6398 6.86881 20 11.9997 20C17.1306 20 21.4766 16.6398 22.9574 12C21.4766 7.36017 17.1306 4 11.9997 4Z"
-                  fill="none"
-                  stroke="#000"
-                  stroke-linecap="square"
-                  stroke-width="2"
-                />
-                <path
                   d="M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z"
                   fill="none"
                   stroke="#000"
@@ -72180,13 +71211,6 @@ exports[`csr snapshot test > csr test ./src/image-viewer/_example/block.vue 1`] 
                   width="24"
                   x="0"
                   y="0"
-                />
-                <path
-                  d="M11.9997 4C6.86881 4 2.52275 7.36017 1.04199 12C2.52275 16.6398 6.86881 20 11.9997 20C17.1306 20 21.4766 16.6398 22.9574 12C21.4766 7.36017 17.1306 4 11.9997 4Z"
-                  fill="none"
-                  stroke="#000"
-                  stroke-linecap="square"
-                  stroke-width="2"
                 />
                 <path
                   d="M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z"
@@ -72351,14 +71375,6 @@ exports[`csr snapshot test > csr test ./src/image-viewer/_example/error.vue 1`] 
                   y="0"
                 />
                 <path
-                  d="M11.9997 4C6.86881 4 2.52275 7.36017 1.04199 12C2.52275 16.6398 6.86881 20 11.9997 20C17.1306 20 21.4766 16.6398 22.9574 12C21.4766 7.36017 17.1306 4 11.9997 4Z"
-                  data-v-604cf906=""
-                  fill="none"
-                  stroke="#000"
-                  stroke-linecap="square"
-                  stroke-width="2"
-                />
-                <path
                   d="M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z"
                   data-v-604cf906=""
                   fill="none"
@@ -72502,14 +71518,6 @@ exports[`csr snapshot test > csr test ./src/image-viewer/_example/error.vue 1`] 
                   width="24"
                   x="0"
                   y="0"
-                />
-                <path
-                  d="M11.9997 4C6.86881 4 2.52275 7.36017 1.04199 12C2.52275 16.6398 6.86881 20 11.9997 20C17.1306 20 21.4766 16.6398 22.9574 12C21.4766 7.36017 17.1306 4 11.9997 4Z"
-                  data-v-604cf906=""
-                  fill="none"
-                  stroke="#000"
-                  stroke-linecap="square"
-                  stroke-width="2"
                 />
                 <path
                   d="M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z"
@@ -72657,14 +71665,6 @@ exports[`csr snapshot test > csr test ./src/image-viewer/_example/error.vue 1`] 
                   y="0"
                 />
                 <path
-                  d="M11.9997 4C6.86881 4 2.52275 7.36017 1.04199 12C2.52275 16.6398 6.86881 20 11.9997 20C17.1306 20 21.4766 16.6398 22.9574 12C21.4766 7.36017 17.1306 4 11.9997 4Z"
-                  data-v-604cf906=""
-                  fill="none"
-                  stroke="#000"
-                  stroke-linecap="square"
-                  stroke-width="2"
-                />
-                <path
                   d="M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z"
                   data-v-604cf906=""
                   fill="none"
@@ -72808,14 +71808,6 @@ exports[`csr snapshot test > csr test ./src/image-viewer/_example/error.vue 1`] 
                   width="24"
                   x="0"
                   y="0"
-                />
-                <path
-                  d="M11.9997 4C6.86881 4 2.52275 7.36017 1.04199 12C2.52275 16.6398 6.86881 20 11.9997 20C17.1306 20 21.4766 16.6398 22.9574 12C21.4766 7.36017 17.1306 4 11.9997 4Z"
-                  data-v-604cf906=""
-                  fill="none"
-                  stroke="#000"
-                  stroke-linecap="square"
-                  stroke-width="2"
                 />
                 <path
                   d="M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z"
@@ -72968,14 +71960,6 @@ exports[`csr snapshot test > csr test ./src/image-viewer/_example/modeless.vue 1
                 y="0"
               />
               <path
-                d="M11.9997 4C6.86881 4 2.52275 7.36017 1.04199 12C2.52275 16.6398 6.86881 20 11.9997 20C17.1306 20 21.4766 16.6398 22.9574 12C21.4766 7.36017 17.1306 4 11.9997 4Z"
-                data-v-431927a4=""
-                fill="none"
-                stroke="#000"
-                stroke-linecap="square"
-                stroke-width="2"
-              />
-              <path
                 d="M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z"
                 data-v-431927a4=""
                 fill="none"
@@ -73124,14 +72108,6 @@ exports[`csr snapshot test > csr test ./src/image-viewer/_example/multiple.vue 1
                 y="0"
               />
               <path
-                d="M11.9997 4C6.86881 4 2.52275 7.36017 1.04199 12C2.52275 16.6398 6.86881 20 11.9997 20C17.1306 20 21.4766 16.6398 22.9574 12C21.4766 7.36017 17.1306 4 11.9997 4Z"
-                data-v-a0b112fc=""
-                fill="none"
-                stroke="#000"
-                stroke-linecap="square"
-                stroke-width="2"
-              />
-              <path
                 d="M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z"
                 data-v-a0b112fc=""
                 fill="none"
@@ -73273,14 +72249,6 @@ exports[`csr snapshot test > csr test ./src/image-viewer/_example/multiple.vue 1
                 y="0"
               />
               <path
-                d="M11.9997 4C6.86881 4 2.52275 7.36017 1.04199 12C2.52275 16.6398 6.86881 20 11.9997 20C17.1306 20 21.4766 16.6398 22.9574 12C21.4766 7.36017 17.1306 4 11.9997 4Z"
-                data-v-a0b112fc=""
-                fill="none"
-                stroke="#000"
-                stroke-linecap="square"
-                stroke-width="2"
-              />
-              <path
                 d="M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z"
                 data-v-a0b112fc=""
                 fill="none"
@@ -73420,14 +72388,6 @@ exports[`csr snapshot test > csr test ./src/image-viewer/_example/multiple.vue 1
                 width="24"
                 x="0"
                 y="0"
-              />
-              <path
-                d="M11.9997 4C6.86881 4 2.52275 7.36017 1.04199 12C2.52275 16.6398 6.86881 20 11.9997 20C17.1306 20 21.4766 16.6398 22.9574 12C21.4766 7.36017 17.1306 4 11.9997 4Z"
-                data-v-a0b112fc=""
-                fill="none"
-                stroke="#000"
-                stroke-linecap="square"
-                stroke-width="2"
               />
               <path
                 d="M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z"
@@ -80458,13 +79418,6 @@ exports[`csr snapshot test > csr test ./src/list/_example/operation.vue 1`] = `
                           y="0"
                         />
                         <path
-                          clip-rule="evenodd"
-                          d="M17.9936 9.89339L21.0506 6.83635L17.1615 2.94727L14.1045 6.0043L17.9936 9.89339Z"
-                          fill="#000"
-                          fill-rule="evenodd"
-                          stroke="none"
-                        />
-                        <path
                           d="M14.1048 6.00427L4.78744 15.3216L3.99805 20.0001L8.67652 19.2107L17.9939 9.89336M14.1048 6.00427L17.9939 9.89336M14.1048 6.00427L17.1615 2.94727L21.0506 6.83635L17.9939 9.89336"
                           fill="none"
                           stroke="#000"
@@ -80635,13 +79588,6 @@ exports[`csr snapshot test > csr test ./src/list/_example/operation.vue 1`] = `
                           width="24"
                           x="0"
                           y="0"
-                        />
-                        <path
-                          clip-rule="evenodd"
-                          d="M17.9936 9.89339L21.0506 6.83635L17.1615 2.94727L14.1045 6.0043L17.9936 9.89339Z"
-                          fill="#000"
-                          fill-rule="evenodd"
-                          stroke="none"
                         />
                         <path
                           d="M14.1048 6.00427L4.78744 15.3216L3.99805 20.0001L8.67652 19.2107L17.9939 9.89336M14.1048 6.00427L17.9939 9.89336M14.1048 6.00427L17.1615 2.94727L21.0506 6.83635L17.9939 9.89336"
@@ -110909,13 +109855,6 @@ exports[`csr snapshot test > csr test ./src/select/_example/prefix.vue 1`] = `
                   y="0"
                 />
                 <path
-                  d="M11.9997 4C6.86881 4 2.52275 7.36017 1.04199 12C2.52275 16.6398 6.86881 20 11.9997 20C17.1306 20 21.4766 16.6398 22.9574 12C21.4766 7.36017 17.1306 4 11.9997 4Z"
-                  fill="none"
-                  stroke="#000"
-                  stroke-linecap="square"
-                  stroke-width="2"
-                />
-                <path
                   d="M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z"
                   fill="none"
                   stroke="#000"
@@ -120362,14 +119301,6 @@ exports[`csr snapshot test > csr test ./src/sticky-tool/_example/base.vue 1`] = 
                   stroke-width="2"
                 />
               </g>
-              <g>
-                <path
-                  d="M13.9961 13.9961H14V14H13.9961V13.9961Z M16.9961 16.9961H17V17H16.9961V16.9961Z M18.9961 18.9961H19V19H18.9961V18.9961Z M20.9961 13.9961H21V14H20.9961V13.9961Z M20.9961 20.9961H21V21H20.9961V20.9961Z M13.9961 20.9961H14V21H13.9961V20.9961Z"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </g>
             </mask>
           </defs>
           <g
@@ -120548,14 +119479,6 @@ exports[`csr snapshot test > csr test ./src/sticky-tool/_example/compact.vue 1`]
               <g>
                 <path
                   d="M3 14H10V21H3V14Z M3 3H10V10H3V3Z M14 3H21V10H14V3Z M6.5 6.5H6.50391V6.50391H6.5V6.5Z M6.5 17.5H6.50391V17.5039H6.5V17.5Z M17.5 6.5H17.5039V6.50391H17.5V6.5Z"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </g>
-              <g>
-                <path
-                  d="M13.9961 13.9961H14V14H13.9961V13.9961Z M16.9961 16.9961H17V17H16.9961V16.9961Z M18.9961 18.9961H19V19H18.9961V18.9961Z M20.9961 13.9961H21V14H20.9961V13.9961Z M20.9961 20.9961H21V21H20.9961V20.9961Z M13.9961 20.9961H14V21H13.9961V20.9961Z"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -120749,14 +119672,6 @@ exports[`csr snapshot test > csr test ./src/sticky-tool/_example/shape.vue 1`] =
                   stroke-width="2"
                 />
               </g>
-              <g>
-                <path
-                  d="M13.9961 13.9961H14V14H13.9961V13.9961Z M16.9961 16.9961H17V17H16.9961V16.9961Z M18.9961 18.9961H19V19H18.9961V18.9961Z M20.9961 13.9961H21V14H20.9961V13.9961Z M20.9961 20.9961H21V21H20.9961V20.9961Z M13.9961 20.9961H14V21H13.9961V20.9961Z"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </g>
             </mask>
           </defs>
           <g
@@ -120937,14 +119852,6 @@ exports[`csr snapshot test > csr test ./src/sticky-tool/_example/shape.vue 1`] =
               <g>
                 <path
                   d="M3 14H10V21H3V14Z M3 3H10V10H3V3Z M14 3H21V10H14V3Z M6.5 6.5H6.50391V6.50391H6.5V6.5Z M6.5 17.5H6.50391V17.5039H6.5V17.5Z M17.5 6.5H17.5039V6.50391H17.5V6.5Z"
-                  fill="none"
-                  stroke="#000"
-                  stroke-width="2"
-                />
-              </g>
-              <g>
-                <path
-                  d="M13.9961 13.9961H14V14H13.9961V13.9961Z M16.9961 16.9961H17V17H16.9961V16.9961Z M18.9961 18.9961H19V19H18.9961V18.9961Z M20.9961 13.9961H21V14H20.9961V13.9961Z M20.9961 20.9961H21V21H20.9961V20.9961Z M13.9961 20.9961H14V21H13.9961V20.9961Z"
                   fill="none"
                   stroke="#000"
                   stroke-width="2"
@@ -129373,12 +128280,6 @@ exports[`csr snapshot test > csr test ./src/tag/_example/icon.vue 1`] = `
               y="0"
             />
             <path
-              d="M11.878 22.0207L1.97852 12.1212L11.878 2.22168L21.0704 2.92879L21.7775 12.1212L11.878 22.0207Z"
-              fill="none"
-              stroke="#000"
-              stroke-width="2"
-            />
-            <path
               d="M13.9998 7.17075C14.7809 6.3897 16.0472 6.3897 16.8283 7.17075C17.6093 7.9518 17.6093 9.21813 16.8283 9.99917C16.0472 10.7802 14.7809 10.7802 13.9998 9.99917C13.2188 9.21813 13.2188 7.9518 13.9998 7.17075Z"
               fill="none"
               stroke="#000"
@@ -129486,12 +128387,6 @@ exports[`csr snapshot test > csr test ./src/tag/_example/icon.vue 1`] = `
               width="24"
               x="0"
               y="0"
-            />
-            <path
-              d="M11.878 22.0207L1.97852 12.1212L11.878 2.22168L21.0704 2.92879L21.7775 12.1212L11.878 22.0207Z"
-              fill="none"
-              stroke="#000"
-              stroke-width="2"
             />
             <path
               d="M13.9998 7.17075C14.7809 6.3897 16.0472 6.3897 16.8283 7.17075C17.6093 7.9518 17.6093 9.21813 16.8283 9.99917C16.0472 10.7802 14.7809 10.7802 13.9998 9.99917C13.2188 9.21813 13.2188 7.9518 13.9998 7.17075Z"
@@ -160633,13 +159528,6 @@ exports[`csr snapshot test > csr test ./src/typography/_example/copyable.vue 1`]
               stroke-linecap="square"
               stroke-width="2"
             />
-            <path
-              d="M14 6.5V3L3 3L3 14H6.5"
-              fill="none"
-              stroke="#000"
-              stroke-linecap="square"
-              stroke-width="2"
-            />
           </mask>
         </defs>
         <g
@@ -160706,13 +159594,6 @@ exports[`csr snapshot test > csr test ./src/typography/_example/copyable.vue 1`]
             />
             <path
               d="M10 10H21V21H10V10Z"
-              fill="none"
-              stroke="#000"
-              stroke-linecap="square"
-              stroke-width="2"
-            />
-            <path
-              d="M14 6.5V3L3 3L3 14H6.5"
               fill="none"
               stroke="#000"
               stroke-linecap="square"
@@ -162290,24 +161171,9 @@ exports[`csr snapshot test > csr test ./src/upload/_example/image.vue 1`] = `
                               x="0"
                               y="0"
                             />
-                            <circle
-                              cx="15.75"
-                              cy="8.25"
-                              fill="#000"
-                              r="2"
-                              stroke="none"
-                            />
                             <path
                               d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                               fill="none"
-                              stroke="#000"
-                              stroke-width="2"
-                            />
-                            <circle
-                              cx="15.75"
-                              cy="8.25"
-                              fill="none"
-                              r="2"
                               stroke="#000"
                               stroke-width="2"
                             />
@@ -162328,12 +161194,6 @@ exports[`csr snapshot test > csr test ./src/upload/_example/image.vue 1`] = `
                               width="24"
                               x="0"
                               y="0"
-                            />
-                            <path
-                              d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                              fill="none"
-                              stroke="#000"
-                              stroke-width="2"
                             />
                             <circle
                               cx="15.75"
@@ -162455,13 +161315,6 @@ exports[`csr snapshot test > csr test ./src/upload/_example/image.vue 1`] = `
                           width="24"
                           x="0"
                           y="0"
-                        />
-                        <path
-                          d="M11.9997 4C6.86881 4 2.52275 7.36017 1.04199 12C2.52275 16.6398 6.86881 20 11.9997 20C17.1306 20 21.4766 16.6398 22.9574 12C21.4766 7.36017 17.1306 4 11.9997 4Z"
-                          fill="none"
-                          stroke="#000"
-                          stroke-linecap="square"
-                          stroke-width="2"
                         />
                         <path
                           d="M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z"
@@ -162865,24 +161718,9 @@ exports[`csr snapshot test > csr test ./src/upload/_example/img-flow-list.vue 1`
                                 x="0"
                                 y="0"
                               />
-                              <circle
-                                cx="15.75"
-                                cy="8.25"
-                                fill="#000"
-                                r="2"
-                                stroke="none"
-                              />
                               <path
                                 d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                                 fill="none"
-                                stroke="#000"
-                                stroke-width="2"
-                              />
-                              <circle
-                                cx="15.75"
-                                cy="8.25"
-                                fill="none"
-                                r="2"
                                 stroke="#000"
                                 stroke-width="2"
                               />
@@ -162903,12 +161741,6 @@ exports[`csr snapshot test > csr test ./src/upload/_example/img-flow-list.vue 1`
                                 width="24"
                                 x="0"
                                 y="0"
-                              />
-                              <path
-                                d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                                fill="none"
-                                stroke="#000"
-                                stroke-width="2"
                               />
                               <circle
                                 cx="15.75"
@@ -163025,13 +161857,6 @@ exports[`csr snapshot test > csr test ./src/upload/_example/img-flow-list.vue 1`
                             width="24"
                             x="0"
                             y="0"
-                          />
-                          <path
-                            d="M11.9997 4C6.86881 4 2.52275 7.36017 1.04199 12C2.52275 16.6398 6.86881 20 11.9997 20C17.1306 20 21.4766 16.6398 22.9574 12C21.4766 7.36017 17.1306 4 11.9997 4Z"
-                            fill="none"
-                            stroke="#000"
-                            stroke-linecap="square"
-                            stroke-width="2"
                           />
                           <path
                             d="M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z"
@@ -163335,24 +162160,9 @@ exports[`csr snapshot test > csr test ./src/upload/_example/img-flow-list.vue 1`
                                 x="0"
                                 y="0"
                               />
-                              <circle
-                                cx="15.75"
-                                cy="8.25"
-                                fill="#000"
-                                r="2"
-                                stroke="none"
-                              />
                               <path
                                 d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                                 fill="none"
-                                stroke="#000"
-                                stroke-width="2"
-                              />
-                              <circle
-                                cx="15.75"
-                                cy="8.25"
-                                fill="none"
-                                r="2"
                                 stroke="#000"
                                 stroke-width="2"
                               />
@@ -163373,12 +162183,6 @@ exports[`csr snapshot test > csr test ./src/upload/_example/img-flow-list.vue 1`
                                 width="24"
                                 x="0"
                                 y="0"
-                              />
-                              <path
-                                d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                                fill="none"
-                                stroke="#000"
-                                stroke-width="2"
                               />
                               <circle
                                 cx="15.75"
@@ -163495,13 +162299,6 @@ exports[`csr snapshot test > csr test ./src/upload/_example/img-flow-list.vue 1`
                             width="24"
                             x="0"
                             y="0"
-                          />
-                          <path
-                            d="M11.9997 4C6.86881 4 2.52275 7.36017 1.04199 12C2.52275 16.6398 6.86881 20 11.9997 20C17.1306 20 21.4766 16.6398 22.9574 12C21.4766 7.36017 17.1306 4 11.9997 4Z"
-                            fill="none"
-                            stroke="#000"
-                            stroke-linecap="square"
-                            stroke-width="2"
                           />
                           <path
                             d="M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z"
@@ -163690,24 +162487,9 @@ exports[`csr snapshot test > csr test ./src/upload/_example/img-flow-list.vue 1`
                                 x="0"
                                 y="0"
                               />
-                              <circle
-                                cx="15.75"
-                                cy="8.25"
-                                fill="#000"
-                                r="2"
-                                stroke="none"
-                              />
                               <path
                                 d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                                 fill="none"
-                                stroke="#000"
-                                stroke-width="2"
-                              />
-                              <circle
-                                cx="15.75"
-                                cy="8.25"
-                                fill="none"
-                                r="2"
                                 stroke="#000"
                                 stroke-width="2"
                               />
@@ -163728,12 +162510,6 @@ exports[`csr snapshot test > csr test ./src/upload/_example/img-flow-list.vue 1`
                                 width="24"
                                 x="0"
                                 y="0"
-                              />
-                              <path
-                                d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                                fill="none"
-                                stroke="#000"
-                                stroke-width="2"
                               />
                               <circle
                                 cx="15.75"
@@ -163850,13 +162626,6 @@ exports[`csr snapshot test > csr test ./src/upload/_example/img-flow-list.vue 1`
                             width="24"
                             x="0"
                             y="0"
-                          />
-                          <path
-                            d="M11.9997 4C6.86881 4 2.52275 7.36017 1.04199 12C2.52275 16.6398 6.86881 20 11.9997 20C17.1306 20 21.4766 16.6398 22.9574 12C21.4766 7.36017 17.1306 4 11.9997 4Z"
-                            fill="none"
-                            stroke="#000"
-                            stroke-linecap="square"
-                            stroke-width="2"
                           />
                           <path
                             d="M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z"

@@ -62,24 +62,9 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, fail 
                         x="0"
                         y="0"
                       />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="#000"
-                        r="2"
-                        stroke="none"
-                      />
                       <path
                         d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                         fill="none"
-                        stroke="#000"
-                        stroke-width="2"
-                      />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="none"
-                        r="2"
                         stroke="#000"
                         stroke-width="2"
                       />
@@ -100,12 +85,6 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, fail 
                         width="24"
                         x="0"
                         y="0"
-                      />
-                      <path
-                        d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                        fill="none"
-                        stroke="#000"
-                        stroke-width="2"
                       />
                       <circle
                         cx="15.75"
@@ -285,24 +264,9 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, progr
                         x="0"
                         y="0"
                       />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="#000"
-                        r="2"
-                        stroke="none"
-                      />
                       <path
                         d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                         fill="none"
-                        stroke="#000"
-                        stroke-width="2"
-                      />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="none"
-                        r="2"
                         stroke="#000"
                         stroke-width="2"
                       />
@@ -323,12 +287,6 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, progr
                         width="24"
                         x="0"
                         y="0"
-                      />
-                      <path
-                        d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                        fill="none"
-                        stroke="#000"
-                        stroke-width="2"
                       />
                       <circle
                         cx="15.75"
@@ -515,24 +473,9 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, succe
                         x="0"
                         y="0"
                       />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="#000"
-                        r="2"
-                        stroke="none"
-                      />
                       <path
                         d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                         fill="none"
-                        stroke="#000"
-                        stroke-width="2"
-                      />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="none"
-                        r="2"
                         stroke="#000"
                         stroke-width="2"
                       />
@@ -553,12 +496,6 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, succe
                         width="24"
                         x="0"
                         y="0"
-                      />
-                      <path
-                        d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                        fill="none"
-                        stroke="#000"
-                        stroke-width="2"
                       />
                       <circle
                         cx="15.75"
@@ -738,24 +675,9 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, succe
                         x="0"
                         y="0"
                       />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="#000"
-                        r="2"
-                        stroke="none"
-                      />
                       <path
                         d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                         fill="none"
-                        stroke="#000"
-                        stroke-width="2"
-                      />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="none"
-                        r="2"
                         stroke="#000"
                         stroke-width="2"
                       />
@@ -776,12 +698,6 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, succe
                         width="24"
                         x="0"
                         y="0"
-                      />
-                      <path
-                        d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                        fill="none"
-                        stroke="#000"
-                        stroke-width="2"
                       />
                       <circle
                         cx="15.75"
@@ -961,24 +877,9 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, waiti
                         x="0"
                         y="0"
                       />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="#000"
-                        r="2"
-                        stroke="none"
-                      />
                       <path
                         d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                         fill="none"
-                        stroke="#000"
-                        stroke-width="2"
-                      />
-                      <circle
-                        cx="15.75"
-                        cy="8.25"
-                        fill="none"
-                        r="2"
                         stroke="#000"
                         stroke-width="2"
                       />
@@ -999,12 +900,6 @@ exports[`Upload Component > props.draggable: theme=image & draggable=true, waiti
                         width="24"
                         x="0"
                         y="0"
-                      />
-                      <path
-                        d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                        fill="none"
-                        stroke="#000"
-                        stroke-width="2"
                       />
                       <circle
                         cx="15.75"
@@ -1484,24 +1379,9 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                             x="0"
                             y="0"
                           />
-                          <circle
-                            cx="15.75"
-                            cy="8.25"
-                            fill="#000"
-                            r="2"
-                            stroke="none"
-                          />
                           <path
                             d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                             fill="none"
-                            stroke="#000"
-                            stroke-width="2"
-                          />
-                          <circle
-                            cx="15.75"
-                            cy="8.25"
-                            fill="none"
-                            r="2"
                             stroke="#000"
                             stroke-width="2"
                           />
@@ -1522,12 +1402,6 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                             width="24"
                             x="0"
                             y="0"
-                          />
-                          <path
-                            d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                            fill="none"
-                            stroke="#000"
-                            stroke-width="2"
                           />
                           <circle
                             cx="15.75"
@@ -1721,24 +1595,9 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                             x="0"
                             y="0"
                           />
-                          <circle
-                            cx="15.75"
-                            cy="8.25"
-                            fill="#000"
-                            r="2"
-                            stroke="none"
-                          />
                           <path
                             d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                             fill="none"
-                            stroke="#000"
-                            stroke-width="2"
-                          />
-                          <circle
-                            cx="15.75"
-                            cy="8.25"
-                            fill="none"
-                            r="2"
                             stroke="#000"
                             stroke-width="2"
                           />
@@ -1759,12 +1618,6 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                             width="24"
                             x="0"
                             y="0"
-                          />
-                          <path
-                            d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                            fill="none"
-                            stroke="#000"
-                            stroke-width="2"
                           />
                           <circle
                             cx="15.75"
@@ -1881,13 +1734,6 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                         width="24"
                         x="0"
                         y="0"
-                      />
-                      <path
-                        d="M11.9997 4C6.86881 4 2.52275 7.36017 1.04199 12C2.52275 16.6398 6.86881 20 11.9997 20C17.1306 20 21.4766 16.6398 22.9574 12C21.4766 7.36017 17.1306 4 11.9997 4Z"
-                        fill="none"
-                        stroke="#000"
-                        stroke-linecap="square"
-                        stroke-width="2"
                       />
                       <path
                         d="M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z"
@@ -2076,24 +1922,9 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                             x="0"
                             y="0"
                           />
-                          <circle
-                            cx="15.75"
-                            cy="8.25"
-                            fill="#000"
-                            r="2"
-                            stroke="none"
-                          />
                           <path
                             d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
                             fill="none"
-                            stroke="#000"
-                            stroke-width="2"
-                          />
-                          <circle
-                            cx="15.75"
-                            cy="8.25"
-                            fill="none"
-                            r="2"
                             stroke="#000"
                             stroke-width="2"
                           />
@@ -2114,12 +1945,6 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                             width="24"
                             x="0"
                             y="0"
-                          />
-                          <path
-                            d="M3 16V3H21V21H20M3 16V21H20M3 16L9 10L20 21"
-                            fill="none"
-                            stroke="#000"
-                            stroke-width="2"
                           />
                           <circle
                             cx="15.75"
@@ -2236,13 +2061,6 @@ exports[`Upload Component > props.theme: theme=image-flow works fine 1`] = `
                         width="24"
                         x="0"
                         y="0"
-                      />
-                      <path
-                        d="M11.9997 4C6.86881 4 2.52275 7.36017 1.04199 12C2.52275 16.6398 6.86881 20 11.9997 20C17.1306 20 21.4766 16.6398 22.9574 12C21.4766 7.36017 17.1306 4 11.9997 4Z"
-                        fill="none"
-                        stroke="#000"
-                        stroke-linecap="square"
-                        stroke-width="2"
                       />
                       <path
                         d="M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z"
