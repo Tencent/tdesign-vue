@@ -27,12 +27,40 @@ exports[`Input > $attrs > input attrs should pass to input element 1`] = `
         viewBox="0 0 24 24"
         width="1em"
       >
+        <defs>
+          <mask
+            height="24"
+            id="t-icon-browse-off-instance-0-overlap-stroke1"
+            mask-type="luminance"
+            maskContentUnits="userSpaceOnUse"
+            maskUnits="userSpaceOnUse"
+            width="24"
+            x="0"
+            y="0"
+          >
+            <rect
+              fill="#fff"
+              height="24"
+              width="24"
+              x="0"
+              y="0"
+            />
+            <path
+              d="M20.9996 21L3 3"
+              fill="none"
+              stroke="#000"
+              stroke-linecap="square"
+              stroke-width="2"
+            />
+          </mask>
+        </defs>
         <g
           id="browse-off"
         >
           <path
             d="M13.1758 8.17578C14.4396 8.56376 15.4368 9.56096 15.8247 10.8247M21.2858 15.2856C22.0085 14.2983 22.5776 13.1913 22.9578 12C21.4771 7.36017 17.131 4 12.0001 4C11.3698 4 10.7513 4.05072 10.1484 4.1483M5.80747 5.80786C3.57225 7.23888 1.86478 9.42193 1.04199 12.0001C2.52275 16.6399 6.86881 20.0001 11.9997 20.0001C14.2796 20.0001 16.4045 19.3367 18.1919 18.1923L5.80747 5.80786ZM8 12.0003C8 10.8957 8.44771 9.89573 9.17157 9.17188L14.8284 14.8287C14.1046 15.5526 13.1046 16.0003 12 16.0003C9.79086 16.0003 8 14.2094 8 12.0003Z"
             id="stroke1"
+            mask="url(#t-icon-browse-off-instance-0-overlap-stroke1)"
             stroke="currentColor"
             stroke-linecap="square"
             stroke-width="2"
