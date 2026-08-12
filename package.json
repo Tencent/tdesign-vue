@@ -96,7 +96,7 @@
     "mitt": "^3.0.0",
     "raf": "^3.4.1",
     "sortablejs": "^1.15.0",
-    "tdesign-icons-vue": "^0.4.9",
+    "tdesign-icons-vue": "https://pkg.pr.new/tdesign-icons-vue@260bb2b",
     "tinycolor2": "^1.4.2",
     "validator": "^13.5.1"
   },
