@@ -21,6 +21,23 @@ export default {
             {
               label: '子选项三',
               value: '1.3',
+              children: [
+                {
+                  label: '子选项三/一',
+                  value: '1.3.1',
+                  disabled: true,
+                },
+                {
+                  label: '子选项三/二',
+                  value: '1.3.2',
+                  disabled: false,
+                },
+              ],
+            },
+            {
+              label: '子选项四',
+              value: '1.4',
+              disabled: true,
             },
           ],
         },
