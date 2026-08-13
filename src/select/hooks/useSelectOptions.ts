@@ -85,17 +85,23 @@ export default function useSelectOptions(
           dynamicIndex += 1;
         } else if (componentName && componentName === getVueComponentName(OptionGroup)) {
           // 分组选项
+          const labelSlot = child.data?.scopedSlots?.label;
           const groupOption = {
             group: (child.componentOptions.propsData as TdOptionProps)?.label,
             ...child.componentOptions.propsData,
             children: [] as TdOptionProps[],
+            groupSlots: labelSlot,
           };
 
           child.componentOptions.children?.forEach?.((groupChild) => {
+            // 跳过 label 插槽节点
+            if (groupChild.data?.slot === 'label') return;
+            // 跳过没有 componentOptions 的节点（如文本节点）
+            if (!groupChild.componentOptions) return;
             groupOption.children.push({
               // 单独处理 style 和 class 参数的透传
-              class: groupChild.data.staticClass,
-              style: groupChild.data.staticStyle,
+              class: groupChild.data?.staticClass,
+              style: groupChild.data?.staticStyle,
               // 透传其他常规参数
               ...groupChild.componentOptions.propsData,
               slots: () => groupChild.componentOptions.children,
