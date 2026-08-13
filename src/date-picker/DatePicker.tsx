@@ -41,6 +41,7 @@ export default defineComponent({
       time,
       inputRef,
       onChange,
+      closePopup,
     } = useSingle(props, { emit });
 
     const formatRef = computed(() => getDefaultFormat({
@@ -103,7 +104,7 @@ export default defineComponent({
     }
 
     // 日期点击
-    function onCellClick(date: Date) {
+    function onCellClick(date: Date, { e }: { e: MouseEvent }) {
       isHoverCell.value = false;
       // date 模式自动切换年月
       if (props.mode === 'date') {
@@ -133,7 +134,7 @@ export default defineComponent({
             trigger: 'pick',
           },
         );
-        popupVisible.value = false;
+        closePopup({ e });
       }
 
       props.onPick?.(date);
@@ -219,7 +220,7 @@ export default defineComponent({
           format: formatRef.value.format,
         });
       }
-      popupVisible.value = false;
+      closePopup({ e });
     }
 
     // 预设
@@ -237,7 +238,7 @@ export default defineComponent({
       );
       props.onPresetClick?.(context);
       emit('preset-click', context);
-      popupVisible.value = false;
+      closePopup({ e: context?.e });
     }
 
     function onYearChange(nextYear: number) {
@@ -290,7 +291,7 @@ export default defineComponent({
 
     const onTagClearClick = ({ e }: { e: MouseEvent }) => {
       e.stopPropagation();
-      popupVisible.value = false;
+      closePopup({ e });
       onChange?.([], { dayjsValue: dayjs(), trigger: 'clear' });
     };
 
