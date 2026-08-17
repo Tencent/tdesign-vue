@@ -123,7 +123,7 @@ export interface TdInputProps<T = InputValue> {
    * 输入框类型。`type=number` 仅支持最基础的数字输入功能，更多功能建议使用 `InputNumber` 组件
    * @default text
    */
-  type?: 'text' | 'number' | 'url' | 'tel' | 'password' | 'search' | 'submit' | 'hidden';
+  type?: 'text' | 'number' | 'url' | 'tel' | 'email' | 'password' | 'search' | 'submit' | 'hidden';
   /**
    * 输入框的值
    */
