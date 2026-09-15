@@ -92,7 +92,7 @@ export default function generateLlmsPlugin() {
       const parseComponentDoc = createComponentDocParser({
         readComponentDoc,
         readDemoCode: readVueDemo,
-        is_examplelot,
+        isDemoSlot: is_examplelot,
         transformers: [],
       });
 
