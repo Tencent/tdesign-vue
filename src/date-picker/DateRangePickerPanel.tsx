@@ -1,422 +1,109 @@
-import {
-  defineComponent, computed, ref, watch,
-} from '@vue/composition-api';
+import { defineComponent, toRefs, watch, ref, computed, h } from '@vue/composition-api';
 import dayjs from 'dayjs';
-
-import dateRangePickerPanelProps from './date-range-picker-panel-props';
-import dateRangePickerProps from './date-range-picker-props';
-import {
-  DateValue,
-  DateRangePickerPartial,
-  TdDateRangePickerPanelProps,
-  DatePickerYearChangeTrigger,
-  DatePickerMonthChangeTrigger,
-} from './type';
-
-import TRangePanel from './panel/RangePanel';
-import useRangeValue from './hooks/useRangeValue';
-import { formatDate, getDefaultFormat, parseToDayjs } from '../_common/js/date-picker/format';
-import { subtractMonth, addMonth, extractTimeObj } from '../_common/js/date-picker/utils';
-import type { TdDateRangePickerProps } from './type';
-import { dateCorrection } from './utils';
+import { TdDateRangePickerPanelProps } from './type';
+import props from './date-range-picker-panel-props';
+import { useConfig } from '../hooks/useConfig';
+import { useTNodeDefault } from '../hooks/tnode';
+import { useRangeValue } from './hooks/useRangeValue';
+import RangePanel from './panel/RangePanel';
+import { useTable } from './hooks/useTable';
+import { useDisableDate } from './hooks/useDisableDate';
+import { formatTNodeReturnValue } from '../utils/render-tnode';
+import { parseToDayjs } from '../_common/js/date-picker/format';
 
 export default defineComponent({
   name: 'TDateRangePickerPanel',
-  props: {
-    value: dateRangePickerProps.value,
-    defaultValue: dateRangePickerProps.defaultValue,
-    disabled: dateRangePickerProps.disabled,
-    disableDate: dateRangePickerProps.disableDate,
-    disableTime: dateRangePickerProps.disableTime,
-    enableTimePicker: dateRangePickerProps.enableTimePicker,
-    firstDayOfWeek: dateRangePickerProps.firstDayOfWeek,
-    format: dateRangePickerProps.format,
-    mode: dateRangePickerProps.mode,
-    presets: dateRangePickerProps.presets,
-    presetsPlacement: dateRangePickerProps.presetsPlacement,
-    timePickerProps: dateRangePickerProps.timePickerProps,
-    panelPreselection: dateRangePickerProps.panelPreselection,
-    ...dateRangePickerPanelProps,
-  },
-  setup(props: TdDateRangePickerPanelProps & { disableTime: TdDateRangePickerProps['disableTime'] }, { emit, attrs }) {
-    const {
-      value, year, month, time, cacheValue, isFirstValueSelected, onChange,
-    } = useRangeValue(props);
+  props,
+  setup(props: TdDateRangePickerPanelProps) {
+    const { value } = toRefs(props);
+    const { globalConfig } = useConfig('datePicker');
+    const { formatRef, ...rangeValueProps } = useRangeValue(props);
+    const { year, month, time, onChange, cacheValue, isFirstValueSelected } = rangeValueProps;
 
-    const formatRef = computed(() => getDefaultFormat({
-      mode: props.mode,
-      enableTimePicker: props.enableTimePicker,
-      format: props.format,
+    const panelProps = computed(() => ({
+      year: year.value,
+      month: month.value,
+      time: time.value,
+      value: value.value,
+      isFirstValueSelected: isFirstValueSelected.value,
+      format: formatRef.value.format,
+      ...useTable(props, { year, month, time }),
+      ...useDisableDate(props),
+      onMonthChange,
+      onYearChange,
+      onJumperClick,
+      onCellClick,
+      onChange,
     }));
 
-    // 记录面板是否选中过
-    const isSelected = ref(false);
-    const isHoverCell = ref(false);
-    const hoverValue = ref([]);
-    const activeIndex = computed(() => (isFirstValueSelected.value ? 1 : 0));
+    function onMonthChange(val: number[], partial: string) {
+      const nextMonth = [...month.value];
+      if (partial === 'start') {
+        nextMonth[0] = val[0];
+      } else {
+        nextMonth[1] = val[1];
+      }
+      month.value = nextMonth;
+    }
+
+    function onYearChange(val: number[], partial: string) {
+      const nextYear = [...year.value];
+      if (partial === 'start') {
+        nextYear[0] = val[0];
+      } else {
+        nextYear[1] = val[1];
+      }
+      year.value = nextYear;
+    }
+
+    function onJumperClick(val: { trigger: string; partial: string }) {
+      const nextMonth = [...month.value];
+      if (val.partial === 'start') {
+        nextMonth[0] = val.trigger === 'prev' ? month.value[0] - 1 : month.value[0] + 1;
+      } else {
+        nextMonth[1] = val.trigger === 'prev' ? month.value[1] - 1 : month.value[1] + 1;
+      }
+      month.value = nextMonth;
+    }
+
+    function onCellClick(date: Date, { e }: { e: MouseEvent }) {
+      const newDate = dayjs(date);
+      const nextVal = [...cacheValue.value];
+      if (!isFirstValueSelected.value) {
+        nextVal[0] = newDate.format(formatRef.value.format);
+        cacheValue.value = nextVal;
+        isFirstValueSelected.value = true;
+      } else {
+        nextVal[1] = newDate.format(formatRef.value.format);
+        cacheValue.value = nextVal;
+        isFirstValueSelected.value = false;
+        onChange?.(nextVal);
+      }
+    }
 
     watch(
       () => value.value,
-      (value) => {
-        // 确保右侧面板月份比左侧大 避免两侧面板月份一致
-        if (value.length === 2 && !props.enableTimePicker) {
-          const nextMonth = value.map((v: string) => parseToDayjs(v || new Date(), formatRef.value.format).month());
-          if (year.value[0] === year.value[1] && nextMonth[0] === nextMonth[1]) {
+      (nextVal) => {
+        if (nextVal.length === 2 && !props.enableTimePicker) {
+          const nextYear = nextVal.map((v: string) => parseToDayjs(v || new Date(), formatRef.value.format).year());
+          const nextMonth = nextVal.map((v: string) => parseToDayjs(v || new Date(), formatRef.value.format).month());
+          // 确保右侧面板月份比左侧大 避免两侧面板月份一致
+          if (nextYear[0] === nextYear[1] && nextMonth[0] === nextMonth[1]) {
             nextMonth[0] === 11 ? (nextMonth[0] -= 1) : (nextMonth[1] += 1);
           }
-          month.value = nextMonth;
+          // 仅在 year/month 实际发生变化时才更新，避免覆盖用户手动导航
+          if (nextYear[0] !== year.value[0] || nextYear[1] !== year.value[1]
+            || nextMonth[0] !== month.value[0] || nextMonth[1] !== month.value[1]) {
+            year.value = nextYear;
+            month.value = nextMonth;
+          }
         }
       },
       { immediate: true },
     );
 
-    // 日期 hover
-    function onCellMouseEnter(date: Date) {
-      isHoverCell.value = true;
-      const nextValue = [...(hoverValue.value as string[])];
-      nextValue[activeIndex.value] = formatDate(date, {
-        format: formatRef.value.format,
-      }) as string;
-      hoverValue.value = nextValue;
-    }
-
-    // 日期 leave
-    function onCellMouseLeave() {
-      isHoverCell.value = false;
-      hoverValue.value = cacheValue.value as string[];
-    }
-
-    // 日期点击
-    function onCellClick(date: Date, { e }: { e: MouseEvent }) {
-      isHoverCell.value = false;
-      isSelected.value = true;
-
-      const nextValue = [...(cacheValue.value as string[])];
-      nextValue[activeIndex.value] = formatDate(date, {
-        format: formatRef.value.format,
-      }) as string;
-      cacheValue.value = nextValue;
-
-      props.onCellClick?.({
-        e,
-        partial: activeIndex.value ? 'end' : 'start',
-        date: nextValue.map((v: string) => parseToDayjs(v, formatRef.value.format).toDate()),
-      });
-      emit('cell-click', {
-        e,
-        partial: activeIndex.value ? 'end' : 'start',
-        date: nextValue.map((v: string) => parseToDayjs(v, formatRef.value.format).toDate()),
-      });
-
-      // 有时间选择器走 confirm 逻辑
-      if (props.enableTimePicker) return;
-
-      // 首次点击不关闭、确保两端都有有效值并且无时间选择器时点击后自动关闭
-      if (nextValue.length === 2 && isFirstValueSelected.value) {
-        onChange?.(
-          formatDate(nextValue, {
-            format: formatRef.value.format,
-            autoSwap: true,
-          }) as DateValue[],
-          {
-            dayjsValue: nextValue.map((v) => parseToDayjs(v, formatRef.value.format)),
-            trigger: 'pick',
-          },
-        );
-        isFirstValueSelected.value = false;
-      } else {
-        isFirstValueSelected.value = true;
-      }
-    }
-
-    // 头部快速切换
-    function onJumperClick({ trigger, partial }: { trigger: string; partial: DateRangePickerPartial }) {
-      const partialIndex = partial === 'start' ? 0 : 1;
-
-      const triggerMap = {
-        prev: 'arrow-previous',
-        next: 'arrow-next',
-      };
-      const monthCountMap = {
-        date: 1,
-        week: 1,
-        month: 12,
-        quarter: 12,
-        year: 120,
-      };
-      const monthCount = monthCountMap[props.mode] || 0;
-      const current = new Date(year.value[partialIndex], month.value[partialIndex]);
-
-      let next = null;
-      if (trigger === 'prev') {
-        next = subtractMonth(current, monthCount);
-      } else if (trigger === 'current') {
-        next = new Date();
-      } else if (trigger === 'next') {
-        next = addMonth(current, monthCount);
-      }
-
-      let nextYear = [...year.value];
-      nextYear[partialIndex] = next.getFullYear();
-      let nextMonth = [...month.value];
-      nextMonth[partialIndex] = next.getMonth();
-      const onlyYearSelect = ['year', 'quarter', 'month'].includes(props.mode);
-
-      // 头部日期切换修正
-      const correctedDate = dateCorrection(partialIndex, nextYear, nextMonth, onlyYearSelect);
-      nextYear = correctedDate.nextYear;
-      nextMonth = correctedDate.nextMonth;
-
-      if (year.value.some((y) => !nextYear.includes(y))) {
-        props.onYearChange?.({
-          partial,
-          year: nextYear[partialIndex],
-          date: value.value.map((v: string) => dayjs(v).toDate()),
-          trigger: trigger === 'current' ? 'today' : (`year-${triggerMap[trigger]}` as DatePickerYearChangeTrigger),
-        });
-        emit('year-change', {
-          partial,
-          year: nextYear[partialIndex],
-          date: value.value.map((v: string) => dayjs(v).toDate()),
-          trigger: trigger === 'current' ? 'today' : (`year-${triggerMap[trigger]}` as DatePickerYearChangeTrigger),
-        });
-      }
-      if (month.value.some((m) => !nextMonth.includes(m))) {
-        props.onMonthChange?.({
-          partial,
-          month: nextMonth[partialIndex],
-          date: value.value.map((v: string) => dayjs(v).toDate()),
-          trigger: trigger === 'current' ? 'today' : (`month-${triggerMap[trigger]}` as DatePickerMonthChangeTrigger),
-        });
-        emit('month-change', {
-          partial,
-          month: nextMonth[partialIndex],
-          date: value.value.map((v: string) => dayjs(v).toDate()),
-          trigger: trigger === 'current' ? 'today' : (`month-${triggerMap[trigger]}` as DatePickerMonthChangeTrigger),
-        });
-      }
-
-      year.value = nextYear;
-      month.value = nextMonth;
-    }
-
-    // time-picker 点击
-    function onTimePickerChange(val: string) {
-      const {
-        hours, minutes, seconds, milliseconds, meridiem,
-      } = extractTimeObj(val);
-
-      const nextInputValue = [...(cacheValue.value as DateValue[])];
-      const changedInputValue = cacheValue.value[activeIndex.value];
-      const currentDate = !dayjs(changedInputValue, formatRef.value.format).isValid()
-        ? dayjs().year(year.value[activeIndex.value]).month(month.value[activeIndex.value])
-        : dayjs(changedInputValue, formatRef.value.format);
-      // am pm 12小时制转化 24小时制
-      let nextHours = hours;
-      if (/am/i.test(meridiem) && nextHours === 12) nextHours -= 12;
-      if (/pm/i.test(meridiem) && nextHours < 12) nextHours += 12;
-
-      const nextDate = currentDate.hour(nextHours).minute(minutes).second(seconds).millisecond(milliseconds)
-        .toDate();
-      nextInputValue[activeIndex.value] = nextDate;
-
-      const nextTime = [...time.value];
-      nextTime[activeIndex.value] = val;
-      time.value = nextTime;
-
-      isSelected.value = true;
-      cacheValue.value = formatDate(nextInputValue, {
-        format: formatRef.value.format,
-      });
-
-      props.onTimeChange?.({
-        time: val,
-        date: value.value.map((v: string) => dayjs(v).toDate()),
-        partial: activeIndex.value ? 'end' : 'start',
-        trigger: 'time-hour',
-      });
-      emit('time-change', {
-        time: val,
-        date: value.value.map((v: string) => dayjs(v).toDate()),
-        partial: activeIndex.value ? 'end' : 'start',
-        trigger: 'time-hour',
-      });
-    }
-
-    // 确定
-    function onConfirmClick({ e }: { e: MouseEvent }) {
-      const nextValue = [...(cacheValue.value as string[])];
-
-      // 首次点击不关闭、确保两端都有有效值并且无时间选择器时点击后自动关闭
-      if (nextValue.length === 2 && isFirstValueSelected.value) {
-        onChange?.(
-          formatDate(nextValue, {
-            format: formatRef.value.format,
-            autoSwap: true,
-          }) as DateValue[],
-          {
-            dayjsValue: nextValue.map((v) => parseToDayjs(v, formatRef.value.format)),
-            trigger: 'confirm',
-          },
-        );
-        year.value = nextValue.map((v) => dayjs(v, formatRef.value.format).year());
-        month.value = nextValue.map((v) => dayjs(v, formatRef.value.format).month());
-        isFirstValueSelected.value = false;
-      } else {
-        isFirstValueSelected.value = true;
-      }
-
-      props.onConfirm?.({ date: value.value.map((v: string) => dayjs(v).toDate()), e });
-      emit('confirm', { date: value.value.map((v: string) => dayjs(v).toDate()), e });
-    }
-
-    // 预设
-    function onPresetClick(preset: any, context: any) {
-      let presetValue = preset;
-      if (typeof preset === 'function') {
-        presetValue = preset();
-      }
-      if (!Array.isArray(presetValue)) {
-        console.error(`preset: ${preset} 预设值必须是数组!`);
-      } else {
-        onChange?.(
-          formatDate(presetValue, {
-            format: formatRef.value.format,
-            autoSwap: true,
-          }) as DateValue[],
-          {
-            dayjsValue: presetValue.map((p) => parseToDayjs(p, formatRef.value.format)),
-            trigger: 'preset',
-          },
-        );
-        props.onPresetClick?.(context);
-        emit('preset-click', context);
-      }
-    }
-
-    function onYearChange(nextVal: number, { partial }: { partial: DateRangePickerPartial }) {
-      let partialIndex = partial === 'start' ? 0 : 1;
-      if (props.enableTimePicker) partialIndex = activeIndex.value;
-
-      let nextYear = [...year.value];
-      nextYear[partialIndex] = nextVal;
-      let nextMonth = [...month.value];
-      // 年/季度/月份场景下，头部只有年选择器
-      const onlyYearSelect = ['year', 'quarter', 'month'].includes(props.mode);
-
-      // 头部日期切换修正
-      const correctedDate = dateCorrection(partialIndex, nextYear, nextMonth, onlyYearSelect);
-      nextYear = correctedDate.nextYear;
-      nextMonth = correctedDate.nextMonth;
-
-      year.value = nextYear;
-      if (!onlyYearSelect) month.value = nextMonth;
-
-      props.onYearChange?.({
-        partial,
-        year: nextYear[partialIndex],
-        date: value.value.map((v: string) => dayjs(v).toDate()),
-        trigger: 'year-select',
-      });
-      emit('year-change', {
-        partial,
-        year: nextYear[partialIndex],
-        date: value.value.map((v: string) => dayjs(v).toDate()),
-        trigger: 'year-select',
-      });
-    }
-
-    function onMonthChange(nextVal: number, { partial }: { partial: DateRangePickerPartial }) {
-      let partialIndex = partial === 'start' ? 0 : 1;
-      if (props.enableTimePicker) partialIndex = activeIndex.value;
-
-      const nextMonth = [...month.value];
-      nextMonth[partialIndex] = nextVal;
-      // 保证左侧时间不大于右侧（仅在同一年内才需要联动月份）
-      if (year.value[0] === year.value[1]) {
-        if (partialIndex === 0) {
-          // 操作了左侧区间, 处理右侧区间小于或等于左侧区间的场景，交互上始终保持右侧比左侧大 1
-          if (nextMonth[1] <= nextMonth[0]) {
-            nextMonth[1] = nextMonth[0] + 1;
-            if (nextMonth[1] === 12) {
-              // 处理跨年的边界场景
-              nextMonth[1] = 0;
-              year.value = [year.value?.[0], year.value?.[1] + 1];
-            }
-          }
-        }
-        if (partialIndex === 1) {
-          // 操作了右侧区间, 处理右侧区间小于或等于左侧区间的场景，交互上始终保持左侧比右侧小 1
-          nextMonth[0] = Math.min(nextMonth[0], nextMonth[1]);
-          if (nextMonth[0] >= nextMonth[1]) {
-            nextMonth[0] -= 1;
-            if (nextMonth[0] === -1) {
-              // 处理跨年的边界场景
-              nextMonth[0] = 11;
-              year.value = [year.value?.[0] - 1, year.value?.[1]];
-            }
-          }
-        }
-      }
-
-      month.value = nextMonth;
-
-      props.onMonthChange?.({
-        partial,
-        month: nextMonth[partialIndex],
-        date: value.value.map((v: string) => dayjs(v).toDate()),
-        trigger: 'month-select',
-      });
-      emit('month-change', {
-        partial,
-        month: nextMonth[partialIndex],
-        date: value.value.map((v: string) => dayjs(v).toDate()),
-        trigger: 'month-select',
-      });
-    }
-
-    function onPanelClick(context: { e: MouseEvent }) {
-      props.onPanelClick?.(context);
-      emit('panel-click', context);
-    }
-
-    const panelProps = computed(() => ({
-      hoverValue: (isHoverCell.value ? hoverValue.value : []) as string[],
-      value: (isSelected.value
-        ? formatDate(cacheValue.value, { format: formatRef.value.format })
-        : value.value) as string[],
-      activeIndex: activeIndex.value,
-      year: year.value,
-      month: month.value,
-      mode: props.mode,
-      format: formatRef.value.format,
-      presets: props.presets,
-      time: time.value,
-      disableDate: props.disableDate,
-      disableTime: props.disableTime,
-      firstDayOfWeek: props.firstDayOfWeek,
-      timePickerProps: props.timePickerProps,
-      enableTimePicker: props.enableTimePicker,
-      presetsPlacement: props.presetsPlacement,
-      panelPreselection: props.panelPreselection,
-      // 该属性本身主要是联动父组件使用, 单独使用没有特别意义, 不应该暴露为props
-      popupVisible: (attrs?.popupVisible as Boolean) ?? true,
-      onPanelClick,
-      onCellClick,
-      onCellMouseEnter,
-      onCellMouseLeave,
-      onJumperClick,
-      onConfirmClick,
-      onPresetClick,
-      onYearChange,
-      onMonthChange,
-      onTimePickerChange,
-    }));
-
-    return { panelProps };
-  },
-  render() {
-    const { panelProps } = this;
-    return <TRangePanel {...{ props: panelProps }} />;
+    return {
+      panelProps,
+    };
   },
 });
