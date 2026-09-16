@@ -55,17 +55,32 @@ export default defineComponent({
     const hoverValue = ref([]);
     const activeIndex = computed(() => (isFirstValueSelected.value ? 1 : 0));
 
+    // 记录上一次 value 用于比较，避免 value 未实际变化时覆盖用户手动导航
+    const prevValue = ref<string[]>([]);
+
     watch(
       () => value.value,
-      (value) => {
+      (newVal) => {
         // 确保右侧面板月份比左侧大 避免两侧面板月份一致
-        if (value.length === 2 && !props.enableTimePicker) {
-          const nextMonth = value.map((v: string) => parseToDayjs(v || new Date(), formatRef.value.format).month());
-          if (year.value[0] === year.value[1] && nextMonth[0] === nextMonth[1]) {
-            nextMonth[0] === 11 ? (nextMonth[0] -= 1) : (nextMonth[1] += 1);
-          }
-          month.value = nextMonth;
+        if (!Array.isArray(newVal) || newVal.length !== 2 || props.enableTimePicker) return;
+
+        // 如果 value 没有实际变化（相同日期），不覆盖用户手动导航的 year/month
+        if (
+          prevValue.value.length === 2
+          && prevValue.value[0] === newVal[0]
+          && prevValue.value[1] === newVal[1]
+        ) {
+          return;
         }
+        prevValue.value = [...newVal];
+
+        const nextYear = newVal.map((v: string) => parseToDayjs(v || new Date(), formatRef.value.format).year());
+        const nextMonth = newVal.map((v: string) => parseToDayjs(v || new Date(), formatRef.value.format).month());
+        if (nextYear[0] === nextYear[1] && nextMonth[0] === nextMonth[1]) {
+          nextMonth[0] === 11 ? (nextMonth[0] -= 1) : (nextMonth[1] += 1);
+        }
+        year.value = nextYear;
+        month.value = nextMonth;
       },
       { immediate: true },
     );
