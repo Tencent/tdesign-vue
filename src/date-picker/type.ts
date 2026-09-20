@@ -209,7 +209,7 @@ export interface TdDateRangePickerProps {
   /**
    * 是否只读
    */
-  readonly?: Boolean;
+  readonly?: boolean;
   /**
    * 是否显示时间选择
    * @default false

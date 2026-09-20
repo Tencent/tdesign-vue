@@ -5,7 +5,7 @@
  * */
 
 import { Instance } from '@popperjs/core';
-import { TNode, ClassName, Styles, AttachNode } from '../common';
+import type { TNode, ClassName, Styles, AttachNode } from '../common';
 
 export interface TdPopupProps {
   /**
@@ -156,5 +156,6 @@ export type PopupTriggerSource =
   | 'trigger-element-blur'
   | 'trigger-element-focus'
   | 'trigger-element-mousedown'
+  | 'trigger-element-close'
   | 'context-menu'
   | 'keydown-esc';

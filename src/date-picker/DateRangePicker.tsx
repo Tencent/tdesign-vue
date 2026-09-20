@@ -46,6 +46,7 @@ export default defineComponent({
       isHoverCell,
       isFirstValueSelected,
       onChange,
+      closePopup,
     } = useRange(props, { emit });
 
     const formatRef = computed(() => getDefaultFormat({
@@ -189,7 +190,7 @@ export default defineComponent({
         activeIndex.value = nextIndex;
         isFirstValueSelected.value = true;
       } else {
-        popupVisible.value = false;
+        closePopup({ e });
       }
     }
 
@@ -307,7 +308,7 @@ export default defineComponent({
         activeIndex.value = nextIndex;
         isFirstValueSelected.value = true;
       } else if (nextValue.length === 2) {
-        popupVisible.value = false;
+        closePopup({ e });
       }
     }
 
@@ -331,7 +332,7 @@ export default defineComponent({
             trigger: 'preset',
           },
         );
-        popupVisible.value = false;
+        closePopup({ e: context?.e });
         props.onPresetClick?.(context);
         emit('preset-click', context);
       }
