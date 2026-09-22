@@ -24,6 +24,7 @@ import { getCellKey, SkipSpansValue } from './hooks/useRowspanAndColspan';
 import useLazyLoad from '../hooks/useLazyLoad';
 import { PaginationProps } from '../pagination';
 import { VirtualScrollConfig } from '../hooks/useVirtualScrollNew';
+import { VirtualColumnConfig } from '../hooks/useVirtualColumn';
 import {
   BaseTableCellParams, TableRowData, RowspanColspan, TdPrimaryTableProps, TdBaseTableProps,
 } from './type';
@@ -84,6 +85,7 @@ export interface TrProps extends TrCommonProps {
   tableContentElm?: HTMLDivElement;
   cellEmptyContent?: TdBaseTableProps['cellEmptyContent'];
   virtualConfig: VirtualScrollConfig;
+  virtualColumnConfig?: VirtualColumnConfig;
   attach?: AttachNode;
   active?: boolean;
   isHover?: boolean;
@@ -156,6 +158,7 @@ export default defineComponent({
     // 合并单元格，是否跳过渲染
     skipSpansMap: Map as PropType<TrProps['skipSpansMap']>,
     virtualConfig: Object as PropType<TrProps['virtualConfig']>,
+    virtualColumnConfig: Object as PropType<TrProps['virtualColumnConfig']>,
     active: Boolean,
     isHover: Boolean,
     ...pick(baseTableProps, TABLE_PROPS),
@@ -332,6 +335,11 @@ export default defineComponent({
     const {
       row, rowIndex, dataLength, rowAndColFixedPosition,
     } = this;
+    const virtualColumnConfig = this.virtualColumnConfig;
+    // 存在行列合并配置时，列虚拟化裁剪与 skipSpansMap 的位置计算耦合复杂，为保证合并单元格正确性，此时不裁剪列
+    const canVirtualizeColumn = Boolean(virtualColumnConfig?.isVirtualColumn.value) && !this.skipSpansMap.size;
+    const visibleRange = canVirtualizeColumn ? virtualColumnConfig.visibleColumnRange.value : null;
+
     const columnVNodeList = this.columns?.map((col, colIndex) => {
       const cellSpans: RowspanColspan = {};
       const params = {
@@ -348,6 +356,10 @@ export default defineComponent({
         spanState?.colspan > 1 && (cellSpans.colspan = spanState.colspan);
         if (spanState.skipped) return null;
       }
+      // 横向虚拟滚动：固定列始终渲染；非固定列仅渲染可视区间（含 buffer）内的部分
+      if (visibleRange && !col.fixed && (colIndex < visibleRange.startIndex || colIndex >= visibleRange.endIndex)) {
+        return null;
+      }
       return this.renderTd(h, params, {
         dataLength,
         rowAndColFixedPosition,
@@ -356,6 +368,32 @@ export default defineComponent({
         cellEmptyContent: this.cellEmptyContent,
       });
     });
+
+    if (visibleRange) {
+      if (visibleRange.leftPlaceholderWidth > 0) {
+        const leftPlaceholderIndex = columnVNodeList.findIndex((node) => node !== null);
+        const insertAt = leftPlaceholderIndex >= 0 ? leftPlaceholderIndex : columnVNodeList.length;
+        columnVNodeList.splice(
+          insertAt,
+          0,
+          <td
+            key="virtual-col-placeholder-left"
+            class="t-table__virtual-column-placeholder"
+            style={{ width: `${visibleRange.leftPlaceholderWidth}px`, padding: 0, border: 'none' }}
+          />,
+        );
+      }
+      if (visibleRange.rightPlaceholderWidth > 0) {
+        columnVNodeList.push(
+          <td
+            key="virtual-col-placeholder-right"
+            class="t-table__virtual-column-placeholder"
+            style={{ width: `${visibleRange.rightPlaceholderWidth}px`, padding: 0, border: 'none' }}
+          />,
+        );
+      }
+    }
+
     const attrs = this.trAttributes || {};
     return (
       <tr
