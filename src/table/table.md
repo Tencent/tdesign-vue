@@ -1,3 +1,7 @@
+## 横向（列）虚拟滚动
+
+{{ virtual-scroll-column }}
+
 :: BASE_DOC ::
 
 ## API
