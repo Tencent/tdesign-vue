@@ -16,6 +16,7 @@ import useColumnResize from './hooks/useColumnResize';
 import useFixed from './hooks/useFixed';
 import usePagination from './hooks/usePagination';
 import useVirtualScroll from '../hooks/useVirtualScrollNew';
+import useVirtualColumn from '../hooks/useVirtualColumn';
 import useAffix from './hooks/useAffix';
 import Loading from '../loading';
 import TBody, { extendTableProps } from './tbody';
@@ -251,6 +252,16 @@ export default defineComponent({
     }));
     const virtualConfig = useVirtualScroll(tableContentRef, virtualScrollParams);
 
+    // 横向（列）虚拟滚动相关数据，与纵向虚拟滚动相互独立
+    const virtualColumnParams = computed(() => ({
+      columns: finalColumns.value,
+      scroll: props.scroll,
+      tableLayout: props.tableLayout,
+      isMultipleHeader: isMultipleHeader.value,
+      thWidthList: thWidthList.value,
+    }));
+    const virtualColumnConfig = useVirtualColumn(tableContentRef, virtualColumnParams);
+
     let lastScrollY = 0;
     const onInnerVirtualScroll = (e: WheelEvent) => {
       const target = (e.target || e.srcElement) as HTMLElement;
@@ -263,8 +274,17 @@ export default defineComponent({
         updateColumnFixedShadow(target);
       }
       lastScrollY = top;
+      virtualColumnConfig.isVirtualColumn.value && virtualColumnConfig.handleScroll();
       emitScrollEvent(e);
     };
+
+    watch(thWidthList, () => {
+      virtualColumnConfig.isVirtualColumn.value && virtualColumnConfig.refreshContainer();
+    });
+
+    watch(tableContentRef, () => {
+      virtualColumnConfig.isVirtualColumn.value && virtualColumnConfig.refreshContainer();
+    });
 
     // used for top margin
     const getTFootHeight = () => {
@@ -346,6 +366,7 @@ export default defineComponent({
 
     return {
       virtualConfig,
+      virtualColumnConfig,
       scrollToElement,
       columnResizable,
       thList,
@@ -611,6 +632,7 @@ export default defineComponent({
       thDraggable: this.thDraggable,
       data: this.virtualConfig.isVirtualScroll.value ? this.virtualConfig.visibleData.value : data,
       virtualConfig: this.virtualConfig,
+      virtualColumnConfig: this.virtualColumnConfig,
       columns,
       tableElm: this.tableRef,
       tableContentElm: this.tableContentRef,
