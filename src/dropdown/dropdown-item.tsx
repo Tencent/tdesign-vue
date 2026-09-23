@@ -41,10 +41,20 @@ export default defineComponent({
       });
     };
 
+    const handleItemHover = (e: MouseEvent) => {
+      props.onHover?.(props.value, {
+        e,
+      });
+      emit('hover', props.value, {
+        e,
+      });
+    };
+
     return {
       itemRef,
       dropdownItemClass,
       handleItemClick,
+      handleItemHover,
     };
   },
   render() {
@@ -63,6 +73,7 @@ export default defineComponent({
       <li
         class={classes}
         onClick={this.handleItemClick}
+        onMouseenter={this.handleItemHover}
         style={{
           maxWidth: pxCompat(this.maxColumnWidth),
           minWidth: pxCompat(this.minColumnWidth),
