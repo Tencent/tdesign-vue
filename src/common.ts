@@ -108,6 +108,16 @@ export interface TScroll {
    * 滚动加载类型，有两种：懒加载和虚拟滚动。<br />值为 `lazy` ，表示滚动时会进行懒加载，非可视区域内的内容将不会默认渲染，直到该内容可见时，才会进行渲染，并且已渲染的内容滚动到不可见时，不会被销毁；<br />值为`virtual`时，表示会进行虚拟滚动，无论滚动条滚动到哪个位置，同一时刻，仅渲染该可视区域内的内容，当需要展示的数据量较大时，建议开启该特性
    */
   type: 'lazy' | 'virtual';
+  /**
+   * 表示除可视区域外，额外渲染的列数，避免快速横向滚动过程中，新出现的列来不及渲染从而出现空白。仅在 `scroll.type` 为 `virtual`、`tableLayout` 为 `fixed` 且列数超过 `scroll.colThreshold` 时生效
+   * @default 5
+   */
+  colBufferSize?: number;
+  /**
+   * 启用横向（列）虚拟滚动的列数阈值。仅在 `scroll.type` 为 `virtual` 且 `tableLayout` 为 `fixed`、不存在多级表头时生效；列数超过该阈值才会裁剪非可视区域内的列
+   * @default 30
+   */
+  colThreshold?: number;
 }
 
 /**
