@@ -38,4 +38,6 @@ export default {
   },
   /** 点击时触发 */
   onClick: Function as PropType<TdDropdownItemProps['onClick']>,
+  /** 鼠标悬浮时触发 */
+  onHover: Function as PropType<TdDropdownItemProps['onHover']>,
 };
