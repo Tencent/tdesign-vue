@@ -40,6 +40,18 @@ export default defineComponent({
       emit('click', data, context);
     };
 
+    const handleItemHover = (
+      optionItem: { disabled: boolean; children: unknown },
+      options: { data: DropdownOption; context: { e: MouseEvent } },
+    ) => {
+      if (optionItem.disabled || optionItem.children) return;
+      const { data, context } = options;
+      data?.onHover?.(data, context);
+
+      props.onHover?.(data, context);
+      emit('hover', data, context);
+    };
+
     const handleScroll = (e: MouseEvent, deep: number) => {
       const { scrollTop } = e.target as HTMLElement;
       set(scrollTopMap, deep, scrollTop);
@@ -64,6 +76,7 @@ export default defineComponent({
       dropdownClass,
       dropdownMenuClass,
       handleItemClick,
+      handleItemHover,
       menuRef,
       isOverMaxHeight,
       handleScroll,
@@ -166,6 +179,10 @@ export default defineComponent({
                     minColumnWidth: this.minColumnWidth,
                     maxColumnWidth: this.maxColumnWidth,
                     onClick: (value: string | number | { [key: string]: any }, context: { e: MouseEvent }) => this.handleItemClick(
+                      { disabled: optionItem.disabled, children: optionItem.children },
+                      { data: optionItem, context },
+                    ),
+                    onHover: (value: string | number | { [key: string]: any }, context: { e: MouseEvent }) => this.handleItemHover(
                       { disabled: optionItem.disabled, children: optionItem.children },
                       { data: optionItem, context },
                     ),
