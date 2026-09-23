@@ -1,76 +1,55 @@
-import { VNode } from 'vue';
-import { get } from 'lodash-es';
-import { computed, ComputedRef } from '@vue/composition-api';
+import { Slots, SetupContext } from 'vue';
+import { computed } from '@vue/composition-api';
+
 import { DropdownOption, TdDropdownProps } from '../type';
 
-const DropdownMenuName = 'TDropdownMenu';
-const DropdownItemName = 'TDropdownItem';
+export default function useDropdownOptions(props: TdDropdownProps, slots: Slots) {
+  const getChildComponentSlots = (item: any) => {
+    const children = item?.componentOptions?.children || item?.children;
+    return children ? (Array.isArray(children) ? children : [children]) : [];
+  };
 
-export const getOptionsFromChildren = (menuGroup: any): DropdownOption[] => {
-  if (!menuGroup || menuGroup?.length === 0) return [];
+  const getOptionItem = (item: any) => {
+    const { value, content, children, divider, disabled, ...otherProps } = item?.componentOptions?.propsData || {};
+    const onClick = item?.componentOptions?.listeners?.click;
+    return {
+      value,
+      content,
+      ...otherProps,
+      disabled,
+      divider,
+      onClick,
+    };
+  };
 
-  // 处理内部嵌套场景
-  if (get(menuGroup, 'Ctor.extendOptions.name') === DropdownMenuName) {
-    const groupChildren = menuGroup.children;
-    if (Array.isArray(groupChildren)) {
-      return getOptionsFromChildren(groupChildren);
-    }
-    return [];
-  }
+  const getOptionsFromSlots = (slots: Slots) => {
+    const dropdownItems = slots?.default ? (Array.isArray(slots.default) ? slots.default : [slots.default]) : [];
+    const options: Array<DropdownOption> = [];
 
-  if (Array.isArray(menuGroup)) {
-    return menuGroup
-      .map((item) => {
-        const groupChildren = item?.componentOptions?.children;
-        if (!groupChildren) return {};
-
-        // 当前节点的渲染内容
-        const contentCtx = groupChildren?.filter?.(
-          (v: VNode) => ![DropdownMenuName, DropdownItemName].includes(get(v, 'componentOptions.Ctor.extendOptions.name')),
-        );
-        // 嵌套菜单的节点
-        const childrenCtx = groupChildren?.filter?.(
-          (v: VNode) => typeof v.text !== 'string'
-            && [DropdownMenuName, DropdownItemName].includes(get(v, 'componentOptions.Ctor.extendOptions.name')),
-        );
-
-        const commonProps = {
-          ...item.componentOptions?.propsData,
-          style: item?.data?.style,
-          class: item?.data?.staticClass,
-          onClick: item.componentOptions?.listeners?.click,
-          content: contentCtx || groupChildren,
-        };
-
-        if (childrenCtx.length === 1) {
-          return {
-            ...commonProps,
-            children: childrenCtx.length > 0 ? getOptionsFromChildren(childrenCtx[0].componentOptions) : null,
-          };
+    dropdownItems?.forEach((item) => {
+      if (item?.componentOptions?.tag === 'TDropdownItem' || item?.componentOptions?.tag === 't-dropdown-item') {
+        const option = getOptionItem(item);
+        const childOptions = getOptionsFromSlots({ default: getChildComponentSlots(item) });
+        if (childOptions.length > 0) {
+          option.children = childOptions;
         }
+        options.push(option);
+      } else if (
+        item?.componentOptions?.tag === 'TDropdownMenu'
+        || item?.componentOptions?.tag === 't-dropdown-menu'
+      ) {
+        options.push(...getOptionsFromSlots({ default: getChildComponentSlots(item) }));
+      }
+    });
 
-        return {
-          ...commonProps,
-          children: childrenCtx.length > 0 ? getOptionsFromChildren(childrenCtx) : null,
-        };
-      })
-      .filter((v) => !!v.content);
-  }
+    return options;
+  };
 
-  return [];
-};
-
-export default function useDropdownOptions(
-  props: TdDropdownProps,
-  slots: {
-    [key: string]: VNode[];
-  },
-): ComputedRef<DropdownOption[]> {
-  const menuSlot = slots?.default?.filter((v: VNode) => get(v, 'componentOptions.Ctor.extendOptions.name') === DropdownMenuName)?.[0]
-    ?.componentOptions || slots?.dropdown?.[0]?.componentOptions;
-  return computed(() => {
+  const options = computed(() => {
     if (props.options && props.options.length > 0) return props.options;
 
-    return getOptionsFromChildren(menuSlot);
+    return getOptionsFromSlots(slots);
   });
+
+  return options;
 }
