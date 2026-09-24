@@ -1,8 +1,14 @@
+import Vue from 'vue';
 import { mount } from '@vue/test-utils';
-import Loading from '@/src/loading/index.ts';
+import Loading, { LoadingPlugin } from '@/src/loading/index.ts';
 
 // every component needs four parts: props/events/slots/functions.
 describe('Loading', () => {
+  afterEach(() => {
+    LoadingPlugin(false);
+    vi.useRealTimers();
+  });
+
   // test props api
   describe(':props', () => {
     it(':default', () => {
@@ -90,5 +96,22 @@ describe('Loading', () => {
       });
       expect(wrapper.element).toMatchSnapshot();
     });
+  });
+
+  it('applies delay when LoadingPlugin creates a standalone loading', async () => {
+    vi.useFakeTimers();
+    const instance = LoadingPlugin({ delay: 500 });
+    await Vue.nextTick();
+    expect(document.body.querySelector('.t-loading')).toBeNull();
+
+    vi.advanceTimersByTime(499);
+    await Vue.nextTick();
+    expect(document.body.querySelector('.t-loading')).toBeNull();
+
+    vi.advanceTimersByTime(1);
+    await Vue.nextTick();
+    expect(document.body.querySelector('.t-loading')).not.toBeNull();
+
+    instance.hide();
   });
 });
