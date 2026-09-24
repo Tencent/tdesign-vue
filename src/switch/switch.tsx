@@ -29,6 +29,7 @@ export default mixins(classPrefixMixins).extend({
     classes(): ClassName {
       return [
         `${this.componentName}`,
+        `${this.componentName}--shape-${this.shape}`,
         this.commonSizeClassName[this.size],
         {
           [this.commonStatusClassName.disabled]: this.tDisabled,
@@ -129,23 +130,21 @@ export default mixins(classPrefixMixins).extend({
     },
   },
   render(): VNode {
-    const {
-      loading, content, nodeClasses, classes, toggle, contentClasses,
-    } = this;
+    const { loading, nodeClasses, classes, toggle, contentClasses } = this;
 
     let switchContent: TNodeReturnValue;
     let loadingContent: TNodeReturnValue;
 
     if (loading) {
       loadingContent = <Loading size="small" />;
-    } else if (content) {
-      switchContent = content;
+    } else if (this.shape !== 'line' && this.content) {
+      switchContent = this.content;
     }
 
     return (
       <div class={classes} onClick={toggle}>
         <span class={nodeClasses}>{loadingContent}</span>
-        <div class={contentClasses}>{switchContent}</div>
+        {this.shape !== 'line' && <div class={contentClasses}>{switchContent}</div>}
       </div>
     );
   },
