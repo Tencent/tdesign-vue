@@ -167,19 +167,7 @@ exports[`Message > :props > :icon is a function, () => MoreIcon 1`] = `
         id="stroke1"
       >
         <path
-          d="M11.5 4H12.5V5H11.5V4Z"
-          stroke="currentColor"
-          stroke-linecap="square"
-          stroke-width="2"
-        />
-        <path
-          d="M11.5 11.5H12.5V12.5H11.5V11.5Z"
-          stroke="currentColor"
-          stroke-linecap="square"
-          stroke-width="2"
-        />
-        <path
-          d="M11.5 19H12.5V20H11.5V19Z"
+          d="M11.5 4H12.5V5H11.5V4Z M11.5 11.5H12.5V12.5H11.5V11.5Z M11.5 19H12.5V20H11.5V19Z"
           stroke="currentColor"
           stroke-linecap="square"
           stroke-width="2"
@@ -394,19 +382,7 @@ exports[`Message > <slot> > <icon> 1`] = `
         id="stroke1"
       >
         <path
-          d="M11.5 4H12.5V5H11.5V4Z"
-          stroke="currentColor"
-          stroke-linecap="square"
-          stroke-width="2"
-        />
-        <path
-          d="M11.5 11.5H12.5V12.5H11.5V11.5Z"
-          stroke="currentColor"
-          stroke-linecap="square"
-          stroke-width="2"
-        />
-        <path
-          d="M11.5 19H12.5V20H11.5V19Z"
+          d="M11.5 4H12.5V5H11.5V4Z M11.5 11.5H12.5V12.5H11.5V11.5Z M11.5 19H12.5V20H11.5V19Z"
           stroke="currentColor"
           stroke-linecap="square"
           stroke-width="2"

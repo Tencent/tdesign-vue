@@ -4,6 +4,7 @@ import { createVuePlugin } from 'vite-plugin-vue2';
 import ScriptSetup from 'unplugin-vue2-script-setup/vite';
 import changelog2Json from './plugins/changelog-to-json';
 import tdocPlugin from './plugins/plugin-tdoc';
+import generateLlms from './plugins/generate-llms';
 
 const publicPathMap = {
   preview: '/',
@@ -57,6 +58,7 @@ export default ({ mode }) =>
       }),
       tdocPlugin(),
       changelog2Json(),
+      generateLlms(),
       ScriptSetup({}),
       disableTreeShakingPlugin(['style/']),
     ],

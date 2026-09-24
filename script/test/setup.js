@@ -17,3 +17,10 @@ vi.mock('vue', async () => {
   vue.default.config.devtools = false;
   return vue;
 });
+
+const iconMaskInstancePattern = /(t-icon-[\w-]+-instance-)\d+(?=-overlap-)/g;
+
+expect.addSnapshotSerializer({
+  test: (value) => typeof value === 'string' && /t-icon-[\w-]+-instance-\d+-overlap-/.test(value),
+  serialize: (value, config, indentation, depth, refs, printer) => printer(value.replace(iconMaskInstancePattern, '$1snapshot'), config, indentation, depth, refs),
+});
