@@ -270,6 +270,12 @@ export default defineComponent({
 
       const notValidIndex = nextValue.findIndex((v) => !v || !isValidDate(v, formatRef.value.format));
 
+      const confirmValue = {
+        date: nextValue.map((v) => dayjs(v).toDate()),
+        e,
+        partial: (activeIndex.value ? 'end' : 'start') as DateRangePickerPartial,
+      };
+
       // 当两端都有有效值时更改 value
       if (notValidIndex === -1 && nextValue.length === 2) {
         // 二次修改时当其中一侧不符合上次区间规范时，清空另一侧数据
@@ -281,11 +287,9 @@ export default defineComponent({
           cacheValue.value = nextValue;
           inputValue.value = nextValue;
         } else {
-          props?.onConfirm?.({
-            date: nextValue.map((v) => dayjs(v).toDate()),
-            e,
-            partial: activeIndex.value ? 'end' : 'start',
-          });
+          props?.onConfirm?.(confirmValue);
+          emit('confirm', confirmValue);
+
           onChange?.(
             formatDate(nextValue, {
               format: formatRef.value.format,
@@ -306,6 +310,9 @@ export default defineComponent({
         if (nextIndex === -1) nextIndex = activeIndex.value ? 0 : 1;
         activeIndex.value = nextIndex;
         isFirstValueSelected.value = true;
+
+        props?.onConfirm?.(confirmValue);
+        emit('confirm', confirmValue);
       } else if (nextValue.length === 2) {
         popupVisible.value = false;
       }
