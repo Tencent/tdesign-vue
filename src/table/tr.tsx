@@ -24,6 +24,7 @@ import { getCellKey, SkipSpansValue } from './hooks/useRowspanAndColspan';
 import useLazyLoad from '../hooks/useLazyLoad';
 import { PaginationProps } from '../pagination';
 import { VirtualScrollConfig } from '../hooks/useVirtualScrollNew';
+import { VirtualColumnConfig } from '../hooks/useVirtualColumn';
 import {
   BaseTableCellParams, TableRowData, RowspanColspan, TdPrimaryTableProps, TdBaseTableProps,
 } from './type';
@@ -84,6 +85,7 @@ export interface TrProps extends TrCommonProps {
   tableContentElm?: HTMLDivElement;
   cellEmptyContent?: TdBaseTableProps['cellEmptyContent'];
   virtualConfig: VirtualScrollConfig;
+  virtualColumnConfig?: VirtualColumnConfig;
   attach?: AttachNode;
   active?: boolean;
   isHover?: boolean;
@@ -156,6 +158,7 @@ export default defineComponent({
     // 合并单元格，是否跳过渲染
     skipSpansMap: Map as PropType<TrProps['skipSpansMap']>,
     virtualConfig: Object as PropType<TrProps['virtualConfig']>,
+    virtualColumnConfig: Object as PropType<TrProps['virtualColumnConfig']>,
     active: Boolean,
     isHover: Boolean,
     ...pick(baseTableProps, TABLE_PROPS),
@@ -332,7 +335,13 @@ export default defineComponent({
     const {
       row, rowIndex, dataLength, rowAndColFixedPosition,
     } = this;
+    // 存在合并单元格时不裁剪列，避免与 colspan/rowspan 计算冲突
+    const canVirtualizeColumn = !this.skipSpansMap.size && this.virtualColumnConfig?.isVirtualColumn.value;
+    const spacerInfo = canVirtualizeColumn
+      ? this.virtualColumnConfig.spacerInfo.value
+      : { left: { width: 0, colSpan: 0 }, right: { width: 0, colSpan: 0 } };
     const columnVNodeList = this.columns?.map((col, colIndex) => {
+      if (canVirtualizeColumn && !this.virtualColumnConfig.isColumnVisible(colIndex, col)) return null;
       const cellSpans: RowspanColspan = {};
       const params = {
         row,
@@ -356,6 +365,12 @@ export default defineComponent({
         cellEmptyContent: this.cellEmptyContent,
       });
     });
+    const leftSpacer = spacerInfo.left.colSpan > 0
+      ? [<td key="virtual-col-spacer-left" attrs={{ colspan: spacerInfo.left.colSpan }} style={{ width: `${spacerInfo.left.width}px`, padding: 0, border: 'none' }} />]
+      : [];
+    const rightSpacer = spacerInfo.right.colSpan > 0
+      ? [<td key="virtual-col-spacer-right" attrs={{ colspan: spacerInfo.right.colSpan }} style={{ width: `${spacerInfo.right.width}px`, padding: 0, border: 'none' }} />]
+      : [];
     const attrs = this.trAttributes || {};
     return (
       <tr
@@ -365,7 +380,9 @@ export default defineComponent({
         class={this.classes}
         on={this.getTrListeners(row, rowIndex)}
       >
-        {this.hasLazyLoadHolder ? [<td style={{ height: `${this.tRowHeight}px`, border: 'none' }} />] : columnVNodeList}
+        {this.hasLazyLoadHolder
+          ? [<td style={{ height: `${this.tRowHeight}px`, border: 'none' }} />]
+          : [...leftSpacer, ...columnVNodeList, ...rightSpacer]}
       </tr>
     );
   },

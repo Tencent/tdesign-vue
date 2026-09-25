@@ -12,6 +12,7 @@ import useRowspanAndColspan from './hooks/useRowspanAndColspan';
 import { BaseTableProps, RowAndColFixedPosition } from './interface';
 import { TdBaseTableProps } from './type';
 import { VirtualScrollConfig } from '../hooks/useVirtualScrollNew';
+import { VirtualColumnConfig } from '../hooks/useVirtualColumn';
 
 export const ROW_AND_TD_LISTENERS = ROW_LISTENERS.concat('cell-click');
 export interface TableBodyProps extends BaseTableProps {
@@ -24,6 +25,7 @@ export interface TableBodyProps extends BaseTableProps {
   tableWidth: number;
   isWidthOverflow: boolean;
   virtualConfig: VirtualScrollConfig;
+  virtualColumnConfig?: VirtualColumnConfig;
   tableContentElm: HTMLDivElement;
   cellEmptyContent: TdBaseTableProps['cellEmptyContent'];
   handleRowMounted: (rowData: any) => void;
@@ -73,6 +75,7 @@ export default defineComponent({
     tableWidth: Number,
     isWidthOverflow: Boolean,
     virtualConfig: Object as PropType<VirtualScrollConfig>,
+    virtualColumnConfig: Object as PropType<VirtualColumnConfig>,
     // eslint-disable-next-line
     tableContentElm: {},
     handleRowMounted: Function as PropType<TableBodyProps['handleRowMounted']>,
@@ -201,6 +204,7 @@ export default defineComponent({
         dataLength,
         skipSpansMap: this.skipSpansMap,
         virtualConfig: this.virtualConfig,
+        virtualColumnConfig: this.virtualColumnConfig,
         active: (this.activeRow as Array<string | number>)?.includes(rowValue),
         isHover: this.hoverRow === rowValue,
         ...pick(this.$props, properties),
