@@ -244,10 +244,21 @@ export default defineComponent({
       return listener;
     };
 
+    // 横向虚拟滚动所需的列宽信息：优先使用拖拽后的实际宽度 thWidthList，其次使用用户设置的 col.width，
+    // 都没有时使用默认宽度兜底（在 hook 内部处理），保证首屏即可计算出确定的裁剪区间。
+    const columnWidthsForVirtualX = computed(() => finalColumns.value.map((col) => ({
+      colKey: col.colKey,
+      width: Number(thWidthList.value?.[col.colKey]) || Number(col.width) || undefined,
+    })));
+    const hasFixedColumnsForVirtualX = computed(() => finalColumns.value.some((col) => !!col.fixed));
+
     // 虚拟滚动相关数据
     const virtualScrollParams = computed(() => ({
       data: props.data,
       scroll: props.scroll,
+      hasFixedColumns: hasFixedColumnsForVirtualX.value,
+      hasRowspanAndColspan: !!props.rowspanAndColspan,
+      columnWidths: columnWidthsForVirtualX.value,
     }));
     const virtualConfig = useVirtualScroll(tableContentRef, virtualScrollParams);
 
@@ -261,6 +272,7 @@ export default defineComponent({
       } else {
         lastScrollY = 0;
         updateColumnFixedShadow(target);
+        virtualConfig.isVirtualScrollX.value && virtualConfig.handleScrollX();
       }
       lastScrollY = top;
       emitScrollEvent(e);
@@ -587,6 +599,13 @@ export default defineComponent({
     const { rowAndColFixedPosition } = this;
     const data = this.isPaginateData ? this.dataSource : this.data;
     const columns = this.spansAndLeafNodes?.leafColumns || this.columns;
+
+    // 横向虚拟滚动：不裁剪列数量（保持 colgroup / thead / tbody 的 <col>/<td> 数量严格一致，
+    // 避免破坏表头对齐、fixed 列定位等既有能力），而是把“可见列区间”下发给 TBody -> TR，
+    // 区间外的列在 tr.tsx 中改为渲染极简占位单元格（跳过用户自定义 cell/render、ellipsis、
+    // fixed 样式等开销），从而降低横向列过多场景下的整体渲染成本。
+    const isVirtualX = this.virtualConfig.isVirtualScrollX.value;
+    const visibleColRange = this.virtualConfig.startAndEndColIndex.value;
     if (this.allowResizeColumnWidth) {
       log.warn('Table', 'allowResizeColumnWidth is going to be deprecated, please use resizable instead.');
     }
@@ -612,6 +631,8 @@ export default defineComponent({
       data: this.virtualConfig.isVirtualScroll.value ? this.virtualConfig.visibleData.value : data,
       virtualConfig: this.virtualConfig,
       columns,
+      isVirtualScrollX: isVirtualX,
+      visibleColRange,
       tableElm: this.tableRef,
       tableContentElm: this.tableContentRef,
       tableWidth: this.tableWidth,

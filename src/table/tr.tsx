@@ -87,6 +87,9 @@ export interface TrProps extends TrCommonProps {
   attach?: AttachNode;
   active?: boolean;
   isHover?: boolean;
+  // 横向虚拟滚动：是否启用 + 当前可见列区间 [start, end)
+  isVirtualScrollX?: boolean;
+  visibleColRange?: [number, number];
 }
 
 export const ROW_LISTENERS = ['click', 'dblclick', 'mouseover', 'mousedown', 'mouseenter', 'mouseleave', 'mouseup'];
@@ -158,6 +161,8 @@ export default defineComponent({
     virtualConfig: Object as PropType<TrProps['virtualConfig']>,
     active: Boolean,
     isHover: Boolean,
+    isVirtualScrollX: Boolean,
+    visibleColRange: Array as unknown as PropType<TrProps['visibleColRange']>,
     ...pick(baseTableProps, TABLE_PROPS),
     // eslint-disabled-next-line
     tableElm: {},
@@ -326,13 +331,28 @@ export default defineComponent({
         </td>
       );
     },
+
+    /**
+     * 横向虚拟滚动专用：可见列区间外的占位单元格。
+     * 有意跳过用户自定义 cell/render/slot、ellipsis 组件、fixed 定位样式等计算，
+     * 只保留一个空 <td>，用于维持 <colgroup>/<thead> 与 <tbody> 的列数一致（避免表格错位），
+     * 同时把该列渲染成本降到最低，从而缓解“列数过多导致页面卡死”的问题。
+     */
+    renderPlaceholderTd(h: CreateElement, col: BaseTableCellParams<TableRowData>['col']) {
+      return <td key={col.colKey} attrs={{ 'data-virtual-x-placeholder': true }} />;
+    },
   },
 
   render(h) {
     const {
       row, rowIndex, dataLength, rowAndColFixedPosition,
     } = this;
+    const [colStart, colEnd] = this.isVirtualScrollX ? this.visibleColRange || [0, this.columns.length] : [0, this.columns.length];
     const columnVNodeList = this.columns?.map((col, colIndex) => {
+      // 横向虚拟滚动：区间外的列使用极简占位单元格，跳过合并单元格计算与自定义渲染
+      if (this.isVirtualScrollX && (colIndex < colStart || colIndex >= colEnd)) {
+        return this.renderPlaceholderTd(h, col);
+      }
       const cellSpans: RowspanColspan = {};
       const params = {
         row,

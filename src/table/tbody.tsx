@@ -27,6 +27,9 @@ export interface TableBodyProps extends BaseTableProps {
   tableContentElm: HTMLDivElement;
   cellEmptyContent: TdBaseTableProps['cellEmptyContent'];
   handleRowMounted: (rowData: any) => void;
+  // 横向虚拟滚动：是否启用 + 当前可见列区间 [start, end)，不启用时 TrElement 按原逻辑全量渲染
+  isVirtualScrollX?: boolean;
+  visibleColRange?: [number, number];
 }
 
 // table 到 body 的相同属性
@@ -81,6 +84,8 @@ export default defineComponent({
     lastFullRow: [String, Function] as PropType<TableBodyProps['lastFullRow']>,
     activeRow: Array as PropType<Array<string | number>>,
     hoverRow: [String, Number],
+    isVirtualScrollX: Boolean,
+    visibleColRange: Array as unknown as PropType<TableBodyProps['visibleColRange']>,
     ...pick(baseTableProps, extendTableProps),
   },
 
@@ -203,6 +208,8 @@ export default defineComponent({
         virtualConfig: this.virtualConfig,
         active: (this.activeRow as Array<string | number>)?.includes(rowValue),
         isHover: this.hoverRow === rowValue,
+        isVirtualScrollX: this.isVirtualScrollX,
+        visibleColRange: this.visibleColRange,
         ...pick(this.$props, properties),
       };
       if (this.onCellClick) {
