@@ -16,6 +16,7 @@ import useColumnResize from './hooks/useColumnResize';
 import useFixed from './hooks/useFixed';
 import usePagination from './hooks/usePagination';
 import useVirtualScroll from '../hooks/useVirtualScrollNew';
+import useHorizontalVirtualScroll from './hooks/useHorizontalVirtualScroll';
 import useAffix from './hooks/useAffix';
 import Loading from '../loading';
 import TBody, { extendTableProps } from './tbody';
@@ -251,10 +252,35 @@ export default defineComponent({
     }));
     const virtualConfig = useVirtualScroll(tableContentRef, virtualScrollParams);
 
+    // 横向虚拟滚动相关数据：列过多时仅渲染可视区域内的列
+    const horizontalVirtualScrollParams = computed(() => ({
+      columns: finalColumns.value || [],
+      scroll: props.scroll,
+    }));
+    const horizontalVirtualConfig = useHorizontalVirtualScroll(
+      tableContentRef,
+      horizontalVirtualScrollParams,
+    );
+
+    // 横向虚拟滚动时实际渲染的列（含固定列），表头与表体共用，保证对齐
+    const horizontalVisibleColKeys = computed(() => {
+      if (!horizontalVirtualConfig.isHorizontalVirtualScroll.value) return undefined;
+      const cols = finalColumns.value || [];
+      return cols
+        .filter((col) => col.fixed === 'left' || col.fixed === 'right' || horizontalVirtualConfig.visibleColumns.value.includes(col))
+        .map((col) => col.colKey);
+    });
+
     let lastScrollY = 0;
+    let lastScrollX = 0;
     const onInnerVirtualScroll = (e: WheelEvent) => {
       const target = (e.target || e.srcElement) as HTMLElement;
       const top = target.scrollTop;
+      const left = target.scrollLeft;
+      // 横向滚动触发横向虚拟滚动计算
+      if (lastScrollX !== left) {
+        horizontalVirtualConfig.isHorizontalVirtualScroll.value && horizontalVirtualConfig.handleScroll();
+      }
       // 排除横向滚动触发的纵向虚拟滚动计算
       if (lastScrollY !== top) {
         virtualConfig.isVirtualScroll.value && virtualConfig.handleScroll();
@@ -263,6 +289,7 @@ export default defineComponent({
         updateColumnFixedShadow(target);
       }
       lastScrollY = top;
+      lastScrollX = left;
       emitScrollEvent(e);
     };
 
@@ -346,6 +373,10 @@ export default defineComponent({
 
     return {
       virtualConfig,
+      horizontalVirtualConfig,
+      isHorizontalVirtualScroll: horizontalVirtualConfig.isHorizontalVirtualScroll,
+      visibleColumns: horizontalVirtualConfig.visibleColumns,
+      horizontalVisibleColKeys,
       scrollToElement,
       columnResizable,
       thList,
@@ -450,6 +481,7 @@ export default defineComponent({
         height: this.height,
         spansAndLeafNodes: this.spansAndLeafNodes,
         thList: this.thList,
+        visibleColKeys: this.horizontalVisibleColKeys,
         thWidthList: isAffixHeader || this.columnResizable ? this.thWidthList : {},
         resizable: this.resizable,
         columnResizeParams: this.columnResizeParams,
@@ -586,7 +618,11 @@ export default defineComponent({
     }
     const { rowAndColFixedPosition } = this;
     const data = this.isPaginateData ? this.dataSource : this.data;
-    const columns = this.spansAndLeafNodes?.leafColumns || this.columns;
+    const allColumns = this.spansAndLeafNodes?.leafColumns || this.columns;
+    // 横向虚拟滚动时只渲染可视区域内的列，但固定列必须保留
+    const columns = this.horizontalVisibleColKeys
+      ? allColumns.filter((col) => this.horizontalVisibleColKeys.includes(col.colKey))
+      : allColumns;
     if (this.allowResizeColumnWidth) {
       log.warn('Table', 'allowResizeColumnWidth is going to be deprecated, please use resizable instead.');
     }
@@ -641,6 +677,12 @@ export default defineComponent({
       >
         {this.virtualConfig.isVirtualScroll.value && (
           <div class={this.virtualScrollClasses.cursor} style={virtualStyle} />
+        )}
+        {this.isHorizontalVirtualScroll && (
+          <div
+            class={`${this.classPrefix}-table__horizontal-virtual-cursor`}
+            style={{ width: `${this.horizontalVirtualConfig.totalWidth.value}px`, height: '1px' }}
+          />
         )}
         <table
           ref="tableElmRef"

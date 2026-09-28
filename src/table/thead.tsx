@@ -31,6 +31,8 @@ export interface TheadProps {
     leafColumns: BaseTableCol<TableRowData>[];
   };
   thList?: BaseTableCol<TableRowData>[][];
+  /** 横向虚拟滚动时可视列的 colKey 集合，为空表示不限制 */
+  visibleColKeys?: string[];
   columnResizeParams?: {
     onColumnMouseover: (e: MouseEvent, col: BaseTableCol<TableRowData>) => void;
     onColumnMousedown: (e: MouseEvent, col: BaseTableCol<TableRowData>, index: number) => void;
@@ -56,6 +58,7 @@ export default defineComponent({
     resizable: Boolean,
     spansAndLeafNodes: Object as PropType<TheadProps['spansAndLeafNodes']>,
     thList: Array as PropType<TheadProps['thList']>,
+    visibleColKeys: Array as PropType<TheadProps['visibleColKeys']>,
     columnResizeParams: Object as PropType<TheadProps['columnResizeParams']>,
     attach: [String, Function] as PropType<TheadProps['attach']>,
     showColumnShadow: Object as PropType<TheadProps['showColumnShadow']>,
@@ -136,6 +139,11 @@ export default defineComponent({
         const thRow = row.map((col: BaseTableColumns[0], index: number) => {
           // 因合并单行表头，跳过
           if (this.colspanSkipMap[col.colKey]) return null;
+          // 横向虚拟滚动：过滤不在可视区域内的列（固定列由 visibleColKeys 保证保留）
+          if (
+            this.visibleColKeys?.length
+            && !this.visibleColKeys.includes(col.colKey)
+          ) return null;
           const rowspanAndColspan = thRowspanAndColspan.get(col);
           if (index === 0 && rowspanAndColspan.rowspan > 1) {
             for (let j = rowIndex + 1; j < rowIndex + rowspanAndColspan.rowspan; j++) {
