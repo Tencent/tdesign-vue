@@ -18,6 +18,7 @@ import { abridgeName } from '../../_common/js/upload/utils';
 import { renderTNodeJSX } from '../../utils/render-tnode';
 import Link from '../../link';
 import Image from '../../image';
+import { UploadConfig } from '../../config-provider';
 
 export interface ImageCardUploadProps extends CommonDisplayFileProps {
   multiple: TdUploadProps['multiple'];
@@ -45,6 +46,7 @@ export default defineComponent({
   },
 
   setup(props: ImageCardUploadProps) {
+    const locale = computed(() => props.locale as UploadConfig);
     const { displayFiles, multiple, max } = toRefs(props);
     const icons = useGlobalIcon({
       AddIcon: TdAddIcon,
@@ -63,6 +65,7 @@ export default defineComponent({
     return {
       icons,
       showTrigger,
+      locale,
     };
   },
 

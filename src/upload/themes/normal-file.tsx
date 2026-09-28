@@ -14,6 +14,7 @@ import { abridgeName } from '../../_common/js/upload/utils';
 import { useGlobalIcon } from '../../hooks/useGlobalIcon';
 import { CommonDisplayFileProps } from '../interface';
 import { commonProps } from '../constants';
+import { UploadConfig } from '../../config-provider';
 
 export interface NormalFileProps extends CommonDisplayFileProps {
   multiple: boolean;
@@ -35,7 +36,7 @@ const NormalFile = defineComponent({
       ErrorCircleFilledIcon: TdErrorCircleFilledIcon,
       CloseCircleFilledIcon: TdCloseCircleFilledIcon,
     });
-
+    const locale = computed(() => props.locale as UploadConfig);
     const uploadPrefix = computed(() => `${props.classPrefix}-upload`);
 
     const classes = computed(() => [`${uploadPrefix.value}__single`, `${uploadPrefix.value}__single-${props.theme}`]);
@@ -44,6 +45,7 @@ const NormalFile = defineComponent({
       classes,
       uploadPrefix,
       icons,
+      locale,
     };
   },
 
