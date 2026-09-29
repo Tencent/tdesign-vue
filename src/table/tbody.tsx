@@ -192,11 +192,12 @@ export default defineComponent({
     this.data?.forEach((row, rowIndex) => {
       const rowKey = this.rowKey || 'id';
       const rowValue = get(row, rowKey);
+      const isVirtualScrollX = this.virtualConfig?.isVirtualScrollX?.value;
       const trProps: TrProps = {
         ...pick(this.$props, TABLE_PROPS),
         rowKey,
         row,
-        columns: this.columns,
+        columns: isVirtualScrollX ? this.virtualConfig.visibleColumns.value : this.columns,
         rowIndex: row?.__VIRTUAL_SCROLL_INDEX || rowIndex,
         dataLength,
         skipSpansMap: this.skipSpansMap,
