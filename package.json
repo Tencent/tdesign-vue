@@ -120,7 +120,7 @@
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^15.3.0",
     "@rollup/plugin-replace": "^2.4.2",
-    "@rollup/plugin-url": "^5.0.1",
+    "@rollup/plugin-url": "^8.0.2",
     "@tdesign/site-components": "^0.19.1",
     "@tdesign/theme-generator": "^1.2.0",
     "@testing-library/dom": "^10.2.0",
