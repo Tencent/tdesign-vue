@@ -238,4 +238,137 @@ describe('DatePicker', () => {
       expect(blurFn).toBeCalledTimes(1);
     });
   });
+
+  // test popupProps.onVisibleChange
+  describe('popupProps.onVisibleChange', () => {
+    afterEach(() => {
+      document.querySelectorAll('.t-popup').forEach((node) => node?.remove());
+    });
+
+    const getLatestPanel = () => {
+      const panels = document.querySelectorAll('.t-date-picker__panel-container');
+      return panels[panels.length - 1];
+    };
+
+    it('点击清除按钮关闭面板时触发 onVisibleChange，visible=false 且 trigger=trigger-element-close', async () => {
+      const onVisibleChange = vi.fn();
+      const wrapper = mount(
+        {
+          render() {
+            return <DatePicker defaultValue={'2022-09-14'} clearable popupProps={{ onVisibleChange }} />;
+          },
+        },
+        { attachTo: document.body },
+      );
+      // 打开面板
+      wrapper.find('.t-input').trigger('click');
+      await nextTick();
+      // hover 输入框以显示清除按钮
+      wrapper.find('.t-input').trigger('mouseenter');
+      await nextTick();
+      // 触发清除
+      wrapper.find('.t-input__suffix-clear').trigger('click');
+      await nextTick();
+      // 验证 onVisibleChange 被调用过：visible=false, trigger=trigger-element-close, 且带事件对象
+      expect(onVisibleChange).toHaveBeenCalledWith(
+        false,
+        expect.objectContaining({
+          trigger: 'trigger-element-close',
+          e: expect.anything(),
+        }),
+      );
+    });
+
+    it('选日期后关闭面板时触发 onVisibleChange，visible=false 且 trigger=trigger-element-close', async () => {
+      const onVisibleChange = vi.fn();
+      const wrapper = mount(
+        {
+          render() {
+            return <DatePicker popupProps={{ onVisibleChange }} />;
+          },
+        },
+        { attachTo: document.body },
+      );
+      // 打开面板
+      wrapper.find('.t-input').trigger('click');
+      await nextTick();
+      await nextTick();
+      await nextTick(); // 等待面板完全打开
+      onVisibleChange.mockClear();
+      // 点击日期
+      const cell = getLatestPanel()?.querySelector(
+        '.t-date-picker__panel-date .t-date-picker__cell:not(.t-is-disabled)',
+      );
+      if (cell) {
+        cell.click();
+      }
+      await nextTick();
+      await nextTick(); // 等待面板关闭动画完成
+      // 验证 onVisibleChange 被调用过：visible=false, trigger=trigger-element-close
+      expect(onVisibleChange).toHaveBeenCalledWith(
+        false,
+        expect.objectContaining({
+          trigger: 'trigger-element-close',
+          e: expect.anything(),
+        }),
+      );
+    });
+
+    it('点击预设按钮关闭面板时触发 onVisibleChange，visible=false 且 trigger=trigger-element-close', async () => {
+      const onVisibleChange = vi.fn();
+      const presets = {
+        昨天: dayjs().subtract(1, 'day').format('YYYY-MM-DD'),
+      };
+      const wrapper = mount(
+        {
+          render() {
+            return <DatePicker presets={presets} popupProps={{ onVisibleChange }} />;
+          },
+        },
+        { attachTo: document.body },
+      );
+      // 打开面板
+      wrapper.find('.t-input').trigger('click');
+      await nextTick();
+      await nextTick();
+      onVisibleChange.mockClear();
+      // 点击预设按钮
+      const presetButton = getLatestPanel()?.querySelector('.t-date-picker__presets .t-button');
+      if (presetButton) {
+        presetButton.click();
+      }
+      await nextTick();
+      // 验证 onVisibleChange 被调用过：visible=false, trigger=trigger-element-close
+      expect(onVisibleChange).toHaveBeenCalledWith(
+        false,
+        expect.objectContaining({
+          trigger: 'trigger-element-close',
+          e: expect.anything(),
+        }),
+      );
+    });
+
+    it('readonly 状态下不触发关闭事件', async () => {
+      const onVisibleChange = vi.fn();
+      const wrapper = mount(
+        {
+          render() {
+            return <DatePicker readonly defaultValue={'2022-09-14'} clearable popupProps={{ onVisibleChange }} />;
+          },
+        },
+        { attachTo: document.body },
+      );
+      // 打开面板
+      wrapper.find('.t-input').trigger('click');
+      await nextTick();
+      // hover 输入框以显示清除按钮
+      wrapper.find('.t-input').trigger('mouseenter');
+      await nextTick();
+      // 触发清除
+      wrapper.find('.t-input__suffix-clear').trigger('click');
+      await nextTick();
+      // 验证 onVisibleChange 没有被调用（readonly 状态）
+      expect(onVisibleChange).not.toHaveBeenCalled();
+    });
+  });
 });

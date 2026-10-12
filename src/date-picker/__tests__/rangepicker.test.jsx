@@ -3,7 +3,7 @@ import MockDate from 'mockdate';
 import { nextTick } from 'vue';
 import { BrowseIcon, LockOnIcon } from 'tdesign-icons-vue';
 import dayjs from 'dayjs';
-import DateRangePicker from '@/src/date-picker/index.ts';
+import DateRangePicker, { DateRangePicker as RealDateRangePicker } from '@/src/date-picker/index.ts';
 import DateRangePickerPanel from '@/src/date-picker/DateRangePickerPanel';
 
 // 固定时间，当使用 new Date() 时，返回固定时间，防止“当前时间”的副作用影响，导致 snapshot 变更，mockdate 插件见 https://github.com/boblauer/MockDate
@@ -274,6 +274,128 @@ describe('DateRangePicker', () => {
       // 验证组件渲染了左右两个面板
       const panels = wrapper.findAll('.t-date-picker__panel-date');
       expect(panels.length).toBe(2);
+    });
+  });
+
+  // test popupProps.onVisibleChange
+  describe('popupProps.onVisibleChange', () => {
+    afterEach(() => {
+      document.querySelectorAll('.t-popup').forEach((node) => node?.remove());
+    });
+
+    const getLatestPanel = () => {
+      const panels = document.querySelectorAll('.t-date-picker__panel-container, .t-date-range-picker__panel');
+      return panels[panels.length - 1];
+    };
+
+    it('点击清除按钮关闭面板时触发 onVisibleChange，visible=false 且 trigger=trigger-element-close', async () => {
+      const onVisibleChange = vi.fn();
+      const wrapper = mount(
+        {
+          render() {
+            return (
+              <RealDateRangePicker
+                defaultValue={['2022-09-14', '2022-09-15']}
+                clearable
+                popupProps={{ onVisibleChange }}
+              />
+            );
+          },
+        },
+        { attachTo: document.body },
+      );
+      // 打开面板
+      wrapper.find('.t-range-input').trigger('click');
+      await nextTick();
+      // hover 输入框以显示清除按钮
+      wrapper.find('.t-range-input').trigger('mouseenter');
+      await nextTick();
+      // 触发清除
+      wrapper.find('.t-range-input__suffix-clear').trigger('click');
+      await nextTick();
+      // 验证 onVisibleChange 被调用过：visible=false, trigger=trigger-element-close, 且带事件对象
+      expect(onVisibleChange).toHaveBeenCalledWith(
+        false,
+        expect.objectContaining({
+          trigger: 'trigger-element-close',
+          e: expect.anything(),
+        }),
+      );
+    });
+
+    it('选完日期范围后关闭面板时触发 onVisibleChange，visible=false 且 trigger=trigger-element-close', async () => {
+      const onVisibleChange = vi.fn();
+      const wrapper = mount(
+        {
+          render() {
+            return <RealDateRangePicker popupProps={{ onVisibleChange }} />;
+          },
+        },
+        { attachTo: document.body },
+      );
+      // 打开面板
+      wrapper.find('.t-range-input').trigger('click');
+      await nextTick();
+      await nextTick();
+      await nextTick(); // 等待面板完全打开
+      onVisibleChange.mockClear();
+      // 点击第一个日期
+      const panel = getLatestPanel();
+      expect(panel).toBeTruthy();
+      let cells = panel.querySelectorAll('.t-date-picker__panel-date .t-date-picker__cell:not(.t-is-disabled)');
+      if (cells.length >= 2) {
+        cells[5].click(); // 选择第一个日期
+        await nextTick();
+        await nextTick(); // 等待第一个日期选择完成
+        cells = panel.querySelectorAll('.t-date-picker__panel-date .t-date-picker__cell:not(.t-is-disabled)');
+        cells[12].click(); // 选择第二个日期
+        await nextTick();
+        await nextTick(); // 等待面板关闭动画完成
+      }
+      // 验证 onVisibleChange 被调用过：visible=false, trigger=trigger-element-close
+      expect(onVisibleChange).toHaveBeenCalledWith(
+        false,
+        expect.objectContaining({
+          trigger: 'trigger-element-close',
+          e: expect.anything(),
+        }),
+      );
+    });
+
+    it('点击预设按钮关闭面板时触发 onVisibleChange，visible=false 且 trigger=trigger-element-close', async () => {
+      const onVisibleChange = vi.fn();
+      const presets = {
+        昨天: [dayjs().subtract(7, 'day').format('YYYY-MM-DD'), dayjs().subtract(1, 'day').format('YYYY-MM-DD')],
+      };
+      const wrapper = mount(
+        {
+          render() {
+            return <RealDateRangePicker presets={presets} popupProps={{ onVisibleChange }} />;
+          },
+        },
+        { attachTo: document.body },
+      );
+      // 打开面板
+      wrapper.find('.t-range-input').trigger('click');
+      await nextTick();
+      await nextTick();
+      await nextTick(); // 等待面板完全打开
+      onVisibleChange.mockClear();
+      // 点击预设按钮
+      const presetButton = getLatestPanel()?.querySelector('.t-date-picker__presets .t-button');
+      if (presetButton) {
+        presetButton.click();
+        await nextTick();
+        await nextTick(); // 等待面板关闭动画完成
+      }
+      // 验证 onVisibleChange 被调用过：visible=false, trigger=trigger-element-close
+      expect(onVisibleChange).toHaveBeenCalledWith(
+        false,
+        expect.objectContaining({
+          trigger: 'trigger-element-close',
+          e: expect.anything(),
+        }),
+      );
     });
   });
 });

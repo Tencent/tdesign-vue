@@ -12,6 +12,7 @@ import {
   parseToDayjs,
 } from '../../_common/js/date-picker/format';
 import useSingleValue from './useSingleValue';
+import usePopupVisibleChange from './usePopupVisibleChange';
 import { TdInputProps } from '../../input/type';
 
 export default function useSingle(props: TdDatePickerProps, { emit }: any) {
@@ -30,8 +31,11 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
     enableTimePicker: props.multiple ? false : props.enableTimePicker,
   }));
 
-  const popupVisible = ref(false);
   const isHoverCell = ref(false);
+  // DatePicker 无 readonly 概念，省略 readonly（undefined 即非只读）
+  const { popupVisible, notifyPopupVisibleChange, closePopup } = usePopupVisibleChange({
+    popupProps: props.popupProps,
+  });
   // 未真正选中前可能不断变更输入框的内容
   const inputValue = ref(formatDate(value.value, { format: formatRef.value.format }));
 
@@ -48,9 +52,9 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
           [`${COMPONENT_NAME.value}__input--placeholder`]: isHoverCell.value,
         },
       ],
-      onClear: (context: { e: InputEvent }) => {
+      onClear: (context: { e: MouseEvent }) => {
         context?.e?.stopPropagation();
-        popupVisible.value = false;
+        closePopup({ e: context.e });
         onChange?.('', { dayjsValue: dayjs(), trigger: 'clear' });
         emit('clear', '', { dayjsValue: dayjs(), trigger: 'clear' });
       },
@@ -79,13 +83,13 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
       onEnter: (val: string) => {
         if (!val) {
           onChange?.('', { dayjsValue: dayjs(), trigger: 'enter' });
-          popupVisible.value = false;
+          closePopup();
           return;
         }
 
         if (!isValidDate(val, formatRef.value.format) && !isValidDate(value.value, formatRef.value.format)) return;
 
-        popupVisible.value = false;
+        closePopup();
         if (isValidDate(val, formatRef.value.format)) {
           onChange?.(
             formatDate(val, { format: formatRef.value.format, targetFormat: formatRef.value.valueType }) as DateValue,
@@ -115,7 +119,7 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
     overlayClassName: [props.popupProps?.overlayClassName, `${COMPONENT_NAME.value}__panel-container`],
     onVisibleChange: (visible: boolean, context: any) => {
       // 这里劫持了进一步向 popup 传递的 onVisibleChange 事件，为了保证可以在 Datepicker 中使用 popupProps.onVisibleChange，故此处理
-      props.popupProps?.onVisibleChange?.(visible, context);
+      notifyPopupVisibleChange(visible, context);
       // 输入框点击不关闭面板
       if (context.trigger === 'trigger-element-click') {
         popupVisible.value = true;
@@ -154,5 +158,6 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
     cacheValue,
     isHoverCell,
     onChange,
+    closePopup,
   };
 }
