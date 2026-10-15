@@ -61,9 +61,21 @@ export default defineComponent({
         // 确保右侧面板月份比左侧大 避免两侧面板月份一致
         if (value.length === 2 && !props.enableTimePicker) {
           const nextMonth = value.map((v: string) => parseToDayjs(v || new Date(), formatRef.value.format).month());
-          if (year.value[0] === year.value[1] && nextMonth[0] === nextMonth[1]) {
-            nextMonth[0] === 11 ? (nextMonth[0] -= 1) : (nextMonth[1] += 1);
+          const nextYear = value.map((v: string) => parseToDayjs(v || new Date(), formatRef.value.format).year());
+          if (nextYear[0] === nextYear[1] && nextMonth[0] === nextMonth[1]) {
+            // 同月时把右侧面板错开一个月；跨年需同步修正年份，避免出现「年变了月没变」的错乱面板
+            if (nextMonth[0] === 11) {
+              nextMonth[0] -= 1;
+            } else {
+              nextMonth[1] += 1;
+              if (nextMonth[1] === 12) {
+                nextMonth[1] = 0;
+                nextYear[1] += 1;
+              }
+            }
           }
+          // 年份与月份必须一起写入：只写 month 会在跨年边界产生「年已进位、月被重置」的错乱
+          year.value = nextYear;
           month.value = nextMonth;
         }
       },
