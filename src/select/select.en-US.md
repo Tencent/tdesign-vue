@@ -95,7 +95,7 @@ value | String / Number | - | \- | N
 name | type | default | description | required
 -- | -- | -- | -- | --
 divider | Boolean | true | \- | N
-label | String | - | \- | N
+label | String / Slot / Function | - | Group alias。Typescript: `string \| TNode`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 
 ### TScroll
 
