@@ -248,6 +248,9 @@ export default defineComponent({
     const virtualScrollParams = computed(() => ({
       data: props.data,
       scroll: props.scroll,
+      columns: spansAndLeafNodes.value?.leafColumns || finalColumns.value,
+      isFixedColumn: isFixedColumn.value,
+      rowspanAndColspan: props.rowspanAndColspan,
     }));
     const virtualConfig = useVirtualScroll(tableContentRef, virtualScrollParams);
 
@@ -261,6 +264,8 @@ export default defineComponent({
       } else {
         lastScrollY = 0;
         updateColumnFixedShadow(target);
+        virtualConfig.isVirtualScrollX?.value
+          && virtualConfig.handleScrollX(target.scrollLeft, target.getBoundingClientRect().width);
       }
       lastScrollY = top;
       emitScrollEvent(e);

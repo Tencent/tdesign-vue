@@ -11,10 +11,16 @@ import {
 import { TScroll } from '../common';
 import useResizeObserver from './useResizeObserver';
 
-export type UseVirtualScrollParams = Ref<{
+export type UseVirtualScrollParams<T = { [key: string]: any }> = Ref<{
   /** 列数据 */
   data: { [key: string]: any }[];
   scroll: TScroll;
+  /** 表格列信息，用于计算横向虚拟滚动 */
+  columns?: T[];
+  /** 是否存在固定列，存在固定列时不启用横向虚拟滚动 */
+  isFixedColumn?: boolean;
+  /** 是否使用了合并单元格，使用时不启用横向虚拟滚动 */
+  rowspanAndColspan?: unknown;
 }>;
 
 export interface ScrollToElementParams {
@@ -27,7 +33,7 @@ export interface ScrollToElementParams {
   behavior?: 'auto' | 'smooth';
 }
 
-const useVirtualScroll = (container: Ref<HTMLElement>, params: UseVirtualScrollParams) => {
+const useVirtualScroll = <T = { [key: string]: any }>(container: Ref<HTMLElement>, params: UseVirtualScrollParams<T>) => {
   /** 注意测试：数据长度为空；数据长度小于表格高度等情况。即期望只有数据量达到一定程度才允许开启虚拟滚动 */
   const visibleData = ref<any[]>([]);
   // 用于显示表格列
@@ -50,9 +56,53 @@ const useVirtualScroll = (container: Ref<HTMLElement>, params: UseVirtualScrollP
       isFixedRowHeight: scroll.isFixedRowHeight ?? false,
       rowHeight: scroll.rowHeight || 47,
       threshold: scroll.threshold || 100,
+      colThreshold: scroll.colThreshold || 30,
       type: scroll.type,
     };
   });
+
+  // 横向虚拟滚动可见列的起止下标（闭区间转半开区间 [start, end)）
+  const startAndEndColIndex = ref<[number, number]>([0, 0]);
+
+  // 当前场景是否满足开启横向虚拟滚动的条件：
+  // 1. 纵向虚拟滚动类型为 virtual；2. 不存在固定列；3. 未使用合并单元格；4. 列数超过 colThreshold
+  const isVirtualScrollX = computed(() => {
+    const { columns, isFixedColumn, rowspanAndColspan } = params.value;
+    if (tScroll.value.type !== 'virtual') return false;
+    if (isFixedColumn) return false;
+    if (rowspanAndColspan) return false;
+    const colLength = columns?.length || 0;
+    return colLength > tScroll.value.colThreshold;
+  });
+
+  // 可见列区间对应的真实列数组
+  const visibleColumns = computed(() => {
+    const { columns } = params.value;
+    if (!isVirtualScrollX.value || !columns) return columns || [];
+    const [start, end] = startAndEndColIndex.value;
+    return columns.slice(start, end);
+  });
+
+  const updateVisibleColumns = (scrollLeft: number, containerW: number) => {
+    const { columns } = params.value;
+    if (!isVirtualScrollX.value || !columns?.length) return;
+    // 简化模型：假定各列平均宽度，用于估算可视区间，两侧各加一屏 buffer 避免横向滚动出现空白
+    const colLength = columns.length;
+    const avgColWidth = Math.max(1, (containerW || 0) / Math.min(colLength, tScroll.value.colThreshold));
+    const visibleCount = Math.max(1, Math.ceil((containerW || 0) / avgColWidth));
+    const bufferCount = visibleCount;
+    const rawStart = Math.floor(scrollLeft / avgColWidth) - bufferCount;
+    const start = Math.max(0, rawStart);
+    const end = Math.min(colLength, start + visibleCount + bufferCount * 2);
+    if (startAndEndColIndex.value.join() !== [start, end].join()) {
+      startAndEndColIndex.value = [start, end];
+    }
+  };
+
+  const handleScrollX = (scrollLeft: number, containerW: number) => {
+    if (!isVirtualScrollX.value) return;
+    updateVisibleColumns(scrollLeft, containerW);
+  };
 
   // 当前场景是否满足开启虚拟滚动的条件
   const isVirtualScroll = computed(() => {
@@ -161,6 +211,19 @@ const useVirtualScroll = (container: Ref<HTMLElement>, params: UseVirtualScrollP
 
   // 固定高度场景，可直接通过数据长度计算出最大滚动高度
   watch(
+    () => [isVirtualScrollX.value, params.value.columns],
+    () => {
+      if (!isVirtualScrollX.value) {
+        startAndEndColIndex.value = [0, params.value.columns?.length || 0];
+        return;
+      }
+      const containerW = container.value?.getBoundingClientRect().width || 0;
+      updateVisibleColumns(container.value?.scrollLeft || 0, containerW);
+    },
+    { immediate: true },
+  );
+
+  watch(
     () => [[...params.value.data, tScroll.value, isVirtualScroll.value, container.value]],
     () => {
       if (!isVirtualScroll.value) return;
@@ -182,6 +245,8 @@ const useVirtualScroll = (container: Ref<HTMLElement>, params: UseVirtualScrollP
     { immediate: true },
   );
 
+  const totalColCount = computed(() => params.value.columns?.length || 0);
+
   return {
     visibleData,
     translateY,
@@ -190,6 +255,11 @@ const useVirtualScroll = (container: Ref<HTMLElement>, params: UseVirtualScrollP
     handleScroll,
     handleRowMounted,
     scrollToElement,
+    isVirtualScrollX,
+    visibleColumns,
+    startAndEndColIndex,
+    handleScrollX,
+    totalColCount,
   };
 };
 

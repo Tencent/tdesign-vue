@@ -332,7 +332,11 @@ export default defineComponent({
     const {
       row, rowIndex, dataLength, rowAndColFixedPosition,
     } = this;
-    const columnVNodeList = this.columns?.map((col, colIndex) => {
+    const colIndexOffset = this.virtualConfig?.isVirtualScrollX?.value
+      ? this.virtualConfig.startAndEndColIndex.value[0]
+      : 0;
+    const columnVNodeList = this.columns?.map((col, colIndexInVisible) => {
+      const colIndex = colIndexInVisible + colIndexOffset;
       const cellSpans: RowspanColspan = {};
       const params = {
         row,
@@ -356,6 +360,32 @@ export default defineComponent({
         cellEmptyContent: this.cellEmptyContent,
       });
     });
+
+    // 横向虚拟滚动：在可见列两侧插入占位单元格，用占位宽度模拟被裁剪掉的列所占据的空间
+    const renderPlaceholderTd = (colCount: number, key: string) => {
+      if (colCount <= 0) return null;
+      return (
+        <td
+          key={key}
+          attrs={{ 'data-virtual-x-placeholder': true, colspan: colCount }}
+          style={{ padding: 0, border: 'none' }}
+        />
+      );
+    };
+
+    let cellList: JSX.Element[] = columnVNodeList;
+    if (this.virtualConfig?.isVirtualScrollX?.value) {
+      const [start, end] = this.virtualConfig.startAndEndColIndex.value;
+      const leadingCount = start;
+      const totalColCount = this.virtualConfig.totalColCount?.value ?? end;
+      const trailingCount = Math.max(0, totalColCount - end);
+      cellList = [
+        renderPlaceholderTd(leadingCount, 'virtual-x-placeholder-start'),
+        ...columnVNodeList,
+        renderPlaceholderTd(trailingCount, 'virtual-x-placeholder-end'),
+      ].filter(Boolean);
+    }
+
     const attrs = this.trAttributes || {};
     return (
       <tr
@@ -365,7 +395,7 @@ export default defineComponent({
         class={this.classes}
         on={this.getTrListeners(row, rowIndex)}
       >
-        {this.hasLazyLoadHolder ? [<td style={{ height: `${this.tRowHeight}px`, border: 'none' }} />] : columnVNodeList}
+        {this.hasLazyLoadHolder ? [<td style={{ height: `${this.tRowHeight}px`, border: 'none' }} />] : cellList}
       </tr>
     );
   },
