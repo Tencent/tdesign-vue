@@ -26,12 +26,8 @@ function ssrSnapshotTest() {
         const realDemoComp = demo.default ? demo.default : demo;
         const wrapper = mount(realDemoComp);
         const renderer = createRenderer();
-        renderer.renderToString(wrapper.vm, (err, str) => {
-          if (err) {
-            throw err;
-          }
-          expect(str).toMatchSnapshot();
-        });
+        const str = await renderer.renderToString(wrapper.vm);
+        expect(str).toMatchSnapshot();
       }, 2000);
     });
   });
