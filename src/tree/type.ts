@@ -5,7 +5,7 @@
  * */
 
 import { CheckboxProps } from '../checkbox';
-import { TNode, TreeOptionData, TreeKeysType, TScroll, ScrollToElementParams } from '../common';
+import { TNode, TreeOptionData, TreeKeysType, TScroll, ComponentScrollToElementParams } from '../common';
 
 export interface TdTreeProps<T extends TreeOptionData = TreeOptionData> {
   /**
@@ -468,6 +468,6 @@ export interface TreeNodeModel<T extends TreeOptionData = TreeOptionData> extend
 
 export type TreeNodeValue = string | number | bigint;
 
-export interface TreeScrollToElementParams extends ScrollToElementParams {
+export interface TreeScrollToElementParams extends Omit<ComponentScrollToElementParams, 'key'> {
   key?: TreeNodeValue;
 }

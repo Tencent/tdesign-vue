@@ -85,7 +85,7 @@ insertAfter | `(value: TreeNodeValue, newData: T)` | \- | 必需。插入新节�
 insertBefore | `(value: TreeNodeValue, newData: T)` | \- | 必需。插入新节点到指定节点前面，泛型 `T` 表示树节点 TS 类型
 refresh | \- | \- | 必需。刷新树节点状态，可用于搜索场景刷新
 remove | `(value: TreeNodeValue)` | \- | 必需。移除指定节点
-scrollTo | `(scrollToParams: TreeScrollToElementParams)` | \- | 虚拟滚动场景下 支持指定滚动到具体的节点
+scrollTo | `(scrollToParams: TreeScrollToElementParams)` | \- | 虚拟滚动场景下 支持指定滚动到具体的节点。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree/type.ts)。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。<br/>`interface TreeScrollToElementParams extends Omit<ComponentScrollToElementParams, 'key'> { key?: TreeNodeValue; }`<br/>
 setItem | `(value: TreeNodeValue, options: TreeNodeState)` | \- | 必需。设置节点状态
 
 ### TreeNodeState
@@ -103,7 +103,7 @@ expanded | Boolean | false | 节点是否已展开 | N
 indeterminate | Boolean | false | 节点是否为半选中状态 | N
 label | String | - | 节点标签文案 | N
 loading | Boolean | false | 子节点数据是否在加载中 | N
-value | String / Number | - | 节点值 | N
+value | String / Number / BigInt | - | 节点值。TS 类型：`TreeNodeValue` | N
 visible | Boolean | false | 节点是否可视 | N
 
 ### TreeNodeModel

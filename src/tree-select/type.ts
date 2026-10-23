@@ -238,7 +238,8 @@ export interface TdTreeSelectProps<
   onSearch?: (filterWords: string, context: { e: KeyboardEvent | SelectInputValueChangeContext['e'] }) => void;
 }
 
-export type TreeSelectValue = string | number | bigint | TreeOptionData | Array<string | number | bigint | TreeOptionData>;
+export type TreeSelectValue =
+  string | number | bigint | TreeOptionData | Array<string | number | bigint | TreeOptionData>;
 
 export interface TreeSelectChangeContext<DataOption> {
   node: TreeNodeModel<DataOption>;
