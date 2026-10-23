@@ -5,6 +5,21 @@ import { delay, step } from './kit';
 describe('Tree:api', () => {
   vi.useRealTimers();
 
+  it('sets the checked state using a bigint node value from common', async () => {
+    const value = 9007199254740993n;
+    const wrapper = mount(Tree, {
+      propsData: { data: [{ value, label: 'Bigint node' }], checkable: true, transition: false },
+    });
+    try {
+      wrapper.vm.setItem(value, { checked: true });
+      await wrapper.vm.$nextTick();
+      expect(wrapper.vm.getItem(value).checked).toBe(true);
+      await vi.waitFor(() => expect(wrapper.find('.t-checkbox').classes()).toContain('t-is-checked'));
+    } finally {
+      wrapper.destroy();
+    }
+  });
+
   // tree.remove
   // 删除 tree 的指定节点
   describe('remove', () => {
