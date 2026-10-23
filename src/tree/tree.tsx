@@ -211,7 +211,7 @@ export default defineComponent({
       if (value != null) {
         const node = this.store.getNode(value);
         if (!node) return [];
-        list = node.walk();
+        list = this.store.getNodes(value);
       } else {
         list = this.store.getNodes();
       }

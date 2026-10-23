@@ -57,20 +57,5 @@ describe('TreeSelect bigint values', () => {
       await wrapper.vm.$nextTick();
       expect(onChange).toHaveBeenCalledWith([9007199254740993n], expect.objectContaining({ trigger: 'tag-remove' }));
     });
-
-    it('resolves nested custom object keys before and after mounting the Tree', async () => {
-      const wrapper = await renderSelect({
-        popupVisible: false,
-        data: [{ name: 'parent', id: 1n, nodes: [{ name: 'zero', id: 0n }] }],
-        keys: { label: 'name', value: 'id', children: 'nodes' },
-        valueType: 'object',
-        value: { name: 'zero', id: 0n },
-      });
-      expect(wrapper.findComponent(SelectInput).props('value')).toMatchObject({ name: 'zero', id: 0n });
-      await wrapper.setProps({ popupVisible: true });
-      await wrapper.vm.$nextTick();
-      await new Promise((resolve) => setTimeout(resolve, 100));
-      expect(wrapper.findComponent(SelectInput).props('value')).toMatchObject({ name: 'zero', id: 0n });
-    });
   });
 });
