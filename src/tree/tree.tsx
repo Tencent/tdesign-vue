@@ -147,7 +147,7 @@ export default defineComponent({
         list = [item];
       }
       list.forEach((item) => {
-        const val = item?.value || '';
+        const val = item?.value ?? '';
         const node = getNode(store, val);
         if (node) {
           store.appendNodes(para, node);
@@ -159,7 +159,7 @@ export default defineComponent({
     // 在指定节点之前插入单个节点数据
     insertBefore(value: TreeNodeValue, item: TypeTreeOptionData) {
       const { store } = this;
-      const val = item?.value || '';
+      const val = item?.value ?? '';
       const node = getNode(store, val);
       if (node) {
         store.insertBefore(value, node);
@@ -170,7 +170,7 @@ export default defineComponent({
     // 在指定节点之后插入单个节点数据
     insertAfter(value: TreeNodeValue, item: TypeTreeOptionData) {
       const { store } = this;
-      const val = item?.value || '';
+      const val = item?.value ?? '';
       const node = getNode(store, val);
       if (node) {
         store.insertAfter(value, node);
@@ -208,15 +208,15 @@ export default defineComponent({
     // 提供树结构原始数据
     getTreeData(value?: TreeNodeValue): TypeTreeOptionData[] {
       let list: TreeNode[] = [];
-      if (value) {
+      if (value != null) {
         const node = this.store.getNode(value);
         if (!node) return [];
-        list = this.store.getNodes(value);
+        list = node.walk();
       } else {
         list = this.store.getNodes();
       }
       // 一维结构树节点转树结构数据
-      const nodeMap = {};
+      const nodeMap = new Map<TreeNodeValue, TypeTreeOptionData>();
       const treeNodes: TypeTreeOptionData[] = [];
       list.forEach((item: TreeNode) => {
         const { value } = item;
@@ -225,13 +225,13 @@ export default defineComponent({
           value,
         };
         delete itemData.children;
-        nodeMap[value] = itemData;
+        nodeMap.set(value, itemData);
         const parent = item.getParent();
         if (!parent) {
           // 是根节点
           treeNodes.push(itemData);
         } else {
-          const parentData = nodeMap[parent.value];
+          const parentData = nodeMap.get(parent.value);
           if (!parentData) {
             // 为目标节点范围内的根节点
             treeNodes.push(itemData);

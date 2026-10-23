@@ -38,8 +38,8 @@ maxHeight | String / Number | - | The max height of tree. Scrollbar will appear 
 operations | Slot / Function | - | Typescript：`TNode<TreeNodeModel<T>>`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 scroll | Object | - | lazy load and virtual scroll。Typescript：`TScroll`。[see more ts definition](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 transition | Boolean | true | \- | N
-value | Array | [] | `v-model` is supported。Typescript：`Array<TreeNodeValue>` `type TreeNodeValue = string \| number`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree/type.ts) | N
-defaultValue | Array | [] | uncontrolled property。Typescript：`Array<TreeNodeValue>` `type TreeNodeValue = string \| number`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree/type.ts) | N
+value | Array | [] | `v-model` is supported。Typescript：`Array<TreeNodeValue>` `type TreeNodeValue = string \| number \| bigint`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree/type.ts) | N
+defaultValue | Array | [] | uncontrolled property。Typescript：`Array<TreeNodeValue>` `type TreeNodeValue = string \| number \| bigint`。[see more ts definition](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree/type.ts) | N
 valueMode | String | onlyLeaf | options: onlyLeaf/parentFirst/all | N
 onActive | Function |  | Typescript：`(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T>; e?: MouseEvent; trigger: 'node-click' \| 'setItem' }) => void`<br/> | N
 onChange | Function |  | Typescript：`(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T>; e?: any; trigger: 'node-click' \| 'setItem' }) => void`<br/> | N
@@ -85,7 +85,7 @@ insertAfter | `(value: TreeNodeValue, newData: T)` | \- | required
 insertBefore | `(value: TreeNodeValue, newData: T)` | \- | required
 refresh | \- | \- | required。refresh tree state, used in tree search
 remove | `(value: TreeNodeValue)` | \- | required
-scrollTo | `(scrollToParams: ScrollToElementParams)` | \- | support scrolling to a specific node when virtual scrolling 
+scrollTo | `(scrollToParams: TreeScrollToElementParams)` | \- | support scrolling to a specific node when virtual scrolling
 setItem | `(value: TreeNodeValue, options: TreeNodeState)` | \- | required
 
 ### TreeNodeState
