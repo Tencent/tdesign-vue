@@ -1,14 +1,15 @@
 import { get as lodashGet, set as lodashSet, isNil } from 'lodash-es';
 import { TreeOptionData, TreeKeysType } from '../common';
 import type { TreeSelectValue } from './type';
+import type { TreeNodeValue } from '../tree';
 
 export function getNodeDataByValue(
-  values: Array<string | number>,
+  values: Array<TreeNodeValue>,
   data: TreeOptionData[],
   keys: TreeKeysType,
 ): TreeOptionData[] {
   const getTreeNodeData = (
-    values: Array<string | number>,
+    values: Array<TreeNodeValue>,
     data: TreeOptionData[],
     keys: TreeKeysType,
     results: Map<any, TreeOptionData> = new Map(),
