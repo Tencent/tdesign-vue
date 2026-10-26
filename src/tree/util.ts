@@ -116,7 +116,7 @@ export function getLineModel(nodes: TypeTreeNode[], node: TypeTreeNode, index: n
 }
 
 export function isTreeNodeValue(item: unknown): item is TreeNodeValue {
-  return typeof item === 'string' || typeof item === 'number' || typeof item === 'bigint';
+  return ['string', 'number', 'bigint'].includes(typeof item);
 }
 
 export function getNode(store: TypeTreeStore, item: TypeTargetNode): TypeTreeNode {
