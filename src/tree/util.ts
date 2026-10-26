@@ -122,7 +122,7 @@ export function isTreeNodeValue(item: unknown): item is TreeNodeValue {
 export function getNode(store: TypeTreeStore, item: TypeTargetNode): TypeTreeNode {
   let node = null;
   let val = null;
-  if (typeof item === 'string' || typeof item === 'number' || typeof item === 'bigint') {
+  if (isTreeNodeValue(item)) {
     val = item;
   } else if (item && isTreeNodeValue(item.value)) {
     val = item.value;
