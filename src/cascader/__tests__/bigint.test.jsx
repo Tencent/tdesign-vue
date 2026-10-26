@@ -38,10 +38,13 @@ describe('Cascader bigint values', () => {
   });
 
   describe('scenarios', () => {
-    it.each([0n, 9007199254740993n, 0, '0'])('preserves %s in selection normalization', (value) => {
-      expect(isEmptyValues(value)).toBe(false);
-      expect(getTreeValue(value)).toEqual([value]);
-      expect(getTreeValue([value])).toEqual([value]);
-    });
+    it.each([0n, 9007199254740993n, 0, '0'].map((value) => [value, typeof value]))(
+      'preserves %s (%s) in selection normalization',
+      (value) => {
+        expect(isEmptyValues(value)).toBe(false);
+        expect(getTreeValue(value)).toEqual([value]);
+        expect(getTreeValue([value])).toEqual([value]);
+      },
+    );
   });
 });
