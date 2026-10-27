@@ -52,6 +52,7 @@ export function getMultipleContent(cascaderContext: CascaderContextType) {
   return (value as TreeNodeValue[])
     .map((item: TreeNodeValue) => {
       const node = treeStore.getNodes(item);
+      if (!node.length) return '';
       return showAllLevels ? getFullPathLabel(node[0]) : node[0].label;
     })
     .filter((item) => !!item);
