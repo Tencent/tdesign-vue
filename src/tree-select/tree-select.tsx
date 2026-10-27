@@ -179,7 +179,7 @@ export default defineComponent({
             valueDisplay: () => this.renderTNodeJSX('valueDisplay', {
               params: this.multiple
                 ? {
-                  value: this.nodeInfo as TreeOptionData<string | number>[],
+                  value: this.nodeInfo as TreeOptionData[],
                   onClose: (index: number) => {
                     const value = this.nodeInfo.map((node: TreeOptionData) => lodashGet(node, this.tKeys.value));
                     this.tagChange(value, {

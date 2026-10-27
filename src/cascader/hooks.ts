@@ -148,13 +148,13 @@ export const useCascaderContext = (props: TdCascaderProps) => {
       if (multiple) {
         if (value.length > 0) {
           // 处理第一个数组的值
-          const firstValue = value[0] as Array<string | number>;
+          const firstValue = value[0] as TreeNodeValue[];
           if (firstValue.length > treeStore.expandedMap.size) {
             treeStore.setExpanded(firstValue.slice(0, treeStore.expandedMap.size + 1));
           }
         }
         // 加载时给所有的选中列表重新设置value，以刷新已选择的值
-        const lastValues = value.map((item: Array<string | number>) => item[item.length - 1]);
+        const lastValues = value.map((item: TreeNodeValue[]) => item[item.length - 1]);
         treeStore.setChecked(lastValues);
       }
     }
