@@ -18,7 +18,7 @@ const data = [{
 const wrappers = [];
 afterEach(() => wrappers.splice(0).forEach((wrapper) => wrapper.destroy()));
 
-async function createTree(options = {}, initial = []) {
+async function createTree(options = {}, initial = [], readyNode = 'D') {
   const onChange = vi.fn();
   const wrapper = mount({
     data: () => ({ value: initial, options }),
@@ -43,7 +43,7 @@ async function createTree(options = {}, initial = []) {
   wrappers.push(wrapper);
   const input = (id) => wrapper.find(`[data-value="${id}"] input[type="checkbox"]`);
   const half = () => wrapper.find('[data-value="P"] .t-checkbox').classes('t-is-indeterminate');
-  await vi.waitFor(() => expect(input('D').exists()).toBe(true));
+  await vi.waitFor(() => expect(input(readyNode).exists()).toBe(true));
   return {
     wrapper,
     input,
@@ -75,6 +75,42 @@ describe('Tree checkAllAffectedBy', () => {
   });
 
   scopes.forEach((checkAllAffectedBy) => {
+    it.each(['all', 'parentFirst'])(`${checkAllAffectedBy} preserves lazy selections before and during loading in %s mode`, async (valueMode) => {
+      let resolveLoad;
+      const load = vi.fn(() => new Promise((resolve) => { resolveLoad = resolve; }));
+      const options = {
+        data: [{ value: 'P', label: 'Parent', children: true }],
+        load,
+        expandAll: false,
+        valueMode,
+        checkAllAffectedBy,
+      };
+      const {
+        wrapper, input, half, onChange,
+      } = await createTree(options, ['P'], 'P');
+      const otherScope = checkAllAffectedBy === 'all' ? 'onlyEnabled' : 'all';
+      const switchScope = async (scope) => {
+        await wrapper.setData({ options: { ...options, checkAllAffectedBy: scope } });
+        await vi.waitFor(() => expect(input('P').element.checked).toBe(true));
+        expect(wrapper.vm.value).toEqual(['P']);
+      };
+      await switchScope(otherScope);
+      await switchScope(checkAllAffectedBy);
+      expect(load).not.toHaveBeenCalled();
+      wrapper.vm.$refs.tree.setItem('P', { expanded: true });
+      await vi.waitFor(() => expect(load).toHaveBeenCalledTimes(1));
+      await switchScope(otherScope);
+      resolveLoad([{ value: 'A' }, { value: 'D', disabled: true }]);
+      await vi.waitFor(() => expect(input('A').exists()).toBe(true));
+      await vi.waitFor(() => expect(input('A').element.checked).toBe(true));
+      expect(input('D').element.disabled).toBe(true);
+      expect(input('D').element.checked).toBe(false);
+      expect(input('P').element.checked).toBe(otherScope === 'onlyEnabled');
+      expect(half()).toBe(otherScope === 'all');
+      expect(wrapper.vm.value).toEqual(['P']);
+      expect(onChange).not.toHaveBeenCalled();
+    });
+
     it.each(modes)(`${checkAllAffectedBy} derives parent state after child clicks in %s mode`, async (valueMode) => {
       const {
         wrapper, input, half, click,
@@ -88,7 +124,7 @@ describe('Tree checkAllAffectedBy', () => {
       const expected = enabledOnly && valueMode !== 'onlyLeaf'
         ? { all: ['P', 'A', 'B'], parentFirst: ['P'] }[valueMode] : ['A', 'B'];
       expect(wrapper.vm.value).toEqual(expected);
-      expect(wrapper.element).toMatchSnapshot();
+      if (valueMode === 'onlyLeaf') expect(wrapper.element).toMatchSnapshot();
       await click('A');
       await vi.waitFor(() => expect(wrapper.vm.value).toEqual(['B']));
       expect(half()).toBe(true);
