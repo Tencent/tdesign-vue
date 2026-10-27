@@ -21,8 +21,9 @@ export function getNodeDataByValue(
         // results.push(item);
         results.set(values[index], item);
       }
-      if (Array.isArray(item.children) && item.children?.length) {
-        getTreeNodeData(values, item.children, keys, results);
+      const children = lodashGet(item, keys.children);
+      if (Array.isArray(children) && children.length) {
+        getTreeNodeData(values, children, keys, results);
       }
       if (results.size >= values.length) {
         return results;
