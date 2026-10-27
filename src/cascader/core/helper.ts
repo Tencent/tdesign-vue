@@ -18,7 +18,7 @@ export function getSingleContent(cascaderContext: CascaderContextType): string {
   const {
     value, multiple, treeStore, showAllLevels,
   } = cascaderContext;
-  if (multiple || (typeof value !== 'number' && !value)) return '';
+  if (multiple || (typeof value !== 'number' && typeof value !== 'bigint' && !value)) return '';
 
   if (Array.isArray(value)) return '';
   const node = treeStore && treeStore.getNodes(value as TreeNodeValue | TreeNode);
@@ -99,7 +99,7 @@ export const getTreeValue = (value: CascaderContextType['value']) => {
     } else if (value.length) {
       treeValue = value as TreeNodeValue[];
     }
-  } else if (value) {
+  } else if (value || value === 0 || value === 0n) {
     if (typeof value === 'object') {
       treeValue = [(value as TreeOptionData).value];
     } else {
@@ -135,6 +135,7 @@ export const getCascaderValue = (value: CascaderValue, valueType: TdCascaderProp
  */
 export function isEmptyValues(value: unknown): boolean {
   if (typeof value === 'number' && !isNaN(value)) return false;
+  if (typeof value === 'bigint') return false;
   return isEmpty(value);
 }
 
