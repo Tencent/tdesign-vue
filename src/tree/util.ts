@@ -1,6 +1,5 @@
 import { camelCase } from 'lodash-es';
 import { TypeVNode, TypeSetupContext, isVueNext } from './adapt';
-import { TreeNodeValue } from './type';
 import {
   TreeProps,
   TypeTreeStore,
@@ -10,6 +9,7 @@ import {
   TypeTNodeProp,
   TypeGetTNodeOption,
   TypeTargetNode,
+  TreeNodeValue,
 } from './tree-types';
 
 export function emitEvent<T extends any[]>(props: TreeProps, context: TypeSetupContext, evtName: string, ...args: T) {
@@ -116,7 +116,7 @@ export function getLineModel(nodes: TypeTreeNode[], node: TypeTreeNode, index: n
 }
 
 export function isTreeNodeValue(item: unknown): item is TreeNodeValue {
-  return typeof item === 'string' || typeof item === 'number' || typeof item === 'bigint';
+  return ['string', 'number', 'bigint'].includes(typeof item);
 }
 
 export function getNode(store: TypeTreeStore, item: TypeTargetNode): TypeTreeNode {
