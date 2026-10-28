@@ -2,17 +2,15 @@
 
 /**
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
- * updated at 2021-11-19 10:44:26
  * */
 
-import { AvatarProps } from '../avatar';
-import { TNode } from '../common';
+import type { TNode } from '../common';
 
 export interface TdCommentProps {
   /**
    * 操作
    */
-  actions?: Array<TNode>;
+  actions?: Array<TNode> | TNode;
   /**
    * 作者
    */
@@ -20,7 +18,7 @@ export interface TdCommentProps {
   /**
    * 头像
    */
-  avatar?: string | AvatarProps | TNode;
+  avatar?: string | TNode;
   /**
    * 内容
    */
@@ -37,4 +35,4 @@ export interface TdCommentProps {
    * 回复
    */
   reply?: string | TNode;
-};
+}
