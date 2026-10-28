@@ -64,59 +64,64 @@ async function createCascader(props = {}, initial = []) {
   };
 }
 
-describe('Cascader disabled children compatibility', () => {
-  it.each(modes)('keeps the existing enabled-only parent calculation and controlled values in %s mode', async (valueMode) => {
-    const {
-      wrapper, checked, half, disabled, click, tags, onChange,
-    } = await createCascader({ valueMode });
-    await click('P');
-    const expected = { all: ['P', 'A', 'B'], parentFirst: ['P'], onlyLeaf: ['A', 'B'] }[valueMode];
-    await vi.waitFor(() => expect(wrapper.vm.value).toEqual(expected));
-    expect(onChange.mock.calls.at(-1)[0]).toEqual(expected);
-    expect(checked('P')).toBe(true);
-    expect(half()).toBe(false);
-    expect(disabled('D')).toBe(true);
-    expect(checked('D')).toBe(false);
-    expect(tags()).toEqual(expected.map((value) => (value === 'P' ? 'Parent' : value)).sort());
-    await click('P');
-    await vi.waitFor(() => expect(wrapper.vm.value).toEqual([]));
-    expect(tags()).toEqual([]);
-    await click('A');
-    await vi.waitFor(() => expect(half()).toBe(true));
-    await click('B');
-    await vi.waitFor(() => expect(wrapper.vm.value).toEqual(expected));
-    expect(checked('P')).toBe(true);
-    expect(half()).toBe(false);
-  });
+describe('Cascader', () => {
+  describe('scenarios', () => {
+    describe('disabled children compatibility', () => {
+      it.each(modes)('keeps the existing enabled-only parent calculation and controlled values in %s mode', async (valueMode) => {
+        const {
+          wrapper, checked, half, disabled, click, tags, onChange,
+        } = await createCascader({ valueMode });
+        await click('P');
+        const expected = { all: ['P', 'A', 'B'], parentFirst: ['P'], onlyLeaf: ['A', 'B'] }[valueMode];
+        await vi.waitFor(() => expect(wrapper.vm.value).toEqual(expected));
+        expect(onChange.mock.calls.at(-1)[0]).toEqual(expected);
+        expect(checked('P')).toBe(true);
+        expect(half()).toBe(false);
+        expect(disabled('D')).toBe(true);
+        expect(checked('D')).toBe(false);
+        expect(tags()).toEqual(expected.map((value) => (value === 'P' ? 'Parent' : value)).sort());
+        await click('P');
+        await vi.waitFor(() => expect(wrapper.vm.value).toEqual([]));
+        expect(tags()).toEqual([]);
+        await click('A');
+        await vi.waitFor(() => expect(half()).toBe(true));
+        await click('B');
+        await vi.waitFor(() => expect(wrapper.vm.value).toEqual(expected));
+        expect(checked('P')).toBe(true);
+        expect(half()).toBe(false);
+      });
 
-  it.each(modes)('retains explicitly selected disabled values and tags in %s mode', async (valueMode) => {
-    const {
-      wrapper, checked, half, click, tags,
-    } = await createCascader({ valueMode }, ['D']);
-    await vi.waitFor(() => expect(tags()).toEqual(['Disabled']));
-    expect(checked('D')).toBe(true);
-    expect(half()).toBe(false);
-    await click('P');
-    await vi.waitFor(() => expect(checked('P')).toBe(true));
-    expect(checked('D')).toBe(true);
-    await click('P');
-    await vi.waitFor(() => expect(wrapper.vm.value).toEqual(['D']));
-    expect(checked('D')).toBe(true);
-    expect(half()).toBe(false);
-    expect(tags()).toEqual(['Disabled']);
-  });
+      it('retains explicitly selected disabled values and tags', async () => {
+        const valueMode = 'parentFirst';
+        const {
+          wrapper, checked, half, click, tags,
+        } = await createCascader({ valueMode }, ['D']);
+        await vi.waitFor(() => expect(tags()).toEqual(['Disabled']));
+        expect(checked('D')).toBe(true);
+        expect(half()).toBe(false);
+        await click('P');
+        await vi.waitFor(() => expect(checked('P')).toBe(true));
+        expect(checked('D')).toBe(true);
+        await click('P');
+        await vi.waitFor(() => expect(wrapper.vm.value).toEqual(['D']));
+        expect(checked('D')).toBe(true);
+        expect(half()).toBe(false);
+        expect(tags()).toEqual(['Disabled']);
+      });
 
-  it('preserves full-path values through parentFirst compression and cancellation', async () => {
-    const {
-      wrapper, checked, click, tags,
-    } = await createCascader({ valueMode: 'parentFirst', valueType: 'full' });
-    await click('P');
-    await vi.waitFor(() => expect(wrapper.vm.value).toEqual([['P']]));
-    expect(checked('P')).toBe(true);
-    expect(checked('D')).toBe(false);
-    expect(tags()).toEqual(['Parent']);
-    await click('P');
-    await vi.waitFor(() => expect(wrapper.vm.value).toEqual([]));
-    expect(tags()).toEqual([]);
+      it('preserves full-path values through parentFirst compression and cancellation', async () => {
+        const {
+          wrapper, checked, click, tags,
+        } = await createCascader({ valueMode: 'parentFirst', valueType: 'full' });
+        await click('P');
+        await vi.waitFor(() => expect(wrapper.vm.value).toEqual([['P']]));
+        expect(checked('P')).toBe(true);
+        expect(checked('D')).toBe(false);
+        expect(tags()).toEqual(['Parent']);
+        await click('P');
+        await vi.waitFor(() => expect(wrapper.vm.value).toEqual([]));
+        expect(tags()).toEqual([]);
+      });
+    });
   });
 });

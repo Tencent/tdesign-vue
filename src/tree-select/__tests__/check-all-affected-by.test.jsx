@@ -56,75 +56,81 @@ async function createSelect(treeProps, initial = []) {
   };
 }
 
-describe('TreeSelect checkAllAffectedBy', () => {
-  [undefined, 'onlyEnabled'].forEach((checkAllAffectedBy) => {
-    const scope = checkAllAffectedBy || 'all';
-    const scopeProps = checkAllAffectedBy ? { checkAllAffectedBy } : {};
+describe('TreeSelect', () => {
+  describe('scenarios', () => {
+    describe('checkAllAffectedBy and controlled selection', () => {
+      [undefined, 'onlyEnabled'].forEach((checkAllAffectedBy) => {
+        const scope = checkAllAffectedBy || 'all';
+        const scopeProps = checkAllAffectedBy ? { checkAllAffectedBy } : {};
 
-    it.each(modes)(`${scope} keeps parent state, emitted values and tags consistent in %s mode`, async (valueMode) => {
-      const {
-        wrapper, checkbox, click, tags, onChange,
-      } = await createSelect({ ...scopeProps, valueMode });
-      await click('P');
-      const expected = scope === 'all' || valueMode === 'onlyLeaf'
-        ? ['A', 'B'] : { all: ['P', 'A', 'B'], parentFirst: ['P'] }[valueMode];
-      await vi.waitFor(() => expect(wrapper.vm.value).toEqual(expected));
-      expect(onChange.mock.calls.at(-1)[0]).toEqual(expected);
-      await vi.waitFor(() => {
-        expect(checkbox('P').classList.contains('t-is-checked')).toBe(scope === 'onlyEnabled');
-        expect(checkbox('P').classList.contains('t-is-indeterminate')).toBe(scope === 'all');
+        it.each(modes)(`${scope} keeps parent state, emitted values and tags consistent in %s mode`, async (valueMode) => {
+          const {
+            wrapper, checkbox, click, tags, onChange,
+          } = await createSelect({ ...scopeProps, valueMode });
+          await click('P');
+          const expected = scope === 'all' || valueMode === 'onlyLeaf'
+            ? ['A', 'B'] : { all: ['P', 'A', 'B'], parentFirst: ['P'] }[valueMode];
+          await vi.waitFor(() => expect(wrapper.vm.value).toEqual(expected));
+          expect(onChange.mock.calls.at(-1)[0]).toEqual(expected);
+          await vi.waitFor(() => {
+            expect(checkbox('P').classList.contains('t-is-checked')).toBe(scope === 'onlyEnabled');
+            expect(checkbox('P').classList.contains('t-is-indeterminate')).toBe(scope === 'all');
+          });
+          expect(checkbox('D').querySelector('input').disabled).toBe(true);
+          expect(checkbox('D').classList.contains('t-is-checked')).toBe(false);
+          expect(tags()).toEqual(expected.map((value) => (value === 'P' ? 'Parent' : value)).sort());
+          await click('P');
+          await vi.waitFor(() => expect(wrapper.vm.value).toEqual([]));
+          expect(tags()).toEqual([]);
+          await vi.waitFor(() => expect(checkbox('P').classList.contains('t-is-indeterminate')).toBe(false));
+          await click('A');
+          await vi.waitFor(() => expect(checkbox('P').classList.contains('t-is-indeterminate')).toBe(true));
+          await click('B');
+          await vi.waitFor(() => expect(wrapper.vm.value).toEqual(expected));
+          await vi.waitFor(() => expect(checkbox('P').classList.contains('t-is-checked')).toBe(scope === 'onlyEnabled'));
+          expect(tags()).toEqual(expected.map((value) => (value === 'P' ? 'Parent' : value)).sort());
+        });
+
+        it(`${scope} retains a disabled value and its tag across parentFirst round-trips`, async () => {
+          const {
+            wrapper, checkbox, click, tags,
+          } = await createSelect({ ...scopeProps, valueMode: 'parentFirst' }, ['D']);
+          await vi.waitFor(() => expect(tags()).toEqual(['Disabled']));
+          expect(checkbox('P').classList.contains('t-is-indeterminate')).toBe(scope === 'all');
+          await click('P');
+          await vi.waitFor(() => expect(wrapper.vm.value).toEqual(['P', 'D']));
+          expect(tags()).toEqual(['Disabled', 'Parent']);
+          expect(checkbox('D').classList.contains('t-is-checked')).toBe(true);
+          await click('P');
+          await vi.waitFor(() => expect(wrapper.vm.value).toEqual(['D']));
+          expect(tags()).toEqual(['Disabled']);
+          expect(checkbox('D').classList.contains('t-is-checked')).toBe(true);
+          expect(checkbox('P').classList.contains('t-is-indeterminate')).toBe(scope === 'all');
+        });
       });
-      expect(checkbox('D').querySelector('input').disabled).toBe(true);
-      expect(checkbox('D').classList.contains('t-is-checked')).toBe(false);
-      expect(tags()).toEqual(expected.map((value) => (value === 'P' ? 'Parent' : value)).sort());
-      await click('P');
-      await vi.waitFor(() => expect(wrapper.vm.value).toEqual([]));
-      expect(tags()).toEqual([]);
-      await vi.waitFor(() => expect(checkbox('P').classList.contains('t-is-indeterminate')).toBe(false));
-      await click('A');
-      await vi.waitFor(() => expect(checkbox('P').classList.contains('t-is-indeterminate')).toBe(true));
-      await click('B');
-      await vi.waitFor(() => expect(wrapper.vm.value).toEqual(expected));
-      await vi.waitFor(() => expect(checkbox('P').classList.contains('t-is-checked')).toBe(scope === 'onlyEnabled'));
-      expect(tags()).toEqual(expected.map((value) => (value === 'P' ? 'Parent' : value)).sort());
     });
 
-    it(`${scope} retains a disabled value and its tag across parentFirst round-trips`, async () => {
-      const {
-        wrapper, checkbox, click, tags,
-      } = await createSelect({ ...scopeProps, valueMode: 'parentFirst' }, ['D']);
-      await vi.waitFor(() => expect(tags()).toEqual(['Disabled']));
-      expect(checkbox('P').classList.contains('t-is-indeterminate')).toBe(scope === 'all');
-      await click('P');
-      await vi.waitFor(() => expect(wrapper.vm.value).toEqual(['P', 'D']));
-      expect(tags()).toEqual(['Disabled', 'Parent']);
-      expect(checkbox('D').classList.contains('t-is-checked')).toBe(true);
-      await click('P');
-      await vi.waitFor(() => expect(wrapper.vm.value).toEqual(['D']));
-      expect(tags()).toEqual(['Disabled']);
-      expect(checkbox('D').classList.contains('t-is-checked')).toBe(true);
-      expect(checkbox('P').classList.contains('t-is-indeterminate')).toBe(scope === 'all');
+    describe('dynamic treeProps', () => {
+      it('reacts to treeProps scope changes without emitting a change or rewriting controlled values', async () => {
+        const {
+          wrapper, checkbox, onChange, tags, click,
+        } = await createSelect({ valueMode: 'parentFirst', checkAllAffectedBy: 'onlyEnabled' }, ['A', 'B']);
+        await vi.waitFor(() => expect(checkbox('P').classList.contains('t-is-checked')).toBe(true));
+        await wrapper.setData({ treeProps: { valueMode: 'parentFirst', checkAllAffectedBy: 'all' } });
+        await vi.waitFor(() => expect(checkbox('P').classList.contains('t-is-indeterminate')).toBe(true));
+        expect(checkbox('P').classList.contains('t-is-checked')).toBe(false);
+        expect(wrapper.vm.value).toEqual(['A', 'B']);
+        expect(tags()).toEqual(['A', 'B']);
+        await wrapper.setData({ treeProps: { valueMode: 'parentFirst', checkAllAffectedBy: 'onlyEnabled' } });
+        await vi.waitFor(() => expect(checkbox('P').classList.contains('t-is-checked')).toBe(true));
+        expect(onChange).not.toHaveBeenCalled();
+        expect(wrapper.vm.value).toEqual(['A', 'B']);
+        expect(tags()).toEqual(['A', 'B']);
+        await click('P');
+        await vi.waitFor(() => expect(wrapper.vm.value).toEqual([]));
+        expect(tags()).toEqual([]);
+        expect(onChange).toHaveBeenCalledTimes(1);
+      });
     });
-  });
-
-  it('reacts to treeProps scope changes without emitting a change or rewriting controlled values', async () => {
-    const {
-      wrapper, checkbox, onChange, tags, click,
-    } = await createSelect({ valueMode: 'parentFirst', checkAllAffectedBy: 'onlyEnabled' }, ['A', 'B']);
-    await vi.waitFor(() => expect(checkbox('P').classList.contains('t-is-checked')).toBe(true));
-    await wrapper.setData({ treeProps: { valueMode: 'parentFirst', checkAllAffectedBy: 'all' } });
-    await vi.waitFor(() => expect(checkbox('P').classList.contains('t-is-indeterminate')).toBe(true));
-    expect(checkbox('P').classList.contains('t-is-checked')).toBe(false);
-    expect(wrapper.vm.value).toEqual(['A', 'B']);
-    expect(tags()).toEqual(['A', 'B']);
-    await wrapper.setData({ treeProps: { valueMode: 'parentFirst', checkAllAffectedBy: 'onlyEnabled' } });
-    await vi.waitFor(() => expect(checkbox('P').classList.contains('t-is-checked')).toBe(true));
-    expect(onChange).not.toHaveBeenCalled();
-    expect(wrapper.vm.value).toEqual(['A', 'B']);
-    expect(tags()).toEqual(['A', 'B']);
-    await click('P');
-    await vi.waitFor(() => expect(wrapper.vm.value).toEqual([]));
-    expect(tags()).toEqual([]);
-    expect(onChange).toHaveBeenCalledTimes(1);
   });
 });
