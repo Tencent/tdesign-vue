@@ -249,7 +249,7 @@ describe('Tree:disabled', () => {
     });
   });
 
-  describe('选中态与禁用态的关联', () => {
+  describe('选中态与禁用态的关联（onlyEnabled）', () => {
     it('禁用的子节点未选中时，父节点选中，子节点不会被选中', async () => {
       const data = [
         {
@@ -266,7 +266,9 @@ describe('Tree:disabled', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" transition={false} data={data} expandAll checkable></Tree>;
+          return (
+            <Tree ref="tree" transition={false} data={data} expandAll checkable checkAllAffectedBy="onlyEnabled"></Tree>
+          );
         },
       });
       await delay(1);
@@ -306,7 +308,9 @@ describe('Tree:disabled', () => {
       ];
       const wrapper = mount({
         render() {
-          return <Tree ref="tree" transition={false} data={data} expandAll checkable></Tree>;
+          return (
+            <Tree ref="tree" transition={false} data={data} expandAll checkable checkAllAffectedBy="onlyEnabled"></Tree>
+          );
         },
       });
       await delay(1);
@@ -334,7 +338,7 @@ describe('Tree:disabled', () => {
     });
   });
 
-  it('禁用的子节点同时存在选中与未选中状态的，父节点状态切换时，可用子节点可切换选中态', async () => {
+  it('onlyEnabled 下，禁用子节点状态不一致时，可用子节点仍可切换选中态', async () => {
     const data = [
       {
         value: 't1',
@@ -353,7 +357,9 @@ describe('Tree:disabled', () => {
     ];
     const wrapper = mount({
       render() {
-        return <Tree ref="tree" transition={false} data={data} expandAll checkable></Tree>;
+        return (
+          <Tree ref="tree" transition={false} data={data} expandAll checkable checkAllAffectedBy="onlyEnabled"></Tree>
+        );
       },
     });
     await delay(1);

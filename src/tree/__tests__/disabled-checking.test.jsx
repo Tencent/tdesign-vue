@@ -2,7 +2,7 @@ import {
   describe, it, expect, afterEach, vi,
 } from 'vitest';
 import { mount as mountVue } from '@vue/test-utils';
-import AfterTree from '@/src/tree/index.ts';
+import Tree from '@/src/tree/index.ts';
 
 const modes = ['all', 'parentFirst', 'onlyLeaf'];
 const data = [
@@ -20,13 +20,13 @@ const cleanup = [];
 afterEach(() => {
   cleanup.splice(0).forEach((fn) => fn());
 });
-async function mount(Component, mode, initial = []) {
+async function mountTree(mode, initial = []) {
   const onChange = vi.fn();
   const wrapper = mountVue(
     {
       data: () => ({ value: initial }),
       render(h) {
-        return h(Component, {
+        return h(Tree, {
           props: {
             data,
             checkable: true,
@@ -63,51 +63,61 @@ async function mount(Component, mode, initial = []) {
     },
   };
 }
-const expected = (mode) => {
-  if (mode === 'all') return ['P', 'A', 'B'];
-  if (mode === 'parentFirst') return ['P'];
-  return ['A', 'B'];
-};
+const checked = (host, id) => host.querySelector(`[data-value="${id}"] .t-checkbox`).classList.contains('t-is-checked');
 const half = (host, id) => host.querySelector(`[data-value="${id}"] .t-checkbox`).classList.contains('t-is-indeterminate');
-describe('Tree disabled children controlled checking', () => {
-  it.each(modes)('fixed parent checking and cancellation round-trip in %s', async (mode) => {
-    const {
-      host, input, value, click,
-    } = await mount(AfterTree, mode);
-    await click('P');
-    await vi.waitFor(() => expect(input('P').checked).toBe(true));
-    expect(value.value).toEqual(expected(mode));
-    expect(half(host, 'P')).toBe(false);
-    expect(input('D').disabled).toBe(true);
-    expect(input('D').checked).toBe(false);
-    await click('P');
-    await vi.waitFor(() => expect(value.value).toEqual([]));
-    expect(input('P').checked).toBe(false);
-    expect(half(host, 'P')).toBe(false);
-  });
-  it.each(modes)('enabled children derive partial and full selection in %s', async (mode) => {
-    const {
-      host, input, value, click,
-    } = await mount(AfterTree, mode);
-    await click('A');
-    await vi.waitFor(() => expect(half(host, 'P')).toBe(true));
-    await click('B');
-    await vi.waitFor(() => expect(input('P').checked).toBe(true));
-    expect(half(host, 'P')).toBe(false);
-    expect(value.value).toEqual(expected(mode));
-    await click('A');
-    await vi.waitFor(() => expect(half(host, 'P')).toBe(true));
-    expect(value.value).toEqual(['B']);
-  });
-  it.each(['all', 'parentFirst'])('retains a selected disabled child in %s', async (mode) => {
-    const { input, value, click } = await mount(AfterTree, mode, ['D']);
-    await click('P');
-    await vi.waitFor(() => expect(input('P').checked).toBe(true));
-    expect(value.value).toEqual(mode === 'all' ? ['P', 'A', 'B', 'D'] : ['P', 'D']);
-    expect(input('D').checked).toBe(true);
-    await click('P');
-    await vi.waitFor(() => expect(value.value).toEqual(['D']));
-    expect(input('P').checked).toBe(false);
-    expect(input('D').checked).toBe(true);
+describe('Tree', () => {
+  describe('scenarios', () => {
+    describe('default all with disabled children', () => {
+      it.each(modes)(
+        'keeps the parent half-selected when checking enabled children through the parent in %s mode',
+        async (mode) => {
+          const {
+            host, input, value, click,
+          } = await mountTree(mode);
+          await click('P');
+          await vi.waitFor(() => expect(value.value).toEqual(['A', 'B']));
+          expect(checked(host, 'P')).toBe(false);
+          expect(half(host, 'P')).toBe(true);
+          expect(input('D').disabled).toBe(true);
+          expect(input('D').checked).toBe(false);
+          await click('P');
+          await vi.waitFor(() => expect(value.value).toEqual([]));
+          expect(checked(host, 'P')).toBe(false);
+          expect(half(host, 'P')).toBe(false);
+        },
+      );
+      it.each(modes)('keeps the parent half-selected after checking all enabled children in %s mode', async (mode) => {
+        const {
+          host, input, value, click,
+        } = await mountTree(mode);
+        await click('A');
+        await vi.waitFor(() => expect(half(host, 'P')).toBe(true));
+        await click('B');
+        await vi.waitFor(() => expect(value.value).toEqual(['A', 'B']));
+        expect(checked(host, 'P')).toBe(false);
+        expect(half(host, 'P')).toBe(true);
+        expect(input('D').checked).toBe(false);
+        await click('A');
+        await vi.waitFor(() => expect(half(host, 'P')).toBe(true));
+        expect(value.value).toEqual(['B']);
+      });
+      it.each(['all', 'parentFirst'])(
+        'preserves disabled selection when toggling the parent in %s mode',
+        async (mode) => {
+          const {
+            host, input, value, click,
+          } = await mountTree(mode, ['D']);
+          await click('P');
+          await vi.waitFor(() => expect(checked(host, 'P')).toBe(true));
+          expect(value.value).toEqual(mode === 'all' ? ['P', 'A', 'B', 'D'] : ['P', 'D']);
+          expect(input('D').checked).toBe(true);
+          await click('P');
+          await vi.waitFor(() => expect(value.value).toEqual(['D']));
+          expect(checked(host, 'P')).toBe(false);
+          expect(half(host, 'P')).toBe(true);
+          expect(input('D').checked).toBe(true);
+        },
+      );
+    });
   });
 });
