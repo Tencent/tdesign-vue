@@ -6,6 +6,11 @@ docClass: timeline
 ---
 
 
+## 🌈 1.16.3 `2026-10-28` 
+### 🐞 Bug Fixes
+- `fix`: 优化 1.16.2 版本的兼容性问题 @uyarn ([#3926](https://github.com/Tencent/tdesign-vue/pull/3926))
+
+
 ## 🌈 1.16.2 `2026-10-28` 
 ### 🚀 Features
 - `Tree`: 
