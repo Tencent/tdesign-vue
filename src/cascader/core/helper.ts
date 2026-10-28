@@ -100,7 +100,7 @@ export const getTreeValue = (value: CascaderContextType['value']) => {
     } else if (value.length) {
       treeValue = value as TreeNodeValue[];
     }
-  } else if (value || value === 0 || value === 0n) {
+  } else if (value || value === 0 || typeof value === 'bigint') {
     if (typeof value === 'object') {
       treeValue = [(value as TreeOptionData).value];
     } else {
