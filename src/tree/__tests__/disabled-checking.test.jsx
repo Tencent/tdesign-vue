@@ -33,7 +33,6 @@ async function mount(Component, mode, initial = []) {
             expandAll: true,
             transition: false,
             valueMode: mode,
-            checkAllAffectedBy: 'onlyEnabled',
             value: this.value,
             onChange: (next, context) => {
               onChange(next, context);
