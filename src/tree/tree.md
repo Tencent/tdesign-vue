@@ -11,6 +11,7 @@ activeMultiple | Boolean | false | 是否允许多个节点同时高亮 | N
 actived | Array | - | 高亮的节点值。支持语法糖 `.sync`。TS 类型：`Array<TreeNodeValue>` | N
 allowDrop | Function | - | 判断节点是否可以执行 drop 操作，泛型 `T` 表示树节点 TS 类型。TS 类型：`(context: { e: DragEvent; dragNode: TreeNodeModel<T>; dropNode: TreeNodeModel<T>; dropPosition: number; }) => boolean` | N
 allowFoldNodeOnFilter | Boolean | false | 是否允许在过滤时节点折叠节点 | N
+checkAllAffectedBy | String | all | 参与父节点全选、半选状态判定的子节点范围。all 表示所有子节点参与判断，包括禁用子节点；onlyEnabled 表示仅未禁用的子节点参与判断，没有可用子节点时，不由子节点推导出全选或半选状态。仅影响父节点状态的判定，不改变禁用子节点自身的选中状态。checkStrictly 为 true 时不生效。可选项：all/onlyEnabled | N
 checkProps | Object | - | 透传属性到 checkbox 组件。参考 checkbox 组件 API。TS 类型：`CheckboxProps`，[Checkbox API Documents](./checkbox?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree/type.ts) | N
 checkStrictly | Boolean | false | 父子节点选中状态不再关联，可各自选中或取消 | N
 checkable | Boolean | false | 隐藏节点复选框 | N
@@ -38,8 +39,8 @@ maxHeight | String / Number | - | 树的最大高度，超出后会出现滚动�
 operations | Slot / Function | - | 自定义节点操作项，泛型 `T` 表示树节点 TS 类型。TS 类型：`TNode<TreeNodeModel<T>>`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 scroll | Object | - | 懒加载和虚拟滚动。为保证组件收益最大化，当数据量小于阈值 `scroll.threshold` 时，无论虚拟滚动的配置是否存在，组件内部都不会开启虚拟滚动，`scroll.threshold` 默认为 `100`。TS 类型：`TScroll`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts) | N
 transition | Boolean | true | 节点展开折叠时是否使用过渡动画 | N
-value | Array | [] | 选中值，组件为可选状态时有效。支持语法糖 `v-model`。TS 类型：`Array<TreeNodeValue>` `type TreeNodeValue = string \| number`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree/type.ts) | N
-defaultValue | Array | [] | 选中值，组件为可选状态时有效。非受控属性。TS 类型：`Array<TreeNodeValue>` `type TreeNodeValue = string \| number`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree/type.ts) | N
+value | Array | [] | 选中值，组件为可选状态时有效。支持语法糖 `v-model`。TS 类型：`Array<TreeNodeValue>` `type TreeNodeValue = string \| number \| bigint`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree/type.ts) | N
+defaultValue | Array | [] | 选中值，组件为可选状态时有效。非受控属性。TS 类型：`Array<TreeNodeValue>` `type TreeNodeValue = string \| number \| bigint`。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree/type.ts) | N
 valueMode | String | onlyLeaf | 选中值模式。all 表示父节点和子节点全部会出现在选中值里面；parentFirst 表示当子节点全部选中时，仅父节点在选中值里面；onlyLeaft 表示无论什么情况，选中值仅呈现叶子节点。可选项：onlyLeaf/parentFirst/all | N
 onActive | Function |  | TS 类型：`(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T>; e?: MouseEvent; trigger: 'node-click' \| 'setItem' }) => void`<br/>节点激活时触发，泛型 `T` 表示树节点 TS 类型 | N
 onChange | Function |  | TS 类型：`(value: Array<TreeNodeValue>, context: { node: TreeNodeModel<T>; e?: any; trigger: 'node-click' \| 'setItem' }) => void`<br/>节点选中状态变化时触发，context.node 表示当前变化的选项，泛型 `T` 表示树节点 TS 类型 | N
@@ -85,7 +86,7 @@ insertAfter | `(value: TreeNodeValue, newData: T)` | \- | 必需。插入新节�
 insertBefore | `(value: TreeNodeValue, newData: T)` | \- | 必需。插入新节点到指定节点前面，泛型 `T` 表示树节点 TS 类型
 refresh | \- | \- | 必需。刷新树节点状态，可用于搜索场景刷新
 remove | `(value: TreeNodeValue)` | \- | 必需。移除指定节点
-scrollTo | `(scrollToParams: ScrollToElementParams)` | \- | 虚拟滚动场景下 支持指定滚动到具体的节点
+scrollTo | `(scrollToParams: TreeScrollToElementParams)` | \- | 虚拟滚动场景下 支持指定滚动到具体的节点。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/tree/type.ts)。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)。<br/>`interface TreeScrollToElementParams extends Omit<ComponentScrollToElementParams, 'key'> { key?: TreeNodeValue; }`<br/>
 setItem | `(value: TreeNodeValue, options: TreeNodeState)` | \- | 必需。设置节点状态
 
 ### TreeNodeState
@@ -103,7 +104,7 @@ expanded | Boolean | false | 节点是否已展开 | N
 indeterminate | Boolean | false | 节点是否为半选中状态 | N
 label | String | - | 节点标签文案 | N
 loading | Boolean | false | 子节点数据是否在加载中 | N
-value | String / Number | - | 节点值 | N
+value | String / Number / BigInt | - | 节点值。TS 类型：`TreeNodeValue` | N
 visible | Boolean | false | 节点是否可视 | N
 
 ### TreeNodeModel
