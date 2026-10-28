@@ -58,12 +58,12 @@ async function createSelect(treeProps, initial = []) {
 
 describe('TreeSelect', () => {
   describe('scenarios', () => {
-    describe('checkAllAffectedBy and controlled selection', () => {
+    describe('checkAllAffectedBy and valueMode', () => {
       [undefined, 'onlyEnabled'].forEach((checkAllAffectedBy) => {
         const scope = checkAllAffectedBy || 'all';
         const scopeProps = checkAllAffectedBy ? { checkAllAffectedBy } : {};
 
-        it.each(modes)(`${scope} keeps parent state, emitted values and tags consistent in %s mode`, async (valueMode) => {
+        it.each(modes)(`${scope} emits values and renders tags in %s mode`, async (valueMode) => {
           const {
             wrapper, checkbox, click, tags, onChange,
           } = await createSelect({ ...scopeProps, valueMode });
@@ -91,7 +91,7 @@ describe('TreeSelect', () => {
           expect(tags()).toEqual(expected.map((value) => (value === 'P' ? 'Parent' : value)).sort());
         });
 
-        it(`${scope} retains a disabled value and its tag across parentFirst round-trips`, async () => {
+        it(`${scope} preserves disabled selection and tags when toggling the parent`, async () => {
           const {
             wrapper, checkbox, click, tags,
           } = await createSelect({ ...scopeProps, valueMode: 'parentFirst' }, ['D']);
@@ -111,7 +111,7 @@ describe('TreeSelect', () => {
     });
 
     describe('dynamic treeProps', () => {
-      it('reacts to treeProps scope changes without emitting a change or rewriting controlled values', async () => {
+      it('updates parent selection from treeProps without emitting change', async () => {
         const {
           wrapper, checkbox, onChange, tags, click,
         } = await createSelect({ valueMode: 'parentFirst', checkAllAffectedBy: 'onlyEnabled' }, ['A', 'B']);

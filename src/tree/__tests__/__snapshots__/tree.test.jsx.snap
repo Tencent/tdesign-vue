@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Tree > scenarios > parent and child selection > all derives parent state after child clicks in onlyLeaf mode 1`] = `
+exports[`Tree > scenarios > checkAllAffectedBy and valueMode > all computes parent selection in onlyLeaf mode 1`] = `
 <div
   class="t-tree t-tree--checkable"
 >
@@ -169,7 +169,7 @@ exports[`Tree > scenarios > parent and child selection > all derives parent stat
 </div>
 `;
 
-exports[`Tree > scenarios > parent and child selection > onlyEnabled derives parent state after child clicks in onlyLeaf mode 1`] = `
+exports[`Tree > scenarios > checkAllAffectedBy and valueMode > onlyEnabled computes parent selection in onlyLeaf mode 1`] = `
 <div
   class="t-tree t-tree--checkable"
 >

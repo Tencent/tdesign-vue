@@ -58,41 +58,42 @@ async function createTree(options = {}, initial = [], readyNode = 'D') {
 
 describe('Tree', () => {
   describe('props', () => {
-    it('defaults to all and preserves disabled children', async () => {
-      const valueMode = 'parentFirst';
-      const {
-        wrapper, input, half, click,
-      } = await createTree({ valueMode });
-      expect(wrapper.findComponent(Tree).props('checkAllAffectedBy')).toBe('all');
-      await click('P');
-      await vi.waitFor(() => expect(wrapper.vm.value).toEqual(['A', 'B']));
-      expect(wrapper.find('[data-value="P"] .t-checkbox').classes('t-is-checked')).toBe(false);
-      expect(half()).toBe(true);
-      expect(input('D').element.disabled).toBe(true);
-      expect(input('D').element.checked).toBe(false);
-      await click('P');
-      await vi.waitFor(() => expect(wrapper.vm.value).toEqual([]));
-      expect(half()).toBe(false);
-    });
-
-    scopes.forEach((checkAllAffectedBy) => {
-      it(`${checkAllAffectedBy} has no effect on strict checking`, async () => {
+    describe('checkAllAffectedBy', () => {
+      it('defaults to all', async () => {
+        const valueMode = 'parentFirst';
         const {
           wrapper, input, half, click,
-        } = await createTree({ checkStrictly: true, checkAllAffectedBy });
+        } = await createTree({ valueMode });
+        expect(wrapper.findComponent(Tree).props('checkAllAffectedBy')).toBe('all');
         await click('P');
-        await vi.waitFor(() => expect(wrapper.vm.value).toEqual(['P']));
-        expect(input('A').element.checked).toBe(false);
+        await vi.waitFor(() => expect(wrapper.vm.value).toEqual(['A', 'B']));
+        expect(wrapper.find('[data-value="P"] .t-checkbox').classes('t-is-checked')).toBe(false);
+        expect(half()).toBe(true);
+        expect(input('D').element.disabled).toBe(true);
         expect(input('D').element.checked).toBe(false);
+        await click('P');
+        await vi.waitFor(() => expect(wrapper.vm.value).toEqual([]));
         expect(half()).toBe(false);
+      });
+
+      scopes.forEach((checkAllAffectedBy) => {
+        it(`${checkAllAffectedBy} does not cascade selection when checkStrictly is true`, async () => {
+          const {
+            wrapper, input, half, click,
+          } = await createTree({ checkStrictly: true, checkAllAffectedBy });
+          await click('P');
+          await vi.waitFor(() => expect(wrapper.vm.value).toEqual(['P']));
+          expect(input('A').element.checked).toBe(false);
+          expect(input('D').element.checked).toBe(false);
+          expect(half()).toBe(false);
+        });
       });
     });
   });
-
   describe('scenarios', () => {
-    describe('parent and child selection', () => {
+    describe('checkAllAffectedBy and valueMode', () => {
       scopes.forEach((checkAllAffectedBy) => {
-        it.each(modes)(`${checkAllAffectedBy} derives parent state after child clicks in %s mode`, async (valueMode) => {
+        it.each(modes)(`${checkAllAffectedBy} computes parent selection in %s mode`, async (valueMode) => {
           const {
             wrapper, input, half, click,
           } = await createTree({ valueMode, checkAllAffectedBy });
@@ -111,7 +112,7 @@ describe('Tree', () => {
           expect(half()).toBe(true);
         });
 
-        it(`${checkAllAffectedBy} retains an explicitly checked disabled child`, async () => {
+        it(`${checkAllAffectedBy} preserves disabled selection when toggling the parent`, async () => {
           const valueMode = 'parentFirst';
           const {
             wrapper, input, half, click,
@@ -126,7 +127,7 @@ describe('Tree', () => {
           expect(half()).toBe(checkAllAffectedBy === 'all');
         });
 
-        it(`${checkAllAffectedBy} derives state from an initial parent value`, async () => {
+        it(`${checkAllAffectedBy} applies the scope to an initial parent selection`, async () => {
           const valueMode = 'parentFirst';
           const { input, half } = await createTree({ valueMode, checkAllAffectedBy }, ['P']);
           await vi.waitFor(() => expect(input('A').element.checked).toBe(true));
@@ -139,7 +140,7 @@ describe('Tree', () => {
 
     describe('lazy loading', () => {
       // Issue: https://github.com/Tencent/tdesign-common/pull/2753
-      it.each(scopes)('%s keeps disabled children unchanged when loading a checked parent', async (checkAllAffectedBy) => {
+      it.each(scopes)('%s preserves disabled child selection during loading', async (checkAllAffectedBy) => {
         let resolveLoad;
         const load = vi.fn(() => new Promise((resolve) => { resolveLoad = resolve; }));
         const {
@@ -174,8 +175,8 @@ describe('Tree', () => {
       });
     });
 
-    describe('scope and disabled state changes', () => {
-      it('recalculates cached parent state when the scope changes', async () => {
+    describe('selection updates', () => {
+      it('updates parent selection when checkAllAffectedBy changes', async () => {
         const valueMode = 'parentFirst';
         const {
           wrapper, input, half, onChange,
@@ -191,7 +192,7 @@ describe('Tree', () => {
         expect(onChange).not.toHaveBeenCalled();
       });
 
-      it('does not derive full or partial selection from an empty enabled set', async () => {
+      it('leaves the parent unselected when all children are disabled', async () => {
         const onlyDisabled = [{ value: 'P', children: [{ value: 'D', disabled: true }] }];
         const {
           input, half, click, wrapper,
@@ -203,7 +204,7 @@ describe('Tree', () => {
         expect(input('D').element.checked).toBe(true);
       });
 
-      it('updates the parent when a child is disabled and enabled again', async () => {
+      it('updates parent selection when child disabled state changes', async () => {
         const { wrapper, input, half } = await createTree({ checkAllAffectedBy: 'onlyEnabled' }, ['A', 'B']);
         await vi.waitFor(() => expect(input('P').element.checked).toBe(true));
         wrapper.vm.$refs.tree.setItem('D', { disabled: false });

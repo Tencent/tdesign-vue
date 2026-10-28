@@ -67,7 +67,7 @@ async function createCascader(props = {}, initial = []) {
 describe('Cascader', () => {
   describe('scenarios', () => {
     describe('disabled children compatibility', () => {
-      it.each(modes)('keeps the existing enabled-only parent calculation and controlled values in %s mode', async (valueMode) => {
+      it.each(modes)('uses enabled children to compute parent selection in %s mode', async (valueMode) => {
         const {
           wrapper, checked, half, disabled, click, tags, onChange,
         } = await createCascader({ valueMode });
@@ -91,7 +91,7 @@ describe('Cascader', () => {
         expect(half()).toBe(false);
       });
 
-      it('retains explicitly selected disabled values and tags', async () => {
+      it('preserves disabled selection and tags when toggling the parent', async () => {
         const valueMode = 'parentFirst';
         const {
           wrapper, checked, half, click, tags,
@@ -109,7 +109,7 @@ describe('Cascader', () => {
         expect(tags()).toEqual(['Disabled']);
       });
 
-      it('preserves full-path values through parentFirst compression and cancellation', async () => {
+      it('preserves full-path values when toggling the parent', async () => {
         const {
           wrapper, checked, click, tags,
         } = await createCascader({ valueMode: 'parentFirst', valueType: 'full' });
