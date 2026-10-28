@@ -3,6 +3,7 @@ import { defineConfig } from 'vite';
 import { createVuePlugin } from 'vite-plugin-vue2';
 import vueJsx from '@vitejs/plugin-vue2-jsx';
 import tdocPlugin from './plugins/plugin-tdoc';
+import generateLlms from './plugins/generate-llms';
 
 const publicPathMap = {
   preview: '/',

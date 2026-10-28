@@ -73,7 +73,7 @@ export default defineComponent({
 
       return (
         <Item
-          key={node.value}
+          key={`${typeof node.value}:${node.value}`}
           node={node}
           cascaderContext={cascaderContext}
           {...{

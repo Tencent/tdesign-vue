@@ -6,6 +6,24 @@ docClass: timeline
 ---
 
 
+## 🌈 1.16.2 `2026-10-28` 
+### 🚀 Features
+- `Tree`: 
+    - 新增 `checkAllAffectedBy`，用于控制禁用子节点是否参与父节点全选、半选状态判断 @RSS1102 ([#3914](https://github.com/Tencent/tdesign-vue/pull/3914))
+   - 新增支持 bigint 类型的节点值及滚动定位，修复零值节点操作和混合类型键的树数据查询异常。 @RSS1102 ([#3915](https://github.com/Tencent/tdesign-vue/pull/3915))
+- `TreeSelect`: 新增支持 bigint 类型的选中值、回显及事件回传。 @RSS1102 ([#3915](https://github.com/Tencent/tdesign-vue/pull/3915))
+- `Cascader`: 新增支持 bigint 类型的选中值，正确处理 `0n` 回显及 Vue2 节点渲染 @RSS1102 ([#3915](https://github.com/Tencent/tdesign-vue/pull/3915))
+### 🐞 Bug Fixes
+- `Icon`: 修复 usb 原始图标的图层 ID 错误导致在深色模式下渲染错误的问题 @uyarn ([#298](https://github.com/Tencent/tdesign-icons/pull/298))([#3885](https://github.com/Tencent/tdesign-vue/pull/3885))
+- `TreeSelect`: 修复自定义 keys 下对象选中值回显、标签移除及 children 别名递归查找异常的问题。 @RSS1102 ([#3916](https://github.com/Tencent/tdesign-vue/pull/3916))
+- `Cascader`: 修复多选值不在选项中时渲染报错、异步加载后 loading 画面残留的问题。 @RSS1102 ([#3913](https://github.com/Tencent/tdesign-vue/pull/3913))
+### 📝 Documentation
+- `Comment`: 修正 `avatar` 属性的类型描述，移除不受支持的 AvatarProps 类型 @liweijie0812 ([#3923](https://github.com/Tencent/tdesign-vue/pull/3923))
+- `Site`:  新增全站及单组件的 llm.txt @liweijie0812 ([#3889](https://github.com/Tencent/tdesign-vue/pull/3889))
+
+
+
+
 ## 🌈 1.16.1 `2026-07-29` 
 ### 🐞 Bug Fixes
 - `Menu`: 修复 `1.16.0` 版本新增折叠功能导致复合菜单场景下顶部菜单错误展示的问题 @uyarn ([#3869](https://github.com/Tencent/tdesign-vue/pull/3869))

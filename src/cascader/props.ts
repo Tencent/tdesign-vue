@@ -160,12 +160,12 @@ export default {
   },
   /** 选中项的值 */
   value: {
-    type: [String, Number, Array] as PropType<TdCascaderProps['value']>,
+    type: [String, Number, Array, BigInt] as PropType<TdCascaderProps['value']>,
     default: (): TdCascaderProps['value'] => [],
   },
   /** 选中项的值，非受控属性 */
   defaultValue: {
-    type: [String, Number, Array] as PropType<TdCascaderProps['defaultValue']>,
+    type: [String, Number, Array, BigInt] as PropType<TdCascaderProps['defaultValue']>,
     default: (): TdCascaderProps['defaultValue'] => [],
   },
   /** 自定义选中项呈现的内容 */

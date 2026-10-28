@@ -34,9 +34,6 @@ export interface UploadDisplayDragEvents {
 
 export type ImageEvent = Event;
 
-/**
- * 通用全局类型
- * */
 export type PlainObject = { [key: string]: any };
 
 export type OptionData = {
@@ -44,7 +41,7 @@ export type OptionData = {
   value?: string | number;
 } & PlainObject;
 
-export type TreeOptionData<T = string | number> = {
+export type TreeOptionData<T = string | number | bigint> = {
   children?: Array<TreeOptionData<T>> | boolean;
   /** option label content */
   label?: string | TNode;
@@ -56,6 +53,9 @@ export type TreeOptionData<T = string | number> = {
   content?: string | TNode;
 } & PlainObject;
 
+/**
+ * 通用全局类型
+ * */
 export type SizeEnum = 'small' | 'medium' | 'large';
 
 export type ShapeEnum = 'circle' | 'round';
