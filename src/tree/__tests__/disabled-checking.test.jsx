@@ -3,6 +3,7 @@ import {
 } from 'vitest';
 import { mount as mountVue } from '@vue/test-utils';
 import Tree from '@/src/tree/index.ts';
+import { delay } from './kit';
 
 const modes = ['all', 'parentFirst', 'onlyLeaf'];
 const data = [
@@ -47,7 +48,8 @@ async function mountTree(mode, initial = []) {
   cleanup.push(() => wrapper.destroy());
   const host = wrapper.element;
   const input = (id) => host.querySelector(`[data-value="${id}"] input[type="checkbox"]`);
-  await vi.waitFor(() => expect(input('D')).toBeTruthy());
+  await delay(1);
+  expect(input('D')).toBeTruthy();
   return {
     host,
     value: {
@@ -75,13 +77,16 @@ describe('Tree', () => {
             host, input, value, click,
           } = await mountTree(mode);
           await click('P');
-          await vi.waitFor(() => expect(value.value).toEqual(['A', 'B']));
+          await delay(1);
+          expect(value.value).toEqual(['A', 'B']);
           expect(checked(host, 'P')).toBe(false);
           expect(half(host, 'P')).toBe(true);
           expect(input('D').disabled).toBe(true);
           expect(input('D').checked).toBe(false);
+
           await click('P');
-          await vi.waitFor(() => expect(value.value).toEqual([]));
+          await delay(1);
+          expect(value.value).toEqual([]);
           expect(checked(host, 'P')).toBe(false);
           expect(half(host, 'P')).toBe(false);
         },
@@ -91,14 +96,17 @@ describe('Tree', () => {
           host, input, value, click,
         } = await mountTree(mode);
         await click('A');
-        await vi.waitFor(() => expect(half(host, 'P')).toBe(true));
+        await delay(1);
+        expect(half(host, 'P')).toBe(true);
         await click('B');
-        await vi.waitFor(() => expect(value.value).toEqual(['A', 'B']));
+        await delay(1);
+        expect(value.value).toEqual(['A', 'B']);
         expect(checked(host, 'P')).toBe(false);
         expect(half(host, 'P')).toBe(true);
         expect(input('D').checked).toBe(false);
         await click('A');
-        await vi.waitFor(() => expect(half(host, 'P')).toBe(true));
+        await delay(1);
+        expect(half(host, 'P')).toBe(true);
         expect(value.value).toEqual(['B']);
       });
       it.each(['all', 'parentFirst'])(
@@ -108,11 +116,13 @@ describe('Tree', () => {
             host, input, value, click,
           } = await mountTree(mode, ['D']);
           await click('P');
-          await vi.waitFor(() => expect(checked(host, 'P')).toBe(true));
+          await delay(1);
+          expect(checked(host, 'P')).toBe(true);
           expect(value.value).toEqual(mode === 'all' ? ['P', 'A', 'B', 'D'] : ['P', 'D']);
           expect(input('D').checked).toBe(true);
           await click('P');
-          await vi.waitFor(() => expect(value.value).toEqual(['D']));
+          await delay(1);
+          expect(value.value).toEqual(['D']);
           expect(checked(host, 'P')).toBe(false);
           expect(half(host, 'P')).toBe(true);
           expect(input('D').checked).toBe(true);
