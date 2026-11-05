@@ -276,4 +276,83 @@ describe('DateRangePicker', () => {
       expect(panels.length).toBe(2);
     });
   });
+
+  // value 未变化时不应覆盖用户手动导航的年月
+  describe('panel navigation should persist when value unchanged', () => {
+    const readPanelYearMonth = (wrapper) => wrapper
+      .findAll('.t-input__inner')
+      .wrappers.map((input) => input.element.value)
+      .filter(Boolean);
+
+    it('should keep the navigated month after parent re-emits the same value', async () => {
+      const wrapper = mount({
+        data() {
+          return { val: ['2020-12-28', '2020-12-28'] };
+        },
+        render() {
+          return <DateRangePickerPanel value={this.val} />;
+        },
+      });
+      await nextTick();
+
+      // 初始两个值同为当前日期时，右侧面板比左侧大一个月
+      expect(readPanelYearMonth(wrapper)).toEqual(['11 月', '2020', '12 月', '2020']);
+
+      // 手动向前切换左侧面板
+      await wrapper.findAll('.t-pagination-mini__prev').at(0).trigger('click');
+      await nextTick();
+      expect(readPanelYearMonth(wrapper)).toEqual(['10 月', '2020', '12 月', '2020']);
+
+      // 父组件回写完全相同的 value，面板不应跳回
+      wrapper.vm.val = ['2020-12-28', '2020-12-28'];
+      await nextTick();
+      await nextTick();
+      expect(readPanelYearMonth(wrapper)).toEqual(['10 月', '2020', '12 月', '2020']);
+    });
+
+    it('should keep the navigated month across years after parent re-emits the same value', async () => {
+      const wrapper = mount({
+        data() {
+          return { val: ['2020-12-28', '2020-12-28'] };
+        },
+        render() {
+          return <DateRangePickerPanel value={this.val} />;
+        },
+      });
+      await nextTick();
+
+      // 连续回退跨年
+      for (let i = 0; i < 3; i += 1) {
+        // eslint-disable-next-line no-await-in-loop
+        await wrapper.findAll('.t-pagination-mini__prev').at(0).trigger('click');
+        // eslint-disable-next-line no-await-in-loop
+        await nextTick();
+      }
+      expect(readPanelYearMonth(wrapper)).toEqual(['8 月', '2020', '12 月', '2020']);
+
+      wrapper.vm.val = ['2020-12-28', '2020-12-28'];
+      await nextTick();
+      await nextTick();
+      expect(readPanelYearMonth(wrapper)).toEqual(['8 月', '2020', '12 月', '2020']);
+    });
+
+    it('should sync year and month when value actually changes', async () => {
+      const wrapper = mount({
+        data() {
+          return { val: ['2020-12-28', '2020-12-28'] };
+        },
+        render() {
+          return <DateRangePickerPanel value={this.val} />;
+        },
+      });
+      await nextTick();
+      expect(readPanelYearMonth(wrapper)).toEqual(['11 月', '2020', '12 月', '2020']);
+
+      // value 真正变化（跨年），面板年份应随之更新，并与直接挂载新 value 的表现一致
+      wrapper.vm.val = ['2019-03-10', '2019-03-10'];
+      await nextTick();
+      await nextTick();
+      expect(readPanelYearMonth(wrapper)).toEqual(['3 月', '2019', '4 月', '2019']);
+    });
+  });
 });
