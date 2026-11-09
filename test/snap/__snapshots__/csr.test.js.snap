@@ -76692,8 +76692,8 @@ exports[`csr snapshot test > csr test ./src/layout/_example/aside.vue 1`] = `
             <img
               alt="logo"
               class="t-menu__logo--center"
-              src="https://www.tencent.com/img/index/menu_logo_hover.png"
-              width="136"
+              src="https://tdesign.gtimg.com/site/baseLogo-light.png"
+              height="28"
             />
           </div>
           <ul
@@ -77025,8 +77025,8 @@ exports[`csr snapshot test > csr test ./src/layout/_example/combine.vue 1`] = `
             <img
               alt="logo"
               class="logo"
-              src="https://www.tencent.com/img/index/menu_logo_hover.png"
-              width="136"
+              src="https://tdesign.gtimg.com/site/baseLogo-light.png"
+              height="28"
             />
           </div>
           <ul
@@ -77319,8 +77319,8 @@ exports[`csr snapshot test > csr test ./src/layout/_example/top.vue 1`] = `
             <img
               alt="logo"
               class="logo"
-              src="https://www.tencent.com/img/index/menu_logo_hover.png"
-              width="136"
+              src="https://tdesign.gtimg.com/site/baseLogo-light.png"
+              height="28"
             />
           </div>
           <ul
@@ -83868,7 +83868,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/group-side.vue 1`] = `
       <img
         alt="logo"
         src="https://tdesign.gtimg.com/site/baseLogo-light.png"
-        width="136"
+        height="28"
       />
     </div>
     <ul
@@ -90994,7 +90994,7 @@ exports[`csr snapshot test > csr test ./src/menu/_example/popup-side.vue 1`] = `
       <img
         alt="logo"
         src="https://tdesign.gtimg.com/site/baseLogo-light.png"
-        width="136"
+        height="28"
       />
     </div>
     <ul

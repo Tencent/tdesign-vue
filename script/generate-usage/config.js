@@ -138,7 +138,7 @@ module.exports = {
         <div :style="{ padding: '24px', background: 'var(--bg-color-page)', borderRadius: '3px' }">
           <t-head-menu style="marginBottom: 20px" v-bind="configProps">
             <template #logo>
-              <img src="https://www.tencent.com/img/index/menu_logo_hover.png" width="136" />
+              <img src="https://tdesign.gtimg.com/site/baseLogo-light.png" height="28" />
             </template>
             <t-menu-item value="0">
               <span>菜单1</span>
