@@ -2,6 +2,36 @@ import { mount } from '@vue/test-utils';
 import { Select, OptionGroup, Option } from '@/src/select/index.ts';
 
 describe('Select', () => {
+  it('does not select an option after becoming disabled while open', async () => {
+    const onChange = vi.fn();
+    const wrapper = mount(Select, {
+      attachTo: document.body,
+      propsData: {
+        defaultValue: 'Apple',
+        defaultPopupVisible: true,
+        options: ['Apple', 'Orange'].map((value) => ({ label: value, value })),
+        onChange,
+      },
+    });
+
+    const findOrange = () => Array.from(document.querySelectorAll('.t-select-option')).find(
+      (option) => option.textContent.trim() === 'Orange',
+    );
+    await vi.waitFor(() => expect(findOrange()).toBeDefined());
+    const orange = findOrange();
+    await wrapper.setProps({ disabled: true });
+    orange.click();
+
+    expect(onChange).not.toHaveBeenCalled();
+    expect(wrapper.find('input').element.value).toBe('Apple');
+
+    await wrapper.setProps({ disabled: false });
+    orange.click();
+    expect(onChange).toHaveBeenCalledTimes(1);
+    expect(onChange.mock.calls[0][0]).toBe('Orange');
+    wrapper.destroy();
+  });
+
   // test props api
   describe(':props', () => {
     it(':disabled', () => {
