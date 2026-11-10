@@ -168,7 +168,7 @@ export default mixins(classPrefixMixins).extend({
     }
 
     // Normal Loading without overlay or content
-    if (this.loading) {
+    if (this.loading && this.delayCounted) {
       return (
         <div class={this.normalClasses} style={this.styles}>
           {indicator}
