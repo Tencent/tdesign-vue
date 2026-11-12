@@ -1,5 +1,6 @@
 import { mount } from '@vue/test-utils';
 import Cascader, { CascaderPanel } from '@/src/cascader/index.ts';
+import { expendClickEffect } from '@/src/cascader/core/effect';
 
 const options = [
   {
@@ -70,6 +71,22 @@ describe('Cascader', () => {
       });
       expect(wrapper.find('.t-is-disabled').exists()).toBe(true);
     });
+  });
+
+  it('ignores a leaf selection after the cascader is disabled', () => {
+    const setValue = vi.fn();
+    const node = { isLeaf: () => true, setChecked: () => ['orange'], getModel: () => ({ value: 'orange' }) };
+
+    expendClickEffect('hover', 'click', node, {
+      disabled: true,
+      multiple: false,
+      valueType: 'single',
+      treeStore: { resetChecked: vi.fn() },
+      setValue,
+      setVisible: vi.fn(),
+    });
+
+    expect(setValue).not.toHaveBeenCalled();
   });
 
   describe('CascaderPanel', () => {
