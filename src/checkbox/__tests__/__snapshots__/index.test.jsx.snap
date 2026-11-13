@@ -13,7 +13,21 @@ exports[`Checkbox > :props > :checked 1`] = `
   />
   <span
     class="t-checkbox__input"
-  />
+  >
+    <svg
+      class="t-icon t-icon-check-1"
+      fill="none"
+      height="1em"
+      style="fill: none;"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <path
+        d="M21.6157 7.91232L11.3862 18.1418C11.0581 18.4699 10.6129 18.6544 10.1489 18.6545C9.6848 18.6545 9.23883 18.47 8.91064 18.1418L2.67529 11.9065L5.1499 9.43185L10.1479 14.4289L19.1411 5.43771L21.6157 7.91232Z"
+        fill="currentColor"
+      />
+    </svg>
+  </span>
   <span
     class="t-checkbox__label"
   />
@@ -33,7 +47,21 @@ exports[`Checkbox > :props > :defaultChecked 1`] = `
   />
   <span
     class="t-checkbox__input"
-  />
+  >
+    <svg
+      class="t-icon t-icon-check-1"
+      fill="none"
+      height="1em"
+      style="fill: none;"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <path
+        d="M21.6157 7.91232L11.3862 18.1418C11.0581 18.4699 10.6129 18.6544 10.1489 18.6545C9.6848 18.6545 9.23883 18.47 8.91064 18.1418L2.67529 11.9065L5.1499 9.43185L10.1479 14.4289L19.1411 5.43771L21.6157 7.91232Z"
+        fill="currentColor"
+      />
+    </svg>
+  </span>
   <span
     class="t-checkbox__label"
   />
@@ -53,7 +81,21 @@ exports[`Checkbox > :props > :disabled 1`] = `
   />
   <span
     class="t-checkbox__input"
-  />
+  >
+    <svg
+      class="t-icon t-icon-check-1"
+      fill="none"
+      height="1em"
+      style="fill: none;"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <path
+        d="M21.6157 7.91232L11.3862 18.1418C11.0581 18.4699 10.6129 18.6544 10.1489 18.6545C9.6848 18.6545 9.23883 18.47 8.91064 18.1418L2.67529 11.9065L5.1499 9.43185L10.1479 14.4289L19.1411 5.43771L21.6157 7.91232Z"
+        fill="currentColor"
+      />
+    </svg>
+  </span>
   <span
     class="t-checkbox__label"
   />
@@ -74,7 +116,21 @@ exports[`Checkbox > :props > :indeterminate 1`] = `
   />
   <span
     class="t-checkbox__input"
-  />
+  >
+    <svg
+      class="t-icon t-icon-remove-1"
+      fill="none"
+      height="1em"
+      style="fill: none;"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <path
+        d="M20.75 10.25V13.75H3.25V10.25H20.75Z"
+        fill="currentColor"
+      />
+    </svg>
+  </span>
   <span
     class="t-checkbox__label"
   />
@@ -95,7 +151,21 @@ exports[`Checkbox > :props > :name 1`] = `
   />
   <span
     class="t-checkbox__input"
-  />
+  >
+    <svg
+      class="t-icon t-icon-check-1"
+      fill="none"
+      height="1em"
+      style="fill: none;"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <path
+        d="M21.6157 7.91232L11.3862 18.1418C11.0581 18.4699 10.6129 18.6544 10.1489 18.6545C9.6848 18.6545 9.23883 18.47 8.91064 18.1418L2.67529 11.9065L5.1499 9.43185L10.1479 14.4289L19.1411 5.43771L21.6157 7.91232Z"
+        fill="currentColor"
+      />
+    </svg>
+  </span>
   <span
     class="t-checkbox__label"
   />
@@ -121,7 +191,21 @@ exports[`Checkbox CheckboxGroup > :props > :checked 1`] = `
     />
     <span
       class="t-checkbox__input"
-    />
+    >
+      <svg
+        class="t-icon t-icon-check-1"
+        fill="none"
+        height="1em"
+        style="fill: none;"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M21.6157 7.91232L11.3862 18.1418C11.0581 18.4699 10.6129 18.6544 10.1489 18.6545C9.6848 18.6545 9.23883 18.47 8.91064 18.1418L2.67529 11.9065L5.1499 9.43185L10.1479 14.4289L19.1411 5.43771L21.6157 7.91232Z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
     <span
       class="t-checkbox__label"
     >
@@ -140,7 +224,21 @@ exports[`Checkbox CheckboxGroup > :props > :checked 1`] = `
     />
     <span
       class="t-checkbox__input"
-    />
+    >
+      <svg
+        class="t-icon t-icon-check-1"
+        fill="none"
+        height="1em"
+        style="fill: none;"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M21.6157 7.91232L11.3862 18.1418C11.0581 18.4699 10.6129 18.6544 10.1489 18.6545C9.6848 18.6545 9.23883 18.47 8.91064 18.1418L2.67529 11.9065L5.1499 9.43185L10.1479 14.4289L19.1411 5.43771L21.6157 7.91232Z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
     <span
       class="t-checkbox__label"
     >
@@ -169,7 +267,21 @@ exports[`Checkbox CheckboxGroup > :props > :defaultChecked 1`] = `
     />
     <span
       class="t-checkbox__input"
-    />
+    >
+      <svg
+        class="t-icon t-icon-check-1"
+        fill="none"
+        height="1em"
+        style="fill: none;"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M21.6157 7.91232L11.3862 18.1418C11.0581 18.4699 10.6129 18.6544 10.1489 18.6545C9.6848 18.6545 9.23883 18.47 8.91064 18.1418L2.67529 11.9065L5.1499 9.43185L10.1479 14.4289L19.1411 5.43771L21.6157 7.91232Z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
     <span
       class="t-checkbox__label"
     >
@@ -188,7 +300,21 @@ exports[`Checkbox CheckboxGroup > :props > :defaultChecked 1`] = `
     />
     <span
       class="t-checkbox__input"
-    />
+    >
+      <svg
+        class="t-icon t-icon-check-1"
+        fill="none"
+        height="1em"
+        style="fill: none;"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M21.6157 7.91232L11.3862 18.1418C11.0581 18.4699 10.6129 18.6544 10.1489 18.6545C9.6848 18.6545 9.23883 18.47 8.91064 18.1418L2.67529 11.9065L5.1499 9.43185L10.1479 14.4289L19.1411 5.43771L21.6157 7.91232Z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
     <span
       class="t-checkbox__label"
     >
@@ -216,7 +342,21 @@ exports[`Checkbox CheckboxGroup > :props > :disabled 1`] = `
     />
     <span
       class="t-checkbox__input"
-    />
+    >
+      <svg
+        class="t-icon t-icon-check-1"
+        fill="none"
+        height="1em"
+        style="fill: none;"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M21.6157 7.91232L11.3862 18.1418C11.0581 18.4699 10.6129 18.6544 10.1489 18.6545C9.6848 18.6545 9.23883 18.47 8.91064 18.1418L2.67529 11.9065L5.1499 9.43185L10.1479 14.4289L19.1411 5.43771L21.6157 7.91232Z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
     <span
       class="t-checkbox__label"
     >
@@ -235,7 +375,21 @@ exports[`Checkbox CheckboxGroup > :props > :disabled 1`] = `
     />
     <span
       class="t-checkbox__input"
-    />
+    >
+      <svg
+        class="t-icon t-icon-check-1"
+        fill="none"
+        height="1em"
+        style="fill: none;"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M21.6157 7.91232L11.3862 18.1418C11.0581 18.4699 10.6129 18.6544 10.1489 18.6545C9.6848 18.6545 9.23883 18.47 8.91064 18.1418L2.67529 11.9065L5.1499 9.43185L10.1479 14.4289L19.1411 5.43771L21.6157 7.91232Z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
     <span
       class="t-checkbox__label"
     >
@@ -254,7 +408,21 @@ exports[`Checkbox CheckboxGroup > :props > :disabled 1`] = `
     />
     <span
       class="t-checkbox__input"
-    />
+    >
+      <svg
+        class="t-icon t-icon-check-1"
+        fill="none"
+        height="1em"
+        style="fill: none;"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M21.6157 7.91232L11.3862 18.1418C11.0581 18.4699 10.6129 18.6544 10.1489 18.6545C9.6848 18.6545 9.23883 18.47 8.91064 18.1418L2.67529 11.9065L5.1499 9.43185L10.1479 14.4289L19.1411 5.43771L21.6157 7.91232Z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
     <span
       class="t-checkbox__label"
     >
@@ -282,7 +450,21 @@ exports[`Checkbox CheckboxGroup > :props > :max 1`] = `
     />
     <span
       class="t-checkbox__input"
-    />
+    >
+      <svg
+        class="t-icon t-icon-check-1"
+        fill="none"
+        height="1em"
+        style="fill: none;"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M21.6157 7.91232L11.3862 18.1418C11.0581 18.4699 10.6129 18.6544 10.1489 18.6545C9.6848 18.6545 9.23883 18.47 8.91064 18.1418L2.67529 11.9065L5.1499 9.43185L10.1479 14.4289L19.1411 5.43771L21.6157 7.91232Z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
     <span
       class="t-checkbox__label"
     >
@@ -301,7 +483,21 @@ exports[`Checkbox CheckboxGroup > :props > :max 1`] = `
     />
     <span
       class="t-checkbox__input"
-    />
+    >
+      <svg
+        class="t-icon t-icon-check-1"
+        fill="none"
+        height="1em"
+        style="fill: none;"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M21.6157 7.91232L11.3862 18.1418C11.0581 18.4699 10.6129 18.6544 10.1489 18.6545C9.6848 18.6545 9.23883 18.47 8.91064 18.1418L2.67529 11.9065L5.1499 9.43185L10.1479 14.4289L19.1411 5.43771L21.6157 7.91232Z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
     <span
       class="t-checkbox__label"
     >
@@ -320,7 +516,21 @@ exports[`Checkbox CheckboxGroup > :props > :max 1`] = `
     />
     <span
       class="t-checkbox__input"
-    />
+    >
+      <svg
+        class="t-icon t-icon-check-1"
+        fill="none"
+        height="1em"
+        style="fill: none;"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M21.6157 7.91232L11.3862 18.1418C11.0581 18.4699 10.6129 18.6544 10.1489 18.6545C9.6848 18.6545 9.23883 18.47 8.91064 18.1418L2.67529 11.9065L5.1499 9.43185L10.1479 14.4289L19.1411 5.43771L21.6157 7.91232Z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
     <span
       class="t-checkbox__label"
     >
@@ -348,7 +558,21 @@ exports[`Checkbox CheckboxGroup > :props > :name 1`] = `
     />
     <span
       class="t-checkbox__input"
-    />
+    >
+      <svg
+        class="t-icon t-icon-check-1"
+        fill="none"
+        height="1em"
+        style="fill: none;"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M21.6157 7.91232L11.3862 18.1418C11.0581 18.4699 10.6129 18.6544 10.1489 18.6545C9.6848 18.6545 9.23883 18.47 8.91064 18.1418L2.67529 11.9065L5.1499 9.43185L10.1479 14.4289L19.1411 5.43771L21.6157 7.91232Z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
     <span
       class="t-checkbox__label"
     >
@@ -367,7 +591,21 @@ exports[`Checkbox CheckboxGroup > :props > :name 1`] = `
     />
     <span
       class="t-checkbox__input"
-    />
+    >
+      <svg
+        class="t-icon t-icon-check-1"
+        fill="none"
+        height="1em"
+        style="fill: none;"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M21.6157 7.91232L11.3862 18.1418C11.0581 18.4699 10.6129 18.6544 10.1489 18.6545C9.6848 18.6545 9.23883 18.47 8.91064 18.1418L2.67529 11.9065L5.1499 9.43185L10.1479 14.4289L19.1411 5.43771L21.6157 7.91232Z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
     <span
       class="t-checkbox__label"
     >
@@ -395,7 +633,21 @@ exports[`Checkbox CheckboxGroup > :props > :options 1`] = `
     />
     <span
       class="t-checkbox__input"
-    />
+    >
+      <svg
+        class="t-icon t-icon-check-1"
+        fill="none"
+        height="1em"
+        style="fill: none;"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M21.6157 7.91232L11.3862 18.1418C11.0581 18.4699 10.6129 18.6544 10.1489 18.6545C9.6848 18.6545 9.23883 18.47 8.91064 18.1418L2.67529 11.9065L5.1499 9.43185L10.1479 14.4289L19.1411 5.43771L21.6157 7.91232Z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
     <span
       class="t-checkbox__label"
     >
@@ -414,7 +666,21 @@ exports[`Checkbox CheckboxGroup > :props > :options 1`] = `
     />
     <span
       class="t-checkbox__input"
-    />
+    >
+      <svg
+        class="t-icon t-icon-check-1"
+        fill="none"
+        height="1em"
+        style="fill: none;"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M21.6157 7.91232L11.3862 18.1418C11.0581 18.4699 10.6129 18.6544 10.1489 18.6545C9.6848 18.6545 9.23883 18.47 8.91064 18.1418L2.67529 11.9065L5.1499 9.43185L10.1479 14.4289L19.1411 5.43771L21.6157 7.91232Z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
     <span
       class="t-checkbox__label"
     >
