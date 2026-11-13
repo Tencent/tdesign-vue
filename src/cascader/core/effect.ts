@@ -139,7 +139,7 @@ export function valueChangeEffect(node: TreeNode, cascaderContext: CascaderConte
  */
 export function closeIconClickEffect(cascaderContext: CascaderContextType) {
   const {
-    setVisible, multiple, setExpend, setValue,
+    setVisible, multiple, setExpend, setValue, setInputVal,
   } = cascaderContext;
 
   setVisible(false, {});
@@ -148,6 +148,9 @@ export function closeIconClickEffect(cascaderContext: CascaderContextType) {
   if (multiple) {
     setExpend([]);
   }
+
+  // 搜索词一并清掉，否则再次打开面板时仍按上次的关键词过滤（issue #3695）
+  setInputVal?.('');
 
   setValue(multiple ? [] : '', 'clear');
 }
