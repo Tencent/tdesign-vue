@@ -41,7 +41,11 @@ export default mixins(classPrefixMixins).extend({
       return this.theme === 'full';
     },
     disabled(): boolean {
-      return this.item.mode === 'month' && this.item.belongTo !== 0;
+      if (this.item.mode !== 'month') return false;
+      // 非当月格子不可选
+      if (this.item.belongTo !== 0) return true;
+      // range 之外的日期同样不可选（issue #3827）
+      return !!this.item.isOutOfRange;
     },
     valueDisplay(): string | number {
       if (this.item.mode === 'month') {
