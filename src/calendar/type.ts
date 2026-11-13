@@ -175,4 +175,6 @@ export interface ControllerOptions {
   formattedFilterDate: string;
   mode: string;
   isShowWeekend: boolean;
+  /** 是否落在 range 之外，范围外的日期不可选中 */
+  isOutOfRange?: boolean;
 }

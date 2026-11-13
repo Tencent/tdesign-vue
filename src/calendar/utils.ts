@@ -216,6 +216,15 @@ export const createMonthCellsData = (props: TdCalendarProps, state: CalendarData
   let arr = [];
   let num = 1;
 
+  // range 之前只用于禁用月/年下拉，日期格子没有范围判断（issue #3827）
+  const rangeFrom = props.range?.[0] ? dayjs(props.range[0]).startOf('day') : null;
+  const rangeTo = props.range?.[1] ? dayjs(props.range[1]).endOf('day') : null;
+  const isOutOfRange = (date: Date): boolean => {
+    if (!rangeFrom || !rangeTo) return false;
+    const d = dayjs(date);
+    return d.isBefore(rangeFrom) || d.isAfter(rangeTo);
+  };
+
   const createCellData = (belongTo: number, isCurrent: boolean, date: Date, weekOrder: number): CalendarCell => {
     const day = getDay(date);
     return {
@@ -229,6 +238,7 @@ export const createMonthCellsData = (props: TdCalendarProps, state: CalendarData
       filterDate: null,
       formattedFilterDate: null,
       isShowWeekend: true,
+      isOutOfRange: isOutOfRange(date),
     };
   };
 
