@@ -17,6 +17,8 @@ export function expendClickEffect(
   node: TreeNode,
   cascaderContext: CascaderContextType,
 ) {
+  if (cascaderContext.disabled) return;
+
   const {
     checkStrictly,
     multiple,
