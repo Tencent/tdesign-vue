@@ -90,6 +90,15 @@ export default mixins(getConfigReceiverMixins('steps')).extend({
       } else {
         options = this.getOptionListBySlots(nodes);
       }
+      // indexMap 之前只在 watch(options) 里构建，手写 <t-step-item> 时 options 为空，
+      // 索引表永远是空对象，current 匹配不到，所有步骤都停在 default（issue #3694）。
+      const indexMap: Record<string, number> = {};
+      options.forEach((item, index) => {
+        if (item.value !== undefined) {
+          indexMap[item.value] = index;
+        }
+      });
+      this.indexMap = indexMap;
       return options;
     },
     getOptionListBySlots(nodes: VNode[]) {
