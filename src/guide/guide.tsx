@@ -1,5 +1,5 @@
 import {
-  defineComponent, computed, nextTick, onMounted, ref, toRefs, watch,
+  defineComponent, computed, nextTick, onMounted, onUnmounted, ref, toRefs, watch,
 } from '@vue/composition-api';
 import { isFunction } from 'lodash-es';
 import { CreateElement } from 'vue';
@@ -197,8 +197,20 @@ export default defineComponent({
       }
     });
 
+    // 浏览器回退时关闭引导，否则遮罩会一直留在页面上（issue #3687）
+    const handlePopState = () => {
+      if (!activated.value) return;
+      activated.value = false;
+      setInnerCurrent(-1, { e: null, total: stepsTotal.value });
+    };
+
     onMounted(() => {
       initGuide();
+      window.addEventListener('popstate', handlePopState);
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener('popstate', handlePopState);
     });
 
     return {
