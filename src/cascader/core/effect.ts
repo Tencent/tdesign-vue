@@ -216,7 +216,13 @@ export const treeNodesEffect = (
       return fullPathLabel.indexOf(`${inputVal}`) > -1;
     };
 
-    nodes = treeStore.nodes.filter(filterMethods);
+    const matched = treeStore.nodes.filter(filterMethods);
+    // 命中节点的父级也要保留，否则 hover 时没有可展开的节点（issue #3749）
+    const matchedSet = new Set(matched);
+    matched.forEach((node: TreeNode) => {
+      node.getParents?.().forEach((parent: TreeNode) => matchedSet.add(parent));
+    });
+    nodes = treeStore.nodes.filter((node: TreeNode) => matchedSet.has(node));
   } else {
     nodes = treeStore.getNodes().filter((node: TreeNode) => node.visible);
   }
