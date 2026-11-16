@@ -81,11 +81,14 @@ export default mixins(
     tPlaceholder(): string {
       return this.placeholder ?? this.t(this.global.placeholder);
     },
+    // 是否具备清除能力（与 hover 无关）
+    canClear(): boolean {
+      return (this.value && !this.tDisabled && this.clearable && !this.readonly) || this.showClearIconOnEmpty;
+    },
+    // 清除图标是否可见。图标始终渲染，仅切换可见性，
+    // 避免 hover 时 DOM 结构变化导致宽度抖动（issue #3884）
     showClear(): boolean {
-      return (
-        ((this.value && !this.tDisabled && this.clearable && !this.readonly) || this.showClearIconOnEmpty)
-        && this.isHover
-      );
+      return this.canClear && this.isHover;
     },
     inputAttrs(): Record<string, any> {
       return getValidAttrs({
@@ -545,16 +548,22 @@ export default mixins(
       }
     }
 
-    if (this.showClear) {
+    if (this.canClear) {
+      // 图标始终渲染，通过 class 控制可见性，保证 hover 前后布局不变（issue #3884）
+      const clearIcon = (
+        <CloseCircleFilledIcon
+          class={{
+            [`${this.componentName}__suffix-clear`]: true,
+            [`${this.componentName}__suffix-clear--hidden`]: !this.showClear,
+          }}
+          nativeOnClick={this.emitClear}
+        />
+      );
       // 如果类型为 password 则使用 passwordIcon 显示 clear
       if (this.type === 'password') {
-        passwordIcon = (
-          <CloseCircleFilledIcon class={`${this.componentName}__suffix-clear`} nativeOnClick={this.emitClear} />
-        );
+        passwordIcon = clearIcon;
       } else {
-        suffixIcon = (
-          <CloseCircleFilledIcon class={`${this.componentName}__suffix-clear`} nativeOnClick={this.emitClear} />
-        );
+        suffixIcon = clearIcon;
       }
     }
 
