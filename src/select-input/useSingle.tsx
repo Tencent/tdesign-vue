@@ -96,8 +96,16 @@ export default function useSingle(props: TdSelectInputProps, context: SetupConte
   const renderSelectSingle = (h: Vue.CreateElement, popupVisible: boolean) => {
     const singleValueDisplay = renderTNode('valueDisplay');
     const pureValue = getInputValue(value.value, keys.value);
-    const displayedValue = popupVisible && props.allowInput ? inputValue.value : pureValue;
-    const prefixContent = [renderTNode('label'), singleValueDisplay];
+    // label 可能是函数式 TNode（issue #3739），Input 的 value 只接受字符串，
+    // 这种情况交给 label 渲染
+    const isFunctionLabel = typeof pureValue === 'function';
+    let displayedValue = pureValue;
+    if (isFunctionLabel) {
+      displayedValue = '';
+    } else if (popupVisible && props.allowInput) {
+      displayedValue = inputValue.value;
+    }
+    const prefixContent = [renderTNode('label'), isFunctionLabel ? pureValue(h) : null, singleValueDisplay];
     const inputProps = {
       ...commonInputProps.value,
       value: singleValueDisplay && props.value ? undefined : displayedValue,
