@@ -318,8 +318,10 @@ export default defineComponent({
           value: values,
           collapsedSelectedItems: values
             .map((item: any) => {
-              const tmpValue = typeof item === 'object' ? item[props.keys?.value || 'value'] : item;
-              return props.options?.find((t: OptionData) => t.value === tmpValue);
+              const valueKey = props.keys?.value || 'value';
+              const tmpValue = typeof item === 'object' ? item[valueKey] : item;
+              // 自定义 keys 后 option 上不再有 value 字段，必须按同一个 key 去比（issue #3762）
+              return props.options?.find((t: OptionData) => t[valueKey] === tmpValue);
             })
             .slice(minCollapsedNum.value),
           count: values.length - minCollapsedNum.value,
