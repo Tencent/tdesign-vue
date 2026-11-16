@@ -33,7 +33,8 @@ export default {
   status: {
     type: String as PropType<TdProgressProps['status']>,
     validator(val: TdProgressProps['status']): boolean {
-      return ['success', 'error', 'warning', 'active'].includes(val);
+      // 空字符串表示不设置状态，normal 是 STATUS_TEXT 里的合法值（issue #3470）
+      return ['', 'normal', 'success', 'error', 'warning', 'active'].includes(val);
     },
   },
   /** 进度条线宽。宽度数值不能超过 size 的一半，否则不能输出环形进度 */
