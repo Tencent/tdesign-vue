@@ -57,13 +57,26 @@ export default defineComponent({
 
     watch(
       () => value.value,
-      (value) => {
+      (newValue, oldValue) => {
+        // value 未真正变化时，保留用户手动切换的年月，避免面板跳回 value 所在月份
+        if (
+          Array.isArray(oldValue)
+          && Array.isArray(newValue)
+          && oldValue.length === newValue.length
+          && oldValue.every((v: string, index: number) => v === newValue[index])
+        ) {
+          return;
+        }
+
         // 确保右侧面板月份比左侧大 避免两侧面板月份一致
-        if (value.length === 2 && !props.enableTimePicker) {
-          const nextMonth = value.map((v: string) => parseToDayjs(v || new Date(), formatRef.value.format).month());
-          if (year.value[0] === year.value[1] && nextMonth[0] === nextMonth[1]) {
+        if (newValue.length === 2 && !props.enableTimePicker) {
+          const nextMonth = newValue.map((v: string) => parseToDayjs(v || new Date(), formatRef.value.format).month());
+          const nextYear = newValue.map((v: string) => parseToDayjs(v || new Date(), formatRef.value.format).year());
+          if (nextYear[0] === nextYear[1] && nextMonth[0] === nextMonth[1]) {
             nextMonth[0] === 11 ? (nextMonth[0] -= 1) : (nextMonth[1] += 1);
           }
+          // 年份同步跟随 value，避免手动传入日期后年份不随之改变
+          year.value = nextYear;
           month.value = nextMonth;
         }
       },
