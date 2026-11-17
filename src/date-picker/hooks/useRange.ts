@@ -5,6 +5,7 @@ import { TdDateRangePickerProps, DateValue } from '../type';
 import {
   isValidDate, formatDate, getDefaultFormat, parseToDayjs,
 } from '../../_common/js/date-picker/format';
+import { isEnabledDate } from '../../_common/js/date-picker/utils';
 import useRangeValue from './useRangeValue';
 
 export const PARTIAL_MAP = { first: 'start', second: 'end' };
@@ -85,6 +86,24 @@ export default function useRange(props: TdDateRangePickerProps, { emit }: any) {
     },
     onEnter: (newVal: string[]) => {
       if (!isValidDate(newVal, formatRef.value.format) && !isValidDate(value.value, formatRef.value.format)) return;
+
+      // issue #3770: 手动输入的禁用日期不应生效
+      if (
+        isValidDate(newVal, formatRef.value.format)
+        && newVal.some(
+          (v) => !isEnabledDate({
+            value: parseToDayjs(v, formatRef.value.format).toDate(),
+            mode: props.mode,
+            format: formatRef.value.format,
+            disableDate: props.disableDate,
+          }),
+        )
+      ) {
+        inputValue.value = value.value
+          ? formatDate(value.value, { format: formatRef.value.format })
+          : [];
+        return;
+      }
 
       popupVisible.value = false;
       if (isValidDate(newVal, formatRef.value.format)) {

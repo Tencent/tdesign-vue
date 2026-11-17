@@ -10,7 +10,7 @@ import {
   parseToDayjs, getDefaultFormat, formatTime, formatDate,
 } from '../_common/js/date-picker/format';
 import {
-  subtractMonth, addMonth, extractTimeObj, covertToDate, isSame,
+  subtractMonth, addMonth, extractTimeObj, covertToDate, isSame, isEnabledDate,
 } from '../_common/js/date-picker/utils';
 import type { DateMultipleValue, DateValue } from './type';
 import props from './props';
@@ -201,6 +201,22 @@ export default defineComponent({
       const nextValue = formatDate(inputValue.value, {
         format: formatRef.value.format,
       });
+      // issue #3770: 手动输入的禁用日期不应确认生效
+      if (
+        nextValue
+        && isValidDate(inputValue.value as string, formatRef.value.format)
+        && !isEnabledDate({
+          value: parseToDayjs(inputValue.value as string, formatRef.value.format).toDate(),
+          mode: props.mode,
+          format: formatRef.value.format,
+          disableDate: props.disableDate,
+        })
+      ) {
+        inputValue.value = value.value
+          ? formatDate(value.value, { format: formatRef.value.format })
+          : '';
+        return;
+      }
       if (nextValue) {
         props?.onConfirm?.({ date: dayjs(nextValue as string).toDate(), e });
         emit('confirm', { date: dayjs(nextValue as string).toDate(), e });
