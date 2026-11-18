@@ -142,6 +142,7 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
           current: this.currentPage,
           total: this.pageTotal,
           pageSize: this.pageSize,
+          disabled: this.disabled,
         }
         : {};
     },
