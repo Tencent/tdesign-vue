@@ -159,6 +159,75 @@ describe('Transfer', () => {
         const doms = wrapper.vm.$el.getElementsByClassName('t-checkbox t-is-disabled');
         expect(doms.length).toBe(data.length + 2);
       });
+
+      it(':disabled disables search and pagination', async () => {
+        const onSearch = vi.fn();
+        const onPageChange = vi.fn();
+        const pageConfig = {
+          pageSize: 2,
+          total: 20,
+          current: 1,
+        };
+        const wrapper = await mount({
+          render() {
+            return (
+              <Transfer
+                data={data}
+                disabled={true}
+                search={true}
+                pagination={pageConfig}
+                on-search={onSearch}
+                on-page-change={onPageChange}
+              ></Transfer>
+            );
+          },
+        });
+
+        // 搜索框应被禁用
+        const searchInputs = wrapper.vm.$el.querySelectorAll('.t-transfer__search-wrapper .t-input');
+        expect(searchInputs.length).toBeGreaterThan(0);
+        searchInputs.forEach((input) => {
+          expect([...input.classList]).toContain('t-is-disabled');
+        });
+
+        // 分页器应被禁用
+        const pagination = wrapper.vm.$el.querySelector('.t-transfer__list-pagination .t-pagination');
+        expect(pagination).not.toBeNull();
+        expect([...pagination.classList]).toContain('t-is-disabled');
+
+        // 禁用态下交互不应触发回调
+        searchInputs[0].querySelector('input').click();
+        const nextBtn = pagination.querySelector('.t-pagination__btn-next');
+        nextBtn.click();
+
+        expect(onSearch).not.toHaveBeenCalled();
+        expect(onPageChange).not.toHaveBeenCalled();
+      });
+
+      it(':disabled via array disables only the specified side', async () => {
+        const wrapper = await mount({
+          render() {
+            return (
+              <Transfer
+                data={data}
+                disabled={[true, false]}
+                search={true}
+                pagination={{ pageSize: 2, total: 20, current: 1 }}
+                value={['0', '1']}
+              ></Transfer>
+            );
+          },
+        });
+
+        const searchInputs = wrapper.vm.$el.querySelectorAll('.t-transfer__search-wrapper .t-input');
+        // 源列表（第 1 个）禁用，目标列表（第 2 个）不禁用
+        expect([...searchInputs[0].classList]).toContain('t-is-disabled');
+        expect([...searchInputs[1].classList]).not.toContain('t-is-disabled');
+
+        const paginations = wrapper.vm.$el.querySelectorAll('.t-transfer__list-pagination .t-pagination');
+        expect([...paginations[0].classList]).toContain('t-is-disabled');
+        expect([...paginations[1].classList]).not.toContain('t-is-disabled');
+      });
     });
 
     describe('empty', () => {
