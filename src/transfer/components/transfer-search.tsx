@@ -22,12 +22,16 @@ export default mixins(getGlobalIconMixins()).extend({
     },
     placeholder: String,
     classPrefix: String,
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
   },
   render(): VNode {
     const { SearchIcon } = this.useGlobalIcon({ SearchIcon: TdSearchIcon });
     4;
     const {
-      searchValue, search, placeholder, classPrefix,
+      searchValue, search, placeholder, classPrefix, disabled,
     } = this;
     const inputProps = typeof search === 'object'
       ? search
@@ -53,6 +57,7 @@ export default mixins(getGlobalIconMixins()).extend({
         <TInput
           props={{ ...inputProps }}
           value={searchValue}
+          disabled={disabled}
           onChange={handleChange}
           on-enter={handleEnter}
           placeholder={placeholder}
