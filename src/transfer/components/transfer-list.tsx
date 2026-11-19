@@ -142,8 +142,9 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
           current: this.currentPage,
           total: this.pageTotal,
           pageSize: this.pageSize,
+          disabled: this.disabled,
         }
-        : {};
+        : { disabled: this.disabled };
     },
     hasFooter(): boolean {
       return !!this.$slots.default;
@@ -176,6 +177,7 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
   },
   methods: {
     handlePaginationChange(pageInfo: PageInfo): void {
+      if (this.disabled) return;
       this.$emit('pageChange', pageInfo);
       this.defaultCurrent = pageInfo.current;
       this.defaultPageSize = pageInfo.pageSize;
@@ -198,6 +200,7 @@ export default mixins(keepAnimationMixins, classPrefixMixins).extend({
       this.$emit('scroll', e);
     },
     handleSearch(e: any): void {
+      if (this.disabled) return;
       const event: SearchEvent = {
         query: e.value,
         type: this.listType as TransferListType,

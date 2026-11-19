@@ -161,6 +161,97 @@ describe('Transfer', () => {
       });
     });
 
+    describe('disabled search and pagination', () => {
+      const disabledData = [];
+      (() => {
+        for (let i = 0; i < 4; i++) {
+          disabledData.push({ value: i.toString(), label: `内容${i + 1}` });
+        }
+      })();
+      const pageConfig = {
+        pageSize: 2,
+        total: 4,
+        current: 1,
+      };
+      // 目标列也放入数据，使两侧均渲染分页器
+      const targetValue = ['0', '1', '2'];
+
+      it('search input is disabled when disabled=true', async () => {
+        const wrapper = await mount({
+          render() {
+            return (
+              <Transfer
+                data={disabledData}
+                disabled={true}
+                search={true}
+                pagination={pageConfig}
+                on-search={() => {}}
+              />
+            );
+          },
+        });
+        const searchInputs = wrapper.vm.$el.querySelectorAll('.t-transfer__search-wrapper .t-input');
+        expect(searchInputs.length).toBe(2);
+        searchInputs.forEach((input) => {
+          expect([...input.classList]).toContain('t-is-disabled');
+        });
+      });
+
+      it('pagination is disabled when disabled=true', async () => {
+        const wrapper = await mount({
+          render() {
+            return (
+              <Transfer
+                data={disabledData}
+                disabled={true}
+                search={true}
+                pagination={pageConfig}
+                value={targetValue}
+                on-page-change={() => {}}
+              />
+            );
+          },
+        });
+        const pagers = wrapper.vm.$el.querySelectorAll('.t-transfer__list-pagination .t-pagination');
+        expect(pagers.length).toBe(2);
+        pagers.forEach((pager) => {
+          expect([...pager.classList]).toContain('t-is-disabled');
+        });
+      });
+
+      it('onPageChange and onSearch are not triggered when disabled=true', async () => {
+        const pageFn = vi.fn();
+        const searchFn = vi.fn();
+        const wrapper = await mount({
+          render() {
+            return (
+              <Transfer
+                data={disabledData}
+                disabled={true}
+                search={true}
+                pagination={pageConfig}
+                value={targetValue}
+                on-page-change={pageFn}
+                on-search={searchFn}
+              />
+            );
+          },
+        });
+        // 翻页按钮点击
+        const pagerBtns = wrapper.vm.$el.querySelectorAll('.t-transfer__list-pagination .t-pagination__btn');
+        pagerBtns.forEach((btn) => btn.click());
+        // 搜索框输入
+        const inputs = wrapper.vm.$el.querySelectorAll('.t-transfer__search-wrapper input');
+        inputs.forEach((input) => {
+          const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
+          setter.call(input, 'a');
+          input.dispatchEvent(new Event('input', { bubbles: true }));
+        });
+        expect(pageFn).not.toHaveBeenCalled();
+        expect(searchFn).not.toHaveBeenCalled();
+      });
+    });
+
     describe('empty', () => {
       it('没有数据~', async () => {
         const wrapper = await mount({
