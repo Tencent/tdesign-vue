@@ -60,7 +60,9 @@ export default mixins(Vue as VueConstructor<TabPanel>, classPrefixMixins).extend
     if ((destroyOnHide && !active) || (lazy && !loaded)) return null;
 
     return (
-      <div class={this.componentName} v-show={active}>
+      // 面板本身不 emit 任何事件，用户写在 <t-tab-panel> 上的 @click 等原生监听
+      // 需要转发到根节点，否则 Vue 2 会把它当成组件自定义事件而永远不触发。
+      <div class={this.componentName} v-show={active} {...{ on: this.$listeners }}>
         {renderContent(this, 'default', 'panel')}
       </div>
     );
