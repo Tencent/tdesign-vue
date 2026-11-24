@@ -30,6 +30,11 @@ export interface TdWatermarkProps {
    */
   isRepeat?: boolean;
   /**
+   * 水印的布局方式，rectangular：矩形，即横平竖直的水印；hexagonal：六边形，即错位的水印
+   * @default rectangular
+   */
+  layout?: 'rectangular' | 'hexagonal';
+  /**
    * 行间距，只作用在多行（`content` 配置为数组）情况下
    * @default 16
    */
@@ -49,7 +54,7 @@ export interface TdWatermarkProps {
    */
   offset?: Array<number>;
   /**
-   * 水印是否可被删除，默认会开启水印节点防删
+   * 水印是否可被删除
    * @default true
    */
   removable?: boolean;
@@ -86,6 +91,11 @@ export interface WatermarkText {
    * @default rgba(0,0,0,0.1)
    */
   fontColor?: string;
+  /**
+   * 水印文本文字字体
+   * @default ''
+   */
+  fontFamily?: string;
   /**
    * 水印文本文字大小
    * @default 16

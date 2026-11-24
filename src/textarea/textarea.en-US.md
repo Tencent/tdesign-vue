@@ -5,7 +5,7 @@
 
 name | type | default | description | required
 -- | -- | -- | -- | --
-allowInputOverMax | Boolean | false | \- | N
+allowInputOverMax | Boolean | false | Allow input after exceeding `maxlength` or `maxcharacter` | N
 autofocus | Boolean | false | \- | N
 autosize | Boolean / Object | false | Typescript：`boolean \| { minRows?: number; maxRows?: number }` | N
 disabled | Boolean | false | \- | N

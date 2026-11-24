@@ -98,7 +98,10 @@ export default {
   /** 只读状态，值为真会隐藏输入框，且无法打开下拉框 */
   readonly: Boolean,
   /** 多选且可搜索时，是否在选中一个选项后保留当前的搜索关键词 */
-  reserveKeyword: Boolean,
+  reserveKeyword: {
+    type: Boolean,
+    default: true,
+  },
   /** 透传 SelectInput 筛选器输入框组件的全部属性 */
   selectInputProps: {
     type: Object as PropType<TdCascaderProps['selectInputProps']>,
@@ -157,12 +160,12 @@ export default {
   },
   /** 选中项的值 */
   value: {
-    type: [String, Number, Array] as PropType<TdCascaderProps['value']>,
+    type: [String, Number, Array, BigInt] as PropType<TdCascaderProps['value']>,
     default: (): TdCascaderProps['value'] => [],
   },
   /** 选中项的值，非受控属性 */
   defaultValue: {
-    type: [String, Number, Array] as PropType<TdCascaderProps['defaultValue']>,
+    type: [String, Number, Array, BigInt] as PropType<TdCascaderProps['defaultValue']>,
     default: (): TdCascaderProps['defaultValue'] => [],
   },
   /** 自定义选中项呈现的内容 */

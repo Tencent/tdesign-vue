@@ -9,6 +9,7 @@ import {
   TypeTNodeProp,
   TypeGetTNodeOption,
   TypeTargetNode,
+  TreeNodeValue,
 } from './tree-types';
 
 export function emitEvent<T extends any[]>(props: TreeProps, context: TypeSetupContext, evtName: string, ...args: T) {
@@ -114,14 +115,14 @@ export function getLineModel(nodes: TypeTreeNode[], node: TypeTreeNode, index: n
   return lineModel;
 }
 
-export function isTreeNodeValue(item: unknown): boolean {
-  return typeof item === 'string' || typeof item === 'number';
+export function isTreeNodeValue(item: unknown): item is TreeNodeValue {
+  return ['string', 'number', 'bigint'].includes(typeof item);
 }
 
 export function getNode(store: TypeTreeStore, item: TypeTargetNode): TypeTreeNode {
   let node = null;
   let val = null;
-  if (typeof item === 'string' || typeof item === 'number') {
+  if (isTreeNodeValue(item)) {
     val = item;
   } else if (item && isTreeNodeValue(item.value)) {
     val = item.value;

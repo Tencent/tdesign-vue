@@ -206,11 +206,10 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
       }
 
       for (let i = begin; i <= end; i++) {
-        const disabled = this.checkMonthAndYearSelectorDisabled(i, this.curSelectedMonth);
         re.push({
           value: i,
           label: this.t(this.global.yearSelection, { year: i }),
-          disabled,
+          disabled: false,
         });
       }
       return re;
@@ -535,13 +534,19 @@ export default mixins(getConfigReceiverMixins<Vue, CalendarConfig>('calendar')).
     checkMonthAndYearSelectorDisabled(year: number, month: number): boolean {
       let disabled = false;
       if (this.rangeFromTo && this.rangeFromTo.from && this.rangeFromTo.to) {
+        // 读取起止年份
         const beginYear = dayjs(this.rangeFromTo.from).year();
         const endYear = dayjs(this.rangeFromTo.to).year();
-        if (year === beginYear) {
-          const beginMon = parseInt(dayjs(this.rangeFromTo.from).format('M'), 10);
+        // 读取起止月份
+        const beginMon = parseInt(dayjs(this.rangeFromTo.from).format('M'), 10);
+        const endMon = parseInt(dayjs(this.rangeFromTo.to).format('M'), 10);
+
+        if (beginYear === endYear) {
+          // 同一年内，禁用开始月份至结束月份之外的月份选项
+          disabled = month < beginMon || month > endMon;
+        } else if (year === beginYear) {
           disabled = month < beginMon;
         } else if (year === endYear) {
-          const endMon = parseInt(dayjs(this.rangeFromTo.to).format('M'), 10);
           disabled = month > endMon;
         }
       }

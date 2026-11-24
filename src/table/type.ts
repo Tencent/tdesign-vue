@@ -420,7 +420,7 @@ export interface BaseTableCol<T extends TableRowData = TableRowData> {
 export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
   extends Omit<TdBaseTableProps<T>, 'columns' | 'onCellClick'> {
   /**
-   * 异步加载状态。值为 `loading` 显示默认文字 “正在加载中，请稍后”，值为 `loading-more` 显示“点击加载更多”，值为其他，表示完全自定义异步加载区域内容
+   * 异步加载状态。值为 `loading` 显示默认文字 “正在加载中，请稍后”，值为 `load-more` 显示“点击加载更多”，值为其他，表示完全自定义异步加载区域内容
    */
   asyncLoading?: 'loading' | 'load-more' | TNode;
   /**
@@ -517,7 +517,7 @@ export interface TdPrimaryTableProps<T extends TableRowData = TableRowData>
    */
   multipleSort?: boolean;
   /**
-   * 行选中功能，是否在分页时保留上一页选中结果不清空，本地数据分页场景下，会全选所有页数据。值为 `false` 则表示全部选中操作停留在当前页，不跨分页；本地数据分页场景下，全选仅选中当前页
+   * 行选中功能，是否在分页时保留上一页选中结果不清空。分页场景下，会全选所有页数据，保留跨分页数据。值为 `false` 则表示全部选中操作停留在当前页，不跨分页。
    * @default true
    */
   reserveSelectedRowOnPaginate?: boolean;

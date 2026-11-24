@@ -1,7 +1,14 @@
 <template>
   <div class="t-container">
     <div class="t-suf-container">
-      <t-drawer :visible.sync="visible" :placement="placement" :mode="mode" header="抽屉标题" showInAttachedElement>
+      <t-drawer
+        :visible.sync="visible"
+        :placement="placement"
+        :mode="mode"
+        header="抽屉标题"
+        showInAttachedElement
+        attach=".t-suf-container"
+      >
         <p>抽屉的内容</p>
       </t-drawer>
       <div class="tdesign-radio-button">

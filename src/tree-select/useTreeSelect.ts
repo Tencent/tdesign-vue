@@ -56,6 +56,10 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
 
   const tKeys = computed<TreeKeysType>(() => ({ ...DEFAULT_KEYS, ...props.treeProps?.keys, ...props.keys }));
 
+  const getObjectValue = (item: TreeSelectValue): TreeNodeValue => (
+    lodashGet(item, tKeys.value.value) ?? lodashGet(item, 'value')
+  );
+
   const inputPlaceholder = computed(() => {
     let label = nodeInfo.value ? lodashGet(nodeInfo.value, tKeys.value.label) : undefined;
     if (typeof label === 'number') label = String(label);
@@ -108,14 +112,14 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
     const list = normalizeArray(value);
     if (treeRef.value) {
       return list.map((item) => {
-        const finalValue = typeof item === 'object' ? item.value : item;
+        const finalValue = typeof item === 'object' ? getObjectValue(item) : item;
         const obj = {};
         lodashSet(obj, tKeys.value.label, finalValue);
         lodashSet(obj, tKeys.value.value, finalValue);
         return treeRef.value.getItem(finalValue)?.data || obj;
       });
     }
-    const onlyValues = list.map((item) => (typeof item === 'object' ? lodashGet(item, tKeys.value.value) : item));
+    const onlyValues = list.map((item) => (typeof item === 'object' ? getObjectValue(item) : item));
     return getNodeDataByValue(onlyValues, props.data, tKeys.value);
   }
 
@@ -126,7 +130,7 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
       return undefined;
     }
     const oneValue = Array.isArray(value) ? value[0] : value;
-    const finalValue = typeof oneValue === 'object' ? oneValue.value : oneValue;
+    const finalValue = typeof oneValue === 'object' ? getObjectValue(oneValue) : oneValue;
     if (treeRef.value) {
       const obj = {};
       lodashSet(obj, tKeys.value.label, finalValue);
@@ -170,7 +174,8 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
   // only for single tree select
   const treeNodeActive: TreeProps['onActive'] = (value, ctx) => {
     if (props.multiple) return;
-    if (treeSelectValue.value === lodashGet(ctx.node.data, tKeys.value.value)) {
+    const selectedValue = isObjectValue.value ? getObjectValue(treeSelectValue.value) : treeSelectValue.value;
+    if (selectedValue === lodashGet(ctx.node.data, tKeys.value.value)) {
       return;
     }
     const onlyLeafNode = Boolean(
@@ -235,7 +240,7 @@ export default function useTreeSelect(props: TdTreeSelectProps, context: SetupCo
     if (!fitTrigger) return;
     // handle remove event
     const current = treeSelectValue.value[index];
-    const currentDeleteValue = typeof current === 'object' ? lodashGet(current, tKeys.value.value) : current;
+    const currentDeleteValue = typeof current === 'object' ? getObjectValue(current) : current;
     const currentNode = treeRef.value?.getItem(currentDeleteValue);
     const data = currentNode ? currentNode.data : getNodeDataByValue([currentDeleteValue], props.data, tKeys.value)[0];
     if (fitTrigger) {

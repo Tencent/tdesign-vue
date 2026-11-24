@@ -61,6 +61,7 @@ export default defineComponent({
           disabled={this.tDisabled}
           readonly={this.readonly}
           autocomplete="off"
+          autofocus={this.autofocus}
           placeholder={this.placeholder}
           unselectable={this.readonly ? 'on' : 'off'}
           autoWidth={this.autoWidth}

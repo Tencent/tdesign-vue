@@ -153,7 +153,7 @@ export default mixins(
       return !this.isFullScreen ? { width: getCSSValue(this.width), ...this.dialogStyle } : { ...this.dialogStyle }; // width全屏模式不生效;
     },
     computedAttach(): AttachNode {
-      return this.showInAttachedElement || this.isNormal ? undefined : this.attach || this.globalAttach();
+      return this.isNormal ? undefined : this.attach || this.globalAttach();
     },
   },
 
@@ -229,7 +229,6 @@ export default mixins(
 
   beforeDestroy() {
     this.addKeyboardEvent(false);
-    this.destroySelf();
     this.destroySelfStyle();
   },
 
@@ -249,9 +248,6 @@ export default mixins(
       this.styleEl.parentNode?.removeChild?.(this.styleEl);
     },
 
-    destroySelf() {
-      this.$el.parentNode?.removeChild?.(this.$el);
-    },
     // 多个dialog情况，若有些给了默认值true，出现ESC关闭不了弹窗问题解决
     storeUid(flag: boolean) {
       if (flag) {

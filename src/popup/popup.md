@@ -35,6 +35,7 @@ triggerElement | String / Slot / Function | - | 触发元素。值类型为字�
 visible | Boolean | - | 是否显示浮层。支持语法糖 `v-model`。TS 类型：`boolean` | N
 defaultVisible | Boolean | - | 是否显示浮层。非受控属性。TS 类型：`boolean` | N
 zIndex | Number | - | 组件层级，Web 侧样式默认为 5500，移动端和小程序样式默认为 1500 | N
+onOverlayClick | Function |  | TS 类型：`(context: { e: MouseEvent }) => void`<br/>内容面板点击时触发 | N
 onScroll | Function |  | TS 类型：`(context: { e: WheelEvent }) => void`<br/>下拉选项滚动事件 | N
 onScrollToBottom | Function |  | TS 类型：`(context: { e: WheelEvent }) => void`<br/>下拉滚动触底事件，常用于滚动到底执行具体业务逻辑 | N
 onVisibleChange | Function |  | TS 类型：`(visible: boolean, context: PopupVisibleChangeContext) => void`<br/>当浮层隐藏或显示时触发，`trigger=document` 表示点击非浮层元素触发；`trigger=context-menu` 表示右击触发。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/popup/type.ts)。<br/>`interface PopupVisibleChangeContext { e?: PopupTriggerEvent; trigger?: PopupTriggerSource }`<br/><br/>`type PopupTriggerEvent = MouseEvent \| FocusEvent \| KeyboardEvent`<br/><br/>`type PopupTriggerSource = 'document' \| 'trigger-element-click' \| 'trigger-element-hover' \| 'trigger-element-blur' \| 'trigger-element-focus' \| 'trigger-element-mousedown' \| 'context-menu' \| 'keydown-esc'`<br/> | N
@@ -43,6 +44,7 @@ onVisibleChange | Function |  | TS 类型：`(visible: boolean, context: PopupVi
 
 名称 | 参数 | 描述
 -- | -- | --
+overlay-click | `(context: { e: MouseEvent })` | 内容面板点击时触发
 scroll | `(context: { e: WheelEvent })` | 下拉选项滚动事件
 scroll-to-bottom | `(context: { e: WheelEvent })` | 下拉滚动触底事件，常用于滚动到底执行具体业务逻辑
 visible-change | `(visible: boolean, context: PopupVisibleChangeContext)` | 当浮层隐藏或显示时触发，`trigger=document` 表示点击非浮层元素触发；`trigger=context-menu` 表示右击触发。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/popup/type.ts)。<br/>`interface PopupVisibleChangeContext { e?: PopupTriggerEvent; trigger?: PopupTriggerSource }`<br/><br/>`type PopupTriggerEvent = MouseEvent \| FocusEvent \| KeyboardEvent`<br/><br/>`type PopupTriggerSource = 'document' \| 'trigger-element-click' \| 'trigger-element-hover' \| 'trigger-element-blur' \| 'trigger-element-focus' \| 'trigger-element-mousedown' \| 'context-menu' \| 'keydown-esc'`<br/>
@@ -51,8 +53,17 @@ visible-change | `(visible: boolean, context: PopupVisibleChangeContext)` | 当�
 
 同时也支持 `this.$popup`。
 
-参数名称 | 参数类型 | 参数默认值 | 参数说明
+名称 | 参数 | 返回值 | 描述
 -- | -- | -- | --
 content | String / Slot / Function | - | 必需。气泡框的内容。TS 类型：`string \| TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/src/common.ts)
 popupProps | Object | - | 透传气泡框/浮层的属性
 triggerElement | String | - | 必需。触发气泡框/浮层的元素，传入选择器即可
+
+### PopupInstanceFunctions 组件实例方法
+
+名称 | 参数 | 返回值 | 描述
+-- | -- | -- | --
+getOverlay | \- | `HTMLElement \| null` | 获取浮层元素
+getOverlayState | \- | `{ hover: boolean }` | 获取浮层悬浮状态
+getPopper | \- | `Instance \| null` | 获取当前组件 popper 实例。[详细类型定义](https://github.com/Tencent/tdesign-vue/tree/develop/src/popup/type.ts)。<br/>`import { Instance } from '@popperjs/core'`<br/>
+update | \- | \- | 更新浮层内容

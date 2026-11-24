@@ -16,8 +16,8 @@ import { renderTNodeJSX } from '../utils/render-tnode';
 import { setTransform } from '../utils/helper';
 import { TdImageViewerProps } from './type';
 import { useMirror, useRotate, useScale } from './hooks';
-
-import { downloadFile, formatImages, getOverlay } from './utils';
+import { downloadImage, formatImages } from '../_common/js/image-viewer/utils';
+import { getOverlay } from './utils';
 import { EVENT_CODE, DEFAULT_IMAGE_SCALE } from './const';
 import Image from '../image';
 
@@ -102,7 +102,7 @@ export default defineComponent({
         emit('download', url);
         return;
       }
-      downloadFile(url);
+      downloadImage(url);
     };
 
     const openHandler = (index: number) => {

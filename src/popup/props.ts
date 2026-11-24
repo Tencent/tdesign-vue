@@ -81,6 +81,8 @@ export default {
   zIndex: {
     type: Number,
   },
+  /** 内容面板点击时触发 */
+  onOverlayClick: Function as PropType<TdPopupProps['onOverlayClick']>,
   /** 下拉选项滚动事件 */
   onScroll: Function as PropType<TdPopupProps['onScroll']>,
   /** 下拉滚动触底事件，常用于滚动到底执行具体业务逻辑 */

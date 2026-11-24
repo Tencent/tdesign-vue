@@ -23,6 +23,16 @@ describe('InputNumber', () => {
       expect(wrapper.element).toMatchSnapshot();
     });
 
+    it(':autofocus', () => {
+      const wrapper = mount({
+        render() {
+          return <InputNumber autofocus></InputNumber>;
+        },
+      });
+
+      expect(wrapper.find('input').attributes('autofocus')).toBeDefined();
+    });
+
     it(':format, with 6%', () => {
       const wrapper = mount({
         render() {

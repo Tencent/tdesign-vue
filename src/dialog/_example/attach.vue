@@ -49,6 +49,7 @@
     <t-dialog
       :visible.sync="visibleShowInAttachedElement"
       header="对话框仅展示在挂载元素区域"
+      attach=".dialog-attach-wrap"
       :showInAttachedElement="true"
       placement="center"
       :onConfirm="() => (this.visibleShowInAttachedElement = false)"

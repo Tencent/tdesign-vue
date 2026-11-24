@@ -44,6 +44,7 @@ export default function useTreeStore(state: TypeTreeState) {
       'checkable',
       'draggable',
       'checkStrictly',
+      'checkAllAffectedBy',
       'load',
       'lazy',
       'valueMode',

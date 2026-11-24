@@ -1,6 +1,6 @@
 /* eslint-disable no-nested-ternary */
 import {
-  defineComponent, computed, inject, onMounted,
+  defineComponent, computed, inject, onMounted, onBeforeUnmount,
 } from '@vue/composition-api';
 import props from './menu-item-props';
 import { TdMenuInterface, TdSubMenuInterface } from './const';
@@ -69,6 +69,9 @@ export default defineComponent({
         parent: submenu?.value,
         vnode: ctx.slots.default && ctx.slots.default(),
       });
+    });
+    onBeforeUnmount(() => {
+      menu?.vMenu?.remove(props.value);
     });
     const activeValues = menu.activeValues.value;
     if (activeValues.includes(props.value) && !activeValues.includes(submenu?.value)) {

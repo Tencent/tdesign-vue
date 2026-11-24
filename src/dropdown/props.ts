@@ -44,6 +44,14 @@ export default {
     type: Array as PropType<TdDropdownProps['options']>,
     default: (): TdDropdownProps['options'] => [],
   },
+  /** 面板内的底部内容 */
+  panelBottomContent: {
+    type: [String, Function] as PropType<TdDropdownProps['panelBottomContent']>,
+  },
+  /** 面板内的顶部内容 */
+  panelTopContent: {
+    type: [String, Function] as PropType<TdDropdownProps['panelTopContent']>,
+  },
   /** 弹窗定位方式，可选值同 Popup 组件 */
   placement: {
     type: String as PropType<TdDropdownProps['placement']>,

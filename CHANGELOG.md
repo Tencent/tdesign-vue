@@ -5,6 +5,165 @@ toc: false
 docClass: timeline
 ---
 
+
+## 🌈 1.16.3 `2026-10-28` 
+### 🐞 Bug Fixes
+- `fix`: 优化 1.16.2 版本的兼容性问题 @uyarn ([#3926](https://github.com/Tencent/tdesign-vue/pull/3926))
+
+
+## 🌈 1.16.2 `2026-10-28` 
+### 🚀 Features
+- `Tree`: 
+    - 新增 `checkAllAffectedBy`，用于控制禁用子节点是否参与父节点全选、半选状态判断 @RSS1102 ([#3914](https://github.com/Tencent/tdesign-vue/pull/3914))
+   - 新增支持 bigint 类型的节点值及滚动定位，修复零值节点操作和混合类型键的树数据查询异常。 @RSS1102 ([#3915](https://github.com/Tencent/tdesign-vue/pull/3915))
+- `TreeSelect`: 新增支持 bigint 类型的选中值、回显及事件回传。 @RSS1102 ([#3915](https://github.com/Tencent/tdesign-vue/pull/3915))
+- `Cascader`: 新增支持 bigint 类型的选中值，正确处理 `0n` 回显及 Vue2 节点渲染 @RSS1102 ([#3915](https://github.com/Tencent/tdesign-vue/pull/3915))
+### 🐞 Bug Fixes
+- `Icon`: 修复 usb 原始图标的图层 ID 错误导致在深色模式下渲染错误的问题 @uyarn ([#298](https://github.com/Tencent/tdesign-icons/pull/298))([#3885](https://github.com/Tencent/tdesign-vue/pull/3885))
+- `TreeSelect`: 修复自定义 keys 下对象选中值回显、标签移除及 children 别名递归查找异常的问题。 @RSS1102 ([#3916](https://github.com/Tencent/tdesign-vue/pull/3916))
+- `Cascader`: 修复多选值不在选项中时渲染报错、异步加载后 loading 画面残留的问题。 @RSS1102 ([#3913](https://github.com/Tencent/tdesign-vue/pull/3913))
+### 📝 Documentation
+- `Comment`: 修正 `avatar` 属性的类型描述，移除不受支持的 AvatarProps 类型 @liweijie0812 ([#3923](https://github.com/Tencent/tdesign-vue/pull/3923))
+- `Site`:  新增全站及单组件的 llm.txt @liweijie0812 ([#3889](https://github.com/Tencent/tdesign-vue/pull/3889))
+
+
+
+
+## 🌈 1.16.1 `2026-07-29` 
+### 🐞 Bug Fixes
+- `Menu`: 修复 `1.16.0` 版本新增折叠功能导致复合菜单场景下顶部菜单错误展示的问题 @uyarn ([#3869](https://github.com/Tencent/tdesign-vue/pull/3869))
+
+
+## 🌈 1.16.0 `2026-07-28` 
+### 🚀 Features
+- `Swiper`: 新增支持 `cardScale` API @RylanBot ([#3769](https://github.com/Tencent/tdesign-vue/pull/3769))
+- `HeadMenu`: 支持横向菜单过多时自动折叠隐藏并展示更多按钮的效果 @uyarn ([#3865](https://github.com/Tencent/tdesign-vue/pull/3865))
+### 🐞 Bug Fixes
+- `menu`: 修复存在浏览器插件意外触发 `mouseleave` 事件，导致 submenu 不能正确选中的问题 @RSS1102 ([#3862](https://github.com/Tencent/tdesign-vue/pull/3862))
+- `Slider`: 修复初始化时精度计算错误的问题 @RylanBot ([#3769](https://github.com/Tencent/tdesign-vue/pull/3769))
+- `Swiper`: 修复 type='card' 时，宽度计算不稳定的问题 @RylanBot ([#3769](https://github.com/Tencent/tdesign-vue/pull/3769))
+
+
+
+## 🌈 1.15.2 `2026-07-14` 
+### 🚀 Features
+- `Icon`: 新增 `star`、`star-1` 图标，优化`chat`、`thumb-up` 图标绘制效果 @uyarn  ([#3859](https://github.com/Tencent/tdesign-vue/pull/3859))
+### 🐞 Bug Fixes
+- `Button`: 优化 outline 和 dashed button 在 hover 下的背景色 @RADWIMPS426 ([common#2569](https://github.com/Tencent/tdesign-common/pull/2569))
+- `Menu`: 修复子菜单悬停显隐时序导致子菜单无法选中的问题 @RSS1102 ([#3857](https://github.com/Tencent/tdesign-vue/pull/3857))
+- `TagInput`: 修复带 label 且已有 tag 时输入内容垂直对齐偏差的问题 @DaZuiZui  ([common#2564](https://github.com/Tencent/tdesign-common/pull/2564))
+- `Tree`: 修复可拖拽节点拖至禁用节点上下方时提示线未正确显示的问题 @RylanBot ([common#2532](https://github.com/Tencent/tdesign-common/pull/2532))
+
+
+
+## 🌈 1.15.1 `2026-06-18` 
+### 🚀 Features
+- `InputNumber`: 新增 `autofocus` 属性 @betavs ([#3845](https://github.com/Tencent/tdesign-vue/pull/3845))
+### 🐞 Bug Fixes
+- `DateRangePickerPanel`: 修复跨年时月份联动的问题 @RSS1102 ([#3846](https://github.com/Tencent/tdesign-vue/pull/3846))
+
+
+## 🌈 1.15.0 `2026-04-27` 
+### 🚀 Features
+- `Icon`: 新增 217 个与人工智能、文档、徽标和文件相关的图标 @uyarn([#3808](https://github.com/Tencent/tdesign-vue/pull/3808))
+- `Dropdown`: `Dropdown` 支持 `panelTopContent` 和 `panelBottomContent` api @HaixingOoO ([#3826](https://github.com/Tencent/tdesign-vue/pull/3826))
+- `popup`: 新增多个组件实例方法 `getOverlay` 用于获取浮层元素、`getOverlayState` 用于获取浮层悬浮状态 、`getPopper` 用于获取当前组件 popper 实例、`update` 用于更新浮层内容 @RSS1102 ([#3751](https://github.com/Tencent/tdesign-vue/pull/3751))
+- `Typography`: 新增 `Typography` 排版组件 @uyarn ([#3831](https://github.com/Tencent/tdesign-vue/pull/3831))
+### 🐞 Bug Fixes
+- `Table`: 修复树形结构展开收起按钮没有更新展示状态的问题 @mark980828 ([#3816](https://github.com/Tencent/tdesign-vue/pull/3816))
+- `TagInput`: 修复 `excessTagsDisplayType="break-line"` 时，`suffix` 没有固定在右侧的问题 @RylanBot ([#3829](https://github.com/Tencent/tdesign-vue/pull/3829))
+
+
+## 🌈 1.14.5 `2026-01-21` 
+### 🐞 Bug Fixes
+- `Table`: 修复远程分页场景下，全选逻辑错误引起展示异常的问题 @RSS1102 ([#3801](https://github.com/Tencent/tdesign-vue/pull/3801))
+- `Menu`: 修复在 Safari 浏览器中点击展开图标没有变换方向的问题 @liweijie0812 ([#3797](https://github.com/Tencent/tdesign-vue/pull/3797))
+- `Menu`: 修复 `1.14.2` 后 menu-item 绝对定位样式丢失导致层级设置不生效的问题 @RSS1102 ([#3804](https://github.com/Tencent/tdesign-vue/pull/3804))
+- `Select`: 修复在 Safari 浏览器中点击展开图标没有变换方向的问题 @liweijie0812 ([#3797](https://github.com/Tencent/tdesign-vue/pull/3797))
+- `TreeSelect`: 修复在 Safari 浏览器中点击展开图标没有变换方向的问题 @liweijie0812 ([#3797](https://github.com/Tencent/tdesign-vue/pull/3797))
+- `Cascader`: 修复在 Safari 浏览器中点击展开图标没有变换方向的问题 @liweijie0812 ([#3797](https://github.com/Tencent/tdesign-vue/pull/3797))
+- `Table`: 优化存在固定表头或表尾场景滚动后表格位置异常的问题 @uyarn ([#3805](https://github.com/Tencent/tdesign-vue/pull/3805))
+
+
+
+
+## 🌈 1.14.4 `2025-12-26` 
+### 🐞 Bug Fixes
+- `Drawer`: 修复 `DOM` 元素未正确移除的问题 @RSS1102 ([#3788](https://github.com/Tencent/tdesign-vue/pull/3788))
+- `Guide`: 修复 `DOM` 元素未正确移除的问题 @RSS1102 ([#3788](https://github.com/Tencent/tdesign-vue/pull/3788))
+
+
+## 🌈 1.14.3 `2025-12-23` 
+### 🚀 Features
+- `ImageViewer`: 
+    - 优化下载跨域图片时的格式处理和压缩比例  @RylanBot ([common#2311](https://github.com/Tencent/tdesign-common/pull/2311)) 
+    - 支持直接下载同域图片，避免二次转换导致体积增大和动图失效等问题 @RylanBot ([common#2311](https://github.com/Tencent/tdesign-common/pull/2311)) 
+- `Popup`: 新增 `onOverlayClick` 事件，支持内容面板点击时触发 @RSS1102  ([#3752](https://github.com/Tencent/tdesign-vue/pull/3752))
+### 🐞 Bug Fixes
+- `Avatar`: 修复样式与设计稿不一致的问题 @liweijie0812 ([common#2364](https://github.com/Tencent/tdesign-common/pull/2364))
+- `Menu`: 修复菜单选项默认边距和图标大小的问题 @liweijie0812 ([common#2369](https://github.com/Tencent/tdesign-common/pull/2369))
+- `Table`: 修复行选中收缩后,表格头全选状态异常的问题 @liweijie0812 ([#3771](https://github.com/Tencent/tdesign-vue/pull/3771))
+- `Upload`: 修复不支持文件数组上传的问题 @GATING ([common#2078](https://github.com/Tencent/tdesign-common/pull/2078))
+- `Upload`: 修复 `theme` 为 `image-flow` 的告警问题 @uyarn ([#3782](https://github.com/Tencent/tdesign-vue/pull/3782))
+
+
+## 🌈 1.14.2 `2025-11-07` 
+### 🚀 Features
+- `Watermark`: 新增 `layout` API，支持生成不同布局的水印 @Wesley-0808 ([#3726](https://github.com/Tencent/tdesign-vue/pull/3726))
+- `Cascader`: 
+     - 支持 `filterable` 与 `checkStrictly` 及`valueMode = parentFirst`配合使用，展示非叶子节点的效果 @uyarn ([#3763](https://github.com/Tencent/tdesign-vue/pull/3763))
+     - `option` 新增`onChange`和`onExpand` 方法，用于多选场景下，自定义节点时自定义点击节点的触发逻辑，具体使用请参考自定义下拉选项的参考示例 @uyarn ([#3763](https://github.com/Tencent/tdesign-vue/pull/3763))
+### 🐞 Bug Fixes
+- `Cascader`: 
+     - 修复多选自定义节点无法进行展开处理的问题 @uyarn ([#3763](https://github.com/Tencent/tdesign-vue/pull/3763)) 
+     -  修复`reserveKeyword` API 无效的问题 @uyarn ([#3763](https://github.com/Tencent/tdesign-vue/pull/3763))
+- `Watermark`: 
+     - 修复多行图文水印图片配置了灰度时，整个画布内容也会灰度的问题 @Wesley-0808 ([#3726](https://github.com/Tencent/tdesign-vue/pull/3726))
+     - 修复 window 不存在场景，构建时报错的问题 @Wesley-0808([#3736](https://github.com/Tencent/tdesign-vue/pull/3736))
+- `Textarea`: 修复内容超长情况下，设置 `autosize` 没有完整自动撑开高度，存在有滚动条的问题 @engvuchen ([#3727](https://github.com/Tencent/tdesign-vue/pull/3727))
+- `Form`: 修复错误消息 `max` 和 `min` 英文翻译错误 @liweijie0812([#3743](https://github.com/Tencent/tdesign-vue/pull/3743))
+- `Calendar`: 
+     - 修复了年份选项错误地使用了月份选项禁用范围判定逻辑的问题 @shumuuu ([#3759](https://github.com/Tencent/tdesign-vue/pull/3759))
+     - 修复了当设定日历的range值为同一年内时，终止月份之后的月份选项没有正常禁用的问题 @shumuuu ([#3759](https://github.com/Tencent/tdesign-vue/pull/3759))
+- `Menu`: 修复菜单项自动翻转失效的问题 @RSS1102 ([#3744](https://github.com/Tencent/tdesign-vue/pull/3744))
+
+### 🚧 Others
+- `Tabs`: 在非拖拽场景下不注册拖拽事件 @RSS1102 ([#3738](https://github.com/Tencent/tdesign-vue/pull/3738))
+
+
+## 🌈 1.14.1 `2025-09-22` 
+### 🐞 Bug Fixes
+- `Watermark`: 修复 `1.14.0` 版本中多次引入水印组件出现节点渲染颜色过深的问题 @uyarn ([#3721](https://github.com/Tencent/tdesign-vue/pull/3721))
+
+
+## 🌈 1.14.0 `2025-09-19` 
+### 🚀 Features
+- `Icon`： @uyarn 
+    - `tdesign-icons-vue` 发布 0.4.x 版本，新增 align-bottom、no-result、no-result-filled、 tree-list、wifi-no、 wifi-no-filled、logo-stackblitz-filled、logo-stackblitz、logo-wecom-filled 图标，移除 video-camera-3、video-camera-3-filled、list 图标，此前有依赖以上三个图标升级请注意 ⚠️  ([#3709](https://github.com/Tencent/tdesign-vue/pull/3709))
+    - 按需加载方式使用的图标资源支持可变粗细功能，通过`strokeWidth`属性进行配置，详情请参考示例和文档 ([#3709](https://github.com/Tencent/tdesign-vue/pull/3709))
+   - 按需加载方式使用的图标资源支持多色填充功能，通过`strokeColor` 和 `fillColor` 属性进行配置，详情请参考示例和文档 ([#3709](https://github.com/Tencent/tdesign-vue/pull/3709))
+- `Textarea`: 新增 `allowInputOverMax` API，允许输入超过 `maxlength` @RSS1102 ([#3691](https://github.com/Tencent/tdesign-vue/pull/3691))
+- `Tabs`: @RSS1102 
+    - 新增 `dragSort` 和 `onDragSort` 方法，用于进行选项卡调换顺序的需求  ([#3711](https://github.com/Tencent/tdesign-vue/pull/3711))
+    - 将 remove 事件从删除图标移至外层容器, 保证替换图标功能正常使用，有覆盖删除图标样式请注意此变更 ⚠️ ([#3686](https://github.com/Tencent/tdesign-vue/pull/3686))
+- `Skeleton`: 修复 `theme` 默认值不符合文档描述的问题，需要 `paragraph` 效果升级后手动设置 `theme` @liweijie0812 ([#3682](https://github.com/Tencent/tdesign-vue/pull/3682))
+
+### 🐞 Bug Fixes
+- `Tree`: 修复 `draggable` 在 `disabled` 状态下依旧生效的异常 @RylanBot ([#3690](https://github.com/Tencent/tdesign-vue/pull/3690))
+- `Watermark`: 修复深色模式下，文字水印内容显示不明显的问题 @liweijie0812 ([#3697](https://github.com/Tencent/tdesign-vue/pull/3697))
+- `Dialog`: 修复`1.10.8`版本后，`showInAttachedElement` 不能配合 `attach` 一起使用的问题 @uyarn ([#3692](https://github.com/Tencent/tdesign-vue/pull/3692))
+- `Tree`: 修复自定义 icon 场景下，全被设为 open 状态，导致图标颜色错误的问题 @RylanBot([#3713](https://github.com/Tencent/tdesign-vue/pull/3713))
+- `Tag`: 修复点击关闭按钮会同时触发点击事件的问题 @uyarn ([#3715](https://github.com/Tencent/tdesign-vue/pull/3715))
+- `Select`: 修复设置 `keys` 后， onChange 回调参数中 selectedOptions 参数缺失的问题 @uyarn ([#3716](https://github.com/Tencent/tdesign-vue/pull/3716))
+
+## 🌈 1.13.1 `2025-08-20` 
+### 🚀 Features
+- `Table`: 新增切换分页后重置滚动条回到顶部的特性 @RSS1102 ([#3684](https://github.com/Tencent/tdesign-vue/pull/3684))
+### 🐞 Bug Fixes
+- `QRCode`: 修复 `type='svg'` 时 `value` 值变化而二维码未刷新的问题 @RSS1102 ([#3681](https://github.com/Tencent/tdesign-vue/pull/3681))
+- `Radio`: 修复 `RadioGroup` 组件的告警问题 @uyarn ([#3685](https://github.com/Tencent/tdesign-vue/pull/3685))
+
+
 ## 🌈 1.13.0 `2025-08-07` 
 ### 🚀 Features
 - `QRCode`: 新增 `QRCode` 二维码组件 @Wesley-0808 ([#3652](https://github.com/Tencent/tdesign-vue/pull/3652))
@@ -1313,3 +1472,4 @@ docClass: timeline
 
 ## 🌈 0.x `2020-12-21 - 2022-12-14`
 前往 [GitHub](https://github.com/Tencent/tdesign-vue/blob/develop/CHANGELOG-0.x.md) 查看 `0.x` 更新日志
+

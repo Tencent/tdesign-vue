@@ -5,7 +5,7 @@
 
 名称 | 类型 | 默认值 | 说明 | 必传
 -- | -- | -- | -- | --
-allowInputOverMax | Boolean | false | 超出maxlength或maxcharacter之后是否还允许输入 | N
+allowInputOverMax | Boolean | false | 超出 `maxlength` 或 `maxcharacter` 之后是否还允许输入 | N
 autofocus | Boolean | false | 自动聚焦，拉起键盘 | N
 autosize | Boolean / Object | false | 高度自动撑开。 autosize = true 表示组件高度自动撑开，同时，依旧允许手动拖高度。如果设置了 autosize.maxRows 或者 autosize.minRows 则不允许手动调整高度。TS 类型：`boolean \| { minRows?: number; maxRows?: number }` | N
 disabled | Boolean | false | 是否禁用文本框 | N

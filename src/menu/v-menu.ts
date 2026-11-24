@@ -129,6 +129,26 @@ export default class VMenu {
     return [...this.expandValues];
   }
 
+  remove(value: MenuValue) {
+    this.cache.forEach((data, _value, cache) => {
+      if (data.value === value) {
+        cache.delete(data);
+      }
+    });
+
+    const removeFromChildren = (node: VMenuData): boolean => {
+      if (!node?.children) return false;
+      const index = node.children.findIndex((child) => child.value === value);
+      if (index !== -1) {
+        node.children.splice(index, 1);
+        return true;
+      }
+      return node.children.some(removeFromChildren);
+    };
+
+    removeFromChildren(this.data);
+  }
+
   getChild(value: MenuValue) {
     const target = DFS(this.data, value);
 

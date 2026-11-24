@@ -36,6 +36,11 @@ export const useContext = (
     expend: [],
   });
 
+  // 部分模式下需要允许父节点被搜索选择 valueMode = 'parentFirst' 和 checkStrictly
+  const isParentFilterable = computed(
+    () => (props.valueMode === 'parentFirst' || props.checkStrictly) && statusContext.inputVal,
+  );
+
   return {
     statusContext,
     cascaderContext: computed(() => {
@@ -53,6 +58,8 @@ export const useContext = (
         minCollapsedNum,
         valueType,
         value,
+        valueMode,
+        reserveKeyword,
       } = props;
       return {
         value: statusContext.scopeVal,
@@ -68,7 +75,10 @@ export const useContext = (
         showAllLevels,
         minCollapsedNum,
         valueType,
+        valueMode,
+        reserveKeyword,
         visible: innerPopupVisible.value,
+        isParentFilterable: isParentFilterable.value,
         cascaderValue: value,
         ...statusContext,
         setTreeNodes: (nodes: TreeNode[]) => {
@@ -108,8 +118,10 @@ export const useCascaderContext = (props: TdCascaderProps) => {
 
   // 更新treeNodes
   const updatedTreeNodes = () => {
-    const { inputVal, treeStore, setTreeNodes } = cascaderContext.value;
-    treeNodesEffect(inputVal, treeStore, setTreeNodes, props.filter);
+    const {
+      inputVal, treeStore, setTreeNodes, isParentFilterable,
+    } = cascaderContext.value;
+    treeNodesEffect(inputVal, treeStore, setTreeNodes, props.filter, isParentFilterable);
   };
 
   // 更新节点展开状态
@@ -136,13 +148,13 @@ export const useCascaderContext = (props: TdCascaderProps) => {
       if (multiple) {
         if (value.length > 0) {
           // 处理第一个数组的值
-          const firstValue = value[0] as Array<string | number>;
+          const firstValue = value[0] as TreeNodeValue[];
           if (firstValue.length > treeStore.expandedMap.size) {
             treeStore.setExpanded(firstValue.slice(0, treeStore.expandedMap.size + 1));
           }
         }
         // 加载时给所有的选中列表重新设置value，以刷新已选择的值
-        const lastValues = value.map((item: Array<string | number>) => item[item.length - 1]);
+        const lastValues = value.map((item: TreeNodeValue[]) => item[item.length - 1]);
         treeStore.setChecked(lastValues);
       }
     }

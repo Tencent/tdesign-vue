@@ -421,6 +421,7 @@ exports[`Progress > :props > :status > :status is error 1`] = `
         class="t-icon t-icon-close-circle-filled t-progress__icon"
         fill="none"
         height="1em"
+        style="fill: none;"
         viewBox="0 0 24 24"
         width="1em"
       >
@@ -457,6 +458,7 @@ exports[`Progress > :props > :status > :status is error and percentage is 100 1`
         class="t-icon t-icon-close-circle-filled t-progress__icon"
         fill="none"
         height="1em"
+        style="fill: none;"
         viewBox="0 0 24 24"
         width="1em"
       >
@@ -493,6 +495,7 @@ exports[`Progress > :props > :status > :status is success 1`] = `
         class="t-icon t-icon-check-circle-filled t-progress__icon"
         fill="none"
         height="1em"
+        style="fill: none;"
         viewBox="0 0 24 24"
         width="1em"
       >
@@ -529,6 +532,7 @@ exports[`Progress > :props > :status > :status is success and percentage is 100 
         class="t-icon t-icon-check-circle-filled t-progress__icon"
         fill="none"
         height="1em"
+        style="fill: none;"
         viewBox="0 0 24 24"
         width="1em"
       >
@@ -565,6 +569,7 @@ exports[`Progress > :props > :status > :status is warning 1`] = `
         class="t-icon t-icon-error-circle-filled t-progress__icon"
         fill="none"
         height="1em"
+        style="fill: none;"
         viewBox="0 0 24 24"
         width="1em"
       >
@@ -601,6 +606,7 @@ exports[`Progress > :props > :status > :status is warning and percentage is 100 
         class="t-icon t-icon-error-circle-filled t-progress__icon"
         fill="none"
         height="1em"
+        style="fill: none;"
         viewBox="0 0 24 24"
         width="1em"
       >

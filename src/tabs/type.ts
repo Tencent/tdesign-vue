@@ -18,6 +18,11 @@ export interface TdTabsProps {
    */
   disabled?: boolean;
   /**
+   * 是否开启拖拽调整顺序
+   * @default false
+   */
+  dragSort?: boolean;
+  /**
    * 选项卡列表
    */
   list?: Array<TdTabPanelProps>;
@@ -58,6 +63,10 @@ export interface TdTabsProps {
    */
   onChange?: (value: TabValue) => void;
   /**
+   * 拖拽排序时触发
+   */
+  onDragSort?: (context: TabsDragSortContext) => void;
+  /**
    * 删除选项卡时触发
    */
   onRemove?: (options: { value: TabValue; index: number; e: MouseEvent }) => void;
@@ -79,9 +88,19 @@ export interface TdTabPanelProps {
    */
   disabled?: boolean;
   /**
+   * 选项卡组件开启允许拖动排序时，当前选项卡是否允许拖动
+   * @default true
+   */
+  draggable?: boolean;
+  /**
    * 选项卡名称，可自定义选项卡导航内容
    */
   label?: string | TNode;
+  /**
+   * 是否启用选项卡懒加载
+   * @default false
+   */
+  lazy?: boolean;
   /**
    * 用于自定义选项卡面板内容
    */
@@ -99,10 +118,13 @@ export interface TdTabPanelProps {
    * 点击删除按钮时触发
    */
   onRemove?: (options: { value: TabValue; e: MouseEvent }) => void;
-  /**
-   * 标签是否延迟渲染
-   */
-  lazy?: Boolean;
 }
 
 export type TabValue = string | number;
+
+export interface TabsDragSortContext {
+  currentIndex: number;
+  current: TabValue;
+  targetIndex: number;
+  target: TabValue;
+}

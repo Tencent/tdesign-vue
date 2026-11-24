@@ -8,6 +8,11 @@ import { TNode } from '../common';
 
 export interface TdTextareaProps {
   /**
+   * 超出 `maxlength` 或 `maxcharacter` 之后是否还允许输入
+   * @default false
+   */
+  allowInputOverMax?: boolean;
+  /**
    * 自动聚焦，拉起键盘
    * @default false
    */

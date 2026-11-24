@@ -1,8 +1,8 @@
 <template>
   <t-breadcrumb>
-    <t-breadcrumbItem><BookmarkIcon name="bookmark" slot="icon" />页面1</t-breadcrumbItem>
-    <t-breadcrumbItem><BookmarkIcon name="bookmark" slot="icon" />页面2</t-breadcrumbItem>
-    <t-breadcrumbItem><BookmarkIcon name="bookmark" slot="icon" />页面3</t-breadcrumbItem>
+    <t-breadcrumb-item><BookmarkIcon name="bookmark" slot="icon" />页面1</t-breadcrumb-item>
+    <t-breadcrumb-item><BookmarkIcon name="bookmark" slot="icon" />页面2</t-breadcrumb-item>
+    <t-breadcrumb-item><BookmarkIcon name="bookmark" slot="icon" />页面3</t-breadcrumb-item>
   </t-breadcrumb>
 </template>
 <script setup>

@@ -12,6 +12,7 @@ exports[`Swiper > :props > :animation fade 1`] = `
     >
       <div
         class="t-swiper__container"
+        style="height: 0px;"
       />
     </div>
     <ul
@@ -77,7 +78,7 @@ exports[`Swiper > :props > :direction 1`] = `
     >
       <div
         class="t-swiper__container"
-        style="transform: translate3d(0, -0%, 0px);"
+        style="height: 0px; transform: translate3d(0, -0%, 0px);"
       />
     </div>
     <ul
@@ -197,28 +198,6 @@ exports[`Swiper > :props > :navigation 1`] = `
 </div>
 `;
 
-exports[`Swiper > :props > :theme 1`] = `
-<div
-  class="t-swiper"
->
-  <div
-    class="t-swiper__wrap t-swiper--inside"
-  >
-    <div
-      class="t-swiper__content"
-    >
-      <div
-        class="t-swiper__container"
-        style="transform: translate3d(-0%, 0px, 0px);"
-      />
-    </div>
-    <ul
-      class="t-swiper__navigation t-swiper__navigation-bars"
-    />
-  </div>
-</div>
-`;
-
 exports[`Swiper > :props > :type 1`] = `
 <div
   class="t-swiper"
@@ -231,6 +210,7 @@ exports[`Swiper > :props > :type 1`] = `
     >
       <div
         class="t-swiper__container"
+        style="height: 0px;"
       />
     </div>
     <ul
@@ -268,13 +248,21 @@ exports[`Swiper > additional function > navigation: VNode 1`] = `
           class="t-icon t-icon-chevron-left"
           fill="none"
           height="1em"
+          style="fill: none;"
           viewBox="0 0 24 24"
           width="1em"
         >
-          <path
-            d="M15.9144 17.5L10.4144 12L15.9144 6.50003L14.5002 5.08582L7.58594 12L14.5002 18.9142L15.9144 17.5Z"
-            fill="currentColor"
-          />
+          <g
+            id="chevron-left"
+          >
+            <path
+              d="M14.5 17.5L9 12L14.5 6.5"
+              id="stroke1"
+              stroke="currentColor"
+              stroke-linecap="square"
+              stroke-width="2"
+            />
+          </g>
         </svg>
       </div>
       <div
@@ -284,13 +272,21 @@ exports[`Swiper > additional function > navigation: VNode 1`] = `
           class="t-icon t-icon-chevron-right"
           fill="none"
           height="1em"
+          style="fill: none;"
           viewBox="0 0 24 24"
           width="1em"
         >
-          <path
-            d="M8.08594 17.5L13.5859 12L8.08594 6.50003L9.50015 5.08582L16.4144 12L9.50015 18.9142L8.08594 17.5Z"
-            fill="currentColor"
-          />
+          <g
+            id="chevron-right"
+          >
+            <path
+              d="M9.5 17.5L15 12L9.5 6.5"
+              id="stroke1"
+              stroke="currentColor"
+              stroke-linecap="square"
+              stroke-width="2"
+            />
+          </g>
         </svg>
       </div>
     </div>
@@ -326,13 +322,21 @@ exports[`Swiper > additional function > no valid panel 1`] = `
           class="t-icon t-icon-chevron-left"
           fill="none"
           height="1em"
+          style="fill: none;"
           viewBox="0 0 24 24"
           width="1em"
         >
-          <path
-            d="M15.9144 17.5L10.4144 12L15.9144 6.50003L14.5002 5.08582L7.58594 12L14.5002 18.9142L15.9144 17.5Z"
-            fill="currentColor"
-          />
+          <g
+            id="chevron-left"
+          >
+            <path
+              d="M14.5 17.5L9 12L14.5 6.5"
+              id="stroke1"
+              stroke="currentColor"
+              stroke-linecap="square"
+              stroke-width="2"
+            />
+          </g>
         </svg>
       </div>
       <div
@@ -342,13 +346,21 @@ exports[`Swiper > additional function > no valid panel 1`] = `
           class="t-icon t-icon-chevron-right"
           fill="none"
           height="1em"
+          style="fill: none;"
           viewBox="0 0 24 24"
           width="1em"
         >
-          <path
-            d="M8.08594 17.5L13.5859 12L8.08594 6.50003L9.50015 5.08582L16.4144 12L9.50015 18.9142L8.08594 17.5Z"
-            fill="currentColor"
-          />
+          <g
+            id="chevron-right"
+          >
+            <path
+              d="M9.5 17.5L15 12L9.5 6.5"
+              id="stroke1"
+              stroke="currentColor"
+              stroke-linecap="square"
+              stroke-width="2"
+            />
+          </g>
         </svg>
       </div>
     </div>

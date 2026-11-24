@@ -56,21 +56,24 @@ export default mixins(keepAnimationMixins, classPrefixMixins, getGlobalIconMixin
       e.stopPropagation();
       emitEvent<Parameters<(e: MouseEvent) => void>>(this, 'click', e);
     },
-    renderCardItem(): VNode {
+    removeBtn(): VNode {
       const { CloseIcon } = this.useGlobalIcon({ CloseIcon: TdCloseIcon });
 
+      return this.removable && !this.disabled ? (
+        <span onClick={(e: MouseEvent) => this.removeBtnClick(e)} class="remove-btn">
+          <CloseIcon />
+        </span>
+      ) : null;
+    },
+    renderCardItem(): VNode {
       return (
         <div class={this.navItemClass} onClick={this.onClickNav} v-ripple={this.keepAnimation.ripple}>
           <span class={`${this.classPrefix}-tabs__nav-item-text-wrapper`}>{this.label}</span>
-          {this.removable && !this.disabled ? (
-            <CloseIcon class="remove-btn" nativeOnClick={this.removeBtnClick} />
-          ) : null}
+          {this.removeBtn()}
         </div>
       );
     },
     renderNormalItem(): VNode {
-      const { CloseIcon } = this.useGlobalIcon({ CloseIcon: TdCloseIcon });
-
       return (
         <div class={this.navItemClass} onClick={this.onClickNav}>
           <div
@@ -85,9 +88,7 @@ export default mixins(keepAnimationMixins, classPrefixMixins, getGlobalIconMixin
           >
             <span class={`${this.classPrefix}-tabs__nav-item-text-wrapper`}>{this.label}</span>
           </div>
-          {this.removable && !this.disabled ? (
-            <CloseIcon class="remove-btn" nativeOnClick={this.removeBtnClick} />
-          ) : null}
+          {this.removeBtn()}
         </div>
       );
     },

@@ -1,14 +1,47 @@
+/* eslint-disable no-param-reassign */
 import {
-  defineComponent, computed, provide, ref, reactive, watch, onMounted,
+  defineComponent,
+  computed,
+  provide,
+  ref,
+  reactive,
+  watch,
+  onMounted,
+  onBeforeUnmount,
+  nextTick,
 } from '@vue/composition-api';
+import type { VNode } from 'vue';
+import { EllipsisIcon } from 'tdesign-icons-vue';
 import props from './head-menu-props';
 import { MenuValue } from './type';
 import { TdMenuInterface, TdOpenType } from './const';
 import { Tabs, TabPanel } from '../tabs';
+import Submenu from './submenu';
+import PopupOverflowContent from './components/popup-overflow-content';
 import { renderContent, renderTNodeJSX } from '../utils/render-tnode';
 import VMenu from './v-menu';
 import type { VMenuData } from './v-menu';
 import { usePrefixClass } from '../hooks/useConfig';
+import useResizeObserver from '../hooks/useResizeObserver';
+
+const MORE_SUBMENU_VALUE = '__t_head_menu_more__';
+
+const cloneVNodeTree = (vnode: VNode): VNode => {
+  const cloned = {
+    ...vnode,
+    data: vnode.data ? { ...vnode.data } : vnode.data,
+    children: vnode.children?.map((child) => cloneVNodeTree(child as VNode)),
+    componentOptions: vnode.componentOptions
+      ? {
+        ...vnode.componentOptions,
+        children: vnode.componentOptions.children?.map((child) => cloneVNodeTree(child)),
+      }
+      : vnode.componentOptions,
+  } as VNode;
+  cloned.elm = undefined;
+  cloned.componentInstance = undefined;
+  return cloned;
+};
 
 export default defineComponent({
   name: 'THeadMenu',
@@ -103,6 +136,7 @@ export default defineComponent({
     const updateActiveValues = (value: MenuValue) => {
       activeValue.value = value;
       activeValues.value = vMenu.select(value);
+      syncMoreActiveState();
     };
     watch(() => props.value, updateActiveValues);
     watch(() => props.defaultValue, updateActiveValues);
@@ -120,6 +154,264 @@ export default defineComponent({
       }
     });
 
+    const menuRef = ref<HTMLElement>();
+    const innerRef = ref<HTMLElement>();
+    const logoRef = ref<HTMLElement>();
+    const operationRef = ref<HTMLElement>();
+    const foldStartIndex = ref(-1);
+    const cachedItemWidths: number[] = [];
+    const foldedItems = new WeakSet<HTMLElement>();
+    const itemDisplayStates = new WeakMap<HTMLElement, { value: string; priority: string }>();
+
+    const hideFoldedItem = (element: HTMLElement) => {
+      if (!foldedItems.has(element)) {
+        itemDisplayStates.set(element, {
+          value: element.style.getPropertyValue('display'),
+          priority: element.style.getPropertyPriority('display'),
+        });
+        foldedItems.add(element);
+      }
+      element.style.setProperty('display', 'none', 'important');
+    };
+
+    const showFoldedItem = (element: HTMLElement) => {
+      if (!foldedItems.has(element)) return;
+      const display = itemDisplayStates.get(element);
+      if (display?.value) {
+        element.style.setProperty('display', display.value, display.priority);
+      } else {
+        element.style.removeProperty('display');
+      }
+      foldedItems.delete(element);
+      itemDisplayStates.delete(element);
+    };
+
+    const getMenuItemElements = () => {
+      if (!menuRef.value) return [];
+      const moreClass = `${classPrefix.value}-head-menu__submenu--more`;
+      const menuItemClass = `${classPrefix.value}-menu__item`;
+      const submenuClass = `${classPrefix.value}-submenu`;
+      const items: HTMLElement[] = [];
+      const collect = (parent: HTMLElement, depth: number) => {
+        if (depth > 3) return;
+        Array.from(parent.children).forEach((element) => {
+          if (!(element instanceof HTMLElement) || element.classList.contains(moreClass)) return;
+          if (element.classList.contains(menuItemClass) || element.classList.contains(submenuClass)) {
+            items.push(element);
+          } else if (getComputedStyle(element).display !== 'none') {
+            collect(element, depth + 1);
+          }
+        });
+      };
+      collect(menuRef.value, 0);
+      return items;
+    };
+
+    const getWrapperElements = () => {
+      if (!menuRef.value) return [];
+      const moreClass = `${classPrefix.value}-head-menu__submenu--more`;
+      const menuItemClass = `${classPrefix.value}-menu__item`;
+      const submenuClass = `${classPrefix.value}-submenu`;
+      return Array.from(menuRef.value.children).filter(
+        (element): element is HTMLElement => element instanceof HTMLElement
+          && !element.classList.contains(moreClass)
+          && !element.classList.contains(menuItemClass)
+          && !element.classList.contains(submenuClass),
+      );
+    };
+
+    const flattenVisibleWrappers = () => {
+      getWrapperElements().forEach((element) => {
+        if (getComputedStyle(element).display !== 'none' && element.style.display !== 'contents') {
+          element.style.display = 'contents';
+        }
+      });
+    };
+
+    const getElementWidth = (element: HTMLElement) => {
+      const style = window.getComputedStyle(element);
+      return (
+        element.getBoundingClientRect().width
+        + Number.parseFloat(style.marginLeft || '0')
+        + Number.parseFloat(style.marginRight || '0')
+      );
+    };
+
+    const getMoreButtonWidth = () => {
+      const moreElement = menuRef.value?.querySelector(`.${classPrefix.value}-head-menu__submenu--more`) as HTMLElement;
+      if (!moreElement) return 0;
+      const wasHidden = moreElement.style.display === 'none';
+      if (wasHidden) {
+        moreElement.style.visibility = 'hidden';
+        moreElement.style.display = '';
+      }
+      const width = getElementWidth(moreElement);
+      if (wasHidden) {
+        moreElement.style.display = 'none';
+        moreElement.style.visibility = '';
+      }
+      return width;
+    };
+
+    const getComputedCssValue = (element: Element, property: keyof CSSStyleDeclaration) => Number.parseFloat(String(getComputedStyle(element)[property])) || 0;
+
+    const calcMenuWidth = () => {
+      if (!innerRef.value || !menuRef.value) return 0;
+      let totalWidth = innerRef.value.clientWidth;
+      [logoRef.value, operationRef.value].forEach((element) => {
+        if (!element) return;
+        totalWidth
+          -= element.offsetWidth
+          + getComputedCssValue(element, 'marginLeft')
+          + getComputedCssValue(element, 'marginRight');
+      });
+      return (
+        totalWidth
+        - getComputedCssValue(menuRef.value, 'paddingLeft')
+        - getComputedCssValue(menuRef.value, 'paddingRight')
+        - getComputedCssValue(menuRef.value, 'marginLeft')
+        - getComputedCssValue(menuRef.value, 'marginRight')
+      );
+    };
+
+    function syncMoreActiveState() {
+      const values = activeValues.value;
+      const hasMoreFlag = values.includes(MORE_SUBMENU_VALUE);
+      let needActive = false;
+      if (foldStartIndex.value >= 0 && values.length) {
+        const topLevelValues = vMenu.data?.children?.map((child) => child.value) || [];
+        const foldedValues = new Set(topLevelValues.slice(foldStartIndex.value));
+        needActive = values.some((value) => value != null && value !== MORE_SUBMENU_VALUE && foldedValues.has(value));
+      }
+      if (needActive && !hasMoreFlag) {
+        activeValues.value = [...values, MORE_SUBMENU_VALUE];
+      } else if (!needActive && hasMoreFlag) {
+        activeValues.value = values.filter((value) => value !== MORE_SUBMENU_VALUE);
+      }
+    }
+
+    const applyFoldState = () => {
+      if (!menuRef.value) return;
+      flattenVisibleWrappers();
+      const isFolded = foldStartIndex.value >= 0;
+      getMenuItemElements().forEach((element, index) => {
+        if (isFolded && index >= foldStartIndex.value) {
+          hideFoldedItem(element);
+        } else {
+          showFoldedItem(element);
+        }
+      });
+      const moreElement = menuRef.value.querySelector(`.${classPrefix.value}-head-menu__submenu--more`) as HTMLElement;
+      if (moreElement) moreElement.style.display = isFolded ? '' : 'none';
+      syncMoreActiveState();
+    };
+
+    const handleResize = () => {
+      if (props.expandType !== 'popup' || !menuRef.value) return;
+      flattenVisibleWrappers();
+      const itemNodes = getMenuItemElements();
+      if (!itemNodes.length) {
+        foldStartIndex.value = -1;
+        applyFoldState();
+        return;
+      }
+
+      const moreElement = menuRef.value.querySelector(`.${classPrefix.value}-head-menu__submenu--more`) as HTMLElement;
+      if (moreElement) moreElement.style.display = 'none';
+      const savedFoldStates = itemNodes.map((element) => foldedItems.has(element));
+      const savedFlexShrinks = itemNodes.map((element) => element.style.flexShrink);
+      itemNodes.forEach((element) => {
+        showFoldedItem(element);
+        element.style.flexShrink = '0';
+      });
+      cachedItemWidths.splice(
+        0,
+        cachedItemWidths.length,
+        ...itemNodes.map((element) => (getComputedStyle(element).display === 'none' ? 0 : getElementWidth(element))),
+      );
+      itemNodes.forEach((element, index) => {
+        if (savedFoldStates[index]) hideFoldedItem(element);
+        element.style.flexShrink = savedFlexShrinks[index];
+      });
+
+      let nextFoldIndex = -1;
+      if (cachedItemWidths.reduce((sum, width) => sum + width, 0) > calcMenuWidth()) {
+        const menuWidth = calcMenuWidth();
+        const moreWidth = getMoreButtonWidth();
+        let currentWidth = 0;
+        for (let index = 0; index < itemNodes.length; index++) {
+          if (currentWidth + cachedItemWidths[index] + moreWidth > menuWidth) {
+            nextFoldIndex = index;
+            break;
+          }
+          currentWidth += cachedItemWidths[index];
+        }
+        if (nextFoldIndex === -1 && currentWidth + moreWidth > menuWidth) {
+          nextFoldIndex = itemNodes.length - 1;
+        }
+      }
+      foldStartIndex.value = nextFoldIndex;
+      applyFoldState();
+    };
+
+    useResizeObserver(innerRef, handleResize);
+    watch(
+      () => props.expandType,
+      (value) => {
+        nextTick(() => {
+          if (value === 'popup') {
+            handleResize();
+          } else {
+            foldStartIndex.value = -1;
+            applyFoldState();
+          }
+        });
+      },
+    );
+    watch(logoRef, (element) => {
+      element?.querySelectorAll('img').forEach((image) => {
+        if (!image.complete) image.addEventListener('load', handleResize, { once: true });
+      });
+    });
+
+    let mutationObserver: MutationObserver;
+    let resizeFrame: number;
+    let isResizing = false;
+    const safeHandleResize = () => {
+      if (isResizing) return;
+      applyFoldState();
+      cancelAnimationFrame(resizeFrame);
+      resizeFrame = requestAnimationFrame(() => {
+        isResizing = true;
+        handleResize();
+        requestAnimationFrame(() => {
+          isResizing = false;
+        });
+      });
+    };
+    watch(menuRef, (element) => {
+      mutationObserver?.disconnect();
+      if (!element || typeof MutationObserver === 'undefined') return;
+      mutationObserver = new MutationObserver((records) => {
+        const wrappers = new Set(getWrapperElements());
+        const shouldResize = records.some(
+          (record) => record.type === 'childList' || wrappers.has(record.target as HTMLElement),
+        );
+        if (shouldResize) safeHandleResize();
+      });
+      mutationObserver.observe(element, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['class', 'style'],
+      });
+      nextTick(handleResize);
+    });
+    onBeforeUnmount(() => {
+      mutationObserver?.disconnect();
+      cancelAnimationFrame(resizeFrame);
+    });
+
     return {
       mode,
       menuClass,
@@ -129,16 +421,21 @@ export default defineComponent({
       submenu,
       handleTabChange,
       classPrefix,
+      menuRef,
+      innerRef,
+      logoRef,
+      operationRef,
+      foldStartIndex,
     };
   },
   methods: {
     renderNormalSubmenu(node: VMenuData[], depth: number) {
       if (node.length === 0) return null;
-
       return (
         <ul class={[`${this.classPrefix}-head-menu__submenu`, `${this.classPrefix}-submenu`]}>
           <t-tabs value={this.activeValues[depth]} onChange={this.handleTabChange}>
-            {node.map((item) => (
+            {/* 由于virtual child机制，这里通过vMenu getChild 会有两个相同的节点，故做此处理 */}
+            {node.slice(0, node.length / 2).map((item) => (
               <t-tab-panel value={item.value} label={typeof item.vnode === 'string' ? item.vnode : item.vnode[0].text}>
                 {item.children && item.children.length > 0 ? this.renderNormalSubmenu(item.children, depth + 1) : null}
               </t-tab-panel>
@@ -154,12 +451,39 @@ export default defineComponent({
     }
     const operations = renderContent(this, 'operations', 'options');
     const logo = renderTNodeJSX(this, 'logo');
+    const content = renderContent(this, 'default', 'content');
+    const isFolded = this.foldStartIndex >= 0;
+    const freshContent = isFolded ? renderContent(this, 'default', 'content') : [];
+    const popupContent = (Array.isArray(freshContent) ? freshContent : [freshContent])
+      .filter(Boolean)
+      .map((vnode: VNode) => cloneVNodeTree(vnode));
     return (
       <div class={this.menuClass}>
-        <div class={`${this.classPrefix}-head-menu__inner`}>
-          {logo && <div class={`${this.classPrefix}-menu__logo`}>{logo}</div>}
-          <ul class={`${this.classPrefix}-menu`}>{renderContent(this, 'default', 'content')}</ul>
-          {operations && <div class={`${this.classPrefix}-menu__operations`}>{operations}</div>}
+        <div ref="innerRef" class={`${this.classPrefix}-head-menu__inner`}>
+          {logo && (
+            <div ref="logoRef" class={`${this.classPrefix}-menu__logo`}>
+              {logo}
+            </div>
+          )}
+          <ul ref="menuRef" class={`${this.classPrefix}-menu`}>
+            {content}
+            {this.mode === 'popup' && (
+              <Submenu
+                class={`${this.classPrefix}-head-menu__submenu--more`}
+                value={MORE_SUBMENU_VALUE}
+                title={() => <EllipsisIcon />}
+                style={{ display: isFolded ? '' : 'none' }}
+                disableVirtualChild
+              >
+                <PopupOverflowContent foldIndex={this.foldStartIndex}>{popupContent}</PopupOverflowContent>
+              </Submenu>
+            )}
+          </ul>
+          {operations && (
+            <div ref="operationRef" class={`${this.classPrefix}-menu__operations`}>
+              {operations}
+            </div>
+          )}
         </div>
         {this.mode === 'normal' && this.renderNormalSubmenu(this.submenu, 1)}
       </div>

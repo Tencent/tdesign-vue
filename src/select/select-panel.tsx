@@ -1,7 +1,7 @@
 import {
   computed, defineComponent, toRefs, inject, onMounted, onBeforeUnmount,
 } from '@vue/composition-api';
-import { isFunction } from 'lodash-es';
+import { isFunction, omit } from 'lodash-es';
 import { VNode } from 'vue';
 import { useTNodeJSX } from '../hooks/tnode';
 import { renderTNodeJSXDefault } from '../utils/render-tnode';
@@ -35,6 +35,7 @@ type SelectPanelProps = Pick<
   | 'creatable'
   | 'filterable'
   | 'filter'
+  | 'keys'
 >;
 
 const sizeClassMap = {
@@ -65,6 +66,7 @@ export default defineComponent({
     'scroll',
     'creatable',
     'filterable',
+    'keys',
   ],
 
   setup(props: SelectPanelProps) {
@@ -277,6 +279,12 @@ export default defineComponent({
                 );
               }
 
+              const defaultOmit = ['index', '$index', 'className', 'tagName'];
+
+              const { value, label, disabled } = this.keys || {};
+              const shouldOmitContent = [value, label, disabled].includes('content');
+              const option = omit(item, defaultOmit.concat(shouldOmitContent ? 'content' : []));
+
               const scrollProps = this.isVirtual
                 ? {
                   rowIndex: item.$index,
@@ -294,7 +302,7 @@ export default defineComponent({
                   // 透传 style
                   style={item.style}
                   // 透传其余参数
-                  {...{ props: { ...item, ...scrollProps } }}
+                  {...{ props: { ...option, ...scrollProps } }}
                   // t-option 自身逻辑所需属性
                   multiple={this.multiple}
                   scopedSlots={{ default: item.slots }}

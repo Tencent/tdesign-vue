@@ -986,7 +986,7 @@ describe('TreeSelect Component', () => {
     expect(onPopupVisibleChangeFn1.mock.calls[0][1].trigger).toBe('clear');
   });
 
-  it('events.focus works fine', async () => {
+  it('events.focus returns primitive values in multiple selection', async () => {
     const onFocusFn = vi.fn();
     const wrapper = getTreeSelectMultipleMount(TreeSelect, { filterable: true, value: [1] }, { focus: onFocusFn });
     wrapper.find('input').trigger('focus');
@@ -997,7 +997,7 @@ describe('TreeSelect Component', () => {
     expect(onFocusFn.mock.calls[0][0].e.type).toBe('focus');
   });
 
-  it('events.focus works fine', async () => {
+  it('events.focus returns object values in multiple selection', async () => {
     const onFocusFn = vi.fn();
     const wrapper = getTreeSelectMultipleMount(
       TreeSelect,

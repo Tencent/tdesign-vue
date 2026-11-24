@@ -142,7 +142,7 @@ export default mixins(classPrefixMixins).extend({
     }
 
     const children = [];
-    if (this.theme) {
+    if (this.theme && !this.rowCol) {
       children.push(this.renderRowCol(ThemeMap[this.theme]));
     }
     if (this.rowCol) {

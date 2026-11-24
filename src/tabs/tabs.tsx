@@ -3,7 +3,7 @@ import { getVNodeComponentName, getVueComponentName } from '../utils/helper';
 import props from './props';
 import TTabPanel from './tab-panel';
 import TTabNav from './tab-nav';
-import { TabValue, TdTabsProps } from './type';
+import { TabValue, TdTabPanelProps, TdTabsProps } from './type';
 import { emitEvent } from '../utils/event';
 import { getClassPrefixMixins } from '../config-provider/config-receiver';
 import mixins from '../utils/mixins';
@@ -82,18 +82,25 @@ export default mixins(Vue as VueConstructor<TabParentInjectVue>, classPrefixMixi
     onChangeTab(value: TabValue) {
       emitEvent<Parameters<TdTabsProps['onChange']>>(this, 'change', value);
     },
+
     onRemoveTab({ e, value, index }: Parameters<TdTabsProps['onRemove']>[0]) {
       const panel = this.panels[index];
-      const eventData = {
+      emitEvent<Parameters<TdTabsProps['onRemove']>>(this, 'remove', {
         value,
         index,
         e,
-      };
-      emitEvent<Parameters<TdTabsProps['onRemove']>>(this, 'remove', eventData);
+      });
       if (!panel) return;
-      emitEvent<Parameters<TdTabsProps['onRemove']>>(panel, 'remove', eventData);
+      emitEvent<Parameters<TdTabPanelProps['onRemove']>>(panel, 'remove', {
+        value,
+        e,
+      });
     },
     renderHeader() {
+      const onDragSort = (context: Parameters<TdTabsProps['onDragSort']>[0]) => {
+        emitEvent<Parameters<TdTabsProps['onDragSort']>>(this, 'drag-sort', context);
+      };
+
       const tabNavProps = {
         theme: this.theme,
         value: this.value,
@@ -103,6 +110,8 @@ export default mixins(Vue as VueConstructor<TabParentInjectVue>, classPrefixMixi
         addable: this.addable,
         panels: this.panels,
         scrollPosition: this.scrollPosition,
+        dragSort: this.dragSort,
+        onDragSort,
       };
       return (
         <div
