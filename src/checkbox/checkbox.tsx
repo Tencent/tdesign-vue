@@ -9,6 +9,7 @@ import {
   useFormDisabled,
   useCommonClassName,
   usePrefixClass,
+  useGlobalIcon,
 } from '../hooks';
 import { CheckboxGroupInjectionKey } from './constants';
 import { getCheckboxStore, ObserverListenerParams } from './store';
@@ -35,6 +36,10 @@ export default defineComponent({
     const checkboxStore = computed(() => getCheckboxStore(storeKey.value));
     const labelRef = ref<HTMLElement>();
     const { STATUS } = useCommonClassName();
+    const { Check1Icon, Remove1Icon } = useGlobalIcon({
+      Check1Icon: TdCheck1Icon,
+      Remove1Icon: TdRemove1Icon,
+    });
     const checkboxGroupExist = ref(false);
 
     const {
@@ -207,6 +212,8 @@ export default defineComponent({
     return {
       labelRef,
       labelClasses,
+      Check1Icon,
+      Remove1Icon,
       COMPONENT_NAME,
       tDisabled,
       tIndeterminate,
@@ -224,6 +231,7 @@ export default defineComponent({
   },
 
   render() {
+    const { Check1Icon, Remove1Icon } = this;
     const disabled = this.tDisabled ?? this.formDisabled;
     const classes = this.labelClasses.concat({
       [this.STATUS.disabled]: disabled,
@@ -256,7 +264,9 @@ export default defineComponent({
                 key="input"
                 tabindex="-1"
               ></input>,
-              <span class={`${this.COMPONENT_NAME}__input`} key="input-span"></span>,
+              <span class={`${this.COMPONENT_NAME}__input`} key="input-span">
+                {this.tIndeterminate ? <Remove1Icon /> : <Check1Icon />}
+              </span>,
               <span class={`${this.COMPONENT_NAME}__label`} key="label" onClick={this.handleLabelClick}>
                 {renderTNodeJSX(this, 'default', { params: slotsPrams })
                   || renderTNodeJSX(this, 'label', { params: slotsPrams, slotFirst: this.checkboxGroupExist })}
