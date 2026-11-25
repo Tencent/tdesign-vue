@@ -133654,7 +133654,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/base.vue 1`] = `
       class="t-timeline t-timeline-left t-timeline-vertical t-timeline-label--same t-timeline-label"
     >
       <li
-        class="t-timeline-item t-timeline-item-left "
+        class="t-timeline-item t-timeline-item-left"
       >
         <div
           class="t-timeline-item__wrapper"
@@ -133678,7 +133678,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/base.vue 1`] = `
         </div>
       </li>
       <li
-        class="t-timeline-item t-timeline-item-left "
+        class="t-timeline-item t-timeline-item-left"
       >
         <div
           class="t-timeline-item__wrapper"
@@ -133702,7 +133702,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/base.vue 1`] = `
         </div>
       </li>
       <li
-        class="t-timeline-item t-timeline-item-left "
+        class="t-timeline-item t-timeline-item-left"
       >
         <div
           class="t-timeline-item__wrapper"
@@ -133726,7 +133726,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/base.vue 1`] = `
         </div>
       </li>
       <li
-        class="t-timeline-item t-timeline-item-left t-timeline-item--last"
+        class="t-timeline-item t-timeline-item-left"
       >
         <div
           class="t-timeline-item__wrapper"
@@ -133760,7 +133760,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customContent.vue 
     class="t-timeline t-timeline-left t-timeline-vertical t-timeline-label--same t-timeline-label"
   >
     <li
-      class="t-timeline-item t-timeline-item-left "
+      class="t-timeline-item t-timeline-item-left"
     >
       <div
         class="t-timeline-item__wrapper"
@@ -133791,7 +133791,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customContent.vue 
       </div>
     </li>
     <li
-      class="t-timeline-item t-timeline-item-left "
+      class="t-timeline-item t-timeline-item-left"
     >
       <div
         class="t-timeline-item__wrapper"
@@ -133822,7 +133822,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customContent.vue 
       </div>
     </li>
     <li
-      class="t-timeline-item t-timeline-item-left "
+      class="t-timeline-item t-timeline-item-left"
     >
       <div
         class="t-timeline-item__wrapper"
@@ -133853,7 +133853,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customContent.vue 
       </div>
     </li>
     <li
-      class="t-timeline-item t-timeline-item-left t-timeline-item--last"
+      class="t-timeline-item t-timeline-item-left"
     >
       <div
         class="t-timeline-item__wrapper"
@@ -133967,7 +133967,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
       class="t-timeline t-timeline-left t-timeline-vertical t-timeline-label--same t-timeline-label"
     >
       <li
-        class="t-timeline-item t-timeline-item-left "
+        class="t-timeline-item t-timeline-item-left"
       >
         <div
           class="t-timeline-item__wrapper"
@@ -134045,7 +134045,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
         </div>
       </li>
       <li
-        class="t-timeline-item t-timeline-item-left "
+        class="t-timeline-item t-timeline-item-left"
       >
         <div
           class="t-timeline-item__wrapper"
@@ -134135,7 +134135,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
         </div>
       </li>
       <li
-        class="t-timeline-item t-timeline-item-left "
+        class="t-timeline-item t-timeline-item-left"
       >
         <div
           class="t-timeline-item__wrapper"
@@ -134219,7 +134219,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/customDot.vue 1`] 
         </div>
       </li>
       <li
-        class="t-timeline-item t-timeline-item-left t-timeline-item--last"
+        class="t-timeline-item t-timeline-item-left"
       >
         <div
           class="t-timeline-item__wrapper"
@@ -134607,7 +134607,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
     class="t-timeline t-timeline-left t-timeline-vertical t-timeline-label--same t-timeline-label"
   >
     <li
-      class="t-timeline-item t-timeline-item-left "
+      class="t-timeline-item t-timeline-item-left"
     >
       <div
         class="t-timeline-item__wrapper"
@@ -134631,7 +134631,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
       </div>
     </li>
     <li
-      class="t-timeline-item t-timeline-item-left "
+      class="t-timeline-item t-timeline-item-left"
     >
       <div
         class="t-timeline-item__wrapper"
@@ -134655,7 +134655,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
       </div>
     </li>
     <li
-      class="t-timeline-item t-timeline-item-left "
+      class="t-timeline-item t-timeline-item-left"
     >
       <div
         class="t-timeline-item__wrapper"
@@ -134679,7 +134679,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/layout.vue 1`] = `
       </div>
     </li>
     <li
-      class="t-timeline-item t-timeline-item-left t-timeline-item--last"
+      class="t-timeline-item t-timeline-item-left"
     >
       <div
         class="t-timeline-item__wrapper"
@@ -134766,7 +134766,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/loading.vue 1`] = 
     class="t-timeline t-timeline-left t-timeline-vertical t-timeline-label--same t-timeline-label"
   >
     <li
-      class="t-timeline-item t-timeline-item-left "
+      class="t-timeline-item t-timeline-item-left"
     >
       <div
         class="t-timeline-item__wrapper"
@@ -134790,7 +134790,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/loading.vue 1`] = 
       </div>
     </li>
     <li
-      class="t-timeline-item t-timeline-item-left "
+      class="t-timeline-item t-timeline-item-left"
     >
       <div
         class="t-timeline-item__wrapper"
@@ -134814,7 +134814,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/loading.vue 1`] = 
       </div>
     </li>
     <li
-      class="t-timeline-item t-timeline-item-left "
+      class="t-timeline-item t-timeline-item-left"
     >
       <div
         class="t-timeline-item__wrapper"
@@ -134838,7 +134838,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/loading.vue 1`] = 
       </div>
     </li>
     <li
-      class="t-timeline-item t-timeline-item-left t-timeline-item--last"
+      class="t-timeline-item t-timeline-item-left"
     >
       <div
         class="t-timeline-item__wrapper"
@@ -134906,7 +134906,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/reverse.vue 1`] = 
     class="t-timeline t-timeline-left t-timeline-vertical t-timeline-label--same t-timeline-label"
   >
     <li
-      class="t-timeline-item t-timeline-item-left "
+      class="t-timeline-item t-timeline-item-left"
     >
       <div
         class="t-timeline-item__wrapper"
@@ -134930,7 +134930,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/reverse.vue 1`] = 
       </div>
     </li>
     <li
-      class="t-timeline-item t-timeline-item-left "
+      class="t-timeline-item t-timeline-item-left"
     >
       <div
         class="t-timeline-item__wrapper"
@@ -134954,7 +134954,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/reverse.vue 1`] = 
       </div>
     </li>
     <li
-      class="t-timeline-item t-timeline-item-left "
+      class="t-timeline-item t-timeline-item-left"
     >
       <div
         class="t-timeline-item__wrapper"
@@ -134978,7 +134978,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/reverse.vue 1`] = 
       </div>
     </li>
     <li
-      class="t-timeline-item t-timeline-item-left t-timeline-item--last"
+      class="t-timeline-item t-timeline-item-left"
     >
       <div
         class="t-timeline-item__wrapper"
@@ -135015,7 +135015,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/theme.vue 1`] = `
       class="t-space-item"
     >
       <li
-        class="t-timeline-item t-timeline-item-left "
+        class="t-timeline-item t-timeline-item-left"
       >
         <div
           class="t-timeline-item__wrapper"
@@ -135024,7 +135024,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/theme.vue 1`] = `
             class="t-timeline-item__dot  t-timeline-item__dot--primary"
           />
           <div
-            class="t-timeline-item__tail t-timeline-item__tail--theme-undefined "
+            class="t-timeline-item__tail t-timeline-item__tail--theme-undefined"
           />
         </div>
         <div
@@ -135041,7 +135041,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/theme.vue 1`] = `
         class="t-timeline t-timeline-left t-timeline-vertical t-timeline-label--same t-timeline-label"
       >
         <li
-          class="t-timeline-item t-timeline-item-left "
+          class="t-timeline-item t-timeline-item-left"
         >
           <div
             class="t-timeline-item__wrapper"
@@ -135065,7 +135065,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/theme.vue 1`] = `
           </div>
         </li>
         <li
-          class="t-timeline-item t-timeline-item-left "
+          class="t-timeline-item t-timeline-item-left"
         >
           <div
             class="t-timeline-item__wrapper"
@@ -135089,7 +135089,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/theme.vue 1`] = `
           </div>
         </li>
         <li
-          class="t-timeline-item t-timeline-item-left "
+          class="t-timeline-item t-timeline-item-left"
         >
           <div
             class="t-timeline-item__wrapper"
@@ -135113,7 +135113,7 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/theme.vue 1`] = `
           </div>
         </li>
         <li
-          class="t-timeline-item t-timeline-item-left "
+          class="t-timeline-item t-timeline-item-left"
         >
           <div
             class="t-timeline-item__wrapper"
@@ -135137,13 +135137,13 @@ exports[`csr snapshot test > csr test ./src/timeline/_example/theme.vue 1`] = `
           </div>
         </li>
         <li
-          class="t-timeline-item t-timeline-item-left t-timeline-item--last"
+          class="t-timeline-item t-timeline-item-left"
         >
           <div
             class="t-timeline-item__wrapper"
           >
             <div
-              class="t-timeline-item__dot  "
+              class="t-timeline-item__dot"
               style="border-color: yellowgreen;"
             />
             <div

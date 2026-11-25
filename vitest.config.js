@@ -48,7 +48,6 @@ export default defineConfig(async () => {
     '@test/utils': path.resolve(__dirname, './test/utils'),
   };
   // 2.6 保持原来的 CJS runtime 别名；2.7 走 ESM 入口以获得具名 composition API。
-  // 2.6 保持原来的 CJS runtime 别名；2.7 走 ESM 入口以获得具名 composition API。
   if (isVue27()) {
     alias['@vue/composition-api'] = compositionApiTarget();
   } else {

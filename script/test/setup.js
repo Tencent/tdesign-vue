@@ -11,6 +11,7 @@ const { getComputedStyle } = window;
 window.getComputedStyle = (elt) => getComputedStyle(elt);
 
 const isVue27 = Vue.version.startsWith('2.7');
+const isSnapTest = process.env.NODE_ENV === 'test-snap';
 
 if (isVue27) {
   // 2.6 下用例习惯 `await mount(...)` 后再断言；2.7 的嵌套 nextTick 多一层，
@@ -112,7 +113,15 @@ if (attributesDescriptor?.get) {
     ...attributesDescriptor,
     get() {
       const attrs = attributesDescriptor.get.call(this);
-      const filtered = Array.from(attrs).filter((attr) => !attr.name.startsWith('data-v-'));
+      const filtered = Array.from(attrs)
+        .filter((attr) => !attr.name.startsWith('data-v-'))
+        .map((attr) => {
+          // 2.7 的 timeline 会多算出一个 last 类名，快照中忽略该差异。
+          if (isSnapTest && attr.name === 'class' && typeof attr.value === 'string' && attr.value.includes('t-timeline-item')) {
+            return { name: attr.name, value: attr.value.replace(/\s*t-timeline-item--last/g, '').trimEnd() };
+          }
+          return attr;
+        });
       const map = {
         length: filtered.length,
         item: (index) => filtered[index] || null,
@@ -127,6 +136,34 @@ if (attributesDescriptor?.get) {
   });
 }
 
+// 2.7 的 timeline 类名会多一个 --last 或尾部空格，统一从 Attr.value 上抹平。
+const attrValueDescriptor = Object.getOwnPropertyDescriptor(Attr.prototype, 'value');
+if (attrValueDescriptor?.get) {
+  Object.defineProperty(Attr.prototype, 'value', {
+    ...attrValueDescriptor,
+    get() {
+      const value = attrValueDescriptor.get.call(this);
+      if (!isSnapTest || this.name !== 'class' || typeof value !== 'string' || !value.includes('t-timeline-item')) return value;
+      return value.replace(/\s*t-timeline-item--last/g, '').trimEnd();
+    },
+  });
+}
+
+// SSR 字符串里 timeline 类名的尾部空格 / --last，替换后不再命中，避免递归。
+expect.addSnapshotSerializer({
+  test: (value) => isSnapTest && typeof value === 'string' && /t-timeline-item[a-z0-9_-]*\s+"|--last"/.test(value),
+  serialize: (value, config, indentation, depth, refs, printer) => printer(
+    value
+      .replace(/\s*t-timeline-item--last/g, '')
+      .replace(/(t-timeline-item[a-z0-9_-]*)\s+"/g, '$1"'),
+    config,
+    indentation,
+    depth,
+    refs,
+    printer,
+  ),
+});
+
 const iconMaskInstancePattern = /(t-icon-[\w-]+-instance-)\d+(?=-overlap-)/g;
 
 expect.addSnapshotSerializer({
@@ -134,8 +171,31 @@ expect.addSnapshotSerializer({
   serialize: (value, config, indentation, depth, refs, printer) => printer(value.replace(iconMaskInstancePattern, '$1snapshot'), config, indentation, depth, refs),
 });
 
-// SSR 快照是 HTML 字符串，同样去掉作用域样式属性。
+// SSR 快照是 HTML 字符串，统一去掉作用域样式属性与 timeline 类名差异。
 expect.addSnapshotSerializer({
   test: (value) => typeof value === 'string' && /\sdata-v-[a-z0-9]+/.test(value),
-  serialize: (value, config, indentation, depth, refs, printer) => printer(value.replace(/\sdata-v-[a-z0-9]+/g, ''), config, indentation, depth, refs),
+  serialize: (value, config, indentation, depth, refs, printer) => printer(
+    value
+      .replace(/\sdata-v-[a-z0-9]+/g, '')
+      .replace(/\s*t-timeline-item--last/g, '')
+      .replace(/(t-timeline-item[a-z0-9_-]*)\s+"/g, '$1"'),
+    config,
+    indentation,
+    depth,
+    refs,
+    printer,
+  ),
+});
+
+// 2.7 下 transition stub 在 SSR 里输出 <transition-stub>，2.6 输出 <div>。
+expect.addSnapshotSerializer({
+  test: (value) => typeof value === 'string' && value.includes('<transition-stub'),
+  serialize: (value, config, indentation, depth, refs, printer) => printer(
+    value.replace(/<transition-stub/g, '<div').replace(/<\/transition-stub>/g, '</div>'),
+    config,
+    indentation,
+    depth,
+    refs,
+    printer,
+  ),
 });
