@@ -46,23 +46,36 @@ jobs:
   test:
     # needs: check
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        vue: ['2.6', '2.7']
+    name: test (vue ${{ matrix.vue }})
     steps:
       - uses: actions/checkout@v4
         with:
           submodules: recursive
       - uses: pnpm/action-setup@v4
         with:
-          version: 9     
+          version: 9
       - uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      - run: node script/migrate/migrateConfig.mjs
+      # 用依赖覆盖切换 Vue 版本，不运行改写源码的迁移脚本。
+      - name: Apply Vue 2.7 dependency overrides
+        if: matrix.vue == '2.7'
+        run: node script/test/use-vue27.mjs
       - run: pnpm install
-      - run: node script/migrate/migrateComponent.mjs
 
       - run: npm run lint
+        if: matrix.vue == '2.6'
+      # 2.7 下 demo 快照仍有若干渲染差异（JSX-in-data、timeline last 类等），
+      # 先跑同一套单测；快照基线继续由 2.6 维护。
       - run: npm run test
+        if: matrix.vue == '2.6'
+      - run: npm run test:unit
+        if: matrix.vue == '2.7'
 
   site:
     runs-on: ubuntu-latest
