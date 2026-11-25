@@ -99,6 +99,42 @@ describe('Slider', () => {
       expect(wrapper.find('.t-slider__button-wrapper').attributes('style')).toBe('left: 0%;');
     });
   });
+
+  describe('change-end', () => {
+    it.each([
+      [false, 80, 0, 60, 60],
+      [false, 40, 0, 60, 40],
+      [true, [20, 80], 0, 60, [20, 60]],
+      [true, [20, 80], 50, 100, [50, 80]],
+    ])('uses the current bounds on release (range: %s)', async (range, value, min, max, expected) => {
+      const onChangeEnd = vi.fn();
+      const wrapper = mount({
+        data: () => ({ min: 0, max: 100 }),
+        render() {
+          return (
+            <Slider
+              range={range}
+              value={value}
+              min={this.min}
+              max={this.max}
+              label={false}
+              on={{ 'change-end': onChangeEnd }}
+            />
+          );
+        },
+      });
+
+      await wrapper.findAll('.t-slider__button').at(range ? 1 : 0).trigger('mousedown', { button: 0 });
+      expect(onChangeEnd).not.toHaveBeenCalled();
+
+      await wrapper.setData({ min, max });
+      window.dispatchEvent(new MouseEvent('mouseup', { button: 0 }));
+
+      expect(onChangeEnd).toHaveBeenCalledTimes(1);
+      expect(onChangeEnd).toHaveBeenCalledWith(expected);
+      wrapper.destroy();
+    });
+  });
 });
 
 // 测试Slider下的marks传参模板
