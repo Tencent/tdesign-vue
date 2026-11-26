@@ -140,7 +140,7 @@ export default defineComponent({
       context: { trigger: SelectValueChangeTrigger; e?: MouseEvent | KeyboardEvent },
       optionValue?: SelectValue,
     ) => {
-      if (newVal === value.value) return;
+      if (isDisabled.value || newVal === value.value) return;
 
       const selectedOptions: TdOptionProps[] = [];
       const { value: valueOfKeys, label: labelOfKeys } = keys.value;
