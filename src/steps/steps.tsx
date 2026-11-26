@@ -15,7 +15,7 @@ export default mixins(getConfigReceiverMixins('steps')).extend({
   props: { ...props },
   data() {
     return {
-      indexMap: {},
+      indexMap: {} as { [key: string]: number },
     };
   },
   provide(): { steps: any } {
@@ -48,35 +48,22 @@ export default mixins(getConfigReceiverMixins('steps')).extend({
     },
   },
   render() {
-    const nodes = this.$scopedSlots?.default && this.$scopedSlots.default(null);
     const options = this.getOptions();
-    const content = options.map((item, index) => {
-      const stepIndex = this.sequence === 'reverse' ? options.length - index - 1 : index;
-      const propsData = {
-        ...item,
-        index: stepIndex,
-        status: this.handleStatus(item, index),
-      };
+    const optionsDisplayListLength = options.length;
 
+    const content = options.map((item, index) => {
+      const stepIndex = this.sequence === 'reverse' ? optionsDisplayListLength - index - 1 : index;
       const stepItem = (
         <t-step-item
           props={{
             ...item,
             index: stepIndex,
-            status: this.handleStatus(item, index),
+            status: this.handleStatus(item, stepIndex),
           }}
           key={item.value || index}
         ></t-step-item>
       );
 
-      if (nodes && nodes[index]) {
-        const vnode = nodes[index];
-        if (vnode.componentOptions) {
-          vnode.componentOptions.propsData = propsData;
-          return vnode;
-        }
-        return stepItem;
-      }
       return stepItem;
     });
     return <div class={this.baseClass}>{content}</div>;
@@ -86,7 +73,7 @@ export default mixins(getConfigReceiverMixins('steps')).extend({
       const nodes = this.$scopedSlots?.default && this.$scopedSlots.default(null);
       let options: Array<TdStepItemProps>;
       if (this.options && this.options.length) {
-        options = this.sequence === 'reverse' ? this.options.reverse() : this.options;
+        options = this.sequence === 'reverse' ? [...this.options].reverse() : this.options;
       } else {
         options = this.getOptionListBySlots(nodes);
       }
@@ -115,10 +102,13 @@ export default mixins(getConfigReceiverMixins('steps')).extend({
     handleStatus(item: TdStepItemProps, index: number) {
       if (item.status && item.status !== 'default') return item.status;
       if (this.current === 'FINISH') return 'finish';
+
       // value 不存在时，使用 index 进行区分每一个步骤
-      if (item.value === undefined) {
-        if (this.sequence === 'positive' && index < this.current) return 'finish';
-        if (this.sequence === 'reverse' && index > this.current) return 'finish';
+
+      if (item.value === undefined && typeof this.current === 'number') {
+        if (index < this.current) return 'finish';
+        if (index === this.current) return 'process';
+        return 'default';
       }
       // value 存在，找匹配位置
       if (item.value !== undefined) {
@@ -127,11 +117,10 @@ export default mixins(getConfigReceiverMixins('steps')).extend({
           console.warn('TDesign Steps Warn: The current `value` is not exist.');
           return 'default';
         }
-        if (this.sequence === 'positive' && index < matchIndex) return 'finish';
-        if (this.sequence === 'reverse' && index > matchIndex) return 'finish';
+        if (index < matchIndex) return 'finish';
+        if (index === matchIndex) return 'process';
+        return 'default';
       }
-      const key = item.value === undefined ? index : item.value;
-      if (key === this.current) return 'process';
       return 'default';
     },
     handleChange(cur: TdStepsProps['current'], prev: TdStepsProps['current'], e: MouseEvent) {
