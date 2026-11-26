@@ -25,6 +25,7 @@ export default defineComponent({
     const { sizeClassNames } = useCommonClassName();
     const COMPONENT_NAME = usePrefixClass('select');
     const { classPrefix } = useConfig('classPrefix');
+    const renderTNode = useTNodeJSX();
 
     const classes = computed<ClassName>(() => [
       `${COMPONENT_NAME.value}-option-group`,
@@ -37,14 +38,15 @@ export default defineComponent({
       classes,
       classPrefix,
       componentName: COMPONENT_NAME,
+      renderTNode,
     };
   },
   render() {
-    const renderTNode = useTNodeJSX();
-    const children: ScopedSlotReturnValue = renderTNode('default');
+    const children: ScopedSlotReturnValue = this.renderTNode('default');
+    const optionGroupLabel = this.renderTNode('label');
     return (
       <li class={this.classes}>
-        {(this.label ?? false) && <div class={`${this.componentName}-option-group__header`}>{this.label}</div>}
+        {optionGroupLabel && <div class={`${this.componentName}-option-group__header`}>{optionGroupLabel}</div>}
         {children}
       </li>
     );
