@@ -48,6 +48,9 @@ export default defineComponent({
 
     const isCheckAll = computed<boolean>(() => {
       const optionItems = optionList.value.filter((item) => !item.disabled && !item.checkAll).map((t) => t.value);
+      // 没有可选条目时不能算全选：空集合求交集同样是空集合，
+      // 0 === 0 会让「全部选项都被禁用」被误判成全选（issue #3809）。
+      if (optionItems.length === 0) return false;
       const intersectionValues = intersection(optionItems, innerValue.value);
       return intersectionValues.length === optionItems.length;
     });
