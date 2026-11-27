@@ -45,9 +45,11 @@ panel | String / Slot / Function | - | Typescript：`string \| TNode`。[see mor
 removable | Boolean | false | \- | N
 value | String / Number | - | Typescript：`TabValue` | N
 onRemove | Function |  | Typescript：`(options: { value: TabValue; e: MouseEvent }) => void`<br/> | N
+onClick | Function |  | Typescript：`(e: MouseEvent) => void`<br/>Triggered when the panel content is clicked. Native events are forwarded to the panel root and are not stopped from bubbling | N
 
 ### TabPanel Events
 
 name | params | description
 -- | -- | --
 remove | `(options: { value: TabValue; e: MouseEvent })` | \-
+click | `(e: MouseEvent)` | Triggered when the panel content is clicked. Native events are forwarded to the panel root and are not stopped from bubbling

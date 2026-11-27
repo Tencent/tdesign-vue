@@ -118,6 +118,11 @@ export interface TdTabPanelProps {
    * 点击删除按钮时触发
    */
   onRemove?: (options: { value: TabValue; e: MouseEvent }) => void;
+  /**
+   * 点击面板内容时触发。与写在普通 DOM 元素上的监听一致，
+   * 原生事件会透传到面板根节点，不阻止冒泡。
+   */
+  onClick?: (e: MouseEvent) => void;
 }
 
 export type TabValue = string | number;
