@@ -313,7 +313,10 @@ export default mixins(classPrefixMixins).extend({
       emitEvent<Parameters<TdSliderProps['onChange']>>(this, 'change', fixValue);
     },
     emitChangeEnd() {
-      emitEvent<Parameters<TdSliderProps['onChangeEnd']>>(this, 'change-end', this.value);
+      const { value, min, max } = this;
+      const clamp = (current: number) => Math.min(max, Math.max(min, current));
+      const committedValue = Array.isArray(value) ? value.map(clamp) : clamp(value);
+      emitEvent<Parameters<TdSliderProps['onChangeEnd']>>(this, 'change-end', committedValue);
     },
     getStopStyle(position: number) {
       return this.vertical ? { top: `calc(${100 - position}% - 1px)` } : { left: `${position}%` };
