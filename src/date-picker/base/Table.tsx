@@ -55,7 +55,7 @@ export default defineComponent({
         const endYear = endObj && endObj.year();
         const endWeek = endObj?.locale?.(dayjsLocale)?.week?.();
 
-        const targetObj = parseToDayjs(targetValue, props.format);
+        const targetObj = parseToDayjs(targetValue, props.format).locale(dayjsLocale);
         const targetYear = targetObj.year();
         const targetWeek = targetObj.week();
         const isActive = (targetYear === startYear && targetWeek === startWeek) || (targetYear === endYear && targetWeek === endWeek);
@@ -75,10 +75,11 @@ export default defineComponent({
     };
 
     const multipleWeekRowClass = (value: DateMultipleValue, targetValue: Date) => {
-      const targetDayjs = parseToDayjs(targetValue, props.format);
+      const targetDayjs = parseToDayjs(targetValue, props.format).locale(dayjsLocale);
       if (props.mode !== 'week' || (Array.isArray(value) && !value.length)) return {};
+
       const isSomeYearWeek = value
-        .map?.((v) => parseToDayjs(v, props.format))
+        .map?.((v) => parseToDayjs(v, props.format).locale(dayjsLocale))
         .some((item) => item.week() === targetDayjs.week() && item.year() === targetDayjs.year());
       return {
         [`${COMPONENT_NAME.value}-${props.mode}-row--active`]: isSomeYearWeek,

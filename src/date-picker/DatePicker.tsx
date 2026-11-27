@@ -267,20 +267,29 @@ export default defineComponent({
       const currentValue = (value.value || []) as DateMultipleValue;
       const { dayjsLocale } = global.value;
 
+      const isWeekMode = props.mode === 'week';
+      const firstDayOfWeek = props.firstDayOfWeek || global.value.firstDayOfWeek;
+      const offset = (date.getDay() - firstDayOfWeek + 7) % 7;
+      const targetDate = isWeekMode && offset ? dayjs(date).subtract(offset, 'day').toDate() : date;
+      const formatOptions = {
+        format: formatRef.value.format,
+        targetFormat: formatRef.value.valueType,
+        ...(isWeekMode && { dayjsLocale }),
+      };
+
       let currentDate: DateMultipleValue;
-      if (props.mode !== 'week') isSameDate = currentValue.some((val) => isSame(parseToDayjs(val, formatRef.value.format).toDate(), date, props.mode, dayjsLocale));
+      if (!isWeekMode) isSameDate = currentValue.some((val) => isSame(parseToDayjs(val, formatRef.value.format).toDate(), date, props.mode, dayjsLocale));
       else {
-        isSameDate = currentValue.some((val) => val === dayjs(date).locale(dayjsLocale).format(formatRef.value.format));
+        isSameDate = currentValue.some(
+          (val) => val === dayjs(targetDate).locale(dayjsLocale).format(formatRef.value.format),
+        );
       }
 
       if (!isSameDate) {
-        currentDate = currentValue.concat(
-          formatDate(date, { format: formatRef.value.format, targetFormat: formatRef.value.valueType }),
-        );
+        currentDate = currentValue.concat(formatDate(targetDate, formatOptions));
       } else {
         currentDate = currentValue.filter(
-          (val) => formatDate(val, { format: formatRef.value.format, targetFormat: formatRef.value.valueType })
-            !== formatDate(date, { format: formatRef.value.format, targetFormat: formatRef.value.valueType }),
+          (val) => formatDate(val, formatOptions) !== formatDate(targetDate, formatOptions),
         );
       }
       return currentDate;
