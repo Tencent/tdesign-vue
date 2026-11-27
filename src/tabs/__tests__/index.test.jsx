@@ -202,6 +202,26 @@ describe('Tabs', () => {
       expect(onTabRemoveFn).toHaveBeenCalledWith({ value: 1, e: expect.any(Event), index: 0 });
       expect(onTabPanelRemoveFn).toHaveBeenCalledWith({ value: 1, e: expect.any(Event) });
     });
+
+    // Issue: https://github.com/Tencent/tdesign-vue/issues/2675
+    it('@click on tab-panel', async () => {
+      const onPanelClick = vi.fn();
+      const wrapper = mount({
+        render() {
+          return (
+            <Tabs value={1}>
+              <TabPanel value={1} label={'1'} onClick={onPanelClick}>
+                1
+              </TabPanel>
+            </Tabs>
+          );
+        },
+      });
+      await Vue.nextTick();
+      const panel = wrapper.findComponent(TabPanel);
+      panel.vm.$el.click();
+      expect(onPanelClick).toHaveBeenCalledTimes(1);
+    });
   });
 
   // test additional function

@@ -45,9 +45,11 @@ panel | String / Slot / Function | - | 用于自定义选项卡面板内容。TS
 removable | Boolean | false | 当前选项卡是否允许移除 | N
 value | String / Number | - | 选项卡的值，唯一标识。TS 类型：`TabValue` | N
 onRemove | Function |  | TS 类型：`(options: { value: TabValue; e: MouseEvent }) => void`<br/>点击删除按钮时触发 | N
+onClick | Function |  | TS 类型：`(e: MouseEvent) => void`<br/>点击面板内容时触发。原生事件会透传到面板根节点，不阻止冒泡 | N
 
 ### TabPanel Events
 
 名称 | 参数 | 描述
 -- | -- | --
 remove | `(options: { value: TabValue; e: MouseEvent })` | 点击删除按钮时触发
+click | `(e: MouseEvent)` | 点击面板内容时触发。原生事件会透传到面板根节点，不阻止冒泡
