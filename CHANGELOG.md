@@ -6,6 +6,16 @@ docClass: timeline
 ---
 
 
+## 🌈 1.17.0 `2026-11-27` 
+### 🚀 Features
+- `Checkbox`: 优化组件内部图标实现为 SVG 资源，提高展示一致性，提高展示一致性，有覆盖原伪元素实现的业务请注意此变更 ⚠️  @uyarn ([#3940](https://github.com/Tencent/tdesign-vue/pull/3940))
+### 🐞 Bug Fixes
+- `Cascader`: 修复下拉面板打开后动态禁用组件时仍可选择选项并触发 change 事件的问题 @Xapollon430 ([#3939](https://github.com/Tencent/tdesign-vue/pull/3939))
+- `DatePicker`: 
+    - 修复周模式下多选的异常问题 @uyarn ([#3970](https://github.com/Tencent/tdesign-vue/pull/3970))
+    - 修复 `allow-input` 下手动输入 disableDate 禁用日期仍可确认的问题 @lnuxe ([#3955](https://github.com/Tencent/tdesign-vue/pull/3955))
+
+
 ## 🌈 1.16.3 `2026-10-28` 
 ### 🐞 Bug Fixes
 - `fix`: 优化 1.16.2 版本的兼容性问题 @uyarn ([#3926](https://github.com/Tencent/tdesign-vue/pull/3926))
