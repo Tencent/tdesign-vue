@@ -1,5 +1,6 @@
 import { isNil } from 'lodash-es';
-import { parseToDayjs } from '../_common/js/date-picker/format';
+import { parseToDayjs, isValidDate } from '../_common/js/date-picker/format';
+import { isEnabledDate } from '../_common/js/date-picker/utils';
 // 用于头部日期切换修正
 // eslint-disable-next-line import/prefer-default-export
 export function dateCorrection(
@@ -67,4 +68,31 @@ export function parseToDateTime(
   }
 
   return dayjs.toDate();
+}
+
+// 输入框手动输入的值是否命中禁用日期，配合 allowInput 在确认前拦截
+// 值为区间时任一命中即视为禁用
+export function isDisabledInputValue({
+  value,
+  disableDate,
+  mode,
+  format,
+}: {
+  value: string | string[];
+  mode: 'year' | 'month' | 'date' | 'quarter' | 'week';
+  format: string;
+  disableDate: any;
+}): boolean {
+  if (!disableDate) return false;
+
+  const values = Array.isArray(value) ? value : [value];
+  return values.some((item) => {
+    if (!item || !isValidDate(item, format)) return false;
+    return !isEnabledDate({
+      value: parseToDayjs(item, format).toDate(),
+      mode,
+      format,
+      disableDate,
+    });
+  });
 }

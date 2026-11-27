@@ -10,6 +10,12 @@ MockDate.set('2020-12-28');
 
 // every component needs four parts: props/events/slots/functions.
 describe('DatePicker', () => {
+  // 面板 teleport 到 body，用例之间清理残留节点，
+  // 否则 document.querySelector 会命中上一个用例遗留的面板
+  afterEach(() => {
+    document.body.innerHTML = '';
+  });
+
   // test props api
   describe(':props', () => {
     it('', () => {
@@ -95,7 +101,8 @@ describe('DatePicker', () => {
     wrapper.find('.t-input').trigger('click');
     await nextTick();
     const weekElement = document.querySelector('.t-date-picker__table table thead tr th');
-    expect(weekElement.innerHTML).toEqual('一');
+    // firstDayOfWeek: 3 => 周三为一周起始，首列表头应为「三」
+    expect(weekElement.innerHTML).toEqual('三');
   });
 
   it('format', async () => {
@@ -226,6 +233,31 @@ describe('DatePicker', () => {
 
   // test exposure function
   describe('function', () => {
+    // issue #3770: allowInput + disabledDate 手动输入禁用日期仍可确认
+    it('allowInput + disabledDate: 输入禁用日期回车不应生效', async () => {
+      MockDate.set('2020-12-28');
+      const changeFn = vi.fn();
+      // 禁用 2020-11-11
+      const disabledDate = (d) => d.getFullYear() === 2020 && d.getMonth() === 10 && d.getDate() === 11;
+      const wrapper = mount({
+        render() {
+          return <DatePicker allowInput disableDate={disabledDate} onChange={changeFn} />;
+        },
+      });
+      await nextTick();
+      const input = wrapper.find('input');
+      await input.setValue('2020-11-11');
+      await nextTick();
+      // 模拟回车确认
+      await input.trigger('keydown.enter');
+      await nextTick();
+      // 禁用日期不应触发 change
+      expect(changeFn).not.toHaveBeenCalled();
+      // 输入框回退到空或原值，不保留禁用日期
+      expect(input.element.value).not.toBe('2020-11-11');
+      MockDate.reset();
+    });
+
     it('onBlur', async () => {
       const blurFn = vi.fn();
       const wrapper = mount({

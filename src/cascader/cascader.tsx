@@ -150,7 +150,7 @@ export default defineComponent({
           props: {
             value: displayValue,
             inputValue: visible ? inputVal : '',
-            popupVisible: visible,
+            popupVisible: visible && !isDisabled,
             keys: this.keys,
             allowInput: isFilterable,
             minCollapsedNum: this.minCollapsedNum,
@@ -230,7 +230,7 @@ export default defineComponent({
               trigger={this.trigger}
               loading={this.loading}
               loadingText={this.loadingText}
-              cascaderContext={cascaderContext}
+              cascaderContext={{ ...cascaderContext, disabled: isDisabled }}
               scopedSlots={{ option: slots.option, empty: slots.empty, loadingText: slots.loadingText }}
             />
           ),

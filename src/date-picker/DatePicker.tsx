@@ -12,6 +12,7 @@ import {
 import {
   subtractMonth, addMonth, extractTimeObj, covertToDate, isSame,
 } from '../_common/js/date-picker/utils';
+import { isDisabledInputValue } from './utils';
 import type { DateMultipleValue, DateValue } from './type';
 import props from './props';
 
@@ -201,6 +202,19 @@ export default defineComponent({
       const nextValue = formatDate(inputValue.value, {
         format: formatRef.value.format,
       });
+      // issue #3770: 手动输入的禁用日期不应确认生效
+      if (
+        nextValue
+        && isDisabledInputValue({
+          value: inputValue.value as string,
+          mode: props.mode,
+          format: formatRef.value.format,
+          disableDate: props.disableDate,
+        })
+      ) {
+        inputValue.value = value.value ? formatDate(value.value, { format: formatRef.value.format }) : '';
+        return;
+      }
       if (nextValue) {
         props?.onConfirm?.({ date: dayjs(nextValue as string).toDate(), e });
         emit('confirm', { date: dayjs(nextValue as string).toDate(), e });
@@ -253,20 +267,29 @@ export default defineComponent({
       const currentValue = (value.value || []) as DateMultipleValue;
       const { dayjsLocale } = global.value;
 
+      const isWeekMode = props.mode === 'week';
+      const firstDayOfWeek = props.firstDayOfWeek || global.value.firstDayOfWeek;
+      const offset = (date.getDay() - firstDayOfWeek + 7) % 7;
+      const targetDate = isWeekMode && offset ? dayjs(date).subtract(offset, 'day').toDate() : date;
+      const formatOptions = {
+        format: formatRef.value.format,
+        targetFormat: formatRef.value.valueType,
+        ...(isWeekMode && { dayjsLocale }),
+      };
+
       let currentDate: DateMultipleValue;
-      if (props.mode !== 'week') isSameDate = currentValue.some((val) => isSame(parseToDayjs(val, formatRef.value.format).toDate(), date, props.mode, dayjsLocale));
+      if (!isWeekMode) isSameDate = currentValue.some((val) => isSame(parseToDayjs(val, formatRef.value.format).toDate(), date, props.mode, dayjsLocale));
       else {
-        isSameDate = currentValue.some((val) => val === dayjs(date).locale(dayjsLocale).format(formatRef.value.format));
+        isSameDate = currentValue.some(
+          (val) => val === dayjs(targetDate).locale(dayjsLocale).format(formatRef.value.format),
+        );
       }
 
       if (!isSameDate) {
-        currentDate = currentValue.concat(
-          formatDate(date, { format: formatRef.value.format, targetFormat: formatRef.value.valueType }),
-        );
+        currentDate = currentValue.concat(formatDate(targetDate, formatOptions));
       } else {
         currentDate = currentValue.filter(
-          (val) => formatDate(val, { format: formatRef.value.format, targetFormat: formatRef.value.valueType })
-            !== formatDate(date, { format: formatRef.value.format, targetFormat: formatRef.value.valueType }),
+          (val) => formatDate(val, formatOptions) !== formatDate(targetDate, formatOptions),
         );
       }
       return currentDate;
