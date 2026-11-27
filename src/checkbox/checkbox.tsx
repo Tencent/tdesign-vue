@@ -1,6 +1,7 @@
 import {
   defineComponent, ref, toRefs, inject, watch, onBeforeUnmount, computed,
 } from 'vue';
+import { Check1Icon as TdCheck1Icon, Remove1Icon as TdRemove1Icon } from 'tdesign-icons-vue';
 import props from './props';
 import {
   useVModel,
