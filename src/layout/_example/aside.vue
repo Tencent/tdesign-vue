@@ -5,9 +5,9 @@
         <t-menu theme="light" value="dashboard" style="margin-right: 50px" height="550px">
           <img
             slot="logo"
-            width="136"
+            height="28"
             class="t-menu__logo--center"
-            src="https://www.tencent.com/img/index/menu_logo_hover.png"
+            src="https://tdesign.gtimg.com/site/baseLogo-light.png"
             alt="logo"
           />
           <t-menu-item value="dashboard"> <icon slot="icon" name="dashboard" />仪表盘 </t-menu-item>
