@@ -109,20 +109,22 @@ export function getCharacterLength(str: string, maxCharacter?: number) {
     return 0;
   }
   let len = 0;
-  for (let i = 0; i < str.length; i++) {
-    let currentStringLength = 0;
-    if (str.charCodeAt(i) > 127) {
-      currentStringLength = 2;
-    } else {
-      currentStringLength = 1;
-    }
+  // 按码点遍历，避免在代理对中间切开留下孤立代理（issue #3945）。
+  // 计数语义保持不变：每个 UTF-16 code unit 大于 127 记 2，
+  // 所以一个代理对（2 个 code unit）记 4。
+  const codePoints = Array.from(str);
+  let offset = 0;
+  for (let i = 0; i < codePoints.length; i++) {
+    const ch = codePoints[i];
+    const currentStringLength = ch.charCodeAt(0) > 127 ? ch.length * 2 : ch.length;
     if (hasMaxCharacter && len + currentStringLength > maxCharacter) {
       return {
         length: len,
-        characters: str.slice(0, i),
+        characters: str.slice(0, offset),
       };
     }
     len += currentStringLength;
+    offset += ch.length;
   }
   if (hasMaxCharacter) {
     return {
