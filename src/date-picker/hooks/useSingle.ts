@@ -11,6 +11,7 @@ import {
   getDefaultFormat,
   parseToDayjs,
 } from '../../_common/js/date-picker/format';
+import { isDisabledInputValue } from '../utils';
 import useSingleValue from './useSingleValue';
 import { TdInputProps } from '../../input/type';
 
@@ -84,6 +85,19 @@ export default function useSingle(props: TdDatePickerProps, { emit }: any) {
         }
 
         if (!isValidDate(val, formatRef.value.format) && !isValidDate(value.value, formatRef.value.format)) return;
+
+        // issue #3770: 手动输入的禁用日期不应生效
+        if (
+          isDisabledInputValue({
+            value: val,
+            mode: props.mode,
+            format: formatRef.value.format,
+            disableDate: props.disableDate,
+          })
+        ) {
+          inputValue.value = value.value ? formatDate(value.value, { format: formatRef.value.format }) : '';
+          return;
+        }
 
         popupVisible.value = false;
         if (isValidDate(val, formatRef.value.format)) {
